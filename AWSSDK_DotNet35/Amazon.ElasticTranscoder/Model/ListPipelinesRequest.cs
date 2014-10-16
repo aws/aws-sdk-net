@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// Container for the parameters to the ListPipelines operation.
     /// The ListPipelines operation gets a list of the pipelines associated with the current
-    /// AWS            account.
+    /// AWS account.
     /// </summary>
     public partial class ListPipelinesRequest : AmazonElasticTranscoderRequest
     {
@@ -41,8 +41,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Ascending. 
         /// <para>
         /// To list pipelines in chronological order by the date and time that they were created,
-        /// enter            <code>true</code>. To list pipelines in reverse chronological order,
-        /// enter            <code>false</code>.
+        /// enter <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.
         /// </para>
         /// </summary>
         public string Ascending
@@ -61,8 +60,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property PageToken. 
         /// <para>
         /// When Elastic Transcoder returns more than one page of results, use <code>pageToken</code>
-        /// in            subsequent <code>GET</code> requests to get each successive page of
-        /// results. 
+        /// in subsequent <code>GET</code> requests to get each successive page of results. 
         /// </para>
         /// </summary>
         public string PageToken

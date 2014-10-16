@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 
 
@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class RDSMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("rds-2013-09-09.normal.json", "rds.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("rds-2014-09-01.normal.json", "rds.customizations.json");
         
 
         [TestMethod]
@@ -111,6 +111,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void CopyDBParameterGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("CopyDBParameterGroup");
+
+            var request = InstantiateClassGenerator.Execute<CopyDBParameterGroupRequest>();
+            var marshaller = new CopyDBParameterGroupRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CopyDBParameterGroupResponseUnmarshaller.Instance.Unmarshall(context)
+                as CopyDBParameterGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void CopyDBSnapshotMarshallTest()
         {
             var operation = service_model.FindOperation("CopyDBSnapshot");
@@ -126,6 +150,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = CopyDBSnapshotResponseUnmarshaller.Instance.Unmarshall(context)
                 as CopyDBSnapshotResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CopyOptionGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("CopyOptionGroup");
+
+            var request = InstantiateClassGenerator.Execute<CopyOptionGroupRequest>();
+            var marshaller = new CopyOptionGroupRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CopyOptionGroupResponseUnmarshaller.Instance.Unmarshall(context)
+                as CopyOptionGroupResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

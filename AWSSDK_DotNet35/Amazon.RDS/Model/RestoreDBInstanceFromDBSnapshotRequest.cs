@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -49,7 +49,10 @@ namespace Amazon.RDS.Model
         private string _optionGroupName;
         private int? _port;
         private bool? _publiclyAccessible;
+        private string _storageType;
         private List<Tag> _tags = new List<Tag>();
+        private string _tdeCredentialArn;
+        private string _tdeCredentialPassword;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -59,8 +62,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates RestoreDBInstanceFromDBSnapshotRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbInstanceIdentifier"> The identifier for the DB snapshot to restore from.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
-        /// <param name="dbSnapshotIdentifier"> Name of the DB instance to create from the DB snapshot. This parameter isn't case sensitive.  Constraints: <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> Example: <code>my-snapshot-id</code></param>
+        /// <param name="dbInstanceIdentifier"> Name of the DB instance to create from the DB snapshot. This parameter isn't case sensitive.  Constraints: <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> Example: <code>my-snapshot-id</code></param>
+        /// <param name="dbSnapshotIdentifier"> The identifier for the DB snapshot to restore from.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
         public RestoreDBInstanceFromDBSnapshotRequest(string dbInstanceIdentifier, string dbSnapshotIdentifier)
         {
             _dBInstanceIdentifier = dbInstanceIdentifier;
@@ -125,7 +128,9 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge
-        /// | db.m2.2xlarge | db.m2.4xlarge</code>
+        /// | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge
+        /// | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro
+        /// | db.t2.small | db.t2.medium</code>
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -143,15 +148,19 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        ///  The identifier for the DB snapshot to restore from. 
+        ///  Name of the DB instance to create from the DB snapshot. This parameter isn't case
+        /// sensitive. 
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
+        ///  <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First
         /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens</li> </ul>
+        /// hyphens</li> </ul> 
+        /// <para>
+        /// Example: <code>my-snapshot-id</code>
+        /// </para>
         /// </summary>
         public string DBInstanceIdentifier
         {
@@ -186,19 +195,15 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSnapshotIdentifier. 
         /// <para>
-        ///  Name of the DB instance to create from the DB snapshot. This parameter isn't case
-        /// sensitive. 
+        ///  The identifier for the DB snapshot to restore from. 
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First
+        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
         /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens</li> </ul> 
-        /// <para>
-        /// Example: <code>my-snapshot-id</code>
-        /// </para>
+        /// hyphens</li> </ul>
         /// </summary>
         public string DBSnapshotIdentifier
         {
@@ -272,6 +277,14 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  Constraints: Must be an integer greater than 1000.
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>SQL Server</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// Setting the IOPS value for the SQL Server database engine is not supported.
         /// </para>
         /// </summary>
         public int Iops
@@ -420,6 +433,33 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        ///  Specifies storage type to be associated with the DB Instance. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid values: <code>standard | gp2 | io1</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
+        /// parameter. 
+        /// </para>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags.
         /// </summary>
         public List<Tag> Tags
@@ -432,6 +472,44 @@ namespace Amazon.RDS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TdeCredentialArn. 
+        /// <para>
+        ///  The ARN from the Key Store with which to associate the instance for TDE encryption.
+        /// 
+        /// </para>
+        /// </summary>
+        public string TdeCredentialArn
+        {
+            get { return this._tdeCredentialArn; }
+            set { this._tdeCredentialArn = value; }
+        }
+
+        // Check to see if TdeCredentialArn property is set
+        internal bool IsSetTdeCredentialArn()
+        {
+            return this._tdeCredentialArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TdeCredentialPassword. 
+        /// <para>
+        ///  The password for the given ARN from the Key Store in order to access the device.
+        /// 
+        /// </para>
+        /// </summary>
+        public string TdeCredentialPassword
+        {
+            get { return this._tdeCredentialPassword; }
+            set { this._tdeCredentialPassword = value; }
+        }
+
+        // Check to see if TdeCredentialPassword property is set
+        internal bool IsSetTdeCredentialPassword()
+        {
+            return this._tdeCredentialPassword != null;
         }
 
     }

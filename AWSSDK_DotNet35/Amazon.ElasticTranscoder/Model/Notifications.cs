@@ -31,8 +31,8 @@ namespace Amazon.ElasticTranscoder.Model
     /// The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order
     /// to report job status.
     /// 
-    ///         <important>To receive notifications, you must also subscribe to the new topic
-    /// in the Amazon SNS            console.</important>
+    ///  <important>To receive notifications, you must also subscribe to the new topic in
+    /// the Amazon SNS console.</important>
     /// </summary>
     public partial class Notifications
     {
@@ -83,7 +83,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Progressing. 
         /// <para>
         /// The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify
-        /// when Elastic Transcoder has started to process the            job.
+        /// when Elastic Transcoder has started to process the job.
         /// </para>
         /// </summary>
         public string Progressing

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -101,6 +101,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StorageType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

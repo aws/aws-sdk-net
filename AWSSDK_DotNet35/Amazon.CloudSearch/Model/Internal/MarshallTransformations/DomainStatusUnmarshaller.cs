@@ -85,6 +85,12 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                         unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Limits", targetDepth))
+                    {
+                        var unmarshaller = LimitsUnmarshaller.Instance;
+                        unmarshalledObject.Limits = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Processing", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

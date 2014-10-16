@@ -62,7 +62,7 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// A list of tag keys. Each corresponding tag is deleted from the stream.
+        /// A list of tag keys. Each corresponding tag is removed from the stream.
         /// </para>
         /// </summary>
         public List<string> TagKeys

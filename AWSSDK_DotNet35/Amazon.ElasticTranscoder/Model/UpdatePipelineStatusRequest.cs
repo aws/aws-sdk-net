@@ -30,15 +30,14 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// Container for the parameters to the UpdatePipelineStatus operation.
     /// The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline
-    ///            stops or restarts the processing of jobs.
+    /// stops or restarts the processing of jobs.
     /// 
-    ///         
+    ///  
     /// <para>
     /// Changing the pipeline status is useful if you want to cancel one or more jobs. You
-    /// can't            cancel jobs after Elastic Transcoder has started processing them;
-    /// if you pause the pipeline to which            you submitted the jobs, you have more
-    /// time to get the job IDs for the jobs that you want            to cancel, and to send
-    /// a <a>CancelJob</a> request. 
+    /// can't cancel jobs after Elastic Transcoder has started processing them; if you pause
+    /// the pipeline to which you submitted the jobs, you have more time to get the job IDs
+    /// for the jobs that you want to cancel, and to send a <a>CancelJob</a> request. 
     /// </para>
     /// </summary>
     public partial class UpdatePipelineStatusRequest : AmazonElasticTranscoderRequest
@@ -69,9 +68,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// The desired status of the pipeline:
         /// </para>
-        ///         <ul>            <li>                <code>Active</code>: The pipeline is processing
-        /// jobs.</li>            <li>                <code>Paused</code>: The pipeline is not
-        /// currently processing jobs.</li>        </ul>
+        ///  <ul> <li> <code>Active</code>: The pipeline is processing jobs.</li> <li> <code>Paused</code>:
+        /// The pipeline is not currently processing jobs.</li> </ul>
         /// </summary>
         public string Status
         {

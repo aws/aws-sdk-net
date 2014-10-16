@@ -43,8 +43,8 @@ namespace Amazon.Kinesis.Model
     /// <code>MergeShards</code> is called when there is a need to reduce the overall capacity
     /// of a stream because of excess capacity that is not being used. You must specify the
     /// shard to be merged and the adjacent shard for a stream. For more information about
-    /// merging shards, see the <a href="http://docs.aws.amazon.com/kinesis/latest/dev/">Amazon
-    /// Kinesis Developer Guide</a>.
+    /// merging shards, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-java-resharding-merge">Merge
+    /// Two Shards</a> in the <i>Amazon Kinesis Developer Guide</i>.
     /// </para>
     ///  
     /// <para>

@@ -16,6 +16,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
             const string engine = "mysql5.1";
             var parameterGroupName = "dotnet-test-param-group-" + DateTime.Now.Ticks;
             DBParameterGroup parameterGroup = null;
+            DBParameterGroup parameterGroup2 = null;
 
             try
             {
@@ -98,6 +99,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
                 var modifiedParameterGroupName = Client.ModifyDBParameterGroup(modifyDbParameterGroupRequest)
                     .DBParameterGroupName;
                 Assert.AreEqual(parameterGroupName, modifiedParameterGroupName);
+
+                // Copy the parameter group
+                parameterGroup2 = Client.CopyDBParameterGroup(new CopyDBParameterGroupRequest
+                {
+                    SourceDBParameterGroupIdentifier = parameterGroupName,
+                    TargetDBParameterGroupIdentifier = parameterGroupName + "copy",
+                    TargetDBParameterGroupDescription = "Copy of " + parameterGroupName
+                }).DBParameterGroup;
+                Assert.AreEqual(parameterGroupName + "copy", parameterGroup2.DBParameterGroupName);
+                Assert.AreEqual("Copy of " + parameterGroupName, parameterGroup2.Description);
+                Assert.IsTrue(parameterGroup2.DBParameterGroupFamily.StartsWith("mysql"));
             }
             finally
             {
@@ -105,7 +117,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
                 {
                     Client.DeleteDBParameterGroup(new DeleteDBParameterGroupRequest
                     {
-                        DBParameterGroupName = parameterGroupName
+                        DBParameterGroupName = parameterGroup.DBParameterGroupName
+                    });
+                }
+                if (parameterGroup2 != null)
+                {
+                    Client.DeleteDBParameterGroup(new DeleteDBParameterGroupRequest
+                    {
+                        DBParameterGroupName = parameterGroup2.DBParameterGroupName
                     });
                 }
             }

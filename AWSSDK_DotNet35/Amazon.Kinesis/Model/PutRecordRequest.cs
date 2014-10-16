@@ -49,8 +49,8 @@ namespace Amazon.Kinesis.Model
     /// hash function is used to map partition keys to 128-bit integer values and to map associated
     /// data records to shards using the hash key ranges of the shards. You can override hashing
     /// the partition key to determine the shard by explicitly specifying a hash value using
-    /// the <code>ExplicitHashKey</code> parameter. For more information, see the <a href="http://docs.aws.amazon.com/kinesis/latest/dev/">Amazon
-    /// Kinesis Developer Guide</a>.
+    /// the <code>ExplicitHashKey</code> parameter. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-defn-partition-key">Partition
+    /// Key</a> in the <i>Amazon Kinesis Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -61,8 +61,8 @@ namespace Amazon.Kinesis.Model
     /// <para>
     /// Sequence numbers generally increase over time. To guarantee strictly increasing ordering,
     /// use the <code>SequenceNumberForOrdering</code> parameter. For more information, see
-    /// the <a href="http://docs.aws.amazon.com/kinesis/latest/dev/">Amazon Kinesis Developer
-    /// Guide</a>.
+    /// <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-defn-sequence-number">Sequence
+    /// Number</a> in the <i>Amazon Kinesis Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property Data. 
         /// <para>
         /// The data blob to put into the record, which is Base64-encoded when the blob is serialized.
-        /// The maximum size of the data blob (the payload after Base64-decoding) is 50 kilobytes
+        /// The maximum size of the data blob (the payload before Base64-encoding) is 50 kilobytes
         /// (KB) 
         /// </para>
         /// </summary>

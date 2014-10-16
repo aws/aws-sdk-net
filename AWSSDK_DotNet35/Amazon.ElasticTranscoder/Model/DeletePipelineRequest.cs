@@ -31,11 +31,11 @@ namespace Amazon.ElasticTranscoder.Model
     /// Container for the parameters to the DeletePipeline operation.
     /// The DeletePipeline operation removes a pipeline.
     /// 
-    ///         
+    ///  
     /// <para>
     ///  You can only delete a pipeline that has never been used or that is not currently
-    /// in use            (doesn't contain any active jobs). If the pipeline is currently
-    /// in use,                <code>DeletePipeline</code> returns an error. 
+    /// in use (doesn't contain any active jobs). If the pipeline is currently in use, <code>DeletePipeline</code>
+    /// returns an error. 
     /// </para>
     /// </summary>
     public partial class DeletePipelineRequest : AmazonElasticTranscoderRequest

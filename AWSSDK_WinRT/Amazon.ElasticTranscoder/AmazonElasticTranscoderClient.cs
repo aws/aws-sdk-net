@@ -36,7 +36,7 @@ namespace Amazon.ElasticTranscoder
     /// <summary>
     /// Implementation for accessing ElasticTranscoder
     ///
-    /// AWS Elastic Transcoder Service        
+    /// AWS Elastic Transcoder Service 
     /// <para>
     /// The AWS Elastic Transcoder Service.
     /// </para>

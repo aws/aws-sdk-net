@@ -30,14 +30,13 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// Container for the parameters to the CreateJob operation.
     /// When you create a job, Elastic Transcoder returns JSON data that includes the values
-    ///            that you specified plus information about the job that is created. 
+    /// that you specified plus information about the job that is created. 
     /// 
-    ///         
+    ///  
     /// <para>
     /// If you have specified more than one output for your jobs (for example, one output
-    /// for the            Kindle Fire and another output for the Apple iPhone 4s), you currently
-    /// must use the            Elastic Transcoder API to list the jobs (as opposed to the
-    /// AWS Console).
+    /// for the Kindle Fire and another output for the Apple iPhone 4s), you currently must
+    /// use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console).
     /// </para>
     /// </summary>
     public partial class CreateJobRequest : AmazonElasticTranscoderRequest
@@ -53,7 +52,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Input. 
         /// <para>
         /// A section of the request body that provides information about the file that is being
-        ///            transcoded.
+        /// transcoded.
         /// </para>
         /// </summary>
         public JobInput Input
@@ -87,7 +86,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property OutputKeyPrefix. 
         /// <para>
         /// The value, if any, that you want Elastic Transcoder to prepend to the names of all
-        /// files            that this job creates, including output files, thumbnails, and playlists.
+        /// files that this job creates, including output files, thumbnails, and playlists.
         /// </para>
         /// </summary>
         public string OutputKeyPrefix
@@ -106,8 +105,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Outputs. 
         /// <para>
         ///  A section of the request body that provides information about the transcoded (target)
-        ///            files. We recommend that you use the <code>Outputs</code> syntax instead
-        /// of the                <code>Output</code> syntax. 
+        /// files. We recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code>
+        /// syntax. 
         /// </para>
         /// </summary>
         public List<CreateJobOutput> Outputs
@@ -125,10 +124,10 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
-        /// The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for  
-        ///          transcoding. The pipeline determines several settings, including the Amazon
-        /// S3 bucket            from which Elastic Transcoder gets the files to transcode and
-        /// the bucket into which            Elastic Transcoder puts the transcoded files.
+        /// The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding.
+        /// The pipeline determines several settings, including the Amazon S3 bucket from which
+        /// Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder
+        /// puts the transcoded files.
         /// </para>
         /// </summary>
         public string PipelineId
@@ -146,14 +145,13 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Playlists. 
         /// <para>
-        /// If you specify a preset in <code>PresetId</code> for which the value of          
-        ///      <code>Container</code> is ts (MPEG-TS), Playlists contains information about
-        /// the            master playlists that you want Elastic Transcoder to create.
+        /// If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code>
+        /// is fmp4 (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the
+        /// master playlists that you want Elastic Transcoder to create.
         /// </para>
-        ///         
+        ///  
         /// <para>
-        /// We recommend that you create only one master playlist. The maximum number of master
-        ///            playlists in a job is 30.
+        /// The maximum number of master playlists in a job is 30.
         /// </para>
         /// </summary>
         public List<CreateJobPlaylist> Playlists

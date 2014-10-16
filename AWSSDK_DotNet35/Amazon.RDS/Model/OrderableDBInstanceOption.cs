@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -45,6 +45,8 @@ namespace Amazon.RDS.Model
         private string _licenseModel;
         private bool? _multiAZCapable;
         private bool? _readReplicaCapable;
+        private string _storageType;
+        private bool? _supportsIops;
         private bool? _vpc;
 
         /// <summary>
@@ -171,6 +173,42 @@ namespace Amazon.RDS.Model
         internal bool IsSetReadReplicaCapable()
         {
             return this._readReplicaCapable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        ///  The storage type for this orderable DB instance. 
+        /// </para>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsIops. 
+        /// <para>
+        ///  Indicates whether this orderable DB instance supports provisioned IOPS. 
+        /// </para>
+        /// </summary>
+        public bool SupportsIops
+        {
+            get { return this._supportsIops.GetValueOrDefault(); }
+            set { this._supportsIops = value; }
+        }
+
+        // Check to see if SupportsIops property is set
+        internal bool IsSetSupportsIops()
+        {
+            return this._supportsIops.HasValue; 
         }
 
         /// <summary>

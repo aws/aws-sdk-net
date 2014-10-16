@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// Container for the parameters to the ListPresets operation.
     /// The ListPresets operation gets a list of the default presets included with Elastic
-    /// Transcoder and the            presets that you've added in an AWS region.
+    /// Transcoder and the presets that you've added in an AWS region.
     /// </summary>
     public partial class ListPresetsRequest : AmazonElasticTranscoderRequest
     {
@@ -41,8 +41,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Ascending. 
         /// <para>
         /// To list presets in chronological order by the date and time that they were created,
-        /// enter            <code>true</code>. To list presets in reverse chronological order,
-        /// enter            <code>false</code>.
+        /// enter <code>true</code>. To list presets in reverse chronological order, enter <code>false</code>.
         /// </para>
         /// </summary>
         public string Ascending
@@ -61,8 +60,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property PageToken. 
         /// <para>
         /// When Elastic Transcoder returns more than one page of results, use <code>pageToken</code>
-        /// in            subsequent <code>GET</code> requests to get each successive page of
-        /// results. 
+        /// in subsequent <code>GET</code> requests to get each successive page of results. 
         /// </para>
         /// </summary>
         public string PageToken

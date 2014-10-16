@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -44,7 +44,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "DescribeReservedDBInstances");
-            request.Parameters.Add("Version", "2013-09-09");
+            request.Parameters.Add("Version", "2014-09-01");
 
             if(publicRequest != null)
             {
@@ -61,16 +61,16 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.Filters)
                     {
-                        if(publicRequestlistValue.IsSetFilterName())
+                        if(publicRequestlistValue.IsSetName())
                         {
-                            request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FilterName", StringUtils.FromString(publicRequestlistValue.FilterName));
+                            request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
-                        if(publicRequestlistValue.IsSetFilterValue())
+                        if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.FilterValue)
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
                             {
-                                request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FilterValue" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Values" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }

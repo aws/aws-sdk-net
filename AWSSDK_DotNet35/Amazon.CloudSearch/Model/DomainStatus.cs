@@ -38,6 +38,7 @@ namespace Amazon.CloudSearch.Model
         private ServiceEndpoint _docService;
         private string _domainId;
         private string _domainName;
+        private Limits _limits;
         private bool? _processing;
         private bool? _requiresIndexDocuments;
         private int? _searchInstanceCount;
@@ -148,6 +149,21 @@ namespace Amazon.CloudSearch.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Limits.
+        /// </summary>
+        public Limits Limits
+        {
+            get { return this._limits; }
+            set { this._limits = value; }
+        }
+
+        // Check to see if Limits property is set
+        internal bool IsSetLimits()
+        {
+            return this._limits != null;
         }
 
         /// <summary>

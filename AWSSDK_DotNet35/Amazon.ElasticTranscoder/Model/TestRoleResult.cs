@@ -39,8 +39,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Messages. 
         /// <para>
         /// If the <code>Success</code> element contains <code>false</code>, this value is an
-        /// array            of one or more error messages that were generated during the test
-        /// process.
+        /// array of one or more error messages that were generated during the test process.
         /// </para>
         /// </summary>
         public List<string> Messages
@@ -59,7 +58,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Success. 
         /// <para>
         /// If the operation is successful, this value is <code>true</code>; otherwise, the value
-        /// is                <code>false</code>.
+        /// is <code>false</code>.
         /// </para>
         /// </summary>
         public string Success

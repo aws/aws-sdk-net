@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DownloadDBLogFilePortion operation.
-    /// Downloads the last line of the specified log file.
+    /// Downloads all or a portion of the specified log file.
     /// </summary>
     public partial class DownloadDBLogFilePortionRequest : AmazonRDSRequest
     {
@@ -85,8 +85,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  The pagination token provided in the previous request. If this parameter is specified
-        /// the response includes only records beyond the marker, up to MaxRecords. 
+        ///  The pagination token provided in the previous request or "0". If the Marker parameter
+        /// is specified the response includes only records beyond the marker until the end of
+        /// the file or up to NumberOfLines. 
         /// </para>
         /// </summary>
         public string Marker
@@ -104,7 +105,35 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property NumberOfLines. 
         /// <para>
-        ///  The number of lines remaining to be downloaded. 
+        ///  The number of lines to download. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the NumberOfLines parameter is specified, then the block of lines returned can
+        /// be from the beginning or the end of the log file, depending on the value of the Marker
+        /// parameter. <ul> <li>
+        /// <para>
+        /// If neither Marker or NumberOfLines are specified, the entire log file is returned.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// If NumberOfLines is specified and Marker is not specified, then the most recent lines
+        /// from the end of the log file are returned.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// If Marker is specified as "0", then the specified number of lines from the beginning
+        /// of the log file are returned.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// You can download the log file in blocks of lines by specifying the size of the block
+        /// using the NumberOfLines parameter, and by specifying a value of "0" for the Marker
+        /// parameter in your first request. Include the Marker value returned in the response
+        /// as the Marker value for the next request, continuing until the AdditionalDataPending
+        /// response element returns false.
+        /// </para>
+        /// </li> </ul> 
         /// </para>
         /// </summary>
         public int NumberOfLines

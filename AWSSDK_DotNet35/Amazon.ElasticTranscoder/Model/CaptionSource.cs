@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// A source file for the input sidecar captions used during the transcoding         process.
+    /// A source file for the input sidecar captions used during the transcoding process.
     /// </summary>
     public partial class CaptionSource
     {
@@ -41,7 +41,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// The name of the sidecar caption file that you want Elastic Transcoder to include in
-        /// the         output file.
+        /// the output file.
         /// </para>
         /// </summary>
         public string Key
@@ -59,9 +59,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Label. 
         /// <para>
-        /// The label of the caption shown in the player when choosing         a language. We
-        /// recommend that you put the caption language name here,          in the language of
-        /// the captions.
+        /// The label of the caption shown in the player when choosing a language. We recommend
+        /// that you put the caption language name here, in the language of the captions.
         /// </para>
         /// </summary>
         public string Label
@@ -81,18 +80,18 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// A string that specifies the language of the caption. Specify this as one of:
         /// </para>
-        ///       <ul>         <li>
+        ///  <ul> <li>
         /// <para>
         /// 2-character ISO 639-1 code
         /// </para>
-        /// </li>         <li>
+        /// </li> <li>
         /// <para>
         /// 3-character ISO 639-2 code
         /// </para>
-        /// </li>      </ul>      
+        /// </li> </ul> 
         /// <para>
         /// For more information on ISO language codes and language names, see the List of ISO
-        ///          639-1 codes.
+        /// 639-1 codes.
         /// </para>
         /// </summary>
         public string Language
@@ -110,11 +109,11 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property TimeOffset. 
         /// <para>
-        /// For clip generation or captions that do not start at the same time         as the
-        /// associated video file, the <code>TimeOffset</code> tells Elastic Transcoder how much
-        /// of the video to encode         before including captions.
+        /// For clip generation or captions that do not start at the same time as the associated
+        /// video file, the <code>TimeOffset</code> tells Elastic Transcoder how much of the video
+        /// to encode before including captions.
         /// </para>
-        ///       
+        ///  
         /// <para>
         /// Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
         /// </para>

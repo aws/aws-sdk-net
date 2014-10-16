@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,43 +32,43 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class Filter
     {
-        private string _filterName;
-        private List<string> _filterValue = new List<string>();
+        private string _name;
+        private List<string> _values = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property FilterName. 
+        /// Gets and sets the property Name. 
         /// <para>
         /// This parameter is not currently supported.
         /// </para>
         /// </summary>
-        public string FilterName
+        public string Name
         {
-            get { return this._filterName; }
-            set { this._filterName = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if FilterName property is set
-        internal bool IsSetFilterName()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._filterName != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property FilterValue. 
+        /// Gets and sets the property Values. 
         /// <para>
         /// This parameter is not currently supported.
         /// </para>
         /// </summary>
-        public List<string> FilterValue
+        public List<string> Values
         {
-            get { return this._filterValue; }
-            set { this._filterValue = value; }
+            get { return this._values; }
+            set { this._values = value; }
         }
 
-        // Check to see if FilterValue property is set
-        internal bool IsSetFilterValue()
+        // Check to see if Values property is set
+        internal bool IsSetValues()
         {
-            return this._filterValue != null && this._filterValue.Count > 0; 
+            return this._values != null && this._values.Count > 0; 
         }
 
     }

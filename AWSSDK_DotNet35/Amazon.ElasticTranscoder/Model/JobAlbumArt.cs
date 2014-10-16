@@ -39,8 +39,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Artwork. 
         /// <para>
         /// The file to be used as album art. There can be multiple artworks associated with an
-        /// audio file,             to a maximum of 20. Valid formats are <code>.jpg</code> and
-        /// <code>.png</code>
+        /// audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code>
         /// </para>
         /// </summary>
         public List<Artwork> Artwork
@@ -61,17 +60,15 @@ namespace Amazon.ElasticTranscoder.Model
         /// A policy that determines how Elastic Transcoder will handle the existence of multiple
         /// album artwork files.
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             <ul>                <li><code>Replace:</code> The specified album art
-        /// will replace any existing album art.</li>                <li><code>Prepend:</code>
-        /// The specified album art will be placed in front of any existing                  
-        ///   album art.</li>                <li><code>Append:</code> The specified album art
-        /// will be placed after any existing album art.</li>                <li><code>Fallback:</code>
-        /// If the original input file contains artwork, Elastic Transcoder will use that    
-        ///                artwork for the output. If the original input does not contain artwork,
-        /// Elastic Transcoder will use the                     specified album art file.</li>
-        ///            </ul>        
+        ///  <ul> <li> <code>Replace:</code> The specified album art will replace any existing
+        /// album art.</li> <li> <code>Prepend:</code> The specified album art will be placed
+        /// in front of any existing album art.</li> <li> <code>Append:</code> The specified album
+        /// art will be placed after any existing album art.</li> <li> <code>Fallback:</code>
+        /// If the original input file contains artwork, Elastic Transcoder will use that artwork
+        /// for the output. If the original input does not contain artwork, Elastic Transcoder
+        /// will use the specified album art file.</li> </ul> 
         /// </para>
         /// </summary>
         public string MergePolicy

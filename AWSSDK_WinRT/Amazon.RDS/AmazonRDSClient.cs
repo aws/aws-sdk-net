@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 
 
@@ -46,14 +46,14 @@ namespace Amazon.RDS
     /// </para>
     ///  
     /// <para>
-    ///  Amazon RDS gives you access to the capabilities of a familiar MySQL or Oracle database
-    /// server. This means the code, applications, and tools you already use today with your
-    /// existing MySQL or Oracle databases work with Amazon RDS without modification. Amazon
-    /// RDS automatically backs up your database and maintains the database software that
-    /// powers your DB instance. Amazon RDS is flexible: you can scale your database instance's
-    /// compute resources and storage capacity to meet your application's demand. As with
-    /// all Amazon Web Services, there are no up-front investments, and you pay only for the
-    /// resources you use. 
+    ///  Amazon RDS gives you access to the capabilities of a MySQL, PostgreSQL, Microsoft
+    /// SQL Server, or Oracle database server. This means the code, applications, and tools
+    /// you already use today with your existing databases work with Amazon RDS without modification.
+    /// Amazon RDS automatically backs up your database and maintains the database software
+    /// that powers your DB instance. Amazon RDS is flexible: you can scale your database
+    /// instance's compute resources and storage capacity to meet your application's demand.
+    /// As with all Amazon Web Services, there are no up-front investments, and you pay only
+    /// for the resources you use. 
     /// </para>
     ///  
     /// <para>
@@ -286,6 +286,37 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CopyDBParameterGroup
+
+        internal CopyDBParameterGroupResponse CopyDBParameterGroup(CopyDBParameterGroupRequest request)
+        {
+            var marshaller = new CopyDBParameterGroupRequestMarshaller();
+            var unmarshaller = CopyDBParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CopyDBParameterGroupRequest,CopyDBParameterGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyDBParameterGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyDBParameterGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CopyDBParameterGroupResponse> CopyDBParameterGroupAsync(CopyDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CopyDBParameterGroupRequestMarshaller();
+            var unmarshaller = CopyDBParameterGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CopyDBParameterGroupRequest,CopyDBParameterGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CopyDBSnapshot
 
         internal CopyDBSnapshotResponse CopyDBSnapshot(CopyDBSnapshotRequest request)
@@ -312,6 +343,37 @@ namespace Amazon.RDS
             var unmarshaller = CopyDBSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<CopyDBSnapshotRequest,CopyDBSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CopyOptionGroup
+
+        internal CopyOptionGroupResponse CopyOptionGroup(CopyOptionGroupRequest request)
+        {
+            var marshaller = new CopyOptionGroupRequestMarshaller();
+            var unmarshaller = CopyOptionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CopyOptionGroupRequest,CopyOptionGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyOptionGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyOptionGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CopyOptionGroupResponse> CopyOptionGroupAsync(CopyOptionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CopyOptionGroupRequestMarshaller();
+            var unmarshaller = CopyOptionGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CopyOptionGroupRequest,CopyOptionGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

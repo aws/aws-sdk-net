@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -46,7 +46,7 @@ namespace Amazon.RDS.Model
         /// Instantiates CreateDBSnapshotRequest with the parameterized properties
         /// </summary>
         /// <param name="dbSnapshotIdentifier"> The identifier for the DB snapshot.  Constraints: <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> Example: <code>my-snapshot-id</code></param>
-        /// <param name="dbInstanceIdentifier"> The DB instance identifier. This is the unique key that identifies a DB instance. This parameter isn't case sensitive.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
+        /// <param name="dbInstanceIdentifier"> The DB instance identifier. This is the unique key that identifies a DB instance.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
         public CreateDBSnapshotRequest(string dbSnapshotIdentifier, string dbInstanceIdentifier)
         {
             _dBSnapshotIdentifier = dbSnapshotIdentifier;
@@ -57,7 +57,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
         ///  The DB instance identifier. This is the unique key that identifies a DB instance.
-        /// This parameter isn't case sensitive. 
+        /// 
         /// </para>
         ///  
         /// <para>

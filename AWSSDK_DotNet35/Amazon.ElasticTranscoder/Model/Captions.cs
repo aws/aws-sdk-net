@@ -40,7 +40,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property CaptionFormats. 
         /// <para>
         /// The array of file formats for the output captions. If you leave this value blank,
-        ///         Elastic Transcoder returns an error.
+        /// Elastic Transcoder returns an error.
         /// </para>
         /// </summary>
         public List<CaptionFormat> CaptionFormats
@@ -58,8 +58,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property CaptionSources. 
         /// <para>
-        /// Source files for the input sidecar captions used during the transcoding         process.
-        /// To omit all sidecar captions, leave <code>CaptionSources</code> blank.
+        /// Source files for the input sidecar captions used during the transcoding process. To
+        /// omit all sidecar captions, leave <code>CaptionSources</code> blank.
         /// </para>
         /// </summary>
         public List<CaptionSource> CaptionSources
@@ -80,28 +80,27 @@ namespace Amazon.ElasticTranscoder.Model
         /// A policy that determines how Elastic Transcoder handles the existence of multiple
         /// captions.
         /// </para>
-        ///       <ul>         <li>
+        ///  <ul> <li>
         /// <para>
-        /// <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded            and sidecar
-        /// captions into outputs. If captions for a language are embedded in the input      
-        ///      file and also appear in a sidecar file, Elastic Transcoder uses the sidecar captions
-        /// and ignores the            embedded captions for that language.
+        /// <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions
+        /// into outputs. If captions for a language are embedded in the input file and also appear
+        /// in a sidecar file, Elastic Transcoder uses the sidecar captions and ignores the embedded
+        /// captions for that language.
         /// </para>
-        /// </li>         <li>
+        /// </li> <li>
         /// <para>
-        /// <b>MergeRetain:</b>  Elastic Transcoder transcodes both embedded            and sidecar
-        /// captions into outputs. If captions for a language are embedded in the input      
-        ///      file and also appear in a sidecar file, Elastic Transcoder uses the embedded
-        /// captions and ignores the            sidecar captions for that language. If <code>CaptionSources</code>
-        /// is empty,            Elastic Transcoder omits all sidecar captions from the output
-        /// files.
+        /// <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions
+        /// into outputs. If captions for a language are embedded in the input file and also appear
+        /// in a sidecar file, Elastic Transcoder uses the embedded captions and ignores the sidecar
+        /// captions for that language. If <code>CaptionSources</code> is empty, Elastic Transcoder
+        /// omits all sidecar captions from the output files.
         /// </para>
-        /// </li>         <li>
+        /// </li> <li>
         /// <para>
-        /// <b>Override:</b> Elastic Transcoder transcodes only the            sidecar captions
-        /// that you specify in <code>CaptionSources</code>.
+        /// <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you
+        /// specify in <code>CaptionSources</code>.
         /// </para>
-        /// </li>      </ul>      
+        /// </li> </ul> 
         /// <para>
         /// <code>MergePolicy</code> cannot be null.
         /// </para>

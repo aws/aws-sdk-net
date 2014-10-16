@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// A section of the response body that provides information about the job that is   
-    ///         created.
+    /// A section of the response body that provides information about the job that is created.
     /// </summary>
     public partial class Job
     {
@@ -65,7 +64,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Id. 
         /// <para>
         ///  The identifier that Elastic Transcoder assigned to the job. You use this value to
-        /// get settings for the            job or to delete the job. 
+        /// get settings for the job or to delete the job. 
         /// </para>
         /// </summary>
         public string Id
@@ -84,7 +83,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Input. 
         /// <para>
         ///  A section of the request or response body that provides information about the file
-        /// that            is being transcoded.
+        /// that is being transcoded.
         /// </para>
         /// </summary>
         public JobInput Input
@@ -103,14 +102,14 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Output. 
         /// <para>
         /// If you specified one output for a job, information about that output. If you specified
-        ///            multiple outputs for a job, the Output object lists information about the
-        /// first output.            This duplicates the information that is listed for the first
-        /// output in the Outputs            object.
+        /// multiple outputs for a job, the Output object lists information about the first output.
+        /// This duplicates the information that is listed for the first output in the Outputs
+        /// object.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// <important>Outputs recommended instead.</important> A section of the request or response
-        ///            body that provides information about the transcoded (target) file. 
+        /// body that provides information about the transcoded (target) file. 
         /// </para>
         /// </summary>
         public JobOutput Output
@@ -129,9 +128,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property OutputKeyPrefix. 
         /// <para>
         /// The value, if any, that you want Elastic Transcoder to prepend to the names of all
-        /// files that this job            creates, including output files, thumbnails, and playlists.
-        /// We recommend that you add a            / or some other delimiter to the end of the
-        /// <code>OutputKeyPrefix</code>.
+        /// files that this job creates, including output files, thumbnails, and playlists. We
+        /// recommend that you add a / or some other delimiter to the end of the <code>OutputKeyPrefix</code>.
         /// </para>
         /// </summary>
         public string OutputKeyPrefix
@@ -150,15 +148,14 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Outputs. 
         /// <para>
         /// Information about the output files. We recommend that you use the <code>Outputs</code>
-        ///            syntax for all jobs, even when you want Elastic Transcoder to transcode
-        /// a file into only            one format. Do not use both the <code>Outputs</code> and
-        /// <code>Output</code> syntaxes in            the same request. You can create a maximum
-        /// of 30 outputs per job. 
+        /// syntax for all jobs, even when you want Elastic Transcoder to transcode a file into
+        /// only one format. Do not use both the <code>Outputs</code> and <code>Output</code>
+        /// syntaxes in the same request. You can create a maximum of 30 outputs per job. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         ///  If you specify more than one output for a job, Elastic Transcoder creates the files
-        /// for            each output in the order in which you specify them in the job.
+        /// for each output in the order in which you specify them in the job.
         /// </para>
         /// </summary>
         public List<JobOutput> Outputs
@@ -177,9 +174,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property PipelineId. 
         /// <para>
         ///  The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding.
-        /// The            pipeline determines several settings, including the Amazon S3 bucket
-        /// from which Elastic Transcoder gets the            files to transcode and the bucket
-        /// into which Elastic Transcoder puts the transcoded files. 
+        /// The pipeline determines several settings, including the Amazon S3 bucket from which
+        /// Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder
+        /// puts the transcoded files. 
         /// </para>
         /// </summary>
         public string PipelineId
@@ -197,15 +194,14 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Playlists. 
         /// <para>
-        /// <important>Outputs in MPEG-TS format only.</important>If you specify a preset in 
-        ///               <code>PresetId</code> for which the value of <code>Container</code>
-        /// is ts (MPEG-TS),                <code>Playlists</code> contains information about
-        /// the master playlists that you want            Elastic Transcoder to create.
+        /// <important>Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify
+        /// a preset in <code>PresetId</code> for which the value of <code>Container</code> is
+        /// fmp4 (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information
+        /// about the master playlists that you want Elastic Transcoder to create.
         /// </para>
-        ///         
+        ///  
         /// <para>
-        /// We recommend that you create only one master playlist. The maximum number of master
-        ///            playlists in a job is 30. 
+        /// The maximum number of master playlists in a job is 30. 
         /// </para>
         /// </summary>
         public List<Playlist> Playlists
@@ -224,7 +220,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Status. 
         /// <para>
         ///  The status of the job: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>,
-        ///                <code>Canceled</code>, or <code>Error</code>. 
+        /// <code>Canceled</code>, or <code>Error</code>. 
         /// </para>
         /// </summary>
         public string Status

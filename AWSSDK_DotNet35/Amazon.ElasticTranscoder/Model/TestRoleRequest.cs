@@ -31,13 +31,13 @@ namespace Amazon.ElasticTranscoder.Model
     /// Container for the parameters to the TestRole operation.
     /// The TestRole operation tests the IAM role used to create the pipeline.
     /// 
-    ///         
+    ///  
     /// <para>
     /// The <code>TestRole</code> action lets you determine whether the IAM role you are using
-    ///            has sufficient permissions to let Elastic Transcoder perform tasks associated
-    /// with the transcoding            process. The action attempts to assume the specified
-    /// IAM role, checks read access to the            input and output buckets, and tries
-    /// to send a test notification to Amazon SNS topics            that you specify.
+    /// has sufficient permissions to let Elastic Transcoder perform tasks associated with
+    /// the transcoding process. The action attempts to assume the specified IAM role, checks
+    /// read access to the input and output buckets, and tries to send a test notification
+    /// to Amazon SNS topics that you specify.
     /// </para>
     /// </summary>
     public partial class TestRoleRequest : AmazonElasticTranscoderRequest
@@ -51,7 +51,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property InputBucket. 
         /// <para>
         /// The Amazon S3 bucket that contains media files to be transcoded. The action attempts
-        /// to read            from this bucket.
+        /// to read from this bucket.
         /// </para>
         /// </summary>
         public string InputBucket
@@ -70,7 +70,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property OutputBucket. 
         /// <para>
         /// The Amazon S3 bucket that Elastic Transcoder will write transcoded media files to.
-        /// The action attempts to            read from this bucket.
+        /// The action attempts to read from this bucket.
         /// </para>
         /// </summary>
         public string OutputBucket
@@ -89,7 +89,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Role. 
         /// <para>
         /// The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to
-        ///            test.
+        /// test.
         /// </para>
         /// </summary>
         public string Role
@@ -108,7 +108,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Topics. 
         /// <para>
         /// The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that
-        /// you want the action to send a test            notification to.
+        /// you want the action to send a test notification to.
         /// </para>
         /// </summary>
         public List<string> Topics

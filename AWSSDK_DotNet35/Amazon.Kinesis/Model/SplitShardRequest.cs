@@ -49,8 +49,8 @@ namespace Amazon.Kinesis.Model
     /// in the shard where the shard gets split in two. In many cases, the new hash key might
     /// simply be the average of the beginning and ending hash key, but it can be any hash
     /// key value in the range being mapped into the shard. For more information about splitting
-    /// shards, see the <a href="http://docs.aws.amazon.com/kinesis/latest/dev/">Amazon Kinesis
-    /// Developer Guide</a>. 
+    /// shards, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-java-resharding-split">Split
+    /// a Shard</a> in the <i>Amazon Kinesis Developer Guide</i>.
     /// </para>
     ///  
     /// <para>

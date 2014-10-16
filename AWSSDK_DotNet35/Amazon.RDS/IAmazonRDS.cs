@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 
 
@@ -38,14 +38,14 @@ namespace Amazon.RDS
     /// </para>
     ///  
     /// <para>
-    ///  Amazon RDS gives you access to the capabilities of a familiar MySQL or Oracle database
-    /// server. This means the code, applications, and tools you already use today with your
-    /// existing MySQL or Oracle databases work with Amazon RDS without modification. Amazon
-    /// RDS automatically backs up your database and maintains the database software that
-    /// powers your DB instance. Amazon RDS is flexible: you can scale your database instance's
-    /// compute resources and storage capacity to meet your application's demand. As with
-    /// all Amazon Web Services, there are no up-front investments, and you pay only for the
-    /// resources you use. 
+    ///  Amazon RDS gives you access to the capabilities of a MySQL, PostgreSQL, Microsoft
+    /// SQL Server, or Oracle database server. This means the code, applications, and tools
+    /// you already use today with your existing databases work with Amazon RDS without modification.
+    /// Amazon RDS automatically backs up your database and maintains the database software
+    /// that powers your DB instance. Amazon RDS is flexible: you can scale your database
+    /// instance's compute resources and storage capacity to meet your application's demand.
+    /// As with all Amazon Web Services, there are no up-front investments, and you pay only
+    /// for the resources you use. 
     /// </para>
     ///  
     /// <para>
@@ -221,6 +221,53 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CopyDBParameterGroup
+
+        /// <summary>
+        /// Copies the specified DBParameterGroup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyDBParameterGroup service method.</param>
+        /// 
+        /// <returns>The response from the CopyDBParameterGroup service method, as returned by RDS.</returns>
+        /// <exception cref="DBParameterGroupAlreadyExistsException">
+        /// A DB parameter group with the same name exists.
+        /// </exception>
+        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        /// <exception cref="DBParameterGroupQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB parameter groups.
+        /// </exception>
+        CopyDBParameterGroupResponse CopyDBParameterGroup(CopyDBParameterGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyDBParameterGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyDBParameterGroup operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyDBParameterGroup
+        ///         operation.</returns>
+        IAsyncResult BeginCopyDBParameterGroup(CopyDBParameterGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CopyDBParameterGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyDBParameterGroup.</param>
+        /// 
+        /// <returns>Returns a  CopyDBParameterGroupResult from RDS.</returns>
+        CopyDBParameterGroupResponse EndCopyDBParameterGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CopyDBSnapshot
 
         /// <summary>
@@ -272,6 +319,53 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CopyOptionGroup
+
+        /// <summary>
+        /// Copies the specified Option Group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyOptionGroup service method.</param>
+        /// 
+        /// <returns>The response from the CopyOptionGroup service method, as returned by RDS.</returns>
+        /// <exception cref="OptionGroupAlreadyExistsException">
+        /// The option group you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="OptionGroupNotFoundException">
+        /// The specified option group could not be found.
+        /// </exception>
+        /// <exception cref="OptionGroupQuotaExceededException">
+        /// The quota of 20 option groups was exceeded for this AWS account.
+        /// </exception>
+        CopyOptionGroupResponse CopyOptionGroup(CopyOptionGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyOptionGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyOptionGroup operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyOptionGroup
+        ///         operation.</returns>
+        IAsyncResult BeginCopyOptionGroup(CopyOptionGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CopyOptionGroup operation.
+        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyOptionGroup.</param>
+        /// 
+        /// <returns>Returns a  CopyOptionGroupResult from RDS.</returns>
+        CopyOptionGroupResponse EndCopyOptionGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateDBInstance
 
         /// <summary>
@@ -280,6 +374,15 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the CreateDBInstance service method.</param>
         /// 
         /// <returns>The response from the CreateDBInstance service method, as returned by RDS.</returns>
+        /// <exception cref="AuthorizationNotFoundException">
+        /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
+        /// group. 
+        /// 
+        ///  
+        /// <para>
+        /// RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+        /// </para>
+        /// </exception>
         /// <exception cref="DBInstanceAlreadyExistsException">
         /// User already has a DB instance with the given identifier.
         /// </exception>
@@ -290,8 +393,8 @@ namespace Amazon.RDS
         /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
         /// </exception>
         /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
-        /// Subnets in the DB subnet group should cover at least 2 Availability Zones unless
-        /// there is only 1 availablility zone.
+        /// Subnets in the DB subnet group should cover at least two Availability Zones unless
+        /// there is only one Availability Zone.
         /// </exception>
         /// <exception cref="DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
@@ -319,6 +422,9 @@ namespace Amazon.RDS
         /// <exception cref="StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
+        /// </exception>
+        /// <exception cref="StorageTypeNotSupportedException">
+        /// <i>StorageType</i> specified cannot be associated with the DB Instance.
         /// </exception>
         CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request);
 
@@ -383,8 +489,8 @@ namespace Amazon.RDS
         /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
         /// </exception>
         /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
-        /// Subnets in the DB subnet group should cover at least 2 Availability Zones unless
-        /// there is only 1 availablility zone.
+        /// Subnets in the DB subnet group should cover at least two Availability Zones unless
+        /// there is only one Availability Zone.
         /// </exception>
         /// <exception cref="DBSubnetGroupNotAllowedException">
         /// Indicates that the DBSubnetGroup should not be specified while creating read replicas
@@ -423,6 +529,9 @@ namespace Amazon.RDS
         /// <exception cref="StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
+        /// </exception>
+        /// <exception cref="StorageTypeNotSupportedException">
+        /// <i>StorageType</i> specified cannot be associated with the DB Instance.
         /// </exception>
         CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest request);
 
@@ -466,9 +575,22 @@ namespace Amazon.RDS
         /// you must modify the group after creating it using <i>ModifyDBParameterGroup</i>. Once
         /// you've created a DB parameter group, you need to associate it with your DB instance
         /// using <i>ModifyDBInstance</i>. When you associate a new DB parameter group with a
-        /// running DB instance, you need to reboot the DB Instance for the new DB parameter group
-        /// and associated settings to take effect. 
+        /// running DB instance, you need to reboot the DB instance without failover for the new
+        /// DB parameter group and associated settings to take effect. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// After you create a DB parameter group, you should wait at least 5 minutes before creating
+        /// your first DB instance that uses that DB parameter group as the default parameter
+        /// group. This allows Amazon RDS to fully complete the create action before the parameter
+        /// group is used as the default for a new DB instance. This is especially important for
+        /// parameters that are critical when creating the default database for a DB instance,
+        /// such as the character set for the default database defined by the <code>character_set_database</code>
+        /// parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
+        /// RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your DB
+        /// parameter group has been created or modified.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBParameterGroup service method.</param>
         /// 
@@ -620,8 +742,8 @@ namespace Amazon.RDS
         /// <i>DBSubnetGroupName</i> is already used by an existing DB subnet group.
         /// </exception>
         /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
-        /// Subnets in the DB subnet group should cover at least 2 Availability Zones unless
-        /// there is only 1 availablility zone.
+        /// Subnets in the DB subnet group should cover at least two Availability Zones unless
+        /// there is only one Availability Zone.
         /// </exception>
         /// <exception cref="DBSubnetGroupQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB subnet groups.
@@ -854,8 +976,8 @@ namespace Amazon.RDS
         #region  DeleteDBParameterGroup
 
         /// <summary>
-        /// Deletes a specified DBParameterGroup. The DBParameterGroup cannot be associated with
-        /// any RDS instances to be deleted.
+        /// Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted cannot be
+        /// associated with any DB instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBParameterGroup service method.</param>
         /// 
@@ -1964,7 +2086,7 @@ namespace Amazon.RDS
         #region  DownloadDBLogFilePortion
 
         /// <summary>
-        /// Downloads the last line of the specified log file.
+        /// Downloads all or a portion of the specified log file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DownloadDBLogFilePortion service method.</param>
         /// 
@@ -2061,6 +2183,15 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBInstance service method.</param>
         /// 
         /// <returns>The response from the ModifyDBInstance service method, as returned by RDS.</returns>
+        /// <exception cref="AuthorizationNotFoundException">
+        /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
+        /// group. 
+        /// 
+        ///  
+        /// <para>
+        /// RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+        /// </para>
+        /// </exception>
         /// <exception cref="DBInstanceAlreadyExistsException">
         /// User already has a DB instance with the given identifier.
         /// </exception>
@@ -2099,6 +2230,9 @@ namespace Amazon.RDS
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
         /// </exception>
+        /// <exception cref="StorageTypeNotSupportedException">
+        /// <i>StorageType</i> specified cannot be associated with the DB Instance.
+        /// </exception>
         ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request);
 
         /// <summary>
@@ -2135,7 +2269,21 @@ namespace Amazon.RDS
         /// Modifies the parameters of a DB parameter group. To modify more than one parameter,
         /// submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
         /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
-        /// request.
+        /// request. 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// After you modify a DB parameter group, you should wait at least 5 minutes before creating
+        /// your first DB instance that uses that DB parameter group as the default parameter
+        /// group. This allows Amazon RDS to fully complete the modify action before the parameter
+        /// group is used as the default for a new DB instance. This is especially important for
+        /// parameters that are critical when creating the default database for a DB instance,
+        /// such as the character set for the default database defined by the <code>character_set_database</code>
+        /// parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
+        /// RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your DB
+        /// parameter group has been created or modified.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBParameterGroup service method.</param>
         /// 
@@ -2186,8 +2334,8 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the ModifyDBSubnetGroup service method, as returned by RDS.</returns>
         /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
-        /// Subnets in the DB subnet group should cover at least 2 Availability Zones unless
-        /// there is only 1 availablility zone.
+        /// Subnets in the DB subnet group should cover at least two Availability Zones unless
+        /// there is only one Availability Zone.
         /// </exception>
         /// <exception cref="DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
@@ -2652,6 +2800,15 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceFromDBSnapshot service method.</param>
         /// 
         /// <returns>The response from the RestoreDBInstanceFromDBSnapshot service method, as returned by RDS.</returns>
+        /// <exception cref="AuthorizationNotFoundException">
+        /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
+        /// group. 
+        /// 
+        ///  
+        /// <para>
+        /// RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+        /// </para>
+        /// </exception>
         /// <exception cref="DBInstanceAlreadyExistsException">
         /// User already has a DB instance with the given identifier.
         /// </exception>
@@ -2659,8 +2816,8 @@ namespace Amazon.RDS
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
         /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
-        /// Subnets in the DB subnet group should cover at least 2 Availability Zones unless
-        /// there is only 1 availablility zone.
+        /// Subnets in the DB subnet group should cover at least two Availability Zones unless
+        /// there is only one Availability Zone.
         /// </exception>
         /// <exception cref="DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
@@ -2694,6 +2851,9 @@ namespace Amazon.RDS
         /// <exception cref="StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
+        /// </exception>
+        /// <exception cref="StorageTypeNotSupportedException">
+        /// <i>StorageType</i> specified cannot be associated with the DB Instance.
         /// </exception>
         RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request);
 
@@ -2737,6 +2897,15 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceToPointInTime service method.</param>
         /// 
         /// <returns>The response from the RestoreDBInstanceToPointInTime service method, as returned by RDS.</returns>
+        /// <exception cref="AuthorizationNotFoundException">
+        /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
+        /// group. 
+        /// 
+        ///  
+        /// <para>
+        /// RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+        /// </para>
+        /// </exception>
         /// <exception cref="DBInstanceAlreadyExistsException">
         /// User already has a DB instance with the given identifier.
         /// </exception>
@@ -2744,8 +2913,8 @@ namespace Amazon.RDS
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
         /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
-        /// Subnets in the DB subnet group should cover at least 2 Availability Zones unless
-        /// there is only 1 availablility zone.
+        /// Subnets in the DB subnet group should cover at least two Availability Zones unless
+        /// there is only one Availability Zone.
         /// </exception>
         /// <exception cref="DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
@@ -2783,6 +2952,9 @@ namespace Amazon.RDS
         /// <exception cref="StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
+        /// </exception>
+        /// <exception cref="StorageTypeNotSupportedException">
+        /// <i>StorageType</i> specified cannot be associated with the DB Instance.
         /// </exception>
         RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request);
 
@@ -2826,7 +2998,12 @@ namespace Amazon.RDS
         /// <returns>The response from the RevokeDBSecurityGroupIngress service method, as returned by RDS.</returns>
         /// <exception cref="AuthorizationNotFoundException">
         /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
-        /// group.
+        /// group. 
+        /// 
+        ///  
+        /// <para>
+        /// RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+        /// </para>
         /// </exception>
         /// <exception cref="DBSecurityGroupNotFoundException">
         /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.

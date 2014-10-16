@@ -38,7 +38,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Job. 
         /// <para>
         ///  A section of the response body that provides information about the job that is created.
-        ///        
+        /// 
         /// </para>
         /// </summary>
         public Job Job

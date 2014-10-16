@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -50,7 +50,7 @@ namespace Amazon.RDS.Model
         ///  <ul> <li>Must specify a valid system snapshot in the "available" state.</li> <li>If
         /// the source snapshot is in the same region as the copy, specify a valid DB snapshot
         /// identifier.</li> <li>If the source snapshot is in a different region than the copy,
-        /// specify valid DB snapshot ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
+        /// specify a valid DB snapshot ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
         /// Copying a DB Snapshot</a>.</li> </ul> 
         /// <para>
         /// Example: <code>rds:mydb-2012-04-02-00-01</code>

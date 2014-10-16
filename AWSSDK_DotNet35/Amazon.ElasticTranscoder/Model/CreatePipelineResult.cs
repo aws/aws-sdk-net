@@ -29,7 +29,7 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// When you create a pipeline, Elastic Transcoder returns the values that you specified
-    /// in the            request.
+    /// in the request.
     /// </summary>
     public partial class CreatePipelineResult : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Pipeline. 
         /// <para>
         /// A section of the response body that provides information about the pipeline that is
-        ///            created.
+        /// created.
         /// </para>
         /// </summary>
         public Pipeline Pipeline

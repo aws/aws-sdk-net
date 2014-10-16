@@ -29,7 +29,8 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the BuildSuggesters operation.
-    /// Indexes the search suggestions.
+    /// Indexes the search suggestions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters">Configuring
+    /// Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.
     /// </summary>
     public partial class BuildSuggestersRequest : AmazonCloudSearchRequest
     {

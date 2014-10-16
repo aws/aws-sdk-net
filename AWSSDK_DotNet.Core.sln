@@ -98,6 +98,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceModels", "ServiceMod
 		ServiceModels\rds-2013-01-10.normal.json = ServiceModels\rds-2013-01-10.normal.json
 		ServiceModels\rds-2013-02-12.normal.json = ServiceModels\rds-2013-02-12.normal.json
 		ServiceModels\rds-2013-09-09.normal.json = ServiceModels\rds-2013-09-09.normal.json
+		ServiceModels\rds-2014-09-01.normal.json = ServiceModels\rds-2014-09-01.normal.json
 		ServiceModels\rds.customizations.constructors.json = ServiceModels\rds.customizations.constructors.json
 		ServiceModels\rds.customizations.json = ServiceModels\rds.customizations.json
 		ServiceModels\redshift-2012-12-01.normal.json = ServiceModels\redshift-2012-12-01.normal.json

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional paging token. 
+        ///  A pagination token that can be used in a subsequent DescribeDBLogFiles request. 
         /// </para>
         /// </summary>
         public string Marker

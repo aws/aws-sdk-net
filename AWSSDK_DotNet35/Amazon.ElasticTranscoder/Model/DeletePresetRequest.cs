@@ -30,12 +30,6 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// Container for the parameters to the DeletePreset operation.
     /// The DeletePreset operation removes a preset that you've added in an AWS region.
-    /// 
-    ///         <note>            
-    /// <para>
-    /// You can't delete the default presets that are included with Elastic Transcoder.
-    /// </para>
-    ///         </note>
     /// </summary>
     public partial class DeletePresetRequest : AmazonElasticTranscoderRequest
     {

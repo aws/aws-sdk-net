@@ -39,24 +39,20 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// You can only choose an audio profile when you specify AAC for the value of Audio:Codec.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Specify the AAC profile for the output file. Elastic Transcoder supports the following
         /// profiles:
         /// </para>
-        ///         <ul>            <li><code>auto</code>: If you specify <code>auto</code>, Elastic
-        /// Transcoder will select                the profile based on the bit rate selected for
-        /// the output file.</li>            <li><code>AAC-LC</code>: The most common AAC profile.
-        /// Use for bitrates larger than                64 kbps.</li>            <li><code>HE-AAC</code>:
-        /// Not supported on some older players and devices.                Use for bitrates between
-        /// 40 and 80 kbps.</li>            <li><code>HE-AACv2</code>: Not supported on some players
-        /// and devices.                Use for bitrates less than 48 kbps.</li>        </ul>
-        ///        <note>
+        ///  <ul> <li> <code>auto</code>: If you specify <code>auto</code>, Elastic Transcoder
+        /// will select the profile based on the bit rate selected for the output file.</li> <li>
+        /// <code>AAC-LC</code>: The most common AAC profile. Use for bitrates larger than 64
+        /// kbps.</li> <li> <code>HE-AAC</code>: Not supported on some older players and devices.
+        /// Use for bitrates between 40 and 80 kbps.</li> <li> <code>HE-AACv2</code>: Not supported
+        /// on some players and devices. Use for bitrates less than 48 kbps.</li> </ul> 
         /// <para>
-        /// If you created any presets before AAC profiles were added, Elastic Transcoder automatically
-        /// updated            your presets to use AAC-LC. You can change the value as required.
+        /// All outputs in a <code>Smooth</code> playlist must have the same value for <code>Profile</code>.
         /// </para>
-        /// </note>
         /// </summary>
         public string Profile
         {

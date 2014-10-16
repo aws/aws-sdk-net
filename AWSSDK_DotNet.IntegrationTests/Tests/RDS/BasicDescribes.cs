@@ -382,6 +382,40 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
 
         [TestMethod]
         [TestCategory("RDS")]
+        public void OptionGroupTests()
+        {
+            var name = "simple-og" + DateTime.Now.Ticks;
+            var optionGroup = Client.CreateOptionGroup(new CreateOptionGroupRequest
+            {
+                EngineName = "mysql",
+                MajorEngineVersion = "5.1",
+                 OptionGroupName = name,
+                 OptionGroupDescription = "Basic test OptionGroup"                  
+            }).OptionGroup;
+
+            var optionGroupName = optionGroup.OptionGroupName;
+            var copyOptionGroupName = optionGroupName + "copy";
+            Client.CopyOptionGroup(new CopyOptionGroupRequest
+            {
+                SourceOptionGroupIdentifier = optionGroupName,
+                TargetOptionGroupIdentifier = copyOptionGroupName,
+                TargetOptionGroupDescription = "copy"
+            });
+
+            var groups = Client.DescribeOptionGroups(new DescribeOptionGroupsRequest
+            {
+                OptionGroupName = copyOptionGroupName
+            }).OptionGroupsList;
+            Assert.AreEqual(1, groups.Count);
+
+            Client.DeleteOptionGroup(new DeleteOptionGroupRequest
+            {
+                OptionGroupName = copyOptionGroupName
+            });
+        }
+
+        [TestMethod]
+        [TestCategory("RDS")]
         public void DescribeReservedDBInstances()
         {
             var response = Client.DescribeReservedDBInstances();

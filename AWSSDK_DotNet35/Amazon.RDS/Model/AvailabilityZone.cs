@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -39,7 +39,6 @@ namespace Amazon.RDS.Model
     public partial class AvailabilityZone
     {
         private string _name;
-        private bool? _provisionedIopsCapable;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -57,24 +56,6 @@ namespace Amazon.RDS.Model
         internal bool IsSetName()
         {
             return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ProvisionedIopsCapable. 
-        /// <para>
-        ///  True indicates the availability zone is capable of provisioned IOPs. 
-        /// </para>
-        /// </summary>
-        public bool ProvisionedIopsCapable
-        {
-            get { return this._provisionedIopsCapable.GetValueOrDefault(); }
-            set { this._provisionedIopsCapable = value; }
-        }
-
-        // Check to see if ProvisionedIopsCapable property is set
-        internal bool IsSetProvisionedIopsCapable()
-        {
-            return this._provisionedIopsCapable.HasValue; 
         }
 
     }

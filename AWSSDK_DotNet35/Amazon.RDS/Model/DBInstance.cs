@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -68,6 +68,8 @@ namespace Amazon.RDS.Model
         private string _readReplicaSourceDBInstanceIdentifier;
         private string _secondaryAvailabilityZone;
         private List<DBInstanceStatusInfo> _statusInfos = new List<DBInstanceStatusInfo>();
+        private string _storageType;
+        private string _tdeCredentialArn;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
 
         /// <summary>
@@ -660,6 +662,43 @@ namespace Amazon.RDS.Model
         internal bool IsSetStatusInfos()
         {
             return this._statusInfos != null && this._statusInfos.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        ///  Specifies storage type associated with DB Instance. 
+        /// </para>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TdeCredentialArn. 
+        /// <para>
+        ///  The ARN from the Key Store with which the instance is associated for TDE encryption.
+        /// 
+        /// </para>
+        /// </summary>
+        public string TdeCredentialArn
+        {
+            get { return this._tdeCredentialArn; }
+            set { this._tdeCredentialArn = value; }
+        }
+
+        // Check to see if TdeCredentialArn property is set
+        internal bool IsSetTdeCredentialArn()
+        {
+            return this._tdeCredentialArn != null;
         }
 
         /// <summary>

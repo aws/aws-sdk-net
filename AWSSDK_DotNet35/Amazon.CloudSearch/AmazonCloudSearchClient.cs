@@ -232,7 +232,8 @@ namespace Amazon.CloudSearch
         #region  BuildSuggesters
 
         /// <summary>
-        /// Indexes the search suggestions.
+        /// Indexes the search suggestions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters">Configuring
+        /// Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BuildSuggesters service method.</param>
         /// 
@@ -1155,8 +1156,8 @@ namespace Amazon.CloudSearch
         /// Gets information about the search domains owned by this account. Can be limited to
         /// specific domains. Shows all domains by default. To get the number of searchable documents
         /// in a domain, use the console or submit a <code>matchall</code> request to your domain's
-        /// search endpoint: <code>q=matchall&amp;q.parser=structured&amp;size=0</code>. For more
-        /// information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
+        /// search endpoint: <code>q=matchall&amp;amp;q.parser=structured&amp;amp;size=0</code>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
         /// target="_blank">Getting Information about a Search Domain</a> in the <i>Amazon CloudSearch
         /// Developer Guide</i>.
         /// </summary>
@@ -1179,8 +1180,8 @@ namespace Amazon.CloudSearch
         /// Gets information about the search domains owned by this account. Can be limited to
         /// specific domains. Shows all domains by default. To get the number of searchable documents
         /// in a domain, use the console or submit a <code>matchall</code> request to your domain's
-        /// search endpoint: <code>q=matchall&amp;q.parser=structured&amp;size=0</code>. For more
-        /// information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
+        /// search endpoint: <code>q=matchall&amp;amp;q.parser=structured&amp;amp;size=0</code>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
         /// target="_blank">Getting Information about a Search Domain</a> in the <i>Amazon CloudSearch
         /// Developer Guide</i>.
         /// </summary>

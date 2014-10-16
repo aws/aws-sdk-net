@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -51,6 +51,9 @@ namespace Amazon.RDS.Model
         private string _optionGroupName;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
+        private string _storageType;
+        private string _tdeCredentialArn;
+        private string _tdeCredentialPassword;
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
         /// <summary>
@@ -70,10 +73,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        ///  The new storage capacity of the RDS instance. Changing this parameter does not result
-        /// in an outage and the change is applied during the next maintenance window unless the
-        /// <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.
-        /// 
+        ///  The new storage capacity of the RDS instance. Changing this setting does not result
+        /// in an outage and the change is applied during the next maintenance window unless <code>ApplyImmediately</code>
+        /// is set to <code>true</code> for this request. 
         /// </para>
         ///  
         /// <para>
@@ -85,7 +87,29 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: 5-1024
+        /// Valid Values: 5-3072
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Value supplied must be at least 10% greater than the current value. Values
+        /// that are not at least 10% greater than the existing value are rounded up so that they
+        /// are 10% greater than the current value.
+        /// </para>
+        ///  
+        /// <para>
+        /// Type: Integer
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>PostgreSQL</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Uses existing setting
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: 5-3072
         /// </para>
         ///  
         /// <para>
@@ -107,7 +131,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: 10-1024
+        /// Valid Values: 10-3072
         /// </para>
         ///  
         /// <para>
@@ -178,16 +202,19 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
         /// <para>
-        ///  Specifies whether or not the modifications in this request and any pending modifications
+        /// Specifies whether the modifications in this request and any pending modifications
         /// are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
         /// setting for the DB instance. 
         /// </para>
         ///  
         /// <para>
-        ///  If this parameter is passed as <code>false</code>, changes to the DB instance are
-        /// applied on the next call to <a>RebootDBInstance</a>, the next maintenance reboot,
-        /// or the next failure reboot, whichever occurs first. See each parameter to determine
-        /// when a change is applied. 
+        ///  If this parameter is set to <code>false</code>, changes to the DB instance are applied
+        /// during the next maintenance window. Some parameter changes can cause an outage and
+        /// will be applied on the next call to <a>RebootDBInstance</a>, or the next failure reboot.
+        /// Review the table of parameters in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html#Overview.DBInstance.Modifying">Modifying
+        /// a DB Instance and Using the Apply Immediately Parameter</a> to see the impact that
+        /// setting <code>ApplyImmediately</code> to <code>true</code> or <code>false</code> has
+        /// for each modified parameter and to determine when the changes will be applied. 
         /// </para>
         ///  
         /// <para>
@@ -276,9 +303,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Passing a value for this parameter causes an outage during the change and is applied
-        /// during the next maintenance window, unless the <code>ApplyImmediately</code> parameter
-        /// is specified as <code>true</code> for this request. 
+        ///  Passing a value for this setting causes an outage during the change and is applied
+        /// during the next maintenance window, unless <code>ApplyImmediately</code> is specified
+        /// as <code>true</code> for this request. 
         /// </para>
         ///  
         /// <para>
@@ -287,7 +314,9 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge
-        /// | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+        /// | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge
+        /// | db.m3.2xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge
+        /// | db.t2.micro | db.t2.small | db.t2.medium</code>
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -330,10 +359,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupName. 
         /// <para>
-        ///  The name of the DB parameter group to apply to this DB instance. Changing this parameter
-        /// does not result in an outage and the change is applied during the next maintenance
-        /// window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
-        /// for this request. 
+        ///  The name of the DB parameter group to apply to the DB instance. Changing this setting
+        /// does not result in an outage. The parameter group name itself is changed immediately,
+        /// but the actual parameter changes are not applied until you reboot the instance without
+        /// failover. The db instance will NOT be rebooted automatically and the parameter changes
+        /// will NOT be applied during the next maintenance window. 
         /// </para>
         ///  
         /// <para>
@@ -360,7 +390,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSecurityGroups. 
         /// <para>
-        ///  A list of DB security groups to authorize on this DB instance. Changing this parameter
+        ///  A list of DB security groups to authorize on this DB instance. Changing this setting
         /// does not result in an outage and the change is asynchronously applied as soon as possible.
         /// 
         /// </para>
@@ -420,7 +450,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Iops. 
         /// <para>
         ///  The new Provisioned IOPS (I/O operations per second) value for the RDS instance.
-        /// Changing this parameter does not result in an outage and the change is applied during
+        /// Changing this setting does not result in an outage and the change is applied during
         /// the next maintenance window unless the <code>ApplyImmediately</code> parameter is
         /// set to <code>true</code> for this request. 
         /// </para>
@@ -432,7 +462,17 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints: Value supplied must be at least 10% greater than the current value. Values
         /// that are not at least 10% greater than the existing value are rounded up so that they
-        /// are 10% greater than the current value.
+        /// are 10% greater than the current value. If you are migrating from Provisioned IOPS
+        /// to standard storage, set this value to 0. The DB instance will require a reboot for
+        /// the change in storage type to take effect.
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>SQL Server</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// Setting the IOPS value for the SQL Server database engine is not supported.
         /// </para>
         ///  
         /// <para>
@@ -528,8 +568,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property NewDBInstanceIdentifier. 
         /// <para>
-        ///  The new DB instance identifier for the DB instance when renaming a DB Instance. This
-        /// value is stored as a lowercase string. 
+        ///  The new DB instance identifier for the DB instance when renaming a DB instance. When
+        /// you change the DB instance identifier, an instance reboot will occur immediately if
+        /// you set <code>Apply Immediately</code> to true, or will occur during the next maintenance
+        /// window if <code>Apply Immediately</code> to false. This value is stored as a lowercase
+        /// string. 
         /// </para>
         ///  
         /// <para>
@@ -648,6 +691,71 @@ namespace Amazon.RDS.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        ///  Specifies storage type to be associated with the DB Instance. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid values: <code>standard | gp2 | io1</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
+        /// parameter. 
+        /// </para>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TdeCredentialArn. 
+        /// <para>
+        ///  The ARN from the Key Store with which to associate the instance for TDE encryption.
+        /// 
+        /// </para>
+        /// </summary>
+        public string TdeCredentialArn
+        {
+            get { return this._tdeCredentialArn; }
+            set { this._tdeCredentialArn = value; }
+        }
+
+        // Check to see if TdeCredentialArn property is set
+        internal bool IsSetTdeCredentialArn()
+        {
+            return this._tdeCredentialArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TdeCredentialPassword. 
+        /// <para>
+        ///  The password for the given ARN from the Key Store in order to access the device.
+        /// 
+        /// </para>
+        /// </summary>
+        public string TdeCredentialPassword
+        {
+            get { return this._tdeCredentialPassword; }
+            set { this._tdeCredentialPassword = value; }
+        }
+
+        // Check to see if TdeCredentialPassword property is set
+        internal bool IsSetTdeCredentialPassword()
+        {
+            return this._tdeCredentialPassword != null;
         }
 
         /// <summary>

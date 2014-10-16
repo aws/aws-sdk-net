@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -54,6 +54,8 @@ namespace Amazon.RDS.Model
         private string _snapshotType;
         private string _sourceRegion;
         private string _status;
+        private string _storageType;
+        private string _tdeCredentialArn;
         private string _vpcId;
 
         /// <summary>
@@ -364,6 +366,43 @@ namespace Amazon.RDS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        ///  Specifies storage type associated with DB Snapshot. 
+        /// </para>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TdeCredentialArn. 
+        /// <para>
+        ///  The ARN from the Key Store with which to associate the instance for TDE encryption.
+        /// 
+        /// </para>
+        /// </summary>
+        public string TdeCredentialArn
+        {
+            get { return this._tdeCredentialArn; }
+            set { this._tdeCredentialArn = value; }
+        }
+
+        // Check to see if TdeCredentialArn property is set
+        internal bool IsSetTdeCredentialArn()
+        {
+            return this._tdeCredentialArn != null;
         }
 
         /// <summary>

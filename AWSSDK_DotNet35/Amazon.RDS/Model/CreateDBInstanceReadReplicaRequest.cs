@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -55,6 +55,7 @@ namespace Amazon.RDS.Model
         private int? _port;
         private bool? _publiclyAccessible;
         private string _sourceDBInstanceIdentifier;
+        private string _storageType;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -66,7 +67,7 @@ namespace Amazon.RDS.Model
         /// Instantiates CreateDBInstanceReadReplicaRequest with the parameterized properties
         /// </summary>
         /// <param name="dbInstanceIdentifier"> The DB instance identifier of the read replica. This is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </param>
-        /// <param name="sourceDBInstanceIdentifier"> The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to five read replicas.  Constraints: <ul> <li>Must be the identifier of an existing DB instance.</li> <li>Can specify a DB instance that is a read replica only if the source is running MySQL 5.6.</li> <li>The specified DB instance must have automatic backups enabled, its backup retention period must be greater than 0.</li> </ul></param>
+        /// <param name="sourceDBInstanceIdentifier"> The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to five read replicas.  Constraints: <ul> <li>Must be the identifier of an existing DB instance.</li> <li>Can specify a DB instance that is a read replica only if the source is running MySQL 5.6.</li> <li>The specified DB instance must have automatic backups enabled, its backup retention period must be greater than 0.</li> <li>If the source DB instance is in the same region as the read replica, specify a valid DB instance identifier.</li> <li>If the source DB instance is in a different region than the read replica, specify a valid DB instance ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul></param>
         public CreateDBInstanceReadReplicaRequest(string dbInstanceIdentifier, string sourceDBInstanceIdentifier)
         {
             _dBInstanceIdentifier = dbInstanceIdentifier;
@@ -130,7 +131,9 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  Valid Values: <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge
-        /// |db.m2.2xlarge | db.m2.4xlarge</code> 
+        /// |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge
+        /// | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro
+        /// | db.t2.small | db.t2.medium</code> 
         /// </para>
         ///  
         /// <para>
@@ -171,18 +174,21 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        /// A DB Subnet Group to associate with this DB Instance in case of a cross region read
-        /// replica.
+        ///  Specifies a DB subnet group for the DB instance. The new DB instance will be created
+        /// in the VPC associated with the DB subnet group. If no DB subnet group is specified,
+        /// then the new DB instance is not created in a VPC. 
         /// </para>
         ///  
         /// <para>
-        /// If there is no DB Subnet Group, then it is a non-VPC DB instance.
+        /// Constraints:
         /// </para>
-        ///  
-        /// <para>
-        ///  Constraints: All the cross region read replicas that share the source instance should
-        /// lie within the same VPC. 
-        /// </para>
+        ///  <ul> <li>Can only be specified if the source DB instance identifier specifies a DB
+        /// instance in another region.</li> <li>The specified DB subnet group must be in the
+        /// same region in which the operation is running.</li> <li> All read replicas in one
+        /// region that are created from the same source DB instance must either: <ul> <li>Specify
+        /// DB subnet groups from the same VPC. All these read replicas will be created in the
+        /// same VPC.</li> <li>Not specify a DB subnet group. All these read replicas will be
+        /// created outside of any VPC.</li> </ul> </li> </ul>
         /// </summary>
         public string DBSubnetGroupName
         {
@@ -306,7 +312,11 @@ namespace Amazon.RDS.Model
         ///  <ul> <li>Must be the identifier of an existing DB instance.</li> <li>Can specify
         /// a DB instance that is a read replica only if the source is running MySQL 5.6.</li>
         /// <li>The specified DB instance must have automatic backups enabled, its backup retention
-        /// period must be greater than 0.</li> </ul>
+        /// period must be greater than 0.</li> <li>If the source DB instance is in the same region
+        /// as the read replica, specify a valid DB instance identifier.</li> <li>If the source
+        /// DB instance is in a different region than the read replica, specify a valid DB instance
+        /// ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+        /// Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
         /// </summary>
         public string SourceDBInstanceIdentifier
         {
@@ -318,6 +328,33 @@ namespace Amazon.RDS.Model
         internal bool IsSetSourceDBInstanceIdentifier()
         {
             return this._sourceDBInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        ///  Specifies storage type to be associated with the DB Instance read replica. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid values: <code>standard | gp2 | io1</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
+        /// parameter. 
+        /// </para>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
         /// <summary>

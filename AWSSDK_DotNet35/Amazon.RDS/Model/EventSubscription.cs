@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -137,7 +137,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceIdsList. 
         /// <para>
-        /// A list of source Ids for the RDS event notification subscription.
+        /// A list of source IDs for the RDS event notification subscription.
         /// </para>
         /// </summary>
         public List<string> SourceIdsList

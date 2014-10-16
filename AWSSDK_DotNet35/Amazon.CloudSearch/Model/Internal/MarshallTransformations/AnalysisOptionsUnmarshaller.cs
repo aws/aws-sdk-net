@@ -55,6 +55,12 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                         unmarshalledObject.AlgorithmicStemming = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("JapaneseTokenizationDictionary", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.JapaneseTokenizationDictionary = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("StemmingDictionary", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

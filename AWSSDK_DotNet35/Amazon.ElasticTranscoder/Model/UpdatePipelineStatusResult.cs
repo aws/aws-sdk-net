@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// When you update status for a pipeline,        Elastic Transcoder returns the values
-    /// that you specified in the request.
+    /// When you update status for a pipeline, Elastic Transcoder returns the values that
+    /// you specified in the request.
     /// </summary>
     public partial class UpdatePipelineStatusResult : AmazonWebServiceResponse
     {

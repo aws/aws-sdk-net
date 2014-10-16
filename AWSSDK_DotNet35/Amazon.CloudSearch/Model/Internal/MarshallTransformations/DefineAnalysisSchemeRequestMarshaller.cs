@@ -56,6 +56,10 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("AnalysisScheme" + "." + "AnalysisOptions" + "." + "AlgorithmicStemming", StringUtils.FromString(publicRequest.AnalysisScheme.AnalysisOptions.AlgorithmicStemming));
                         }
+                        if(publicRequest.AnalysisScheme.AnalysisOptions.IsSetJapaneseTokenizationDictionary())
+                        {
+                            request.Parameters.Add("AnalysisScheme" + "." + "AnalysisOptions" + "." + "JapaneseTokenizationDictionary", StringUtils.FromString(publicRequest.AnalysisScheme.AnalysisOptions.JapaneseTokenizationDictionary));
+                        }
                         if(publicRequest.AnalysisScheme.AnalysisOptions.IsSetStemmingDictionary())
                         {
                             request.Parameters.Add("AnalysisScheme" + "." + "AnalysisOptions" + "." + "StemmingDictionary", StringUtils.FromString(publicRequest.AnalysisScheme.AnalysisOptions.StemmingDictionary));

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,10 @@ namespace Amazon.RDS.Model
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
+        private string _storageType;
         private List<Tag> _tags = new List<Tag>();
+        private string _tdeCredentialArn;
+        private string _tdeCredentialPassword;
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
         /// <summary>
@@ -68,9 +71,9 @@ namespace Amazon.RDS.Model
         /// Instantiates CreateDBInstanceRequest with the parameterized properties
         /// </summary>
         /// <param name="dbInstanceIdentifier"> The DB instance identifier. This parameter is stored as a lowercase string.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server).</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul> Example: <code>mydbinstance</code></param>
-        /// <param name="allocatedStorage"> The amount of storage (in gigabytes) to be initially allocated for the database instance.  <b>MySQL</b>  Constraints: Must be an integer from 5 to 1024.  Type: Integer <b>Oracle</b>  Constraints: Must be an integer from 10 to 1024. <b>SQL Server</b>  Constraints: Must be an integer from 200 to 1024 (Standard Edition and Enterprise Edition) or from 30 to 1024 (Express Edition and Web Edition)</param>
-        /// <param name="dbInstanceClass"> The compute and memory capacity of the DB instance.   Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> </param>
-        /// <param name="engine"> The name of the database engine to be used for this instance.   Valid Values: <code>MySQL</code> | <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> </param>
+        /// <param name="allocatedStorage"> The amount of storage (in gigabytes) to be initially allocated for the database instance.   Type: Integer <b>MySQL</b>  Constraints: Must be an integer from 5 to 3072. <b>PostgreSQL</b>  Constraints: Must be an integer from 5 to 3072. <b>Oracle</b>  Constraints: Must be an integer from 10 to 3072. <b>SQL Server</b>  Constraints: Must be an integer from 200 to 1024 (Standard Edition and Enterprise Edition) or from 30 to 1024 (Express Edition and Web Edition)</param>
+        /// <param name="dbInstanceClass"> The compute and memory capacity of the DB instance.   Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code> </param>
+        /// <param name="engine"> The name of the database engine to be used for this instance.   Valid Values: <code>MySQL</code> | <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> </param>
         /// <param name="masterUsername"> The name of master user for the client DB instance.  <b>MySQL</b> Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul> Type: String <b>Oracle</b> Constraints: <ul> <li>Must be 1 to 30 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul> <b>SQL Server</b> Constraints: <ul> <li>Must be 1 to 128 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul></param>
         /// <param name="masterUserPassword"> The password for the master database user. Can be any printable ASCII character except "/", """, or "@".  Type: String <b>MySQL</b>  Constraints: Must contain from 8 to 41 characters.  <b>Oracle</b>  Constraints: Must contain from 8 to 30 characters.  <b>SQL Server</b>  Constraints: Must contain from 8 to 128 characters. </param>
         public CreateDBInstanceRequest(string dbInstanceIdentifier, int allocatedStorage, string dbInstanceClass, string engine, string masterUsername, string masterUserPassword)
@@ -91,15 +94,23 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        ///  Type: Integer
+        /// </para>
+        ///  
+        /// <para>
         /// <b>MySQL</b>
         /// </para>
         ///  
         /// <para>
-        ///  Constraints: Must be an integer from 5 to 1024.
+        ///  Constraints: Must be an integer from 5 to 3072.
         /// </para>
         ///  
         /// <para>
-        ///  Type: Integer
+        /// <b>PostgreSQL</b>
+        /// </para>
+        ///  
+        /// <para>
+        ///  Constraints: Must be an integer from 5 to 3072.
         /// </para>
         ///  
         /// <para>
@@ -107,7 +118,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Constraints: Must be an integer from 10 to 1024.
+        ///  Constraints: Must be an integer from 10 to 3072.
         /// </para>
         ///  
         /// <para>
@@ -243,7 +254,9 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge
-        /// | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> 
+        /// | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge
+        /// | db.m3.2xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge
+        /// | db.t2.micro | db.t2.small | db.t2.medium</code> 
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -293,6 +306,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// Type: String
+        /// </para>
+        ///  
+        /// <para>
         /// <b>MySQL</b>
         /// </para>
         ///  
@@ -307,9 +324,21 @@ namespace Amazon.RDS.Model
         ///  <ul> <li>Must contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word reserved
         /// by the specified database engine</li> </ul> 
         /// <para>
-        /// Type: String
+        /// <b>PostgreSQL</b>
         /// </para>
         ///  
+        /// <para>
+        /// The name of the database to create when the DB instance is created. If this parameter
+        /// is not specified, no database is created in the DB instance. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li>Must contain 1 to 63 alphanumeric characters</li> <li>Must begin with a
+        /// letter or an underscore. Subsequent characters can be letters, underscores, or digits
+        /// (0-9).</li> <li>Cannot be a word reserved by the specified database engine</li> </ul>
+        /// 
         /// <para>
         /// <b>Oracle</b>
         /// </para>
@@ -425,7 +454,7 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  Valid Values: <code>MySQL</code> | <code>oracle-se1</code> | <code>oracle-se</code>
         /// | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-        /// <code>sqlserver-ex</code> | <code>sqlserver-web</code> 
+        /// <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> 
         /// </para>
         /// </summary>
         public string Engine
@@ -452,6 +481,18 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Example: <code>5.1.42</code>
+        /// </para>
+        ///  
+        /// <para>
+        /// Type: String
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>PostgreSQL</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>9.3</code>
         /// </para>
         ///  
         /// <para>
@@ -498,7 +539,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Constraints: Must be an integer greater than 1000.
+        ///  Constraints: To use PIOPS, this value must be an integer greater than 1000.
         /// </para>
         /// </summary>
         public int Iops
@@ -703,6 +744,22 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// <b>PostgreSQL</b>
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <code>5432</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid Values: <code>1150-65535</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Type: Integer 
+        /// </para>
+        ///  
+        /// <para>
         /// <b>Oracle</b>
         /// </para>
         ///  
@@ -723,7 +780,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code> except for <code>1434</code> and <code>3389</code>.
+        ///  Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>,
+        /// <code>47001</code>, <code>49152</code>, and <code>49152</code> through <code>49156</code>.
         /// 
         /// </para>
         /// </summary>
@@ -840,6 +898,33 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        ///  Specifies storage type to be associated with the DB Instance. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid values: <code>standard | gp2 | io1</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
+        /// parameter. 
+        /// </para>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags.
         /// </summary>
         public List<Tag> Tags
@@ -852,6 +937,44 @@ namespace Amazon.RDS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TdeCredentialArn. 
+        /// <para>
+        ///  The ARN from the Key Store with which to associate the instance for TDE encryption.
+        /// 
+        /// </para>
+        /// </summary>
+        public string TdeCredentialArn
+        {
+            get { return this._tdeCredentialArn; }
+            set { this._tdeCredentialArn = value; }
+        }
+
+        // Check to see if TdeCredentialArn property is set
+        internal bool IsSetTdeCredentialArn()
+        {
+            return this._tdeCredentialArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TdeCredentialPassword. 
+        /// <para>
+        ///  The password for the given ARN from the Key Store in order to access the device.
+        /// 
+        /// </para>
+        /// </summary>
+        public string TdeCredentialPassword
+        {
+            get { return this._tdeCredentialPassword; }
+            set { this._tdeCredentialPassword = value; }
+        }
+
+        // Check to see if TdeCredentialPassword property is set
+        internal bool IsSetTdeCredentialPassword()
+        {
+            return this._tdeCredentialPassword != null;
         }
 
         /// <summary>

@@ -57,9 +57,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property NextPageToken. 
         /// <para>
         ///  A value that you use to access the second and subsequent pages of results, if any.
-        /// When            the jobs in the specified pipeline fit on one page or when you've
-        /// reached the last page            of results, the value of <code>NextPageToken</code>
-        /// is <code>null</code>. 
+        /// When the jobs in the specified pipeline fit on one page or when you've reached the
+        /// last page of results, the value of <code>NextPageToken</code> is <code>null</code>.
+        /// 
         /// </para>
         /// </summary>
         public string NextPageToken

@@ -31,11 +31,10 @@ namespace Amazon.ElasticTranscoder.Model
     /// Container for the parameters to the ListJobsByPipeline operation.
     /// The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.
     /// 
-    ///         
+    ///  
     /// <para>
     /// Elastic Transcoder returns all of the jobs currently in the specified pipeline. The
-    ///            response body contains one element for each job that satisfies the search
-    /// criteria.
+    /// response body contains one element for each job that satisfies the search criteria.
     /// </para>
     /// </summary>
     public partial class ListJobsByPipelineRequest : AmazonElasticTranscoderRequest
@@ -48,8 +47,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Ascending. 
         /// <para>
         ///  To list jobs in chronological order by the date and time that they were submitted,
-        /// enter                <code>true</code>. To list jobs in reverse chronological order,
-        /// enter                <code>false</code>. 
+        /// enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>.
+        /// 
         /// </para>
         /// </summary>
         public string Ascending
@@ -68,8 +67,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property PageToken. 
         /// <para>
         ///  When Elastic Transcoder returns more than one page of results, use <code>pageToken</code>
-        /// in            subsequent <code>GET</code> requests to get each successive page of
-        /// results. 
+        /// in subsequent <code>GET</code> requests to get each successive page of results. 
         /// </para>
         /// </summary>
         public string PageToken

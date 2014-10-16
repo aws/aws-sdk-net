@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -41,6 +41,7 @@ namespace Amazon.RDS.Model
         private string _masterUserPassword;
         private bool? _multiAZ;
         private int? _port;
+        private string _storageType;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -212,6 +213,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        ///  Specifies storage type to be associated with the DB instance. 
+        /// </para>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
     }

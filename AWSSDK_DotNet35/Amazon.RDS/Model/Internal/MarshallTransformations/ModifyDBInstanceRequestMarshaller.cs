@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2013-09-09.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -44,7 +44,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
             request.Parameters.Add("Action", "ModifyDBInstance");
-            request.Parameters.Add("Version", "2013-09-09");
+            request.Parameters.Add("Version", "2014-09-01");
 
             if(publicRequest != null)
             {
@@ -120,6 +120,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPreferredMaintenanceWindow())
                 {
                     request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(publicRequest.PreferredMaintenanceWindow));
+                }
+                if(publicRequest.IsSetStorageType())
+                {
+                    request.Parameters.Add("StorageType", StringUtils.FromString(publicRequest.StorageType));
+                }
+                if(publicRequest.IsSetTdeCredentialArn())
+                {
+                    request.Parameters.Add("TdeCredentialArn", StringUtils.FromString(publicRequest.TdeCredentialArn));
+                }
+                if(publicRequest.IsSetTdeCredentialPassword())
+                {
+                    request.Parameters.Add("TdeCredentialPassword", StringUtils.FromString(publicRequest.TdeCredentialPassword));
                 }
                 if(publicRequest.IsSetVpcSecurityGroupIds())
                 {

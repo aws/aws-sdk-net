@@ -30,12 +30,12 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// Container for the parameters to the UpdatePipelineNotifications operation.
     /// With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification
-    /// Service (Amazon SNS)            notifications for a pipeline.
+    /// Service (Amazon SNS) notifications for a pipeline.
     /// 
-    ///         
+    ///  
     /// <para>
     /// When you update notifications for a pipeline, Elastic Transcoder returns the values
-    /// that you specified            in the request.
+    /// that you specified in the request.
     /// </para>
     /// </summary>
     public partial class UpdatePipelineNotificationsRequest : AmazonElasticTranscoderRequest
@@ -66,23 +66,21 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Notifications. 
         /// <para>
         /// The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you
-        /// want to notify to report job            status.
+        /// want to notify to report job status.
         /// </para>
-        ///         <important>To receive notifications, you must also subscribe to the new topic
-        /// in the Amazon SNS            console.</important>        <ul>            <li><b>Progressing</b>:
-        /// The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you
-        /// want to                notify when Elastic Transcoder has started to process jobs
-        /// that are added to this pipeline. This                is the ARN that Amazon SNS returned
-        /// when you created the topic.</li>            <li><b>Completed</b>: The topic ARN for
-        /// the Amazon SNS topic that you want to notify when                Elastic Transcoder
-        /// has finished processing a job. This is the ARN that Amazon SNS returned when     
-        ///           you created the topic.</li>            <li><b>Warning</b>: The topic ARN
-        /// for the Amazon SNS topic that you want to notify when Elastic Transcoder         
-        ///       encounters a warning condition. This is the ARN that Amazon SNS returned when
-        /// you                created the topic.</li>            <li><b>Error</b>: The topic
-        /// ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder     
-        ///           encounters an error condition. This is the ARN that Amazon SNS returned
-        /// when you                created the topic.</li>        </ul>
+        ///  <important>To receive notifications, you must also subscribe to the new topic in
+        /// the Amazon SNS console.</important> <ul> <li> <b>Progressing</b>: The topic ARN for
+        /// the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify
+        /// when Elastic Transcoder has started to process jobs that are added to this pipeline.
+        /// This is the ARN that Amazon SNS returned when you created the topic.</li> <li> <b>Completed</b>:
+        /// The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
+        /// has finished processing a job. This is the ARN that Amazon SNS returned when you created
+        /// the topic.</li> <li> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you
+        /// want to notify when Elastic Transcoder encounters a warning condition. This is the
+        /// ARN that Amazon SNS returned when you created the topic.</li> <li> <b>Error</b>: The
+        /// topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
+        /// encounters an error condition. This is the ARN that Amazon SNS returned when you created
+        /// the topic.</li> </ul>
         /// </summary>
         public Notifications Notifications
         {

@@ -28,11 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// Synonyms, stopwords, and stemming options for an analysis scheme.
+    /// Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization
+    /// dictionary for Japanese.
     /// </summary>
     public partial class AnalysisOptions
     {
         private AlgorithmicStemming _algorithmicStemming;
+        private string _japaneseTokenizationDictionary;
         private string _stemmingDictionary;
         private string _stopwords;
         private string _synonyms;
@@ -57,6 +59,27 @@ namespace Amazon.CloudSearch.Model
         internal bool IsSetAlgorithmicStemming()
         {
             return this._algorithmicStemming != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JapaneseTokenizationDictionary. 
+        /// <para>
+        /// A JSON array that contains a collection of terms, tokens, readings and part of speech
+        /// for Japanese Tokenizaiton. The Japanese tokenization dictionary enables you to override
+        /// the default tokenization for selected terms. This is only valid for Japanese language
+        /// fields.
+        /// </para>
+        /// </summary>
+        public string JapaneseTokenizationDictionary
+        {
+            get { return this._japaneseTokenizationDictionary; }
+            set { this._japaneseTokenizationDictionary = value; }
+        }
+
+        // Check to see if JapaneseTokenizationDictionary property is set
+        internal bool IsSetJapaneseTokenizationDictionary()
+        {
+            return this._japaneseTokenizationDictionary != null;
         }
 
         /// <summary>

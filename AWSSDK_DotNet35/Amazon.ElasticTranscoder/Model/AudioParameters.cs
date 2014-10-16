@@ -42,7 +42,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property BitRate. 
         /// <para>
         /// The bit rate of the audio stream in the output file, in kilobits/second. Enter an
-        /// integer            between 64 and 320, inclusive.
+        /// integer between 64 and 320, inclusive.
         /// </para>
         /// </summary>
         public string BitRate
@@ -62,14 +62,14 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// The number of audio channels in the output file. Valid values include:
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// <code>auto</code>, <code>0</code>, <code>1</code>, <code>2</code>
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// If you specify <code>auto</code>, Elastic Transcoder automatically detects the number
-        /// of channels in            the input file.
+        /// of channels in the input file.
         /// </para>
         /// </summary>
         public string Channels
@@ -87,8 +87,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Codec. 
         /// <para>
-        /// The audio codec for the output file. Valid values include <code>aac</code>,      
-        ///       <code>mp3</code>, and <code>vorbis</code>.
+        /// The audio codec for the output file. Valid values include <code>aac</code>, <code>mp3</code>,
+        /// and <code>vorbis</code>.
         /// </para>
         /// </summary>
         public string Codec
@@ -107,13 +107,13 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property CodecOptions. 
         /// <para>
         /// If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is the <code>AAC</code>
-        ///             compression profile to use. Valid values include:
+        /// compression profile to use. Valid values include:
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>, <code>HE-AACv2</code>
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// If you specify <code>auto</code>, Elastic Transcoder chooses a profile based on the
         /// bit rate of the output file.
@@ -134,15 +134,14 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property SampleRate. 
         /// <para>
-        /// The sample rate of the audio stream in the output file, in Hertz. Valid values   
-        ///         include:
+        /// The sample rate of the audio stream in the output file, in Hertz. Valid values include:
         /// </para>
-        ///         
+        ///  
         /// <para>
-        /// <code>auto</code>, <code>22050</code>, <code>32000</code>, <code>44100</code>,   
-        ///             <code>48000</code>, <code>96000</code>
+        /// <code>auto</code>, <code>22050</code>, <code>32000</code>, <code>44100</code>, <code>48000</code>,
+        /// <code>96000</code>
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// If you specify <code>auto</code>, Elastic Transcoder automatically detects the sample
         /// rate.

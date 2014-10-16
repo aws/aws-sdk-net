@@ -29,7 +29,7 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Watermarks can be in .png or .jpg format. If you want to display a watermark that
-    /// is not            rectangular, use the .png format, which supports transparency.
+    /// is not rectangular, use the .png format, which supports transparency.
     /// </summary>
     public partial class JobWatermark
     {
@@ -40,15 +40,15 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property InputKey. 
         /// <para>
         ///  The name of the .png or .jpg file that you want to use for the watermark. To determine
-        ///            which Amazon S3 bucket contains the specified file, Elastic Transcoder
-        /// checks the pipeline specified by                <code>Pipeline</code>; the <code>Input
-        /// Bucket</code> object in that pipeline            identifies the bucket.
+        /// which Amazon S3 bucket contains the specified file, Elastic Transcoder checks the
+        /// pipeline specified by <code>Pipeline</code>; the <code>Input Bucket</code> object
+        /// in that pipeline identifies the bucket.
         /// </para>
-        ///         
+        ///  
         /// <para>
         ///  If the file name includes a prefix, for example, <b>logos/128x64.png</b>, include
-        /// the            prefix in the key. If the file isn't in the specified bucket, Elastic
-        /// Transcoder returns            an error. 
+        /// the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder
+        /// returns an error. 
         /// </para>
         /// </summary>
         public string InputKey
@@ -67,9 +67,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property PresetWatermarkId. 
         /// <para>
         /// The ID of the watermark settings that Elastic Transcoder uses to add watermarks to
-        /// the            video during transcoding. The settings are in the preset specified
-        /// by Preset for the            current output. In that preset, the value of Watermarks
-        /// Id tells Elastic Transcoder            which settings to use.
+        /// the video during transcoding. The settings are in the preset specified by Preset for
+        /// the current output. In that preset, the value of Watermarks Id tells Elastic Transcoder
+        /// which settings to use.
         /// </para>
         /// </summary>
         public string PresetWatermarkId
