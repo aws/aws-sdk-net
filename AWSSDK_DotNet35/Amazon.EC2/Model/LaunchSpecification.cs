@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AddressingType. 
         /// <para>
-        /// 
+        /// Deprecated.
         /// </para>
         /// </summary>
         public string AddressingType
@@ -70,7 +70,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllSecurityGroups. 
         /// <para>
-        /// One or more security groups.
+        /// One or more security groups. If requesting a Spot Instance in a nondefault VPC, you
+        /// must specify the security group ID. If requesting a Spot Instance in EC2-Classic or
+        /// a default VPC, you can specify either the security group name or ID.
         /// </para>
         /// </summary>
         public List<GroupIdentifier> AllSecurityGroups
@@ -168,6 +170,10 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The instance type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>m1.small</code>
         /// </para>
         /// </summary>
         public InstanceType InstanceType

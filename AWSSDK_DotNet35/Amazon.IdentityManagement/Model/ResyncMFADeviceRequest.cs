@@ -30,6 +30,13 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ResyncMFADevice operation.
     /// Synchronizes the specified MFA device with AWS servers.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about creating and working with virtual MFA devices, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
+    /// a Virtual MFA Device</a> in the <i>Using IAM</i> guide. 
+    /// </para>
     /// </summary>
     public partial class ResyncMFADeviceRequest : AmazonIdentityManagementServiceRequest
     {
@@ -95,7 +102,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Name of the user whose MFA device you want to resynchronize.
+        /// The name of the user whose MFA device you want to resynchronize.
         /// </para>
         /// </summary>
         public string UserName

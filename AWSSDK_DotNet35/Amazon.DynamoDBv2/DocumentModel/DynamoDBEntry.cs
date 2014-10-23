@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Amazon.DynamoDBv2.Model;
 using System.IO;
@@ -815,6 +816,34 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public static explicit operator HashSet<Primitive>(DynamoDBEntry p)
         {
             return p.AsHashSetOfPrimitive();
+        }
+
+
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to List&lt;Document&gt;
+        /// </summary>
+        /// <returns>List&lt;Document&gt; value of this object</returns>
+        public virtual List<Document> AsListOfDocument()
+        {
+            throw new InvalidCastException();
+        }
+        /// <summary>
+        /// Implicitly convert List&lt;Document&gt; to DynamoDBEntry
+        /// </summary>
+        /// <param name="data">List&lt;Document&gt; data to convert</param>
+        /// <returns>DynamoDBEntry representing the data</returns>
+        public static implicit operator DynamoDBEntry(List<Document> data)
+        {
+            return new DynamoDBList(data.Cast<DynamoDBEntry>());
+        }
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to List&lt;Document&gt;
+        /// </summary>
+        /// <param name="p">DynamoDBEntry to convert</param>
+        /// <returns>List&lt;Document&gt; value of DynamoDBEntry</returns>
+        public static explicit operator List<Document>(DynamoDBEntry p)
+        {
+            return p.AsListOfDocument();
         }
 
 

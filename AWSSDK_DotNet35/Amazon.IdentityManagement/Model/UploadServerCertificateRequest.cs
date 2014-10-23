@@ -31,12 +31,12 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the UploadServerCertificate operation.
     /// Uploads a server certificate entity for the AWS account. The server certificate entity
     /// includes a public key certificate, a private key, and an optional certificate chain,
-    /// which should all be PEM-encoded.
+    /// which should all be PEM-encoded. 
     /// 
     ///  
     /// <para>
-    /// For information about the number of server certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-    /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+    ///  For information about the number of server certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+    /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
     /// </para>
     /// </summary>
     public partial class UploadServerCertificateRequest : AmazonIdentityManagementServiceRequest
@@ -86,8 +86,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property CertificateChain. 
         /// <para>
-        /// The contents of the certificate chain. This is typically a concatenation of the PEM-encoded
-        /// public key certificates of the chain.
+        ///  The contents of the certificate chain. This is typically a concatenation of the PEM-encoded
+        /// public key certificates of the chain. 
         /// </para>
         /// </summary>
         public string CertificateChain
@@ -105,8 +105,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The path for the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
+        ///  The path for the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         ///  
         /// <para>

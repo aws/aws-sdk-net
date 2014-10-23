@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -46,10 +46,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AssociatePublicIpAddress. 
         /// <para>
-        /// Indicates whether to auto-assign a public IP address to an instance in a VPC. This
-        /// public IP address can be assigned to the network interface for eth0 only when you
-        /// launch the instance. You must create the network interface instead of using an existing
-        /// network interface for eth0, and you must not specify more than one network interface.
+        /// Indicates whether to assign a public IP address to an instance you launch in a VPC.
+        /// The public IP address can only be assigned to a network interface for eth0, and can
+        /// only be assigned to a new network interface, not an existing one. You cannot specify
+        /// more than one network interface in the request. If luanching into a default subnet,
+        /// the default value is <code>true</code>.
         /// </para>
         /// </summary>
         public bool AssociatePublicIpAddress
@@ -68,6 +69,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DeleteOnTermination. 
         /// <para>
         /// If set to <code>true</code>, the interface is deleted when the instance is terminated.
+        /// You can specify <code>true</code> only if creating a new network interface when launching
+        /// an instance.
         /// </para>
         /// </summary>
         public bool DeleteOnTermination
@@ -85,7 +88,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the network interface.
+        /// The description of the network interface. Applies only if creating a network interface
+        /// when launching an instance.
         /// </para>
         /// </summary>
         public string Description
@@ -103,7 +107,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeviceIndex. 
         /// <para>
-        /// The index of the device on the instance for the network interface attachment.
+        /// The index of the device on the instance for the network interface attachment. If you
+        /// are specifying a network interface in a <a>RunInstances</a> request, you must provide
+        /// the device index.
         /// </para>
         /// </summary>
         public int DeviceIndex
@@ -121,7 +127,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// The IDs of the security groups for the network interface.
+        /// The IDs of the security groups for the network interface. Applies only if creating
+        /// a network interface when launching an instance.
         /// </para>
         /// </summary>
         public List<string> Groups
@@ -157,7 +164,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
-        /// The private IP address of the network interface.
+        /// The private IP address of the network interface. Applies only if creating a network
+        /// interface when launching an instance.
         /// </para>
         /// </summary>
         public string PrivateIpAddress
@@ -175,7 +183,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddresses. 
         /// <para>
-        /// One or more private IP addresses to assign to the network interface.
+        /// One or more private IP addresses to assign to the network interface. Only one private
+        /// IP address can be designated as primary.
         /// </para>
         /// </summary>
         public List<PrivateIpAddressSpecification> PrivateIpAddresses
@@ -193,7 +202,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecondaryPrivateIpAddressCount. 
         /// <para>
-        /// The number of secondary private IP addresses.
+        /// The number of secondary private IP addresses. You can't specify this option and specify
+        /// more than one private IP address using the private IP addresses option.
         /// </para>
         /// </summary>
         public int SecondaryPrivateIpAddressCount
@@ -211,7 +221,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The ID of the subnet associated with the network string.
+        /// The ID of the subnet associated with the network string. Applies only if creating
+        /// a network interface when launching an instance.
         /// </para>
         /// </summary>
         public string SubnetId

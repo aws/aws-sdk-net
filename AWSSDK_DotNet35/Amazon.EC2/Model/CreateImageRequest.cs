@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         /// Instantiates CreateImageRequest with the parameterized properties
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="name">A name for the new image. Constraints: 3-128 alphanumeric characters, parenthesis (()), periods (.), slashes (/), dashes (-), or underscores(_)</param>
+        /// <param name="name">A name for the new image. Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</param>
         public CreateImageRequest(string instanceId, string name)
         {
             _instanceId = instanceId;
@@ -130,8 +130,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: 3-128 alphanumeric characters, parenthesis (()), periods (.), slashes
-        /// (/), dashes (-), or underscores(_)
+        /// Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]),
+        /// spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@),
+        /// or underscores(_)
         /// </para>
         /// </summary>
         public string Name

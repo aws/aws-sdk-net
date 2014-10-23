@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -40,13 +40,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EnableDnsHostnames. 
         /// <para>
-        /// Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute
-        /// is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.
+        /// Indicates whether the instances launched in the VPC get DNS hostnames. If enabled,
+        /// instances in the VPC get DNS hostnames; otherwise, they do not.
         /// </para>
         ///  
         /// <para>
-        /// You can only set <code>enableDnsHostnames</code> to <code>true</code> if you also
-        /// set the <code>EnableDnsSupport</code> attribute to <code>true</code>.
+        /// You can only enable DNS hostnames if you also enable DNS support.
         /// </para>
         /// </summary>
         public bool EnableDnsHostnames
@@ -64,11 +63,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EnableDnsSupport. 
         /// <para>
-        /// Indicates whether the DNS resolution is supported for the VPC. If this attribute is
-        /// <code>false</code>, the Amazon provided DNS service in the VPC that resolves public
-        /// DNS hostnames to IP addresses is not enabled. If this attribute is <code>true</code>,
-        /// queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the
-        /// reserved IP address at the base of the VPC network range "plus two" will succeed.
+        /// Indicates whether the DNS resolution is supported for the VPC. If enabled, queries
+        /// to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved
+        /// IP address at the base of the VPC network range "plus two" will succeed. If disabled,
+        /// the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP
+        /// addresses is not enabled.
         /// </para>
         /// </summary>
         public bool EnableDnsSupport

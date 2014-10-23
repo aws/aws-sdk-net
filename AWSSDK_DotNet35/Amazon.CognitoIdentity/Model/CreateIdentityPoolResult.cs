@@ -36,6 +36,7 @@ namespace Amazon.CognitoIdentity.Model
         private string _developerProviderName;
         private string _identityPoolId;
         private string _identityPoolName;
+        private List<string> _openIdConnectProviderARNs = new List<string>();
         private Dictionary<string, string> _supportedLoginProviders = new Dictionary<string, string>();
 
         /// <summary>
@@ -103,6 +104,21 @@ namespace Amazon.CognitoIdentity.Model
         internal bool IsSetIdentityPoolName()
         {
             return this._identityPoolName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenIdConnectProviderARNs.
+        /// </summary>
+        public List<string> OpenIdConnectProviderARNs
+        {
+            get { return this._openIdConnectProviderARNs; }
+            set { this._openIdConnectProviderARNs = value; }
+        }
+
+        // Check to see if OpenIdConnectProviderARNs property is set
+        internal bool IsSetOpenIdConnectProviderARNs()
+        {
+            return this._openIdConnectProviderARNs != null && this._openIdConnectProviderARNs.Count > 0; 
         }
 
         /// <summary>

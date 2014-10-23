@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -44,7 +44,8 @@ namespace Amazon.EC2.Model
         ///  <ul> <li> 
         /// <para>
         /// <code>cidr</code> - The CIDR block of the VPC. The CIDR block you specify must exactly
-        /// match the VPC's CIDR block for information to be returned for the VPC.
+        /// match the VPC's CIDR block for information to be returned for the VPC. Must contain
+        /// the slash followed by one or two digits (for example, <code>/28</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

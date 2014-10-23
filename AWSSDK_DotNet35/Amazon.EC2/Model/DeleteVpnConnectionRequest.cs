@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,7 +35,11 @@ namespace Amazon.EC2.Model
     /// <para>
     /// If you're deleting the VPC and its associated components, we recommend that you detach
     /// the virtual private gateway from the VPC and delete the VPC before deleting the VPN
-    /// connection.
+    /// connection. If you believe that the tunnel credentials for your VPN connection have
+    /// been compromised, you can delete the VPN connection and create a new one that has
+    /// new keys, without needing to delete the VPC or virtual private gateway. If you create
+    /// a new VPN connection, you must reconfigure the customer gateway using the new configuration
+    /// information returned with the new VPN connection ID.
     /// </para>
     /// </summary>
     public partial class DeleteVpnConnectionRequest : AmazonEC2Request

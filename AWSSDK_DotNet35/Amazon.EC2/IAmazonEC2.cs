@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 
 
@@ -202,15 +202,16 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// [EC2-Classic, default VPC] If the Elastic IP address is already associated with a
-        /// different instance, it is disassociated from that instance and associated with the
-        /// specified instance.
+        /// [EC2-Classic, VPC in an EC2-VPC-only account] If the Elastic IP address is already
+        /// associated with a different instance, it is disassociated from that instance and associated
+        /// with the specified instance.
         /// </para>
         ///  
         /// <para>
-        /// [EC2-VPC] If you don't specify a private IP address, the Elastic IP address is associated
-        /// with the primary IP address. If the Elastic IP address is already associated with
-        /// a different instance or a network interface, you get an error unless you allow reassociation.
+        /// [VPC in an EC2-Classic account] If you don't specify a private IP address, the Elastic
+        /// IP address is associated with the primary IP address. If the Elastic IP address is
+        /// already associated with a different instance or a network interface, you get an error
+        /// unless you allow reassociation.
         /// </para>
         ///  
         /// <para>
@@ -549,8 +550,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Adds one or more egress rules to a security group for use with a VPC. Specifically,
-        /// this action permits instances to send traffic to one or more CIDR IP address ranges,
-        /// or to one or more security groups for the same VPC.
+        /// this action permits instances to send traffic to one or more destination CIDR IP address
+        /// ranges, or to one or more destination security groups for the same VPC.
         /// 
         ///  <important> 
         /// <para>
@@ -1164,7 +1165,11 @@ namespace Amazon.EC2
         /// types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>. </li> </ul>
         /// 
         /// <para>
-        /// For more information about DHCP options, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+        /// Your VPC automatically starts out with a set of DHCP options that includes only a
+        /// DNS server that we provide (AmazonProvidedDNS). If you create a set of options, and
+        /// if your VPC has an Internet gateway, make sure to set the <code>domain-name-servers</code>
+        /// option either to <code>AmazonProvidedDNS</code> or to a domain name server of your
+        /// choice. For more information about DHCP options, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
         /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -1368,6 +1373,11 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You can have up to five thousand key pairs per region.
+        /// </para>
+        ///  
+        /// <para>
+        /// The key pair returned to you is available only in the region in which you create it.
+        /// To create a key pair that is available in all regions, use <a>ImportKeyPair</a>.
         /// </para>
         ///  
         /// <para>
@@ -1607,8 +1617,25 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a listing for Amazon EC2 Reserved Instances to be sold in the Reserved Instance
-        /// Marketplace. You can submit one Reserved Instance listing at a time.
+        /// Marketplace. You can submit one Reserved Instance listing at a time. To get a list
+        /// of your Reserved Instances, you can use the <a>DescribeReservedInstances</a> operation.
         /// 
+        ///  
+        /// <para>
+        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
+        /// capacity that they no longer need with buyers who want to purchase additional capacity.
+        /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
+        /// like any other Reserved Instances. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To sell your Reserved Instances, you must first register as a Seller in the Reserved
+        /// Instance Marketplace. After completing the registration process, you can create a
+        /// Reserved Instance Marketplace listing of some or all of your Reserved Instances, and
+        /// specify the upfront price to receive for them. Your Reserved Instance listings then
+        /// become available for purchase. To view the details of your Reserved Instance listing,
+        /// you can use the <a>DescribeReservedInstancesListings</a> operation.
+        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
@@ -1655,8 +1682,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You must specify one of the following targets: Internet gateway, NAT instance, VPC
-        /// peering connection, or network interface.
+        /// You must specify one of the following targets: Internet gateway or virtual private
+        /// gateway, NAT instance, VPC peering connection, or network interface.
         /// </para>
         ///  
         /// <para>
@@ -1976,6 +2003,14 @@ namespace Amazon.EC2
         /// <para>
         /// If you add more than one subnet to a VPC, they're set up in a star topology with a
         /// logical router in the middle.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
+        /// doesn't change if you stop and restart the instance (unlike a similar instance launched
+        /// outside a VPC, which gets a new IP address when restarted). It's therefore possible
+        /// to have a subnet with no running instances (they're all stopped), but no remaining
+        /// IP addresses available.
         /// </para>
         ///  
         /// <para>
@@ -3142,7 +3177,11 @@ namespace Amazon.EC2
         /// <para>
         /// If you're deleting the VPC and its associated components, we recommend that you detach
         /// the virtual private gateway from the VPC and delete the VPC before deleting the VPN
-        /// connection.
+        /// connection. If you believe that the tunnel credentials for your VPN connection have
+        /// been compromised, you can delete the VPN connection and create a new one that has
+        /// new keys, without needing to delete the VPC or virtual private gateway. If you create
+        /// a new VPN connection, you must reconfigure the customer gateway using the new configuration
+        /// information returned with the new VPN connection ID.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConnection service method.</param>
@@ -3817,7 +3856,11 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified attribute of the specified instance. You can specify only
-        /// one attribute at a time.
+        /// one attribute at a time. Valid attribute values are: <code>instanceType</code> | <code>kernel</code>
+        /// | <code>ramdisk</code> | <code>userData</code> | <code>disableApiTermination</code>
+        /// | <code>instanceInitiatedShutdownBehavior</code> | <code>rootDeviceName</code> | <code>blockDeviceMapping</code>
+        /// | <code>productCodes</code> | <code>sourceDestCheck</code> | <code>groupSet</code>
+        /// | <code>ebsOptimized</code> | <code>sriovNetSupport</code>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAttribute service method.</param>
         /// 
@@ -4532,6 +4575,27 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
+        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
+        /// capacity that they no longer need with buyers who want to purchase additional capacity.
+        /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
+        /// like any other Reserved Instances. 
+        /// </para>
+        ///  
+        /// <para>
+        /// As a seller, you choose to list some or all of your Reserved Instances, and you specify
+        /// the upfront price to receive for them. Your Reserved Instances are then listed in
+        /// the Reserved Instance Marketplace and are available for purchase. 
+        /// </para>
+        ///  
+        /// <para>
+        /// As a buyer, you specify the configuration of the Reserved Instance to purchase, and
+        /// the Marketplace matches what you're searching for with what's available. The Marketplace
+        /// first sells the lowest priced Reserved Instances to you, and continues to sell available
+        /// Reserved Instance listings to you until your demand is met. You are charged based
+        /// on the total price of all of the listings that you purchase.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
@@ -4543,6 +4607,27 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
         /// 
+        ///  
+        /// <para>
+        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
+        /// capacity that they no longer need with buyers who want to purchase additional capacity.
+        /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
+        /// like any other Reserved Instances. 
+        /// </para>
+        ///  
+        /// <para>
+        /// As a seller, you choose to list some or all of your Reserved Instances, and you specify
+        /// the upfront price to receive for them. Your Reserved Instances are then listed in
+        /// the Reserved Instance Marketplace and are available for purchase. 
+        /// </para>
+        ///  
+        /// <para>
+        /// As a buyer, you specify the configuration of the Reserved Instance to purchase, and
+        /// the Marketplace matches what you're searching for with what's available. The Marketplace
+        /// first sells the lowest priced Reserved Instances to you, and continues to sell available
+        /// Reserved Instance listings to you until your demand is met. You are charged based
+        /// on the total price of all of the listings that you purchase.
+        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
@@ -4589,6 +4674,12 @@ namespace Amazon.EC2
         /// information about all your Reserved Instances modification requests is returned. If
         /// a modification ID is specified, only information about the specific modification is
         /// returned.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
+        /// Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedInstancesModifications service method, as returned by EC2.</returns>
@@ -4599,6 +4690,12 @@ namespace Amazon.EC2
         /// information about all your Reserved Instances modification requests is returned. If
         /// a modification ID is specified, only information about the specific modification is
         /// returned.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
+        /// Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesModifications service method.</param>
         /// 
@@ -5136,6 +5233,13 @@ namespace Amazon.EC2
         /// time period. The prices returned are listed in chronological order, from the oldest
         /// to the most recent.
         /// </para>
+        ///  
+        /// <para>
+        /// When you specify the start and end time options, this operation returns two pieces
+        /// of data: the prices of the instance types within the time range that you specified
+        /// and the time when the price changed. The price is valid within the time period that
+        /// you specified; the response merely indicates the last time that the price changed.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSpotPriceHistory service method, as returned by EC2.</returns>
@@ -5158,6 +5262,13 @@ namespace Amazon.EC2
         /// earlier than 2011-05-15, you get the lowest price across the region for the specified
         /// time period. The prices returned are listed in chronological order, from the oldest
         /// to the most recent.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you specify the start and end time options, this operation returns two pieces
+        /// of data: the prices of the instance types within the time range that you specified
+        /// and the time when the price changed. The price is valid within the time period that
+        /// you specified; the response merely indicates the last time that the price changed.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotPriceHistory service method.</param>
@@ -5359,6 +5470,15 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
+        /// If you are describing a long list of volumes, you can paginate the output to make
+        /// the list more manageable. The <code>MaxResults</code> parameter sets the maximum number
+        /// of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
+        /// value, then that number of results is returned along with a <code>NextToken</code>
+        /// value that can be passed to a subsequent <code>DescribeVolumes</code> request to retrieve
+        /// the remaining results.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about Amazon EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
         /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
@@ -5370,6 +5490,15 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes the specified Amazon EBS volumes.
         /// 
+        ///  
+        /// <para>
+        /// If you are describing a long list of volumes, you can paginate the output to make
+        /// the list more manageable. The <code>MaxResults</code> parameter sets the maximum number
+        /// of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
+        /// value, then that number of results is returned along with a <code>NextToken</code>
+        /// value that can be passed to a subsequent <code>DescribeVolumes</code> request to retrieve
+        /// the remaining results.
+        /// </para>
         ///  
         /// <para>
         /// For more information about Amazon EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
@@ -5961,8 +6090,8 @@ namespace Amazon.EC2
         #region  DisableVgwRoutePropagation
 
         /// <summary>
-        /// Disables a virtual private gateway (VGW) from propagating routes to the routing tables
-        /// of a VPC.
+        /// Disables a virtual private gateway (VGW) from propagating routes to a specified route
+        /// table of a VPC.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableVgwRoutePropagation service method.</param>
         /// 
@@ -6003,6 +6132,12 @@ namespace Amazon.EC2
         /// Disassociates an Elastic IP address from the instance or network interface it's associated
         /// with.
         /// 
+        ///  
+        /// <para>
+        /// An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For
+        /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
         ///  
         /// <para>
         /// This is an idempotent operation. If you perform the operation more than once, Amazon
@@ -6091,8 +6226,8 @@ namespace Amazon.EC2
         #region  EnableVgwRoutePropagation
 
         /// <summary>
-        /// Enables a virtual private gateway (VGW) to propagate routes to the routing tables
-        /// of a VPC.
+        /// Enables a virtual private gateway (VGW) to propagate routes to the specified route
+        /// table of a VPC.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableVgwRoutePropagation service method.</param>
         /// 
@@ -6237,8 +6372,11 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The Windows password is only generated the first time an AMI is launched. It is not
-        /// generated for rebundled AMIs or after the password is changed on an instance.
+        /// The Windows password is generated at boot if the <code>EC2Config</code> service plugin,
+        /// <code>Ec2SetPassword</code>, is enabled. This usually only happens the first time
+        /// an AMI is launched, and then <code>Ec2SetPassword</code> is automatically disabled.
+        /// The password is not generated for rebundled AMIs unless <code>Ec2SetPassword</code>
+        /// is enabled before bundling.
         /// </para>
         ///  
         /// <para>
@@ -6548,6 +6686,12 @@ namespace Amazon.EC2
         /// (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved Instances to be
         /// modified must be identical, except for Availability Zone, network platform, and instance
         /// type.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
+        /// Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReservedInstances service method.</param>
         /// 
@@ -6806,7 +6950,14 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+        /// Use <a>DescribeReservedInstancesOfferings</a> to get a list of Reserved Instance offerings
+        /// that match your specifications. After you've purchased a Reserved Instance, you can
+        /// check for your new Reserved Instance with <a>DescribeReservedInstances</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
+        /// Instances</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -6954,8 +7105,10 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Rejects a VPC peering connection request. The VPC peering connection must be in the
-        /// <code>pending-acceptance</code> state. Use the <code>DescribeVpcPeeringConnections</code>
-        /// request to view your outstanding VPC peering connection requests.
+        /// <code>pending-acceptance</code> state. Use the <a>DescribeVpcPeeringConnections</a>
+        /// request to view your outstanding VPC peering connection requests. To delete an active
+        /// VPC peering connection, or to delete a VPC peering connection request that you initiated,
+        /// use <a>DeleteVpcPeeringConnection</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectVpcPeeringConnection service method.</param>
         /// 
@@ -7011,7 +7164,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// [Nondefault VPC] You must use the <a>DisassociateAddress</a> to disassociate the Elastic
+        /// [Nondefault VPC] You must use <a>DisassociateAddress</a> to disassociate the Elastic
         /// IP address before you try to release it. Otherwise, Amazon EC2 returns an error (<code>InvalidIPAddress.InUse</code>).
         /// </para>
         /// </summary>
@@ -7133,8 +7286,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Replaces an existing route within a route table in a VPC. You must provide only one
-        /// of the following: Internet gateway, NAT instance, VPC peering connection, or network
-        /// interface.
+        /// of the following: Internet gateway or virtual private gateway, NAT instance, VPC peering
+        /// connection, or network interface.
         /// 
         ///  
         /// <para>
@@ -7231,6 +7384,11 @@ namespace Amazon.EC2
         /// by <a>DescribeInstanceStatus</a>, use <a>ReportInstanceStatus</a> to report your experience
         /// with the instance. Amazon EC2 collects this information to improve the accuracy of
         /// status checks.
+        /// 
+        ///  
+        /// <para>
+        /// Use of this action does not change the value returned by <a>DescribeInstanceStatus</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReportInstanceStatus service method.</param>
         /// 
@@ -7274,6 +7432,12 @@ namespace Amazon.EC2
         /// and current Spot Instance requests. For more information about Spot Instances, see
         /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">Spot
         /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Users must be subscribed to the required product to run an instance with AWS Marketplace
+        /// product codes.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method.</param>
         /// 
@@ -7349,8 +7513,8 @@ namespace Amazon.EC2
         #region  ResetInstanceAttribute
 
         /// <summary>
-        /// Resets an attribute of an instance to its default value. To reset the kernel or RAM
-        /// disk, the instance must be in a stopped state. To reset the <code>SourceDestCheck</code>,
+        /// Resets an attribute of an instance to its default value. To reset the <code>kernel</code>
+        /// or <code>ramdisk</code>, the instance must be in a stopped state. To reset the <code>SourceDestCheck</code>,
         /// the instance can be either running or stopped.
         /// 
         ///  

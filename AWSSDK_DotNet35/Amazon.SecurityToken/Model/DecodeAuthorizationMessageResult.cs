@@ -29,7 +29,7 @@ namespace Amazon.SecurityToken.Model
 {
     /// <summary>
     /// A document that contains additional information about the authorization status of
-    /// a request      from an encoded message that is returned in response to an AWS request.
+    /// a request from an encoded message that is returned in response to an AWS request.
     /// </summary>
     public partial class DecodeAuthorizationMessageResult : AmazonWebServiceResponse
     {
@@ -38,8 +38,8 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property DecodedMessage. 
         /// <para>
-        /// An XML document that contains the decoded message. For more information, see     
-        ///   <code>DecodeAuthorizationMessage</code>. 
+        /// An XML document that contains the decoded message. For more information, see <code>DecodeAuthorizationMessage</code>.
+        /// 
         /// </para>
         /// </summary>
         public string DecodedMessage

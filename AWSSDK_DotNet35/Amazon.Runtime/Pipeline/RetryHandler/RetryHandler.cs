@@ -26,7 +26,22 @@ namespace Amazon.Runtime.Internal
     /// a retry should be performed.
     /// </summary>
     public class RetryHandler : PipelineHandler
-    {        
+    {
+        private ILogger _logger;
+
+        /// <summary>
+        /// The logger used to log messages.
+        /// </summary>
+        public override ILogger Logger
+        {
+            get { return _logger; }
+            set
+            {
+                _logger = value;
+                this.RetryPolicy.Logger = value;
+            }
+        }
+
         /// <summary>
         /// The retry policy which specifies when 
         /// a retry should be performed.

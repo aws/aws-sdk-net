@@ -29,8 +29,8 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoggingStatus operation.
-    /// Describes whether information, such as queries and connection attempts,          
-    ///  is being logged for the specified Amazon Redshift cluster.
+    /// Describes whether information, such as queries and connection attempts, is being logged
+    /// for the specified Amazon Redshift cluster.
     /// </summary>
     public partial class DescribeLoggingStatusRequest : AmazonRedshiftRequest
     {
@@ -39,10 +39,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///             The identifier of the cluster to get the logging status from.        
-        /// 
+        ///  The identifier of the cluster to get the logging status from. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Example: <code>examplecluster</code>
         /// </para>

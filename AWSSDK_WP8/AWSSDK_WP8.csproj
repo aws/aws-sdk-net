@@ -468,6 +468,9 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Util\TransferProgressArgs.cs">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Util\AmazonS3Uri.cs">
+      <Visible>false</Visible>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.SecurityToken\*" Exclude="..\AWSSDK_DotNet35\Amazon.SecurityToken\IAmazonSecurityTokenService.cs;..\AWSSDK_DotNet35\Amazon.SecurityToken\AmazonSecurityTokenServiceClient.cs;..\AWSSDK_DotNet35\Amazon.SecurityToken\AssumeRoleAWSCredentials.bcl.cs">

@@ -68,7 +68,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         response.LastModified = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    }                    
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

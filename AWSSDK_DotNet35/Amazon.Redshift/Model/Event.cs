@@ -43,7 +43,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Date. 
         /// <para>
-        ///         The date and time of the event.        
+        ///  The date and time of the event. 
         /// </para>
         /// </summary>
         public DateTime Date
@@ -61,7 +61,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property EventCategories. 
         /// <para>
-        ///             A list of the event categories.        
+        ///  A list of the event categories. 
         /// </para>
         /// </summary>
         public List<string> EventCategories
@@ -79,7 +79,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property EventId. 
         /// <para>
-        ///             The identifier of the event.        
+        ///  The identifier of the event. 
         /// </para>
         /// </summary>
         public string EventId
@@ -97,7 +97,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        ///         The text of this event.        
+        ///  The text of this event. 
         /// </para>
         /// </summary>
         public string Message
@@ -117,7 +117,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The severity of the event.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Values: ERROR, INFO
         /// </para>
@@ -137,7 +137,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SourceIdentifier. 
         /// <para>
-        ///         The identifier for the source of the event.        
+        ///  The identifier for the source of the event. 
         /// </para>
         /// </summary>
         public string SourceIdentifier
@@ -155,7 +155,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        ///         The source type for this event.        
+        ///  The source type for this event. 
         /// </para>
         /// </summary>
         public SourceType SourceType

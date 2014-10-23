@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// The User data type contains information about a user.
+    /// Contains information about an IAM user entity.
     /// 
     ///  
     /// <para>
@@ -52,6 +52,7 @@ namespace Amazon.IdentityManagement.Model
     {
         private string _arn;
         private DateTime? _createDate;
+        private DateTime? _passwordLastUsed;
         private string _path;
         private string _userId;
         private string _userName;
@@ -64,11 +65,11 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates User with the parameterized properties
         /// </summary>
-        /// <param name="path">Path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers for IAM Entities</a> in the <i>Using IAM</i> guide.</param>
-        /// <param name="userName">The name identifying the user.</param>
-        /// <param name="userId">The stable and unique string identifying the user. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers for IAM Entities</a> in the <i>Using IAM</i> guide.</param>
-        /// <param name="arn">The Amazon Resource Name (ARN) specifying the user. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers for IAM Entities</a> in the <i>Using IAM</i> guide.</param>
-        /// <param name="createDate">The date when the user was created.</param>
+        /// <param name="path">The path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</param>
+        /// <param name="userName">The friendly name identifying the user.</param>
+        /// <param name="userId">The stable and unique string identifying the user. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide.</param>
+        /// <param name="arn">The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </param>
+        /// <param name="createDate">The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was created.</param>
         public User(string path, string userName, string userId, string arn, DateTime createDate)
         {
             _path = path;
@@ -81,9 +82,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) specifying the user. For more information about ARNs
-        /// and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
+        /// The Amazon Resource Name (ARN) that identifies the user. For more information about
+        /// ARNs and how to use ARNs in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         public string Arn
@@ -101,7 +102,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property CreateDate. 
         /// <para>
-        /// The date when the user was created.
+        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the user was created.
         /// </para>
         /// </summary>
         public DateTime CreateDate
@@ -117,10 +119,39 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PasswordLastUsed. 
+        /// <para>
+        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the user's password was last used to sign in to an AWS website. For
+        /// a list of AWS websites that capture a user's last sign-in time, see the <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
+        /// Reports</a> topic in the <i>Using IAM</i> guide. If a password is used more than once
+        /// in a five-minute span, only the first use is returned in this field. When the user
+        /// does not have a password, this field is null (not present). When a user's password
+        /// exists but has never been used, or when there is no sign-in data associated with the
+        /// user, this field is null (not present). 
+        /// </para>
+        ///  
+        /// <para>
+        /// This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions. 
+        /// </para>
+        /// </summary>
+        public DateTime PasswordLastUsed
+        {
+            get { return this._passwordLastUsed.GetValueOrDefault(); }
+            set { this._passwordLastUsed = value; }
+        }
+
+        // Check to see if PasswordLastUsed property is set
+        internal bool IsSetPasswordLastUsed()
+        {
+            return this._passwordLastUsed.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// Path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
+        /// The path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// Identifiers</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
         public string Path
@@ -139,8 +170,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property UserId. 
         /// <para>
         /// The stable and unique string identifying the user. For more information about IDs,
-        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// Identifiers</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
         public string UserId
@@ -158,7 +189,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name identifying the user.
+        /// The friendly name identifying the user.
         /// </para>
         /// </summary>
         public string UserName

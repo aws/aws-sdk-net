@@ -41,7 +41,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterSubnetGroupName. 
         /// <para>
-        ///         The name of the cluster subnet group.        
+        ///  The name of the cluster subnet group. 
         /// </para>
         /// </summary>
         public string ClusterSubnetGroupName
@@ -59,7 +59,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///         The description of the cluster subnet group.        
+        ///  The description of the cluster subnet group. 
         /// </para>
         /// </summary>
         public string Description
@@ -77,8 +77,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SubnetGroupStatus. 
         /// <para>
-        ///             The status of the cluster subnet group.  Possible values are <code>Complete</code>,
-        ///             <code>Incomplete</code> and <code>Invalid</code>.        
+        ///  The status of the cluster subnet group. Possible values are <code>Complete</code>,
+        /// <code>Incomplete</code> and <code>Invalid</code>. 
         /// </para>
         /// </summary>
         public string SubnetGroupStatus
@@ -96,7 +96,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        ///         A list of the VPC <a>Subnet</a> elements.        
+        ///  A list of the VPC <a>Subnet</a> elements. 
         /// </para>
         /// </summary>
         public List<Subnet> Subnets
@@ -114,7 +114,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        ///         The VPC ID of the cluster subnet group.        
+        ///  The VPC ID of the cluster subnet group. 
         /// </para>
         /// </summary>
         public string VpcId

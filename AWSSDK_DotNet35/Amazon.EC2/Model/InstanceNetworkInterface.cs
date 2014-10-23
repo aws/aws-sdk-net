@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private InstanceNetworkInterfaceAttachment _attachment;
         private string _description;
         private List<GroupIdentifier> _groups = new List<GroupIdentifier>();
+        private string _macAddress;
         private string _networkInterfaceId;
         private string _ownerId;
         private string _privateDnsName;
@@ -116,6 +117,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetGroups()
         {
             return this._groups != null && this._groups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MacAddress. 
+        /// <para>
+        /// The MAC address.
+        /// </para>
+        /// </summary>
+        public string MacAddress
+        {
+            get { return this._macAddress; }
+            set { this._macAddress = value; }
+        }
+
+        // Check to see if MacAddress property is set
+        internal bool IsSetMacAddress()
+        {
+            return this._macAddress != null;
         }
 
         /// <summary>

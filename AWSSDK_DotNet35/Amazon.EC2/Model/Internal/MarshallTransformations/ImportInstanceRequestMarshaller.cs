@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "ImportInstance");
-            request.Parameters.Add("Version", "2014-06-15");
+            request.Parameters.Add("Version", "2014-09-01");
 
             if(publicRequest != null)
             {
@@ -95,6 +95,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.LaunchSpecification.IsSetArchitecture())
                     {
                         request.Parameters.Add("LaunchSpecification" + "." + "Architecture", StringUtils.FromString(publicRequest.LaunchSpecification.Architecture));
+                    }
+                    if(publicRequest.LaunchSpecification.IsSetGroupIds())
+                    {
+                        int publicRequestLaunchSpecificationlistValueIndex = 1;
+                        foreach(var publicRequestLaunchSpecificationlistValue in publicRequest.LaunchSpecification.GroupIds)
+                        {
+                            request.Parameters.Add("LaunchSpecification" + "." + "GroupId" + "." + publicRequestLaunchSpecificationlistValueIndex, StringUtils.FromString(publicRequestLaunchSpecificationlistValue));
+                            publicRequestLaunchSpecificationlistValueIndex++;
+                        }
                     }
                     if(publicRequest.LaunchSpecification.IsSetGroupNames())
                     {

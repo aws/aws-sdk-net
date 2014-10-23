@@ -301,6 +301,14 @@ namespace Amazon.Runtime.Internal
             var clientConfig = requestContext.ClientConfig;
             var originalRequest = requestContext.OriginalRequest;
 
+            // If System.Net.WebRequest.AllowAutoRedirect is set to true (default value),
+            // redirects for GET requests are automatically followed and redirects for POST
+            // requests are thrown back as exceptions.
+
+            // If System.Net.WebRequest.AllowAutoRedirect is set to false (e.g. S3),
+            // redirects are returned as responses.
+            _request.AllowAutoRedirect = clientConfig.AllowAutoRedirect;
+
             // Configure timeouts.
             if (requestContext.Request.ContentStream != null)
             {

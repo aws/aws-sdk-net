@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>end</code> - The time when the Reserved Instance expires.
+        /// <code>end</code> - The time when the Reserved Instance expires (for example, 2014-08-07T11:54:42.000Z).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -85,7 +85,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// <code>start</code> - The time at which the Reserved Instance purchase request was
-        /// placed.
+        /// placed (for example, 2014-08-07T11:54:42.000Z).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -133,7 +133,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OfferingType. 
         /// <para>
-        /// The Reserved Instance offering type.
+        /// The Reserved Instance offering type. If you are using tools that predate the 2011-11-01
+        /// API version, you only have access to the <code>Medium Utilization</code> Reserved
+        /// Instance offering type. 
         /// </para>
         /// </summary>
         public OfferingTypeValues OfferingType

@@ -46,8 +46,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates GetUserPolicyRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">Name of the user who the policy is associated with.</param>
-        /// <param name="policyName">Name of the policy document to get.</param>
+        /// <param name="userName">The name of the user who the policy is associated with.</param>
+        /// <param name="policyName">The name of the policy document to get.</param>
         public GetUserPolicyRequest(string userName, string policyName)
         {
             _userName = userName;
@@ -57,7 +57,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// Name of the policy document to get.
+        /// The name of the policy document to get.
         /// </para>
         /// </summary>
         public string PolicyName
@@ -75,7 +75,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Name of the user who the policy is associated with.
+        /// The name of the user who the policy is associated with.
         /// </para>
         /// </summary>
         public string UserName

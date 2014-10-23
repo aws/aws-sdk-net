@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -40,6 +40,11 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
+    /// The key pair returned to you is available only in the region in which you create it.
+    /// To create a key pair that is available in all regions, use <a>ImportKeyPair</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information about key pairs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
     /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
@@ -56,7 +61,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateKeyPairRequest with the parameterized properties
         /// </summary>
-        /// <param name="keyName">A unique name for the key pair.</param>
+        /// <param name="keyName">A unique name for the key pair. Constraints: Up to 255 ASCII characters</param>
         public CreateKeyPairRequest(string keyName)
         {
             _keyName = keyName;
@@ -66,6 +71,10 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property KeyName. 
         /// <para>
         /// A unique name for the key pair.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Up to 255 ASCII characters
         /// </para>
         /// </summary>
         public string KeyName

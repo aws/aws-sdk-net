@@ -31,13 +31,13 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the PutRolePolicy operation.
     /// Adds (or updates) a policy document associated with the specified role. For information
     /// about policies, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-    /// of Policies</a> in the <i>Using IAM</i> guide.
+    /// of Policies</a> in the <i>Using IAM</i> guide. 
     /// 
     ///  
     /// <para>
-    /// For information about limits on the policies you can associate with a role, see <a
+    ///  For information about limits on the policies you can associate with a role, see <a
     /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-    /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+    /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
     /// </para>
     /// </summary>
     public partial class PutRolePolicyRequest : AmazonIdentityManagementServiceRequest
@@ -67,7 +67,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// Name of the policy document.
+        /// The name of the policy document.
         /// </para>
         /// </summary>
         public string PolicyName
@@ -85,7 +85,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// Name of the role to associate the policy with.
+        /// The name of the role to associate the policy with.
         /// </para>
         /// </summary>
         public string RoleName

@@ -28,11 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// The ServerCertificate data type contains information about a server certificate.
+    /// Contains information about a server certificate.
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the action <a>GetServerCertificate</a>.
+    ///  This data type is used as a response element in the <a>GetServerCertificate</a> action.
+    /// 
     /// </para>
     /// </summary>
     public partial class ServerCertificate

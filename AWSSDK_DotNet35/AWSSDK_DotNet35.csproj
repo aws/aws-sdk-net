@@ -469,6 +469,7 @@
     <Compile Include="Amazon.Runtime\Internal\Transform\CustomMarshallTransformations.cs" />
     <Compile Include="Amazon.Runtime\Internal\Transform\IRequestMarshaller.cs" />
     <Compile Include="Amazon.Runtime\Internal\Util\ILogger.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Util\NonDisposingWrapperStream.cs" />
     <Compile Include="Amazon.Runtime\Pipeline\ErrorHandler\ExceptionHandler.cs" />
     <Compile Include="Amazon.Runtime\Pipeline\ErrorHandler\HttpErrorResponseExceptionHandler.cs" />
     <Compile Include="Amazon.Runtime\Pipeline\ErrorHandler\IExceptionHandler.cs" />
@@ -509,7 +510,9 @@
     <Compile Include="Amazon.S3\Internal\AmazonS3ExceptionHandler.cs" />
     <Compile Include="Amazon.S3\Internal\AmazonS3PostMarshallHandler.cs" />
     <Compile Include="Amazon.S3\Internal\AmazonS3PreMarshallHandler.cs" />
+    <Compile Include="Amazon.S3\Internal\AmazonS3RedirectHandler.cs" />
     <Compile Include="Amazon.S3\Internal\AmazonS3ResponseHandler.cs" />
+    <Compile Include="Amazon.S3\Internal\AmazonS3RetryPolicy.cs" />
     <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\LifecycleRuleNoncurrentVersionExpirationUnmarshaller.cs" />
     <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\LifecycleRuleNoncurrentVersionTransitionUnmarshaller.cs" />
     <Compile Include="Amazon.S3\Model\LifecycleRuleNoncurrentVersionExpiration.cs" />

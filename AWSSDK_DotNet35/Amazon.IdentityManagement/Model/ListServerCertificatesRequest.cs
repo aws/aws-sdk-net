@@ -30,12 +30,12 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListServerCertificates operation.
     /// Lists the server certificates that have the specified path prefix. If none exist,
-    /// the action returns an empty list.
+    /// the action returns an empty list. 
     /// 
     ///  
     /// <para>
-    /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-    /// parameters.
+    ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+    /// parameters. 
     /// </para>
     /// </summary>
     public partial class ListServerCertificatesRequest : AmazonIdentityManagementServiceRequest
@@ -52,9 +52,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// Use this only when paginating results, and only in a subsequent request after you've
+        ///  Use this only when paginating results, and only in a subsequent request after you've
         /// received a response where the results are truncated. Set it to the value of the <code>Marker</code>
-        /// element in the response you just received.
+        /// element in the response you just received. 
         /// </para>
         /// </summary>
         public string Marker
@@ -72,10 +72,10 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// Use this only when paginating results to indicate the maximum number of server certificates
+        ///  Use this only when paginating results to indicate the maximum number of server certificates
         /// you want in the response. If there are additional server certificates beyond the maximum
         /// you specify, the <code>IsTruncated</code> response element will be set to <code>true</code>.
-        /// This parameter is optional. If you do not include it, it defaults to 100.
+        /// This parameter is optional. If you do not include it, it defaults to 100. 
         /// </para>
         /// </summary>
         public int MaxItems
@@ -93,13 +93,14 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PathPrefix. 
         /// <para>
-        /// The path prefix for filtering the results. For example: <code>/company/servercerts</code>
+        ///  The path prefix for filtering the results. For example: <code>/company/servercerts</code>
         /// would get all server certificates for which the path starts with <code>/company/servercerts</code>.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// This parameter is optional. If it is not included, it defaults to a slash (/), listing
-        /// all server certificates.
+        ///  This parameter is optional. If it is not included, it defaults to a slash (/), listing
+        /// all server certificates. 
         /// </para>
         /// </summary>
         public string PathPrefix

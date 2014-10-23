@@ -30,21 +30,20 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the CopyClusterSnapshot operation.
     /// Copies the specified automated cluster snapshot to a new manual cluster snapshot.
-    ///         The source must be an automated snapshot and it must be in the available state.
-    ///        
+    /// The source must be an automated snapshot and it must be in the available state. 
     /// 
-    ///         
+    ///  
     /// <para>
-    ///             When you delete a cluster, Amazon Redshift deletes any automated snapshots
-    ///             of the cluster. Also, when the retention period of the snapshot expires,
-    ///            Amazon Redshift automatically deletes it. If you want to keep an      
-    ///       automated snapshot for a longer period, you can make a manual            copy
-    /// of the snapshot. Manual snapshots are retained until you delete them.         
+    ///  When you delete a cluster, Amazon Redshift deletes any automated snapshots of the
+    /// cluster. Also, when the retention period of the snapshot expires, Amazon Redshift
+    /// automatically deletes it. If you want to keep an automated snapshot for a longer period,
+    /// you can make a manual copy of the snapshot. Manual snapshots are retained until you
+    /// delete them. 
     /// </para>
-    ///         
+    ///  
     /// <para>
-    /// For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
-    /// Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i>.
+    ///  For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+    /// Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i>. 
     /// </para>
     /// </summary>
     public partial class CopyClusterSnapshotRequest : AmazonRedshiftRequest
@@ -56,16 +55,15 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SourceSnapshotClusterIdentifier. 
         /// <para>
-        ///             The identifier of the cluster the source snapshot was created from. This
-        /// parameter is required if your IAM user has a policy containing a snapshot resource
-        /// element that specifies anything other than * for the cluster name.        
+        ///  The identifier of the cluster the source snapshot was created from. This parameter
+        /// is required if your IAM user has a policy containing a snapshot resource element that
+        /// specifies anything other than * for the cluster name. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///         <ul>            <li>Must be the identifier for a valid cluster.</li>     
-        ///   </ul>
+        ///  <ul> <li>Must be the identifier for a valid cluster.</li> </ul>
         /// </summary>
         public string SourceSnapshotClusterIdentifier
         {
@@ -82,14 +80,14 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SourceSnapshotIdentifier. 
         /// <para>
-        ///         The identifier for the source snapshot.        
+        ///  The identifier for the source snapshot. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///         <ul>            <li>Must be the identifier for a valid automated snapshot
-        /// whose state is <code>available</code>.</li>        </ul>
+        ///  <ul> <li>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</li>
+        /// </ul>
         /// </summary>
         public string SourceSnapshotIdentifier
         {
@@ -106,17 +104,16 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property TargetSnapshotIdentifier. 
         /// <para>
-        ///         The identifier given to the new manual snapshot.        
+        ///  The identifier given to the new manual snapshot. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///         <ul>            <li>Cannot be null, empty, or blank.</li>            <li>Must
-        /// contain from 1 to 255 alphanumeric characters or hyphens.</li>            <li>First
-        /// character must be a letter.</li>            <li>Cannot end with a hyphen or contain
-        /// two consecutive hyphens.</li>            <li>Must be unique for the AWS account that
-        /// is making the request.</li>        </ul>
+        ///  <ul> <li>Cannot be null, empty, or blank.</li> <li>Must contain from 1 to 255 alphanumeric
+        /// characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot
+        /// end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for
+        /// the AWS account that is making the request.</li> </ul>
         /// </summary>
         public string TargetSnapshotIdentifier
         {

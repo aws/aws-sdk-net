@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// The PasswordPolicy data type contains information about the account password policy.
+    /// Contains information about the account password policy.
     /// 
     ///  
     /// <para>
-    ///  This data type is used as a response element in the action <a>GetAccountPasswordPolicy</a>.
-    /// 
+    ///  This data type is used as a response element in the <a>GetAccountPasswordPolicy</a>
+    /// action. 
     /// </para>
     /// </summary>
     public partial class PasswordPolicy

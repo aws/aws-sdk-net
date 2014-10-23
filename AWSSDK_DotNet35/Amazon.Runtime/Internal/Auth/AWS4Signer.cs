@@ -31,6 +31,9 @@ namespace Amazon.Runtime.Internal.Auth
     {
         public const string Scheme = "AWS4";
         public const string Algorithm = "HMAC-SHA256";
+
+        public const string AWS4AlgorithmTag = Scheme + "-" + Algorithm;
+
         public const string Terminator = "aws4_request";
         public static readonly byte[] TerminatorBytes = Encoding.UTF8.GetBytes(Terminator);
 
@@ -338,8 +341,11 @@ namespace Amazon.Runtime.Internal.Auth
                 if (request.Headers.ContainsKey(HeaderKeys.ContentEncodingHeader))
                 {
                     var originalEncoding = request.Headers[HeaderKeys.ContentEncodingHeader];
-                    request.Headers[HeaderKeys.ContentEncodingHeader] 
+                    if (!originalEncoding.Contains(AWSChunkedEncoding))
+                    {
+                        request.Headers[HeaderKeys.ContentEncodingHeader]
                         = string.Concat(originalEncoding, ", ", AWSChunkedEncoding);
+                    }
                 }
                 else
                     request.Headers[HeaderKeys.ContentEncodingHeader] = AWSChunkedEncoding;
@@ -901,7 +907,7 @@ namespace Amazon.Runtime.Internal.Auth
             var canonicalizedHeaderNames = CanonicalizeHeaderNames(sortedHeaders);
 
             var parametersToCanonicalize = GetParametersToCanonicalize(request);
-            parametersToCanonicalize.Add(XAmzAlgorithm, string.Format(CultureInfo.InvariantCulture, "{0}-{1}", Scheme, Algorithm));
+            parametersToCanonicalize.Add(XAmzAlgorithm, AWS4AlgorithmTag);
             parametersToCanonicalize.Add(XAmzCredential,
                                          string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}/{4}",
                                                        awsAccessKeyId,
@@ -1061,10 +1067,10 @@ namespace Amazon.Runtime.Internal.Auth
             get
             {
                 var authorizationHeader = new StringBuilder();
-                authorizationHeader.AppendFormat("{0}-{1} ", AWS4Signer.Scheme, AWS4Signer.Algorithm);
-                authorizationHeader.AppendFormat("{0}={1}/{2}, ", AWS4Signer.Credential, AccessKeyId, Scope);
-                authorizationHeader.AppendFormat("{0}={1}, ", AWS4Signer.SignedHeaders, SignedHeaders);
-                authorizationHeader.AppendFormat("{0}={1}", AWS4Signer.Signature, Signature);
+                authorizationHeader.Append(AWS4Signer.AWS4AlgorithmTag);
+                authorizationHeader.AppendFormat(" {0}={1}/{2},", AWS4Signer.Credential, AccessKeyId, Scope);
+                authorizationHeader.AppendFormat(" {0}={1},", AWS4Signer.SignedHeaders, SignedHeaders);
+                authorizationHeader.AppendFormat(" {0}={1}", AWS4Signer.Signature, Signature);
 
                 return authorizationHeader.ToString();
             }
@@ -1081,7 +1087,7 @@ namespace Amazon.Runtime.Internal.Auth
 
                 authParams.AppendFormat("{0}={1}",
                                         AWS4PreSignedUrlSigner.XAmzAlgorithm,
-                                        string.Format(CultureInfo.InvariantCulture, "{0}-{1}", AWS4Signer.Scheme, AWS4Signer.Algorithm));
+                                        AWS4Signer.AWS4AlgorithmTag);
                 authParams.AppendFormat("&{0}={1}",
                                         AWS4PreSignedUrlSigner.XAmzCredential,
                                         string.Format(CultureInfo.InvariantCulture, "{0}/{1}", AccessKeyId, Scope));

@@ -29,21 +29,21 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSigningCertificate operation.
-    /// Changes the status of the specified signing certificate from active to disabled, or
-    /// vice versa. This action can be used to disable a user's signing certificate as part
-    /// of a certificate rotation work flow.
+    /// Changes the status of the specified signing certificate from active to disabled,
+    /// or vice versa. This action can be used to disable a user's signing certificate as
+    /// part of a certificate rotation work flow. 
     /// 
     ///  
     /// <para>
-    /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
+    ///  If the <code>UserName</code> field is not specified, the UserName is determined implicitly
     /// based on the AWS access key ID used to sign the request. Because this action works
-    /// for access keys under the AWS account, this API can be used to manage root credentials
-    /// even if the AWS account has no associated users.
+    /// for access keys under the AWS account, you can use this action to manage root credentials
+    /// even if the AWS account has no associated users. 
     /// </para>
     ///  
     /// <para>
-    /// For information about rotating certificates, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
-    /// Keys and Certificates</a> in the <i>Using IAM</i> guide.
+    ///  For information about rotating certificates, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
+    /// Keys and Certificates</a> in the <i>Using IAM</i> guide. 
     /// </para>
     /// </summary>
     public partial class UpdateSigningCertificateRequest : AmazonIdentityManagementServiceRequest
@@ -61,7 +61,7 @@ namespace Amazon.IdentityManagement.Model
         /// Instantiates UpdateSigningCertificateRequest with the parameterized properties
         /// </summary>
         /// <param name="certificateId">The ID of the signing certificate you want to update.</param>
-        /// <param name="status">The status you want to assign to the certificate. <code>Active</code> means the certificate can be used for API calls to AWS, while <code>Inactive</code> means the certificate cannot be used.</param>
+        /// <param name="status"> The status you want to assign to the certificate. <code>Active</code> means the certificate can be used for API calls to AWS, while <code>Inactive</code> means the certificate cannot be used. </param>
         public UpdateSigningCertificateRequest(string certificateId, StatusType status)
         {
             _certificateId = certificateId;
@@ -89,9 +89,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status you want to assign to the certificate. <code>Active</code> means the certificate
+        ///  The status you want to assign to the certificate. <code>Active</code> means the certificate
         /// can be used for API calls to AWS, while <code>Inactive</code> means the certificate
-        /// cannot be used.
+        /// cannot be used. 
         /// </para>
         /// </summary>
         public StatusType Status
@@ -109,7 +109,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Name of the user the signing certificate belongs to.
+        /// The name of the user the signing certificate belongs to.
         /// </para>
         /// </summary>
         public string UserName

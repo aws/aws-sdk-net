@@ -59,7 +59,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// Name of the role to update.
+        /// The name of the role to update.
         /// </para>
         /// </summary>
         public string RoleName

@@ -51,6 +51,22 @@ namespace Amazon.Route53Domains
 
         #endregion
                 
+        #region  DisableDomainAutoRenew
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableDomainAutoRenew operation.
+        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableDomainAutoRenew operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DisableDomainAutoRenewResponse> DisableDomainAutoRenewAsync(DisableDomainAutoRenewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisableDomainTransferLock
 
         /// <summary>
@@ -64,6 +80,22 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DisableDomainTransferLockResponse> DisableDomainTransferLockAsync(DisableDomainTransferLockRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  EnableDomainAutoRenew
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableDomainAutoRenew operation.
+        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableDomainAutoRenew operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<EnableDomainAutoRenewResponse> EnableDomainAutoRenewAsync(EnableDomainAutoRenewRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

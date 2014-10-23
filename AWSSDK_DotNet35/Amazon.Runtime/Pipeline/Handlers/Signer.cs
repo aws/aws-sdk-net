@@ -55,7 +55,7 @@ namespace Amazon.Runtime.Internal
         /// Signs the request.
         /// </summary>
         /// <param name="requestContext">The request context.</param>
-        private static void SignRequest(IRequestContext requestContext)
+        internal static void SignRequest(IRequestContext requestContext)
         {
             ImmutableCredentials immutableCredentials = requestContext.ImmutableCredentials;
 

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,6 +35,12 @@ namespace Amazon.EC2.Model
     /// and current Spot Instance requests. For more information about Spot Instances, see
     /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">Spot
     /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// 
+    ///  
+    /// <para>
+    /// Users must be subscribed to the required product to run an instance with AWS Marketplace
+    /// product codes.
+    /// </para>
     /// </summary>
     public partial class RequestSpotInstancesRequest : AmazonEC2Request
     {

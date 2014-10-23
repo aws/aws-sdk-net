@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -128,9 +128,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The number of I/O operations per second (IOPS) that the volume supports. This parameter
-        /// is not used with Magnetic or General Purpose (SSD) volumes, but is required when the
-        /// volume type is <code>io1</code>.
+        /// Only valid for Provisioned IOPS (SSD) volumes. The number of I/O operations per second
+        /// (IOPS) to provision for the volume.
         /// </para>
         /// </summary>
         public int Iops

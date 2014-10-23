@@ -29,14 +29,14 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the RevokeSnapshotAccess operation.
-    /// Removes the ability of the specified AWS customer account to restore the
-    /// specified snapshot.            If the account is currently restoring the snapshot,
-    /// the restore will run to completion.        
+    /// Removes the ability of the specified AWS customer account to restore the specified
+    /// snapshot. If the account is currently restoring the snapshot, the restore will run
+    /// to completion. 
     /// 
-    ///         
+    ///  
     /// <para>
-    /// For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
-    /// Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i>.
+    ///  For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+    /// Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i>. 
     /// </para>
     /// </summary>
     public partial class RevokeSnapshotAccessRequest : AmazonRedshiftRequest
@@ -48,8 +48,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AccountWithRestoreAccess. 
         /// <para>
-        ///             The identifier of the AWS customer account that can no longer restore
-        /// the specified snapshot.         
+        ///  The identifier of the AWS customer account that can no longer restore the specified
+        /// snapshot. 
         /// </para>
         /// </summary>
         public string AccountWithRestoreAccess
@@ -67,9 +67,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SnapshotClusterIdentifier. 
         /// <para>
-        ///             The identifier of the cluster the snapshot was created from. This parameter
-        /// is required if your IAM user has a policy containing a snapshot resource element that
-        /// specifies anything other than * for the cluster name.        
+        ///  The identifier of the cluster the snapshot was created from. This parameter is required
+        /// if your IAM user has a policy containing a snapshot resource element that specifies
+        /// anything other than * for the cluster name. 
         /// </para>
         /// </summary>
         public string SnapshotClusterIdentifier
@@ -87,8 +87,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SnapshotIdentifier. 
         /// <para>
-        ///             The identifier of the snapshot that the account can no longer access.
-        ///         
+        ///  The identifier of the snapshot that the account can no longer access. 
         /// </para>
         /// </summary>
         public string SnapshotIdentifier

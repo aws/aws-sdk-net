@@ -44,7 +44,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates DeleteUserRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">Name of the user to delete.</param>
+        /// <param name="userName">The name of the user to delete.</param>
         public DeleteUserRequest(string userName)
         {
             _userName = userName;
@@ -53,7 +53,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Name of the user to delete.
+        /// The name of the user to delete.
         /// </para>
         /// </summary>
         public string UserName

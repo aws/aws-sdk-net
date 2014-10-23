@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,8 +29,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableVgwRoutePropagation operation.
-    /// Enables a virtual private gateway (VGW) to propagate routes to the routing tables
-    /// of a VPC.
+    /// Enables a virtual private gateway (VGW) to propagate routes to the specified route
+    /// table of a VPC.
     /// </summary>
     public partial class EnableVgwRoutePropagationRequest : AmazonEC2Request
     {
@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RouteTableId. 
         /// <para>
-        /// The ID of the routing table.
+        /// The ID of the route table.
         /// </para>
         /// </summary>
         public string RouteTableId

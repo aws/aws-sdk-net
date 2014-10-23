@@ -41,7 +41,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceProfileName. 
         /// <para>
-        /// Name of the instance profile to get information about.
+        /// The name of the instance profile to get information about.
         /// </para>
         /// </summary>
         public string InstanceProfileName

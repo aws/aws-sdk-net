@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -71,7 +71,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpPermissions. 
         /// <para>
-        /// 
+        /// A set of IP permissions. You can't specify a destination security group and a CIDR
+        /// IP address range.
         /// </para>
         /// </summary>
         public List<IpPermission> IpPermissions

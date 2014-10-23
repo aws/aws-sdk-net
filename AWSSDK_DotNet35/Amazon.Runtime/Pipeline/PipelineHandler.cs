@@ -29,7 +29,7 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// The logger used to log messages.
         /// </summary>
-        public ILogger Logger { get; set; }
+        public virtual ILogger Logger { get; set; }
 
         /// <summary>
         /// The inner handler which is called after the current 

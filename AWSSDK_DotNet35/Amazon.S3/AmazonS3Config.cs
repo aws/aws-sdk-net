@@ -32,6 +32,7 @@ namespace Amazon.S3
         public AmazonS3Config()
         {
             this.AuthenticationServiceName = "s3";
+            this.AllowAutoRedirect = false;
 #if BCL45
             // Set Timeout and ReadWriteTimeout for S3 to max timeout as per-request
             // timeouts are not supported.

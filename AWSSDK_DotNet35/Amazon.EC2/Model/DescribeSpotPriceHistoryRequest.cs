@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -45,6 +45,13 @@ namespace Amazon.EC2.Model
     /// earlier than 2011-05-15, you get the lowest price across the region for the specified
     /// time period. The prices returned are listed in chronological order, from the oldest
     /// to the most recent.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you specify the start and end time options, this operation returns two pieces
+    /// of data: the prices of the instance types within the time range that you specified
+    /// and the time when the price changed. The price is valid within the time period that
+    /// you specified; the response merely indicates the last time that the price changed.
     /// </para>
     /// </summary>
     public partial class DescribeSpotPriceHistoryRequest : AmazonEC2Request

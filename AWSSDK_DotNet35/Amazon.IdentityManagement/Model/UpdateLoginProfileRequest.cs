@@ -30,6 +30,13 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the UpdateLoginProfile operation.
     /// Changes the password for the specified user.
+    /// 
+    ///  
+    /// <para>
+    /// Users can change their own passwords by calling <a>ChangePassword</a>. For more information
+    /// about modifying passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
+    /// Passwords</a> in the <i>Using IAM</i> guide. 
+    /// </para>
     /// </summary>
     public partial class UpdateLoginProfileRequest : AmazonIdentityManagementServiceRequest
     {
@@ -45,7 +52,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates UpdateLoginProfileRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">Name of the user whose password you want to update.</param>
+        /// <param name="userName">The name of the user whose password you want to update.</param>
         public UpdateLoginProfileRequest(string userName)
         {
             _userName = userName;
@@ -90,7 +97,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Name of the user whose password you want to update.
+        /// The name of the user whose password you want to update.
         /// </para>
         /// </summary>
         public string UserName

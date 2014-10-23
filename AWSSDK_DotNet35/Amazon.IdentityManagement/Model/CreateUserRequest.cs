@@ -33,8 +33,8 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// For information about limitations on the number of users you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-    /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+    ///  For information about limitations on the number of users you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+    /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
     /// </para>
     /// </summary>
     public partial class CreateUserRequest : AmazonIdentityManagementServiceRequest
@@ -50,7 +50,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates CreateUserRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">Name of the user to create.</param>
+        /// <param name="userName">The name of the user to create.</param>
         public CreateUserRequest(string userName)
         {
             _userName = userName;
@@ -59,8 +59,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The path for the user name. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
+        ///  The path for the user name. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         ///  
         /// <para>
@@ -82,7 +82,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Name of the user to create.
+        /// The name of the user to create.
         /// </para>
         /// </summary>
         public string UserName

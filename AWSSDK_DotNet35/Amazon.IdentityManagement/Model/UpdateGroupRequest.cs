@@ -49,7 +49,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates UpdateGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">Name of the group to update. If you're changing the name of the group, this is the original name.</param>
+        /// <param name="groupName"> Name of the group to update. If you're changing the name of the group, this is the original name. </param>
         public UpdateGroupRequest(string groupName)
         {
             _groupName = groupName;
@@ -58,8 +58,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// Name of the group to update. If you're changing the name of the group, this is the
-        /// original name.
+        ///  Name of the group to update. If you're changing the name of the group, this is the
+        /// original name. 
         /// </para>
         /// </summary>
         public string GroupName

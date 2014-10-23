@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -94,7 +94,15 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VirtualName. 
         /// <para>
-        /// The virtual device name.
+        /// The virtual device name (ephemeral[0..3]). The number of available instance store
+        /// volumes depends on the instance type. After you connect to the instance, you must
+        /// mount the volume.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: For M3 instances, you must specify instance store volumes in the block
+        /// device mapping for the instance. When you launch an M3 instance, we ignore any instance
+        /// store volumes specified in the block device mapping for the AMI.
         /// </para>
         /// </summary>
         public string VirtualName

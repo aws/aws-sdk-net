@@ -58,8 +58,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property NewPath. 
         /// <para>
-        /// The new path for the server certificate. Include this only if you are updating the
-        /// server certificate's path.
+        ///  The new path for the server certificate. Include this only if you are updating the
+        /// server certificate's path. 
         /// </para>
         /// </summary>
         public string NewPath
@@ -77,8 +77,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property NewServerCertificateName. 
         /// <para>
-        /// The new name for the server certificate. Include this only if you are updating the
-        /// server certificate's name.
+        ///  The new name for the server certificate. Include this only if you are updating the
+        /// server certificate's name. 
         /// </para>
         /// </summary>
         public string NewServerCertificateName

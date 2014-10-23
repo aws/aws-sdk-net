@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -50,6 +50,14 @@ namespace Amazon.EC2.Model
     /// <para>
     /// If you add more than one subnet to a VPC, they're set up in a star topology with a
     /// logical router in the middle.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
+    /// doesn't change if you stop and restart the instance (unlike a similar instance launched
+    /// outside a VPC, which gets a new IP address when restarted). It's therefore possible
+    /// to have a subnet with no running instances (they're all stopped), but no remaining
+    /// IP addresses available.
     /// </para>
     ///  
     /// <para>

@@ -141,6 +141,7 @@
     <EmbeddedResource Include="Runtime\TestResponses\EtsListPresetsResponse.txt" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Runtime\TestResponses\S3200WithErrorResponse.txt" />
     <Content Include="Runtime\TestResponses\GetObjectResponse.txt" />
   </ItemGroup>
   <Choose>

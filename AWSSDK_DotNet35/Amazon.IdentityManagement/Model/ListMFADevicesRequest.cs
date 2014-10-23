@@ -32,12 +32,12 @@ namespace Amazon.IdentityManagement.Model
     /// Lists the MFA devices. If the request includes the user name, then this action lists
     /// all the MFA devices associated with the specified user name. If you do not specify
     /// a user name, IAM determines the user name implicitly based on the AWS access key ID
-    /// signing the request.
+    /// signing the request. 
     /// 
     ///  
     /// <para>
-    /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-    /// parameters.
+    ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+    /// parameters. 
     /// </para>
     /// </summary>
     public partial class ListMFADevicesRequest : AmazonIdentityManagementServiceRequest
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates ListMFADevicesRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">Name of the user whose MFA devices you want to list.</param>
+        /// <param name="userName">The name of the user whose MFA devices you want to list.</param>
         public ListMFADevicesRequest(string userName)
         {
             _userName = userName;
@@ -63,9 +63,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// Use this only when paginating results, and only in a subsequent request after you've
+        ///  Use this only when paginating results, and only in a subsequent request after you've
         /// received a response where the results are truncated. Set it to the value of the <code>Marker</code>
-        /// element in the response you just received.
+        /// element in the response you just received. 
         /// </para>
         /// </summary>
         public string Marker
@@ -83,10 +83,10 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// Use this only when paginating results to indicate the maximum number of MFA devices
+        ///  Use this only when paginating results to indicate the maximum number of MFA devices
         /// you want in the response. If there are additional MFA devices beyond the maximum you
         /// specify, the <code>IsTruncated</code> response element is <code>true</code>. This
-        /// parameter is optional. If you do not include it, it defaults to 100.
+        /// parameter is optional. If you do not include it, it defaults to 100. 
         /// </para>
         /// </summary>
         public int MaxItems
@@ -104,7 +104,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Name of the user whose MFA devices you want to list.
+        /// The name of the user whose MFA devices you want to list.
         /// </para>
         /// </summary>
         public string UserName

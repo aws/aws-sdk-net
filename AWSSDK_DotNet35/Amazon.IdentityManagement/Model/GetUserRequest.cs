@@ -29,13 +29,13 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetUser operation.
-    /// Retrieves information about the specified user, including the user's path, unique
-    /// ID, and ARN.
+    /// Retrieves information about the specified user, including the user's creation date,
+    /// path, unique ID, and ARN. 
     /// 
     ///  
     /// <para>
     /// If you do not specify a user name, IAM determines the user name implicitly based on
-    /// the AWS access key ID signing the request.
+    /// the AWS access key ID used to sign the request. 
     /// </para>
     /// </summary>
     public partial class GetUserRequest : AmazonIdentityManagementServiceRequest
@@ -50,7 +50,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Name of the user to get information about.
+        /// The name of the user to get information about.
         /// </para>
         ///  
         /// <para>

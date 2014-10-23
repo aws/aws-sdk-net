@@ -38,6 +38,7 @@ namespace Amazon.S3.Util
         internal const int DefaultBufferSize = 8192;
 
         internal const string S3DefaultEndpoint = "s3.amazonaws.com";
+        internal const string S3AlternateDefaultEndpoint = "s3-external-1.amazonaws.com";
 
         // Bucket Validation constants
         internal const int MinBucketLength = 3;

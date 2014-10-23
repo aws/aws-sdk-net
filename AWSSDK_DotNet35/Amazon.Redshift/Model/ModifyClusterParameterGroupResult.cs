@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Contains the output from the         <a>ModifyClusterParameterGroup</a> and <a>ResetClusterParameterGroup</a>
-    /// actions and            indicate the parameter group involved and the status of the
-    /// operation on the             parameter group.
+    /// Contains the output from the <a>ModifyClusterParameterGroup</a> and <a>ResetClusterParameterGroup</a>
+    /// actions and indicate the parameter group involved and the status of the operation
+    /// on the parameter group.
     /// </summary>
     public partial class ModifyClusterParameterGroupResult : AmazonWebServiceResponse
     {
@@ -40,7 +40,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterGroupName. 
         /// <para>
-        ///         The name of the cluster parameter group.        
+        ///  The name of the cluster parameter group. 
         /// </para>
         /// </summary>
         public string ParameterGroupName
@@ -58,9 +58,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterGroupStatus. 
         /// <para>
-        ///         The status of the parameter group. For example, if you made        a change
-        /// to a parameter group name-value pair, then the change could be pending        a reboot
-        /// of an associated cluster.        
+        ///  The status of the parameter group. For example, if you made a change to a parameter
+        /// group name-value pair, then the change could be pending a reboot of an associated
+        /// cluster. 
         /// </para>
         /// </summary>
         public string ParameterGroupStatus

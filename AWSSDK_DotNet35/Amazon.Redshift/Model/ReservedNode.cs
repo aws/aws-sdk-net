@@ -66,7 +66,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        ///     The duration of the node reservation in seconds.    
+        ///  The duration of the node reservation in seconds. 
         /// </para>
         /// </summary>
         public int Duration
@@ -84,7 +84,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property FixedPrice. 
         /// <para>
-        ///     The fixed cost Amazon Redshift charged you for this reserved node.    
+        ///  The fixed cost Amazon Redshift charged you for this reserved node. 
         /// </para>
         /// </summary>
         public double FixedPrice
@@ -102,7 +102,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NodeCount. 
         /// <para>
-        ///     The number of reserved compute nodes.    
+        ///  The number of reserved compute nodes. 
         /// </para>
         /// </summary>
         public int NodeCount
@@ -120,7 +120,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
-        ///     The node type of the reserved node.    
+        ///  The node type of the reserved node. 
         /// </para>
         /// </summary>
         public string NodeType
@@ -175,7 +175,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ReservedNodeId. 
         /// <para>
-        ///     The unique identifier for the reservation.    
+        ///  The unique identifier for the reservation. 
         /// </para>
         /// </summary>
         public string ReservedNodeId
@@ -193,7 +193,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ReservedNodeOfferingId. 
         /// <para>
-        ///     The identifier for the reserved node offering.    
+        ///  The identifier for the reserved node offering. 
         /// </para>
         /// </summary>
         public string ReservedNodeOfferingId
@@ -211,8 +211,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///     The time the reservation started. You purchase a reserved node offering for a
-        /// duration. This is the start     time of that duration.    
+        ///  The time the reservation started. You purchase a reserved node offering for a duration.
+        /// This is the start time of that duration. 
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -230,17 +230,16 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        ///     The state of the reserved Compute Node.     
+        ///  The state of the reserved Compute Node. 
         /// </para>
-        ///        
+        ///  
         /// <para>
         /// Possible Values:
         /// </para>
-        ///        <ul>           <li>pending-payment-This reserved node has recently been purchased,
-        /// and the sale                has been approved, but payment has not yet been confirmed.</li>
-        ///           <li>active-This reserved node is owned by the caller and is available for
-        /// use.</li>           <li>payment-failed-Payment failed for the purchase attempt.</li>
-        ///       </ul>
+        ///  <ul> <li>pending-payment-This reserved node has recently been purchased, and the
+        /// sale has been approved, but payment has not yet been confirmed.</li> <li>active-This
+        /// reserved node is owned by the caller and is available for use.</li> <li>payment-failed-Payment
+        /// failed for the purchase attempt.</li> </ul>
         /// </summary>
         public string State
         {
@@ -257,7 +256,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property UsagePrice. 
         /// <para>
-        ///     The hourly rate Amazon Redshift charge you for this reserved node.    
+        ///  The hourly rate Amazon Redshift charge you for this reserved node. 
         /// </para>
         /// </summary>
         public double UsagePrice

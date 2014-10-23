@@ -29,14 +29,26 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCluster operation.
-    /// Deletes a previously provisioned cluster. A successful response      
-    ///      from the web service indicates that the request was received correctly. If a
-    /// final cluster snapshot is requested            the status of the cluster will be "final-snapshot"
-    /// while the snapshot is being taken, then it's "deleting" once Amazon Redshift begins
-    /// deleting the cluster. Use <a>DescribeClusters</a>             to monitor the status
-    /// of the deletion. The delete operation cannot be canceled or reverted once submitted.
-    ///             For more information about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-    /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i>.
+    /// Deletes a previously provisioned cluster. A successful response from the web service
+    /// indicates that the request was received correctly. Use <a>DescribeClusters</a> to
+    /// monitor the status of the deletion. The delete operation cannot be canceled or reverted
+    /// once submitted. For more information about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i> . 
+    /// 
+    ///  
+    /// <para>
+    ///  If you want to shut down the cluster and retain it for future use, set <i>SkipFinalClusterSnapshot</i>
+    /// to <code>false</code> and specify a name for <i>FinalClusterSnapshotIdentifier</i>.
+    /// You can later restore this snapshot to resume using the cluster. If a final cluster
+    /// snapshot is requested, the status of the cluster will be "final-snapshot" while the
+    /// snapshot is being taken, then it's "deleting" once Amazon Redshift begins deleting
+    /// the cluster. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  For more information about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i> . 
+    /// </para>
     /// </summary>
     public partial class DeleteClusterRequest : AmazonRedshiftRequest
     {
@@ -47,16 +59,15 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///             The identifier of the cluster to be deleted.        
+        ///  The identifier of the cluster to be deleted. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///         <ul>            <li>Must contain lowercase characters.</li>            <li>Must
-        /// contain from 1 to 63 alphanumeric characters or hyphens.</li>            <li>First
-        /// character must be a letter.</li>            <li>Cannot end with a hyphen or contain
-        /// two consecutive hyphens.</li>        </ul>
+        ///  <ul> <li>Must contain lowercase characters.</li> <li>Must contain from 1 to 63 alphanumeric
+        /// characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot
+        /// end with a hyphen or contain two consecutive hyphens.</li> </ul>
         /// </summary>
         public string ClusterIdentifier
         {
@@ -73,17 +84,17 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property FinalClusterSnapshotIdentifier. 
         /// <para>
-        ///             The identifier of the final snapshot that is to be created immediately
-        /// before deleting the cluster. If this            parameter is provided, <i>SkipFinalClusterSnapshot</i>
-        /// must be <code>false</code>.        
+        ///  The identifier of the final snapshot that is to be created immediately before deleting
+        /// the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be
+        /// <code>false</code>. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///         <ul>            <li>Must be 1 to 255 alphanumeric characters.</li>       
-        ///     <li>First character must be a letter.</li>            <li>Cannot end with a hyphen
-        /// or contain two consecutive hyphens.</li>        </ul>
+        ///  <ul> <li>Must be 1 to 255 alphanumeric characters.</li> <li>First character must
+        /// be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+        /// </ul>
         /// </summary>
         public string FinalClusterSnapshotIdentifier
         {
@@ -100,13 +111,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SkipFinalClusterSnapshot. 
         /// <para>
-        ///             Determines whether a final snapshot of the cluster is created before Amazon
-        /// Redshift deletes the cluster.             If <code>true</code>, a final cluster snapshot
-        /// is not created.             If <code>false</code>, a final cluster snapshot      
-        ///       is created before the cluster is deleted.        
+        ///  Determines whether a final snapshot of the cluster is created before Amazon Redshift
+        /// deletes the cluster. If <code>true</code>, a final cluster snapshot is not created.
+        /// If <code>false</code>, a final cluster snapshot is created before the cluster is deleted.
+        /// 
         /// </para>
-        ///         <note>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified
-        /// if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</note>        
+        ///  
         /// <para>
         /// Default: <code>false</code>
         /// </para>

@@ -23,6 +23,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Amazon.Runtime
@@ -32,17 +33,7 @@ namespace Amazon.Runtime
     /// </summary>
     public class HttpRequestMessageFactory : IHttpRequestFactory<HttpContent>
     {
-        private bool _disposed;
-        private HttpClient _httpClient;
         private ClientConfig _clientConfig;
-
-        /// <summary>
-        /// Returns the HttpClient used by the request factory.
-        /// </summary>
-        public HttpClient HttpClient
-        {
-            get { return _httpClient; }
-        }
 
         /// <summary>
         /// The constructor for HttpRequestMessageFactory.
@@ -51,7 +42,6 @@ namespace Amazon.Runtime
         public HttpRequestMessageFactory(ClientConfig clientConfig)
         {
             _clientConfig = clientConfig;
-            _httpClient = CreateHttpClient();
         }
 
         /// <summary>
@@ -61,7 +51,7 @@ namespace Amazon.Runtime
         /// <returns>An HTTP request.</returns>
         public IHttpRequest<HttpContent> CreateHttpRequest(Uri requestUri)
         {
-            return new HttpWebRequestMessage(requestUri, _httpClient);
+            return new HttpWebRequestMessage(requestUri, _clientConfig);
         }
 
         /// <summary>
@@ -70,42 +60,11 @@ namespace Amazon.Runtime
         public void Dispose()
         {
             Dispose(true);
-            GC.SuppressFinalize(this);            
+            GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)
-        {
-            if(_disposed)
-                return;
-
-            if (disposing)
-            {
-                if(_httpClient!=null)
-                    _httpClient.Dispose();
-
-                _disposed = true;
-            }
-        }
-
-        protected HttpClient CreateHttpClient()
-        {
-            var httpMessageHandler = new HttpClientHandler();
-
-            if (httpMessageHandler.Proxy != null && _clientConfig.ProxyCredentials != null)
-            {
-                httpMessageHandler.Proxy.Credentials = _clientConfig.ProxyCredentials;
-            }
-
-            var httpClient = new HttpClient(httpMessageHandler);
-            if (_clientConfig.Timeout.HasValue)
-            {
-                // Timeout value is set to ClientConfig.MaxTimeout for S3 and Glacier.
-                // Use default value (100 seconds) for other services.
-                httpClient.Timeout = _clientConfig.Timeout.Value;
-            }
-            // Disable the Expect 100-continue header
-            httpClient.DefaultRequestHeaders.ExpectContinue = false;
-            return httpClient;
+        {            
         }
     }
 
@@ -131,17 +90,25 @@ namespace Amazon.Runtime
         private bool _disposed;
         private HttpRequestMessage _request;
         private HttpClient _httpClient;
+        private ClientConfig _clientConfig;
 
         /// <summary>
         /// The constructor for HttpWebRequestMessage.
         /// </summary>
         /// <param name="requestUri">The request URI.</param>
-        /// <param name="client">The HTTP client used to create requests.</param>
-        public HttpWebRequestMessage(Uri requestUri, HttpClient client)
+        /// <param name="config">The service client config.</param>
+        public HttpWebRequestMessage(Uri requestUri, ClientConfig config)
         {
+            _clientConfig = config;
+            _httpClient = CreateHttpClient();
+
             _request = new HttpRequestMessage();
             _request.RequestUri = requestUri;
-            _httpClient = client;
+        }
+
+        public HttpClient HttpClient
+        {
+            get { return _httpClient; }
         }
 
         /// <summary>
@@ -174,7 +141,7 @@ namespace Amazon.Runtime
         /// </summary>
         /// <param name="requestContext">The request context.</param>
         public void ConfigureRequest(IRequestContext requestContext)
-        {            
+        {
         }
 
         /// <summary>
@@ -202,7 +169,7 @@ namespace Amazon.Runtime
             {
                 return this.GetRequestContentAsync().Result;
             }
-            catch(AggregateException e)
+            catch (AggregateException e)
             {
                 throw e.InnerException;
             }
@@ -218,7 +185,7 @@ namespace Amazon.Runtime
             {
                 return this.GetResponseAsync(System.Threading.CancellationToken.None).Result;
             }
-            catch(AggregateException e)
+            catch (AggregateException e)
             {
                 throw e.InnerException;
             }
@@ -229,7 +196,7 @@ namespace Amazon.Runtime
         /// </summary>
         public void Abort()
         {
-            // NOP since HttRequestMessage does not have a Abort operation.     
+            // NOP since HttRequestMessage does not have an Abort operation.     
         }
 
         /// <summary>
@@ -243,12 +210,23 @@ namespace Amazon.Runtime
             {
                 var responseMessage = await _httpClient.SendAsync(_request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false);
-                if (!responseMessage.IsSuccessStatusCode)
+
+                // If AllowAutoRedirect is set to false, HTTP 3xx responses are returned back as response.
+                if (!_clientConfig.AllowAutoRedirect &&
+                    responseMessage.StatusCode >= HttpStatusCode.Ambiguous &&
+                    responseMessage.StatusCode < HttpStatusCode.BadRequest)
                 {
-                    throw new Amazon.Runtime.Internal.HttpErrorResponseException(new HttpClientResponseData(responseMessage));
+                    return new HttpClientResponseData(responseMessage, _httpClient);
                 }
 
-                return new HttpClientResponseData(responseMessage);
+                if (!responseMessage.IsSuccessStatusCode)
+                {
+                    // For all responses other than HTTP 2xx, return an exception.
+                    throw new Amazon.Runtime.Internal.HttpErrorResponseException(
+                        new HttpClientResponseData(responseMessage, _httpClient));
+                }
+
+                return new HttpClientResponseData(responseMessage, _httpClient);
             }
             catch (HttpRequestException e)
             {
@@ -267,10 +245,11 @@ namespace Amazon.Runtime
         /// <param name="contentHeaders">HTTP content headers.</param>
         /// <param name="bufferSize">The size of the buffer used to read and transfer the stream.</param>
         public void WriteToRequestBody(HttpContent requestContent, Stream contentStream,
-            IDictionary<string,string> contentHeaders, int bufferSize)
+            IDictionary<string, string> contentHeaders, int bufferSize)
         {
-            _request.Content = new StreamContent(contentStream, bufferSize);
-            _request.Content.Headers.ContentLength = contentStream.Length; 
+            var wrapperStream = new Amazon.Runtime.Internal.Util.NonDisposingWrapperStream(contentStream);
+            _request.Content = new StreamContent(wrapperStream, bufferSize);
+            _request.Content.Headers.ContentLength = contentStream.Length;
             WriteContentHeaders(contentHeaders);
         }
 
@@ -281,10 +260,10 @@ namespace Amazon.Runtime
         /// <param name="content">The content stream to be written.</param>
         /// <param name="contentHeaders">HTTP content headers.</param>
         public void WriteToRequestBody(HttpContent requestContent,
-            byte[] content, IDictionary<string,string> contentHeaders)
+            byte[] content, IDictionary<string, string> contentHeaders)
         {
             _request.Content = new ByteArrayContent(content);
-            _request.Content.Headers.ContentLength = content.Length; 
+            _request.Content.Headers.ContentLength = content.Length;
             WriteContentHeaders(contentHeaders);
         }
 
@@ -295,7 +274,7 @@ namespace Amazon.Runtime
         public System.Threading.Tasks.Task<HttpContent> GetRequestContentAsync()
         {
             return System.Threading.Tasks.Task.FromResult(_request.Content);
-        }        
+        }
 
 
         private void WriteContentHeaders(IDictionary<string, string> contentHeaders)
@@ -322,7 +301,7 @@ namespace Amazon.Runtime
             DateTime expires;
             if (contentHeaders.ContainsKey(HeaderKeys.Expires) &&
                 DateTime.TryParse(contentHeaders[HeaderKeys.Expires], CultureInfo.InvariantCulture, DateTimeStyles.None, out expires))
-            _request.Content.Headers.Expires = expires;
+                _request.Content.Headers.Expires = expires;
         }
 
         /// <summary>
@@ -332,6 +311,36 @@ namespace Amazon.Runtime
         {
             Dispose(true);
             GC.SuppressFinalize(this);
+        }
+
+        private HttpClient CreateHttpClient()
+        {
+            var httpMessageHandler = new HttpClientHandler();
+
+            // If HttpClientHandler.AllowAutoRedirect is set to true (default value),
+            // redirects for GET requests are automatically followed and redirects for POST
+            // requests are thrown back as exceptions.
+
+            // If HttpClientHandler.AllowAutoRedirect is set to false (e.g. S3),
+            // redirects are returned as responses.
+            httpMessageHandler.AllowAutoRedirect = _clientConfig.AllowAutoRedirect;
+
+            if (httpMessageHandler.Proxy != null && _clientConfig.ProxyCredentials != null)
+            {
+                httpMessageHandler.Proxy.Credentials = _clientConfig.ProxyCredentials;
+            }
+
+            var httpClient = new HttpClient(httpMessageHandler);
+            if (_clientConfig.Timeout.HasValue)
+            {
+                // Timeout value is set to ClientConfig.MaxTimeout for S3 and Glacier.
+                // Use default value (100 seconds) for other services.
+                httpClient.Timeout = _clientConfig.Timeout.Value;
+            }
+            // Disable the Expect 100-continue header
+            httpClient.DefaultRequestHeaders.ExpectContinue = false;
+
+            return httpClient;
         }
 
         protected virtual void Dispose(bool disposing)

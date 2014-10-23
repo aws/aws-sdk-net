@@ -31,14 +31,14 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the RemoveRoleFromInstanceProfile operation.
     /// Removes the specified role from the specified instance profile.
     /// 
-    ///  <important>Make sure you do not have any Amazon EC2 instances running with the role
+    ///  <important> Make sure you do not have any Amazon EC2 instances running with the role
     /// you are about to remove from the instance profile. Removing a role from an instance
     /// profile that is associated with a running instance will break any applications running
-    /// on the instance.</important> 
+    /// on the instance. </important> 
     /// <para>
-    /// For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+    ///  For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
     /// with Roles</a>. For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-    /// Instance Profiles</a>.
+    /// Instance Profiles</a>. 
     /// </para>
     /// </summary>
     public partial class RemoveRoleFromInstanceProfileRequest : AmazonIdentityManagementServiceRequest
@@ -49,7 +49,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceProfileName. 
         /// <para>
-        /// Name of the instance profile to update.
+        /// The name of the instance profile to update.
         /// </para>
         /// </summary>
         public string InstanceProfileName
@@ -67,7 +67,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// Name of the role to remove.
+        /// The name of the role to remove.
         /// </para>
         /// </summary>
         public string RoleName

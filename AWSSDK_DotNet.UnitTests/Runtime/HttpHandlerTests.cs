@@ -278,10 +278,14 @@ namespace AWSSDK.UnitTests
             public Amazon.Runtime.Internal.Transform.IWebResponseData GetResponse()
             {
                 if (this.GetResponseAction!=null)                
-                    this.GetResponseAction();                
+                    this.GetResponseAction();
+
+                // Extract the last segment of the URI, this is the custom URI 
+                // sent by the unit tests.
+                var resourceName = this.RequestUri.Host.Split('.').Last();
 
                 return new HttpWebRequestResponseData(
-                    MockWebResponse.CreateFromResource(this.RequestUri.Host)
+                    MockWebResponse.CreateFromResource(resourceName)
                     as HttpWebResponse);
             }
 

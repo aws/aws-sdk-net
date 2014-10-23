@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         /// </li> <li>
         /// <para>
         /// <code>AssumeRolePolicySizeQuota</code> - Maximum allowed size for assume role policy
-        /// documents (in kilobytes) 
+        /// documents (in kilobytes)
         /// </para>
         /// </li> <li>
         /// <para>
@@ -67,7 +67,8 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// <code>GroupsPerUserQuota</code> - Maximum number of groups a user can belong to
+        /// <code>GroupsPerUserQuota</code> - Maximum number of groups an IAM user can belong
+        /// to
         /// </para>
         /// </li> <li>
         /// <para>
@@ -94,7 +95,7 @@ namespace Amazon.IdentityManagement.Model
         /// </li> <li>
         /// <para>
         /// <code>RolePolicySizeQuota</code> - Maximum allowed size for role policy documents
-        /// (in kilobytes) 
+        /// (in kilobytes)
         /// </para>
         /// </li> <li>
         /// <para>
@@ -121,7 +122,7 @@ namespace Amazon.IdentityManagement.Model
         /// </li> <li>
         /// <para>
         /// <code>UserPolicySizeQuota</code> - Maximum allowed size for user policy documents
-        /// (in kilobytes) 
+        /// (in kilobytes)
         /// </para>
         /// </li> <li>
         /// <para>

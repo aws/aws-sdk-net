@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         /// Instantiates AuthorizeSecurityGroupIngressRequest with the parameterized properties
         /// </summary>
         /// <param name="groupName">[EC2-Classic, default VPC] The name of the security group.</param>
-        /// <param name="ipPermissions"></param>
+        /// <param name="ipPermissions">A set of IP permissions. You can't specify a source security group and a CIDR IP address range.</param>
         public AuthorizeSecurityGroupIngressRequest(string groupName, List<IpPermission> ipPermissions)
         {
             _groupName = groupName;
@@ -120,7 +120,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpPermissions. 
         /// <para>
-        /// 
+        /// A set of IP permissions. You can't specify a source security group and a CIDR IP address
+        /// range.
         /// </para>
         /// </summary>
         public List<IpPermission> IpPermissions

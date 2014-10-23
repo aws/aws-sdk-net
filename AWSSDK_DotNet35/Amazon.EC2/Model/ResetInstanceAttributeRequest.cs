@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,8 +29,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetInstanceAttribute operation.
-    /// Resets an attribute of an instance to its default value. To reset the kernel or RAM
-    /// disk, the instance must be in a stopped state. To reset the <code>SourceDestCheck</code>,
+    /// Resets an attribute of an instance to its default value. To reset the <code>kernel</code>
+    /// or <code>ramdisk</code>, the instance must be in a stopped state. To reset the <code>SourceDestCheck</code>,
     /// the instance can be either running or stopped.
     /// 
     ///  

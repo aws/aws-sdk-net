@@ -29,9 +29,9 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLoginProfile operation.
-    /// Creates a password for the specified user, giving the user the ability to access AWS
-    /// services through the AWS Management Console. For more information about managing passwords,
-    /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
+    /// Creates a password for the specified user, giving the user the ability to access
+    /// AWS services through the AWS Management Console. For more information about managing
+    /// passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
     /// Passwords</a> in the <i>Using IAM</i> guide.
     /// </summary>
     public partial class CreateLoginProfileRequest : AmazonIdentityManagementServiceRequest
@@ -48,7 +48,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates CreateLoginProfileRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">Name of the user to create a password for.</param>
+        /// <param name="userName">The name of the user to create a password for.</param>
         /// <param name="password">The new password for the user.</param>
         public CreateLoginProfileRequest(string userName, string password)
         {
@@ -77,7 +77,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PasswordResetRequired. 
         /// <para>
-        /// Specifies whether the user is required to set a new password on next sign-in.
+        ///  Specifies whether the user is required to set a new password on next sign-in. 
         /// </para>
         /// </summary>
         public bool PasswordResetRequired
@@ -95,7 +95,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Name of the user to create a password for.
+        /// The name of the user to create a password for.
         /// </para>
         /// </summary>
         public string UserName

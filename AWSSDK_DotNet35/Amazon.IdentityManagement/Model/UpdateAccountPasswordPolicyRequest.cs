@@ -33,8 +33,8 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-    /// an IAM Password Policy</a> in the <i>Using IAM</i> guide.
+    ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+    /// an IAM Password Policy</a> in the <i>Using IAM</i> guide. 
     /// </para>
     /// </summary>
     public partial class UpdateAccountPasswordPolicyRequest : AmazonIdentityManagementServiceRequest
@@ -52,9 +52,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property AllowUsersToChangePassword. 
         /// <para>
-        /// Allows all IAM users in your account to use the AWS Management Console to change their
-        /// own passwords. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-        /// IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i> guide.
+        ///  Allows all IAM users in your account to use the AWS Management Console to change
+        /// their own passwords. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
+        /// IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i> guide. 
         /// </para>
         ///  
         /// <para>
@@ -210,9 +210,19 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RequireSymbols. Specifies whether IAM user passwords must
-        /// contain at least one of the following non-alphanumeric characters: ! @ # $ % ^ &amp;
-        /// * ( ) _ + - = [ ] { } | ' Default value: false
+        /// Gets and sets the property RequireSymbols. 
+        /// <para>
+        /// Specifies whether IAM user passwords must contain at least one of the following non-alphanumeric
+        /// characters:
+        /// </para>
+        ///  
+        /// <para>
+        /// ! @ # $ % ^ &amp;amp; * ( ) _ + - = [ ] { } | '
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: false
+        /// </para>
         /// </summary>
         public bool RequireSymbols
         {

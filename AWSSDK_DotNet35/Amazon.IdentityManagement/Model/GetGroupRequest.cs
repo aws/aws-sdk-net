@@ -46,7 +46,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates GetGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">Name of the group.</param>
+        /// <param name="groupName">The name of the group.</param>
         public GetGroupRequest(string groupName)
         {
             _groupName = groupName;
@@ -55,7 +55,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// Name of the group.
+        /// The name of the group.
         /// </para>
         /// </summary>
         public string GroupName
@@ -73,9 +73,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// Use this only when paginating results, and only in a subsequent request after you've
+        ///  Use this only when paginating results, and only in a subsequent request after you've
         /// received a response where the results are truncated. Set it to the value of the <code>Marker</code>
-        /// element in the response you just received.
+        /// element in the response you just received. 
         /// </para>
         /// </summary>
         public string Marker
@@ -93,10 +93,10 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// Use this only when paginating results to indicate the maximum number of user names
-        /// you want in the response. If there are additional user names beyond the maximum you
-        /// specify, the <code>IsTruncated</code> response element is <code>true</code>. This
-        /// parameter is optional. If you do not include it, it defaults to 100.
+        ///  Use this only when paginating results to indicate the maximum number of groups you
+        /// want in the response. If there are additional groups beyond the maximum you specify,
+        /// the <code>IsTruncated</code> response element is <code>true</code>. This parameter
+        /// is optional. If you do not include it, it defaults to 100. 
         /// </para>
         /// </summary>
         public int MaxItems

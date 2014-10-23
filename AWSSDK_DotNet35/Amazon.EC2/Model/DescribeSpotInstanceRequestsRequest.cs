@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -135,46 +135,45 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>launch.network-interface.network-interface-id</code> - The ID of the network
-        /// interface.
+        /// <code>network-interface.network-interface-id</code> - The ID of the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>launch.network-interface.device-index</code> - The index of the device for the
-        /// network interface attachment on the instance.
+        /// <code>network-interface.device-index</code> - The index of the device for the network
+        /// interface attachment on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>launch.network-interface.subnet-id</code> - The ID of the subnet for the instance.
+        /// <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>launch.network-interface.description</code> - A description of the network interface.
+        /// <code>network-interface.description</code> - A description of the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>launch.network-interface.private-ip-address</code> - The primary private IP
-        /// address of the network interface.
+        /// <code>network-interface.private-ip-address</code> - The primary private IP address
+        /// of the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>launch.network-interface.delete-on-termination</code> - Indicates whether the
-        /// network interface is deleted when the instance is terminated.
+        /// <code>network-interface.delete-on-termination</code> - Indicates whether the network
+        /// interface is deleted when the instance is terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>launch.network-interface.group-id</code> - The ID of the security group associated
+        /// <code>network-interface.group-id</code> - The ID of the security group associated
         /// with the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>launch.network-interface.group-name</code> - The name of the security group
-        /// associated with the network interface.
+        /// <code>network-interface.group-name</code> - The name of the security group associated
+        /// with the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>launch.network-interface.addresses.primary</code> - Indicates whether the IP
-        /// address is the primary private IP address.
+        /// <code>network-interface.addresses.primary</code> - Indicates whether the IP address
+        /// is the primary private IP address.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -193,7 +192,10 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// <code>state</code> - The state of the Spot Instance request (<code>open</code> | <code>active</code>
-        /// | <code>closed</code> | <code>cancelled</code> | <code>failed</code>).
+        /// | <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot bid status
+        /// information can help you track your Amazon EC2 Spot Instance requests. For information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
+        /// Spot Requests with Bid Status Codes</a> in the Amazon Elastic Compute Cloud User Guide.
         /// </para>
         ///  </li> <li> 
         /// <para>

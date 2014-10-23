@@ -103,7 +103,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The list of Amazon Redshift event categories specified in the event notification subscription.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Values: Configuration, Management, Monitoring, Security
         /// </para>
@@ -125,7 +125,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The event severity specified in the Amazon Redshift event notification subscription.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Values: ERROR, INFO
         /// </para>
@@ -184,7 +184,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property SourceType. 
         /// <para>
         /// The source type of the events returned the Amazon Redshift event notification, such
-        /// as cluster, or            cluster-snapshot.
+        /// as cluster, or cluster-snapshot.
         /// </para>
         /// </summary>
         public string SourceType
@@ -204,15 +204,14 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The status of the Amazon Redshift event notification subscription.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///         <ul>            <li>Can be one of the following: active | no-permission |
-        /// topic-not-exist</li>            <li>The status "no-permission" indicates that Amazon
-        /// Redshift no longer has permission to post                to the Amazon SNS topic.
-        /// The status "topic-not-exist" indicates that the topic was deleted                after
-        /// the subscription was created.</li>        </ul>
+        ///  <ul> <li>Can be one of the following: active | no-permission | topic-not-exist</li>
+        /// <li>The status "no-permission" indicates that Amazon Redshift no longer has permission
+        /// to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic
+        /// was deleted after the subscription was created.</li> </ul>
         /// </summary>
         public string Status
         {

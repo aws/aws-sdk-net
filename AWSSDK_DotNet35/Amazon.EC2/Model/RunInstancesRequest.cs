@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -319,9 +319,8 @@ namespace Amazon.EC2.Model
         ///  <important> 
         /// <para>
         /// We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html#pv-grub-a-new-amazon-kernel-image">
-        /// PV-GRUB: A New Amazon Kernel Image</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+        /// PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -504,6 +503,13 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The ID of the RAM disk.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+        /// PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string RamdiskId
         {

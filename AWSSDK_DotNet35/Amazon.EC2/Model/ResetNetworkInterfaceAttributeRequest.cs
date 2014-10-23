@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -57,9 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SourceDestCheck. 
         /// <para>
-        /// Indicates whether source/destination checking is enabled. A value of <code>true</code>
-        /// means checking is enabled, and <code>false</code> means checking is disabled. This
-        /// value must be <code>false</code> for a NAT instance to perform NAT.
+        /// The source/destination checking attribute. Resets the value to <code>true</code>.
         /// </para>
         /// </summary>
         public string SourceDestCheck

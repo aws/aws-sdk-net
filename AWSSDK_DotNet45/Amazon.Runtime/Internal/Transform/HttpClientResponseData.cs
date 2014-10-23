@@ -25,12 +25,19 @@ namespace Amazon.Runtime.Internal.Transform
 {
     public class HttpClientResponseData : IWebResponseData
     {
+        HttpClient _httpClient;
         HttpResponseMessage _response;
         string[] _headerNames;
         HashSet<string> _headerNamesSet;
 
         internal HttpClientResponseData(HttpResponseMessage response)
+            : this(response, null)
+        {            
+        }
+
+        internal HttpClientResponseData(HttpResponseMessage response, HttpClient httpClient)
         {
+            _httpClient = httpClient;
             this._response = response;
 
             this.StatusCode = _response.StatusCode;
@@ -39,7 +46,7 @@ namespace Amazon.Runtime.Internal.Transform
 
             if (_response.Content.Headers.ContentType != null)
             {
-                this.ContentType = _response.Content.Headers.ContentType.MediaType;            
+                this.ContentType = _response.Content.Headers.ContentType.MediaType;
             }
         }
 
@@ -100,17 +107,19 @@ namespace Amazon.Runtime.Internal.Transform
 
         public IHttpResponseBody ResponseBody
         {
-            get { return new HttpResponseMessageBody(_response); }
+            get { return new HttpResponseMessageBody(_response, _httpClient); }
         }
     }
 
     public class HttpResponseMessageBody : IHttpResponseBody
     {
+        HttpClient _httpClient;
         HttpResponseMessage _response;
         bool _disposed = false;
 
-        public HttpResponseMessageBody(HttpResponseMessage response)
+        public HttpResponseMessageBody(HttpResponseMessage response, HttpClient httpClient)
         {
+            _httpClient = httpClient;
             _response = response;
         }
 
@@ -145,6 +154,9 @@ namespace Amazon.Runtime.Internal.Transform
             {
                 if (_response != null)
                     _response.Dispose();
+
+                if (_httpClient != null)
+                    _httpClient.Dispose();
 
                 _disposed = true;
             }

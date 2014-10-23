@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -30,8 +30,10 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the RejectVpcPeeringConnection operation.
     /// Rejects a VPC peering connection request. The VPC peering connection must be in the
-    /// <code>pending-acceptance</code> state. Use the <code>DescribeVpcPeeringConnections</code>
-    /// request to view your outstanding VPC peering connection requests.
+    /// <code>pending-acceptance</code> state. Use the <a>DescribeVpcPeeringConnections</a>
+    /// request to view your outstanding VPC peering connection requests. To delete an active
+    /// VPC peering connection, or to delete a VPC peering connection request that you initiated,
+    /// use <a>DeleteVpcPeeringConnection</a>.
     /// </summary>
     public partial class RejectVpcPeeringConnectionRequest : AmazonEC2Request
     {

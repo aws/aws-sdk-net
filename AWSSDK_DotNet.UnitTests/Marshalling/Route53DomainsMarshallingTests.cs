@@ -72,6 +72,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Route53Domains")]
+        public void DisableDomainAutoRenewMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DisableDomainAutoRenewRequest>();
+            var marshaller = new DisableDomainAutoRenewRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DisableDomainAutoRenewRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisableDomainAutoRenew").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DisableDomainAutoRenewResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisableDomainAutoRenewResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Route53Domains")]
         public void DisableDomainTransferLockMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DisableDomainTransferLockRequest>();
@@ -93,6 +122,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DisableDomainTransferLockResponseUnmarshaller.Instance.Unmarshall(context)
                 as DisableDomainTransferLockResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Route53Domains")]
+        public void EnableDomainAutoRenewMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<EnableDomainAutoRenewRequest>();
+            var marshaller = new EnableDomainAutoRenewRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<EnableDomainAutoRenewRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("EnableDomainAutoRenew").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = EnableDomainAutoRenewResponseUnmarshaller.Instance.Unmarshall(context)
+                as EnableDomainAutoRenewResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

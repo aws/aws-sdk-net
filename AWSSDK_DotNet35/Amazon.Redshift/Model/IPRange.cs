@@ -38,8 +38,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property CIDRIP. 
         /// <para>
-        ///             The IP range in Classless Inter-Domain Routing (CIDR) notation.      
-        ///  
+        ///  The IP range in Classless Inter-Domain Routing (CIDR) notation. 
         /// </para>
         /// </summary>
         public string CIDRIP
@@ -57,7 +56,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///         The status of the IP range, for example, "authorized".        
+        ///  The status of the IP range, for example, "authorized". 
         /// </para>
         /// </summary>
         public string Status

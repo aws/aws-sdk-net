@@ -33,10 +33,10 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// If you do not specify a user name, IAM determines the user name implicitly based on
-    /// the AWS access key ID signing the request. Because this action works for access keys
-    /// under the AWS account, you can use this API to manage root credentials even if the
-    /// AWS account has no associated users.
+    ///  If you do not specify a user name, IAM determines the user name implicitly based
+    /// on the AWS access key ID signing the request. Because this action works for access
+    /// keys under the AWS account, you can use this action to manage root credentials even
+    /// if the AWS account has no associated users. 
     /// </para>
     /// </summary>
     public partial class DeleteSigningCertificateRequest : AmazonIdentityManagementServiceRequest
@@ -52,7 +52,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates DeleteSigningCertificateRequest with the parameterized properties
         /// </summary>
-        /// <param name="certificateId">ID of the signing certificate to delete.</param>
+        /// <param name="certificateId">The ID of the signing certificate to delete.</param>
         public DeleteSigningCertificateRequest(string certificateId)
         {
             _certificateId = certificateId;
@@ -61,7 +61,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property CertificateId. 
         /// <para>
-        /// ID of the signing certificate to delete.
+        /// The ID of the signing certificate to delete.
         /// </para>
         /// </summary>
         public string CertificateId
@@ -79,7 +79,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Name of the user the signing certificate belongs to.
+        /// The name of the user the signing certificate belongs to.
         /// </para>
         /// </summary>
         public string UserName

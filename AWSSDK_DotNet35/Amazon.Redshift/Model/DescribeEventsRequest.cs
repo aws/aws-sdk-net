@@ -29,10 +29,10 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
-    /// Returns events related to clusters, security groups, snapshots, and parameter
-    ///        groups for the past 14 days. Events specific to a particular cluster, security
-    /// group,        snapshot or parameter group can be obtained by providing the name as
-    /// a parameter.        By default, the past hour of events are returned.
+    /// Returns events related to clusters, security groups, snapshots, and parameter groups
+    /// for the past 14 days. Events specific to a particular cluster, security group, snapshot
+    /// or parameter group can be obtained by providing the name as a parameter. By default,
+    /// the past hour of events are returned.
     /// </summary>
     public partial class DescribeEventsRequest : AmazonRedshiftRequest
     {
@@ -47,12 +47,11 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        ///             The number of minutes prior to the time of the request for which to retrieve
-        /// events.         For example, if the request is sent at 18:00 and you specify a duration
-        /// of 60,        then only events which have occurred after 17:00 will be returned. 
-        ///       
+        ///  The number of minutes prior to the time of the request for which to retrieve events.
+        /// For example, if the request is sent at 18:00 and you specify a duration of 60, then
+        /// only events which have occurred after 17:00 will be returned. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Default: <code>60</code>
         /// </para>
@@ -72,11 +71,11 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        ///         The end of the time interval for which to retrieve events,        specified
-        /// in ISO 8601 format. For more information about ISO 8601,         go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
-        /// Wikipedia page.</a>        
+        ///  The end of the time interval for which to retrieve events, specified in ISO 8601
+        /// format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
+        /// Wikipedia page.</a> 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Example: <code>2009-07-08T18:00Z</code>
         /// </para>
@@ -96,12 +95,11 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///             An optional parameter that specifies the starting point to return a set
-        /// of response records.             When the results of a <a>DescribeEvents</a> request
-        /// exceed the value specified in <code>MaxRecords</code>,             AWS returns a value
-        /// in the <code>Marker</code> field of the response. You can retrieve the next set of
-        ///             response records by providing the returned marker value in the <code>Marker</code>
-        /// parameter and             retrying the request.        
+        ///  An optional parameter that specifies the starting point to return a set of response
+        /// records. When the results of a <a>DescribeEvents</a> request exceed the value specified
+        /// in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of
+        /// the response. You can retrieve the next set of response records by providing the returned
+        /// marker value in the <code>Marker</code> parameter and retrying the request. 
         /// </para>
         /// </summary>
         public string Marker
@@ -119,17 +117,16 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///             The maximum number of response records to return in each call.       
-        ///      If the number of remaining response records exceeds the specified <code>MaxRecords</code>
-        /// value,             a value is returned in a <code>marker</code> field of the response.
-        ///             You can retrieve the next set of records by retrying the command with
-        /// the returned marker value.        
+        ///  The maximum number of response records to return in each call. If the number of remaining
+        /// response records exceeds the specified <code>MaxRecords</code> value, a value is returned
+        /// in a <code>marker</code> field of the response. You can retrieve the next set of records
+        /// by retrying the command with the returned marker value. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Default: <code>100</code>
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints: minimum 20, maximum 100.
         /// </para>
@@ -149,24 +146,22 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SourceIdentifier. 
         /// <para>
-        ///         The identifier of the event source for which events        will be returned.
-        /// If this parameter is not specified,        then all sources are included in the response.
-        ///        
+        ///  The identifier of the event source for which events will be returned. If this parameter
+        /// is not specified, then all sources are included in the response. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// If <i>SourceIdentifier</i> is supplied, <i>SourceType</i> must also be provided.
         /// </para>
-        ///         <ul>            <li>Specify a cluster identifier when <i>SourceType</i> is
-        /// <code>cluster</code>.</li>            <li>Specify a cluster security group name when
-        /// <i>SourceType</i> is <code>cluster-security-group</code>.</li>            <li>Specify
-        /// a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</li>
-        ///            <li>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</li>
-        ///        </ul>
+        ///  <ul> <li>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</li>
+        /// <li>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</li>
+        /// <li>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</li>
+        /// <li>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</li>
+        /// </ul>
         /// </summary>
         public string SourceIdentifier
         {
@@ -183,23 +178,22 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        ///         The event source to retrieve events for.        If no value is specified,
-        /// all events are returned.        
+        ///  The event source to retrieve events for. If no value is specified, all events are
+        /// returned. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// If <i>SourceType</i> is supplied, <i>SourceIdentifier</i> must also be provided.
         /// </para>
-        ///         <ul>            <li>Specify <code>cluster</code> when <i>SourceIdentifier</i>
-        /// is a cluster identifier.</li>            <li>Specify <code>cluster-security-group</code>
-        /// when <i>SourceIdentifier</i> is a cluster security group name.</li>            <li>Specify
-        /// <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter
-        /// group name.</li>            <li>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i>
-        /// is a cluster snapshot identifier.</li>        </ul>
+        ///  <ul> <li>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</li>
+        /// <li>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a
+        /// cluster security group name.</li> <li>Specify <code>cluster-parameter-group</code>
+        /// when <i>SourceIdentifier</i> is a cluster parameter group name.</li> <li>Specify <code>cluster-snapshot</code>
+        /// when <i>SourceIdentifier</i> is a cluster snapshot identifier.</li> </ul>
         /// </summary>
         public SourceType SourceType
         {
@@ -216,11 +210,11 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///         The beginning of the time interval to retrieve events for,        specified
-        /// in ISO 8601 format. For more information about ISO 8601,         go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
-        /// Wikipedia page.</a>        
+        ///  The beginning of the time interval to retrieve events for, specified in ISO 8601
+        /// format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
+        /// Wikipedia page.</a> 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Example: <code>2009-07-08T18:00Z</code>
         /// </para>

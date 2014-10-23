@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     {
         private string _additionalInfo;
         private ArchitectureValues _architecture;
+        private List<string> _groupIds = new List<string>();
         private List<string> _groupNames = new List<string>();
         private ShutdownBehavior _instanceInitiatedShutdownBehavior;
         private InstanceType _instanceType;
@@ -74,6 +75,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetArchitecture()
         {
             return this._architecture != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupIds.
+        /// </summary>
+        public List<string> GroupIds
+        {
+            get { return this._groupIds; }
+            set { this._groupIds = value; }
+        }
+
+        // Check to see if GroupIds property is set
+        internal bool IsSetGroupIds()
+        {
+            return this._groupIds != null && this._groupIds.Count > 0; 
         }
 
         /// <summary>

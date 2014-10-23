@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 
 
@@ -153,7 +153,7 @@ namespace Amazon.EC2
 
         protected override AbstractAWSSigner CreateSigner()
         {
-            return new EC2Signer();
+            return new AWS4Signer();
         } 
 
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)

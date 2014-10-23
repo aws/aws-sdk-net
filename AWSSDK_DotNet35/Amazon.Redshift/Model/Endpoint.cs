@@ -38,7 +38,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Address. 
         /// <para>
-        ///         The DNS address of the Cluster.        
+        ///  The DNS address of the Cluster. 
         /// </para>
         /// </summary>
         public string Address
@@ -56,7 +56,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        ///         The port that the database engine is listening on.        
+        ///  The port that the database engine is listening on. 
         /// </para>
         /// </summary>
         public int Port

@@ -81,6 +81,17 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IdentityPoolName);
                 }
 
+                if(publicRequest.IsSetOpenIdConnectProviderARNs())
+                {
+                    context.Writer.WritePropertyName("OpenIdConnectProviderARNs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestOpenIdConnectProviderARNsListValue in publicRequest.OpenIdConnectProviderARNs)
+                    {
+                            context.Writer.Write(publicRequestOpenIdConnectProviderARNsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetSupportedLoginProviders())
                 {
                     context.Writer.WritePropertyName("SupportedLoginProviders");

@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Contains the output from the             <a>DescribeClusterSubnetGroups</a>
-    /// action.
+    /// Contains the output from the <a>DescribeClusterSubnetGroups</a> action.
     /// </summary>
     public partial class DescribeClusterSubnetGroupsResult : AmazonWebServiceResponse
     {
@@ -39,7 +38,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterSubnetGroups. 
         /// <para>
-        ///         A list of <a>ClusterSubnetGroup</a> instances.        
+        ///  A list of <a>ClusterSubnetGroup</a> instances. 
         /// </para>
         /// </summary>
         public List<ClusterSubnetGroup> ClusterSubnetGroups
@@ -57,12 +56,11 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///             A value that indicates the starting point for the next set of response
-        /// records in a subsequent request.             If a value is returned in a response,
-        /// you can retrieve the next set of records by providing this returned             marker
-        /// value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code>
-        /// field            is empty, all response records have been retrieved for the request.
-        ///        
+        ///  A value that indicates the starting point for the next set of response records in
+        /// a subsequent request. If a value is returned in a response, you can retrieve the next
+        /// set of records by providing this returned marker value in the <code>Marker</code>
+        /// parameter and retrying the command. If the <code>Marker</code> field is empty, all
+        /// response records have been retrieved for the request. 
         /// </para>
         /// </summary>
         public string Marker

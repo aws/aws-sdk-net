@@ -29,11 +29,10 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetClusterParameterGroup operation.
-    /// Sets one or more parameters of the specified parameter group to their
-    /// default values and sets the             source values of the parameters to "engine-default".
-    ///             To reset the entire parameter group specify the <i>ResetAllParameters</i>
-    /// parameter.             For parameter changes to take effect you must reboot any associated
-    /// clusters.
+    /// Sets one or more parameters of the specified parameter group to their default values
+    /// and sets the source values of the parameters to "engine-default". To reset the entire
+    /// parameter group specify the <i>ResetAllParameters</i> parameter. For parameter changes
+    /// to take effect you must reboot any associated clusters.
     /// </summary>
     public partial class ResetClusterParameterGroupRequest : AmazonRedshiftRequest
     {
@@ -44,7 +43,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterGroupName. 
         /// <para>
-        ///         The name of the cluster parameter group to be reset.        
+        ///  The name of the cluster parameter group to be reset. 
         /// </para>
         /// </summary>
         public string ParameterGroupName
@@ -62,11 +61,10 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        ///         An array of names of parameters to be reset. If <i>ResetAllParameters</i>
-        /// option is not used,         then at least one parameter name must be supplied.   
-        ///             
+        ///  An array of names of parameters to be reset. If <i>ResetAllParameters</i> option
+        /// is not used, then at least one parameter name must be supplied. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints: A maximum of 20 parameters can be reset in a single request.
         /// </para>
@@ -86,10 +84,10 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ResetAllParameters. 
         /// <para>
-        ///             If <code>true</code>, all parameters        in the specified parameter
-        /// group will be reset to their default values.        
+        ///  If <code>true</code>, all parameters in the specified parameter group will be reset
+        /// to their default values. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Default: <code>true</code>
         /// </para>

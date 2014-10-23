@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -43,7 +43,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Attachment. 
         /// <para>
-        /// The ID of the interface attachment.
+        /// Information about the interface attachment. If modifying the 'delete on termination'
+        /// attribute, you must specify the ID of the interface attachment.
         /// </para>
         /// </summary>
         public NetworkInterfaceAttachmentChanges Attachment

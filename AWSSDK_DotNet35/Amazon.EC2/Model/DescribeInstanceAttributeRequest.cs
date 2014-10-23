@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -30,7 +30,11 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeInstanceAttribute operation.
     /// Describes the specified attribute of the specified instance. You can specify only
-    /// one attribute at a time.
+    /// one attribute at a time. Valid attribute values are: <code>instanceType</code> | <code>kernel</code>
+    /// | <code>ramdisk</code> | <code>userData</code> | <code>disableApiTermination</code>
+    /// | <code>instanceInitiatedShutdownBehavior</code> | <code>rootDeviceName</code> | <code>blockDeviceMapping</code>
+    /// | <code>productCodes</code> | <code>sourceDestCheck</code> | <code>groupSet</code>
+    /// | <code>ebsOptimized</code> | <code>sriovNetSupport</code>
     /// </summary>
     public partial class DescribeInstanceAttributeRequest : AmazonEC2Request
     {

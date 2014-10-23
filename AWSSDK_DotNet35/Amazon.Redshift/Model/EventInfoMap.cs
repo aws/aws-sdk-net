@@ -96,7 +96,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The severity of the event.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Values: ERROR, INFO
         /// </para>

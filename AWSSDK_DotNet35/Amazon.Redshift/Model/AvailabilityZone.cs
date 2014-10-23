@@ -37,7 +37,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///             The name of the availability zone.        
+        ///  The name of the availability zone. 
         /// </para>
         /// </summary>
         public string Name

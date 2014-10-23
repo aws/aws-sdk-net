@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -135,11 +135,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>event.not-after</code> - The latest end time for the scheduled event.
+        /// <code>event.not-after</code> - The latest end time for the scheduled event, for example:
+        /// <code>2010-09-15T17:15:20.000Z</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>event.not-before</code> - The earliest start time for the scheduled event.
+        /// <code>event.not-before</code> - The earliest start time for the scheduled event, for
+        /// example: <code>2010-09-15T17:15:20.000Z</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -245,7 +247,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of paginated instance items per response.
+        /// The maximum number of paginated instance items per response. The call also returns
+        /// a token that you can specify in a subsequent call to get the next set of results.
+        /// If the value is greater than 1000, we return only 1000 items.
         /// </para>
         ///  
         /// <para>
@@ -267,7 +271,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The next paginated set of results to return.
+        /// The next paginated set of results to return. (You received this token from a prior
+        /// call.)
         /// </para>
         /// </summary>
         public string NextToken

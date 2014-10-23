@@ -54,7 +54,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SubnetIdentifier. 
         /// <para>
-        ///         The identifier of the subnet.        
+        ///  The identifier of the subnet. 
         /// </para>
         /// </summary>
         public string SubnetIdentifier
@@ -72,7 +72,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SubnetStatus. 
         /// <para>
-        ///         The status of the subnet.        
+        ///  The status of the subnet. 
         /// </para>
         /// </summary>
         public string SubnetStatus

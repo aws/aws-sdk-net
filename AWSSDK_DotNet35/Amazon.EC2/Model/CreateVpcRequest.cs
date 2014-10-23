@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -90,7 +90,7 @@ namespace Amazon.EC2.Model
         /// means that instances can be launched with any tenancy; a value of <code>dedicated</code>
         /// means all instances launched into the VPC are launched as dedicated tenancy instances
         /// regardless of the tenancy assigned to the instance at launch. Dedicated tenancy instances
-        /// runs on single-tenant hardware.
+        /// run on single-tenant hardware.
         /// </para>
         ///  
         /// <para>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,6 +34,11 @@ namespace Amazon.EC2.Model
     /// by <a>DescribeInstanceStatus</a>, use <a>ReportInstanceStatus</a> to report your experience
     /// with the instance. Amazon EC2 collects this information to improve the accuracy of
     /// status checks.
+    /// 
+    ///  
+    /// <para>
+    /// Use of this action does not change the value returned by <a>DescribeInstanceStatus</a>.
+    /// </para>
     /// </summary>
     public partial class ReportInstanceStatusRequest : AmazonEC2Request
     {

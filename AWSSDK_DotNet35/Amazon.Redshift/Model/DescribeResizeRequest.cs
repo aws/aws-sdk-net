@@ -29,16 +29,15 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeResize operation.
-    /// Returns information about the last resize operation for the specified cluster.
-    ///         If no resize operation has ever been initiated for the specified cluster,
-    /// a <code>HTTP 404</code> error is returned.            If a resize operation was initiated
-    /// and completed, the status of the resize remains as <code>SUCCEEDED</code> until  
-    ///          the next resize.        
+    /// Returns information about the last resize operation for the specified cluster. If
+    /// no resize operation has ever been initiated for the specified cluster, a <code>HTTP
+    /// 404</code> error is returned. If a resize operation was initiated and completed, the
+    /// status of the resize remains as <code>SUCCEEDED</code> until the next resize. 
     /// 
-    ///        
+    ///  
     /// <para>
-    ///             A resize operation can be requested using         <a>ModifyCluster</a>
-    /// and specifying a different number or type of nodes for the cluster.        
+    ///  A resize operation can be requested using <a>ModifyCluster</a> and specifying a different
+    /// number or type of nodes for the cluster. 
     /// </para>
     /// </summary>
     public partial class DescribeResizeRequest : AmazonRedshiftRequest
@@ -48,13 +47,13 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///             The unique identifier of a cluster whose resize progress you are requesting.
-        ///            This parameter isn't case-sensitive.        
+        ///  The unique identifier of a cluster whose resize progress you are requesting. This
+        /// parameter is case-sensitive. 
         /// </para>
-        ///                 
+        ///  
         /// <para>
         /// By default, resize operations for all clusters defined for an AWS account are returned.
-        ///        
+        /// 
         /// </para>
         /// </summary>
         public string ClusterIdentifier

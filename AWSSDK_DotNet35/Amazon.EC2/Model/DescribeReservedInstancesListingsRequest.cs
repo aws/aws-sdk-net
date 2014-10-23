@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -31,6 +31,27 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DescribeReservedInstancesListings operation.
     /// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
     /// 
+    ///  
+    /// <para>
+    /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
+    /// capacity that they no longer need with buyers who want to purchase additional capacity.
+    /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
+    /// like any other Reserved Instances. 
+    /// </para>
+    ///  
+    /// <para>
+    /// As a seller, you choose to list some or all of your Reserved Instances, and you specify
+    /// the upfront price to receive for them. Your Reserved Instances are then listed in
+    /// the Reserved Instance Marketplace and are available for purchase. 
+    /// </para>
+    ///  
+    /// <para>
+    /// As a buyer, you specify the configuration of the Reserved Instance to purchase, and
+    /// the Marketplace matches what you're searching for with what's available. The Marketplace
+    /// first sells the lowest priced Reserved Instances to you, and continues to sell available
+    /// Reserved Instance listings to you until your demand is met. You are charged based
+    /// on the total price of all of the listings that you purchase.
+    /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved

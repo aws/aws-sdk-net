@@ -27,11 +27,17 @@ namespace Amazon.Runtime.Internal
     /// </summary>
     public partial class RuntimePipeline : IDisposable
     {
+        #region Private members
+
         bool _disposed;
         ILogger _logger;
 
         // The top-most handler in the pipeline.
         IPipelineHandler _handler;
+
+        #endregion
+
+        #region Properties
 
         /// <summary>
         /// The top-most handler in the pipeline.
@@ -40,6 +46,10 @@ namespace Amazon.Runtime.Internal
         {
             get { return _handler; }
         }
+
+        #endregion
+
+        #region Constructors
 
         /// <summary>
         /// Constructor for RuntimePipeline.
@@ -108,13 +118,19 @@ namespace Amazon.Runtime.Internal
             _logger = logger;
         }
 
+        #endregion
+
+        #region Invoke methods
+
         /// <summary>
         /// Invokes the pipeline synchronously.
         /// </summary>
         /// <param name="executionContext">Request context</param>
         /// <returns>Response context</returns>
         public IResponseContext InvokeSync(IExecutionContext executionContext)
-        {            
+        {
+            ThrowIfDisposed();
+
             _handler.InvokeSync(executionContext);            
             return executionContext.ResponseContext;
         }
@@ -129,6 +145,8 @@ namespace Amazon.Runtime.Internal
         public System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
             where T : AmazonWebServiceResponse, new()
         {
+            ThrowIfDisposed();
+
             return _handler.InvokeAsync<T>(executionContext);
         }
 
@@ -140,10 +158,16 @@ namespace Amazon.Runtime.Internal
         /// <param name="executionContext">Request context</param>
         /// <returns>IAsyncResult which represents the in progress asynchronous operation.</returns>
         public IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {   
+        {
+            ThrowIfDisposed();
+
             return _handler.InvokeAsync(executionContext);
         }
 #endif
+
+        #endregion
+
+        #region Handler methods
 
         /// <summary>
         /// Adds a new handler to the top of the pipeline.
@@ -153,6 +177,8 @@ namespace Amazon.Runtime.Internal
         {
             if (handler == null)
                 throw new ArgumentNullException("handler");
+
+            ThrowIfDisposed();
 
             var innerMostHandler = GetInnermostHandler(handler);
 
@@ -177,6 +203,8 @@ namespace Amazon.Runtime.Internal
         {
             if (handler == null)
                 throw new ArgumentNullException("handler");
+
+            ThrowIfDisposed();
 
             var type = typeof(T);
             var current = _handler;
@@ -204,6 +232,8 @@ namespace Amazon.Runtime.Internal
         {
             if (handler == null)
                 throw new ArgumentNullException("handler");
+
+            ThrowIfDisposed();
 
             var type = typeof(T);
             if (_handler.GetType() == type)
@@ -237,6 +267,8 @@ namespace Amazon.Runtime.Internal
         /// <typeparam name="T">Type of the handler which will be removed.</typeparam>
         public void RemoveHandler<T>()
         {
+            ThrowIfDisposed();
+
             var type = typeof(T);
 
             IPipelineHandler previous = null;
@@ -291,6 +323,8 @@ namespace Amazon.Runtime.Internal
         {
             if (handler == null)
                 throw new ArgumentNullException("handler");
+
+            ThrowIfDisposed();
 
             var type = typeof(T);
             IPipelineHandler previous = null;
@@ -370,8 +404,14 @@ namespace Amazon.Runtime.Internal
 
         private void SetHandlerProperties(IPipelineHandler handler)
         {
+            ThrowIfDisposed();
+
             handler.Logger = _logger;
         }
+
+        #endregion
+
+        #region Dispose methods
 
         public void Dispose()
         {
@@ -401,5 +441,13 @@ namespace Amazon.Runtime.Internal
                 _disposed = true;
             }
         }
+
+        private void ThrowIfDisposed()
+        {
+            if (this._disposed)
+                throw new ObjectDisposedException(GetType().FullName);
+        }
+
+        #endregion
     }
 }

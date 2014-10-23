@@ -38,7 +38,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterApplyStatus. 
         /// <para>
-        ///         The status of parameter updates.        
+        ///  The status of parameter updates. 
         /// </para>
         /// </summary>
         public string ParameterApplyStatus
@@ -56,7 +56,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterGroupName. 
         /// <para>
-        ///         The name of the cluster parameter group.        
+        ///  The name of the cluster parameter group. 
         /// </para>
         /// </summary>
         public string ParameterGroupName

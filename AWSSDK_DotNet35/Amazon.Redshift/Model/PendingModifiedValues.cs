@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Describes cluster attributes that are in a pending state. A change to one
-    /// or        more the attributes was requested and is in progress or will be applied.
+    /// Describes cluster attributes that are in a pending state. A change to one or more
+    /// the attributes was requested and is in progress or will be applied.
     /// </summary>
     public partial class PendingModifiedValues
     {
@@ -44,8 +44,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AutomatedSnapshotRetentionPeriod. 
         /// <para>
-        ///             The pending or in-progress change of the automated snapshot retention
-        /// period.                    
+        ///  The pending or in-progress change of the automated snapshot retention period. 
         /// </para>
         /// </summary>
         public int AutomatedSnapshotRetentionPeriod
@@ -81,7 +80,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterType. 
         /// <para>
-        ///         The pending or in-progress change of the cluster type.        
+        ///  The pending or in-progress change of the cluster type. 
         /// </para>
         /// </summary>
         public string ClusterType
@@ -99,8 +98,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterVersion. 
         /// <para>
-        ///          The pending or in-progress change of the service version.               
-        ///     
+        ///  The pending or in-progress change of the service version. 
         /// </para>
         /// </summary>
         public string ClusterVersion
@@ -118,8 +116,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        ///         The pending or in-progress change of the master user password for the cluster.
-        ///        
+        ///  The pending or in-progress change of the master user password for the cluster. 
         /// </para>
         /// </summary>
         public string MasterUserPassword
@@ -137,7 +134,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
-        ///         The pending or in-progress change of the cluster's node type.        
+        ///  The pending or in-progress change of the cluster's node type. 
         /// </para>
         /// </summary>
         public string NodeType
@@ -155,8 +152,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
-        ///             The pending or in-progress change of the number of nodes in the cluster.
-        ///                    
+        ///  The pending or in-progress change of the number of nodes in the cluster. 
         /// </para>
         /// </summary>
         public int NumberOfNodes

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -120,8 +120,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DisableApiTermination. 
         /// <para>
-        /// Specifies whether to disable the ability to terminate the instance using the Amazon
-        /// EC2 console, CLI, and API.
+        /// If the value is <code>true</code>, you can't terminate the instance using the Amazon
+        /// EC2 console, CLI, or API; otherwise, you can.
         /// </para>
         /// </summary>
         public bool DisableApiTermination
@@ -241,7 +241,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Kernel. 
         /// <para>
-        /// Changes the instance's kernel to the specified value.
+        /// Changes the instance's kernel to the specified value. We recommend that you use PV-GRUB
+        /// instead of kernels and RAM disks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
         /// </para>
         /// </summary>
         public string Kernel
@@ -259,7 +260,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ramdisk. 
         /// <para>
-        /// Changes the instance's RAM disk to the specified value.
+        /// Changes the instance's RAM disk to the specified value. We recommend that you use
+        /// PV-GRUB instead of kernels and RAM disks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
         /// </para>
         /// </summary>
         public string Ramdisk

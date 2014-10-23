@@ -29,7 +29,7 @@ namespace Amazon.SecurityToken.Model
 {
     /// <summary>
     /// Contains the result of a successful call to the <a>AssumeRole</a> action, including
-    ///      temporary AWS credentials that can be used to make AWS requests.
+    /// temporary AWS credentials that can be used to make AWS requests.
     /// </summary>
     public partial class AssumeRoleResult : AmazonWebServiceResponse
     {
@@ -41,10 +41,10 @@ namespace Amazon.SecurityToken.Model
         /// Gets and sets the property AssumedRoleUser. 
         /// <para>
         /// The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that
-        /// you can      use to refer to the resulting temporary security credentials. For example,
-        /// you can reference      these credentials as a principal in a resource-based policy
-        /// by using the ARN or assumed role      ID. The ARN and ID include the <code>RoleSessionName</code>
-        /// that you specified when you called        <code>AssumeRole</code>. 
+        /// you can use to refer to the resulting temporary security credentials. For example,
+        /// you can reference these credentials as a principal in a resource-based policy by using
+        /// the ARN or assumed role ID. The ARN and ID include the <code>RoleSessionName</code>
+        /// that you specified when you called <code>AssumeRole</code>. 
         /// </para>
         /// </summary>
         public AssumedRoleUser AssumedRoleUser
@@ -63,7 +63,7 @@ namespace Amazon.SecurityToken.Model
         /// Gets and sets the property Credentials. 
         /// <para>
         /// The temporary security credentials, which include an access key ID, a secret access
-        /// key, and      a security (or session) token.
+        /// key, and a security (or session) token.
         /// </para>
         /// </summary>
         public Credentials Credentials
@@ -82,8 +82,8 @@ namespace Amazon.SecurityToken.Model
         /// Gets and sets the property PackedPolicySize. 
         /// <para>
         /// A percentage value that indicates the size of the policy in packed form. The service
-        /// rejects      any policy with a packed size greater than 100 percent, which means the
-        /// policy exceeded the      allowed space. 
+        /// rejects any policy with a packed size greater than 100 percent, which means the policy
+        /// exceeded the allowed space. 
         /// </para>
         /// </summary>
         public int PackedPolicySize

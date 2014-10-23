@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CidrBlock. 
         /// <para>
-        /// The network range to allow or deny, in CIDR notation.
+        /// The network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).
         /// </para>
         /// </summary>
         public string CidrBlock
@@ -104,7 +104,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IcmpTypeCode. 
         /// <para>
-        /// ICMP protocol: The ICMP type and code.
+        /// ICMP protocol: The ICMP type and code. Required if specifying ICMP for the protocol.
         /// </para>
         /// </summary>
         public IcmpTypeCode IcmpTypeCode
@@ -122,7 +122,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkAclId. 
         /// <para>
-        /// The ID of the ACL.
+        /// The ID of the network ACL.
         /// </para>
         /// </summary>
         public string NetworkAclId

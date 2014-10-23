@@ -35,15 +35,16 @@ namespace Amazon.IdentityManagement
     ///
     /// AWS Identity and Access Management 
     /// <para>
-    /// AWS Identity and Access Management (IAM) is a web service that you can use to manage
+    ///  AWS Identity and Access Management (IAM) is a web service that you can use to manage
     /// users and user permissions under your AWS account. This guide provides descriptions
-    /// of the IAM API. For general information about IAM, see <a href="http://aws.amazon.com/iam/">AWS
-    /// Identity and Access Management (IAM)</a>. For the user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using
+    /// of IAM actions that you can call programmatically. For general information about IAM,
+    /// see <a href="http://aws.amazon.com/iam/">AWS Identity and Access Management (IAM)</a>.
+    /// For the user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using
     /// IAM</a>. 
     /// </para>
     ///  
     /// <para>
-    /// We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However,
+    ///  We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However,
     /// you can also use the IAM Query API to make direct calls to the IAM web service. To
     /// learn more about the IAM Query API, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
     /// Query Requests</a> in the <i>Using IAM</i> guide. IAM supports GET and POST requests
@@ -57,7 +58,7 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  
     /// <para>
-    /// Requests must be signed using an access key ID and a secret access key. We strongly
+    ///  Requests must be signed using an access key ID and a secret access key. We strongly
     /// recommend that you do not use your AWS account access key ID and secret access key
     /// for everyday work with IAM. You can use the access key ID and secret access key for
     /// an IAM user or you can use the AWS Security Token Service to generate temporary security
@@ -65,7 +66,7 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  
     /// <para>
-    /// To sign requests, we recommend that you use <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    ///  To sign requests, we recommend that you use <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4</a>. If you have an existing application that uses Signature Version 2,
     /// you do not have to update it to use Signature Version 4. However, some operations
     /// now require Signature Version 4. The documentation for operations that require version
@@ -94,13 +95,13 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  <ul> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS
     /// Security Credentials</a>. This topic provides general information about the types
-    /// of credentials used for accessing AWS.</li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
+    /// of credentials used for accessing AWS. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
     /// Best Practices</a>. This topic presents a list of suggestions for using the IAM service
-    /// to help secure your AWS resources.</li> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/">AWS
+    /// to help secure your AWS resources. </li> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/">AWS
     /// Security Token Service</a>. This guide describes how to create and use temporary security
-    /// credentials.</li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    /// credentials. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
     /// AWS API Requests</a>. This set of topics walk you through the process of signing a
-    /// request using an access key ID and secret access key.</li> </ul>
+    /// request using an access key ID and secret access key. </li> </ul>
     /// </summary>
     public partial class AmazonIdentityManagementServiceClient : AmazonServiceClient, IAmazonIdentityManagementService
     {
@@ -283,6 +284,77 @@ namespace Amazon.IdentityManagement
         #endregion
 
         
+        #region  AddClientIDToOpenIDConnectProvider
+
+        /// <summary>
+        /// Adds a new client ID (also known as audience) to the list of client IDs already registered
+        /// for the specified IAM OpenID Connect provider.
+        /// 
+        ///  
+        /// <para>
+        /// This action is idempotent; it does not fail or return an error if you add an existing
+        /// client ID to the provider.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddClientIDToOpenIDConnectProvider service method.</param>
+        /// 
+        /// <returns>The response from the AddClientIDToOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public AddClientIDToOpenIDConnectProviderResponse AddClientIDToOpenIDConnectProvider(AddClientIDToOpenIDConnectProviderRequest request)
+        {
+            var marshaller = new AddClientIDToOpenIDConnectProviderRequestMarshaller();
+            var unmarshaller = AddClientIDToOpenIDConnectProviderResponseUnmarshaller.Instance;
+
+            return Invoke<AddClientIDToOpenIDConnectProviderRequest,AddClientIDToOpenIDConnectProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddClientIDToOpenIDConnectProvider operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddClientIDToOpenIDConnectProvider operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddClientIDToOpenIDConnectProvider
+        ///         operation.</returns>
+        public IAsyncResult BeginAddClientIDToOpenIDConnectProvider(AddClientIDToOpenIDConnectProviderRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new AddClientIDToOpenIDConnectProviderRequestMarshaller();
+            var unmarshaller = AddClientIDToOpenIDConnectProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddClientIDToOpenIDConnectProviderRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddClientIDToOpenIDConnectProvider operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddClientIDToOpenIDConnectProvider.</param>
+        /// 
+        /// <returns>Returns a  AddClientIDToOpenIDConnectProviderResult from IdentityManagementService.</returns>
+        public  AddClientIDToOpenIDConnectProviderResponse EndAddClientIDToOpenIDConnectProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AddClientIDToOpenIDConnectProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AddRoleToInstanceProfile
 
         /// <summary>
@@ -412,10 +484,15 @@ namespace Amazon.IdentityManagement
         #region  ChangePassword
 
         /// <summary>
-        /// Changes the password of the IAM user calling <code>ChangePassword</code>. The root
-        /// account password is not affected by this action. For information about modifying passwords,
-        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-        /// Passwords</a> in the <i>Using IAM</i> guide.
+        /// Changes the password of the IAM user who is calling this action. The root account
+        /// password is not affected by this action. 
+        /// 
+        ///  
+        /// <para>
+        /// To change the password for a different user, see <a>UpdateLoginProfile</a>. For more
+        /// information about modifying passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
+        /// Passwords</a> in the <i>Using IAM</i> guide. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ChangePassword service method.</param>
         /// 
@@ -489,24 +566,24 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Creates a new AWS secret access key and corresponding AWS access key ID for the specified
-        /// user. The default status for new keys is <code>Active</code>.
+        /// user. The default status for new keys is <code>Active</code>. 
         /// 
         ///  
         /// <para>
-        /// If you do not specify a user name, IAM determines the user name implicitly based on
-        /// the AWS access key ID signing the request. Because this action works for access keys
-        /// under the AWS account, you can use this API to manage root credentials even if the
-        /// AWS account has no associated users.
+        ///  If you do not specify a user name, IAM determines the user name implicitly based
+        /// on the AWS access key ID signing the request. Because this action works for access
+        /// keys under the AWS account, you can use this action to manage root credentials even
+        /// if the AWS account has no associated users. 
         /// </para>
         ///  
         /// <para>
-        /// For information about limits on the number of keys you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+        ///  For information about limits on the number of keys you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
-        ///  <important>To ensure the security of your AWS account, the secret access key is accessible
-        /// only during key and user creation. You must save the key (for example, in a text file)
-        /// if you want to be able to access it again. If a secret key is lost, you can delete
-        /// the access keys for the associated user and then create new keys.</important>
+        ///  <important> To ensure the security of your AWS account, the secret access key is
+        /// accessible only during key and user creation. You must save the key (for example,
+        /// in a text file) if you want to be able to access it again. If a secret key is lost,
+        /// you can delete the access keys for the associated user and then create new keys. </important>
         /// </summary>
         /// 
         /// <returns>The response from the CreateAccessKey service method, as returned by IdentityManagementService.</returns>
@@ -525,24 +602,24 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Creates a new AWS secret access key and corresponding AWS access key ID for the specified
-        /// user. The default status for new keys is <code>Active</code>.
+        /// user. The default status for new keys is <code>Active</code>. 
         /// 
         ///  
         /// <para>
-        /// If you do not specify a user name, IAM determines the user name implicitly based on
-        /// the AWS access key ID signing the request. Because this action works for access keys
-        /// under the AWS account, you can use this API to manage root credentials even if the
-        /// AWS account has no associated users.
+        ///  If you do not specify a user name, IAM determines the user name implicitly based
+        /// on the AWS access key ID signing the request. Because this action works for access
+        /// keys under the AWS account, you can use this action to manage root credentials even
+        /// if the AWS account has no associated users. 
         /// </para>
         ///  
         /// <para>
-        /// For information about limits on the number of keys you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+        ///  For information about limits on the number of keys you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
-        ///  <important>To ensure the security of your AWS account, the secret access key is accessible
-        /// only during key and user creation. You must save the key (for example, in a text file)
-        /// if you want to be able to access it again. If a secret key is lost, you can delete
-        /// the access keys for the associated user and then create new keys.</important>
+        ///  <important> To ensure the security of your AWS account, the secret access key is
+        /// accessible only during key and user creation. You must save the key (for example,
+        /// in a text file) if you want to be able to access it again. If a secret key is lost,
+        /// you can delete the access keys for the associated user and then create new keys. </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessKey service method.</param>
         /// 
@@ -602,8 +679,8 @@ namespace Amazon.IdentityManagement
         #region  CreateAccountAlias
 
         /// <summary>
-        /// This action creates an alias for your AWS account. For information about using an
-        /// AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+        /// Creates an alias for your AWS account. For information about using an AWS account
+        /// alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
         /// an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccountAlias service method.</param>
@@ -667,8 +744,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// For information about the number of groups you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+        ///  For information about the number of groups you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
@@ -734,12 +811,12 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Creates a new instance profile. For information about instance profiles, go to <a
         /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// Instance Profiles</a>.
+        /// Instance Profiles</a>. 
         /// 
         ///  
         /// <para>
-        /// For information about the number of instance profiles you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+        ///  For information about the number of instance profiles you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInstanceProfile service method.</param>
@@ -799,9 +876,9 @@ namespace Amazon.IdentityManagement
         #region  CreateLoginProfile
 
         /// <summary>
-        /// Creates a password for the specified user, giving the user the ability to access AWS
-        /// services through the AWS Management Console. For more information about managing passwords,
-        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
+        /// Creates a password for the specified user, giving the user the ability to access
+        /// AWS services through the AWS Management Console. For more information about managing
+        /// passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
         /// Passwords</a> in the <i>Using IAM</i> guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoginProfile service method.</param>
@@ -866,20 +943,100 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
-        #region  CreateRole
+        #region  CreateOpenIDConnectProvider
 
         /// <summary>
-        /// Creates a new role for your AWS account. For more information about roles, go to <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with Roles</a>. For information about limitations on role names and the number of
-        /// roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+        /// Creates an IAM entity to describe an identity provider (IdP) that supports <a href="http://openid.net/connect/">OpenID
+        /// Connect (OIDC)</a>. 
         /// 
         ///  
         /// <para>
-        /// The example policy grants permission to an EC2 instance to assume the role. The policy
+        /// The OIDC provider that you create with this operation can be used as a principal in
+        /// a role's trust policy to establish a trust relationship between AWS and the OIDC provider.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create the IAM OIDC provider, you specify the URL of the OIDC identity provider
+        /// (IdP) to trust, a list of client IDs (also known as audiences) that identify the application
+        /// or applications that are allowed to authenticate using the OIDC provider, and a list
+        /// of thumbprints of the server certificate(s) that the IdP uses. You get all of this
+        /// information from the OIDC IdP that you want to use for access to AWS. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOpenIDConnectProvider service method.</param>
+        /// 
+        /// <returns>The response from the CreateOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="EntityAlreadyExistsException">
+        /// The request was rejected because it attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        public CreateOpenIDConnectProviderResponse CreateOpenIDConnectProvider(CreateOpenIDConnectProviderRequest request)
+        {
+            var marshaller = new CreateOpenIDConnectProviderRequestMarshaller();
+            var unmarshaller = CreateOpenIDConnectProviderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateOpenIDConnectProviderRequest,CreateOpenIDConnectProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateOpenIDConnectProvider operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateOpenIDConnectProvider operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateOpenIDConnectProvider
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateOpenIDConnectProvider(CreateOpenIDConnectProviderRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateOpenIDConnectProviderRequestMarshaller();
+            var unmarshaller = CreateOpenIDConnectProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateOpenIDConnectProviderRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateOpenIDConnectProvider operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateOpenIDConnectProvider.</param>
+        /// 
+        /// <returns>Returns a  CreateOpenIDConnectProviderResult from IdentityManagementService.</returns>
+        public  CreateOpenIDConnectProviderResponse EndCreateOpenIDConnectProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateOpenIDConnectProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateRole
+
+        /// <summary>
+        /// Creates a new role for your AWS account. For more information about roles, go to
+        /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+        /// with Roles</a>. For information about limitations on role names and the number of
+        /// roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// 
+        ///  
+        /// <para>
+        ///  The example policy grants permission to an EC2 instance to assume the role. The policy
         /// is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a
         /// href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRole service method.</param>
@@ -947,14 +1104,14 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// The SAML provider that you create with this operation can be used as a principal in
-        /// a role's trust policy to establish a trust relationship between AWS and a SAML identity
-        /// provider. You can create an IAM role that supports Web-based single sign-on (SSO)
-        /// to the AWS Management Console or one that supports API access to AWS. 
+        ///  The SAML provider that you create with this operation can be used as a principal
+        /// in a role's trust policy to establish a trust relationship between AWS and a SAML
+        /// identity provider. You can create an IAM role that supports Web-based single sign-on
+        /// (SSO) to the AWS Management Console or one that supports API access to AWS. 
         /// </para>
         ///  
         /// <para>
-        /// When you create the SAML provider, you upload an a SAML metadata document that you
+        ///  When you create the SAML provider, you upload an a SAML metadata document that you
         /// get from your IdP and that includes the issuer's name, expiration information, and
         /// keys that can be used to validate the SAML authentication response (assertions) that
         /// are received from the IdP. You must generate the metadata document using the identity
@@ -962,7 +1119,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSMgmtConsole-SAML.html">Giving
+        ///  For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSMgmtConsole-SAML.html">Giving
         /// Console Access Using SAML</a> and <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
         /// Temporary Security Credentials for SAML Federation</a> in the <i>Using Temporary Credentials</i>
         /// guide. 
@@ -975,7 +1132,8 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
         /// <exception cref="InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -1032,8 +1190,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// For information about limitations on the number of users you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+        ///  For information about limitations on the number of users you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
@@ -1097,21 +1255,22 @@ namespace Amazon.IdentityManagement
         #region  CreateVirtualMFADevice
 
         /// <summary>
-        /// Creates a new virtual MFA device for the AWS account. After creating the virtual MFA,
-        /// use <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html">EnableMFADevice</a>
+        /// Creates a new virtual MFA device for the AWS account. After creating the virtual
+        /// MFA, use <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html">EnableMFADevice</a>
         /// to attach the MFA device to an IAM user. For more information about creating and working
         /// with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-        /// a Virtual MFA Device</a> in the <i>Using IAM</i> guide.
+        /// a Virtual MFA Device</a> in the <i>Using IAM</i> guide. 
         /// 
         ///  
         /// <para>
-        /// For information about limits on the number of MFA devices you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on Entities</a> in the <i>Using IAM</i> guide.
+        ///  For information about limits on the number of MFA devices you can create, see <a
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
-        ///  <important>The seed information contained in the QR code and the Base32 string should
+        ///  <important> The seed information contained in the QR code and the Base32 string should
         /// be treated like any other secret access information, such as your AWS access keys
         /// or your passwords. After you provision your virtual device, you should ensure that
-        /// the information is destroyed following secure procedures.</important>
+        /// the information is destroyed following secure procedures. </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVirtualMFADevice service method.</param>
         /// 
@@ -1171,7 +1330,14 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Deactivates the specified MFA device and removes it from association with the user
-        /// name for which it was originally enabled.
+        /// name for which it was originally enabled. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about creating and working with virtual MFA devices, go to <a
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
+        /// a Virtual MFA Device</a> in the <i>Using IAM</i> guide. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeactivateMFADevice service method.</param>
         /// 
@@ -1241,10 +1407,10 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// If you do not specify a user name, IAM determines the user name implicitly based on
-        /// the AWS access key ID signing the request. Because this action works for access keys
-        /// under the AWS account, you can use this API to manage root credentials even if the
-        /// AWS account has no associated users.
+        ///  If you do not specify a user name, IAM determines the user name implicitly based
+        /// on the AWS access key ID signing the request. Because this action works for access
+        /// keys under the AWS account, you can use this action to manage root credentials even
+        /// if the AWS account has no associated users. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessKey service method.</param>
@@ -1571,15 +1737,15 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Deletes the specified instance profile. The instance profile must not have an associated
-        /// role.
+        /// role. 
         /// 
-        ///  <important>Make sure you do not have any Amazon EC2 instances running with the instance
+        ///  <important> Make sure you do not have any Amazon EC2 instances running with the instance
         /// profile you are about to delete. Deleting a role or instance profile that is associated
-        /// with a running instance will break any applications running on the instance.</important>
+        /// with a running instance will break any applications running on the instance. </important>
         /// 
         /// <para>
-        /// For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// Instance Profiles</a>.
+        ///  For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+        /// Instance Profiles</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceProfile service method.</param>
@@ -1644,10 +1810,10 @@ namespace Amazon.IdentityManagement
         #region  DeleteLoginProfile
 
         /// <summary>
-        /// Deletes the password for the specified user, which terminates the user's ability to
-        /// access AWS services through the AWS Management Console.
+        /// Deletes the password for the specified user, which terminates the user's ability
+        /// to access AWS services through the AWS Management Console. 
         /// 
-        ///  <important>Deleting a user's password does not prevent a user from accessing IAM
+        ///  <important> Deleting a user's password does not prevent a user from accessing IAM
         /// through the command line interface or the API. To prevent all user access you must
         /// also either make the access key inactive or delete it. For more information about
         /// making keys inactive or deleting them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>.
@@ -1714,16 +1880,88 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DeleteOpenIDConnectProvider
+
+        /// <summary>
+        /// Deletes an IAM OpenID Connect identity provider.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting an OIDC provider does not update any roles that reference the provider as
+        /// a principal in their trust policies. Any attempt to assume a role that references
+        /// a provider that has been deleted will fail. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is idempotent; it does not fail or return an error if you call the action
+        /// for a provider that was already deleted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOpenIDConnectProvider service method.</param>
+        /// 
+        /// <returns>The response from the DeleteOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public DeleteOpenIDConnectProviderResponse DeleteOpenIDConnectProvider(DeleteOpenIDConnectProviderRequest request)
+        {
+            var marshaller = new DeleteOpenIDConnectProviderRequestMarshaller();
+            var unmarshaller = DeleteOpenIDConnectProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOpenIDConnectProviderRequest,DeleteOpenIDConnectProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteOpenIDConnectProvider operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOpenIDConnectProvider operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteOpenIDConnectProvider
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteOpenIDConnectProvider(DeleteOpenIDConnectProviderRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteOpenIDConnectProviderRequestMarshaller();
+            var unmarshaller = DeleteOpenIDConnectProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteOpenIDConnectProviderRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteOpenIDConnectProvider operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteOpenIDConnectProvider.</param>
+        /// 
+        /// <returns>Returns a  DeleteOpenIDConnectProviderResult from IdentityManagementService.</returns>
+        public  DeleteOpenIDConnectProviderResponse EndDeleteOpenIDConnectProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteOpenIDConnectProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteRole
 
         /// <summary>
         /// Deletes the specified role. The role must not have any policies attached. For more
         /// information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with Roles</a>.
+        /// with Roles</a>. 
         /// 
-        ///  <important>Make sure you do not have any Amazon EC2 instances running with the role
+        ///  <important> Make sure you do not have any Amazon EC2 instances running with the role
         /// you are about to delete. Deleting a role or instance profile that is associated with
-        /// a running instance will break any applications running on the instance.</important>
+        /// a running instance will break any applications running on the instance. </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRole service method.</param>
         /// 
@@ -1851,8 +2089,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// Deleting the provider does not update any roles that reference the SAML provider as
-        /// a principal in their trust policies. Any attempt to assume a role that references
+        ///  Deleting the provider does not update any roles that reference the SAML provider
+        /// as a principal in their trust policies. Any attempt to assume a role that references
         /// a SAML provider that has been deleted will fail. 
         /// </para>
         /// </summary>
@@ -1860,7 +2098,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the DeleteSAMLProvider service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -1919,14 +2158,14 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Deletes the specified server certificate.
         /// 
-        ///  <important>If you are using a server certificate with Elastic Load Balancing, deleting
+        ///  <important> If you are using a server certificate with Elastic Load Balancing, deleting
         /// the certificate could have implications for your application. If Elastic Load Balancing
         /// doesn't detect the deletion of bound certificates, it may continue to use the certificates.
         /// This could cause Elastic Load Balancing to stop accepting traffic. We recommend that
         /// you remove the reference to the certificate from Elastic Load Balancing before using
         /// this command to delete the certificate. For more information, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DeleteLoadBalancerListeners.html"
         /// target="blank">DeleteLoadBalancerListeners</a> in the <i>Elastic Load Balancing API
-        /// Reference</i>.</important>
+        /// Reference</i>. </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteServerCertificate service method.</param>
         /// 
@@ -1994,10 +2233,10 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// If you do not specify a user name, IAM determines the user name implicitly based on
-        /// the AWS access key ID signing the request. Because this action works for access keys
-        /// under the AWS account, you can use this API to manage root credentials even if the
-        /// AWS account has no associated users.
+        ///  If you do not specify a user name, IAM determines the user name implicitly based
+        /// on the AWS access key ID signing the request. Because this action works for access
+        /// keys under the AWS account, you can use this action to manage root credentials even
+        /// if the AWS account has no associated users. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSigningCertificate service method.</param>
@@ -2247,9 +2486,9 @@ namespace Amazon.IdentityManagement
         #region  EnableMFADevice
 
         /// <summary>
-        /// Enables the specified MFA device and associates it with the specified user name. When
-        /// enabled, the MFA device is required for every subsequent login by the user name associated
-        /// with the device.
+        /// Enables the specified MFA device and associates it with the specified user name.
+        /// When enabled, the MFA device is required for every subsequent login by the user name
+        /// associated with the device.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableMFADevice service method.</param>
         /// 
@@ -2264,8 +2503,8 @@ namespace Amazon.IdentityManagement
         /// error message describes the entity.
         /// </exception>
         /// <exception cref="InvalidAuthenticationCodeException">
-        /// The request was rejected because the authentication code was not recognized. The error
-        /// message describes the specific error.
+        /// The request was rejected because the authentication code was not recognized. The
+        /// error message describes the specific error.
         /// </exception>
         /// <exception cref="LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -2474,8 +2713,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// For information about limitations on IAM entities, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+        ///  For information about limitations on IAM entities, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         /// 
@@ -2490,8 +2729,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// For information about limitations on IAM entities, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+        ///  For information about limitations on IAM entities, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountSummary service method.</param>
@@ -2865,19 +3104,80 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  GetOpenIDConnectProvider
+
+        /// <summary>
+        /// Returns information about the specified OpenID Connect provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOpenIDConnectProvider service method.</param>
+        /// 
+        /// <returns>The response from the GetOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public GetOpenIDConnectProviderResponse GetOpenIDConnectProvider(GetOpenIDConnectProviderRequest request)
+        {
+            var marshaller = new GetOpenIDConnectProviderRequestMarshaller();
+            var unmarshaller = GetOpenIDConnectProviderResponseUnmarshaller.Instance;
+
+            return Invoke<GetOpenIDConnectProviderRequest,GetOpenIDConnectProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOpenIDConnectProvider operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOpenIDConnectProvider operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOpenIDConnectProvider
+        ///         operation.</returns>
+        public IAsyncResult BeginGetOpenIDConnectProvider(GetOpenIDConnectProviderRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetOpenIDConnectProviderRequestMarshaller();
+            var unmarshaller = GetOpenIDConnectProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetOpenIDConnectProviderRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetOpenIDConnectProvider operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOpenIDConnectProvider.</param>
+        /// 
+        /// <returns>Returns a  GetOpenIDConnectProviderResult from IdentityManagementService.</returns>
+        public  GetOpenIDConnectProviderResponse EndGetOpenIDConnectProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetOpenIDConnectProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetRole
 
         /// <summary>
-        /// Retrieves information about the specified role, including the role's path, GUID, ARN,
-        /// and the policy granting permission to assume the role. For more information about
+        /// Retrieves information about the specified role, including the role's path, GUID,
+        /// ARN, and the policy granting permission to assume the role. For more information about
         /// ARNs, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a>.
         /// For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with Roles</a>.
+        /// with Roles</a>. 
         /// 
         ///  
         /// <para>
-        /// The returned policy is URL-encoded according to RFC 3986. For more information about
+        ///  The returned policy is URL-encoded according to RFC 3986. For more information about
         /// RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRole service method.</param>
@@ -2936,12 +3236,13 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Retrieves the specified policy document for the specified role. For more information
         /// about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with Roles</a>.
+        /// with Roles</a>. 
         /// 
         ///  
         /// <para>
-        /// The returned policy is URL-encoded according to RFC 3986. For more information about
+        ///  The returned policy is URL-encoded according to RFC 3986. For more information about
         /// RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRolePolicy service method.</param>
@@ -3005,7 +3306,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetSAMLProvider service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
@@ -3114,13 +3416,13 @@ namespace Amazon.IdentityManagement
         #region  GetUser
 
         /// <summary>
-        /// Retrieves information about the specified user, including the user's path, unique
-        /// ID, and ARN.
+        /// Retrieves information about the specified user, including the user's creation date,
+        /// path, unique ID, and ARN. 
         /// 
         ///  
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
-        /// the AWS access key ID signing the request.
+        /// the AWS access key ID used to sign the request. 
         /// </para>
         /// </summary>
         /// 
@@ -3135,13 +3437,13 @@ namespace Amazon.IdentityManagement
         }
 
         /// <summary>
-        /// Retrieves information about the specified user, including the user's path, unique
-        /// ID, and ARN.
+        /// Retrieves information about the specified user, including the user's creation date,
+        /// path, unique ID, and ARN. 
         /// 
         ///  
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
-        /// the AWS access key ID signing the request.
+        /// the AWS access key ID used to sign the request. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUser service method.</param>
@@ -3256,20 +3558,20 @@ namespace Amazon.IdentityManagement
         #region  ListAccessKeys
 
         /// <summary>
-        /// Returns information about the access key IDs associated with the specified user. If
-        /// there are none, the action returns an empty list.
+        /// Returns information about the access key IDs associated with the specified user.
+        /// If there are none, the action returns an empty list. 
         /// 
         ///  
         /// <para>
-        /// Although each user is limited to a small number of keys, you can still paginate the
-        /// results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        ///  Although each user is limited to a small number of keys, you can still paginate the
+        /// results using the <code>MaxItems</code> and <code>Marker</code> parameters. 
         /// </para>
         ///  
         /// <para>
-        /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
+        ///  If the <code>UserName</code> field is not specified, the UserName is determined implicitly
         /// based on the AWS access key ID used to sign the request. Because this action works
-        /// for access keys under the AWS account, this API can be used to manage root credentials
-        /// even if the AWS account has no associated users.
+        /// for access keys under the AWS account, you can use this action to manage root credentials
+        /// even if the AWS account has no associated users. 
         /// </para>
         /// </summary>
         /// 
@@ -3284,20 +3586,20 @@ namespace Amazon.IdentityManagement
         }
 
         /// <summary>
-        /// Returns information about the access key IDs associated with the specified user. If
-        /// there are none, the action returns an empty list.
+        /// Returns information about the access key IDs associated with the specified user.
+        /// If there are none, the action returns an empty list. 
         /// 
         ///  
         /// <para>
-        /// Although each user is limited to a small number of keys, you can still paginate the
-        /// results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        ///  Although each user is limited to a small number of keys, you can still paginate the
+        /// results using the <code>MaxItems</code> and <code>Marker</code> parameters. 
         /// </para>
         ///  
         /// <para>
-        /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
+        ///  If the <code>UserName</code> field is not specified, the UserName is determined implicitly
         /// based on the AWS access key ID used to sign the request. Because this action works
-        /// for access keys under the AWS account, this API can be used to manage root credentials
-        /// even if the AWS account has no associated users.
+        /// for access keys under the AWS account, you can use this action to manage root credentials
+        /// even if the AWS account has no associated users. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessKeys service method.</param>
@@ -3356,12 +3658,12 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account aliases associated with the account. For information about using
         /// an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide.
+        /// an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide. 
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         /// </summary>
         /// 
@@ -3374,12 +3676,12 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account aliases associated with the account. For information about using
         /// an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide.
+        /// an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide. 
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAliases service method.</param>
@@ -3433,12 +3735,12 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the names of the policies associated with the specified group. If there are
-        /// none, the action returns an empty list.
+        /// none, the action returns an empty list. 
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupPolicies service method.</param>
@@ -3499,8 +3801,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         /// </summary>
         /// 
@@ -3515,8 +3817,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
@@ -3573,8 +3875,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupsForUser service method.</param>
@@ -3634,12 +3936,12 @@ namespace Amazon.IdentityManagement
         /// Lists the instance profiles that have the specified path prefix. If there are none,
         /// the action returns an empty list. For more information about instance profiles, go
         /// to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// Instance Profiles</a>.
+        /// Instance Profiles</a>. 
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         /// </summary>
         /// 
@@ -3653,12 +3955,12 @@ namespace Amazon.IdentityManagement
         /// Lists the instance profiles that have the specified path prefix. If there are none,
         /// the action returns an empty list. For more information about instance profiles, go
         /// to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// Instance Profiles</a>.
+        /// Instance Profiles</a>. 
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstanceProfiles service method.</param>
@@ -3714,12 +4016,12 @@ namespace Amazon.IdentityManagement
         /// Lists the instance profiles that have the specified associated role. If there are
         /// none, the action returns an empty list. For more information about instance profiles,
         /// go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// Instance Profiles</a>.
+        /// Instance Profiles</a>. 
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstanceProfilesForRole service method.</param>
@@ -3779,12 +4081,12 @@ namespace Amazon.IdentityManagement
         /// Lists the MFA devices. If the request includes the user name, then this action lists
         /// all the MFA devices associated with the specified user name. If you do not specify
         /// a user name, IAM determines the user name implicitly based on the AWS access key ID
-        /// signing the request.
+        /// signing the request. 
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         /// </summary>
         /// 
@@ -3802,12 +4104,12 @@ namespace Amazon.IdentityManagement
         /// Lists the MFA devices. If the request includes the user name, then this action lists
         /// all the MFA devices associated with the specified user name. If you do not specify
         /// a user name, IAM determines the user name implicitly based on the AWS access key ID
-        /// signing the request.
+        /// signing the request. 
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMFADevices service method.</param>
@@ -3861,16 +4163,68 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ListOpenIDConnectProviders
+
+        /// <summary>
+        /// Lists information about the OpenID Connect providers in the AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOpenIDConnectProviders service method.</param>
+        /// 
+        /// <returns>The response from the ListOpenIDConnectProviders service method, as returned by IdentityManagementService.</returns>
+        public ListOpenIDConnectProvidersResponse ListOpenIDConnectProviders(ListOpenIDConnectProvidersRequest request)
+        {
+            var marshaller = new ListOpenIDConnectProvidersRequestMarshaller();
+            var unmarshaller = ListOpenIDConnectProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<ListOpenIDConnectProvidersRequest,ListOpenIDConnectProvidersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOpenIDConnectProviders operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOpenIDConnectProviders operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOpenIDConnectProviders
+        ///         operation.</returns>
+        public IAsyncResult BeginListOpenIDConnectProviders(ListOpenIDConnectProvidersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListOpenIDConnectProvidersRequestMarshaller();
+            var unmarshaller = ListOpenIDConnectProvidersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListOpenIDConnectProvidersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOpenIDConnectProviders operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOpenIDConnectProviders.</param>
+        /// 
+        /// <returns>Returns a  ListOpenIDConnectProvidersResult from IdentityManagementService.</returns>
+        public  ListOpenIDConnectProvidersResponse EndListOpenIDConnectProviders(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListOpenIDConnectProvidersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListRolePolicies
 
         /// <summary>
-        /// Lists the names of the policies associated with the specified role. If there are none,
-        /// the action returns an empty list.
+        /// Lists the names of the policies associated with the specified role. If there are
+        /// none, the action returns an empty list. 
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRolePolicies service method.</param>
@@ -3929,17 +4283,18 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the roles that have the specified path prefix. If there are none, the action
         /// returns an empty list. For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with Roles</a>.
+        /// with Roles</a>. 
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         ///  
         /// <para>
-        /// The returned policy is URL-encoded according to RFC 3986. For more information about
+        ///  The returned policy is URL-encoded according to RFC 3986. For more information about
         /// RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+        /// 
         /// </para>
         /// </summary>
         /// 
@@ -3952,17 +4307,18 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the roles that have the specified path prefix. If there are none, the action
         /// returns an empty list. For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with Roles</a>.
+        /// with Roles</a>. 
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         ///  
         /// <para>
-        /// The returned policy is URL-encoded according to RFC 3986. For more information about
+        ///  The returned policy is URL-encoded according to RFC 3986. For more information about
         /// RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRoles service method.</param>
@@ -4078,12 +4434,12 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the server certificates that have the specified path prefix. If none exist,
-        /// the action returns an empty list.
+        /// the action returns an empty list. 
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         /// </summary>
         /// 
@@ -4095,12 +4451,12 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the server certificates that have the specified path prefix. If none exist,
-        /// the action returns an empty list.
+        /// the action returns an empty list. 
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServerCertificates service method.</param>
@@ -4153,20 +4509,21 @@ namespace Amazon.IdentityManagement
         #region  ListSigningCertificates
 
         /// <summary>
-        /// Returns information about the signing certificates associated with the specified user.
-        /// If there are none, the action returns an empty list.
+        /// Returns information about the signing certificates associated with the specified
+        /// user. If there are none, the action returns an empty list. 
         /// 
         ///  
         /// <para>
-        /// Although each user is limited to a small number of signing certificates, you can still
-        /// paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        ///  Although each user is limited to a small number of signing certificates, you can
+        /// still paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         ///  
         /// <para>
-        /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-        /// based on the AWS access key ID used to sign the request. Because this action works
-        /// for access keys under the AWS account, this API can be used to manage root credentials
-        /// even if the AWS account has no associated users.
+        ///  If the <code>UserName</code> field is not specified, the user name is determined
+        /// implicitly based on the AWS access key ID used to sign the request. Because this action
+        /// works for access keys under the AWS account, you can use this action to manage root
+        /// credentials even if the AWS account has no associated users. 
         /// </para>
         /// </summary>
         /// 
@@ -4181,20 +4538,21 @@ namespace Amazon.IdentityManagement
         }
 
         /// <summary>
-        /// Returns information about the signing certificates associated with the specified user.
-        /// If there are none, the action returns an empty list.
+        /// Returns information about the signing certificates associated with the specified
+        /// user. If there are none, the action returns an empty list. 
         /// 
         ///  
         /// <para>
-        /// Although each user is limited to a small number of signing certificates, you can still
-        /// paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        ///  Although each user is limited to a small number of signing certificates, you can
+        /// still paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         ///  
         /// <para>
-        /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-        /// based on the AWS access key ID used to sign the request. Because this action works
-        /// for access keys under the AWS account, this API can be used to manage root credentials
-        /// even if the AWS account has no associated users.
+        ///  If the <code>UserName</code> field is not specified, the user name is determined
+        /// implicitly based on the AWS access key ID used to sign the request. Because this action
+        /// works for access keys under the AWS account, you can use this action to manage root
+        /// credentials even if the AWS account has no associated users. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSigningCertificates service method.</param>
@@ -4251,13 +4609,13 @@ namespace Amazon.IdentityManagement
         #region  ListUserPolicies
 
         /// <summary>
-        /// Lists the names of the policies associated with the specified user. If there are none,
-        /// the action returns an empty list.
+        /// Lists the names of the policies associated with the specified user. If there are
+        /// none, the action returns an empty list. 
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUserPolicies service method.</param>
@@ -4314,13 +4672,14 @@ namespace Amazon.IdentityManagement
         #region  ListUsers
 
         /// <summary>
-        /// Lists the users that have the specified path prefix. If there are none, the action
-        /// returns an empty list.
+        /// Lists the IAM users that have the specified path prefix. If no path prefix is specified,
+        /// the action returns all users in the AWS account. If there are none, the action returns
+        /// an empty list. 
         /// 
         ///  
         /// <para>
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        /// parameters. 
         /// </para>
         /// </summary>
         /// 
@@ -4331,13 +4690,14 @@ namespace Amazon.IdentityManagement
         }
 
         /// <summary>
-        /// Lists the users that have the specified path prefix. If there are none, the action
-        /// returns an empty list.
+        /// Lists the IAM users that have the specified path prefix. If no path prefix is specified,
+        /// the action returns all users in the AWS account. If there are none, the action returns
+        /// an empty list. 
         /// 
         ///  
         /// <para>
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        /// parameters. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUsers service method.</param>
@@ -4397,8 +4757,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         /// </summary>
         /// 
@@ -4416,8 +4776,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVirtualMFADevices service method.</param>
@@ -4472,13 +4832,13 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Adds (or updates) a policy document associated with the specified group. For information
         /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-        /// of Policies</a> in the <i>Using IAM</i> guide.
+        /// of Policies</a> in the <i>Using IAM</i> guide. 
         /// 
         ///  
         /// <para>
-        /// For information about limits on the number of policies you can associate with a group,
+        ///  For information about limits on the number of policies you can associate with a group,
         /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutGroupPolicy service method.</param>
@@ -4545,13 +4905,13 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Adds (or updates) a policy document associated with the specified role. For information
         /// about policies, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-        /// of Policies</a> in the <i>Using IAM</i> guide.
+        /// of Policies</a> in the <i>Using IAM</i> guide. 
         /// 
         ///  
         /// <para>
-        /// For information about limits on the policies you can associate with a role, see <a
+        ///  For information about limits on the policies you can associate with a role, see <a
         /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRolePolicy service method.</param>
@@ -4618,13 +4978,13 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Adds (or updates) a policy document associated with the specified user. For information
         /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-        /// of Policies</a> in the <i>Using IAM</i> guide.
+        /// of Policies</a> in the <i>Using IAM</i> guide. 
         /// 
         ///  
         /// <para>
-        /// For information about limits on the number of policies you can associate with a user,
+        ///  For information about limits on the number of policies you can associate with a user,
         /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutUserPolicy service method.</param>
@@ -4686,19 +5046,86 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  RemoveClientIDFromOpenIDConnectProvider
+
+        /// <summary>
+        /// Removes the specified client ID (also known as audience) from the list of client IDs
+        /// registered for the specified IAM OpenID Connect provider.
+        /// 
+        ///  
+        /// <para>
+        /// This action is idempotent; it does not fail or return an error if you try to remove
+        /// a client ID that was removed previously.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveClientIDFromOpenIDConnectProvider service method.</param>
+        /// 
+        /// <returns>The response from the RemoveClientIDFromOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public RemoveClientIDFromOpenIDConnectProviderResponse RemoveClientIDFromOpenIDConnectProvider(RemoveClientIDFromOpenIDConnectProviderRequest request)
+        {
+            var marshaller = new RemoveClientIDFromOpenIDConnectProviderRequestMarshaller();
+            var unmarshaller = RemoveClientIDFromOpenIDConnectProviderResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveClientIDFromOpenIDConnectProviderRequest,RemoveClientIDFromOpenIDConnectProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveClientIDFromOpenIDConnectProvider operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveClientIDFromOpenIDConnectProvider operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveClientIDFromOpenIDConnectProvider
+        ///         operation.</returns>
+        public IAsyncResult BeginRemoveClientIDFromOpenIDConnectProvider(RemoveClientIDFromOpenIDConnectProviderRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new RemoveClientIDFromOpenIDConnectProviderRequestMarshaller();
+            var unmarshaller = RemoveClientIDFromOpenIDConnectProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RemoveClientIDFromOpenIDConnectProviderRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveClientIDFromOpenIDConnectProvider operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveClientIDFromOpenIDConnectProvider.</param>
+        /// 
+        /// <returns>Returns a  RemoveClientIDFromOpenIDConnectProviderResult from IdentityManagementService.</returns>
+        public  RemoveClientIDFromOpenIDConnectProviderResponse EndRemoveClientIDFromOpenIDConnectProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RemoveClientIDFromOpenIDConnectProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RemoveRoleFromInstanceProfile
 
         /// <summary>
         /// Removes the specified role from the specified instance profile.
         /// 
-        ///  <important>Make sure you do not have any Amazon EC2 instances running with the role
+        ///  <important> Make sure you do not have any Amazon EC2 instances running with the role
         /// you are about to remove from the instance profile. Removing a role from an instance
         /// profile that is associated with a running instance will break any applications running
-        /// on the instance.</important> 
+        /// on the instance. </important> 
         /// <para>
-        /// For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+        ///  For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
         /// with Roles</a>. For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// Instance Profiles</a>.
+        /// Instance Profiles</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromInstanceProfile service method.</param>
@@ -4820,13 +5247,20 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Synchronizes the specified MFA device with AWS servers.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about creating and working with virtual MFA devices, go to <a
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
+        /// a Virtual MFA Device</a> in the <i>Using IAM</i> guide. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResyncMFADevice service method.</param>
         /// 
         /// <returns>The response from the ResyncMFADevice service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="InvalidAuthenticationCodeException">
-        /// The request was rejected because the authentication code was not recognized. The error
-        /// message describes the specific error.
+        /// The request was rejected because the authentication code was not recognized. The
+        /// error message describes the specific error.
         /// </exception>
         /// <exception cref="LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -4886,17 +5320,18 @@ namespace Amazon.IdentityManagement
         /// Changes the status of the specified access key from Active to Inactive, or vice versa.
         /// This action can be used to disable a user's key as part of a key rotation work flow.
         /// 
+        /// 
         ///  
         /// <para>
-        /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
+        ///  If the <code>UserName</code> field is not specified, the UserName is determined implicitly
         /// based on the AWS access key ID used to sign the request. Because this action works
-        /// for access keys under the AWS account, this API can be used to manage root credentials
-        /// even if the AWS account has no associated users.
+        /// for access keys under the AWS account, you can use this action to manage root credentials
+        /// even if the AWS account has no associated users. 
         /// </para>
         ///  
         /// <para>
-        /// For information about rotating keys, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
-        /// Keys and Certificates</a> in the <i>Using IAM </i> guide.
+        ///  For information about rotating keys, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
+        /// Keys and Certificates</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccessKey service method.</param>
@@ -4961,8 +5396,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-        /// an IAM Password Policy</a> in the <i>Using IAM</i> guide.
+        ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+        /// an IAM Password Policy</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         /// 
@@ -4989,8 +5424,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-        /// an IAM Password Policy</a> in the <i>Using IAM</i> guide.
+        ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+        /// an IAM Password Policy</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountPasswordPolicy service method.</param>
@@ -5189,6 +5624,13 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Changes the password for the specified user.
+        /// 
+        ///  
+        /// <para>
+        /// Users can change their own passwords by calling <a>ChangePassword</a>. For more information
+        /// about modifying passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
+        /// Passwords</a> in the <i>Using IAM</i> guide. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLoginProfile service method.</param>
         /// 
@@ -5255,6 +5697,79 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  UpdateOpenIDConnectProviderThumbprint
+
+        /// <summary>
+        /// Replaces the existing list of server certificate thumbprints with a new list. 
+        /// 
+        ///  
+        /// <para>
+        /// The list that you pass with this action completely replaces the existing list of thumbprints.
+        /// (The lists are not merged.)
+        /// </para>
+        ///  
+        /// <para>
+        /// Typically, you need to update a thumbprint only when the identity provider's certificate
+        /// changes, which occurs rarely. However, if the provider's certificate <i>does</i> change,
+        /// any attempt to assume an IAM role that specifies the IAM provider as a principal will
+        /// fail until the certificate thumbprint is updated.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOpenIDConnectProviderThumbprint service method.</param>
+        /// 
+        /// <returns>The response from the UpdateOpenIDConnectProviderThumbprint service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public UpdateOpenIDConnectProviderThumbprintResponse UpdateOpenIDConnectProviderThumbprint(UpdateOpenIDConnectProviderThumbprintRequest request)
+        {
+            var marshaller = new UpdateOpenIDConnectProviderThumbprintRequestMarshaller();
+            var unmarshaller = UpdateOpenIDConnectProviderThumbprintResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateOpenIDConnectProviderThumbprintRequest,UpdateOpenIDConnectProviderThumbprintResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateOpenIDConnectProviderThumbprint operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOpenIDConnectProviderThumbprint operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateOpenIDConnectProviderThumbprint
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateOpenIDConnectProviderThumbprint(UpdateOpenIDConnectProviderThumbprintRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateOpenIDConnectProviderThumbprintRequestMarshaller();
+            var unmarshaller = UpdateOpenIDConnectProviderThumbprintResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateOpenIDConnectProviderThumbprintRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateOpenIDConnectProviderThumbprint operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateOpenIDConnectProviderThumbprint.</param>
+        /// 
+        /// <returns>Returns a  UpdateOpenIDConnectProviderThumbprintResult from IdentityManagementService.</returns>
+        public  UpdateOpenIDConnectProviderThumbprintResponse EndUpdateOpenIDConnectProviderThumbprint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateOpenIDConnectProviderThumbprintResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateSAMLProvider
 
         /// <summary>
@@ -5264,7 +5779,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the UpdateSAMLProvider service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -5388,21 +5904,21 @@ namespace Amazon.IdentityManagement
         #region  UpdateSigningCertificate
 
         /// <summary>
-        /// Changes the status of the specified signing certificate from active to disabled, or
-        /// vice versa. This action can be used to disable a user's signing certificate as part
-        /// of a certificate rotation work flow.
+        /// Changes the status of the specified signing certificate from active to disabled,
+        /// or vice versa. This action can be used to disable a user's signing certificate as
+        /// part of a certificate rotation work flow. 
         /// 
         ///  
         /// <para>
-        /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
+        ///  If the <code>UserName</code> field is not specified, the UserName is determined implicitly
         /// based on the AWS access key ID used to sign the request. Because this action works
-        /// for access keys under the AWS account, this API can be used to manage root credentials
-        /// even if the AWS account has no associated users.
+        /// for access keys under the AWS account, you can use this action to manage root credentials
+        /// even if the AWS account has no associated users. 
         /// </para>
         ///  
         /// <para>
-        /// For information about rotating certificates, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
-        /// Keys and Certificates</a> in the <i>Using IAM</i> guide.
+        ///  For information about rotating certificates, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
+        /// Keys and Certificates</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSigningCertificate service method.</param>
@@ -5538,12 +6054,12 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Uploads a server certificate entity for the AWS account. The server certificate entity
         /// includes a public key certificate, a private key, and an optional certificate chain,
-        /// which should all be PEM-encoded.
+        /// which should all be PEM-encoded. 
         /// 
         ///  
         /// <para>
-        /// For information about the number of server certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+        ///  For information about the number of server certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UploadServerCertificate service method.</param>
@@ -5614,14 +6130,14 @@ namespace Amazon.IdentityManagement
         /// Uploads an X.509 signing certificate and associates it with the specified user. Some
         /// AWS services use X.509 signing certificates to validate requests that are signed with
         /// a corresponding private key. When you upload the certificate, its default status is
-        /// <code>Active</code>.
+        /// <code>Active</code>. 
         /// 
         ///  
         /// <para>
-        /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-        /// based on the AWS access key ID used to sign the request. Because this action works
-        /// for access keys under the AWS account, this API can be used to manage root credentials
-        /// even if the AWS account has no associated users.
+        ///  If the <code>UserName</code> field is not specified, the user name is determined
+        /// implicitly based on the AWS access key ID used to sign the request. Because this action
+        /// works for access keys under the AWS account, you can use this action to manage root
+        /// credentials even if the AWS account has no associated users. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UploadSigningCertificate service method.</param>

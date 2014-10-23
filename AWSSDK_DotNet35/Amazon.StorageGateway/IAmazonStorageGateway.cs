@@ -62,12 +62,12 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// This operation activates the gateway you previously deployed on your host. For more
-        /// information, see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/DownloadAndDeploy.html">Downloading
-        /// and Deploying AWS Storage Gateway VM</a>. In the activation process you specify information
+        /// information, see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html">
+        /// Activate the AWS Storage Gateway</a>. In the activation process, you specify information
         /// such as the region you want to use for storing snapshots, the time zone for scheduled
-        /// snapshots and the gateway schedule window, an activation key, and a name for your
-        /// gateway. The activation process also associates your gateway with your account (see
-        /// <a>UpdateGatewayInformation</a>).
+        /// snapshots the gateway snapshot schedule window, an activation key, and a name for
+        /// your gateway. The activation process also associates your gateway with your account;
+        /// for more information, see <a>UpdateGatewayInformation</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ActivateGateway service method.</param>
         /// 
@@ -437,7 +437,7 @@ namespace Amazon.StorageGateway
         /// data to Amazon Simple Storage (S3) for durable off-site recovery, as well as import
         /// the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud
         /// (EC2). You can take snapshots of your gateway volume on a scheduled or ad-hoc basis.
-        /// This API enables you to take ad-hoc snapshot. For more information, see <a href="TBD">Working
+        /// This API enables you to take ad-hoc snapshot. For more information, see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working
         /// With Snapshots in the AWS Storage Gateway Console</a>.
         /// </para>
         ///  
@@ -1726,7 +1726,7 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// This operation returns information about the working storage of a gateway. This operation
         /// is supported only for the gateway-stored volume architecture. This operation is deprecated
-        /// in cached-volumes API version (20120630). Use <a>DescribeUploadBuffer </a>instead.
+        /// in cached-volumes API version (20120630). Use DescribeUploadBuffer instead.
         /// 
         ///  
         /// <para>

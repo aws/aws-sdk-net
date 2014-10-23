@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// <code>block-device-mapping.attach-time</code> - The attach time for an Amazon EBS
-        /// volume mapped to the instance.
+        /// volume mapped to the instance, for example, <code>2010-09-15T17:15:20.000Z</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

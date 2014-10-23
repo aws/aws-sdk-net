@@ -29,10 +29,10 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoginProfile operation.
-    /// Deletes the password for the specified user, which terminates the user's ability to
-    /// access AWS services through the AWS Management Console.
+    /// Deletes the password for the specified user, which terminates the user's ability
+    /// to access AWS services through the AWS Management Console. 
     /// 
-    ///  <important>Deleting a user's password does not prevent a user from accessing IAM
+    ///  <important> Deleting a user's password does not prevent a user from accessing IAM
     /// through the command line interface or the API. To prevent all user access you must
     /// also either make the access key inactive or delete it. For more information about
     /// making keys inactive or deleting them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>.
@@ -50,7 +50,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates DeleteLoginProfileRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">Name of the user whose password you want to delete.</param>
+        /// <param name="userName">The name of the user whose password you want to delete.</param>
         public DeleteLoginProfileRequest(string userName)
         {
             _userName = userName;
@@ -59,7 +59,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Name of the user whose password you want to delete.
+        /// The name of the user whose password you want to delete.
         /// </para>
         /// </summary>
         public string UserName

@@ -29,10 +29,10 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeClusterSnapshots operation.
-    /// Returns one or more snapshot objects, which contain metadata about your cluster
-    /// snapshots.        By default, this operation returns information about all snapshots
-    /// of all clusters that are        owned by you AWS customer account. No information
-    /// is returned for snapshots owned by inactive AWS customer accounts.
+    /// Returns one or more snapshot objects, which contain metadata about your cluster snapshots.
+    /// By default, this operation returns information about all snapshots of all clusters
+    /// that are owned by you AWS customer account. No information is returned for snapshots
+    /// owned by inactive AWS customer accounts.
     /// </summary>
     public partial class DescribeClusterSnapshotsRequest : AmazonRedshiftRequest
     {
@@ -48,8 +48,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///         The identifier of the cluster for which information about snapshots is requested.
-        ///                 
+        ///  The identifier of the cluster for which information about snapshots is requested.
+        /// 
         /// </para>
         /// </summary>
         public string ClusterIdentifier
@@ -67,12 +67,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        ///         A time value that requests only snapshots created at or before the specified
-        /// time. The time        value is         specified in ISO 8601 format. For more information
-        /// about ISO 8601,         go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
-        /// Wikipedia page.</a>        
+        ///  A time value that requests only snapshots created at or before the specified time.
+        /// The time value is specified in ISO 8601 format. For more information about ISO 8601,
+        /// go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
+        /// 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Example: <code>2012-07-16T18:00:00Z</code>
         /// </para>
@@ -92,12 +92,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///             An optional parameter that specifies the starting point to return a set
-        /// of response records.             When the results of a <a>DescribeClusterSnapshots</a>
-        /// request exceed the value specified in <code>MaxRecords</code>,             AWS returns
-        /// a value in the <code>Marker</code> field of the response. You can retrieve the next
-        /// set of             response records by providing the returned marker value in the
-        /// <code>Marker</code> parameter and             retrying the request.        
+        ///  An optional parameter that specifies the starting point to return a set of response
+        /// records. When the results of a <a>DescribeClusterSnapshots</a> request exceed the
+        /// value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
+        /// field of the response. You can retrieve the next set of response records by providing
+        /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
+        /// 
         /// </para>
         /// </summary>
         public string Marker
@@ -115,17 +115,16 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///             The maximum number of response records to return in each call.       
-        ///      If the number of remaining response records exceeds the specified <code>MaxRecords</code>
-        /// value,             a value is returned in a <code>marker</code> field of the response.
-        ///             You can retrieve the next set of records by retrying the command with
-        /// the returned marker value.        
+        ///  The maximum number of response records to return in each call. If the number of remaining
+        /// response records exceeds the specified <code>MaxRecords</code> value, a value is returned
+        /// in a <code>marker</code> field of the response. You can retrieve the next set of records
+        /// by retrying the command with the returned marker value. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Default: <code>100</code>
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints: minimum 20, maximum 100.
         /// </para>
@@ -145,10 +144,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        ///             The AWS customer account used to create or copy the snapshot. Use this
-        /// field to filter the results to snapshots owned by a particular account. To describe
-        /// snapshots you own, either specify your AWS customer account, or do not specify the
-        /// parameter.        
+        ///  The AWS customer account used to create or copy the snapshot. Use this field to filter
+        /// the results to snapshots owned by a particular account. To describe snapshots you
+        /// own, either specify your AWS customer account, or do not specify the parameter. 
         /// </para>
         /// </summary>
         public string OwnerAccount
@@ -166,8 +164,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SnapshotIdentifier. 
         /// <para>
-        ///         The snapshot identifier of the snapshot about which to return information.
-        ///        
+        ///  The snapshot identifier of the snapshot about which to return information. 
         /// </para>
         /// </summary>
         public string SnapshotIdentifier
@@ -185,12 +182,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SnapshotType. 
         /// <para>
-        ///         The type of snapshots for which you are requesting information.         By
-        /// default, snapshots of all types are returned.        
+        ///  The type of snapshots for which you are requesting information. By default, snapshots
+        /// of all types are returned. 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             Valid Values: <code>automated</code> | <code>manual</code>        
+        ///  Valid Values: <code>automated</code> | <code>manual</code> 
         /// </para>
         /// </summary>
         public string SnapshotType
@@ -208,12 +205,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///         A value that requests only snapshots created at or after the specified time.
-        /// The time        value is         specified in ISO 8601 format. For more information
-        /// about ISO 8601,         go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
-        /// Wikipedia page.</a>        
+        ///  A value that requests only snapshots created at or after the specified time. The
+        /// time value is specified in ISO 8601 format. For more information about ISO 8601, go
+        /// to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
+        /// 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Example: <code>2012-07-16T18:00:00Z</code>
         /// </para>

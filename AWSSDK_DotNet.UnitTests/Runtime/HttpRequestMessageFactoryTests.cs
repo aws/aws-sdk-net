@@ -45,12 +45,13 @@ namespace AWSSDK.UnitTests
             IHttpRequestFactory<HttpContent> factory = requestFactory;
             var request = factory.CreateHttpRequest(new Uri(@"https://testuri"));
 
-            Assert.AreEqual(TimeSpan.FromSeconds(40), requestFactory.HttpClient.Timeout);
-            Assert.AreEqual(false, requestFactory.HttpClient.DefaultRequestHeaders.ExpectContinue);
-
             Assert.IsNotNull(request);
             request.Method = "PUT";
-            var httpRequestMessage = ((HttpWebRequestMessage)request).Request;
+            var httpWebRequestMessage = ((HttpWebRequestMessage)request);
+            var httpRequestMessage = httpWebRequestMessage.Request;
+
+            Assert.AreEqual(TimeSpan.FromSeconds(40), httpWebRequestMessage.HttpClient.Timeout);
+            Assert.AreEqual(false, httpWebRequestMessage.HttpClient.DefaultRequestHeaders.ExpectContinue);
             Assert.AreEqual(HttpMethod.Put, httpRequestMessage.Method);
 
             var putObjectRequest = new PutObjectRequest
@@ -60,7 +61,7 @@ namespace AWSSDK.UnitTests
                 ContentBody = "Test_Content",
 
             };
-            
+
             var requestContext = new RequestContext(true)
             {
                 ClientConfig = clientConfig,
@@ -71,7 +72,7 @@ namespace AWSSDK.UnitTests
             };
 
             request.ConfigureRequest(requestContext);
-            
+
             var date = DateTime.Now.ToUniversalTime();
             var headers = new Dictionary<string, string>
             {
@@ -99,12 +100,12 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(length, httpRequestMessage.Content.Headers.ContentLength);
 
             var sourceContent = Encoding.UTF8.GetBytes("Test_Content123");
-            destinationStream = httpRequestMessage.Content;            
+            destinationStream = httpRequestMessage.Content;
             request.WriteToRequestBody(destinationStream, sourceContent, headers);
             Assert.AreEqual(sourceContent.Length, httpRequestMessage.Content.Headers.ContentLength);
 
             Assert.AreEqual("text/plain", httpRequestMessage.Headers.Accept.First().MediaType);
-            Assert.AreEqual("application/json", httpRequestMessage.Content.Headers.ContentType.MediaType);           
+            Assert.AreEqual("application/json", httpRequestMessage.Content.Headers.ContentType.MediaType);
             Assert.AreEqual("awssdk", httpRequestMessage.Headers.UserAgent.First().Product.Name);
             Assert.AreEqual(DateTime.Parse(date.ToString("r")), httpRequestMessage.Headers.Date);
             Assert.AreEqual("s3.amazonaws.com", httpRequestMessage.Headers.Host);

@@ -28,12 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// The <code>MFADevice</code> data type contains information about an MFA device.
+    /// Contains information about an MFA device.
     /// 
     ///  
     /// <para>
-    ///  This data type is used as a response element in the action <a>ListMFADevices</a>.
-    /// 
+    /// This data type is used as a response element in the <a>ListMFADevices</a> action.
     /// </para>
     /// </summary>
     public partial class MFADevice
@@ -51,7 +50,7 @@ namespace Amazon.IdentityManagement.Model
         /// Instantiates MFADevice with the parameterized properties
         /// </summary>
         /// <param name="userName">The user with whom the MFA device is associated.</param>
-        /// <param name="serialNumber">The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</param>
+        /// <param name="serialNumber"> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </param>
         /// <param name="enableDate">The date when the MFA device was enabled for the user.</param>
         public MFADevice(string userName, string serialNumber, DateTime enableDate)
         {
@@ -81,8 +80,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property SerialNumber. 
         /// <para>
-        /// The serial number that uniquely identifies the MFA device. For virtual MFA devices,
-        /// the serial number is the device ARN.
+        ///  The serial number that uniquely identifies the MFA device. For virtual MFA devices,
+        /// the serial number is the device ARN. 
         /// </para>
         /// </summary>
         public string SerialNumber

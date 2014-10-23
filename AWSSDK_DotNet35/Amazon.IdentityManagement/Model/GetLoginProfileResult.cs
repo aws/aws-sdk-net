@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property LoginProfile. 
         /// <para>
-        /// User name and password create date for the user.
+        /// The user name and password create date for the user.
         /// </para>
         /// </summary>
         public LoginProfile LoginProfile

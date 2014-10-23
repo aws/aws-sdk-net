@@ -35,7 +35,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             writer.Close();
 
             bucketName = S3TestUtils.CreateBucket(Client);
-            Client.PutBucket(new PutBucketRequest() { BucketName = bucketName });
+            //Client.PutBucket(new PutBucketRequest() { BucketName = bucketName });
         }
 
 
@@ -161,8 +161,135 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             using (var client = new AmazonS3Client(RegionEndpoint.USWest2))
             {
-                AssertExtensions.ExpectException(() => client.PutObject(request), typeof(AmazonS3Exception));
+                // Returns an exception with HTTP 301 MovedPermanently
+                var exception = AssertExtensions.ExpectException<AmazonS3Exception>(() => client.PutObject(request));
+                Assert.AreEqual("PermanentRedirect", exception.ErrorCode);
+                Assert.AreEqual(HttpStatusCode.MovedPermanently, exception.StatusCode);
+                Assert.IsFalse(string.IsNullOrEmpty(exception.Message));
+                Assert.IsFalse(string.IsNullOrEmpty(exception.RequestId));
+                Assert.IsFalse(string.IsNullOrEmpty(exception.AmazonId2));
             }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void GetObjectWithNonMatchingEtag()
+        {
+            var key = "TestMatchingEtag" + random.Next();
+            var request = new PutObjectRequest()
+            {
+                BucketName = bucketName,
+                Key = key,
+                ContentBody = "This is the content body!",
+                CannedACL = S3CannedACL.AuthenticatedRead
+            };
+
+            Client.PutObject(request);
+
+            var etag = Client.GetObject(new GetObjectRequest
+            {
+                BucketName = bucketName,
+                Key = key
+            }).ETag;
+
+            // Returns an exception with HTTP 304 NotModified
+            var exception = AssertExtensions.ExpectException<AmazonS3Exception>(() =>
+                Client.GetObject(new GetObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    EtagToNotMatch = etag
+                })
+            );
+            Assert.AreEqual("NotModified", exception.ErrorCode);
+            Assert.AreEqual(HttpStatusCode.NotModified, exception.StatusCode);
+            Assert.IsFalse(string.IsNullOrEmpty(exception.Message));
+            Assert.IsFalse(string.IsNullOrEmpty(exception.RequestId));
+            Assert.IsFalse(string.IsNullOrEmpty(exception.AmazonId2));
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TemporaryRedirectForS3OperationsWithSigV4()
+        {
+            AWSConfigs.S3Config.UseSignatureVersion4 = true;
+            TemporaryRedirectForS3Operations();
+            AWSConfigs.S3Config.UseSignatureVersion4 = false;
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TemporaryRedirectForS3Operations()
+        {            
+            var testBucketName = UtilityMethods.GenerateName(UtilityMethods.SDK_TEST_PREFIX);
+            using (var client = new AmazonS3Client())
+            {
+                var bucket = client.PutBucket(new PutBucketRequest
+                {
+                    BucketName = testBucketName,
+                    BucketRegion = S3Region.USW2
+                });
+
+                try
+                {
+                    client.PutObject(new PutObjectRequest
+                    {
+                        BucketName = testBucketName,
+                        Key = "TestKey1",
+                        ContentBody = "sample text"
+                    });
+
+                    client.PutObject(new PutObjectRequest
+                    {
+                        BucketName = testBucketName,
+                        Key = "TestKey2",
+                        InputStream = UtilityMethods.CreateStreamFromString("sample text")
+                    });
+
+                    // Returns an exception with HTTP 307 TemporaryRedirect
+                    var exception = AssertExtensions.ExpectException<AmazonS3Exception>(() =>
+                        client.PutObject(new PutObjectRequest
+                        {
+                            BucketName = testBucketName,
+                            Key = "TestKey3",
+                            InputStream = UtilityMethods.CreateStreamFromString("sample text", new NonRewindableStream())
+                        })
+                    );
+
+                    Assert.AreEqual("TemporaryRedirect", exception.ErrorCode);
+                    Assert.AreEqual(HttpStatusCode.TemporaryRedirect, exception.StatusCode);
+                    Assert.IsFalse(string.IsNullOrEmpty(exception.Message));
+                    Assert.IsFalse(string.IsNullOrEmpty(exception.RequestId));
+                    Assert.IsFalse(string.IsNullOrEmpty(exception.AmazonId2));
+
+
+                    var objects = client.ListObjects(new ListObjectsRequest
+                    {
+                        BucketName = testBucketName
+                    }).S3Objects;
+                    Assert.AreEqual(2, objects.Count);
+                }
+                finally
+                {
+                    AmazonS3Util.DeleteS3BucketWithObjects(client, testBucketName);
+                }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void DeleteNonExistentBucket()
+        {
+            // Returns an exception with HTTP 404 NotFound
+            var exception = AssertExtensions.ExpectException<AmazonS3Exception>(() =>
+                Client.DeleteBucket(new DeleteBucketRequest { BucketName = "nonexistentbucket1234567890" })
+            );
+            Assert.AreEqual("NoSuchBucket", exception.ErrorCode);
+            Assert.AreEqual(HttpStatusCode.NotFound, exception.StatusCode);
+            Assert.IsFalse(string.IsNullOrEmpty(exception.Message));
+            Assert.IsFalse(string.IsNullOrEmpty(exception.RequestId));
+            Assert.IsFalse(string.IsNullOrEmpty(exception.AmazonId2));
+
         }
 
         [TestMethod]
@@ -188,7 +315,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var getResponse = Client.GetObject(getRequest))
             {
                 Assert.AreEqual("disposition", getResponse.Headers.ContentDisposition);
-                Assert.AreEqual("gzip", getResponse.Headers.ContentEncoding);                
+                Assert.AreEqual("gzip", getResponse.Headers.ContentEncoding);
             }
         }
 
@@ -427,16 +554,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 ContentBody = "Some Random Nonsense",
                 Grants = new List<S3Grant>()
                 {
-                    new S3Grant(){Grantee = new S3Grantee(){EmailAddress = "pavel@amazon.com"}, Permission = S3Permission.FULL_CONTROL},
-                    new S3Grant(){Grantee = new S3Grantee(){EmailAddress = "aws-dr-tools-test@amazon.com"}, Permission = S3Permission.FULL_CONTROL},
-                    new S3Grant(){Grantee = new S3Grantee(){URI = "http://acs.amazonaws.com/groups/global/AllUsers"}, Permission = S3Permission.READ}
+                    //new S3Grant(){Grantee = new S3Grantee(){EmailAddress = "pavel@amazon.com"}, Permission = S3Permission.FULL_CONTROL},
+                    //new S3Grant(){Grantee = new S3Grantee(){EmailAddress = "aws-dr-tools-test@amazon.com"}, Permission = S3Permission.FULL_CONTROL},
+                    new S3Grant(){Grantee = new S3Grantee(){URI = "http://acs.amazonaws.com/groups/global/AllUsers"}, Permission = S3Permission.READ},
+                    new S3Grant(){Grantee = new S3Grantee { URI = "http://acs.amazonaws.com/groups/global/AuthenticatedUsers"}, Permission = S3Permission.READ}
                 }
             };
 
             Client.PutObject(request);
 
             var acl = Client.GetACL(new GetACLRequest() { BucketName = bucketName, Key = "putobjectwithacl" }).AccessControlList;
-            Assert.AreEqual(3, acl.Grants.Count);
+            Assert.AreEqual(2, acl.Grants.Count);
             foreach (var grant in acl.Grants)
             {
                 var grantee = grant.Grantee;
@@ -460,7 +588,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     {
                         new S3Grant
                         {
-                            Grantee = new S3Grantee { EmailAddress = "pavel@amazon.com" },
+                            Grantee = new S3Grantee { URI = "http://acs.amazonaws.com/groups/global/AuthenticatedUsers" },
                             Permission = S3Permission.READ
                         }
                     },
@@ -468,7 +596,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 },
             });
 
-            Thread.Sleep(1000);            
+            Thread.Sleep(1000);
             acl = Client.GetACL(new GetACLRequest() { BucketName = bucketName, Key = "putobjectwithacl" }).AccessControlList;
             Assert.AreEqual(1, acl.Grants.Count);
         }
@@ -492,6 +620,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 if (!string.IsNullOrEmpty(grant.Grantee.DisplayName))
                 {
                     Assert.IsNotNull(grant.Grantee.DisplayName);
+                    Assert.AreEqual<S3Permission>(S3Permission.FULL_CONTROL, grant.Permission);
+                }
+                else if (!string.IsNullOrEmpty(grant.Grantee.CanonicalUser))
+                {
+                    Assert.IsNotNull(grant.Grantee.CanonicalUser);
                     Assert.AreEqual<S3Permission>(S3Permission.FULL_CONTROL, grant.Permission);
                 }
                 else
@@ -592,9 +725,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var putRequest = new PutObjectRequest
             {
                 BucketName = bucketName,
-                Key = "foo",
-                InputStream = es
+                Key = "foo1",
+                InputStream = es,
+                AutoCloseStream = false
             };
+
             putRequest.Headers["x-amz-content-sha256"] = payloadhash;
             Client.PutObject(putRequest);
 
@@ -610,6 +745,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
 
             Assert.AreEqual(data, responseData);
+
+            requestCount = 0;
+            putRequest.InputStream = es;
+            Client.PutObject(putRequest);
+
+            TestStreamRetry2();
         }
 
         [TestMethod]
@@ -618,6 +759,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             string data = "sample data";
             byte[] bytes = Encoding.UTF8.GetBytes(data);
+
             // must precompute this and set in headers to avoid hash computation on ErrorStream
             // affecting the test
             var payloadhash = UtilityMethods.ToHex(UtilityMethods.ComputeSHA256(bytes), true);
@@ -638,7 +780,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
             putRequest.Headers["x-amz-content-sha256"] = payloadhash;
 
-            AssertExtensions.ExpectException(() => Client.PutObject(putRequest), typeof(AmazonServiceException));
+            var exception = AssertExtensions.ExpectException<AmazonServiceException>(() => Client.PutObject(putRequest));
 
             es = ErrorStream.Create(bytes, readOnly: true);
             es.MaxReadBytes = 3;
@@ -705,7 +847,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     }
                     break;
                 }
-                catch(AmazonServiceException e)
+                catch (AmazonServiceException e)
                 {
                     if (e.StatusCode != HttpStatusCode.NotFound || retries == 5)
                         throw;
@@ -779,6 +921,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             public override long Position { get; set; }
         }
+    }
 
+    public class NonRewindableStream : MemoryStream
+    {
+        public override bool CanSeek
+        {
+            get
+            {
+                return false;
+            }
+        }
     }
 }

@@ -44,7 +44,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates DeleteGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">Name of the group to delete.</param>
+        /// <param name="groupName">The name of the group to delete.</param>
         public DeleteGroupRequest(string groupName)
         {
             _groupName = groupName;
@@ -53,7 +53,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// Name of the group to delete.
+        /// The name of the group to delete.
         /// </para>
         /// </summary>
         public string GroupName

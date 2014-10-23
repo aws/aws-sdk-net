@@ -42,7 +42,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceProfileName. 
         /// <para>
-        /// Name of the instance profile to update.
+        /// The name of the instance profile to update.
         /// </para>
         /// </summary>
         public string InstanceProfileName
@@ -60,7 +60,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// Name of the role to add.
+        /// The name of the role to add.
         /// </para>
         /// </summary>
         public string RoleName

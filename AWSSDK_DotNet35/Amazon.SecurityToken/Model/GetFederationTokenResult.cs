@@ -29,7 +29,7 @@ namespace Amazon.SecurityToken.Model
 {
     /// <summary>
     /// Contains the result of a successful call to the <a>GetFederationToken</a> action,
-    /// including      temporary AWS credentials that can be used to make AWS requests.
+    /// including temporary AWS credentials that can be used to make AWS requests.
     /// </summary>
     public partial class GetFederationTokenResult : AmazonWebServiceResponse
     {
@@ -58,10 +58,9 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property FederatedUser. 
         /// <para>
-        /// Identifiers for the federated user associated with the credentials (such as      
-        ///  <code>arn:aws:sts::123456789012:federated-user/Bob</code> or <code>123456789012:Bob</code>).
-        ///      You can use the federated user's ARN in your resource-based policies, such as
-        /// an Amazon S3      bucket policy. 
+        /// Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code>
+        /// or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based
+        /// policies, such as an Amazon S3 bucket policy. 
         /// </para>
         /// </summary>
         public FederatedUser FederatedUser
@@ -80,8 +79,8 @@ namespace Amazon.SecurityToken.Model
         /// Gets and sets the property PackedPolicySize. 
         /// <para>
         /// A percentage value indicating the size of the policy in packed form. The service rejects
-        ///      policies for which the packed size is greater than 100 percent of the allowed
-        /// value. 
+        /// policies for which the packed size is greater than 100 percent of the allowed value.
+        /// 
         /// </para>
         /// </summary>
         public int PackedPolicySize

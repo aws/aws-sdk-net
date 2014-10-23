@@ -54,11 +54,17 @@ namespace AWSSDK_DotNet35.UnitTests
             stream.Position = 0;
             return stream;
         }
-
+        
         public static void AssertExceptionExpected(Action action)
         {
             AssertExceptionExpected(action, typeof(Exception));
         }
+
+        public static T AssertExceptionExpected<T>(Action action) where T : Exception
+        {
+            return AssertExceptionExpected(action, typeof(T)) as T;
+        }
+
         public static Exception AssertExceptionExpected(Action action, Type expectedExceptionType, string expectedExceptionMessage = null)
         {
             try

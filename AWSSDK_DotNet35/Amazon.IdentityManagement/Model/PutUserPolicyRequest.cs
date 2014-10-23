@@ -31,13 +31,13 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the PutUserPolicy operation.
     /// Adds (or updates) a policy document associated with the specified user. For information
     /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-    /// of Policies</a> in the <i>Using IAM</i> guide.
+    /// of Policies</a> in the <i>Using IAM</i> guide. 
     /// 
     ///  
     /// <para>
-    /// For information about limits on the number of policies you can associate with a user,
+    ///  For information about limits on the number of policies you can associate with a user,
     /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-    /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+    /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
     /// </para>
     /// </summary>
     public partial class PutUserPolicyRequest : AmazonIdentityManagementServiceRequest
@@ -54,8 +54,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates PutUserPolicyRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">Name of the user to associate the policy with.</param>
-        /// <param name="policyName">Name of the policy document.</param>
+        /// <param name="userName">The name of the user to associate the policy with.</param>
+        /// <param name="policyName">The name of the policy document.</param>
         /// <param name="policyDocument">The policy document.</param>
         public PutUserPolicyRequest(string userName, string policyName, string policyDocument)
         {
@@ -85,7 +85,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// Name of the policy document.
+        /// The name of the policy document.
         /// </para>
         /// </summary>
         public string PolicyName
@@ -103,7 +103,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Name of the user to associate the policy with.
+        /// The name of the user to associate the policy with.
         /// </para>
         /// </summary>
         public string UserName

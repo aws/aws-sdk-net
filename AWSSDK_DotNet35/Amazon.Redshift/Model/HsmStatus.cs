@@ -40,7 +40,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property HsmClientCertificateIdentifier. 
         /// <para>
         /// Specifies the name of the HSM client certificate the Amazon Redshift cluster uses
-        /// to retrieve the data            encryption keys stored in an HSM.
+        /// to retrieve the data encryption keys stored in an HSM.
         /// </para>
         /// </summary>
         public string HsmClientCertificateIdentifier
@@ -59,7 +59,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property HsmConfigurationIdentifier. 
         /// <para>
         /// Specifies the name of the HSM configuration that contains the information the Amazon
-        /// Redshift cluster            can use to retrieve and store keys in an HSM.
+        /// Redshift cluster can use to retrieve and store keys in an HSM.
         /// </para>
         /// </summary>
         public string HsmConfigurationIdentifier
@@ -78,9 +78,9 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// Reports whether the Amazon Redshift cluster has finished applying any HSM settings
-        /// changes            specified in a modify cluster command.
+        /// changes specified in a modify cluster command.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Values: active, applying
         /// </para>

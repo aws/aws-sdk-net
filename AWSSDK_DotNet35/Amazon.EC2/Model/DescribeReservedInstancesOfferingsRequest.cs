@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -87,7 +87,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// <code>duration</code> - The duration of the Reserved Instance (for example, one year
-        /// or three years), in seconds.
+        /// or three years), in seconds (<code>31536000</code> | <code>94608000</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -200,6 +200,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The maximum duration (in seconds) to filter when searching for offerings.
         /// </para>
+        ///  
+        /// <para>
+        /// Default: 94608000 (3 years)
+        /// </para>
         /// </summary>
         public long MaxDuration
         {
@@ -218,6 +222,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The maximum number of instances to filter when searching for offerings.
         /// </para>
+        ///  
+        /// <para>
+        /// Default: 20
+        /// </para>
         /// </summary>
         public int MaxInstanceCount
         {
@@ -234,7 +242,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of offerings to return.
+        /// The maximum number of offerings to return. The maximum is 100.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 100
         /// </para>
         /// </summary>
         public int MaxResults
@@ -253,6 +265,10 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MinDuration. 
         /// <para>
         /// The minimum duration (in seconds) to filter when searching for offerings.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 2592000 (1 month)
         /// </para>
         /// </summary>
         public long MinDuration
@@ -288,7 +304,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OfferingType. 
         /// <para>
-        /// The Reserved Instance offering type.
+        /// The Reserved Instance offering type. If you are using tools that predate the 2011-11-01
+        /// API version, you only have access to the <code>Medium Utilization</code> Reserved
+        /// Instance offering type. 
         /// </para>
         /// </summary>
         public OfferingTypeValues OfferingType

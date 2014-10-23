@@ -44,6 +44,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void AddClientIDToOpenIDConnectProviderMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddClientIDToOpenIDConnectProvider");
+
+            var request = InstantiateClassGenerator.Execute<AddClientIDToOpenIDConnectProviderRequest>();
+            var marshaller = new AddClientIDToOpenIDConnectProviderRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void AddRoleToInstanceProfileMarshallTest()
         {
             var operation = service_model.FindOperation("AddRoleToInstanceProfile");
@@ -207,6 +226,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = CreateLoginProfileResponseUnmarshaller.Instance.Unmarshall(context)
                 as CreateLoginProfileResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void CreateOpenIDConnectProviderMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateOpenIDConnectProvider");
+
+            var request = InstantiateClassGenerator.Execute<CreateOpenIDConnectProviderRequest>();
+            var marshaller = new CreateOpenIDConnectProviderRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateOpenIDConnectProviderResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateOpenIDConnectProviderResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -451,6 +494,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var request = InstantiateClassGenerator.Execute<DeleteLoginProfileRequest>();
             var marshaller = new DeleteLoginProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void DeleteOpenIDConnectProviderMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteOpenIDConnectProvider");
+
+            var request = InstantiateClassGenerator.Execute<DeleteOpenIDConnectProviderRequest>();
+            var marshaller = new DeleteOpenIDConnectProviderRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();
@@ -827,6 +889,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void GetOpenIDConnectProviderMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetOpenIDConnectProvider");
+
+            var request = InstantiateClassGenerator.Execute<GetOpenIDConnectProviderRequest>();
+            var marshaller = new GetOpenIDConnectProviderRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetOpenIDConnectProviderResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetOpenIDConnectProviderResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void GetRoleMarshallTest()
         {
             var operation = service_model.FindOperation("GetRole");
@@ -1163,6 +1249,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void ListOpenIDConnectProvidersMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListOpenIDConnectProviders");
+
+            var request = InstantiateClassGenerator.Execute<ListOpenIDConnectProvidersRequest>();
+            var marshaller = new ListOpenIDConnectProvidersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListOpenIDConnectProvidersResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListOpenIDConnectProvidersResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void ListRolePoliciesMarshallTest()
         {
             var operation = service_model.FindOperation("ListRolePolicies");
@@ -1412,6 +1522,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void RemoveClientIDFromOpenIDConnectProviderMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveClientIDFromOpenIDConnectProvider");
+
+            var request = InstantiateClassGenerator.Execute<RemoveClientIDFromOpenIDConnectProviderRequest>();
+            var marshaller = new RemoveClientIDFromOpenIDConnectProviderRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void RemoveRoleFromInstanceProfileMarshallTest()
         {
             var operation = service_model.FindOperation("RemoveRoleFromInstanceProfile");
@@ -1551,6 +1680,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var request = InstantiateClassGenerator.Execute<UpdateLoginProfileRequest>();
             var marshaller = new UpdateLoginProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void UpdateOpenIDConnectProviderThumbprintMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateOpenIDConnectProviderThumbprint");
+
+            var request = InstantiateClassGenerator.Execute<UpdateOpenIDConnectProviderThumbprintRequest>();
+            var marshaller = new UpdateOpenIDConnectProviderThumbprintRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();

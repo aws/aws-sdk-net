@@ -30,8 +30,8 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the DescribeHsmConfigurations operation.
     /// Returns information about the specified Amazon Redshift HSM configuration. If no configuration
-    /// ID is            specified, returns information about all the HSM configurations owned
-    /// by your AWS customer account.
+    /// ID is specified, returns information about all the HSM configurations owned by your
+    /// AWS customer account.
     /// </summary>
     public partial class DescribeHsmConfigurationsRequest : AmazonRedshiftRequest
     {
@@ -43,8 +43,8 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property HsmConfigurationIdentifier. 
         /// <para>
         /// The identifier of a specific Amazon Redshift HSM configuration to be described. If
-        /// no            identifier is specified, information is returned for all HSM configurations
-        ///            owned by your AWS customer account.
+        /// no identifier is specified, information is returned for all HSM configurations owned
+        /// by your AWS customer account.
         /// </para>
         /// </summary>
         public string HsmConfigurationIdentifier
@@ -62,12 +62,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///             An optional parameter that specifies the starting point to return a set
-        /// of response records.             When the results of a <a>DescribeHsmConfigurations</a>
-        /// request exceed the value specified in <code>MaxRecords</code>,             AWS returns
-        /// a value in the <code>Marker</code> field of the response. You can retrieve the next
-        /// set of             response records by providing the returned marker value in the
-        /// <code>Marker</code> parameter and             retrying the request.        
+        ///  An optional parameter that specifies the starting point to return a set of response
+        /// records. When the results of a <a>DescribeHsmConfigurations</a> request exceed the
+        /// value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
+        /// field of the response. You can retrieve the next set of response records by providing
+        /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
+        /// 
         /// </para>
         /// </summary>
         public string Marker
@@ -85,17 +85,16 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///             The maximum number of response records to return in each call.       
-        ///      If the number of remaining response records exceeds the specified <code>MaxRecords</code>
-        /// value,             a value is returned in a <code>marker</code> field of the response.
-        ///             You can retrieve the next set of records by retrying the command with
-        /// the returned marker value.        
+        ///  The maximum number of response records to return in each call. If the number of remaining
+        /// response records exceeds the specified <code>MaxRecords</code> value, a value is returned
+        /// in a <code>marker</code> field of the response. You can retrieve the next set of records
+        /// by retrying the command with the returned marker value. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Default: <code>100</code>
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints: minimum 20, maximum 100.
         /// </para>

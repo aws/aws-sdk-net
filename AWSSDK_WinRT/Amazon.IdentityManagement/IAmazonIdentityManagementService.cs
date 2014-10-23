@@ -32,15 +32,16 @@ namespace Amazon.IdentityManagement
     ///
     /// AWS Identity and Access Management 
     /// <para>
-    /// AWS Identity and Access Management (IAM) is a web service that you can use to manage
+    ///  AWS Identity and Access Management (IAM) is a web service that you can use to manage
     /// users and user permissions under your AWS account. This guide provides descriptions
-    /// of the IAM API. For general information about IAM, see <a href="http://aws.amazon.com/iam/">AWS
-    /// Identity and Access Management (IAM)</a>. For the user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using
+    /// of IAM actions that you can call programmatically. For general information about IAM,
+    /// see <a href="http://aws.amazon.com/iam/">AWS Identity and Access Management (IAM)</a>.
+    /// For the user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using
     /// IAM</a>. 
     /// </para>
     ///  
     /// <para>
-    /// We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However,
+    ///  We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However,
     /// you can also use the IAM Query API to make direct calls to the IAM web service. To
     /// learn more about the IAM Query API, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
     /// Query Requests</a> in the <i>Using IAM</i> guide. IAM supports GET and POST requests
@@ -54,7 +55,7 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  
     /// <para>
-    /// Requests must be signed using an access key ID and a secret access key. We strongly
+    ///  Requests must be signed using an access key ID and a secret access key. We strongly
     /// recommend that you do not use your AWS account access key ID and secret access key
     /// for everyday work with IAM. You can use the access key ID and secret access key for
     /// an IAM user or you can use the AWS Security Token Service to generate temporary security
@@ -62,7 +63,7 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  
     /// <para>
-    /// To sign requests, we recommend that you use <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    ///  To sign requests, we recommend that you use <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4</a>. If you have an existing application that uses Signature Version 2,
     /// you do not have to update it to use Signature Version 4. However, some operations
     /// now require Signature Version 4. The documentation for operations that require version
@@ -91,16 +92,32 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  <ul> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS
     /// Security Credentials</a>. This topic provides general information about the types
-    /// of credentials used for accessing AWS.</li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
+    /// of credentials used for accessing AWS. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
     /// Best Practices</a>. This topic presents a list of suggestions for using the IAM service
-    /// to help secure your AWS resources.</li> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/">AWS
+    /// to help secure your AWS resources. </li> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/">AWS
     /// Security Token Service</a>. This guide describes how to create and use temporary security
-    /// credentials.</li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    /// credentials. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
     /// AWS API Requests</a>. This set of topics walk you through the process of signing a
-    /// request using an access key ID and secret access key.</li> </ul>
+    /// request using an access key ID and secret access key. </li> </ul>
     /// </summary>
     public partial interface IAmazonIdentityManagementService : IDisposable
     {
+                
+        #region  AddClientIDToOpenIDConnectProvider
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddClientIDToOpenIDConnectProvider operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddClientIDToOpenIDConnectProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AddClientIDToOpenIDConnectProviderResponse> AddClientIDToOpenIDConnectProviderAsync(AddClientIDToOpenIDConnectProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
                 
         #region  AddRoleToInstanceProfile
 
@@ -227,6 +244,22 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<CreateLoginProfileResponse> CreateLoginProfileAsync(CreateLoginProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateOpenIDConnectProvider
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateOpenIDConnectProvider operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateOpenIDConnectProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateOpenIDConnectProviderResponse> CreateOpenIDConnectProviderAsync(CreateOpenIDConnectProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -419,6 +452,22 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteLoginProfileResponse> DeleteLoginProfileAsync(DeleteLoginProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteOpenIDConnectProvider
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteOpenIDConnectProvider operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOpenIDConnectProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteOpenIDConnectProviderResponse> DeleteOpenIDConnectProviderAsync(DeleteOpenIDConnectProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -694,6 +743,22 @@ namespace Amazon.IdentityManagement
 
         #endregion
                 
+        #region  GetOpenIDConnectProvider
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOpenIDConnectProvider operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOpenIDConnectProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetOpenIDConnectProviderResponse> GetOpenIDConnectProviderAsync(GetOpenIDConnectProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetRole
 
         /// <summary>
@@ -918,6 +983,22 @@ namespace Amazon.IdentityManagement
 
         #endregion
                 
+        #region  ListOpenIDConnectProviders
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOpenIDConnectProviders operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOpenIDConnectProviders operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListOpenIDConnectProvidersResponse> ListOpenIDConnectProvidersAsync(ListOpenIDConnectProvidersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListRolePolicies
 
         /// <summary>
@@ -1094,6 +1175,22 @@ namespace Amazon.IdentityManagement
 
         #endregion
                 
+        #region  RemoveClientIDFromOpenIDConnectProvider
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveClientIDFromOpenIDConnectProvider operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveClientIDFromOpenIDConnectProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RemoveClientIDFromOpenIDConnectProviderResponse> RemoveClientIDFromOpenIDConnectProviderAsync(RemoveClientIDFromOpenIDConnectProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RemoveRoleFromInstanceProfile
 
         /// <summary>
@@ -1219,6 +1316,22 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<UpdateLoginProfileResponse> UpdateLoginProfileAsync(UpdateLoginProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateOpenIDConnectProviderThumbprint
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateOpenIDConnectProviderThumbprint operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOpenIDConnectProviderThumbprint operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateOpenIDConnectProviderThumbprintResponse> UpdateOpenIDConnectProviderThumbprintAsync(UpdateOpenIDConnectProviderThumbprintRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

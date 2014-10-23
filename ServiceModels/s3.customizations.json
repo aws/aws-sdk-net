@@ -5,7 +5,14 @@
             { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3PostMarshallHandler", "targetType": "Amazon.Runtime.Internal.Marshaller" },
             { "operation": "addBefore", "newType": "Amazon.S3.Internal.AmazonS3ResponseHandler", "targetType": "Amazon.Runtime.Internal.Unmarshaller" },
             { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3ExceptionHandler", "targetType": "Amazon.Runtime.Internal.ErrorCallbackHandler" },
-            { "operation": "addAfter", "newType": "Amazon.Runtime.Internal.RedirectHandler", "targetType": "Amazon.Runtime.Internal.ErrorHandler" }
+            { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3RedirectHandler", "targetType": "Amazon.Runtime.Internal.Unmarshaller" }
+
+            { 
+                "operation": "replace", 
+                "newType":"Amazon.Runtime.Internal.RetryHandler", 
+                "targetType":"Amazon.Runtime.Internal.RetryHandler",
+                "constructorInput":"new Amazon.S3.Internal.AmazonS3RetryPolicy(this.Config.MaxErrorRetry)" 
+            }
         ]
     },
     "noArgOverloads": [

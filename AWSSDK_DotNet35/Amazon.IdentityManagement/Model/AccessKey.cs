@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// The AccessKey data type contains information about an AWS access key.
+    /// Contains information about an AWS access key.
     /// 
     ///  
     /// <para>
-    ///  This data type is used as a response element in the actions <a>CreateAccessKey</a>
-    /// and <a>ListAccessKeys</a>. 
+    ///  This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a>
+    /// actions. 
     /// </para>
     /// </summary>
     public partial class AccessKey
@@ -52,9 +52,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates AccessKey with the parameterized properties
         /// </summary>
-        /// <param name="userName">Name of the user the key is associated with.</param>
+        /// <param name="userName">The name of the IAM user that the access key is associated with.</param>
         /// <param name="accessKeyId">The ID for this access key.</param>
-        /// <param name="status">The status of the access key. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not.</param>
+        /// <param name="status"> The status of the access key. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not. </param>
         /// <param name="secretAccessKey">The secret key used to sign requests.</param>
         public AccessKey(string userName, string accessKeyId, StatusType status, string secretAccessKey)
         {
@@ -121,8 +121,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the access key. <code>Active</code> means the key is valid for API calls,
-        /// while <code>Inactive</code> means it is not.
+        ///  The status of the access key. <code>Active</code> means the key is valid for API
+        /// calls, while <code>Inactive</code> means it is not. 
         /// </para>
         /// </summary>
         public StatusType Status
@@ -140,7 +140,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Name of the user the key is associated with.
+        /// The name of the IAM user that the access key is associated with.
         /// </para>
         /// </summary>
         public string UserName

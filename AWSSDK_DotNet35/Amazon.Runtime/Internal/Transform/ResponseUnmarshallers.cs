@@ -186,6 +186,11 @@ namespace Amazon.Runtime.Internal.Transform
             response.ResponseMetadata.Metadata.Add(AMZ_ID_2, input.ResponseData.GetHeaderValue(AMZ_ID_2));
             return response;
         }
+
+        protected override UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response)
+        {
+            return new S3UnmarshallerContext(responseStream, maintainResponseBody, response);
+        }
     }
 
     /// <summary>

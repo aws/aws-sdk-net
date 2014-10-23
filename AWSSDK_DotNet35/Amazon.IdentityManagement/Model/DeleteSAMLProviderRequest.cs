@@ -33,8 +33,8 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// Deleting the provider does not update any roles that reference the SAML provider as
-    /// a principal in their trust policies. Any attempt to assume a role that references
+    ///  Deleting the provider does not update any roles that reference the SAML provider
+    /// as a principal in their trust policies. Any attempt to assume a role that references
     /// a SAML provider that has been deleted will fail. 
     /// </para>
     /// </summary>

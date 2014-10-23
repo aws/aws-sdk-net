@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,6 +33,12 @@ namespace Amazon.EC2.Model
     /// (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved Instances to be
     /// modified must be identical, except for Availability Zone, network platform, and instance
     /// type.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
+    /// Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.
+    /// </para>
     /// </summary>
     public partial class ModifyReservedInstancesRequest : AmazonEC2Request
     {

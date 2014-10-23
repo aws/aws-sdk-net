@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -91,7 +91,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PrivateIpAddresses. 
         /// <para>
         /// One or more IP addresses to be assigned as a secondary private IP address to the network
-        /// interface.
+        /// interface. You can't specify this parameter when also specifying a number of secondary
+        /// IP addresses.
         /// </para>
         ///  
         /// <para>
@@ -114,7 +115,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecondaryPrivateIpAddressCount. 
         /// <para>
-        /// The number of secondary IP addresses to assign to the network interface.
+        /// The number of secondary IP addresses to assign to the network interface. You can't
+        /// specify this parameter when also specifying private IP addresses.
         /// </para>
         /// </summary>
         public int SecondaryPrivateIpAddressCount

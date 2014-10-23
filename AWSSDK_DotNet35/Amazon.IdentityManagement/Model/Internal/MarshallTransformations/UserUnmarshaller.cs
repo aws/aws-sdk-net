@@ -61,6 +61,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PasswordLastUsed", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.PasswordLastUsed = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Path", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

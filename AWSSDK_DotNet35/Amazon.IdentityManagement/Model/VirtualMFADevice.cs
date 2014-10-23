@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// The <code>VirtualMFADevice</code> data type contains information about a virtual MFA
-    /// device.
+    /// Contains information about a virtual MFA device.
     /// </summary>
     public partial class VirtualMFADevice
     {
@@ -42,8 +41,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Base32StringSeed. 
         /// <para>
-        /// The Base32 seed defined as specified in <a href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>.
-        /// The <code>Base32StringSeed</code> is Base64-encoded.
+        ///  The Base32 seed defined as specified in <a href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>.
+        /// The <code>Base32StringSeed</code> is Base64-encoded. 
         /// </para>
         /// </summary>
         public MemoryStream Base32StringSeed
@@ -59,7 +58,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EnableDate.
+        /// Gets and sets the property EnableDate. 
+        /// <para>
+        /// The date and time on which the virtual MFA device was enabled.
+        /// </para>
         /// </summary>
         public DateTime EnableDate
         {
@@ -76,10 +78,11 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property QRCodePNG. 
         /// <para>
-        /// A QR code PNG image that encodes <i>otpauth://totp/$virtualMFADeviceName@$AccountName?
-        /// secret=$Base32String</i> where $virtualMFADeviceName is one of the create call arguments,
-        /// AccountName is the user name if set (accountId otherwise), and Base32String is the
-        /// seed in Base32 format. The <code>Base32String</code> is Base64-encoded.
+        ///  A QR code PNG image that encodes <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
+        /// where <code>$virtualMFADeviceName</code> is one of the create call arguments, <code>AccountName</code>
+        /// is the user name if set (otherwise, the account ID otherwise), and <code>Base32String</code>
+        /// is the seed in Base32 format. The <code>Base32String</code> value is Base64-encoded.
+        /// 
         /// </para>
         /// </summary>
         public MemoryStream QRCodePNG

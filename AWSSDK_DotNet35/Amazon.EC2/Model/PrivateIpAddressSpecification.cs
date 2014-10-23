@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -38,7 +38,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Primary. 
         /// <para>
-        /// Indicates whether the private IP address is the primary private IP address.
+        /// Indicates whether the private IP address is the primary private IP address. Only one
+        /// IP address can be designated as primary.
         /// </para>
         /// </summary>
         public bool Primary

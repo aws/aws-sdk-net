@@ -38,12 +38,11 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///             A value that indicates the starting point for the next set of response
-        /// records in a subsequent request.             If a value is returned in a response,
-        /// you can retrieve the next set of records by providing this returned             marker
-        /// value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code>
-        /// field            is empty, all response records have been retrieved for the request.
-        ///        
+        ///  A value that indicates the starting point for the next set of response records in
+        /// a subsequent request. If a value is returned in a response, you can retrieve the next
+        /// set of records by providing this returned marker value in the <code>Marker</code>
+        /// parameter and retrying the command. If the <code>Marker</code> field is empty, all
+        /// response records have been retrieved for the request. 
         /// </para>
         /// </summary>
         public string Marker
@@ -61,8 +60,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterGroups. 
         /// <para>
-        ///             A list of <a>ClusterParameterGroup</a> instances. Each instance describes
-        /// one cluster parameter            group.        
+        ///  A list of <a>ClusterParameterGroup</a> instances. Each instance describes one cluster
+        /// parameter group. 
         /// </para>
         /// </summary>
         public List<ClusterParameterGroup> ParameterGroups

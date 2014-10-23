@@ -60,7 +60,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property LastFailureMessage. 
         /// <para>
-        ///             The message indicating that logs failed to be delivered.        
+        ///  The message indicating that logs failed to be delivered. 
         /// </para>
         /// </summary>
         public string LastFailureMessage
@@ -78,7 +78,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property LastFailureTime. 
         /// <para>
-        ///             The last time when logs failed to be delivered.        
+        ///  The last time when logs failed to be delivered. 
         /// </para>
         /// </summary>
         public DateTime LastFailureTime
@@ -96,7 +96,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property LastSuccessfulDeliveryTime. 
         /// <para>
-        ///             The last time when logs were delivered.        
+        ///  The last time when logs were delivered. 
         /// </para>
         /// </summary>
         public DateTime LastSuccessfulDeliveryTime

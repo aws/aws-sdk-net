@@ -38,8 +38,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property SerialNumber. 
         /// <para>
-        /// The serial number that uniquely identifies the MFA device. For virtual MFA devices,
-        /// the serial number is the same as the ARN.
+        ///  The serial number that uniquely identifies the MFA device. For virtual MFA devices,
+        /// the serial number is the same as the ARN. 
         /// </para>
         /// </summary>
         public string SerialNumber

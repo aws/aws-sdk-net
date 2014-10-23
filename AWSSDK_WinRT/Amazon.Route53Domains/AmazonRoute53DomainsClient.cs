@@ -195,6 +195,37 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  DisableDomainAutoRenew
+
+        internal DisableDomainAutoRenewResponse DisableDomainAutoRenew(DisableDomainAutoRenewRequest request)
+        {
+            var marshaller = new DisableDomainAutoRenewRequestMarshaller();
+            var unmarshaller = DisableDomainAutoRenewResponseUnmarshaller.Instance;
+
+            return Invoke<DisableDomainAutoRenewRequest,DisableDomainAutoRenewResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableDomainAutoRenew operation.
+        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableDomainAutoRenew operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DisableDomainAutoRenewResponse> DisableDomainAutoRenewAsync(DisableDomainAutoRenewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DisableDomainAutoRenewRequestMarshaller();
+            var unmarshaller = DisableDomainAutoRenewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableDomainAutoRenewRequest,DisableDomainAutoRenewResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisableDomainTransferLock
 
         internal DisableDomainTransferLockResponse DisableDomainTransferLock(DisableDomainTransferLockRequest request)
@@ -221,6 +252,37 @@ namespace Amazon.Route53Domains
             var unmarshaller = DisableDomainTransferLockResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisableDomainTransferLockRequest,DisableDomainTransferLockResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableDomainAutoRenew
+
+        internal EnableDomainAutoRenewResponse EnableDomainAutoRenew(EnableDomainAutoRenewRequest request)
+        {
+            var marshaller = new EnableDomainAutoRenewRequestMarshaller();
+            var unmarshaller = EnableDomainAutoRenewResponseUnmarshaller.Instance;
+
+            return Invoke<EnableDomainAutoRenewRequest,EnableDomainAutoRenewResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableDomainAutoRenew operation.
+        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableDomainAutoRenew operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<EnableDomainAutoRenewResponse> EnableDomainAutoRenewAsync(EnableDomainAutoRenewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new EnableDomainAutoRenewRequestMarshaller();
+            var unmarshaller = EnableDomainAutoRenewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableDomainAutoRenewRequest,EnableDomainAutoRenewResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

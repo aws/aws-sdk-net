@@ -29,17 +29,18 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRole operation.
-    /// Creates a new role for your AWS account. For more information about roles, go to <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+    /// Creates a new role for your AWS account. For more information about roles, go to
+    /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
     /// with Roles</a>. For information about limitations on role names and the number of
     /// roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-    /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+    /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
     /// 
     ///  
     /// <para>
-    /// The example policy grants permission to an EC2 instance to assume the role. The policy
+    ///  The example policy grants permission to an EC2 instance to assume the role. The policy
     /// is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a
     /// href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+    /// 
     /// </para>
     /// </summary>
     public partial class CreateRoleRequest : AmazonIdentityManagementServiceRequest
@@ -69,8 +70,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The path to the role. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
+        ///  The path to the role. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         ///  
         /// <para>
@@ -92,7 +93,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// Name of the role to create.
+        /// The name of the role to create.
         /// </para>
         /// </summary>
         public string RoleName

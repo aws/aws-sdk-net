@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates GetLoginProfileRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">Name of the user whose login profile you want to retrieve.</param>
+        /// <param name="userName">The name of the user whose login profile you want to retrieve.</param>
         public GetLoginProfileRequest(string userName)
         {
             _userName = userName;
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Name of the user whose login profile you want to retrieve.
+        /// The name of the user whose login profile you want to retrieve.
         /// </para>
         /// </summary>
         public string UserName

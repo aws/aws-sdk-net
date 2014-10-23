@@ -114,6 +114,37 @@ namespace Amazon.DynamoDBv2.DocumentModel
             this.Entries.Add(value);
         }
 
+        /// <summary>
+        /// Returns a new instance of Document where all unconverted .NET types
+        /// are converted to DynamoDBEntry types using a specific conversion.
+        /// </summary>
+        /// <param name="conversion"></param>
+        /// <returns></returns>
+        public DynamoDBList ForceConversion(DynamoDBEntryConversion conversion)
+        {
+            DynamoDBList newList = new DynamoDBList();
+            for (int i = 0; i < Entries.Count; i++)
+            {
+                var entry = Entries[i];
+
+                var unconvertedEntry = entry as UnconvertedDynamoDBEntry;
+                if (unconvertedEntry != null)
+                    entry = unconvertedEntry.Convert(conversion);
+
+                var doc = entry as Document;
+                if (doc != null)
+                    entry = doc.ForceConversion(conversion);
+
+                var list = entry as DynamoDBList;
+                if (list != null)
+                    entry = list.ForceConversion(conversion);
+
+                newList.Add(entry);
+            }
+
+            return newList;
+        }
+
         #endregion
 
         #region Overrides
@@ -252,6 +283,34 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         #endregion
+
+        /// <summary>
+        /// Explicitly convert DynamoDBList to List&lt;Document&gt;
+        /// </summary>
+        /// <returns>List&lt;Document&gt; value of this object</returns>
+        public override List<Document> AsListOfDocument()
+        {
+            return Entries.Select(e => e.ToDocument()).ToList();
+        }
+
+        /// <summary>
+        /// Implicitly convert List&lt;Document&gt; to DynamoDBEntry
+        /// </summary>
+        /// <param name="data">List&lt;Document&gt; data to convert</param>
+        /// <returns>DynamoDBEntry representing the data</returns>
+        public static implicit operator DynamoDBList(List<Document> data)
+        {
+            return new DynamoDBList(data.Cast<DynamoDBEntry>());
+        }
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to List&lt;Document&gt;
+        /// </summary>
+        /// <param name="p">DynamoDBEntry to convert</param>
+        /// <returns>List&lt;Document&gt; value of DynamoDBEntry</returns>
+        public static explicit operator List<Document>(DynamoDBList p)
+        {
+            return p.AsListOfDocument();
+        }
 
 
         /// <summary>

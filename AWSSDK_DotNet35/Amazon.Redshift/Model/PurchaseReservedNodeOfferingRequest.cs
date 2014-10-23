@@ -29,17 +29,15 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the PurchaseReservedNodeOffering operation.
-    /// Allows you to purchase reserved nodes. Amazon Redshift offers a predefined
-    /// set of reserved node offerings.           You can purchase one of the offerings. You
-    /// can call the           <a>DescribeReservedNodeOfferings</a> API to obtain the available
-    /// reserved node offerings. You can call this            API by providing a specific
-    /// reserved node offering and the number of nodes you want to reserve.       
+    /// Allows you to purchase reserved nodes. Amazon Redshift offers a predefined set of
+    /// reserved node offerings. You can purchase one of the offerings. You can call the <a>DescribeReservedNodeOfferings</a>
+    /// API to obtain the available reserved node offerings. You can call this API by providing
+    /// a specific reserved node offering and the number of nodes you want to reserve. 
     /// 
-    ///        
+    ///  
     /// <para>
-    ///            For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
-    /// Reserved Nodes</a> in the <i>Amazon Redshift Management Guide</i>.               
-    ///     
+    ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
+    /// Reserved Nodes</a> in the <i>Amazon Redshift Management Guide</i>. 
     /// </para>
     /// </summary>
     public partial class PurchaseReservedNodeOfferingRequest : AmazonRedshiftRequest
@@ -52,7 +50,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The number of reserved nodes you want to purchase.
         /// </para>
-        ///        
+        ///  
         /// <para>
         /// Default: <code>1</code>
         /// </para>

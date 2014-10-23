@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -86,7 +86,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
         /// The primary private IP address of the network interface. If you don't specify an IP
-        /// address, Amazon EC2 selects one for you from the subnet range.
+        /// address, Amazon EC2 selects one for you from the subnet range. If you specify an IP
+        /// address, you cannot indicate any IP addresses specified in <code>privateIpAddresses</code>
+        /// as primary (only one IP address can be designated as primary).
         /// </para>
         /// </summary>
         public string PrivateIpAddress
@@ -124,7 +126,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The number of secondary private IP addresses to assign to a network interface. When
         /// you specify a number of secondary IP addresses, Amazon EC2 selects these IP addresses
-        /// within the subnet range.
+        /// within the subnet range. You can't specify this option and specify more than one private
+        /// IP address using <code>privateIpAddresses</code>.
         /// </para>
         ///  
         /// <para>

@@ -31,12 +31,12 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the CreateInstanceProfile operation.
     /// Creates a new instance profile. For information about instance profiles, go to <a
     /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-    /// Instance Profiles</a>.
+    /// Instance Profiles</a>. 
     /// 
     ///  
     /// <para>
-    /// For information about the number of instance profiles you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-    /// on IAM Entities</a> in the <i>Using IAM</i> guide.
+    ///  For information about the number of instance profiles you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+    /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
     /// </para>
     /// </summary>
     public partial class CreateInstanceProfileRequest : AmazonIdentityManagementServiceRequest
@@ -47,7 +47,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceProfileName. 
         /// <para>
-        /// Name of the instance profile to create.
+        /// The name of the instance profile to create.
         /// </para>
         /// </summary>
         public string InstanceProfileName
@@ -65,8 +65,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
+        ///  The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         ///  
         /// <para>

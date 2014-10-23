@@ -186,7 +186,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Document ForceConversion(DynamoDBEntryConversion conversion)
         {
-            Document doc = new Document();
+            Document newDocument = new Document();
             foreach(var kvp in this)
             {
                 string name = kvp.Key;
@@ -196,10 +196,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (unconvertedEntry != null)
                     entry = unconvertedEntry.Convert(conversion);
 
-                doc[name] = entry;
+                var doc = entry as Document;
+                if (doc != null)
+                    entry = doc.ForceConversion(conversion);
+
+                var list = entry as DynamoDBList;
+                if (list != null)
+                    entry = list.ForceConversion(conversion);
+
+                newDocument[name] = entry;
             }
 
-            return doc;
+            return newDocument;
         }
 
         #endregion

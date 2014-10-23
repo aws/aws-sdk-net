@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates DeleteSecurityGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">[EC2-Classic, default VPC] The name of the security group.</param>
+        /// <param name="groupName">[EC2-Classic, default VPC] The name of the security group. You can specify either the security group name or the security group ID.</param>
         public DeleteSecurityGroupRequest(string groupName)
         {
             _groupName = groupName;
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// The ID of the security group.
+        /// The ID of the security group. Required for a nondefault VPC.
         /// </para>
         /// </summary>
         public string GroupId
@@ -78,7 +78,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// [EC2-Classic, default VPC] The name of the security group.
+        /// [EC2-Classic, default VPC] The name of the security group. You can specify either
+        /// the security group name or the security group ID.
         /// </para>
         /// </summary>
         public string GroupName

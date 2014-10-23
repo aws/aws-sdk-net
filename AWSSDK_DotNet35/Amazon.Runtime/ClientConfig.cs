@@ -59,6 +59,7 @@ namespace Amazon.Runtime
         private bool logMetrics = AWSConfigs.LoggingConfig.LogMetrics;
         private bool disableLogging = false;
         private TimeSpan? timeout = null;
+        private bool allowAutoRedirect = true;
 
         /// <summary>
         /// Gets Service Version
@@ -275,6 +276,22 @@ namespace Amazon.Runtime
         {
             get { return this.resignRetries; }
             set { this.resignRetries = value; }
+        }
+
+        /// <summary>
+        /// This flag controls if .NET HTTP infrastructure should follow redirection
+        ///  responses (e.g. HTTP 307 - temporary redirect).
+        /// </summary>
+        internal bool AllowAutoRedirect
+        {
+            get
+            {
+                return this.allowAutoRedirect;
+            }
+            set
+            {
+                this.allowAutoRedirect = value;
+            }
         }
 
         /// <summary>

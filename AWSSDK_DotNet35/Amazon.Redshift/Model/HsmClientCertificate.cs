@@ -29,8 +29,8 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Returns information about an HSM client certificate. The certificate is stored in
-    /// a secure            Hardware Storage Module (HSM), and used by the Amazon Redshift
-    /// cluster to            encrypt data files.
+    /// a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to
+    /// encrypt data files.
     /// </summary>
     public partial class HsmClientCertificate
     {
@@ -58,8 +58,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property HsmClientCertificatePublicKey. 
         /// <para>
-        /// The public key that the Amazon Redshift cluster will use to connect to the HSM.  
-        ///          You must register the public key in the HSM.
+        /// The public key that the Amazon Redshift cluster will use to connect to the HSM. You
+        /// must register the public key in the HSM.
         /// </para>
         /// </summary>
         public string HsmClientCertificatePublicKey

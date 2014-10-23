@@ -29,12 +29,44 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 CreateContext(conversion);
 
                 TestContextConversions();
+                TestUnsupportedTypes();
 
                 TestHashObjects();
                 TestHashRangeObjects();
                 TestOtherContextOperations();
                 TestBatchOperations();
             }
+        }
+
+        private static void TestUnsupportedTypes()
+        {
+            // Verify that saving objects with invalid properties result in exceptions
+            var employee2 = new Employee2
+            {
+                Name = "Alan",
+                Age = 31,
+                TimeWithCompany = TimeSpan.FromDays(300)
+            };
+            AssertExtensions.ExpectException(() => Context.Save(employee2),
+                typeof(InvalidOperationException),
+                "Type System.TimeSpan is unsupported, it cannot be instantiated");
+            var employee3 = new Employee3
+            {
+                Name = "Alan",
+                Age = 31,
+                EmptyProperty = new EmptyType()
+            };
+            AssertExtensions.ExpectException(() => Context.Save(employee3),
+                typeof(InvalidOperationException),
+                "Type AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members");
+
+            // Verify that objects that are invalid result in exceptions
+            AssertExtensions.ExpectException(() => Context.Scan<TimeSpan>(),
+                typeof(InvalidOperationException),
+                "Type System.TimeSpan is unsupported, it cannot be instantiated");
+            AssertExtensions.ExpectException(() => Context.Scan<EmptyType>(),
+                typeof(InvalidOperationException),
+                "Type AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members");
         }
 
         private void TestContextConversions()
@@ -367,7 +399,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 ManagerName = "Barbara",
                 InternalId = "Alan@BigRiver",
                 Aliases = new List<string> { "Al", "Steve" },
-                Data = Encoding.UTF8.GetBytes("Some binary data")
+                Data = Encoding.UTF8.GetBytes("Some binary data"),
             };
             Context.Save(employee);
 
@@ -456,112 +488,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     }
                 }).ToList();
             Assert.AreEqual(1, employees.Count);
-
-
-            // -------------------------------------------
-
-
-            //Product product = new Product
-            //{
-            //    Id = 1,
-            //    Name = "CloudSpotter",
-            //    CompanyName = "CloudsAreGrate",
-            //    Price = 1200,
-            //    TagSet = new List<string> { "Prod", "1.0" },
-            //    InternalId = "T1000"
-            //};
-            //Context.Save(product);
-
-            // Load item
-            ////Product retrieved = Context.Load<Product>(1);
-            //Assert.AreEqual(product.Id, retrieved.Id);
-            //Assert.AreEqual(product.TagSet.Count, retrieved.TagSet.Count);
-            //Assert.IsNull(retrieved.InternalId);
-
-            //// Create and save new item
-            //product.Id++;
-            //product.Price = 94;
-            //product.TagSet = null;
-            //Context.Save(product);
-
-            //// Load new item
-            //retrieved = Context.Load<Product>(product);
-            //Assert.AreEqual(product.Id, retrieved.Id);
-            //Assert.IsNull(retrieved.TagSet);
-            //Assert.IsNull(retrieved.InternalId);
-
-            //// Enumerate all products and save their Ids
-            //List<int> productIds = new List<int>();
-            //IEnumerable<Product> products = Context.Scan<Product>();
-            //foreach (var p in products)
-            //{
-            //    productIds.Add(p.Id);
-            //}
-            //Assert.AreEqual(2, productIds.Count);
-
-            //// Load first product
-            //var firstId = productIds[0];
-            //product = Context.Load<Product>(firstId);
-            //Assert.IsNotNull(product);
-            //Assert.AreEqual(firstId, product.Id);
-
-            //// Query GlobalIndex
-            //products = Context.Query<Product>(
-            //    product.CompanyName,            // Hash-key for the index is Company
-            //    QueryOperator.GreaterThan,      // Range-key for the index is Price, so the
-            //    new object[] { 90 },           // condition is against a numerical value
-            //    new DynamoDBOperationConfig     // Configure the index to use
-            //    {
-            //        IndexName = "GlobalIndex",
-            //    });
-            //Assert.AreEqual(2, products.Count());
-
-            //// Query GlobalIndex with an additional non-key condition
-            //products = Context.Query<Product>(
-            //    product.CompanyName,            // Hash-key for the index is Company
-            //    QueryOperator.GreaterThan,      // Range-key for the index is Price, so the
-            //    new object[] { 90 },            // condition is against a numerical value
-            //    new DynamoDBOperationConfig     // Configure the index to use
-            //    {
-            //        IndexName = "GlobalIndex",
-            //        QueryFilter = new List<ScanCondition> 
-            //        {
-            //            new ScanCondition("TagSet", ScanOperator.Contains, "1.0")
-            //        }
-            //    });
-            //Assert.AreEqual(1, products.Count());
-
-            //// Delete first product
-            //Context.Delete<Product>(firstId);
-            //product = Context.Load<Product>(product.Id);
-            //Assert.IsNull(product);
-
-            //// Scan the table
-            //products = Context.Scan<Product>();
-            //Assert.AreEqual(1, products.Count());
-
-            //// Test a versioned product
-            //VersionedProduct vp = new VersionedProduct
-            //{
-            //    Id = 3,
-            //    Name = "CloudDebugger",
-            //    CompanyName = "CloudsAreGrate",
-            //    Price = 9000,
-            //    TagSet = new List<string> { "Test" },
-            //};
-            //Context.Save(vp);
-
-            //// Update and save
-            //vp.Price++;
-            //Context.Save(vp);
-
-            //// Alter the version and try to save
-            //vp.Version = 0;
-            //AssertExtensions.ExpectException(() => Context.Save(vp));
-
-            //// Load and save
-            //vp = Context.Load(vp);
-            //Context.Save(vp);
         }
 
         private void TestBatchOperations()
@@ -768,6 +694,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             public string InternalId { get; set; }
         }
+
+        /// <summary>
+        /// Class with a property of a type that has no valid constructor
+        /// </summary>
+        public class Employee2 : Employee
+        {
+            public TimeSpan TimeWithCompany { get; set; }
+        }
+
+        /// <summary>
+        /// Class with a property of an empty type
+        /// </summary>
+        public class Employee3 : Employee
+        {
+            public EmptyType EmptyProperty { get; set; }
+        }
+
+        /// <summary>
+        /// Empty type
+        /// </summary>
+        public class EmptyType
+        { }
 
         /// <summary>
         /// Class representing items in the table [TableNamePrefix]HashTable

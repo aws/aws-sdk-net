@@ -29,33 +29,30 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEventSubscription operation.
-    /// Creates an Amazon Redshift event notification subscription. This action
-    /// requires an ARN (Amazon Resource Name) of            an Amazon SNS topic created by
-    /// either the Amazon Redshift console, the Amazon SNS console, or the             Amazon
-    /// SNS API. To obtain an ARN with Amazon SNS, you must create a topic in Amazon SNS and
-    /// subscribe to the topic.            The ARN is displayed in the SNS console.      
-    ///  
+    /// Creates an Amazon Redshift event notification subscription. This action requires
+    /// an ARN (Amazon Resource Name) of an Amazon SNS topic created by either the Amazon
+    /// Redshift console, the Amazon SNS console, or the Amazon SNS API. To obtain an ARN
+    /// with Amazon SNS, you must create a topic in Amazon SNS and subscribe to the topic.
+    /// The ARN is displayed in the SNS console. 
     /// 
-    ///         
+    ///  
     /// <para>
-    ///             You can specify the source type, and lists of Amazon Redshift source IDs,
-    /// event categories, and event severities.            Notifications will be sent for
-    /// all events you want that match those criteria. For example, you can specify      
-    ///      source type = cluster, source ID = my-cluster-1 and mycluster2, event categories
-    /// = Availability, Backup, and            severity = ERROR. The subscription will only
-    /// send notifications for those ERROR events in the Availability and            Backup
-    /// categories for the specified clusters.        
+    ///  You can specify the source type, and lists of Amazon Redshift source IDs, event categories,
+    /// and event severities. Notifications will be sent for all events you want that match
+    /// those criteria. For example, you can specify source type = cluster, source ID = my-cluster-1
+    /// and mycluster2, event categories = Availability, Backup, and severity = ERROR. The
+    /// subscription will only send notifications for those ERROR events in the Availability
+    /// and Backup categories for the specified clusters. 
     /// </para>
-    ///         
+    ///  
     /// <para>
-    ///             If you specify both the source type and source IDs, such as source type
-    /// = cluster and source identifier =             my-cluster-1, notifications will be
-    /// sent for all the cluster events for my-cluster-1. If you specify a source type   
-    ///         but do not specify a source identifier, you will receive notice of the events
-    /// for the objects of that type in your            AWS account. If you do not specify
-    /// either the SourceType nor the SourceIdentifier, you will be notified of events   
-    ///         generated from all Amazon Redshift sources belonging to your AWS account.
-    /// You must specify a source type if you            specify a source ID.        
+    ///  If you specify both the source type and source IDs, such as source type = cluster
+    /// and source identifier = my-cluster-1, notifications will be sent for all the cluster
+    /// events for my-cluster-1. If you specify a source type but do not specify a source
+    /// identifier, you will receive notice of the events for the objects of that type in
+    /// your AWS account. If you do not specify either the SourceType nor the SourceIdentifier,
+    /// you will be notified of events generated from all Amazon Redshift sources belonging
+    /// to your AWS account. You must specify a source type if you specify a source ID. 
     /// </para>
     /// </summary>
     public partial class CreateEventSubscriptionRequest : AmazonRedshiftRequest
@@ -71,9 +68,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        ///             A Boolean value; set to <code>true</code> to activate the subscription,
-        /// set to <code>false</code> to create the            subscription but not active it.
-        ///        
+        ///  A Boolean value; set to <code>true</code> to activate the subscription, set to <code>false</code>
+        /// to create the subscription but not active it. 
         /// </para>
         /// </summary>
         public bool Enabled
@@ -94,7 +90,7 @@ namespace Amazon.Redshift.Model
         /// Specifies the Amazon Redshift event categories to be published by the event notification
         /// subscription.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Values: Configuration, Management, Monitoring, Security
         /// </para>
@@ -117,7 +113,7 @@ namespace Amazon.Redshift.Model
         /// Specifies the Amazon Redshift event severity to be published by the event notification
         /// subscription.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Values: ERROR, INFO
         /// </para>
@@ -137,9 +133,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
-        ///             The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit
-        /// the event notifications. The ARN is created by            Amazon SNS when you create
-        /// a topic and subscribe to it.        
+        ///  The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the event
+        /// notifications. The ARN is created by Amazon SNS when you create a topic and subscribe
+        /// to it. 
         /// </para>
         /// </summary>
         public string SnsTopicArn
@@ -157,17 +153,16 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SourceIds. 
         /// <para>
-        ///             A list of one or more identifiers of Amazon Redshift source objects. All
-        /// of the objects must be of the same type as            was specified in the source
-        /// type parameter. The event subscription will return only events generated by the  
-        ///          specified objects. If not specified, then events are returned for all objects
-        /// within the source type specified.        
+        ///  A list of one or more identifiers of Amazon Redshift source objects. All of the objects
+        /// must be of the same type as was specified in the source type parameter. The event
+        /// subscription will return only events generated by the specified objects. If not specified,
+        /// then events are returned for all objects within the source type specified. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Example: my-cluster-1, my-cluster-2
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Example: my-snapshot-20131010
         /// </para>
@@ -187,13 +182,13 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        ///             The type of source that will be generating the events. For example, if
-        /// you want to be notified of events generated by a            cluster, you would set
-        /// this parameter to cluster. If this value is not specified, events are returned for
-        /// all             Amazon Redshift objects in your AWS account. You must specify a source
-        /// type in order to specify source IDs.        
+        ///  The type of source that will be generating the events. For example, if you want to
+        /// be notified of events generated by a cluster, you would set this parameter to cluster.
+        /// If this value is not specified, events are returned for all Amazon Redshift objects
+        /// in your AWS account. You must specify a source type in order to specify source IDs.
+        /// 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Valid values: cluster, cluster-parameter-group, cluster-security-group, and cluster-snapshot.
         /// </para>
@@ -213,16 +208,15 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SubscriptionName. 
         /// <para>
-        ///             The name of the event subscription to be created.        
+        ///  The name of the event subscription to be created. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///         <ul>            <li>Cannot be null, empty, or blank.</li>            <li>Must
-        /// contain from 1 to 255 alphanumeric characters or hyphens.</li>            <li>First
-        /// character must be a letter.</li>            <li>Cannot end with a hyphen or contain
-        /// two consecutive hyphens.</li>        </ul>
+        ///  <ul> <li>Cannot be null, empty, or blank.</li> <li>Must contain from 1 to 255 alphanumeric
+        /// characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot
+        /// end with a hyphen or contain two consecutive hyphens.</li> </ul>
         /// </summary>
         public string SubscriptionName
         {

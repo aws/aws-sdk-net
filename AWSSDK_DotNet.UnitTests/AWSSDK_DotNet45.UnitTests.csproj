@@ -126,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Runtime\TestResponses\GetObjectResponse.txt" />
+    <EmbeddedResource Include="Runtime\TestResponses\S3200WithErrorResponse.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

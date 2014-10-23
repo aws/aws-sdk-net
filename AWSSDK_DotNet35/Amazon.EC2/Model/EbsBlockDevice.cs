@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -60,7 +60,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Indicates whether the Amazon EBS volume is encrypted.
+        /// Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon EBS volumes
+        /// may only be attached to instances that support Amazon EBS encryption.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -78,16 +79,23 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The number of I/O operations per second (IOPS) that the volume supports.
+        /// The number of I/O operations per second (IOPS) that the volume supports. For Provisioned
+        /// IOPS (SSD) volumes, this represents the number of IOPS that are provisioned for the
+        /// volume. For General Purpose (SSD) volumes, this represents the baseline performance
+        /// of the volume and the rate at which the volume accumulates I/O credits for bursting.
+        /// For more information on General Purpose (SSD) baseline performance, I/O credits, and
+        /// bursting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+        /// EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Constraint: Range is 100 to 4000.
+        /// Constraint: Range is 100 to 4000 for Provisioned IOPS (SSD) volumes and 3 to 3072
+        /// for General Purpose (SSD) volumes.
         /// </para>
         ///  
         /// <para>
-        /// Condition: Required when the volume type is <code>io1</code>; not used with <code>standard</code>
-        /// or <code>gp2</code> volumes.
+        /// Condition: This parameter is required for requests to create <code>io1</code> volumes;
+        /// it is not used in requests to create <code>standard</code> or <code>gp2</code> volumes.
         /// </para>
         /// </summary>
         public int Iops
@@ -128,7 +136,9 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// Constraints: If the volume type is <code>io1</code>, the minimum size of the volume
-        /// is 10 GiB.
+        /// is 10 GiB; otherwise, the minimum size is 1 GiB. The maximum volume size is 1024 GiB.
+        /// If you specify a snapshot, the volume size must be equal to or larger than the snapshot
+        /// size.
         /// </para>
         ///  
         /// <para>

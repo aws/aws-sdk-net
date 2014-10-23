@@ -44,7 +44,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        ///             The currency code for the compute nodes offering.        
+        ///  The currency code for the compute nodes offering. 
         /// </para>
         /// </summary>
         public string CurrencyCode
@@ -62,7 +62,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        ///     The duration, in seconds, for which the offering will reserve the node.    
+        ///  The duration, in seconds, for which the offering will reserve the node. 
         /// </para>
         /// </summary>
         public int Duration
@@ -80,8 +80,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property FixedPrice. 
         /// <para>
-        ///     The upfront fixed charge you will pay to purchase the specific reserved node offering.
-        ///    
+        ///  The upfront fixed charge you will pay to purchase the specific reserved node offering.
+        /// 
         /// </para>
         /// </summary>
         public double FixedPrice
@@ -99,7 +99,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
-        ///     The node type offered by the reserved node offering.    
+        ///  The node type offered by the reserved node offering. 
         /// </para>
         /// </summary>
         public string NodeType
@@ -137,8 +137,8 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property RecurringCharges. 
         /// <para>
         /// The charge to your account regardless of whether you are creating any clusters using
-        /// the node offering.            Recurring charges are only in effect for heavy-utilization
-        /// reserved nodes.        
+        /// the node offering. Recurring charges are only in effect for heavy-utilization reserved
+        /// nodes. 
         /// </para>
         /// </summary>
         public List<RecurringCharge> RecurringCharges
@@ -156,7 +156,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ReservedNodeOfferingId. 
         /// <para>
-        ///     The offering identifier.    
+        ///  The offering identifier. 
         /// </para>
         /// </summary>
         public string ReservedNodeOfferingId
@@ -174,8 +174,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property UsagePrice. 
         /// <para>
-        ///     The rate you are charged for each hour the cluster that is using the offering
-        /// is running.    
+        ///  The rate you are charged for each hour the cluster that is using the offering is
+        /// running. 
         /// </para>
         /// </summary>
         public double UsagePrice

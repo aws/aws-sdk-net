@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
@@ -34,36 +35,10 @@ namespace Amazon.Runtime.Internal
         /// requests and response context.</param>
         public override void InvokeSync(IExecutionContext executionContext)
         {
-            var isRedirect = false;
             do
             {
-                try
-                {
-                    base.InvokeSync(executionContext);
-                    return;
-                }
-                catch (WebException exception)
-                {
-                    isRedirect = HandleRedirect(executionContext, exception);
-                    if (!isRedirect)
-                        throw;
-                }
-                catch (HttpErrorResponseException httpException)
-                {
-                    var webException = httpException.InnerException as WebException;
-                    if (webException != null)
-                    {
-                        isRedirect = HandleRedirect(executionContext, webException);
-                        if (!isRedirect)
-                            throw;    
-                    }
-                    else
-                    {
-                        throw;
-                    }                    
-                }
-                RetryHandler.PrepareForRetry(executionContext.RequestContext);
-            } while (isRedirect);            
+                base.InvokeSync(executionContext);
+            } while (HandleRedirect(executionContext));
         }
 
 #if BCL45 || WIN_RT || WINDOWS_PHONE 
@@ -78,36 +53,12 @@ namespace Amazon.Runtime.Internal
         /// <returns>A task that represents the asynchronous operation.</returns>
         public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
-            var isRedirect = false;
+            T result = null;
             do
             {
-                try
-                {
-                    return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
-                }
-                catch (WebException exception)
-                {
-                    isRedirect = HandleRedirect(executionContext, exception);
-                    if (!isRedirect)
-                        throw;
-                }
-                catch (HttpErrorResponseException httpException)
-                {
-                    var webException = httpException.InnerException as WebException;
-                    if (webException != null)
-                    {
-                        isRedirect = HandleRedirect(executionContext, webException);
-                        if (!isRedirect)
-                            throw;    
-                    }
-                    else
-                    {
-                        throw;
-                    }                    
-                }
-                RetryHandler.PrepareForRetry(executionContext.RequestContext);
-            } while (isRedirect);
-            throw new AmazonClientException("Neither a response was returned nor an exception was thrown in the Runtime RedirectHandler.");
+                result = await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
+            } while (HandleRedirect(executionContext));
+            return result;
         }
 
 #elif BCL && !BCL45
@@ -120,68 +71,82 @@ namespace Amazon.Runtime.Internal
         /// request and response context.</param>
         protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
         {
-            var exception = executionContext.ResponseContext.AsyncResult.Exception;
-            if (exception != null)
+            // Call InvokeAsync to redirect to new location.
+            if (HandleRedirect(ExecutionContext.CreateFromAsyncContext(executionContext)))
             {
-                var webException = exception as WebException;
-                var httpException = exception as HttpErrorResponseException;
-
-                if (webException== null && httpException!= null)
-                {
-                    webException = httpException.InnerException as WebException;   
-                }
-
-                if (webException != null)
-                {
-                    // Call InvokeAsync to redirect to new location.
-                    if (HandleRedirect(ExecutionContext.CreateFromAsyncContext(executionContext), webException))
-                    {
-                        executionContext.ResponseContext.AsyncResult.Exception = null;
-                        RetryHandler.PrepareForRetry(executionContext.RequestContext);
-                        base.InvokeAsync(executionContext);
-                        return;
-                    }
-                }
+                base.InvokeAsync(executionContext);
+                return;
             }
 
             // Not a redirect, call outer callbacks to continue processing response.
             base.InvokeAsyncCallback(executionContext);
         }
-#endif
 
+#endif
         /// <summary>
-        /// Checks if a HTTP 307 (temporary redirect) has occured and changes the 
+        /// Checks if an HTTP 307 (temporary redirect) has occured and changes the 
         /// request endpoint to the redirected location.
         /// </summary>
         /// <param name="executionContext">
         /// The execution context, it contains the request and response context.
         /// </param>
-        /// <param name="exception">The WebException from from the HTTP handler.</param>
         /// <returns>
         /// A boolean value that indicates if a redirect has occured.
         /// </returns>
-        private bool HandleRedirect(IExecutionContext executionContext, WebException exception)
+        private bool HandleRedirect(IExecutionContext executionContext)
         {
-            var requestContext = executionContext.RequestContext;
-            var httpErrorResponse = exception.Response as HttpWebResponse;
-            if (httpErrorResponse != null && 
-                httpErrorResponse.StatusCode == HttpStatusCode.TemporaryRedirect)
+            var response = executionContext.ResponseContext.HttpResponse;
+
+            // Handle all HTTP 3xx status codes
+            if (response.StatusCode >= HttpStatusCode.Ambiguous &&
+                response.StatusCode < HttpStatusCode.BadRequest)
             {
-                string redirectedLocation = httpErrorResponse.Headers[HeaderKeys.LocationHeader];
-                requestContext.Metrics.AddProperty(Metric.RedirectLocation, redirectedLocation);
-
-                var isRewindableStream = executionContext.RequestContext.Request.IsRequestStreamRewindable();
-
-                if (isRewindableStream &&
-                    !string.IsNullOrEmpty(redirectedLocation))
+                if (response.StatusCode == HttpStatusCode.TemporaryRedirect &&
+                    response.IsHeaderPresent(HeaderKeys.LocationHeader))
                 {
-                    this.Logger.InfoFormat("Request {0} is being redirected to {1}.",
-                        requestContext.RequestName, redirectedLocation);
-                    requestContext.Request.Endpoint = new Uri(redirectedLocation);
-                    return true;
+                    var requestContext = executionContext.RequestContext;
+                    string redirectedLocation = response.GetHeaderValue(HeaderKeys.LocationHeader);
+                    requestContext.Metrics.AddProperty(Metric.RedirectLocation, redirectedLocation);
+
+                    var isRewindableStream = executionContext.RequestContext.Request.IsRequestStreamRewindable();
+                    if (isRewindableStream &&
+                        !string.IsNullOrEmpty(redirectedLocation))
+                    {
+                        FinalizeForRedirect(executionContext, redirectedLocation);
+
+                        // Dispose the current response body before we redirect.
+                        if (response.ResponseBody != null)
+                        {
+                            response.ResponseBody.Dispose();
+                        }
+
+                        return true;
+                    }
                 }
+
+                // Set HttpResponse on ResponseContext to null, 
+                // as the HttpResponse will be wrapped in an exception.
+                executionContext.ResponseContext.HttpResponse = null;
+
+                // Throw an exception contain the HTTP response, so that an
+                // appropriate exception can be returned to the user.
+                throw new HttpErrorResponseException(response);
             }
             return false;
+        }
+
+        protected virtual void FinalizeForRedirect(IExecutionContext executionContext, string redirectedLocation)
+        {
+            this.Logger.InfoFormat("Request {0} is being redirected to {1}.",
+                                    executionContext.RequestContext.RequestName, 
+                                    redirectedLocation);
+
+            var uri = new Uri(redirectedLocation);
+
+            var requestContext = executionContext.RequestContext;
+            requestContext.Request.Endpoint = new UriBuilder(uri.Scheme, uri.Host).Uri;
+
+            RetryHandler.PrepareForRetry(executionContext.RequestContext);
         }
     }
 }

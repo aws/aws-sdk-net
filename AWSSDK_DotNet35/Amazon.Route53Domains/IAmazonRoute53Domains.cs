@@ -82,6 +82,50 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  DisableDomainAutoRenew
+
+        /// <summary>
+        /// This operation disables automatic renewal of domain registration for the specified
+        /// domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableDomainAutoRenew service method.</param>
+        /// 
+        /// <returns>The response from the DisableDomainAutoRenew service method, as returned by Route53Domains.</returns>
+        /// <exception cref="InvalidInputException">
+        /// The requested item is not acceptable. For example, for an OperationId it may refer
+        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        DisableDomainAutoRenewResponse DisableDomainAutoRenew(DisableDomainAutoRenewRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableDomainAutoRenew operation.
+        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableDomainAutoRenew operation on AmazonRoute53DomainsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableDomainAutoRenew
+        ///         operation.</returns>
+        IAsyncResult BeginDisableDomainAutoRenew(DisableDomainAutoRenewRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableDomainAutoRenew operation.
+        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableDomainAutoRenew.</param>
+        /// 
+        /// <returns>Returns a  DisableDomainAutoRenewResult from Route53Domains.</returns>
+        DisableDomainAutoRenewResponse EndDisableDomainAutoRenew(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableDomainTransferLock
 
         /// <summary>
@@ -136,6 +180,60 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>Returns a  DisableDomainTransferLockResult from Route53Domains.</returns>
         DisableDomainTransferLockResponse EndDisableDomainTransferLock(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableDomainAutoRenew
+
+        /// <summary>
+        /// This operation configures Amazon Route 53 to automatically renew the specified domain
+        /// before the domain registration expires. The cost of renewing your domain registration
+        /// is billed to your AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// The period during which you can renew a domain name varies by TLD. For a list of TLDs
+        /// and their renewal policies, see "Renewal, restoration, and deletion times" (http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times)
+        /// on the website for our registrar partner, Gandi. Route 53 requires that you renew
+        /// before the end of the renewal period that is listed on the Gandi website so we can
+        /// complete processing before the deadline.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableDomainAutoRenew service method.</param>
+        /// 
+        /// <returns>The response from the EnableDomainAutoRenew service method, as returned by Route53Domains.</returns>
+        /// <exception cref="InvalidInputException">
+        /// The requested item is not acceptable. For example, for an OperationId it may refer
+        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        EnableDomainAutoRenewResponse EnableDomainAutoRenew(EnableDomainAutoRenewRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableDomainAutoRenew operation.
+        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableDomainAutoRenew operation on AmazonRoute53DomainsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableDomainAutoRenew
+        ///         operation.</returns>
+        IAsyncResult BeginEnableDomainAutoRenew(EnableDomainAutoRenewRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableDomainAutoRenew operation.
+        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableDomainAutoRenew.</param>
+        /// 
+        /// <returns>Returns a  EnableDomainAutoRenewResult from Route53Domains.</returns>
+        EnableDomainAutoRenewResponse EndEnableDomainAutoRenew(IAsyncResult asyncResult);
 
         #endregion
         

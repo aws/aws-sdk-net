@@ -29,22 +29,21 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeClusterParameters operation.
-    /// Returns a detailed list of parameters contained within the specified Amazon
-    /// Redshift         parameter group. For each parameter the response includes information
-    ///         such as parameter name, description,         data type, value, whether the
-    /// parameter value is modifiable, and so on.        
+    /// Returns a detailed list of parameters contained within the specified Amazon Redshift
+    /// parameter group. For each parameter the response includes information such as parameter
+    /// name, description, data type, value, whether the parameter value is modifiable, and
+    /// so on. 
     /// 
-    ///         
+    ///  
     /// <para>
     /// You can specify <i>source</i> filter to retrieve parameters of only specific type.
-    ///            For example, to retrieve parameters that were modified by a user action
-    /// such as from             <a>ModifyClusterParameterGroup</a>, you can specify <i>source</i>
-    /// equal to <i>user</i>.
+    /// For example, to retrieve parameters that were modified by a user action such as from
+    /// <a>ModifyClusterParameterGroup</a>, you can specify <i>source</i> equal to <i>user</i>.
     /// </para>
-    ///         
+    ///  
     /// <para>
-    /// For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-    /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Management Guide</i>.
+    ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+    /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Management Guide</i>. 
     /// </para>
     /// </summary>
     public partial class DescribeClusterParametersRequest : AmazonRedshiftRequest
@@ -57,12 +56,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///             An optional parameter that specifies the starting point to return a set
-        /// of response records.             When the results of a <a>DescribeClusterParameters</a>
-        /// request exceed the value specified in <code>MaxRecords</code>,             AWS returns
-        /// a value in the <code>Marker</code> field of the response. You can retrieve the next
-        /// set of             response records by providing the returned marker value in the
-        /// <code>Marker</code> parameter and             retrying the request.        
+        ///  An optional parameter that specifies the starting point to return a set of response
+        /// records. When the results of a <a>DescribeClusterParameters</a> request exceed the
+        /// value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
+        /// field of the response. You can retrieve the next set of response records by providing
+        /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
+        /// 
         /// </para>
         /// </summary>
         public string Marker
@@ -80,17 +79,16 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///             The maximum number of response records to return in each call.       
-        ///      If the number of remaining response records exceeds the specified <code>MaxRecords</code>
-        /// value,             a value is returned in a <code>marker</code> field of the response.
-        ///             You can retrieve the next set of records by retrying the command with
-        /// the returned marker value.        
+        ///  The maximum number of response records to return in each call. If the number of remaining
+        /// response records exceeds the specified <code>MaxRecords</code> value, a value is returned
+        /// in a <code>marker</code> field of the response. You can retrieve the next set of records
+        /// by retrying the command with the returned marker value. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Default: <code>100</code>
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints: minimum 20, maximum 100.
         /// </para>
@@ -110,8 +108,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterGroupName. 
         /// <para>
-        ///         The name of a cluster parameter group for which to return details.       
-        /// 
+        ///  The name of a cluster parameter group for which to return details. 
         /// </para>
         /// </summary>
         public string ParameterGroupName
@@ -129,16 +126,15 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        ///             The parameter types to return. Specify <code>user</code> to show parameters
-        /// that are different form the        default. Similarly, specify <code>engine-default</code>
-        /// to show parameters that are the same as the default            parameter group.  
-        ///      
+        ///  The parameter types to return. Specify <code>user</code> to show parameters that
+        /// are different form the default. Similarly, specify <code>engine-default</code> to
+        /// show parameters that are the same as the default parameter group. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Default: All parameter types returned.
         /// </para>
-        ///                 
+        ///  
         /// <para>
         /// Valid Values: <code>user</code> | <code>engine-default</code>
         /// </para>

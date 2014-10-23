@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns the destination region and retention period that are configured
-    /// for cross-region snapshot copy.
+    /// Returns the destination region and retention period that are configured for cross-region
+    /// snapshot copy.
     /// </summary>
     public partial class ClusterSnapshotCopyStatus
     {

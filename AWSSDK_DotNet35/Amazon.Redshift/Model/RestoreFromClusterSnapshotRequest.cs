@@ -29,23 +29,22 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreFromClusterSnapshot operation.
-    /// Creates a new cluster from a snapshot. Amazon Redshift creates the resulting
-    /// cluster         with the same configuration as the original cluster from which the
-    /// snapshot was created,         except that the new cluster        is created with the
-    /// default cluster security and parameter group.                 After Amazon Redshift
-    /// creates the cluster you can use the <a>ModifyCluster</a>             API to associate
-    /// a different security group and different parameter group with the            restored
-    /// cluster.        
+    /// Creates a new cluster from a snapshot. Amazon Redshift creates the resulting cluster
+    /// with the same configuration as the original cluster from which the snapshot was created,
+    /// except that the new cluster is created with the default cluster security and parameter
+    /// group. After Amazon Redshift creates the cluster you can use the <a>ModifyCluster</a>
+    /// API to associate a different security group and different parameter group with the
+    /// restored cluster. 
     /// 
-    ///         
+    ///  
     /// <para>
     ///  If you restore a cluster into a VPC, you must provide a cluster subnet group where
-    /// you want the cluster             restored.        
+    /// you want the cluster restored. 
     /// </para>
-    ///         
+    ///  
     /// <para>
-    /// For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
-    /// Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i>.
+    ///  For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+    /// Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i>. 
     /// </para>
     /// </summary>
     public partial class RestoreFromClusterSnapshotRequest : AmazonRedshiftRequest
@@ -71,10 +70,10 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AllowVersionUpgrade. 
         /// <para>
-        ///         If <code>true</code>, upgrades can be applied during the maintenance window
-        /// to the         Amazon Redshift engine that is running on the cluster.    
+        ///  If <code>true</code>, major version upgrades can be applied during the maintenance
+        /// window to the Amazon Redshift engine that is running on the cluster. 
         /// </para>
-        ///        
+        ///  
         /// <para>
         /// Default: <code>true</code>
         /// </para>
@@ -94,17 +93,15 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AutomatedSnapshotRetentionPeriod. 
         /// <para>
-        ///             The number of days that automated snapshots are retained.            If
-        /// the value is 0, automated snapshots are disabled. Even if            automated snapshots
-        /// are disabled, you can still create            manual snapshots when you want with
-        /// <a>CreateClusterSnapshot</a>.        
+        ///  The number of days that automated snapshots are retained. If the value is 0, automated
+        /// snapshots are disabled. Even if automated snapshots are disabled, you can still create
+        /// manual snapshots when you want with <a>CreateClusterSnapshot</a>. 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             Default: The value selected for the cluster from which the snapshot was
-        /// taken.        
+        ///  Default: The value selected for the cluster from which the snapshot was taken. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints: Must be a value from 0 to 35.
         /// </para>
@@ -124,13 +121,13 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        ///         The Amazon EC2 Availability Zone in which to restore the cluster.        
+        ///  The Amazon EC2 Availability Zone in which to restore the cluster. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Default: A random, system-chosen Availability Zone.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Example: <code>us-east-1a</code>
         /// </para>
@@ -150,19 +147,18 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///         The identifier of the cluster that will be created from restoring the snapshot.
-        ///        
+        ///  The identifier of the cluster that will be created from restoring the snapshot. 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             
+        ///  
         /// <para>
         /// Constraints:
         /// </para>
-        /// <ul><li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li><li>Alphabetic
-        /// characters must be lowercase.</li><li>First character must be a letter.</li><li>Cannot
-        /// end with a hyphen or contain two consecutive hyphens.</li><li>Must be unique for all
-        /// clusters within an AWS account.</li></ul>        
+        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>Alphabetic
+        /// characters must be lowercase.</li> <li>First character must be a letter.</li> <li>Cannot
+        /// end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for
+        /// all clusters within an AWS account.</li> </ul> 
         /// </para>
         /// </summary>
         public string ClusterIdentifier
@@ -180,22 +176,21 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterParameterGroupName. 
         /// <para>
-        ///             The name of the parameter group to be associated            with this
-        /// cluster.         
+        ///  The name of the parameter group to be associated with this cluster. 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        /// Default: The default Amazon Redshift             cluster parameter group. For information
-        /// about the default parameter group,            go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+        /// Default: The default Amazon Redshift cluster parameter group. For information about
+        /// the default parameter group, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
         /// with Amazon Redshift Parameter Groups</a>.
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             Constraints:        
+        ///  Constraints: 
         /// </para>
-        ///         <ul>            <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
-        ///            <li>First character must be a letter.</li>            <li>Cannot end with
-        /// a hyphen or contain two consecutive hyphens.</li>        </ul>
+        ///  <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens.</li> <li>First character
+        /// must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+        /// </ul>
         /// </summary>
         public string ClusterParameterGroupName
         {
@@ -212,15 +207,13 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterSecurityGroups. 
         /// <para>
-        ///             A list of security groups to be associated            with this cluster.
-        ///        
+        ///  A list of security groups to be associated with this cluster. 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             Default: The default cluster security group for Amazon Redshift.     
-        ///    
+        ///  Default: The default cluster security group for Amazon Redshift. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Cluster security groups only apply to clusters outside of VPCs.
         /// </para>
@@ -240,14 +233,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterSubnetGroupName. 
         /// <para>
-        ///             The name of the subnet group where you want to cluster restored.     
-        ///    
+        ///  The name of the subnet group where you want to cluster restored. 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             A snapshot of cluster in VPC can be restored only in VPC. Therefore, 
-        ///            you must provide subnet group name where you want the cluster restored.
-        ///        
+        ///  A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must provide
+        /// subnet group name where you want the cluster restored. 
         /// </para>
         /// </summary>
         public string ClusterSubnetGroupName
@@ -284,7 +275,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property HsmClientCertificateIdentifier. 
         /// <para>
         /// Specifies the name of the HSM client certificate the Amazon Redshift cluster uses
-        /// to retrieve the data            encryption keys stored in an HSM.
+        /// to retrieve the data encryption keys stored in an HSM.
         /// </para>
         /// </summary>
         public string HsmClientCertificateIdentifier
@@ -303,7 +294,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property HsmConfigurationIdentifier. 
         /// <para>
         /// Specifies the name of the HSM configuration that contains the information the Amazon
-        /// Redshift cluster            can use to retrieve and store keys in an HSM.
+        /// Redshift cluster can use to retrieve and store keys in an HSM.
         /// </para>
         /// </summary>
         public string HsmConfigurationIdentifier
@@ -321,9 +312,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        ///             The AWS customer account used to create or copy the snapshot. Required
-        /// if you are restoring a snapshot you do not own, optional if you own the snapshot.
-        ///         
+        ///  The AWS customer account used to create or copy the snapshot. Required if you are
+        /// restoring a snapshot you do not own, optional if you own the snapshot. 
         /// </para>
         /// </summary>
         public string OwnerAccount
@@ -341,13 +331,13 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        ///         The port number on which the cluster accepts connections.        
+        ///  The port number on which the cluster accepts connections. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Default: The same port as the original cluster.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints: Must be between <code>1115</code> and <code>65535</code>.
         /// </para>
@@ -367,29 +357,24 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        ///             The weekly time range (in UTC) during which automated cluster maintenance
-        /// can occur.        
+        ///  The weekly time range (in UTC) during which automated cluster maintenance can occur.
+        /// 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>        
+        ///  Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             Default: The value selected for the cluster from which the snapshot was
-        /// taken.             The following list shows the time blocks for each region      
-        ///       from which the default maintenance windows are assigned.        
+        ///  Default: The value selected for the cluster from which the snapshot was taken. For
+        /// more information about the time blocks for each region, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+        /// Windows</a> in Amazon Redshift Management Guide. 
         /// </para>
-        ///         <ul>            <li><b>US-East (Northern Virginia) Region:</b> 03:00-11:00
-        /// UTC</li>            <li><b>US-West (Oregon) Region</b> 06:00-14:00 UTC</li>      
-        ///      <li><b>EU (Ireland) Region</b> 22:00-06:00 UTC</li>            <li><b>Asia Pacific
-        /// (Singapore) Region</b> 14:00-22:00 UTC</li>            <li><b>Asia Pacific (Sydney)
-        /// Region</b> 12:00-20:00 UTC</li>            <li><b>Asia Pacific (Tokyo) Region</b>
-        /// 17:00-03:00 UTC</li>        </ul>        
+        ///  
         /// <para>
         /// Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints: Minimum 30-minute window.
         /// </para>
@@ -409,8 +394,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        ///             If <code>true</code>, the cluster can be accessed from a public network.
-        ///        
+        ///  If <code>true</code>, the cluster can be accessed from a public network. 
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
@@ -428,9 +412,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SnapshotClusterIdentifier. 
         /// <para>
-        ///             The name of the cluster the source snapshot was created from. This parameter
-        /// is required if your IAM user has a policy containing a snapshot resource element that
-        /// specifies anything other than * for the cluster name.        
+        ///  The name of the cluster the source snapshot was created from. This parameter is required
+        /// if your IAM user has a policy containing a snapshot resource element that specifies
+        /// anything other than * for the cluster name. 
         /// </para>
         /// </summary>
         public string SnapshotClusterIdentifier
@@ -448,10 +432,10 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SnapshotIdentifier. 
         /// <para>
-        ///         The name of the snapshot from which to create the new cluster.        This
-        /// parameter isn't case sensitive.         
+        ///  The name of the snapshot from which to create the new cluster. This parameter isn't
+        /// case sensitive. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Example: <code>my-snapshot-id</code>
         /// </para>
@@ -471,17 +455,16 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        ///             A list of Virtual Private Cloud (VPC) security groups to be associated
-        /// with the cluster.        
+        ///  A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.
+        /// 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             Default: The default VPC security group is associated with the cluster.
-        ///        
+        ///  Default: The default VPC security group is associated with the cluster. 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             VPC security groups only apply to clusters in VPCs.        
+        ///  VPC security groups only apply to clusters in VPCs. 
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds

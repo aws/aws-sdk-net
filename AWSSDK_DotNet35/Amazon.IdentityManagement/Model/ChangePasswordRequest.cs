@@ -29,10 +29,15 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ChangePassword operation.
-    /// Changes the password of the IAM user calling <code>ChangePassword</code>. The root
-    /// account password is not affected by this action. For information about modifying passwords,
-    /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-    /// Passwords</a> in the <i>Using IAM</i> guide.
+    /// Changes the password of the IAM user who is calling this action. The root account
+    /// password is not affected by this action. 
+    /// 
+    ///  
+    /// <para>
+    /// To change the password for a different user, see <a>UpdateLoginProfile</a>. For more
+    /// information about modifying passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
+    /// Passwords</a> in the <i>Using IAM</i> guide. 
+    /// </para>
     /// </summary>
     public partial class ChangePasswordRequest : AmazonIdentityManagementServiceRequest
     {
@@ -61,7 +66,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property OldPassword. 
         /// <para>
-        /// The IAM users's current password.
+        /// The IAM user's current password.
         /// </para>
         /// </summary>
         public string OldPassword

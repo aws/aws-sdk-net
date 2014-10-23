@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateCustomerGatewayRequest with the parameterized properties
         /// </summary>
-        /// <param name="type">The type of VPN connection that this customer gateway supports.</param>
+        /// <param name="type">The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).</param>
         /// <param name="publicIp">The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</param>
         /// <param name="bgpAsn">For devices that support BGP, the customer gateway's BGP ASN. Default: 65000</param>
         public CreateCustomerGatewayRequest(GatewayType type, string publicIp, int bgpAsn)
@@ -117,7 +117,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of VPN connection that this customer gateway supports.
+        /// The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).
         /// </para>
         /// </summary>
         public GatewayType Type

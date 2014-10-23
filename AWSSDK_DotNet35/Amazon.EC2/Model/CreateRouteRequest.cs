@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,8 +33,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// You must specify one of the following targets: Internet gateway, NAT instance, VPC
-    /// peering connection, or network interface.
+    /// You must specify one of the following targets: Internet gateway or virtual private
+    /// gateway, NAT instance, VPC peering connection, or network interface.
     /// </para>
     ///  
     /// <para>
@@ -93,7 +93,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GatewayId. 
         /// <para>
-        /// The ID of an Internet gateway attached to your VPC.
+        /// The ID of an Internet gateway or virtual private gateway attached to your VPC.
         /// </para>
         /// </summary>
         public string GatewayId

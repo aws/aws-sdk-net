@@ -28,13 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// ServerCertificateMetadata contains information about a server certificate without
-    /// its certificate body, certificate chain, and private key.
+    /// Contains information about a server certificate without its certificate body, certificate
+    /// chain, and private key. 
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the action <a>UploadServerCertificate</a>
-    /// and <a>ListServerCertificates</a>.
+    ///  This data type is used as a response element in the <a>UploadServerCertificate</a>
+    /// and <a>ListServerCertificates</a> actions. 
     /// </para>
     /// </summary>
     public partial class ServerCertificateMetadata
@@ -54,10 +54,10 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates ServerCertificateMetadata with the parameterized properties
         /// </summary>
-        /// <param name="path">Path to the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers for IAM Entities</a> in the <i>Using IAM</i> guide.</param>
+        /// <param name="path"> The path to the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </param>
         /// <param name="serverCertificateName">The name that identifies the server certificate.</param>
-        /// <param name="serverCertificateId">The stable and unique string identifying the server certificate. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers for IAM Entities</a> in the <i>Using IAM</i> guide.</param>
-        /// <param name="arn">The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers for IAM Entities</a> in the <i>Using IAM</i> guide.</param>
+        /// <param name="serverCertificateId"> The stable and unique string identifying the server certificate. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </param>
+        /// <param name="arn"> The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </param>
         public ServerCertificateMetadata(string path, string serverCertificateName, string serverCertificateId, string arn)
         {
             _path = path;
@@ -69,9 +69,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) specifying the server certificate. For more information
-        /// about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
+        ///  The Amazon Resource Name (ARN) specifying the server certificate. For more information
+        /// about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         public string Arn
@@ -107,8 +107,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// Path to the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
+        ///  The path to the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         public string Path
@@ -126,9 +126,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ServerCertificateId. 
         /// <para>
-        /// The stable and unique string identifying the server certificate. For more information
-        /// about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
+        ///  The stable and unique string identifying the server certificate. For more information
+        /// about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         public string ServerCertificateId

@@ -266,6 +266,49 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  DisableDomainAutoRenew
+
+        /// <summary>
+        /// This operation disables automatic renewal of domain registration for the specified
+        /// domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableDomainAutoRenew service method.</param>
+        /// 
+        /// <returns>The response from the DisableDomainAutoRenew service method, as returned by Route53Domains.</returns>
+        /// <exception cref="InvalidInputException">
+        /// The requested item is not acceptable. For example, for an OperationId it may refer
+        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        public DisableDomainAutoRenewResponse DisableDomainAutoRenew(DisableDomainAutoRenewRequest request)
+        {
+            var marshaller = new DisableDomainAutoRenewRequestMarshaller();
+            var unmarshaller = DisableDomainAutoRenewResponseUnmarshaller.Instance;
+
+            return Invoke<DisableDomainAutoRenewRequest,DisableDomainAutoRenewResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableDomainAutoRenew operation.
+        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableDomainAutoRenew operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DisableDomainAutoRenewResponse> DisableDomainAutoRenewAsync(DisableDomainAutoRenewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DisableDomainAutoRenewRequestMarshaller();
+            var unmarshaller = DisableDomainAutoRenewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableDomainAutoRenewRequest,DisableDomainAutoRenewResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisableDomainTransferLock
 
         /// <summary>
@@ -317,6 +360,59 @@ namespace Amazon.Route53Domains
             var unmarshaller = DisableDomainTransferLockResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisableDomainTransferLockRequest,DisableDomainTransferLockResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableDomainAutoRenew
+
+        /// <summary>
+        /// This operation configures Amazon Route 53 to automatically renew the specified domain
+        /// before the domain registration expires. The cost of renewing your domain registration
+        /// is billed to your AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// The period during which you can renew a domain name varies by TLD. For a list of TLDs
+        /// and their renewal policies, see "Renewal, restoration, and deletion times" (http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times)
+        /// on the website for our registrar partner, Gandi. Route 53 requires that you renew
+        /// before the end of the renewal period that is listed on the Gandi website so we can
+        /// complete processing before the deadline.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableDomainAutoRenew service method.</param>
+        /// 
+        /// <returns>The response from the EnableDomainAutoRenew service method, as returned by Route53Domains.</returns>
+        /// <exception cref="InvalidInputException">
+        /// The requested item is not acceptable. For example, for an OperationId it may refer
+        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        public EnableDomainAutoRenewResponse EnableDomainAutoRenew(EnableDomainAutoRenewRequest request)
+        {
+            var marshaller = new EnableDomainAutoRenewRequestMarshaller();
+            var unmarshaller = EnableDomainAutoRenewResponseUnmarshaller.Instance;
+
+            return Invoke<EnableDomainAutoRenewRequest,EnableDomainAutoRenewResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableDomainAutoRenew operation.
+        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableDomainAutoRenew operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<EnableDomainAutoRenewResponse> EnableDomainAutoRenewAsync(EnableDomainAutoRenewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new EnableDomainAutoRenewRequestMarshaller();
+            var unmarshaller = EnableDomainAutoRenewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableDomainAutoRenewRequest,EnableDomainAutoRenewResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

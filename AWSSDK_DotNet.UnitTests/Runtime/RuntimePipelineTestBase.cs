@@ -66,7 +66,7 @@ namespace AWSSDK.UnitTests
 
             var putObjectResponse = MockWebResponse.CreateFromResource("PutObjectResponse.txt")
                 as HttpWebResponse;
-            return new Amazon.Runtime.Internal.AsyncExecutionContext(            
+            return new Amazon.Runtime.Internal.AsyncExecutionContext(
                 requestContext,
                 new AsyncResponseContext
                 {
@@ -75,7 +75,7 @@ namespace AWSSDK.UnitTests
             );
         }
     }
-        
+
     public abstract class RuntimePipelineTestBase<T> : RuntimePipelineTestBase where T : IPipelineHandler
     {
         public static MockActionHandler Tester { get; private set; }
@@ -90,46 +90,46 @@ namespace AWSSDK.UnitTests
             RuntimePipeline = new RuntimePipeline(Tester);
         }
 
-//        [TestMethod][TestCategory("UnitTest")]
-//        [TestCategory("Runtime")]
-//        public virtual void TestSuccessfulRequest()
-//        {
-//            Tester.Reset();
-//            var request = CreateTestContext();
-//            RuntimePipeline.InvokeSync(request);
+        //        [TestMethod][TestCategory("UnitTest")]
+        //        [TestCategory("Runtime")]
+        //        public virtual void TestSuccessfulRequest()
+        //        {
+        //            Tester.Reset();
+        //            var request = CreateTestContext();
+        //            RuntimePipeline.InvokeSync(request);
 
-//            Assert.AreEqual(1, Tester.CallCount);
-//        }
+        //            Assert.AreEqual(1, Tester.CallCount);
+        //        }
 
-//#if BCL45
+        //#if BCL45
 
-//        [TestMethod][TestCategory("UnitTest")]
-//        [TestCategory("Runtime")]
-//        [TestCategory(@"Runtime\Async45")]
-//        public virtual async Task TestSuccessfulRequestAsync()
-//        {
-//            Tester.Reset();
-//            var request = CreateTestContext();
-//            await RuntimePipeline.InvokeAsync<AmazonWebServiceResponse>(request);
+        //        [TestMethod][TestCategory("UnitTest")]
+        //        [TestCategory("Runtime")]
+        //        [TestCategory(@"Runtime\Async45")]
+        //        public virtual async Task TestSuccessfulRequestAsync()
+        //        {
+        //            Tester.Reset();
+        //            var request = CreateTestContext();
+        //            await RuntimePipeline.InvokeAsync<AmazonWebServiceResponse>(request);
 
-//            Assert.AreEqual(1, Tester.CallCount);
-//        }
+        //            Assert.AreEqual(1, Tester.CallCount);
+        //        }
 
-//#elif !BCL45 && BCL
+        //#elif !BCL45 && BCL
 
-//        [TestMethod][TestCategory("UnitTest")]
-//        [TestCategory("Runtime")]
-//        [TestCategory(@"Runtime\Async35")]
-//        public virtual void TestSuccessfulRequestAsync()
-//        {
-//            Tester.Reset();
-//            var request = CreateAsyncTestContext();
-//            var asyncResult = RuntimePipeline.InvokeAsync(request);
-//            asyncResult.AsyncWaitHandle.WaitOne();
+        //        [TestMethod][TestCategory("UnitTest")]
+        //        [TestCategory("Runtime")]
+        //        [TestCategory(@"Runtime\Async35")]
+        //        public virtual void TestSuccessfulRequestAsync()
+        //        {
+        //            Tester.Reset();
+        //            var request = CreateAsyncTestContext();
+        //            var asyncResult = RuntimePipeline.InvokeAsync(request);
+        //            asyncResult.AsyncWaitHandle.WaitOne();
 
-//            Assert.AreEqual(1, Tester.CallCount);
-//        }
-//#endif               
+        //            Assert.AreEqual(1, Tester.CallCount);
+        //        }
+        //#endif               
     }
 
     public class MockSigner : AbstractAWSSigner
@@ -159,6 +159,8 @@ namespace AWSSDK.UnitTests
 
         public Action<int> Action { get; set; }
 
+        public Action<int, IExecutionContext> Action2 { get; set; }
+
         public Action<int> Validate { get; set; }
 
         public void Reset()
@@ -171,8 +173,11 @@ namespace AWSSDK.UnitTests
         public override void InvokeSync(IExecutionContext executionContext)
         {
             this.CallCount++;
-            if (this.Action != null)            
+            if (this.Action != null)
                 Action(this.CallCount);
+
+            if (this.Action2 != null)
+                Action2(this.CallCount, executionContext);
 
             if (this.Validate != null)
                 Validate(this.CallCount);
@@ -184,8 +189,11 @@ namespace AWSSDK.UnitTests
             await Task.Delay(100);
 
             this.CallCount++;
-            if (this.Action != null)            
+            if (this.Action != null)
                 Action(this.CallCount);
+
+            if (this.Action2 != null)
+                Action2(this.CallCount, executionContext);
 
             if (this.Validate != null)
                 Validate(this.CallCount);
@@ -218,6 +226,10 @@ namespace AWSSDK.UnitTests
             {
                 if (this.Action != null)
                     Action(this.CallCount);
+
+                if (this.Action2 != null)
+                    Action2(this.CallCount, 
+                        Amazon.Runtime.Internal.ExecutionContext.CreateFromAsyncContext(executionContext));
 
                 if (this.Validate != null)
                     Validate(this.CallCount);
@@ -266,5 +278,5 @@ namespace AWSSDK.UnitTests
             return executionContext.ResponseContext.AsyncResult;
         }
 #endif
-    } 
+    }
 }

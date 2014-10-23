@@ -29,8 +29,8 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableLogging operation.
-    /// Starts logging information, such as queries and connection attempts,            for
-    /// the specified Amazon Redshift cluster.
+    /// Starts logging information, such as queries and connection attempts, for the specified
+    /// Amazon Redshift cluster.
     /// </summary>
     public partial class EnableLoggingRequest : AmazonRedshiftRequest
     {
@@ -41,15 +41,14 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        ///             The name of an existing S3 bucket where the log files are to be stored.
-        ///         
+        ///  The name of an existing S3 bucket where the log files are to be stored. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///         <ul>            <li>Must be in the same region as the cluster</li>       
-        ///     <li>The cluster must have read bucket and put object permissions</li>        </ul>
+        ///  <ul> <li>Must be in the same region as the cluster</li> <li>The cluster must have
+        /// read bucket and put object permissions</li> </ul>
         /// </summary>
         public string BucketName
         {
@@ -66,10 +65,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///             The identifier of the cluster on which logging is to be started.     
-        ///    
+        ///  The identifier of the cluster on which logging is to be started. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Example: <code>examplecluster</code>
         /// </para>
@@ -89,19 +87,16 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property S3KeyPrefix. 
         /// <para>
-        ///             The prefix applied to the log file names.         
+        ///  The prefix applied to the log file names. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///         <ul>            <li>Cannot exceed 512 characters</li>            <li>Cannot
-        /// contain spaces( ), double quotes ("), single quotes ('),                a backslash
-        /// (\), or control characters. The hexadecimal codes for                invalid characters
-        /// are:                <ul>                    <li>x00 to x20</li>                  
-        ///  <li>x22</li>                    <li>x27</li>                    <li>x5c</li>    
-        ///                <li>x7f or larger</li>                </ul>            </li>      
-        ///  </ul>
+        ///  <ul> <li>Cannot exceed 512 characters</li> <li>Cannot contain spaces( ), double quotes
+        /// ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes
+        /// for invalid characters are: <ul> <li>x00 to x20</li> <li>x22</li> <li>x27</li> <li>x5c</li>
+        /// <li>x7f or larger</li> </ul> </li> </ul>
         /// </summary>
         public string S3KeyPrefix
         {

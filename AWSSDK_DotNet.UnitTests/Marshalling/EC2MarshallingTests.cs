@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 
 
@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class EC2MarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("ec2-2014-06-15.normal.json", "ec2.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("ec2-2014-09-01.normal.json", "ec2.customizations.json");
         
 
         [TestMethod]

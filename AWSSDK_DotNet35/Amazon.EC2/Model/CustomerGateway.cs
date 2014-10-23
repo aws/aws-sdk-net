@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -96,7 +96,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of the customer gateway.
+        /// The current state of the customer gateway (<code>pending | available | deleting |
+        /// deleted</code>).
         /// </para>
         /// </summary>
         public string State
@@ -132,7 +133,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of VPN connection the customer gateway supports.
+        /// The type of VPN connection the customer gateway supports (<code>ipsec.1</code>).
         /// </para>
         /// </summary>
         public string Type

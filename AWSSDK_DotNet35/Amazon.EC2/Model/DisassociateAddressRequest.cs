@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,6 +34,12 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
+    /// An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For
+    /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+    /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
     /// This is an idempotent operation. If you perform the operation more than once, Amazon
     /// EC2 doesn't return an error.
     /// </para>
@@ -51,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates DisassociateAddressRequest with the parameterized properties
         /// </summary>
-        /// <param name="publicIp">[EC2-Classic] The Elastic IP address.</param>
+        /// <param name="publicIp">[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</param>
         public DisassociateAddressRequest(string publicIp)
         {
             _publicIp = publicIp;
@@ -60,7 +66,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AssociationId. 
         /// <para>
-        /// [EC2-VPC] The association ID.
+        /// [EC2-VPC] The association ID. Required for EC2-VPC.
         /// </para>
         /// </summary>
         public string AssociationId
@@ -78,7 +84,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicIp. 
         /// <para>
-        /// [EC2-Classic] The Elastic IP address.
+        /// [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
         /// </para>
         /// </summary>
         public string PublicIp

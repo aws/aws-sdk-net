@@ -49,7 +49,6 @@ namespace Amazon.Runtime.Internal
         public override bool HandleException(IExecutionContext executionContext, HttpErrorResponseException exception)
         {
             var requestContext = executionContext.RequestContext;
-            var responseContext = executionContext.ResponseContext;
             var httpErrorResponse = exception.Response;
 
             // If 404 was suppressed and successfully unmarshalled,

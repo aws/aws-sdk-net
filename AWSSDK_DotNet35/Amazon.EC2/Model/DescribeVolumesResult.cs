@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,7 +32,29 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeVolumesResult : AmazonWebServiceResponse
     {
+        private string _nextToken;
         private List<Volume> _volumes = new List<Volume>();
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code>
+        /// request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>,
+        /// this value can be used to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Volumes.

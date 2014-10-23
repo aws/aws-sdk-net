@@ -29,8 +29,8 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifySnapshotCopyRetentionPeriod operation.
-    /// Modifies the number of days to retain automated snapshots in the destination
-    /// region after they are copied from the source region.
+    /// Modifies the number of days to retain automated snapshots in the destination region
+    /// after they are copied from the source region.
     /// </summary>
     public partial class ModifySnapshotCopyRetentionPeriodRequest : AmazonRedshiftRequest
     {
@@ -40,13 +40,13 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///            The unique identifier of the cluster for which you want to change the retention
-        /// period for automated snapshots that are copied to a destination region.        
+        ///  The unique identifier of the cluster for which you want to change the retention period
+        /// for automated snapshots that are copied to a destination region. 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             Constraints: Must be the valid name of an existing cluster that has cross-region
-        /// snapshot copy enabled.        
+        ///  Constraints: Must be the valid name of an existing cluster that has cross-region
+        /// snapshot copy enabled. 
         /// </para>
         /// </summary>
         public string ClusterIdentifier
@@ -64,19 +64,19 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        ///             The number of days to retain automated snapshots in the destination region
-        /// after they are copied from the source region.        
+        ///  The number of days to retain automated snapshots in the destination region after
+        /// they are copied from the source region. 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             If you decrease the retention period for automated snapshots that are
-        /// copied to a destination region, Amazon Redshift will delete any existing automated
-        /// snapshots that were copied to the destination region and that fall outside of the
-        /// new retention period.        
+        ///  If you decrease the retention period for automated snapshots that are copied to a
+        /// destination region, Amazon Redshift will delete any existing automated snapshots that
+        /// were copied to the destination region and that fall outside of the new retention period.
+        /// 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             Constraints: Must be at least 1 and no more than 35.        
+        ///  Constraints: Must be at least 1 and no more than 35. 
         /// </para>
         /// </summary>
         public int RetentionPeriod

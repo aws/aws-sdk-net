@@ -30,12 +30,12 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the ActivateGateway operation.
     /// This operation activates the gateway you previously deployed on your host. For more
-    /// information, see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/DownloadAndDeploy.html">Downloading
-    /// and Deploying AWS Storage Gateway VM</a>. In the activation process you specify information
+    /// information, see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html">
+    /// Activate the AWS Storage Gateway</a>. In the activation process, you specify information
     /// such as the region you want to use for storing snapshots, the time zone for scheduled
-    /// snapshots and the gateway schedule window, an activation key, and a name for your
-    /// gateway. The activation process also associates your gateway with your account (see
-    /// <a>UpdateGatewayInformation</a>).
+    /// snapshots the gateway snapshot schedule window, an activation key, and a name for
+    /// your gateway. The activation process also associates your gateway with your account;
+    /// for more information, see <a>UpdateGatewayInformation</a>.
     /// </summary>
     public partial class ActivateGatewayRequest : AmazonStorageGatewayRequest
     {
@@ -92,12 +92,12 @@ namespace Amazon.StorageGateway.Model
         /// The gateway region specified must be the same region as the region in your <code>Host</code>
         /// header in the request. For more information about available regions and endpoints
         /// for AWS Storage Gateway, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
-        /// and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
+        /// and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
         /// </para>
         ///  
         /// <para>
-        /// <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "ap-northeast-1",
-        /// "ap-southest-1", "sa-east-1"
+        /// <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
+        /// "ap-northeast-1", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
         /// </para>
         /// </summary>
         public string GatewayRegion
@@ -153,7 +153,15 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediumChangerType.
+        /// Gets and sets the property MediumChangerType. 
+        /// <para>
+        /// The value that indicates the type of medium changer to use for gateway-VTL. This field
+        /// is optional.
+        /// </para>
+        ///  
+        /// <para>
+        /// <i>Valid Values</i>: "STK-L700" 
+        /// </para>
         /// </summary>
         public string MediumChangerType
         {
@@ -168,7 +176,15 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TapeDriveType.
+        /// Gets and sets the property TapeDriveType. 
+        /// <para>
+        /// The value that indicates the type of tape drive to use for gateway-VTL. This field
+        /// is optional. 
+        /// </para>
+        ///  
+        /// <para>
+        /// <i>Valid Values</i>: "IBM-ULT3580-TD5" 
+        /// </para>
         /// </summary>
         public string TapeDriveType
         {

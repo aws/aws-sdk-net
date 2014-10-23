@@ -29,19 +29,17 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedNodeOfferings operation.
-    /// Returns a list of the            available reserved node offerings by
-    /// Amazon Redshift with their descriptions including             the node type, the fixed
-    /// and recurring costs of reserving the node and duration the node will             be
-    /// reserved for you. These descriptions help you             determine which reserve
-    /// node offering you want to purchase. You then use the unique offering ID          
-    ///   in you call to <a>PurchaseReservedNodeOffering</a> to reserve one or more nodes
-    /// for your             Amazon Redshift cluster.        
+    /// Returns a list of the available reserved node offerings by Amazon Redshift with their
+    /// descriptions including the node type, the fixed and recurring costs of reserving the
+    /// node and duration the node will be reserved for you. These descriptions help you determine
+    /// which reserve node offering you want to purchase. You then use the unique offering
+    /// ID in you call to <a>PurchaseReservedNodeOffering</a> to reserve one or more nodes
+    /// for your Amazon Redshift cluster. 
     /// 
-    ///         
+    ///  
     /// <para>
-    ///             For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
-    /// Reserved Nodes</a> in the <i>Amazon Redshift Management Guide</i>.               
-    ///      
+    ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
+    /// Reserved Nodes</a> in the <i>Amazon Redshift Management Guide</i>. 
     /// </para>
     /// </summary>
     public partial class DescribeReservedNodeOfferingsRequest : AmazonRedshiftRequest
@@ -53,12 +51,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///            An optional parameter that specifies the starting point to return a set
-        /// of response records.            When the results of a <a>DescribeReservedNodeOfferings</a>
-        /// request exceed the value specified in <code>MaxRecords</code>,            AWS returns
-        /// a value in the <code>Marker</code> field of the response. You can retrieve the next
-        /// set of            response records by providing the returned marker value in the <code>Marker</code>
-        /// parameter and            retrying the request.       
+        ///  An optional parameter that specifies the starting point to return a set of response
+        /// records. When the results of a <a>DescribeReservedNodeOfferings</a> request exceed
+        /// the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
+        /// field of the response. You can retrieve the next set of response records by providing
+        /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
+        /// 
         /// </para>
         /// </summary>
         public string Marker
@@ -76,17 +74,16 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///            The maximum number of response records to return in each call.        
-        ///    If the number of remaining response records exceeds the specified <code>MaxRecords</code>
-        /// value,            a value is returned in a <code>marker</code> field of the response.
-        ///            You can retrieve the next set of records by retrying the command with the
-        /// returned marker value.       
+        ///  The maximum number of response records to return in each call. If the number of remaining
+        /// response records exceeds the specified <code>MaxRecords</code> value, a value is returned
+        /// in a <code>marker</code> field of the response. You can retrieve the next set of records
+        /// by retrying the command with the returned marker value. 
         /// </para>
-        ///        
+        ///  
         /// <para>
         /// Default: <code>100</code>
         /// </para>
-        ///        
+        ///  
         /// <para>
         /// Constraints: minimum 20, maximum 100.
         /// </para>

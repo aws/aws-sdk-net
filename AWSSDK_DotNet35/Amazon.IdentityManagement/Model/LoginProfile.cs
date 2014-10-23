@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// The LoginProfile data type contains the user name and password create date for a user.
+    /// Contains the user name and password create date for a user.
     /// 
     ///  
     /// <para>
-    ///  This data type is used as a response element in the actions <a>CreateLoginProfile</a>
-    /// and <a>GetLoginProfile</a>. 
+    ///  This data type is used as a response element in the <a>CreateLoginProfile</a> and
+    /// <a>GetLoginProfile</a> actions. 
     /// </para>
     /// </summary>
     public partial class LoginProfile

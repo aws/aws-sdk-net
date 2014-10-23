@@ -70,6 +70,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             doc["Price"] = 1200;
             doc["Tags"] = new HashSet<string> { "Prod", "1.0" };
             doc["Aliases"] = new List<string> { "CS", "Magic" };
+            doc["Developers"] = new List<Document>
+            {
+                new Document(new Dictionary<string,DynamoDBEntry>
+                {
+                    { "Name", "Alan" },
+                    { "Age", 29 }
+                }),
+                new Document(new Dictionary<string,DynamoDBEntry>
+                {
+                    { "Name", "Franco" },
+                    { "Age", 32 }
+                })
+            };
             doc["Garbage"] = "asdf";
             Assert.AreEqual("asdf", doc["Garbage"].AsString());
             hashTable.PutItem(doc);
@@ -99,9 +112,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(2, aliasesRetrieved.AsPrimitiveList().Entries.Count);
             else
                 Assert.AreEqual(2, aliasesRetrieved.AsDynamoDBList().Entries.Count);
+            List<Document> developers = retrieved["Developers"].AsListOfDocument();
+            Assert.AreEqual(2, developers.Count);
+            AssertExtensions.ExpectException(() => aliasesRetrieved.AsListOfDocument(), typeof(InvalidCastException));
 
             // Update the item
             doc["Tags"] = new List<string> { "Prod", "1.0", "2.0" };
+            doc["Developers"] = new DynamoDBList(new List<DynamoDBEntry>
+            {
+                new Document(new Dictionary<string,DynamoDBEntry>
+                {
+                    { "Name", "Alan" },
+                    { "Age", 29 }
+                })
+            });
             // Delete the Garbage attribute
             doc["Garbage"] = null;
             Assert.IsNull(doc["Garbage"].AsString());
@@ -110,6 +134,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsFalse(AreValuesEqual(doc, retrieved, conversion));
             doc.Remove("Garbage");
             Assert.IsTrue(AreValuesEqual(doc, retrieved, conversion));
+            developers = retrieved["Developers"].AsListOfDocument();
+            Assert.AreEqual(1, developers.Count);
 
             // Create new, circularly-referencing item            
             Document doc2 = doc.ForceConversion(conversion);

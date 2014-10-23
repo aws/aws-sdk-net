@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// [Nondefault VPC] You must use the <a>DisassociateAddress</a> to disassociate the Elastic
+    /// [Nondefault VPC] You must use <a>DisassociateAddress</a> to disassociate the Elastic
     /// IP address before you try to release it. Otherwise, Amazon EC2 returns an error (<code>InvalidIPAddress.InUse</code>).
     /// </para>
     /// </summary>
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates ReleaseAddressRequest with the parameterized properties
         /// </summary>
-        /// <param name="publicIp">[EC2-Classic] The Elastic IP address.</param>
+        /// <param name="publicIp">[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</param>
         public ReleaseAddressRequest(string publicIp)
         {
             _publicIp = publicIp;
@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllocationId. 
         /// <para>
-        /// [EC2-VPC] The allocation ID.
+        /// [EC2-VPC] The allocation ID. Required for EC2-VPC.
         /// </para>
         /// </summary>
         public string AllocationId
@@ -91,7 +91,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicIp. 
         /// <para>
-        /// [EC2-Classic] The Elastic IP address.
+        /// [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
         /// </para>
         /// </summary>
         public string PublicIp

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -51,7 +51,11 @@ namespace Amazon.EC2.Model
     /// types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>. </li> </ul>
     /// 
     /// <para>
-    /// For more information about DHCP options, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+    /// Your VPC automatically starts out with a set of DHCP options that includes only a
+    /// DNS server that we provide (AmazonProvidedDNS). If you create a set of options, and
+    /// if your VPC has an Internet gateway, make sure to set the <code>domain-name-servers</code>
+    /// option either to <code>AmazonProvidedDNS</code> or to a domain name server of your
+    /// choice. For more information about DHCP options, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
     /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>

@@ -29,26 +29,23 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeClusterSecurityGroupIngress operation.
-    /// Adds an inbound (ingress) rule to an Amazon Redshift security group. 
-    ///                       Depending on whether the application accessing your cluster
-    /// is running            on the Internet or an EC2 instance, you can            authorize
-    /// inbound access to either a Classless Interdomain Routing (CIDR) IP address range 
-    ///          or an EC2 security group.               You can add as many as 20 ingress
-    /// rules to an Amazon Redshift security group.         
+    /// Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on
+    /// whether the application accessing your cluster is running on the Internet or an EC2
+    /// instance, you can authorize inbound access to either a Classless Interdomain Routing
+    /// (CIDR) IP address range or an EC2 security group. You can add as many as 20 ingress
+    /// rules to an Amazon Redshift security group. 
     /// 
-    ///         <note>            The EC2 security group must be defined in the AWS region
-    /// where the cluster resides.        </note>        
+    ///  
     /// <para>
-    /// For an overview of CIDR blocks, see the Wikipedia article on               <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-    /// Inter-Domain Routing</a>.        
+    /// For an overview of CIDR blocks, see the Wikipedia article on <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+    /// Inter-Domain Routing</a>. 
     /// </para>
-    ///         
+    ///  
     /// <para>
-    ///             You must also associate the security group with a cluster so that clients
-    ///             running on these IP addresses or the EC2 instance are authorized to connect
-    /// to the cluster.            For information about managing security groups, go to 
-    ///           <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working
-    /// with Security Groups</a> in the             <i>Amazon Redshift Management Guide</i>.
+    ///  You must also associate the security group with a cluster so that clients running
+    /// on these IP addresses or the EC2 instance are authorized to connect to the cluster.
+    /// For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working
+    /// with Security Groups</a> in the <i>Amazon Redshift Management Guide</i>.
     /// </para>
     /// </summary>
     public partial class AuthorizeClusterSecurityGroupIngressRequest : AmazonRedshiftRequest
@@ -61,7 +58,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property CIDRIP. 
         /// <para>
-        ///             The IP range to be added the Amazon Redshift security group.        
+        ///  The IP range to be added the Amazon Redshift security group. 
         /// </para>
         /// </summary>
         public string CIDRIP
@@ -79,8 +76,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterSecurityGroupName. 
         /// <para>
-        ///         The name of the security group to which the ingress rule is added.       
-        /// 
+        ///  The name of the security group to which the ingress rule is added. 
         /// </para>
         /// </summary>
         public string ClusterSecurityGroupName
@@ -98,8 +94,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupName. 
         /// <para>
-        ///             The EC2 security group to be added the Amazon Redshift security group.
-        ///        
+        ///  The EC2 security group to be added the Amazon Redshift security group. 
         /// </para>
         /// </summary>
         public string EC2SecurityGroupName
@@ -117,13 +112,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupOwnerId. 
         /// <para>
-        ///         The AWS account number of the owner of the security group        specified
-        /// by the <i>EC2SecurityGroupName</i> parameter.        The AWS Access Key ID is not
-        /// an acceptable value.        
+        ///  The AWS account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i>
+        /// parameter. The AWS Access Key ID is not an acceptable value. 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             Example: <code>111122223333</code>        
+        ///  Example: <code>111122223333</code> 
         /// </para>
         /// </summary>
         public string EC2SecurityGroupOwnerId

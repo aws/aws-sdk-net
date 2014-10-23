@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// The list of SAML providers for this account.
+    /// Contains the list of SAML providers for this account.
     /// </summary>
     public partial class SAMLProviderListEntry
     {

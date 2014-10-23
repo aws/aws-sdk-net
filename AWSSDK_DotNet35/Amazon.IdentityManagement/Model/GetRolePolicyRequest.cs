@@ -31,12 +31,13 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the GetRolePolicy operation.
     /// Retrieves the specified policy document for the specified role. For more information
     /// about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-    /// with Roles</a>.
+    /// with Roles</a>. 
     /// 
     ///  
     /// <para>
-    /// The returned policy is URL-encoded according to RFC 3986. For more information about
+    ///  The returned policy is URL-encoded according to RFC 3986. For more information about
     /// RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+    /// 
     /// </para>
     /// </summary>
     public partial class GetRolePolicyRequest : AmazonIdentityManagementServiceRequest
@@ -47,7 +48,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// Name of the policy document to get.
+        /// The name of the policy document to get.
         /// </para>
         /// </summary>
         public string PolicyName
@@ -65,7 +66,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// Name of the role associated with the policy.
+        /// The name of the role associated with the policy.
         /// </para>
         /// </summary>
         public string RoleName

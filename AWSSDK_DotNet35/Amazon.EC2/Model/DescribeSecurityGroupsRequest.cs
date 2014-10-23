@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -130,7 +130,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupIds. 
         /// <para>
-        /// One or more security group IDs.
+        /// One or more security group IDs. Required for nondefault VPCs.
         /// </para>
         ///  
         /// <para>
@@ -152,7 +152,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupNames. 
         /// <para>
-        /// [EC2-Classic, default VPC] One or more security group names.
+        /// [EC2-Classic, default VPC] One or more security group names. You can specify either
+        /// the security group name or the security group ID.
         /// </para>
         ///  
         /// <para>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateVpnConnectionRequest with the parameterized properties
         /// </summary>
-        /// <param name="type">The type of VPN connection.</param>
+        /// <param name="type">The type of VPN connection (<code>ipsec.1</code>).</param>
         /// <param name="customerGatewayId">The ID of the customer gateway.</param>
         /// <param name="vpnGatewayId">The ID of the virtual private gateway.</param>
         public CreateVpnConnectionRequest(string type, string customerGatewayId, string vpnGatewayId)
@@ -124,7 +124,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of VPN connection.
+        /// The type of VPN connection (<code>ipsec.1</code>).
         /// </para>
         /// </summary>
         public string Type

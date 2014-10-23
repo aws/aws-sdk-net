@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -50,6 +50,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("nextToken", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.NextToken = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("volumeSet/item", targetDepth))
                     {
                         var unmarshaller = VolumeUnmarshaller.Instance;

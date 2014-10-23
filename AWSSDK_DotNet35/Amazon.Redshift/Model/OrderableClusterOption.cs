@@ -40,7 +40,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        ///             A list of availability zones for the orderable cluster.         
+        ///  A list of availability zones for the orderable cluster. 
         /// </para>
         /// </summary>
         public List<AvailabilityZone> AvailabilityZones
@@ -58,7 +58,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterType. 
         /// <para>
-        ///             The cluster type, for example <code>multi-node</code>.        
+        ///  The cluster type, for example <code>multi-node</code>. 
         /// </para>
         /// </summary>
         public string ClusterType
@@ -76,7 +76,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterVersion. 
         /// <para>
-        ///             The version of the orderable cluster.        
+        ///  The version of the orderable cluster. 
         /// </para>
         /// </summary>
         public string ClusterVersion
@@ -94,7 +94,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
-        ///             The node type for the orderable cluster.         
+        ///  The node type for the orderable cluster. 
         /// </para>
         /// </summary>
         public string NodeType

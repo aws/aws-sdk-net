@@ -51,9 +51,9 @@ namespace Amazon.DynamoDBv2.DataModel
         public IPropertyConverter Converter { get; protected set; }
 
         public SimplePropertyStorage(MemberInfo member)
+            : this(Utils.GetType(member))
         {
             Member = member;
-            MemberType = Utils.GetType(member);
             PropertyName = member.Name;
         }
         public SimplePropertyStorage(Type memberType)
@@ -166,7 +166,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
             foreach (var index in Indexes)
                 IndexNames.AddRange(index.IndexNames);
-
         }
 
         public PropertyStorage(MemberInfo member)
@@ -315,10 +314,19 @@ namespace Amazon.DynamoDBv2.DataModel
         // constructor
         public StorageConfig(ITypeInfo targetTypeInfo)
         {
+            var type = targetTypeInfo.Type;
+            if (!Utils.CanInstantiate(type))
+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                    "Type {0} is unsupported, it cannot be instantiated", targetTypeInfo.FullName));
+
             TargetTypeInfo = targetTypeInfo;
             Properties = new List<PropertyStorage>();
             PropertyToPropertyStorageMapping = new Dictionary<string, PropertyStorage>(StringComparer.Ordinal);
             TargetTypeMembers = GetMembersDictionary(targetTypeInfo);
+
+            if (TargetTypeMembers.Count == 0)
+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                    "Type {0} is unsupported, it has no supported members", targetTypeInfo.FullName));
         }
     }
     
@@ -455,6 +463,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
             //if (this.HashKeyPropertyNames.Count == 0)
             //    throw new InvalidOperationException("No hash key configured for type " + TargetTypeInfo.FullName);
+
+            if (this.Properties.Count == 0)
+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                    "Type {0} is unsupported, it has no supported members", TargetTypeInfo.FullName));
         }
 
         private void AddPropertyStorage(PropertyStorage value)
@@ -712,7 +724,6 @@ namespace Amazon.DynamoDBv2.DataModel
                 config.Properties.Add(propertyStorage);
             }
         }
-
         private static void PopulateConfigFromTable(ItemStorageConfig config, Table table)
         {
             PropertyStorage property;
@@ -778,7 +789,6 @@ namespace Amazon.DynamoDBv2.DataModel
             }
 
         }
-
         private static void PopulateConfigFromMappings(ItemStorageConfig config, Dictionary<Type, TypeMapping> typeMappings)
         {
             var baseType = config.TargetTypeInfo.Type;

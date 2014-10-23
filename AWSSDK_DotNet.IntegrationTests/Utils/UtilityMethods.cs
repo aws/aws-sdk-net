@@ -49,6 +49,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             }
         }
 
+        public static Stream CreateStreamFromString(string s)
+        {
+            return CreateStreamFromString(s, new MemoryStream());
+        }
+        
+        public static Stream CreateStreamFromString(string s, Stream stream)
+        {            
+            StreamWriter writer = new StreamWriter(stream);
+            writer.Write(s);
+            writer.Flush();
+            stream.Position = 0;
+            return stream;
+        }
+
         public static string GetResourceText(string resourceName)
         {
             using (StreamReader reader = new StreamReader(GetResourceStream(resourceName)))

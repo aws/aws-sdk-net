@@ -16,6 +16,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDB")]
         public void TestTableCalls()
         {
+            // Only run these tests if we are not reusing tables
+            if (ReuseTables)
+                return;
+
             var tables = GetTableNames();
             int tableCount = tables.Count;
 

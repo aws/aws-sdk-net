@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicIp. 
         /// <para>
-        /// The address of the Elastic IP address bound to the network interface.
+        /// The public IP address or Elastic IP address bound to the network interface.
         /// </para>
         /// </summary>
         public string PublicIp

@@ -13,6 +13,7 @@ using Amazon.Runtime.Internal.Util;
 using System.Threading;
 using System.Net;
 using Amazon.Runtime.Internal;
+using Amazon.S3;
 
 namespace AWSSDK.UnitTests
 {
@@ -84,7 +85,58 @@ namespace AWSSDK.UnitTests
             },
             typeof(AmazonServiceException));
             Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
-        }  
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void RetryForHttpStatus200WithErrorResponse()
+        {
+            var s3Client = new MockS3Client(new BasicAWSCredentials("access_key", "secret_key"),
+                new Amazon.S3.AmazonS3Config
+                {
+                    ServiceURL = @"http://S3200WithErrorResponse",
+                    MaxErrorRetry = MAX_RETRIES
+                });
+
+            IExecutionContext executionContext = null;
+            s3Client.Pipeline.AddHandlerAfter<RetryHandler>(new CallbackHandler
+            {
+                OnPreInvoke = (context) => 
+                {
+                    executionContext = context;
+                }
+            });
+
+            var exception = Utils.AssertExceptionExpected<AmazonS3Exception>(() =>
+            {
+                var completeMultipartUploadResponse = s3Client.CompleteMultipartUpload(
+                    new CompleteMultipartUploadRequest
+                    {
+                        BucketName = "bucketName",
+                        Key = "key",
+                        PartETags = new List<PartETag> { },
+                        UploadId = "Upload123"
+                    });
+            });            
+            Assert.AreEqual(MAX_RETRIES, executionContext.RequestContext.Retries);
+
+            exception = Utils.AssertExceptionExpected<AmazonS3Exception>(() =>
+            {
+                var copyPartResponse = s3Client.CopyPart("source", "key",
+                    "destination", "key", "Upload123");
+            });
+            Assert.AreEqual(MAX_RETRIES, executionContext.RequestContext.Retries);
+
+            exception = Utils.AssertExceptionExpected<AmazonS3Exception>(()=>{
+                var copyObjectResponse = s3Client.CopyObject("source", "key", 
+                    "destination", "key");
+            });
+            Assert.AreEqual("InternalError", exception.ErrorCode);
+            Assert.AreEqual("656c76696e6727732072657175657374", exception.RequestId);
+            Assert.AreEqual("Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==", exception.AmazonId2);
+            Assert.AreEqual(MAX_RETRIES, executionContext.RequestContext.Retries);
+        }
 
 #if BCL45
 
@@ -209,5 +261,43 @@ namespace AWSSDK.UnitTests
         }
 
 #endif        
-    }    
+    }
+
+    public class MockS3Client : AmazonS3Client
+    {
+        private AWSSDK.UnitTests.HttpHandlerTests.MockHttpRequestFactory _requestFactory = null;
+
+        public RuntimePipeline Pipeline
+        {
+            get
+            {
+                return base.RuntimePipeline;
+            }
+        }
+
+        public Action GetResponseAction
+        {
+            set { _requestFactory.GetResponseAction = value; }
+        }
+
+
+        public MockS3Client(AWSCredentials credentials, AmazonS3Config clientConfig)
+            : base(credentials, clientConfig)
+        {
+        }
+
+        public void Reset()
+        {
+            this.GetResponseAction = null;
+        }
+
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            base.CustomizeRuntimePipeline(pipeline);
+
+            _requestFactory = new AWSSDK.UnitTests.HttpHandlerTests.MockHttpRequestFactory();
+            var httpHandler = new HttpHandler<Stream>(_requestFactory, this);
+            pipeline.ReplaceHandler<HttpHandler<Stream>>(httpHandler);
+        }
+    }
 }

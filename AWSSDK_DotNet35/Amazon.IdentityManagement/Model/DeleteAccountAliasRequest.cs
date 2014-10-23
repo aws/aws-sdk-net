@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates DeleteAccountAliasRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountAlias">Name of the account alias to delete.</param>
+        /// <param name="accountAlias">The name of the account alias to delete.</param>
         public DeleteAccountAliasRequest(string accountAlias)
         {
             _accountAlias = accountAlias;
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property AccountAlias. 
         /// <para>
-        /// Name of the account alias to delete.
+        /// The name of the account alias to delete.
         /// </para>
         /// </summary>
         public string AccountAlias

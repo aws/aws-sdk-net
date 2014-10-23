@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates ConfirmProductInstanceRequest with the parameterized properties
         /// </summary>
-        /// <param name="productCode">The product code. This must be an Amazon DevPay product code that you own.</param>
+        /// <param name="productCode">The product code. This must be a product code that you own.</param>
         /// <param name="instanceId">The ID of the instance.</param>
         public ConfirmProductInstanceRequest(string productCode, string instanceId)
         {
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ProductCode. 
         /// <para>
-        /// The product code. This must be an Amazon DevPay product code that you own.
+        /// The product code. This must be a product code that you own.
         /// </para>
         /// </summary>
         public string ProductCode

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -87,7 +87,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IcmpTypeCode. 
         /// <para>
-        /// ICMP protocol: The ICMP type and code.
+        /// ICMP protocol: The ICMP type and code. Required if specifying 1 (ICMP) for the protocol.
         /// </para>
         /// </summary>
         public IcmpTypeCode IcmpTypeCode
@@ -123,7 +123,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PortRange. 
         /// <para>
-        /// TCP or UDP protocols: The range of ports the rule applies to.
+        /// TCP or UDP protocols: The range of ports the rule applies to. Required if specifying
+        /// 6 (TCP) or 17 (UDP) for the protocol.
         /// </para>
         /// </summary>
         public PortRange PortRange

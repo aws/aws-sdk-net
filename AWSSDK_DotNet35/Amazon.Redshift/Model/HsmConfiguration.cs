@@ -29,8 +29,8 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Returns information about an HSM configuration, which is an object that describes
-    /// to Amazon Redshift            clusters the information they require to connect to
-    /// an HSM where they can store database            encryption keys.
+    /// to Amazon Redshift clusters the information they require to connect to an HSM where
+    /// they can store database encryption keys.
     /// </summary>
     public partial class HsmConfiguration
     {
@@ -97,7 +97,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property HsmPartitionName. 
         /// <para>
         /// The name of the partition in the HSM where the Amazon Redshift clusters will store
-        ///            their database encryption keys.
+        /// their database encryption keys.
         /// </para>
         /// </summary>
         public string HsmPartitionName

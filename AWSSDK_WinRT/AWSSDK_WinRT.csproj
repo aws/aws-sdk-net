@@ -724,6 +724,9 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Util\S3Constants.cs">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Util\AmazonS3Uri.cs">
+      <Visible>false</Visible>
+    </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Util\TransferProgressArgs.cs">
       <Visible>false</Visible>
     </Compile>

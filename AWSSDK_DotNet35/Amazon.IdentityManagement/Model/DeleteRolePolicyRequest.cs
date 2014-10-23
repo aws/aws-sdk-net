@@ -39,7 +39,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// Name of the policy document to delete.
+        /// The name of the policy document to delete.
         /// </para>
         /// </summary>
         public string PolicyName
@@ -57,7 +57,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// Name of the role the associated with the policy.
+        /// The name of the role the associated with the policy.
         /// </para>
         /// </summary>
         public string RoleName

@@ -32,14 +32,14 @@ namespace Amazon.IdentityManagement.Model
     /// Uploads an X.509 signing certificate and associates it with the specified user. Some
     /// AWS services use X.509 signing certificates to validate requests that are signed with
     /// a corresponding private key. When you upload the certificate, its default status is
-    /// <code>Active</code>.
+    /// <code>Active</code>. 
     /// 
     ///  
     /// <para>
-    /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-    /// based on the AWS access key ID used to sign the request. Because this action works
-    /// for access keys under the AWS account, this API can be used to manage root credentials
-    /// even if the AWS account has no associated users.
+    ///  If the <code>UserName</code> field is not specified, the user name is determined
+    /// implicitly based on the AWS access key ID used to sign the request. Because this action
+    /// works for access keys under the AWS account, you can use this action to manage root
+    /// credentials even if the AWS account has no associated users. 
     /// </para>
     /// </summary>
     public partial class UploadSigningCertificateRequest : AmazonIdentityManagementServiceRequest
@@ -82,7 +82,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Name of the user the signing certificate is for.
+        /// The name of the user the signing certificate is for.
         /// </para>
         /// </summary>
         public string UserName

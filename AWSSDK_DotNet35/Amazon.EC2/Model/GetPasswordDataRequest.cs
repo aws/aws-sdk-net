@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,8 +33,11 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// The Windows password is only generated the first time an AMI is launched. It is not
-    /// generated for rebundled AMIs or after the password is changed on an instance.
+    /// The Windows password is generated at boot if the <code>EC2Config</code> service plugin,
+    /// <code>Ec2SetPassword</code>, is enabled. This usually only happens the first time
+    /// an AMI is launched, and then <code>Ec2SetPassword</code> is automatically disabled.
+    /// The password is not generated for rebundled AMIs unless <code>Ec2SetPassword</code>
+    /// is enabled before bundling.
     /// </para>
     ///  
     /// <para>

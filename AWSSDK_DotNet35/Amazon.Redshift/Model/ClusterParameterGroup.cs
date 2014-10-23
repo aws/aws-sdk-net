@@ -39,7 +39,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///         The description of the parameter group.        
+        ///  The description of the parameter group. 
         /// </para>
         /// </summary>
         public string Description
@@ -57,8 +57,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterGroupFamily. 
         /// <para>
-        ///         The name of the cluster parameter group family that        this cluster parameter
-        /// group is compatible with.        
+        ///  The name of the cluster parameter group family that this cluster parameter group
+        /// is compatible with. 
         /// </para>
         /// </summary>
         public string ParameterGroupFamily
@@ -76,7 +76,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterGroupName. 
         /// <para>
-        ///         The name of the cluster parameter group.        
+        ///  The name of the cluster parameter group. 
         /// </para>
         /// </summary>
         public string ParameterGroupName

@@ -29,12 +29,11 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the RebootCluster operation.
-    /// Reboots a cluster.         This action is taken as soon as possible. It results
-    /// in a momentary outage to the cluster,        during which the cluster status is set
-    /// to <code>rebooting</code>. A cluster event is created            when the reboot is
-    /// completed.                    Any pending cluster modifications (see <a>ModifyCluster</a>)
-    /// are applied at this reboot.        For more information about managing clusters, go
-    /// to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+    /// Reboots a cluster. This action is taken as soon as possible. It results in a momentary
+    /// outage to the cluster, during which the cluster status is set to <code>rebooting</code>.
+    /// A cluster event is created when the reboot is completed. Any pending cluster modifications
+    /// (see <a>ModifyCluster</a>) are applied at this reboot. For more information about
+    /// managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
     /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i>
     /// </summary>
     public partial class RebootClusterRequest : AmazonRedshiftRequest
@@ -44,7 +43,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///         The cluster identifier.        
+        ///  The cluster identifier. 
         /// </para>
         /// </summary>
         public string ClusterIdentifier

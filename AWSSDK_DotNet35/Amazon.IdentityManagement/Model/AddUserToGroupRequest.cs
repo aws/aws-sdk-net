@@ -44,8 +44,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates AddUserToGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">Name of the group to update.</param>
-        /// <param name="userName">Name of the user to add.</param>
+        /// <param name="groupName">The name of the group to update.</param>
+        /// <param name="userName">The name of the user to add.</param>
         public AddUserToGroupRequest(string groupName, string userName)
         {
             _groupName = groupName;
@@ -55,7 +55,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// Name of the group to update.
+        /// The name of the group to update.
         /// </para>
         /// </summary>
         public string GroupName
@@ -73,7 +73,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Name of the user to add.
+        /// The name of the user to add.
         /// </para>
         /// </summary>
         public string UserName

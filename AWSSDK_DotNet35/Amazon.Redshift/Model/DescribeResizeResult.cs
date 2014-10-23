@@ -49,8 +49,8 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property AvgResizeRateInMegaBytesPerSecond. 
         /// <para>
         /// The average rate of the resize operation over the last few minutes, measured in megabytes
-        /// per second.             After the resize operation completes, this value shows the
-        /// average rate of the entire resize operation.
+        /// per second. After the resize operation completes, this value shows the average rate
+        /// of the entire resize operation.
         /// </para>
         /// </summary>
         public double AvgResizeRateInMegaBytesPerSecond
@@ -68,9 +68,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ElapsedTimeInSeconds. 
         /// <para>
-        /// The amount of seconds that have elapsed since the resize operation began.        
-        ///     After the resize operation completes, this value shows the total actual time,
-        /// in seconds, for the resize operation. 
+        /// The amount of seconds that have elapsed since the resize operation began. After the
+        /// resize operation completes, this value shows the total actual time, in seconds, for
+        /// the resize operation. 
         /// </para>
         /// </summary>
         public long ElapsedTimeInSeconds
@@ -89,9 +89,9 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property EstimatedTimeToCompletionInSeconds. 
         /// <para>
         /// The estimated time remaining, in seconds, until the resize operation is complete.
-        /// This value is calculated based on the average resize rate             and the estimated
-        /// amount of data remaining to be processed. Once the resize operation is complete, this
-        /// value will be 0. 
+        /// This value is calculated based on the average resize rate and the estimated amount
+        /// of data remaining to be processed. Once the resize operation is complete, this value
+        /// will be 0. 
         /// </para>
         /// </summary>
         public long EstimatedTimeToCompletionInSeconds
@@ -111,7 +111,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The names of tables that have been completely imported .
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Valid Values: List of table names.
         /// </para>
@@ -133,7 +133,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The names of tables that are being currently imported.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Valid Values: List of table names.
         /// </para>
@@ -155,7 +155,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The names of tables that have not been yet imported.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Valid Values: List of table names
         /// </para>
@@ -176,10 +176,10 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property ProgressInMegaBytes. 
         /// <para>
         /// While the resize operation is in progress, this value shows the current amount of
-        /// data, in megabytes, that has been processed so far.             When the resize operation
-        /// is complete, this value shows the total amount of data, in megabytes, on the cluster,
-        ///             which may be more or less than TotalResizeDataInMegaBytes (the estimated
-        /// total amount of data before resize). 
+        /// data, in megabytes, that has been processed so far. When the resize operation is complete,
+        /// this value shows the total amount of data, in megabytes, on the cluster, which may
+        /// be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data
+        /// before resize). 
         /// </para>
         /// </summary>
         public long ProgressInMegaBytes
@@ -199,7 +199,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The status of the resize operation.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> |
         /// <code>SUCCEEDED</code>
@@ -222,7 +222,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The cluster type after the resize operation is complete.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Valid Values: <code>multi-node</code> | <code>single-node</code>
         /// </para>

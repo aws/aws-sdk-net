@@ -32,17 +32,18 @@ namespace Amazon.IdentityManagement.Model
     /// Changes the status of the specified access key from Active to Inactive, or vice versa.
     /// This action can be used to disable a user's key as part of a key rotation work flow.
     /// 
+    /// 
     ///  
     /// <para>
-    /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
+    ///  If the <code>UserName</code> field is not specified, the UserName is determined implicitly
     /// based on the AWS access key ID used to sign the request. Because this action works
-    /// for access keys under the AWS account, this API can be used to manage root credentials
-    /// even if the AWS account has no associated users.
+    /// for access keys under the AWS account, you can use this action to manage root credentials
+    /// even if the AWS account has no associated users. 
     /// </para>
     ///  
     /// <para>
-    /// For information about rotating keys, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
-    /// Keys and Certificates</a> in the <i>Using IAM </i> guide.
+    ///  For information about rotating keys, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
+    /// Keys and Certificates</a> in the <i>Using IAM</i> guide. 
     /// </para>
     /// </summary>
     public partial class UpdateAccessKeyRequest : AmazonIdentityManagementServiceRequest
@@ -60,7 +61,7 @@ namespace Amazon.IdentityManagement.Model
         /// Instantiates UpdateAccessKeyRequest with the parameterized properties
         /// </summary>
         /// <param name="accessKeyId">The access key ID of the secret access key you want to update.</param>
-        /// <param name="status">The status you want to assign to the secret access key. <code>Active</code> means the key can be used for API calls to AWS, while <code>Inactive</code> means the key cannot be used.</param>
+        /// <param name="status"> The status you want to assign to the secret access key. <code>Active</code> means the key can be used for API calls to AWS, while <code>Inactive</code> means the key cannot be used. </param>
         public UpdateAccessKeyRequest(string accessKeyId, StatusType status)
         {
             _accessKeyId = accessKeyId;
@@ -88,9 +89,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status you want to assign to the secret access key. <code>Active</code> means
+        ///  The status you want to assign to the secret access key. <code>Active</code> means
         /// the key can be used for API calls to AWS, while <code>Inactive</code> means the key
-        /// cannot be used.
+        /// cannot be used. 
         /// </para>
         /// </summary>
         public StatusType Status
@@ -108,7 +109,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Name of the user whose key you want to update.
+        /// The name of the user whose key you want to update.
         /// </para>
         /// </summary>
         public string UserName

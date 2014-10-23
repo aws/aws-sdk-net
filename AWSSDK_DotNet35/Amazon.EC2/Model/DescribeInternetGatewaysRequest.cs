@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
         ///  <ul> <li> 
         /// <para>
         /// <code>attachment.state</code> - The current state of the attachment between the gateway
-        /// and the VPC. Present only if a VPC is attached.
+        /// and the VPC (<code>available</code>). Present only if a VPC is attached.
         /// </para>
         ///  </li> <li> 
         /// <para>

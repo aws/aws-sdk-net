@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-06-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,6 +33,12 @@ namespace Amazon.EC2.Model
     /// information about all your Reserved Instances modification requests is returned. If
     /// a modification ID is specified, only information about the specific modification is
     /// returned.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
+    /// Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.
+    /// </para>
     /// </summary>
     public partial class DescribeReservedInstancesModificationsRequest : AmazonEC2Request
     {

@@ -41,13 +41,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///             The unique identifier of the source cluster to copy snapshots from.  
-        ///      
+        ///  The unique identifier of the source cluster to copy snapshots from. 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             Constraints: Must be the valid name of an existing cluster that does not
-        /// already have cross-region snapshot copy enabled.        
+        ///  Constraints: Must be the valid name of an existing cluster that does not already
+        /// have cross-region snapshot copy enabled. 
         /// </para>
         /// </summary>
         public string ClusterIdentifier
@@ -65,13 +64,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DestinationRegion. 
         /// <para>
-        ///             The destination region that you want to copy snapshots to.        
+        ///  The destination region that you want to copy snapshots to. 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             Constraints: Must be the name of a valid region. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
-        /// and Endpoints</a> in the Amazon Web Services General Reference.                
+        ///  Constraints: Must be the name of a valid region. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
+        /// and Endpoints</a> in the Amazon Web Services General Reference. 
         /// </para>
         /// </summary>
         public string DestinationRegion
@@ -89,16 +87,16 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        ///             The number of days to retain automated snapshots in the destination region
-        /// after they are copied from the source region.        
+        ///  The number of days to retain automated snapshots in the destination region after
+        /// they are copied from the source region. 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             Default: 7.        
+        ///  Default: 7. 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             Constraints: Must be at least 1 and no more than 35.        
+        ///  Constraints: Must be at least 1 and no more than 35. 
         /// </para>
         /// </summary>
         public int RetentionPeriod
