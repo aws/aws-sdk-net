@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -49,6 +49,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AutomaticFailover", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AutomaticFailover = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Description", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

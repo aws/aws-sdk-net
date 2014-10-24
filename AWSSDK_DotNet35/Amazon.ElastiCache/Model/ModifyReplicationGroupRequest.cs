@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,6 +35,7 @@ namespace Amazon.ElastiCache.Model
     public partial class ModifyReplicationGroupRequest : AmazonElastiCacheRequest
     {
         private bool? _applyImmediately;
+        private bool? _automaticFailoverEnabled;
         private bool? _autoMinorVersionUpgrade;
         private string _cacheParameterGroupName;
         private List<string> _cacheSecurityGroupNames = new List<string>();
@@ -84,10 +85,33 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AutomaticFailoverEnabled. 
+        /// <para>
+        /// Whether a read replica will be automatically promoted to read/write primary if the
+        /// existing primary encounters a failure.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>true</code> | <code>false</code>
+        /// </para>
+        /// </summary>
+        public bool AutomaticFailoverEnabled
+        {
+            get { return this._automaticFailoverEnabled.GetValueOrDefault(); }
+            set { this._automaticFailoverEnabled = value; }
+        }
+
+        // Check to see if AutomaticFailoverEnabled property is set
+        internal bool IsSetAutomaticFailoverEnabled()
+        {
+            return this._automaticFailoverEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
         /// Determines whether minor engine upgrades will be applied automatically to all of the
-        /// cache nodes in the replication group during the maintenance window. A value of <code>true</code>
+        /// clusters in the replication group during the maintenance window. A value of <code>true</code>
         /// allows these upgrades to occur; <code>false</code> disables automatic upgrades.
         /// </para>
         /// </summary>
@@ -106,7 +130,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheParameterGroupName. 
         /// <para>
-        /// The name of the cache parameter group to apply to all of the cache nodes in this replication
+        /// The name of the cache parameter group to apply to all of the clusters in this replication
         /// group. This change is asynchronously applied as soon as possible for parameters when
         /// the <i>ApplyImmediately</i> parameter is specified as <i>true</i> for this request.
         /// </para>
@@ -131,8 +155,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter can be used only with replication groups containing cache clusters
-        /// running outside of an Amazon Virtual Private Cloud (VPC).
+        /// This parameter can be used only with replication group containing cache clusters running
+        /// outside of an Amazon Virtual Private Cloud (VPC).
         /// </para>
         ///  
         /// <para>
@@ -154,8 +178,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The upgraded version of the cache engine to be run on the nodes in the replication
-        /// group..
+        /// The upgraded version of the cache engine to be run on the cache clusters in the replication
+        /// group.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -173,7 +197,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NotificationTopicArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the SNS topic to which notifications will be sent.
+        /// The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will
+        /// be sent.
         /// </para>
         /// </summary>
         public string NotificationTopicArn
@@ -236,9 +261,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PrimaryClusterId. 
         /// <para>
-        /// If this parameter is specified, ElastiCache will promote each of the nodes in the
-        /// specified cache cluster to the primary role. The nodes of all other clusters in the
-        /// replication group will be read replicas.
+        /// If this parameter is specified, ElastiCache will promote each of the cache clusters
+        /// in the specified replication group to the primary role. The nodes of all other cache
+        /// clusters in the replication group will be read replicas.
         /// </para>
         /// </summary>
         public string PrimaryClusterId
@@ -297,8 +322,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter can be used only with replication groups containing cache clusters
-        /// running in an Amazon Virtual Private Cloud (VPC).
+        /// This parameter can be used only with replication group containing cache clusters running
+        /// in an Amazon Virtual Private Cloud (VPC).
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -316,7 +341,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SnapshotRetentionLimit. 
         /// <para>
-        /// The number of days for which ElastiCache will retain automatic cache cluster snapshots
+        /// The number of days for which ElastiCache will retain automatic node group snapshots
         /// before deleting them. For example, if you set <i>SnapshotRetentionLimit</i> to 5,
         /// then a snapshot that was taken today will be retained for 5 days before being deleted.
         /// </para>
@@ -361,7 +386,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SnapshotWindow. 
         /// <para>
         /// The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot
-        /// of the cache cluster specified by <i>SnapshottingClusterId</i>.
+        /// of the node group specified by <i>SnapshottingClusterId</i>.
         /// </para>
         ///  
         /// <para>

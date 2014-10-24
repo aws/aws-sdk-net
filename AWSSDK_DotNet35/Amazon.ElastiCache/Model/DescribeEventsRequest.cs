@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -77,7 +77,6 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property EndTime. 
         /// <para>
         /// The end of the time interval for which to retrieve events, specified in ISO 8601 format.
-        /// 
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -187,7 +186,6 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
-        /// 
         /// </para>
         /// </summary>
         public DateTime StartTime

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
  */
 
 
@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache
     /// <para>
     /// With ElastiCache, customers gain all of the benefits of a high-performance, in-memory
     /// cache with far less of the administrative burden of launching and managing a distributed
-    /// cache. The service makes set-up, scaling, and cluster failure handling much simpler
+    /// cache. The service makes setup, scaling, and cluster failure handling much simpler
     /// than in a self-managed cache deployment.
     /// </para>
     ///  

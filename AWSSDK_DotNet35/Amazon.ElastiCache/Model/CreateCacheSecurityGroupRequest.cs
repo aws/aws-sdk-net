@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,9 +34,9 @@ namespace Amazon.ElastiCache.Model
     /// 
     ///  
     /// <para>
-    /// Cache security groups are only used when you are creating a cluster outside of an
-    /// Amazon Virtual Private Cloud (VPC). If you are creating a cluster inside of a VPC,
-    /// use a cache subnet group instead. For more information, see <i>CreateCacheSubnetGroup</i>.
+    /// Cache security groups are only used when you are creating a cache cluster outside
+    /// of an Amazon Virtual Private Cloud (VPC). If you are creating a cache cluster inside
+    /// of a VPC, use a cache subnet group instead. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.
     /// </para>
     /// </summary>
     public partial class CreateCacheSecurityGroupRequest : AmazonElastiCacheRequest
@@ -52,7 +52,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Instantiates CreateCacheSecurityGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="cacheSecurityGroupName">A name for the cache security group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric characters. Must not be the word "Default". Example: <code>mysecuritygroup</code></param>
+        /// <param name="cacheSecurityGroupName">A name for the cache security group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the word "Default". Example: <code>mysecuritygroup</code></param>
         /// <param name="description">A description for the cache security group.</param>
         public CreateCacheSecurityGroupRequest(string cacheSecurityGroupName, string description)
         {
@@ -67,7 +67,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must contain no more than 255 alphanumeric characters. Must not be the
+        /// Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the
         /// word "Default".
         /// </para>
         ///  

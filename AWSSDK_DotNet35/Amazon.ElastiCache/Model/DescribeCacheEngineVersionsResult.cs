@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -39,7 +39,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property CacheEngineVersions. 
         /// <para>
         /// A list of cache engine version details. Each element in the list contains detailed
-        /// information about once cache engine version.
+        /// information about one cache engine version.
         /// </para>
         /// </summary>
         public List<CacheEngineVersion> CacheEngineVersions

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -95,8 +95,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
         /// <para>
-        /// The user-supplied identifier of the cache cluster. This is a unique key that identifies
-        /// a cache cluster.
+        /// The user-supplied identifier of the cache cluster. This identifier is a unique key
+        /// that identifies a cache cluster.
         /// </para>
         /// </summary>
         public string CacheClusterId
@@ -114,7 +114,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheClusterStatus. 
         /// <para>
-        /// The current state of this cache cluster - <i>creating</i>, <i>available</i>, etc.
+        /// The current state of this cache cluster, one of the following values: <i>available</i>,
+        /// <i>creating</i>, <i>deleted</i>, <i>deleting</i>, <i>incompatible-network</i>, <i>modifying</i>,
+        /// <i>rebooting cache cluster nodes</i>, <i>restore-failed</i>, or <i>snapshotting</i>.
         /// </para>
         /// </summary>
         public string CacheClusterStatus

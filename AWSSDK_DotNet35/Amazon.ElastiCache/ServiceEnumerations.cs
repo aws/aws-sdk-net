@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
  */
 
 using System;
@@ -23,6 +23,134 @@ using Amazon.Runtime;
 
 namespace Amazon.ElastiCache
 {
+
+    /// <summary>
+    /// Constants used for properties of type AutomaticFailoverStatus.
+    /// </summary>
+    public class AutomaticFailoverStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for AutomaticFailoverStatus
+        /// </summary>
+        public static readonly AutomaticFailoverStatus Disabled = new AutomaticFailoverStatus("disabled");
+        /// <summary>
+        /// Constant Disabling for AutomaticFailoverStatus
+        /// </summary>
+        public static readonly AutomaticFailoverStatus Disabling = new AutomaticFailoverStatus("disabling");
+        /// <summary>
+        /// Constant Enabled for AutomaticFailoverStatus
+        /// </summary>
+        public static readonly AutomaticFailoverStatus Enabled = new AutomaticFailoverStatus("enabled");
+        /// <summary>
+        /// Constant Enabling for AutomaticFailoverStatus
+        /// </summary>
+        public static readonly AutomaticFailoverStatus Enabling = new AutomaticFailoverStatus("enabling");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public AutomaticFailoverStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomaticFailoverStatus FindValue(string value)
+        {
+            return FindValue<AutomaticFailoverStatus>(value);
+        }
+
+        public static implicit operator AutomaticFailoverStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AZMode.
+    /// </summary>
+    public class AZMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CrossAz for AZMode
+        /// </summary>
+        public static readonly AZMode CrossAz = new AZMode("cross-az");
+        /// <summary>
+        /// Constant SingleAz for AZMode
+        /// </summary>
+        public static readonly AZMode SingleAz = new AZMode("single-az");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public AZMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AZMode FindValue(string value)
+        {
+            return FindValue<AZMode>(value);
+        }
+
+        public static implicit operator AZMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PendingAutomaticFailoverStatus.
+    /// </summary>
+    public class PendingAutomaticFailoverStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for PendingAutomaticFailoverStatus
+        /// </summary>
+        public static readonly PendingAutomaticFailoverStatus Disabled = new PendingAutomaticFailoverStatus("disabled");
+        /// <summary>
+        /// Constant Enabled for PendingAutomaticFailoverStatus
+        /// </summary>
+        public static readonly PendingAutomaticFailoverStatus Enabled = new PendingAutomaticFailoverStatus("enabled");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public PendingAutomaticFailoverStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PendingAutomaticFailoverStatus FindValue(string value)
+        {
+            return FindValue<PendingAutomaticFailoverStatus>(value);
+        }
+
+        public static implicit operator PendingAutomaticFailoverStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 
     /// <summary>
     /// Constants used for properties of type SourceType.

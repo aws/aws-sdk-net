@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,7 +33,26 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class ReplicationGroupPendingModifiedValues
     {
+        private PendingAutomaticFailoverStatus _automaticFailoverStatus;
         private string _primaryClusterId;
+
+        /// <summary>
+        /// Gets and sets the property AutomaticFailoverStatus. 
+        /// <para>
+        /// Indicates the status of automatic failover for this replication group.
+        /// </para>
+        /// </summary>
+        public PendingAutomaticFailoverStatus AutomaticFailoverStatus
+        {
+            get { return this._automaticFailoverStatus; }
+            set { this._automaticFailoverStatus = value; }
+        }
+
+        // Check to see if AutomaticFailoverStatus property is set
+        internal bool IsSetAutomaticFailoverStatus()
+        {
+            return this._automaticFailoverStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PrimaryClusterId. 

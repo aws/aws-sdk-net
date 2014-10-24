@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
  */
 
 
@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache
     /// <para>
     /// With ElastiCache, customers gain all of the benefits of a high-performance, in-memory
     /// cache with far less of the administrative burden of launching and managing a distributed
-    /// cache. The service makes set-up, scaling, and cluster failure handling much simpler
+    /// cache. The service makes setup, scaling, and cluster failure handling much simpler
     /// than in a self-managed cache deployment.
     /// </para>
     ///  
@@ -350,8 +350,8 @@ namespace Amazon.ElastiCache
         #region  CreateCacheCluster
 
         /// <summary>
-        /// The <i>CreateCacheCluster</i> operation creates a new cache cluster. All nodes in
-        /// the cache cluster run the same protocol-compliant cache engine software - either Memcached
+        /// The <i>CreateCacheCluster</i> operation creates a cache cluster. All nodes in the
+        /// cache cluster run the same protocol-compliant cache engine software, either Memcached
         /// or Redis.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCacheCluster service method.</param>
@@ -494,9 +494,9 @@ namespace Amazon.ElastiCache
         /// 
         ///  
         /// <para>
-        /// Cache security groups are only used when you are creating a cluster outside of an
-        /// Amazon Virtual Private Cloud (VPC). If you are creating a cluster inside of a VPC,
-        /// use a cache subnet group instead. For more information, see <i>CreateCacheSubnetGroup</i>.
+        /// Cache security groups are only used when you are creating a cache cluster outside
+        /// of an Amazon Virtual Private Cloud (VPC). If you are creating a cache cluster inside
+        /// of a VPC, use a cache subnet group instead. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCacheSecurityGroup service method.</param>
@@ -606,8 +606,8 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// The <i>CreateReplicationGroup</i> operation creates a replication group. A replication
-        /// group is a collection of cache clusters, where one of the clusters is a read/write
-        /// primary and the other clusters are read-only replicas. Writes to the primary are automatically
+        /// group is a collection of cache clusters, where one of the cache clusters is a read/write
+        /// primary and the others are read-only replicas. Writes to the primary are automatically
         /// propagated to the replicas.
         /// 
         ///  
@@ -616,12 +616,34 @@ namespace Amazon.ElastiCache
         /// is in the primary role. When the replication group has been successfully created,
         /// you can add one or more read replica replicas to it, up to a total of five read replicas.
         /// </para>
+        ///  
+        /// <para>
+        /// <b>Note:</b> This action is valid only for Redis.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationGroup service method.</param>
         /// 
         /// <returns>The response from the CreateReplicationGroup service method, as returned by ElastiCache.</returns>
         /// <exception cref="CacheClusterNotFoundException">
         /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// </exception>
+        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// The requested cache parameter group name does not refer to an existing cache parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// The requested cache security group name does not refer to an existing cache security
+        /// group.
+        /// </exception>
+        /// <exception cref="CacheSubnetGroupNotFoundException">
+        /// The requested cache subnet group name does not refer to an existing cache subnet group.
+        /// </exception>
+        /// <exception cref="ClusterQuotaForCustomerExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of cache
+        /// clusters per customer.
+        /// </exception>
+        /// <exception cref="InsufficientCacheClusterCapacityException">
+        /// The requested cache node type is not available in the specified Availability Zone.
         /// </exception>
         /// <exception cref="InvalidCacheClusterStateException">
         /// The requested cache cluster is not in the <i>available</i> state.
@@ -631,6 +653,17 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="InvalidParameterValueException">
         /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="InvalidVPCNetworkStateException">
+        /// The VPC network is in an invalid state.
+        /// </exception>
+        /// <exception cref="NodeQuotaForClusterExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of cache
+        /// nodes in a single cache cluster.
+        /// </exception>
+        /// <exception cref="NodeQuotaForCustomerExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of cache
+        /// nodes per customer.
         /// </exception>
         /// <exception cref="ReplicationGroupAlreadyExistsException">
         /// The specified replication group already exists.
@@ -693,8 +726,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis cache cluster running on a a <i>t1.micro</i> cache
-        /// node.
+        /// Creating a snapshot of a Redis cache cluster running on a <i>t1.micro</i> cache node.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -745,6 +777,12 @@ namespace Amazon.ElastiCache
         /// cache cluster itself. When you receive a successful response from this operation,
         /// Amazon ElastiCache immediately begins deleting the cache cluster; you cannot cancel
         /// or revert this operation.
+        /// 
+        ///  
+        /// <para>
+        /// This API cannot be used to delete a cache cluster that is the last read replica of
+        /// a replication group that has automatic failover mode enabled.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCacheCluster service method.</param>
         /// 
@@ -769,8 +807,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis cache cluster running on a a <i>t1.micro</i> cache
-        /// node.
+        /// Creating a snapshot of a Redis cache cluster running on a <i>t1.micro</i> cache node.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -962,10 +999,10 @@ namespace Amazon.ElastiCache
         #region  DeleteReplicationGroup
 
         /// <summary>
-        /// The <i>DeleteReplicationGroup</i> operation deletes an existing replication group.
-        /// By default, this operation deletes the entire replication group, including the primary
-        /// cache cluster and all of the read replicas. You can optionally delete only the read
-        /// replicas, while retaining the primary cache cluster.
+        /// The <i>DeleteReplicationGroup</i> operation deletes an existing cluster. By default,
+        /// this operation deletes the entire cluster, including the primary node group and all
+        /// of the read replicas. You can optionally delete only the read replicas, while retaining
+        /// the primary node group.
         /// 
         ///  
         /// <para>
@@ -996,8 +1033,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis cache cluster running on a a <i>t1.micro</i> cache
-        /// node.
+        /// Creating a snapshot of a Redis cache cluster running on a <i>t1.micro</i> cache node.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1921,24 +1957,6 @@ namespace Amazon.ElastiCache
         /// The <i>ModifyCacheCluster</i> operation modifies the settings for a cache cluster.
         /// You can use this operation to change one or more cluster configuration parameters
         /// by specifying the parameters and the new values.
-        /// 
-        ///  
-        /// <para>
-        /// A pending action to modify the number of cache nodes in a cluster during its maintenance
-        /// window, whether by adding or removing nodes in accordance with the scale out architecture,
-        /// is not queued. The customer's latest request to add or remove nodes to the cluster
-        /// overrides any of his or her previous pending actions to modify the number of cache
-        /// nodes in the cluster. For example, a request to remove 2 nodes would override a previous
-        /// pending action to remove 3 nodes. Similarly, a request to add 2 nodes would override
-        /// a previous pending action to remove 3 nodes and vice versa . As cache nodes may now
-        /// be provisioned in different Availability Zones with flexible cache node placement,
-        /// a request to add nodes does not automatically override a previous pending action to
-        /// add nodes. The customer can modify the previous pending action to add more nodes or
-        /// explicitly cancel the pending request and retry the new request. To cancel a pending
-        /// action to modify the number of cache nodes in a cluster, the customer may retry the
-        /// <code>ModifyCacheCluster</code> request by setting <code>NumCacheNodes</code> equal
-        /// to the number of cache nodes currently in the cache cluster. 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyCacheCluster service method.</param>
         /// 
@@ -2132,6 +2150,9 @@ namespace Amazon.ElastiCache
         /// The requested cache security group name does not refer to an existing cache security
         /// group.
         /// </exception>
+        /// <exception cref="InsufficientCacheClusterCapacityException">
+        /// The requested cache node type is not available in the specified Availability Zone.
+        /// </exception>
         /// <exception cref="InvalidCacheClusterStateException">
         /// The requested cache cluster is not in the <i>available</i> state.
         /// </exception>
@@ -2149,6 +2170,14 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
+        /// </exception>
+        /// <exception cref="NodeQuotaForClusterExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of cache
+        /// nodes in a single cache cluster.
+        /// </exception>
+        /// <exception cref="NodeQuotaForCustomerExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of cache
+        /// nodes per customer.
         /// </exception>
         /// <exception cref="ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,6 +34,12 @@ namespace Amazon.ElastiCache.Model
     /// cache cluster itself. When you receive a successful response from this operation,
     /// Amazon ElastiCache immediately begins deleting the cache cluster; you cannot cancel
     /// or revert this operation.
+    /// 
+    ///  
+    /// <para>
+    /// This API cannot be used to delete a cache cluster that is the last read replica of
+    /// a replication group that has automatic failover mode enabled.
+    /// </para>
     /// </summary>
     public partial class DeleteCacheClusterRequest : AmazonElastiCacheRequest
     {
@@ -76,8 +82,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property FinalSnapshotIdentifier. 
         /// <para>
-        /// The name of a final cache cluster snapshot. ElastiCache creates the snapshot, and
-        /// then deletes the cache cluster immediately afterward.
+        /// The user-supplied name of a final cache cluster snapshot. This is the unique name
+        /// that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the
+        /// cache cluster immediately afterward.
         /// </para>
         /// </summary>
         public string FinalSnapshotIdentifier

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-07-15.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,10 +29,10 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteReplicationGroup operation.
-    /// The <i>DeleteReplicationGroup</i> operation deletes an existing replication group.
-    /// By default, this operation deletes the entire replication group, including the primary
-    /// cache cluster and all of the read replicas. You can optionally delete only the read
-    /// replicas, while retaining the primary cache cluster.
+    /// The <i>DeleteReplicationGroup</i> operation deletes an existing cluster. By default,
+    /// this operation deletes the entire cluster, including the primary node group and all
+    /// of the read replicas. You can optionally delete only the read replicas, while retaining
+    /// the primary node group.
     /// 
     ///  
     /// <para>
@@ -49,10 +49,10 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property FinalSnapshotIdentifier. 
         /// <para>
-        /// The name of a final cache cluster snapshot. ElastiCache creates the snapshot from
-        /// the primary cluster in the replication group, rather than one of the replicas; this
-        /// is to ensure that it captures the freshest data. After the final snapshot is taken,
-        /// the replication group is deleted immediately afterward.
+        /// The name of a final node group snapshot. ElastiCache creates the snapshot from the
+        /// primary node in the cluster, rather than one of the replicas; this is to ensure that
+        /// it captures the freshest data. After the final snapshot is taken, the cluster is immediately
+        /// deleted.
         /// </para>
         /// </summary>
         public string FinalSnapshotIdentifier
@@ -70,8 +70,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ReplicationGroupId. 
         /// <para>
-        /// The identifier for the replication group to be deleted. This parameter is not case
-        /// sensitive.
+        /// The identifier for the cluster to be deleted. This parameter is not case sensitive.
         /// </para>
         /// </summary>
         public string ReplicationGroupId
@@ -89,8 +88,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property RetainPrimaryCluster. 
         /// <para>
-        /// If set to <i>true</i>, all of the read replicas will be deleted, but the primary cache
-        /// cluster will be retained.
+        /// If set to <i>true</i>, all of the read replicas will be deleted, but the primary node
+        /// will be retained.
         /// </para>
         /// </summary>
         public bool RetainPrimaryCluster
