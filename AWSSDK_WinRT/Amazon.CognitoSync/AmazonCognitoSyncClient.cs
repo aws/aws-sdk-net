@@ -47,6 +47,13 @@ namespace Amazon.CognitoSync
     /// can store up to 1 MB of key-value pairs, and you can have up to 20 datasets per user
     /// identity.
     /// </para>
+    ///  
+    /// <para>
+    /// With Amazon Cognito Sync, the data stored for each identity is accessible only to
+    /// credentials assigned to that identity. In order to use the Cognito Sync service, you
+    /// need to make API calls using credentials retrieved with <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/Welcome.html">Amazon
+    /// Cognito Identity service</a>.
+    /// </para>
     /// </summary>
     public partial class AmazonCognitoSyncClient : AmazonServiceClient, IAmazonCognitoSync
     {
@@ -303,6 +310,37 @@ namespace Amazon.CognitoSync
 
         #endregion
         
+        #region  GetIdentityPoolConfiguration
+
+        internal GetIdentityPoolConfigurationResponse GetIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest request)
+        {
+            var marshaller = new GetIdentityPoolConfigurationRequestMarshaller();
+            var unmarshaller = GetIdentityPoolConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdentityPoolConfigurationRequest,GetIdentityPoolConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdentityPoolConfiguration operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityPoolConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetIdentityPoolConfigurationResponse> GetIdentityPoolConfigurationAsync(GetIdentityPoolConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetIdentityPoolConfigurationRequestMarshaller();
+            var unmarshaller = GetIdentityPoolConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIdentityPoolConfigurationRequest,GetIdentityPoolConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDatasets
 
         internal ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
@@ -391,6 +429,130 @@ namespace Amazon.CognitoSync
             var unmarshaller = ListRecordsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListRecordsRequest,ListRecordsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterDevice
+
+        internal RegisterDeviceResponse RegisterDevice(RegisterDeviceRequest request)
+        {
+            var marshaller = new RegisterDeviceRequestMarshaller();
+            var unmarshaller = RegisterDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterDeviceRequest,RegisterDeviceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterDevice operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RegisterDeviceResponse> RegisterDeviceAsync(RegisterDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RegisterDeviceRequestMarshaller();
+            var unmarshaller = RegisterDeviceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterDeviceRequest,RegisterDeviceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetIdentityPoolConfiguration
+
+        internal SetIdentityPoolConfigurationResponse SetIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest request)
+        {
+            var marshaller = new SetIdentityPoolConfigurationRequestMarshaller();
+            var unmarshaller = SetIdentityPoolConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<SetIdentityPoolConfigurationRequest,SetIdentityPoolConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetIdentityPoolConfiguration operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityPoolConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SetIdentityPoolConfigurationResponse> SetIdentityPoolConfigurationAsync(SetIdentityPoolConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetIdentityPoolConfigurationRequestMarshaller();
+            var unmarshaller = SetIdentityPoolConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetIdentityPoolConfigurationRequest,SetIdentityPoolConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SubscribeToDataset
+
+        internal SubscribeToDatasetResponse SubscribeToDataset(SubscribeToDatasetRequest request)
+        {
+            var marshaller = new SubscribeToDatasetRequestMarshaller();
+            var unmarshaller = SubscribeToDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<SubscribeToDatasetRequest,SubscribeToDatasetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SubscribeToDataset operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SubscribeToDataset operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SubscribeToDatasetResponse> SubscribeToDatasetAsync(SubscribeToDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SubscribeToDatasetRequestMarshaller();
+            var unmarshaller = SubscribeToDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SubscribeToDatasetRequest,SubscribeToDatasetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UnsubscribeFromDataset
+
+        internal UnsubscribeFromDatasetResponse UnsubscribeFromDataset(UnsubscribeFromDatasetRequest request)
+        {
+            var marshaller = new UnsubscribeFromDatasetRequestMarshaller();
+            var unmarshaller = UnsubscribeFromDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<UnsubscribeFromDatasetRequest,UnsubscribeFromDatasetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UnsubscribeFromDataset operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UnsubscribeFromDataset operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UnsubscribeFromDatasetResponse> UnsubscribeFromDatasetAsync(UnsubscribeFromDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UnsubscribeFromDatasetRequestMarshaller();
+            var unmarshaller = UnsubscribeFromDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UnsubscribeFromDatasetRequest,UnsubscribeFromDatasetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

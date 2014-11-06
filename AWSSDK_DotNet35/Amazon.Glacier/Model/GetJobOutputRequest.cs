@@ -30,50 +30,50 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Container for the parameters to the GetJobOutput operation.
     /// This operation downloads the output of the job you initiated using <a>InitiateJob</a>.
-    /// Depending on the            job type you specified when you initiated the job, the output will
-    /// be either the content            of an archive or a vault inventory.
+    /// Depending on the job type you specified when you initiated the job, the output will
+    /// be either the content of an archive or a vault inventory.
     /// 
-    ///       
+    ///  
     /// <para>
     /// A job ID will not expire for at least 24 hours after Amazon Glacier completes the
-    /// job. That is, you can download the job                output within the 24 hours period after
-    /// Amazon Glacier completes the job.
+    /// job. That is, you can download the job output within the 24 hours period after Amazon
+    /// Glacier completes the job.
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// If the job output is large, then you can use the <code>Range</code> request header
-    /// to            retrieve a portion of the output. This allows you to download the entire output
-    /// in smaller            chunks of bytes. For example, suppose you have 1 GB of job output you
-    /// want to download and            you decide to download 128 MB chunks of data at a time, which
-    /// is a total of eight Get Job Output            requests. You use the following process to download
+    /// to retrieve a portion of the output. This allows you to download the entire output
+    /// in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want
+    /// to download and you decide to download 128 MB chunks of data at a time, which is a
+    /// total of eight Get Job Output requests. You use the following process to download
     /// the job output:
     /// </para>
-    ///         <ol>            <li>
+    ///  <ol> <li> 
     /// <para>
-    /// Download a 128 MB chunk of output by specifying the appropriate byte range using the                        <code>Range</code>
-    /// header.
+    /// Download a 128 MB chunk of output by specifying the appropriate byte range using the
+    /// <code>Range</code> header.
     /// </para>
-    ///             </li>            <li>
+    ///  </li> <li> 
     /// <para>
-    /// Along with the data, the response includes a checksum of the payload. You compute                the
-    /// checksum of the payload on the client and compare it with the checksum you received                in
-    /// the response to ensure you received all the expected data.
+    /// Along with the data, the response includes a SHA256 tree hash of the payload. You
+    /// compute the checksum of the payload on the client and compare it with the checksum
+    /// you received in the response to ensure you received all the expected data.
     /// </para>
-    ///             </li>            <li>
+    ///  </li> <li> 
     /// <para>
-    /// Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time                specifying
+    /// Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying
     /// the appropriate byte range.
     /// </para>
-    ///             </li>            <li>
+    ///  </li> <li> 
     /// <para>
-    /// After downloading all the parts of the job output, you have a list of eight checksum                values.
-    /// Compute the tree hash of these values to find the checksum of the entire output.                Using
-    /// the <a>DescribeJob</a> API, obtain job information of the job that provided you the                output.
-    /// The response includes the checksum of the entire archive stored in Amazon Glacier.                You
-    /// compare this value with the checksum you computed to ensure you have downloaded the                entire
-    /// archive content with no errors.
+    /// After downloading all the parts of the job output, you have a list of eight checksum
+    /// values. Compute the tree hash of these values to find the checksum of the entire output.
+    /// Using the <a>DescribeJob</a> API, obtain job information of the job that provided
+    /// you the output. The response includes the checksum of the entire archive stored in
+    /// Amazon Glacier. You compare this value with the checksum you computed to ensure you
+    /// have downloaded the entire archive content with no errors.
     /// </para>
-    ///             </li>        </ol>        
+    ///  </li> </ol> 
     /// <para>
     /// An AWS account has full permission to perform all operations (actions). However, AWS
     /// Identity and Access Management (IAM) users don't have any permissions by default.
@@ -81,11 +81,11 @@ namespace Amazon.Glacier.Model
     /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
     /// Control Using AWS Identity and Access Management (IAM)</a>.
     /// </para>
-    ///       
+    ///  
     /// <para>
-    /// For conceptual information and the underlying REST API, go to          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">Downloading
-    /// a Vault Inventory</a>,          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive.html">Downloading
-    /// an Archive</a>,          and          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html">Get
+    /// For conceptual information and the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">Downloading
+    /// a Vault Inventory</a>, <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive.html">Downloading
+    /// an Archive</a>, and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html">Get
     /// Job Output </a> 
     /// </para>
     /// </summary>
@@ -106,7 +106,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="jobId">The job ID whose data is downloaded.</param>
-        /// <param name="range">The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes,    specify "Range: bytes=0-1048575". By default, this operation downloads the entire output. </param>
+        /// <param name="range">The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes, specify "Range: bytes=0-1048575". By default, this operation downloads the entire output. </param>
         public GetJobOutputRequest(string vaultName, string jobId, string range)
         {
             _vaultName = vaultName;
@@ -117,10 +117,10 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates GetJobOutputRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-',    in which case Amazon Glacier uses the AWS Account ID associated with the credentials used    to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
+        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="jobId">The job ID whose data is downloaded.</param>
-        /// <param name="range">The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes,    specify "Range: bytes=0-1048575". By default, this operation downloads the entire output. </param>
+        /// <param name="range">The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes, specify "Range: bytes=0-1048575". By default, this operation downloads the entire output. </param>
         public GetJobOutputRequest(string accountId, string vaultName, string jobId, string range)
         {
             _accountId = accountId;
@@ -133,9 +133,9 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account
-        /// ID or optionally a '-',          in which case Amazon Glacier uses the AWS Account
-        /// ID associated with the credentials used          to sign the request. If you specify
-        /// your Account ID, do not include hyphens in it. 
+        /// ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated
+        /// with the credentials used to sign the request. If you specify your Account ID, do
+        /// not include hyphens in it. 
         /// </para>
         /// </summary>
         public string AccountId
@@ -172,8 +172,8 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property Range. 
         /// <para>
         /// The range of bytes to retrieve from the output. For example, if you want to download
-        /// the first 1,048,576 bytes,          specify "Range: bytes=0-1048575". By default,
-        /// this operation downloads the entire output. 
+        /// the first 1,048,576 bytes, specify "Range: bytes=0-1048575". By default, this operation
+        /// downloads the entire output. 
         /// </para>
         /// </summary>
         public string Range

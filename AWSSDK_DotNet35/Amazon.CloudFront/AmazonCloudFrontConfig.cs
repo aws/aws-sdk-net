@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2014-10-21.normal.json service model.
  */
 
 
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront
         {
             get
             {
-                return "2014-05-31";
+                return "2014-10-21";
             }
         }
     }

@@ -41,8 +41,8 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property EndDate. 
         /// <para>
         /// The end of the date range in UTC for vault inventory retrieval that includes archives
-        /// created before this date.         A string representation of ISO 8601 date format,
-        /// for example, 2013-03-20T17:03:43Z.
+        /// created before this date. A string representation of ISO 8601 date format, for example,
+        /// 2013-03-20T17:03:43Z.
         /// </para>
         /// </summary>
         public string EndDate
@@ -61,7 +61,7 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// Specifies the maximum number of inventory items returned per vault inventory retrieval
-        /// request.         Valid values are greater than or equal to 1.
+        /// request. Valid values are greater than or equal to 1.
         /// </para>
         /// </summary>
         public string Limit
@@ -80,9 +80,8 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An opaque string that represents where to continue pagination of the vault inventory
-        /// retrieval results.          You use the marker in a new <b>InitiateJob</b> request
-        /// to obtain additional inventory items.          If there are no more inventory items,
-        /// this value is <code>null</code>.
+        /// retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain
+        /// additional inventory items. If there are no more inventory items, this value is <code>null</code>.
         /// </para>
         /// </summary>
         public string Marker
@@ -101,8 +100,8 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property StartDate. 
         /// <para>
         /// The start of the date range in UTC for vault inventory retrieval that includes archives
-        /// created          on or after this date. A string representation of ISO 8601 date format,
-        /// for example, 2013-03-20T17:03:43Z.
+        /// created on or after this date. A string representation of ISO 8601 date format, for
+        /// example, 2013-03-20T17:03:43Z.
         /// </para>
         /// </summary>
         public string StartDate

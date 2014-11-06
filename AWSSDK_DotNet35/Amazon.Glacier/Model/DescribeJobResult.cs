@@ -91,7 +91,7 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property ArchiveSHA256TreeHash. 
         /// <para>
         /// The SHA256 tree hash of the entire archive for an archive retrieval. For inventory
-        /// retrieval jobs, this field is null.        
+        /// retrieval jobs, this field is null. 
         /// </para>
         /// </summary>
         public string ArchiveSHA256TreeHash
@@ -258,10 +258,9 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property RetrievalByteRange. 
         /// <para>
         /// The retrieved byte range for archive retrieval jobs in the form "<i>StartByteValue</i>-<i>EndByteValue</i>"
-        ///             If no range was specified in the archive retrieval, then the whole archive
-        /// is retrieved and             <i>StartByteValue</i> equals 0 and <i>EndByteValue</i>
-        /// equals the size of the archive minus 1.             For inventory retrieval jobs this
-        /// field is null. 
+        /// If no range was specified in the archive retrieval, then the whole archive is retrieved
+        /// and <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the
+        /// archive minus 1. For inventory retrieval jobs this field is null. 
         /// </para>
         /// </summary>
         public string RetrievalByteRange
@@ -282,34 +281,33 @@ namespace Amazon.Glacier.Model
         /// For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise, the value
         /// is null.
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             The SHA256 tree hash value for the requested range of an archive.    
-        ///         If the Initiate a Job request for an archive specified a tree-hash aligned
-        /// range, then this field             returns a value. 
+        ///  The SHA256 tree hash value for the requested range of an archive. If the Initiate
+        /// a Job request for an archive specified a tree-hash aligned range, then this field
+        /// returns a value. 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///                         For the specific case when the whole archive is retrieved,
-        /// this value is the             same as the ArchiveSHA256TreeHash value. 
+        ///  For the specific case when the whole archive is retrieved, this value is the same
+        /// as the ArchiveSHA256TreeHash value. 
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             This field is null in the following situations:            <ul>      
-        ///          <li>
+        ///  This field is null in the following situations: <ul> <li>
         /// <para>
         /// Archive retrieval jobs that specify a range that is not tree-hash aligned.
         /// </para>
-        /// </li>            </ul>                        <ul>                <li>
+        /// </li> </ul> <ul> <li>
         /// <para>
         /// Archival jobs that specify a range that is equal to the whole archive and the job
         /// status is InProgress.
         /// </para>
-        /// </li>            </ul>                        <ul>                <li>
+        /// </li> </ul> <ul> <li>
         /// <para>
         /// Inventory jobs.
         /// </para>
-        /// </li>            </ul>                    
+        /// </li> </ul> 
         /// </para>
         /// </summary>
         public string SHA256TreeHash

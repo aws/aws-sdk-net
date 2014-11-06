@@ -35,6 +35,22 @@ namespace Amazon.Route53
     public partial interface IAmazonRoute53 : IDisposable
     {
                 
+        #region  AssociateVPCWithHostedZone
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateVPCWithHostedZone operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateVPCWithHostedZone operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AssociateVPCWithHostedZoneResponse> AssociateVPCWithHostedZoneAsync(AssociateVPCWithHostedZoneRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ChangeResourceRecordSets
 
         /// <summary>
@@ -99,6 +115,22 @@ namespace Amazon.Route53
 
         #endregion
                 
+        #region  CreateReusableDelegationSet
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReusableDelegationSet operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReusableDelegationSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateReusableDelegationSetResponse> CreateReusableDelegationSetAsync(CreateReusableDelegationSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteHealthCheck
 
         /// <summary>
@@ -128,6 +160,38 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteHostedZoneResponse> DeleteHostedZoneAsync(DeleteHostedZoneRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteReusableDelegationSet
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReusableDelegationSet operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReusableDelegationSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteReusableDelegationSetResponse> DeleteReusableDelegationSetAsync(DeleteReusableDelegationSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DisassociateVPCFromHostedZone
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateVPCFromHostedZone operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateVPCFromHostedZone operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DisassociateVPCFromHostedZoneResponse> DisassociateVPCFromHostedZoneAsync(DisassociateVPCFromHostedZoneRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -211,6 +275,38 @@ namespace Amazon.Route53
 
         #endregion
                 
+        #region  GetHealthCheckLastFailureReason
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHealthCheckLastFailureReason operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckLastFailureReason operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetHealthCheckLastFailureReasonResponse> GetHealthCheckLastFailureReasonAsync(GetHealthCheckLastFailureReasonRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetHealthCheckStatus
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHealthCheckStatus operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetHealthCheckStatusResponse> GetHealthCheckStatusAsync(GetHealthCheckStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetHostedZone
 
         /// <summary>
@@ -224,6 +320,22 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetHostedZoneResponse> GetHostedZoneAsync(GetHostedZoneRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetReusableDelegationSet
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReusableDelegationSet operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReusableDelegationSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetReusableDelegationSetResponse> GetReusableDelegationSetAsync(GetReusableDelegationSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -288,6 +400,22 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ListResourceRecordSetsResponse> ListResourceRecordSetsAsync(ListResourceRecordSetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListReusableDelegationSets
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReusableDelegationSets operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReusableDelegationSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListReusableDelegationSetsResponse> ListReusableDelegationSetsAsync(ListReusableDelegationSetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

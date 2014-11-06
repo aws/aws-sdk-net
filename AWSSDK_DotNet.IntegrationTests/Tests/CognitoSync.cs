@@ -2,6 +2,9 @@
 using Amazon.CognitoIdentity;
 using Amazon.CognitoSync;
 using Amazon.CognitoSync.Model;
+using Amazon.SecurityToken;
+using Amazon.SimpleNotificationService;
+using Amazon.SimpleNotificationService.Model;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -15,17 +18,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     [TestClass]
     public class CognitoSync : TestBase<AmazonCognitoSyncClient>
     {
-        public static int MaxResults = 10;
+        public static int MaxResults = 1000;
         private string poolName = null;
         private string poolId = null;
         private const string policyName = "TestPolicy";
         private static List<string> roleNames = new List<string>();
         FacebookUtilities.FacebookCreateUserResponse facebookUser = null;
         private const string FacebookProvider = "graph.facebook.com";
+        private static TimeSpan roleTimeout = TimeSpan.FromMinutes(1);
+        private static TimeSpan roleTestPeriod = TimeSpan.FromSeconds(5);
+        private const string notAuthorizedMessage = "Not authorized to perform sts:AssumeRoleWithWebIdentity";
+        private static List<string> topicArns = new List<string>();
+        private static string platformApplicationArn = null;
 
         // Facebook information required to run Facebook tests
         public const string FacebookAppId = "999999999999999";
         public const string FacebookAppSecret = "ffffffffffffffffffffffffffffffff";
+
+        // SNS PlatformCredential required to run ConfigsTest
+        public const string PlatformCredential = "fffffffffffffffffffffffffffffffffffffff";
 
 
         [TestCleanup]
@@ -42,6 +53,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             if (facebookUser != null)
             {
                 FacebookUtilities.DeleteFacebookUser(facebookUser);
+            }
+
+            using(var sns = new AmazonSimpleNotificationServiceClient())
+            {
+                foreach (var topicArn in topicArns)
+                    sns.DeleteTopic(topicArn);
+                topicArns.Clear();
+
+                if (platformApplicationArn != null)
+                    sns.DeletePlatformApplication(new DeletePlatformApplicationRequest
+                    {
+                        PlatformApplicationArn = platformApplicationArn
+                    });
             }
         }
 
@@ -77,6 +101,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public void IdentityTests()
         {
             CognitoIdentity.CreateIdentityPool(out poolId, out poolName);
+
+            var config = Client.GetIdentityPoolConfiguration(new GetIdentityPoolConfigurationRequest
+            {
+                IdentityPoolId = poolId
+            });
+            Assert.AreEqual(poolId, config.IdentityPoolId);
+            Assert.IsNull(config.PushSync);
 
             var usages = GetAllIdentityPoolUsages();
             Assert.IsNotNull(usages);
@@ -217,6 +248,94 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual(2, credentialsChanges);
         }
 
+        // This test is disabled.
+        // To run it, put correct information into PlatformCredential
+        // and uncomment the TestMethod attribute below.
+        //[TestMethod]
+        [TestCategory("CognitoSync")]
+        public void ConfigsTest()
+        {
+            CognitoIdentity.CreateIdentityPool(out poolId, out poolName);
+
+            var config = Client.GetIdentityPoolConfiguration(new GetIdentityPoolConfigurationRequest
+            {
+                IdentityPoolId = poolId
+            });
+            Assert.AreEqual(poolId, config.IdentityPoolId);
+            Assert.IsNull(config.PushSync);
+
+            CreatePlatformApplication();
+
+            Client.SetIdentityPoolConfiguration(new SetIdentityPoolConfigurationRequest
+            {
+                IdentityPoolId = poolId,
+                PushSync = new PushSync
+                {
+                    ApplicationArns = new List<string> { platformApplicationArn },
+                    RoleArn = null
+                }
+            });
+
+            config = Client.GetIdentityPoolConfiguration(new GetIdentityPoolConfigurationRequest
+            {
+                IdentityPoolId = poolId
+            });
+            Assert.AreEqual(poolId, config.IdentityPoolId);
+            Assert.IsNotNull(config.PushSync);
+            Assert.IsNull(config.PushSync.RoleArn);
+            Assert.IsNotNull(config.PushSync.ApplicationArns);
+            Assert.AreEqual(1, config.PushSync.ApplicationArns.Count);
+
+            Client.SetIdentityPoolConfiguration(new SetIdentityPoolConfigurationRequest
+            {
+                IdentityPoolId = poolId,
+                PushSync = new PushSync
+                {
+                    //ApplicationArns = new List<string> { platformApplicationArn },
+                    //RoleArn = null
+                }
+            });
+
+            config = Client.GetIdentityPoolConfiguration(new GetIdentityPoolConfigurationRequest
+            {
+                IdentityPoolId = poolId
+            });
+            Assert.AreEqual(poolId, config.IdentityPoolId);
+            Assert.IsNull(config.PushSync);
+        }
+
+        private void CreatePlatformApplication()
+        {
+            using (var sns = new Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient())
+            {
+                // Create target topic
+                var topicArn = sns.CreateTopic(new CreateTopicRequest
+                {
+                    Name = "TestTopic" + new Random().Next()
+                }).TopicArn;
+                topicArns.Add(topicArn);
+
+                var platformAppName = "NetSDKTestApp" + new Random().Next();
+
+                // Create a platform application for GCM.
+                platformApplicationArn = sns.CreatePlatformApplication(new CreatePlatformApplicationRequest
+                {
+                    Name = platformAppName,
+                    Platform = "GCM",
+                    Attributes = new Dictionary<string, string>
+                    {
+                        {"PlatformCredential", PlatformCredential},
+                        {"PlatformPrincipal", "NA"},    
+                        {"EventEndpointCreated", topicArn},
+                        {"EventEndpointDeleted", topicArn},
+                        {"EventEndpointUpdated", topicArn},
+                        {"EventDeliveryAttemptFailure", topicArn},
+                        {"EventDeliveryFailure", topicArn},
+                    }
+                }).PlatformApplicationArn;
+            }
+        }
+
         private void TestDataCalls(string datasetName, AmazonCognitoSyncClient authenticatedClient)
         {
             var recordsResult = authenticatedClient.ListRecords(new ListRecordsRequest
@@ -309,14 +428,34 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         private static CognitoAWSCredentials GetCognitoCredentials(string poolId)
         {
             string roleArn = PrepareRole();
+            return GetCognitoCredentials(poolId, roleArn);
+        }
+        private static CognitoAWSCredentials GetCognitoCredentials(string poolId, string roleArn)
+        {
+            var latest = DateTime.Now + roleTimeout;
+            do
+            {
+                CognitoAWSCredentials credentials = new CognitoAWSCredentials(
+                    UtilityMethods.AccountId, poolId,
+                    roleArn,    // The same role is used for unAuthRoleArn
+                    roleArn,    // and authRoleArn
+                    AWSConfigs.RegionEndpoint);
 
-            CognitoAWSCredentials credentials = new CognitoAWSCredentials(
-                UtilityMethods.AccountId, poolId,
-                roleArn,    // The same role is used for unAuthRoleArn
-                roleArn,    // and authRoleArn
-                AWSConfigs.RegionEndpoint);
+                try
+                {
+                    credentials.GetCredentials();
+                    return credentials;
+                }
+                catch (AmazonSecurityTokenServiceException astse)
+                {
+                    Assert.IsNotNull(astse);
+                    Assert.AreEqual(notAuthorizedMessage, astse.Message);
+                    Console.WriteLine("Role not yet ready, sleeping for " + roleTestPeriod);
+                    Thread.Sleep(roleTestPeriod);
+                }
+            } while (DateTime.Now < latest);
 
-            return credentials;
+            throw new InvalidOperationException("Role should have been ready by now");
         }
         private static string PrepareRole()
         {
@@ -371,9 +510,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 roleArn = response.Role.Arn;
                 roleNames.Add(roleName);
             }
-
-            // Allow time for policy to be configured
-            Thread.Sleep(TimeSpan.FromSeconds(5));
 
             return roleArn;
         }

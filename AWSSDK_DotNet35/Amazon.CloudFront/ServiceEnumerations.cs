@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2014-10-21.normal.json service model.
  */
 
 using System;
@@ -166,6 +166,46 @@ namespace Amazon.CloudFront
         }
 
         public static implicit operator Method(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MinimumProtocolVersion.
+    /// </summary>
+    public class MinimumProtocolVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SSLv3 for MinimumProtocolVersion
+        /// </summary>
+        public static readonly MinimumProtocolVersion SSLv3 = new MinimumProtocolVersion("SSLv3");
+        /// <summary>
+        /// Constant TLSv1 for MinimumProtocolVersion
+        /// </summary>
+        public static readonly MinimumProtocolVersion TLSv1 = new MinimumProtocolVersion("TLSv1");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public MinimumProtocolVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MinimumProtocolVersion FindValue(string value)
+        {
+            return FindValue<MinimumProtocolVersion>(value);
+        }
+
+        public static implicit operator MinimumProtocolVersion(string value)
         {
             return FindValue(value);
         }

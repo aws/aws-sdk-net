@@ -31,7 +31,10 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// Container for the parameters to the DescribeLoadBalancers operation.
     /// Returns detailed configuration information for all the load balancers created for
     /// the account. If you specify load balancer names, the action returns configuration
-    /// information of the specified load balancers.
+    /// information of the specified load balancers. 
+    /// 
+    ///  <note> In order to retrieve this information, you must provide the same account credentials
+    /// that was used to create the load balancer.</note>
     /// </summary>
     public partial class DescribeLoadBalancersRequest : AmazonElasticLoadBalancingRequest
     {

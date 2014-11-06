@@ -56,7 +56,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates DeleteHostedZoneRequest with the parameterized properties
         /// </summary>
-        /// <param name="id"> The ID of the request. Include this ID in a call to <a>GetChange</a> to track when the change has propagated to all Route 53 DNS servers.</param>
+        /// <param name="id"> The ID of the hosted zone you want to delete.</param>
         public DeleteHostedZoneRequest(string id)
         {
             _id = id;
@@ -65,8 +65,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The ID of the request. Include this ID in a call to <a>GetChange</a> to track when
-        /// the change has propagated to all Route 53 DNS servers.
+        ///  The ID of the hosted zone you want to delete.
         /// </para>
         /// </summary>
         public string Id

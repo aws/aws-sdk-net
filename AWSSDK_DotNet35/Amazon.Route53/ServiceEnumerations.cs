@@ -223,6 +223,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly ResourceRecordSetRegion CnNorth1 = new ResourceRecordSetRegion("cn-north-1");
         /// <summary>
+        /// Constant EuCentral1 for ResourceRecordSetRegion
+        /// </summary>
+        public static readonly ResourceRecordSetRegion EuCentral1 = new ResourceRecordSetRegion("eu-central-1");
+        /// <summary>
         /// Constant EuWest1 for ResourceRecordSetRegion
         /// </summary>
         public static readonly ResourceRecordSetRegion EuWest1 = new ResourceRecordSetRegion("eu-west-1");
@@ -370,6 +374,78 @@ namespace Amazon.Route53
         }
 
         public static implicit operator TagResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VPCRegion.
+    /// </summary>
+    public class VPCRegion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ApNortheast1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion ApNortheast1 = new VPCRegion("ap-northeast-1");
+        /// <summary>
+        /// Constant ApSoutheast1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion ApSoutheast1 = new VPCRegion("ap-southeast-1");
+        /// <summary>
+        /// Constant ApSoutheast2 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion ApSoutheast2 = new VPCRegion("ap-southeast-2");
+        /// <summary>
+        /// Constant CnNorth1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion CnNorth1 = new VPCRegion("cn-north-1");
+        /// <summary>
+        /// Constant EuCentral1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion EuCentral1 = new VPCRegion("eu-central-1");
+        /// <summary>
+        /// Constant EuWest1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion EuWest1 = new VPCRegion("eu-west-1");
+        /// <summary>
+        /// Constant SaEast1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion SaEast1 = new VPCRegion("sa-east-1");
+        /// <summary>
+        /// Constant UsEast1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion UsEast1 = new VPCRegion("us-east-1");
+        /// <summary>
+        /// Constant UsWest1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion UsWest1 = new VPCRegion("us-west-1");
+        /// <summary>
+        /// Constant UsWest2 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion UsWest2 = new VPCRegion("us-west-2");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public VPCRegion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VPCRegion FindValue(string value)
+        {
+            return FindValue<VPCRegion>(value);
+        }
+
+        public static implicit operator VPCRegion(string value)
         {
             return FindValue(value);
         }

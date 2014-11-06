@@ -29,19 +29,25 @@ namespace Amazon.CognitoSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRecords operation.
-    /// Posts updates to records and add and delete records for a dataset and user.
+    /// Posts updates to records and add and delete records for a dataset and user. The credentials
+    /// used to make this API call need to have access to the identity data. With Amazon Cognito
+    /// Sync, each identity has access only to its own data. You should use Amazon Cognito
+    /// Identity service to retrieve the credentials necessary to make this API call.
     /// </summary>
     public partial class UpdateRecordsRequest : AmazonCognitoSyncRequest
     {
         private string _clientContext;
         private string _datasetName;
+        private string _deviceId;
         private string _identityId;
         private string _identityPoolId;
         private List<RecordPatch> _recordPatches = new List<RecordPatch>();
         private string _syncSessionToken;
 
         /// <summary>
-        /// Gets and sets the property ClientContext.
+        /// Gets and sets the property ClientContext. Intended to supply a device ID that will
+        /// populate the <code>lastModifiedBy</code> field referenced in other methods. The <code>ClientContext</code>
+        /// field is not yet implemented.
         /// </summary>
         public string ClientContext
         {
@@ -69,6 +75,24 @@ namespace Amazon.CognitoSync.Model
         internal bool IsSetDatasetName()
         {
             return this._datasetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceId. 
+        /// <para>
+        /// The unique ID generated for this device by Cognito.
+        /// </para>
+        /// </summary>
+        public string DeviceId
+        {
+            get { return this._deviceId; }
+            set { this._deviceId = value; }
+        }
+
+        // Check to see if DeviceId property is set
+        internal bool IsSetDeviceId()
+        {
+            return this._deviceId != null;
         }
 
         /// <summary>
@@ -104,7 +128,7 @@ namespace Amazon.CognitoSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecordPatches.
+        /// Gets and sets the property RecordPatches. A list of patch operations.
         /// </summary>
         public List<RecordPatch> RecordPatches
         {

@@ -29,30 +29,30 @@ namespace Amazon.Glacier.Model
 {
     /// <summary>
     /// Container for the parameters to the SetVaultNotifications operation.
-    /// This operation configures notifications that will be sent when specific events happen            to
-    /// a vault. By default, you don't get any notifications. 
+    /// This operation configures notifications that will be sent when specific events happen
+    /// to a vault. By default, you don't get any notifications. 
     /// 
-    ///         
+    ///  
     /// <para>
-    /// To configure vault notifications, send a PUT request to the                <code class="code">notification-configuration</code>
-    /// subresource of the vault. The request should            include a JSON document that provides
-    /// an Amazon SNS topic and specific events for which            you want Amazon Glacier to send
+    /// To configure vault notifications, send a PUT request to the <code class="code">notification-configuration</code>
+    /// subresource of the vault. The request should include a JSON document that provides
+    /// an Amazon SNS topic and specific events for which you want Amazon Glacier to send
     /// notifications to the topic.
     /// </para>
-    ///         
+    ///  
     /// <para>
-    /// Amazon SNS topics must grant permission to the vault to be allowed to publish            notifications
-    /// to the topic. You can configure a vault to publish a notification for the            following
+    /// Amazon SNS topics must grant permission to the vault to be allowed to publish notifications
+    /// to the topic. You can configure a vault to publish a notification for the following
     /// vault events:
     /// </para>
-    ///         <ul>            <li>                <b>ArchiveRetrievalCompleted</b> This event occurs when a                        job
-    /// that was initiated for an archive retrieval is completed (<a>InitiateJob</a>). The                        status
-    /// of the completed job can be "Succeeded" or "Failed". The notification                        sent to
-    /// the SNS topic is the same output as returned from <a>DescribeJob</a>.            </li>            <li><b>InventoryRetrievalCompleted</b>
-    /// This event occurs when                        a job that was initiated for an inventory retrieval is
-    /// completed (<a>InitiateJob</a>). The                        status of the completed job can be "Succeeded"
-    /// or "Failed". The notification                        sent to the SNS topic is the same output as returned
-    /// from <a>DescribeJob</a>.            </li>        </ul>        
+    ///  <ul> <li> <b>ArchiveRetrievalCompleted</b> This event occurs when a job that was
+    /// initiated for an archive retrieval is completed (<a>InitiateJob</a>). The status of
+    /// the completed job can be "Succeeded" or "Failed". The notification sent to the SNS
+    /// topic is the same output as returned from <a>DescribeJob</a>. </li> <li> <b>InventoryRetrievalCompleted</b>
+    /// This event occurs when a job that was initiated for an inventory retrieval is completed
+    /// (<a>InitiateJob</a>). The status of the completed job can be "Succeeded" or "Failed".
+    /// The notification sent to the SNS topic is the same output as returned from <a>DescribeJob</a>.
+    /// </li> </ul> 
     /// <para>
     /// An AWS account has full permission to perform all operations (actions). However, AWS
     /// Identity and Access Management (IAM) users don't have any permissions by default.
@@ -60,12 +60,12 @@ namespace Amazon.Glacier.Model
     /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
     /// Control Using AWS Identity and Access Management (IAM)</a>.
     /// </para>
-    ///       
+    ///  
     /// <para>
-    /// For conceptual information and underlying REST API, go to          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
-    /// Vault Notifications in Amazon Glacier</a>          and          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html">Set
+    /// For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
+    /// Vault Notifications in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html">Set
     /// Vault Notification Configuration </a> in the <i>Amazon Glacier Developer Guide</i>.
-    ///      
+    /// 
     /// </para>
     /// </summary>
     public partial class SetVaultNotificationsRequest : AmazonGlacierRequest
@@ -93,7 +93,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates SetVaultNotificationsRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-',    in which case Amazon Glacier uses the AWS Account ID associated with the credentials used    to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
+        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="vaultNotificationConfig">Provides options for specifying notification configuration.</param>
         public SetVaultNotificationsRequest(string accountId, string vaultName, VaultNotificationConfig vaultNotificationConfig)
@@ -107,9 +107,9 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account
-        /// ID or optionally a '-',          in which case Amazon Glacier uses the AWS Account
-        /// ID associated with the credentials used          to sign the request. If you specify
-        /// your Account ID, do not include hyphens in it. 
+        /// ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated
+        /// with the credentials used to sign the request. If you specify your Account ID, do
+        /// not include hyphens in it. 
         /// </para>
         /// </summary>
         public string AccountId

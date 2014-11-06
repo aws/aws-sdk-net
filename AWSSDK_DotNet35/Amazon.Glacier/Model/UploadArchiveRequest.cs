@@ -30,40 +30,40 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Container for the parameters to the UploadArchive operation.
     /// This operation adds an archive to a vault. This is a synchronous operation, and for
-    /// a            successful upload, your data is durably persisted. Amazon Glacier returns the
-    /// archive ID in            the <code class="code">x-amz-archive-id</code> header of the response.        
+    /// a successful upload, your data is durably persisted. Amazon Glacier returns the archive
+    /// ID in the <code class="code">x-amz-archive-id</code> header of the response. 
     /// 
-    ///         
+    ///  
     /// <para>
     /// You must use the archive ID to access your data in Amazon Glacier. After you upload
-    /// an archive,            you should save the archive ID returned so that you can retrieve or
-    /// delete the archive            later. Besides saving the archive ID, you can also index it and
-    /// give it a friendly name            to allow for better searching. You can also use the optional
-    /// archive description field            to specify how the archive is referred to in an external
-    /// index of archives, such as you            might create in Amazon DynamoDB. You can also get
-    /// the vault inventory to obtain a list            of archive IDs in a vault. For more information,
-    /// see <a>InitiateJob</a>.         
+    /// an archive, you should save the archive ID returned so that you can retrieve or delete
+    /// the archive later. Besides saving the archive ID, you can also index it and give it
+    /// a friendly name to allow for better searching. You can also use the optional archive
+    /// description field to specify how the archive is referred to in an external index of
+    /// archives, such as you might create in Amazon DynamoDB. You can also get the vault
+    /// inventory to obtain a list of archive IDs in a vault. For more information, see <a>InitiateJob</a>.
+    /// 
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// You must provide a SHA256 tree hash of the data you are uploading. For information
-    /// about            computing a SHA256 tree hash, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html">Computing
+    /// about computing a SHA256 tree hash, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html">Computing
     /// Checksums</a>. 
     /// </para>
-    ///         
+    ///  
     /// <para>
-    /// You can optionally specify an archive description of up to 1,024 printable ASCII characters.            You
-    /// can get the archive description when you either retrieve the archive or get the vault            inventory.
-    /// For more information, see <a>InitiateJob</a>. Amazon Glacier does not interpret the
-    /// description            in any way. An archive description does not need to be unique. You cannot
-    /// use the            description to retrieve or sort the archive list.         
+    /// You can optionally specify an archive description of up to 1,024 printable ASCII characters.
+    /// You can get the archive description when you either retrieve the archive or get the
+    /// vault inventory. For more information, see <a>InitiateJob</a>. Amazon Glacier does
+    /// not interpret the description in any way. An archive description does not need to
+    /// be unique. You cannot use the description to retrieve or sort the archive list. 
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// Archives are immutable. After you upload an archive, you cannot edit the archive or
-    /// its            description. 
+    /// its description. 
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// An AWS account has full permission to perform all operations (actions). However, AWS
     /// Identity and Access Management (IAM) users don't have any permissions by default.
@@ -71,11 +71,11 @@ namespace Amazon.Glacier.Model
     /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
     /// Control Using AWS Identity and Access Management (IAM)</a>.
     /// </para>
-    ///       
+    ///  
     /// <para>
-    ///  For conceptual information and underlying REST API, go to          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html">Uploading
-    /// an Archive in Amazon Glacier</a>          and          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload
-    /// Archive</a> in the <i>Amazon Glacier Developer Guide</i>.      
+    ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html">Uploading
+    /// an Archive in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload
+    /// Archive</a> in the <i>Amazon Glacier Developer Guide</i>. 
     /// </para>
     /// </summary>
     public partial class UploadArchiveRequest : AmazonGlacierRequest
@@ -96,7 +96,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="archiveDescription">The optional description of the archive you are uploading. </param>
-        /// <param name="checksum">The SHA256 checksum (a linear hash) of the payload.</param>
+        /// <param name="checksum">The SHA256 tree hash of the data being uploaded.</param>
         /// <param name="body">The data to upload.</param>
         public UploadArchiveRequest(string vaultName, string archiveDescription, string checksum, Stream body)
         {
@@ -109,10 +109,10 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates UploadArchiveRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-',    in which case Amazon Glacier uses the AWS Account ID associated with the credentials used    to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
+        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="archiveDescription">The optional description of the archive you are uploading. </param>
-        /// <param name="checksum">The SHA256 checksum (a linear hash) of the payload.</param>
+        /// <param name="checksum">The SHA256 tree hash of the data being uploaded.</param>
         /// <param name="body">The data to upload.</param>
         public UploadArchiveRequest(string accountId, string vaultName, string archiveDescription, string checksum, Stream body)
         {
@@ -127,9 +127,9 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account
-        /// ID or optionally a '-',          in which case Amazon Glacier uses the AWS Account
-        /// ID associated with the credentials used          to sign the request. If you specify
-        /// your Account ID, do not include hyphens in it. 
+        /// ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated
+        /// with the credentials used to sign the request. If you specify your Account ID, do
+        /// not include hyphens in it. 
         /// </para>
         /// </summary>
         public string AccountId
@@ -183,7 +183,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Checksum. 
         /// <para>
-        /// The SHA256 checksum (a linear hash) of the payload.
+        /// The SHA256 tree hash of the data being uploaded.
         /// </para>
         /// </summary>
         public string Checksum

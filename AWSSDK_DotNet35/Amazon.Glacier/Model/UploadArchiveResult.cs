@@ -30,10 +30,10 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Contains the Amazon Glacier response to your request.
     /// 
-    ///       
+    ///  
     /// <para>
-    /// For information about the underlying REST API, go to          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload
-    /// Archive</a>.          For conceptual information, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
+    /// For information about the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload
+    /// Archive</a>. For conceptual information, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
     /// with Archives in Amazon Glacier</a>.
     /// </para>
     /// </summary>

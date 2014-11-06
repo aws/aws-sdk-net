@@ -14,6 +14,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     [TestClass]
     public class SimpleWorkflow : TestBase<AmazonSimpleWorkflowClient>
     {
+        private static readonly TimeSpan SleepDuration = TimeSpan.FromSeconds(5);
+        private const int MaxRetries = 3;
+
         public static readonly string ONE_HOUR_DURATION = (60 * 60).ToString();
         public static readonly string TWO_HOUR_DURATION = (60 * 60 * 2).ToString();
         public static readonly string THREE_HOUR_DURATION = (60 * 60 * 3).ToString();
@@ -307,7 +310,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var regResponse = Client.RegisterDomain(regRequest);
             try
             {
-                Thread.Sleep(2000); // Sleep for the eventual consistency
+                Sleep(); // Sleep for the eventual consistency
                 Assert.IsNotNull(regResponse.ResponseMetadata.RequestId);
                 var descRequest = new DescribeDomainRequest() { Name = domainName };
                 var descResponse = Client.DescribeDomain(descRequest);
@@ -317,14 +320,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.AreEqual("3", descResponse.DomainDetail.Configuration.WorkflowExecutionRetentionPeriodInDays);
                 Assert.IsNotNull(descResponse.DomainDetail.DomainInfo.Status);
 
-                var listDomainResponse = Client.ListDomains(
-                    new ListDomainsRequest()
-                    {
-                        RegistrationStatus = descResponse.DomainDetail.DomainInfo.Status
-                    });
 
-                Assert.IsTrue(listDomainResponse.DomainInfos.Infos.Count > 0);
-                var info = listDomainResponse.DomainInfos.Infos.FirstOrDefault(x => string.Equals(x.Name, domainName));
+                DomainInfo info = null;
+                for (int i = 0; i < MaxRetries; i++)
+                {
+                    Sleep(); // Sleep for the eventual consistency
+                    var listDomainResponse = Client.ListDomains(
+                        new ListDomainsRequest()
+                        {
+                            RegistrationStatus = descResponse.DomainDetail.DomainInfo.Status
+                        });
+
+                    Assert.IsTrue(listDomainResponse.DomainInfos.Infos.Count > 0);
+                    info = listDomainResponse.DomainInfos.Infos.FirstOrDefault(x => string.Equals(x.Name, domainName));
+                    if (info != null)
+                        break;
+                }
                 Assert.IsNotNull(info);
                 Assert.IsNotNull(info.Status);
 
@@ -347,7 +358,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.IsNotNull(regActivityResponse.ResponseMetadata.RequestId);
                 try
                 {
-                    Thread.Sleep(2000); // Sleep for the eventual consistency
+                    Sleep(); // Sleep for the eventual consistency
                     var descActivityTypeRequest = new DescribeActivityTypeRequest()
                     {
                         Domain = domainName,
@@ -365,13 +376,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     Assert.AreEqual(THREE_HOUR_DURATION, descActivityTypeResponse.ActivityTypeDetail.Configuration.DefaultTaskScheduleToStartTimeout);
                     Assert.AreEqual(FOUR_HOUR_DURATION, descActivityTypeResponse.ActivityTypeDetail.Configuration.DefaultTaskStartToCloseTimeout);
 
-                    var listActivityResponse = Client.ListActivityTypes(
-                        new ListActivityTypesRequest()
-                        {
-                            Domain = domainName,
-                            RegistrationStatus = descActivityTypeResponse.ActivityTypeDetail.TypeInfo.Status
-                        });
-
+                    ListActivityTypesResponse listActivityResponse = null;
+                    for (int i = 0; i < MaxRetries; i++)
+                    {
+                        Sleep(); // Sleep for the eventual consistency
+                        listActivityResponse = Client.ListActivityTypes(
+                            new ListActivityTypesRequest()
+                            {
+                                Domain = domainName,
+                                RegistrationStatus = descActivityTypeResponse.ActivityTypeDetail.TypeInfo.Status
+                            });
+                        if (listActivityResponse.ActivityTypeInfos.TypeInfos.Count > 0)
+                            break;
+                    }
+                    Assert.IsNotNull(listActivityResponse);
                     Assert.IsTrue(listActivityResponse.ActivityTypeInfos.TypeInfos.Count > 0);
                     var acInfo = listActivityResponse.ActivityTypeInfos.TypeInfos.FirstOrDefault(x => x.Description == activityDescription);
                     Assert.IsNotNull(acInfo);
@@ -406,7 +424,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 var regWorkflowResponse = Client.RegisterWorkflowType(regWorkflowRequest);
                 try
                 {
-                    Thread.Sleep(2000); // Sleep for the eventual consistency
+                    Sleep(); // Sleep for the eventual consistency
                     var descWorkFlowRequest = new DescribeWorkflowTypeRequest()
                     {
                         Domain = domainName,
@@ -499,7 +517,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 var regWorkflowResponse = Client.RegisterWorkflowType(regWorkflowRequest);
                 try
                 {
-                    Thread.Sleep(2000); // Sleep for the eventual consistency
+                    Sleep(); // Sleep for the eventual consistency
                     var workflowId = DateTime.Now.Ticks.ToString();
                     var startRequest = new StartWorkflowExecutionRequest()
                     {
@@ -646,6 +664,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             Client.RespondDecisionTaskCompleted(respondRequest);
             return pollActivity();
+        }
+
+        void Sleep()
+        {
+            Thread.Sleep(SleepDuration);
         }
     }
 }

@@ -36,7 +36,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///  The load balancer evenly distributes requests across all its registered Availability
     /// Zones that contain instances. 
     /// </para>
-    ///  
+    ///  <note> The new EC2 Availability Zones to be added must be in the same EC2 Region
+    /// as the Availability Zones for which the load balancer was created. </note> 
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html">Expand
     /// a Load Balanced Application to an Additional Availability Zone</a> in the <i>Elastic

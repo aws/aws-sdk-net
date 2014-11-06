@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2014-10-21.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -60,6 +60,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.IAMCertificateId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MinimumProtocolVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MinimumProtocolVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SSLSupportMethod", targetDepth))

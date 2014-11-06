@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2014-10-21.normal.json service model.
  */
 
 
@@ -129,6 +129,10 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="InvalidOriginException">
         /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="InvalidProtocolSettingsException">
+        /// You cannot specify SSLv3 as the minimum protocol version if you only want to support
+        /// only clients that Support Server Name Indication (SNI).
         /// </exception>
         /// <exception cref="InvalidRelativePathException">
         /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).

@@ -31,6 +31,10 @@ namespace Amazon.Route53.Internal
             {
                 request.ResourcePath = request.ResourcePath.Replace("/change//change/", "/change/");
             }
+            if (request.ResourcePath.Contains("/delegationset//delegationset/"))
+            {
+                request.ResourcePath = request.ResourcePath.Replace("/delegationset//delegationset/", "/delegationset/");
+            }
         }
     }
 }

@@ -38,8 +38,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The vault ARN at which to continue pagination of the results.          You use the
-        /// marker in another List Vaults request to obtain more vaults in the list.
+        /// The vault ARN at which to continue pagination of the results. You use the marker in
+        /// another List Vaults request to obtain more vaults in the list.
         /// </para>
         /// </summary>
         public string Marker

@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Text;
+using Amazon.DynamoDBv2.DataModel;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -551,7 +552,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 string statement;
                 Dictionary<string, AttributeValue> expressionAttributeValues;
                 Dictionary<string, string> expressionAttributeNames;
-                ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, out statement, out expressionAttributeValues, out expressionAttributeNames);
+                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, out statement, out expressionAttributeValues, out expressionAttributeNames);
 
                 req.AttributeUpdates = null;
                 req.UpdateExpression = statement;
@@ -594,61 +595,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     return true;
             }
             return false;
-        }
-
-        // Convert collection of AttributeValueUpdate to an update expression. This is needed when doing an update
-        // with a conditional expression.
-        private static void ConvertAttributeUpdatesToUpdateExpression(Dictionary<string, AttributeValueUpdate> attributesToUpdates,
-            out string statement, 
-            out Dictionary<string, AttributeValue> expressionAttributeValues,
-            out Dictionary<string, string>  expressionAttributes)
-        {
-            expressionAttributeValues = new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
-            expressionAttributes = new Dictionary<string, string>(StringComparer.Ordinal);
-
-            // Build an expression string with a SET clause for the added/modified attributes and 
-            // REMOVE clause for the attributes set to null.
-            int variableSuffix = 0;
-            StringBuilder sets = new StringBuilder();
-            StringBuilder removes = new StringBuilder();
-            foreach (var attributeToUpdate in attributesToUpdates)
-            {
-                string variableName = "awsavar" + (++variableSuffix);
-                if (attributeToUpdate.Value.Action == AttributeAction.DELETE)
-                {
-                    if (removes.Length > 0)
-                        removes.Append(", ");
-                    removes.AppendFormat("#{0}", variableName);
-                }
-                else
-                {
-                    if (sets.Length > 0)
-                        sets.Append(", ");
-                    sets.AppendFormat("#{0} = :{1}", variableName, variableName);
-
-                    // Add the attribute value for the variable in the added in the expression
-                    expressionAttributeValues.Add(string.Format(CultureInfo.InvariantCulture, ":{0}", variableName), attributeToUpdate.Value.Value);                    
-                }
-
-                // Add the attribute name for the variable in the added in the expression
-                expressionAttributes.Add(string.Format(CultureInfo.InvariantCulture, "#{0}", variableName), attributeToUpdate.Key);
-            }
-
-            // Combine the SET and REMOVE clause
-            StringBuilder statementBuilder = new StringBuilder();
-            if (sets.Length > 0)
-            {
-                statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "SET {0}", sets.ToString());
-            }
-            if(removes.Length > 0)
-            {
-                if (sets.Length > 0)
-                    statementBuilder.Append(" ");
-
-                statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "REMOVE {0}", removes.ToString());
-            }
-
-            statement = statementBuilder.ToString();
         }
 
         #endregion

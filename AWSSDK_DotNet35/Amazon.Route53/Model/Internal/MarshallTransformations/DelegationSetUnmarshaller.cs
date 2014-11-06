@@ -50,6 +50,18 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("Id", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CallerReference", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CallerReference = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("NameServers/NameServer", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

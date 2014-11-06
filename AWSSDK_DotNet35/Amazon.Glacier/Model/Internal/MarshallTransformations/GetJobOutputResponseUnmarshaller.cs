@@ -80,6 +80,14 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             return new AmazonGlacierException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
+        internal override bool HasStreamingProperty
+        {
+            get
+            {
+                return true;
+            }
+        }
+
         private static GetJobOutputResponseUnmarshaller _instance = new GetJobOutputResponseUnmarshaller();        
 
         internal static GetJobOutputResponseUnmarshaller GetInstance()

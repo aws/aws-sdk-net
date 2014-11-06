@@ -62,7 +62,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Instantiates DisableAvailabilityZonesForLoadBalancerRequest with the parameterized properties
         /// </summary>
         /// <param name="loadBalancerName"> The name associated with the load balancer. </param>
-        /// <param name="availabilityZones"> A list of Availability Zones to be removed from the load balancer. </param>
+        /// <param name="availabilityZones"> A list of Availability Zones to be removed from the load balancer.  <note> There must be at least one Availability Zone registered with a load balancer at all times. Specified Availability Zones must be in the same region. </note></param>
         public DisableAvailabilityZonesForLoadBalancerRequest(string loadBalancerName, List<string> availabilityZones)
         {
             _loadBalancerName = loadBalancerName;
@@ -74,6 +74,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <para>
         ///  A list of Availability Zones to be removed from the load balancer. 
         /// </para>
+        ///  <note> There must be at least one Availability Zone registered with a load balancer
+        /// at all times. Specified Availability Zones must be in the same region. </note>
         /// </summary>
         public List<string> AvailabilityZones
         {

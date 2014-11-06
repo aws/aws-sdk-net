@@ -209,6 +209,7 @@ namespace Amazon.Route53
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.Route53.Internal.AmazonRoute53PostMarshallHandler());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.ErrorCallbackHandler>(new Amazon.Route53.Internal.AmazonRoute53PreMarshallHandler());
         }    
 
         #endregion
@@ -222,6 +223,72 @@ namespace Amazon.Route53
 
         #endregion
 
+        
+        #region  AssociateVPCWithHostedZone
+
+        /// <summary>
+        /// This action associates a VPC with an hosted zone. 
+        /// 
+        ///  
+        /// <para>
+        ///  To associate a VPC with an hosted zone, send a <code>POST</code> request to the <code>2013-04-01/hostedzone/<i>hosted
+        /// zone ID</i>/associatevpc</code> resource. The request body must include an XML document
+        /// with a <code>AssociateVPCWithHostedZoneRequest</code> element. The response returns
+        /// the <code>AssociateVPCWithHostedZoneResponse</code> element that contains <code>ChangeInfo</code>
+        /// for you to track the progress of the <code>AssociateVPCWithHostedZoneRequest</code>
+        /// you made. See <code>GetChange</code> operation for how to track the progress of your
+        /// change.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateVPCWithHostedZone service method.</param>
+        /// 
+        /// <returns>The response from the AssociateVPCWithHostedZone service method, as returned by Route53.</returns>
+        /// <exception cref="ConflictingDomainExistsException">
+        /// 
+        /// </exception>
+        /// <exception cref="InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="InvalidVPCIdException">
+        /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Route
+        /// 53 returns this error when the VPC specified by <code>VPCId</code> does not belong
+        /// to you.
+        /// </exception>
+        /// <exception cref="NoSuchHostedZoneException">
+        /// 
+        /// </exception>
+        /// <exception cref="PublicZoneVPCAssociationException">
+        /// The hosted zone you are trying to associate VPC with doesn't have any VPC association.
+        /// Route 53 currently doesn't support associate a VPC with a public hosted zone.
+        /// </exception>
+        public AssociateVPCWithHostedZoneResponse AssociateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest request)
+        {
+            var marshaller = new AssociateVPCWithHostedZoneRequestMarshaller();
+            var unmarshaller = AssociateVPCWithHostedZoneResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateVPCWithHostedZoneRequest,AssociateVPCWithHostedZoneResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateVPCWithHostedZone operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateVPCWithHostedZone operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AssociateVPCWithHostedZoneResponse> AssociateVPCWithHostedZoneAsync(AssociateVPCWithHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AssociateVPCWithHostedZoneRequestMarshaller();
+            var unmarshaller = AssociateVPCWithHostedZoneResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateVPCWithHostedZoneRequest,AssociateVPCWithHostedZoneResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
         
         #region  ChangeResourceRecordSets
 
@@ -446,16 +513,28 @@ namespace Amazon.Route53
         /// it is not yet available on all DNS servers. The status of the zone changes to <code>INSYNC</code>
         /// when the NS and SOA records are available on all Route 53 DNS servers. 
         /// </para>
+        ///  
+        /// <para>
+        /// When trying to create a hosted zone using a reusable delegation set, you could specify
+        /// an optional DelegationSetId, and Route53 would assign those 4 NS records for the zone,
+        /// instead of alloting a new one.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHostedZone service method.</param>
         /// 
         /// <returns>The response from the CreateHostedZone service method, as returned by Route53.</returns>
+        /// <exception cref="ConflictingDomainExistsException">
+        /// 
+        /// </exception>
         /// <exception cref="DelegationSetNotAvailableException">
         /// Route 53 allows some duplicate domain names, but there is a maximum number of duplicate
         /// names. This error indicates that you have reached that maximum. If you want to create
         /// another hosted zone with the same name and Route 53 generates this error, you can
         /// request an increase to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact
         /// Us</a> page.
+        /// </exception>
+        /// <exception cref="DelegationSetNotReusableException">
+        /// The specified delegation set has not been marked as reusable.
         /// </exception>
         /// <exception cref="HostedZoneAlreadyExistsException">
         /// The hosted zone you are trying to create already exists. Route 53 returns this error
@@ -466,6 +545,14 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="InvalidVPCIdException">
+        /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Route
+        /// 53 returns this error when the VPC specified by <code>VPCId</code> does not belong
+        /// to you.
+        /// </exception>
+        /// <exception cref="NoSuchDelegationSetException">
+        /// The specified delegation set does not exist.
         /// </exception>
         /// <exception cref="TooManyHostedZonesException">
         /// This error indicates that you've reached the maximum number of hosted zones that can
@@ -496,6 +583,82 @@ namespace Amazon.Route53
             var unmarshaller = CreateHostedZoneResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateHostedZoneRequest,CreateHostedZoneResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateReusableDelegationSet
+
+        /// <summary>
+        /// This action creates a reusable delegationSet.
+        /// 
+        ///  
+        /// <para>
+        ///  To create a new reusable delegationSet, send a <code>POST</code> request to the <code>2013-04-01/delegationset</code>
+        /// resource. The request body must include an XML document with a <code>CreateReusableDelegationSetRequest</code>
+        /// element. The response returns the <code>CreateReusableDelegationSetResponse</code>
+        /// element that contains metadata about the delegationSet. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If the optional parameter HostedZoneId is specified, it marks the delegationSet associated
+        /// with that particular hosted zone as reusable. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReusableDelegationSet service method.</param>
+        /// 
+        /// <returns>The response from the CreateReusableDelegationSet service method, as returned by Route53.</returns>
+        /// <exception cref="DelegationSetAlreadyCreatedException">
+        /// A delegation set with the same owner and caller reference combination has already
+        /// been created.
+        /// </exception>
+        /// <exception cref="DelegationSetAlreadyReusableException">
+        /// The specified delegation set has already been marked as reusable.
+        /// </exception>
+        /// <exception cref="DelegationSetNotAvailableException">
+        /// Route 53 allows some duplicate domain names, but there is a maximum number of duplicate
+        /// names. This error indicates that you have reached that maximum. If you want to create
+        /// another hosted zone with the same name and Route 53 generates this error, you can
+        /// request an increase to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact
+        /// Us</a> page.
+        /// </exception>
+        /// <exception cref="HostedZoneNotFoundException">
+        /// The specified HostedZone cannot be found.
+        /// </exception>
+        /// <exception cref="InvalidArgumentException">
+        /// At least one of the specified arguments is invalid.
+        /// </exception>
+        /// <exception cref="InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="LimitsExceededException">
+        /// The limits specified for a resource have been exceeded.
+        /// </exception>
+        public CreateReusableDelegationSetResponse CreateReusableDelegationSet(CreateReusableDelegationSetRequest request)
+        {
+            var marshaller = new CreateReusableDelegationSetRequestMarshaller();
+            var unmarshaller = CreateReusableDelegationSetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateReusableDelegationSetRequest,CreateReusableDelegationSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReusableDelegationSet operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReusableDelegationSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateReusableDelegationSetResponse> CreateReusableDelegationSetAsync(CreateReusableDelegationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateReusableDelegationSetRequestMarshaller();
+            var unmarshaller = CreateReusableDelegationSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateReusableDelegationSetRequest,CreateReusableDelegationSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -615,6 +778,131 @@ namespace Amazon.Route53
             var unmarshaller = DeleteHostedZoneResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteHostedZoneRequest,DeleteHostedZoneResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteReusableDelegationSet
+
+        /// <summary>
+        /// This action deletes a reusable delegation set. To delete a reusable delegation set,
+        /// send a <code>DELETE</code> request to the <code>2013-04-01/delegationset/<i>delegation
+        /// set ID</i></code> resource.
+        /// 
+        ///  <important> You can delete a reusable delegation set only if there are no associated
+        /// hosted zones. If your reusable delegation set contains associated hosted zones, you
+        /// must delete them before you can delete your reusable delegation set. If you try to
+        /// delete a reusable delegation set that contains associated hosted zones, Route 53 will
+        /// deny your request with a <code>DelegationSetInUse</code> error.</important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReusableDelegationSet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReusableDelegationSet service method, as returned by Route53.</returns>
+        /// <exception cref="DelegationSetInUseException">
+        /// The specified delegation contains associated hosted zones which must be deleted before
+        /// the reusable delegation set can be deleted.
+        /// </exception>
+        /// <exception cref="DelegationSetNotReusableException">
+        /// The specified delegation set has not been marked as reusable.
+        /// </exception>
+        /// <exception cref="InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="NoSuchDelegationSetException">
+        /// The specified delegation set does not exist.
+        /// </exception>
+        public DeleteReusableDelegationSetResponse DeleteReusableDelegationSet(DeleteReusableDelegationSetRequest request)
+        {
+            var marshaller = new DeleteReusableDelegationSetRequestMarshaller();
+            var unmarshaller = DeleteReusableDelegationSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteReusableDelegationSetRequest,DeleteReusableDelegationSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReusableDelegationSet operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReusableDelegationSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteReusableDelegationSetResponse> DeleteReusableDelegationSetAsync(DeleteReusableDelegationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteReusableDelegationSetRequestMarshaller();
+            var unmarshaller = DeleteReusableDelegationSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteReusableDelegationSetRequest,DeleteReusableDelegationSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateVPCFromHostedZone
+
+        /// <summary>
+        /// This action disassociates a VPC from an hosted zone. 
+        /// 
+        ///  
+        /// <para>
+        ///  To disassociate a VPC to a hosted zone, send a <code>POST</code> request to the <code>2013-04-01/hostedzone/<i>hosted
+        /// zone ID</i>/disassociatevpc</code> resource. The request body must include an XML
+        /// document with a <code>DisassociateVPCFromHostedZoneRequest</code> element. The response
+        /// returns the <code>DisassociateVPCFromHostedZoneResponse</code> element that contains
+        /// <code>ChangeInfo</code> for you to track the progress of the <code>DisassociateVPCFromHostedZoneRequest</code>
+        /// you made. See <code>GetChange</code> operation for how to track the progress of your
+        /// change.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateVPCFromHostedZone service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateVPCFromHostedZone service method, as returned by Route53.</returns>
+        /// <exception cref="InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="InvalidVPCIdException">
+        /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Route
+        /// 53 returns this error when the VPC specified by <code>VPCId</code> does not belong
+        /// to you.
+        /// </exception>
+        /// <exception cref="LastVPCAssociationException">
+        /// The VPC you are trying to disassociate from the hosted zone is the last the VPC that
+        /// is associated with the hosted zone. Route 53 currently doesn't support disassociate
+        /// the last VPC from the hosted zone.
+        /// </exception>
+        /// <exception cref="NoSuchHostedZoneException">
+        /// 
+        /// </exception>
+        /// <exception cref="VPCAssociationNotFoundException">
+        /// The VPC you specified is not currently associated with the hosted zone.
+        /// </exception>
+        public DisassociateVPCFromHostedZoneResponse DisassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request)
+        {
+            var marshaller = new DisassociateVPCFromHostedZoneRequestMarshaller();
+            var unmarshaller = DisassociateVPCFromHostedZoneResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateVPCFromHostedZoneRequest,DisassociateVPCFromHostedZoneResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateVPCFromHostedZone operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateVPCFromHostedZone operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DisassociateVPCFromHostedZoneResponse> DisassociateVPCFromHostedZoneAsync(DisassociateVPCFromHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DisassociateVPCFromHostedZoneRequestMarshaller();
+            var unmarshaller = DisassociateVPCFromHostedZoneResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateVPCFromHostedZoneRequest,DisassociateVPCFromHostedZoneResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -846,6 +1134,91 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  GetHealthCheckLastFailureReason
+
+        /// <summary>
+        /// If you want to learn why a health check is currently failing or why it failed most
+        /// recently (if at all), you can get the failure reason for the most recent failure.
+        /// Send a <code>GET</code> request to the <code>2013-04-01/healthcheck/<i>health check
+        /// ID</i>/lastfailurereason</code> resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckLastFailureReason service method.</param>
+        /// 
+        /// <returns>The response from the GetHealthCheckLastFailureReason service method, as returned by Route53.</returns>
+        /// <exception cref="NoSuchHealthCheckException">
+        /// The health check you are trying to get or delete does not exist.
+        /// </exception>
+        public GetHealthCheckLastFailureReasonResponse GetHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest request)
+        {
+            var marshaller = new GetHealthCheckLastFailureReasonRequestMarshaller();
+            var unmarshaller = GetHealthCheckLastFailureReasonResponseUnmarshaller.Instance;
+
+            return Invoke<GetHealthCheckLastFailureReasonRequest,GetHealthCheckLastFailureReasonResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHealthCheckLastFailureReason operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckLastFailureReason operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetHealthCheckLastFailureReasonResponse> GetHealthCheckLastFailureReasonAsync(GetHealthCheckLastFailureReasonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetHealthCheckLastFailureReasonRequestMarshaller();
+            var unmarshaller = GetHealthCheckLastFailureReasonResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetHealthCheckLastFailureReasonRequest,GetHealthCheckLastFailureReasonResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetHealthCheckStatus
+
+        /// <summary>
+        /// To retrieve the health check status, send a <code>GET</code> request to the <code>2013-04-01/healthcheck/<i>health
+        /// check ID</i>/status</code> resource. You can use this call to get a health check's
+        /// current status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetHealthCheckStatus service method, as returned by Route53.</returns>
+        /// <exception cref="NoSuchHealthCheckException">
+        /// The health check you are trying to get or delete does not exist.
+        /// </exception>
+        public GetHealthCheckStatusResponse GetHealthCheckStatus(GetHealthCheckStatusRequest request)
+        {
+            var marshaller = new GetHealthCheckStatusRequestMarshaller();
+            var unmarshaller = GetHealthCheckStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetHealthCheckStatusRequest,GetHealthCheckStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHealthCheckStatus operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetHealthCheckStatusResponse> GetHealthCheckStatusAsync(GetHealthCheckStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetHealthCheckStatusRequestMarshaller();
+            var unmarshaller = GetHealthCheckStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetHealthCheckStatusRequest,GetHealthCheckStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetHostedZone
 
         /// <summary>
@@ -892,7 +1265,82 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  GetReusableDelegationSet
+
+        /// <summary>
+        /// To retrieve the reusable delegation set, send a <code>GET</code> request to the <code>2013-04-01/delegationset/<i>delegation
+        /// set ID</i></code> resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReusableDelegationSet service method.</param>
+        /// 
+        /// <returns>The response from the GetReusableDelegationSet service method, as returned by Route53.</returns>
+        /// <exception cref="DelegationSetNotReusableException">
+        /// The specified delegation set has not been marked as reusable.
+        /// </exception>
+        /// <exception cref="InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="NoSuchDelegationSetException">
+        /// The specified delegation set does not exist.
+        /// </exception>
+        public GetReusableDelegationSetResponse GetReusableDelegationSet(GetReusableDelegationSetRequest request)
+        {
+            var marshaller = new GetReusableDelegationSetRequestMarshaller();
+            var unmarshaller = GetReusableDelegationSetResponseUnmarshaller.Instance;
+
+            return Invoke<GetReusableDelegationSetRequest,GetReusableDelegationSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReusableDelegationSet operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReusableDelegationSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetReusableDelegationSetResponse> GetReusableDelegationSetAsync(GetReusableDelegationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetReusableDelegationSetRequestMarshaller();
+            var unmarshaller = GetReusableDelegationSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetReusableDelegationSetRequest,GetReusableDelegationSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListGeoLocations
+
+        /// <summary>
+        /// To retrieve a list of supported geo locations, send a <code>GET</code> request to
+        /// the <code>2013-04-01/geolocations</code> resource. The response to this request includes
+        /// a <code>GeoLocationDetailsList</code> element with zero, one, or multiple <code>GeoLocationDetails</code>
+        /// child elements. The list is sorted by country code, and then subdivision code, followed
+        /// by continents at the end of the list. 
+        /// 
+        ///  
+        /// <para>
+        ///  By default, the list of geo locations is displayed on a single page. You can control
+        /// the length of the page that is displayed by using the <code>MaxItems</code> parameter.
+        /// If the list is truncated, <code>IsTruncated</code> will be set to <i>true</i> and
+        /// a combination of <code>NextContinentCode, NextCountryCode, NextSubdivisionCode</code>
+        /// will be populated. You can pass these as parameters to <code>StartContinentCode, StartCountryCode,
+        /// StartSubdivisionCode</code> to control the geo location that the list begins with.
+        /// 
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListGeoLocations service method, as returned by Route53.</returns>
+        /// <exception cref="InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        public ListGeoLocationsResponse ListGeoLocations()
+        {
+            return ListGeoLocations(new ListGeoLocationsRequest());
+        }
 
         /// <summary>
         /// To retrieve a list of supported geo locations, send a <code>GET</code> request to
@@ -956,7 +1404,10 @@ namespace Amazon.Route53
         /// child elements. By default, the list of health checks is displayed on a single page.
         /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
         /// parameter. You can use the <code>Marker</code> parameter to control the health check
-        /// that the list begins with.
+        /// that the list begins with. 
+        /// 
+        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
+        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
         /// </summary>
         /// 
         /// <returns>The response from the ListHealthChecks service method, as returned by Route53.</returns>
@@ -979,7 +1430,10 @@ namespace Amazon.Route53
         /// child elements. By default, the list of health checks is displayed on a single page.
         /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
         /// parameter. You can use the <code>Marker</code> parameter to control the health check
-        /// that the list begins with.
+        /// that the list begins with. 
+        /// 
+        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
+        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHealthChecks service method.</param>
         /// 
@@ -1029,12 +1483,21 @@ namespace Amazon.Route53
         /// list of hosted zones is displayed on a single page. You can control the length of
         /// the page that is displayed by using the <code>MaxItems</code> parameter. You can use
         /// the <code>Marker</code> parameter to control the hosted zone that the list begins
-        /// with.
+        /// with. 
+        /// 
+        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
+        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
         /// </summary>
         /// 
         /// <returns>The response from the ListHostedZones service method, as returned by Route53.</returns>
+        /// <exception cref="DelegationSetNotReusableException">
+        /// The specified delegation set has not been marked as reusable.
+        /// </exception>
         /// <exception cref="InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="NoSuchDelegationSetException">
+        /// The specified delegation set does not exist.
         /// </exception>
         public ListHostedZonesResponse ListHostedZones()
         {
@@ -1048,13 +1511,22 @@ namespace Amazon.Route53
         /// list of hosted zones is displayed on a single page. You can control the length of
         /// the page that is displayed by using the <code>MaxItems</code> parameter. You can use
         /// the <code>Marker</code> parameter to control the hosted zone that the list begins
-        /// with.
+        /// with. 
+        /// 
+        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
+        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHostedZones service method.</param>
         /// 
         /// <returns>The response from the ListHostedZones service method, as returned by Route53.</returns>
+        /// <exception cref="DelegationSetNotReusableException">
+        /// The specified delegation set has not been marked as reusable.
+        /// </exception>
         /// <exception cref="InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="NoSuchDelegationSetException">
+        /// The specified delegation set does not exist.
         /// </exception>
         public ListHostedZonesResponse ListHostedZones(ListHostedZonesRequest request)
         {
@@ -1173,6 +1645,77 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  ListReusableDelegationSets
+
+        /// <summary>
+        /// To retrieve a list of your reusable delegation sets, send a <code>GET</code> request
+        /// to the <code>2013-04-01/delegationset</code> resource. The response to this request
+        /// includes a <code>DelegationSets</code> element with zero, one, or multiple <code>DelegationSet</code>
+        /// child elements. By default, the list of delegation sets is displayed on a single page.
+        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
+        /// parameter. You can use the <code>Marker</code> parameter to control the delegation
+        /// set that the list begins with. 
+        /// 
+        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
+        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListReusableDelegationSets service method, as returned by Route53.</returns>
+        /// <exception cref="InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        public ListReusableDelegationSetsResponse ListReusableDelegationSets()
+        {
+            return ListReusableDelegationSets(new ListReusableDelegationSetsRequest());
+        }
+
+        /// <summary>
+        /// To retrieve a list of your reusable delegation sets, send a <code>GET</code> request
+        /// to the <code>2013-04-01/delegationset</code> resource. The response to this request
+        /// includes a <code>DelegationSets</code> element with zero, one, or multiple <code>DelegationSet</code>
+        /// child elements. By default, the list of delegation sets is displayed on a single page.
+        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
+        /// parameter. You can use the <code>Marker</code> parameter to control the delegation
+        /// set that the list begins with. 
+        /// 
+        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
+        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReusableDelegationSets service method.</param>
+        /// 
+        /// <returns>The response from the ListReusableDelegationSets service method, as returned by Route53.</returns>
+        /// <exception cref="InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        public ListReusableDelegationSetsResponse ListReusableDelegationSets(ListReusableDelegationSetsRequest request)
+        {
+            var marshaller = new ListReusableDelegationSetsRequestMarshaller();
+            var unmarshaller = ListReusableDelegationSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListReusableDelegationSetsRequest,ListReusableDelegationSetsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReusableDelegationSets operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReusableDelegationSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListReusableDelegationSetsResponse> ListReusableDelegationSetsAsync(ListReusableDelegationSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListReusableDelegationSetsRequestMarshaller();
+            var unmarshaller = ListReusableDelegationSetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListReusableDelegationSetsRequest,ListReusableDelegationSetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
@@ -1278,7 +1821,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        ///  To update a health check, send a <code>POST</code> request to the <code>2013-05-27/healthcheck/<i>health
+        ///  To update a health check, send a <code>POST</code> request to the <code>2013-04-01/healthcheck/<i>health
         /// check ID</i></code> resource. The request body must include an XML document with an
         /// <code>UpdateHealthCheckRequest</code> element. The response returns an <code>UpdateHealthCheckResponse</code>
         /// element, which contains metadata about the health check.

@@ -104,7 +104,8 @@ namespace Amazon.CognitoSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedBy.
+        /// Gets and sets the property LastModifiedBy. The user/device that made the last change
+        /// to this record.
         /// </summary>
         public string LastModifiedBy
         {

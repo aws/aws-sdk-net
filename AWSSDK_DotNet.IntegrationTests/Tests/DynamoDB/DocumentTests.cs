@@ -420,9 +420,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             expression.ExpressionAttributeValues[":job"] = "Retired";
 
             var search = hashRangeTable.Query("Gunnar", expression);
-
             var docs = search.GetRemaining();
             Assert.AreEqual(1, docs.Count);
+            Assert.AreEqual(77, docs[0]["Age"].AsInt());
+
+            search = hashRangeTable.Query(new QueryOperationConfig
+            {
+                Filter = new QueryFilter("Name", QueryOperator.Equal, "Gunnar"),
+                FilterExpression = expression,
+                AttributesToGet = new List<string> { "Age" },
+                Select = SelectValues.SpecificAttributes
+            });
+            docs = search.GetRemaining();
+            Assert.AreEqual(1, docs.Count);
+            Assert.AreEqual(1, docs[0].Count);
             Assert.AreEqual(77, docs[0]["Age"].AsInt());
 
             hashRangeTable.DeleteItem(doc1);
@@ -450,9 +461,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             expression.ExpressionAttributeValues[":age"] = 5;
 
             var search = hashRangeTable.Scan(expression);
-
             var docs = search.GetRemaining();
             Assert.AreEqual(1, docs.Count);
+            Assert.AreEqual("Elementary", docs[0]["School"].AsString());
+
+            search = hashRangeTable.Scan(new ScanOperationConfig
+            {
+                FilterExpression = expression,
+                Select = SelectValues.SpecificAttributes,
+                AttributesToGet = new List<string> { "School" }
+            });
+            docs = search.GetRemaining();
+            Assert.AreEqual(1, docs.Count);
+            Assert.AreEqual(1, docs[0].Count);
             Assert.AreEqual("Elementary", docs[0]["School"].AsString());
 
             hashRangeTable.DeleteItem(doc1);

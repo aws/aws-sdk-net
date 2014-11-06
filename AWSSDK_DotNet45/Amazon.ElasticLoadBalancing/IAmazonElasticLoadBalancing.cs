@@ -39,14 +39,14 @@ namespace Amazon.ElasticLoadBalancing
     ///  
     /// <para>
     /// You can create, access, and manage Elastic Load Balancing using the AWS Management
-    /// Console or the Elastic Load Balancing API. For more information about Elastic Load
-    /// Balancing interfaces, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/SvcIntro_Interfaces.html">Accessing
+    /// Console, the AWS Command Line Interface (AWS CLI), the Query API, or the AWS SDKs.
+    /// For more information about Elastic Load Balancing interfaces, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/SvcIntro_Interfaces.html">Accessing
     /// Elastic Load Balancing</a>.
     /// </para>
     ///  
     /// <para>
-    /// This reference guide contains documentation for the Query API and the AWS command
-    /// line interface commands, to manage Elastic Load Balancing. 
+    /// This reference guide contains documentation for the Query API and the AWS CLI commands,
+    /// to manage Elastic Load Balancing. 
     /// </para>
     ///  
     /// <para>
@@ -73,6 +73,17 @@ namespace Amazon.ElasticLoadBalancing
     /// You can create your load balancers in other AWS regions. For information about regions
     /// and endpoints supported by Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">Regions
     /// and Endpoints</a> in the Amazon Web Services General Reference. 
+    /// </para>
+    ///  
+    /// <para>
+    /// <b>Idempotency</b>
+    /// </para>
+    ///  
+    /// <para>
+    /// All Elastic Load Balancing Query API actions and AWS CLI commands are designed to
+    /// be idempotent. An <i>idempotent</i> action or command completes no more than one time.
+    /// If you repeat a request or a command using the same values the action will succeed
+    /// with a 200 OK response code. 
     /// </para>
     /// </summary>
     public partial interface IAmazonElasticLoadBalancing : IDisposable
@@ -265,7 +276,9 @@ namespace Amazon.ElasticLoadBalancing
         ///  If the application cookie is explicitly removed or expires, the session stops being
         /// sticky until a new application cookie is issued. 
         /// </para>
-        ///  
+        ///  <note> An application client must receive and send two cookies: the application-generated
+        /// cookie and the special Elastic Load Balancing cookie named <code>AWSELB</code>. This
+        /// is the default behavior for many common web browsers. </note> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies">Enabling
         /// Application-Controlled Session Stickiness</a> in the <i>Elastic Load Balancing Developer
@@ -562,6 +575,8 @@ namespace Amazon.ElasticLoadBalancing
         ///  To successfully call this API, you must provide the same account credentials as were
         /// used to create the load balancer. 
         /// </para>
+        ///  <note> By design, if the load balancer does not exist or has already been deleted,
+        /// a call to <code>DeleteLoadBalancer</code> action still succeeds. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancer service method.</param>
         /// 
@@ -692,7 +707,10 @@ namespace Amazon.ElasticLoadBalancing
         /// <summary>
         /// Returns the current state of the specified instances registered with the specified
         /// load balancer. If no instances are specified, the state of all the instances registered
-        /// with the load balancer is returned.
+        /// with the load balancer is returned. 
+        /// 
+        ///  <note> You must provide the same account credentials as those that were used to create
+        /// the load balancer. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceHealth service method.</param>
         /// 
@@ -853,7 +871,10 @@ namespace Amazon.ElasticLoadBalancing
         /// <summary>
         /// Returns detailed configuration information for all the load balancers created for
         /// the account. If you specify load balancer names, the action returns configuration
-        /// information of the specified load balancers.
+        /// information of the specified load balancers. 
+        /// 
+        ///  <note> In order to retrieve this information, you must provide the same account credentials
+        /// that was used to create the load balancer.</note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLoadBalancers service method, as returned by ElasticLoadBalancing.</returns>
@@ -865,7 +886,10 @@ namespace Amazon.ElasticLoadBalancing
         /// <summary>
         /// Returns detailed configuration information for all the load balancers created for
         /// the account. If you specify load balancer names, the action returns configuration
-        /// information of the specified load balancers.
+        /// information of the specified load balancers. 
+        /// 
+        ///  <note> In order to retrieve this information, you must provide the same account credentials
+        /// that was used to create the load balancer.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers service method.</param>
         /// 
@@ -1012,7 +1036,8 @@ namespace Amazon.ElasticLoadBalancing
         ///  The load balancer evenly distributes requests across all its registered Availability
         /// Zones that contain instances. 
         /// </para>
-        ///  
+        ///  <note> The new EC2 Availability Zones to be added must be in the same EC2 Region
+        /// as the Availability Zones for which the load balancer was created. </note> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html">Expand
         /// a Load Balanced Application to an Additional Availability Zone</a> in the <i>Elastic
@@ -1119,7 +1144,10 @@ namespace Amazon.ElasticLoadBalancing
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">De-register
         /// and Register Amazon EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
-        ///  
+        ///  <note> In order for this call to be successful, you must provide the same account
+        /// credentials as those that were used to create the load balancer. </note> <note> Completion
+        /// of this API does not guarantee that operation has completed. Rather, it means that
+        /// the request has been registered and the changes will happen shortly. </note> 
         /// <para>
         /// You can use <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a> action to
         /// check the state of the newly registered instances.
@@ -1232,7 +1260,14 @@ namespace Amazon.ElasticLoadBalancing
         /// time, only the back-end server authentication policy type can be applied to the back-end
         /// ports; this policy type is composed of multiple public key policies. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The <i>SetLoadBalancerPoliciesForBackendServer</i> replaces the current set of policies
+        /// associated with the specified instance port. Every time you use this action to enable
+        /// the policies, use the <code>PolicyNames</code> parameter to list all the policies
+        /// you want to enable.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can use <a>DescribeLoadBalancers</a> or <a>DescribeLoadBalancerPolicies</a> action
         /// to verify that the policy has been associated with the back-end server.

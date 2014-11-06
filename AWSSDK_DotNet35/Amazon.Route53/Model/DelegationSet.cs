@@ -32,6 +32,8 @@ namespace Amazon.Route53.Model
     /// </summary>
     public partial class DelegationSet
     {
+        private string _id;
+        private string _callerReference;
         private List<string> _nameServers = new List<string>();
 
         /// <summary>
@@ -46,6 +48,36 @@ namespace Amazon.Route53.Model
         public DelegationSet(List<string> nameServers)
         {
             _nameServers = nameServers;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id.
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CallerReference.
+        /// </summary>
+        public string CallerReference
+        {
+            get { return this._callerReference; }
+            set { this._callerReference = value; }
+        }
+
+        // Check to see if CallerReference property is set
+        internal bool IsSetCallerReference()
+        {
+            return this._callerReference != null;
         }
 
         /// <summary>

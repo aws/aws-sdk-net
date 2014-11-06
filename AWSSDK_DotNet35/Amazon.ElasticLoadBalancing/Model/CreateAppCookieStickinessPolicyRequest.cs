@@ -46,7 +46,9 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///  If the application cookie is explicitly removed or expires, the session stops being
     /// sticky until a new application cookie is issued. 
     /// </para>
-    ///  
+    ///  <note> An application client must receive and send two cookies: the application-generated
+    /// cookie and the special Elastic Load Balancing cookie named <code>AWSELB</code>. This
+    /// is the default behavior for many common web browsers. </note> 
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies">Enabling
     /// Application-Controlled Session Stickiness</a> in the <i>Elastic Load Balancing Developer

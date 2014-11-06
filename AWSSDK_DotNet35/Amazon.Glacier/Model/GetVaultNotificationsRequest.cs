@@ -30,17 +30,17 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Container for the parameters to the GetVaultNotifications operation.
     /// This operation retrieves the <code class="code">notification-configuration</code>
-    /// subresource of the            specified vault.
+    /// subresource of the specified vault.
     /// 
-    ///         
+    ///  
     /// <para>
     /// For information about setting a notification configuration on a vault, see <a>SetVaultNotifications</a>.
-    /// If            a notification configuration for a vault is not set, the operation returns a
-    /// <code class="code">404 Not                Found</code> error. For more information about vault
-    /// notifications, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
+    /// If a notification configuration for a vault is not set, the operation returns a <code
+    /// class="code">404 Not Found</code> error. For more information about vault notifications,
+    /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
     /// Vault Notifications in Amazon Glacier</a>. 
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// An AWS account has full permission to perform all operations (actions). However, AWS
     /// Identity and Access Management (IAM) users don't have any permissions by default.
@@ -48,12 +48,12 @@ namespace Amazon.Glacier.Model
     /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
     /// Control Using AWS Identity and Access Management (IAM)</a>.
     /// </para>
-    ///       
+    ///  
     /// <para>
-    /// For conceptual information and underlying REST API, go to          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
-    /// Vault Notifications in Amazon Glacier</a>          and          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html">Get
+    /// For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
+    /// Vault Notifications in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html">Get
     /// Vault Notification Configuration </a> in the <i>Amazon Glacier Developer Guide</i>.
-    ///      
+    /// 
     /// </para>
     /// </summary>
     public partial class GetVaultNotificationsRequest : AmazonGlacierRequest
@@ -78,7 +78,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates GetVaultNotificationsRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-',    in which case Amazon Glacier uses the AWS Account ID associated with the credentials used    to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
+        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
         /// <param name="vaultName">The name of the vault.</param>
         public GetVaultNotificationsRequest(string accountId, string vaultName)
         {
@@ -90,9 +90,9 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account
-        /// ID or optionally a '-',          in which case Amazon Glacier uses the AWS Account
-        /// ID associated with the credentials used          to sign the request. If you specify
-        /// your Account ID, do not include hyphens in it. 
+        /// ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated
+        /// with the credentials used to sign the request. If you specify your Account ID, do
+        /// not include hyphens in it. 
         /// </para>
         /// </summary>
         public string AccountId

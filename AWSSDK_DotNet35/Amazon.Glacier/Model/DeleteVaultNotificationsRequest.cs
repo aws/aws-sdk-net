@@ -30,11 +30,11 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Container for the parameters to the DeleteVaultNotifications operation.
     /// This operation deletes the notification configuration set for a vault. The operation
-    /// is            eventually consistent;that is, it might take some time for Amazon Glacier to            completely
-    /// disable the notifications and you might still receive some notifications for            a short
+    /// is eventually consistent;that is, it might take some time for Amazon Glacier to completely
+    /// disable the notifications and you might still receive some notifications for a short
     /// time after you send the delete request. 
     /// 
-    ///         
+    ///  
     /// <para>
     /// An AWS account has full permission to perform all operations (actions). However, AWS
     /// Identity and Access Management (IAM) users don't have any permissions by default.
@@ -42,12 +42,11 @@ namespace Amazon.Glacier.Model
     /// see <a href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">Access
     /// Control Using AWS Identity and Access Management (IAM)</a>.
     /// </para>
-    ///       
+    ///  
     /// <para>
-    ///  For conceptual information and underlying REST API, go to          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
-    /// Vault Notifications in Amazon Glacier</a>          and          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">Delete
-    /// Vault Notification Configuration </a> in the Amazon Glacier Developer Guide.     
-    /// 
+    ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
+    /// Vault Notifications in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">Delete
+    /// Vault Notification Configuration </a> in the Amazon Glacier Developer Guide. 
     /// </para>
     /// </summary>
     public partial class DeleteVaultNotificationsRequest : AmazonGlacierRequest
@@ -72,7 +71,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates DeleteVaultNotificationsRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-',    in which case Amazon Glacier uses the AWS Account ID associated with the credentials used    to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
+        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
         /// <param name="vaultName">The name of the vault.</param>
         public DeleteVaultNotificationsRequest(string accountId, string vaultName)
         {
@@ -84,9 +83,9 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account
-        /// ID or optionally a '-',          in which case Amazon Glacier uses the AWS Account
-        /// ID associated with the credentials used          to sign the request. If you specify
-        /// your Account ID, do not include hyphens in it. 
+        /// ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated
+        /// with the credentials used to sign the request. If you specify your Account ID, do
+        /// not include hyphens in it. 
         /// </para>
         /// </summary>
         public string AccountId

@@ -30,7 +30,10 @@ namespace Amazon.CognitoSync.Model
     /// <summary>
     /// Container for the parameters to the ListRecords operation.
     /// Gets paginated records, optionally changed after a particular sync count for a dataset
-    /// and identity.
+    /// and identity. The credentials used to make this API call need to have access to the
+    /// identity data. With Amazon Cognito Sync, each identity has access only to its own
+    /// data. You should use Amazon Cognito Identity service to retrieve the credentials necessary
+    /// to make this API call.
     /// </summary>
     public partial class ListRecordsRequest : AmazonCognitoSyncRequest
     {

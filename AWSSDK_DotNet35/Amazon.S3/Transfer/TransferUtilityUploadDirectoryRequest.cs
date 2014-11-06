@@ -279,6 +279,11 @@ namespace Amazon.S3.Transfer
         /// </remarks>
         public event EventHandler<UploadDirectoryProgressArgs> UploadDirectoryProgressEvent;
 
+        /// <summary>
+        /// The event for modifying individual TransferUtilityUploadRequest for each file
+        /// being uploaded.
+        /// </summary>
+        public event EventHandler<UploadDirectoryFileRequestArgs> UploadDirectoryFileRequestEvent;
 
         /// <summary>
         /// Causes the UploadDirectoryProgressEvent event to be fired.
@@ -287,6 +292,16 @@ namespace Amazon.S3.Transfer
         internal void OnRaiseProgressEvent(UploadDirectoryProgressArgs uploadDirectoryProgress)
         {
             AWSSDKUtils.InvokeInBackground(UploadDirectoryProgressEvent, uploadDirectoryProgress, this);
+        }
+
+        internal void RaiseUploadDirectoryFileRequestEvent(TransferUtilityUploadRequest request)
+        {
+            var targetEvent = UploadDirectoryFileRequestEvent;
+            if (targetEvent != null)
+            {
+                var args = new UploadDirectoryFileRequestArgs(request);
+                targetEvent(this, args);
+            }
         }
     }
 
@@ -449,5 +464,24 @@ namespace Amazon.S3.Transfer
             return string.Format(CultureInfo.InvariantCulture, "Total Files: {0}, Uploaded Files {1}, Total Bytes: {2}, Transferred Bytes: {3}",
                 this.TotalNumberOfFiles, this.NumberOfFilesUploaded, this.TotalBytes, this.TransferredBytes);
         }
+    }
+
+    /// <summary>
+    /// Contains a single TransferUtilityUploadRequest corresponding
+    /// to a single file about to be uploaded, allowing changes to
+    /// the request before it is executed.
+    /// </summary>
+    public class UploadDirectoryFileRequestArgs : EventArgs
+    {
+        /// <summary>
+        /// Constructs a new UploadDirectoryFileRequestArgs instance.
+        /// </summary>
+        /// <param name="request">Request being processed.</param>
+        public UploadDirectoryFileRequestArgs(TransferUtilityUploadRequest request)
+        {
+            UploadRequest = request;
+        }
+
+        public TransferUtilityUploadRequest UploadRequest { get; set; }
     }
 }

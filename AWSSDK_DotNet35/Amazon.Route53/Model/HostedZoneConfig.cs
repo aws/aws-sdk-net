@@ -35,6 +35,7 @@ namespace Amazon.Route53.Model
     public partial class HostedZoneConfig
     {
         private string _comment;
+        private bool? _privateZone;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -59,6 +60,21 @@ namespace Amazon.Route53.Model
         internal bool IsSetComment()
         {
             return this._comment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateZone.
+        /// </summary>
+        public bool PrivateZone
+        {
+            get { return this._privateZone.GetValueOrDefault(); }
+            set { this._privateZone = value; }
+        }
+
+        // Check to see if PrivateZone property is set
+        internal bool IsSetPrivateZone()
+        {
+            return this._privateZone.HasValue; 
         }
 
     }

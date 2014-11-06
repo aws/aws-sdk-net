@@ -159,9 +159,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 
         public static void GenerateFile(string path, long size)
         {
-            new DirectoryInfo(Path.GetDirectoryName(path)).Create();
+            string fullPath = Path.GetFullPath(path);
+            new DirectoryInfo(Path.GetDirectoryName(fullPath)).Create();
 
-            using (StreamWriter stream = new StreamWriter(path))
+            using (StreamWriter stream = new StreamWriter(fullPath))
             {
                 for (long i = 0; i < size; i++)
                 {

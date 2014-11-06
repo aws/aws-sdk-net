@@ -154,6 +154,7 @@ namespace Amazon.Route53
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.Route53.Internal.AmazonRoute53PostMarshallHandler());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.ErrorCallbackHandler>(new Amazon.Route53.Internal.AmazonRoute53PreMarshallHandler());
         }
 
         #endregion
@@ -167,6 +168,37 @@ namespace Amazon.Route53
 
         #endregion
 
+        
+        #region  AssociateVPCWithHostedZone
+
+        internal AssociateVPCWithHostedZoneResponse AssociateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest request)
+        {
+            var marshaller = new AssociateVPCWithHostedZoneRequestMarshaller();
+            var unmarshaller = AssociateVPCWithHostedZoneResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateVPCWithHostedZoneRequest,AssociateVPCWithHostedZoneResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateVPCWithHostedZone operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateVPCWithHostedZone operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AssociateVPCWithHostedZoneResponse> AssociateVPCWithHostedZoneAsync(AssociateVPCWithHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AssociateVPCWithHostedZoneRequestMarshaller();
+            var unmarshaller = AssociateVPCWithHostedZoneResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateVPCWithHostedZoneRequest,AssociateVPCWithHostedZoneResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
         
         #region  ChangeResourceRecordSets
 
@@ -292,6 +324,37 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  CreateReusableDelegationSet
+
+        internal CreateReusableDelegationSetResponse CreateReusableDelegationSet(CreateReusableDelegationSetRequest request)
+        {
+            var marshaller = new CreateReusableDelegationSetRequestMarshaller();
+            var unmarshaller = CreateReusableDelegationSetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateReusableDelegationSetRequest,CreateReusableDelegationSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReusableDelegationSet operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReusableDelegationSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateReusableDelegationSetResponse> CreateReusableDelegationSetAsync(CreateReusableDelegationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateReusableDelegationSetRequestMarshaller();
+            var unmarshaller = CreateReusableDelegationSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateReusableDelegationSetRequest,CreateReusableDelegationSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteHealthCheck
 
         internal DeleteHealthCheckResponse DeleteHealthCheck(DeleteHealthCheckRequest request)
@@ -349,6 +412,68 @@ namespace Amazon.Route53
             var unmarshaller = DeleteHostedZoneResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteHostedZoneRequest,DeleteHostedZoneResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteReusableDelegationSet
+
+        internal DeleteReusableDelegationSetResponse DeleteReusableDelegationSet(DeleteReusableDelegationSetRequest request)
+        {
+            var marshaller = new DeleteReusableDelegationSetRequestMarshaller();
+            var unmarshaller = DeleteReusableDelegationSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteReusableDelegationSetRequest,DeleteReusableDelegationSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReusableDelegationSet operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReusableDelegationSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteReusableDelegationSetResponse> DeleteReusableDelegationSetAsync(DeleteReusableDelegationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteReusableDelegationSetRequestMarshaller();
+            var unmarshaller = DeleteReusableDelegationSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteReusableDelegationSetRequest,DeleteReusableDelegationSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateVPCFromHostedZone
+
+        internal DisassociateVPCFromHostedZoneResponse DisassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request)
+        {
+            var marshaller = new DisassociateVPCFromHostedZoneRequestMarshaller();
+            var unmarshaller = DisassociateVPCFromHostedZoneResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateVPCFromHostedZoneRequest,DisassociateVPCFromHostedZoneResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateVPCFromHostedZone operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateVPCFromHostedZone operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DisassociateVPCFromHostedZoneResponse> DisassociateVPCFromHostedZoneAsync(DisassociateVPCFromHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DisassociateVPCFromHostedZoneRequestMarshaller();
+            var unmarshaller = DisassociateVPCFromHostedZoneResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateVPCFromHostedZoneRequest,DisassociateVPCFromHostedZoneResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -509,6 +634,68 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  GetHealthCheckLastFailureReason
+
+        internal GetHealthCheckLastFailureReasonResponse GetHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest request)
+        {
+            var marshaller = new GetHealthCheckLastFailureReasonRequestMarshaller();
+            var unmarshaller = GetHealthCheckLastFailureReasonResponseUnmarshaller.Instance;
+
+            return Invoke<GetHealthCheckLastFailureReasonRequest,GetHealthCheckLastFailureReasonResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHealthCheckLastFailureReason operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckLastFailureReason operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetHealthCheckLastFailureReasonResponse> GetHealthCheckLastFailureReasonAsync(GetHealthCheckLastFailureReasonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetHealthCheckLastFailureReasonRequestMarshaller();
+            var unmarshaller = GetHealthCheckLastFailureReasonResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetHealthCheckLastFailureReasonRequest,GetHealthCheckLastFailureReasonResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetHealthCheckStatus
+
+        internal GetHealthCheckStatusResponse GetHealthCheckStatus(GetHealthCheckStatusRequest request)
+        {
+            var marshaller = new GetHealthCheckStatusRequestMarshaller();
+            var unmarshaller = GetHealthCheckStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetHealthCheckStatusRequest,GetHealthCheckStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHealthCheckStatus operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetHealthCheckStatusResponse> GetHealthCheckStatusAsync(GetHealthCheckStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetHealthCheckStatusRequestMarshaller();
+            var unmarshaller = GetHealthCheckStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetHealthCheckStatusRequest,GetHealthCheckStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetHostedZone
 
         internal GetHostedZoneResponse GetHostedZone(GetHostedZoneRequest request)
@@ -540,8 +727,43 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  GetReusableDelegationSet
+
+        internal GetReusableDelegationSetResponse GetReusableDelegationSet(GetReusableDelegationSetRequest request)
+        {
+            var marshaller = new GetReusableDelegationSetRequestMarshaller();
+            var unmarshaller = GetReusableDelegationSetResponseUnmarshaller.Instance;
+
+            return Invoke<GetReusableDelegationSetRequest,GetReusableDelegationSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReusableDelegationSet operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReusableDelegationSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetReusableDelegationSetResponse> GetReusableDelegationSetAsync(GetReusableDelegationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetReusableDelegationSetRequestMarshaller();
+            var unmarshaller = GetReusableDelegationSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetReusableDelegationSetRequest,GetReusableDelegationSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListGeoLocations
 
+        internal ListGeoLocationsResponse ListGeoLocations()
+        {
+            return ListGeoLocations(new ListGeoLocationsRequest());
+        }
         internal ListGeoLocationsResponse ListGeoLocations(ListGeoLocationsRequest request)
         {
             var marshaller = new ListGeoLocationsRequestMarshaller();
@@ -667,6 +889,41 @@ namespace Amazon.Route53
             var unmarshaller = ListResourceRecordSetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListResourceRecordSetsRequest,ListResourceRecordSetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListReusableDelegationSets
+
+        internal ListReusableDelegationSetsResponse ListReusableDelegationSets()
+        {
+            return ListReusableDelegationSets(new ListReusableDelegationSetsRequest());
+        }
+        internal ListReusableDelegationSetsResponse ListReusableDelegationSets(ListReusableDelegationSetsRequest request)
+        {
+            var marshaller = new ListReusableDelegationSetsRequestMarshaller();
+            var unmarshaller = ListReusableDelegationSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListReusableDelegationSetsRequest,ListReusableDelegationSetsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReusableDelegationSets operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReusableDelegationSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListReusableDelegationSetsResponse> ListReusableDelegationSetsAsync(ListReusableDelegationSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListReusableDelegationSetsRequestMarshaller();
+            var unmarshaller = ListReusableDelegationSetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListReusableDelegationSetsRequest,ListReusableDelegationSetsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

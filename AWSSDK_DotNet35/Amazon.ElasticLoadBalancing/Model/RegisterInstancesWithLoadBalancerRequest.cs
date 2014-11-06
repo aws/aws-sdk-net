@@ -54,7 +54,10 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">De-register
     /// and Register Amazon EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i>.
     /// </para>
-    ///  
+    ///  <note> In order for this call to be successful, you must provide the same account
+    /// credentials as those that were used to create the load balancer. </note> <note> Completion
+    /// of this API does not guarantee that operation has completed. Rather, it means that
+    /// the request has been registered and the changes will happen shortly. </note> 
     /// <para>
     /// You can use <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a> action to
     /// check the state of the newly registered instances.

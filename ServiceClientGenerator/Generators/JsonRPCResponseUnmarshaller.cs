@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+    #line 1 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class JsonRPCResponseUnmarshaller : BaseResponseUnmarshaller
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators
         public override string TransformText()
         {
             
-            #line 6 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 6 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
 
     AddLicenseHeader();
 
@@ -40,7 +40,7 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("using ThirdParty.Json.LitJson;\r\n\r\nnamespace ");
             
-            #line 13 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 13 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -48,14 +48,14 @@ namespace ServiceClientGenerator.Generators
             this.Write(".Model.Internal.MarshallTransformations\r\n{\r\n    /// <summary>\r\n    /// Response U" +
                     "nmarshaller for ");
             
-            #line 16 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 16 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
             this.Write(" operation\r\n    /// </summary>  \r\n    public class ");
             
-            #line 18 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 18 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
@@ -64,21 +64,21 @@ namespace ServiceClientGenerator.Generators
                     "mazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)\r\n        {\r\n" +
                     "            ");
             
-            #line 22 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 22 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
             this.Write("Response response = new ");
             
-            #line 22 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 22 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("Response();\r\n\r\n");
             
-            #line 24 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 24 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
 
     if( this.Operation.ResponseHasBodyMembers )
     {
@@ -90,21 +90,21 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("            var unmarshaller = ");
             
-            #line 30 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 30 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.ResponseBodyMembers[0].DetermineTypeUnmarshallerInstantiate()));
             
             #line default
             #line hidden
             this.Write(";\r\n            response.");
             
-            #line 31 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 31 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.ResponseBodyMembers[0].PropertyName));
             
             #line default
             #line hidden
             this.Write(" = unmarshaller.Unmarshall(context);\r\n");
             
-            #line 32 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 32 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
 
         }
 		else if(this.IsWrapped)
@@ -115,21 +115,21 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("\t\t\tresponse.");
             
-            #line 37 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 37 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.WrappedResultMember));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 37 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 37 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write("Unmarshaller.Instance.Unmarshall(context);\r\n");
             
-            #line 38 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 38 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
 
 		}
         else
@@ -141,7 +141,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("            context.Read();\r\n            int targetDepth = context.CurrentDepth;\r" +
                     "\n            while (context.ReadAtDepth(targetDepth))\r\n            {\r\n");
             
-            #line 47 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 47 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
 
         
             foreach (var member in this.Operation.ResponseBodyMembers)
@@ -152,21 +152,21 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("                if (context.TestExpression(\"");
             
-            #line 52 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 52 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
             
             #line default
             #line hidden
             this.Write("\", targetDepth))\r\n                {\r\n                    var unmarshaller = ");
             
-            #line 54 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 54 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineTypeUnmarshallerInstantiate()));
             
             #line default
             #line hidden
             this.Write(";\r\n                    response.");
             
-            #line 55 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 55 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
@@ -174,7 +174,7 @@ namespace ServiceClientGenerator.Generators
             this.Write(" = unmarshaller.Unmarshall(context);\r\n                    continue;\r\n            " +
                     "    }\r\n");
             
-            #line 58 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 58 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
 
             }
 
@@ -183,7 +183,7 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("            }\r\n");
             
-            #line 62 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 62 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
 
         }
     }
@@ -203,7 +203,7 @@ namespace ServiceClientGenerator.Generators
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
 ");
             
-            #line 76 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 76 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
 
     foreach (var exception in this.Operation.Exceptions)
     {
@@ -213,14 +213,14 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("            if (errorResponse.Code != null && errorResponse.Code.Equals(\"");
             
-            #line 80 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 80 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Code));
             
             #line default
             #line hidden
             this.Write("\"))\r\n            {\r\n                return new ");
             
-            #line 82 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 82 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
             
             #line default
@@ -228,7 +228,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, e" +
                     "rrorResponse.RequestId, statusCode);\r\n            }\r\n");
             
-            #line 84 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 84 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
 
     }
 
@@ -237,7 +237,7 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("            return new Amazon");
             
-            #line 87 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 87 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -245,8 +245,17 @@ namespace ServiceClientGenerator.Generators
             this.Write("Exception(errorResponse.Message, innerException, errorResponse.Type, errorRespons" +
                     "e.Code, errorResponse.RequestId, statusCode);\r\n        }\r\n\r\n");
             
-            #line 90 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+            #line 90 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
+	if(this.Operation.ResponseStreamingMember != null) {
+            
+            #line default
+            #line hidden
+            this.Write("        internal override bool HasStreamingProperty\r\n        {\r\n            get\r\n" +
+                    "            {\r\n                return true;\r\n            }\r\n        }\r\n\r\n");
+            
+            #line 99 "C:\codebase\GitBranches\Master\sdk\src\ServiceClientGenerator\Generators\JsonRPCResponseUnmarshaller.tt"
 
+	}
     this.AddResponseSingletonMethod();
 
             

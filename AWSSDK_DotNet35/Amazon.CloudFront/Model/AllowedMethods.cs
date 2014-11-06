@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2014-10-21.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,17 +29,34 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// A complex type that controls which HTTP methods CloudFront processes and forwards
-    /// to your Amazon S3 bucket or your custom origin. There are two options: - CloudFront
-    /// forwards only GET and HEAD requests. - CloudFront forwards DELETE, GET, HEAD, OPTIONS,
-    /// PATCH, POST, and PUT requests. If you choose the second option, you may need to restrict
-    /// access to your Amazon S3 bucket or to your custom origin so users can't perform operations
-    /// that you don't want them to. For example, you may not want users to have permission
-    /// to delete objects from your origin.
+    /// to your Amazon S3 bucket or your custom origin. There are three choices: - CloudFront
+    /// forwards only GET and HEAD requests. - CloudFront forwards only GET, HEAD and OPTIONS
+    /// requests. - CloudFront forwards GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests.
+    /// If you pick the third choice, you may need to restrict access to your Amazon S3 bucket
+    /// or to your custom origin so users can't perform operations that you don't want them
+    /// to. For example, you may not want users to have permission to delete objects from
+    /// your origin.
     /// </summary>
     public partial class AllowedMethods
     {
+        private CachedMethods _cachedMethods;
         private List<string> _items = new List<string>();
         private int? _quantity;
+
+        /// <summary>
+        /// Gets and sets the property CachedMethods.
+        /// </summary>
+        public CachedMethods CachedMethods
+        {
+            get { return this._cachedMethods; }
+            set { this._cachedMethods = value; }
+        }
+
+        // Check to see if CachedMethods property is set
+        internal bool IsSetCachedMethods()
+        {
+            return this._cachedMethods != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Items. A complex type that contains the HTTP methods that
@@ -59,8 +76,9 @@ namespace Amazon.CloudFront.Model
 
         /// <summary>
         /// Gets and sets the property Quantity. The number of HTTP methods that you want CloudFront
-        /// to forward to your origin. Valid values are 2 (for GET and HEAD requests) and 7 (for
-        /// DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT requests).
+        /// to forward to your origin. Valid values are 2 (for GET and HEAD requests), 3 (for
+        /// GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and
+        /// DELETE requests).
         /// </summary>
         public int Quantity
         {

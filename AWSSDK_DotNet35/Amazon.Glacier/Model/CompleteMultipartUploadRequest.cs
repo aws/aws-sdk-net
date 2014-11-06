@@ -30,44 +30,43 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Container for the parameters to the CompleteMultipartUpload operation.
     /// You call this operation to inform Amazon Glacier that all the archive parts have been
-    /// uploaded            and that Amazon Glacier can now assemble the archive from the uploaded
-    /// parts. After assembling and            saving the archive to the vault, Amazon Glacier returns
-    /// the URI path of the newly created            archive resource. Using the URI path, you can
-    /// then access the archive. After you upload            an archive, you should save the archive
-    /// ID returned to retrieve the archive at a later            point. You can also get the vault
-    /// inventory to obtain a list of archive IDs in a vault.            For more information, see
-    /// <a>InitiateJob</a>.
+    /// uploaded and that Amazon Glacier can now assemble the archive from the uploaded parts.
+    /// After assembling and saving the archive to the vault, Amazon Glacier returns the URI
+    /// path of the newly created archive resource. Using the URI path, you can then access
+    /// the archive. After you upload an archive, you should save the archive ID returned
+    /// to retrieve the archive at a later point. You can also get the vault inventory to
+    /// obtain a list of archive IDs in a vault. For more information, see <a>InitiateJob</a>.
     /// 
-    ///         
+    ///  
     /// <para>
     /// In the request, you must include the computed SHA256 tree hash of the entire archive
-    /// you            have uploaded. For information about computing a SHA256 tree hash, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html">Computing
-    /// Checksums</a>. On the server            side, Amazon Glacier also constructs the SHA256 tree
-    /// hash of the assembled archive. If the            values match, Amazon Glacier saves the archive
-    /// to the vault; otherwise, it returns an error,            and the operation fails. The <a>ListParts</a>
-    /// operation returns a list of parts uploaded for            a specific multipart upload. It includes
-    /// checksum information for each uploaded part            that can be used to debug a bad checksum
+    /// you have uploaded. For information about computing a SHA256 tree hash, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html">Computing
+    /// Checksums</a>. On the server side, Amazon Glacier also constructs the SHA256 tree
+    /// hash of the assembled archive. If the values match, Amazon Glacier saves the archive
+    /// to the vault; otherwise, it returns an error, and the operation fails. The <a>ListParts</a>
+    /// operation returns a list of parts uploaded for a specific multipart upload. It includes
+    /// checksum information for each uploaded part that can be used to debug a bad checksum
     /// issue.
     /// </para>
-    ///            
+    ///  
     /// <para>
     /// Additionally, Amazon Glacier also checks for any missing content ranges when assembling
-    /// the            archive, if missing content ranges are found, Amazon Glacier returns an error
-    /// and the            operation fails. 
+    /// the archive, if missing content ranges are found, Amazon Glacier returns an error
+    /// and the operation fails. 
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// Complete Multipart Upload is an idempotent operation. After your first successful
-    /// complete            multipart upload, if you call the operation again within a short period,
-    /// the operation            will succeed and return the same archive ID. This is useful in the
-    /// event you experience            a network issue that causes an aborted connection or receive
-    /// a 500 server error, in            which case you can repeat your Complete Multipart Upload
-    /// request and get the same            archive ID without creating duplicate archives. Note, however,
-    /// that after the multipart            upload completes, you cannot call the List Parts operation
-    /// and the multipart upload will            not appear in List Multipart Uploads response, even
-    /// if idempotent complete is            possible.
+    /// complete multipart upload, if you call the operation again within a short period,
+    /// the operation will succeed and return the same archive ID. This is useful in the event
+    /// you experience a network issue that causes an aborted connection or receive a 500
+    /// server error, in which case you can repeat your Complete Multipart Upload request
+    /// and get the same archive ID without creating duplicate archives. Note, however, that
+    /// after the multipart upload completes, you cannot call the List Parts operation and
+    /// the multipart upload will not appear in List Multipart Uploads response, even if idempotent
+    /// complete is possible.
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// An AWS account has full permission to perform all operations (actions). However, AWS
     /// Identity and Access Management (IAM) users don't have any permissions by default.
@@ -75,11 +74,11 @@ namespace Amazon.Glacier.Model
     /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
     /// Control Using AWS Identity and Access Management (IAM)</a>.
     /// </para>
-    ///       
+    ///  
     /// <para>
-    ///  For conceptual information and underlying REST API, go to          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
-    /// Large Archives in Parts (Multipart Upload)</a>          and          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html">Complete
-    /// Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>.      
+    ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
+    /// Large Archives in Parts (Multipart Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html">Complete
+    /// Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. 
     /// </para>
     /// </summary>
     public partial class CompleteMultipartUploadRequest : AmazonGlacierRequest
@@ -113,7 +112,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates CompleteMultipartUploadRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-',    in which case Amazon Glacier uses the AWS Account ID associated with the credentials used    to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
+        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="uploadId">The upload ID of the multipart upload.</param>
         /// <param name="archiveSize">The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</param>
@@ -131,9 +130,9 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account
-        /// ID or optionally a '-',          in which case Amazon Glacier uses the AWS Account
-        /// ID associated with the credentials used          to sign the request. If you specify
-        /// your Account ID, do not include hyphens in it. 
+        /// ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated
+        /// with the credentials used to sign the request. If you specify your Account ID, do
+        /// not include hyphens in it. 
         /// </para>
         /// </summary>
         public string AccountId

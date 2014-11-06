@@ -56,9 +56,9 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An opaque string that represents where to continue pagination of the results.    
-        ///      You use this value in a new List Jobs request to obtain more jobs in the list.
-        ///          If there are no more jobs, this value is <code>null</code>. 
+        /// An opaque string that represents where to continue pagination of the results. You
+        /// use this value in a new List Jobs request to obtain more jobs in the list. If there
+        /// are no more jobs, this value is <code>null</code>. 
         /// </para>
         /// </summary>
         public string Marker

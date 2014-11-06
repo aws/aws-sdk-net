@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2014-10-21.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -46,94 +46,94 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "POST";
-            string uriResourcePath = "/2014-05-31/streaming-distribution";
+            string uriResourcePath = "/2014-10-21/streaming-distribution";
             request.ResourcePath = uriResourcePath;
 
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
             {   
-                xmlWriter.WriteStartElement("StreamingDistributionConfig", "http://cloudfront.amazonaws.com/doc/2014-05-31/");                                
+                xmlWriter.WriteStartElement("StreamingDistributionConfig", "http://cloudfront.amazonaws.com/doc/2014-10-21/");                                
                 
                 if (publicRequest.StreamingDistributionConfig.Aliases != null) 
                 {
-                    xmlWriter.WriteStartElement("Aliases", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                    xmlWriter.WriteStartElement("Aliases", "http://cloudfront.amazonaws.com/doc/2014-10-21/");            
                     var publicRequestStreamingDistributionConfigAliasesItems = publicRequest.StreamingDistributionConfig.Aliases.Items;
                     if (publicRequestStreamingDistributionConfigAliasesItems != null && publicRequestStreamingDistributionConfigAliasesItems.Count > 0) 
                     {                        
-                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-10-21/");
                         foreach (var publicRequestStreamingDistributionConfigAliasesItemsValue in publicRequestStreamingDistributionConfigAliasesItems) 
                         {
-                            xmlWriter.WriteStartElement("CNAME", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                            xmlWriter.WriteStartElement("CNAME", "http://cloudfront.amazonaws.com/doc/2014-10-21/");
                             xmlWriter.WriteValue(publicRequestStreamingDistributionConfigAliasesItemsValue);
                             xmlWriter.WriteEndElement();
                         }            
                         xmlWriter.WriteEndElement();            
                     }
                     if(publicRequest.StreamingDistributionConfig.Aliases.IsSetQuantity())
-                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", StringUtils.FromInt(publicRequest.StreamingDistributionConfig.Aliases.Quantity));                 
+                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-10-21/", StringUtils.FromInt(publicRequest.StreamingDistributionConfig.Aliases.Quantity));                 
     
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.StreamingDistributionConfig.IsSetCallerReference())
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2014-05-31/", StringUtils.FromString(publicRequest.StreamingDistributionConfig.CallerReference));                    
+                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2014-10-21/", StringUtils.FromString(publicRequest.StreamingDistributionConfig.CallerReference));                    
 
                 if(publicRequest.StreamingDistributionConfig.IsSetComment())
-                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2014-05-31/", StringUtils.FromString(publicRequest.StreamingDistributionConfig.Comment));                    
+                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2014-10-21/", StringUtils.FromString(publicRequest.StreamingDistributionConfig.Comment));                    
 
                 if(publicRequest.StreamingDistributionConfig.IsSetEnabled())
-                    xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2014-05-31/", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.Enabled));                    
+                    xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2014-10-21/", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.Enabled));                    
 
                 
                 if (publicRequest.StreamingDistributionConfig.Logging != null) 
                 {
-                    xmlWriter.WriteStartElement("Logging", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                    xmlWriter.WriteStartElement("Logging", "http://cloudfront.amazonaws.com/doc/2014-10-21/");            
                     if(publicRequest.StreamingDistributionConfig.Logging.IsSetBucket())
-                        xmlWriter.WriteElementString("Bucket", "http://cloudfront.amazonaws.com/doc/2014-05-31/", StringUtils.FromString(publicRequest.StreamingDistributionConfig.Logging.Bucket));                 
+                        xmlWriter.WriteElementString("Bucket", "http://cloudfront.amazonaws.com/doc/2014-10-21/", StringUtils.FromString(publicRequest.StreamingDistributionConfig.Logging.Bucket));                 
     
                     if(publicRequest.StreamingDistributionConfig.Logging.IsSetEnabled())
-                        xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2014-05-31/", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.Logging.Enabled));                 
+                        xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2014-10-21/", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.Logging.Enabled));                 
     
                     if(publicRequest.StreamingDistributionConfig.Logging.IsSetPrefix())
-                        xmlWriter.WriteElementString("Prefix", "http://cloudfront.amazonaws.com/doc/2014-05-31/", StringUtils.FromString(publicRequest.StreamingDistributionConfig.Logging.Prefix));                 
+                        xmlWriter.WriteElementString("Prefix", "http://cloudfront.amazonaws.com/doc/2014-10-21/", StringUtils.FromString(publicRequest.StreamingDistributionConfig.Logging.Prefix));                 
     
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.StreamingDistributionConfig.IsSetPriceClass())
-                    xmlWriter.WriteElementString("PriceClass", "http://cloudfront.amazonaws.com/doc/2014-05-31/", StringUtils.FromString(publicRequest.StreamingDistributionConfig.PriceClass));                    
+                    xmlWriter.WriteElementString("PriceClass", "http://cloudfront.amazonaws.com/doc/2014-10-21/", StringUtils.FromString(publicRequest.StreamingDistributionConfig.PriceClass));                    
 
                 
                 if (publicRequest.StreamingDistributionConfig.S3Origin != null) 
                 {
-                    xmlWriter.WriteStartElement("S3Origin", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                    xmlWriter.WriteStartElement("S3Origin", "http://cloudfront.amazonaws.com/doc/2014-10-21/");            
                     if(publicRequest.StreamingDistributionConfig.S3Origin.IsSetDomainName())
-                        xmlWriter.WriteElementString("DomainName", "http://cloudfront.amazonaws.com/doc/2014-05-31/", StringUtils.FromString(publicRequest.StreamingDistributionConfig.S3Origin.DomainName));                 
+                        xmlWriter.WriteElementString("DomainName", "http://cloudfront.amazonaws.com/doc/2014-10-21/", StringUtils.FromString(publicRequest.StreamingDistributionConfig.S3Origin.DomainName));                 
     
                     if(publicRequest.StreamingDistributionConfig.S3Origin.IsSetOriginAccessIdentity())
-                        xmlWriter.WriteElementString("OriginAccessIdentity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", StringUtils.FromString(publicRequest.StreamingDistributionConfig.S3Origin.OriginAccessIdentity));                 
+                        xmlWriter.WriteElementString("OriginAccessIdentity", "http://cloudfront.amazonaws.com/doc/2014-10-21/", StringUtils.FromString(publicRequest.StreamingDistributionConfig.S3Origin.OriginAccessIdentity));                 
     
                     xmlWriter.WriteEndElement();
                 }
                 
                 if (publicRequest.StreamingDistributionConfig.TrustedSigners != null) 
                 {
-                    xmlWriter.WriteStartElement("TrustedSigners", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                    xmlWriter.WriteStartElement("TrustedSigners", "http://cloudfront.amazonaws.com/doc/2014-10-21/");            
                     if(publicRequest.StreamingDistributionConfig.TrustedSigners.IsSetEnabled())
-                        xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2014-05-31/", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.TrustedSigners.Enabled));                 
+                        xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2014-10-21/", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.TrustedSigners.Enabled));                 
     
                     var publicRequestStreamingDistributionConfigTrustedSignersItems = publicRequest.StreamingDistributionConfig.TrustedSigners.Items;
                     if (publicRequestStreamingDistributionConfigTrustedSignersItems != null && publicRequestStreamingDistributionConfigTrustedSignersItems.Count > 0) 
                     {                        
-                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-10-21/");
                         foreach (var publicRequestStreamingDistributionConfigTrustedSignersItemsValue in publicRequestStreamingDistributionConfigTrustedSignersItems) 
                         {
-                            xmlWriter.WriteStartElement("AwsAccountNumber", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                            xmlWriter.WriteStartElement("AwsAccountNumber", "http://cloudfront.amazonaws.com/doc/2014-10-21/");
                             xmlWriter.WriteValue(publicRequestStreamingDistributionConfigTrustedSignersItemsValue);
                             xmlWriter.WriteEndElement();
                         }            
                         xmlWriter.WriteEndElement();            
                     }
                     if(publicRequest.StreamingDistributionConfig.TrustedSigners.IsSetQuantity())
-                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", StringUtils.FromInt(publicRequest.StreamingDistributionConfig.TrustedSigners.Quantity));                 
+                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-10-21/", StringUtils.FromInt(publicRequest.StreamingDistributionConfig.TrustedSigners.Quantity));                 
     
                     xmlWriter.WriteEndElement();
                 }

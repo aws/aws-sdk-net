@@ -38,48 +38,48 @@ namespace Amazon.Glacier
     ///
     /// Amazon Glacier is a storage solution for "cold data."
     /// 
-    ///      
+    ///  
     /// <para>
     /// Amazon Glacier is an extremely low-cost storage service that provides secure, durable,
-    /// and        easy-to-use storage for data backup and archival. With Amazon Glacier, customers
-    /// can store        their data cost effectively for months, years, or decades. Amazon Glacier
-    /// also enables        customers to offload the administrative burdens of operating and scaling
-    /// storage to AWS, so        they don't have to worry about capacity planning, hardware provisioning,
-    /// data replication,        hardware failure and recovery, or time-consuming hardware migrations.
+    /// and easy-to-use storage for data backup and archival. With Amazon Glacier, customers
+    /// can store their data cost effectively for months, years, or decades. Amazon Glacier
+    /// also enables customers to offload the administrative burdens of operating and scaling
+    /// storage to AWS, so they don't have to worry about capacity planning, hardware provisioning,
+    /// data replication, hardware failure and recovery, or time-consuming hardware migrations.
     /// </para>
-    ///      
+    ///  
     /// <para>
     /// Amazon Glacier is a great storage choice when low storage cost is paramount, your
-    /// data is        rarely retrieved, and retrieval latency of several hours is acceptable. If
-    /// your application        requires fast or frequent access to your data, consider using Amazon
-    /// S3. For more        information, go to <a href="http://aws.amazon.com/s3/">Amazon Simple
+    /// data is rarely retrieved, and retrieval latency of several hours is acceptable. If
+    /// your application requires fast or frequent access to your data, consider using Amazon
+    /// S3. For more information, go to <a href="http://aws.amazon.com/s3/">Amazon Simple
     /// Storage Service (Amazon S3)</a>.
     /// </para>
-    ///       
+    ///  
     /// <para>
     /// You can store any kind of data in any format. There is no maximum limit on the total
-    /// amount        of data you can store in Amazon Glacier. 
+    /// amount of data you can store in Amazon Glacier. 
     /// </para>
-    ///       
+    ///  
     /// <para>
-    /// If you are a first-time user of Amazon Glacier, we recommend that you begin      
-    ///    by reading the following sections in the <i>Amazon Glacier Developer Guide</i>:
+    /// If you are a first-time user of Amazon Glacier, we recommend that you begin by reading
+    /// the following sections in the <i>Amazon Glacier Developer Guide</i>:
     /// </para>
-    ///       <ul>         <li>
+    ///  <ul> <li>
     /// <para>
     /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html">What
-    /// is Amazon Glacier</a> - This section of the Developer Guide             describes
-    /// the underlying data model, the operations it supports,             and the AWS SDKs
-    /// that you can use to interact with the service.
+    /// is Amazon Glacier</a> - This section of the Developer Guide describes the underlying
+    /// data model, the operations it supports, and the AWS SDKs that you can use to interact
+    /// with the service.
     /// </para>
-    /// </li>         <li>
+    /// </li> <li>
     /// <para>
     /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html">Getting
-    /// Started with Amazon Glacier</a> - The Getting             Started section walks you
-    /// through the process of creating a vault,             uploading archives, creating
-    /// jobs to download archives,             retrieving the job output, and deleting archives.
+    /// Started with Amazon Glacier</a> - The Getting Started section walks you through the
+    /// process of creating a vault, uploading archives, creating jobs to download archives,
+    /// retrieving the job output, and deleting archives.
     /// </para>
-    /// </li>      </ul>
+    /// </li> </ul>
     /// </summary>
     public partial class AmazonGlacierClient : AmazonServiceClient, IAmazonGlacier
     {

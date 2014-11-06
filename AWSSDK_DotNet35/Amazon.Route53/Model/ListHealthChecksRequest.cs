@@ -35,7 +35,10 @@ namespace Amazon.Route53.Model
     /// child elements. By default, the list of health checks is displayed on a single page.
     /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
     /// parameter. You can use the <code>Marker</code> parameter to control the health check
-    /// that the list begins with.
+    /// that the list begins with. 
+    /// 
+    ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
+    /// greater than 100, Amazon Route 53 returns only the first 100.</note>
     /// </summary>
     public partial class ListHealthChecksRequest : AmazonRoute53Request
     {

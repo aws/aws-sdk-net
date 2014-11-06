@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2014-05-31.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2014-10-21.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,6 +34,7 @@ namespace Amazon.CloudFront.Model
     {
         private bool? _cloudFrontDefaultCertificate;
         private string _iAMCertificateId;
+        private MinimumProtocolVersion _minimumProtocolVersion;
         private SSLSupportMethod _sSLSupportMethod;
 
         /// <summary>
@@ -70,6 +71,30 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetIAMCertificateId()
         {
             return this._iAMCertificateId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinimumProtocolVersion. Specify the minimum version of
+        /// the SSL protocol that you want CloudFront to use, SSLv3 or TLSv1, for HTTPS connections.
+        /// CloudFront will serve your objects only to browsers or devices that support at least
+        /// the SSL version that you specify. The TLSv1 protocol is more secure, so we recommend
+        /// that you specify SSLv3 only if your users are using browsers or devices that don't
+        /// support TLSv1. If you're using a custom certificate (if you specify a value for IAMCertificateId)
+        /// and if you're using dedicated IP (if you specify vip for SSLSupportMethod), you can
+        /// choose SSLv3 or TLSv1 as the MinimumProtocolVersion. If you're using a custom certificate
+        /// (if you specify a value for IAMCertificateId) and if you're using SNI (if you specify
+        /// sni-only for SSLSupportMethod), you must specify TLSv1 for MinimumProtocolVersion.
+        /// </summary>
+        public MinimumProtocolVersion MinimumProtocolVersion
+        {
+            get { return this._minimumProtocolVersion; }
+            set { this._minimumProtocolVersion = value; }
+        }
+
+        // Check to see if MinimumProtocolVersion property is set
+        internal bool IsSetMinimumProtocolVersion()
+        {
+            return this._minimumProtocolVersion != null;
         }
 
         /// <summary>

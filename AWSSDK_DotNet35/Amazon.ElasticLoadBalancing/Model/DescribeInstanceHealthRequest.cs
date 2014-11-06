@@ -31,7 +31,10 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// Container for the parameters to the DescribeInstanceHealth operation.
     /// Returns the current state of the specified instances registered with the specified
     /// load balancer. If no instances are specified, the state of all the instances registered
-    /// with the load balancer is returned.
+    /// with the load balancer is returned. 
+    /// 
+    ///  <note> You must provide the same account credentials as those that were used to create
+    /// the load balancer. </note>
     /// </summary>
     public partial class DescribeInstanceHealthRequest : AmazonElasticLoadBalancingRequest
     {

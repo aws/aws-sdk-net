@@ -38,9 +38,9 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An opaque string that represents where to continue pagination of the results.    
-        ///      You use the marker in a new List Multipart Uploads request to obtain more uploads
-        /// in the list.          If there are no more uploads, this value is <code>null</code>.
+        /// An opaque string that represents where to continue pagination of the results. You
+        /// use the marker in a new List Multipart Uploads request to obtain more uploads in the
+        /// list. If there are no more uploads, this value is <code>null</code>.
         /// </para>
         /// </summary>
         public string Marker

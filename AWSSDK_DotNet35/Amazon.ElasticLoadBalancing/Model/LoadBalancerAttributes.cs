@@ -33,6 +33,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     public partial class LoadBalancerAttributes
     {
         private AccessLog _accessLog;
+        private List<AdditionalAttribute> _additionalAttributes = new List<AdditionalAttribute>();
         private ConnectionDraining _connectionDraining;
         private ConnectionSettings _connectionSettings;
         private CrossZoneLoadBalancing _crossZoneLoadBalancing;
@@ -60,6 +61,24 @@ namespace Amazon.ElasticLoadBalancing.Model
         internal bool IsSetAccessLog()
         {
             return this._accessLog != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalAttributes. 
+        /// <para>
+        /// This parameter is reserved for future use.
+        /// </para>
+        /// </summary>
+        public List<AdditionalAttribute> AdditionalAttributes
+        {
+            get { return this._additionalAttributes; }
+            set { this._additionalAttributes = value; }
+        }
+
+        // Check to see if AdditionalAttributes property is set
+        internal bool IsSetAdditionalAttributes()
+        {
+            return this._additionalAttributes != null && this._additionalAttributes.Count > 0; 
         }
 
         /// <summary>

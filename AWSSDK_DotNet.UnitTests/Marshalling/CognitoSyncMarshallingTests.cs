@@ -171,6 +171,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("CognitoSync")]
+        public void GetIdentityPoolConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIdentityPoolConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<GetIdentityPoolConfigurationRequest>();
+            var marshaller = new GetIdentityPoolConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetIdentityPoolConfiguration", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetIdentityPoolConfigurationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetIdentityPoolConfigurationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CognitoSync")]
         public void ListDatasetsMarshallTest()
         {
             var operation = service_model.FindOperation("ListDatasets");
@@ -259,6 +291,134 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListRecordsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListRecordsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CognitoSync")]
+        public void RegisterDeviceMarshallTest()
+        {
+            var operation = service_model.FindOperation("RegisterDevice");
+
+            var request = InstantiateClassGenerator.Execute<RegisterDeviceRequest>();
+            var marshaller = new RegisterDeviceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("RegisterDevice", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = RegisterDeviceResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as RegisterDeviceResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CognitoSync")]
+        public void SetIdentityPoolConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("SetIdentityPoolConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<SetIdentityPoolConfigurationRequest>();
+            var marshaller = new SetIdentityPoolConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("SetIdentityPoolConfiguration", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = SetIdentityPoolConfigurationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as SetIdentityPoolConfigurationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CognitoSync")]
+        public void SubscribeToDatasetMarshallTest()
+        {
+            var operation = service_model.FindOperation("SubscribeToDataset");
+
+            var request = InstantiateClassGenerator.Execute<SubscribeToDatasetRequest>();
+            var marshaller = new SubscribeToDatasetRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("SubscribeToDataset", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = SubscribeToDatasetResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as SubscribeToDatasetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CognitoSync")]
+        public void UnsubscribeFromDatasetMarshallTest()
+        {
+            var operation = service_model.FindOperation("UnsubscribeFromDataset");
+
+            var request = InstantiateClassGenerator.Execute<UnsubscribeFromDatasetRequest>();
+            var marshaller = new UnsubscribeFromDatasetRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("UnsubscribeFromDataset", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UnsubscribeFromDatasetResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UnsubscribeFromDatasetResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

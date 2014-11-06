@@ -30,19 +30,19 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Container for the parameters to the DeleteArchive operation.
     /// This operation deletes an archive from a vault. Subsequent requests to initiate a
-    /// retrieval            of this archive will fail. Archive retrievals that are in progress for
-    /// this archive ID            may or may not succeed according to the following scenarios:
+    /// retrieval of this archive will fail. Archive retrievals that are in progress for this
+    /// archive ID may or may not succeed according to the following scenarios:
     /// 
-    ///            <ul>            <li>If the archive retrieval job is actively preparing the data for download
-    /// when Amazon                        Glacier receives the delete archive request, the archival retrieval                        operation
-    /// might fail.            </li>            <li>If the archive retrieval job has successfully prepared the
-    /// archive for download when                        Amazon Glacier receives the delete archive request,
-    /// you will be able to                        download the output.            </li>        </ul>        
+    ///  <ul> <li>If the archive retrieval job is actively preparing the data for download
+    /// when Amazon Glacier receives the delete archive request, the archival retrieval operation
+    /// might fail. </li> <li>If the archive retrieval job has successfully prepared the archive
+    /// for download when Amazon Glacier receives the delete archive request, you will be
+    /// able to download the output. </li> </ul> 
     /// <para>
     /// This operation is idempotent. Attempting to delete an already-deleted archive does
-    /// not            result in an error. 
+    /// not result in an error. 
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// An AWS account has full permission to perform all operations (actions). However, AWS
     /// Identity and Access Management (IAM) users don't have any permissions by default.
@@ -50,11 +50,11 @@ namespace Amazon.Glacier.Model
     /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
     /// Control Using AWS Identity and Access Management (IAM)</a>.
     /// </para>
-    ///       
+    ///  
     /// <para>
-    ///  For conceptual information and underlying REST API, go to          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive.html">Deleting
-    /// an Archive in Amazon Glacier</a>          and          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html">Delete
-    /// Archive</a> in the <i>Amazon Glacier Developer Guide</i>.      
+    ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive.html">Deleting
+    /// an Archive in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html">Delete
+    /// Archive</a> in the <i>Amazon Glacier Developer Guide</i>. 
     /// </para>
     /// </summary>
     public partial class DeleteArchiveRequest : AmazonGlacierRequest
@@ -82,7 +82,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates DeleteArchiveRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-',    in which case Amazon Glacier uses the AWS Account ID associated with the credentials used    to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
+        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="archiveId">The ID of the archive to delete.</param>
         public DeleteArchiveRequest(string accountId, string vaultName, string archiveId)
@@ -96,9 +96,9 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account
-        /// ID or optionally a '-',          in which case Amazon Glacier uses the AWS Account
-        /// ID associated with the credentials used          to sign the request. If you specify
-        /// your Account ID, do not include hyphens in it. 
+        /// ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated
+        /// with the credentials used to sign the request. If you specify your Account ID, do
+        /// not include hyphens in it. 
         /// </para>
         /// </summary>
         public string AccountId

@@ -195,11 +195,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             Select = EnumMapper.Convert(Select),
                         };
                         if (this.FilterExpression != null && this.FilterExpression.IsSet)
-                        {
                             this.FilterExpression.ApplyExpression(scanReq, SourceTable.Conversion);
-                        }
                         if (scanReq.ScanFilter != null && scanReq.ScanFilter.Count > 1)
                             scanReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
+                        Common.ConvertAttributesToGetToProjectionExpression(scanReq);
 
                         if (this.TotalSegments != 0)
                         {
@@ -249,6 +248,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         SplitQueryFilter(Filter, SourceTable, queryReq.IndexName, out keyConditions, out filterConditions);
                         queryReq.KeyConditions = keyConditions;
                         queryReq.QueryFilter = filterConditions;
+                        Common.ConvertAttributesToGetToProjectionExpression(queryReq);
 
                         if (queryReq.QueryFilter != null && queryReq.QueryFilter.Count > 1)
                             queryReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);

@@ -30,23 +30,22 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Container for the parameters to the DescribeJob operation.
     /// This operation returns information about a job you previously initiated, including
-    /// the job            initiation date, the user who initiated the job, the job status code/message
-    /// and the            Amazon SNS topic to notify after Amazon Glacier completes the job. For more
-    /// information about            initiating a job, see <a>InitiateJob</a>. 
+    /// the job initiation date, the user who initiated the job, the job status code/message
+    /// and the Amazon SNS topic to notify after Amazon Glacier completes the job. For more
+    /// information about initiating a job, see <a>InitiateJob</a>. 
     /// 
-    ///         <note>
+    ///  <note>
     /// <para>
-    /// This operation enables you to check the status of your job. However, it is                    strongly
-    /// recommended that you set up an Amazon SNS topic and specify it in your                    initiate
-    /// job request so that Amazon Glacier can notify the topic after it completes                    the
-    /// job. 
+    /// This operation enables you to check the status of your job. However, it is strongly
+    /// recommended that you set up an Amazon SNS topic and specify it in your initiate job
+    /// request so that Amazon Glacier can notify the topic after it completes the job. 
     /// </para>
-    /// </note>      
+    /// </note> 
     /// <para>
     /// A job ID will not expire for at least 24 hours after Amazon Glacier completes the
     /// job. 
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// An AWS account has full permission to perform all operations (actions). However, AWS
     /// Identity and Access Management (IAM) users don't have any permissions by default.
@@ -54,11 +53,11 @@ namespace Amazon.Glacier.Model
     /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
     /// Control Using AWS Identity and Access Management (IAM)</a>.
     /// </para>
-    ///             
+    ///  
     /// <para>
-    ///  For information about the underlying REST API, go to          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html">Working
+    ///  For information about the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html">Working
     /// with Archives in Amazon Glacier</a> in the <i>Amazon Glacier Developer Guide</i>.
-    ///      
+    /// 
     /// </para>
     /// </summary>
     public partial class DescribeJobRequest : AmazonGlacierRequest
@@ -75,7 +74,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates DescribeJobRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-',    in which case Amazon Glacier uses the AWS Account ID associated with the credentials used    to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
+        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="jobId">The ID of the job to describe.</param>
         public DescribeJobRequest(string accountId, string vaultName, string jobId)
@@ -100,9 +99,9 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account
-        /// ID or optionally a '-',          in which case Amazon Glacier uses the AWS Account
-        /// ID associated with the credentials used          to sign the request. If you specify
-        /// your Account ID, do not include hyphens in it. 
+        /// ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated
+        /// with the credentials used to sign the request. If you specify your Account ID, do
+        /// not include hyphens in it. 
         /// </para>
         /// </summary>
         public string AccountId

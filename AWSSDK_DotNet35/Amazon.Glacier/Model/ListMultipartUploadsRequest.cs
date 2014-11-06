@@ -29,42 +29,42 @@ namespace Amazon.Glacier.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMultipartUploads operation.
-    /// This operation lists in-progress multipart uploads for the specified vault. An in-progress            multipart
-    /// upload is a multipart upload that has been initiated by an <a>InitiateMultipartUpload</a>            request,
-    /// but has not yet been completed or aborted. The list returned in the List            Multipart
-    /// Upload response has no guaranteed order.       
+    /// This operation lists in-progress multipart uploads for the specified vault. An in-progress
+    /// multipart upload is a multipart upload that has been initiated by an <a>InitiateMultipartUpload</a>
+    /// request, but has not yet been completed or aborted. The list returned in the List
+    /// Multipart Upload response has no guaranteed order. 
     /// 
-    ///         
+    ///  
     /// <para>
-    /// The List Multipart Uploads operation supports pagination.           By default, this operation
-    /// returns up to 1,000 multipart uploads in the response.            You should always check
-    /// the response for a <code>marker</code> at which to continue the list;            if there
-    /// are no more items the <code>marker</code> is <code>null</code>.            To return a list
-    /// of multipart uploads that begins at a            specific upload, set the <code>marker</code>
-    /// request parameter to the value you obtained            from a previous List Multipart Upload
-    /// request. You can also limit the number of uploads            returned in the response by specifying
-    /// the <code>limit</code> parameter in the            request.
+    /// The List Multipart Uploads operation supports pagination. By default, this operation
+    /// returns up to 1,000 multipart uploads in the response. You should always check the
+    /// response for a <code>marker</code> at which to continue the list; if there are no
+    /// more items the <code>marker</code> is <code>null</code>. To return a list of multipart
+    /// uploads that begins at a specific upload, set the <code>marker</code> request parameter
+    /// to the value you obtained from a previous List Multipart Upload request. You can also
+    /// limit the number of uploads returned in the response by specifying the <code>limit</code>
+    /// parameter in the request.
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// Note the difference between this operation and listing parts (<a>ListParts</a>). The
-    /// List            Multipart Uploads operation lists all multipart uploads for a vault and does
-    /// not require            a multipart upload ID. The List Parts operation requires a multipart
-    /// upload ID since            parts are associated with a single upload.
+    /// List Multipart Uploads operation lists all multipart uploads for a vault and does
+    /// not require a multipart upload ID. The List Parts operation requires a multipart upload
+    /// ID since parts are associated with a single upload.
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// An AWS account has full permission to perform all operations (actions). However, AWS
     /// Identity and Access Management (IAM) users don't have any permissions by default.
-    ///            You must grant them explicit permission to perform specific actions.            For
-    /// more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+    /// You must grant them explicit permission to perform specific actions. For more information,
+    /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
     /// Control Using AWS Identity and Access Management (IAM)</a>.
     /// </para>
-    ///            
+    ///  
     /// <para>
-    /// For conceptual information and the underlying REST API, go to          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
-    /// with Archives in Amazon Glacier</a>           and          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html">List
-    /// Multipart Uploads  </a> in the <i>Amazon Glacier Developer Guide</i>.
+    /// For conceptual information and the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
+    /// with Archives in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html">List
+    /// Multipart Uploads </a> in the <i>Amazon Glacier Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class ListMultipartUploadsRequest : AmazonGlacierRequest
@@ -91,7 +91,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates ListMultipartUploadsRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-',    in which case Amazon Glacier uses the AWS Account ID associated with the credentials used    to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
+        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
         /// <param name="vaultName">The name of the vault.</param>
         public ListMultipartUploadsRequest(string accountId, string vaultName)
         {
@@ -103,9 +103,9 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account
-        /// ID or optionally a '-',          in which case Amazon Glacier uses the AWS Account
-        /// ID associated with the credentials used          to sign the request. If you specify
-        /// your Account ID, do not include hyphens in it. 
+        /// ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated
+        /// with the credentials used to sign the request. If you specify your Account ID, do
+        /// not include hyphens in it. 
         /// </para>
         /// </summary>
         public string AccountId
@@ -123,8 +123,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Specifies the maximum number of uploads returned in the response body.          If
-        /// this value is not specified, the List Uploads operation returns up to 1,000 uploads.
+        /// Specifies the maximum number of uploads returned in the response body. If this value
+        /// is not specified, the List Uploads operation returns up to 1,000 uploads.
         /// </para>
         /// </summary>
         public int Limit
@@ -143,9 +143,9 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property UploadIdMarker. 
         /// <para>
         /// An opaque string used for pagination. This value specifies the upload at which the
-        /// listing of uploads should begin.          Get the marker value from a previous List
-        /// Uploads response.          You need only include the marker if you are continuing
-        /// the pagination of results started in a previous List Uploads request.
+        /// listing of uploads should begin. Get the marker value from a previous List Uploads
+        /// response. You need only include the marker if you are continuing the pagination of
+        /// results started in a previous List Uploads request.
         /// </para>
         /// </summary>
         public string UploadIdMarker

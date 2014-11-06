@@ -42,8 +42,8 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property EndDate. 
         /// <para>
         /// The end of the date range in UTC for vault inventory retrieval that includes archives
-        /// created before this date.            A string representation of ISO 8601 date format,
-        /// for example, 2013-03-20T17:03:43Z.
+        /// created before this date. A string representation of ISO 8601 date format, for example,
+        /// 2013-03-20T17:03:43Z.
         /// </para>
         /// </summary>
         public string EndDate
@@ -62,8 +62,8 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property Format. 
         /// <para>
         /// The output format for the vault inventory list, which is set by the <b>InitiateJob</b>
-        /// request             when initiating a job to retrieve a vault inventory. Valid values
-        /// are "CSV" and "JSON".
+        /// request when initiating a job to retrieve a vault inventory. Valid values are "CSV"
+        /// and "JSON".
         /// </para>
         /// </summary>
         public string Format
@@ -82,8 +82,8 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// Specifies the maximum number of inventory items returned per vault inventory retrieval
-        /// request.             This limit is set when initiating the job with the a <b>InitiateJob</b>
-        /// request. 
+        /// request. This limit is set when initiating the job with the a <b>InitiateJob</b> request.
+        /// 
         /// </para>
         /// </summary>
         public string Limit
@@ -102,10 +102,10 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An opaque string that represents where to continue pagination of the vault inventory
-        /// retrieval results.            You use the marker in a new <b>InitiateJob</b> request
-        /// to obtain additional inventory items.         If there are no more inventory items,
-        /// this value is <code>null</code>. For more information, see        <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
-        ///            Range Inventory Retrieval</a>.
+        /// retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain
+        /// additional inventory items. If there are no more inventory items, this value is <code>null</code>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
+        /// Range Inventory Retrieval</a>.
         /// </para>
         /// </summary>
         public string Marker
@@ -124,8 +124,8 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property StartDate. 
         /// <para>
         /// The start of the date range in UTC for vault inventory retrieval that includes archives
-        /// created             on or after this date. A string representation of ISO 8601 date
-        /// format, for example, 2013-03-20T17:03:43Z.
+        /// created on or after this date. A string representation of ISO 8601 date format, for
+        /// example, 2013-03-20T17:03:43Z.
         /// </para>
         /// </summary>
         public string StartDate

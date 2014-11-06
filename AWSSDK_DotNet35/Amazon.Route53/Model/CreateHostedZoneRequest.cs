@@ -52,12 +52,20 @@ namespace Amazon.Route53.Model
     /// it is not yet available on all DNS servers. The status of the zone changes to <code>INSYNC</code>
     /// when the NS and SOA records are available on all Route 53 DNS servers. 
     /// </para>
+    ///  
+    /// <para>
+    /// When trying to create a hosted zone using a reusable delegation set, you could specify
+    /// an optional DelegationSetId, and Route53 would assign those 4 NS records for the zone,
+    /// instead of alloting a new one.
+    /// </para>
     /// </summary>
     public partial class CreateHostedZoneRequest : AmazonRoute53Request
     {
         private string _name;
+        private VPC _vPC;
         private string _callerReference;
         private HostedZoneConfig _hostedZoneConfig;
+        private string _delegationSetId;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -103,6 +111,25 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
+        /// Gets and sets the property VPC. 
+        /// <para>
+        /// The VPC that you want your hosted zone to be associated with. By providing this parameter,
+        /// your newly created hosted cannot be resolved anywhere other than the given VPC.
+        /// </para>
+        /// </summary>
+        public VPC VPC
+        {
+            get { return this._vPC; }
+            set { this._vPC = value; }
+        }
+
+        // Check to see if VPC property is set
+        internal bool IsSetVPC()
+        {
+            return this._vPC != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CallerReference. 
         /// <para>
         /// A unique string that identifies the request and that allows failed <code>CreateHostedZone</code>
@@ -145,6 +172,25 @@ namespace Amazon.Route53.Model
         internal bool IsSetHostedZoneConfig()
         {
             return this._hostedZoneConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DelegationSetId. 
+        /// <para>
+        /// The delegation set id of the reusable delgation set whose NS records you want to assign
+        /// to the new hosted zone.
+        /// </para>
+        /// </summary>
+        public string DelegationSetId
+        {
+            get { return this._delegationSetId; }
+            set { this._delegationSetId = value; }
+        }
+
+        // Check to see if DelegationSetId property is set
+        internal bool IsSetDelegationSetId()
+        {
+            return this._delegationSetId != null;
         }
 
     }

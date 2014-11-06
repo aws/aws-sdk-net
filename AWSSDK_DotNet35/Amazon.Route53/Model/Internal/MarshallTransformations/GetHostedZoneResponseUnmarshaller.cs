@@ -68,6 +68,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         response.DelegationSet = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("VPCs/VPC", targetDepth))
+                    {
+                        var unmarshaller = VPCUnmarshaller.Instance;
+                        response.VPCs.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

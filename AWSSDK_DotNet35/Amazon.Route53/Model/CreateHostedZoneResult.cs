@@ -35,6 +35,7 @@ namespace Amazon.Route53.Model
         private HostedZone _hostedZone;
         private ChangeInfo _changeInfo;
         private DelegationSet _delegationSet;
+        private VPC _vPC;
         private string _location;
 
         /// <summary>
@@ -91,6 +92,21 @@ namespace Amazon.Route53.Model
         internal bool IsSetDelegationSet()
         {
             return this._delegationSet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VPC.
+        /// </summary>
+        public VPC VPC
+        {
+            get { return this._vPC; }
+            set { this._vPC = value; }
+        }
+
+        // Check to see if VPC property is set
+        internal bool IsSetVPC()
+        {
+            return this._vPC != null;
         }
 
         /// <summary>

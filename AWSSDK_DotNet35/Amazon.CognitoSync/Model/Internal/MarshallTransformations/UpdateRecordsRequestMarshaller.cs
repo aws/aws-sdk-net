@@ -61,6 +61,12 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeviceId())
+                {
+                    context.Writer.WritePropertyName("DeviceId");
+                    context.Writer.Write(publicRequest.DeviceId);
+                }
+
                 if(publicRequest.IsSetRecordPatches())
                 {
                     context.Writer.WritePropertyName("RecordPatches");

@@ -31,19 +31,19 @@ namespace Amazon.Glacier.Model
     /// Container for the parameters to the AbortMultipartUpload operation.
     /// This operation aborts a multipart upload identified by the upload ID.
     /// 
-    ///               
+    ///  
     /// <para>
     /// After the Abort Multipart Upload request succeeds, you cannot upload any more parts
-    /// to the            multipart upload or complete the multipart upload. Aborting a completed upload
-    /// fails.            However, aborting an already-aborted upload will succeed, for a short time.
-    /// For more            information about uploading a part and completing a multipart upload, see
+    /// to the multipart upload or complete the multipart upload. Aborting a completed upload
+    /// fails. However, aborting an already-aborted upload will succeed, for a short time.
+    /// For more information about uploading a part and completing a multipart upload, see
     /// <a>UploadMultipartPart</a> and <a>CompleteMultipartUpload</a>.
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// This operation is idempotent.
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// An AWS account has full permission to perform all operations (actions). However, AWS
     /// Identity and Access Management (IAM) users don't have any permissions by default.
@@ -51,11 +51,11 @@ namespace Amazon.Glacier.Model
     /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
     /// Control Using AWS Identity and Access Management (IAM)</a>.
     /// </para>
-    ///       
+    ///  
     /// <para>
-    ///  For conceptual information and underlying REST API, go to          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
-    /// with Archives in Amazon Glacier</a>          and          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort
-    /// Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>.      
+    ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
+    /// with Archives in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort
+    /// Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. 
     /// </para>
     /// </summary>
     public partial class AbortMultipartUploadRequest : AmazonGlacierRequest
@@ -83,7 +83,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates AbortMultipartUploadRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-',    in which case Amazon Glacier uses the AWS Account ID associated with the credentials used    to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
+        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="uploadId">The upload ID of the multipart upload to delete.</param>
         public AbortMultipartUploadRequest(string accountId, string vaultName, string uploadId)
@@ -97,9 +97,9 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account
-        /// ID or optionally a '-',          in which case Amazon Glacier uses the AWS Account
-        /// ID associated with the credentials used          to sign the request. If you specify
-        /// your Account ID, do not include hyphens in it. 
+        /// ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated
+        /// with the credentials used to sign the request. If you specify your Account ID, do
+        /// not include hyphens in it. 
         /// </para>
         /// </summary>
         public string AccountId

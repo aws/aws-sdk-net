@@ -53,6 +53,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("maxitems", StringUtils.FromString(publicRequest.MaxItems));
+            
+            if (publicRequest.IsSetDelegationSetId())
+                request.Parameters.Add("delegationsetid", StringUtils.FromString(publicRequest.DelegationSetId));
             request.ResourcePath = uriResourcePath;
 
 

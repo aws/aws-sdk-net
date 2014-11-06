@@ -384,6 +384,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
         [TestCategory("RDS")]
         public void OptionGroupTests()
         {
+            string ogNamePrefix = "simple-og";
+
+            var groups = Client.DescribeOptionGroups().OptionGroupsList;
+            foreach(var group in groups)
+            {
+                var groupName = group.OptionGroupName;
+
+                if (groupName.IndexOf(ogNamePrefix, StringComparison.OrdinalIgnoreCase) >= 0)
+                    Client.DeleteOptionGroup(new DeleteOptionGroupRequest
+                    {
+                        OptionGroupName = groupName
+                    });
+            }
+
+
             var name = "simple-og" + DateTime.Now.Ticks;
             var optionGroup = Client.CreateOptionGroup(new CreateOptionGroupRequest
             {
@@ -402,7 +417,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
                 TargetOptionGroupDescription = "copy"
             });
 
-            var groups = Client.DescribeOptionGroups(new DescribeOptionGroupsRequest
+            groups = Client.DescribeOptionGroups(new DescribeOptionGroupsRequest
             {
                 OptionGroupName = copyOptionGroupName
             }).OptionGroupsList;
@@ -411,6 +426,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
             Client.DeleteOptionGroup(new DeleteOptionGroupRequest
             {
                 OptionGroupName = copyOptionGroupName
+            });
+            Client.DeleteOptionGroup(new DeleteOptionGroupRequest
+            {
+                OptionGroupName = optionGroupName
             });
         }
 

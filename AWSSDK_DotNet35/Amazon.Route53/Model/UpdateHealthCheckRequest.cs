@@ -33,7 +33,7 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    ///  To update a health check, send a <code>POST</code> request to the <code>2013-05-27/healthcheck/<i>health
+    ///  To update a health check, send a <code>POST</code> request to the <code>2013-04-01/healthcheck/<i>health
     /// check ID</i></code> resource. The request body must include an XML document with an
     /// <code>UpdateHealthCheckRequest</code> element. The response returns an <code>UpdateHealthCheckResponse</code>
     /// element, which contains metadata about the health check.

@@ -35,12 +35,16 @@ namespace Amazon.Route53.Model
     /// list of hosted zones is displayed on a single page. You can control the length of
     /// the page that is displayed by using the <code>MaxItems</code> parameter. You can use
     /// the <code>Marker</code> parameter to control the hosted zone that the list begins
-    /// with.
+    /// with. 
+    /// 
+    ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
+    /// greater than 100, Amazon Route 53 returns only the first 100.</note>
     /// </summary>
     public partial class ListHostedZonesRequest : AmazonRoute53Request
     {
         private string _marker;
         private string _maxItems;
+        private string _delegationSetId;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -83,6 +87,21 @@ namespace Amazon.Route53.Model
         internal bool IsSetMaxItems()
         {
             return this._maxItems != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DelegationSetId.
+        /// </summary>
+        public string DelegationSetId
+        {
+            get { return this._delegationSetId; }
+            set { this._delegationSetId = value; }
+        }
+
+        // Check to see if DelegationSetId property is set
+        internal bool IsSetDelegationSetId()
+        {
+            return this._delegationSetId != null;
         }
 
     }

@@ -30,20 +30,20 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Container for the parameters to the DeleteVault operation.
     /// This operation deletes a vault. Amazon Glacier will delete a vault only if there are
-    /// no archives            in the vault as of the last inventory and there have been no writes
-    /// to the vault since            the last inventory. If either of these conditions is not satisfied,
-    /// the vault deletion            fails (that is, the vault is not removed) and Amazon Glacier
-    /// returns an error. You can use                <a>DescribeVault</a> to return the number of            archives
-    /// in a vault, and you can use <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">Initiate
-    /// a Job (POST jobs)</a> to initiate a new inventory retrieval for a            vault. The inventory
+    /// no archives in the vault as of the last inventory and there have been no writes to
+    /// the vault since the last inventory. If either of these conditions is not satisfied,
+    /// the vault deletion fails (that is, the vault is not removed) and Amazon Glacier returns
+    /// an error. You can use <a>DescribeVault</a> to return the number of archives in a vault,
+    /// and you can use <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">Initiate
+    /// a Job (POST jobs)</a> to initiate a new inventory retrieval for a vault. The inventory
     /// contains the archive IDs you use to delete archives using <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html">Delete
     /// Archive (DELETE archive)</a>.
     /// 
-    ///         
+    ///  
     /// <para>
     /// This operation is idempotent.
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// An AWS account has full permission to perform all operations (actions). However, AWS
     /// Identity and Access Management (IAM) users don't have any permissions by default.
@@ -51,11 +51,11 @@ namespace Amazon.Glacier.Model
     /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
     /// Control Using AWS Identity and Access Management (IAM)</a>.
     /// </para>
-    ///       
+    ///  
     /// <para>
-    ///  For conceptual information and underlying REST API, go to          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html">Deleting
-    /// a Vault in Amazon Glacier</a>          and          <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html">Delete
-    /// Vault </a> in the <i>Amazon Glacier Developer Guide</i>.      
+    ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html">Deleting
+    /// a Vault in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html">Delete
+    /// Vault </a> in the <i>Amazon Glacier Developer Guide</i>. 
     /// </para>
     /// </summary>
     public partial class DeleteVaultRequest : AmazonGlacierRequest
@@ -80,7 +80,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates DeleteVaultRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-',    in which case Amazon Glacier uses the AWS Account ID associated with the credentials used    to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
+        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
         /// <param name="vaultName">The name of the vault.</param>
         public DeleteVaultRequest(string accountId, string vaultName)
         {
@@ -92,9 +92,9 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account
-        /// ID or optionally a '-',          in which case Amazon Glacier uses the AWS Account
-        /// ID associated with the credentials used          to sign the request. If you specify
-        /// your Account ID, do not include hyphens in it. 
+        /// ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated
+        /// with the credentials used to sign the request. If you specify your Account ID, do
+        /// not include hyphens in it. 
         /// </para>
         /// </summary>
         public string AccountId

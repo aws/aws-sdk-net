@@ -55,6 +55,13 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                         unmarshalledObject.AccessLog = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AdditionalAttributes/member", targetDepth))
+                    {
+                        var unmarshaller = AdditionalAttributeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AdditionalAttributes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("ConnectionDraining", targetDepth))
                     {
                         var unmarshaller = ConnectionDrainingUnmarshaller.Instance;

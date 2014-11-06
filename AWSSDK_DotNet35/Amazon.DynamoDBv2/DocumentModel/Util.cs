@@ -15,7 +15,11 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Text;
+
 using Amazon.DynamoDBv2.Model;
+using Amazon.Util;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -274,6 +278,136 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 default:
                     throw new ArgumentOutOfRangeException("value", "Invalid ConditionalOperatorValues value");
             }
+        }
+    }
+
+    internal static class Common
+    {
+        private const string AwsVariablePrefix = "awsavar";
+
+        // Convert collection of AttributeValueUpdate to an update expression. This is needed when doing an update
+        // with a conditional expression.
+        public static void ConvertAttributeUpdatesToUpdateExpression(Dictionary<string, AttributeValueUpdate> attributesToUpdates,
+            out string statement,
+            out Dictionary<string, AttributeValue> expressionAttributeValues,
+            out Dictionary<string, string> expressionAttributes)
+        {
+            expressionAttributeValues = new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
+            expressionAttributes = new Dictionary<string, string>(StringComparer.Ordinal);
+
+            // Build an expression string with a SET clause for the added/modified attributes and 
+            // REMOVE clause for the attributes set to null.
+            int attributeCount = 0;
+            StringBuilder sets = new StringBuilder();
+            StringBuilder removes = new StringBuilder();
+            foreach (var kvp in attributesToUpdates)
+            {
+                var attribute = kvp.Key;
+                var update = kvp.Value;
+
+                string variableName = GetVariableName(ref attributeCount);
+                var attributeReference = GetAttributeReference(variableName);
+                var attributeValueReference = GetAttributeValueReference(variableName);
+
+                if (update.Action == AttributeAction.DELETE)
+                {
+                    if (removes.Length > 0)
+                        removes.Append(", ");
+                    removes.Append(attributeReference);
+                }
+                else
+                {
+                    if (sets.Length > 0)
+                        sets.Append(", ");
+                    sets.AppendFormat("{0} = {1}", attributeReference, attributeValueReference);
+
+                    // Add the attribute value for the variable in the added in the expression
+                    expressionAttributeValues.Add(attributeValueReference, update.Value);
+                }
+
+                // Add the attribute name for the variable in the added in the expression
+                expressionAttributes.Add(attributeReference, attribute);
+            }
+
+            // Combine the SET and REMOVE clause
+            StringBuilder statementBuilder = new StringBuilder();
+            if (sets.Length > 0)
+            {
+                statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "SET {0}", sets.ToString());
+            }
+            if (removes.Length > 0)
+            {
+                if (sets.Length > 0)
+                    statementBuilder.Append(" ");
+
+                statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "REMOVE {0}", removes.ToString());
+            }
+
+            statement = statementBuilder.ToString();
+        }
+
+        public static void ConvertAttributesToGetToProjectionExpression(QueryRequest request)
+        {
+            if (request.IsSetAttributesToGet() &&
+                (request.IsSetExpressionAttributeNames() || request.IsSetExpressionAttributeValues() || request.IsSetFilterExpression()))
+            {
+                var attributesToGet = request.AttributesToGet;
+                var attributeNames = request.ExpressionAttributeNames;
+
+                request.ProjectionExpression = AttributesToGetAsProjectionExpression(attributesToGet, attributeNames);
+                request.AttributesToGet = null;
+            }
+        }
+        public static void ConvertAttributesToGetToProjectionExpression(ScanRequest request)
+        {
+            if (request.IsSetAttributesToGet() &&
+                (request.IsSetExpressionAttributeNames() || request.IsSetExpressionAttributeValues() || request.IsSetFilterExpression()))
+            {
+                var attributesToGet = request.AttributesToGet;
+                var attributeNames = request.ExpressionAttributeNames;
+
+                request.ProjectionExpression = AttributesToGetAsProjectionExpression(attributesToGet, attributeNames);
+                request.AttributesToGet = null;
+            }
+        }
+
+        private static string AttributesToGetAsProjectionExpression(List<string> attributesToGet, Dictionary<string, string> attributeNames)
+        {
+            int attributeCount = attributeNames.Count;
+            var referencesToGet = new List<string>();
+            foreach (var attribute in attributesToGet)
+            {
+                string attributeReference = GetAttributeReference(attribute, attributeNames, ref attributeCount);
+                referencesToGet.Add(attributeReference);
+            }
+            var projectionExpression = string.Join(", ", referencesToGet.ToArray());
+            return projectionExpression;
+        }
+
+        private static string GetAttributeReference(string attribute, Dictionary<string, string> attributeNames, ref int attributeCount)
+        {
+            string attributeReference;
+            if (!AWSSDKUtils.TryFindByValue(attributeNames, attribute, StringComparer.Ordinal, out attributeReference))
+            {
+                var variableName = GetVariableName(ref attributeCount);
+                attributeReference = GetAttributeReference(variableName);
+                attributeNames.Add(attributeReference, attribute);
+            }
+            return attributeReference;
+        }
+        public static string GetAttributeReference(string attributeName)
+        {
+            return string.Format(CultureInfo.InvariantCulture, "#{0}", attributeName);
+        }
+        public static string GetAttributeValueReference(string attributeName)
+        {
+            return string.Format(CultureInfo.InvariantCulture, ":{0}", attributeName);
+        }
+        public static string GetVariableName(ref int attributeCount)
+        {
+            attributeCount++;
+            string variableName = AwsVariablePrefix + attributeCount;
+            return variableName;
         }
     }
  

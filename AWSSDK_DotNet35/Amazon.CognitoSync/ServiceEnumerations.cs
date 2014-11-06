@@ -63,4 +63,52 @@ namespace Amazon.CognitoSync
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type Platform.
+    /// </summary>
+    public class Platform : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADM for Platform
+        /// </summary>
+        public static readonly Platform ADM = new Platform("ADM");
+        /// <summary>
+        /// Constant APNS for Platform
+        /// </summary>
+        public static readonly Platform APNS = new Platform("APNS");
+        /// <summary>
+        /// Constant APNS_SANDBOX for Platform
+        /// </summary>
+        public static readonly Platform APNS_SANDBOX = new Platform("APNS_SANDBOX");
+        /// <summary>
+        /// Constant GCM for Platform
+        /// </summary>
+        public static readonly Platform GCM = new Platform("GCM");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public Platform(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Platform FindValue(string value)
+        {
+            return FindValue<Platform>(value);
+        }
+
+        public static implicit operator Platform(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

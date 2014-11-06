@@ -44,6 +44,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///  To successfully call this API, you must provide the same account credentials as were
     /// used to create the load balancer. 
     /// </para>
+    ///  <note> By design, if the load balancer does not exist or has already been deleted,
+    /// a call to <code>DeleteLoadBalancer</code> action still succeeds. </note>
     /// </summary>
     public partial class DeleteLoadBalancerRequest : AmazonElasticLoadBalancingRequest
     {

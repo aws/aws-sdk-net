@@ -35,7 +35,14 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// time, only the back-end server authentication policy type can be applied to the back-end
     /// ports; this policy type is composed of multiple public key policies. 
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// The <i>SetLoadBalancerPoliciesForBackendServer</i> replaces the current set of policies
+    /// associated with the specified instance port. Every time you use this action to enable
+    /// the policies, use the <code>PolicyNames</code> parameter to list all the policies
+    /// you want to enable.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// You can use <a>DescribeLoadBalancers</a> or <a>DescribeLoadBalancerPolicies</a> action
     /// to verify that the policy has been associated with the back-end server.

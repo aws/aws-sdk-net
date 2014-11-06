@@ -48,10 +48,10 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates JobParameters with the parameterized properties
         /// </summary>
-        /// <param name="format">When initiating a job to retrieve a vault inventory, you can optionally add this parameter to your request to specify the output format.    If you are initiating an inventory job and do not specify a Format field, JSON is the default format.   Valid values are "CSV" and "JSON". </param>
-        /// <param name="type">The job type. You can initiate a job to retrieve an archive or get an inventory of a vault.    Valid values are "archive-retrieval" and "inventory-retrieval".</param>
-        /// <param name="archiveId">The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set to archive-retrieval.    An error occurs if you specify this request parameter for an inventory retrieval job request. </param>
-        /// <param name="description">The optional description for the job.   The description must be less than or equal to 1,024 bytes.    The allowable characters are 7-bit ASCII without control codes-specifically, ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.</param>
+        /// <param name="format">When initiating a job to retrieve a vault inventory, you can optionally add this parameter to your request to specify the output format. If you are initiating an inventory job and do not specify a Format field, JSON is the default format. Valid values are "CSV" and "JSON". </param>
+        /// <param name="type">The job type. You can initiate a job to retrieve an archive or get an inventory of a vault. Valid values are "archive-retrieval" and "inventory-retrieval".</param>
+        /// <param name="archiveId">The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set to archive-retrieval. An error occurs if you specify this request parameter for an inventory retrieval job request. </param>
+        /// <param name="description">The optional description for the job. The description must be less than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII without control codes-specifically, ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.</param>
         public JobParameters(string format, string type, string archiveId, string description)
         {
             _format = format;
@@ -64,8 +64,8 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property ArchiveId. 
         /// <para>
         /// The ID of the archive that you want to retrieve. This field is required only if <code>Type</code>
-        /// is set to archive-retrieval.          An error occurs if you specify this request
-        /// parameter for an inventory retrieval job request. 
+        /// is set to archive-retrieval. An error occurs if you specify this request parameter
+        /// for an inventory retrieval job request. 
         /// </para>
         /// </summary>
         public string ArchiveId
@@ -83,9 +83,9 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The optional description for the job.         The description must be less than or
-        /// equal to 1,024 bytes.          The allowable characters are 7-bit ASCII without control
-        /// codes-specifically, ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.
+        /// The optional description for the job. The description must be less than or equal to
+        /// 1,024 bytes. The allowable characters are 7-bit ASCII without control codes-specifically,
+        /// ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.
         /// </para>
         /// </summary>
         public string Description
@@ -104,9 +104,9 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property Format. 
         /// <para>
         /// When initiating a job to retrieve a vault inventory, you can optionally add this parameter
-        /// to your request to specify the output format.          If you are initiating an inventory
-        /// job and do not specify a Format field, JSON is the default format.         Valid values
-        /// are "CSV" and "JSON". 
+        /// to your request to specify the output format. If you are initiating an inventory job
+        /// and do not specify a Format field, JSON is the default format. Valid values are "CSV"
+        /// and "JSON". 
         /// </para>
         /// </summary>
         public string Format
@@ -143,14 +143,13 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property RetrievalByteRange. 
         /// <para>
         /// The byte range to retrieve for an archive retrieval. in the form "<i>StartByteValue</i>-<i>EndByteValue</i>"
-        ///          If not specified, the whole archive is retrieved. If specified, the byte
-        /// range must be megabyte          (1024*1024) aligned which means that <i>StartByteValue</i>
-        /// must be divisible by 1 MB and <i>EndByteValue</i>          plus 1 must be divisible
-        /// by 1 MB or be the end of the archive specified as the archive byte size          value
-        /// minus 1. If RetrievalByteRange is not megabyte aligned, this operation returns a 400
-        /// response.         
+        /// If not specified, the whole archive is retrieved. If specified, the byte range must
+        /// be megabyte (1024*1024) aligned which means that <i>StartByteValue</i> must be divisible
+        /// by 1 MB and <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of
+        /// the archive specified as the archive byte size value minus 1. If RetrievalByteRange
+        /// is not megabyte aligned, this operation returns a 400 response. 
         /// </para>
-        ///          
+        ///  
         /// <para>
         /// An error occurs if you specify this field for an inventory retrieval job request.
         /// 
@@ -172,8 +171,8 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property SNSTopic. 
         /// <para>
         /// The Amazon SNS topic ARN to which Amazon Glacier sends a notification when the job
-        /// is completed and the output is ready for you to download.          The specified topic
-        /// publishes the notification to its subscribers. The SNS topic must exist.
+        /// is completed and the output is ready for you to download. The specified topic publishes
+        /// the notification to its subscribers. The SNS topic must exist.
         /// </para>
         /// </summary>
         public string SNSTopic
@@ -192,7 +191,7 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The job type. You can initiate a job to retrieve an archive or get an inventory of
-        /// a vault.          Valid values are "archive-retrieval" and "inventory-retrieval".
+        /// a vault. Valid values are "archive-retrieval" and "inventory-retrieval".
         /// </para>
         /// </summary>
         public string Type

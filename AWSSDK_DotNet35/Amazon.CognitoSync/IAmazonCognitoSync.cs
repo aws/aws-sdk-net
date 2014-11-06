@@ -39,6 +39,13 @@ namespace Amazon.CognitoSync
     /// can store up to 1 MB of key-value pairs, and you can have up to 20 datasets per user
     /// identity.
     /// </para>
+    ///  
+    /// <para>
+    /// With Amazon Cognito Sync, the data stored for each identity is accessible only to
+    /// credentials assigned to that identity. In order to use the Cognito Sync service, you
+    /// need to make API calls using credentials retrieved with <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/Welcome.html">Amazon
+    /// Cognito Identity service</a>.
+    /// </para>
     /// </summary>
     public partial interface IAmazonCognitoSync : IDisposable
     {
@@ -99,7 +106,10 @@ namespace Amazon.CognitoSync
         #region  DescribeDataset
 
         /// <summary>
-        /// Gets metadata about a dataset by identity and dataset name.
+        /// Gets metadata about a dataset by identity and dataset name. The credentials used to
+        /// make this API call need to have access to the identity data. With Amazon Cognito Sync,
+        /// each identity has access only to its own data. You should use Amazon Cognito Identity
+        /// service to retrieve the credentials necessary to make this API call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
         /// 
@@ -246,10 +256,63 @@ namespace Amazon.CognitoSync
 
         #endregion
         
+        #region  GetIdentityPoolConfiguration
+
+        /// <summary>
+        /// Gets the configuration settings of an identity pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityPoolConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetIdentityPoolConfiguration service method, as returned by CognitoSync.</returns>
+        /// <exception cref="InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        GetIdentityPoolConfigurationResponse GetIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdentityPoolConfiguration operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityPoolConfiguration operation on AmazonCognitoSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdentityPoolConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginGetIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIdentityPoolConfiguration operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityPoolConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetIdentityPoolConfigurationResult from CognitoSync.</returns>
+        GetIdentityPoolConfigurationResponse EndGetIdentityPoolConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListDatasets
 
         /// <summary>
-        /// Lists datasets for an identity.
+        /// Lists datasets for an identity. The credentials used to make this API call need to
+        /// have access to the identity data. With Amazon Cognito Sync, each identity has access
+        /// only to its own data. You should use Amazon Cognito Identity service to retrieve the
+        /// credentials necessary to make this API call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
         /// 
@@ -344,7 +407,10 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Gets paginated records, optionally changed after a particular sync count for a dataset
-        /// and identity.
+        /// and identity. The credentials used to make this API call need to have access to the
+        /// identity data. With Amazon Cognito Sync, each identity has access only to its own
+        /// data. You should use Amazon Cognito Identity service to retrieve the credentials necessary
+        /// to make this API call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecords service method.</param>
         /// 
@@ -391,10 +457,222 @@ namespace Amazon.CognitoSync
 
         #endregion
         
+        #region  RegisterDevice
+
+        /// <summary>
+        /// Registers a device to receive push sync notifications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDevice service method.</param>
+        /// 
+        /// <returns>The response from the RegisterDevice service method, as returned by CognitoSync.</returns>
+        /// <exception cref="InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="InvalidConfigurationException">
+        /// 
+        /// </exception>
+        /// <exception cref="InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        RegisterDeviceResponse RegisterDevice(RegisterDeviceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterDevice operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDevice operation on AmazonCognitoSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterDevice
+        ///         operation.</returns>
+        IAsyncResult BeginRegisterDevice(RegisterDeviceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterDevice operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterDevice.</param>
+        /// 
+        /// <returns>Returns a  RegisterDeviceResult from CognitoSync.</returns>
+        RegisterDeviceResponse EndRegisterDevice(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SetIdentityPoolConfiguration
+
+        /// <summary>
+        /// Sets the necessary configuration for push sync.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityPoolConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the SetIdentityPoolConfiguration service method, as returned by CognitoSync.</returns>
+        /// <exception cref="InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        SetIdentityPoolConfigurationResponse SetIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetIdentityPoolConfiguration operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityPoolConfiguration operation on AmazonCognitoSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetIdentityPoolConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginSetIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetIdentityPoolConfiguration operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityPoolConfiguration.</param>
+        /// 
+        /// <returns>Returns a  SetIdentityPoolConfigurationResult from CognitoSync.</returns>
+        SetIdentityPoolConfigurationResponse EndSetIdentityPoolConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SubscribeToDataset
+
+        /// <summary>
+        /// Subscribes to receive notifications when a dataset is modified by another device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubscribeToDataset service method.</param>
+        /// 
+        /// <returns>The response from the SubscribeToDataset service method, as returned by CognitoSync.</returns>
+        /// <exception cref="InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="InvalidConfigurationException">
+        /// 
+        /// </exception>
+        /// <exception cref="InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        SubscribeToDatasetResponse SubscribeToDataset(SubscribeToDatasetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SubscribeToDataset operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SubscribeToDataset operation on AmazonCognitoSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSubscribeToDataset
+        ///         operation.</returns>
+        IAsyncResult BeginSubscribeToDataset(SubscribeToDatasetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SubscribeToDataset operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSubscribeToDataset.</param>
+        /// 
+        /// <returns>Returns a  SubscribeToDatasetResult from CognitoSync.</returns>
+        SubscribeToDatasetResponse EndSubscribeToDataset(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UnsubscribeFromDataset
+
+        /// <summary>
+        /// Unsubscribe from receiving notifications when a dataset is modified by another device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnsubscribeFromDataset service method.</param>
+        /// 
+        /// <returns>The response from the UnsubscribeFromDataset service method, as returned by CognitoSync.</returns>
+        /// <exception cref="InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="InvalidConfigurationException">
+        /// 
+        /// </exception>
+        /// <exception cref="InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        UnsubscribeFromDatasetResponse UnsubscribeFromDataset(UnsubscribeFromDatasetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UnsubscribeFromDataset operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UnsubscribeFromDataset operation on AmazonCognitoSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnsubscribeFromDataset
+        ///         operation.</returns>
+        IAsyncResult BeginUnsubscribeFromDataset(UnsubscribeFromDatasetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UnsubscribeFromDataset operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnsubscribeFromDataset.</param>
+        /// 
+        /// <returns>Returns a  UnsubscribeFromDatasetResult from CognitoSync.</returns>
+        UnsubscribeFromDatasetResponse EndUnsubscribeFromDataset(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateRecords
 
         /// <summary>
-        /// Posts updates to records and add and delete records for a dataset and user.
+        /// Posts updates to records and add and delete records for a dataset and user. The credentials
+        /// used to make this API call need to have access to the identity data. With Amazon Cognito
+        /// Sync, each identity has access only to its own data. You should use Amazon Cognito
+        /// Identity service to retrieve the credentials necessary to make this API call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecords service method.</param>
         /// 

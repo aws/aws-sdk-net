@@ -86,7 +86,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates CreateLoadBalancerRequest with the parameterized properties
         /// </summary>
-        /// <param name="loadBalancerName"> The name associated with the load balancer. The name must be unique within your set of load balancers, must have a maximum of 32 characters, and must only contain alphanumeric characters or hyphens. </param>
+        /// <param name="loadBalancerName"> The name associated with the load balancer.   The name must be unique within your set of load balancers, must have a maximum of 32 characters, and must only contain alphanumeric characters or hyphens. </param>
         public CreateLoadBalancerRequest(string loadBalancerName)
         {
             _loadBalancerName = loadBalancerName;
@@ -95,8 +95,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates CreateLoadBalancerRequest with the parameterized properties
         /// </summary>
-        /// <param name="loadBalancerName"> The name associated with the load balancer. The name must be unique within your set of load balancers, must have a maximum of 32 characters, and must only contain alphanumeric characters or hyphens. </param>
-        /// <param name="listeners"> A list of the following tuples: Protocol, LoadBalancerPort, InstanceProtocol, InstancePort, and SSLCertificateId. </param>
+        /// <param name="loadBalancerName"> The name associated with the load balancer.   The name must be unique within your set of load balancers, must have a maximum of 32 characters, and must only contain alphanumeric characters or hyphens. </param>
+        /// <param name="listeners"> A list of the following tuples: Protocol, LoadBalancerPort, InstanceProtocol, InstancePort, and SSLCertificateId.  For information about the protocols and the ports supported by Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener Configurations for Elastic Load Balancing</a>.</param>
         /// <param name="availabilityZones"> A list of Availability Zones.   At least one Availability Zone must be specified. Specified Availability Zones must be in the same EC2 Region as the load balancer. Traffic will be equally distributed across all zones.   You can later add more Availability Zones after the creation of the load balancer by calling <a>EnableAvailabilityZonesForLoadBalancer</a> action. </param>
         public CreateLoadBalancerRequest(string loadBalancerName, List<Listener> listeners, List<string> availabilityZones)
         {
@@ -140,6 +140,12 @@ namespace Amazon.ElasticLoadBalancing.Model
         ///  A list of the following tuples: Protocol, LoadBalancerPort, InstanceProtocol, InstancePort,
         /// and SSLCertificateId. 
         /// </para>
+        ///  
+        /// <para>
+        /// For information about the protocols and the ports supported by Elastic Load Balancing,
+        /// see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+        /// Configurations for Elastic Load Balancing</a>.
+        /// </para>
         /// </summary>
         public List<Listener> Listeners
         {
@@ -156,9 +162,12 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  The name associated with the load balancer. The name must be unique within your set
-        /// of load balancers, must have a maximum of 32 characters, and must only contain alphanumeric
-        /// characters or hyphens. 
+        ///  The name associated with the load balancer. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The name must be unique within your set of load balancers, must have a maximum of
+        /// 32 characters, and must only contain alphanumeric characters or hyphens. 
         /// </para>
         /// </summary>
         public string LoadBalancerName
@@ -190,6 +199,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Specify the value <code>internal</code> for this option to create an internal load
         /// balancer with a DNS name that resolves to private IP addresses.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This option is only available for load balancers created within EC2-VPC.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Scheme
         {
