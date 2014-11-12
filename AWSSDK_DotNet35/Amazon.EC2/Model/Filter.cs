@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// A filter name and value pair that is used to return a more specific list of results.
+    /// Filters can be used to match a set of resources by various criteria, such as tags,
+    /// attributes, or IDs.
     /// </summary>
     public partial class Filter
     {
@@ -43,8 +45,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates Filter with the parameterized properties
         /// </summary>
-        /// <param name="name">The name of the filter.</param>
-        /// <param name="values">One or more filter values.</param>
+        /// <param name="name">The name of the filter. Filter names are case-sensitive.</param>
+        /// <param name="values">One or more filter values. Filter values are case-sensitive.</param>
         public Filter(string name, List<string> values)
         {
             _name = name;
@@ -54,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates Filter with the parameterized properties
         /// </summary>
-        /// <param name="name">The name of the filter.</param>
+        /// <param name="name">The name of the filter. Filter names are case-sensitive.</param>
         public Filter(string name)
         {
             _name = name;
@@ -63,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the filter.
+        /// The name of the filter. Filter names are case-sensitive.
         /// </para>
         /// </summary>
         public string Name
@@ -81,7 +83,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// One or more filter values.
+        /// One or more filter values. Filter values are case-sensitive.
         /// </para>
         /// </summary>
         public List<string> Values

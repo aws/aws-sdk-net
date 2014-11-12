@@ -351,31 +351,31 @@ namespace Amazon.SimpleDB
         /// <param name="request">Container for the necessary parameters to execute the BatchPutAttributes service method.</param>
         /// 
         /// <returns>The response from the BatchPutAttributes service method, as returned by SimpleDB.</returns>
-        /// <exception cref="DuplicateItemNameException">
+        /// <exception cref="Amazon.SimpleDB.Model.DuplicateItemNameException">
         /// The item name was specified more than once.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="MissingParameterException">
+        /// <exception cref="Amazon.SimpleDB.Model.MissingParameterException">
         /// The request must contain the specified missing parameter.
         /// </exception>
-        /// <exception cref="NoSuchDomainException">
+        /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
-        /// <exception cref="NumberDomainAttributesExceededException">
+        /// <exception cref="Amazon.SimpleDB.Model.NumberDomainAttributesExceededException">
         /// Too many attributes in this domain.
         /// </exception>
-        /// <exception cref="NumberDomainBytesExceededException">
+        /// <exception cref="Amazon.SimpleDB.Model.NumberDomainBytesExceededException">
         /// Too many bytes in this domain.
         /// </exception>
-        /// <exception cref="NumberItemAttributesExceededException">
+        /// <exception cref="Amazon.SimpleDB.Model.NumberItemAttributesExceededException">
         /// Too many attributes in this item.
         /// </exception>
-        /// <exception cref="NumberSubmittedAttributesExceededException">
+        /// <exception cref="Amazon.SimpleDB.Model.NumberSubmittedAttributesExceededException">
         /// Too many attributes exist in a single call.
         /// </exception>
-        /// <exception cref="NumberSubmittedItemsExceededException">
+        /// <exception cref="Amazon.SimpleDB.Model.NumberSubmittedItemsExceededException">
         /// Too many items exist in a single call.
         /// </exception>
         public BatchPutAttributesResponse BatchPutAttributes(BatchPutAttributesRequest request)
@@ -442,13 +442,13 @@ namespace Amazon.SimpleDB
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// 
         /// <returns>The response from the CreateDomain service method, as returned by SimpleDB.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="MissingParameterException">
+        /// <exception cref="Amazon.SimpleDB.Model.MissingParameterException">
         /// The request must contain the specified missing parameter.
         /// </exception>
-        /// <exception cref="NumberDomainsExceededException">
+        /// <exception cref="Amazon.SimpleDB.Model.NumberDomainsExceededException">
         /// Too many domains exist per this account.
         /// </exception>
         public CreateDomainResponse CreateDomain(CreateDomainRequest request)
@@ -517,16 +517,16 @@ namespace Amazon.SimpleDB
         /// <param name="request">Container for the necessary parameters to execute the DeleteAttributes service method.</param>
         /// 
         /// <returns>The response from the DeleteAttributes service method, as returned by SimpleDB.</returns>
-        /// <exception cref="AttributeDoesNotExistException">
+        /// <exception cref="Amazon.SimpleDB.Model.AttributeDoesNotExistException">
         /// The specified attribute does not exist.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="MissingParameterException">
+        /// <exception cref="Amazon.SimpleDB.Model.MissingParameterException">
         /// The request must contain the specified missing parameter.
         /// </exception>
-        /// <exception cref="NoSuchDomainException">
+        /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
         public DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
@@ -583,7 +583,7 @@ namespace Amazon.SimpleDB
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
         /// 
         /// <returns>The response from the DeleteDomain service method, as returned by SimpleDB.</returns>
-        /// <exception cref="MissingParameterException">
+        /// <exception cref="Amazon.SimpleDB.Model.MissingParameterException">
         /// The request must contain the specified missing parameter.
         /// </exception>
         public DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
@@ -640,10 +640,10 @@ namespace Amazon.SimpleDB
         /// <param name="request">Container for the necessary parameters to execute the DomainMetadata service method.</param>
         /// 
         /// <returns>The response from the DomainMetadata service method, as returned by SimpleDB.</returns>
-        /// <exception cref="MissingParameterException">
+        /// <exception cref="Amazon.SimpleDB.Model.MissingParameterException">
         /// The request must contain the specified missing parameter.
         /// </exception>
-        /// <exception cref="NoSuchDomainException">
+        /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
         public DomainMetadataResponse DomainMetadata(DomainMetadataRequest request)
@@ -707,13 +707,13 @@ namespace Amazon.SimpleDB
         /// <param name="request">Container for the necessary parameters to execute the GetAttributes service method.</param>
         /// 
         /// <returns>The response from the GetAttributes service method, as returned by SimpleDB.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="MissingParameterException">
+        /// <exception cref="Amazon.SimpleDB.Model.MissingParameterException">
         /// The request must contain the specified missing parameter.
         /// </exception>
-        /// <exception cref="NoSuchDomainException">
+        /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
         public GetAttributesResponse GetAttributes(GetAttributesRequest request)
@@ -772,10 +772,10 @@ namespace Amazon.SimpleDB
         /// </summary>
         /// 
         /// <returns>The response from the ListDomains service method, as returned by SimpleDB.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidNextTokenException">
         /// The specified NextToken is not valid.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         public ListDomainsResponse ListDomains()
@@ -794,10 +794,10 @@ namespace Amazon.SimpleDB
         /// <param name="request">Container for the necessary parameters to execute the ListDomains service method.</param>
         /// 
         /// <returns>The response from the ListDomains service method, as returned by SimpleDB.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidNextTokenException">
         /// The specified NextToken is not valid.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         public ListDomainsResponse ListDomains(ListDomainsRequest request)
@@ -894,25 +894,25 @@ namespace Amazon.SimpleDB
         /// <param name="request">Container for the necessary parameters to execute the PutAttributes service method.</param>
         /// 
         /// <returns>The response from the PutAttributes service method, as returned by SimpleDB.</returns>
-        /// <exception cref="AttributeDoesNotExistException">
+        /// <exception cref="Amazon.SimpleDB.Model.AttributeDoesNotExistException">
         /// The specified attribute does not exist.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="MissingParameterException">
+        /// <exception cref="Amazon.SimpleDB.Model.MissingParameterException">
         /// The request must contain the specified missing parameter.
         /// </exception>
-        /// <exception cref="NoSuchDomainException">
+        /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
-        /// <exception cref="NumberDomainAttributesExceededException">
+        /// <exception cref="Amazon.SimpleDB.Model.NumberDomainAttributesExceededException">
         /// Too many attributes in this domain.
         /// </exception>
-        /// <exception cref="NumberDomainBytesExceededException">
+        /// <exception cref="Amazon.SimpleDB.Model.NumberDomainBytesExceededException">
         /// Too many bytes in this domain.
         /// </exception>
-        /// <exception cref="NumberItemAttributesExceededException">
+        /// <exception cref="Amazon.SimpleDB.Model.NumberItemAttributesExceededException">
         /// Too many attributes in this item.
         /// </exception>
         public PutAttributesResponse PutAttributes(PutAttributesRequest request)
@@ -983,32 +983,32 @@ namespace Amazon.SimpleDB
         /// <param name="request">Container for the necessary parameters to execute the Select service method.</param>
         /// 
         /// <returns>The response from the Select service method, as returned by SimpleDB.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidNextTokenException">
         /// The specified NextToken is not valid.
         /// </exception>
-        /// <exception cref="InvalidNumberPredicatesException">
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidNumberPredicatesException">
         /// Too many predicates exist in the query expression.
         /// </exception>
-        /// <exception cref="InvalidNumberValueTestsException">
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidNumberValueTestsException">
         /// Too many predicates exist in the query expression.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="InvalidQueryExpressionException">
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidQueryExpressionException">
         /// The specified query expression syntax is not valid.
         /// </exception>
-        /// <exception cref="MissingParameterException">
+        /// <exception cref="Amazon.SimpleDB.Model.MissingParameterException">
         /// The request must contain the specified missing parameter.
         /// </exception>
-        /// <exception cref="NoSuchDomainException">
+        /// <exception cref="Amazon.SimpleDB.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
-        /// <exception cref="RequestTimeoutException">
+        /// <exception cref="Amazon.SimpleDB.Model.RequestTimeoutException">
         /// A timeout occurred when attempting to query the specified domain with specified query
         /// expression.
         /// </exception>
-        /// <exception cref="TooManyRequestedAttributesException">
+        /// <exception cref="Amazon.SimpleDB.Model.TooManyRequestedAttributesException">
         /// Too many attributes requested.
         /// </exception>
         public SelectResponse Select(SelectRequest request)

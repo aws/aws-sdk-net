@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CreateVolume");
-            request.Parameters.Add("Version", "2014-09-01");
+            request.Parameters.Add("Version", "2014-10-01");
 
             if(publicRequest != null)
             {
@@ -59,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIops())
                 {
                     request.Parameters.Add("Iops", StringUtils.FromInt(publicRequest.Iops));
+                }
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
                 if(publicRequest.IsSetSize())
                 {

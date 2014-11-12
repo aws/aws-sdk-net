@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
  */
 
 
@@ -868,7 +868,12 @@ namespace Amazon.EC2
         /// During bundling, only the root device volume (C:\) is bundled. Data on other instance
         /// store volumes is not preserved.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This procedure is not applicable for Linux/Unix instances or Windows instances that
+        /// are backed by Amazon EBS.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html">Creating
         /// an Instance Store-Backed Windows AMI</a>.
@@ -1273,7 +1278,13 @@ namespace Amazon.EC2
         /// If you don't have an ASN already, you can use a private ASN (in the 64512 - 65534
         /// range).
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534, with the exception
+        /// of 7224, which is reserved in the <code>us-east-1</code> region, and 9059, which is
+        /// reserved in the <code>eu-west-1</code> region.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information about VPN customer gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
         /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
@@ -3186,7 +3197,11 @@ namespace Amazon.EC2
         /// Deletes the specified Amazon EBS volume. The volume must be in the <code>available</code>
         /// state (not attached to an instance).
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The volume may remain in the <code>deleting</code> state for several minutes.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
         /// an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -3652,6 +3667,15 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes one or more of your bundling tasks.
+        /// 
+        ///  <note>
+        /// <para>
+        /// Completed bundle tasks are listed for only a limited time. If your bundle task is
+        /// no longer in the list, you can still register an AMI from it. Just use <code>RegisterImage</code>
+        /// with the Amazon S3 bucket name and image manifest name you provided to the bundle
+        /// task.
+        /// </para>
+        /// </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeBundleTasks service method, as returned by EC2.</returns>
@@ -3662,6 +3686,15 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes one or more of your bundling tasks.
+        /// 
+        ///  <note>
+        /// <para>
+        /// Completed bundle tasks are listed for only a limited time. If your bundle task is
+        /// no longer in the list, you can still register an AMI from it. Just use <code>RegisterImage</code>
+        /// with the Amazon S3 bucket name and image manifest name you provided to the bundle
+        /// task.
+        /// </para>
+        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBundleTasks service method.</param>
         /// 
@@ -3957,6 +3990,13 @@ namespace Amazon.EC2
         /// Describes one or more of the images (AMIs, AKIs, and ARIs) available to you. Images
         /// available to you include public images, private images that you own, and private images
         /// owned by other AWS accounts but for which you have explicit launch permissions.
+        /// 
+        ///  <note>
+        /// <para>
+        /// Deregistered images are included in the returned results for an unspecified interval
+        /// after deregistration.
+        /// </para>
+        /// </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeImages service method, as returned by EC2.</returns>
@@ -3969,6 +4009,13 @@ namespace Amazon.EC2
         /// Describes one or more of the images (AMIs, AKIs, and ARIs) available to you. Images
         /// available to you include public images, private images that you own, and private images
         /// owned by other AWS accounts but for which you have explicit launch permissions.
+        /// 
+        ///  <note>
+        /// <para>
+        /// Deregistered images are included in the returned results for an unspecified interval
+        /// after deregistration.
+        /// </para>
+        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeImages service method.</param>
         /// 
@@ -5768,6 +5815,13 @@ namespace Amazon.EC2
         /// This means that you may want to enable the I/O operations for the volume by calling
         /// the <a>EnableVolumeIO</a> action and then check the volume for data consistency.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Volume status is based on the volume status checks, and does not reflect the volume
+        /// state. Therefore, volume status does not indicate volumes in the <code>error</code>
+        /// state (for example, when a volume is incapable of accepting I/O.)
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVolumeStatus service method, as returned by EC2.</returns>
@@ -5816,6 +5870,13 @@ namespace Amazon.EC2
         /// This means that you may want to enable the I/O operations for the volume by calling
         /// the <a>EnableVolumeIO</a> action and then check the volume for data consistency.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Volume status is based on the volume status checks, and does not reflect the volume
+        /// state. Therefore, volume status does not indicate volumes in the <code>error</code>
+        /// state (for example, when a volume is incapable of accepting I/O.)
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumeStatus service method.</param>
         /// 
@@ -6743,6 +6804,13 @@ namespace Amazon.EC2
         /// <summary>
         /// Modifies the specified attribute of the specified AMI. You can specify only one attribute
         /// at a time.
+        /// 
+        ///  <note>
+        /// <para>
+        /// AWS Marketplace product codes cannot be modified. Images with an AWS Marketplace product
+        /// code cannot be made public.
+        /// </para>
+        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyImageAttribute service method.</param>
         /// 
@@ -6918,6 +6986,11 @@ namespace Amazon.EC2
         /// For more information on modifying snapshot permissions, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
         /// Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Snapshots with AWS Marketplace product codes cannot be made public.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotAttribute service method.</param>
         /// 
@@ -7227,7 +7300,12 @@ namespace Amazon.EC2
         /// AMIs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
         /// Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
-        ///  
+        ///  <note>
+        /// <para>
+        /// For Amazon EBS-backed instances, <a>CreateImage</a> creates and registers the AMI
+        /// in a single request, so you don't have to register the AMI yourself.
+        /// </para>
+        /// </note> 
         /// <para>
         /// You can also use <code>RegisterImage</code> to create an Amazon EBS-backed AMI from
         /// a snapshot of a root device volume. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html">Launching
@@ -7239,6 +7317,12 @@ namespace Amazon.EC2
         /// AMI backed by an instance store volume invalidates its registration. If you make changes
         /// to an image, deregister the previous image and register the new image.
         /// </para>
+        ///  <note>
+        /// <para>
+        /// You can't register an image where a secondary (non-root) snapshot has AWS Marketplace
+        /// product codes.
+        /// </para>
+        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterImage service method.</param>
         /// 

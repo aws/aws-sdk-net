@@ -257,10 +257,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="returnConsumedCapacity">A property of BatchGetItemRequest used to execute the BatchGetItem service method.</param>
         /// 
         /// <returns>The response from the BatchGetItem service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -268,7 +268,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -343,10 +343,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="requestItems">A map of one or more table names and, for each table, the corresponding primary keys for the items to retrieve. Each table name can be invoked only once. Each element in the map consists of the following: <ul> <li> <i>Keys</i> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify <i>both</i> the hash attribute and the range attribute. </li> <li> <i>AttributesToGet</i> - One or more attributes to be retrieved from the table. By default, all attributes are returned. If a specified attribute is not found, it does not appear in the result. Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines capacity units consumed based on item size, not on the amount of data that is returned to an application. </li> <li> <i>ConsistentRead</i> - If <code>true</code>, a strongly consistent read is used; if <code>false</code> (the default), an eventually consistent read is used. </li> </ul></param>
         /// 
         /// <returns>The response from the BatchGetItem service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -354,7 +354,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -429,10 +429,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="request">Container for the necessary parameters to execute the BatchGetItem service method.</param>
         /// 
         /// <returns>The response from the BatchGetItem service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -440,7 +440,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -574,14 +574,14 @@ namespace Amazon.DynamoDBv2
         /// <param name="requestItems">A map of one or more table names and, for each table, a list of operations to be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the map consists of the following: <ul> <li> <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted is identified by a <i>Key</i> subelement: <ul> <li> <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify <i>both</i> the hash attribute and the range attribute. </li> </ul> </li> <li> <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is identified by an <i>Item</i> subelement: <ul> <li> <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <i>ValidationException</i> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
         /// 
         /// <returns>The response from the BatchWriteItem service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ItemCollectionSizeLimitExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ItemCollectionSizeLimitExceededException">
         /// An item collection is too large. This exception is only returned for tables that have
         /// one or more local secondary indexes.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -589,7 +589,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -693,14 +693,14 @@ namespace Amazon.DynamoDBv2
         /// <param name="request">Container for the necessary parameters to execute the BatchWriteItem service method.</param>
         /// 
         /// <returns>The response from the BatchWriteItem service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ItemCollectionSizeLimitExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ItemCollectionSizeLimitExceededException">
         /// An item collection is too large. This exception is only returned for tables that have
         /// one or more local secondary indexes.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -708,7 +708,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -773,10 +773,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="provisionedThroughput">A property of CreateTableRequest used to execute the CreateTable service method.</param>
         /// 
         /// <returns>The response from the CreateTable service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
         /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
         /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
         /// of 10.
@@ -791,7 +791,7 @@ namespace Amazon.DynamoDBv2
         /// The total limit of tables in the <code>ACTIVE</code> state is 250.
         /// </para>
         /// </exception>
-        /// <exception cref="ResourceInUseException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
         /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
         /// state.
@@ -824,10 +824,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="request">Container for the necessary parameters to execute the CreateTable service method.</param>
         /// 
         /// <returns>The response from the CreateTable service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
         /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
         /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
         /// of 10.
@@ -842,7 +842,7 @@ namespace Amazon.DynamoDBv2
         /// The total limit of tables in the <code>ACTIVE</code> state is 250.
         /// </para>
         /// </exception>
-        /// <exception cref="ResourceInUseException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
         /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
         /// state.
@@ -905,17 +905,17 @@ namespace Amazon.DynamoDBv2
         /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to delete. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify both the hash attribute and the range attribute.</param>
         /// 
         /// <returns>The response from the DeleteItem service method, as returned by DynamoDB.</returns>
-        /// <exception cref="ConditionalCheckFailedException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
         /// A condition specified in the operation could not be evaluated.
         /// </exception>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ItemCollectionSizeLimitExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ItemCollectionSizeLimitExceededException">
         /// An item collection is too large. This exception is only returned for tables that have
         /// one or more local secondary indexes.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -923,7 +923,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -956,17 +956,17 @@ namespace Amazon.DynamoDBv2
         /// <param name="returnValues">Use <i>ReturnValues</i> if you want to get the item attributes as they appeared before they were deleted. For <i>DeleteItem</i>, the valid values are: <ul> <li> <code>NONE</code> - If <i>ReturnValues</i> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <i>ReturnValues</i>.) </li> <li> <code>ALL_OLD</code> - The content of the old item is returned. </li> </ul></param>
         /// 
         /// <returns>The response from the DeleteItem service method, as returned by DynamoDB.</returns>
-        /// <exception cref="ConditionalCheckFailedException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
         /// A condition specified in the operation could not be evaluated.
         /// </exception>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ItemCollectionSizeLimitExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ItemCollectionSizeLimitExceededException">
         /// An item collection is too large. This exception is only returned for tables that have
         /// one or more local secondary indexes.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -974,7 +974,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -1005,17 +1005,17 @@ namespace Amazon.DynamoDBv2
         /// <param name="request">Container for the necessary parameters to execute the DeleteItem service method.</param>
         /// 
         /// <returns>The response from the DeleteItem service method, as returned by DynamoDB.</returns>
-        /// <exception cref="ConditionalCheckFailedException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
         /// A condition specified in the operation could not be evaluated.
         /// </exception>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ItemCollectionSizeLimitExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ItemCollectionSizeLimitExceededException">
         /// An item collection is too large. This exception is only returned for tables that have
         /// one or more local secondary indexes.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -1023,7 +1023,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -1080,10 +1080,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="tableName"> The name of the table to delete.</param>
         /// 
         /// <returns>The response from the DeleteTable service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
         /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
         /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
         /// of 10.
@@ -1098,12 +1098,12 @@ namespace Amazon.DynamoDBv2
         /// The total limit of tables in the <code>ACTIVE</code> state is 250.
         /// </para>
         /// </exception>
-        /// <exception cref="ResourceInUseException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
         /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
         /// state.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -1130,10 +1130,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="request">Container for the necessary parameters to execute the DeleteTable service method.</param>
         /// 
         /// <returns>The response from the DeleteTable service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
         /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
         /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
         /// of 10.
@@ -1148,12 +1148,12 @@ namespace Amazon.DynamoDBv2
         /// The total limit of tables in the <code>ACTIVE</code> state is 250.
         /// </para>
         /// </exception>
-        /// <exception cref="ResourceInUseException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
         /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
         /// state.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -1196,10 +1196,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="tableName"> The name of the table to describe.</param>
         /// 
         /// <returns>The response from the DescribeTable service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -1212,10 +1212,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="request">Container for the necessary parameters to execute the DescribeTable service method.</param>
         /// 
         /// <returns>The response from the DescribeTable service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -1267,10 +1267,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify both the hash attribute and the range attribute.</param>
         /// 
         /// <returns>The response from the GetItem service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -1278,7 +1278,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -1301,10 +1301,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="consistentRead">A value that if set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, eventually consistent reads are used.</param>
         /// 
         /// <returns>The response from the GetItem service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -1312,7 +1312,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -1333,10 +1333,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="request">Container for the necessary parameters to execute the GetItem service method.</param>
         /// 
         /// <returns>The response from the GetItem service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -1344,7 +1344,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -1387,7 +1387,7 @@ namespace Amazon.DynamoDBv2
         /// </summary>
         /// 
         /// <returns>The response from the ListTables service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         ListTablesResponse ListTables();
@@ -1400,7 +1400,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="exclusiveStartTableName">The first table name that this operation will evaluate. Use the value that was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that you can obtain the next page of results.</param>
         /// 
         /// <returns>The response from the ListTables service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         ListTablesResponse ListTables(string exclusiveStartTableName);
@@ -1414,7 +1414,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="limit"> A maximum number of table names to return. If this parameter is not specified, the limit is 100.</param>
         /// 
         /// <returns>The response from the ListTables service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         ListTablesResponse ListTables(string exclusiveStartTableName, int limit);
@@ -1427,7 +1427,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="limit"> A maximum number of table names to return. If this parameter is not specified, the limit is 100.</param>
         /// 
         /// <returns>The response from the ListTables service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         ListTablesResponse ListTables(int limit);
@@ -1440,7 +1440,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="request">Container for the necessary parameters to execute the ListTables service method.</param>
         /// 
         /// <returns>The response from the ListTables service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         ListTablesResponse ListTables(ListTablesRequest request);
@@ -1510,17 +1510,17 @@ namespace Amazon.DynamoDBv2
         /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify both the hash attribute and the range attribute. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. For more information about primary keys, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <i>Item</i> map is an <i>AttributeValue</i> object.</param>
         /// 
         /// <returns>The response from the PutItem service method, as returned by DynamoDB.</returns>
-        /// <exception cref="ConditionalCheckFailedException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
         /// A condition specified in the operation could not be evaluated.
         /// </exception>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ItemCollectionSizeLimitExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ItemCollectionSizeLimitExceededException">
         /// An item collection is too large. This exception is only returned for tables that have
         /// one or more local secondary indexes.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -1528,7 +1528,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -1570,17 +1570,17 @@ namespace Amazon.DynamoDBv2
         /// <param name="returnValues">Use <i>ReturnValues</i> if you want to get the item attributes as they appeared before they were updated with the <i>PutItem</i> request. For <i>PutItem</i>, the valid values are: <ul> <li> <code>NONE</code> - If <i>ReturnValues</i> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <i>ReturnValues</i>.) </li> <li> <code>ALL_OLD</code> - If <i>PutItem</i> overwrote an attribute name-value pair, then the content of the old item is returned. </li> </ul></param>
         /// 
         /// <returns>The response from the PutItem service method, as returned by DynamoDB.</returns>
-        /// <exception cref="ConditionalCheckFailedException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
         /// A condition specified in the operation could not be evaluated.
         /// </exception>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ItemCollectionSizeLimitExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ItemCollectionSizeLimitExceededException">
         /// An item collection is too large. This exception is only returned for tables that have
         /// one or more local secondary indexes.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -1588,7 +1588,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -1628,17 +1628,17 @@ namespace Amazon.DynamoDBv2
         /// <param name="request">Container for the necessary parameters to execute the PutItem service method.</param>
         /// 
         /// <returns>The response from the PutItem service method, as returned by DynamoDB.</returns>
-        /// <exception cref="ConditionalCheckFailedException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
         /// A condition specified in the operation could not be evaluated.
         /// </exception>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ItemCollectionSizeLimitExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ItemCollectionSizeLimitExceededException">
         /// An item collection is too large. This exception is only returned for tables that have
         /// one or more local secondary indexes.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -1646,7 +1646,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -1715,10 +1715,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="request">Container for the necessary parameters to execute the Query service method.</param>
         /// 
         /// <returns>The response from the Query service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -1726,7 +1726,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -1792,10 +1792,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="attributesToGet"><important>There is a newer parameter available. Use <i>ProjectionExpression</i> instead. Note that if you use <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same time, DynamoDB will return a <i>ValidationException</i> exception. This parameter allows you to retrieve lists or maps; however, it cannot retrieve individual list or map elements.</important> The names of one or more attributes to retrieve. If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines capacity units consumed based on item size, not on the amount of data that is returned to an application.</param>
         /// 
         /// <returns>The response from the Scan service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -1803,7 +1803,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -1839,10 +1839,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="scanFilter"><important> There is a newer parameter available. Use <i>FilterExpression</i> instead. Note that if you use <i>ScanFilter</i> and <i>FilterExpression</i> at the same time, DynamoDB will return a <i>ValidationException</i> exception. This parameter does not support lists or maps. </important> A condition that evaluates the scan results and returns only the desired values. If you specify more than one condition in the <i>ScanFilter</i> map, then by default all of the conditions must evaluate to true. In other words, the conditions are ANDed together. (You can use the <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do this, then at least one of the conditions must evaluate to true, rather than all of them.) Each <i>ScanFilter</i> element consists of an attribute name to compare, along with the following: <ul> <li> <i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute. The number of values in the list depends on the operator specified in <i>ComparisonOperator</i> . For type Number, value comparisons are numeric. String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <code>a</code> is greater than <code>A</code>, and <code>aa</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>. For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query expressions. For information on specifying data types in JSON, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For example, equals, greater than, less than, etc. The following comparison operators are available: <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> For complete descriptions of all comparison operators, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>. </li> </ul></param>
         /// 
         /// <returns>The response from the Scan service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -1850,7 +1850,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -1887,10 +1887,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="scanFilter"><important> There is a newer parameter available. Use <i>FilterExpression</i> instead. Note that if you use <i>ScanFilter</i> and <i>FilterExpression</i> at the same time, DynamoDB will return a <i>ValidationException</i> exception. This parameter does not support lists or maps. </important> A condition that evaluates the scan results and returns only the desired values. If you specify more than one condition in the <i>ScanFilter</i> map, then by default all of the conditions must evaluate to true. In other words, the conditions are ANDed together. (You can use the <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do this, then at least one of the conditions must evaluate to true, rather than all of them.) Each <i>ScanFilter</i> element consists of an attribute name to compare, along with the following: <ul> <li> <i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute. The number of values in the list depends on the operator specified in <i>ComparisonOperator</i> . For type Number, value comparisons are numeric. String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <code>a</code> is greater than <code>A</code>, and <code>aa</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>. For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query expressions. For information on specifying data types in JSON, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For example, equals, greater than, less than, etc. The following comparison operators are available: <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> For complete descriptions of all comparison operators, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>. </li> </ul></param>
         /// 
         /// <returns>The response from the Scan service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -1898,7 +1898,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -1933,10 +1933,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="request">Container for the necessary parameters to execute the Scan service method.</param>
         /// 
         /// <returns>The response from the Scan service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -1944,7 +1944,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -1997,17 +1997,17 @@ namespace Amazon.DynamoDBv2
         /// <param name="attributeUpdates"><important> There is a newer parameter available. Use <i>UpdateExpression</i> instead. Note that if you use <i>AttributeUpdates</i> and <i>UpdateExpression</i> at the same time, DynamoDB will return a <i>ValidationException</i> exception. This parameter can be used for modifying top-level attributes; however, it does not support individual list or map elements. </important> The names of attributes to be modified, the action to perform on each, and the new value for each. If you are updating an attribute that is an index key attribute for any indexes on that table, the attribute type must match the index key type defined in the <i>AttributesDefinition</i> of the table description. You can use <i>UpdateItem</i> to update any nonkey attributes. Attribute values cannot be null. String and Binary type attributes must have lengths greater than zero. Set type attributes must not be empty. Requests with empty values will be rejected with a <i>ValidationException</i> exception. Each <i>AttributeUpdates</i> element consists of an attribute name to modify, along with the following: <ul> <li> <i>Value</i> - The new value, if applicable, for this attribute. </li> <li> <i>Action</i> - A value that specifies how to perform the update. This action is only valid for an existing attribute whose data type is Number or is a set; do not use <code>ADD</code> for other data types.  If an item with the specified primary key is found in the table, the following values perform the following actions: <ul> <li> <code>PUT</code> - Adds the specified attribute to the item. If the attribute already exists, it is replaced by the new value.  </li> <li> <code>DELETE</code> - Removes the attribute and its value, if no value is specified for <code>DELETE</code>. The data type of the specified value must match the existing value's data type. If a set of values is specified, then those values are subtracted from the old set. For example, if the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specifies <code>[a,c]</code>, then the final attribute value is <code>[b]</code>. Specifying an empty set is an error. </li> <li> <code>ADD</code> - Adds the specified value to the item, if the attribute does not already exist. If the attribute does exist, then the behavior of <code>ADD</code> depends on the data type of the attribute: <ul> <li> If the existing attribute is a number, and if <i>Value</i> is also a number, then <i>Value</i> is mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is subtracted from the existing attribute. </li> <li> If the existing data type is a set, and if <i>Value</i> is also a set, then <i>Value</i> is appended to the existing set. For example, if the attribute value is the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then the final attribute value is <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is specified for a set attribute and the attribute type specified does not match the existing set type.  Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, <i>Value</i> must also be a set of strings. </li> </ul> </li> </ul> If no item with the specified key is found in the table, the following values perform the following actions:  <ul> <li> <code>PUT</code> - Causes DynamoDB to create a new item with the specified primary key, and then adds the attribute.  </li> <li> <code>DELETE</code> - Causes nothing to happen; there is no attribute to delete. </li> <li> <code>ADD</code> - Causes DynamoDB to creat an item with the supplied primary key and number (or set of numbers) for the attribute value. The only data types allowed are Number and Number Set. </li> </ul> </li> </ul> If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</param>
         /// 
         /// <returns>The response from the UpdateItem service method, as returned by DynamoDB.</returns>
-        /// <exception cref="ConditionalCheckFailedException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
         /// A condition specified in the operation could not be evaluated.
         /// </exception>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ItemCollectionSizeLimitExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ItemCollectionSizeLimitExceededException">
         /// An item collection is too large. This exception is only returned for tables that have
         /// one or more local secondary indexes.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -2015,7 +2015,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -2039,17 +2039,17 @@ namespace Amazon.DynamoDBv2
         /// <param name="returnValues">Use <i>ReturnValues</i> if you want to get the item attributes as they appeared either before or after they were updated. For <i>UpdateItem</i>, the valid values are: <ul> <li> <code>NONE</code> - If <i>ReturnValues</i> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <i>ReturnValues</i>.) </li> <li> <code>ALL_OLD</code> - If <i>UpdateItem</i> overwrote an attribute name-value pair, then the content of the old item is returned. </li> <li> <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned. </li> <li> <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned. </li> <li> <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned. </li> </ul></param>
         /// 
         /// <returns>The response from the UpdateItem service method, as returned by DynamoDB.</returns>
-        /// <exception cref="ConditionalCheckFailedException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
         /// A condition specified in the operation could not be evaluated.
         /// </exception>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ItemCollectionSizeLimitExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ItemCollectionSizeLimitExceededException">
         /// An item collection is too large. This exception is only returned for tables that have
         /// one or more local secondary indexes.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -2057,7 +2057,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -2078,17 +2078,17 @@ namespace Amazon.DynamoDBv2
         /// <param name="request">Container for the necessary parameters to execute the UpdateItem service method.</param>
         /// 
         /// <returns>The response from the UpdateItem service method, as returned by DynamoDB.</returns>
-        /// <exception cref="ConditionalCheckFailedException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
         /// A condition specified in the operation could not be evaluated.
         /// </exception>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="ItemCollectionSizeLimitExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ItemCollectionSizeLimitExceededException">
         /// An item collection is too large. This exception is only returned for tables that have
         /// one or more local secondary indexes.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the request is too large, for the available throughput
         /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
         /// therefore, your request will eventually succeed, unless the request is too large or
@@ -2096,7 +2096,7 @@ namespace Amazon.DynamoDBv2
         /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -2162,10 +2162,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="provisionedThroughput">A property of UpdateTableRequest used to execute the UpdateTable service method.</param>
         /// 
         /// <returns>The response from the UpdateTable service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
         /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
         /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
         /// of 10.
@@ -2180,12 +2180,12 @@ namespace Amazon.DynamoDBv2
         /// The total limit of tables in the <code>ACTIVE</code> state is 250.
         /// </para>
         /// </exception>
-        /// <exception cref="ResourceInUseException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
         /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
         /// state.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
@@ -2220,10 +2220,10 @@ namespace Amazon.DynamoDBv2
         /// <param name="request">Container for the necessary parameters to execute the UpdateTable service method.</param>
         /// 
         /// <returns>The response from the UpdateTable service method, as returned by DynamoDB.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
         /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
         /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
         /// of 10.
@@ -2238,12 +2238,12 @@ namespace Amazon.DynamoDBv2
         /// The total limit of tables in the <code>ACTIVE</code> state is 250.
         /// </para>
         /// </exception>
-        /// <exception cref="ResourceInUseException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
         /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
         /// state.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>

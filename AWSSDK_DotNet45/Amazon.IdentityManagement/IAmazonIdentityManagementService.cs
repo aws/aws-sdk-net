@@ -119,15 +119,15 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the AddClientIDToOpenIDConnectProvider service method.</param>
         /// 
         /// <returns>The response from the AddClientIDToOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -158,14 +158,14 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the AddRoleToInstanceProfile service method.</param>
         /// 
         /// <returns>The response from the AddRoleToInstanceProfile service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityAlreadyExistsException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -193,11 +193,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the AddUserToGroup service method.</param>
         /// 
         /// <returns>The response from the AddUserToGroup service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -233,24 +233,24 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ChangePassword service method.</param>
         /// 
         /// <returns>The response from the ChangePassword service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityTemporarilyUnmodifiableException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityTemporarilyUnmodifiableException">
         /// The request was rejected because it referenced an entity that is temporarily unmodifiable,
         /// such as a user name that was deleted and then recreated. The error indicates that
         /// the request is likely to succeed if you try again after waiting several minutes. The
         /// error message describes the entity.
         /// </exception>
-        /// <exception cref="InvalidUserTypeException">
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidUserTypeException">
         /// The request was rejected because the type of user for the transaction was incorrect.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
-        /// <exception cref="PasswordPolicyViolationException">
+        /// <exception cref="Amazon.IdentityManagement.Model.PasswordPolicyViolationException">
         /// The request was rejected because the provided password did not meet the requirements
         /// imposed by the account password policy.
         /// </exception>
@@ -295,11 +295,11 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the CreateAccessKey service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -329,11 +329,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessKey service method.</param>
         /// 
         /// <returns>The response from the CreateAccessKey service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -363,10 +363,10 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the CreateAccountAlias service method.</param>
         /// 
         /// <returns>The response from the CreateAccountAlias service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityAlreadyExistsException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
@@ -400,14 +400,14 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
         /// 
         /// <returns>The response from the CreateGroup service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityAlreadyExistsException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -443,10 +443,10 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the CreateInstanceProfile service method.</param>
         /// 
         /// <returns>The response from the CreateInstanceProfile service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityAlreadyExistsException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
@@ -477,18 +477,18 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the CreateLoginProfile service method.</param>
         /// 
         /// <returns>The response from the CreateLoginProfile service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityAlreadyExistsException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
-        /// <exception cref="PasswordPolicyViolationException">
+        /// <exception cref="Amazon.IdentityManagement.Model.PasswordPolicyViolationException">
         /// The request was rejected because the provided password did not meet the requirements
         /// imposed by the account password policy.
         /// </exception>
@@ -532,14 +532,14 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the CreateOpenIDConnectProvider service method.</param>
         /// 
         /// <returns>The response from the CreateOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityAlreadyExistsException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
@@ -579,14 +579,14 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the CreateRole service method.</param>
         /// 
         /// <returns>The response from the CreateRole service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityAlreadyExistsException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="MalformedPolicyDocumentException">
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
         /// describes the specific error.
         /// </exception>
@@ -637,14 +637,14 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the CreateSAMLProvider service method.</param>
         /// 
         /// <returns>The response from the CreateSAMLProvider service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityAlreadyExistsException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
@@ -678,14 +678,14 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
         /// 
         /// <returns>The response from the CreateUser service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityAlreadyExistsException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -728,10 +728,10 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the CreateVirtualMFADevice service method.</param>
         /// 
         /// <returns>The response from the CreateVirtualMFADevice service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityAlreadyExistsException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
@@ -767,17 +767,17 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeactivateMFADevice service method.</param>
         /// 
         /// <returns>The response from the DeactivateMFADevice service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityTemporarilyUnmodifiableException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityTemporarilyUnmodifiableException">
         /// The request was rejected because it referenced an entity that is temporarily unmodifiable,
         /// such as a user name that was deleted and then recreated. The error indicates that
         /// the request is likely to succeed if you try again after waiting several minutes. The
         /// error message describes the entity.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -813,11 +813,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessKey service method.</param>
         /// 
         /// <returns>The response from the DeleteAccessKey service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -847,11 +847,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountAlias service method.</param>
         /// 
         /// <returns>The response from the DeleteAccountAlias service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -878,11 +878,11 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the DeleteAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -894,11 +894,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountPasswordPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -927,15 +927,15 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteGroup service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="DeleteConflictException">
+        /// <exception cref="Amazon.IdentityManagement.Model.DeleteConflictException">
         /// The request was rejected because it attempted to delete a resource that has attached
         /// subordinate entities. The error message describes these entities.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -963,11 +963,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroupPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteGroupPolicy service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1005,15 +1005,15 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceProfile service method.</param>
         /// 
         /// <returns>The response from the DeleteInstanceProfile service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="DeleteConflictException">
+        /// <exception cref="Amazon.IdentityManagement.Model.DeleteConflictException">
         /// The request was rejected because it attempted to delete a resource that has attached
         /// subordinate entities. The error message describes these entities.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1048,17 +1048,17 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoginProfile service method.</param>
         /// 
         /// <returns>The response from the DeleteLoginProfile service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityTemporarilyUnmodifiableException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityTemporarilyUnmodifiableException">
         /// The request was rejected because it referenced an entity that is temporarily unmodifiable,
         /// such as a user name that was deleted and then recreated. The error indicates that
         /// the request is likely to succeed if you try again after waiting several minutes. The
         /// error message describes the entity.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1098,11 +1098,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteOpenIDConnectProvider service method.</param>
         /// 
         /// <returns>The response from the DeleteOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1136,15 +1136,15 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteRole service method.</param>
         /// 
         /// <returns>The response from the DeleteRole service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="DeleteConflictException">
+        /// <exception cref="Amazon.IdentityManagement.Model.DeleteConflictException">
         /// The request was rejected because it attempted to delete a resource that has attached
         /// subordinate entities. The error message describes these entities.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1172,11 +1172,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteRolePolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteRolePolicy service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1211,15 +1211,15 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteSAMLProvider service method.</param>
         /// 
         /// <returns>The response from the DeleteSAMLProvider service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1256,15 +1256,15 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteServerCertificate service method.</param>
         /// 
         /// <returns>The response from the DeleteServerCertificate service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="DeleteConflictException">
+        /// <exception cref="Amazon.IdentityManagement.Model.DeleteConflictException">
         /// The request was rejected because it attempted to delete a resource that has attached
         /// subordinate entities. The error message describes these entities.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1300,11 +1300,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteSigningCertificate service method.</param>
         /// 
         /// <returns>The response from the DeleteSigningCertificate service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1333,15 +1333,15 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// 
         /// <returns>The response from the DeleteUser service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="DeleteConflictException">
+        /// <exception cref="Amazon.IdentityManagement.Model.DeleteConflictException">
         /// The request was rejected because it attempted to delete a resource that has attached
         /// subordinate entities. The error message describes these entities.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1369,11 +1369,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteUserPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteUserPolicy service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1401,15 +1401,15 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualMFADevice service method.</param>
         /// 
         /// <returns>The response from the DeleteVirtualMFADevice service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="DeleteConflictException">
+        /// <exception cref="Amazon.IdentityManagement.Model.DeleteConflictException">
         /// The request was rejected because it attempted to delete a resource that has attached
         /// subordinate entities. The error message describes these entities.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1439,24 +1439,24 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the EnableMFADevice service method.</param>
         /// 
         /// <returns>The response from the EnableMFADevice service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityAlreadyExistsException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
-        /// <exception cref="EntityTemporarilyUnmodifiableException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityTemporarilyUnmodifiableException">
         /// The request was rejected because it referenced an entity that is temporarily unmodifiable,
         /// such as a user name that was deleted and then recreated. The error indicates that
         /// the request is likely to succeed if you try again after waiting several minutes. The
         /// error message describes the entity.
         /// </exception>
-        /// <exception cref="InvalidAuthenticationCodeException">
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidAuthenticationCodeException">
         /// The request was rejected because the authentication code was not recognized. The
         /// error message describes the specific error.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1485,7 +1485,7 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the GenerateCredentialReport service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
@@ -1499,7 +1499,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the GenerateCredentialReport service method.</param>
         /// 
         /// <returns>The response from the GenerateCredentialReport service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
@@ -1528,7 +1528,7 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the GetAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1542,7 +1542,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the GetAccountPasswordPolicy service method.</param>
         /// 
         /// <returns>The response from the GetAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1614,17 +1614,17 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the GetCredentialReport service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="CredentialReportExpiredException">
+        /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportExpiredException">
         /// The request was rejected because the most recent credential report has expired. To
         /// generate a new credential report, use <a>GenerateCredentialReport</a>. For more information
         /// about credential report expiration, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
         /// Credential Reports</a> in the <i>Using IAM</i> guide.
         /// </exception>
-        /// <exception cref="CredentialReportNotPresentException">
+        /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotPresentException">
         /// The request was rejected because the credential report does not exist. To generate
         /// a credential report, use <a>GenerateCredentialReport</a>.
         /// </exception>
-        /// <exception cref="CredentialReportNotReadyException">
+        /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotReadyException">
         /// The request was rejected because the credential report is still being generated.
         /// </exception>
         GetCredentialReportResponse GetCredentialReport();
@@ -1637,17 +1637,17 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the GetCredentialReport service method.</param>
         /// 
         /// <returns>The response from the GetCredentialReport service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="CredentialReportExpiredException">
+        /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportExpiredException">
         /// The request was rejected because the most recent credential report has expired. To
         /// generate a new credential report, use <a>GenerateCredentialReport</a>. For more information
         /// about credential report expiration, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
         /// Credential Reports</a> in the <i>Using IAM</i> guide.
         /// </exception>
-        /// <exception cref="CredentialReportNotPresentException">
+        /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotPresentException">
         /// The request was rejected because the credential report does not exist. To generate
         /// a credential report, use <a>GenerateCredentialReport</a>.
         /// </exception>
-        /// <exception cref="CredentialReportNotReadyException">
+        /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotReadyException">
         /// The request was rejected because the credential report is still being generated.
         /// </exception>
         GetCredentialReportResponse GetCredentialReport(GetCredentialReportRequest request);
@@ -1675,7 +1675,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the GetGroup service method.</param>
         /// 
         /// <returns>The response from the GetGroup service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1705,7 +1705,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the GetGroupPolicy service method.</param>
         /// 
         /// <returns>The response from the GetGroupPolicy service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1736,7 +1736,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the GetInstanceProfile service method.</param>
         /// 
         /// <returns>The response from the GetInstanceProfile service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1766,7 +1766,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the GetLoginProfile service method.</param>
         /// 
         /// <returns>The response from the GetLoginProfile service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1794,11 +1794,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the GetOpenIDConnectProvider service method.</param>
         /// 
         /// <returns>The response from the GetOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1837,7 +1837,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the GetRole service method.</param>
         /// 
         /// <returns>The response from the GetRole service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1874,7 +1874,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the GetRolePolicy service method.</param>
         /// 
         /// <returns>The response from the GetRolePolicy service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1903,11 +1903,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the GetSAMLProvider service method.</param>
         /// 
         /// <returns>The response from the GetSAMLProvider service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1935,7 +1935,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the GetServerCertificate service method.</param>
         /// 
         /// <returns>The response from the GetServerCertificate service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1969,7 +1969,7 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the GetUser service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -1988,7 +1988,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the GetUser service method.</param>
         /// 
         /// <returns>The response from the GetUser service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -2018,7 +2018,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the GetUserPolicy service method.</param>
         /// 
         /// <returns>The response from the GetUserPolicy service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -2059,7 +2059,7 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the ListAccessKeys service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -2085,7 +2085,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListAccessKeys service method.</param>
         /// 
         /// <returns>The response from the ListAccessKeys service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -2167,7 +2167,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListGroupPolicies service method.</param>
         /// 
         /// <returns>The response from the ListGroupPolicies service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -2244,7 +2244,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListGroupsForUser service method.</param>
         /// 
         /// <returns>The response from the ListGroupsForUser service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -2330,7 +2330,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListInstanceProfilesForRole service method.</param>
         /// 
         /// <returns>The response from the ListInstanceProfilesForRole service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -2366,7 +2366,7 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the ListMFADevices service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -2387,7 +2387,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListMFADevices service method.</param>
         /// 
         /// <returns>The response from the ListMFADevices service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -2446,7 +2446,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListRolePolicies service method.</param>
         /// 
         /// <returns>The response from the ListRolePolicies service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -2623,7 +2623,7 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the ListSigningCertificates service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -2650,7 +2650,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListSigningCertificates service method.</param>
         /// 
         /// <returns>The response from the ListSigningCertificates service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -2685,7 +2685,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListUserPolicies service method.</param>
         /// 
         /// <returns>The response from the ListUserPolicies service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -2818,15 +2818,15 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the PutGroupPolicy service method.</param>
         /// 
         /// <returns>The response from the PutGroupPolicy service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="MalformedPolicyDocumentException">
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
         /// describes the specific error.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -2863,15 +2863,15 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the PutRolePolicy service method.</param>
         /// 
         /// <returns>The response from the PutRolePolicy service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="MalformedPolicyDocumentException">
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
         /// describes the specific error.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -2908,15 +2908,15 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the PutUserPolicy service method.</param>
         /// 
         /// <returns>The response from the PutUserPolicy service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="MalformedPolicyDocumentException">
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
         /// describes the specific error.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -2951,11 +2951,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the RemoveClientIDFromOpenIDConnectProvider service method.</param>
         /// 
         /// <returns>The response from the RemoveClientIDFromOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -2993,11 +2993,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromInstanceProfile service method.</param>
         /// 
         /// <returns>The response from the RemoveRoleFromInstanceProfile service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -3025,11 +3025,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the RemoveUserFromGroup service method.</param>
         /// 
         /// <returns>The response from the RemoveUserFromGroup service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -3064,15 +3064,15 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ResyncMFADevice service method.</param>
         /// 
         /// <returns>The response from the ResyncMFADevice service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="InvalidAuthenticationCodeException">
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidAuthenticationCodeException">
         /// The request was rejected because the authentication code was not recognized. The
         /// error message describes the specific error.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -3115,11 +3115,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccessKey service method.</param>
         /// 
         /// <returns>The response from the UpdateAccessKey service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -3152,15 +3152,15 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the UpdateAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="MalformedPolicyDocumentException">
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
         /// describes the specific error.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -3178,15 +3178,15 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountPasswordPolicy service method.</param>
         /// 
         /// <returns>The response from the UpdateAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="MalformedPolicyDocumentException">
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
         /// describes the specific error.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -3216,15 +3216,15 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssumeRolePolicy service method.</param>
         /// 
         /// <returns>The response from the UpdateAssumeRolePolicy service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="MalformedPolicyDocumentException">
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
         /// describes the specific error.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -3256,14 +3256,14 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
         /// 
         /// <returns>The response from the UpdateGroup service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityAlreadyExistsException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -3298,21 +3298,21 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the UpdateLoginProfile service method.</param>
         /// 
         /// <returns>The response from the UpdateLoginProfile service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityTemporarilyUnmodifiableException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityTemporarilyUnmodifiableException">
         /// The request was rejected because it referenced an entity that is temporarily unmodifiable,
         /// such as a user name that was deleted and then recreated. The error indicates that
         /// the request is likely to succeed if you try again after waiting several minutes. The
         /// error message describes the entity.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
-        /// <exception cref="PasswordPolicyViolationException">
+        /// <exception cref="Amazon.IdentityManagement.Model.PasswordPolicyViolationException">
         /// The request was rejected because the provided password did not meet the requirements
         /// imposed by the account password policy.
         /// </exception>
@@ -3353,11 +3353,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the UpdateOpenIDConnectProviderThumbprint service method.</param>
         /// 
         /// <returns>The response from the UpdateOpenIDConnectProviderThumbprint service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -3385,15 +3385,15 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the UpdateSAMLProvider service method.</param>
         /// 
         /// <returns>The response from the UpdateSAMLProvider service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -3425,14 +3425,14 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the UpdateServerCertificate service method.</param>
         /// 
         /// <returns>The response from the UpdateServerCertificate service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityAlreadyExistsException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -3475,11 +3475,11 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the UpdateSigningCertificate service method.</param>
         /// 
         /// <returns>The response from the UpdateSigningCertificate service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -3511,20 +3511,20 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
         /// 
         /// <returns>The response from the UpdateUser service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityAlreadyExistsException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
-        /// <exception cref="EntityTemporarilyUnmodifiableException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityTemporarilyUnmodifiableException">
         /// The request was rejected because it referenced an entity that is temporarily unmodifiable,
         /// such as a user name that was deleted and then recreated. The error indicates that
         /// the request is likely to succeed if you try again after waiting several minutes. The
         /// error message describes the entity.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
@@ -3560,18 +3560,18 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the UploadServerCertificate service method.</param>
         /// 
         /// <returns>The response from the UploadServerCertificate service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="EntityAlreadyExistsException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
-        /// <exception cref="KeyPairMismatchException">
+        /// <exception cref="Amazon.IdentityManagement.Model.KeyPairMismatchException">
         /// The request was rejected because the public key certificate and the private key do
         /// not match.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="MalformedCertificateException">
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedCertificateException">
         /// The request was rejected because the certificate was malformed or expired. The error
         /// message describes the specific error.
         /// </exception>
@@ -3610,25 +3610,25 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the UploadSigningCertificate service method.</param>
         /// 
         /// <returns>The response from the UploadSigningCertificate service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="DuplicateCertificateException">
+        /// <exception cref="Amazon.IdentityManagement.Model.DuplicateCertificateException">
         /// The request was rejected because the same certificate is associated to another user
         /// under the account.
         /// </exception>
-        /// <exception cref="EntityAlreadyExistsException">
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
-        /// <exception cref="InvalidCertificateException">
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidCertificateException">
         /// The request was rejected because the certificate is invalid.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
-        /// <exception cref="MalformedCertificateException">
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedCertificateException">
         /// The request was rejected because the certificate was malformed or expired. The error
         /// message describes the specific error.
         /// </exception>
-        /// <exception cref="NoSuchEntityException">
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>

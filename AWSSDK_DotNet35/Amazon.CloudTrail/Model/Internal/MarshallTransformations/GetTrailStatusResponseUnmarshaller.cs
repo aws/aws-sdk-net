@@ -52,6 +52,18 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     response.IsLogging = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LatestCloudWatchLogsDeliveryError", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LatestCloudWatchLogsDeliveryError = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestCloudWatchLogsDeliveryTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LatestCloudWatchLogsDeliveryTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LatestDeliveryError", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

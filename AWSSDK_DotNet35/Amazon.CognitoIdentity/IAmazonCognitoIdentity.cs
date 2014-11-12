@@ -72,22 +72,22 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the CreateIdentityPool service method.</param>
         /// 
         /// <returns>The response from the CreateIdentityPool service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.LimitExceededException">
         /// Thrown when the total number of user pools has exceeded a preset limit.
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceConflictException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
         /// Thrown when a user tries to use a login which is already linked to another account.
         /// </exception>
-        /// <exception cref="TooManyRequestsException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
         CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request);
@@ -129,19 +129,19 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityPool service method.</param>
         /// 
         /// <returns>The response from the DeleteIdentityPool service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="TooManyRequestsException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
         DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request);
@@ -183,19 +183,19 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityPool service method.</param>
         /// 
         /// <returns>The response from the DescribeIdentityPool service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="TooManyRequestsException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
         DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request);
@@ -237,25 +237,25 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the GetId service method.</param>
         /// 
         /// <returns>The response from the GetId service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.LimitExceededException">
         /// Thrown when the total number of user pools has exceeded a preset limit.
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceConflictException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
         /// Thrown when a user tries to use a login which is already linked to another account.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="TooManyRequestsException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
         GetIdResponse GetId(GetIdRequest request);
@@ -303,22 +303,22 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the GetOpenIdToken service method.</param>
         /// 
         /// <returns>The response from the GetOpenIdToken service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceConflictException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
         /// Thrown when a user tries to use a login which is already linked to another account.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="TooManyRequestsException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
         GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request);
@@ -373,26 +373,26 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the GetOpenIdTokenForDeveloperIdentity service method.</param>
         /// 
         /// <returns>The response from the GetOpenIdTokenForDeveloperIdentity service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="DeveloperUserAlreadyRegisteredException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.DeveloperUserAlreadyRegisteredException">
         /// The provided developer user identifier is already registered with Cognito under a
         /// different identity ID.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceConflictException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
         /// Thrown when a user tries to use a login which is already linked to another account.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="TooManyRequestsException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
         GetOpenIdTokenForDeveloperIdentityResponse GetOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request);
@@ -433,19 +433,19 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the ListIdentities service method.</param>
         /// 
         /// <returns>The response from the ListIdentities service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="TooManyRequestsException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
         ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request);
@@ -486,16 +486,16 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityPools service method.</param>
         /// 
         /// <returns>The response from the ListIdentityPools service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="TooManyRequestsException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
         ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request);
@@ -544,22 +544,22 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the LookupDeveloperIdentity service method.</param>
         /// 
         /// <returns>The response from the LookupDeveloperIdentity service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceConflictException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
         /// Thrown when a user tries to use a login which is already linked to another account.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="TooManyRequestsException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
         LookupDeveloperIdentityResponse LookupDeveloperIdentity(LookupDeveloperIdentityRequest request);
@@ -606,22 +606,22 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the MergeDeveloperIdentities service method.</param>
         /// 
         /// <returns>The response from the MergeDeveloperIdentities service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceConflictException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
         /// Thrown when a user tries to use a login which is already linked to another account.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="TooManyRequestsException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
         MergeDeveloperIdentitiesResponse MergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request);
@@ -665,22 +665,22 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the UnlinkDeveloperIdentity service method.</param>
         /// 
         /// <returns>The response from the UnlinkDeveloperIdentity service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceConflictException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
         /// Thrown when a user tries to use a login which is already linked to another account.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="TooManyRequestsException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
         UnlinkDeveloperIdentityResponse UnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request);
@@ -723,22 +723,22 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the UnlinkIdentity service method.</param>
         /// 
         /// <returns>The response from the UnlinkIdentity service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceConflictException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
         /// Thrown when a user tries to use a login which is already linked to another account.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="TooManyRequestsException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
         UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request);
@@ -779,22 +779,22 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityPool service method.</param>
         /// 
         /// <returns>The response from the UpdateIdentityPool service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceConflictException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
         /// Thrown when a user tries to use a login which is already linked to another account.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
         /// Thrown when the requested resource (for example, a dataset or record) does not exist.
         /// </exception>
-        /// <exception cref="TooManyRequestsException">
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
         UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request);

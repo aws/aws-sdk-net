@@ -110,7 +110,7 @@ namespace Amazon.SQS
         /// <param name="actions">The action the client wants to allow for the specified principal.    The following are valid values: <code>* | SendMessage | ReceiveMessage | DeleteMessage | ChangeMessageVisibility | GetQueueAttributes | GetQueueUrl</code>.    For more information about these actions, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes">Understanding   Permissions</a> in the <i>Amazon SQS Developer Guide</i>. Specifying <code>SendMessage</code>,   <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for the    <code>ActionName.n</code> also grants   permissions for the corresponding batch versions of those actions:   <code>SendMessageBatch</code>,   <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</param>
         /// 
         /// <returns>The response from the AddPermission service method, as returned by SQS.</returns>
-        /// <exception cref="OverLimitException">
+        /// <exception cref="Amazon.SQS.Model.OverLimitException">
         /// The action that you requested would violate a limit. For example,      ReceiveMessage
         /// returns this error if the maximum number of messages      inflight has already been
         /// reached. <a>AddPermission</a> returns this error if      the maximum number of permissions
@@ -151,7 +151,7 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the AddPermission service method.</param>
         /// 
         /// <returns>The response from the AddPermission service method, as returned by SQS.</returns>
-        /// <exception cref="OverLimitException">
+        /// <exception cref="Amazon.SQS.Model.OverLimitException">
         /// The action that you requested would violate a limit. For example,      ReceiveMessage
         /// returns this error if the maximum number of messages      inflight has already been
         /// reached. <a>AddPermission</a> returns this error if      the maximum number of permissions
@@ -215,10 +215,10 @@ namespace Amazon.SQS
         /// <param name="visibilityTimeout">The new value (in seconds - from 0 to 43200 - maximum 12 hours) for the message's visibility timeout.</param>
         /// 
         /// <returns>The response from the ChangeMessageVisibility service method, as returned by SQS.</returns>
-        /// <exception cref="MessageNotInflightException">
+        /// <exception cref="Amazon.SQS.Model.MessageNotInflightException">
         /// The message referred to is not in flight.
         /// </exception>
-        /// <exception cref="ReceiptHandleIsInvalidException">
+        /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The receipt handle provided is not valid.
         /// </exception>
         ChangeMessageVisibilityResponse ChangeMessageVisibility(string queueUrl, string receiptHandle, int visibilityTimeout);
@@ -261,10 +261,10 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the ChangeMessageVisibility service method.</param>
         /// 
         /// <returns>The response from the ChangeMessageVisibility service method, as returned by SQS.</returns>
-        /// <exception cref="MessageNotInflightException">
+        /// <exception cref="Amazon.SQS.Model.MessageNotInflightException">
         /// The message referred to is not in flight.
         /// </exception>
-        /// <exception cref="ReceiptHandleIsInvalidException">
+        /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The receipt handle provided is not valid.
         /// </exception>
         ChangeMessageVisibilityResponse ChangeMessageVisibility(ChangeMessageVisibilityRequest request);
@@ -309,17 +309,17 @@ namespace Amazon.SQS
         /// <param name="entries">A list of receipt handles of the messages for which the visibility timeout   must be changed.</param>
         /// 
         /// <returns>The response from the ChangeMessageVisibilityBatch service method, as returned by SQS.</returns>
-        /// <exception cref="BatchEntryIdsNotDistinctException">
+        /// <exception cref="Amazon.SQS.Model.BatchEntryIdsNotDistinctException">
         /// Two or more batch entries have the same <code>Id</code> in the request.
         /// </exception>
-        /// <exception cref="EmptyBatchRequestException">
+        /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
         /// Batch request does not contain an entry.
         /// </exception>
-        /// <exception cref="InvalidBatchEntryIdException">
+        /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request does not abide      by the
         /// specification.
         /// </exception>
-        /// <exception cref="TooManyEntriesInBatchRequestException">
+        /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// Batch request contains more number of entries than permissible.
         /// </exception>
         ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(string queueUrl, List<ChangeMessageVisibilityBatchRequestEntry> entries);
@@ -347,17 +347,17 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the ChangeMessageVisibilityBatch service method.</param>
         /// 
         /// <returns>The response from the ChangeMessageVisibilityBatch service method, as returned by SQS.</returns>
-        /// <exception cref="BatchEntryIdsNotDistinctException">
+        /// <exception cref="Amazon.SQS.Model.BatchEntryIdsNotDistinctException">
         /// Two or more batch entries have the same <code>Id</code> in the request.
         /// </exception>
-        /// <exception cref="EmptyBatchRequestException">
+        /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
         /// Batch request does not contain an entry.
         /// </exception>
-        /// <exception cref="InvalidBatchEntryIdException">
+        /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request does not abide      by the
         /// specification.
         /// </exception>
-        /// <exception cref="TooManyEntriesInBatchRequestException">
+        /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// Batch request contains more number of entries than permissible.
         /// </exception>
         ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request);
@@ -422,11 +422,11 @@ namespace Amazon.SQS
         /// <param name="queueName">The name for the queue to be created.</param>
         /// 
         /// <returns>The response from the CreateQueue service method, as returned by SQS.</returns>
-        /// <exception cref="QueueDeletedRecentlyException">
+        /// <exception cref="Amazon.SQS.Model.QueueDeletedRecentlyException">
         /// You must wait 60 seconds after deleting a queue before you can create another    
         ///  with the same name.
         /// </exception>
-        /// <exception cref="QueueNameExistsException">
+        /// <exception cref="Amazon.SQS.Model.QueueNameExistsException">
         /// A queue already exists with this name. Amazon SQS returns this error only if the request
         /// includes      attributes whose values differ from those of the existing queue.
         /// </exception>
@@ -476,11 +476,11 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the CreateQueue service method.</param>
         /// 
         /// <returns>The response from the CreateQueue service method, as returned by SQS.</returns>
-        /// <exception cref="QueueDeletedRecentlyException">
+        /// <exception cref="Amazon.SQS.Model.QueueDeletedRecentlyException">
         /// You must wait 60 seconds after deleting a queue before you can create another    
         ///  with the same name.
         /// </exception>
-        /// <exception cref="QueueNameExistsException">
+        /// <exception cref="Amazon.SQS.Model.QueueNameExistsException">
         /// A queue already exists with this name. Amazon SQS returns this error only if the request
         /// includes      attributes whose values differ from those of the existing queue.
         /// </exception>
@@ -534,10 +534,10 @@ namespace Amazon.SQS
         /// <param name="receiptHandle">The receipt handle associated with the message to delete.</param>
         /// 
         /// <returns>The response from the DeleteMessage service method, as returned by SQS.</returns>
-        /// <exception cref="InvalidIdFormatException">
+        /// <exception cref="Amazon.SQS.Model.InvalidIdFormatException">
         /// The receipt handle is not valid for the current version.
         /// </exception>
-        /// <exception cref="ReceiptHandleIsInvalidException">
+        /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The receipt handle provided is not valid.
         /// </exception>
         DeleteMessageResponse DeleteMessage(string queueUrl, string receiptHandle);
@@ -573,10 +573,10 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the DeleteMessage service method.</param>
         /// 
         /// <returns>The response from the DeleteMessage service method, as returned by SQS.</returns>
-        /// <exception cref="InvalidIdFormatException">
+        /// <exception cref="Amazon.SQS.Model.InvalidIdFormatException">
         /// The receipt handle is not valid for the current version.
         /// </exception>
-        /// <exception cref="ReceiptHandleIsInvalidException">
+        /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The receipt handle provided is not valid.
         /// </exception>
         DeleteMessageResponse DeleteMessage(DeleteMessageRequest request);
@@ -623,17 +623,17 @@ namespace Amazon.SQS
         /// <param name="entries">A list of receipt handles for the messages to be deleted.</param>
         /// 
         /// <returns>The response from the DeleteMessageBatch service method, as returned by SQS.</returns>
-        /// <exception cref="BatchEntryIdsNotDistinctException">
+        /// <exception cref="Amazon.SQS.Model.BatchEntryIdsNotDistinctException">
         /// Two or more batch entries have the same <code>Id</code> in the request.
         /// </exception>
-        /// <exception cref="EmptyBatchRequestException">
+        /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
         /// Batch request does not contain an entry.
         /// </exception>
-        /// <exception cref="InvalidBatchEntryIdException">
+        /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request does not abide      by the
         /// specification.
         /// </exception>
-        /// <exception cref="TooManyEntriesInBatchRequestException">
+        /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// Batch request contains more number of entries than permissible.
         /// </exception>
         DeleteMessageBatchResponse DeleteMessageBatch(string queueUrl, List<DeleteMessageBatchRequestEntry> entries);
@@ -663,17 +663,17 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the DeleteMessageBatch service method.</param>
         /// 
         /// <returns>The response from the DeleteMessageBatch service method, as returned by SQS.</returns>
-        /// <exception cref="BatchEntryIdsNotDistinctException">
+        /// <exception cref="Amazon.SQS.Model.BatchEntryIdsNotDistinctException">
         /// Two or more batch entries have the same <code>Id</code> in the request.
         /// </exception>
-        /// <exception cref="EmptyBatchRequestException">
+        /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
         /// Batch request does not contain an entry.
         /// </exception>
-        /// <exception cref="InvalidBatchEntryIdException">
+        /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request does not abide      by the
         /// specification.
         /// </exception>
-        /// <exception cref="TooManyEntriesInBatchRequestException">
+        /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// Batch request contains more number of entries than permissible.
         /// </exception>
         DeleteMessageBatchResponse DeleteMessageBatch(DeleteMessageBatchRequest request);
@@ -821,7 +821,7 @@ namespace Amazon.SQS
         /// <param name="attributeNames">A list of attributes to retrieve information for. </param>
         /// 
         /// <returns>The response from the GetQueueAttributes service method, as returned by SQS.</returns>
-        /// <exception cref="InvalidAttributeNameException">
+        /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The attribute referred to does not exist.
         /// </exception>
         GetQueueAttributesResponse GetQueueAttributes(string queueUrl, List<string> attributeNames);
@@ -874,7 +874,7 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the GetQueueAttributes service method.</param>
         /// 
         /// <returns>The response from the GetQueueAttributes service method, as returned by SQS.</returns>
-        /// <exception cref="InvalidAttributeNameException">
+        /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The attribute referred to does not exist.
         /// </exception>
         GetQueueAttributesResponse GetQueueAttributes(GetQueueAttributesRequest request);
@@ -911,7 +911,7 @@ namespace Amazon.SQS
         /// <param name="queueName">The name of the queue whose URL must be fetched.    Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.</param>
         /// 
         /// <returns>The response from the GetQueueUrl service method, as returned by SQS.</returns>
-        /// <exception cref="QueueDoesNotExistException">
+        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The queue referred to does not exist.
         /// </exception>
         GetQueueUrlResponse GetQueueUrl(string queueName);
@@ -932,7 +932,7 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the GetQueueUrl service method.</param>
         /// 
         /// <returns>The response from the GetQueueUrl service method, as returned by SQS.</returns>
-        /// <exception cref="QueueDoesNotExistException">
+        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The queue referred to does not exist.
         /// </exception>
         GetQueueUrlResponse GetQueueUrl(GetQueueUrlRequest request);
@@ -966,7 +966,7 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the ListDeadLetterSourceQueues service method.</param>
         /// 
         /// <returns>The response from the ListDeadLetterSourceQueues service method, as returned by SQS.</returns>
-        /// <exception cref="QueueDoesNotExistException">
+        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The queue referred to does not exist.
         /// </exception>
         ListDeadLetterSourceQueuesResponse ListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request);
@@ -1094,7 +1094,7 @@ namespace Amazon.SQS
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on.</param>
         /// 
         /// <returns>The response from the ReceiveMessage service method, as returned by SQS.</returns>
-        /// <exception cref="OverLimitException">
+        /// <exception cref="Amazon.SQS.Model.OverLimitException">
         /// The action that you requested would violate a limit. For example,      ReceiveMessage
         /// returns this error if the maximum number of messages      inflight has already been
         /// reached. <a>AddPermission</a> returns this error if      the maximum number of permissions
@@ -1173,7 +1173,7 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the ReceiveMessage service method.</param>
         /// 
         /// <returns>The response from the ReceiveMessage service method, as returned by SQS.</returns>
-        /// <exception cref="OverLimitException">
+        /// <exception cref="Amazon.SQS.Model.OverLimitException">
         /// The action that you requested would violate a limit. For example,      ReceiveMessage
         /// returns this error if the maximum number of messages      inflight has already been
         /// reached. <a>AddPermission</a> returns this error if      the maximum number of permissions
@@ -1258,10 +1258,10 @@ namespace Amazon.SQS
         /// <param name="messageBody">The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding important note.</param>
         /// 
         /// <returns>The response from the SendMessage service method, as returned by SQS.</returns>
-        /// <exception cref="InvalidMessageContentsException">
+        /// <exception cref="Amazon.SQS.Model.InvalidMessageContentsException">
         /// The message contains characters outside the allowed set.
         /// </exception>
-        /// <exception cref="UnsupportedOperationException">
+        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
         SendMessageResponse SendMessage(string queueUrl, string messageBody);
@@ -1291,10 +1291,10 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the SendMessage service method.</param>
         /// 
         /// <returns>The response from the SendMessage service method, as returned by SQS.</returns>
-        /// <exception cref="InvalidMessageContentsException">
+        /// <exception cref="Amazon.SQS.Model.InvalidMessageContentsException">
         /// The message contains characters outside the allowed set.
         /// </exception>
-        /// <exception cref="UnsupportedOperationException">
+        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
         SendMessageResponse SendMessage(SendMessageRequest request);
@@ -1357,23 +1357,23 @@ namespace Amazon.SQS
         /// <param name="entries">A list of <a>SendMessageBatchRequestEntry</a> items.</param>
         /// 
         /// <returns>The response from the SendMessageBatch service method, as returned by SQS.</returns>
-        /// <exception cref="BatchEntryIdsNotDistinctException">
+        /// <exception cref="Amazon.SQS.Model.BatchEntryIdsNotDistinctException">
         /// Two or more batch entries have the same <code>Id</code> in the request.
         /// </exception>
-        /// <exception cref="BatchRequestTooLongException">
+        /// <exception cref="Amazon.SQS.Model.BatchRequestTooLongException">
         /// The length of all the messages put together is more than the limit.
         /// </exception>
-        /// <exception cref="EmptyBatchRequestException">
+        /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
         /// Batch request does not contain an entry.
         /// </exception>
-        /// <exception cref="InvalidBatchEntryIdException">
+        /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request does not abide      by the
         /// specification.
         /// </exception>
-        /// <exception cref="TooManyEntriesInBatchRequestException">
+        /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// Batch request contains more number of entries than permissible.
         /// </exception>
-        /// <exception cref="UnsupportedOperationException">
+        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
         SendMessageBatchResponse SendMessageBatch(string queueUrl, List<SendMessageBatchRequestEntry> entries);
@@ -1419,23 +1419,23 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the SendMessageBatch service method.</param>
         /// 
         /// <returns>The response from the SendMessageBatch service method, as returned by SQS.</returns>
-        /// <exception cref="BatchEntryIdsNotDistinctException">
+        /// <exception cref="Amazon.SQS.Model.BatchEntryIdsNotDistinctException">
         /// Two or more batch entries have the same <code>Id</code> in the request.
         /// </exception>
-        /// <exception cref="BatchRequestTooLongException">
+        /// <exception cref="Amazon.SQS.Model.BatchRequestTooLongException">
         /// The length of all the messages put together is more than the limit.
         /// </exception>
-        /// <exception cref="EmptyBatchRequestException">
+        /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
         /// Batch request does not contain an entry.
         /// </exception>
-        /// <exception cref="InvalidBatchEntryIdException">
+        /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request does not abide      by the
         /// specification.
         /// </exception>
-        /// <exception cref="TooManyEntriesInBatchRequestException">
+        /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// Batch request contains more number of entries than permissible.
         /// </exception>
-        /// <exception cref="UnsupportedOperationException">
+        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
         SendMessageBatchResponse SendMessageBatch(SendMessageBatchRequest request);
@@ -1470,7 +1470,7 @@ namespace Amazon.SQS
         /// <param name="attributes">A map of attributes to set. The following lists the names, descriptions, and values of the special request parameters the <code>SetQueueAttributes</code>   action uses:    <ul>    <li><code>DelaySeconds</code> - The time in seconds that the delivery of all messages in the queue will be delayed. An integer from 0 to 900 (15 minutes). The default for this attribute is 0 (zero).</li>      <li><code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it. An integer from 1024 bytes (1 KiB) up to 262144 bytes (256 KiB). The default for this attribute is 262144 (256 KiB).</li>  <li><code>MessageRetentionPeriod</code> - The number of seconds Amazon SQS retains a message. Integer representing seconds, from 60 (1 minute) to 1209600 (14 days). The default for this attribute is 345600 (4 days).</li>  <li><code>Policy</code> - The queue's policy. A valid    form-url-encoded policy. For more information about policy    structure, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/BasicStructure.html">Basic Policy Structure</a> in the <i>Amazon SQS Developer Guide</i>.     For more information about form-url-encoding, see     <a href="http://www.w3.org/MarkUp/html-spec/html-spec_8.html#SEC8.2.1">http://www.w3.org/MarkUp/html-spec/html-spec_8.html#SEC8.2.1</a>.</li>      <li><code>ReceiveMessageWaitTimeSeconds</code> - The time for which a ReceiveMessage call will wait for a message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0. </li>  <li><code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The default for this attribute is 30. For more information about visibility timeout, see Visibility Timeout in the <i>Amazon SQS Developer Guide</i>.</li>  <li><code>RedrivePolicy</code> - The parameters for dead letter queue functionality of the source queue.     For more information about RedrivePolicy and dead letter queues, see Using Amazon SQS Dead Letter Queues in the <i>Amazon SQS Developer Guide</i>.</li>   </ul> </param>
         /// 
         /// <returns>The response from the SetQueueAttributes service method, as returned by SQS.</returns>
-        /// <exception cref="InvalidAttributeNameException">
+        /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The attribute referred to does not exist.
         /// </exception>
         SetQueueAttributesResponse SetQueueAttributes(string queueUrl, Dictionary<string, string> attributes);
@@ -1488,7 +1488,7 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the SetQueueAttributes service method.</param>
         /// 
         /// <returns>The response from the SetQueueAttributes service method, as returned by SQS.</returns>
-        /// <exception cref="InvalidAttributeNameException">
+        /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The attribute referred to does not exist.
         /// </exception>
         SetQueueAttributesResponse SetQueueAttributes(SetQueueAttributesRequest request);

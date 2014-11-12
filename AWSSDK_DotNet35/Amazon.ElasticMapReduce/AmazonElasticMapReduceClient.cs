@@ -233,7 +233,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the AddInstanceGroups service method.</param>
         /// 
         /// <returns>The response from the AddInstanceGroups service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
         /// Indicates that an error occurred while processing the request and that the request
         /// was not         completed.
         /// </exception>
@@ -320,7 +320,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the AddJobFlowSteps service method.</param>
         /// 
         /// <returns>The response from the AddJobFlowSteps service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
         /// Indicates that an error occurred while processing the request and that the request
         /// was not         completed.
         /// </exception>
@@ -379,10 +379,10 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// 
         /// <returns>The response from the AddTags service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the EMR service.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
         public AddTagsResponse AddTags(AddTagsRequest request)
@@ -437,10 +437,10 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// 
         /// <returns>The response from the DescribeCluster service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the EMR service.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
         public DescribeClusterResponse DescribeCluster()
@@ -455,10 +455,10 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the DescribeCluster service method.</param>
         /// 
         /// <returns>The response from the DescribeCluster service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the EMR service.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
         public DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
@@ -538,7 +538,7 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// 
         /// <returns>The response from the DescribeJobFlows service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
         /// Indicates that an error occurred while processing the request and that the request
         /// was not         completed.
         /// </exception>
@@ -579,7 +579,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the DescribeJobFlows service method.</param>
         /// 
         /// <returns>The response from the DescribeJobFlows service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
         /// Indicates that an error occurred while processing the request and that the request
         /// was not         completed.
         /// </exception>
@@ -634,10 +634,10 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// 
         /// <returns>The response from the DescribeStep service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the EMR service.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
         public DescribeStepResponse DescribeStep()
@@ -651,10 +651,10 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the DescribeStep service method.</param>
         /// 
         /// <returns>The response from the DescribeStep service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the EMR service.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
         public DescribeStepResponse DescribeStep(DescribeStepRequest request)
@@ -708,10 +708,10 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// 
         /// <returns>The response from the ListBootstrapActions service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the EMR service.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
         public ListBootstrapActionsResponse ListBootstrapActions()
@@ -725,10 +725,10 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the ListBootstrapActions service method.</param>
         /// 
         /// <returns>The response from the ListBootstrapActions service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the EMR service.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
         public ListBootstrapActionsResponse ListBootstrapActions(ListBootstrapActionsRequest request)
@@ -786,10 +786,10 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// 
         /// <returns>The response from the ListClusters service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the EMR service.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
         public ListClustersResponse ListClusters()
@@ -807,10 +807,10 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
         /// 
         /// <returns>The response from the ListClusters service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the EMR service.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
         public ListClustersResponse ListClusters(ListClustersRequest request)
@@ -864,10 +864,10 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// 
         /// <returns>The response from the ListInstanceGroups service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the EMR service.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
         public ListInstanceGroupsResponse ListInstanceGroups()
@@ -881,10 +881,10 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the ListInstanceGroups service method.</param>
         /// 
         /// <returns>The response from the ListInstanceGroups service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the EMR service.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
         public ListInstanceGroupsResponse ListInstanceGroups(ListInstanceGroupsRequest request)
@@ -941,10 +941,10 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// 
         /// <returns>The response from the ListInstances service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the EMR service.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
         public ListInstancesResponse ListInstances()
@@ -961,10 +961,10 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the ListInstances service method.</param>
         /// 
         /// <returns>The response from the ListInstances service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the EMR service.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
         public ListInstancesResponse ListInstances(ListInstancesRequest request)
@@ -1018,10 +1018,10 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// 
         /// <returns>The response from the ListSteps service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the EMR service.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
         public ListStepsResponse ListSteps()
@@ -1035,10 +1035,10 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the ListSteps service method.</param>
         /// 
         /// <returns>The response from the ListSteps service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the EMR service.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
         public ListStepsResponse ListSteps(ListStepsRequest request)
@@ -1096,7 +1096,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceGroups service method.</param>
         /// 
         /// <returns>The response from the ModifyInstanceGroups service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
         /// Indicates that an error occurred while processing the request and that the request
         /// was not         completed.
         /// </exception>
@@ -1160,10 +1160,10 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the RemoveTags service method.</param>
         /// 
         /// <returns>The response from the RemoveTags service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the EMR service.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
         public RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
@@ -1250,7 +1250,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the RunJobFlow service method.</param>
         /// 
         /// <returns>The response from the RunJobFlow service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
         /// Indicates that an error occurred while processing the request and that the request
         /// was not         completed.
         /// </exception>
@@ -1331,7 +1331,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the SetTerminationProtection service method.</param>
         /// 
         /// <returns>The response from the SetTerminationProtection service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
         /// Indicates that an error occurred while processing the request and that the request
         /// was not         completed.
         /// </exception>
@@ -1391,7 +1391,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the SetVisibleToAllUsers service method.</param>
         /// 
         /// <returns>The response from the SetVisibleToAllUsers service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
         /// Indicates that an error occurred while processing the request and that the request
         /// was not         completed.
         /// </exception>
@@ -1459,7 +1459,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the TerminateJobFlows service method.</param>
         /// 
         /// <returns>The response from the TerminateJobFlows service method, as returned by ElasticMapReduce.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
         /// Indicates that an error occurred while processing the request and that the request
         /// was not         completed.
         /// </exception>

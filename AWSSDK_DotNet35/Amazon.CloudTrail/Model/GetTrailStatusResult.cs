@@ -33,6 +33,8 @@ namespace Amazon.CloudTrail.Model
     public partial class GetTrailStatusResult : AmazonWebServiceResponse
     {
         private bool? _isLogging;
+        private string _latestCloudWatchLogsDeliveryError;
+        private DateTime? _latestCloudWatchLogsDeliveryTime;
         private string _latestDeliveryError;
         private DateTime? _latestDeliveryTime;
         private string _latestNotificationError;
@@ -56,6 +58,44 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetIsLogging()
         {
             return this._isLogging.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestCloudWatchLogsDeliveryError. 
+        /// <para>
+        /// Displays any CloudWatch Logs error that CloudTrail encountered when attempting to
+        /// deliver logs to CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        public string LatestCloudWatchLogsDeliveryError
+        {
+            get { return this._latestCloudWatchLogsDeliveryError; }
+            set { this._latestCloudWatchLogsDeliveryError = value; }
+        }
+
+        // Check to see if LatestCloudWatchLogsDeliveryError property is set
+        internal bool IsSetLatestCloudWatchLogsDeliveryError()
+        {
+            return this._latestCloudWatchLogsDeliveryError != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestCloudWatchLogsDeliveryTime. 
+        /// <para>
+        /// Displays the most recent date and time when CloudTrail delivered logs to CloudWatch
+        /// Logs.
+        /// </para>
+        /// </summary>
+        public DateTime LatestCloudWatchLogsDeliveryTime
+        {
+            get { return this._latestCloudWatchLogsDeliveryTime.GetValueOrDefault(); }
+            set { this._latestCloudWatchLogsDeliveryTime = value; }
+        }
+
+        // Check to see if LatestCloudWatchLogsDeliveryTime property is set
+        internal bool IsSetLatestCloudWatchLogsDeliveryTime()
+        {
+            return this._latestCloudWatchLogsDeliveryTime.HasValue; 
         }
 
         /// <summary>

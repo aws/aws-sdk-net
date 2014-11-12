@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -39,6 +39,11 @@ namespace Amazon.EC2.Model
     /// For more information on modifying snapshot permissions, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
     /// Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Snapshots with AWS Marketplace product codes cannot be made public.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ModifySnapshotAttributeRequest : AmazonEC2Request
     {

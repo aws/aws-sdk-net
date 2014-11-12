@@ -224,6 +224,17 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// This flag specifies if SigV4 is required for the current request.
+        /// </summary>
+        bool RequireSigV4 { get; set; }
+
+        /// <summary>
+        /// The authentication region to use for the request.
+        /// Set from Config.AuthenticationRegion.
+        /// </summary>
+        string AuthenticationRegion { get; set; }
+
+        /// <summary>
         /// Checks if the request stream can be rewinded.
         /// </summary>
         /// <returns>Returns true if the request stream can be rewinded ,

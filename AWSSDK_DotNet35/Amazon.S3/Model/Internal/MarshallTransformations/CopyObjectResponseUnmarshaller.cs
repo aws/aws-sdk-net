@@ -19,6 +19,7 @@ using Amazon.S3.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -83,8 +84,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (responseData.IsHeaderPresent("x-amz-copy-source-version-id"))
                 response.SourceVersionId = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-copy-source-version-id"));
             if (responseData.IsHeaderPresent("x-amz-server-side-encryption"))
-                response.ServerSideEncryptionMethod = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption"));         
-
+                response.ServerSideEncryptionMethod = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption"));
+            if (responseData.IsHeaderPresent(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader))
+                response.ServerSideEncryptionKeyManagementServiceKeyId = S3Transforms.ToString(responseData.GetHeaderValue(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader));
 
             return;
         }

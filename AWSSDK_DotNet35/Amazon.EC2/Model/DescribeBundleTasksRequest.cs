@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -30,6 +30,15 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeBundleTasks operation.
     /// Describes one or more of your bundling tasks.
+    /// 
+    ///  <note>
+    /// <para>
+    /// Completed bundle tasks are listed for only a limited time. If your bundle task is
+    /// no longer in the list, you can still register an AMI from it. Just use <code>RegisterImage</code>
+    /// with the Amazon S3 bucket name and image manifest name you provided to the bundle
+    /// task.
+    /// </para>
+    /// </note>
     /// </summary>
     public partial class DescribeBundleTasksRequest : AmazonEC2Request
     {

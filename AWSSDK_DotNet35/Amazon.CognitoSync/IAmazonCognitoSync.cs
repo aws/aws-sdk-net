@@ -61,16 +61,16 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
         /// 
         /// <returns>The response from the DeleteDataset service method, as returned by CognitoSync.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
         DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request);
@@ -114,16 +114,16 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
         /// 
         /// <returns>The response from the DescribeDataset service method, as returned by CognitoSync.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
         DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request);
@@ -164,16 +164,16 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityPoolUsage service method.</param>
         /// 
         /// <returns>The response from the DescribeIdentityPoolUsage service method, as returned by CognitoSync.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
         DescribeIdentityPoolUsageResponse DescribeIdentityPoolUsage(DescribeIdentityPoolUsageRequest request);
@@ -214,16 +214,16 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityUsage service method.</param>
         /// 
         /// <returns>The response from the DescribeIdentityUsage service method, as returned by CognitoSync.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
         DescribeIdentityUsageResponse DescribeIdentityUsage(DescribeIdentityUsageRequest request);
@@ -264,16 +264,16 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityPoolConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetIdentityPoolConfiguration service method, as returned by CognitoSync.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
         GetIdentityPoolConfigurationResponse GetIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest request);
@@ -317,13 +317,13 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
         /// 
         /// <returns>The response from the ListDatasets service method, as returned by CognitoSync.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
         ListDatasetsResponse ListDatasets(ListDatasetsRequest request);
@@ -364,13 +364,13 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityPoolUsage service method.</param>
         /// 
         /// <returns>The response from the ListIdentityPoolUsage service method, as returned by CognitoSync.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
         ListIdentityPoolUsageResponse ListIdentityPoolUsage(ListIdentityPoolUsageRequest request);
@@ -415,16 +415,16 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the ListRecords service method.</param>
         /// 
         /// <returns>The response from the ListRecords service method, as returned by CognitoSync.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="TooManyRequestsException">
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
         ListRecordsResponse ListRecords(ListRecordsRequest request);
@@ -465,19 +465,19 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the RegisterDevice service method.</param>
         /// 
         /// <returns>The response from the RegisterDevice service method, as returned by CognitoSync.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidConfigurationException">
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidConfigurationException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
         RegisterDeviceResponse RegisterDevice(RegisterDeviceRequest request);
@@ -518,16 +518,16 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityPoolConfiguration service method.</param>
         /// 
         /// <returns>The response from the SetIdentityPoolConfiguration service method, as returned by CognitoSync.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
         SetIdentityPoolConfigurationResponse SetIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest request);
@@ -568,19 +568,19 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the SubscribeToDataset service method.</param>
         /// 
         /// <returns>The response from the SubscribeToDataset service method, as returned by CognitoSync.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidConfigurationException">
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidConfigurationException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
         SubscribeToDatasetResponse SubscribeToDataset(SubscribeToDatasetRequest request);
@@ -621,19 +621,19 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the UnsubscribeFromDataset service method.</param>
         /// 
         /// <returns>The response from the UnsubscribeFromDataset service method, as returned by CognitoSync.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidConfigurationException">
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidConfigurationException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
         UnsubscribeFromDatasetResponse UnsubscribeFromDataset(UnsubscribeFromDatasetRequest request);
@@ -677,26 +677,26 @@ namespace Amazon.CognitoSync
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecords service method.</param>
         /// 
         /// <returns>The response from the UpdateRecords service method, as returned by CognitoSync.</returns>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.CognitoSync.Model.LimitExceededException">
         /// Thrown when the limit on the number of objects or operations has been exceeded.
         /// </exception>
-        /// <exception cref="NotAuthorizedException">
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
-        /// <exception cref="ResourceConflictException">
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceConflictException">
         /// Thrown if an update can't be applied because the resource was changed by another call
         /// and this would result in a conflict.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
-        /// <exception cref="TooManyRequestsException">
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
         /// Thrown if the request is throttled.
         /// </exception>
         UpdateRecordsResponse UpdateRecords(UpdateRecordsRequest request);

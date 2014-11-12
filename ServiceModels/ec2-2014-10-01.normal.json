@@ -1,11 +1,11 @@
 {
   "metadata":{
-    "apiVersion":"2014-09-01",
+    "apiVersion":"2014-10-01",
     "endpointPrefix":"ec2",
     "serviceAbbreviation":"Amazon EC2",
     "serviceFullName":"Amazon Elastic Compute Cloud",
     "signatureVersion":"v4",
-    "xmlNamespace":"http://ec2.amazonaws.com/doc/2014-09-01",
+    "xmlNamespace":"http://ec2.amazonaws.com/doc/2014-10-01",
     "protocol":"ec2"
   },
   "documentation":"<fullname>Amazon Elastic Compute Cloud</fullname> <p>Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in the Amazon Web Services (AWS) cloud. Using Amazon EC2 eliminates your need to invest in hardware up front, so you can develop and deploy applications faster.</p>",
@@ -136,7 +136,7 @@
       },
       "input":{"shape":"BundleInstanceRequest"},
       "output":{"shape":"BundleInstanceResult"},
-      "documentation":"<p>Bundles an Amazon instance store-backed Windows instance.</p> <p>During bundling, only the root device volume (C:\\) is bundled. Data on other instance store volumes is not preserved.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html\">Creating an Instance Store-Backed Windows AMI</a>.</p>"
+      "documentation":"<p>Bundles an Amazon instance store-backed Windows instance.</p> <p>During bundling, only the root device volume (C:\\) is bundled. Data on other instance store volumes is not preserved.</p> <note> <p>This procedure is not applicable for Linux/Unix instances or Windows instances that are backed by Amazon EBS.</p> </note> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html\">Creating an Instance Store-Backed Windows AMI</a>.</p>"
     },
     "CancelBundleTask":{
       "name":"CancelBundleTask",
@@ -224,7 +224,7 @@
       },
       "input":{"shape":"CreateCustomerGatewayRequest"},
       "output":{"shape":"CreateCustomerGatewayResult"},
-      "documentation":"<p>Provides information to AWS about your VPN customer gateway device. The customer gateway is the appliance at your end of the VPN connection. (The device on the AWS side of the VPN connection is the virtual private gateway.) You must provide the Internet-routable IP address of the customer gateway's external interface. The IP address must be static and can't be behind a device performing network address translation (NAT).</p> <p>For devices that use Border Gateway Protocol (BGP), you can also provide the device's BGP Autonomous System Number (ASN). You can use an existing ASN assigned to your network. If you don't have an ASN already, you can use a private ASN (in the 64512 - 65534 range).</p> <p>For more information about VPN customer gateways, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html\">Adding a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>"
+      "documentation":"<p>Provides information to AWS about your VPN customer gateway device. The customer gateway is the appliance at your end of the VPN connection. (The device on the AWS side of the VPN connection is the virtual private gateway.) You must provide the Internet-routable IP address of the customer gateway's external interface. The IP address must be static and can't be behind a device performing network address translation (NAT).</p> <p>For devices that use Border Gateway Protocol (BGP), you can also provide the device's BGP Autonomous System Number (ASN). You can use an existing ASN assigned to your network. If you don't have an ASN already, you can use a private ASN (in the 64512 - 65534 range).</p> <note> <p>Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534, with the exception of 7224, which is reserved in the <code>us-east-1</code> region, and 9059, which is reserved in the <code>eu-west-1</code> region.</p> </note> <p>For more information about VPN customer gateways, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html\">Adding a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>"
     },
     "CreateDhcpOptions":{
       "name":"CreateDhcpOptions",
@@ -603,7 +603,7 @@
         "requestUri":"/"
       },
       "input":{"shape":"DeleteVolumeRequest"},
-      "documentation":"<p>Deletes the specified Amazon EBS volume. The volume must be in the <code>available</code> state (not attached to an instance).</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html\">Deleting an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"
+      "documentation":"<p>Deletes the specified Amazon EBS volume. The volume must be in the <code>available</code> state (not attached to an instance).</p> <note> <p>The volume may remain in the <code>deleting</code> state for several minutes.</p> </note> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html\">Deleting an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"
     },
     "DeleteVpc":{
       "name":"DeleteVpc",
@@ -698,7 +698,7 @@
       },
       "input":{"shape":"DescribeBundleTasksRequest"},
       "output":{"shape":"DescribeBundleTasksResult"},
-      "documentation":"<p>Describes one or more of your bundling tasks.</p>"
+      "documentation":"<p>Describes one or more of your bundling tasks.</p> <note><p>Completed bundle tasks are listed for only a limited time. If your bundle task is no longer in the list, you can still register an AMI from it. Just use <code>RegisterImage</code> with the Amazon S3 bucket name and image manifest name you provided to the bundle task.</p></note>"
     },
     "DescribeConversionTasks":{
       "name":"DescribeConversionTasks",
@@ -762,7 +762,7 @@
       },
       "input":{"shape":"DescribeImagesRequest"},
       "output":{"shape":"DescribeImagesResult"},
-      "documentation":"<p>Describes one or more of the images (AMIs, AKIs, and ARIs) available to you. Images available to you include public images, private images that you own, and private images owned by other AWS accounts but for which you have explicit launch permissions.</p>"
+      "documentation":"<p>Describes one or more of the images (AMIs, AKIs, and ARIs) available to you. Images available to you include public images, private images that you own, and private images owned by other AWS accounts but for which you have explicit launch permissions.</p> <note><p>Deregistered images are included in the returned results for an unspecified interval after deregistration.</p></note>"
     },
     "DescribeInstanceAttribute":{
       "name":"DescribeInstanceAttribute",
@@ -1012,7 +1012,7 @@
       },
       "input":{"shape":"DescribeVolumeStatusRequest"},
       "output":{"shape":"DescribeVolumeStatusResult"},
-      "documentation":"<p>Describes the status of the specified volumes. Volume status provides the result of the checks performed on your volumes to determine events that can impair the performance of your volumes. The performance of a volume can be affected if an issue occurs on the volume's underlying host. If the volume's underlying host experiences a power outage or system issue, after the system is restored, there could be data inconsistencies on the volume. Volume events notify you if this occurs. Volume actions notify you if any action needs to be taken in response to the event.</p> <p>The <code>DescribeVolumeStatus</code> operation provides the following information about the specified volumes:</p> <p><i>Status</i>: Reflects the current status of the volume. The possible values are <code>ok</code>, <code>impaired</code> , <code>warning</code>, or <code>insufficient-data</code>. If all checks pass, the overall status of the volume is <code>ok</code>. If the check fails, the overall status is <code>impaired</code>. If the status is <code>insufficient-data</code>, then the checks may still be taking place on your volume at the time. We recommend that you retry the request. For more information on volume status, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html\">Monitoring the Status of Your Volumes</a>.</p> <p><i>Events</i>: Reflect the cause of a volume status and may require you to take action. For example, if your volume returns an <code>impaired</code> status, then the volume event might be <code>potential-data-inconsistency</code>. This means that your volume has been affected by an issue with the underlying host, has all I/O operations disabled, and may have inconsistent data.</p> <p><i>Actions</i>: Reflect the actions you may have to take in response to an event. For example, if the status of the volume is <code>impaired</code> and the volume event shows <code>potential-data-inconsistency</code>, then the action shows <code>enable-volume-io</code>. This means that you may want to enable the I/O operations for the volume by calling the <a>EnableVolumeIO</a> action and then check the volume for data consistency.</p>"
+      "documentation":"<p>Describes the status of the specified volumes. Volume status provides the result of the checks performed on your volumes to determine events that can impair the performance of your volumes. The performance of a volume can be affected if an issue occurs on the volume's underlying host. If the volume's underlying host experiences a power outage or system issue, after the system is restored, there could be data inconsistencies on the volume. Volume events notify you if this occurs. Volume actions notify you if any action needs to be taken in response to the event.</p> <p>The <code>DescribeVolumeStatus</code> operation provides the following information about the specified volumes:</p> <p><i>Status</i>: Reflects the current status of the volume. The possible values are <code>ok</code>, <code>impaired</code> , <code>warning</code>, or <code>insufficient-data</code>. If all checks pass, the overall status of the volume is <code>ok</code>. If the check fails, the overall status is <code>impaired</code>. If the status is <code>insufficient-data</code>, then the checks may still be taking place on your volume at the time. We recommend that you retry the request. For more information on volume status, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html\">Monitoring the Status of Your Volumes</a>.</p> <p><i>Events</i>: Reflect the cause of a volume status and may require you to take action. For example, if your volume returns an <code>impaired</code> status, then the volume event might be <code>potential-data-inconsistency</code>. This means that your volume has been affected by an issue with the underlying host, has all I/O operations disabled, and may have inconsistent data.</p> <p><i>Actions</i>: Reflect the actions you may have to take in response to an event. For example, if the status of the volume is <code>impaired</code> and the volume event shows <code>potential-data-inconsistency</code>, then the action shows <code>enable-volume-io</code>. This means that you may want to enable the I/O operations for the volume by calling the <a>EnableVolumeIO</a> action and then check the volume for data consistency.</p> <note> <p>Volume status is based on the volume status checks, and does not reflect the volume state. Therefore, volume status does not indicate volumes in the <code>error</code> state (for example, when a volume is incapable of accepting I/O.)</p> </note>"
     },
     "DescribeVolumes":{
       "name":"DescribeVolumes",
@@ -1216,7 +1216,7 @@
         "requestUri":"/"
       },
       "input":{"shape":"ModifyImageAttributeRequest"},
-      "documentation":"<p>Modifies the specified attribute of the specified AMI. You can specify only one attribute at a time.</p>"
+      "documentation":"<p>Modifies the specified attribute of the specified AMI. You can specify only one attribute at a time.</p> <note><p>AWS Marketplace product codes cannot be modified. Images with an AWS Marketplace product code cannot be made public.</p></note>"
     },
     "ModifyInstanceAttribute":{
       "name":"ModifyInstanceAttribute",
@@ -1253,7 +1253,7 @@
         "requestUri":"/"
       },
       "input":{"shape":"ModifySnapshotAttributeRequest"},
-      "documentation":"<p>Adds or removes permission settings for the specified snapshot. You may add or remove specified AWS account IDs from a snapshot's list of create volume permissions, but you cannot do both in a single API call. If you need to both add and remove account IDs for a snapshot, you must use multiple API calls.</p> <p>For more information on modifying snapshot permissions, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html\">Sharing Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"
+      "documentation":"<p>Adds or removes permission settings for the specified snapshot. You may add or remove specified AWS account IDs from a snapshot's list of create volume permissions, but you cannot do both in a single API call. If you need to both add and remove account IDs for a snapshot, you must use multiple API calls.</p> <p>For more information on modifying snapshot permissions, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html\">Sharing Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <note> <p>Snapshots with AWS Marketplace product codes cannot be made public.</p> </note>"
     },
     "ModifySubnetAttribute":{
       "name":"ModifySubnetAttribute",
@@ -1319,7 +1319,7 @@
       },
       "input":{"shape":"RegisterImageRequest"},
       "output":{"shape":"RegisterImageResult"},
-      "documentation":"<p>Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an instance from the AMI. For more information about creating AMIs, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html\">Creating Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>You can also use <code>RegisterImage</code> to create an Amazon EBS-backed AMI from a snapshot of a root device volume. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html\">Launching an Instance from a Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If needed, you can deregister an AMI at any time. Any modifications you make to an AMI backed by an instance store volume invalidates its registration. If you make changes to an image, deregister the previous image and register the new image.</p>"
+      "documentation":"<p>Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an instance from the AMI. For more information about creating AMIs, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html\">Creating Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <note><p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and registers the AMI in a single request, so you don't have to register the AMI yourself.</p></note> <p>You can also use <code>RegisterImage</code> to create an Amazon EBS-backed AMI from a snapshot of a root device volume. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html\">Launching an Instance from a Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If needed, you can deregister an AMI at any time. Any modifications you make to an AMI backed by an instance store volume invalidates its registration. If you make changes to an image, deregister the previous image and register the new image.</p> <note><p>You can't register an image where a secondary (non-root) snapshot has AWS Marketplace product codes.</p></note>"
     },
     "RejectVpcPeeringConnection":{
       "name":"RejectVpcPeeringConnection",
@@ -1954,18 +1954,22 @@
       "members":{
         "Value":{
           "shape":"Boolean",
+          "documentation":"<p>Valid values are <code>true</code> or <code>false</code>.</p>",
           "locationName":"value"
         }
-      }
+      },
+      "documentation":"<p>The value to use when a resource attribute accepts a Boolean value.</p>"
     },
     "AttributeValue":{
       "type":"structure",
       "members":{
         "Value":{
           "shape":"String",
+          "documentation":"<p>Valid values are case-sensitive and vary by action.</p>",
           "locationName":"value"
         }
-      }
+      },
+      "documentation":"<p>The value to use for a resource attribute.</p>"
     },
     "AuthorizeSecurityGroupEgressRequest":{
       "type":"structure",
@@ -3222,7 +3226,7 @@
         },
         "Size":{
           "shape":"Integer",
-          "documentation":"<p>The size of the volume, in GiBs.</p> <p>Constraints: If the volume type is <code>io1</code>, the minimum size of the volume is 10 GiB.</p> <p>Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.</p>"
+          "documentation":"<p>The size of the volume, in GiBs.</p> <p>Constraints: If the volume type is <code>io1</code>, the minimum size of the volume is 4 GiB.</p> <p>Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.</p>"
         },
         "SnapshotId":{
           "shape":"String",
@@ -3244,6 +3248,10 @@
           "shape":"Boolean",
           "documentation":"<p>Specifies whether the volume should be encrypted.</p>",
           "locationName":"encrypted"
+        },
+        "KmsKeyId":{
+          "shape":"String",
+          "documentation":"<p>The full ARN of the AWS Key Management Service (KMS) Customer Master Key (CMK) to use when creating the encrypted volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not specified, the default CMK is used. The ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p>"
         }
       }
     },
@@ -5764,14 +5772,15 @@
       "members":{
         "Name":{
           "shape":"String",
-          "documentation":"<p>The name of the filter.</p>"
+          "documentation":"<p>The name of the filter. Filter names are case-sensitive.</p>"
         },
         "Values":{
           "shape":"ValueStringList",
-          "documentation":"<p>One or more filter values.</p>",
+          "documentation":"<p>One or more filter values. Filter values are case-sensitive.</p>",
           "locationName":"Value"
         }
-      }
+      },
+      "documentation":"<p>A filter name and value pair that is used to return a more specific list of results. Filters can be used to match a set of resources by various criteria, such as tags, attributes, or IDs.</p>"
     },
     "FilterList":{
       "type":"list",
@@ -10201,6 +10210,11 @@
           "shape":"Boolean",
           "documentation":"<p>Indicates whether the snapshot is encrypted.</p>",
           "locationName":"encrypted"
+        },
+        "KmsKeyId":{
+          "shape":"String",
+          "documentation":"<p>The full ARN of the AWS Key Management Service (KMS) Customer Master Key (CMK) that was used to protect the volume encryption key for the parent volume.</p>",
+          "locationName":"kmsKeyId"
         }
       },
       "documentation":"<p>Describes a snapshot.</p>"
@@ -10942,6 +10956,11 @@
           "shape":"Boolean",
           "documentation":"<p>Indicates whether the volume is encrypted.</p>",
           "locationName":"encrypted"
+        },
+        "KmsKeyId":{
+          "shape":"String",
+          "documentation":"<p>The full ARN of the AWS Key Management Service (KMS) Customer Master Key (CMK) that was used to protect the volume encryption key for the volume.</p>",
+          "locationName":"kmsKeyId"
         }
       },
       "documentation":"<p>Describes a volume.</p>"

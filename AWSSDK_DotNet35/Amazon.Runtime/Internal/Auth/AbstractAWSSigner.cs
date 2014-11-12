@@ -89,18 +89,19 @@ namespace Amazon.Runtime.Internal.Auth
         /// Inspects the supplied evidence to return the signer appropriate for the operation
         /// </summary>
         /// <param name="useSigV4Setting">Global setting for the service</param>
+        /// <param name="request">The request.</param>
         /// <param name="config">Configuration for the client</param>
         /// <returns>True if signature v4 request signing should be used</returns>
-        protected static bool UseV4Signing(bool useSigV4Setting, ClientConfig config)
+        protected static bool UseV4Signing(bool useSigV4Setting, IRequest request, ClientConfig config)
         {
-            if (useSigV4Setting || config.SignatureVersion == "4")
+            if (useSigV4Setting || request.RequireSigV4 || config.SignatureVersion == "4")
                 return true;
 
             // do a cascading series of checks to try and arrive at whether we have
             // a recognisable region; this is required to use the AWS4 signer
             RegionEndpoint r = null;
-            if (!string.IsNullOrEmpty(config.AuthenticationRegion))
-                r = RegionEndpoint.GetBySystemName(config.AuthenticationRegion);
+            if (!string.IsNullOrEmpty(request.AuthenticationRegion))
+                r = RegionEndpoint.GetBySystemName(request.AuthenticationRegion);
 
             if (r == null && !string.IsNullOrEmpty(config.ServiceURL))
             {
@@ -123,17 +124,15 @@ namespace Amazon.Runtime.Internal.Auth
         }
 
         
-        protected AbstractAWSSigner SelectSigner(ClientConfig config)
+        protected AbstractAWSSigner SelectSigner(IRequest request, ClientConfig config)
         {
-            return SelectSigner(this, useSigV4Setting: false, config: config);
+            return SelectSigner(this, useSigV4Setting: false, request: request, config: config);
         }
-        protected AbstractAWSSigner SelectSigner(bool useSigV4Setting,  ClientConfig config)
+
+        protected AbstractAWSSigner SelectSigner(AbstractAWSSigner defaultSigner,bool useSigV4Setting, 
+            IRequest request, ClientConfig config)
         {
-            return SelectSigner(this, useSigV4Setting, config);
-        }
-        protected AbstractAWSSigner SelectSigner(AbstractAWSSigner defaultSigner,bool useSigV4Setting,  ClientConfig config)
-        {
-            bool usev4Signing = UseV4Signing(useSigV4Setting, config);
+            bool usev4Signing = UseV4Signing(useSigV4Setting, request, config);
 
             if (usev4Signing)
                 return AWS4SignerInstance;

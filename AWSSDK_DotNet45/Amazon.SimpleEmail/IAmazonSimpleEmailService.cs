@@ -434,7 +434,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the SendEmail service method.</param>
         /// 
         /// <returns>The response from the SendEmail service method, as returned by SimpleEmailService.</returns>
-        /// <exception cref="MessageRejectedException">
+        /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
         /// Indicates that the action failed, and the message could not be sent. Check the error
         /// stack for more        information about what caused the error.
         /// </exception>
@@ -498,7 +498,7 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the SendRawEmail service method.</param>
         /// 
         /// <returns>The response from the SendRawEmail service method, as returned by SimpleEmailService.</returns>
-        /// <exception cref="MessageRejectedException">
+        /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
         /// Indicates that the action failed, and the message could not be sent. Check the error
         /// stack for more        information about what caused the error.
         /// </exception>

@@ -175,10 +175,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the CreateAutoScalingGroup service method.</param>
         /// 
         /// <returns>The response from the CreateAutoScalingGroup service method, as returned by AutoScaling.</returns>
-        /// <exception cref="AlreadyExistsException">
+        /// <exception cref="Amazon.AutoScaling.Model.AlreadyExistsException">
         /// The named Auto Scaling group or launch configuration already exists.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// The quota for capacity groups or launch configurations for this customer has already
         /// been reached.
         /// </exception>
@@ -209,10 +209,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchConfiguration service method.</param>
         /// 
         /// <returns>The response from the CreateLaunchConfiguration service method, as returned by AutoScaling.</returns>
-        /// <exception cref="AlreadyExistsException">
+        /// <exception cref="Amazon.AutoScaling.Model.AlreadyExistsException">
         /// The named Auto Scaling group or launch configuration already exists.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// The quota for capacity groups or launch configurations for this customer has already
         /// been reached.
         /// </exception>
@@ -246,10 +246,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the CreateOrUpdateTags service method.</param>
         /// 
         /// <returns>The response from the CreateOrUpdateTags service method, as returned by AutoScaling.</returns>
-        /// <exception cref="AlreadyExistsException">
+        /// <exception cref="Amazon.AutoScaling.Model.AlreadyExistsException">
         /// The named Auto Scaling group or launch configuration already exists.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// The quota for capacity groups or launch configurations for this customer has already
         /// been reached.
         /// </exception>
@@ -278,11 +278,11 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DeleteAutoScalingGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteAutoScalingGroup service method, as returned by AutoScaling.</returns>
-        /// <exception cref="ResourceInUseException">
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceInUseException">
         /// This is returned when you cannot delete a launch configuration or Auto Scaling group
         /// because it is being used.
         /// </exception>
-        /// <exception cref="ScalingActivityInProgressException">
+        /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// You cannot delete an Auto Scaling group while there are scaling activities in progress
         /// for that group.
         /// </exception>
@@ -317,7 +317,7 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteLaunchConfiguration service method, as returned by AutoScaling.</returns>
-        /// <exception cref="ResourceInUseException">
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceInUseException">
         /// This is returned when you cannot delete a launch configuration or Auto Scaling group
         /// because it is being used.
         /// </exception>
@@ -565,7 +565,7 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAutoScalingGroups service method, as returned by AutoScaling.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups();
@@ -585,7 +585,7 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeAutoScalingGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeAutoScalingGroups service method, as returned by AutoScaling.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request);
@@ -620,7 +620,7 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAutoScalingInstances service method, as returned by AutoScaling.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances();
@@ -640,7 +640,7 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeAutoScalingInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeAutoScalingInstances service method, as returned by AutoScaling.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest request);
@@ -704,7 +704,7 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLaunchConfigurations service method, as returned by AutoScaling.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations();
@@ -722,7 +722,7 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeLaunchConfigurations service method.</param>
         /// 
         /// <returns>The response from the DescribeLaunchConfigurations service method, as returned by AutoScaling.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request);
@@ -829,7 +829,7 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// 
         /// <returns>The response from the DescribeNotificationConfigurations service method, as returned by AutoScaling.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations();
@@ -841,7 +841,7 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeNotificationConfigurations service method.</param>
         /// 
         /// <returns>The response from the DescribeNotificationConfigurations service method, as returned by AutoScaling.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations(DescribeNotificationConfigurationsRequest request);
@@ -870,7 +870,7 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// 
         /// <returns>The response from the DescribePolicies service method, as returned by AutoScaling.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         DescribePoliciesResponse DescribePolicies();
@@ -884,7 +884,7 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribePolicies service method.</param>
         /// 
         /// <returns>The response from the DescribePolicies service method, as returned by AutoScaling.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         DescribePoliciesResponse DescribePolicies(DescribePoliciesRequest request);
@@ -923,7 +923,7 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// 
         /// <returns>The response from the DescribeScalingActivities service method, as returned by AutoScaling.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         DescribeScalingActivitiesResponse DescribeScalingActivities();
@@ -947,7 +947,7 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingActivities service method.</param>
         /// 
         /// <returns>The response from the DescribeScalingActivities service method, as returned by AutoScaling.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest request);
@@ -1007,7 +1007,7 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// 
         /// <returns>The response from the DescribeScheduledActions service method, as returned by AutoScaling.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         DescribeScheduledActionsResponse DescribeScheduledActions();
@@ -1019,7 +1019,7 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledActions service method.</param>
         /// 
         /// <returns>The response from the DescribeScheduledActions service method, as returned by AutoScaling.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest request);
@@ -1059,7 +1059,7 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by AutoScaling.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         DescribeTagsResponse DescribeTags();
@@ -1084,7 +1084,7 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by AutoScaling.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
@@ -1262,7 +1262,7 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the ExecutePolicy service method.</param>
         /// 
         /// <returns>The response from the ExecutePolicy service method, as returned by AutoScaling.</returns>
-        /// <exception cref="ScalingActivityInProgressException">
+        /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// You cannot delete an Auto Scaling group while there are scaling activities in progress
         /// for that group.
         /// </exception>
@@ -1345,7 +1345,7 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleHook service method.</param>
         /// 
         /// <returns>The response from the PutLifecycleHook service method, as returned by AutoScaling.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// The quota for capacity groups or launch configurations for this customer has already
         /// been reached.
         /// </exception>
@@ -1386,7 +1386,7 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the PutNotificationConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutNotificationConfiguration service method, as returned by AutoScaling.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// The quota for capacity groups or launch configurations for this customer has already
         /// been reached.
         /// </exception>
@@ -1417,7 +1417,7 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the PutScalingPolicy service method.</param>
         /// 
         /// <returns>The response from the PutScalingPolicy service method, as returned by AutoScaling.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// The quota for capacity groups or launch configurations for this customer has already
         /// been reached.
         /// </exception>
@@ -1454,10 +1454,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the PutScheduledUpdateGroupAction service method.</param>
         /// 
         /// <returns>The response from the PutScheduledUpdateGroupAction service method, as returned by AutoScaling.</returns>
-        /// <exception cref="AlreadyExistsException">
+        /// <exception cref="Amazon.AutoScaling.Model.AlreadyExistsException">
         /// The named Auto Scaling group or launch configuration already exists.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// The quota for capacity groups or launch configurations for this customer has already
         /// been reached.
         /// </exception>
@@ -1555,7 +1555,7 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the SetDesiredCapacity service method.</param>
         /// 
         /// <returns>The response from the SetDesiredCapacity service method, as returned by AutoScaling.</returns>
-        /// <exception cref="ScalingActivityInProgressException">
+        /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// You cannot delete an Auto Scaling group while there are scaling activities in progress
         /// for that group.
         /// </exception>
@@ -1653,7 +1653,7 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the TerminateInstanceInAutoScalingGroup service method.</param>
         /// 
         /// <returns>The response from the TerminateInstanceInAutoScalingGroup service method, as returned by AutoScaling.</returns>
-        /// <exception cref="ScalingActivityInProgressException">
+        /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// You cannot delete an Auto Scaling group while there are scaling activities in progress
         /// for that group.
         /// </exception>
@@ -1688,7 +1688,7 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the UpdateAutoScalingGroup service method.</param>
         /// 
         /// <returns>The response from the UpdateAutoScalingGroup service method, as returned by AutoScaling.</returns>
-        /// <exception cref="ScalingActivityInProgressException">
+        /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// You cannot delete an Auto Scaling group while there are scaling activities in progress
         /// for that group.
         /// </exception>

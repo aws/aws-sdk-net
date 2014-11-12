@@ -46,12 +46,12 @@ namespace Amazon.Route53Domains
         /// <param name="request">Container for the necessary parameters to execute the CheckDomainAvailability service method.</param>
         /// 
         /// <returns>The response from the CheckDomainAvailability service method, as returned by Route53Domains.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
-        /// <exception cref="UnsupportedTLDException">
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
         CheckDomainAvailabilityResponse CheckDomainAvailability(CheckDomainAvailabilityRequest request);
@@ -79,7 +79,7 @@ namespace Amazon.Route53Domains
         /// <param name="request">Container for the necessary parameters to execute the DisableDomainAutoRenew service method.</param>
         /// 
         /// <returns>The response from the DisableDomainAutoRenew service method, as returned by Route53Domains.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
@@ -113,18 +113,18 @@ namespace Amazon.Route53Domains
         /// <param name="request">Container for the necessary parameters to execute the DisableDomainTransferLock service method.</param>
         /// 
         /// <returns>The response from the DisableDomainTransferLock service method, as returned by Route53Domains.</returns>
-        /// <exception cref="DuplicateRequestException">
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
         /// The request is already in progress for the domain.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
-        /// <exception cref="OperationLimitExceededException">
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
         /// </exception>
-        /// <exception cref="TLDRulesViolationException">
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
         /// The top-level domain does not support this operation.
         /// </exception>
         DisableDomainTransferLockResponse DisableDomainTransferLock(DisableDomainTransferLockRequest request);
@@ -162,7 +162,7 @@ namespace Amazon.Route53Domains
         /// <param name="request">Container for the necessary parameters to execute the EnableDomainAutoRenew service method.</param>
         /// 
         /// <returns>The response from the EnableDomainAutoRenew service method, as returned by Route53Domains.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
@@ -194,18 +194,18 @@ namespace Amazon.Route53Domains
         /// <param name="request">Container for the necessary parameters to execute the EnableDomainTransferLock service method.</param>
         /// 
         /// <returns>The response from the EnableDomainTransferLock service method, as returned by Route53Domains.</returns>
-        /// <exception cref="DuplicateRequestException">
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
         /// The request is already in progress for the domain.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
-        /// <exception cref="OperationLimitExceededException">
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
         /// </exception>
-        /// <exception cref="TLDRulesViolationException">
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
         /// The top-level domain does not support this operation.
         /// </exception>
         EnableDomainTransferLockResponse EnableDomainTransferLock(EnableDomainTransferLockRequest request);
@@ -233,7 +233,7 @@ namespace Amazon.Route53Domains
         /// <param name="request">Container for the necessary parameters to execute the GetDomainDetail service method.</param>
         /// 
         /// <returns>The response from the GetDomainDetail service method, as returned by Route53Domains.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
@@ -262,7 +262,7 @@ namespace Amazon.Route53Domains
         /// <param name="request">Container for the necessary parameters to execute the GetOperationDetail service method.</param>
         /// 
         /// <returns>The response from the GetOperationDetail service method, as returned by Route53Domains.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
@@ -291,7 +291,7 @@ namespace Amazon.Route53Domains
         /// </summary>
         /// 
         /// <returns>The response from the ListDomains service method, as returned by Route53Domains.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
@@ -305,7 +305,7 @@ namespace Amazon.Route53Domains
         /// <param name="request">Container for the necessary parameters to execute the ListDomains service method.</param>
         /// 
         /// <returns>The response from the ListDomains service method, as returned by Route53Domains.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
@@ -333,7 +333,7 @@ namespace Amazon.Route53Domains
         /// </summary>
         /// 
         /// <returns>The response from the ListOperations service method, as returned by Route53Domains.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
@@ -346,7 +346,7 @@ namespace Amazon.Route53Domains
         /// <param name="request">Container for the necessary parameters to execute the ListOperations service method.</param>
         /// 
         /// <returns>The response from the ListOperations service method, as returned by Route53Domains.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
@@ -394,24 +394,24 @@ namespace Amazon.Route53Domains
         /// <param name="request">Container for the necessary parameters to execute the RegisterDomain service method.</param>
         /// 
         /// <returns>The response from the RegisterDomain service method, as returned by Route53Domains.</returns>
-        /// <exception cref="DomainLimitExceededException">
+        /// <exception cref="Amazon.Route53Domains.Model.DomainLimitExceededException">
         /// The number of domains has exceeded the allowed threshold for the account.
         /// </exception>
-        /// <exception cref="DuplicateRequestException">
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
         /// The request is already in progress for the domain.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
-        /// <exception cref="OperationLimitExceededException">
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
         /// </exception>
-        /// <exception cref="TLDRulesViolationException">
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
         /// The top-level domain does not support this operation.
         /// </exception>
-        /// <exception cref="UnsupportedTLDException">
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
         RegisterDomainResponse RegisterDomain(RegisterDomainRequest request);
@@ -439,7 +439,7 @@ namespace Amazon.Route53Domains
         /// <param name="request">Container for the necessary parameters to execute the RetrieveDomainAuthCode service method.</param>
         /// 
         /// <returns>The response from the RetrieveDomainAuthCode service method, as returned by Route53Domains.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
@@ -501,24 +501,24 @@ namespace Amazon.Route53Domains
         /// <param name="request">Container for the necessary parameters to execute the TransferDomain service method.</param>
         /// 
         /// <returns>The response from the TransferDomain service method, as returned by Route53Domains.</returns>
-        /// <exception cref="DomainLimitExceededException">
+        /// <exception cref="Amazon.Route53Domains.Model.DomainLimitExceededException">
         /// The number of domains has exceeded the allowed threshold for the account.
         /// </exception>
-        /// <exception cref="DuplicateRequestException">
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
         /// The request is already in progress for the domain.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
-        /// <exception cref="OperationLimitExceededException">
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
         /// </exception>
-        /// <exception cref="TLDRulesViolationException">
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
         /// The top-level domain does not support this operation.
         /// </exception>
-        /// <exception cref="UnsupportedTLDException">
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
         TransferDomainResponse TransferDomain(TransferDomainRequest request);
@@ -554,18 +554,18 @@ namespace Amazon.Route53Domains
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainContact service method.</param>
         /// 
         /// <returns>The response from the UpdateDomainContact service method, as returned by Route53Domains.</returns>
-        /// <exception cref="DuplicateRequestException">
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
         /// The request is already in progress for the domain.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
-        /// <exception cref="OperationLimitExceededException">
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
         /// </exception>
-        /// <exception cref="TLDRulesViolationException">
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
         /// The top-level domain does not support this operation.
         /// </exception>
         UpdateDomainContactResponse UpdateDomainContact(UpdateDomainContactRequest request);
@@ -605,18 +605,18 @@ namespace Amazon.Route53Domains
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainContactPrivacy service method.</param>
         /// 
         /// <returns>The response from the UpdateDomainContactPrivacy service method, as returned by Route53Domains.</returns>
-        /// <exception cref="DuplicateRequestException">
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
         /// The request is already in progress for the domain.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
-        /// <exception cref="OperationLimitExceededException">
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
         /// </exception>
-        /// <exception cref="TLDRulesViolationException">
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
         /// The top-level domain does not support this operation.
         /// </exception>
         UpdateDomainContactPrivacyResponse UpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request);
@@ -652,18 +652,18 @@ namespace Amazon.Route53Domains
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainNameservers service method.</param>
         /// 
         /// <returns>The response from the UpdateDomainNameservers service method, as returned by Route53Domains.</returns>
-        /// <exception cref="DuplicateRequestException">
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
         /// The request is already in progress for the domain.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
-        /// <exception cref="OperationLimitExceededException">
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
         /// </exception>
-        /// <exception cref="TLDRulesViolationException">
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
         /// The top-level domain does not support this operation.
         /// </exception>
         UpdateDomainNameserversResponse UpdateDomainNameservers(UpdateDomainNameserversRequest request);

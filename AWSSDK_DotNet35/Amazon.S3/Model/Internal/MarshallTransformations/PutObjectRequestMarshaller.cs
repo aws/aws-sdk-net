@@ -73,6 +73,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(putObjectRequest.ServerSideEncryptionCustomerProvidedKey));
             }
 
+            if (putObjectRequest.IsSetServerSideEncryptionKeyManagementServiceKeyId())
+                request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader, putObjectRequest.ServerSideEncryptionKeyManagementServiceKeyId);
+
             AmazonS3Util.SetMetadataHeaders(request, putObjectRequest.Metadata);
 
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",

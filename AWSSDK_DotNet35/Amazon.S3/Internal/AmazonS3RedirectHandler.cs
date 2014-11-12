@@ -39,26 +39,24 @@ namespace Amazon.S3.Internal
                 request.Headers.Remove(HeaderKeys.HostHeader);
             }
 
-
+            // FinalizeForRedirect() sets the correct endpoint as per the redirected location.
             base.FinalizeForRedirect(executionContext, redirectedLocation);
 
+            // Evaluate if this request requires SigV4. The endpoint set by FinalizeForRedirect()
+            // is one of the inputs to decide if SigV4 is required.
+            AmazonS3KmsHandler.EvaluateIfSigV4Required(executionContext.RequestContext.Request);
+
             var redirect = new AmazonS3Uri(redirectedLocation);
-            if (AWSConfigs.S3Config.UseSignatureVersion4 ||                
+            if (AWSConfigs.S3Config.UseSignatureVersion4 ||   
+                request.RequireSigV4 ||
                 redirect.Region.GetEndpointForService("s3").SignatureVersionOverride == "4")
             {
-                // Resign if sigV4 is enabled or if the redirected region mandates sigV4.
+                // Resign if sigV4 is enabled, the request explicitly requires SigV4 or if the redirected region mandates sigV4.
                 // resign appropriately for the redirected region, re-instating the user's client 
                 // config to original state when done
-                var oldAuthRegion = executionContext.RequestContext.ClientConfig.AuthenticationRegion;
-                executionContext.RequestContext.ClientConfig.AuthenticationRegion = redirect.Region.SystemName;
-                try
-                {
-                    Signer.SignRequest(executionContext.RequestContext);
-                }
-                finally
-                {
-                    executionContext.RequestContext.ClientConfig.AuthenticationRegion = oldAuthRegion;
-                }
+
+                request.AuthenticationRegion = redirect.Region.SystemName;
+                Signer.SignRequest(executionContext.RequestContext);
             }
         }
     }

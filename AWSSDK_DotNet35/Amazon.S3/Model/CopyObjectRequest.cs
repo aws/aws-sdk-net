@@ -52,6 +52,7 @@ namespace Amazon.S3.Model
         private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
         private string serverSideEncryptionCustomerProvidedKey;
         private string serverSideEncryptionCustomerProvidedKeyMD5;
+        private string serverSideEncryptionKeyManagementServiceKeyId;
 
         private ServerSideEncryptionCustomerMethod copySourceServerSideCustomerEncryption;
         private string copySourceServerSideEncryptionCustomerProvidedKey;
@@ -295,6 +296,25 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// The id of the AWS Key Management Service key that Amazon S3 should use to encrypt and decrypt the object.
+        /// If a key id is not specified, the default key will be used for encryption and decryption.
+        /// </summary>
+        public string ServerSideEncryptionKeyManagementServiceKeyId
+        {
+            get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
+            set { this.serverSideEncryptionKeyManagementServiceKeyId = value; }
+        }
+
+        /// <summary>
+        /// Checks if ServerSideEncryptionKeyManagementServiceKeyId property is set.
+        /// </summary>
+        /// <returns>true if ServerSideEncryptionKeyManagementServiceKeyId property is set.</returns>
+        internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
+        {
+            return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
+        }
+
+        /// <summary>
         /// The type of storage to use for the object. Defaults to 'STANDARD'.
         ///  
         /// </summary>
@@ -481,7 +501,17 @@ namespace Amazon.S3.Model
         internal bool IsSetCopySourceServerSideEncryptionCustomerProvidedKeyMD5()
         {
             return !System.String.IsNullOrEmpty(this.copySourceServerSideEncryptionCustomerProvidedKeyMD5);
-        }		
+        }
+
+        internal override bool RequireSigV4
+        {
+            get
+            {
+                if (this.ServerSideEncryptionMethod == ServerSideEncryptionMethod.AWSKMS)
+                    return true;
+                return false;
+            }
+        }
     }
 }
     

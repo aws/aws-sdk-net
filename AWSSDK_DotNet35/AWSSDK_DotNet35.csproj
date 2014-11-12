@@ -143,6 +143,15 @@
     <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CodeDeploy\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CodeDeploy\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CodeDeploy\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.CognitoIdentity\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -238,6 +247,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.CloudTrail\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.ConfigService\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.ConfigService\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.ConfigService\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.CloudWatch\*.cs">
@@ -406,6 +424,15 @@
     <Compile Include="Amazon.ImportExport\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.KeyManagementService\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.KeyManagementService\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.KeyManagementService\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Kinesis\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -508,6 +535,7 @@
     <Compile Include="Amazon.S3\Encryption\Internal\SetupEncryptionHandler.cs" />
     <Compile Include="Amazon.S3\Encryption\Internal\UserAgentHandler.cs" />
     <Compile Include="Amazon.S3\Internal\AmazonS3ExceptionHandler.cs" />
+    <Compile Include="Amazon.S3\Internal\AmazonS3KmsHandler.cs" />
     <Compile Include="Amazon.S3\Internal\AmazonS3PostMarshallHandler.cs" />
     <Compile Include="Amazon.S3\Internal\AmazonS3PreMarshallHandler.cs" />
     <Compile Include="Amazon.S3\Internal\AmazonS3RedirectHandler.cs" />

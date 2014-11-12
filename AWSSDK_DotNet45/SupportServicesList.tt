@@ -51,6 +51,7 @@
 		"Amazon.StorageGateway.IAmazonStorageGateway",
 		"Amazon.AWSSupport.IAmazonAWSSupport",
 		"Amazon.CognitoIdentity.IAmazonCognitoIdentity",
-		"Amazon.CognitoSync.IAmazonCognitoSync"
+		"Amazon.CognitoSync.IAmazonCognitoSync",
+        "Amazon.CodeDeploy.IAmazonCodeDeploy"
 	};
 #>

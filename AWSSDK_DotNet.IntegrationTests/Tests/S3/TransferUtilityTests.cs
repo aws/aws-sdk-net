@@ -411,14 +411,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 try
                 {
-                    var response = Client.GetObject(new GetObjectRequest
+                    var request = new GetObjectRequest
                     {
                         BucketName = bucketName,
                         Key = key,
-                    });
-                    //Assert.AreEqual(contentType, response.Headers.ContentType);
-                    response.WriteResponseStreamToFile(downloadPath);
-                    UtilityMethods.CompareFiles(path, downloadPath);
+                    };
+                    using (var response = Client.GetObject(request))
+                    {
+                        //Assert.AreEqual(contentType, response.Headers.ContentType);
+                        response.WriteResponseStreamToFile(downloadPath);
+                    }
                 }
                 catch(AmazonS3Exception e)
                 {
@@ -426,6 +428,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         throw;
                 }
             }
+            UtilityMethods.CompareFiles(path, downloadPath);
         }
 
         public static void ValidateDirectoryContents(string bucketName, string rootDirectoryName, string directoryPath)

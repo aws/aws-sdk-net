@@ -55,21 +55,21 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the AssociateVPCWithHostedZone service method.</param>
         /// 
         /// <returns>The response from the AssociateVPCWithHostedZone service method, as returned by Route53.</returns>
-        /// <exception cref="ConflictingDomainExistsException">
+        /// <exception cref="Amazon.Route53.Model.ConflictingDomainExistsException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="InvalidVPCIdException">
+        /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
         /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Route
         /// 53 returns this error when the VPC specified by <code>VPCId</code> does not belong
         /// to you.
         /// </exception>
-        /// <exception cref="NoSuchHostedZoneException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// 
         /// </exception>
-        /// <exception cref="PublicZoneVPCAssociationException">
+        /// <exception cref="Amazon.Route53.Model.PublicZoneVPCAssociationException">
         /// The hosted zone you are trying to associate VPC with doesn't have any VPC association.
         /// Route 53 currently doesn't support associate a VPC with a public hosted zone.
         /// </exception>
@@ -136,21 +136,21 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the ChangeResourceRecordSets service method.</param>
         /// 
         /// <returns>The response from the ChangeResourceRecordSets service method, as returned by Route53.</returns>
-        /// <exception cref="InvalidChangeBatchException">
+        /// <exception cref="Amazon.Route53.Model.InvalidChangeBatchException">
         /// This error contains a list of one or more error messages. Each error message indicates
         /// one error in the change batch. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html#example_Errors">Example
         /// InvalidChangeBatch Errors</a>.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="NoSuchHealthCheckException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// The health check you are trying to get or delete does not exist.
         /// </exception>
-        /// <exception cref="NoSuchHostedZoneException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// 
         /// </exception>
-        /// <exception cref="PriorRequestNotCompleteException">
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
         /// The request was rejected because Route 53 was still processing a prior request.
         /// </exception>
         ChangeResourceRecordSetsResponse ChangeResourceRecordSets(ChangeResourceRecordSetsRequest request);
@@ -177,16 +177,16 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the ChangeTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ChangeTagsForResource service method, as returned by Route53.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="NoSuchHealthCheckException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// The health check you are trying to get or delete does not exist.
         /// </exception>
-        /// <exception cref="PriorRequestNotCompleteException">
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
         /// The request was rejected because Route 53 was still processing a prior request.
         /// </exception>
-        /// <exception cref="ThrottlingException">
+        /// <exception cref="Amazon.Route53.Model.ThrottlingException">
         /// 
         /// </exception>
         ChangeTagsForResourceResponse ChangeTagsForResource(ChangeTagsForResourceRequest request);
@@ -221,14 +221,14 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the CreateHealthCheck service method.</param>
         /// 
         /// <returns>The response from the CreateHealthCheck service method, as returned by Route53.</returns>
-        /// <exception cref="HealthCheckAlreadyExistsException">
+        /// <exception cref="Amazon.Route53.Model.HealthCheckAlreadyExistsException">
         /// The health check you are trying to create already exists. Route 53 returns this error
         /// when a health check has already been created with the specified <code>CallerReference</code>.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="TooManyHealthChecksException">
+        /// <exception cref="Amazon.Route53.Model.TooManyHealthChecksException">
         /// 
         /// </exception>
         CreateHealthCheckResponse CreateHealthCheck(CreateHealthCheckRequest request);
@@ -283,38 +283,38 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the CreateHostedZone service method.</param>
         /// 
         /// <returns>The response from the CreateHostedZone service method, as returned by Route53.</returns>
-        /// <exception cref="ConflictingDomainExistsException">
+        /// <exception cref="Amazon.Route53.Model.ConflictingDomainExistsException">
         /// 
         /// </exception>
-        /// <exception cref="DelegationSetNotAvailableException">
+        /// <exception cref="Amazon.Route53.Model.DelegationSetNotAvailableException">
         /// Route 53 allows some duplicate domain names, but there is a maximum number of duplicate
         /// names. This error indicates that you have reached that maximum. If you want to create
         /// another hosted zone with the same name and Route 53 generates this error, you can
         /// request an increase to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact
         /// Us</a> page.
         /// </exception>
-        /// <exception cref="DelegationSetNotReusableException">
+        /// <exception cref="Amazon.Route53.Model.DelegationSetNotReusableException">
         /// The specified delegation set has not been marked as reusable.
         /// </exception>
-        /// <exception cref="HostedZoneAlreadyExistsException">
+        /// <exception cref="Amazon.Route53.Model.HostedZoneAlreadyExistsException">
         /// The hosted zone you are trying to create already exists. Route 53 returns this error
         /// when a hosted zone has already been created with the specified <code>CallerReference</code>.
         /// </exception>
-        /// <exception cref="InvalidDomainNameException">
+        /// <exception cref="Amazon.Route53.Model.InvalidDomainNameException">
         /// This error indicates that the specified domain name is not valid.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="InvalidVPCIdException">
+        /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
         /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Route
         /// 53 returns this error when the VPC specified by <code>VPCId</code> does not belong
         /// to you.
         /// </exception>
-        /// <exception cref="NoSuchDelegationSetException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
         /// The specified delegation set does not exist.
         /// </exception>
-        /// <exception cref="TooManyHostedZonesException">
+        /// <exception cref="Amazon.Route53.Model.TooManyHostedZonesException">
         /// This error indicates that you've reached the maximum number of hosted zones that can
         /// be created for the current AWS account. You can request an increase to the limit on
         /// the <a href="http://aws.amazon.com/route53-request/">Contact Us</a> page.
@@ -356,30 +356,30 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the CreateReusableDelegationSet service method.</param>
         /// 
         /// <returns>The response from the CreateReusableDelegationSet service method, as returned by Route53.</returns>
-        /// <exception cref="DelegationSetAlreadyCreatedException">
+        /// <exception cref="Amazon.Route53.Model.DelegationSetAlreadyCreatedException">
         /// A delegation set with the same owner and caller reference combination has already
         /// been created.
         /// </exception>
-        /// <exception cref="DelegationSetAlreadyReusableException">
+        /// <exception cref="Amazon.Route53.Model.DelegationSetAlreadyReusableException">
         /// The specified delegation set has already been marked as reusable.
         /// </exception>
-        /// <exception cref="DelegationSetNotAvailableException">
+        /// <exception cref="Amazon.Route53.Model.DelegationSetNotAvailableException">
         /// Route 53 allows some duplicate domain names, but there is a maximum number of duplicate
         /// names. This error indicates that you have reached that maximum. If you want to create
         /// another hosted zone with the same name and Route 53 generates this error, you can
         /// request an increase to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact
         /// Us</a> page.
         /// </exception>
-        /// <exception cref="HostedZoneNotFoundException">
+        /// <exception cref="Amazon.Route53.Model.HostedZoneNotFoundException">
         /// The specified HostedZone cannot be found.
         /// </exception>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.Route53.Model.InvalidArgumentException">
         /// At least one of the specified arguments is invalid.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="LimitsExceededException">
+        /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
         /// The limits specified for a resource have been exceeded.
         /// </exception>
         CreateReusableDelegationSetResponse CreateReusableDelegationSet(CreateReusableDelegationSetRequest request);
@@ -414,14 +414,14 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the DeleteHealthCheck service method.</param>
         /// 
         /// <returns>The response from the DeleteHealthCheck service method, as returned by Route53.</returns>
-        /// <exception cref="HealthCheckInUseException">
+        /// <exception cref="Amazon.Route53.Model.HealthCheckInUseException">
         /// There are resource records associated with this health check. Before you can delete
         /// the health check, you must disassociate it from the resource record sets.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="NoSuchHealthCheckException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// The health check you are trying to get or delete does not exist.
         /// </exception>
         DeleteHealthCheckResponse DeleteHealthCheck(DeleteHealthCheckRequest request);
@@ -461,18 +461,18 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the DeleteHostedZone service method.</param>
         /// 
         /// <returns>The response from the DeleteHostedZone service method, as returned by Route53.</returns>
-        /// <exception cref="HostedZoneNotEmptyException">
+        /// <exception cref="Amazon.Route53.Model.HostedZoneNotEmptyException">
         /// The hosted zone contains resource record sets in addition to the default NS and SOA
         /// resource record sets. Before you can delete the hosted zone, you must delete the additional
         /// resource record sets.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="NoSuchHostedZoneException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// 
         /// </exception>
-        /// <exception cref="PriorRequestNotCompleteException">
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
         /// The request was rejected because Route 53 was still processing a prior request.
         /// </exception>
         DeleteHostedZoneResponse DeleteHostedZone(DeleteHostedZoneRequest request);
@@ -507,17 +507,17 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the DeleteReusableDelegationSet service method.</param>
         /// 
         /// <returns>The response from the DeleteReusableDelegationSet service method, as returned by Route53.</returns>
-        /// <exception cref="DelegationSetInUseException">
+        /// <exception cref="Amazon.Route53.Model.DelegationSetInUseException">
         /// The specified delegation contains associated hosted zones which must be deleted before
         /// the reusable delegation set can be deleted.
         /// </exception>
-        /// <exception cref="DelegationSetNotReusableException">
+        /// <exception cref="Amazon.Route53.Model.DelegationSetNotReusableException">
         /// The specified delegation set has not been marked as reusable.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="NoSuchDelegationSetException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
         /// The specified delegation set does not exist.
         /// </exception>
         DeleteReusableDelegationSetResponse DeleteReusableDelegationSet(DeleteReusableDelegationSetRequest request);
@@ -555,23 +555,23 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the DisassociateVPCFromHostedZone service method.</param>
         /// 
         /// <returns>The response from the DisassociateVPCFromHostedZone service method, as returned by Route53.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="InvalidVPCIdException">
+        /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
         /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Route
         /// 53 returns this error when the VPC specified by <code>VPCId</code> does not belong
         /// to you.
         /// </exception>
-        /// <exception cref="LastVPCAssociationException">
+        /// <exception cref="Amazon.Route53.Model.LastVPCAssociationException">
         /// The VPC you are trying to disassociate from the hosted zone is the last the VPC that
         /// is associated with the hosted zone. Route 53 currently doesn't support disassociate
         /// the last VPC from the hosted zone.
         /// </exception>
-        /// <exception cref="NoSuchHostedZoneException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// 
         /// </exception>
-        /// <exception cref="VPCAssociationNotFoundException">
+        /// <exception cref="Amazon.Route53.Model.VPCAssociationNotFoundException">
         /// The VPC you specified is not currently associated with the hosted zone.
         /// </exception>
         DisassociateVPCFromHostedZoneResponse DisassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request);
@@ -610,10 +610,10 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the GetChange service method.</param>
         /// 
         /// <returns>The response from the GetChange service method, as returned by Route53.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="NoSuchChangeException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchChangeException">
         /// 
         /// </exception>
         GetChangeResponse GetChange(GetChangeRequest request);
@@ -669,10 +669,10 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the GetGeoLocation service method.</param>
         /// 
         /// <returns>The response from the GetGeoLocation service method, as returned by Route53.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="NoSuchGeoLocationException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchGeoLocationException">
         /// The geo location you are trying to get does not exist.
         /// </exception>
         GetGeoLocationResponse GetGeoLocation(GetGeoLocationRequest request);
@@ -700,14 +700,14 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheck service method.</param>
         /// 
         /// <returns>The response from the GetHealthCheck service method, as returned by Route53.</returns>
-        /// <exception cref="IncompatibleVersionException">
+        /// <exception cref="Amazon.Route53.Model.IncompatibleVersionException">
         /// The resource you are trying to access is unsupported on this Route 53 endpoint. Please
         /// consider using a newer endpoint or a tool that does so.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="NoSuchHealthCheckException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// The health check you are trying to get or delete does not exist.
         /// </exception>
         GetHealthCheckResponse GetHealthCheck(GetHealthCheckRequest request);
@@ -762,7 +762,7 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckLastFailureReason service method.</param>
         /// 
         /// <returns>The response from the GetHealthCheckLastFailureReason service method, as returned by Route53.</returns>
-        /// <exception cref="NoSuchHealthCheckException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// The health check you are trying to get or delete does not exist.
         /// </exception>
         GetHealthCheckLastFailureReasonResponse GetHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest request);
@@ -791,7 +791,7 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckStatus service method.</param>
         /// 
         /// <returns>The response from the GetHealthCheckStatus service method, as returned by Route53.</returns>
-        /// <exception cref="NoSuchHealthCheckException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// The health check you are trying to get or delete does not exist.
         /// </exception>
         GetHealthCheckStatusResponse GetHealthCheckStatus(GetHealthCheckStatusRequest request);
@@ -821,10 +821,10 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the GetHostedZone service method.</param>
         /// 
         /// <returns>The response from the GetHostedZone service method, as returned by Route53.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="NoSuchHostedZoneException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// 
         /// </exception>
         GetHostedZoneResponse GetHostedZone(GetHostedZoneRequest request);
@@ -852,13 +852,13 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the GetReusableDelegationSet service method.</param>
         /// 
         /// <returns>The response from the GetReusableDelegationSet service method, as returned by Route53.</returns>
-        /// <exception cref="DelegationSetNotReusableException">
+        /// <exception cref="Amazon.Route53.Model.DelegationSetNotReusableException">
         /// The specified delegation set has not been marked as reusable.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="NoSuchDelegationSetException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
         /// The specified delegation set does not exist.
         /// </exception>
         GetReusableDelegationSetResponse GetReusableDelegationSet(GetReusableDelegationSetRequest request);
@@ -899,7 +899,7 @@ namespace Amazon.Route53
         /// </summary>
         /// 
         /// <returns>The response from the ListGeoLocations service method, as returned by Route53.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
         ListGeoLocationsResponse ListGeoLocations();
@@ -925,7 +925,7 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the ListGeoLocations service method.</param>
         /// 
         /// <returns>The response from the ListGeoLocations service method, as returned by Route53.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
         ListGeoLocationsResponse ListGeoLocations(ListGeoLocationsRequest request);
@@ -960,11 +960,11 @@ namespace Amazon.Route53
         /// </summary>
         /// 
         /// <returns>The response from the ListHealthChecks service method, as returned by Route53.</returns>
-        /// <exception cref="IncompatibleVersionException">
+        /// <exception cref="Amazon.Route53.Model.IncompatibleVersionException">
         /// The resource you are trying to access is unsupported on this Route 53 endpoint. Please
         /// consider using a newer endpoint or a tool that does so.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
         ListHealthChecksResponse ListHealthChecks();
@@ -984,11 +984,11 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the ListHealthChecks service method.</param>
         /// 
         /// <returns>The response from the ListHealthChecks service method, as returned by Route53.</returns>
-        /// <exception cref="IncompatibleVersionException">
+        /// <exception cref="Amazon.Route53.Model.IncompatibleVersionException">
         /// The resource you are trying to access is unsupported on this Route 53 endpoint. Please
         /// consider using a newer endpoint or a tool that does so.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
         ListHealthChecksResponse ListHealthChecks(ListHealthChecksRequest request);
@@ -1023,13 +1023,13 @@ namespace Amazon.Route53
         /// </summary>
         /// 
         /// <returns>The response from the ListHostedZones service method, as returned by Route53.</returns>
-        /// <exception cref="DelegationSetNotReusableException">
+        /// <exception cref="Amazon.Route53.Model.DelegationSetNotReusableException">
         /// The specified delegation set has not been marked as reusable.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="NoSuchDelegationSetException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
         /// The specified delegation set does not exist.
         /// </exception>
         ListHostedZonesResponse ListHostedZones();
@@ -1049,13 +1049,13 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the ListHostedZones service method.</param>
         /// 
         /// <returns>The response from the ListHostedZones service method, as returned by Route53.</returns>
-        /// <exception cref="DelegationSetNotReusableException">
+        /// <exception cref="Amazon.Route53.Model.DelegationSetNotReusableException">
         /// The specified delegation set has not been marked as reusable.
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="NoSuchDelegationSetException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
         /// The specified delegation set does not exist.
         /// </exception>
         ListHostedZonesResponse ListHostedZones(ListHostedZonesRequest request);
@@ -1127,10 +1127,10 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the ListResourceRecordSets service method.</param>
         /// 
         /// <returns>The response from the ListResourceRecordSets service method, as returned by Route53.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="NoSuchHostedZoneException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// 
         /// </exception>
         ListResourceRecordSetsResponse ListResourceRecordSets(ListResourceRecordSetsRequest request);
@@ -1165,7 +1165,7 @@ namespace Amazon.Route53
         /// </summary>
         /// 
         /// <returns>The response from the ListReusableDelegationSets service method, as returned by Route53.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
         ListReusableDelegationSetsResponse ListReusableDelegationSets();
@@ -1185,7 +1185,7 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the ListReusableDelegationSets service method.</param>
         /// 
         /// <returns>The response from the ListReusableDelegationSets service method, as returned by Route53.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
         ListReusableDelegationSetsResponse ListReusableDelegationSets(ListReusableDelegationSetsRequest request);
@@ -1212,16 +1212,16 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Route53.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="NoSuchHealthCheckException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// The health check you are trying to get or delete does not exist.
         /// </exception>
-        /// <exception cref="PriorRequestNotCompleteException">
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
         /// The request was rejected because Route 53 was still processing a prior request.
         /// </exception>
-        /// <exception cref="ThrottlingException">
+        /// <exception cref="Amazon.Route53.Model.ThrottlingException">
         /// 
         /// </exception>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -1248,16 +1248,16 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResources service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResources service method, as returned by Route53.</returns>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="NoSuchHealthCheckException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// The health check you are trying to get or delete does not exist.
         /// </exception>
-        /// <exception cref="PriorRequestNotCompleteException">
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
         /// The request was rejected because Route 53 was still processing a prior request.
         /// </exception>
-        /// <exception cref="ThrottlingException">
+        /// <exception cref="Amazon.Route53.Model.ThrottlingException">
         /// 
         /// </exception>
         ListTagsForResourcesResponse ListTagsForResources(ListTagsForResourcesRequest request);
@@ -1292,13 +1292,13 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the UpdateHealthCheck service method.</param>
         /// 
         /// <returns>The response from the UpdateHealthCheck service method, as returned by Route53.</returns>
-        /// <exception cref="HealthCheckVersionMismatchException">
+        /// <exception cref="Amazon.Route53.Model.HealthCheckVersionMismatchException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidInputException">
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
-        /// <exception cref="NoSuchHealthCheckException">
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// The health check you are trying to get or delete does not exist.
         /// </exception>
         UpdateHealthCheckResponse UpdateHealthCheck(UpdateHealthCheckRequest request);

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -31,6 +31,13 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the ModifyImageAttribute operation.
     /// Modifies the specified attribute of the specified AMI. You can specify only one attribute
     /// at a time.
+    /// 
+    ///  <note>
+    /// <para>
+    /// AWS Marketplace product codes cannot be modified. Images with an AWS Marketplace product
+    /// code cannot be made public.
+    /// </para>
+    /// </note>
     /// </summary>
     public partial class ModifyImageAttributeRequest : AmazonEC2Request
     {

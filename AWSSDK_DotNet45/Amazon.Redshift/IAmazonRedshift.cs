@@ -91,17 +91,17 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeClusterSecurityGroupIngress service method.</param>
         /// 
         /// <returns>The response from the AuthorizeClusterSecurityGroupIngress service method, as returned by Redshift.</returns>
-        /// <exception cref="AuthorizationAlreadyExistsException">
+        /// <exception cref="Amazon.Redshift.Model.AuthorizationAlreadyExistsException">
         /// The specified CIDR block or EC2 security group is already authorized for the specified
         /// cluster security group.
         /// </exception>
-        /// <exception cref="AuthorizationQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.AuthorizationQuotaExceededException">
         /// The authorization quota for the cluster security group has been reached.
         /// </exception>
-        /// <exception cref="ClusterSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
         /// </exception>
-        /// <exception cref="InvalidClusterSecurityGroupStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
         /// The state of the cluster security group is not <code>available</code>.
         /// </exception>
         AuthorizeClusterSecurityGroupIngressResponse AuthorizeClusterSecurityGroupIngress(AuthorizeClusterSecurityGroupIngressRequest request);
@@ -135,14 +135,14 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSnapshotAccess service method.</param>
         /// 
         /// <returns>The response from the AuthorizeSnapshotAccess service method, as returned by Redshift.</returns>
-        /// <exception cref="AuthorizationAlreadyExistsException">
+        /// <exception cref="Amazon.Redshift.Model.AuthorizationAlreadyExistsException">
         /// The specified CIDR block or EC2 security group is already authorized for the specified
         /// cluster security group.
         /// </exception>
-        /// <exception cref="AuthorizationQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.AuthorizationQuotaExceededException">
         /// The authorization quota for the cluster security group has been reached.
         /// </exception>
-        /// <exception cref="ClusterSnapshotNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
         AuthorizeSnapshotAccessResponse AuthorizeSnapshotAccess(AuthorizeSnapshotAccessRequest request);
@@ -184,16 +184,16 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the CopyClusterSnapshot service method.</param>
         /// 
         /// <returns>The response from the CopyClusterSnapshot service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterSnapshotAlreadyExistsException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotAlreadyExistsException">
         /// The value specified as a snapshot identifier is already used by an existing snapshot.
         /// </exception>
-        /// <exception cref="ClusterSnapshotNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
-        /// <exception cref="ClusterSnapshotQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of cluster snapshots.
         /// </exception>
-        /// <exception cref="InvalidClusterSnapshotStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSnapshotStateException">
         /// The state of the cluster snapshot is not <code>available</code>, or other accounts
         /// are authorized to access the snapshot.
         /// </exception>
@@ -226,53 +226,53 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
         /// 
         /// <returns>The response from the CreateCluster service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterAlreadyExistsException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterAlreadyExistsException">
         /// The account already has a cluster with the given identifier.
         /// </exception>
-        /// <exception cref="ClusterParameterGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupNotFoundException">
         /// The parameter group name does not refer to an existing parameter group.
         /// </exception>
-        /// <exception cref="ClusterQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterQuotaExceededException">
         /// The request would exceed the allowed number of cluster instances for this account.
         /// For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
         /// </exception>
-        /// <exception cref="ClusterSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
         /// </exception>
-        /// <exception cref="ClusterSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException">
         /// The cluster subnet group name does not refer to an existing cluster subnet group.
         /// </exception>
-        /// <exception cref="HsmClientCertificateNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.HsmClientCertificateNotFoundException">
         /// There is no Amazon Redshift HSM client certificate with the specified identifier.
         /// </exception>
-        /// <exception cref="HsmConfigurationNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.HsmConfigurationNotFoundException">
         /// There is no Amazon Redshift HSM configuration with the specified identifier.
         /// </exception>
-        /// <exception cref="InsufficientClusterCapacityException">
+        /// <exception cref="Amazon.Redshift.Model.InsufficientClusterCapacityException">
         /// The number of nodes specified exceeds the allotted capacity of the cluster.
         /// </exception>
-        /// <exception cref="InvalidClusterSubnetGroupStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSubnetGroupStateException">
         /// The cluster subnet group cannot be deleted because it is in use.
         /// </exception>
-        /// <exception cref="InvalidElasticIpException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidElasticIpException">
         /// The Elastic IP (EIP) is invalid or cannot be found.
         /// </exception>
-        /// <exception cref="InvalidSubnetException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidSubnetException">
         /// The requested subnet is not valid, or not all of the subnets are in the same VPC.
         /// </exception>
-        /// <exception cref="InvalidVPCNetworkStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidVPCNetworkStateException">
         /// The cluster subnet group does not cover all Availability Zones.
         /// </exception>
-        /// <exception cref="NumberOfNodesPerClusterLimitExceededException">
+        /// <exception cref="Amazon.Redshift.Model.NumberOfNodesPerClusterLimitExceededException">
         /// The operation would exceed the number of nodes allowed for a cluster.
         /// </exception>
-        /// <exception cref="NumberOfNodesQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.NumberOfNodesQuotaExceededException">
         /// The operation would exceed the number of nodes allotted to the account. For information
         /// about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
         /// </exception>
-        /// <exception cref="UnauthorizedOperationException">
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
         /// </exception>
         CreateClusterResponse CreateCluster(CreateClusterRequest request);
@@ -314,10 +314,10 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the CreateClusterParameterGroup service method.</param>
         /// 
         /// <returns>The response from the CreateClusterParameterGroup service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterParameterGroupAlreadyExistsException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupAlreadyExistsException">
         /// A cluster parameter group with the same name already exists.
         /// </exception>
-        /// <exception cref="ClusterParameterGroupQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of cluster parameter
         /// groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
@@ -354,10 +354,10 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the CreateClusterSecurityGroup service method.</param>
         /// 
         /// <returns>The response from the CreateClusterSecurityGroup service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterSecurityGroupAlreadyExistsException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupAlreadyExistsException">
         /// A cluster security group with the same name already exists.
         /// </exception>
-        /// <exception cref="ClusterSecurityGroupQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of cluster security
         /// groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
@@ -393,16 +393,16 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the CreateClusterSnapshot service method.</param>
         /// 
         /// <returns>The response from the CreateClusterSnapshot service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
         /// </exception>
-        /// <exception cref="ClusterSnapshotAlreadyExistsException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotAlreadyExistsException">
         /// The value specified as a snapshot identifier is already used by an existing snapshot.
         /// </exception>
-        /// <exception cref="ClusterSnapshotQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of cluster snapshots.
         /// </exception>
-        /// <exception cref="InvalidClusterStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
         CreateClusterSnapshotResponse CreateClusterSnapshot(CreateClusterSnapshotRequest request);
@@ -438,23 +438,23 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the CreateClusterSubnetGroup service method.</param>
         /// 
         /// <returns>The response from the CreateClusterSubnetGroup service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterSubnetGroupAlreadyExistsException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupAlreadyExistsException">
         /// A <i>ClusterSubnetGroupName</i> is already used by an existing cluster subnet group.
         /// </exception>
-        /// <exception cref="ClusterSubnetGroupQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupQuotaExceededException">
         /// The request would result in user exceeding the allowed number of cluster subnet groups.
         /// For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
         /// </exception>
-        /// <exception cref="ClusterSubnetQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSubnetQuotaExceededException">
         /// The request would result in user exceeding the allowed number of subnets in a cluster
         /// subnet groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
         /// </exception>
-        /// <exception cref="InvalidSubnetException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidSubnetException">
         /// The requested subnet is not valid, or not all of the subnets are in the same VPC.
         /// </exception>
-        /// <exception cref="UnauthorizedOperationException">
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
         /// </exception>
         CreateClusterSubnetGroupResponse CreateClusterSubnetGroup(CreateClusterSubnetGroupRequest request);
@@ -505,35 +505,35 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription service method.</param>
         /// 
         /// <returns>The response from the CreateEventSubscription service method, as returned by Redshift.</returns>
-        /// <exception cref="EventSubscriptionQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.EventSubscriptionQuotaExceededException">
         /// The request would exceed the allowed number of event subscriptions for this account.
         /// For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
         /// </exception>
-        /// <exception cref="SNSInvalidTopicException">
+        /// <exception cref="Amazon.Redshift.Model.SNSInvalidTopicException">
         /// Amazon SNS has responded that there is a problem with the specified Amazon SNS topic.
         /// </exception>
-        /// <exception cref="SNSNoAuthorizationException">
+        /// <exception cref="Amazon.Redshift.Model.SNSNoAuthorizationException">
         /// You do not have permission to publish to the specified Amazon SNS topic.
         /// </exception>
-        /// <exception cref="SNSTopicArnNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.SNSTopicArnNotFoundException">
         /// An Amazon SNS topic with the specified Amazon Resource Name (ARN) does not exist.
         /// </exception>
-        /// <exception cref="SourceNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.SourceNotFoundException">
         /// The specified Amazon Redshift event source could not be found.
         /// </exception>
-        /// <exception cref="SubscriptionAlreadyExistException">
+        /// <exception cref="Amazon.Redshift.Model.SubscriptionAlreadyExistException">
         /// There is already an existing event notification subscription with the specified name.
         /// </exception>
-        /// <exception cref="SubscriptionCategoryNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.SubscriptionCategoryNotFoundException">
         /// The value specified for the event category was not one of the allowed values, or it
         /// specified a category that does not apply to the specified source type. The allowed
         /// values are Configuration, Management, Monitoring, and Security.
         /// </exception>
-        /// <exception cref="SubscriptionEventIdNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.SubscriptionEventIdNotFoundException">
         /// An Amazon Redshift event with the specified event ID does not exist.
         /// </exception>
-        /// <exception cref="SubscriptionSeverityNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.SubscriptionSeverityNotFoundException">
         /// The value specified for the event severity was not one of the allowed values, or it
         /// specified a severity that does not apply to the specified source type. The allowed
         /// values are ERROR and INFO.
@@ -573,11 +573,11 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the CreateHsmClientCertificate service method.</param>
         /// 
         /// <returns>The response from the CreateHsmClientCertificate service method, as returned by Redshift.</returns>
-        /// <exception cref="HsmClientCertificateAlreadyExistsException">
+        /// <exception cref="Amazon.Redshift.Model.HsmClientCertificateAlreadyExistsException">
         /// There is already an existing Amazon Redshift HSM client certificate with the specified
         /// identifier.
         /// </exception>
-        /// <exception cref="HsmClientCertificateQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.HsmClientCertificateQuotaExceededException">
         /// The quota for HSM client certificates has been reached. For information about increasing
         /// your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
@@ -616,11 +616,11 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the CreateHsmConfiguration service method.</param>
         /// 
         /// <returns>The response from the CreateHsmConfiguration service method, as returned by Redshift.</returns>
-        /// <exception cref="HsmConfigurationAlreadyExistsException">
+        /// <exception cref="Amazon.Redshift.Model.HsmConfigurationAlreadyExistsException">
         /// There is already an existing Amazon Redshift HSM configuration with the specified
         /// identifier.
         /// </exception>
-        /// <exception cref="HsmConfigurationQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.HsmConfigurationQuotaExceededException">
         /// The quota for HSM configurations has been reached. For information about increasing
         /// your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
@@ -668,16 +668,16 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
         /// 
         /// <returns>The response from the DeleteCluster service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
         /// </exception>
-        /// <exception cref="ClusterSnapshotAlreadyExistsException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotAlreadyExistsException">
         /// The value specified as a snapshot identifier is already used by an existing snapshot.
         /// </exception>
-        /// <exception cref="ClusterSnapshotQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of cluster snapshots.
         /// </exception>
-        /// <exception cref="InvalidClusterStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
         DeleteClusterResponse DeleteCluster(DeleteClusterRequest request);
@@ -704,10 +704,10 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DeleteClusterParameterGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteClusterParameterGroup service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterParameterGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupNotFoundException">
         /// The parameter group name does not refer to an existing parameter group.
         /// </exception>
-        /// <exception cref="InvalidClusterParameterGroupStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterParameterGroupStateException">
         /// The cluster parameter group action can not be completed because another task is in
         /// progress that involves the parameter group. Wait a few moments and try the operation
         /// again.
@@ -743,10 +743,10 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DeleteClusterSecurityGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteClusterSecurityGroup service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
         /// </exception>
-        /// <exception cref="InvalidClusterSecurityGroupStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
         /// The state of the cluster security group is not <code>available</code>.
         /// </exception>
         DeleteClusterSecurityGroupResponse DeleteClusterSecurityGroup(DeleteClusterSecurityGroupRequest request);
@@ -783,10 +783,10 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DeleteClusterSnapshot service method.</param>
         /// 
         /// <returns>The response from the DeleteClusterSnapshot service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterSnapshotNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
-        /// <exception cref="InvalidClusterSnapshotStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSnapshotStateException">
         /// The state of the cluster snapshot is not <code>available</code>, or other accounts
         /// are authorized to access the snapshot.
         /// </exception>
@@ -814,13 +814,13 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DeleteClusterSubnetGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteClusterSubnetGroup service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException">
         /// The cluster subnet group name does not refer to an existing cluster subnet group.
         /// </exception>
-        /// <exception cref="InvalidClusterSubnetGroupStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSubnetGroupStateException">
         /// The cluster subnet group cannot be deleted because it is in use.
         /// </exception>
-        /// <exception cref="InvalidClusterSubnetStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSubnetStateException">
         /// The state of the subnet is invalid.
         /// </exception>
         DeleteClusterSubnetGroupResponse DeleteClusterSubnetGroup(DeleteClusterSubnetGroupRequest request);
@@ -847,11 +847,11 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DeleteEventSubscription service method.</param>
         /// 
         /// <returns>The response from the DeleteEventSubscription service method, as returned by Redshift.</returns>
-        /// <exception cref="InvalidSubscriptionStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidSubscriptionStateException">
         /// The subscription request is invalid because it is a duplicate request. This subscription
         /// request is already in progress.
         /// </exception>
-        /// <exception cref="SubscriptionNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.SubscriptionNotFoundException">
         /// An Amazon Redshift event notification subscription with the specified name does not
         /// exist.
         /// </exception>
@@ -879,10 +879,10 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DeleteHsmClientCertificate service method.</param>
         /// 
         /// <returns>The response from the DeleteHsmClientCertificate service method, as returned by Redshift.</returns>
-        /// <exception cref="HsmClientCertificateNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.HsmClientCertificateNotFoundException">
         /// There is no Amazon Redshift HSM client certificate with the specified identifier.
         /// </exception>
-        /// <exception cref="InvalidHsmClientCertificateStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidHsmClientCertificateStateException">
         /// The specified HSM client certificate is not in the <code>available</code> state, or
         /// it is still in use by one or more Amazon Redshift clusters.
         /// </exception>
@@ -910,10 +910,10 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DeleteHsmConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteHsmConfiguration service method, as returned by Redshift.</returns>
-        /// <exception cref="HsmConfigurationNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.HsmConfigurationNotFoundException">
         /// There is no Amazon Redshift HSM configuration with the specified identifier.
         /// </exception>
-        /// <exception cref="InvalidHsmConfigurationStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidHsmConfigurationStateException">
         /// The specified HSM configuration is not in the <code>available</code> state, or it
         /// is still in use by one or more Amazon Redshift clusters.
         /// </exception>
@@ -949,7 +949,7 @@ namespace Amazon.Redshift
         /// </summary>
         /// 
         /// <returns>The response from the DescribeClusterParameterGroups service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterParameterGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupNotFoundException">
         /// The parameter group name does not refer to an existing parameter group.
         /// </exception>
         DescribeClusterParameterGroupsResponse DescribeClusterParameterGroups();
@@ -969,7 +969,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterParameterGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeClusterParameterGroups service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterParameterGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupNotFoundException">
         /// The parameter group name does not refer to an existing parameter group.
         /// </exception>
         DescribeClusterParameterGroupsResponse DescribeClusterParameterGroups(DescribeClusterParameterGroupsRequest request);
@@ -1011,7 +1011,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterParameters service method.</param>
         /// 
         /// <returns>The response from the DescribeClusterParameters service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterParameterGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupNotFoundException">
         /// The parameter group name does not refer to an existing parameter group.
         /// </exception>
         DescribeClusterParametersResponse DescribeClusterParameters(DescribeClusterParametersRequest request);
@@ -1041,7 +1041,7 @@ namespace Amazon.Redshift
         /// </summary>
         /// 
         /// <returns>The response from the DescribeClusters service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
         /// </exception>
         DescribeClustersResponse DescribeClusters();
@@ -1056,7 +1056,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusters service method.</param>
         /// 
         /// <returns>The response from the DescribeClusters service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
         /// </exception>
         DescribeClustersResponse DescribeClusters(DescribeClustersRequest request);
@@ -1091,7 +1091,7 @@ namespace Amazon.Redshift
         /// </summary>
         /// 
         /// <returns>The response from the DescribeClusterSecurityGroups service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
         /// </exception>
         DescribeClusterSecurityGroupsResponse DescribeClusterSecurityGroups();
@@ -1111,7 +1111,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterSecurityGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeClusterSecurityGroups service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
         /// </exception>
         DescribeClusterSecurityGroupsResponse DescribeClusterSecurityGroups(DescribeClusterSecurityGroupsRequest request);
@@ -1140,7 +1140,7 @@ namespace Amazon.Redshift
         /// </summary>
         /// 
         /// <returns>The response from the DescribeClusterSnapshots service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterSnapshotNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
         DescribeClusterSnapshotsResponse DescribeClusterSnapshots();
@@ -1154,7 +1154,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterSnapshots service method.</param>
         /// 
         /// <returns>The response from the DescribeClusterSnapshots service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterSnapshotNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
         DescribeClusterSnapshotsResponse DescribeClusterSnapshots(DescribeClusterSnapshotsRequest request);
@@ -1182,7 +1182,7 @@ namespace Amazon.Redshift
         /// </summary>
         /// 
         /// <returns>The response from the DescribeClusterSubnetGroups service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException">
         /// The cluster subnet group name does not refer to an existing cluster subnet group.
         /// </exception>
         DescribeClusterSubnetGroupsResponse DescribeClusterSubnetGroups();
@@ -1195,7 +1195,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterSubnetGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeClusterSubnetGroups service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException">
         /// The cluster subnet group name does not refer to an existing cluster subnet group.
         /// </exception>
         DescribeClusterSubnetGroupsResponse DescribeClusterSubnetGroups(DescribeClusterSubnetGroupsRequest request);
@@ -1362,7 +1362,7 @@ namespace Amazon.Redshift
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEventSubscriptions service method, as returned by Redshift.</returns>
-        /// <exception cref="SubscriptionNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.SubscriptionNotFoundException">
         /// An Amazon Redshift event notification subscription with the specified name does not
         /// exist.
         /// </exception>
@@ -1376,7 +1376,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventSubscriptions service method.</param>
         /// 
         /// <returns>The response from the DescribeEventSubscriptions service method, as returned by Redshift.</returns>
-        /// <exception cref="SubscriptionNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.SubscriptionNotFoundException">
         /// An Amazon Redshift event notification subscription with the specified name does not
         /// exist.
         /// </exception>
@@ -1405,7 +1405,7 @@ namespace Amazon.Redshift
         /// </summary>
         /// 
         /// <returns>The response from the DescribeHsmClientCertificates service method, as returned by Redshift.</returns>
-        /// <exception cref="HsmClientCertificateNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.HsmClientCertificateNotFoundException">
         /// There is no Amazon Redshift HSM client certificate with the specified identifier.
         /// </exception>
         DescribeHsmClientCertificatesResponse DescribeHsmClientCertificates();
@@ -1418,7 +1418,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeHsmClientCertificates service method.</param>
         /// 
         /// <returns>The response from the DescribeHsmClientCertificates service method, as returned by Redshift.</returns>
-        /// <exception cref="HsmClientCertificateNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.HsmClientCertificateNotFoundException">
         /// There is no Amazon Redshift HSM client certificate with the specified identifier.
         /// </exception>
         DescribeHsmClientCertificatesResponse DescribeHsmClientCertificates(DescribeHsmClientCertificatesRequest request);
@@ -1446,7 +1446,7 @@ namespace Amazon.Redshift
         /// </summary>
         /// 
         /// <returns>The response from the DescribeHsmConfigurations service method, as returned by Redshift.</returns>
-        /// <exception cref="HsmConfigurationNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.HsmConfigurationNotFoundException">
         /// There is no Amazon Redshift HSM configuration with the specified identifier.
         /// </exception>
         DescribeHsmConfigurationsResponse DescribeHsmConfigurations();
@@ -1459,7 +1459,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeHsmConfigurations service method.</param>
         /// 
         /// <returns>The response from the DescribeHsmConfigurations service method, as returned by Redshift.</returns>
-        /// <exception cref="HsmConfigurationNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.HsmConfigurationNotFoundException">
         /// There is no Amazon Redshift HSM configuration with the specified identifier.
         /// </exception>
         DescribeHsmConfigurationsResponse DescribeHsmConfigurations(DescribeHsmConfigurationsRequest request);
@@ -1487,7 +1487,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoggingStatus service method.</param>
         /// 
         /// <returns>The response from the DescribeLoggingStatus service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
         /// </exception>
         DescribeLoggingStatusResponse DescribeLoggingStatus(DescribeLoggingStatusRequest request);
@@ -1569,7 +1569,7 @@ namespace Amazon.Redshift
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedNodeOfferings service method, as returned by Redshift.</returns>
-        /// <exception cref="ReservedNodeOfferingNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ReservedNodeOfferingNotFoundException">
         /// Specified offering does not exist.
         /// </exception>
         DescribeReservedNodeOfferingsResponse DescribeReservedNodeOfferings();
@@ -1591,7 +1591,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedNodeOfferings service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedNodeOfferings service method, as returned by Redshift.</returns>
-        /// <exception cref="ReservedNodeOfferingNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ReservedNodeOfferingNotFoundException">
         /// Specified offering does not exist.
         /// </exception>
         DescribeReservedNodeOfferingsResponse DescribeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest request);
@@ -1617,7 +1617,7 @@ namespace Amazon.Redshift
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedNodes service method, as returned by Redshift.</returns>
-        /// <exception cref="ReservedNodeNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ReservedNodeNotFoundException">
         /// The specified reserved compute node not found.
         /// </exception>
         DescribeReservedNodesResponse DescribeReservedNodes();
@@ -1628,7 +1628,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedNodes service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedNodes service method, as returned by Redshift.</returns>
-        /// <exception cref="ReservedNodeNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ReservedNodeNotFoundException">
         /// The specified reserved compute node not found.
         /// </exception>
         DescribeReservedNodesResponse DescribeReservedNodes(DescribeReservedNodesRequest request);
@@ -1664,10 +1664,10 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeResize service method.</param>
         /// 
         /// <returns>The response from the DescribeResize service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
         /// </exception>
-        /// <exception cref="ResizeNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ResizeNotFoundException">
         /// A resize operation for the specified cluster is not found.
         /// </exception>
         DescribeResizeResponse DescribeResize(DescribeResizeRequest request);
@@ -1695,7 +1695,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DisableLogging service method.</param>
         /// 
         /// <returns>The response from the DisableLogging service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
         /// </exception>
         DisableLoggingResponse DisableLogging(DisableLoggingRequest request);
@@ -1723,16 +1723,16 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DisableSnapshotCopy service method.</param>
         /// 
         /// <returns>The response from the DisableSnapshotCopy service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
         /// </exception>
-        /// <exception cref="InvalidClusterStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
-        /// <exception cref="SnapshotCopyAlreadyDisabledException">
+        /// <exception cref="Amazon.Redshift.Model.SnapshotCopyAlreadyDisabledException">
         /// The cluster already has cross-region snapshot copy disabled.
         /// </exception>
-        /// <exception cref="UnauthorizedOperationException">
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
         /// </exception>
         DisableSnapshotCopyResponse DisableSnapshotCopy(DisableSnapshotCopyRequest request);
@@ -1760,22 +1760,22 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the EnableLogging service method.</param>
         /// 
         /// <returns>The response from the EnableLogging service method, as returned by Redshift.</returns>
-        /// <exception cref="BucketNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.BucketNotFoundException">
         /// Could not find the specified S3 bucket.
         /// </exception>
-        /// <exception cref="ClusterNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
         /// </exception>
-        /// <exception cref="InsufficientS3BucketPolicyException">
+        /// <exception cref="Amazon.Redshift.Model.InsufficientS3BucketPolicyException">
         /// The cluster does not have read bucket or put object permissions on the S3 bucket
         /// specified when enabling logging.
         /// </exception>
-        /// <exception cref="InvalidS3BucketNameException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidS3BucketNameException">
         /// The S3 bucket name is invalid. For more information about naming rules, go to <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
         /// Restrictions and Limitations</a> in the Amazon Simple Storage Service (S3) Developer
         /// Guide.
         /// </exception>
-        /// <exception cref="InvalidS3KeyPrefixException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidS3KeyPrefixException">
         /// The string specified for the logging S3 key prefix does not comply with the documented
         /// constraints.
         /// </exception>
@@ -1804,25 +1804,25 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the EnableSnapshotCopy service method.</param>
         /// 
         /// <returns>The response from the EnableSnapshotCopy service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
         /// </exception>
-        /// <exception cref="CopyToRegionDisabledException">
+        /// <exception cref="Amazon.Redshift.Model.CopyToRegionDisabledException">
         /// Cross-region snapshot copy was temporarily disabled. Try your request again.
         /// </exception>
-        /// <exception cref="IncompatibleOrderableOptionsException">
+        /// <exception cref="Amazon.Redshift.Model.IncompatibleOrderableOptionsException">
         /// The specified options are incompatible.
         /// </exception>
-        /// <exception cref="InvalidClusterStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
-        /// <exception cref="SnapshotCopyAlreadyEnabledException">
+        /// <exception cref="Amazon.Redshift.Model.SnapshotCopyAlreadyEnabledException">
         /// The cluster already has cross-region snapshot copy enabled.
         /// </exception>
-        /// <exception cref="UnauthorizedOperationException">
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
         /// </exception>
-        /// <exception cref="UnknownSnapshotCopyRegionException">
+        /// <exception cref="Amazon.Redshift.Model.UnknownSnapshotCopyRegionException">
         /// The specified region is incorrect or does not exist.
         /// </exception>
         EnableSnapshotCopyResponse EnableSnapshotCopy(EnableSnapshotCopyRequest request);
@@ -1862,42 +1862,42 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the ModifyCluster service method.</param>
         /// 
         /// <returns>The response from the ModifyCluster service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterAlreadyExistsException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterAlreadyExistsException">
         /// The account already has a cluster with the given identifier.
         /// </exception>
-        /// <exception cref="ClusterNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
         /// </exception>
-        /// <exception cref="ClusterParameterGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupNotFoundException">
         /// The parameter group name does not refer to an existing parameter group.
         /// </exception>
-        /// <exception cref="ClusterSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
         /// </exception>
-        /// <exception cref="HsmClientCertificateNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.HsmClientCertificateNotFoundException">
         /// There is no Amazon Redshift HSM client certificate with the specified identifier.
         /// </exception>
-        /// <exception cref="HsmConfigurationNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.HsmConfigurationNotFoundException">
         /// There is no Amazon Redshift HSM configuration with the specified identifier.
         /// </exception>
-        /// <exception cref="InsufficientClusterCapacityException">
+        /// <exception cref="Amazon.Redshift.Model.InsufficientClusterCapacityException">
         /// The number of nodes specified exceeds the allotted capacity of the cluster.
         /// </exception>
-        /// <exception cref="InvalidClusterSecurityGroupStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
         /// The state of the cluster security group is not <code>available</code>.
         /// </exception>
-        /// <exception cref="InvalidClusterStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
-        /// <exception cref="NumberOfNodesQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.NumberOfNodesQuotaExceededException">
         /// The operation would exceed the number of nodes allotted to the account. For information
         /// about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
         /// </exception>
-        /// <exception cref="UnauthorizedOperationException">
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
         /// </exception>
-        /// <exception cref="UnsupportedOptionException">
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOptionException">
         /// A request option was specified that is not supported.
         /// </exception>
         ModifyClusterResponse ModifyCluster(ModifyClusterRequest request);
@@ -1930,10 +1930,10 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the ModifyClusterParameterGroup service method.</param>
         /// 
         /// <returns>The response from the ModifyClusterParameterGroup service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterParameterGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupNotFoundException">
         /// The parameter group name does not refer to an existing parameter group.
         /// </exception>
-        /// <exception cref="InvalidClusterParameterGroupStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterParameterGroupStateException">
         /// The cluster parameter group action can not be completed because another task is in
         /// progress that involves the parameter group. Wait a few moments and try the operation
         /// again.
@@ -1963,21 +1963,21 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the ModifyClusterSubnetGroup service method.</param>
         /// 
         /// <returns>The response from the ModifyClusterSubnetGroup service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException">
         /// The cluster subnet group name does not refer to an existing cluster subnet group.
         /// </exception>
-        /// <exception cref="ClusterSubnetQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSubnetQuotaExceededException">
         /// The request would result in user exceeding the allowed number of subnets in a cluster
         /// subnet groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
         /// </exception>
-        /// <exception cref="InvalidSubnetException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidSubnetException">
         /// The requested subnet is not valid, or not all of the subnets are in the same VPC.
         /// </exception>
-        /// <exception cref="SubnetAlreadyInUseException">
+        /// <exception cref="Amazon.Redshift.Model.SubnetAlreadyInUseException">
         /// A specified subnet is already in use by another cluster.
         /// </exception>
-        /// <exception cref="UnauthorizedOperationException">
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
         /// </exception>
         ModifyClusterSubnetGroupResponse ModifyClusterSubnetGroup(ModifyClusterSubnetGroupRequest request);
@@ -2004,35 +2004,35 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the ModifyEventSubscription service method.</param>
         /// 
         /// <returns>The response from the ModifyEventSubscription service method, as returned by Redshift.</returns>
-        /// <exception cref="InvalidSubscriptionStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidSubscriptionStateException">
         /// The subscription request is invalid because it is a duplicate request. This subscription
         /// request is already in progress.
         /// </exception>
-        /// <exception cref="SNSInvalidTopicException">
+        /// <exception cref="Amazon.Redshift.Model.SNSInvalidTopicException">
         /// Amazon SNS has responded that there is a problem with the specified Amazon SNS topic.
         /// </exception>
-        /// <exception cref="SNSNoAuthorizationException">
+        /// <exception cref="Amazon.Redshift.Model.SNSNoAuthorizationException">
         /// You do not have permission to publish to the specified Amazon SNS topic.
         /// </exception>
-        /// <exception cref="SNSTopicArnNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.SNSTopicArnNotFoundException">
         /// An Amazon SNS topic with the specified Amazon Resource Name (ARN) does not exist.
         /// </exception>
-        /// <exception cref="SourceNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.SourceNotFoundException">
         /// The specified Amazon Redshift event source could not be found.
         /// </exception>
-        /// <exception cref="SubscriptionCategoryNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.SubscriptionCategoryNotFoundException">
         /// The value specified for the event category was not one of the allowed values, or it
         /// specified a category that does not apply to the specified source type. The allowed
         /// values are Configuration, Management, Monitoring, and Security.
         /// </exception>
-        /// <exception cref="SubscriptionEventIdNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.SubscriptionEventIdNotFoundException">
         /// An Amazon Redshift event with the specified event ID does not exist.
         /// </exception>
-        /// <exception cref="SubscriptionNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.SubscriptionNotFoundException">
         /// An Amazon Redshift event notification subscription with the specified name does not
         /// exist.
         /// </exception>
-        /// <exception cref="SubscriptionSeverityNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.SubscriptionSeverityNotFoundException">
         /// The value specified for the event severity was not one of the allowed values, or it
         /// specified a severity that does not apply to the specified source type. The allowed
         /// values are ERROR and INFO.
@@ -2062,16 +2062,16 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotCopyRetentionPeriod service method.</param>
         /// 
         /// <returns>The response from the ModifySnapshotCopyRetentionPeriod service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
         /// </exception>
-        /// <exception cref="InvalidClusterStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
-        /// <exception cref="SnapshotCopyDisabledException">
+        /// <exception cref="Amazon.Redshift.Model.SnapshotCopyDisabledException">
         /// Cross-region snapshot copy was temporarily disabled. Try your request again.
         /// </exception>
-        /// <exception cref="UnauthorizedOperationException">
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
         /// </exception>
         ModifySnapshotCopyRetentionPeriodResponse ModifySnapshotCopyRetentionPeriod(ModifySnapshotCopyRetentionPeriodRequest request);
@@ -2107,13 +2107,13 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedNodeOffering service method.</param>
         /// 
         /// <returns>The response from the PurchaseReservedNodeOffering service method, as returned by Redshift.</returns>
-        /// <exception cref="ReservedNodeAlreadyExistsException">
+        /// <exception cref="Amazon.Redshift.Model.ReservedNodeAlreadyExistsException">
         /// User already has a reservation with the given identifier.
         /// </exception>
-        /// <exception cref="ReservedNodeOfferingNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ReservedNodeOfferingNotFoundException">
         /// Specified offering does not exist.
         /// </exception>
-        /// <exception cref="ReservedNodeQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.ReservedNodeQuotaExceededException">
         /// Request would exceed the user's compute node quota. For information about increasing
         /// your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
@@ -2147,10 +2147,10 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the RebootCluster service method.</param>
         /// 
         /// <returns>The response from the RebootCluster service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
         /// </exception>
-        /// <exception cref="InvalidClusterStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
         RebootClusterResponse RebootCluster(RebootClusterRequest request);
@@ -2180,10 +2180,10 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the ResetClusterParameterGroup service method.</param>
         /// 
         /// <returns>The response from the ResetClusterParameterGroup service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterParameterGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupNotFoundException">
         /// The parameter group name does not refer to an existing parameter group.
         /// </exception>
-        /// <exception cref="InvalidClusterParameterGroupStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterParameterGroupStateException">
         /// The cluster parameter group action can not be completed because another task is in
         /// progress that involves the parameter group. Wait a few moments and try the operation
         /// again.
@@ -2228,67 +2228,67 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the RestoreFromClusterSnapshot service method.</param>
         /// 
         /// <returns>The response from the RestoreFromClusterSnapshot service method, as returned by Redshift.</returns>
-        /// <exception cref="AccessToSnapshotDeniedException">
+        /// <exception cref="Amazon.Redshift.Model.AccessToSnapshotDeniedException">
         /// The owner of the specified snapshot has not authorized your account to access the
         /// snapshot.
         /// </exception>
-        /// <exception cref="ClusterAlreadyExistsException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterAlreadyExistsException">
         /// The account already has a cluster with the given identifier.
         /// </exception>
-        /// <exception cref="ClusterParameterGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupNotFoundException">
         /// The parameter group name does not refer to an existing parameter group.
         /// </exception>
-        /// <exception cref="ClusterQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterQuotaExceededException">
         /// The request would exceed the allowed number of cluster instances for this account.
         /// For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
         /// </exception>
-        /// <exception cref="ClusterSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
         /// </exception>
-        /// <exception cref="ClusterSnapshotNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
-        /// <exception cref="ClusterSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException">
         /// The cluster subnet group name does not refer to an existing cluster subnet group.
         /// </exception>
-        /// <exception cref="HsmClientCertificateNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.HsmClientCertificateNotFoundException">
         /// There is no Amazon Redshift HSM client certificate with the specified identifier.
         /// </exception>
-        /// <exception cref="HsmConfigurationNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.HsmConfigurationNotFoundException">
         /// There is no Amazon Redshift HSM configuration with the specified identifier.
         /// </exception>
-        /// <exception cref="InsufficientClusterCapacityException">
+        /// <exception cref="Amazon.Redshift.Model.InsufficientClusterCapacityException">
         /// The number of nodes specified exceeds the allotted capacity of the cluster.
         /// </exception>
-        /// <exception cref="InvalidClusterSnapshotStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSnapshotStateException">
         /// The state of the cluster snapshot is not <code>available</code>, or other accounts
         /// are authorized to access the snapshot.
         /// </exception>
-        /// <exception cref="InvalidClusterSubnetGroupStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSubnetGroupStateException">
         /// The cluster subnet group cannot be deleted because it is in use.
         /// </exception>
-        /// <exception cref="InvalidElasticIpException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidElasticIpException">
         /// The Elastic IP (EIP) is invalid or cannot be found.
         /// </exception>
-        /// <exception cref="InvalidRestoreException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidRestoreException">
         /// The restore is invalid.
         /// </exception>
-        /// <exception cref="InvalidSubnetException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidSubnetException">
         /// The requested subnet is not valid, or not all of the subnets are in the same VPC.
         /// </exception>
-        /// <exception cref="InvalidVPCNetworkStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidVPCNetworkStateException">
         /// The cluster subnet group does not cover all Availability Zones.
         /// </exception>
-        /// <exception cref="NumberOfNodesPerClusterLimitExceededException">
+        /// <exception cref="Amazon.Redshift.Model.NumberOfNodesPerClusterLimitExceededException">
         /// The operation would exceed the number of nodes allowed for a cluster.
         /// </exception>
-        /// <exception cref="NumberOfNodesQuotaExceededException">
+        /// <exception cref="Amazon.Redshift.Model.NumberOfNodesQuotaExceededException">
         /// The operation would exceed the number of nodes allotted to the account. For information
         /// about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
         /// </exception>
-        /// <exception cref="UnauthorizedOperationException">
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
         /// </exception>
         RestoreFromClusterSnapshotResponse RestoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest request);
@@ -2318,14 +2318,14 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the RevokeClusterSecurityGroupIngress service method.</param>
         /// 
         /// <returns>The response from the RevokeClusterSecurityGroupIngress service method, as returned by Redshift.</returns>
-        /// <exception cref="AuthorizationNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.AuthorizationNotFoundException">
         /// The specified CIDR IP range or EC2 security group is not authorized for the specified
         /// cluster security group.
         /// </exception>
-        /// <exception cref="ClusterSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
         /// </exception>
-        /// <exception cref="InvalidClusterSecurityGroupStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
         /// The state of the cluster security group is not <code>available</code>.
         /// </exception>
         RevokeClusterSecurityGroupIngressResponse RevokeClusterSecurityGroupIngress(RevokeClusterSecurityGroupIngressRequest request);
@@ -2360,15 +2360,15 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the RevokeSnapshotAccess service method.</param>
         /// 
         /// <returns>The response from the RevokeSnapshotAccess service method, as returned by Redshift.</returns>
-        /// <exception cref="AccessToSnapshotDeniedException">
+        /// <exception cref="Amazon.Redshift.Model.AccessToSnapshotDeniedException">
         /// The owner of the specified snapshot has not authorized your account to access the
         /// snapshot.
         /// </exception>
-        /// <exception cref="AuthorizationNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.AuthorizationNotFoundException">
         /// The specified CIDR IP range or EC2 security group is not authorized for the specified
         /// cluster security group.
         /// </exception>
-        /// <exception cref="ClusterSnapshotNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
         RevokeSnapshotAccessResponse RevokeSnapshotAccess(RevokeSnapshotAccessRequest request);
@@ -2395,10 +2395,10 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the RotateEncryptionKey service method.</param>
         /// 
         /// <returns>The response from the RotateEncryptionKey service method, as returned by Redshift.</returns>
-        /// <exception cref="ClusterNotFoundException">
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
         /// </exception>
-        /// <exception cref="InvalidClusterStateException">
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
         RotateEncryptionKeyResponse RotateEncryptionKey(RotateEncryptionKeyRequest request);

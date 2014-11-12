@@ -71,10 +71,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the AddSourceIdentifierToSubscription service method.</param>
         /// 
         /// <returns>The response from the AddSourceIdentifierToSubscription service method, as returned by RDS.</returns>
-        /// <exception cref="SourceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.SourceNotFoundException">
         /// The requested source could not be found.
         /// </exception>
-        /// <exception cref="SubscriptionNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.SubscriptionNotFoundException">
         /// The subscription name does not exist.
         /// </exception>
         AddSourceIdentifierToSubscriptionResponse AddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request);
@@ -123,10 +123,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
         /// 
         /// <returns>The response from the AddTagsToResource service method, as returned by RDS.</returns>
-        /// <exception cref="DBInstanceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
-        /// <exception cref="DBSnapshotNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
         AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request);
@@ -178,17 +178,17 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeDBSecurityGroupIngress service method.</param>
         /// 
         /// <returns>The response from the AuthorizeDBSecurityGroupIngress service method, as returned by RDS.</returns>
-        /// <exception cref="AuthorizationAlreadyExistsException">
+        /// <exception cref="Amazon.RDS.Model.AuthorizationAlreadyExistsException">
         /// The specified CIDRIP or EC2 security group is already authorized for the specified
         /// DB security group.
         /// </exception>
-        /// <exception cref="AuthorizationQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.AuthorizationQuotaExceededException">
         /// DB security group authorization quota has been reached.
         /// </exception>
-        /// <exception cref="DBSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
         /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
         /// </exception>
-        /// <exception cref="InvalidDBSecurityGroupStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSecurityGroupStateException">
         /// The state of the DB security group does not allow deletion.
         /// </exception>
         AuthorizeDBSecurityGroupIngressResponse AuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest request);
@@ -229,13 +229,13 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the CopyDBParameterGroup service method.</param>
         /// 
         /// <returns>The response from the CopyDBParameterGroup service method, as returned by RDS.</returns>
-        /// <exception cref="DBParameterGroupAlreadyExistsException">
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupAlreadyExistsException">
         /// A DB parameter group with the same name exists.
         /// </exception>
-        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
-        /// <exception cref="DBParameterGroupQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB parameter groups.
         /// </exception>
         CopyDBParameterGroupResponse CopyDBParameterGroup(CopyDBParameterGroupRequest request);
@@ -277,16 +277,16 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the CopyDBSnapshot service method.</param>
         /// 
         /// <returns>The response from the CopyDBSnapshot service method, as returned by RDS.</returns>
-        /// <exception cref="DBSnapshotAlreadyExistsException">
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
         /// <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
         /// </exception>
-        /// <exception cref="DBSnapshotNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
-        /// <exception cref="InvalidDBSnapshotStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
         /// The state of the DB snapshot does not allow deletion.
         /// </exception>
-        /// <exception cref="SnapshotQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB snapshots.
         /// </exception>
         CopyDBSnapshotResponse CopyDBSnapshot(CopyDBSnapshotRequest request);
@@ -327,13 +327,13 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the CopyOptionGroup service method.</param>
         /// 
         /// <returns>The response from the CopyOptionGroup service method, as returned by RDS.</returns>
-        /// <exception cref="OptionGroupAlreadyExistsException">
+        /// <exception cref="Amazon.RDS.Model.OptionGroupAlreadyExistsException">
         /// The option group you are trying to create already exists.
         /// </exception>
-        /// <exception cref="OptionGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
-        /// <exception cref="OptionGroupQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.OptionGroupQuotaExceededException">
         /// The quota of 20 option groups was exceeded for this AWS account.
         /// </exception>
         CopyOptionGroupResponse CopyOptionGroup(CopyOptionGroupRequest request);
@@ -374,7 +374,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the CreateDBInstance service method.</param>
         /// 
         /// <returns>The response from the CreateDBInstance service method, as returned by RDS.</returns>
-        /// <exception cref="AuthorizationNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
         /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
         /// group. 
         /// 
@@ -383,47 +383,47 @@ namespace Amazon.RDS
         /// RDS may not also be authorized via IAM to perform necessary actions on your behalf.
         /// </para>
         /// </exception>
-        /// <exception cref="DBInstanceAlreadyExistsException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// User already has a DB instance with the given identifier.
         /// </exception>
-        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
-        /// <exception cref="DBSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
         /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
         /// </exception>
-        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
         /// Subnets in the DB subnet group should cover at least two Availability Zones unless
         /// there is only one Availability Zone.
         /// </exception>
-        /// <exception cref="DBSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
-        /// <exception cref="InstanceQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB instances.
         /// </exception>
-        /// <exception cref="InsufficientDBInstanceCapacityException">
+        /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// Specified DB instance class is not available in the specified Availability Zone.
         /// </exception>
-        /// <exception cref="InvalidSubnetException">
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not
         /// all in a common VPC.
         /// </exception>
-        /// <exception cref="InvalidVPCNetworkStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// DB subnet group does not cover all Availability Zones after it is created because
         /// users' change.
         /// </exception>
-        /// <exception cref="OptionGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
-        /// <exception cref="ProvisionedIopsNotAvailableInAZException">
+        /// <exception cref="Amazon.RDS.Model.ProvisionedIopsNotAvailableInAZException">
         /// Provisioned IOPS not available in the specified Availability Zone.
         /// </exception>
-        /// <exception cref="StorageQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
         /// </exception>
-        /// <exception cref="StorageTypeNotSupportedException">
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// <i>StorageType</i> specified cannot be associated with the DB Instance.
         /// </exception>
         CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request);
@@ -476,61 +476,61 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the CreateDBInstanceReadReplica service method.</param>
         /// 
         /// <returns>The response from the CreateDBInstanceReadReplica service method, as returned by RDS.</returns>
-        /// <exception cref="DBInstanceAlreadyExistsException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// User already has a DB instance with the given identifier.
         /// </exception>
-        /// <exception cref="DBInstanceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
-        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
-        /// <exception cref="DBSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
         /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
         /// </exception>
-        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
         /// Subnets in the DB subnet group should cover at least two Availability Zones unless
         /// there is only one Availability Zone.
         /// </exception>
-        /// <exception cref="DBSubnetGroupNotAllowedException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotAllowedException">
         /// Indicates that the DBSubnetGroup should not be specified while creating read replicas
         /// that lie in the same region as the source instance.
         /// </exception>
-        /// <exception cref="DBSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
-        /// <exception cref="InstanceQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB instances.
         /// </exception>
-        /// <exception cref="InsufficientDBInstanceCapacityException">
+        /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// Specified DB instance class is not available in the specified Availability Zone.
         /// </exception>
-        /// <exception cref="InvalidDBInstanceStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
-        /// <exception cref="InvalidDBSubnetGroupException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupException">
         /// Indicates the DBSubnetGroup does not belong to the same VPC as that of an existing
         /// cross region read replica of the same source instance.
         /// </exception>
-        /// <exception cref="InvalidSubnetException">
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not
         /// all in a common VPC.
         /// </exception>
-        /// <exception cref="InvalidVPCNetworkStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// DB subnet group does not cover all Availability Zones after it is created because
         /// users' change.
         /// </exception>
-        /// <exception cref="OptionGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
-        /// <exception cref="ProvisionedIopsNotAvailableInAZException">
+        /// <exception cref="Amazon.RDS.Model.ProvisionedIopsNotAvailableInAZException">
         /// Provisioned IOPS not available in the specified Availability Zone.
         /// </exception>
-        /// <exception cref="StorageQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
         /// </exception>
-        /// <exception cref="StorageTypeNotSupportedException">
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// <i>StorageType</i> specified cannot be associated with the DB Instance.
         /// </exception>
         CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest request);
@@ -595,10 +595,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the CreateDBParameterGroup service method.</param>
         /// 
         /// <returns>The response from the CreateDBParameterGroup service method, as returned by RDS.</returns>
-        /// <exception cref="DBParameterGroupAlreadyExistsException">
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupAlreadyExistsException">
         /// A DB parameter group with the same name exists.
         /// </exception>
-        /// <exception cref="DBParameterGroupQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB parameter groups.
         /// </exception>
         CreateDBParameterGroupResponse CreateDBParameterGroup(CreateDBParameterGroupRequest request);
@@ -639,14 +639,14 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the CreateDBSecurityGroup service method.</param>
         /// 
         /// <returns>The response from the CreateDBSecurityGroup service method, as returned by RDS.</returns>
-        /// <exception cref="DBSecurityGroupAlreadyExistsException">
+        /// <exception cref="Amazon.RDS.Model.DBSecurityGroupAlreadyExistsException">
         /// A DB security group with the name specified in <i>DBSecurityGroupName</i> already
         /// exists.
         /// </exception>
-        /// <exception cref="DBSecurityGroupNotSupportedException">
+        /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotSupportedException">
         /// A DB security group is not allowed for this action.
         /// </exception>
-        /// <exception cref="DBSecurityGroupQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.DBSecurityGroupQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB security groups.
         /// </exception>
         CreateDBSecurityGroupResponse CreateDBSecurityGroup(CreateDBSecurityGroupRequest request);
@@ -687,16 +687,16 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the CreateDBSnapshot service method.</param>
         /// 
         /// <returns>The response from the CreateDBSnapshot service method, as returned by RDS.</returns>
-        /// <exception cref="DBInstanceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
-        /// <exception cref="DBSnapshotAlreadyExistsException">
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
         /// <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
         /// </exception>
-        /// <exception cref="InvalidDBInstanceStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
-        /// <exception cref="SnapshotQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB snapshots.
         /// </exception>
         CreateDBSnapshotResponse CreateDBSnapshot(CreateDBSnapshotRequest request);
@@ -738,21 +738,21 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the CreateDBSubnetGroup service method.</param>
         /// 
         /// <returns>The response from the CreateDBSubnetGroup service method, as returned by RDS.</returns>
-        /// <exception cref="DBSubnetGroupAlreadyExistsException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupAlreadyExistsException">
         /// <i>DBSubnetGroupName</i> is already used by an existing DB subnet group.
         /// </exception>
-        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
         /// Subnets in the DB subnet group should cover at least two Availability Zones unless
         /// there is only one Availability Zone.
         /// </exception>
-        /// <exception cref="DBSubnetGroupQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB subnet groups.
         /// </exception>
-        /// <exception cref="DBSubnetQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetQuotaExceededException">
         /// Request would result in user exceeding the allowed number of subnets in a DB subnet
         /// groups.
         /// </exception>
-        /// <exception cref="InvalidSubnetException">
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not
         /// all in a common VPC.
         /// </exception>
@@ -816,25 +816,25 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription service method.</param>
         /// 
         /// <returns>The response from the CreateEventSubscription service method, as returned by RDS.</returns>
-        /// <exception cref="EventSubscriptionQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.EventSubscriptionQuotaExceededException">
         /// You have reached the maximum number of event subscriptions.
         /// </exception>
-        /// <exception cref="SNSInvalidTopicException">
+        /// <exception cref="Amazon.RDS.Model.SNSInvalidTopicException">
         /// SNS has responded that there is a problem with the SND topic specified.
         /// </exception>
-        /// <exception cref="SNSNoAuthorizationException">
+        /// <exception cref="Amazon.RDS.Model.SNSNoAuthorizationException">
         /// You do not have permission to publish to the SNS topic ARN.
         /// </exception>
-        /// <exception cref="SNSTopicArnNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.SNSTopicArnNotFoundException">
         /// The SNS topic ARN does not exist.
         /// </exception>
-        /// <exception cref="SourceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.SourceNotFoundException">
         /// The requested source could not be found.
         /// </exception>
-        /// <exception cref="SubscriptionAlreadyExistException">
+        /// <exception cref="Amazon.RDS.Model.SubscriptionAlreadyExistException">
         /// The supplied subscription name already exists.
         /// </exception>
-        /// <exception cref="SubscriptionCategoryNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.SubscriptionCategoryNotFoundException">
         /// The supplied category does not exist.
         /// </exception>
         CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request);
@@ -875,10 +875,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the CreateOptionGroup service method.</param>
         /// 
         /// <returns>The response from the CreateOptionGroup service method, as returned by RDS.</returns>
-        /// <exception cref="OptionGroupAlreadyExistsException">
+        /// <exception cref="Amazon.RDS.Model.OptionGroupAlreadyExistsException">
         /// The option group you are trying to create already exists.
         /// </exception>
-        /// <exception cref="OptionGroupQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.OptionGroupQuotaExceededException">
         /// The quota of 20 option groups was exceeded for this AWS account.
         /// </exception>
         CreateOptionGroupResponse CreateOptionGroup(CreateOptionGroupRequest request);
@@ -931,16 +931,16 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBInstance service method.</param>
         /// 
         /// <returns>The response from the DeleteDBInstance service method, as returned by RDS.</returns>
-        /// <exception cref="DBInstanceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
-        /// <exception cref="DBSnapshotAlreadyExistsException">
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
         /// <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
         /// </exception>
-        /// <exception cref="InvalidDBInstanceStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
-        /// <exception cref="SnapshotQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB snapshots.
         /// </exception>
         DeleteDBInstanceResponse DeleteDBInstance(DeleteDBInstanceRequest request);
@@ -982,10 +982,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBParameterGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteDBParameterGroup service method, as returned by RDS.</returns>
-        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
-        /// <exception cref="InvalidDBParameterGroupStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
         /// The DB parameter group cannot be deleted because it is in use.
         /// </exception>
         DeleteDBParameterGroupResponse DeleteDBParameterGroup(DeleteDBParameterGroupRequest request);
@@ -1026,10 +1026,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBSecurityGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteDBSecurityGroup service method, as returned by RDS.</returns>
-        /// <exception cref="DBSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
         /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
         /// </exception>
-        /// <exception cref="InvalidDBSecurityGroupStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSecurityGroupStateException">
         /// The state of the DB security group does not allow deletion.
         /// </exception>
         DeleteDBSecurityGroupResponse DeleteDBSecurityGroup(DeleteDBSecurityGroupRequest request);
@@ -1070,10 +1070,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBSnapshot service method.</param>
         /// 
         /// <returns>The response from the DeleteDBSnapshot service method, as returned by RDS.</returns>
-        /// <exception cref="DBSnapshotNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
-        /// <exception cref="InvalidDBSnapshotStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
         /// The state of the DB snapshot does not allow deletion.
         /// </exception>
         DeleteDBSnapshotResponse DeleteDBSnapshot(DeleteDBSnapshotRequest request);
@@ -1114,13 +1114,13 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBSubnetGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteDBSubnetGroup service method, as returned by RDS.</returns>
-        /// <exception cref="DBSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
-        /// <exception cref="InvalidDBSubnetGroupStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
         /// The DB subnet group cannot be deleted because it is in use.
         /// </exception>
-        /// <exception cref="InvalidDBSubnetStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetStateException">
         /// The DB subnet is not in the <i>available</i> state.
         /// </exception>
         DeleteDBSubnetGroupResponse DeleteDBSubnetGroup(DeleteDBSubnetGroupRequest request);
@@ -1161,11 +1161,11 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DeleteEventSubscription service method.</param>
         /// 
         /// <returns>The response from the DeleteEventSubscription service method, as returned by RDS.</returns>
-        /// <exception cref="InvalidEventSubscriptionStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidEventSubscriptionStateException">
         /// This error can occur if someone else is modifying a subscription. You should retry
         /// the action.
         /// </exception>
-        /// <exception cref="SubscriptionNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.SubscriptionNotFoundException">
         /// The subscription name does not exist.
         /// </exception>
         DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request);
@@ -1206,10 +1206,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DeleteOptionGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteOptionGroup service method, as returned by RDS.</returns>
-        /// <exception cref="InvalidOptionGroupStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidOptionGroupStateException">
         /// The option group is not in the <i>available</i> state.
         /// </exception>
-        /// <exception cref="OptionGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
         DeleteOptionGroupResponse DeleteOptionGroup(DeleteOptionGroupRequest request);
@@ -1294,7 +1294,7 @@ namespace Amazon.RDS
         /// </summary>
         /// 
         /// <returns>The response from the DescribeDBInstances service method, as returned by RDS.</returns>
-        /// <exception cref="DBInstanceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
         DescribeDBInstancesResponse DescribeDBInstances();
@@ -1305,7 +1305,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeDBInstances service method, as returned by RDS.</returns>
-        /// <exception cref="DBInstanceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
         DescribeDBInstancesResponse DescribeDBInstances(DescribeDBInstancesRequest request);
@@ -1346,7 +1346,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBLogFiles service method.</param>
         /// 
         /// <returns>The response from the DescribeDBLogFiles service method, as returned by RDS.</returns>
-        /// <exception cref="DBInstanceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
         DescribeDBLogFilesResponse DescribeDBLogFiles(DescribeDBLogFilesRequest request);
@@ -1388,7 +1388,7 @@ namespace Amazon.RDS
         /// </summary>
         /// 
         /// <returns>The response from the DescribeDBParameterGroups service method, as returned by RDS.</returns>
-        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
         DescribeDBParameterGroupsResponse DescribeDBParameterGroups();
@@ -1401,7 +1401,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBParameterGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeDBParameterGroups service method, as returned by RDS.</returns>
-        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
         DescribeDBParameterGroupsResponse DescribeDBParameterGroups(DescribeDBParameterGroupsRequest request);
@@ -1442,7 +1442,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBParameters service method.</param>
         /// 
         /// <returns>The response from the DescribeDBParameters service method, as returned by RDS.</returns>
-        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
         DescribeDBParametersResponse DescribeDBParameters(DescribeDBParametersRequest request);
@@ -1484,7 +1484,7 @@ namespace Amazon.RDS
         /// </summary>
         /// 
         /// <returns>The response from the DescribeDBSecurityGroups service method, as returned by RDS.</returns>
-        /// <exception cref="DBSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
         /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
         /// </exception>
         DescribeDBSecurityGroupsResponse DescribeDBSecurityGroups();
@@ -1497,7 +1497,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBSecurityGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeDBSecurityGroups service method, as returned by RDS.</returns>
-        /// <exception cref="DBSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
         /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
         /// </exception>
         DescribeDBSecurityGroupsResponse DescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest request);
@@ -1537,7 +1537,7 @@ namespace Amazon.RDS
         /// </summary>
         /// 
         /// <returns>The response from the DescribeDBSnapshots service method, as returned by RDS.</returns>
-        /// <exception cref="DBSnapshotNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
         DescribeDBSnapshotsResponse DescribeDBSnapshots();
@@ -1548,7 +1548,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBSnapshots service method.</param>
         /// 
         /// <returns>The response from the DescribeDBSnapshots service method, as returned by RDS.</returns>
-        /// <exception cref="DBSnapshotNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
         DescribeDBSnapshotsResponse DescribeDBSnapshots(DescribeDBSnapshotsRequest request);
@@ -1595,7 +1595,7 @@ namespace Amazon.RDS
         /// </summary>
         /// 
         /// <returns>The response from the DescribeDBSubnetGroups service method, as returned by RDS.</returns>
-        /// <exception cref="DBSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
         DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups();
@@ -1613,7 +1613,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBSubnetGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeDBSubnetGroups service method, as returned by RDS.</returns>
-        /// <exception cref="DBSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
         DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest request);
@@ -1801,7 +1801,7 @@ namespace Amazon.RDS
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEventSubscriptions service method, as returned by RDS.</returns>
-        /// <exception cref="SubscriptionNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.SubscriptionNotFoundException">
         /// The subscription name does not exist.
         /// </exception>
         DescribeEventSubscriptionsResponse DescribeEventSubscriptions();
@@ -1819,7 +1819,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventSubscriptions service method.</param>
         /// 
         /// <returns>The response from the DescribeEventSubscriptions service method, as returned by RDS.</returns>
-        /// <exception cref="SubscriptionNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.SubscriptionNotFoundException">
         /// The subscription name does not exist.
         /// </exception>
         DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request);
@@ -1897,7 +1897,7 @@ namespace Amazon.RDS
         /// </summary>
         /// 
         /// <returns>The response from the DescribeOptionGroups service method, as returned by RDS.</returns>
-        /// <exception cref="OptionGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
         DescribeOptionGroupsResponse DescribeOptionGroups();
@@ -1908,7 +1908,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeOptionGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeOptionGroups service method, as returned by RDS.</returns>
-        /// <exception cref="OptionGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
         DescribeOptionGroupsResponse DescribeOptionGroups(DescribeOptionGroupsRequest request);
@@ -1987,7 +1987,7 @@ namespace Amazon.RDS
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedDBInstances service method, as returned by RDS.</returns>
-        /// <exception cref="ReservedDBInstanceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.ReservedDBInstanceNotFoundException">
         /// The specified reserved DB Instance not found.
         /// </exception>
         DescribeReservedDBInstancesResponse DescribeReservedDBInstances();
@@ -1999,7 +1999,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedDBInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedDBInstances service method, as returned by RDS.</returns>
-        /// <exception cref="ReservedDBInstanceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.ReservedDBInstanceNotFoundException">
         /// The specified reserved DB Instance not found.
         /// </exception>
         DescribeReservedDBInstancesResponse DescribeReservedDBInstances(DescribeReservedDBInstancesRequest request);
@@ -2039,7 +2039,7 @@ namespace Amazon.RDS
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedDBInstancesOfferings service method, as returned by RDS.</returns>
-        /// <exception cref="ReservedDBInstancesOfferingNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.ReservedDBInstancesOfferingNotFoundException">
         /// Specified offering does not exist.
         /// </exception>
         DescribeReservedDBInstancesOfferingsResponse DescribeReservedDBInstancesOfferings();
@@ -2050,7 +2050,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedDBInstancesOfferings service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedDBInstancesOfferings service method, as returned by RDS.</returns>
-        /// <exception cref="ReservedDBInstancesOfferingNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.ReservedDBInstancesOfferingNotFoundException">
         /// Specified offering does not exist.
         /// </exception>
         DescribeReservedDBInstancesOfferingsResponse DescribeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest request);
@@ -2091,7 +2091,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DownloadDBLogFilePortion service method.</param>
         /// 
         /// <returns>The response from the DownloadDBLogFilePortion service method, as returned by RDS.</returns>
-        /// <exception cref="DBInstanceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
         DownloadDBLogFilePortionResponse DownloadDBLogFilePortion(DownloadDBLogFilePortionRequest request);
@@ -2138,10 +2138,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by RDS.</returns>
-        /// <exception cref="DBInstanceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
-        /// <exception cref="DBSnapshotNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -2183,7 +2183,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBInstance service method.</param>
         /// 
         /// <returns>The response from the ModifyDBInstance service method, as returned by RDS.</returns>
-        /// <exception cref="AuthorizationNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
         /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
         /// group. 
         /// 
@@ -2192,45 +2192,45 @@ namespace Amazon.RDS
         /// RDS may not also be authorized via IAM to perform necessary actions on your behalf.
         /// </para>
         /// </exception>
-        /// <exception cref="DBInstanceAlreadyExistsException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// User already has a DB instance with the given identifier.
         /// </exception>
-        /// <exception cref="DBInstanceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
-        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
-        /// <exception cref="DBSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
         /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
         /// </exception>
-        /// <exception cref="DBUpgradeDependencyFailureException">
+        /// <exception cref="Amazon.RDS.Model.DBUpgradeDependencyFailureException">
         /// The DB upgrade failed because a resource the DB depends on could not be modified.
         /// </exception>
-        /// <exception cref="InsufficientDBInstanceCapacityException">
+        /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// Specified DB instance class is not available in the specified Availability Zone.
         /// </exception>
-        /// <exception cref="InvalidDBInstanceStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
-        /// <exception cref="InvalidDBSecurityGroupStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSecurityGroupStateException">
         /// The state of the DB security group does not allow deletion.
         /// </exception>
-        /// <exception cref="InvalidVPCNetworkStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// DB subnet group does not cover all Availability Zones after it is created because
         /// users' change.
         /// </exception>
-        /// <exception cref="OptionGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
-        /// <exception cref="ProvisionedIopsNotAvailableInAZException">
+        /// <exception cref="Amazon.RDS.Model.ProvisionedIopsNotAvailableInAZException">
         /// Provisioned IOPS not available in the specified Availability Zone.
         /// </exception>
-        /// <exception cref="StorageQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
         /// </exception>
-        /// <exception cref="StorageTypeNotSupportedException">
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// <i>StorageType</i> specified cannot be associated with the DB Instance.
         /// </exception>
         ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request);
@@ -2288,10 +2288,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBParameterGroup service method.</param>
         /// 
         /// <returns>The response from the ModifyDBParameterGroup service method, as returned by RDS.</returns>
-        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
-        /// <exception cref="InvalidDBParameterGroupStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
         /// The DB parameter group cannot be deleted because it is in use.
         /// </exception>
         ModifyDBParameterGroupResponse ModifyDBParameterGroup(ModifyDBParameterGroupRequest request);
@@ -2333,22 +2333,22 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSubnetGroup service method.</param>
         /// 
         /// <returns>The response from the ModifyDBSubnetGroup service method, as returned by RDS.</returns>
-        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
         /// Subnets in the DB subnet group should cover at least two Availability Zones unless
         /// there is only one Availability Zone.
         /// </exception>
-        /// <exception cref="DBSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
-        /// <exception cref="DBSubnetQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetQuotaExceededException">
         /// Request would result in user exceeding the allowed number of subnets in a DB subnet
         /// groups.
         /// </exception>
-        /// <exception cref="InvalidSubnetException">
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not
         /// all in a common VPC.
         /// </exception>
-        /// <exception cref="SubnetAlreadyInUseException">
+        /// <exception cref="Amazon.RDS.Model.SubnetAlreadyInUseException">
         /// The DB subnet is already in use in the Availability Zone.
         /// </exception>
         ModifyDBSubnetGroupResponse ModifyDBSubnetGroup(ModifyDBSubnetGroupRequest request);
@@ -2399,22 +2399,22 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the ModifyEventSubscription service method.</param>
         /// 
         /// <returns>The response from the ModifyEventSubscription service method, as returned by RDS.</returns>
-        /// <exception cref="EventSubscriptionQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.EventSubscriptionQuotaExceededException">
         /// You have reached the maximum number of event subscriptions.
         /// </exception>
-        /// <exception cref="SNSInvalidTopicException">
+        /// <exception cref="Amazon.RDS.Model.SNSInvalidTopicException">
         /// SNS has responded that there is a problem with the SND topic specified.
         /// </exception>
-        /// <exception cref="SNSNoAuthorizationException">
+        /// <exception cref="Amazon.RDS.Model.SNSNoAuthorizationException">
         /// You do not have permission to publish to the SNS topic ARN.
         /// </exception>
-        /// <exception cref="SNSTopicArnNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.SNSTopicArnNotFoundException">
         /// The SNS topic ARN does not exist.
         /// </exception>
-        /// <exception cref="SubscriptionCategoryNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.SubscriptionCategoryNotFoundException">
         /// The supplied category does not exist.
         /// </exception>
-        /// <exception cref="SubscriptionNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.SubscriptionNotFoundException">
         /// The subscription name does not exist.
         /// </exception>
         ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request);
@@ -2455,10 +2455,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the ModifyOptionGroup service method.</param>
         /// 
         /// <returns>The response from the ModifyOptionGroup service method, as returned by RDS.</returns>
-        /// <exception cref="InvalidOptionGroupStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidOptionGroupStateException">
         /// The option group is not in the <i>available</i> state.
         /// </exception>
-        /// <exception cref="OptionGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
         ModifyOptionGroupResponse ModifyOptionGroup(ModifyOptionGroupRequest request);
@@ -2499,10 +2499,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the PromoteReadReplica service method.</param>
         /// 
         /// <returns>The response from the PromoteReadReplica service method, as returned by RDS.</returns>
-        /// <exception cref="DBInstanceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
-        /// <exception cref="InvalidDBInstanceStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
         PromoteReadReplicaResponse PromoteReadReplica(PromoteReadReplicaRequest request);
@@ -2543,13 +2543,13 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedDBInstancesOffering service method.</param>
         /// 
         /// <returns>The response from the PurchaseReservedDBInstancesOffering service method, as returned by RDS.</returns>
-        /// <exception cref="ReservedDBInstanceAlreadyExistsException">
+        /// <exception cref="Amazon.RDS.Model.ReservedDBInstanceAlreadyExistsException">
         /// User already has a reservation with the given identifier.
         /// </exception>
-        /// <exception cref="ReservedDBInstanceQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.ReservedDBInstanceQuotaExceededException">
         /// Request would exceed the user's DB Instance quota.
         /// </exception>
-        /// <exception cref="ReservedDBInstancesOfferingNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.ReservedDBInstancesOfferingNotFoundException">
         /// Specified offering does not exist.
         /// </exception>
         PurchaseReservedDBInstancesOfferingResponse PurchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest request);
@@ -2610,10 +2610,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the RebootDBInstance service method.</param>
         /// 
         /// <returns>The response from the RebootDBInstance service method, as returned by RDS.</returns>
-        /// <exception cref="DBInstanceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
-        /// <exception cref="InvalidDBInstanceStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
         RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest request);
@@ -2654,10 +2654,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the RemoveSourceIdentifierFromSubscription service method.</param>
         /// 
         /// <returns>The response from the RemoveSourceIdentifierFromSubscription service method, as returned by RDS.</returns>
-        /// <exception cref="SourceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.SourceNotFoundException">
         /// The requested source could not be found.
         /// </exception>
-        /// <exception cref="SubscriptionNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.SubscriptionNotFoundException">
         /// The subscription name does not exist.
         /// </exception>
         RemoveSourceIdentifierFromSubscriptionResponse RemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request);
@@ -2704,10 +2704,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
         /// 
         /// <returns>The response from the RemoveTagsFromResource service method, as returned by RDS.</returns>
-        /// <exception cref="DBInstanceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
-        /// <exception cref="DBSnapshotNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
         RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request);
@@ -2754,10 +2754,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the ResetDBParameterGroup service method.</param>
         /// 
         /// <returns>The response from the ResetDBParameterGroup service method, as returned by RDS.</returns>
-        /// <exception cref="DBParameterGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
-        /// <exception cref="InvalidDBParameterGroupStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
         /// The DB parameter group cannot be deleted because it is in use.
         /// </exception>
         ResetDBParameterGroupResponse ResetDBParameterGroup(ResetDBParameterGroupRequest request);
@@ -2800,7 +2800,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceFromDBSnapshot service method.</param>
         /// 
         /// <returns>The response from the RestoreDBInstanceFromDBSnapshot service method, as returned by RDS.</returns>
-        /// <exception cref="AuthorizationNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
         /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
         /// group. 
         /// 
@@ -2809,50 +2809,50 @@ namespace Amazon.RDS
         /// RDS may not also be authorized via IAM to perform necessary actions on your behalf.
         /// </para>
         /// </exception>
-        /// <exception cref="DBInstanceAlreadyExistsException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// User already has a DB instance with the given identifier.
         /// </exception>
-        /// <exception cref="DBSnapshotNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
-        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
         /// Subnets in the DB subnet group should cover at least two Availability Zones unless
         /// there is only one Availability Zone.
         /// </exception>
-        /// <exception cref="DBSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
-        /// <exception cref="InstanceQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB instances.
         /// </exception>
-        /// <exception cref="InsufficientDBInstanceCapacityException">
+        /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// Specified DB instance class is not available in the specified Availability Zone.
         /// </exception>
-        /// <exception cref="InvalidDBSnapshotStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
         /// The state of the DB snapshot does not allow deletion.
         /// </exception>
-        /// <exception cref="InvalidRestoreException">
+        /// <exception cref="Amazon.RDS.Model.InvalidRestoreException">
         /// Cannot restore from vpc backup to non-vpc DB instance.
         /// </exception>
-        /// <exception cref="InvalidSubnetException">
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not
         /// all in a common VPC.
         /// </exception>
-        /// <exception cref="InvalidVPCNetworkStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// DB subnet group does not cover all Availability Zones after it is created because
         /// users' change.
         /// </exception>
-        /// <exception cref="OptionGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
-        /// <exception cref="ProvisionedIopsNotAvailableInAZException">
+        /// <exception cref="Amazon.RDS.Model.ProvisionedIopsNotAvailableInAZException">
         /// Provisioned IOPS not available in the specified Availability Zone.
         /// </exception>
-        /// <exception cref="StorageQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
         /// </exception>
-        /// <exception cref="StorageTypeNotSupportedException">
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// <i>StorageType</i> specified cannot be associated with the DB Instance.
         /// </exception>
         RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request);
@@ -2897,7 +2897,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceToPointInTime service method.</param>
         /// 
         /// <returns>The response from the RestoreDBInstanceToPointInTime service method, as returned by RDS.</returns>
-        /// <exception cref="AuthorizationNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
         /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
         /// group. 
         /// 
@@ -2906,54 +2906,54 @@ namespace Amazon.RDS
         /// RDS may not also be authorized via IAM to perform necessary actions on your behalf.
         /// </para>
         /// </exception>
-        /// <exception cref="DBInstanceAlreadyExistsException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// User already has a DB instance with the given identifier.
         /// </exception>
-        /// <exception cref="DBInstanceNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
-        /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
         /// Subnets in the DB subnet group should cover at least two Availability Zones unless
         /// there is only one Availability Zone.
         /// </exception>
-        /// <exception cref="DBSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
-        /// <exception cref="InstanceQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB instances.
         /// </exception>
-        /// <exception cref="InsufficientDBInstanceCapacityException">
+        /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// Specified DB instance class is not available in the specified Availability Zone.
         /// </exception>
-        /// <exception cref="InvalidDBInstanceStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
-        /// <exception cref="InvalidRestoreException">
+        /// <exception cref="Amazon.RDS.Model.InvalidRestoreException">
         /// Cannot restore from vpc backup to non-vpc DB instance.
         /// </exception>
-        /// <exception cref="InvalidSubnetException">
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not
         /// all in a common VPC.
         /// </exception>
-        /// <exception cref="InvalidVPCNetworkStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// DB subnet group does not cover all Availability Zones after it is created because
         /// users' change.
         /// </exception>
-        /// <exception cref="OptionGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
-        /// <exception cref="PointInTimeRestoreNotEnabledException">
+        /// <exception cref="Amazon.RDS.Model.PointInTimeRestoreNotEnabledException">
         /// <i>SourceDBInstanceIdentifier</i> refers to a DB instance with <i>BackupRetentionPeriod</i>
         /// equal to 0.
         /// </exception>
-        /// <exception cref="ProvisionedIopsNotAvailableInAZException">
+        /// <exception cref="Amazon.RDS.Model.ProvisionedIopsNotAvailableInAZException">
         /// Provisioned IOPS not available in the specified Availability Zone.
         /// </exception>
-        /// <exception cref="StorageQuotaExceededException">
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
         /// </exception>
-        /// <exception cref="StorageTypeNotSupportedException">
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// <i>StorageType</i> specified cannot be associated with the DB Instance.
         /// </exception>
         RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request);
@@ -2996,7 +2996,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the RevokeDBSecurityGroupIngress service method.</param>
         /// 
         /// <returns>The response from the RevokeDBSecurityGroupIngress service method, as returned by RDS.</returns>
-        /// <exception cref="AuthorizationNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
         /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
         /// group. 
         /// 
@@ -3005,10 +3005,10 @@ namespace Amazon.RDS
         /// RDS may not also be authorized via IAM to perform necessary actions on your behalf.
         /// </para>
         /// </exception>
-        /// <exception cref="DBSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
         /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
         /// </exception>
-        /// <exception cref="InvalidDBSecurityGroupStateException">
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSecurityGroupStateException">
         /// The state of the DB security group does not allow deletion.
         /// </exception>
         RevokeDBSecurityGroupIngressResponse RevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest request);

@@ -435,6 +435,11 @@ namespace Amazon.S3
         /// </summary>
         public static readonly ServerSideEncryptionMethod AES256 = new ServerSideEncryptionMethod("AES256");
 
+        /// <summary>
+        /// Use AWS Key Management Service for server side encryption.
+        /// </summary>
+        public static readonly ServerSideEncryptionMethod AWSKMS = new ServerSideEncryptionMethod("aws:kms");
+
         public ServerSideEncryptionMethod(string value)
             : base(value)
         {

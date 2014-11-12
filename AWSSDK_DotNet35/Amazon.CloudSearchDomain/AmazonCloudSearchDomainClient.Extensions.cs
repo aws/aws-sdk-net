@@ -40,6 +40,26 @@ namespace Amazon.CloudSearchDomain
         /// </code>
         ///
         /// </summary>
+        public AmazonCloudSearchDomainClient()
+            : base(FallbackCredentialsFactory.GetCredentials(true), new AmazonCloudSearchDomainConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudSearchDomainClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
         /// <param name="serviceUrl">The URL of the search or document service.</param>
         public AmazonCloudSearchDomainClient(string serviceUrl)
             : base(FallbackCredentialsFactory.GetCredentials(true), new AmazonCloudSearchDomainConfig { ServiceURL = serviceUrl })
@@ -93,9 +113,19 @@ namespace Amazon.CloudSearchDomain
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        public AmazonCloudSearchDomainClient(string awsAccessKeyId, string awsSecretAccessKey)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonCloudSearchDomainConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudSearchDomainClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="serviceUrl">The URL of the search or document service.</param>
         public AmazonCloudSearchDomainClient(string awsAccessKeyId, string awsSecretAccessKey, string serviceUrl)
-            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonCloudSearchDomainConfig())
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonCloudSearchDomainConfig { ServiceURL = serviceUrl })
         {
         }
 

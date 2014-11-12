@@ -29,7 +29,7 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrails operation.
-    /// Retrieves the settings for some or all trails associated with an account.
+    /// Retrieves settings for the trail associated with the current region for your account.
     /// </summary>
     public partial class DescribeTrailsRequest : AmazonCloudTrailRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property TrailNameList. 
         /// <para>
-        /// The list of trails.
+        /// The trail returned.
         /// </para>
         /// </summary>
         public List<string> TrailNameList

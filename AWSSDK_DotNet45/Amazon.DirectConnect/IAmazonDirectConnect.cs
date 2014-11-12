@@ -67,11 +67,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the AllocateConnectionOnInterconnect service method.</param>
         /// 
         /// <returns>The response from the AllocateConnectionOnInterconnect service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -112,11 +112,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the AllocatePrivateVirtualInterface service method.</param>
         /// 
         /// <returns>The response from the AllocatePrivateVirtualInterface service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -157,11 +157,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the AllocatePublicVirtualInterface service method.</param>
         /// 
         /// <returns>The response from the AllocatePublicVirtualInterface service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -196,11 +196,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the ConfirmConnection service method.</param>
         /// 
         /// <returns>The response from the ConfirmConnection service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -235,11 +235,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the ConfirmPrivateVirtualInterface service method.</param>
         /// 
         /// <returns>The response from the ConfirmPrivateVirtualInterface service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -273,11 +273,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the ConfirmPublicVirtualInterface service method.</param>
         /// 
         /// <returns>The response from the ConfirmPublicVirtualInterface service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -316,11 +316,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the CreateConnection service method.</param>
         /// 
         /// <returns>The response from the CreateConnection service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -367,11 +367,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the CreateInterconnect service method.</param>
         /// 
         /// <returns>The response from the CreateInterconnect service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -401,11 +401,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the CreatePrivateVirtualInterface service method.</param>
         /// 
         /// <returns>The response from the CreatePrivateVirtualInterface service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -435,11 +435,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the CreatePublicVirtualInterface service method.</param>
         /// 
         /// <returns>The response from the CreatePublicVirtualInterface service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -475,11 +475,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method.</param>
         /// 
         /// <returns>The response from the DeleteConnection service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -507,11 +507,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the DeleteInterconnect service method.</param>
         /// 
         /// <returns>The response from the DeleteInterconnect service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -539,11 +539,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualInterface service method.</param>
         /// 
         /// <returns>The response from the DeleteVirtualInterface service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -575,11 +575,11 @@ namespace Amazon.DirectConnect
         /// </summary>
         /// 
         /// <returns>The response from the DescribeConnections service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -596,11 +596,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the DescribeConnections service method.</param>
         /// 
         /// <returns>The response from the DescribeConnections service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -628,11 +628,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionsOnInterconnect service method.</param>
         /// 
         /// <returns>The response from the DescribeConnectionsOnInterconnect service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -664,11 +664,11 @@ namespace Amazon.DirectConnect
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInterconnects service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -685,11 +685,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the DescribeInterconnects service method.</param>
         /// 
         /// <returns>The response from the DescribeInterconnects service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -717,11 +717,11 @@ namespace Amazon.DirectConnect
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLocations service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -734,11 +734,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocations service method.</param>
         /// 
         /// <returns>The response from the DescribeLocations service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -773,11 +773,11 @@ namespace Amazon.DirectConnect
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVirtualGateways service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -797,11 +797,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualGateways service method.</param>
         /// 
         /// <returns>The response from the DescribeVirtualGateways service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -844,11 +844,11 @@ namespace Amazon.DirectConnect
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVirtualInterfaces service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>
@@ -876,11 +876,11 @@ namespace Amazon.DirectConnect
         /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualInterfaces service method.</param>
         /// 
         /// <returns>The response from the DescribeVirtualInterfaces service method, as returned by DirectConnect.</returns>
-        /// <exception cref="DirectConnectClientException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
         /// The API was called with invalid parameters. The error message will contain additional
         /// details about the cause.
         /// </exception>
-        /// <exception cref="DirectConnectServerException">
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred during the API call. The error message will contain additional
         /// details about the cause.
         /// </exception>

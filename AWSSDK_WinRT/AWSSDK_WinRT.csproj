@@ -233,6 +233,8 @@
     <Compile Include="Amazon.IdentityManagement\IAmazonIdentityManagementService.cs" />
     <Compile Include="Amazon.ImportExport\AmazonImportExportClient.cs" />
     <Compile Include="Amazon.ImportExport\IAmazonImportExport.cs" />
+    <Compile Include="Amazon.KeyManagementService\AmazonKeyManagementServiceClient.cs" />
+    <Compile Include="Amazon.KeyManagementService\IAmazonKeyManagementService.cs" />
     <Compile Include="Amazon.Kinesis\AmazonKinesisClient.cs" />
     <Compile Include="Amazon.Kinesis\IAmazonKinesis.cs" />
     <Compile Include="Amazon.MissingTypes\ICloneable.cs" />
@@ -614,6 +616,17 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.ImportExport\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.KeyManagementService\*" Exclude="..\AWSSDK_DotNet35\Amazon.KeyManagementService\IAmazonKeyManagementService.cs;..\AWSSDK_DotNet35\Amazon.KeyManagementService\AmazonKeyManagementServiceClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.KeyManagementService\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.KeyManagementService\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>

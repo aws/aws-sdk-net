@@ -104,10 +104,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the AssignVolume service method.</param>
         /// 
         /// <returns>The response from the AssignVolume service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         AssignVolumeResponse AssignVolume(AssignVolumeRequest request);
@@ -159,10 +159,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the AssociateElasticIp service method.</param>
         /// 
         /// <returns>The response from the AssociateElasticIp service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         AssociateElasticIpResponse AssociateElasticIp(AssociateElasticIpRequest request);
@@ -213,10 +213,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the AttachElasticLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the AttachElasticLoadBalancer service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         AttachElasticLoadBalancerResponse AttachElasticLoadBalancer(AttachElasticLoadBalancerRequest request);
@@ -266,10 +266,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the CloneStack service method.</param>
         /// 
         /// <returns>The response from the CloneStack service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         CloneStackResponse CloneStack(CloneStackRequest request);
@@ -319,10 +319,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the CreateApp service method.</param>
         /// 
         /// <returns>The response from the CreateApp service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         CreateAppResponse CreateApp(CreateAppRequest request);
@@ -380,10 +380,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the CreateDeployment service method.</param>
         /// 
         /// <returns>The response from the CreateDeployment service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request);
@@ -433,10 +433,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the CreateInstance service method.</param>
         /// 
         /// <returns>The response from the CreateInstance service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         CreateInstanceResponse CreateInstance(CreateInstanceRequest request);
@@ -486,10 +486,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the CreateLayer service method.</param>
         /// 
         /// <returns>The response from the CreateLayer service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         CreateLayerResponse CreateLayer(CreateLayerRequest request);
@@ -539,7 +539,7 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the CreateStack service method.</param>
         /// 
         /// <returns>The response from the CreateStack service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         CreateStackResponse CreateStack(CreateStackRequest request);
@@ -588,7 +588,7 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the CreateUserProfile service method.</param>
         /// 
         /// <returns>The response from the CreateUserProfile service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request);
@@ -637,10 +637,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DeleteApp service method.</param>
         /// 
         /// <returns>The response from the DeleteApp service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DeleteAppResponse DeleteApp(DeleteAppRequest request);
@@ -691,10 +691,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DeleteInstance service method.</param>
         /// 
         /// <returns>The response from the DeleteInstance service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request);
@@ -745,10 +745,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DeleteLayer service method.</param>
         /// 
         /// <returns>The response from the DeleteLayer service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DeleteLayerResponse DeleteLayer(DeleteLayerRequest request);
@@ -799,10 +799,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DeleteStack service method.</param>
         /// 
         /// <returns>The response from the DeleteStack service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DeleteStackResponse DeleteStack(DeleteStackRequest request);
@@ -851,10 +851,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DeleteUserProfile service method.</param>
         /// 
         /// <returns>The response from the DeleteUserProfile service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request);
@@ -905,10 +905,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DeregisterElasticIp service method.</param>
         /// 
         /// <returns>The response from the DeregisterElasticIp service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DeregisterElasticIpResponse DeregisterElasticIp(DeregisterElasticIpRequest request);
@@ -957,10 +957,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DeregisterRdsDbInstance service method.</param>
         /// 
         /// <returns>The response from the DeregisterRdsDbInstance service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DeregisterRdsDbInstanceResponse DeregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request);
@@ -1011,10 +1011,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DeregisterVolume service method.</param>
         /// 
         /// <returns>The response from the DeregisterVolume service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DeregisterVolumeResponse DeregisterVolume(DeregisterVolumeRequest request);
@@ -1063,10 +1063,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribeApps service method.</param>
         /// 
         /// <returns>The response from the DescribeApps service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeAppsResponse DescribeApps(DescribeAppsRequest request);
@@ -1115,10 +1115,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribeCommands service method.</param>
         /// 
         /// <returns>The response from the DescribeCommands service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeCommandsResponse DescribeCommands(DescribeCommandsRequest request);
@@ -1167,10 +1167,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribeDeployments service method.</param>
         /// 
         /// <returns>The response from the DescribeDeployments service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeDeploymentsResponse DescribeDeployments(DescribeDeploymentsRequest request);
@@ -1220,10 +1220,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribeElasticIps service method.</param>
         /// 
         /// <returns>The response from the DescribeElasticIps service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeElasticIpsResponse DescribeElasticIps(DescribeElasticIpsRequest request);
@@ -1271,10 +1271,10 @@ namespace Amazon.OpsWorks
         /// </summary>
         /// 
         /// <returns>The response from the DescribeElasticLoadBalancers service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers();
@@ -1293,10 +1293,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribeElasticLoadBalancers service method.</param>
         /// 
         /// <returns>The response from the DescribeElasticLoadBalancers service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request);
@@ -1345,10 +1345,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeInstances service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request);
@@ -1397,10 +1397,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribeLayers service method.</param>
         /// 
         /// <returns>The response from the DescribeLayers service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeLayersResponse DescribeLayers(DescribeLayersRequest request);
@@ -1449,10 +1449,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBasedAutoScaling service method.</param>
         /// 
         /// <returns>The response from the DescribeLoadBasedAutoScaling service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeLoadBasedAutoScalingResponse DescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request);
@@ -1562,10 +1562,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribePermissions service method.</param>
         /// 
         /// <returns>The response from the DescribePermissions service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribePermissionsResponse DescribePermissions(DescribePermissionsRequest request);
@@ -1614,10 +1614,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribeRaidArrays service method.</param>
         /// 
         /// <returns>The response from the DescribeRaidArrays service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeRaidArraysResponse DescribeRaidArrays(DescribeRaidArraysRequest request);
@@ -1666,10 +1666,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribeRdsDbInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeRdsDbInstances service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeRdsDbInstancesResponse DescribeRdsDbInstances(DescribeRdsDbInstancesRequest request);
@@ -1717,10 +1717,10 @@ namespace Amazon.OpsWorks
         /// </summary>
         /// 
         /// <returns>The response from the DescribeServiceErrors service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeServiceErrorsResponse DescribeServiceErrors();
@@ -1739,10 +1739,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribeServiceErrors service method.</param>
         /// 
         /// <returns>The response from the DescribeServiceErrors service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeServiceErrorsResponse DescribeServiceErrors(DescribeServiceErrorsRequest request);
@@ -1790,10 +1790,10 @@ namespace Amazon.OpsWorks
         /// </summary>
         /// 
         /// <returns>The response from the DescribeStacks service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeStacksResponse DescribeStacks();
@@ -1812,10 +1812,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribeStacks service method.</param>
         /// 
         /// <returns>The response from the DescribeStacks service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeStacksResponse DescribeStacks(DescribeStacksRequest request);
@@ -1865,10 +1865,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackSummary service method.</param>
         /// 
         /// <returns>The response from the DescribeStackSummary service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeStackSummaryResponse DescribeStackSummary(DescribeStackSummaryRequest request);
@@ -1917,10 +1917,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribeTimeBasedAutoScaling service method.</param>
         /// 
         /// <returns>The response from the DescribeTimeBasedAutoScaling service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeTimeBasedAutoScalingResponse DescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request);
@@ -1968,10 +1968,10 @@ namespace Amazon.OpsWorks
         /// </summary>
         /// 
         /// <returns>The response from the DescribeUserProfiles service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeUserProfilesResponse DescribeUserProfiles();
@@ -1990,10 +1990,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribeUserProfiles service method.</param>
         /// 
         /// <returns>The response from the DescribeUserProfiles service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeUserProfilesResponse DescribeUserProfiles(DescribeUserProfilesRequest request);
@@ -2042,10 +2042,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumes service method.</param>
         /// 
         /// <returns>The response from the DescribeVolumes service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request);
@@ -2094,7 +2094,7 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DetachElasticLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the DetachElasticLoadBalancer service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
         DetachElasticLoadBalancerResponse DetachElasticLoadBalancer(DetachElasticLoadBalancerRequest request);
@@ -2145,10 +2145,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DisassociateElasticIp service method.</param>
         /// 
         /// <returns>The response from the DisassociateElasticIp service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         DisassociateElasticIpResponse DisassociateElasticIp(DisassociateElasticIpRequest request);
@@ -2198,10 +2198,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the GetHostnameSuggestion service method.</param>
         /// 
         /// <returns>The response from the GetHostnameSuggestion service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         GetHostnameSuggestionResponse GetHostnameSuggestion(GetHostnameSuggestionRequest request);
@@ -2251,10 +2251,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the RebootInstance service method.</param>
         /// 
         /// <returns>The response from the RebootInstance service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         RebootInstanceResponse RebootInstance(RebootInstanceRequest request);
@@ -2307,10 +2307,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the RegisterElasticIp service method.</param>
         /// 
         /// <returns>The response from the RegisterElasticIp service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         RegisterElasticIpResponse RegisterElasticIp(RegisterElasticIpRequest request);
@@ -2359,10 +2359,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the RegisterRdsDbInstance service method.</param>
         /// 
         /// <returns>The response from the RegisterRdsDbInstance service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         RegisterRdsDbInstanceResponse RegisterRdsDbInstance(RegisterRdsDbInstanceRequest request);
@@ -2414,10 +2414,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the RegisterVolume service method.</param>
         /// 
         /// <returns>The response from the RegisterVolume service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         RegisterVolumeResponse RegisterVolume(RegisterVolumeRequest request);
@@ -2468,10 +2468,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBasedAutoScaling service method.</param>
         /// 
         /// <returns>The response from the SetLoadBasedAutoScaling service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         SetLoadBasedAutoScalingResponse SetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request);
@@ -2521,10 +2521,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the SetPermission service method.</param>
         /// 
         /// <returns>The response from the SetPermission service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         SetPermissionResponse SetPermission(SetPermissionRequest request);
@@ -2575,10 +2575,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the SetTimeBasedAutoScaling service method.</param>
         /// 
         /// <returns>The response from the SetTimeBasedAutoScaling service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         SetTimeBasedAutoScalingResponse SetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request);
@@ -2628,10 +2628,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the StartInstance service method.</param>
         /// 
         /// <returns>The response from the StartInstance service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         StartInstanceResponse StartInstance(StartInstanceRequest request);
@@ -2680,10 +2680,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the StartStack service method.</param>
         /// 
         /// <returns>The response from the StartStack service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         StartStackResponse StartStack(StartStackRequest request);
@@ -2735,10 +2735,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the StopInstance service method.</param>
         /// 
         /// <returns>The response from the StopInstance service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         StopInstanceResponse StopInstance(StopInstanceRequest request);
@@ -2787,10 +2787,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the StopStack service method.</param>
         /// 
         /// <returns>The response from the StopStack service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         StopStackResponse StopStack(StopStackRequest request);
@@ -2841,10 +2841,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the UnassignVolume service method.</param>
         /// 
         /// <returns>The response from the UnassignVolume service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         UnassignVolumeResponse UnassignVolume(UnassignVolumeRequest request);
@@ -2893,10 +2893,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the UpdateApp service method.</param>
         /// 
         /// <returns>The response from the UpdateApp service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         UpdateAppResponse UpdateApp(UpdateAppRequest request);
@@ -2946,10 +2946,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the UpdateElasticIp service method.</param>
         /// 
         /// <returns>The response from the UpdateElasticIp service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         UpdateElasticIpResponse UpdateElasticIp(UpdateElasticIpRequest request);
@@ -2998,10 +2998,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the UpdateInstance service method.</param>
         /// 
         /// <returns>The response from the UpdateInstance service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest request);
@@ -3050,10 +3050,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the UpdateLayer service method.</param>
         /// 
         /// <returns>The response from the UpdateLayer service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         UpdateLayerResponse UpdateLayer(UpdateLayerRequest request);
@@ -3101,7 +3101,7 @@ namespace Amazon.OpsWorks
         /// </summary>
         /// 
         /// <returns>The response from the UpdateMyUserProfile service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         UpdateMyUserProfileResponse UpdateMyUserProfile();
@@ -3120,7 +3120,7 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the UpdateMyUserProfile service method.</param>
         /// 
         /// <returns>The response from the UpdateMyUserProfile service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         UpdateMyUserProfileResponse UpdateMyUserProfile(UpdateMyUserProfileRequest request);
@@ -3169,10 +3169,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the UpdateRdsDbInstance service method.</param>
         /// 
         /// <returns>The response from the UpdateRdsDbInstance service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         UpdateRdsDbInstanceResponse UpdateRdsDbInstance(UpdateRdsDbInstanceRequest request);
@@ -3221,10 +3221,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the UpdateStack service method.</param>
         /// 
         /// <returns>The response from the UpdateStack service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         UpdateStackResponse UpdateStack(UpdateStackRequest request);
@@ -3273,10 +3273,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserProfile service method.</param>
         /// 
         /// <returns>The response from the UpdateUserProfile service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request);
@@ -3326,10 +3326,10 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the UpdateVolume service method.</param>
         /// 
         /// <returns>The response from the UpdateVolume service method, as returned by OpsWorks.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
-        /// <exception cref="ValidationException">
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was invalid.
         /// </exception>
         UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest request);

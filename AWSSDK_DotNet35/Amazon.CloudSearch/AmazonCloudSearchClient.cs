@@ -238,15 +238,15 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the BuildSuggesters service method.</param>
         /// 
         /// <returns>The response from the BuildSuggesters service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -304,15 +304,15 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// 
         /// <returns>The response from the CreateDomain service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
         /// The request was rejected because a resource limit has already been met.
         /// </exception>
         public CreateDomainResponse CreateDomain(CreateDomainRequest request)
@@ -371,21 +371,21 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the DefineAnalysisScheme service method.</param>
         /// 
         /// <returns>The response from the DefineAnalysisScheme service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="InvalidTypeException">
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
         /// The request was rejected because it specified an invalid type definition.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
         /// The request was rejected because a resource limit has already been met.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -445,21 +445,21 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the DefineExpression service method.</param>
         /// 
         /// <returns>The response from the DefineExpression service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="InvalidTypeException">
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
         /// The request was rejected because it specified an invalid type definition.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
         /// The request was rejected because a resource limit has already been met.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -523,21 +523,21 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the DefineIndexField service method.</param>
         /// 
         /// <returns>The response from the DefineIndexField service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="InvalidTypeException">
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
         /// The request was rejected because it specified an invalid type definition.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
         /// The request was rejected because a resource limit has already been met.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -598,21 +598,21 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the DefineSuggester service method.</param>
         /// 
         /// <returns>The response from the DefineSuggester service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="InvalidTypeException">
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
         /// The request was rejected because it specified an invalid type definition.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
         /// The request was rejected because a resource limit has already been met.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -670,18 +670,18 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the DeleteAnalysisScheme service method.</param>
         /// 
         /// <returns>The response from the DeleteAnalysisScheme service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="InvalidTypeException">
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
         /// The request was rejected because it specified an invalid type definition.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -740,10 +740,10 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
         /// 
         /// <returns>The response from the DeleteDomain service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
@@ -803,18 +803,18 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the DeleteExpression service method.</param>
         /// 
         /// <returns>The response from the DeleteExpression service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="InvalidTypeException">
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
         /// The request was rejected because it specified an invalid type definition.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -873,18 +873,18 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the DeleteIndexField service method.</param>
         /// 
         /// <returns>The response from the DeleteIndexField service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="InvalidTypeException">
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
         /// The request was rejected because it specified an invalid type definition.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -942,18 +942,18 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the DeleteSuggester service method.</param>
         /// 
         /// <returns>The response from the DeleteSuggester service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="InvalidTypeException">
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
         /// The request was rejected because it specified an invalid type definition.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -1016,15 +1016,15 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the DescribeAnalysisSchemes service method.</param>
         /// 
         /// <returns>The response from the DescribeAnalysisSchemes service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -1085,24 +1085,24 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityOptions service method.</param>
         /// 
         /// <returns>The response from the DescribeAvailabilityOptions service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="DisabledOperationException">
+        /// <exception cref="Amazon.CloudSearch.Model.DisabledOperationException">
         /// The request was rejected because it attempted an operation which is not enabled.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="InvalidTypeException">
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
         /// The request was rejected because it specified an invalid type definition.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
         /// The request was rejected because a resource limit has already been met.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -1163,10 +1163,10 @@ namespace Amazon.CloudSearch
         /// </summary>
         /// 
         /// <returns>The response from the DescribeDomains service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
@@ -1188,10 +1188,10 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomains service method.</param>
         /// 
         /// <returns>The response from the DescribeDomains service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
@@ -1254,15 +1254,15 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the DescribeExpressions service method.</param>
         /// 
         /// <returns>The response from the DescribeExpressions service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -1324,15 +1324,15 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the DescribeIndexFields service method.</param>
         /// 
         /// <returns>The response from the DescribeIndexFields service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -1392,15 +1392,15 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingParameters service method.</param>
         /// 
         /// <returns>The response from the DescribeScalingParameters service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -1461,15 +1461,15 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the DescribeServiceAccessPolicies service method.</param>
         /// 
         /// <returns>The response from the DescribeServiceAccessPolicies service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -1531,15 +1531,15 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the DescribeSuggesters service method.</param>
         /// 
         /// <returns>The response from the DescribeSuggesters service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -1597,15 +1597,15 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the IndexDocuments service method.</param>
         /// 
         /// <returns>The response from the IndexDocuments service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -1660,7 +1660,7 @@ namespace Amazon.CloudSearch
         /// </summary>
         /// 
         /// <returns>The response from the ListDomainNames service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         public ListDomainNamesResponse ListDomainNames()
@@ -1674,7 +1674,7 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the ListDomainNames service method.</param>
         /// 
         /// <returns>The response from the ListDomainNames service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         public ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
@@ -1735,24 +1735,24 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the UpdateAvailabilityOptions service method.</param>
         /// 
         /// <returns>The response from the UpdateAvailabilityOptions service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="DisabledOperationException">
+        /// <exception cref="Amazon.CloudSearch.Model.DisabledOperationException">
         /// The request was rejected because it attempted an operation which is not enabled.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="InvalidTypeException">
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
         /// The request was rejected because it specified an invalid type definition.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
         /// The request was rejected because a resource limit has already been met.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -1815,21 +1815,21 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the UpdateScalingParameters service method.</param>
         /// 
         /// <returns>The response from the UpdateScalingParameters service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="InvalidTypeException">
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
         /// The request was rejected because it specified an invalid type definition.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
         /// The request was rejected because a resource limit has already been met.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
@@ -1887,21 +1887,21 @@ namespace Amazon.CloudSearch
         /// <param name="request">Container for the necessary parameters to execute the UpdateServiceAccessPolicies service method.</param>
         /// 
         /// <returns>The response from the UpdateServiceAccessPolicies service method, as returned by CloudSearch.</returns>
-        /// <exception cref="BaseException">
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
-        /// <exception cref="InternalException">
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
         /// An internal error occurred while processing the request. If this problem persists,
         /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
         /// Health Dashboard</a>.
         /// </exception>
-        /// <exception cref="InvalidTypeException">
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
         /// The request was rejected because it specified an invalid type definition.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
         /// The request was rejected because a resource limit has already been met.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>

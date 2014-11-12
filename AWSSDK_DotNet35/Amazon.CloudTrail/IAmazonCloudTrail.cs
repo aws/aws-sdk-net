@@ -28,7 +28,7 @@ namespace Amazon.CloudTrail
     /// <summary>
     /// Interface for accessing CloudTrail
     ///
-    /// AWS Cloud Trail 
+    /// AWS CloudTrail 
     /// <para>
     /// This is the CloudTrail API Reference. It provides descriptions of actions, data types,
     /// common parameters, and common errors for CloudTrail.
@@ -40,7 +40,13 @@ namespace Amazon.CloudTrail
     /// the user, the start time of the AWS API call, the source IP address, the request parameters,
     /// and the response elements returned by the service.
     /// </para>
-    ///  
+    ///  <note> As an alternative to using the API, you can use one of the AWS SDKs, which
+    /// consist of libraries and sample code for various programming languages and platforms
+    /// (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way to create
+    /// programmatic access to AWSCloudTrail. For example, the SDKs take care of cryptographically
+    /// signing requests, managing errors, and retrying requests automatically. For information
+    /// about the AWS SDKs, including how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools
+    /// for Amazon Web Services page</a>. </note> 
     /// <para>
     /// See the CloudTrail User Guide for information about the data that is included with
     /// each AWS API call listed in the log files.
@@ -64,31 +70,40 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the CreateTrail service method.</param>
         /// 
         /// <returns>The response from the CreateTrail service method, as returned by CloudTrail.</returns>
-        /// <exception cref="InsufficientS3BucketPolicyException">
+        /// <exception cref="Amazon.CloudTrail.Model.CloudWatchLogsDeliveryUnavailableException">
+        /// Cannot set a CloudWatch Logs delivery for this region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
         /// </exception>
-        /// <exception cref="InsufficientSnsTopicPolicyException">
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientSnsTopicPolicyException">
         /// This exception is thrown when the policy on the SNS topic is not sufficient.
         /// </exception>
-        /// <exception cref="InvalidS3BucketNameException">
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidCloudWatchLogsLogGroupArnException">
+        /// This exception is thrown when the provided CloudWatch log group is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidCloudWatchLogsRoleArnException">
+        /// This exception is thrown when the provided role is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidS3BucketNameException">
         /// This exception is thrown when the provided S3 bucket name is not valid.
         /// </exception>
-        /// <exception cref="InvalidS3PrefixException">
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidS3PrefixException">
         /// This exception is thrown when the provided S3 prefix is not valid.
         /// </exception>
-        /// <exception cref="InvalidSnsTopicNameException">
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidSnsTopicNameException">
         /// This exception is thrown when the provided SNS topic name is not valid.
         /// </exception>
-        /// <exception cref="InvalidTrailNameException">
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid.
         /// </exception>
-        /// <exception cref="MaximumNumberOfTrailsExceededException">
+        /// <exception cref="Amazon.CloudTrail.Model.MaximumNumberOfTrailsExceededException">
         /// This exception is thrown when the maximum number of trails is reached.
         /// </exception>
-        /// <exception cref="S3BucketDoesNotExistException">
+        /// <exception cref="Amazon.CloudTrail.Model.S3BucketDoesNotExistException">
         /// This exception is thrown when the specified S3 bucket does not exist.
         /// </exception>
-        /// <exception cref="TrailAlreadyExistsException">
+        /// <exception cref="Amazon.CloudTrail.Model.TrailAlreadyExistsException">
         /// This exception is thrown when the specified trail already exists.
         /// </exception>
         CreateTrailResponse CreateTrail(CreateTrailRequest request);
@@ -129,10 +144,10 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrail service method.</param>
         /// 
         /// <returns>The response from the DeleteTrail service method, as returned by CloudTrail.</returns>
-        /// <exception cref="InvalidTrailNameException">
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid.
         /// </exception>
-        /// <exception cref="TrailNotFoundException">
+        /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
         DeleteTrailResponse DeleteTrail(DeleteTrailRequest request);
@@ -168,14 +183,14 @@ namespace Amazon.CloudTrail
         #region  DescribeTrails
 
         /// <summary>
-        /// Retrieves the settings for some or all trails associated with an account.
+        /// Retrieves settings for the trail associated with the current region for your account.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
         DescribeTrailsResponse DescribeTrails();
 
         /// <summary>
-        /// Retrieves the settings for some or all trails associated with an account.
+        /// Retrieves settings for the trail associated with the current region for your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrails service method.</param>
         /// 
@@ -220,10 +235,10 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the GetTrailStatus service method.</param>
         /// 
         /// <returns>The response from the GetTrailStatus service method, as returned by CloudTrail.</returns>
-        /// <exception cref="InvalidTrailNameException">
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid.
         /// </exception>
-        /// <exception cref="TrailNotFoundException">
+        /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
         GetTrailStatusResponse GetTrailStatus(GetTrailStatusRequest request);
@@ -264,10 +279,10 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the StartLogging service method.</param>
         /// 
         /// <returns>The response from the StartLogging service method, as returned by CloudTrail.</returns>
-        /// <exception cref="InvalidTrailNameException">
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid.
         /// </exception>
-        /// <exception cref="TrailNotFoundException">
+        /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
         StartLoggingResponse StartLogging(StartLoggingRequest request);
@@ -310,10 +325,10 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the StopLogging service method.</param>
         /// 
         /// <returns>The response from the StopLogging service method, as returned by CloudTrail.</returns>
-        /// <exception cref="InvalidTrailNameException">
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid.
         /// </exception>
-        /// <exception cref="TrailNotFoundException">
+        /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
         StopLoggingResponse StopLogging(StopLoggingRequest request);
@@ -362,28 +377,37 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrail service method.</param>
         /// 
         /// <returns>The response from the UpdateTrail service method, as returned by CloudTrail.</returns>
-        /// <exception cref="InsufficientS3BucketPolicyException">
+        /// <exception cref="Amazon.CloudTrail.Model.CloudWatchLogsDeliveryUnavailableException">
+        /// Cannot set a CloudWatch Logs delivery for this region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
         /// </exception>
-        /// <exception cref="InsufficientSnsTopicPolicyException">
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientSnsTopicPolicyException">
         /// This exception is thrown when the policy on the SNS topic is not sufficient.
         /// </exception>
-        /// <exception cref="InvalidS3BucketNameException">
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidCloudWatchLogsLogGroupArnException">
+        /// This exception is thrown when the provided CloudWatch log group is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidCloudWatchLogsRoleArnException">
+        /// This exception is thrown when the provided role is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidS3BucketNameException">
         /// This exception is thrown when the provided S3 bucket name is not valid.
         /// </exception>
-        /// <exception cref="InvalidS3PrefixException">
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidS3PrefixException">
         /// This exception is thrown when the provided S3 prefix is not valid.
         /// </exception>
-        /// <exception cref="InvalidSnsTopicNameException">
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidSnsTopicNameException">
         /// This exception is thrown when the provided SNS topic name is not valid.
         /// </exception>
-        /// <exception cref="InvalidTrailNameException">
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid.
         /// </exception>
-        /// <exception cref="S3BucketDoesNotExistException">
+        /// <exception cref="Amazon.CloudTrail.Model.S3BucketDoesNotExistException">
         /// This exception is thrown when the specified S3 bucket does not exist.
         /// </exception>
-        /// <exception cref="TrailNotFoundException">
+        /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
         UpdateTrailResponse UpdateTrail(UpdateTrailRequest request);

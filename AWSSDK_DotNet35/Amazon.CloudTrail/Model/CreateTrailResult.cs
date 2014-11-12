@@ -32,11 +32,51 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class CreateTrailResult : AmazonWebServiceResponse
     {
+        private string _cloudWatchLogsLogGroupArn;
+        private string _cloudWatchLogsRoleArn;
         private bool? _includeGlobalServiceEvents;
         private string _name;
         private string _s3BucketName;
         private string _s3KeyPrefix;
         private string _snsTopicName;
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLogsLogGroupArn. 
+        /// <para>
+        /// Specifies the Amazon Resource Name (ARN) of the log group to which CloudTrail logs
+        /// will be delivered.
+        /// </para>
+        /// </summary>
+        public string CloudWatchLogsLogGroupArn
+        {
+            get { return this._cloudWatchLogsLogGroupArn; }
+            set { this._cloudWatchLogsLogGroupArn = value; }
+        }
+
+        // Check to see if CloudWatchLogsLogGroupArn property is set
+        internal bool IsSetCloudWatchLogsLogGroupArn()
+        {
+            return this._cloudWatchLogsLogGroupArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLogsRoleArn. 
+        /// <para>
+        /// Specifies the role for the CloudWatch Logs endpoint to assume to write to a user’s
+        /// log group.
+        /// </para>
+        /// </summary>
+        public string CloudWatchLogsRoleArn
+        {
+            get { return this._cloudWatchLogsRoleArn; }
+            set { this._cloudWatchLogsRoleArn = value; }
+        }
+
+        // Check to see if CloudWatchLogsRoleArn property is set
+        internal bool IsSetCloudWatchLogsRoleArn()
+        {
+            return this._cloudWatchLogsRoleArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IncludeGlobalServiceEvents. 

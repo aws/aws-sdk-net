@@ -66,7 +66,7 @@ namespace Amazon.EC2.Internal
             {
                 if (string.IsNullOrEmpty(copySnapshotRequest.DestinationRegion))
                 {
-                    copySnapshotRequest.DestinationRegion = AWS4Signer.DetermineSigningRegion(config, "ec2", alternateEndpoint: null);
+                    copySnapshotRequest.DestinationRegion = AWS4Signer.DetermineSigningRegion(config, "ec2", alternateEndpoint: null, request: null);
                 }
                 if (string.IsNullOrEmpty(copySnapshotRequest.SourceRegion))
                 {

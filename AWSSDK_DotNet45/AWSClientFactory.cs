@@ -56,6 +56,7 @@ using Amazon.StorageGateway;
 using Amazon.AWSSupport;
 using Amazon.CognitoIdentity;
 using Amazon.CognitoSync;
+using Amazon.CodeDeploy;
 
 namespace Amazon
 {
@@ -5528,6 +5529,162 @@ namespace Amazon
         public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(AWSCredentials credentials, AmazonCognitoSyncConfig config)
         {
             return new AmazonCognitoSyncClient(credentials, config);
+        }
+        #endregion
+
+        #region Amazon CodeDeploy
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient()
+        {
+            return new AmazonCodeDeployClient();
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient(AmazonCodeDeployConfig config)
+        {
+            return new AmazonCodeDeployClient(config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonCodeDeployClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, AmazonCodeDeployConfig config
+            )
+        {
+            return new AmazonCodeDeployClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient(RegionEndpoint region)
+        {
+            return new AmazonCodeDeployClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonCodeDeployClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient(AWSCredentials credentials)
+        {
+            return new AmazonCodeDeployClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonCodeDeployClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with AWSCredentials and an AmazonCodeDeploy Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient(AWSCredentials credentials, AmazonCodeDeployConfig config)
+        {
+            return new AmazonCodeDeployClient(credentials, config);
         }
         #endregion
 

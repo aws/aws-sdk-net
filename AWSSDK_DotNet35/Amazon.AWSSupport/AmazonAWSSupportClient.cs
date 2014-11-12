@@ -284,22 +284,22 @@ namespace Amazon.AWSSupport
         /// <param name="request">Container for the necessary parameters to execute the AddAttachmentsToSet service method.</param>
         /// 
         /// <returns>The response from the AddAttachmentsToSet service method, as returned by AWSSupport.</returns>
-        /// <exception cref="AttachmentLimitExceededException">
+        /// <exception cref="Amazon.AWSSupport.Model.AttachmentLimitExceededException">
         /// The limit for the number of attachment sets created in a short period of time has
         /// been exceeded.
         /// </exception>
-        /// <exception cref="AttachmentSetExpiredException">
+        /// <exception cref="Amazon.AWSSupport.Model.AttachmentSetExpiredException">
         /// The expiration time of the attachment set has passed. The set expires 1 hour after
         /// it is created.
         /// </exception>
-        /// <exception cref="AttachmentSetIdNotFoundException">
+        /// <exception cref="Amazon.AWSSupport.Model.AttachmentSetIdNotFoundException">
         /// An attachment set with the specified ID could not be found.
         /// </exception>
-        /// <exception cref="AttachmentSetSizeLimitExceededException">
+        /// <exception cref="Amazon.AWSSupport.Model.AttachmentSetSizeLimitExceededException">
         /// A limit for the size of an attachment set has been exceeded. The limits are 3 attachments
         /// and 5 MB per attachment.
         /// </exception>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
         public AddAttachmentsToSetResponse AddAttachmentsToSet(AddAttachmentsToSetRequest request)
@@ -367,17 +367,17 @@ namespace Amazon.AWSSupport
         /// <param name="request">Container for the necessary parameters to execute the AddCommunicationToCase service method.</param>
         /// 
         /// <returns>The response from the AddCommunicationToCase service method, as returned by AWSSupport.</returns>
-        /// <exception cref="AttachmentSetExpiredException">
+        /// <exception cref="Amazon.AWSSupport.Model.AttachmentSetExpiredException">
         /// The expiration time of the attachment set has passed. The set expires 1 hour after
         /// it is created.
         /// </exception>
-        /// <exception cref="AttachmentSetIdNotFoundException">
+        /// <exception cref="Amazon.AWSSupport.Model.AttachmentSetIdNotFoundException">
         /// An attachment set with the specified ID could not be found.
         /// </exception>
-        /// <exception cref="CaseIdNotFoundException">
+        /// <exception cref="Amazon.AWSSupport.Model.CaseIdNotFoundException">
         /// The requested <code>CaseId</code> could not be located.
         /// </exception>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
         public AddCommunicationToCaseResponse AddCommunicationToCase(AddCommunicationToCaseRequest request)
@@ -468,17 +468,17 @@ namespace Amazon.AWSSupport
         /// <param name="request">Container for the necessary parameters to execute the CreateCase service method.</param>
         /// 
         /// <returns>The response from the CreateCase service method, as returned by AWSSupport.</returns>
-        /// <exception cref="AttachmentSetExpiredException">
+        /// <exception cref="Amazon.AWSSupport.Model.AttachmentSetExpiredException">
         /// The expiration time of the attachment set has passed. The set expires 1 hour after
         /// it is created.
         /// </exception>
-        /// <exception cref="AttachmentSetIdNotFoundException">
+        /// <exception cref="Amazon.AWSSupport.Model.AttachmentSetIdNotFoundException">
         /// An attachment set with the specified ID could not be found.
         /// </exception>
-        /// <exception cref="CaseCreationLimitExceededException">
+        /// <exception cref="Amazon.AWSSupport.Model.CaseCreationLimitExceededException">
         /// The case creation limit for the account has been exceeded.
         /// </exception>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
         public CreateCaseResponse CreateCase(CreateCaseRequest request)
@@ -536,14 +536,14 @@ namespace Amazon.AWSSupport
         /// <param name="request">Container for the necessary parameters to execute the DescribeAttachment service method.</param>
         /// 
         /// <returns>The response from the DescribeAttachment service method, as returned by AWSSupport.</returns>
-        /// <exception cref="AttachmentIdNotFoundException">
+        /// <exception cref="Amazon.AWSSupport.Model.AttachmentIdNotFoundException">
         /// An attachment with the specified ID could not be found.
         /// </exception>
-        /// <exception cref="DescribeAttachmentLimitExceededException">
+        /// <exception cref="Amazon.AWSSupport.Model.DescribeAttachmentLimitExceededException">
         /// The limit for the number of <a>DescribeAttachment</a> requests in a short period of
         /// time has been exceeded.
         /// </exception>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
         public DescribeAttachmentResponse DescribeAttachment(DescribeAttachmentRequest request)
@@ -613,10 +613,10 @@ namespace Amazon.AWSSupport
         /// <param name="request">Container for the necessary parameters to execute the DescribeCases service method.</param>
         /// 
         /// <returns>The response from the DescribeCases service method, as returned by AWSSupport.</returns>
-        /// <exception cref="CaseIdNotFoundException">
+        /// <exception cref="Amazon.AWSSupport.Model.CaseIdNotFoundException">
         /// The requested <code>CaseId</code> could not be located.
         /// </exception>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
         public DescribeCasesResponse DescribeCases(DescribeCasesRequest request)
@@ -687,10 +687,10 @@ namespace Amazon.AWSSupport
         /// <param name="request">Container for the necessary parameters to execute the DescribeCommunications service method.</param>
         /// 
         /// <returns>The response from the DescribeCommunications service method, as returned by AWSSupport.</returns>
-        /// <exception cref="CaseIdNotFoundException">
+        /// <exception cref="Amazon.AWSSupport.Model.CaseIdNotFoundException">
         /// The requested <code>CaseId</code> could not be located.
         /// </exception>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
         public DescribeCommunicationsResponse DescribeCommunications(DescribeCommunicationsRequest request)
@@ -757,7 +757,7 @@ namespace Amazon.AWSSupport
         /// </summary>
         /// 
         /// <returns>The response from the DescribeServices service method, as returned by AWSSupport.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
         public DescribeServicesResponse DescribeServices()
@@ -784,7 +784,7 @@ namespace Amazon.AWSSupport
         /// <param name="request">Container for the necessary parameters to execute the DescribeServices service method.</param>
         /// 
         /// <returns>The response from the DescribeServices service method, as returned by AWSSupport.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
         public DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
@@ -840,7 +840,7 @@ namespace Amazon.AWSSupport
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSeverityLevels service method, as returned by AWSSupport.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
         public DescribeSeverityLevelsResponse DescribeSeverityLevels()
@@ -856,7 +856,7 @@ namespace Amazon.AWSSupport
         /// <param name="request">Container for the necessary parameters to execute the DescribeSeverityLevels service method.</param>
         /// 
         /// <returns>The response from the DescribeSeverityLevels service method, as returned by AWSSupport.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
         public DescribeSeverityLevelsResponse DescribeSeverityLevels(DescribeSeverityLevelsRequest request)
@@ -912,7 +912,7 @@ namespace Amazon.AWSSupport
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrustedAdvisorCheckRefreshStatuses service method.</param>
         /// 
         /// <returns>The response from the DescribeTrustedAdvisorCheckRefreshStatuses service method, as returned by AWSSupport.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
         public DescribeTrustedAdvisorCheckRefreshStatusesResponse DescribeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request)
@@ -983,7 +983,7 @@ namespace Amazon.AWSSupport
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrustedAdvisorCheckResult service method.</param>
         /// 
         /// <returns>The response from the DescribeTrustedAdvisorCheckResult service method, as returned by AWSSupport.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
         public DescribeTrustedAdvisorCheckResultResponse DescribeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request)
@@ -1041,7 +1041,7 @@ namespace Amazon.AWSSupport
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrustedAdvisorChecks service method.</param>
         /// 
         /// <returns>The response from the DescribeTrustedAdvisorChecks service method, as returned by AWSSupport.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
         public DescribeTrustedAdvisorChecksResponse DescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request)
@@ -1102,7 +1102,7 @@ namespace Amazon.AWSSupport
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrustedAdvisorCheckSummaries service method.</param>
         /// 
         /// <returns>The response from the DescribeTrustedAdvisorCheckSummaries service method, as returned by AWSSupport.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
         public DescribeTrustedAdvisorCheckSummariesResponse DescribeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request)
@@ -1168,7 +1168,7 @@ namespace Amazon.AWSSupport
         /// <param name="request">Container for the necessary parameters to execute the RefreshTrustedAdvisorCheck service method.</param>
         /// 
         /// <returns>The response from the RefreshTrustedAdvisorCheck service method, as returned by AWSSupport.</returns>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
         public RefreshTrustedAdvisorCheckResponse RefreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest request)
@@ -1224,10 +1224,10 @@ namespace Amazon.AWSSupport
         /// <param name="request">Container for the necessary parameters to execute the ResolveCase service method.</param>
         /// 
         /// <returns>The response from the ResolveCase service method, as returned by AWSSupport.</returns>
-        /// <exception cref="CaseIdNotFoundException">
+        /// <exception cref="Amazon.AWSSupport.Model.CaseIdNotFoundException">
         /// The requested <code>CaseId</code> could not be located.
         /// </exception>
-        /// <exception cref="InternalServerErrorException">
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
         public ResolveCaseResponse ResolveCase(ResolveCaseRequest request)

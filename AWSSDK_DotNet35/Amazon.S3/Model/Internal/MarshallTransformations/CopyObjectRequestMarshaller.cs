@@ -85,6 +85,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 else
                     request.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(copyObjectRequest.CopySourceServerSideEncryptionCustomerProvidedKey));
             }
+            if (copyObjectRequest.IsSetServerSideEncryptionKeyManagementServiceKeyId())
+                request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader, copyObjectRequest.ServerSideEncryptionKeyManagementServiceKeyId);
 
             if (copyObjectRequest.IsSetStorageClass())
                 request.Headers.Add(HeaderKeys.XAmzStorageClassHeader, S3Transforms.ToStringValue(copyObjectRequest.StorageClass));

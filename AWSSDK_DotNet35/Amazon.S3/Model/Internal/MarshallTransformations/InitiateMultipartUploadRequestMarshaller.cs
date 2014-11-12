@@ -59,6 +59,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(initiateMultipartUploadRequest.ServerSideEncryptionCustomerProvidedKey));
             }
 
+            if (initiateMultipartUploadRequest.IsSetServerSideEncryptionKeyManagementServiceKeyId())
+                request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader, initiateMultipartUploadRequest.ServerSideEncryptionKeyManagementServiceKeyId);
+
             if (initiateMultipartUploadRequest.IsSetStorageClass())
                 request.Headers.Add(HeaderKeys.XAmzStorageClassHeader, S3Transforms.ToStringValue(initiateMultipartUploadRequest.StorageClass));
 

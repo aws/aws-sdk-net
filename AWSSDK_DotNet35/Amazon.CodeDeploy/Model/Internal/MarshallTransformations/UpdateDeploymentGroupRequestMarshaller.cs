@@ -1,0 +1,129 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the codedeploy-2014-10-06.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.CodeDeploy.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// UpdateDeploymentGroup Request Marshaller
+    /// </summary>       
+    public class UpdateDeploymentGroupRequestMarshaller : IMarshaller<IRequest, UpdateDeploymentGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    {
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateDeploymentGroupRequest)input);
+        }
+
+        public IRequest Marshall(UpdateDeploymentGroupRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeDeploy");
+            string target = "CodeDeploy_20141006.UpdateDeploymentGroup";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
+            request.ResourcePath = uriResourcePath;
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetApplicationName())
+                {
+                    context.Writer.WritePropertyName("applicationName");
+                    context.Writer.Write(publicRequest.ApplicationName);
+                }
+
+                if(publicRequest.IsSetAutoScalingGroups())
+                {
+                    context.Writer.WritePropertyName("autoScalingGroups");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAutoScalingGroupsListValue in publicRequest.AutoScalingGroups)
+                    {
+                            context.Writer.Write(publicRequestAutoScalingGroupsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetCurrentDeploymentGroupName())
+                {
+                    context.Writer.WritePropertyName("currentDeploymentGroupName");
+                    context.Writer.Write(publicRequest.CurrentDeploymentGroupName);
+                }
+
+                if(publicRequest.IsSetDeploymentConfigName())
+                {
+                    context.Writer.WritePropertyName("deploymentConfigName");
+                    context.Writer.Write(publicRequest.DeploymentConfigName);
+                }
+
+                if(publicRequest.IsSetEc2TagFilters())
+                {
+                    context.Writer.WritePropertyName("ec2TagFilters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEc2TagFiltersListValue in publicRequest.Ec2TagFilters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EC2TagFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestEc2TagFiltersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetNewDeploymentGroupName())
+                {
+                    context.Writer.WritePropertyName("newDeploymentGroupName");
+                    context.Writer.Write(publicRequest.NewDeploymentGroupName);
+                }
+
+                if(publicRequest.IsSetServiceRoleArn())
+                {
+                    context.Writer.WritePropertyName("serviceRoleArn");
+                    context.Writer.Write(publicRequest.ServiceRoleArn);
+                }
+
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
+
+            return request;
+        }
+
+
+    }
+}

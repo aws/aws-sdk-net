@@ -31,6 +31,7 @@ namespace Amazon.S3.Model
         private Expiration expiration;
         private string srcVersionId;
         private ServerSideEncryptionMethod serverSideEncryption;
+        private string serverSideEncryptionKeyManagementServiceKeyId;
 
         /// <summary>
         /// Gets and sets the ETag property.
@@ -81,6 +82,25 @@ namespace Amazon.S3.Model
         {
             get { return this.serverSideEncryption; }
             set { this.serverSideEncryption = value; }
+        }
+
+
+        /// <summary>
+        /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
+        /// </summary>
+        public string ServerSideEncryptionKeyManagementServiceKeyId
+        {
+            get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
+            set { this.serverSideEncryptionKeyManagementServiceKeyId = value; }
+        }
+
+        /// <summary>
+        /// Checks if ServerSideEncryptionKeyManagementServiceKeyId property is set.
+        /// </summary>
+        /// <returns>true if ServerSideEncryptionKeyManagementServiceKeyId property is set.</returns>
+        internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
+        {
+            return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
         }
     }
 }

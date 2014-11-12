@@ -107,10 +107,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the CountClosedWorkflowExecutions service method.</param>
         /// 
         /// <returns>The response from the CountClosedWorkflowExecutions service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -164,10 +164,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the CountOpenWorkflowExecutions service method.</param>
         /// 
         /// <returns>The response from the CountOpenWorkflowExecutions service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -219,10 +219,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the CountPendingActivityTasks service method.</param>
         /// 
         /// <returns>The response from the CountPendingActivityTasks service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -274,10 +274,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the CountPendingDecisionTasks service method.</param>
         /// 
         /// <returns>The response from the CountPendingDecisionTasks service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -331,13 +331,13 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the DeprecateActivityType service method.</param>
         /// 
         /// <returns>The response from the DeprecateActivityType service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="TypeDeprecatedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.TypeDeprecatedException">
         /// Returned when the specified activity or workflow type was already deprecated.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -390,13 +390,13 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the DeprecateDomain service method.</param>
         /// 
         /// <returns>The response from the DeprecateDomain service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="DomainDeprecatedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.DomainDeprecatedException">
         /// Returned when the specified domain has been deprecated.
         /// </exception>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -451,13 +451,13 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the DeprecateWorkflowType service method.</param>
         /// 
         /// <returns>The response from the DeprecateWorkflowType service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="TypeDeprecatedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.TypeDeprecatedException">
         /// Returned when the specified activity or workflow type was already deprecated.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -511,10 +511,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the DescribeActivityType service method.</param>
         /// 
         /// <returns>The response from the DescribeActivityType service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -563,10 +563,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomain service method.</param>
         /// 
         /// <returns>The response from the DescribeDomain service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -616,10 +616,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkflowExecution service method.</param>
         /// 
         /// <returns>The response from the DescribeWorkflowExecution service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -673,10 +673,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkflowType service method.</param>
         /// 
         /// <returns>The response from the DescribeWorkflowType service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -727,10 +727,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the GetWorkflowExecutionHistory service method.</param>
         /// 
         /// <returns>The response from the GetWorkflowExecutionHistory service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -783,10 +783,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the ListActivityTypes service method.</param>
         /// 
         /// <returns>The response from the ListActivityTypes service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -841,10 +841,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the ListClosedWorkflowExecutions service method.</param>
         /// 
         /// <returns>The response from the ListClosedWorkflowExecutions service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -896,7 +896,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the ListDomains service method.</param>
         /// 
         /// <returns>The response from the ListDomains service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
         ListDomainsResponse ListDomains(ListDomainsRequest request);
@@ -949,10 +949,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the ListOpenWorkflowExecutions service method.</param>
         /// 
         /// <returns>The response from the ListOpenWorkflowExecutions service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -1003,10 +1003,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the ListWorkflowTypes service method.</param>
         /// 
         /// <returns>The response from the ListWorkflowTypes service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -1065,15 +1065,15 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the PollForActivityTask service method.</param>
         /// 
         /// <returns>The response from the PollForActivityTask service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.LimitExceededException">
         /// Returned by any operation if a system imposed limitation has been reached. To address
         /// this fault you should either clean up unused resources or increase the limit by contacting
         /// AWS.
         /// </exception>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -1142,15 +1142,15 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the PollForDecisionTask service method.</param>
         /// 
         /// <returns>The response from the PollForDecisionTask service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.LimitExceededException">
         /// Returned by any operation if a system imposed limitation has been reached. To address
         /// this fault you should either clean up unused resources or increase the limit by contacting
         /// AWS.
         /// </exception>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -1220,10 +1220,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the RecordActivityTaskHeartbeat service method.</param>
         /// 
         /// <returns>The response from the RecordActivityTaskHeartbeat service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -1278,20 +1278,20 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the RegisterActivityType service method.</param>
         /// 
         /// <returns>The response from the RegisterActivityType service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.LimitExceededException">
         /// Returned by any operation if a system imposed limitation has been reached. To address
         /// this fault you should either clean up unused resources or increase the limit by contacting
         /// AWS.
         /// </exception>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="TypeAlreadyExistsException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.TypeAlreadyExistsException">
         /// Returned if the type already exists in the specified domain. You will get this fault
         /// even if the existing type is in deprecated status. You can specify another version
         /// if the intent is to create a new distinct version of the type.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -1341,16 +1341,16 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the RegisterDomain service method.</param>
         /// 
         /// <returns>The response from the RegisterDomain service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="DomainAlreadyExistsException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.DomainAlreadyExistsException">
         /// Returned if the specified domain already exists. You will get this fault even if
         /// the existing domain is in deprecated status.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.LimitExceededException">
         /// Returned by any operation if a system imposed limitation has been reached. To address
         /// this fault you should either clean up unused resources or increase the limit by contacting
         /// AWS.
         /// </exception>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
         RegisterDomainResponse RegisterDomain(RegisterDomainRequest request);
@@ -1408,20 +1408,20 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the RegisterWorkflowType service method.</param>
         /// 
         /// <returns>The response from the RegisterWorkflowType service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.LimitExceededException">
         /// Returned by any operation if a system imposed limitation has been reached. To address
         /// this fault you should either clean up unused resources or increase the limit by contacting
         /// AWS.
         /// </exception>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="TypeAlreadyExistsException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.TypeAlreadyExistsException">
         /// Returned if the type already exists in the specified domain. You will get this fault
         /// even if the existing type is in deprecated status. You can specify another version
         /// if the intent is to create a new distinct version of the type.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -1473,10 +1473,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the RequestCancelWorkflowExecution service method.</param>
         /// 
         /// <returns>The response from the RequestCancelWorkflowExecution service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -1542,10 +1542,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the RespondActivityTaskCanceled service method.</param>
         /// 
         /// <returns>The response from the RespondActivityTaskCanceled service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -1608,10 +1608,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the RespondActivityTaskCompleted service method.</param>
         /// 
         /// <returns>The response from the RespondActivityTaskCompleted service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -1671,10 +1671,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the RespondActivityTaskFailed service method.</param>
         /// 
         /// <returns>The response from the RespondActivityTaskFailed service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -1726,10 +1726,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the RespondDecisionTaskCompleted service method.</param>
         /// 
         /// <returns>The response from the RespondDecisionTaskCompleted service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -1781,10 +1781,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the SignalWorkflowExecution service method.</param>
         /// 
         /// <returns>The response from the SignalWorkflowExecution service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
@@ -1847,26 +1847,26 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the StartWorkflowExecution service method.</param>
         /// 
         /// <returns>The response from the StartWorkflowExecution service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="DefaultUndefinedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.DefaultUndefinedException">
         /// 
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.LimitExceededException">
         /// Returned by any operation if a system imposed limitation has been reached. To address
         /// this fault you should either clean up unused resources or increase the limit by contacting
         /// AWS.
         /// </exception>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="TypeDeprecatedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.TypeDeprecatedException">
         /// Returned when the specified activity or workflow type was already deprecated.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.
         /// </exception>
-        /// <exception cref="WorkflowExecutionAlreadyStartedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.WorkflowExecutionAlreadyStartedException">
         /// Returned by <a>StartWorkflowExecution</a> when an open execution with the same workflowId
         /// is already running in the specified domain.
         /// </exception>
@@ -1918,10 +1918,10 @@ namespace Amazon.SimpleWorkflow
         /// <param name="request">Container for the necessary parameters to execute the TerminateWorkflowExecution service method.</param>
         /// 
         /// <returns>The response from the TerminateWorkflowExecution service method, as returned by SimpleWorkflow.</returns>
-        /// <exception cref="OperationNotPermittedException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller does not have sufficient permissions to invoke the action.
         /// </exception>
-        /// <exception cref="UnknownResourceException">
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
         /// (region or domain). This could happen if the named resource was never created or is
         /// no longer available for this operation.

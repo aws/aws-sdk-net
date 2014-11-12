@@ -92,7 +92,7 @@ namespace Amazon.CloudWatch
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlarms service method.</param>
         /// 
         /// <returns>The response from the DeleteAlarms service method, as returned by CloudWatch.</returns>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
         /// The named resource does not exist.
         /// </exception>
         DeleteAlarmsResponse DeleteAlarms(DeleteAlarmsRequest request);
@@ -134,7 +134,7 @@ namespace Amazon.CloudWatch
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAlarmHistory service method, as returned by CloudWatch.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
         /// The next token specified is invalid.
         /// </exception>
         DescribeAlarmHistoryResponse DescribeAlarmHistory();
@@ -147,7 +147,7 @@ namespace Amazon.CloudWatch
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmHistory service method.</param>
         /// 
         /// <returns>The response from the DescribeAlarmHistory service method, as returned by CloudWatch.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
         /// The next token specified is invalid.
         /// </exception>
         DescribeAlarmHistoryResponse DescribeAlarmHistory(DescribeAlarmHistoryRequest request);
@@ -189,7 +189,7 @@ namespace Amazon.CloudWatch
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAlarms service method, as returned by CloudWatch.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
         /// The next token specified is invalid.
         /// </exception>
         DescribeAlarmsResponse DescribeAlarms();
@@ -202,7 +202,7 @@ namespace Amazon.CloudWatch
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarms service method.</param>
         /// 
         /// <returns>The response from the DescribeAlarms service method, as returned by CloudWatch.</returns>
-        /// <exception cref="InvalidNextTokenException">
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
         /// The next token specified is invalid.
         /// </exception>
         DescribeAlarmsResponse DescribeAlarms(DescribeAlarmsRequest request);
@@ -392,17 +392,17 @@ namespace Amazon.CloudWatch
         /// <param name="request">Container for the necessary parameters to execute the GetMetricStatistics service method.</param>
         /// 
         /// <returns>The response from the GetMetricStatistics service method, as returned by CloudWatch.</returns>
-        /// <exception cref="InternalServiceException">
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
         /// Indicates that the request processing has failed due to some unknown error, exception,
         /// or failure.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterCombinationException">
         /// Parameters that must not be used together were used together.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
         /// Bad or out-of-range value was supplied for the input parameter.
         /// </exception>
-        /// <exception cref="MissingRequiredParameterException">
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
         /// An input parameter that is mandatory for processing the request is not supplied.
         /// </exception>
         GetMetricStatisticsResponse GetMetricStatistics(GetMetricStatisticsRequest request);
@@ -444,11 +444,11 @@ namespace Amazon.CloudWatch
         /// </summary>
         /// 
         /// <returns>The response from the ListMetrics service method, as returned by CloudWatch.</returns>
-        /// <exception cref="InternalServiceException">
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
         /// Indicates that the request processing has failed due to some unknown error, exception,
         /// or failure.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
         /// Bad or out-of-range value was supplied for the input parameter.
         /// </exception>
         ListMetricsResponse ListMetrics();
@@ -461,11 +461,11 @@ namespace Amazon.CloudWatch
         /// <param name="request">Container for the necessary parameters to execute the ListMetrics service method.</param>
         /// 
         /// <returns>The response from the ListMetrics service method, as returned by CloudWatch.</returns>
-        /// <exception cref="InternalServiceException">
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
         /// Indicates that the request processing has failed due to some unknown error, exception,
         /// or failure.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
         /// Bad or out-of-range value was supplied for the input parameter.
         /// </exception>
         ListMetricsResponse ListMetrics(ListMetricsRequest request);
@@ -515,7 +515,7 @@ namespace Amazon.CloudWatch
         /// <param name="request">Container for the necessary parameters to execute the PutMetricAlarm service method.</param>
         /// 
         /// <returns>The response from the PutMetricAlarm service method, as returned by CloudWatch.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
         /// The quota for alarms for this customer has already been reached.
         /// </exception>
         PutMetricAlarmResponse PutMetricAlarm(PutMetricAlarmRequest request);
@@ -573,17 +573,17 @@ namespace Amazon.CloudWatch
         /// <param name="request">Container for the necessary parameters to execute the PutMetricData service method.</param>
         /// 
         /// <returns>The response from the PutMetricData service method, as returned by CloudWatch.</returns>
-        /// <exception cref="InternalServiceException">
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
         /// Indicates that the request processing has failed due to some unknown error, exception,
         /// or failure.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterCombinationException">
         /// Parameters that must not be used together were used together.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
         /// Bad or out-of-range value was supplied for the input parameter.
         /// </exception>
-        /// <exception cref="MissingRequiredParameterException">
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
         /// An input parameter that is mandatory for processing the request is not supplied.
         /// </exception>
         PutMetricDataResponse PutMetricData(PutMetricDataRequest request);
@@ -627,10 +627,10 @@ namespace Amazon.CloudWatch
         /// <param name="request">Container for the necessary parameters to execute the SetAlarmState service method.</param>
         /// 
         /// <returns>The response from the SetAlarmState service method, as returned by CloudWatch.</returns>
-        /// <exception cref="InvalidFormatException">
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidFormatException">
         /// Data was not syntactically valid JSON.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
         /// The named resource does not exist.
         /// </exception>
         SetAlarmStateResponse SetAlarmState(SetAlarmStateRequest request);

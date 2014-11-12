@@ -394,6 +394,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.KeyManagementService\*" Exclude="..\AWSSDK_DotNet35\Amazon.KeyManagementService\IAmazonKeyManagementService.cs;..\AWSSDK_DotNet35\Amazon.KeyManagementService\AmazonKeyManagementServiceClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_WinRT\Amazon.KeyManagementService\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.KeyManagementService\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.KeyManagementService\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Kinesis\*" Exclude="..\AWSSDK_DotNet35\Amazon.Kinesis\IAmazonKinesis.cs;..\AWSSDK_DotNet35\Amazon.Kinesis\AmazonKinesisClient.cs">
       <Visible>false</Visible>
     </Compile>

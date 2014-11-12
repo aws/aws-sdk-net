@@ -37,6 +37,7 @@ namespace Amazon.S3.Model
         private string versionId;
         private DateTime? expires;
         private string websiteRedirectLocation;
+        private string serverSideEncryptionKeyManagementServiceKeyId;
         private ServerSideEncryptionMethod serverSideEncryption;
         private ServerSideEncryptionCustomerMethod serverSideEncryptionCustomerMethod;
         private HeadersCollection headersCollection = new HeadersCollection();
@@ -276,6 +277,24 @@ namespace Amazon.S3.Model
         internal bool IsSetServerSideEncryptionCustomerMethod()
         {
             return this.serverSideEncryptionCustomerMethod != null;
+        }
+
+        /// <summary>
+        /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
+        /// </summary>
+        public string ServerSideEncryptionKeyManagementServiceKeyId
+        {
+            get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
+            set { this.serverSideEncryptionKeyManagementServiceKeyId = value; }
+        }
+
+        /// <summary>
+        /// Checks if ServerSideEncryptionKeyManagementServiceKeyId property is set.
+        /// </summary>
+        /// <returns>true if ServerSideEncryptionKeyManagementServiceKeyId property is set.</returns>
+        internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
+        {
+            return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
         }
     }
 }

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,7 +36,12 @@ namespace Amazon.EC2.Model
     /// During bundling, only the root device volume (C:\) is bundled. Data on other instance
     /// store volumes is not preserved.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// This procedure is not applicable for Linux/Unix instances or Windows instances that
+    /// are backed by Amazon EBS.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html">Creating
     /// an Instance Store-Backed Windows AMI</a>.

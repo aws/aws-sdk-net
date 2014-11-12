@@ -48,7 +48,7 @@ namespace Amazon.S3.Transfer
         S3StorageClass _storageClass;
         MetadataCollection metadataCollection;
         ServerSideEncryptionMethod encryption;
-
+        string serverSideEncryptionKeyManagementServiceKeyId;
 
 
         /// <summary>
@@ -228,6 +228,16 @@ namespace Amazon.S3.Transfer
         {
             get { return this.encryption; }
             set { this.encryption = value; }
+        }
+
+        /// <summary>
+        /// The id of the AWS Key Management Service key that Amazon S3 should use to encrypt and decrypt the object.
+        /// If a key id is not specified, the default key will be used for encryption and decryption.
+        /// </summary>
+        public string ServerSideEncryptionKeyManagementServiceKeyId
+        {
+            get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
+            set { this.serverSideEncryptionKeyManagementServiceKeyId = value; }
         }
 
 

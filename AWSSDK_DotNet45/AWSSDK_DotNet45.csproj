@@ -145,6 +145,8 @@
     <Compile Include="Amazon.AutoScaling\IAmazonAutoScaling.cs" />
     <Compile Include="Amazon.AWSSupport\AmazonAWSSupportClient.cs" />
     <Compile Include="Amazon.AWSSupport\IAmazonAWSSupport.cs" />
+    <Compile Include="Amazon.CodeDeploy\AmazonCodeDeployClient.cs" />
+    <Compile Include="Amazon.CodeDeploy\IAmazonCodeDeploy.cs" />
     <Compile Include="Amazon.CognitoIdentity\AmazonCognitoIdentityClient.cs" />
     <Compile Include="Amazon.CognitoIdentity\IAmazonCognitoIdentity.cs" />
     <Compile Include="Amazon.CognitoSync\AmazonCognitoSyncClient.cs" />
@@ -161,6 +163,8 @@
     <Compile Include="Amazon.CloudSearch_2011_02_01\IAmazonCloudSearch.cs" />
     <Compile Include="Amazon.CloudTrail\AmazonCloudTrailClient.cs" />
     <Compile Include="Amazon.CloudTrail\IAmazonCloudTrail.cs" />
+    <Compile Include="Amazon.ConfigService\AmazonConfigServiceClient.cs" />
+    <Compile Include="Amazon.ConfigService\IAmazonConfigService.cs" />
     <Compile Include="Amazon.CloudWatchLogs\AmazonCloudWatchLogsClient.cs" />
     <Compile Include="Amazon.CloudWatchLogs\IAmazonCloudWatchLogs.cs" />
     <Compile Include="Amazon.CloudWatch\AmazonCloudWatchClient.cs" />
@@ -215,6 +219,8 @@
     <Compile Include="Amazon.IdentityManagement\IAmazonIdentityManagementService.cs" />
     <Compile Include="Amazon.ImportExport\AmazonImportExportClient.cs" />
     <Compile Include="Amazon.ImportExport\IAmazonImportExport.cs" />
+    <Compile Include="Amazon.KeyManagementService\AmazonKeyManagementServiceClient.cs" />
+    <Compile Include="Amazon.KeyManagementService\IAmazonKeyManagementService.cs" />
     <Compile Include="Amazon.Kinesis\AmazonKinesisClient.cs" />
     <Compile Include="Amazon.Kinesis\IAmazonKinesis.cs" />
     <Compile Include="Amazon.OpsWorks\AmazonOpsWorksClient.cs" />
@@ -336,6 +342,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CodeDeploy\*" Exclude="..\AWSSDK_DotNet35\Amazon.CodeDeploy\IAmazonCodeDeploy.cs;..\AWSSDK_DotNet35\Amazon.CodeDeploy\AmazonCodeDeployClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CodeDeploy\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CodeDeploy\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\*" Exclude="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\IAmazonCognitoIdentity.cs;..\AWSSDK_DotNet35\Amazon.CognitoIdentity\AmazonCognitoIdentityClient.cs">
       <Visible>false</Visible>
     </Compile>
@@ -446,6 +463,17 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudTrail\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.ConfigService\*" Exclude="..\AWSSDK_DotNet35\Amazon.ConfigService\IAmazonConfigService.cs;..\AWSSDK_DotNet35\Amazon.ConfigService\AmazonConfigServiceClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.ConfigService\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.ConfigService\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>
@@ -642,6 +670,17 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Glacier\Transfer\Internal\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.KeyManagementService\*" Exclude="..\AWSSDK_DotNet35\Amazon.KeyManagementService\IAmazonKeyManagementService.cs;..\AWSSDK_DotNet35\Amazon.KeyManagementService\AmazonKeyManagementServiceClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.KeyManagementService\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.KeyManagementService\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>

@@ -48,13 +48,4 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             return (self == null);
         }
     }
-
-    public static class DisposableExtensions
-    {
-        public static void SafeDispose(this IDisposable self)
-        {
-            if (self != null)
-                self.Dispose();
-        }
-    }
 }

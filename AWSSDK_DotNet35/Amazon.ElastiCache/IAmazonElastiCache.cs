@@ -61,21 +61,21 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeCacheSecurityGroupIngress service method.</param>
         /// 
         /// <returns>The response from the AuthorizeCacheSecurityGroupIngress service method, as returned by ElastiCache.</returns>
-        /// <exception cref="AuthorizationAlreadyExistsException">
+        /// <exception cref="Amazon.ElastiCache.Model.AuthorizationAlreadyExistsException">
         /// The specified Amazon EC2 security group is already authorized for the specified cache
         /// security group.
         /// </exception>
-        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException">
         /// The requested cache security group name does not refer to an existing cache security
         /// group.
         /// </exception>
-        /// <exception cref="InvalidCacheSecurityGroupStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheSecurityGroupStateException">
         /// The current state of the cache security group does not allow deletion.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         AuthorizeCacheSecurityGroupIngressResponse AuthorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest request);
@@ -116,22 +116,22 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the CopySnapshot service method.</param>
         /// 
         /// <returns>The response from the CopySnapshot service method, as returned by ElastiCache.</returns>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="InvalidSnapshotStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidSnapshotStateException">
         /// The current state of the snapshot does not allow the requested action to occur.
         /// </exception>
-        /// <exception cref="SnapshotAlreadyExistsException">
+        /// <exception cref="Amazon.ElastiCache.Model.SnapshotAlreadyExistsException">
         /// You already have a snapshot with the given name.
         /// </exception>
-        /// <exception cref="SnapshotNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
         /// The requested snapshot name does not refer to an existing snapshot.
         /// </exception>
-        /// <exception cref="SnapshotQuotaExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.SnapshotQuotaExceededException">
         /// The request cannot be processed because it would exceed the maximum number of snapshots.
         /// </exception>
         CopySnapshotResponse CopySnapshot(CopySnapshotRequest request);
@@ -174,48 +174,48 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the CreateCacheCluster service method.</param>
         /// 
         /// <returns>The response from the CreateCacheCluster service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheClusterAlreadyExistsException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheClusterAlreadyExistsException">
         /// You already have a cache cluster with the given identifier.
         /// </exception>
-        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
         /// The requested cache parameter group name does not refer to an existing cache parameter
         /// group.
         /// </exception>
-        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException">
         /// The requested cache security group name does not refer to an existing cache security
         /// group.
         /// </exception>
-        /// <exception cref="CacheSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetGroupNotFoundException">
         /// The requested cache subnet group name does not refer to an existing cache subnet group.
         /// </exception>
-        /// <exception cref="ClusterQuotaForCustomerExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.ClusterQuotaForCustomerExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
         /// clusters per customer.
         /// </exception>
-        /// <exception cref="InsufficientCacheClusterCapacityException">
+        /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="InvalidReplicationGroupStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
         /// The requested replication group is not in the <i>available</i> state.
         /// </exception>
-        /// <exception cref="InvalidVPCNetworkStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
         /// </exception>
-        /// <exception cref="NodeQuotaForClusterExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForClusterExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
         /// nodes in a single cache cluster.
         /// </exception>
-        /// <exception cref="NodeQuotaForCustomerExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForCustomerExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
         /// nodes per customer.
         /// </exception>
-        /// <exception cref="ReplicationGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
         /// </exception>
         CreateCacheClusterResponse CreateCacheCluster(CreateCacheClusterRequest request);
@@ -258,21 +258,21 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the CreateCacheParameterGroup service method.</param>
         /// 
         /// <returns>The response from the CreateCacheParameterGroup service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheParameterGroupAlreadyExistsException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupAlreadyExistsException">
         /// A cache parameter group with the requested name already exists.
         /// </exception>
-        /// <exception cref="CacheParameterGroupQuotaExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupQuotaExceededException">
         /// The request cannot be processed because it would exceed the maximum number of cache
         /// security groups.
         /// </exception>
-        /// <exception cref="InvalidCacheParameterGroupStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheParameterGroupStateException">
         /// The current state of the cache parameter group does not allow the requested action
         /// to occur.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         CreateCacheParameterGroupResponse CreateCacheParameterGroup(CreateCacheParameterGroupRequest request);
@@ -321,17 +321,17 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the CreateCacheSecurityGroup service method.</param>
         /// 
         /// <returns>The response from the CreateCacheSecurityGroup service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheSecurityGroupAlreadyExistsException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSecurityGroupAlreadyExistsException">
         /// A cache security group with the specified name already exists.
         /// </exception>
-        /// <exception cref="CacheSecurityGroupQuotaExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSecurityGroupQuotaExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
         /// security groups.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         CreateCacheSecurityGroupResponse CreateCacheSecurityGroup(CreateCacheSecurityGroupRequest request);
@@ -378,19 +378,19 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the CreateCacheSubnetGroup service method.</param>
         /// 
         /// <returns>The response from the CreateCacheSubnetGroup service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheSubnetGroupAlreadyExistsException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetGroupAlreadyExistsException">
         /// The requested cache subnet group name is already in use by an existing cache subnet
         /// group.
         /// </exception>
-        /// <exception cref="CacheSubnetGroupQuotaExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetGroupQuotaExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
         /// subnet groups.
         /// </exception>
-        /// <exception cref="CacheSubnetQuotaExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetQuotaExceededException">
         /// The request cannot be processed because it would exceed the allowed number of subnets
         /// in a cache subnet group.
         /// </exception>
-        /// <exception cref="InvalidSubnetException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidSubnetException">
         /// An invalid subnet identifier was specified.
         /// </exception>
         CreateCacheSubnetGroupResponse CreateCacheSubnetGroup(CreateCacheSubnetGroupRequest request);
@@ -445,48 +445,48 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationGroup service method.</param>
         /// 
         /// <returns>The response from the CreateReplicationGroup service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheClusterNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
         /// The requested cache cluster ID does not refer to an existing cache cluster.
         /// </exception>
-        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
         /// The requested cache parameter group name does not refer to an existing cache parameter
         /// group.
         /// </exception>
-        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException">
         /// The requested cache security group name does not refer to an existing cache security
         /// group.
         /// </exception>
-        /// <exception cref="CacheSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetGroupNotFoundException">
         /// The requested cache subnet group name does not refer to an existing cache subnet group.
         /// </exception>
-        /// <exception cref="ClusterQuotaForCustomerExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.ClusterQuotaForCustomerExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
         /// clusters per customer.
         /// </exception>
-        /// <exception cref="InsufficientCacheClusterCapacityException">
+        /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
         /// </exception>
-        /// <exception cref="InvalidCacheClusterStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
         /// The requested cache cluster is not in the <i>available</i> state.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="InvalidVPCNetworkStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
         /// </exception>
-        /// <exception cref="NodeQuotaForClusterExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForClusterExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
         /// nodes in a single cache cluster.
         /// </exception>
-        /// <exception cref="NodeQuotaForCustomerExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForCustomerExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
         /// nodes per customer.
         /// </exception>
-        /// <exception cref="ReplicationGroupAlreadyExistsException">
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupAlreadyExistsException">
         /// The specified replication group already exists.
         /// </exception>
         CreateReplicationGroupResponse CreateReplicationGroup(CreateReplicationGroupRequest request);
@@ -528,22 +528,22 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
         /// 
         /// <returns>The response from the CreateSnapshot service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheClusterNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
         /// The requested cache cluster ID does not refer to an existing cache cluster.
         /// </exception>
-        /// <exception cref="InvalidCacheClusterStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
         /// The requested cache cluster is not in the <i>available</i> state.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="SnapshotAlreadyExistsException">
+        /// <exception cref="Amazon.ElastiCache.Model.SnapshotAlreadyExistsException">
         /// You already have a snapshot with the given name.
         /// </exception>
-        /// <exception cref="SnapshotFeatureNotSupportedException">
+        /// <exception cref="Amazon.ElastiCache.Model.SnapshotFeatureNotSupportedException">
         /// You attempted one of the following actions:
         /// 
         ///  <ul> <li> 
@@ -559,7 +559,7 @@ namespace Amazon.ElastiCache
         /// Neither of these are supported by ElastiCache.
         /// </para>
         /// </exception>
-        /// <exception cref="SnapshotQuotaExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.SnapshotQuotaExceededException">
         /// The request cannot be processed because it would exceed the maximum number of snapshots.
         /// </exception>
         CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request);
@@ -610,22 +610,22 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the DeleteCacheCluster service method.</param>
         /// 
         /// <returns>The response from the DeleteCacheCluster service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheClusterNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
         /// The requested cache cluster ID does not refer to an existing cache cluster.
         /// </exception>
-        /// <exception cref="InvalidCacheClusterStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
         /// The requested cache cluster is not in the <i>available</i> state.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="SnapshotAlreadyExistsException">
+        /// <exception cref="Amazon.ElastiCache.Model.SnapshotAlreadyExistsException">
         /// You already have a snapshot with the given name.
         /// </exception>
-        /// <exception cref="SnapshotFeatureNotSupportedException">
+        /// <exception cref="Amazon.ElastiCache.Model.SnapshotFeatureNotSupportedException">
         /// You attempted one of the following actions:
         /// 
         ///  <ul> <li> 
@@ -641,7 +641,7 @@ namespace Amazon.ElastiCache
         /// Neither of these are supported by ElastiCache.
         /// </para>
         /// </exception>
-        /// <exception cref="SnapshotQuotaExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.SnapshotQuotaExceededException">
         /// The request cannot be processed because it would exceed the maximum number of snapshots.
         /// </exception>
         DeleteCacheClusterResponse DeleteCacheCluster(DeleteCacheClusterRequest request);
@@ -684,18 +684,18 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the DeleteCacheParameterGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteCacheParameterGroup service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
         /// The requested cache parameter group name does not refer to an existing cache parameter
         /// group.
         /// </exception>
-        /// <exception cref="InvalidCacheParameterGroupStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheParameterGroupStateException">
         /// The current state of the cache parameter group does not allow the requested action
         /// to occur.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         DeleteCacheParameterGroupResponse DeleteCacheParameterGroup(DeleteCacheParameterGroupRequest request);
@@ -736,17 +736,17 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the DeleteCacheSecurityGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteCacheSecurityGroup service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException">
         /// The requested cache security group name does not refer to an existing cache security
         /// group.
         /// </exception>
-        /// <exception cref="InvalidCacheSecurityGroupStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheSecurityGroupStateException">
         /// The current state of the cache security group does not allow deletion.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         DeleteCacheSecurityGroupResponse DeleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest request);
@@ -787,10 +787,10 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the DeleteCacheSubnetGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteCacheSubnetGroup service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheSubnetGroupInUseException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetGroupInUseException">
         /// The requested cache subnet group is currently in use.
         /// </exception>
-        /// <exception cref="CacheSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetGroupNotFoundException">
         /// The requested cache subnet group name does not refer to an existing cache subnet group.
         /// </exception>
         DeleteCacheSubnetGroupResponse DeleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest request);
@@ -840,22 +840,22 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteReplicationGroup service method, as returned by ElastiCache.</returns>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="InvalidReplicationGroupStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
         /// The requested replication group is not in the <i>available</i> state.
         /// </exception>
-        /// <exception cref="ReplicationGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
         /// </exception>
-        /// <exception cref="SnapshotAlreadyExistsException">
+        /// <exception cref="Amazon.ElastiCache.Model.SnapshotAlreadyExistsException">
         /// You already have a snapshot with the given name.
         /// </exception>
-        /// <exception cref="SnapshotFeatureNotSupportedException">
+        /// <exception cref="Amazon.ElastiCache.Model.SnapshotFeatureNotSupportedException">
         /// You attempted one of the following actions:
         /// 
         ///  <ul> <li> 
@@ -871,7 +871,7 @@ namespace Amazon.ElastiCache
         /// Neither of these are supported by ElastiCache.
         /// </para>
         /// </exception>
-        /// <exception cref="SnapshotQuotaExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.SnapshotQuotaExceededException">
         /// The request cannot be processed because it would exceed the maximum number of snapshots.
         /// </exception>
         DeleteReplicationGroupResponse DeleteReplicationGroup(DeleteReplicationGroupRequest request);
@@ -914,16 +914,16 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshot service method.</param>
         /// 
         /// <returns>The response from the DeleteSnapshot service method, as returned by ElastiCache.</returns>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="InvalidSnapshotStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidSnapshotStateException">
         /// The current state of the snapshot does not allow the requested action to occur.
         /// </exception>
-        /// <exception cref="SnapshotNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
         /// The requested snapshot name does not refer to an existing snapshot.
         /// </exception>
         DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request);
@@ -994,13 +994,13 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// 
         /// <returns>The response from the DescribeCacheClusters service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheClusterNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
         /// The requested cache cluster ID does not refer to an existing cache cluster.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         DescribeCacheClustersResponse DescribeCacheClusters();
@@ -1042,13 +1042,13 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the DescribeCacheClusters service method.</param>
         /// 
         /// <returns>The response from the DescribeCacheClusters service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheClusterNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
         /// The requested cache cluster ID does not refer to an existing cache cluster.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         DescribeCacheClustersResponse DescribeCacheClusters(DescribeCacheClustersRequest request);
@@ -1137,14 +1137,14 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// 
         /// <returns>The response from the DescribeCacheParameterGroups service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
         /// The requested cache parameter group name does not refer to an existing cache parameter
         /// group.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         DescribeCacheParameterGroupsResponse DescribeCacheParameterGroups();
@@ -1157,14 +1157,14 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the DescribeCacheParameterGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeCacheParameterGroups service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
         /// The requested cache parameter group name does not refer to an existing cache parameter
         /// group.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         DescribeCacheParameterGroupsResponse DescribeCacheParameterGroups(DescribeCacheParameterGroupsRequest request);
@@ -1206,14 +1206,14 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the DescribeCacheParameters service method.</param>
         /// 
         /// <returns>The response from the DescribeCacheParameters service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
         /// The requested cache parameter group name does not refer to an existing cache parameter
         /// group.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         DescribeCacheParametersResponse DescribeCacheParameters(DescribeCacheParametersRequest request);
@@ -1255,14 +1255,14 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// 
         /// <returns>The response from the DescribeCacheSecurityGroups service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException">
         /// The requested cache security group name does not refer to an existing cache security
         /// group.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         DescribeCacheSecurityGroupsResponse DescribeCacheSecurityGroups();
@@ -1275,14 +1275,14 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the DescribeCacheSecurityGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeCacheSecurityGroups service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException">
         /// The requested cache security group name does not refer to an existing cache security
         /// group.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         DescribeCacheSecurityGroupsResponse DescribeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest request);
@@ -1324,7 +1324,7 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// 
         /// <returns>The response from the DescribeCacheSubnetGroups service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetGroupNotFoundException">
         /// The requested cache subnet group name does not refer to an existing cache subnet group.
         /// </exception>
         DescribeCacheSubnetGroupsResponse DescribeCacheSubnetGroups();
@@ -1337,7 +1337,7 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the DescribeCacheSubnetGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeCacheSubnetGroups service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetGroupNotFoundException">
         /// The requested cache subnet group name does not refer to an existing cache subnet group.
         /// </exception>
         DescribeCacheSubnetGroupsResponse DescribeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest request);
@@ -1379,10 +1379,10 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultParameters service method.</param>
         /// 
         /// <returns>The response from the DescribeEngineDefaultParameters service method, as returned by ElastiCache.</returns>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request);
@@ -1431,10 +1431,10 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by ElastiCache.</returns>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         DescribeEventsResponse DescribeEvents();
@@ -1454,10 +1454,10 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by ElastiCache.</returns>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         DescribeEventsResponse DescribeEvents(DescribeEventsRequest request);
@@ -1499,13 +1499,13 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReplicationGroups service method, as returned by ElastiCache.</returns>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="ReplicationGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
         /// </exception>
         DescribeReplicationGroupsResponse DescribeReplicationGroups();
@@ -1518,13 +1518,13 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeReplicationGroups service method, as returned by ElastiCache.</returns>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="ReplicationGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
         /// </exception>
         DescribeReplicationGroupsResponse DescribeReplicationGroups(DescribeReplicationGroupsRequest request);
@@ -1565,13 +1565,13 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedCacheNodes service method, as returned by ElastiCache.</returns>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="ReservedCacheNodeNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodeNotFoundException">
         /// The requested reserved cache node was not found.
         /// </exception>
         DescribeReservedCacheNodesResponse DescribeReservedCacheNodes();
@@ -1583,13 +1583,13 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedCacheNodes service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedCacheNodes service method, as returned by ElastiCache.</returns>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="ReservedCacheNodeNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodeNotFoundException">
         /// The requested reserved cache node was not found.
         /// </exception>
         DescribeReservedCacheNodesResponse DescribeReservedCacheNodes(DescribeReservedCacheNodesRequest request);
@@ -1630,13 +1630,13 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedCacheNodesOfferings service method, as returned by ElastiCache.</returns>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="ReservedCacheNodesOfferingNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodesOfferingNotFoundException">
         /// The requested cache node offering does not exist.
         /// </exception>
         DescribeReservedCacheNodesOfferingsResponse DescribeReservedCacheNodesOfferings();
@@ -1648,13 +1648,13 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedCacheNodesOfferings service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedCacheNodesOfferings service method, as returned by ElastiCache.</returns>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="ReservedCacheNodesOfferingNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodesOfferingNotFoundException">
         /// The requested cache node offering does not exist.
         /// </exception>
         DescribeReservedCacheNodesOfferingsResponse DescribeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest request);
@@ -1697,16 +1697,16 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheClusterNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
         /// The requested cache cluster ID does not refer to an existing cache cluster.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="SnapshotNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
         /// The requested snapshot name does not refer to an existing snapshot.
         /// </exception>
         DescribeSnapshotsResponse DescribeSnapshots();
@@ -1720,16 +1720,16 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshots service method.</param>
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheClusterNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
         /// The requested cache cluster ID does not refer to an existing cache cluster.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="SnapshotNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
         /// The requested snapshot name does not refer to an existing snapshot.
         /// </exception>
         DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request);
@@ -1772,40 +1772,40 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the ModifyCacheCluster service method.</param>
         /// 
         /// <returns>The response from the ModifyCacheCluster service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheClusterNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
         /// The requested cache cluster ID does not refer to an existing cache cluster.
         /// </exception>
-        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
         /// The requested cache parameter group name does not refer to an existing cache parameter
         /// group.
         /// </exception>
-        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException">
         /// The requested cache security group name does not refer to an existing cache security
         /// group.
         /// </exception>
-        /// <exception cref="InsufficientCacheClusterCapacityException">
+        /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
         /// </exception>
-        /// <exception cref="InvalidCacheClusterStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
         /// The requested cache cluster is not in the <i>available</i> state.
         /// </exception>
-        /// <exception cref="InvalidCacheSecurityGroupStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheSecurityGroupStateException">
         /// The current state of the cache security group does not allow deletion.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="InvalidVPCNetworkStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
         /// </exception>
-        /// <exception cref="NodeQuotaForClusterExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForClusterExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
         /// nodes in a single cache cluster.
         /// </exception>
-        /// <exception cref="NodeQuotaForCustomerExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForCustomerExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
         /// nodes per customer.
         /// </exception>
@@ -1849,18 +1849,18 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the ModifyCacheParameterGroup service method.</param>
         /// 
         /// <returns>The response from the ModifyCacheParameterGroup service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
         /// The requested cache parameter group name does not refer to an existing cache parameter
         /// group.
         /// </exception>
-        /// <exception cref="InvalidCacheParameterGroupStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheParameterGroupStateException">
         /// The current state of the cache parameter group does not allow the requested action
         /// to occur.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         ModifyCacheParameterGroupResponse ModifyCacheParameterGroup(ModifyCacheParameterGroupRequest request);
@@ -1901,17 +1901,17 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the ModifyCacheSubnetGroup service method.</param>
         /// 
         /// <returns>The response from the ModifyCacheSubnetGroup service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheSubnetGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetGroupNotFoundException">
         /// The requested cache subnet group name does not refer to an existing cache subnet group.
         /// </exception>
-        /// <exception cref="CacheSubnetQuotaExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetQuotaExceededException">
         /// The request cannot be processed because it would exceed the allowed number of subnets
         /// in a cache subnet group.
         /// </exception>
-        /// <exception cref="InvalidSubnetException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidSubnetException">
         /// An invalid subnet identifier was specified.
         /// </exception>
-        /// <exception cref="SubnetInUseException">
+        /// <exception cref="Amazon.ElastiCache.Model.SubnetInUseException">
         /// The requested subnet is being used by another cache subnet group.
         /// </exception>
         ModifyCacheSubnetGroupResponse ModifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest request);
@@ -1953,47 +1953,47 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationGroup service method.</param>
         /// 
         /// <returns>The response from the ModifyReplicationGroup service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheClusterNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
         /// The requested cache cluster ID does not refer to an existing cache cluster.
         /// </exception>
-        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
         /// The requested cache parameter group name does not refer to an existing cache parameter
         /// group.
         /// </exception>
-        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException">
         /// The requested cache security group name does not refer to an existing cache security
         /// group.
         /// </exception>
-        /// <exception cref="InsufficientCacheClusterCapacityException">
+        /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
         /// </exception>
-        /// <exception cref="InvalidCacheClusterStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
         /// The requested cache cluster is not in the <i>available</i> state.
         /// </exception>
-        /// <exception cref="InvalidCacheSecurityGroupStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheSecurityGroupStateException">
         /// The current state of the cache security group does not allow deletion.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="InvalidReplicationGroupStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
         /// The requested replication group is not in the <i>available</i> state.
         /// </exception>
-        /// <exception cref="InvalidVPCNetworkStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
         /// </exception>
-        /// <exception cref="NodeQuotaForClusterExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForClusterExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
         /// nodes in a single cache cluster.
         /// </exception>
-        /// <exception cref="NodeQuotaForCustomerExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForCustomerExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
         /// nodes per customer.
         /// </exception>
-        /// <exception cref="ReplicationGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
         /// </exception>
         ModifyReplicationGroupResponse ModifyReplicationGroup(ModifyReplicationGroupRequest request);
@@ -2035,19 +2035,19 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedCacheNodesOffering service method.</param>
         /// 
         /// <returns>The response from the PurchaseReservedCacheNodesOffering service method, as returned by ElastiCache.</returns>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
-        /// <exception cref="ReservedCacheNodeAlreadyExistsException">
+        /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodeAlreadyExistsException">
         /// You already have a reservation with the given identifier.
         /// </exception>
-        /// <exception cref="ReservedCacheNodeQuotaExceededException">
+        /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodeQuotaExceededException">
         /// The request cannot be processed because it would exceed the user's cache node quota.
         /// </exception>
-        /// <exception cref="ReservedCacheNodesOfferingNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodesOfferingNotFoundException">
         /// The requested cache node offering does not exist.
         /// </exception>
         PurchaseReservedCacheNodesOfferingResponse PurchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest request);
@@ -2102,10 +2102,10 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the RebootCacheCluster service method.</param>
         /// 
         /// <returns>The response from the RebootCacheCluster service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheClusterNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
         /// The requested cache cluster ID does not refer to an existing cache cluster.
         /// </exception>
-        /// <exception cref="InvalidCacheClusterStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
         /// The requested cache cluster is not in the <i>available</i> state.
         /// </exception>
         RebootCacheClusterResponse RebootCacheCluster(RebootCacheClusterRequest request);
@@ -2149,18 +2149,18 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the ResetCacheParameterGroup service method.</param>
         /// 
         /// <returns>The response from the ResetCacheParameterGroup service method, as returned by ElastiCache.</returns>
-        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
         /// The requested cache parameter group name does not refer to an existing cache parameter
         /// group.
         /// </exception>
-        /// <exception cref="InvalidCacheParameterGroupStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheParameterGroupStateException">
         /// The current state of the cache parameter group does not allow the requested action
         /// to occur.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         ResetCacheParameterGroupResponse ResetCacheParameterGroup(ResetCacheParameterGroupRequest request);
@@ -2203,21 +2203,21 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the RevokeCacheSecurityGroupIngress service method.</param>
         /// 
         /// <returns>The response from the RevokeCacheSecurityGroupIngress service method, as returned by ElastiCache.</returns>
-        /// <exception cref="AuthorizationNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.AuthorizationNotFoundException">
         /// The specified Amazon EC2 security group is not authorized for the specified cache
         /// security group.
         /// </exception>
-        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException">
         /// The requested cache security group name does not refer to an existing cache security
         /// group.
         /// </exception>
-        /// <exception cref="InvalidCacheSecurityGroupStateException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheSecurityGroupStateException">
         /// The current state of the cache security group does not allow deletion.
         /// </exception>
-        /// <exception cref="InvalidParameterCombinationException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         RevokeCacheSecurityGroupIngressResponse RevokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest request);

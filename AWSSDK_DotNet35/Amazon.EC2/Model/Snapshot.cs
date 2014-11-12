@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     {
         private string _description;
         private bool? _encrypted;
+        private string _kmsKeyId;
         private string _ownerAlias;
         private string _ownerId;
         private string _progress;
@@ -78,6 +79,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetEncrypted()
         {
             return this._encrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The full ARN of the AWS Key Management Service (KMS) Customer Master Key (CMK) that
+        /// was used to protect the volume encryption key for the parent volume.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

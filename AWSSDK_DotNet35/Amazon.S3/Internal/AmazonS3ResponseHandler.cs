@@ -40,6 +40,7 @@ namespace Amazon.S3.Internal
             AmazonWebServiceResponse response = executionContext.ResponseContext.Response;
             IRequest request = executionContext.RequestContext.Request;
             IWebResponseData webResponseData = executionContext.ResponseContext.HttpResponse;
+            bool isSse = HasSSEHeaders(webResponseData);
 
             var getObjectResponse = response as GetObjectResponse;
             if (getObjectResponse != null)
@@ -50,10 +51,10 @@ namespace Amazon.S3.Internal
 
                 // If ETag is present and is an MD5 hash (not a multi-part upload ETag), and no byte range is specified,
                 // wrap the response stream in an MD5Stream.
-                // If there is a customer encryption algorithm the etag is not and MD5.
+                // If there is a customer encryption algorithm the etag is not an MD5.
                 if (!string.IsNullOrEmpty(getObjectResponse.ETag)
                     && !getObjectResponse.ETag.Contains("-")
-                    && string.IsNullOrEmpty(webResponseData.GetHeaderValue("x-amz-server-side-encryption-customer-algorithm"))
+                    && !isSse
                     && getObjectRequest.ByteRange == null)
                 {
                     string etag = getObjectResponse.ETag.Trim(etagTrimChars);
@@ -80,7 +81,7 @@ namespace Amazon.S3.Internal
                 HashStream hashStream = putObjectRequest.InputStream as HashStream;
                 if (hashStream != null)
                 {
-                    if (putObjectResponse != null && string.IsNullOrEmpty(webResponseData.GetHeaderValue("x-amz-server-side-encryption-customer-algorithm")))
+                    if (putObjectResponse != null && !isSse)
                     {
                         // Stream may not have been closed, so force calculation of hash
                         hashStream.CalculateHash();
@@ -114,7 +115,7 @@ namespace Amazon.S3.Internal
                 HashStream hashStream = uploadPartRequest.InputStream as HashStream;
                 if (hashStream != null)
                 {
-                    if (uploadPartResponse != null && string.IsNullOrEmpty(webResponseData.GetHeaderValue("x-amz-server-side-encryption-customer-algorithm")))
+                    if (uploadPartResponse != null && !isSse)
                     {
                         // Stream may not have been closed, so force calculation of hash
                         hashStream.CalculateHash();
@@ -133,6 +134,13 @@ namespace Amazon.S3.Internal
             }
 
             AmazonS3Client.CleanupRequest(request);
+        }
+
+        private static bool HasSSEHeaders(IWebResponseData webResponseData)
+        {
+            bool usesCustomerAlgorithm = !string.IsNullOrEmpty(webResponseData.GetHeaderValue(HeaderKeys.XAmzSSECustomerAlgorithmHeader));
+            bool usesKmsKeyId = !string.IsNullOrEmpty(webResponseData.GetHeaderValue(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader));
+            return usesCustomerAlgorithm || usesKmsKeyId;
         }
 
         private static char[] etagTrimChars = new char[] { '\"' };

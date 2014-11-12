@@ -64,16 +64,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="actionName">The action you want to allow for the specified principal(s). Valid values: any Amazon SNS action name.</param>
         /// 
         /// <returns>The response from the AddPermission service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         AddPermissionResponse AddPermission(string topicArn, string label, List<string> awsAccountId, List<string> actionName);
@@ -85,16 +85,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the AddPermission service method.</param>
         /// 
         /// <returns>The response from the AddPermission service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         AddPermissionResponse AddPermission(AddPermissionRequest request);
@@ -127,19 +127,19 @@ namespace Amazon.SimpleNotificationService
         /// <param name="authenticateOnUnsubscribe">Disallows unauthenticated unsubscribes of the subscription.  If the value of this parameter is <code>true</code> and the request has an AWS signature, then only the topic owner and the subscription owner can unsubscribe the endpoint.  The unsubscribe action requires AWS authentication. </param>
         /// 
         /// <returns>The response from the ConfirmSubscription service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
-        /// <exception cref="SubscriptionLimitExceededException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
         ConfirmSubscriptionResponse ConfirmSubscription(string topicArn, string token, string authenticateOnUnsubscribe);
@@ -155,19 +155,19 @@ namespace Amazon.SimpleNotificationService
         /// <param name="token">Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</param>
         /// 
         /// <returns>The response from the ConfirmSubscription service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
-        /// <exception cref="SubscriptionLimitExceededException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
         ConfirmSubscriptionResponse ConfirmSubscription(string topicArn, string token);
@@ -182,19 +182,19 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the ConfirmSubscription service method.</param>
         /// 
         /// <returns>The response from the ConfirmSubscription service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
-        /// <exception cref="SubscriptionLimitExceededException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
         ConfirmSubscriptionResponse ConfirmSubscription(ConfirmSubscriptionRequest request);
@@ -232,13 +232,13 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the CreatePlatformApplication service method.</param>
         /// 
         /// <returns>The response from the CreatePlatformApplication service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         CreatePlatformApplicationResponse CreatePlatformApplication(CreatePlatformApplicationRequest request);
@@ -283,16 +283,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the CreatePlatformEndpoint service method.</param>
         /// 
         /// <returns>The response from the CreatePlatformEndpoint service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         CreatePlatformEndpointResponse CreatePlatformEndpoint(CreatePlatformEndpointRequest request);
@@ -322,16 +322,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="name">The name of the topic you want to create. Constraints: Topic names must be made up of  only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be  between 1 and 256 characters long. </param>
         /// 
         /// <returns>The response from the CreateTopic service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="TopicLimitExceededException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.TopicLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of topics.
         /// </exception>
         CreateTopicResponse CreateTopic(string name);
@@ -345,16 +345,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the CreateTopic service method.</param>
         /// 
         /// <returns>The response from the CreateTopic service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="TopicLimitExceededException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.TopicLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of topics.
         /// </exception>
         CreateTopicResponse CreateTopic(CreateTopicRequest request);
@@ -383,13 +383,13 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
         /// 
         /// <returns>The response from the DeleteEndpoint service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request);
@@ -418,13 +418,13 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the DeletePlatformApplication service method.</param>
         /// 
         /// <returns>The response from the DeletePlatformApplication service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         DeletePlatformApplicationResponse DeletePlatformApplication(DeletePlatformApplicationRequest request);
@@ -454,16 +454,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="topicArn">The ARN of the topic you want to delete.<examples> <queryrequest>  http://sns.us-east-1.amazonaws.com/  ?TopicArn=arn%3Aaws%3Asns%3Aus-east-1%3A123456789012%3AMy-Topic  &amp;Action=DeleteTopic  &amp;SignatureVersion=2  &amp;SignatureMethod=HmacSHA256  &amp;Timestamp=2010-03-31T12%3A00%3A00.000Z  &amp;AWSAccessKeyId=(AWS Access Key ID)  &amp;Signature=DjHBa%2BbYCKQAzctOPnLP7MbHnrHT3%2FK3kFEZjwcf9%2FU%3D </queryrequest> <queryresponse>  &lt;DeleteTopicResponse xmlns="http://sns.amazonaws.com/doc/2010-03-31/"&gt;  &lt;ResponseMetadata&gt; &lt;RequestId&gt;fba800b9-3765-11df-8cf3-c58c53254dfb&lt;/RequestId&gt;  &lt;/ResponseMetadata&gt;&lt;/DeleteTopicResponse&gt;   </queryresponse></examples></param>
         /// 
         /// <returns>The response from the DeleteTopic service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         DeleteTopicResponse DeleteTopic(string topicArn);
@@ -477,16 +477,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the DeleteTopic service method.</param>
         /// 
         /// <returns>The response from the DeleteTopic service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         DeleteTopicResponse DeleteTopic(DeleteTopicRequest request);
@@ -515,16 +515,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the GetEndpointAttributes service method.</param>
         /// 
         /// <returns>The response from the GetEndpointAttributes service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         GetEndpointAttributesResponse GetEndpointAttributes(GetEndpointAttributesRequest request);
@@ -554,16 +554,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the GetPlatformApplicationAttributes service method.</param>
         /// 
         /// <returns>The response from the GetPlatformApplicationAttributes service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         GetPlatformApplicationAttributesResponse GetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request);
@@ -590,16 +590,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="subscriptionArn">The ARN of the subscription whose properties you want to get.</param>
         /// 
         /// <returns>The response from the GetSubscriptionAttributes service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         GetSubscriptionAttributesResponse GetSubscriptionAttributes(string subscriptionArn);
@@ -610,16 +610,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the GetSubscriptionAttributes service method.</param>
         /// 
         /// <returns>The response from the GetSubscriptionAttributes service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         GetSubscriptionAttributesResponse GetSubscriptionAttributes(GetSubscriptionAttributesRequest request);
@@ -647,16 +647,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="topicArn">The ARN of the topic whose properties you want to get.</param>
         /// 
         /// <returns>The response from the GetTopicAttributes service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         GetTopicAttributesResponse GetTopicAttributes(string topicArn);
@@ -668,16 +668,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the GetTopicAttributes service method.</param>
         /// 
         /// <returns>The response from the GetTopicAttributes service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         GetTopicAttributesResponse GetTopicAttributes(GetTopicAttributesRequest request);
@@ -712,16 +712,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the ListEndpointsByPlatformApplication service method.</param>
         /// 
         /// <returns>The response from the ListEndpointsByPlatformApplication service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         ListEndpointsByPlatformApplicationResponse ListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request);
@@ -755,13 +755,13 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// 
         /// <returns>The response from the ListPlatformApplications service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         ListPlatformApplicationsResponse ListPlatformApplications();
@@ -780,13 +780,13 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the ListPlatformApplications service method.</param>
         /// 
         /// <returns>The response from the ListPlatformApplications service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         ListPlatformApplicationsResponse ListPlatformApplications(ListPlatformApplicationsRequest request);
@@ -815,13 +815,13 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// 
         /// <returns>The response from the ListSubscriptions service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         ListSubscriptionsResponse ListSubscriptions();
@@ -835,13 +835,13 @@ namespace Amazon.SimpleNotificationService
         /// <param name="nextToken">Token returned by the previous <code>ListSubscriptions</code> request.</param>
         /// 
         /// <returns>The response from the ListSubscriptions service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         ListSubscriptionsResponse ListSubscriptions(string nextToken);
@@ -855,13 +855,13 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the ListSubscriptions service method.</param>
         /// 
         /// <returns>The response from the ListSubscriptions service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request);
@@ -892,16 +892,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="nextToken">Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</param>
         /// 
         /// <returns>The response from the ListSubscriptionsByTopic service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(string topicArn, string nextToken);
@@ -915,16 +915,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="topicArn">The ARN of the topic for which you wish to find subscriptions.</param>
         /// 
         /// <returns>The response from the ListSubscriptionsByTopic service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(string topicArn);
@@ -938,16 +938,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the ListSubscriptionsByTopic service method.</param>
         /// 
         /// <returns>The response from the ListSubscriptionsByTopic service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request);
@@ -976,13 +976,13 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// 
         /// <returns>The response from the ListTopics service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         ListTopicsResponse ListTopics();
@@ -996,13 +996,13 @@ namespace Amazon.SimpleNotificationService
         /// <param name="nextToken">Token returned by the previous <code>ListTopics</code> request.</param>
         /// 
         /// <returns>The response from the ListTopics service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         ListTopicsResponse ListTopics(string nextToken);
@@ -1016,13 +1016,13 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the ListTopics service method.</param>
         /// 
         /// <returns>The response from the ListTopics service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         ListTopicsResponse ListTopics(ListTopicsRequest request);
@@ -1062,25 +1062,25 @@ namespace Amazon.SimpleNotificationService
         /// <param name="message">The message you want to send to the topic. If you want to send the same message to all transport protocols,    include the text of the message as a String value. If you want to send different messages for each transport protocol,    set the value of the <code>MessageStructure</code> parameter to <code>json</code>    and use a JSON object for the <code>Message</code> parameter.    See the Examples section for the format of the JSON object.  Constraints: Messages must be UTF-8 encoded   strings at most 256 KB in size (262144 bytes, not 262144 characters). JSON-specific constraints:   <ul>  <li>Keys in the JSON object that correspond to supported transport   protocols must have simple JSON string values. </li>  <li>The values will be parsed (unescaped)  before they are used in outgoing messages.</li>  <li>Outbound notifications are JSON  encoded (meaning that the characters will be reescaped for sending).</li>  <li>Values have a minimum length of 0 (the empty string, "", is allowed).</li>  <li>Values have a maximum length bounded by the overall message size (so, including  multiple protocols may limit message sizes).</li>  <li>Non-string values will cause the key  to be ignored.</li>  <li>Keys that do not correspond to supported transport protocols are ignored.</li>  <li>Duplicate keys are not allowed.</li>  <li>Failure to parse or validate any key or    value in the message will cause the <code>Publish</code> call to return an error (no partial   delivery).</li>   </ul>  </param>
         /// 
         /// <returns>The response from the Publish service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="EndpointDisabledException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.EndpointDisabledException">
         /// Exception error indicating endpoint disabled.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterValueException">
         /// 
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
-        /// <exception cref="PlatformApplicationDisabledException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
         /// Exception error indicating platform application disabled.
         /// </exception>
         PublishResponse Publish(string topicArn, string message);
@@ -1105,25 +1105,25 @@ namespace Amazon.SimpleNotificationService
         /// <param name="subject">Optional parameter to be used as the "Subject" line when the message is   delivered to email endpoints. This field will also be included, if present,    in the standard JSON messages delivered to other endpoints. Constraints: Subjects must be ASCII text that begins with a letter, number,    or punctuation mark; must not include line breaks or control characters; and    must be less than 100 characters long.</param>
         /// 
         /// <returns>The response from the Publish service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="EndpointDisabledException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.EndpointDisabledException">
         /// Exception error indicating endpoint disabled.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterValueException">
         /// 
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
-        /// <exception cref="PlatformApplicationDisabledException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
         /// Exception error indicating platform application disabled.
         /// </exception>
         PublishResponse Publish(string topicArn, string message, string subject);
@@ -1146,25 +1146,25 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the Publish service method.</param>
         /// 
         /// <returns>The response from the Publish service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="EndpointDisabledException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.EndpointDisabledException">
         /// Exception error indicating endpoint disabled.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterValueException">
         /// 
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
-        /// <exception cref="PlatformApplicationDisabledException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
         /// Exception error indicating platform application disabled.
         /// </exception>
         PublishResponse Publish(PublishRequest request);
@@ -1192,16 +1192,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="label">The unique label of the statement you want to remove.</param>
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         RemovePermissionResponse RemovePermission(string topicArn, string label);
@@ -1212,16 +1212,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission service method.</param>
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         RemovePermissionResponse RemovePermission(RemovePermissionRequest request);
@@ -1250,16 +1250,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the SetEndpointAttributes service method.</param>
         /// 
         /// <returns>The response from the SetEndpointAttributes service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         SetEndpointAttributesResponse SetEndpointAttributes(SetEndpointAttributesRequest request);
@@ -1288,16 +1288,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the SetPlatformApplicationAttributes service method.</param>
         /// 
         /// <returns>The response from the SetPlatformApplicationAttributes service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         SetPlatformApplicationAttributesResponse SetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request);
@@ -1326,16 +1326,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="attributeValue">The new value for the attribute in JSON format.</param>
         /// 
         /// <returns>The response from the SetSubscriptionAttributes service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         SetSubscriptionAttributesResponse SetSubscriptionAttributes(string subscriptionArn, string attributeName, string attributeValue);
@@ -1346,16 +1346,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the SetSubscriptionAttributes service method.</param>
         /// 
         /// <returns>The response from the SetSubscriptionAttributes service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         SetSubscriptionAttributesResponse SetSubscriptionAttributes(SetSubscriptionAttributesRequest request);
@@ -1384,16 +1384,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="attributeValue">The new value for the attribute.</param>
         /// 
         /// <returns>The response from the SetTopicAttributes service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         SetTopicAttributesResponse SetTopicAttributes(string topicArn, string attributeName, string attributeValue);
@@ -1404,16 +1404,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the SetTopicAttributes service method.</param>
         /// 
         /// <returns>The response from the SetTopicAttributes service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         SetTopicAttributesResponse SetTopicAttributes(SetTopicAttributesRequest request);
@@ -1445,19 +1445,19 @@ namespace Amazon.SimpleNotificationService
         /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul>   <li>For the <code>http</code> protocol, the endpoint is an URL beginning with "http://"</li>   <li>For the <code>https</code> protocol, the endpoint is a URL beginning with "https://"</li>   <li>For the <code>email</code> protocol, the endpoint is an email address</li>   <li>For the <code>email-json</code> protocol, the endpoint is an email address</li>   <li>For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device</li>   <li>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue</li>   <li>For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device.</li> </ul></param>
         /// 
         /// <returns>The response from the Subscribe service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
-        /// <exception cref="SubscriptionLimitExceededException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
         SubscribeResponse Subscribe(string topicArn, string protocol, string endpoint);
@@ -1471,19 +1471,19 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the Subscribe service method.</param>
         /// 
         /// <returns>The response from the Subscribe service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
-        /// <exception cref="SubscriptionLimitExceededException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
         SubscribeResponse Subscribe(SubscribeRequest request);
@@ -1516,16 +1516,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="subscriptionArn">The ARN of the subscription to be deleted.</param>
         /// 
         /// <returns>The response from the Unsubscribe service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         UnsubscribeResponse Unsubscribe(string subscriptionArn);
@@ -1542,16 +1542,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">Container for the necessary parameters to execute the Unsubscribe service method.</param>
         /// 
         /// <returns>The response from the Unsubscribe service method, as returned by SimpleNotificationService.</returns>
-        /// <exception cref="AuthorizationErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
-        /// <exception cref="InternalErrorException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
-        /// <exception cref="NotFoundException">
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
         UnsubscribeResponse Unsubscribe(UnsubscribeRequest request);

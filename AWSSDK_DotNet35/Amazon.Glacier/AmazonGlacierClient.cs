@@ -298,17 +298,17 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the AbortMultipartUpload service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
@@ -413,17 +413,17 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the CompleteMultipartUpload service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
@@ -515,16 +515,16 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the CreateVault service method.</param>
         /// 
         /// <returns>The response from the CreateVault service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.Glacier.Model.LimitExceededException">
         /// Returned if the request results in a vault or account limit being exceeded.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public CreateVaultResponse CreateVault(CreateVaultRequest request)
@@ -605,17 +605,17 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the DeleteArchive service method.</param>
         /// 
         /// <returns>The response from the DeleteArchive service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
@@ -697,17 +697,17 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the DeleteVault service method.</param>
         /// 
         /// <returns>The response from the DeleteVault service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public DeleteVaultResponse DeleteVault(DeleteVaultRequest request)
@@ -780,17 +780,17 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the DeleteVaultNotifications service method.</param>
         /// 
         /// <returns>The response from the DeleteVaultNotifications service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public DeleteVaultNotificationsResponse DeleteVaultNotifications(DeleteVaultNotificationsRequest request)
@@ -874,17 +874,17 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
         /// 
         /// <returns>The response from the DescribeJob service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public DescribeJobResponse DescribeJob(DescribeJobRequest request)
@@ -962,17 +962,17 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the DescribeVault service method.</param>
         /// 
         /// <returns>The response from the DescribeVault service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public DescribeVaultResponse DescribeVault(DescribeVaultRequest request)
@@ -1085,17 +1085,17 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the GetJobOutput service method.</param>
         /// 
         /// <returns>The response from the GetJobOutput service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public GetJobOutputResponse GetJobOutput(GetJobOutputRequest request)
@@ -1175,17 +1175,17 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the GetVaultNotifications service method.</param>
         /// 
         /// <returns>The response from the GetVaultNotifications service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public GetVaultNotificationsResponse GetVaultNotifications(GetVaultNotificationsRequest request)
@@ -1392,17 +1392,17 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the InitiateJob service method.</param>
         /// 
         /// <returns>The response from the InitiateJob service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public InitiateJobResponse InitiateJob(InitiateJobRequest request)
@@ -1501,17 +1501,17 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload service method.</param>
         /// 
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
@@ -1618,17 +1618,17 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// 
         /// <returns>The response from the ListJobs service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public ListJobsResponse ListJobs(ListJobsRequest request)
@@ -1719,17 +1719,17 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads service method.</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
@@ -1814,17 +1814,17 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the ListParts service method.</param>
         /// 
         /// <returns>The response from the ListParts service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public ListPartsResponse ListParts(ListPartsRequest request)
@@ -1905,17 +1905,17 @@ namespace Amazon.Glacier
         /// </summary>
         /// 
         /// <returns>The response from the ListVaults service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public ListVaultsResponse ListVaults()
@@ -1956,17 +1956,17 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the ListVaults service method.</param>
         /// 
         /// <returns>The response from the ListVaults service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public ListVaultsResponse ListVaults(ListVaultsRequest request)
@@ -2058,17 +2058,17 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the SetVaultNotifications service method.</param>
         /// 
         /// <returns>The response from the SetVaultNotifications service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public SetVaultNotificationsResponse SetVaultNotifications(SetVaultNotificationsRequest request)
@@ -2170,21 +2170,21 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the UploadArchive service method.</param>
         /// 
         /// <returns>The response from the UploadArchive service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="RequestTimeoutException">
+        /// <exception cref="Amazon.Glacier.Model.RequestTimeoutException">
         /// Returned if, when uploading an archive, Amazon Glacier times out while receiving the
         /// upload.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public UploadArchiveResponse UploadArchive(UploadArchiveRequest request)
@@ -2293,21 +2293,21 @@ namespace Amazon.Glacier
         /// <param name="request">Container for the necessary parameters to execute the UploadMultipartPart service method.</param>
         /// 
         /// <returns>The response from the UploadMultipartPart service method, as returned by Glacier.</returns>
-        /// <exception cref="InvalidParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="MissingParameterValueException">
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
-        /// <exception cref="RequestTimeoutException">
+        /// <exception cref="Amazon.Glacier.Model.RequestTimeoutException">
         /// Returned if, when uploading an archive, Amazon Glacier times out while receiving the
         /// upload.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
         /// exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public UploadMultipartPartResponse UploadMultipartPart(UploadMultipartPartRequest request)

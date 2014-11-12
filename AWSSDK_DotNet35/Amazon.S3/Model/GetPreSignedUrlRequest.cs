@@ -47,6 +47,7 @@ namespace Amazon.S3.Model
         HttpVerb verb;
         string versionId;
         ServerSideEncryptionMethod encryption;
+        private string serverSideEncryptionKeyManagementServiceKeyId;
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
 
@@ -220,6 +221,25 @@ namespace Amazon.S3.Model
         {
             get { return this.encryption; }
             set { this.encryption = value; }
+        }
+
+        /// <summary>
+        /// The id of the AWS Key Management Service key that Amazon S3 should use to encrypt and decrypt the object.
+        /// If a key id is not specified, the default key will be used for encryption and decryption.
+        /// </summary>
+        public string ServerSideEncryptionKeyManagementServiceKeyId
+        {
+            get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
+            set { this.serverSideEncryptionKeyManagementServiceKeyId = value; }
+        }
+
+        /// <summary>
+        /// Checks if ServerSideEncryptionKeyManagementServiceKeyId property is set.
+        /// </summary>
+        /// <returns>true if ServerSideEncryptionKeyManagementServiceKeyId property is set.</returns>
+        internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
+        {
+            return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
         }
 
         #endregion

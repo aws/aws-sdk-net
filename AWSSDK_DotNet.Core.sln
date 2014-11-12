@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.30324.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK_DotNet35", "AWSSDK_DotNet35\AWSSDK_DotNet35.csproj", "{40E91E2D-70F3-463D-9E3E-408AE2A70BA8}"
 EndProject
@@ -44,8 +44,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceModels", "ServiceMod
 		ServiceModels\cloudsearchdomain.customizations.json = ServiceModels\cloudsearchdomain.customizations.json
 		ServiceModels\cloudtrail-2013-11-01.normal.json = ServiceModels\cloudtrail-2013-11-01.normal.json
 		ServiceModels\cloudtrail.customizations.json = ServiceModels\cloudtrail.customizations.json
+		ServiceModels\codedeploy-2014-10-06.normal.json = ServiceModels\codedeploy-2014-10-06.normal.json
+		codedeploy.customizations.json = codedeploy.customizations.json
 		ServiceModels\cognito-identity-2014-06-30.normal.json = ServiceModels\cognito-identity-2014-06-30.normal.json
 		ServiceModels\cognito-sync-2014-06-30.normal.json = ServiceModels\cognito-sync-2014-06-30.normal.json
+		ServiceModels\config-2014-10-17.normal.json = ServiceModels\config-2014-10-17.normal.json
+		ServiceModels\config.customizations.json = ServiceModels\config.customizations.json
+		ServiceModels\config.customizations.simpleMethodForms.json = ServiceModels\config.customizations.simpleMethodForms.json
 		ServiceModels\datapipeline-2012-10-29.normal.json = ServiceModels\datapipeline-2012-10-29.normal.json
 		ServiceModels\datapipeline.customizations.json = ServiceModels\datapipeline.customizations.json
 		ServiceModels\directconnect-2012-10-25.normal.json = ServiceModels\directconnect-2012-10-25.normal.json
@@ -88,6 +93,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceModels", "ServiceMod
 		ServiceModels\importexport.customizations.json = ServiceModels\importexport.customizations.json
 		ServiceModels\kinesis-2013-12-02.normal.json = ServiceModels\kinesis-2013-12-02.normal.json
 		ServiceModels\kinesis.customizations.json = ServiceModels\kinesis.customizations.json
+		ServiceModels\kms-2014-11-01.normal.json = ServiceModels\kms-2014-11-01.normal.json
 		ServiceModels\logs-2014-03-28.normal.json = ServiceModels\logs-2014-03-28.normal.json
 		ServiceModels\logs.customizations.constructors.json = ServiceModels\logs.customizations.constructors.json
 		ServiceModels\logs.customizations.json = ServiceModels\logs.customizations.json

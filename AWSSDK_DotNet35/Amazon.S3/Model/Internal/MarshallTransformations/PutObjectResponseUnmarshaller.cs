@@ -19,6 +19,7 @@ using Amazon.S3.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -49,8 +50,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (responseData.IsHeaderPresent("ETag"))
                 response.ETag = S3Transforms.ToString(responseData.GetHeaderValue("ETag"));
             if (responseData.IsHeaderPresent("x-amz-version-id"))
-                response.VersionId = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-version-id"));            
-
+                response.VersionId = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-version-id"));
+            if (responseData.IsHeaderPresent(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader))
+                response.ServerSideEncryptionKeyManagementServiceKeyId = S3Transforms.ToString(responseData.GetHeaderValue(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader));
 
             return;
         }

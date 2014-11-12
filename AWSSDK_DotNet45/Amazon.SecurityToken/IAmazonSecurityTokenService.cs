@@ -184,11 +184,11 @@ namespace Amazon.SecurityToken
         /// <param name="request">Container for the necessary parameters to execute the AssumeRole service method.</param>
         /// 
         /// <returns>The response from the AssumeRole service method, as returned by SecurityTokenService.</returns>
-        /// <exception cref="MalformedPolicyDocumentException">
+        /// <exception cref="Amazon.SecurityToken.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
         /// describes the specific error.
         /// </exception>
-        /// <exception cref="PackedPolicyTooLargeException">
+        /// <exception cref="Amazon.SecurityToken.Model.PackedPolicyTooLargeException">
         /// The request was rejected because the policy document was too large. The error message
         /// describes how big the policy document is, in packed form, as a percentage of what
         /// the API allows.
@@ -271,11 +271,11 @@ namespace Amazon.SecurityToken
         /// <param name="request">Container for the necessary parameters to execute the AssumeRoleWithSAML service method.</param>
         /// 
         /// <returns>The response from the AssumeRoleWithSAML service method, as returned by SecurityTokenService.</returns>
-        /// <exception cref="ExpiredTokenException">
+        /// <exception cref="Amazon.SecurityToken.Model.ExpiredTokenException">
         /// The web identity token that was passed is expired or is not valid. Get a new identity
         /// token from the identity provider and then retry the request.
         /// </exception>
-        /// <exception cref="IDPRejectedClaimException">
+        /// <exception cref="Amazon.SecurityToken.Model.IDPRejectedClaimException">
         /// The identity provider (IdP) reported that authentication failed. This might be because
         /// the claim is invalid.
         /// 
@@ -285,15 +285,15 @@ namespace Amazon.SecurityToken
         /// it can also mean that the claim has expired or has been explicitly revoked. 
         /// </para>
         /// </exception>
-        /// <exception cref="InvalidIdentityTokenException">
+        /// <exception cref="Amazon.SecurityToken.Model.InvalidIdentityTokenException">
         /// The web identity token that was passed could not be validated by AWS. Get a new identity
         /// token from the identity provider and then retry the request.
         /// </exception>
-        /// <exception cref="MalformedPolicyDocumentException">
+        /// <exception cref="Amazon.SecurityToken.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
         /// describes the specific error.
         /// </exception>
-        /// <exception cref="PackedPolicyTooLargeException">
+        /// <exception cref="Amazon.SecurityToken.Model.PackedPolicyTooLargeException">
         /// The request was rejected because the policy document was too large. The error message
         /// describes how big the policy document is, in packed form, as a percentage of what
         /// the API allows.
@@ -390,18 +390,18 @@ namespace Amazon.SecurityToken
         /// <param name="request">Container for the necessary parameters to execute the AssumeRoleWithWebIdentity service method.</param>
         /// 
         /// <returns>The response from the AssumeRoleWithWebIdentity service method, as returned by SecurityTokenService.</returns>
-        /// <exception cref="ExpiredTokenException">
+        /// <exception cref="Amazon.SecurityToken.Model.ExpiredTokenException">
         /// The web identity token that was passed is expired or is not valid. Get a new identity
         /// token from the identity provider and then retry the request.
         /// </exception>
-        /// <exception cref="IDPCommunicationErrorException">
+        /// <exception cref="Amazon.SecurityToken.Model.IDPCommunicationErrorException">
         /// The request could not be fulfilled because the non-AWS identity provider (IDP) that
         /// was asked to verify the incoming identity token could not be reached. This is often
         /// a transient error caused by network conditions. Retry the request a limited number
         /// of times so that you don't exceed the request rate. If the error persists, the non-AWS
         /// identity provider might be down or not responding.
         /// </exception>
-        /// <exception cref="IDPRejectedClaimException">
+        /// <exception cref="Amazon.SecurityToken.Model.IDPRejectedClaimException">
         /// The identity provider (IdP) reported that authentication failed. This might be because
         /// the claim is invalid.
         /// 
@@ -411,15 +411,15 @@ namespace Amazon.SecurityToken
         /// it can also mean that the claim has expired or has been explicitly revoked. 
         /// </para>
         /// </exception>
-        /// <exception cref="InvalidIdentityTokenException">
+        /// <exception cref="Amazon.SecurityToken.Model.InvalidIdentityTokenException">
         /// The web identity token that was passed could not be validated by AWS. Get a new identity
         /// token from the identity provider and then retry the request.
         /// </exception>
-        /// <exception cref="MalformedPolicyDocumentException">
+        /// <exception cref="Amazon.SecurityToken.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
         /// describes the specific error.
         /// </exception>
-        /// <exception cref="PackedPolicyTooLargeException">
+        /// <exception cref="Amazon.SecurityToken.Model.PackedPolicyTooLargeException">
         /// The request was rejected because the policy document was too large. The error message
         /// describes how big the policy document is, in packed form, as a percentage of what
         /// the API allows.
@@ -474,7 +474,7 @@ namespace Amazon.SecurityToken
         /// <param name="request">Container for the necessary parameters to execute the DecodeAuthorizationMessage service method.</param>
         /// 
         /// <returns>The response from the DecodeAuthorizationMessage service method, as returned by SecurityTokenService.</returns>
-        /// <exception cref="InvalidAuthorizationMessageException">
+        /// <exception cref="Amazon.SecurityToken.Model.InvalidAuthorizationMessageException">
         /// The error returned if the message passed to <code>DecodeAuthorizationMessage</code>
         /// was invalid. This can happen if the token contains invalid characters, such as linebreaks.
         /// </exception>
@@ -579,11 +579,11 @@ namespace Amazon.SecurityToken
         /// <param name="request">Container for the necessary parameters to execute the GetFederationToken service method.</param>
         /// 
         /// <returns>The response from the GetFederationToken service method, as returned by SecurityTokenService.</returns>
-        /// <exception cref="MalformedPolicyDocumentException">
+        /// <exception cref="Amazon.SecurityToken.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
         /// describes the specific error.
         /// </exception>
-        /// <exception cref="PackedPolicyTooLargeException">
+        /// <exception cref="Amazon.SecurityToken.Model.PackedPolicyTooLargeException">
         /// The request was rejected because the policy document was too large. The error message
         /// describes how big the policy document is, in packed form, as a percentage of what
         /// the API allows.

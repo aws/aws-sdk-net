@@ -67,6 +67,7 @@ namespace Amazon.S3.Transfer.Internal
                 Metadata = this._request.Metadata,
                 StorageClass = this._request.StorageClass,
                 ServerSideEncryptionMethod = this._request.ServerSideEncryptionMethod,
+                ServerSideEncryptionKeyManagementServiceKeyId = this._request.ServerSideEncryptionKeyManagementServiceKeyId,
 #if (BCL && !BCL45)
                 Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._request.Timeout)
 #endif

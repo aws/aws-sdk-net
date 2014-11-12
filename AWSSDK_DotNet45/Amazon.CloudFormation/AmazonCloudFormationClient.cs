@@ -296,14 +296,14 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the CreateStack service method.</param>
         /// 
         /// <returns>The response from the CreateStack service method, as returned by CloudFormation.</returns>
-        /// <exception cref="AlreadyExistsException">
+        /// <exception cref="Amazon.CloudFormation.Model.AlreadyExistsException">
         /// Resource with the name requested already exists.
         /// </exception>
-        /// <exception cref="InsufficientCapabilitiesException">
+        /// <exception cref="Amazon.CloudFormation.Model.InsufficientCapabilitiesException">
         /// The template contains resources with capabilities that were not specified in the Capabilities
         /// parameter.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
         /// Quota for the resource has already been reached.
         /// </exception>
         public CreateStackResponse CreateStack(CreateStackRequest request)
@@ -840,7 +840,7 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the UpdateStack service method.</param>
         /// 
         /// <returns>The response from the UpdateStack service method, as returned by CloudFormation.</returns>
-        /// <exception cref="InsufficientCapabilitiesException">
+        /// <exception cref="Amazon.CloudFormation.Model.InsufficientCapabilitiesException">
         /// The template contains resources with capabilities that were not specified in the Capabilities
         /// parameter.
         /// </exception>

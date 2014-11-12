@@ -80,7 +80,7 @@ namespace Amazon.CloudSearchDomain
         /// <param name="request">Container for the necessary parameters to execute the Search service method.</param>
         /// 
         /// <returns>The response from the Search service method, as returned by CloudSearchDomain.</returns>
-        /// <exception cref="SearchException">
+        /// <exception cref="Amazon.CloudSearchDomain.Model.SearchException">
         /// Information about any problems encountered while processing a search request.
         /// </exception>
         SearchResponse Search(SearchRequest request);
@@ -141,7 +141,7 @@ namespace Amazon.CloudSearchDomain
         /// <param name="request">Container for the necessary parameters to execute the Suggest service method.</param>
         /// 
         /// <returns>The response from the Suggest service method, as returned by CloudSearchDomain.</returns>
-        /// <exception cref="SearchException">
+        /// <exception cref="Amazon.CloudSearchDomain.Model.SearchException">
         /// Information about any problems encountered while processing a search request.
         /// </exception>
         SuggestResponse Suggest(SuggestRequest request);
@@ -206,7 +206,7 @@ namespace Amazon.CloudSearchDomain
         /// <param name="request">Container for the necessary parameters to execute the UploadDocuments service method.</param>
         /// 
         /// <returns>The response from the UploadDocuments service method, as returned by CloudSearchDomain.</returns>
-        /// <exception cref="DocumentServiceException">
+        /// <exception cref="Amazon.CloudSearchDomain.Model.DocumentServiceException">
         /// Information about any problems encountered while processing an upload request.
         /// </exception>
         UploadDocumentsResponse UploadDocuments(UploadDocumentsRequest request);

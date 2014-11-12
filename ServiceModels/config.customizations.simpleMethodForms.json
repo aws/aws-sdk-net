@@ -1,0 +1,34 @@
+{
+    "simpleMethods" : {
+        "operations" : {
+            "DeleteDeliveryChannel" : {
+                "methodForms" : [
+                    [
+                        "DeliveryChannelName"
+                    ]
+                ]
+            },
+            "DeliverConfigSnapshot" : {
+                "methodForms" : [
+                    [
+                        "DeliveryChannelName"
+                    ]
+                ]
+            },
+            "StartConfigurationRecorder" : {
+                "methodForms" : [
+                    [
+                        "ConfigurationRecorderName"
+                    ]
+                ]
+            },
+            "StopConfigurationRecorder" : {
+                "methodForms" : [
+                    [
+                        "ConfigurationRecorderName"
+                    ]
+                ]
+            }
+       }
+    }
+}

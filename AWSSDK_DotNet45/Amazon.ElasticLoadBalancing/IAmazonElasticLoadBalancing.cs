@@ -110,13 +110,13 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// 
         /// <returns>The response from the AddTags service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="DuplicateTagKeysException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.DuplicateTagKeysException">
         /// The same tag key specified multiple times.
         /// </exception>
-        /// <exception cref="TooManyTagsException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyTagsException">
         /// The quota for the number of tags that can be assigned to a load balancer has been
         /// reached.
         /// </exception>
@@ -152,13 +152,13 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the ApplySecurityGroupsToLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the ApplySecurityGroupsToLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="InvalidConfigurationRequestException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="InvalidSecurityGroupException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidSecurityGroupException">
         /// One or more specified security groups do not exist.
         /// </exception>
         ApplySecurityGroupsToLoadBalancerResponse ApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest request);
@@ -194,16 +194,16 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancerToSubnets service method.</param>
         /// 
         /// <returns>The response from the AttachLoadBalancerToSubnets service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="InvalidConfigurationRequestException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="InvalidSubnetException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidSubnetException">
         /// The VPC has no Internet gateway.
         /// </exception>
-        /// <exception cref="SubnetNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.SubnetNotFoundException">
         /// One or more subnets were not found.
         /// </exception>
         AttachLoadBalancerToSubnetsResponse AttachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest request);
@@ -237,7 +237,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the ConfigureHealthCheck service method.</param>
         /// 
         /// <returns>The response from the ConfigureHealthCheck service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
         ConfigureHealthCheckResponse ConfigureHealthCheck(ConfigureHealthCheckRequest request);
@@ -288,16 +288,16 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the CreateAppCookieStickinessPolicy service method.</param>
         /// 
         /// <returns>The response from the CreateAppCookieStickinessPolicy service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="DuplicatePolicyNameException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.DuplicatePolicyNameException">
         /// Policy with the same name exists for this load balancer. Please choose another name.
         /// </exception>
-        /// <exception cref="InvalidConfigurationRequestException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="TooManyPoliciesException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException">
         /// Quota for number of policies for this load balancer has already been reached.
         /// </exception>
         CreateAppCookieStickinessPolicyResponse CreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request);
@@ -347,16 +347,16 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the CreateLBCookieStickinessPolicy service method.</param>
         /// 
         /// <returns>The response from the CreateLBCookieStickinessPolicy service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="DuplicatePolicyNameException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.DuplicatePolicyNameException">
         /// Policy with the same name exists for this load balancer. Please choose another name.
         /// </exception>
-        /// <exception cref="InvalidConfigurationRequestException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="TooManyPoliciesException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException">
         /// Quota for number of policies for this load balancer has already been reached.
         /// </exception>
         CreateLBCookieStickinessPolicyResponse CreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request);
@@ -420,35 +420,35 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the CreateLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="CertificateNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.CertificateNotFoundException">
         /// The specified SSL ID does not refer to a valid SSL certificate in the AWS Identity
         /// and Access Management Service.
         /// </exception>
-        /// <exception cref="DuplicateAccessPointNameException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.DuplicateAccessPointNameException">
         /// The load balancer name already exists for this account. Please choose another name.
         /// </exception>
-        /// <exception cref="DuplicateTagKeysException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.DuplicateTagKeysException">
         /// The same tag key specified multiple times.
         /// </exception>
-        /// <exception cref="InvalidConfigurationRequestException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="InvalidSchemeException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidSchemeException">
         /// Invalid value for scheme. Scheme can only be specified for load balancers in VPC.
         /// </exception>
-        /// <exception cref="InvalidSecurityGroupException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidSecurityGroupException">
         /// One or more specified security groups do not exist.
         /// </exception>
-        /// <exception cref="InvalidSubnetException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidSubnetException">
         /// The VPC has no Internet gateway.
         /// </exception>
-        /// <exception cref="SubnetNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.SubnetNotFoundException">
         /// One or more subnets were not found.
         /// </exception>
-        /// <exception cref="TooManyAccessPointsException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyAccessPointsException">
         /// The quota for the number of load balancers has already been reached.
         /// </exception>
-        /// <exception cref="TooManyTagsException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyTagsException">
         /// The quota for the number of tags that can be assigned to a load balancer has been
         /// reached.
         /// </exception>
@@ -484,19 +484,19 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancerListeners service method.</param>
         /// 
         /// <returns>The response from the CreateLoadBalancerListeners service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="CertificateNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.CertificateNotFoundException">
         /// The specified SSL ID does not refer to a valid SSL certificate in the AWS Identity
         /// and Access Management Service.
         /// </exception>
-        /// <exception cref="DuplicateListenerException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.DuplicateListenerException">
         /// A <code>Listener</code> already exists for the given <code>LoadBalancerName</code>
         /// and <code>LoadBalancerPort</code>, but with a different <code>InstancePort</code>,
         /// <code>Protocol</code>, or <code>SSLCertificateId</code>.
         /// </exception>
-        /// <exception cref="InvalidConfigurationRequestException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
         CreateLoadBalancerListenersResponse CreateLoadBalancerListeners(CreateLoadBalancerListenersRequest request);
@@ -526,19 +526,19 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancerPolicy service method.</param>
         /// 
         /// <returns>The response from the CreateLoadBalancerPolicy service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="DuplicatePolicyNameException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.DuplicatePolicyNameException">
         /// Policy with the same name exists for this load balancer. Please choose another name.
         /// </exception>
-        /// <exception cref="InvalidConfigurationRequestException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="PolicyTypeNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyTypeNotFoundException">
         /// One or more of the specified policy types do not exist.
         /// </exception>
-        /// <exception cref="TooManyPoliciesException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException">
         /// Quota for number of policies for this load balancer has already been reached.
         /// </exception>
         CreateLoadBalancerPolicyResponse CreateLoadBalancerPolicy(CreateLoadBalancerPolicyRequest request);
@@ -605,7 +605,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancerListeners service method.</param>
         /// 
         /// <returns>The response from the DeleteLoadBalancerListeners service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
         DeleteLoadBalancerListenersResponse DeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest request);
@@ -633,10 +633,10 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancerPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteLoadBalancerPolicy service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="InvalidConfigurationRequestException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
         DeleteLoadBalancerPolicyResponse DeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request);
@@ -680,10 +680,10 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DeregisterInstancesFromLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the DeregisterInstancesFromLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="InvalidEndPointException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidEndPointException">
         /// The specified EndPoint is not valid.
         /// </exception>
         DeregisterInstancesFromLoadBalancerResponse DeregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest request);
@@ -715,10 +715,10 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceHealth service method.</param>
         /// 
         /// <returns>The response from the DescribeInstanceHealth service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="InvalidEndPointException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidEndPointException">
         /// The specified EndPoint is not valid.
         /// </exception>
         DescribeInstanceHealthResponse DescribeInstanceHealth(DescribeInstanceHealthRequest request);
@@ -746,10 +746,10 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerAttributes service method.</param>
         /// 
         /// <returns>The response from the DescribeLoadBalancerAttributes service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="LoadBalancerAttributeNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.LoadBalancerAttributeNotFoundException">
         /// The specified load balancer attribute could not be found.
         /// </exception>
         DescribeLoadBalancerAttributesResponse DescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request);
@@ -781,10 +781,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLoadBalancerPolicies service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="PolicyNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
         /// One or more specified policies were not found.
         /// </exception>
         DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies();
@@ -801,10 +801,10 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerPolicies service method.</param>
         /// 
         /// <returns>The response from the DescribeLoadBalancerPolicies service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="PolicyNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
         /// One or more specified policies were not found.
         /// </exception>
         DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest request);
@@ -833,7 +833,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLoadBalancerPolicyTypes service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="PolicyTypeNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyTypeNotFoundException">
         /// One or more of the specified policy types do not exist.
         /// </exception>
         DescribeLoadBalancerPolicyTypesResponse DescribeLoadBalancerPolicyTypes();
@@ -847,7 +847,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerPolicyTypes service method.</param>
         /// 
         /// <returns>The response from the DescribeLoadBalancerPolicyTypes service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="PolicyTypeNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyTypeNotFoundException">
         /// One or more of the specified policy types do not exist.
         /// </exception>
         DescribeLoadBalancerPolicyTypesResponse DescribeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest request);
@@ -878,7 +878,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLoadBalancers service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
         DescribeLoadBalancersResponse DescribeLoadBalancers();
@@ -894,7 +894,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers service method.</param>
         /// 
         /// <returns>The response from the DescribeLoadBalancers service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
         DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request);
@@ -921,7 +921,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
         DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
@@ -957,10 +957,10 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DetachLoadBalancerFromSubnets service method.</param>
         /// 
         /// <returns>The response from the DetachLoadBalancerFromSubnets service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="InvalidConfigurationRequestException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
         DetachLoadBalancerFromSubnetsResponse DetachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest request);
@@ -1004,10 +1004,10 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DisableAvailabilityZonesForLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the DisableAvailabilityZonesForLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="InvalidConfigurationRequestException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
         DisableAvailabilityZonesForLoadBalancerResponse DisableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest request);
@@ -1047,7 +1047,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the EnableAvailabilityZonesForLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the EnableAvailabilityZonesForLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
         EnableAvailabilityZonesForLoadBalancerResponse EnableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest request);
@@ -1091,13 +1091,13 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the ModifyLoadBalancerAttributes service method.</param>
         /// 
         /// <returns>The response from the ModifyLoadBalancerAttributes service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="InvalidConfigurationRequestException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="LoadBalancerAttributeNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.LoadBalancerAttributeNotFoundException">
         /// The specified load balancer attribute could not be found.
         /// </exception>
         ModifyLoadBalancerAttributesResponse ModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request);
@@ -1156,10 +1156,10 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the RegisterInstancesWithLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the RegisterInstancesWithLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="InvalidEndPointException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidEndPointException">
         /// The specified EndPoint is not valid.
         /// </exception>
         RegisterInstancesWithLoadBalancerResponse RegisterInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest request);
@@ -1186,7 +1186,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the RemoveTags service method.</param>
         /// 
         /// <returns>The response from the RemoveTags service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
         RemoveTagsResponse RemoveTags(RemoveTagsRequest request);
@@ -1222,17 +1222,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerListenerSSLCertificate service method.</param>
         /// 
         /// <returns>The response from the SetLoadBalancerListenerSSLCertificate service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="CertificateNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.CertificateNotFoundException">
         /// The specified SSL ID does not refer to a valid SSL certificate in the AWS Identity
         /// and Access Management Service.
         /// </exception>
-        /// <exception cref="InvalidConfigurationRequestException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="ListenerNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.ListenerNotFoundException">
         /// Load balancer does not have a listener configured at the given port.
         /// </exception>
         SetLoadBalancerListenerSSLCertificateResponse SetLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest request);
@@ -1276,13 +1276,13 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerPoliciesForBackendServer service method.</param>
         /// 
         /// <returns>The response from the SetLoadBalancerPoliciesForBackendServer service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="InvalidConfigurationRequestException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="PolicyNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
         /// One or more specified policies were not found.
         /// </exception>
         SetLoadBalancerPoliciesForBackendServerResponse SetLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest request);
@@ -1310,16 +1310,16 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerPoliciesOfListener service method.</param>
         /// 
         /// <returns>The response from the SetLoadBalancerPoliciesOfListener service method, as returned by ElasticLoadBalancing.</returns>
-        /// <exception cref="AccessPointNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer could not be found.
         /// </exception>
-        /// <exception cref="InvalidConfigurationRequestException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
         /// </exception>
-        /// <exception cref="ListenerNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.ListenerNotFoundException">
         /// Load balancer does not have a listener configured at the given port.
         /// </exception>
-        /// <exception cref="PolicyNotFoundException">
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
         /// One or more specified policies were not found.
         /// </exception>
         SetLoadBalancerPoliciesOfListenerResponse SetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request);

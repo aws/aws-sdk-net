@@ -1,0 +1,119 @@
+
+{
+    "simpleMethods" : {
+        "operations" : {
+            "CreateAlias" : {
+                "methodForms" : [
+                    [
+                        "AliasName",
+                        "TargetKeyId"
+                    ]
+                ]
+            },
+            "UpdateAlias" : {
+                "methodForms" : [
+                    [
+                        "AliasName",
+                        "TargetKeyId"
+                    ]
+                ]
+            },
+            "DeleteAlias" : {
+                "methodForms" : [
+                    [
+                        "AliasName"
+                    ]
+                ]
+            },
+            "DescribeKey" : {
+                "methodForms" : [
+                    [
+                        "KeyId"
+                    ]
+                ]
+            },
+            "DisableKey" : {
+                "methodForms" : [
+                    [
+                        "KeyId"
+                    ]
+                ]
+            },
+            "DisableKeyRotation" : {
+                "methodForms" : [
+                    [
+                        "KeyId"
+                    ]
+                ]
+            },
+            "EnableKey" : {
+                "methodForms" : [
+                    [
+                        "KeyId"
+                    ]
+                ]
+            },
+            "EnableKeyRotation" : {
+                "methodForms" : [
+                    [
+                        "KeyId"
+                    ]
+                ]
+            },
+            "GenerateRandom" : {
+                "methodForms" : [
+                    [
+                        "NumberOfBytes"
+                    ]
+                ]
+            },
+            "GetKeyPolicy" : {
+                "methodForms" : [
+                    [
+                        "KeyId",
+                        "PolicyName"
+                    ]
+                ]
+            },
+            "GetKeyRotationStatus" : {
+                "methodForms" : [
+                    [
+                        "KeyId"
+                    ]
+                ]
+            },
+            "PutKeyPolicy" : {
+                "methodForms" : [
+                    [
+                        "KeyId",
+                        "Policy",
+                        "PolicyName"
+                    ]
+                ]
+            },
+            "RetireGrant" : {
+                "methodForms" : [
+                    [
+                        "GrantToken"
+                    ]
+                ]
+            },
+            "RevokeGrant" : {
+                "methodForms" : [
+                    [
+                        "GrantId",
+                        "KeyId"
+                    ]
+                ]
+            },
+            "UpdateKeyDescription" : {
+                "methodForms" : [
+                    [
+                        "KeyId",
+                        "Description"
+                    ]
+                ]
+            }
+       }
+    }
+}

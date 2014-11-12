@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,7 +32,11 @@ namespace Amazon.EC2.Model
     /// Deletes the specified Amazon EBS volume. The volume must be in the <code>available</code>
     /// state (not attached to an instance).
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// The volume may remain in the <code>deleting</code> state for several minutes.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
     /// an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.

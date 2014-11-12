@@ -225,6 +225,7 @@ namespace Amazon.S3.Transfer.Internal
                 ContentType = determineContentType(),
                 StorageClass = this._fileTransporterRequest.StorageClass,
                 ServerSideEncryptionMethod = this._fileTransporterRequest.ServerSideEncryptionMethod,
+                ServerSideEncryptionKeyManagementServiceKeyId = this._fileTransporterRequest.ServerSideEncryptionKeyManagementServiceKeyId,
                 ServerSideEncryptionCustomerMethod = this._fileTransporterRequest.ServerSideEncryptionCustomerMethod,
                 ServerSideEncryptionCustomerProvidedKey = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKey,
                 ServerSideEncryptionCustomerProvidedKeyMD5 = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKeyMD5

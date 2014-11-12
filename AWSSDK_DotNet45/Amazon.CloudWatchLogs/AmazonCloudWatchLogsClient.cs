@@ -275,19 +275,19 @@ namespace Amazon.CloudWatchLogs
         /// <param name="request">Container for the necessary parameters to execute the CreateLogGroup service method.</param>
         /// 
         /// <returns>The response from the CreateLogGroup service method, as returned by CloudWatchLogs.</returns>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
         /// Returned if you have reached the maximum number of resources that can be created.
         /// </exception>
-        /// <exception cref="OperationAbortedException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
         /// Returned if multiple requests to update the same resource were in conflict.
         /// </exception>
-        /// <exception cref="ResourceAlreadyExistsException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceAlreadyExistsException">
         /// Returned if the specified resource already exists.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public CreateLogGroupResponse CreateLogGroup(CreateLogGroupRequest request)
@@ -336,16 +336,16 @@ namespace Amazon.CloudWatchLogs
         /// <param name="request">Container for the necessary parameters to execute the CreateLogStream service method.</param>
         /// 
         /// <returns>The response from the CreateLogStream service method, as returned by CloudWatchLogs.</returns>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="ResourceAlreadyExistsException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceAlreadyExistsException">
         /// Returned if the specified resource already exists.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// Returned if the specified resource does not exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public CreateLogStreamResponse CreateLogStream(CreateLogStreamRequest request)
@@ -386,16 +386,16 @@ namespace Amazon.CloudWatchLogs
         /// <param name="request">Container for the necessary parameters to execute the DeleteLogGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteLogGroup service method, as returned by CloudWatchLogs.</returns>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="OperationAbortedException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
         /// Returned if multiple requests to update the same resource were in conflict.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// Returned if the specified resource does not exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public DeleteLogGroupResponse DeleteLogGroup(DeleteLogGroupRequest request)
@@ -436,16 +436,16 @@ namespace Amazon.CloudWatchLogs
         /// <param name="request">Container for the necessary parameters to execute the DeleteLogStream service method.</param>
         /// 
         /// <returns>The response from the DeleteLogStream service method, as returned by CloudWatchLogs.</returns>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="OperationAbortedException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
         /// Returned if multiple requests to update the same resource were in conflict.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// Returned if the specified resource does not exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public DeleteLogStreamResponse DeleteLogStream(DeleteLogStreamRequest request)
@@ -485,16 +485,16 @@ namespace Amazon.CloudWatchLogs
         /// <param name="request">Container for the necessary parameters to execute the DeleteMetricFilter service method.</param>
         /// 
         /// <returns>The response from the DeleteMetricFilter service method, as returned by CloudWatchLogs.</returns>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="OperationAbortedException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
         /// Returned if multiple requests to update the same resource were in conflict.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// Returned if the specified resource does not exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public DeleteMetricFilterResponse DeleteMetricFilter(DeleteMetricFilterRequest request)
@@ -535,16 +535,16 @@ namespace Amazon.CloudWatchLogs
         /// <param name="request">Container for the necessary parameters to execute the DeleteRetentionPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteRetentionPolicy service method, as returned by CloudWatchLogs.</returns>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="OperationAbortedException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
         /// Returned if multiple requests to update the same resource were in conflict.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// Returned if the specified resource does not exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public DeleteRetentionPolicyResponse DeleteRetentionPolicy(DeleteRetentionPolicyRequest request)
@@ -592,10 +592,10 @@ namespace Amazon.CloudWatchLogs
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLogGroups service method, as returned by CloudWatchLogs.</returns>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public DescribeLogGroupsResponse DescribeLogGroups()
@@ -618,10 +618,10 @@ namespace Amazon.CloudWatchLogs
         /// <param name="request">Container for the necessary parameters to execute the DescribeLogGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeLogGroups service method, as returned by CloudWatchLogs.</returns>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public DescribeLogGroupsResponse DescribeLogGroups(DescribeLogGroupsRequest request)
@@ -670,13 +670,13 @@ namespace Amazon.CloudWatchLogs
         /// <param name="request">Container for the necessary parameters to execute the DescribeLogStreams service method.</param>
         /// 
         /// <returns>The response from the DescribeLogStreams service method, as returned by CloudWatchLogs.</returns>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// Returned if the specified resource does not exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public DescribeLogStreamsResponse DescribeLogStreams(DescribeLogStreamsRequest request)
@@ -726,13 +726,13 @@ namespace Amazon.CloudWatchLogs
         /// <param name="request">Container for the necessary parameters to execute the DescribeMetricFilters service method.</param>
         /// 
         /// <returns>The response from the DescribeMetricFilters service method, as returned by CloudWatchLogs.</returns>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// Returned if the specified resource does not exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public DescribeMetricFiltersResponse DescribeMetricFilters(DescribeMetricFiltersRequest request)
@@ -784,13 +784,13 @@ namespace Amazon.CloudWatchLogs
         /// <param name="request">Container for the necessary parameters to execute the GetLogEvents service method.</param>
         /// 
         /// <returns>The response from the GetLogEvents service method, as returned by CloudWatchLogs.</returns>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// Returned if the specified resource does not exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public GetLogEventsResponse GetLogEvents(GetLogEventsRequest request)
@@ -847,22 +847,22 @@ namespace Amazon.CloudWatchLogs
         /// <param name="request">Container for the necessary parameters to execute the PutLogEvents service method.</param>
         /// 
         /// <returns>The response from the PutLogEvents service method, as returned by CloudWatchLogs.</returns>
-        /// <exception cref="DataAlreadyAcceptedException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.DataAlreadyAcceptedException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="InvalidSequenceTokenException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidSequenceTokenException">
         /// 
         /// </exception>
-        /// <exception cref="OperationAbortedException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
         /// Returned if multiple requests to update the same resource were in conflict.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// Returned if the specified resource does not exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public PutLogEventsResponse PutLogEvents(PutLogEventsRequest request)
@@ -904,19 +904,19 @@ namespace Amazon.CloudWatchLogs
         /// <param name="request">Container for the necessary parameters to execute the PutMetricFilter service method.</param>
         /// 
         /// <returns>The response from the PutMetricFilter service method, as returned by CloudWatchLogs.</returns>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
         /// Returned if you have reached the maximum number of resources that can be created.
         /// </exception>
-        /// <exception cref="OperationAbortedException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
         /// Returned if multiple requests to update the same resource were in conflict.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// Returned if the specified resource does not exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public PutMetricFilterResponse PutMetricFilter(PutMetricFilterRequest request)
@@ -957,16 +957,16 @@ namespace Amazon.CloudWatchLogs
         /// <param name="request">Container for the necessary parameters to execute the PutRetentionPolicy service method.</param>
         /// 
         /// <returns>The response from the PutRetentionPolicy service method, as returned by CloudWatchLogs.</returns>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="OperationAbortedException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
         /// Returned if multiple requests to update the same resource were in conflict.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// Returned if the specified resource does not exist.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public PutRetentionPolicyResponse PutRetentionPolicy(PutRetentionPolicyRequest request)
@@ -1007,10 +1007,10 @@ namespace Amazon.CloudWatchLogs
         /// <param name="request">Container for the necessary parameters to execute the TestMetricFilter service method.</param>
         /// 
         /// <returns>The response from the TestMetricFilter service method, as returned by CloudWatchLogs.</returns>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
-        /// <exception cref="ServiceUnavailableException">
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         public TestMetricFilterResponse TestMetricFilter(TestMetricFilterRequest request)

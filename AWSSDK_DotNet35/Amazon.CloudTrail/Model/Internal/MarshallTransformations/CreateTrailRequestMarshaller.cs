@@ -57,6 +57,18 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCloudWatchLogsLogGroupArn())
+                {
+                    context.Writer.WritePropertyName("CloudWatchLogsLogGroupArn");
+                    context.Writer.Write(publicRequest.CloudWatchLogsLogGroupArn);
+                }
+
+                if(publicRequest.IsSetCloudWatchLogsRoleArn())
+                {
+                    context.Writer.WritePropertyName("CloudWatchLogsRoleArn");
+                    context.Writer.Write(publicRequest.CloudWatchLogsRoleArn);
+                }
+
                 if(publicRequest.IsSetIncludeGlobalServiceEvents())
                 {
                     context.Writer.WritePropertyName("IncludeGlobalServiceEvents");

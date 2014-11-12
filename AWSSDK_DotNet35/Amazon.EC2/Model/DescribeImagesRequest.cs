@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,6 +32,13 @@ namespace Amazon.EC2.Model
     /// Describes one or more of the images (AMIs, AKIs, and ARIs) available to you. Images
     /// available to you include public images, private images that you own, and private images
     /// owned by other AWS accounts but for which you have explicit launch permissions.
+    /// 
+    ///  <note>
+    /// <para>
+    /// Deregistered images are included in the returned results for an unspecified interval
+    /// after deregistration.
+    /// </para>
+    /// </note>
     /// </summary>
     public partial class DescribeImagesRequest : AmazonEC2Request
     {

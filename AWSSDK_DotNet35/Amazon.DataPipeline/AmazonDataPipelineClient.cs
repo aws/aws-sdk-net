@@ -273,18 +273,18 @@ namespace Amazon.DataPipeline
         /// <param name="request">Container for the necessary parameters to execute the ActivatePipeline service method.</param>
         /// 
         /// <returns>The response from the ActivatePipeline service method, as returned by DataPipeline.</returns>
-        /// <exception cref="InternalServiceErrorException">
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
         /// An internal service error occurred.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
         /// The request was not valid. Verify that your request was properly formatted, that the
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
         /// </exception>
-        /// <exception cref="PipelineDeletedException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
         /// The specified pipeline has been deleted.
         /// </exception>
-        /// <exception cref="PipelineNotFoundException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
@@ -341,10 +341,10 @@ namespace Amazon.DataPipeline
         /// <param name="request">Container for the necessary parameters to execute the CreatePipeline service method.</param>
         /// 
         /// <returns>The response from the CreatePipeline service method, as returned by DataPipeline.</returns>
-        /// <exception cref="InternalServiceErrorException">
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
         /// An internal service error occurred.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
         /// The request was not valid. Verify that your request was properly formatted, that the
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
@@ -411,15 +411,15 @@ namespace Amazon.DataPipeline
         /// <param name="request">Container for the necessary parameters to execute the DeletePipeline service method.</param>
         /// 
         /// <returns>The response from the DeletePipeline service method, as returned by DataPipeline.</returns>
-        /// <exception cref="InternalServiceErrorException">
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
         /// An internal service error occurred.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
         /// The request was not valid. Verify that your request was properly formatted, that the
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
         /// </exception>
-        /// <exception cref="PipelineNotFoundException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
@@ -477,18 +477,18 @@ namespace Amazon.DataPipeline
         /// <param name="request">Container for the necessary parameters to execute the DescribeObjects service method.</param>
         /// 
         /// <returns>The response from the DescribeObjects service method, as returned by DataPipeline.</returns>
-        /// <exception cref="InternalServiceErrorException">
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
         /// An internal service error occurred.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
         /// The request was not valid. Verify that your request was properly formatted, that the
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
         /// </exception>
-        /// <exception cref="PipelineDeletedException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
         /// The specified pipeline has been deleted.
         /// </exception>
-        /// <exception cref="PipelineNotFoundException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
@@ -555,18 +555,18 @@ namespace Amazon.DataPipeline
         /// <param name="request">Container for the necessary parameters to execute the DescribePipelines service method.</param>
         /// 
         /// <returns>The response from the DescribePipelines service method, as returned by DataPipeline.</returns>
-        /// <exception cref="InternalServiceErrorException">
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
         /// An internal service error occurred.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
         /// The request was not valid. Verify that your request was properly formatted, that the
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
         /// </exception>
-        /// <exception cref="PipelineDeletedException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
         /// The specified pipeline has been deleted.
         /// </exception>
-        /// <exception cref="PipelineNotFoundException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
@@ -623,22 +623,22 @@ namespace Amazon.DataPipeline
         /// <param name="request">Container for the necessary parameters to execute the EvaluateExpression service method.</param>
         /// 
         /// <returns>The response from the EvaluateExpression service method, as returned by DataPipeline.</returns>
-        /// <exception cref="InternalServiceErrorException">
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
         /// An internal service error occurred.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
         /// The request was not valid. Verify that your request was properly formatted, that the
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
         /// </exception>
-        /// <exception cref="PipelineDeletedException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
         /// The specified pipeline has been deleted.
         /// </exception>
-        /// <exception cref="PipelineNotFoundException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
-        /// <exception cref="TaskNotFoundException">
+        /// <exception cref="Amazon.DataPipeline.Model.TaskNotFoundException">
         /// The specified task was not found.
         /// </exception>
         public EvaluateExpressionResponse EvaluateExpression(EvaluateExpressionRequest request)
@@ -694,18 +694,18 @@ namespace Amazon.DataPipeline
         /// <param name="request">Container for the necessary parameters to execute the GetPipelineDefinition service method.</param>
         /// 
         /// <returns>The response from the GetPipelineDefinition service method, as returned by DataPipeline.</returns>
-        /// <exception cref="InternalServiceErrorException">
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
         /// An internal service error occurred.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
         /// The request was not valid. Verify that your request was properly formatted, that the
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
         /// </exception>
-        /// <exception cref="PipelineDeletedException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
         /// The specified pipeline has been deleted.
         /// </exception>
-        /// <exception cref="PipelineNotFoundException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
@@ -761,10 +761,10 @@ namespace Amazon.DataPipeline
         /// </summary>
         /// 
         /// <returns>The response from the ListPipelines service method, as returned by DataPipeline.</returns>
-        /// <exception cref="InternalServiceErrorException">
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
         /// An internal service error occurred.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
         /// The request was not valid. Verify that your request was properly formatted, that the
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
@@ -781,10 +781,10 @@ namespace Amazon.DataPipeline
         /// <param name="request">Container for the necessary parameters to execute the ListPipelines service method.</param>
         /// 
         /// <returns>The response from the ListPipelines service method, as returned by DataPipeline.</returns>
-        /// <exception cref="InternalServiceErrorException">
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
         /// An internal service error occurred.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
         /// The request was not valid. Verify that your request was properly formatted, that the
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
@@ -857,15 +857,15 @@ namespace Amazon.DataPipeline
         /// <param name="request">Container for the necessary parameters to execute the PollForTask service method.</param>
         /// 
         /// <returns>The response from the PollForTask service method, as returned by DataPipeline.</returns>
-        /// <exception cref="InternalServiceErrorException">
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
         /// An internal service error occurred.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
         /// The request was not valid. Verify that your request was properly formatted, that the
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
         /// </exception>
-        /// <exception cref="TaskNotFoundException">
+        /// <exception cref="Amazon.DataPipeline.Model.TaskNotFoundException">
         /// The specified task was not found.
         /// </exception>
         public PollForTaskResponse PollForTask(PollForTaskRequest request)
@@ -935,18 +935,18 @@ namespace Amazon.DataPipeline
         /// <param name="request">Container for the necessary parameters to execute the PutPipelineDefinition service method.</param>
         /// 
         /// <returns>The response from the PutPipelineDefinition service method, as returned by DataPipeline.</returns>
-        /// <exception cref="InternalServiceErrorException">
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
         /// An internal service error occurred.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
         /// The request was not valid. Verify that your request was properly formatted, that the
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
         /// </exception>
-        /// <exception cref="PipelineDeletedException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
         /// The specified pipeline has been deleted.
         /// </exception>
-        /// <exception cref="PipelineNotFoundException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
@@ -1011,18 +1011,18 @@ namespace Amazon.DataPipeline
         /// <param name="request">Container for the necessary parameters to execute the QueryObjects service method.</param>
         /// 
         /// <returns>The response from the QueryObjects service method, as returned by DataPipeline.</returns>
-        /// <exception cref="InternalServiceErrorException">
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
         /// An internal service error occurred.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
         /// The request was not valid. Verify that your request was properly formatted, that the
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
         /// </exception>
-        /// <exception cref="PipelineDeletedException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
         /// The specified pipeline has been deleted.
         /// </exception>
-        /// <exception cref="PipelineNotFoundException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
@@ -1088,22 +1088,22 @@ namespace Amazon.DataPipeline
         /// <param name="request">Container for the necessary parameters to execute the ReportTaskProgress service method.</param>
         /// 
         /// <returns>The response from the ReportTaskProgress service method, as returned by DataPipeline.</returns>
-        /// <exception cref="InternalServiceErrorException">
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
         /// An internal service error occurred.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
         /// The request was not valid. Verify that your request was properly formatted, that the
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
         /// </exception>
-        /// <exception cref="PipelineDeletedException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
         /// The specified pipeline has been deleted.
         /// </exception>
-        /// <exception cref="PipelineNotFoundException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
-        /// <exception cref="TaskNotFoundException">
+        /// <exception cref="Amazon.DataPipeline.Model.TaskNotFoundException">
         /// The specified task was not found.
         /// </exception>
         public ReportTaskProgressResponse ReportTaskProgress(ReportTaskProgressRequest request)
@@ -1161,10 +1161,10 @@ namespace Amazon.DataPipeline
         /// <param name="request">Container for the necessary parameters to execute the ReportTaskRunnerHeartbeat service method.</param>
         /// 
         /// <returns>The response from the ReportTaskRunnerHeartbeat service method, as returned by DataPipeline.</returns>
-        /// <exception cref="InternalServiceErrorException">
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
         /// An internal service error occurred.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
         /// The request was not valid. Verify that your request was properly formatted, that the
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
@@ -1223,18 +1223,18 @@ namespace Amazon.DataPipeline
         /// <param name="request">Container for the necessary parameters to execute the SetStatus service method.</param>
         /// 
         /// <returns>The response from the SetStatus service method, as returned by DataPipeline.</returns>
-        /// <exception cref="InternalServiceErrorException">
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
         /// An internal service error occurred.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
         /// The request was not valid. Verify that your request was properly formatted, that the
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
         /// </exception>
-        /// <exception cref="PipelineDeletedException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
         /// The specified pipeline has been deleted.
         /// </exception>
-        /// <exception cref="PipelineNotFoundException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
@@ -1293,22 +1293,22 @@ namespace Amazon.DataPipeline
         /// <param name="request">Container for the necessary parameters to execute the SetTaskStatus service method.</param>
         /// 
         /// <returns>The response from the SetTaskStatus service method, as returned by DataPipeline.</returns>
-        /// <exception cref="InternalServiceErrorException">
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
         /// An internal service error occurred.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
         /// The request was not valid. Verify that your request was properly formatted, that the
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
         /// </exception>
-        /// <exception cref="PipelineDeletedException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
         /// The specified pipeline has been deleted.
         /// </exception>
-        /// <exception cref="PipelineNotFoundException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>
-        /// <exception cref="TaskNotFoundException">
+        /// <exception cref="Amazon.DataPipeline.Model.TaskNotFoundException">
         /// The specified task was not found.
         /// </exception>
         public SetTaskStatusResponse SetTaskStatus(SetTaskStatusRequest request)
@@ -1364,18 +1364,18 @@ namespace Amazon.DataPipeline
         /// <param name="request">Container for the necessary parameters to execute the ValidatePipelineDefinition service method.</param>
         /// 
         /// <returns>The response from the ValidatePipelineDefinition service method, as returned by DataPipeline.</returns>
-        /// <exception cref="InternalServiceErrorException">
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
         /// An internal service error occurred.
         /// </exception>
-        /// <exception cref="InvalidRequestException">
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
         /// The request was not valid. Verify that your request was properly formatted, that the
         /// signature was generated with the correct credentials, and that you haven't exceeded
         /// any of the service limits for your account.
         /// </exception>
-        /// <exception cref="PipelineDeletedException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
         /// The specified pipeline has been deleted.
         /// </exception>
-        /// <exception cref="PipelineNotFoundException">
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
         /// The specified pipeline was not found. Verify that you used the correct user and account
         /// identifiers.
         /// </exception>

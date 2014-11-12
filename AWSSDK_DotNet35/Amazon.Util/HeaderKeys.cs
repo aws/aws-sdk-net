@@ -60,6 +60,7 @@ namespace Amazon.Util
         public const string XAmzAuthorizationHeader = "X-Amzn-Authorization";
         public const string XAmzNonceHeader = "x-amz-nonce";
         public const string XAmzServerSideEncryptionHeader = "x-amz-server-side-encryption";
+        public const string XAmzServerSideEncryptionAwsKmsKeyIdHeader = "x-amz-server-side-encryption-aws-kms-key-id";
 
         public const string XAmzSSECustomerAlgorithmHeader = "x-amz-server-side-encryption-customer-algorithm";
         public const string XAmzSSECustomerKeyHeader = "x-amz-server-side-encryption-customer-key";

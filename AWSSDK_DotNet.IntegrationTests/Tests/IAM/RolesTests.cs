@@ -41,7 +41,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [TestCleanup]
         public void TestCleanup()
         {
-            var roles = client.ListRoles(new ListRolesRequest()).Roles;
+            var roles = GetRoles();
             if (roles.Any(r => string.Equals(r.RoleName, roleName)))
             {
                 var rolePolicies = client.ListRolePolicies(new ListRolePoliciesRequest
@@ -78,7 +78,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [TestCategory("IAM")]
         public void Roles()
         {
-            var roles = client.ListRoles().Roles;
+            var roles = GetRoles();
             Assert.IsNotNull(roles);
             int originalCount = roles.Count;
 
@@ -90,7 +90,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }).Role;
             Assert.IsNotNull(newRole);
 
-            roles = client.ListRoles().Roles;
+            roles = GetRoles();
             Assert.IsNotNull(roles);
             Assert.AreEqual(originalCount + 1, roles.Count);
 
@@ -110,7 +110,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
             AssertExtensions.ExpectException(() => client.DeleteRole(new DeleteRoleRequest { RoleName = "bar" }));
 
-            roles = client.ListRoles().Roles;
+            roles = GetRoles();
             Assert.IsNotNull(roles);
             Assert.AreEqual(originalCount + 1, roles.Count);
 
@@ -119,7 +119,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
                 RoleName = roleName
             });
 
-            roles = client.ListRoles().Roles;
+            roles = GetRoles();
             Assert.IsNotNull(roles);
             Assert.AreEqual(originalCount, roles.Count);
 
@@ -162,7 +162,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
                 PolicyDocument = TEST_DENY_POLICY
             });
 
-            var roles = client.ListRoles().Roles;
+            var roles = GetRoles();
             Assert.IsNotNull(roles);
 
             var policyResult = client.GetRolePolicy(new GetRolePolicyRequest
@@ -321,6 +321,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }).Role;
             Assert.IsNotNull(role);
             Assert.IsNotNull(role.AssumeRolePolicyDocument);
+        }
+
+        private List<Role> GetRoles()
+        {
+            var roles = new List<Role>();
+            string nextMarker = null;
+            do
+            {
+                var response = client.ListRoles(new ListRolesRequest
+                {
+                    Marker = nextMarker
+                });
+                nextMarker = response.Marker;
+                roles.AddRange(response.Roles);
+            } while (!string.IsNullOrEmpty(nextMarker));
+
+            return roles;
         }
     }
 }

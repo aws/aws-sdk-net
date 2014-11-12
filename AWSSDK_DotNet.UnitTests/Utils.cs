@@ -29,10 +29,12 @@ namespace AWSSDK_DotNet35.UnitTests
                     if (!string.IsNullOrEmpty(customizationsName))
                     {
 #if BCL45
-                        customizationsReader = new StreamReader(typeof(Utils).Assembly.GetManifestResourceStream("AWSSDK_DotNet45.UnitTests....ServiceModels." + customizationsName));
+                        var customizationsStream = typeof(Utils).Assembly.GetManifestResourceStream("AWSSDK_DotNet45.UnitTests....ServiceModels." + customizationsName);
 #else
-                        customizationsReader = new StreamReader(typeof(Utils).Assembly.GetManifestResourceStream("AWSSDK_DotNet35.UnitTests....ServiceModels." + customizationsName));
-#endif              
+                        var customizationsStream = typeof(Utils).Assembly.GetManifestResourceStream("AWSSDK_DotNet35.UnitTests....ServiceModels." + customizationsName);
+#endif
+                        if (customizationsStream != null)
+                            customizationsReader = new StreamReader(customizationsStream);
                     }
 
                     return new ServiceModel(streamReader, customizationsReader);

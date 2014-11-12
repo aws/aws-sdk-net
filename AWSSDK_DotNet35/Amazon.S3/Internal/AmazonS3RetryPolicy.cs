@@ -26,6 +26,8 @@ namespace Amazon.S3.Internal
 {
     public class AmazonS3RetryPolicy : DefaultRetryPolicy
     {
+        private const string AWS_KMS_Signature_Error = "AWS KMS managed keys require AWS Signature Version 4";
+
         private static ICollection<Type> RequestsWith200Error = new HashSet<Type>
         {
             typeof(CopyObjectRequest),
@@ -70,11 +72,13 @@ namespace Amazon.S3.Internal
                 if (serviceException.StatusCode == HttpStatusCode.BadRequest)
                 {
                     var configuredUri = new Uri(executionContext.RequestContext.ClientConfig.DetermineServiceURL());
-                    if (configuredUri.Host.Equals(S3Constants.S3DefaultEndpoint) 
-                            && serviceException.Message.Contains(AWS4Signer.AWS4AlgorithmTag))
+                    if (configuredUri.Host.Equals(S3Constants.S3DefaultEndpoint) &&
+                        (serviceException.Message.Contains(AWS4Signer.AWS4AlgorithmTag) ||
+                         serviceException.Message.Contains(AWS_KMS_Signature_Error))
+                        )
                     {
                         // If the response message indicates AWS4 signing should have been used,
-                        // we've attempted to access a bucket in an AWS4-only region with an AWS2
+                        // we've attempted to access a bucket in an AWS4-only region (e.g. EU Central (Frankfurt)) with an AWS2
                         // signature and/or client not configured with the correct region. 
                         // Retry the request to the s3-external endpoint to yield a 307 redirect
                         // that we can then follow to the correct bucket location with the expected
@@ -92,6 +96,13 @@ namespace Amazon.S3.Internal
                         // on the bucket name
                         var tempEndpoint = string.Format("https://{0}.{1}", s3Uri.Bucket, S3Constants.S3AlternateDefaultEndpoint);
                         r.Endpoint = new Uri(tempEndpoint);
+
+                        if (serviceException.Message.Contains(AWS_KMS_Signature_Error))
+                        {
+                            r.RequireSigV4 = true;
+                            r.AuthenticationRegion = RegionEndpoint.USEast1.SystemName;
+                            executionContext.RequestContext.IsSigned = false;
+                        }
                         return true;
                     }
                 }

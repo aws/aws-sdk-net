@@ -27,8 +27,13 @@ using Amazon.AWSSupport;
 using Amazon.CloudFormation;
 using Amazon.CloudFront;
 using Amazon.CloudSearch;
+using Amazon.CloudSearchDomain;
 using Amazon.CloudTrail;
 using Amazon.CloudWatch;
+using Amazon.CloudWatchLogs;
+using Amazon.CodeDeploy;
+using Amazon.CognitoIdentity;
+using Amazon.CognitoSync;
 using Amazon.DataPipeline;
 using Amazon.DirectConnect;
 using Amazon.DynamoDBv2;
@@ -46,6 +51,7 @@ using Amazon.OpsWorks;
 using Amazon.RDS;
 using Amazon.Redshift;
 using Amazon.Route53;
+using Amazon.Route53Domains;
 using Amazon.S3;
 using Amazon.SecurityToken;
 using Amazon.SimpleDB;
@@ -1158,6 +1164,630 @@ namespace Amazon
         public static IAmazonCloudWatch CreateAmazonCloudWatchClient(AWSCredentials credentials, AmazonCloudWatchConfig config)
         {
             return new AmazonCloudWatchClient(credentials, config);
+        }
+		#endregion
+
+        #region Amazon CloudWatchLogs
+
+        /// <summary>
+        /// Create a client for the Amazon CloudWatchLogs Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <returns>An Amazon CloudWatchLogs client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudWatchLogs CreateAmazonCloudWatchLogsClient()
+        {
+            return new AmazonCloudWatchLogsClient();
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudWatchLogs Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CloudWatchLogs client</returns>
+        public static IAmazonCloudWatchLogs CreateAmazonCloudWatchLogsClient(AmazonCloudWatchLogsConfig config)
+        {
+            return new AmazonCloudWatchLogsClient(config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudWatchLogs Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon CloudWatchLogs client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudWatchLogs CreateAmazonCloudWatchLogsClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonCloudWatchLogsClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudWatchLogs Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon CloudWatchLogs client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudWatchLogs CreateAmazonCloudWatchLogsClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, AmazonCloudWatchLogsConfig config
+            )
+        {
+            return new AmazonCloudWatchLogsClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudWatchLogs Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CloudWatchLogs client</returns>
+        public static IAmazonCloudWatchLogs CreateAmazonCloudWatchLogsClient(RegionEndpoint region)
+        {
+            return new AmazonCloudWatchLogsClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudWatchLogs Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CloudWatchLogs client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudWatchLogs CreateAmazonCloudWatchLogsClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonCloudWatchLogsClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudWatchLogs Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon CloudWatchLogs client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudWatchLogs CreateAmazonCloudWatchLogsClient(AWSCredentials credentials)
+        {
+            return new AmazonCloudWatchLogsClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudWatchLogs Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CloudWatchLogs client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudWatchLogs CreateAmazonCloudWatchLogsClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonCloudWatchLogsClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudWatchLogs Service with AWSCredentials and an AmazonCloudWatchLogs Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CloudWatchLogs client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudWatchLogs CreateAmazonCloudWatchLogsClient(AWSCredentials credentials, AmazonCloudWatchLogsConfig config)
+        {
+            return new AmazonCloudWatchLogsClient(credentials, config);
+        }
+		#endregion
+
+        #region Amazon CodeDeploy
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient()
+        {
+            return new AmazonCodeDeployClient();
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient(AmazonCodeDeployConfig config)
+        {
+            return new AmazonCodeDeployClient(config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonCodeDeployClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, AmazonCodeDeployConfig config
+            )
+        {
+            return new AmazonCodeDeployClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient(RegionEndpoint region)
+        {
+            return new AmazonCodeDeployClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonCodeDeployClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient(AWSCredentials credentials)
+        {
+            return new AmazonCodeDeployClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonCodeDeployClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CodeDeploy Service with AWSCredentials and an AmazonCodeDeploy Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CodeDeploy client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCodeDeploy CreateAmazonCodeDeployClient(AWSCredentials credentials, AmazonCodeDeployConfig config)
+        {
+            return new AmazonCodeDeployClient(credentials, config);
+        }
+		#endregion
+
+        #region Amazon CognitoIdentity
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoIdentity Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <returns>An Amazon CognitoIdentity client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoIdentity CreateAmazonCognitoIdentityClient()
+        {
+            return new AmazonCognitoIdentityClient();
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoIdentity Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CognitoIdentity client</returns>
+        public static IAmazonCognitoIdentity CreateAmazonCognitoIdentityClient(AmazonCognitoIdentityConfig config)
+        {
+            return new AmazonCognitoIdentityClient(config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoIdentity Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon CognitoIdentity client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoIdentity CreateAmazonCognitoIdentityClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonCognitoIdentityClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoIdentity Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon CognitoIdentity client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoIdentity CreateAmazonCognitoIdentityClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, AmazonCognitoIdentityConfig config
+            )
+        {
+            return new AmazonCognitoIdentityClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoIdentity Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CognitoIdentity client</returns>
+        public static IAmazonCognitoIdentity CreateAmazonCognitoIdentityClient(RegionEndpoint region)
+        {
+            return new AmazonCognitoIdentityClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoIdentity Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CognitoIdentity client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoIdentity CreateAmazonCognitoIdentityClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonCognitoIdentityClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoIdentity Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon CognitoIdentity client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoIdentity CreateAmazonCognitoIdentityClient(AWSCredentials credentials)
+        {
+            return new AmazonCognitoIdentityClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoIdentity Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CognitoIdentity client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoIdentity CreateAmazonCognitoIdentityClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonCognitoIdentityClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoIdentity Service with AWSCredentials and an AmazonCognitoIdentity Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CognitoIdentity client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoIdentity CreateAmazonCognitoIdentityClient(AWSCredentials credentials, AmazonCognitoIdentityConfig config)
+        {
+            return new AmazonCognitoIdentityClient(credentials, config);
+        }
+		#endregion
+
+        #region Amazon CognitoSync
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient()
+        {
+            return new AmazonCognitoSyncClient();
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(AmazonCognitoSyncConfig config)
+        {
+            return new AmazonCognitoSyncClient(config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonCognitoSyncClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, AmazonCognitoSyncConfig config
+            )
+        {
+            return new AmazonCognitoSyncClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(RegionEndpoint region)
+        {
+            return new AmazonCognitoSyncClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonCognitoSyncClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(AWSCredentials credentials)
+        {
+            return new AmazonCognitoSyncClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonCognitoSyncClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with AWSCredentials and an AmazonCognitoSync Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(AWSCredentials credentials, AmazonCognitoSyncConfig config)
+        {
+            return new AmazonCognitoSyncClient(credentials, config);
         }
 		#endregion
 
@@ -3810,6 +4440,162 @@ namespace Amazon
         public static IAmazonRoute53 CreateAmazonRoute53Client(AWSCredentials credentials, AmazonRoute53Config config)
         {
             return new AmazonRoute53Client(credentials, config);
+        }
+		#endregion
+
+        #region Amazon Route53Domains
+
+        /// <summary>
+        /// Create a client for the Amazon Route53Domains Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <returns>An Amazon Route53Domains client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonRoute53Domains CreateAmazonRoute53DomainsClient()
+        {
+            return new AmazonRoute53DomainsClient();
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Route53Domains Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon Route53Domains client</returns>
+        public static IAmazonRoute53Domains CreateAmazonRoute53DomainsClient(AmazonRoute53DomainsConfig config)
+        {
+            return new AmazonRoute53DomainsClient(config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Route53Domains Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon Route53Domains client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonRoute53Domains CreateAmazonRoute53DomainsClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonRoute53DomainsClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Route53Domains Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon Route53Domains client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonRoute53Domains CreateAmazonRoute53DomainsClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, AmazonRoute53DomainsConfig config
+            )
+        {
+            return new AmazonRoute53DomainsClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Route53Domains Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon Route53Domains client</returns>
+        public static IAmazonRoute53Domains CreateAmazonRoute53DomainsClient(RegionEndpoint region)
+        {
+            return new AmazonRoute53DomainsClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Route53Domains Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon Route53Domains client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonRoute53Domains CreateAmazonRoute53DomainsClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonRoute53DomainsClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Route53Domains Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon Route53Domains client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonRoute53Domains CreateAmazonRoute53DomainsClient(AWSCredentials credentials)
+        {
+            return new AmazonRoute53DomainsClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Route53Domains Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon Route53Domains client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonRoute53Domains CreateAmazonRoute53DomainsClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonRoute53DomainsClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Route53Domains Service with AWSCredentials and an AmazonRoute53Domains Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon Route53Domains client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonRoute53Domains CreateAmazonRoute53DomainsClient(AWSCredentials credentials, AmazonRoute53DomainsConfig config)
+        {
+            return new AmazonRoute53DomainsClient(credentials, config);
         }
 		#endregion
 

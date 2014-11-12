@@ -44,23 +44,23 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the CreateCloudFrontOriginAccessIdentity service method.</param>
         /// 
         /// <returns>The response from the CreateCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
-        /// <exception cref="CloudFrontOriginAccessIdentityAlreadyExistsException">
+        /// <exception cref="Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityAlreadyExistsException">
         /// If the CallerReference is a value you already sent in a previous request to create
         /// an identity but the content of the CloudFrontOriginAccessIdentityConfig is different
         /// from the original request, CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists
         /// error.
         /// </exception>
-        /// <exception cref="InconsistentQuantitiesException">
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
         /// The value of Quantity and the size of Items do not match.
         /// </exception>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <exception cref="MissingBodyException">
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the Content-Type
         /// header is set.
         /// </exception>
-        /// <exception cref="TooManyCloudFrontOriginAccessIdentitiesException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCloudFrontOriginAccessIdentitiesException">
         /// Processing your request would cause you to exceed the maximum number of origin access
         /// identities allowed.
         /// </exception>
@@ -88,99 +88,99 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the CreateDistribution service method.</param>
         /// 
         /// <returns>The response from the CreateDistribution service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="CNAMEAlreadyExistsException">
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
         /// 
         /// </exception>
-        /// <exception cref="DistributionAlreadyExistsException">
+        /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
         /// The caller reference you attempted to create the distribution with is associated with
         /// another distribution.
         /// </exception>
-        /// <exception cref="InconsistentQuantitiesException">
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
         /// The value of Quantity and the size of Items do not match.
         /// </exception>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <exception cref="InvalidDefaultRootObjectException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
         /// The default root object file name is too big or contains an invalid character.
         /// </exception>
-        /// <exception cref="InvalidErrorCodeException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidForwardCookiesException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
         /// for the whitelisted list of cookie names. Either list of cookie names has been specified
         /// when not allowed or list of cookie names is missing when expected.
         /// </exception>
-        /// <exception cref="InvalidGeoRestrictionParameterException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidHeadersForS3OriginException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidLocationCodeException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidOriginAccessIdentityException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
         /// </exception>
-        /// <exception cref="InvalidOriginException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginException">
         /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
         /// </exception>
-        /// <exception cref="InvalidProtocolSettingsException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidProtocolSettingsException">
         /// You cannot specify SSLv3 as the minimum protocol version if you only want to support
         /// only clients that Support Server Name Indication (SNI).
         /// </exception>
-        /// <exception cref="InvalidRelativePathException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
         /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
         /// </exception>
-        /// <exception cref="InvalidRequiredProtocolException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
         /// in your request, or omit the RequiredProtocols element from your distribution configuration.
         /// </exception>
-        /// <exception cref="InvalidResponseCodeException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidViewerCertificateException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
         /// 
         /// </exception>
-        /// <exception cref="MissingBodyException">
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the Content-Type
         /// header is set.
         /// </exception>
-        /// <exception cref="NoSuchOriginException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
         /// No origin exists with the specified Origin Id.
         /// </exception>
-        /// <exception cref="TooManyCacheBehaviorsException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create anymore cache behaviors for the distribution.
         /// </exception>
-        /// <exception cref="TooManyCertificatesException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
         /// You cannot create anymore custom ssl certificates.
         /// </exception>
-        /// <exception cref="TooManyCookieNamesInWhiteListException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
         /// Your request contains more cookie names in the whitelist than are allowed per cache
         /// behavior.
         /// </exception>
-        /// <exception cref="TooManyDistributionCNAMEsException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
         /// Your request contains more CNAMEs than are allowed per distribution.
         /// </exception>
-        /// <exception cref="TooManyDistributionsException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
         /// Processing your request would cause you to exceed the maximum number of distributions
         /// allowed.
         /// </exception>
-        /// <exception cref="TooManyHeadersInForwardedValuesException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
         /// 
         /// </exception>
-        /// <exception cref="TooManyOriginsException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
         /// You cannot create anymore origins for the distribution.
         /// </exception>
-        /// <exception cref="TooManyTrustedSignersException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
         /// Your request contains more trusted signers than are allowed per distribution.
         /// </exception>
-        /// <exception cref="TrustedSignerDoesNotExistException">
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers do not exist.
         /// </exception>
         CreateDistributionResponse CreateDistribution(CreateDistributionRequest request);
@@ -207,26 +207,26 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the CreateInvalidation service method.</param>
         /// 
         /// <returns>The response from the CreateInvalidation service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="BatchTooLargeException">
+        /// <exception cref="Amazon.CloudFront.Model.BatchTooLargeException">
         /// 
         /// </exception>
-        /// <exception cref="InconsistentQuantitiesException">
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
         /// The value of Quantity and the size of Items do not match.
         /// </exception>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <exception cref="MissingBodyException">
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the Content-Type
         /// header is set.
         /// </exception>
-        /// <exception cref="NoSuchDistributionException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <exception cref="TooManyInvalidationsInProgressException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyInvalidationsInProgressException">
         /// You have exceeded the maximum number of allowable InProgress invalidation batch requests,
         /// or invalidation objects.
         /// </exception>
@@ -254,42 +254,42 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamingDistribution service method.</param>
         /// 
         /// <returns>The response from the CreateStreamingDistribution service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="CNAMEAlreadyExistsException">
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
         /// 
         /// </exception>
-        /// <exception cref="InconsistentQuantitiesException">
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
         /// The value of Quantity and the size of Items do not match.
         /// </exception>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <exception cref="InvalidOriginAccessIdentityException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
         /// </exception>
-        /// <exception cref="InvalidOriginException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginException">
         /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
         /// </exception>
-        /// <exception cref="MissingBodyException">
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the Content-Type
         /// header is set.
         /// </exception>
-        /// <exception cref="StreamingDistributionAlreadyExistsException">
+        /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionAlreadyExistsException">
         /// 
         /// </exception>
-        /// <exception cref="TooManyStreamingDistributionCNAMEsException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException">
         /// 
         /// </exception>
-        /// <exception cref="TooManyStreamingDistributionsException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionsException">
         /// Processing your request would cause you to exceed the maximum number of streaming
         /// distributions allowed.
         /// </exception>
-        /// <exception cref="TooManyTrustedSignersException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
         /// Your request contains more trusted signers than are allowed per distribution.
         /// </exception>
-        /// <exception cref="TrustedSignerDoesNotExistException">
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers do not exist.
         /// </exception>
         CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request);
@@ -315,19 +315,19 @@ namespace Amazon.CloudFront
         /// </summary>
         /// 
         /// <returns>The response from the DeleteCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="CloudFrontOriginAccessIdentityInUseException">
+        /// <exception cref="Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityInUseException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidIfMatchVersionException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The If-Match version is missing or not valid for the distribution.
         /// </exception>
-        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <exception cref="PreconditionFailedException">
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to false.
         /// </exception>
         DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity();
@@ -338,19 +338,19 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the DeleteCloudFrontOriginAccessIdentity service method.</param>
         /// 
         /// <returns>The response from the DeleteCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="CloudFrontOriginAccessIdentityInUseException">
+        /// <exception cref="Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityInUseException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidIfMatchVersionException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The If-Match version is missing or not valid for the distribution.
         /// </exception>
-        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <exception cref="PreconditionFailedException">
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to false.
         /// </exception>
         DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request);
@@ -376,19 +376,19 @@ namespace Amazon.CloudFront
         /// </summary>
         /// 
         /// <returns>The response from the DeleteDistribution service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="DistributionNotDisabledException">
+        /// <exception cref="Amazon.CloudFront.Model.DistributionNotDisabledException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidIfMatchVersionException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The If-Match version is missing or not valid for the distribution.
         /// </exception>
-        /// <exception cref="NoSuchDistributionException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <exception cref="PreconditionFailedException">
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to false.
         /// </exception>
         DeleteDistributionResponse DeleteDistribution();
@@ -399,19 +399,19 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the DeleteDistribution service method.</param>
         /// 
         /// <returns>The response from the DeleteDistribution service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="DistributionNotDisabledException">
+        /// <exception cref="Amazon.CloudFront.Model.DistributionNotDisabledException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidIfMatchVersionException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The If-Match version is missing or not valid for the distribution.
         /// </exception>
-        /// <exception cref="NoSuchDistributionException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <exception cref="PreconditionFailedException">
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to false.
         /// </exception>
         DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request);
@@ -437,19 +437,19 @@ namespace Amazon.CloudFront
         /// </summary>
         /// 
         /// <returns>The response from the DeleteStreamingDistribution service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="InvalidIfMatchVersionException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The If-Match version is missing or not valid for the distribution.
         /// </exception>
-        /// <exception cref="NoSuchStreamingDistributionException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <exception cref="PreconditionFailedException">
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to false.
         /// </exception>
-        /// <exception cref="StreamingDistributionNotDisabledException">
+        /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// 
         /// </exception>
         DeleteStreamingDistributionResponse DeleteStreamingDistribution();
@@ -460,19 +460,19 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the DeleteStreamingDistribution service method.</param>
         /// 
         /// <returns>The response from the DeleteStreamingDistribution service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="InvalidIfMatchVersionException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The If-Match version is missing or not valid for the distribution.
         /// </exception>
-        /// <exception cref="NoSuchStreamingDistributionException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <exception cref="PreconditionFailedException">
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to false.
         /// </exception>
-        /// <exception cref="StreamingDistributionNotDisabledException">
+        /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// 
         /// </exception>
         DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request);
@@ -498,10 +498,10 @@ namespace Amazon.CloudFront
         /// </summary>
         /// 
         /// <returns>The response from the GetCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
         GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity();
@@ -512,10 +512,10 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the GetCloudFrontOriginAccessIdentity service method.</param>
         /// 
         /// <returns>The response from the GetCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
         GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request);
@@ -541,10 +541,10 @@ namespace Amazon.CloudFront
         /// </summary>
         /// 
         /// <returns>The response from the GetCloudFrontOriginAccessIdentityConfig service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
         GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig();
@@ -555,10 +555,10 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the GetCloudFrontOriginAccessIdentityConfig service method.</param>
         /// 
         /// <returns>The response from the GetCloudFrontOriginAccessIdentityConfig service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
         GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request);
@@ -584,10 +584,10 @@ namespace Amazon.CloudFront
         /// </summary>
         /// 
         /// <returns>The response from the GetDistribution service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="NoSuchDistributionException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
         GetDistributionResponse GetDistribution();
@@ -598,10 +598,10 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the GetDistribution service method.</param>
         /// 
         /// <returns>The response from the GetDistribution service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="NoSuchDistributionException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
         GetDistributionResponse GetDistribution(GetDistributionRequest request);
@@ -627,10 +627,10 @@ namespace Amazon.CloudFront
         /// </summary>
         /// 
         /// <returns>The response from the GetDistributionConfig service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="NoSuchDistributionException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
         GetDistributionConfigResponse GetDistributionConfig();
@@ -641,10 +641,10 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the GetDistributionConfig service method.</param>
         /// 
         /// <returns>The response from the GetDistributionConfig service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="NoSuchDistributionException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
         GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request);
@@ -671,13 +671,13 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the GetInvalidation service method.</param>
         /// 
         /// <returns>The response from the GetInvalidation service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="NoSuchDistributionException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <exception cref="NoSuchInvalidationException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchInvalidationException">
         /// The specified invalidation does not exist.
         /// </exception>
         GetInvalidationResponse GetInvalidation(GetInvalidationRequest request);
@@ -703,10 +703,10 @@ namespace Amazon.CloudFront
         /// </summary>
         /// 
         /// <returns>The response from the GetStreamingDistribution service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="NoSuchStreamingDistributionException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
         GetStreamingDistributionResponse GetStreamingDistribution();
@@ -717,10 +717,10 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the GetStreamingDistribution service method.</param>
         /// 
         /// <returns>The response from the GetStreamingDistribution service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="NoSuchStreamingDistributionException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
         GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request);
@@ -746,10 +746,10 @@ namespace Amazon.CloudFront
         /// </summary>
         /// 
         /// <returns>The response from the GetStreamingDistributionConfig service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="NoSuchStreamingDistributionException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
         GetStreamingDistributionConfigResponse GetStreamingDistributionConfig();
@@ -760,10 +760,10 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the GetStreamingDistributionConfig service method.</param>
         /// 
         /// <returns>The response from the GetStreamingDistributionConfig service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="NoSuchStreamingDistributionException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
         GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request);
@@ -789,7 +789,7 @@ namespace Amazon.CloudFront
         /// </summary>
         /// 
         /// <returns>The response from the ListCloudFrontOriginAccessIdentities service method, as returned by CloudFront.</returns>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
         ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities();
@@ -800,7 +800,7 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the ListCloudFrontOriginAccessIdentities service method.</param>
         /// 
         /// <returns>The response from the ListCloudFrontOriginAccessIdentities service method, as returned by CloudFront.</returns>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
         ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request);
@@ -826,7 +826,7 @@ namespace Amazon.CloudFront
         /// </summary>
         /// 
         /// <returns>The response from the ListDistributions service method, as returned by CloudFront.</returns>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
         ListDistributionsResponse ListDistributions();
@@ -837,7 +837,7 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the ListDistributions service method.</param>
         /// 
         /// <returns>The response from the ListDistributions service method, as returned by CloudFront.</returns>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
         ListDistributionsResponse ListDistributions(ListDistributionsRequest request);
@@ -864,13 +864,13 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the ListInvalidations service method.</param>
         /// 
         /// <returns>The response from the ListInvalidations service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <exception cref="NoSuchDistributionException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
         ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request);
@@ -896,7 +896,7 @@ namespace Amazon.CloudFront
         /// </summary>
         /// 
         /// <returns>The response from the ListStreamingDistributions service method, as returned by CloudFront.</returns>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
         ListStreamingDistributionsResponse ListStreamingDistributions();
@@ -907,7 +907,7 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the ListStreamingDistributions service method.</param>
         /// 
         /// <returns>The response from the ListStreamingDistributions service method, as returned by CloudFront.</returns>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
         ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request);
@@ -934,29 +934,29 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the UpdateCloudFrontOriginAccessIdentity service method.</param>
         /// 
         /// <returns>The response from the UpdateCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="IllegalUpdateException">
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
         /// Origin and CallerReference cannot be updated.
         /// </exception>
-        /// <exception cref="InconsistentQuantitiesException">
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
         /// The value of Quantity and the size of Items do not match.
         /// </exception>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <exception cref="InvalidIfMatchVersionException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The If-Match version is missing or not valid for the distribution.
         /// </exception>
-        /// <exception cref="MissingBodyException">
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the Content-Type
         /// header is set.
         /// </exception>
-        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <exception cref="PreconditionFailedException">
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to false.
         /// </exception>
         UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request);
@@ -983,96 +983,96 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the UpdateDistribution service method.</param>
         /// 
         /// <returns>The response from the UpdateDistribution service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="CNAMEAlreadyExistsException">
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
         /// 
         /// </exception>
-        /// <exception cref="IllegalUpdateException">
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
         /// Origin and CallerReference cannot be updated.
         /// </exception>
-        /// <exception cref="InconsistentQuantitiesException">
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
         /// The value of Quantity and the size of Items do not match.
         /// </exception>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <exception cref="InvalidDefaultRootObjectException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
         /// The default root object file name is too big or contains an invalid character.
         /// </exception>
-        /// <exception cref="InvalidErrorCodeException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidForwardCookiesException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
         /// for the whitelisted list of cookie names. Either list of cookie names has been specified
         /// when not allowed or list of cookie names is missing when expected.
         /// </exception>
-        /// <exception cref="InvalidGeoRestrictionParameterException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidHeadersForS3OriginException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidIfMatchVersionException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The If-Match version is missing or not valid for the distribution.
         /// </exception>
-        /// <exception cref="InvalidLocationCodeException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidOriginAccessIdentityException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
         /// </exception>
-        /// <exception cref="InvalidRelativePathException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
         /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
         /// </exception>
-        /// <exception cref="InvalidRequiredProtocolException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
         /// in your request, or omit the RequiredProtocols element from your distribution configuration.
         /// </exception>
-        /// <exception cref="InvalidResponseCodeException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
         /// 
         /// </exception>
-        /// <exception cref="InvalidViewerCertificateException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
         /// 
         /// </exception>
-        /// <exception cref="MissingBodyException">
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the Content-Type
         /// header is set.
         /// </exception>
-        /// <exception cref="NoSuchDistributionException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <exception cref="NoSuchOriginException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
         /// No origin exists with the specified Origin Id.
         /// </exception>
-        /// <exception cref="PreconditionFailedException">
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to false.
         /// </exception>
-        /// <exception cref="TooManyCacheBehaviorsException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create anymore cache behaviors for the distribution.
         /// </exception>
-        /// <exception cref="TooManyCertificatesException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
         /// You cannot create anymore custom ssl certificates.
         /// </exception>
-        /// <exception cref="TooManyCookieNamesInWhiteListException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
         /// Your request contains more cookie names in the whitelist than are allowed per cache
         /// behavior.
         /// </exception>
-        /// <exception cref="TooManyDistributionCNAMEsException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
         /// Your request contains more CNAMEs than are allowed per distribution.
         /// </exception>
-        /// <exception cref="TooManyHeadersInForwardedValuesException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
         /// 
         /// </exception>
-        /// <exception cref="TooManyOriginsException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
         /// You cannot create anymore origins for the distribution.
         /// </exception>
-        /// <exception cref="TooManyTrustedSignersException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
         /// Your request contains more trusted signers than are allowed per distribution.
         /// </exception>
-        /// <exception cref="TrustedSignerDoesNotExistException">
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers do not exist.
         /// </exception>
         UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request);
@@ -1099,44 +1099,44 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the UpdateStreamingDistribution service method.</param>
         /// 
         /// <returns>The response from the UpdateStreamingDistribution service method, as returned by CloudFront.</returns>
-        /// <exception cref="AccessDeniedException">
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
-        /// <exception cref="CNAMEAlreadyExistsException">
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
         /// 
         /// </exception>
-        /// <exception cref="IllegalUpdateException">
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
         /// Origin and CallerReference cannot be updated.
         /// </exception>
-        /// <exception cref="InconsistentQuantitiesException">
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
         /// The value of Quantity and the size of Items do not match.
         /// </exception>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <exception cref="InvalidIfMatchVersionException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The If-Match version is missing or not valid for the distribution.
         /// </exception>
-        /// <exception cref="InvalidOriginAccessIdentityException">
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
         /// </exception>
-        /// <exception cref="MissingBodyException">
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the Content-Type
         /// header is set.
         /// </exception>
-        /// <exception cref="NoSuchStreamingDistributionException">
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <exception cref="PreconditionFailedException">
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to false.
         /// </exception>
-        /// <exception cref="TooManyStreamingDistributionCNAMEsException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException">
         /// 
         /// </exception>
-        /// <exception cref="TooManyTrustedSignersException">
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
         /// Your request contains more trusted signers than are allowed per distribution.
         /// </exception>
-        /// <exception cref="TrustedSignerDoesNotExistException">
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers do not exist.
         /// </exception>
         UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request);

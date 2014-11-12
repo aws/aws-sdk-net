@@ -86,6 +86,16 @@
 			"service-url":"https://cloudtrail.us-east-1.amazonaws.com",
             "mobile-platforms" : ["WinRT"]
 		},
+        {
+			"active" : true,
+			
+			"model" : "config",
+			"base-name" : "ConfigService",
+			"region-lookup-name" : "config",
+			"authentication-service-name" : "config",
+			"service-url":"https://config.us-east-1.amazonaws.com",
+            "mobile-platforms" : []
+		},
 		{
 			"active" : true,
 			
@@ -104,6 +114,16 @@
 			"region-lookup-name" : "logs",
 			"authentication-service-name" : "logs",
 			"service-url":"https://logs.us-east-1.amazonaws.com",
+            "mobile-platforms" : []
+		},
+        {
+			"active" : true,
+			
+			"model" : "codedeploy",
+			"base-name" : "CodeDeploy",
+			"region-lookup-name" : "codedeploy",
+			"authentication-service-name" : "codedeploy",
+            "service-url": "http://codedeploy.us-east-1.amazonaws.com",
             "mobile-platforms" : []
 		},
 		{
@@ -258,6 +278,15 @@
 			"region-lookup-name" : "kinesis",
 			"authentication-service-name" : "kinesis",
 			"service-url":"https://kinesis.us-east-1.amazonaws.com/",
+            "mobile-platforms" : ["WinRT", "PCL", "WP8"]
+		},
+		{
+			"active" : true,
+			
+			"model" : "kms",
+			"base-name" : "KeyManagementService",
+			"region-lookup-name" : "kms",
+			"authentication-service-name" : "kms",
             "mobile-platforms" : ["WinRT", "PCL", "WP8"]
 		},
 		{

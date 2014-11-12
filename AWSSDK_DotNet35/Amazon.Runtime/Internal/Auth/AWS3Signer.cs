@@ -55,7 +55,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request</exception>
         public override void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey) 
         {
-            var signer = SelectSigner(clientConfig);
+            var signer = SelectSigner(request, clientConfig);
             var useV4 = signer is AWS4Signer;
 
             if (useV4)

@@ -232,7 +232,7 @@
         var documentation = CleanupDocumentation(exception.Documentation);
 
 #>
-        /// <exception cref="<#=exception.Name#>">
+        /// <exception cref="<#=this.Config.Namespace#>.Model.<#=exception.Name#>">
 <#+
         WriteCommentBlock("        ", documentation);
 #>

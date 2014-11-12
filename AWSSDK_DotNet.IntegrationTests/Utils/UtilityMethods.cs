@@ -157,19 +157,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             throw new TimeoutException(string.Format("Wait condition was not satisfied for {0} seconds", maxWaitSeconds));
         }
 
-        public static void GenerateFile(string path, long size)
+        public static void WriteFile(string path, string contents)
         {
             string fullPath = Path.GetFullPath(path);
             new DirectoryInfo(Path.GetDirectoryName(fullPath)).Create();
+            File.WriteAllText(fullPath, contents);
+        }
+        public static void GenerateFile(string path, long size)
+        {
+            string contents = GenerateTestContents(size);
+            WriteFile(path, contents);
+        }
 
-            using (StreamWriter stream = new StreamWriter(fullPath))
+        public static string GenerateTestContents(long size)
+        {
+            StringBuilder sb = new StringBuilder();
+            for (long i = 0; i < size; i++)
             {
-                for (long i = 0; i < size; i++)
-                {
-                    char c = (char)('a' + (i % 26));
-                    stream.Write(c);
-                }
+                char c = (char)('a' + (i % 26));
+                sb.Append(c);
             }
+            string contents = sb.ToString();
+            return contents;
+        }
+
+        public static string GenerateName()
+        {
+            return GenerateName(SDK_TEST_PREFIX + "-");
         }
 
         public static string GenerateName(string name)

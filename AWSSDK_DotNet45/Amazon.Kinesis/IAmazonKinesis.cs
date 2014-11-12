@@ -55,19 +55,19 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToStream service method.</param>
         /// 
         /// <returns>The response from the AddTagsToStream service method, as returned by Kinesis.</returns>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
-        /// <exception cref="ResourceInUseException">
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For example, you attempted to split
         /// a shard but the stream is not in the <code>ACTIVE</code> state.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. It might not be specified correctly, or
         /// it might not be in the <code>ACTIVE</code> state.
         /// </exception>
@@ -145,15 +145,15 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the CreateStream service method.</param>
         /// 
         /// <returns>The response from the CreateStream service method, as returned by Kinesis.</returns>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
-        /// <exception cref="ResourceInUseException">
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For example, you attempted to split
         /// a shard but the stream is not in the <code>ACTIVE</code> state.
         /// </exception>
@@ -210,11 +210,11 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the DeleteStream service method.</param>
         /// 
         /// <returns>The response from the DeleteStream service method, as returned by Kinesis.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. It might not be specified correctly, or
         /// it might not be in the <code>ACTIVE</code> state.
         /// </exception>
@@ -271,11 +271,11 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the DescribeStream service method.</param>
         /// 
         /// <returns>The response from the DescribeStream service method, as returned by Kinesis.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. It might not be specified correctly, or
         /// it might not be in the <code>ACTIVE</code> state.
         /// </exception>
@@ -357,20 +357,20 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the GetRecords service method.</param>
         /// 
         /// <returns>The response from the GetRecords service method, as returned by Kinesis.</returns>
-        /// <exception cref="ExpiredIteratorException">
+        /// <exception cref="Amazon.Kinesis.Model.ExpiredIteratorException">
         /// The provided iterator exceeds the maximum age allowed.
         /// </exception>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.Kinesis.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the requested data is too large for the available
         /// throughput. Reduce the frequency or size of your requests. For more information, see
         /// <a href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html" target="_blank">Error
         /// Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. It might not be specified correctly, or
         /// it might not be in the <code>ACTIVE</code> state.
         /// </exception>
@@ -448,17 +448,17 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the GetShardIterator service method.</param>
         /// 
         /// <returns>The response from the GetShardIterator service method, as returned by Kinesis.</returns>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.Kinesis.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the requested data is too large for the available
         /// throughput. Reduce the frequency or size of your requests. For more information, see
         /// <a href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html" target="_blank">Error
         /// Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. It might not be specified correctly, or
         /// it might not be in the <code>ACTIVE</code> state.
         /// </exception>
@@ -507,7 +507,7 @@ namespace Amazon.Kinesis
         /// </summary>
         /// 
         /// <returns>The response from the ListStreams service method, as returned by Kinesis.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
@@ -541,7 +541,7 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the ListStreams service method.</param>
         /// 
         /// <returns>The response from the ListStreams service method, as returned by Kinesis.</returns>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
@@ -569,15 +569,15 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForStream service method.</param>
         /// 
         /// <returns>The response from the ListTagsForStream service method, as returned by Kinesis.</returns>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. It might not be specified correctly, or
         /// it might not be in the <code>ACTIVE</code> state.
         /// </exception>
@@ -657,19 +657,19 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the MergeShards service method.</param>
         /// 
         /// <returns>The response from the MergeShards service method, as returned by Kinesis.</returns>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
-        /// <exception cref="ResourceInUseException">
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For example, you attempted to split
         /// a shard but the stream is not in the <code>ACTIVE</code> state.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. It might not be specified correctly, or
         /// it might not be in the <code>ACTIVE</code> state.
         /// </exception>
@@ -742,17 +742,17 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the PutRecord service method.</param>
         /// 
         /// <returns>The response from the PutRecord service method, as returned by Kinesis.</returns>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
         /// </exception>
-        /// <exception cref="ProvisionedThroughputExceededException">
+        /// <exception cref="Amazon.Kinesis.Model.ProvisionedThroughputExceededException">
         /// The request rate is too high, or the requested data is too large for the available
         /// throughput. Reduce the frequency or size of your requests. For more information, see
         /// <a href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html" target="_blank">Error
         /// Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. It might not be specified correctly, or
         /// it might not be in the <code>ACTIVE</code> state.
         /// </exception>
@@ -785,19 +785,19 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromStream service method.</param>
         /// 
         /// <returns>The response from the RemoveTagsFromStream service method, as returned by Kinesis.</returns>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
-        /// <exception cref="ResourceInUseException">
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For example, you attempted to split
         /// a shard but the stream is not in the <code>ACTIVE</code> state.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. It might not be specified correctly, or
         /// it might not be in the <code>ACTIVE</code> state.
         /// </exception>
@@ -891,19 +891,19 @@ namespace Amazon.Kinesis
         /// <param name="request">Container for the necessary parameters to execute the SplitShard service method.</param>
         /// 
         /// <returns>The response from the SplitShard service method, as returned by Kinesis.</returns>
-        /// <exception cref="InvalidArgumentException">
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
         /// </exception>
-        /// <exception cref="LimitExceededException">
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
-        /// <exception cref="ResourceInUseException">
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For example, you attempted to split
         /// a shard but the stream is not in the <code>ACTIVE</code> state.
         /// </exception>
-        /// <exception cref="ResourceNotFoundException">
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. It might not be specified correctly, or
         /// it might not be in the <code>ACTIVE</code> state.
         /// </exception>

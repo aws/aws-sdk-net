@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -68,6 +68,13 @@ namespace Amazon.EC2.Model
     /// This means that you may want to enable the I/O operations for the volume by calling
     /// the <a>EnableVolumeIO</a> action and then check the volume for data consistency.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Volume status is based on the volume status checks, and does not reflect the volume
+    /// state. Therefore, volume status does not indicate volumes in the <code>error</code>
+    /// state (for example, when a volume is incapable of accepting I/O.)
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeVolumeStatusRequest : AmazonEC2Request
     {

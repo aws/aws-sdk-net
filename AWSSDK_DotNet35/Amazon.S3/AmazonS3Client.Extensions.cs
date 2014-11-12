@@ -76,7 +76,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("The Expires specified is null!");
 
             var aws4Signing = AWSConfigs.S3Config.UseSignatureVersion4;
-            var region = AWS4Signer.DetermineSigningRegion(Config, "s3", alternateEndpoint: null);
+            var region = AWS4Signer.DetermineSigningRegion(Config, "s3", alternateEndpoint: null, request: null);
             if (aws4Signing && string.IsNullOrEmpty(region))
                 throw new InvalidOperationException("To use AWS4 signing, a region must be specified in the client configuration using the AuthenticationRegion or Region properties, or be determinable from the service URL.");
 
@@ -166,6 +166,8 @@ namespace Amazon.S3
                 request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionHeader, S3Transforms.ToStringValue(getPreSignedUrlRequest.ServerSideEncryptionMethod));
             if (getPreSignedUrlRequest.IsSetServerSideEncryptionCustomerMethod())
                 request.Headers.Add(HeaderKeys.XAmzSSECustomerAlgorithmHeader, getPreSignedUrlRequest.ServerSideEncryptionCustomerMethod);
+            if (getPreSignedUrlRequest.IsSetServerSideEncryptionKeyManagementServiceKeyId())
+                request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader, getPreSignedUrlRequest.ServerSideEncryptionKeyManagementServiceKeyId);
 
             var queryParameters = request.Parameters;
 

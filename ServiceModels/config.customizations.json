@@ -1,0 +1,8 @@
+{
+  "noArgOverloads": [
+    "DescribeConfigurationRecorders",
+    "DescribeConfigurationRecorderStatus",
+    "DescribeDeliveryChannels",
+    "DescribeDeliveryChannelStatus"
+  ]
+}

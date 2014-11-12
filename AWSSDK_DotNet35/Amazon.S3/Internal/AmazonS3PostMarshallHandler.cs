@@ -99,7 +99,8 @@ namespace Amazon.S3.Internal
 
         private static HashSet<string> httpsOnlyHeaders = new HashSet<string>
         {
-            HeaderKeys.XAmzSSECustomerKeyHeader
+            HeaderKeys.XAmzSSECustomerKeyHeader,
+            HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader
         };
 
         private static char[] separators = new char[] { '/', '?' };

@@ -48,21 +48,21 @@ namespace Amazon.ImportExport
         /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
         /// 
         /// <returns>The response from the CancelJob service method, as returned by ImportExport.</returns>
-        /// <exception cref="CanceledJobIdException">
+        /// <exception cref="Amazon.ImportExport.Model.CanceledJobIdException">
         /// The specified job ID has been canceled and is no longer valid.
         /// </exception>
-        /// <exception cref="ExpiredJobIdException">
+        /// <exception cref="Amazon.ImportExport.Model.ExpiredJobIdException">
         /// Indicates that the specified job has expired out of the system.
         /// </exception>
-        /// <exception cref="InvalidAccessKeyIdException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAccessKeyIdException">
         /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
         /// value. The manifest and the request authentication must use the same AWS Access Key
         /// ID.
         /// </exception>
-        /// <exception cref="InvalidJobIdException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidJobIdException">
         /// The JOBID was missing, not found, or not associated with the AWS account.
         /// </exception>
-        /// <exception cref="UnableToCancelJobIdException">
+        /// <exception cref="Amazon.ImportExport.Model.UnableToCancelJobIdException">
         /// AWS Import/Export cannot cancel the job
         /// </exception>
         CancelJobResponse CancelJob(CancelJobRequest request);
@@ -107,50 +107,50 @@ namespace Amazon.ImportExport
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// 
         /// <returns>The response from the CreateJob service method, as returned by ImportExport.</returns>
-        /// <exception cref="BucketPermissionException">
+        /// <exception cref="Amazon.ImportExport.Model.BucketPermissionException">
         /// The account specified does not have the appropriate bucket permissions.
         /// </exception>
-        /// <exception cref="InvalidAccessKeyIdException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAccessKeyIdException">
         /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
         /// value. The manifest and the request authentication must use the same AWS Access Key
         /// ID.
         /// </exception>
-        /// <exception cref="InvalidAddressException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAddressException">
         /// The address specified in the manifest is invalid.
         /// </exception>
-        /// <exception cref="InvalidCustomsException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidCustomsException">
         /// One or more customs parameters was invalid. Please correct and resubmit.
         /// </exception>
-        /// <exception cref="InvalidFileSystemException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidFileSystemException">
         /// File system specified in export manifest is invalid.
         /// </exception>
-        /// <exception cref="InvalidManifestFieldException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidManifestFieldException">
         /// One or more manifest fields was invalid. Please correct and resubmit.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidParameterException">
         /// One or more parameters had an invalid value.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidParameterException">
         /// One or more parameters had an invalid value.
         /// </exception>
-        /// <exception cref="MalformedManifestException">
+        /// <exception cref="Amazon.ImportExport.Model.MalformedManifestException">
         /// Your manifest is not well-formed.
         /// </exception>
-        /// <exception cref="MissingCustomsException">
+        /// <exception cref="Amazon.ImportExport.Model.MissingCustomsException">
         /// One or more required customs parameters was missing from the manifest.
         /// </exception>
-        /// <exception cref="MissingManifestFieldException">
+        /// <exception cref="Amazon.ImportExport.Model.MissingManifestFieldException">
         /// One or more required fields were missing from the manifest file. Please correct and
         /// resubmit.
         /// </exception>
-        /// <exception cref="MissingParameterException">
+        /// <exception cref="Amazon.ImportExport.Model.MissingParameterException">
         /// One or more required parameters was missing from the request.
         /// </exception>
-        /// <exception cref="MultipleRegionsException">
+        /// <exception cref="Amazon.ImportExport.Model.MultipleRegionsException">
         /// Your manifest file contained buckets from multiple regions. A job is restricted to
         /// buckets from one region. Please correct and resubmit.
         /// </exception>
-        /// <exception cref="NoSuchBucketException">
+        /// <exception cref="Amazon.ImportExport.Model.NoSuchBucketException">
         /// The specified bucket does not exist. Create the specified bucket or change the manifest's
         /// bucket, exportBucket, or logBucket field to a bucket that the account, as specified
         /// by the manifest's Access Key ID, has write permissions to.
@@ -195,18 +195,18 @@ namespace Amazon.ImportExport
         /// <param name="request">Container for the necessary parameters to execute the GetStatus service method.</param>
         /// 
         /// <returns>The response from the GetStatus service method, as returned by ImportExport.</returns>
-        /// <exception cref="CanceledJobIdException">
+        /// <exception cref="Amazon.ImportExport.Model.CanceledJobIdException">
         /// The specified job ID has been canceled and is no longer valid.
         /// </exception>
-        /// <exception cref="ExpiredJobIdException">
+        /// <exception cref="Amazon.ImportExport.Model.ExpiredJobIdException">
         /// Indicates that the specified job has expired out of the system.
         /// </exception>
-        /// <exception cref="InvalidAccessKeyIdException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAccessKeyIdException">
         /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
         /// value. The manifest and the request authentication must use the same AWS Access Key
         /// ID.
         /// </exception>
-        /// <exception cref="InvalidJobIdException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidJobIdException">
         /// The JOBID was missing, not found, or not associated with the AWS account.
         /// </exception>
         GetStatusResponse GetStatus(GetStatusRequest request);
@@ -249,12 +249,12 @@ namespace Amazon.ImportExport
         /// </summary>
         /// 
         /// <returns>The response from the ListJobs service method, as returned by ImportExport.</returns>
-        /// <exception cref="InvalidAccessKeyIdException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAccessKeyIdException">
         /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
         /// value. The manifest and the request authentication must use the same AWS Access Key
         /// ID.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidParameterException">
         /// One or more parameters had an invalid value.
         /// </exception>
         ListJobsResponse ListJobs();
@@ -268,12 +268,12 @@ namespace Amazon.ImportExport
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// 
         /// <returns>The response from the ListJobs service method, as returned by ImportExport.</returns>
-        /// <exception cref="InvalidAccessKeyIdException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAccessKeyIdException">
         /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
         /// value. The manifest and the request authentication must use the same AWS Access Key
         /// ID.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidParameterException">
         /// One or more parameters had an invalid value.
         /// </exception>
         ListJobsResponse ListJobs(ListJobsRequest request);
@@ -317,56 +317,56 @@ namespace Amazon.ImportExport
         /// <param name="request">Container for the necessary parameters to execute the UpdateJob service method.</param>
         /// 
         /// <returns>The response from the UpdateJob service method, as returned by ImportExport.</returns>
-        /// <exception cref="BucketPermissionException">
+        /// <exception cref="Amazon.ImportExport.Model.BucketPermissionException">
         /// The account specified does not have the appropriate bucket permissions.
         /// </exception>
-        /// <exception cref="CanceledJobIdException">
+        /// <exception cref="Amazon.ImportExport.Model.CanceledJobIdException">
         /// The specified job ID has been canceled and is no longer valid.
         /// </exception>
-        /// <exception cref="ExpiredJobIdException">
+        /// <exception cref="Amazon.ImportExport.Model.ExpiredJobIdException">
         /// Indicates that the specified job has expired out of the system.
         /// </exception>
-        /// <exception cref="InvalidAccessKeyIdException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAccessKeyIdException">
         /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
         /// value. The manifest and the request authentication must use the same AWS Access Key
         /// ID.
         /// </exception>
-        /// <exception cref="InvalidAddressException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAddressException">
         /// The address specified in the manifest is invalid.
         /// </exception>
-        /// <exception cref="InvalidCustomsException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidCustomsException">
         /// One or more customs parameters was invalid. Please correct and resubmit.
         /// </exception>
-        /// <exception cref="InvalidFileSystemException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidFileSystemException">
         /// File system specified in export manifest is invalid.
         /// </exception>
-        /// <exception cref="InvalidJobIdException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidJobIdException">
         /// The JOBID was missing, not found, or not associated with the AWS account.
         /// </exception>
-        /// <exception cref="InvalidManifestFieldException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidManifestFieldException">
         /// One or more manifest fields was invalid. Please correct and resubmit.
         /// </exception>
-        /// <exception cref="InvalidParameterException">
+        /// <exception cref="Amazon.ImportExport.Model.InvalidParameterException">
         /// One or more parameters had an invalid value.
         /// </exception>
-        /// <exception cref="MalformedManifestException">
+        /// <exception cref="Amazon.ImportExport.Model.MalformedManifestException">
         /// Your manifest is not well-formed.
         /// </exception>
-        /// <exception cref="MissingCustomsException">
+        /// <exception cref="Amazon.ImportExport.Model.MissingCustomsException">
         /// One or more required customs parameters was missing from the manifest.
         /// </exception>
-        /// <exception cref="MissingManifestFieldException">
+        /// <exception cref="Amazon.ImportExport.Model.MissingManifestFieldException">
         /// One or more required fields were missing from the manifest file. Please correct and
         /// resubmit.
         /// </exception>
-        /// <exception cref="MissingParameterException">
+        /// <exception cref="Amazon.ImportExport.Model.MissingParameterException">
         /// One or more required parameters was missing from the request.
         /// </exception>
-        /// <exception cref="MultipleRegionsException">
+        /// <exception cref="Amazon.ImportExport.Model.MultipleRegionsException">
         /// Your manifest file contained buckets from multiple regions. A job is restricted to
         /// buckets from one region. Please correct and resubmit.
         /// </exception>
-        /// <exception cref="NoSuchBucketException">
+        /// <exception cref="Amazon.ImportExport.Model.NoSuchBucketException">
         /// The specified bucket does not exist. Create the specified bucket or change the manifest's
         /// bucket, exportBucket, or logBucket field to a bucket that the account, as specified
         /// by the manifest's Access Key ID, has write permissions to.
