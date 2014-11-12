@@ -12,69 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeMetricCollectionTypesResult Unmarshaller
-     /// </summary>
-    internal class DescribeMetricCollectionTypesResultUnmarshaller : IUnmarshaller<DescribeMetricCollectionTypesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeMetricCollectionTypesResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeMetricCollectionTypes Object
+    /// </summary>  
+    public class DescribeMetricCollectionTypesResultUnmarshaller : IUnmarshaller<DescribeMetricCollectionTypesResult, XmlUnmarshallerContext>
     {
         public DescribeMetricCollectionTypesResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeMetricCollectionTypesResult describeMetricCollectionTypesResult = new DescribeMetricCollectionTypesResult();
+            DescribeMetricCollectionTypesResult result = new DescribeMetricCollectionTypesResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Metrics/member", targetDepth))
-                    {
-                        describeMetricCollectionTypesResult.Metrics.Add(MetricCollectionTypeUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("Granularities/member", targetDepth))
                     {
-                        describeMetricCollectionTypesResult.Granularities.Add(MetricGranularityTypeUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = MetricGranularityTypeUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.Granularities.Add(item);
                         continue;
                     }
-                }
+                    if (context.TestExpression("Metrics/member", targetDepth))
+                    {
+                        var unmarshaller = MetricCollectionTypeUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.Metrics.Add(item);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeMetricCollectionTypesResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeMetricCollectionTypesResult;
+            return result;
         }
 
-        public DescribeMetricCollectionTypesResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeMetricCollectionTypesResultUnmarshaller instance;
-
-        public static DescribeMetricCollectionTypesResultUnmarshaller GetInstance() 
+        public static DescribeMetricCollectionTypesResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeMetricCollectionTypesResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeMetricCollectionTypesResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

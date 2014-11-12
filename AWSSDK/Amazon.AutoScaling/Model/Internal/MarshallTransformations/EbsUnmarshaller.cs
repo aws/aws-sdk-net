@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Ebs Unmarshaller
-     /// </summary>
-    internal class EbsUnmarshaller : IUnmarshaller<Ebs, XmlUnmarshallerContext>, IUnmarshaller<Ebs, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Ebs Object
+    /// </summary>  
+    public class EbsUnmarshaller : IUnmarshaller<Ebs, XmlUnmarshallerContext>, IUnmarshaller<Ebs, JsonUnmarshallerContext>
     {
-        public Ebs Unmarshall(XmlUnmarshallerContext context) 
+        public Ebs Unmarshall(XmlUnmarshallerContext context)
         {
-            Ebs ebs = new Ebs();
+            Ebs unmarshalledObject = new Ebs();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,63 +44,62 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("SnapshotId", targetDepth))
-                    {
-                        ebs.SnapshotId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("VolumeSize", targetDepth))
-                    {
-                        ebs.VolumeSize = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("VolumeType", targetDepth))
-                    {
-                        ebs.VolumeType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("DeleteOnTermination", targetDepth))
                     {
-                        ebs.DeleteOnTermination = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        unmarshalledObject.DeleteOnTermination = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("Iops", targetDepth))
                     {
-                        ebs.Iops = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.GetInstance();
+                        unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SnapshotId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.SnapshotId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VolumeSize", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.GetInstance();
+                        unmarshalledObject.VolumeSize = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VolumeType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.VolumeType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return ebs;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return ebs;
+            return unmarshalledObject;
         }
 
-        public Ebs Unmarshall(JsonUnmarshallerContext context) 
+        public Ebs Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static EbsUnmarshaller instance;
-
-        public static EbsUnmarshaller GetInstance() 
+        public static EbsUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new EbsUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new EbsUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

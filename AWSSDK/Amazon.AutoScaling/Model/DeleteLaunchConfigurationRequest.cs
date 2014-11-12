@@ -25,36 +25,32 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLaunchConfiguration operation.
-    /// <para> Deletes the specified LaunchConfiguration. </para> <para> The specified launch configuration must not be attached to an Auto Scaling
-    /// group. When this call completes, the launch configuration is no longer available for use. </para>
+    /// Deletes the specified <a>LaunchConfiguration</a>.        
+    /// 
+    ///         
+    /// <para>
+    ///         The specified launch configuration must not be         attached to an Auto
+    /// Scaling group. When this call completes,        the launch configuration is no longer
+    /// available for use.        
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DeleteLaunchConfiguration"/>
-    public class DeleteLaunchConfigurationRequest : AmazonWebServiceRequest
+    public partial class DeleteLaunchConfigurationRequest : AmazonWebServiceRequest
     {
-        private string launchConfigurationName;
+        private string _launchConfigurationName;
+
 
         /// <summary>
-        /// The name of the launch configuration.
-        ///  
+        /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///             The name of the launch configuration.        
         /// </para>
         /// </summary>
         public string LaunchConfigurationName
         {
-            get { return this.launchConfigurationName; }
-            set { this.launchConfigurationName = value; }
+            get { return this._launchConfigurationName; }
+            set { this._launchConfigurationName = value; }
         }
+
 
         /// <summary>
         /// Sets the LaunchConfigurationName property
@@ -64,16 +60,15 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteLaunchConfigurationRequest WithLaunchConfigurationName(string launchConfigurationName)
         {
-            this.launchConfigurationName = launchConfigurationName;
+            this._launchConfigurationName = launchConfigurationName;
             return this;
         }
-            
 
         // Check to see if LaunchConfigurationName property is set
         internal bool IsSetLaunchConfigurationName()
         {
-            return this.launchConfigurationName != null;
+            return this._launchConfigurationName != null;
         }
+
     }
 }
-    

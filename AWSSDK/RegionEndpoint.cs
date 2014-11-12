@@ -68,6 +68,11 @@ namespace Amazon
         public static readonly RegionEndpoint EUWest1 = new RegionEndpoint("eu-west-1", "EU West (Ireland)");
 
         /// <summary>
+        /// The EU Central (Frankfurt) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint EUCentral1 = new RegionEndpoint("eu-central-1", "EU Central (Frankfurt)");
+
+        /// <summary>
         /// The Asia Pacific (Tokyo) endpoint.
         /// </summary>
         public static readonly RegionEndpoint APNortheast1 = new RegionEndpoint("ap-northeast-1", "Asia Pacific (Tokyo)");
@@ -101,6 +106,7 @@ namespace Amazon
             hashBySystemName.Add(USWest1.SystemName, USWest1);
             hashBySystemName.Add(USWest2.SystemName, USWest2);
             hashBySystemName.Add(EUWest1.SystemName, EUWest1);
+            hashBySystemName.Add(EUCentral1.SystemName, EUCentral1);
             hashBySystemName.Add(APNortheast1.SystemName, APNortheast1);
             hashBySystemName.Add(APSoutheast1.SystemName, APSoutheast1);
             hashBySystemName.Add(APSoutheast2.SystemName, APSoutheast2);

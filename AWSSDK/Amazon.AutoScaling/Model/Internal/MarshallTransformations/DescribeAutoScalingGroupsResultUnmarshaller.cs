@@ -12,69 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeAutoScalingGroupsResult Unmarshaller
-     /// </summary>
-    internal class DescribeAutoScalingGroupsResultUnmarshaller : IUnmarshaller<DescribeAutoScalingGroupsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeAutoScalingGroupsResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeAutoScalingGroups Object
+    /// </summary>  
+    public class DescribeAutoScalingGroupsResultUnmarshaller : IUnmarshaller<DescribeAutoScalingGroupsResult, XmlUnmarshallerContext>
     {
         public DescribeAutoScalingGroupsResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeAutoScalingGroupsResult describeAutoScalingGroupsResult = new DescribeAutoScalingGroupsResult();
+            DescribeAutoScalingGroupsResult result = new DescribeAutoScalingGroupsResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("AutoScalingGroups/member", targetDepth))
                     {
-                        describeAutoScalingGroupsResult.AutoScalingGroups.Add(AutoScalingGroupUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("NextToken", targetDepth))
-                    {
-                        describeAutoScalingGroupsResult.NextToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = AutoScalingGroupUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.AutoScalingGroups.Add(item);
                         continue;
                     }
-                }
+                    if (context.TestExpression("NextToken", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.NextToken = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeAutoScalingGroupsResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeAutoScalingGroupsResult;
+            return result;
         }
 
-        public DescribeAutoScalingGroupsResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeAutoScalingGroupsResultUnmarshaller instance;
-
-        public static DescribeAutoScalingGroupsResultUnmarshaller GetInstance() 
+        public static DescribeAutoScalingGroupsResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeAutoScalingGroupsResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeAutoScalingGroupsResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

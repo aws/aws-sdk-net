@@ -18,39 +18,33 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> An Auto Scaling process that has been suspended. For more information, see ProcessType. </para>
+    /// An Auto Scaling process that has been suspended.            For more information,
+    /// see <a>ProcessType</a>.
     /// </summary>
     public partial class SuspendedProcess
     {
-        
-        private string processName;
-        private string suspensionReason;
+        private string _processName;
+        private string _suspensionReason;
+
 
         /// <summary>
-        /// The name of the suspended process.
-        ///  
+        /// Gets and sets the property ProcessName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///             The name of the suspended process.        
         /// </para>
         /// </summary>
         public string ProcessName
         {
-            get { return this.processName; }
-            set { this.processName = value; }
+            get { return this._processName; }
+            set { this._processName = value; }
         }
+
 
         /// <summary>
         /// Sets the ProcessName property
@@ -60,39 +54,29 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SuspendedProcess WithProcessName(string processName)
         {
-            this.processName = processName;
+            this._processName = processName;
             return this;
         }
-            
 
         // Check to see if ProcessName property is set
         internal bool IsSetProcessName()
         {
-            return this.processName != null;
+            return this._processName != null;
         }
 
+
         /// <summary>
-        /// The reason that the process was suspended.
-        ///  
+        /// Gets and sets the property SuspensionReason. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///             The reason that the process was suspended.        
         /// </para>
         /// </summary>
         public string SuspensionReason
         {
-            get { return this.suspensionReason; }
-            set { this.suspensionReason = value; }
+            get { return this._suspensionReason; }
+            set { this._suspensionReason = value; }
         }
+
 
         /// <summary>
         /// Sets the SuspensionReason property
@@ -102,15 +86,15 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SuspendedProcess WithSuspensionReason(string suspensionReason)
         {
-            this.suspensionReason = suspensionReason;
+            this._suspensionReason = suspensionReason;
             return this;
         }
-            
 
         // Check to see if SuspensionReason property is set
         internal bool IsSetSuspensionReason()
         {
-            return this.suspensionReason != null;
+            return this._suspensionReason != null;
         }
+
     }
 }

@@ -12,69 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeScalingActivitiesResult Unmarshaller
-     /// </summary>
-    internal class DescribeScalingActivitiesResultUnmarshaller : IUnmarshaller<DescribeScalingActivitiesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeScalingActivitiesResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeScalingActivities Object
+    /// </summary>  
+    public class DescribeScalingActivitiesResultUnmarshaller : IUnmarshaller<DescribeScalingActivitiesResult, XmlUnmarshallerContext>
     {
         public DescribeScalingActivitiesResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeScalingActivitiesResult describeScalingActivitiesResult = new DescribeScalingActivitiesResult();
+            DescribeScalingActivitiesResult result = new DescribeScalingActivitiesResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("Activities/member", targetDepth))
                     {
-                        describeScalingActivitiesResult.Activities.Add(ActivityUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("NextToken", targetDepth))
-                    {
-                        describeScalingActivitiesResult.NextToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = ActivityUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.Activities.Add(item);
                         continue;
                     }
-                }
+                    if (context.TestExpression("NextToken", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.NextToken = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeScalingActivitiesResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeScalingActivitiesResult;
+            return result;
         }
 
-        public DescribeScalingActivitiesResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeScalingActivitiesResultUnmarshaller instance;
-
-        public static DescribeScalingActivitiesResultUnmarshaller GetInstance() 
+        public static DescribeScalingActivitiesResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeScalingActivitiesResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeScalingActivitiesResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

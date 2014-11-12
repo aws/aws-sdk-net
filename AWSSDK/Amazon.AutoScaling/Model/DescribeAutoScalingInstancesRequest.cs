@@ -25,75 +25,89 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAutoScalingInstances operation.
-    /// <para> Returns a description of each Auto Scaling instance in the <c>InstanceIds</c> list. If a list is not provided, the service returns
-    /// the full details of all instances up to a maximum of 50. By default, the service returns a list of 20 items. </para> <para> This action
-    /// supports pagination by returning a token if there are more pages to retrieve. To get the next page, call this action again with the returned
-    /// token as the <c>NextToken</c> parameter. </para>
+    /// Returns a description of each Auto Scaling instance in the <code>InstanceIds</code>
+    /// list.            If a list is not provided, the service returns the full details of
+    /// all instances up to a maximum of 50.             By default, the service returns a
+    /// list of 20 items.        
+    /// 
+    ///         
+    /// <para>
+    ///             This action supports pagination by returning a token if there are more
+    /// pages to retrieve.            To get the next page, call this action again with the
+    /// returned token as the <code>NextToken</code> parameter.        
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeAutoScalingInstances"/>
-    public class DescribeAutoScalingInstancesRequest : AmazonWebServiceRequest
+    public partial class DescribeAutoScalingInstancesRequest : AmazonWebServiceRequest
     {
-        private List<string> instanceIds = new List<string>();
-        private int? maxRecords;
-        private string nextToken;
+        private List<string> _instanceIds = new List<string>();
+        private int? _maxRecords;
+        private string _nextToken;
+
 
         /// <summary>
-        /// The list of Auto Scaling instances to describe. If this list is omitted, all auto scaling instances are described. The list of requested
-        /// instances cannot contain more than 50 items. If unknown instances are requested, they are ignored with no error.
-        ///  
+        /// Gets and sets the property InstanceIds. 
+        /// <para>
+        ///             The list of Auto Scaling instances to describe.             If this list
+        /// is omitted, all auto scaling instances are described.             The list of requested
+        /// instances cannot contain more than            50 items. If unknown instances are requested,
+        ///            they are ignored with no error.        
+        /// </para>
         /// </summary>
         public List<string> InstanceIds
         {
-            get { return this.instanceIds; }
-            set { this.instanceIds = value; }
+            get { return this._instanceIds; }
+            set { this._instanceIds = value; }
         }
+
         /// <summary>
-        /// Adds elements to the InstanceIds collection
+        /// Sets the InstanceIds property
         /// </summary>
         /// <param name="instanceIds">The values to add to the InstanceIds collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingInstancesRequest WithInstanceIds(params string[] instanceIds)
         {
-            foreach (string element in instanceIds)
+            foreach (var element in instanceIds)
             {
-                this.instanceIds.Add(element);
+                this._instanceIds.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the InstanceIds collection
+        /// Sets the InstanceIds property
         /// </summary>
         /// <param name="instanceIds">The values to add to the InstanceIds collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingInstancesRequest WithInstanceIds(IEnumerable<string> instanceIds)
         {
-            foreach (string element in instanceIds)
+            foreach (var element in instanceIds)
             {
-                this.instanceIds.Add(element);
+                this._instanceIds.Add(element);
             }
-
             return this;
         }
-
         // Check to see if InstanceIds property is set
         internal bool IsSetInstanceIds()
         {
-            return this.instanceIds.Count > 0;
+            return this._instanceIds != null && this._instanceIds.Count > 0; 
         }
 
+
         /// <summary>
-        /// The maximum number of Auto Scaling instances to be described with each call.
-        ///  
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        ///             The maximum number of Auto Scaling instances to be described         
+        ///   with each call.        
+        /// </para>
         /// </summary>
         public int MaxRecords
         {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
         }
+
 
         /// <summary>
         /// Sets the MaxRecords property
@@ -103,35 +117,30 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingInstancesRequest WithMaxRecords(int maxRecords)
         {
-            this.maxRecords = maxRecords;
+            this._maxRecords = maxRecords;
             return this;
         }
-            
 
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;
+            return this._maxRecords.HasValue; 
         }
 
+
         /// <summary>
-        /// The token returned by a previous call to indicate that there is more data available.
-        ///  
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///             The token returned by a previous call             to indicate that there
+        /// is more data available.        
         /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
+
 
         /// <summary>
         /// Sets the NextToken property
@@ -141,16 +150,15 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingInstancesRequest WithNextToken(string nextToken)
         {
-            this.nextToken = nextToken;
+            this._nextToken = nextToken;
             return this;
         }
-            
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
     }
 }
-    

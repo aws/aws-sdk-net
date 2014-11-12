@@ -18,82 +18,81 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>AutoScalingInstancesType</c> data type. </para>
+    /// The <code>AutoScalingInstancesType</code> data type.
     /// </summary>
     public partial class DescribeAutoScalingInstancesResult
     {
-        
-        private List<AutoScalingInstanceDetails> autoScalingInstances = new List<AutoScalingInstanceDetails>();
-        private string nextToken;
+        private List<AutoScalingInstanceDetails> _autoScalingInstances = new List<AutoScalingInstanceDetails>();
+        private string _nextToken;
+
 
         /// <summary>
-        /// A list of Auto Scaling instances.
-        ///  
+        /// Gets and sets the property AutoScalingInstances. 
+        /// <para>
+        ///             A list of Auto Scaling instances.        
+        /// </para>
         /// </summary>
         public List<AutoScalingInstanceDetails> AutoScalingInstances
         {
-            get { return this.autoScalingInstances; }
-            set { this.autoScalingInstances = value; }
+            get { return this._autoScalingInstances; }
+            set { this._autoScalingInstances = value; }
         }
+
         /// <summary>
-        /// Adds elements to the AutoScalingInstances collection
+        /// Sets the AutoScalingInstances property
         /// </summary>
         /// <param name="autoScalingInstances">The values to add to the AutoScalingInstances collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingInstancesResult WithAutoScalingInstances(params AutoScalingInstanceDetails[] autoScalingInstances)
         {
-            foreach (AutoScalingInstanceDetails element in autoScalingInstances)
+            foreach (var element in autoScalingInstances)
             {
-                this.autoScalingInstances.Add(element);
+                this._autoScalingInstances.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the AutoScalingInstances collection
+        /// Sets the AutoScalingInstances property
         /// </summary>
         /// <param name="autoScalingInstances">The values to add to the AutoScalingInstances collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingInstancesResult WithAutoScalingInstances(IEnumerable<AutoScalingInstanceDetails> autoScalingInstances)
         {
-            foreach (AutoScalingInstanceDetails element in autoScalingInstances)
+            foreach (var element in autoScalingInstances)
             {
-                this.autoScalingInstances.Add(element);
+                this._autoScalingInstances.Add(element);
             }
-
             return this;
         }
-
         // Check to see if AutoScalingInstances property is set
         internal bool IsSetAutoScalingInstances()
         {
-            return this.autoScalingInstances.Count > 0;
+            return this._autoScalingInstances != null && this._autoScalingInstances.Count > 0; 
         }
 
+
         /// <summary>
-        /// A string that marks the start of the next batch of returned results.
-        ///  
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///             A string that marks the start of the next batch of returned results. 
+        ///                               
         /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
+
 
         /// <summary>
         /// Sets the NextToken property
@@ -103,15 +102,15 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingInstancesResult WithNextToken(string nextToken)
         {
-            this.nextToken = nextToken;
+            this._nextToken = nextToken;
             return this;
         }
-            
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
     }
 }

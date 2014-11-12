@@ -18,38 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The MetricGranularityType data type. </para>
+    /// The MetricGranularityType data type.
     /// </summary>
     public partial class MetricGranularityType
     {
-        
-        private string granularity;
+        private string _granularity;
+
 
         /// <summary>
-        /// The granularity of a Metric.
-        ///  
+        /// Gets and sets the property Granularity. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///             The granularity of a Metric.        
         /// </para>
         /// </summary>
         public string Granularity
         {
-            get { return this.granularity; }
-            set { this.granularity = value; }
+            get { return this._granularity; }
+            set { this._granularity = value; }
         }
+
 
         /// <summary>
         /// Sets the Granularity property
@@ -59,15 +52,15 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public MetricGranularityType WithGranularity(string granularity)
         {
-            this.granularity = granularity;
+            this._granularity = granularity;
             return this;
         }
-            
 
         // Check to see if Granularity property is set
         internal bool IsSetGranularity()
         {
-            return this.granularity != null;
+            return this._granularity != null;
         }
+
     }
 }

@@ -18,35 +18,34 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para>The <c>Filter</c> data type.</para>
+    /// The <code>Filter</code> data type.
     /// </summary>
     public partial class Filter
     {
-        
-        private string name;
-        private List<string> values = new List<string>();
+        private string _name;
+        private List<string> _values = new List<string>();
+
 
         /// <summary>
-        /// The name of the filter. Valid Name values are: <c>"auto-scaling-group"</c>, <c>"key"</c>, <c>"value"</c>, and <c>"propagate-at-launch"</c>.
-        ///  
+        /// Gets and sets the property Name. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///             The name of the filter. Valid Name values are:             <code>"auto-scaling-group"</code>,
+        /// <code>"key"</code>, <code>"value"</code>, and <code>"propagate-at-launch"</code>.
+        ///        
         /// </para>
         /// </summary>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
+
 
         /// <summary>
         /// Sets the Name property
@@ -56,62 +55,63 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Filter WithName(string name)
         {
-            this.name = name;
+            this._name = name;
             return this;
         }
-            
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;
+            return this._name != null;
         }
 
+
         /// <summary>
-        /// The value of the filter.
-        ///  
+        /// Gets and sets the property Values. 
+        /// <para>
+        ///             The value of the filter.        
+        /// </para>
         /// </summary>
         public List<string> Values
         {
-            get { return this.values; }
-            set { this.values = value; }
+            get { return this._values; }
+            set { this._values = value; }
         }
+
         /// <summary>
-        /// Adds elements to the Values collection
+        /// Sets the Values property
         /// </summary>
         /// <param name="values">The values to add to the Values collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Filter WithValues(params string[] values)
         {
-            foreach (string element in values)
+            foreach (var element in values)
             {
-                this.values.Add(element);
+                this._values.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Values collection
+        /// Sets the Values property
         /// </summary>
         /// <param name="values">The values to add to the Values collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Filter WithValues(IEnumerable<string> values)
         {
-            foreach (string element in values)
+            foreach (var element in values)
             {
-                this.values.Add(element);
+                this._values.Add(element);
             }
-
             return this;
         }
-
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this.values.Count > 0;
+            return this._values != null && this._values.Count > 0; 
         }
+
     }
 }

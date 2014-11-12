@@ -12,63 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeTerminationPolicyTypesResult Unmarshaller
-     /// </summary>
-    internal class DescribeTerminationPolicyTypesResultUnmarshaller : IUnmarshaller<DescribeTerminationPolicyTypesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeTerminationPolicyTypesResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeTerminationPolicyTypes Object
+    /// </summary>  
+    public class DescribeTerminationPolicyTypesResultUnmarshaller : IUnmarshaller<DescribeTerminationPolicyTypesResult, XmlUnmarshallerContext>
     {
         public DescribeTerminationPolicyTypesResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeTerminationPolicyTypesResult describeTerminationPolicyTypesResult = new DescribeTerminationPolicyTypesResult();
+            DescribeTerminationPolicyTypesResult result = new DescribeTerminationPolicyTypesResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("TerminationPolicyTypes/member", targetDepth))
                     {
-                        describeTerminationPolicyTypesResult.TerminationPolicyTypes.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.TerminationPolicyTypes.Add(item);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeTerminationPolicyTypesResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeTerminationPolicyTypesResult;
+            return result;
         }
 
-        public DescribeTerminationPolicyTypesResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeTerminationPolicyTypesResultUnmarshaller instance;
-
-        public static DescribeTerminationPolicyTypesResultUnmarshaller GetInstance() 
+        public static DescribeTerminationPolicyTypesResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeTerminationPolicyTypesResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeTerminationPolicyTypesResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

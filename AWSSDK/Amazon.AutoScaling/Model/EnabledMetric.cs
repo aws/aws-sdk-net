@@ -18,81 +18,32 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>EnabledMetric</c> data type. </para>
+    /// The <code>EnabledMetric</code> data type.
     /// </summary>
     public partial class EnabledMetric
     {
-        
-        private string metric;
-        private string granularity;
+        private string _granularity;
+        private string _metric;
+
 
         /// <summary>
-        /// The name of the enabled metric.
-        ///  
+        /// Gets and sets the property Granularity. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Metric
-        {
-            get { return this.metric; }
-            set { this.metric = value; }
-        }
-
-        /// <summary>
-        /// Sets the Metric property
-        /// </summary>
-        /// <param name="metric">The value to set for the Metric property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public EnabledMetric WithMetric(string metric)
-        {
-            this.metric = metric;
-            return this;
-        }
-            
-
-        // Check to see if Metric property is set
-        internal bool IsSetMetric()
-        {
-            return this.metric != null;
-        }
-
-        /// <summary>
-        /// The granularity of the enabled metric.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///             The granularity of the enabled metric.         
         /// </para>
         /// </summary>
         public string Granularity
         {
-            get { return this.granularity; }
-            set { this.granularity = value; }
+            get { return this._granularity; }
+            set { this._granularity = value; }
         }
+
 
         /// <summary>
         /// Sets the Granularity property
@@ -102,15 +53,47 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnabledMetric WithGranularity(string granularity)
         {
-            this.granularity = granularity;
+            this._granularity = granularity;
             return this;
         }
-            
 
         // Check to see if Granularity property is set
         internal bool IsSetGranularity()
         {
-            return this.granularity != null;
+            return this._granularity != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Metric. 
+        /// <para>
+        ///             The name of the enabled metric.        
+        /// </para>
+        /// </summary>
+        public string Metric
+        {
+            get { return this._metric; }
+            set { this._metric = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Metric property
+        /// </summary>
+        /// <param name="metric">The value to set for the Metric property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public EnabledMetric WithMetric(string metric)
+        {
+            this._metric = metric;
+            return this;
+        }
+
+        // Check to see if Metric property is set
+        internal bool IsSetMetric()
+        {
+            return this._metric != null;
+        }
+
     }
 }

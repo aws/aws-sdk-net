@@ -18,26 +18,33 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The output of the DescribeAccountLimitsResult action. </para>
+    /// The output of the <a>DescribeAccountLimitsResult</a> action.
     /// </summary>
     public partial class DescribeAccountLimitsResult
     {
-        
-        private int? maxNumberOfAutoScalingGroups;
-        private int? maxNumberOfLaunchConfigurations;
+        private int? _maxNumberOfAutoScalingGroups;
+        private int? _maxNumberOfLaunchConfigurations;
+
 
         /// <summary>
-        /// The maximum number of Auto Scaling groups allowed for your AWS account.
-        ///  
+        /// Gets and sets the property MaxNumberOfAutoScalingGroups. 
+        /// <para>
+        ///             The maximum number of Auto Scaling groups allowed for your AWS account.
+        ///        
+        /// </para>
         /// </summary>
         public int MaxNumberOfAutoScalingGroups
         {
-            get { return this.maxNumberOfAutoScalingGroups ?? default(int); }
-            set { this.maxNumberOfAutoScalingGroups = value; }
+            get { return this._maxNumberOfAutoScalingGroups.GetValueOrDefault(); }
+            set { this._maxNumberOfAutoScalingGroups = value; }
         }
+
 
         /// <summary>
         /// Sets the MaxNumberOfAutoScalingGroups property
@@ -47,26 +54,30 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAccountLimitsResult WithMaxNumberOfAutoScalingGroups(int maxNumberOfAutoScalingGroups)
         {
-            this.maxNumberOfAutoScalingGroups = maxNumberOfAutoScalingGroups;
+            this._maxNumberOfAutoScalingGroups = maxNumberOfAutoScalingGroups;
             return this;
         }
-            
 
         // Check to see if MaxNumberOfAutoScalingGroups property is set
         internal bool IsSetMaxNumberOfAutoScalingGroups()
         {
-            return this.maxNumberOfAutoScalingGroups.HasValue;
+            return this._maxNumberOfAutoScalingGroups.HasValue; 
         }
 
+
         /// <summary>
-        /// The maximum number of launch configurations allowed for your AWS account.
-        ///  
+        /// Gets and sets the property MaxNumberOfLaunchConfigurations. 
+        /// <para>
+        ///             The maximum number of launch configurations allowed for your AWS account.
+        ///        
+        /// </para>
         /// </summary>
         public int MaxNumberOfLaunchConfigurations
         {
-            get { return this.maxNumberOfLaunchConfigurations ?? default(int); }
-            set { this.maxNumberOfLaunchConfigurations = value; }
+            get { return this._maxNumberOfLaunchConfigurations.GetValueOrDefault(); }
+            set { this._maxNumberOfLaunchConfigurations = value; }
         }
+
 
         /// <summary>
         /// Sets the MaxNumberOfLaunchConfigurations property
@@ -76,15 +87,15 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAccountLimitsResult WithMaxNumberOfLaunchConfigurations(int maxNumberOfLaunchConfigurations)
         {
-            this.maxNumberOfLaunchConfigurations = maxNumberOfLaunchConfigurations;
+            this._maxNumberOfLaunchConfigurations = maxNumberOfLaunchConfigurations;
             return this;
         }
-            
 
         // Check to see if MaxNumberOfLaunchConfigurations property is set
         internal bool IsSetMaxNumberOfLaunchConfigurations()
         {
-            return this.maxNumberOfLaunchConfigurations.HasValue;
+            return this._maxNumberOfLaunchConfigurations.HasValue; 
         }
+
     }
 }

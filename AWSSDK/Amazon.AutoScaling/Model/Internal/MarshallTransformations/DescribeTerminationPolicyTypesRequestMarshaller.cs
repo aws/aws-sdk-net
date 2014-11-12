@@ -14,28 +14,32 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Termination Policy Types Request Marshaller
+    /// DescribeTerminationPolicyTypes Request Marshaller
     /// </summary>       
     public class DescribeTerminationPolicyTypesRequestMarshaller : IMarshaller<IRequest, DescribeTerminationPolicyTypesRequest>
     {
-        public IRequest Marshall(DescribeTerminationPolicyTypesRequest describeTerminationPolicyTypesRequest)
+        public IRequest Marshall(DescribeTerminationPolicyTypesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeTerminationPolicyTypesRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "DescribeTerminationPolicyTypes");
             request.Parameters.Add("Version", "2011-01-01");
 
+            if(publicRequest != null)
+            {
+            }
             return request;
         }
     }

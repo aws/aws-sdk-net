@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   AutoScalingInstanceDetails Unmarshaller
-     /// </summary>
-    internal class AutoScalingInstanceDetailsUnmarshaller : IUnmarshaller<AutoScalingInstanceDetails, XmlUnmarshallerContext>, IUnmarshaller<AutoScalingInstanceDetails, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for AutoScalingInstanceDetails Object
+    /// </summary>  
+    public class AutoScalingInstanceDetailsUnmarshaller : IUnmarshaller<AutoScalingInstanceDetails, XmlUnmarshallerContext>, IUnmarshaller<AutoScalingInstanceDetails, JsonUnmarshallerContext>
     {
-        public AutoScalingInstanceDetails Unmarshall(XmlUnmarshallerContext context) 
+        public AutoScalingInstanceDetails Unmarshall(XmlUnmarshallerContext context)
         {
-            AutoScalingInstanceDetails autoScalingInstanceDetails = new AutoScalingInstanceDetails();
+            AutoScalingInstanceDetails unmarshalledObject = new AutoScalingInstanceDetails();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,69 +44,68 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("InstanceId", targetDepth))
-                    {
-                        autoScalingInstanceDetails.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("AutoScalingGroupName", targetDepth))
                     {
-                        autoScalingInstanceDetails.AutoScalingGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.AutoScalingGroupName = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("AvailabilityZone", targetDepth))
                     {
-                        autoScalingInstanceDetails.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("LifecycleState", targetDepth))
-                    {
-                        autoScalingInstanceDetails.LifecycleState = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                    }
                     if (context.TestExpression("HealthStatus", targetDepth))
                     {
-                        autoScalingInstanceDetails.HealthStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
+                    if (context.TestExpression("InstanceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LaunchConfigurationName", targetDepth))
                     {
-                        autoScalingInstanceDetails.LaunchConfigurationName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.LaunchConfigurationName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LifecycleState", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.LifecycleState = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return autoScalingInstanceDetails;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return autoScalingInstanceDetails;
+            return unmarshalledObject;
         }
 
-        public AutoScalingInstanceDetails Unmarshall(JsonUnmarshallerContext context) 
+        public AutoScalingInstanceDetails Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static AutoScalingInstanceDetailsUnmarshaller instance;
-
-        public static AutoScalingInstanceDetailsUnmarshaller GetInstance() 
+        public static AutoScalingInstanceDetailsUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new AutoScalingInstanceDetailsUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new AutoScalingInstanceDetailsUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

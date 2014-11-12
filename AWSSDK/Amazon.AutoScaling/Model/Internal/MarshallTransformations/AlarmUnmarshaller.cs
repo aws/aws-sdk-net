@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Alarm Unmarshaller
-     /// </summary>
-    internal class AlarmUnmarshaller : IUnmarshaller<Alarm, XmlUnmarshallerContext>, IUnmarshaller<Alarm, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Alarm Object
+    /// </summary>  
+    public class AlarmUnmarshaller : IUnmarshaller<Alarm, XmlUnmarshallerContext>, IUnmarshaller<Alarm, JsonUnmarshallerContext>
     {
-        public Alarm Unmarshall(XmlUnmarshallerContext context) 
+        public Alarm Unmarshall(XmlUnmarshallerContext context)
         {
-            Alarm alarm = new Alarm();
+            Alarm unmarshalledObject = new Alarm();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,45 +44,44 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("AlarmName", targetDepth))
-                    {
-                        alarm.AlarmName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("AlarmARN", targetDepth))
                     {
-                        alarm.AlarmARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.AlarmARN = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("AlarmName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.AlarmName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return alarm;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return alarm;
+            return unmarshalledObject;
         }
 
-        public Alarm Unmarshall(JsonUnmarshallerContext context) 
+        public Alarm Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static AlarmUnmarshaller instance;
-
-        public static AlarmUnmarshaller GetInstance() 
+        public static AlarmUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new AlarmUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new AlarmUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

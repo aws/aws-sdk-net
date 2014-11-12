@@ -14,51 +14,53 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Scaling Activities Request Marshaller
+    /// DescribeScalingActivities Request Marshaller
     /// </summary>       
     public class DescribeScalingActivitiesRequestMarshaller : IMarshaller<IRequest, DescribeScalingActivitiesRequest>
     {
-        public IRequest Marshall(DescribeScalingActivitiesRequest describeScalingActivitiesRequest)
+        public IRequest Marshall(DescribeScalingActivitiesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeScalingActivitiesRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "DescribeScalingActivities");
             request.Parameters.Add("Version", "2011-01-01");
-            if (describeScalingActivitiesRequest != null)
-            {
-                List<string> activityIdsList = describeScalingActivitiesRequest.ActivityIds;
 
-                int activityIdsListIndex = 1;
-                foreach (string activityIdsListValue in activityIdsList)
-                { 
-                    request.Parameters.Add("ActivityIds.member." + activityIdsListIndex, StringUtils.FromString(activityIdsListValue));
-                    activityIdsListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetActivityIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ActivityIds)
+                    {
+                        request.Parameters.Add("ActivityIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetAutoScalingGroupName())
+                {
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
             }
-            if (describeScalingActivitiesRequest != null && describeScalingActivitiesRequest.IsSetAutoScalingGroupName())
-            {
-                request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(describeScalingActivitiesRequest.AutoScalingGroupName));
-            }
-            if (describeScalingActivitiesRequest != null && describeScalingActivitiesRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeScalingActivitiesRequest.MaxRecords));
-            }
-            if (describeScalingActivitiesRequest != null && describeScalingActivitiesRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("NextToken", StringUtils.FromString(describeScalingActivitiesRequest.NextToken));
-            }
-
             return request;
         }
     }

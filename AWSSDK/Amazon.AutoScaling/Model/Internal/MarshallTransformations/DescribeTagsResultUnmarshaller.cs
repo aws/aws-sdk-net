@@ -12,69 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeTagsResult Unmarshaller
-     /// </summary>
-    internal class DescribeTagsResultUnmarshaller : IUnmarshaller<DescribeTagsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeTagsResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeTags Object
+    /// </summary>  
+    public class DescribeTagsResultUnmarshaller : IUnmarshaller<DescribeTagsResult, XmlUnmarshallerContext>
     {
         public DescribeTagsResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeTagsResult describeTagsResult = new DescribeTagsResult();
+            DescribeTagsResult result = new DescribeTagsResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Tags/member", targetDepth))
-                    {
-                        describeTagsResult.Tags.Add(TagDescriptionUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("NextToken", targetDepth))
                     {
-                        describeTagsResult.NextToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.NextToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("Tags/member", targetDepth))
+                    {
+                        var unmarshaller = TagDescriptionUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.Tags.Add(item);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeTagsResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeTagsResult;
+            return result;
         }
 
-        public DescribeTagsResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeTagsResultUnmarshaller instance;
-
-        public static DescribeTagsResultUnmarshaller GetInstance() 
+        public static DescribeTagsResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeTagsResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeTagsResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

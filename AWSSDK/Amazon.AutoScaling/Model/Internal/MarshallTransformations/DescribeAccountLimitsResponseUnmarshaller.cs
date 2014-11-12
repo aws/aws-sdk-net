@@ -13,28 +13,34 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeAccountLimits operation
-    /// </summary>
-    internal class DescribeAccountLimitsResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DescribeAccountLimits operation
+    /// </summary>  
+    public class DescribeAccountLimitsResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             DescribeAccountLimitsResponse response = new DescribeAccountLimitsResponse();
-            
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
             while (context.Read())
             {
-                if (context.IsStartElement)                
+                if (context.IsStartElement)
                 {
                     if(context.TestExpression("DescribeAccountLimitsResult", 2))
                     {
@@ -47,30 +53,26 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
 
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonAutoScalingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeAccountLimitsResponseUnmarshaller instance;
 
+        private static DescribeAccountLimitsResponseUnmarshaller instance;
         public static DescribeAccountLimitsResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new DescribeAccountLimitsResponseUnmarshaller();
+                instance = new DescribeAccountLimitsResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

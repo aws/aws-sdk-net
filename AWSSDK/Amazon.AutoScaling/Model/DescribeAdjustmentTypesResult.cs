@@ -18,61 +18,65 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The output of the DescribeAdjustmentTypes action. </para>
+    /// The output of the <a>DescribeAdjustmentTypes</a> action.
     /// </summary>
     public partial class DescribeAdjustmentTypesResult
     {
-        
-        private List<AdjustmentType> adjustmentTypes = new List<AdjustmentType>();
+        private List<AdjustmentType> _adjustmentTypes = new List<AdjustmentType>();
+
 
         /// <summary>
-        /// A list of specific policy adjustment types.
-        ///  
+        /// Gets and sets the property AdjustmentTypes. 
+        /// <para>
+        ///             A list of specific policy adjustment types.        
+        /// </para>
         /// </summary>
         public List<AdjustmentType> AdjustmentTypes
         {
-            get { return this.adjustmentTypes; }
-            set { this.adjustmentTypes = value; }
+            get { return this._adjustmentTypes; }
+            set { this._adjustmentTypes = value; }
         }
+
         /// <summary>
-        /// Adds elements to the AdjustmentTypes collection
+        /// Sets the AdjustmentTypes property
         /// </summary>
         /// <param name="adjustmentTypes">The values to add to the AdjustmentTypes collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAdjustmentTypesResult WithAdjustmentTypes(params AdjustmentType[] adjustmentTypes)
         {
-            foreach (AdjustmentType element in adjustmentTypes)
+            foreach (var element in adjustmentTypes)
             {
-                this.adjustmentTypes.Add(element);
+                this._adjustmentTypes.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the AdjustmentTypes collection
+        /// Sets the AdjustmentTypes property
         /// </summary>
         /// <param name="adjustmentTypes">The values to add to the AdjustmentTypes collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAdjustmentTypesResult WithAdjustmentTypes(IEnumerable<AdjustmentType> adjustmentTypes)
         {
-            foreach (AdjustmentType element in adjustmentTypes)
+            foreach (var element in adjustmentTypes)
             {
-                this.adjustmentTypes.Add(element);
+                this._adjustmentTypes.Add(element);
             }
-
             return this;
         }
-
         // Check to see if AdjustmentTypes property is set
         internal bool IsSetAdjustmentTypes()
         {
-            return this.adjustmentTypes.Count > 0;
+            return this._adjustmentTypes != null && this._adjustmentTypes.Count > 0; 
         }
+
     }
 }

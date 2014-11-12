@@ -25,41 +25,32 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScheduledActions operation.
-    /// <para> Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see a list of actions already executed,
-    /// see the activity record returned in DescribeScalingActivities. </para>
+    /// Lists all the actions scheduled for your Auto Scaling group that haven't
+    /// been executed. To see a list of            actions already executed, see the activity
+    /// record returned in <a>DescribeScalingActivities</a>.
     /// </summary>
-    /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeScheduledActions"/>
-    public class DescribeScheduledActionsRequest : AmazonWebServiceRequest
+    public partial class DescribeScheduledActionsRequest : AmazonWebServiceRequest
     {
-        private string autoScalingGroupName;
-        private List<string> scheduledActionNames = new List<string>();
-        private DateTime? startTime;
-        private DateTime? endTime;
-        private string nextToken;
-        private int? maxRecords;
+        private string _autoScalingGroupName;
+        private DateTime? _endTime;
+        private int? _maxRecords;
+        private string _nextToken;
+        private List<string> _scheduledActionNames = new List<string>();
+        private DateTime? _startTime;
+
 
         /// <summary>
-        /// The name of the Auto Scaling group.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///             The name of the Auto Scaling group.        
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
+
 
         /// <summary>
         /// Sets the AutoScalingGroupName property
@@ -69,104 +60,30 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScheduledActionsRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
-            this.autoScalingGroupName = autoScalingGroupName;
+            this._autoScalingGroupName = autoScalingGroupName;
             return this;
         }
-            
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
         }
+
 
         /// <summary>
-        /// A list of scheduled actions to be described. If this list is omitted, all scheduled actions are described. The list of requested scheduled
-        /// actions cannot contain more than 50 items. If an auto scaling group name is provided, the results are limited to that group. If unknown
-        /// scheduled actions are requested, they are ignored with no error.
-        ///  
-        /// </summary>
-        public List<string> ScheduledActionNames
-        {
-            get { return this.scheduledActionNames; }
-            set { this.scheduledActionNames = value; }
-        }
-        /// <summary>
-        /// Adds elements to the ScheduledActionNames collection
-        /// </summary>
-        /// <param name="scheduledActionNames">The values to add to the ScheduledActionNames collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeScheduledActionsRequest WithScheduledActionNames(params string[] scheduledActionNames)
-        {
-            foreach (string element in scheduledActionNames)
-            {
-                this.scheduledActionNames.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the ScheduledActionNames collection
-        /// </summary>
-        /// <param name="scheduledActionNames">The values to add to the ScheduledActionNames collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeScheduledActionsRequest WithScheduledActionNames(IEnumerable<string> scheduledActionNames)
-        {
-            foreach (string element in scheduledActionNames)
-            {
-                this.scheduledActionNames.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if ScheduledActionNames property is set
-        internal bool IsSetScheduledActionNames()
-        {
-            return this.scheduledActionNames.Count > 0;
-        }
-
-        /// <summary>
-        /// The earliest scheduled start time to return. If scheduled action names are provided, this field will be ignored.
-        ///  
-        /// </summary>
-        public DateTime StartTime
-        {
-            get { return this.startTime ?? default(DateTime); }
-            set { this.startTime = value; }
-        }
-
-        /// <summary>
-        /// Sets the StartTime property
-        /// </summary>
-        /// <param name="startTime">The value to set for the StartTime property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeScheduledActionsRequest WithStartTime(DateTime startTime)
-        {
-            this.startTime = startTime;
-            return this;
-        }
-            
-
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
-        {
-            return this.startTime.HasValue;
-        }
-
-        /// <summary>
-        /// The latest scheduled start time to return. If scheduled action names are provided, this field is ignored.
-        ///  
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        ///             The latest scheduled start time to return. If scheduled            action
+        /// names are provided, this field is ignored.        
+        /// </para>
         /// </summary>
         public DateTime EndTime
         {
-            get { return this.endTime ?? default(DateTime); }
-            set { this.endTime = value; }
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
         }
+
 
         /// <summary>
         /// Sets the EndTime property
@@ -176,64 +93,29 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScheduledActionsRequest WithEndTime(DateTime endTime)
         {
-            this.endTime = endTime;
+            this._endTime = endTime;
             return this;
         }
-            
 
         // Check to see if EndTime property is set
         internal bool IsSetEndTime()
         {
-            return this.endTime.HasValue;
+            return this._endTime.HasValue; 
         }
 
+
         /// <summary>
-        /// A string that marks the start of the next batch of returned results.
-        ///  
+        /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///             The maximum number of scheduled actions to return.        
         /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
-        }
-
-        /// <summary>
-        /// Sets the NextToken property
-        /// </summary>
-        /// <param name="nextToken">The value to set for the NextToken property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeScheduledActionsRequest WithNextToken(string nextToken)
-        {
-            this.nextToken = nextToken;
-            return this;
-        }
-            
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this.nextToken != null;
-        }
-
-        /// <summary>
-        /// The maximum number of scheduled actions to return.
-        ///  
         /// </summary>
         public int MaxRecords
         {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
         }
+
 
         /// <summary>
         /// Sets the MaxRecords property
@@ -243,16 +125,134 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScheduledActionsRequest WithMaxRecords(int maxRecords)
         {
-            this.maxRecords = maxRecords;
+            this._maxRecords = maxRecords;
             return this;
         }
-            
 
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;
+            return this._maxRecords.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///             A string that marks the start of the next batch of returned results. 
+        ///       
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the NextToken property
+        /// </summary>
+        /// <param name="nextToken">The value to set for the NextToken property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeScheduledActionsRequest WithNextToken(string nextToken)
+        {
+            this._nextToken = nextToken;
+            return this;
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ScheduledActionNames. 
+        /// <para>
+        ///             A list of scheduled actions to be described. If this            list is
+        /// omitted, all scheduled actions are described.            The list of requested scheduled
+        /// actions cannot            contain more than 50 items. If an auto scaling         
+        ///   group name is provided, the results are limited to            that group. If unknown
+        /// scheduled actions are            requested, they are ignored with no error.      
+        ///  
+        /// </para>
+        /// </summary>
+        public List<string> ScheduledActionNames
+        {
+            get { return this._scheduledActionNames; }
+            set { this._scheduledActionNames = value; }
+        }
+
+        /// <summary>
+        /// Sets the ScheduledActionNames property
+        /// </summary>
+        /// <param name="scheduledActionNames">The values to add to the ScheduledActionNames collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeScheduledActionsRequest WithScheduledActionNames(params string[] scheduledActionNames)
+        {
+            foreach (var element in scheduledActionNames)
+            {
+                this._scheduledActionNames.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the ScheduledActionNames property
+        /// </summary>
+        /// <param name="scheduledActionNames">The values to add to the ScheduledActionNames collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeScheduledActionsRequest WithScheduledActionNames(IEnumerable<string> scheduledActionNames)
+        {
+            foreach (var element in scheduledActionNames)
+            {
+                this._scheduledActionNames.Add(element);
+            }
+            return this;
+        }
+        // Check to see if ScheduledActionNames property is set
+        internal bool IsSetScheduledActionNames()
+        {
+            return this._scheduledActionNames != null && this._scheduledActionNames.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        ///             The earliest scheduled start time to return. If scheduled            action
+        /// names are provided, this field will be ignored.        
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the StartTime property
+        /// </summary>
+        /// <param name="startTime">The value to set for the StartTime property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeScheduledActionsRequest WithStartTime(DateTime startTime)
+        {
+            this._startTime = startTime;
+            return this;
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
+        }
+
     }
 }
-    

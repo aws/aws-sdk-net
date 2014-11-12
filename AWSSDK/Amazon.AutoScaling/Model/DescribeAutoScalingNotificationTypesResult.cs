@@ -18,70 +18,86 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para>The <c>AutoScalingNotificationTypes</c> data type.</para>
+    /// The <code>AutoScalingNotificationTypes</code> data type.
     /// </summary>
     public partial class DescribeAutoScalingNotificationTypesResult
     {
-        
-        private List<string> autoScalingNotificationTypes = new List<string>();
+        private List<string> _autoScalingNotificationTypes = new List<string>();
+
 
         /// <summary>
-        /// Returns a list of all notification types supported by Auto Scaling. They are: <ul> <li><c>autoscaling:EC2_INSTANCE_LAUNCH</c></li>
-        /// <li><c>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</c></li> <li><c>autoscaling:EC2_INSTANCE_TERMINATE</c></li>
-        /// <li><c>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</c></li> <li><c>autoscaling:TEST_NOTIFICATION</c></li> </ul> <examples>
-        /// <queryrequest>https://autoscaling.amazonaws.com/?Version=2011-01-01&amp;Action=DescribeAutoScalingNotificationTypes&amp;AUTHPARAMS</queryrequest>
-        /// <queryresponse><DescribeAutoScalingNotificationTypesResponse xmlns="http://autoscaling.amazonaws.com/doc/2011-01-01/">
-        /// <DescribeAutoScalingNotificationTypesResult> <AutoScalingNotificationTypes> <member>autoscaling:EC2_INSTANCE_LAUNCH</member>
-        /// <member>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</member> <member>autoscaling:EC2_INSTANCE_TERMINATE</member>
-        /// <member>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</member> <member>autoscaling:TEST_NOTIFICATION</member> </AutoScalingNotificationTypes>
-        /// </DescribeAutoScalingNotificationTypesResult> <ResponseMetadata> <RequestId>42fc6794-bf21-11e2-a1cf-ff3dEXAMPLE</RequestId>
-        /// </ResponseMetadata> </DescribeAutoScalingNotificationTypesResponse></queryresponse> </examples>
-        ///  
+        /// Gets and sets the property AutoScalingNotificationTypes. 
+        /// <para>
+        /// Returns a list of all notification types supported by Auto Scaling. They are:
+        /// </para>
+        ///          <ul>            <li>
+        /// <para>
+        /// <code>autoscaling:EC2_INSTANCE_LAUNCH</code>
+        /// </para>
+        /// </li>            <li>
+        /// <para>
+        /// <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code>
+        /// </para>
+        /// </li>            <li>
+        /// <para>
+        /// <code>autoscaling:EC2_INSTANCE_TERMINATE</code>
+        /// </para>
+        /// </li>            <li>
+        /// <para>
+        /// <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code>
+        /// </para>
+        /// </li>            <li>
+        /// <para>
+        /// <code>autoscaling:TEST_NOTIFICATION</code>
+        /// </para>
+        /// </li>                </ul>
         /// </summary>
         public List<string> AutoScalingNotificationTypes
         {
-            get { return this.autoScalingNotificationTypes; }
-            set { this.autoScalingNotificationTypes = value; }
+            get { return this._autoScalingNotificationTypes; }
+            set { this._autoScalingNotificationTypes = value; }
         }
+
         /// <summary>
-        /// Adds elements to the AutoScalingNotificationTypes collection
+        /// Sets the AutoScalingNotificationTypes property
         /// </summary>
         /// <param name="autoScalingNotificationTypes">The values to add to the AutoScalingNotificationTypes collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingNotificationTypesResult WithAutoScalingNotificationTypes(params string[] autoScalingNotificationTypes)
         {
-            foreach (string element in autoScalingNotificationTypes)
+            foreach (var element in autoScalingNotificationTypes)
             {
-                this.autoScalingNotificationTypes.Add(element);
+                this._autoScalingNotificationTypes.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the AutoScalingNotificationTypes collection
+        /// Sets the AutoScalingNotificationTypes property
         /// </summary>
         /// <param name="autoScalingNotificationTypes">The values to add to the AutoScalingNotificationTypes collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAutoScalingNotificationTypesResult WithAutoScalingNotificationTypes(IEnumerable<string> autoScalingNotificationTypes)
         {
-            foreach (string element in autoScalingNotificationTypes)
+            foreach (var element in autoScalingNotificationTypes)
             {
-                this.autoScalingNotificationTypes.Add(element);
+                this._autoScalingNotificationTypes.Add(element);
             }
-
             return this;
         }
-
         // Check to see if AutoScalingNotificationTypes property is set
         internal bool IsSetAutoScalingNotificationTypes()
         {
-            return this.autoScalingNotificationTypes.Count > 0;
+            return this._autoScalingNotificationTypes != null && this._autoScalingNotificationTypes.Count > 0; 
         }
+
     }
 }

@@ -12,69 +12,73 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeAccountLimitsResult Unmarshaller
-     /// </summary>
-    internal class DescribeAccountLimitsResultUnmarshaller : IUnmarshaller<DescribeAccountLimitsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeAccountLimitsResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeAccountLimits Object
+    /// </summary>  
+    public class DescribeAccountLimitsResultUnmarshaller : IUnmarshaller<DescribeAccountLimitsResult, XmlUnmarshallerContext>
     {
         public DescribeAccountLimitsResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeAccountLimitsResult describeAccountLimitsResult = new DescribeAccountLimitsResult();
+            DescribeAccountLimitsResult result = new DescribeAccountLimitsResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("MaxNumberOfAutoScalingGroups", targetDepth))
                     {
-                        describeAccountLimitsResult.MaxNumberOfAutoScalingGroups = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("MaxNumberOfLaunchConfigurations", targetDepth))
-                    {
-                        describeAccountLimitsResult.MaxNumberOfLaunchConfigurations = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.GetInstance();
+                        result.MaxNumberOfAutoScalingGroups = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("MaxNumberOfLaunchConfigurations", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.GetInstance();
+                        result.MaxNumberOfLaunchConfigurations = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeAccountLimitsResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeAccountLimitsResult;
+            return result;
         }
 
-        public DescribeAccountLimitsResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeAccountLimitsResultUnmarshaller instance;
-
-        public static DescribeAccountLimitsResultUnmarshaller GetInstance() 
+        public static DescribeAccountLimitsResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeAccountLimitsResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeAccountLimitsResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

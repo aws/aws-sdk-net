@@ -18,25 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>InstanceMonitoring</c> data type. </para>
+    /// The <code>InstanceMonitoring</code> data type.
     /// </summary>
     public partial class InstanceMonitoring
     {
-        
-        private bool? enabled;
+        private bool? _enabled;
+
 
         /// <summary>
-        /// If <c>True</c>, instance monitoring is enabled.
-        ///  
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        ///             If <code>True</code>, instance monitoring is enabled.        
+        /// </para>
         /// </summary>
         public bool Enabled
         {
-            get { return this.enabled ?? default(bool); }
-            set { this.enabled = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
+
 
         /// <summary>
         /// Sets the Enabled property
@@ -46,15 +52,15 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceMonitoring WithEnabled(bool enabled)
         {
-            this.enabled = enabled;
+            this._enabled = enabled;
             return this;
         }
-            
 
         // Check to see if Enabled property is set
         internal bool IsSetEnabled()
         {
-            return this.enabled.HasValue;
+            return this._enabled.HasValue; 
         }
+
     }
 }

@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeAdjustmentTypesResult response and response metadata.
+    /// Returns information about the DescribeAdjustmentTypesResult response and response metadata.
     /// </summary>
     public class DescribeAdjustmentTypesResponse : AmazonWebServiceResponse
     {
-        private DescribeAdjustmentTypesResult describeAdjustmentTypesResult;
+        private DescribeAdjustmentTypesResult _describeAdjustmentTypesResult;
 
         /// <summary>
         /// Gets and sets the DescribeAdjustmentTypesResult property.
-        /// The output of the DescribeAdjustmentTypes action.
+        /// Represents the output of a DescribeAdjustmentTypes operation.
         /// </summary>
         public DescribeAdjustmentTypesResult DescribeAdjustmentTypesResult
         {
             get
             {
-                if(this.describeAdjustmentTypesResult == null)
+                if(this._describeAdjustmentTypesResult == null)
                 {
-                    this.describeAdjustmentTypesResult = new DescribeAdjustmentTypesResult();
+                    this._describeAdjustmentTypesResult = new DescribeAdjustmentTypesResult();
                 }
-
-                return this.describeAdjustmentTypesResult;
+                return this._describeAdjustmentTypesResult;
             }
-            set { this.describeAdjustmentTypesResult = value; }
+            set { this._describeAdjustmentTypesResult = value; }
         }
     }
 }
-    

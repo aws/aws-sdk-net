@@ -18,61 +18,65 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The output of the DescribeScalingProcessTypes action. </para>
+    /// The output of the <a>DescribeScalingProcessTypes</a> action.
     /// </summary>
     public partial class DescribeScalingProcessTypesResult
     {
-        
-        private List<ProcessType> processes = new List<ProcessType>();
+        private List<ProcessType> _processes = new List<ProcessType>();
+
 
         /// <summary>
-        /// A list of <a>ProcessType</a> names.
-        ///  
+        /// Gets and sets the property Processes. 
+        /// <para>
+        ///             A list of <a>ProcessType</a> names.        
+        /// </para>
         /// </summary>
         public List<ProcessType> Processes
         {
-            get { return this.processes; }
-            set { this.processes = value; }
+            get { return this._processes; }
+            set { this._processes = value; }
         }
+
         /// <summary>
-        /// Adds elements to the Processes collection
+        /// Sets the Processes property
         /// </summary>
         /// <param name="processes">The values to add to the Processes collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScalingProcessTypesResult WithProcesses(params ProcessType[] processes)
         {
-            foreach (ProcessType element in processes)
+            foreach (var element in processes)
             {
-                this.processes.Add(element);
+                this._processes.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Processes collection
+        /// Sets the Processes property
         /// </summary>
         /// <param name="processes">The values to add to the Processes collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScalingProcessTypesResult WithProcesses(IEnumerable<ProcessType> processes)
         {
-            foreach (ProcessType element in processes)
+            foreach (var element in processes)
             {
-                this.processes.Add(element);
+                this._processes.Add(element);
             }
-
             return this;
         }
-
         // Check to see if Processes property is set
         internal bool IsSetProcesses()
         {
-            return this.processes.Count > 0;
+            return this._processes != null && this._processes.Count > 0; 
         }
+
     }
 }

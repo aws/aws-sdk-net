@@ -79,7 +79,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add(nameValuePair[0], null);
                 }
-            }
+            }            
             return uriResourcePath;
         }
         

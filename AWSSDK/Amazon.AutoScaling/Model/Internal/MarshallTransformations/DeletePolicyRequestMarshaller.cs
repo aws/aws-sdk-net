@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Policy Request Marshaller
+    /// DeletePolicy Request Marshaller
     /// </summary>       
     public class DeletePolicyRequestMarshaller : IMarshaller<IRequest, DeletePolicyRequest>
     {
-        public IRequest Marshall(DeletePolicyRequest deletePolicyRequest)
+        public IRequest Marshall(DeletePolicyRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deletePolicyRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "DeletePolicy");
             request.Parameters.Add("Version", "2011-01-01");
-            if (deletePolicyRequest != null && deletePolicyRequest.IsSetAutoScalingGroupName())
-            {
-                request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(deletePolicyRequest.AutoScalingGroupName));
-            }
-            if (deletePolicyRequest != null && deletePolicyRequest.IsSetPolicyName())
-            {
-                request.Parameters.Add("PolicyName", StringUtils.FromString(deletePolicyRequest.PolicyName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAutoScalingGroupName())
+                {
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
+                if(publicRequest.IsSetPolicyName())
+                {
+                    request.Parameters.Add("PolicyName", StringUtils.FromString(publicRequest.PolicyName));
+                }
+            }
             return request;
         }
     }

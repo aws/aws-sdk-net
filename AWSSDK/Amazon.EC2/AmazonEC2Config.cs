@@ -33,7 +33,7 @@ namespace Amazon.EC2
         private RegionEndpoint regionEndpoint;
         private string serviceURL = "https://ec2.amazonaws.com";
         private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent;
-        private string signatureVersion = "2";
+        private string signatureVersion = "4";
         private string signatureMethod = "HmacSHA256";
         private string proxyHost;
         private int proxyPort = -1;
@@ -54,6 +54,10 @@ namespace Amazon.EC2
         /// <summary>
         /// Gets and sets of the signatureMethod property.
         /// </summary>
+        /// <remarks>
+        /// This property is ignored; the AmazonEC2Client in the SDK uses
+        /// AWS Signature Version 4 for all regions.
+        /// </remarks>
         public string SignatureMethod
         {
             get { return this.signatureMethod; }
@@ -80,9 +84,14 @@ namespace Amazon.EC2
         {
             return this.signatureMethod != null;
         }
+
         /// <summary>
         /// Gets and sets of the SignatureVersion property.
         /// </summary>
+        /// <remarks>
+        /// This property is ignored; the AmazonEC2Client in the SDK uses
+        /// AWS Signature Version 4 for all regions.
+        /// </remarks>
         public string SignatureVersion
         {
             get { return this.signatureVersion; }

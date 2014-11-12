@@ -18,62 +18,67 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para>The <c>TerminationPolicyTypes</c> data type.</para>
+    /// The <code>TerminationPolicyTypes</code> data type.
     /// </summary>
     public partial class DescribeTerminationPolicyTypesResult
     {
-        
-        private List<string> terminationPolicyTypes = new List<string>();
+        private List<string> _terminationPolicyTypes = new List<string>();
+
 
         /// <summary>
-        /// Termination policies supported by Auto Scaling. They are: <c>OldestInstance</c>, <c>OldestLaunchConfiguration</c>, <c>NewestInstance</c>,
-        /// <c>ClosestToNextInstanceHour</c>, <c>Default</c>
-        ///  
+        /// Gets and sets the property TerminationPolicyTypes. 
+        /// <para>
+        ///          Termination policies supported by Auto Scaling. They are:         <code>OldestInstance</code>,
+        /// <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
+        ///          <code>Default</code>     
+        /// </para>
         /// </summary>
         public List<string> TerminationPolicyTypes
         {
-            get { return this.terminationPolicyTypes; }
-            set { this.terminationPolicyTypes = value; }
+            get { return this._terminationPolicyTypes; }
+            set { this._terminationPolicyTypes = value; }
         }
+
         /// <summary>
-        /// Adds elements to the TerminationPolicyTypes collection
+        /// Sets the TerminationPolicyTypes property
         /// </summary>
         /// <param name="terminationPolicyTypes">The values to add to the TerminationPolicyTypes collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTerminationPolicyTypesResult WithTerminationPolicyTypes(params string[] terminationPolicyTypes)
         {
-            foreach (string element in terminationPolicyTypes)
+            foreach (var element in terminationPolicyTypes)
             {
-                this.terminationPolicyTypes.Add(element);
+                this._terminationPolicyTypes.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the TerminationPolicyTypes collection
+        /// Sets the TerminationPolicyTypes property
         /// </summary>
         /// <param name="terminationPolicyTypes">The values to add to the TerminationPolicyTypes collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTerminationPolicyTypesResult WithTerminationPolicyTypes(IEnumerable<string> terminationPolicyTypes)
         {
-            foreach (string element in terminationPolicyTypes)
+            foreach (var element in terminationPolicyTypes)
             {
-                this.terminationPolicyTypes.Add(element);
+                this._terminationPolicyTypes.Add(element);
             }
-
             return this;
         }
-
         // Check to see if TerminationPolicyTypes property is set
         internal bool IsSetTerminationPolicyTypes()
         {
-            return this.terminationPolicyTypes.Count > 0;
+            return this._terminationPolicyTypes != null && this._terminationPolicyTypes.Count > 0; 
         }
+
     }
 }

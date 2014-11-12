@@ -36,6 +36,7 @@ using Amazon.EC2.Util;
 
 using Amazon.Util;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.EC2
 {
@@ -3457,8 +3458,9 @@ namespace Amazon.EC2
             T response = default(T);
             HttpStatusCode statusCode = default(HttpStatusCode);
 
+            IDictionary<string, string> headers = new Dictionary<string, string>();
             /* Add required request parameters */
-            AddRequiredParameters(parameters, credentials);
+            AddRequiredParameters(headers, parameters, credentials);
 
             string queryString = AWSSDKUtils.GetParametersAsString(parameters);
 
@@ -3471,6 +3473,8 @@ namespace Amazon.EC2
             {
                 string responseBody = null;
                 HttpWebRequest request = ConfigureWebRequest(requestData.Length, config);
+                AmazonWebServiceClient.AddHeaders(request, headers);
+
                 /* Submit the request and read response body */
                 try
                 {
@@ -3667,47 +3671,41 @@ namespace Amazon.EC2
         /**
          * Add authentication related and version parameters
          */
-        private void AddRequiredParameters(IDictionary<string, string> parameters, ImmutableCredentials immutableCredentials)
+        private void AddRequiredParameters(IDictionary<string, string> headers, IDictionary<string, string> parameters, ImmutableCredentials immutableCredentials)
         {
             bool shouldDisposeCredentials = credentials == null;
             if (immutableCredentials == null)
                 immutableCredentials = credentials.GetCredentials();
+
             try
             {
+                parameters["Version"] = config.ServiceVersion;
                 if (immutableCredentials.UseToken)
                 {
-                    parameters["SecurityToken"] = immutableCredentials.Token;
-                }
-                parameters["AWSAccessKeyId"] = immutableCredentials.AccessKey;
-                parameters["SignatureVersion"] = config.SignatureVersion;
-                parameters["SignatureMethod"] = config.SignatureMethod;
-                parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
-                parameters["Version"] = config.ServiceVersion;
-                if (!config.SignatureVersion.Equals("2"))
-                {
-                    throw new AmazonEC2Exception("Invalid Signature Version specified");
+                    headers["x-amz-security-token"] = immutableCredentials.Token;
                 }
 
                 string serviceURL;
+                string authenticationRegion = null;
                 if (config.RegionEndpoint != null)
+                {
                     serviceURL = "https://" + config.RegionEndpoint.GetEndpointForService(config.RegionEndpointServiceName).Hostname;
+                    authenticationRegion = config.RegionEndpoint.SystemName;
+
+                }
                 else
+                {
                     serviceURL = config.ServiceURL;
-
-                string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, serviceURL);
-
-                KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
-                string auth;
-
-                if (immutableCredentials.UseSecureStringForSecretKey)
-                {
-                    auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.SecureSecretKey, algorithm);
                 }
-                else
-                {
-                    auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.ClearSecretKey, algorithm);
-                }
-                parameters["Signature"] = auth;
+
+                string signature = AWS4Signer.CalculateSignature(headers, 
+                                                                 parameters, 
+                                                                 serviceURL, 
+                                                                 "POST", 
+                                                                 config.RegionEndpointServiceName, 
+                                                                 authenticationRegion, 
+                                                                 immutableCredentials);
+                headers.Add("Authorization", signature);
             }
             finally
             {

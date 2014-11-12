@@ -14,52 +14,56 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Put Scaling Policy Request Marshaller
+    /// PutScalingPolicy Request Marshaller
     /// </summary>       
     public class PutScalingPolicyRequestMarshaller : IMarshaller<IRequest, PutScalingPolicyRequest>
     {
-        public IRequest Marshall(PutScalingPolicyRequest putScalingPolicyRequest)
+        public IRequest Marshall(PutScalingPolicyRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(putScalingPolicyRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "PutScalingPolicy");
             request.Parameters.Add("Version", "2011-01-01");
-            if (putScalingPolicyRequest != null && putScalingPolicyRequest.IsSetAutoScalingGroupName())
-            {
-                request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(putScalingPolicyRequest.AutoScalingGroupName));
-            }
-            if (putScalingPolicyRequest != null && putScalingPolicyRequest.IsSetPolicyName())
-            {
-                request.Parameters.Add("PolicyName", StringUtils.FromString(putScalingPolicyRequest.PolicyName));
-            }
-            if (putScalingPolicyRequest != null && putScalingPolicyRequest.IsSetScalingAdjustment())
-            {
-                request.Parameters.Add("ScalingAdjustment", StringUtils.FromInt(putScalingPolicyRequest.ScalingAdjustment));
-            }
-            if (putScalingPolicyRequest != null && putScalingPolicyRequest.IsSetAdjustmentType())
-            {
-                request.Parameters.Add("AdjustmentType", StringUtils.FromString(putScalingPolicyRequest.AdjustmentType));
-            }
-            if (putScalingPolicyRequest != null && putScalingPolicyRequest.IsSetCooldown())
-            {
-                request.Parameters.Add("Cooldown", StringUtils.FromInt(putScalingPolicyRequest.Cooldown));
-            }
-            if (putScalingPolicyRequest != null && putScalingPolicyRequest.IsSetMinAdjustmentStep())
-            {
-                request.Parameters.Add("MinAdjustmentStep", StringUtils.FromInt(putScalingPolicyRequest.MinAdjustmentStep));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAdjustmentType())
+                {
+                    request.Parameters.Add("AdjustmentType", StringUtils.FromString(publicRequest.AdjustmentType));
+                }
+                if(publicRequest.IsSetAutoScalingGroupName())
+                {
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
+                if(publicRequest.IsSetCooldown())
+                {
+                    request.Parameters.Add("Cooldown", StringUtils.FromInt(publicRequest.Cooldown));
+                }
+                if(publicRequest.IsSetMinAdjustmentStep())
+                {
+                    request.Parameters.Add("MinAdjustmentStep", StringUtils.FromInt(publicRequest.MinAdjustmentStep));
+                }
+                if(publicRequest.IsSetPolicyName())
+                {
+                    request.Parameters.Add("PolicyName", StringUtils.FromString(publicRequest.PolicyName));
+                }
+                if(publicRequest.IsSetScalingAdjustment())
+                {
+                    request.Parameters.Add("ScalingAdjustment", StringUtils.FromInt(publicRequest.ScalingAdjustment));
+                }
+            }
             return request;
         }
     }

@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeLaunchConfigurationsResult response and response metadata.
+    /// Returns information about the DescribeLaunchConfigurationsResult response and response metadata.
     /// </summary>
     public class DescribeLaunchConfigurationsResponse : AmazonWebServiceResponse
     {
-        private DescribeLaunchConfigurationsResult describeLaunchConfigurationsResult;
+        private DescribeLaunchConfigurationsResult _describeLaunchConfigurationsResult;
 
         /// <summary>
         /// Gets and sets the DescribeLaunchConfigurationsResult property.
-        /// The LaunchConfigurationsType data type.
+        /// Represents the output of a DescribeLaunchConfigurations operation.
         /// </summary>
         public DescribeLaunchConfigurationsResult DescribeLaunchConfigurationsResult
         {
             get
             {
-                if(this.describeLaunchConfigurationsResult == null)
+                if(this._describeLaunchConfigurationsResult == null)
                 {
-                    this.describeLaunchConfigurationsResult = new DescribeLaunchConfigurationsResult();
+                    this._describeLaunchConfigurationsResult = new DescribeLaunchConfigurationsResult();
                 }
-
-                return this.describeLaunchConfigurationsResult;
+                return this._describeLaunchConfigurationsResult;
             }
-            set { this.describeLaunchConfigurationsResult = value; }
+            set { this._describeLaunchConfigurationsResult = value; }
         }
     }
 }
-    

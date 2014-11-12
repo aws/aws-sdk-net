@@ -25,42 +25,44 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the SuspendProcesses operation.
-    /// <para> Suspends Auto Scaling processes for an Auto Scaling group. To suspend specific process types, specify them by name with the
-    /// <c>ScalingProcesses.member.N</c> parameter. To suspend all process types, omit the <c>ScalingProcesses.member.N</c> parameter. </para>
-    /// <para><b>IMPORTANT:</b> Suspending either of the two primary process types, Launch or Terminate, can prevent other process types from
-    /// functioning properly. </para> <para> To resume processes that have been suspended, use ResumeProcesses For more information on suspending
-    /// and resuming Auto Scaling process, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html" >Suspend
-    /// and Resume Auto Scaling Process</a> .
+    /// Suspends Auto Scaling processes for an Auto Scaling group.           
+    /// To suspend specific process types, specify them by name            with the <code>ScalingProcesses.member.N</code>
+    /// parameter.            To suspend all process types, omit the <code>ScalingProcesses.member.N</code>
+    ///            parameter.         
+    /// 
+    ///         <important>            
+    /// <para>
+    ///                 Suspending either of the two primary process types,              
+    ///  <code>Launch</code> or <code>Terminate</code>,                can prevent other process
+    /// types from functioning                properly.             
+    /// </para>
+    ///         </important>        
+    /// <para>
+    ///             To resume processes that have been suspended,            use <a>ResumeProcesses</a>
+    /// For more information on suspending and resuming Auto Scaling process,            
+    /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspend
+    /// and Resume Auto Scaling Process</a>.        
     /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.SuspendProcesses"/>
-    public class SuspendProcessesRequest : AmazonWebServiceRequest
+    public partial class SuspendProcessesRequest : AmazonWebServiceRequest
     {
-        private string autoScalingGroupName;
-        private List<string> scalingProcesses = new List<string>();
+        private string _autoScalingGroupName;
+        private List<string> _scalingProcesses = new List<string>();
+
 
         /// <summary>
-        /// The name or Amazon Resource Name (ARN) of the Auto Scaling group.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///             The name or Amazon Resource Name (ARN) of the Auto Scaling group.    
+        ///    
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
+
 
         /// <summary>
         /// Sets the AutoScalingGroupName property
@@ -70,65 +72,71 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SuspendProcessesRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
-            this.autoScalingGroupName = autoScalingGroupName;
+            this._autoScalingGroupName = autoScalingGroupName;
             return this;
         }
-            
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
         }
 
+
         /// <summary>
-        /// The processes that you want to suspend or resume, which can include one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
-        /// <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li> <li>AlarmNotification</li> <li>ScheduledActions</li>
-        /// <li>AddToLoadBalancer</li> </ul> To suspend all process types, omit this parameter.
-        ///  
+        /// Gets and sets the property ScalingProcesses. 
+        /// <para>
+        ///             The processes that you want to suspend or resume,            which can
+        /// include one or more of the following:        
+        /// </para>
+        ///         <ul>            <li>Launch</li>            <li>Terminate</li>            <li>HealthCheck</li>
+        ///            <li>ReplaceUnhealthy</li>            <li>AZRebalance</li>            <li>AlarmNotification</li>
+        ///            <li>ScheduledActions</li>            <li>AddToLoadBalancer</li>       
+        /// </ul>        
+        /// <para>
+        ///             To suspend all process types, omit this parameter.        
+        /// </para>
         /// </summary>
         public List<string> ScalingProcesses
         {
-            get { return this.scalingProcesses; }
-            set { this.scalingProcesses = value; }
+            get { return this._scalingProcesses; }
+            set { this._scalingProcesses = value; }
         }
+
         /// <summary>
-        /// Adds elements to the ScalingProcesses collection
+        /// Sets the ScalingProcesses property
         /// </summary>
         /// <param name="scalingProcesses">The values to add to the ScalingProcesses collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SuspendProcessesRequest WithScalingProcesses(params string[] scalingProcesses)
         {
-            foreach (string element in scalingProcesses)
+            foreach (var element in scalingProcesses)
             {
-                this.scalingProcesses.Add(element);
+                this._scalingProcesses.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the ScalingProcesses collection
+        /// Sets the ScalingProcesses property
         /// </summary>
         /// <param name="scalingProcesses">The values to add to the ScalingProcesses collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SuspendProcessesRequest WithScalingProcesses(IEnumerable<string> scalingProcesses)
         {
-            foreach (string element in scalingProcesses)
+            foreach (var element in scalingProcesses)
             {
-                this.scalingProcesses.Add(element);
+                this._scalingProcesses.Add(element);
             }
-
             return this;
         }
-
         // Check to see if ScalingProcesses property is set
         internal bool IsSetScalingProcesses()
         {
-            return this.scalingProcesses.Count > 0;
+            return this._scalingProcesses != null && this._scalingProcesses.Count > 0; 
         }
+
     }
 }
-    

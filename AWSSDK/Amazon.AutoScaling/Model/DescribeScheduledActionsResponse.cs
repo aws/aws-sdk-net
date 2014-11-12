@@ -12,40 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeScheduledActionsResult response and response metadata.
+    /// Returns information about the DescribeScheduledActionsResult response and response metadata.
     /// </summary>
     public class DescribeScheduledActionsResponse : AmazonWebServiceResponse
     {
-        private DescribeScheduledActionsResult describeScheduledActionsResult;
+        private DescribeScheduledActionsResult _describeScheduledActionsResult;
 
         /// <summary>
         /// Gets and sets the DescribeScheduledActionsResult property.
-        /// A scaling action that is scheduled for a future time and date. An action can be scheduled up to thirty days in advance. Starting with API
-        /// version 2011-01-01, you can use recurrence to specify that a scaling action occurs regularly on a schedule.
+        /// Represents the output of a DescribeScheduledActions operation.
         /// </summary>
         public DescribeScheduledActionsResult DescribeScheduledActionsResult
         {
             get
             {
-                if(this.describeScheduledActionsResult == null)
+                if(this._describeScheduledActionsResult == null)
                 {
-                    this.describeScheduledActionsResult = new DescribeScheduledActionsResult();
+                    this._describeScheduledActionsResult = new DescribeScheduledActionsResult();
                 }
-
-                return this.describeScheduledActionsResult;
+                return this._describeScheduledActionsResult;
             }
-            set { this.describeScheduledActionsResult = value; }
+            set { this._describeScheduledActionsResult = value; }
         }
     }
 }
-    

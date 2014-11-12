@@ -25,39 +25,31 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePolicies operation.
-    /// <para> Returns descriptions of what each policy does. This action supports pagination. If the response includes a token, there are more
-    /// records available. To get the additional records, repeat the request with the response token as the <c>NextToken</c> parameter. </para>
+    /// Returns descriptions of what each policy does.            This action
+    /// supports pagination. If the response includes a token,             there are more
+    /// records available. To get the additional records, repeat            the request with
+    /// the response token as the <code>NextToken</code> parameter.
     /// </summary>
-    /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribePolicies"/>
-    public class DescribePoliciesRequest : AmazonWebServiceRequest
+    public partial class DescribePoliciesRequest : AmazonWebServiceRequest
     {
-        private string autoScalingGroupName;
-        private List<string> policyNames = new List<string>();
-        private string nextToken;
-        private int? maxRecords;
+        private string _autoScalingGroupName;
+        private int? _maxRecords;
+        private string _nextToken;
+        private List<string> _policyNames = new List<string>();
+
 
         /// <summary>
-        /// The name of the Auto Scaling group.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///             The name of the Auto Scaling group.        
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
+
 
         /// <summary>
         /// Sets the AutoScalingGroupName property
@@ -67,113 +59,30 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePoliciesRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
-            this.autoScalingGroupName = autoScalingGroupName;
+            this._autoScalingGroupName = autoScalingGroupName;
             return this;
         }
-            
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
         }
+
 
         /// <summary>
-        /// A list of policy names or policy ARNs to be described. If this list is omitted, all policy names are described. If an auto scaling group
-        /// name is provided, the results are limited to that group. The list of requested policy names cannot contain more than 50 items. If unknown
-        /// policy names are requested, they are ignored with no error.
-        ///  
-        /// </summary>
-        public List<string> PolicyNames
-        {
-            get { return this.policyNames; }
-            set { this.policyNames = value; }
-        }
-        /// <summary>
-        /// Adds elements to the PolicyNames collection
-        /// </summary>
-        /// <param name="policyNames">The values to add to the PolicyNames collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribePoliciesRequest WithPolicyNames(params string[] policyNames)
-        {
-            foreach (string element in policyNames)
-            {
-                this.policyNames.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the PolicyNames collection
-        /// </summary>
-        /// <param name="policyNames">The values to add to the PolicyNames collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribePoliciesRequest WithPolicyNames(IEnumerable<string> policyNames)
-        {
-            foreach (string element in policyNames)
-            {
-                this.policyNames.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if PolicyNames property is set
-        internal bool IsSetPolicyNames()
-        {
-            return this.policyNames.Count > 0;
-        }
-
-        /// <summary>
-        /// A string that is used to mark the start of the next batch of returned results for pagination.
-        ///  
+        /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///             The maximum number of policies that will be described            with
+        /// each call.        
         /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
-        }
-
-        /// <summary>
-        /// Sets the NextToken property
-        /// </summary>
-        /// <param name="nextToken">The value to set for the NextToken property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribePoliciesRequest WithNextToken(string nextToken)
-        {
-            this.nextToken = nextToken;
-            return this;
-        }
-            
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this.nextToken != null;
-        }
-
-        /// <summary>
-        /// The maximum number of policies that will be described with each call.
-        ///  
         /// </summary>
         public int MaxRecords
         {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
         }
+
 
         /// <summary>
         /// Sets the MaxRecords property
@@ -183,16 +92,100 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePoliciesRequest WithMaxRecords(int maxRecords)
         {
-            this.maxRecords = maxRecords;
+            this._maxRecords = maxRecords;
             return this;
         }
-            
 
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;
+            return this._maxRecords.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///             A string that is used to mark the start of the next            batch of
+        /// returned results for pagination.        
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the NextToken property
+        /// </summary>
+        /// <param name="nextToken">The value to set for the NextToken property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribePoliciesRequest WithNextToken(string nextToken)
+        {
+            this._nextToken = nextToken;
+            return this;
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PolicyNames. 
+        /// <para>
+        ///             A list of policy names or policy ARNs to be            described. If this
+        /// list is omitted, all policy names            are described. If an auto scaling group
+        /// name is            provided, the results are limited to that group. The          
+        ///  list of requested policy names cannot contain more            than 50 items. If unknown
+        /// policy names are            requested, they are ignored with no error.        
+        /// </para>
+        /// </summary>
+        public List<string> PolicyNames
+        {
+            get { return this._policyNames; }
+            set { this._policyNames = value; }
+        }
+
+        /// <summary>
+        /// Sets the PolicyNames property
+        /// </summary>
+        /// <param name="policyNames">The values to add to the PolicyNames collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribePoliciesRequest WithPolicyNames(params string[] policyNames)
+        {
+            foreach (var element in policyNames)
+            {
+                this._policyNames.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the PolicyNames property
+        /// </summary>
+        /// <param name="policyNames">The values to add to the PolicyNames collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribePoliciesRequest WithPolicyNames(IEnumerable<string> policyNames)
+        {
+            foreach (var element in policyNames)
+            {
+                this._policyNames.Add(element);
+            }
+            return this;
+        }
+        // Check to see if PolicyNames property is set
+        internal bool IsSetPolicyNames()
+        {
+            return this._policyNames != null && this._policyNames.Count > 0; 
+        }
+
     }
 }
-    

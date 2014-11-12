@@ -13,28 +13,34 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeScalingActivities operation
-    /// </summary>
-    internal class DescribeScalingActivitiesResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DescribeScalingActivities operation
+    /// </summary>  
+    public class DescribeScalingActivitiesResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             DescribeScalingActivitiesResponse response = new DescribeScalingActivitiesResponse();
-            
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
             while (context.Read())
             {
-                if (context.IsStartElement)                
+                if (context.IsStartElement)
                 {
                     if(context.TestExpression("DescribeScalingActivitiesResult", 2))
                     {
@@ -47,35 +53,30 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
 
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextToken"))
             {
                 return new InvalidNextTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             return new AmazonAutoScalingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeScalingActivitiesResponseUnmarshaller instance;
 
+        private static DescribeScalingActivitiesResponseUnmarshaller instance;
         public static DescribeScalingActivitiesResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new DescribeScalingActivitiesResponseUnmarshaller();
+                instance = new DescribeScalingActivitiesResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

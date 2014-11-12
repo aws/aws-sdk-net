@@ -14,64 +14,68 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Put Scheduled Update Group Action Request Marshaller
+    /// PutScheduledUpdateGroupAction Request Marshaller
     /// </summary>       
     public class PutScheduledUpdateGroupActionRequestMarshaller : IMarshaller<IRequest, PutScheduledUpdateGroupActionRequest>
     {
-        public IRequest Marshall(PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest)
+        public IRequest Marshall(PutScheduledUpdateGroupActionRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(putScheduledUpdateGroupActionRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "PutScheduledUpdateGroupAction");
             request.Parameters.Add("Version", "2011-01-01");
-            if (putScheduledUpdateGroupActionRequest != null && putScheduledUpdateGroupActionRequest.IsSetAutoScalingGroupName())
-            {
-                request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(putScheduledUpdateGroupActionRequest.AutoScalingGroupName));
-            }
-            if (putScheduledUpdateGroupActionRequest != null && putScheduledUpdateGroupActionRequest.IsSetScheduledActionName())
-            {
-                request.Parameters.Add("ScheduledActionName", StringUtils.FromString(putScheduledUpdateGroupActionRequest.ScheduledActionName));
-            }
-            if (putScheduledUpdateGroupActionRequest != null && putScheduledUpdateGroupActionRequest.IsSetTime())
-            {
-                request.Parameters.Add("Time", StringUtils.FromDateTime(putScheduledUpdateGroupActionRequest.Time));
-            }
-            if (putScheduledUpdateGroupActionRequest != null && putScheduledUpdateGroupActionRequest.IsSetStartTime())
-            {
-                request.Parameters.Add("StartTime", StringUtils.FromDateTime(putScheduledUpdateGroupActionRequest.StartTime));
-            }
-            if (putScheduledUpdateGroupActionRequest != null && putScheduledUpdateGroupActionRequest.IsSetEndTime())
-            {
-                request.Parameters.Add("EndTime", StringUtils.FromDateTime(putScheduledUpdateGroupActionRequest.EndTime));
-            }
-            if (putScheduledUpdateGroupActionRequest != null && putScheduledUpdateGroupActionRequest.IsSetRecurrence())
-            {
-                request.Parameters.Add("Recurrence", StringUtils.FromString(putScheduledUpdateGroupActionRequest.Recurrence));
-            }
-            if (putScheduledUpdateGroupActionRequest != null && putScheduledUpdateGroupActionRequest.IsSetMinSize())
-            {
-                request.Parameters.Add("MinSize", StringUtils.FromInt(putScheduledUpdateGroupActionRequest.MinSize));
-            }
-            if (putScheduledUpdateGroupActionRequest != null && putScheduledUpdateGroupActionRequest.IsSetMaxSize())
-            {
-                request.Parameters.Add("MaxSize", StringUtils.FromInt(putScheduledUpdateGroupActionRequest.MaxSize));
-            }
-            if (putScheduledUpdateGroupActionRequest != null && putScheduledUpdateGroupActionRequest.IsSetDesiredCapacity())
-            {
-                request.Parameters.Add("DesiredCapacity", StringUtils.FromInt(putScheduledUpdateGroupActionRequest.DesiredCapacity));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAutoScalingGroupName())
+                {
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
+                if(publicRequest.IsSetDesiredCapacity())
+                {
+                    request.Parameters.Add("DesiredCapacity", StringUtils.FromInt(publicRequest.DesiredCapacity));
+                }
+                if(publicRequest.IsSetEndTime())
+                {
+                    request.Parameters.Add("EndTime", StringUtils.FromDateTime(publicRequest.EndTime));
+                }
+                if(publicRequest.IsSetMaxSize())
+                {
+                    request.Parameters.Add("MaxSize", StringUtils.FromInt(publicRequest.MaxSize));
+                }
+                if(publicRequest.IsSetMinSize())
+                {
+                    request.Parameters.Add("MinSize", StringUtils.FromInt(publicRequest.MinSize));
+                }
+                if(publicRequest.IsSetRecurrence())
+                {
+                    request.Parameters.Add("Recurrence", StringUtils.FromString(publicRequest.Recurrence));
+                }
+                if(publicRequest.IsSetScheduledActionName())
+                {
+                    request.Parameters.Add("ScheduledActionName", StringUtils.FromString(publicRequest.ScheduledActionName));
+                }
+                if(publicRequest.IsSetStartTime())
+                {
+                    request.Parameters.Add("StartTime", StringUtils.FromDateTime(publicRequest.StartTime));
+                }
+                if(publicRequest.IsSetTime())
+                {
+                    request.Parameters.Add("Time", StringUtils.FromDateTime(publicRequest.Time));
+                }
+            }
             return request;
         }
     }

@@ -25,38 +25,31 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAutoScalingGroup operation.
-    /// <para> Deletes the specified Auto Scaling group if the group has no instances and no scaling activities in progress. </para>
-    /// <para><b>NOTE:</b> To remove all instances before calling DeleteAutoScalingGroup, you can call UpdateAutoScalingGroup to set the minimum and
-    /// maximum size of the AutoScalingGroup to zero. </para>
+    /// Deletes the specified Auto Scaling group if the group has no        instances
+    /// and no scaling activities in progress.        
+    /// 
+    ///         <note>            To remove all instances before calling <a>DeleteAutoScalingGroup</a>,
+    ///            you can call <a>UpdateAutoScalingGroup</a> to set the minimum and     
+    ///        maximum size of the AutoScalingGroup to zero.        </note>
     /// </summary>
-    /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DeleteAutoScalingGroup"/>
-    public class DeleteAutoScalingGroupRequest : AmazonWebServiceRequest
+    public partial class DeleteAutoScalingGroupRequest : AmazonWebServiceRequest
     {
-        private string autoScalingGroupName;
-        private bool? forceDelete;
+        private string _autoScalingGroupName;
+        private bool? _forceDelete;
+
 
         /// <summary>
-        /// The name of the Auto Scaling group to delete.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///         The name of the Auto Scaling group to delete.        
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
+
 
         /// <summary>
         /// Sets the AutoScalingGroupName property
@@ -66,27 +59,31 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteAutoScalingGroupRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
-            this.autoScalingGroupName = autoScalingGroupName;
+            this._autoScalingGroupName = autoScalingGroupName;
             return this;
         }
-            
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
         }
 
+
         /// <summary>
-        /// Starting with API version 2011-01-01, specifies that the Auto Scaling group will be deleted along with all instances associated with the
-        /// group, without waiting for all instances to be terminated.
-        ///  
+        /// Gets and sets the property ForceDelete. 
+        /// <para>
+        /// Starting with API version 2011-01-01, specifies that the Auto Scaling group will be
+        /// deleted along with all instances           associated with the group, without waiting
+        /// for all instances to be terminated.         
+        /// </para>
         /// </summary>
         public bool ForceDelete
         {
-            get { return this.forceDelete ?? default(bool); }
-            set { this.forceDelete = value; }
+            get { return this._forceDelete.GetValueOrDefault(); }
+            set { this._forceDelete = value; }
         }
+
 
         /// <summary>
         /// Sets the ForceDelete property
@@ -96,16 +93,15 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteAutoScalingGroupRequest WithForceDelete(bool forceDelete)
         {
-            this.forceDelete = forceDelete;
+            this._forceDelete = forceDelete;
             return this;
         }
-            
 
         // Check to see if ForceDelete property is set
         internal bool IsSetForceDelete()
         {
-            return this.forceDelete.HasValue;
+            return this._forceDelete.HasValue; 
         }
+
     }
 }
-    

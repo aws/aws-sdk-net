@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeTerminationPolicyTypesResult response and response metadata.
+    /// Returns information about the DescribeTerminationPolicyTypesResult response and response metadata.
     /// </summary>
     public class DescribeTerminationPolicyTypesResponse : AmazonWebServiceResponse
     {
-        private DescribeTerminationPolicyTypesResult describeTerminationPolicyTypesResult;
+        private DescribeTerminationPolicyTypesResult _describeTerminationPolicyTypesResult;
 
         /// <summary>
         /// Gets and sets the DescribeTerminationPolicyTypesResult property.
-        /// The TerminationPolicyTypes data type.
+        /// Represents the output of a DescribeTerminationPolicyTypes operation.
         /// </summary>
         public DescribeTerminationPolicyTypesResult DescribeTerminationPolicyTypesResult
         {
             get
             {
-                if(this.describeTerminationPolicyTypesResult == null)
+                if(this._describeTerminationPolicyTypesResult == null)
                 {
-                    this.describeTerminationPolicyTypesResult = new DescribeTerminationPolicyTypesResult();
+                    this._describeTerminationPolicyTypesResult = new DescribeTerminationPolicyTypesResult();
                 }
-
-                return this.describeTerminationPolicyTypesResult;
+                return this._describeTerminationPolicyTypesResult;
             }
-            set { this.describeTerminationPolicyTypesResult = value; }
+            set { this._describeTerminationPolicyTypesResult = value; }
         }
     }
 }
-    

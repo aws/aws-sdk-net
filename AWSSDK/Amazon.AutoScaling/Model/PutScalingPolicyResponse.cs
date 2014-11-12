@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  PutScalingPolicyResult response and response metadata.
+    /// Returns information about the PutScalingPolicyResult response and response metadata.
     /// </summary>
     public class PutScalingPolicyResponse : AmazonWebServiceResponse
     {
-        private PutScalingPolicyResult putScalingPolicyResult;
+        private PutScalingPolicyResult _putScalingPolicyResult;
 
         /// <summary>
         /// Gets and sets the PutScalingPolicyResult property.
-        /// The PolicyARNType data type.
+        /// Represents the output of a PutScalingPolicy operation.
         /// </summary>
         public PutScalingPolicyResult PutScalingPolicyResult
         {
             get
             {
-                if(this.putScalingPolicyResult == null)
+                if(this._putScalingPolicyResult == null)
                 {
-                    this.putScalingPolicyResult = new PutScalingPolicyResult();
+                    this._putScalingPolicyResult = new PutScalingPolicyResult();
                 }
-
-                return this.putScalingPolicyResult;
+                return this._putScalingPolicyResult;
             }
-            set { this.putScalingPolicyResult = value; }
+            set { this._putScalingPolicyResult = value; }
         }
     }
 }
-    

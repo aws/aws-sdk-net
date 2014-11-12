@@ -14,47 +14,49 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Put Notification Configuration Request Marshaller
+    /// PutNotificationConfiguration Request Marshaller
     /// </summary>       
     public class PutNotificationConfigurationRequestMarshaller : IMarshaller<IRequest, PutNotificationConfigurationRequest>
     {
-        public IRequest Marshall(PutNotificationConfigurationRequest putNotificationConfigurationRequest)
+        public IRequest Marshall(PutNotificationConfigurationRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(putNotificationConfigurationRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "PutNotificationConfiguration");
             request.Parameters.Add("Version", "2011-01-01");
-            if (putNotificationConfigurationRequest != null && putNotificationConfigurationRequest.IsSetAutoScalingGroupName())
-            {
-                request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(putNotificationConfigurationRequest.AutoScalingGroupName));
-            }
-            if (putNotificationConfigurationRequest != null && putNotificationConfigurationRequest.IsSetTopicARN())
-            {
-                request.Parameters.Add("TopicARN", StringUtils.FromString(putNotificationConfigurationRequest.TopicARN));
-            }
-            if (putNotificationConfigurationRequest != null)
-            {
-                List<string> notificationTypesList = putNotificationConfigurationRequest.NotificationTypes;
 
-                int notificationTypesListIndex = 1;
-                foreach (string notificationTypesListValue in notificationTypesList)
-                { 
-                    request.Parameters.Add("NotificationTypes.member." + notificationTypesListIndex, StringUtils.FromString(notificationTypesListValue));
-                    notificationTypesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAutoScalingGroupName())
+                {
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
+                if(publicRequest.IsSetNotificationTypes())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.NotificationTypes)
+                    {
+                        request.Parameters.Add("NotificationTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetTopicARN())
+                {
+                    request.Parameters.Add("TopicARN", StringUtils.FromString(publicRequest.TopicARN));
                 }
             }
-
             return request;
         }
     }

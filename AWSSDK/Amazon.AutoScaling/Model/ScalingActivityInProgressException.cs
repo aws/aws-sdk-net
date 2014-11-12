@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.AutoScaling.Model
 {
     ///<summary>
-    /// AmazonAutoScaling exception
+    /// AutoScaling exception
     /// </summary>
     public class ScalingActivityInProgressException : AmazonAutoScalingException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.AutoScaling.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ScalingActivityInProgressException(string message) 
+        public ScalingActivityInProgressException(string message) 
             : base(message) {}
           
-        internal ScalingActivityInProgressException(string message, Exception innerException) 
+        public ScalingActivityInProgressException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ScalingActivityInProgressException(Exception innerException) 
+        public ScalingActivityInProgressException(Exception innerException) 
             : base(innerException) {}
             
-        internal ScalingActivityInProgressException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ScalingActivityInProgressException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ScalingActivityInProgressException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ScalingActivityInProgressException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

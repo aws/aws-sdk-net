@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  TerminateInstanceInAutoScalingGroupResult response and response metadata.
+    /// Returns information about the TerminateInstanceInAutoScalingGroupResult response and response metadata.
     /// </summary>
     public class TerminateInstanceInAutoScalingGroupResponse : AmazonWebServiceResponse
     {
-        private TerminateInstanceInAutoScalingGroupResult terminateInstanceInAutoScalingGroupResult;
+        private TerminateInstanceInAutoScalingGroupResult _terminateInstanceInAutoScalingGroupResult;
 
         /// <summary>
         /// Gets and sets the TerminateInstanceInAutoScalingGroupResult property.
-        /// The output for the TerminateInstanceInAutoScalingGroup action.
+        /// Represents the output of a TerminateInstanceInAutoScalingGroup operation.
         /// </summary>
         public TerminateInstanceInAutoScalingGroupResult TerminateInstanceInAutoScalingGroupResult
         {
             get
             {
-                if(this.terminateInstanceInAutoScalingGroupResult == null)
+                if(this._terminateInstanceInAutoScalingGroupResult == null)
                 {
-                    this.terminateInstanceInAutoScalingGroupResult = new TerminateInstanceInAutoScalingGroupResult();
+                    this._terminateInstanceInAutoScalingGroupResult = new TerminateInstanceInAutoScalingGroupResult();
                 }
-
-                return this.terminateInstanceInAutoScalingGroupResult;
+                return this._terminateInstanceInAutoScalingGroupResult;
             }
-            set { this.terminateInstanceInAutoScalingGroupResult = value; }
+            set { this._terminateInstanceInAutoScalingGroupResult = value; }
         }
     }
 }
-    

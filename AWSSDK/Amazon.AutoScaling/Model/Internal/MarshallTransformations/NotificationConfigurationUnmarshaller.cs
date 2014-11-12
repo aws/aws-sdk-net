@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   NotificationConfiguration Unmarshaller
-     /// </summary>
-    internal class NotificationConfigurationUnmarshaller : IUnmarshaller<NotificationConfiguration, XmlUnmarshallerContext>, IUnmarshaller<NotificationConfiguration, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for NotificationConfiguration Object
+    /// </summary>  
+    public class NotificationConfigurationUnmarshaller : IUnmarshaller<NotificationConfiguration, XmlUnmarshallerContext>, IUnmarshaller<NotificationConfiguration, JsonUnmarshallerContext>
     {
-        public NotificationConfiguration Unmarshall(XmlUnmarshallerContext context) 
+        public NotificationConfiguration Unmarshall(XmlUnmarshallerContext context)
         {
-            NotificationConfiguration notificationConfiguration = new NotificationConfiguration();
+            NotificationConfiguration unmarshalledObject = new NotificationConfiguration();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,51 +44,50 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("AutoScalingGroupName", targetDepth))
                     {
-                        notificationConfiguration.AutoScalingGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.AutoScalingGroupName = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("TopicARN", targetDepth))
-                    {
-                        notificationConfiguration.TopicARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                    }
                     if (context.TestExpression("NotificationType", targetDepth))
                     {
-                        notificationConfiguration.NotificationType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.NotificationType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TopicARN", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.TopicARN = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return notificationConfiguration;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return notificationConfiguration;
+            return unmarshalledObject;
         }
 
-        public NotificationConfiguration Unmarshall(JsonUnmarshallerContext context) 
+        public NotificationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static NotificationConfigurationUnmarshaller instance;
-
-        public static NotificationConfigurationUnmarshaller GetInstance() 
+        public static NotificationConfigurationUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new NotificationConfigurationUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new NotificationConfigurationUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

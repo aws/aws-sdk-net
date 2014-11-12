@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeScalingProcessTypesResult response and response metadata.
+    /// Returns information about the DescribeScalingProcessTypesResult response and response metadata.
     /// </summary>
     public class DescribeScalingProcessTypesResponse : AmazonWebServiceResponse
     {
-        private DescribeScalingProcessTypesResult describeScalingProcessTypesResult;
+        private DescribeScalingProcessTypesResult _describeScalingProcessTypesResult;
 
         /// <summary>
         /// Gets and sets the DescribeScalingProcessTypesResult property.
-        /// The output of the DescribeScalingProcessTypes action.
+        /// Represents the output of a DescribeScalingProcessTypes operation.
         /// </summary>
         public DescribeScalingProcessTypesResult DescribeScalingProcessTypesResult
         {
             get
             {
-                if(this.describeScalingProcessTypesResult == null)
+                if(this._describeScalingProcessTypesResult == null)
                 {
-                    this.describeScalingProcessTypesResult = new DescribeScalingProcessTypesResult();
+                    this._describeScalingProcessTypesResult = new DescribeScalingProcessTypesResult();
                 }
-
-                return this.describeScalingProcessTypesResult;
+                return this._describeScalingProcessTypesResult;
             }
-            set { this.describeScalingProcessTypesResult = value; }
+            set { this._describeScalingProcessTypesResult = value; }
         }
     }
 }
-    

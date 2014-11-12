@@ -12,63 +12,67 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   TerminateInstanceInAutoScalingGroupResult Unmarshaller
-     /// </summary>
-    internal class TerminateInstanceInAutoScalingGroupResultUnmarshaller : IUnmarshaller<TerminateInstanceInAutoScalingGroupResult, XmlUnmarshallerContext>, IUnmarshaller<TerminateInstanceInAutoScalingGroupResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for TerminateInstanceInAutoScalingGroup Object
+    /// </summary>  
+    public class TerminateInstanceInAutoScalingGroupResultUnmarshaller : IUnmarshaller<TerminateInstanceInAutoScalingGroupResult, XmlUnmarshallerContext>
     {
         public TerminateInstanceInAutoScalingGroupResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            TerminateInstanceInAutoScalingGroupResult terminateInstanceInAutoScalingGroupResult = new TerminateInstanceInAutoScalingGroupResult();
+            TerminateInstanceInAutoScalingGroupResult result = new TerminateInstanceInAutoScalingGroupResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("Activity", targetDepth))
                     {
-                        terminateInstanceInAutoScalingGroupResult.Activity = ActivityUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = ActivityUnmarshaller.GetInstance();
+                        result.Activity = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return terminateInstanceInAutoScalingGroupResult;
+                    return result;
                 }
             }
-                        
 
-
-            return terminateInstanceInAutoScalingGroupResult;
+            return result;
         }
 
-        public TerminateInstanceInAutoScalingGroupResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static TerminateInstanceInAutoScalingGroupResultUnmarshaller instance;
-
-        public static TerminateInstanceInAutoScalingGroupResultUnmarshaller GetInstance() 
+        public static TerminateInstanceInAutoScalingGroupResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new TerminateInstanceInAutoScalingGroupResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new TerminateInstanceInAutoScalingGroupResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

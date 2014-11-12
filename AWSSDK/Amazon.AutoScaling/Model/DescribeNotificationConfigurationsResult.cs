@@ -18,82 +18,33 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para>The output of the DescribeNotificationConfigurations action.</para>
+    /// The output of the <a>DescribeNotificationConfigurations</a> action.
     /// </summary>
     public partial class DescribeNotificationConfigurationsResult
     {
-        
-        private List<NotificationConfiguration> notificationConfigurations = new List<NotificationConfiguration>();
-        private string nextToken;
+        private string _nextToken;
+        private List<NotificationConfiguration> _notificationConfigurations = new List<NotificationConfiguration>();
+
 
         /// <summary>
-        /// The list of notification configurations.
-        ///  
-        /// </summary>
-        public List<NotificationConfiguration> NotificationConfigurations
-        {
-            get { return this.notificationConfigurations; }
-            set { this.notificationConfigurations = value; }
-        }
-        /// <summary>
-        /// Adds elements to the NotificationConfigurations collection
-        /// </summary>
-        /// <param name="notificationConfigurations">The values to add to the NotificationConfigurations collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeNotificationConfigurationsResult WithNotificationConfigurations(params NotificationConfiguration[] notificationConfigurations)
-        {
-            foreach (NotificationConfiguration element in notificationConfigurations)
-            {
-                this.notificationConfigurations.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the NotificationConfigurations collection
-        /// </summary>
-        /// <param name="notificationConfigurations">The values to add to the NotificationConfigurations collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeNotificationConfigurationsResult WithNotificationConfigurations(IEnumerable<NotificationConfiguration> notificationConfigurations)
-        {
-            foreach (NotificationConfiguration element in notificationConfigurations)
-            {
-                this.notificationConfigurations.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if NotificationConfigurations property is set
-        internal bool IsSetNotificationConfigurations()
-        {
-            return this.notificationConfigurations.Count > 0;
-        }
-
-        /// <summary>
-        /// A string that is used to mark the start of the next batch of returned results for pagination.
-        ///  
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// A string that is used to mark the start of the next            batch of returned results
+        /// for pagination.
         /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
+
 
         /// <summary>
         /// Sets the NextToken property
@@ -103,15 +54,63 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeNotificationConfigurationsResult WithNextToken(string nextToken)
         {
-            this.nextToken = nextToken;
+            this._nextToken = nextToken;
             return this;
         }
-            
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property NotificationConfigurations. 
+        /// <para>
+        /// The list of notification configurations.
+        /// </para>
+        /// </summary>
+        public List<NotificationConfiguration> NotificationConfigurations
+        {
+            get { return this._notificationConfigurations; }
+            set { this._notificationConfigurations = value; }
+        }
+
+        /// <summary>
+        /// Sets the NotificationConfigurations property
+        /// </summary>
+        /// <param name="notificationConfigurations">The values to add to the NotificationConfigurations collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeNotificationConfigurationsResult WithNotificationConfigurations(params NotificationConfiguration[] notificationConfigurations)
+        {
+            foreach (var element in notificationConfigurations)
+            {
+                this._notificationConfigurations.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the NotificationConfigurations property
+        /// </summary>
+        /// <param name="notificationConfigurations">The values to add to the NotificationConfigurations collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeNotificationConfigurationsResult WithNotificationConfigurations(IEnumerable<NotificationConfiguration> notificationConfigurations)
+        {
+            foreach (var element in notificationConfigurations)
+            {
+                this._notificationConfigurations.Add(element);
+            }
+            return this;
+        }
+        // Check to see if NotificationConfigurations property is set
+        internal bool IsSetNotificationConfigurations()
+        {
+            return this._notificationConfigurations != null && this._notificationConfigurations.Count > 0; 
+        }
+
     }
 }

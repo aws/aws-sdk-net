@@ -13,65 +13,65 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for UpdateAutoScalingGroup operation
-    /// </summary>
-    internal class UpdateAutoScalingGroupResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for UpdateAutoScalingGroup operation
+    /// </summary>  
+    public class UpdateAutoScalingGroupResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             UpdateAutoScalingGroupResponse response = new UpdateAutoScalingGroupResponse();
-            
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
             while (context.Read())
             {
                 if (context.IsStartElement)
                 {
-                    
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
                         response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
                     }
                 }
             }
-                
 
             return response;
         }
-        
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("ScalingActivityInProgress"))
             {
                 return new ScalingActivityInProgressException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             return new AmazonAutoScalingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static UpdateAutoScalingGroupResponseUnmarshaller instance;
 
+        private static UpdateAutoScalingGroupResponseUnmarshaller instance;
         public static UpdateAutoScalingGroupResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new UpdateAutoScalingGroupResponseUnmarshaller();
+                instance = new UpdateAutoScalingGroupResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

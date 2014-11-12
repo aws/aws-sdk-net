@@ -14,28 +14,32 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Auto Scaling Notification Types Request Marshaller
+    /// DescribeAutoScalingNotificationTypes Request Marshaller
     /// </summary>       
     public class DescribeAutoScalingNotificationTypesRequestMarshaller : IMarshaller<IRequest, DescribeAutoScalingNotificationTypesRequest>
     {
-        public IRequest Marshall(DescribeAutoScalingNotificationTypesRequest describeAutoScalingNotificationTypesRequest)
+        public IRequest Marshall(DescribeAutoScalingNotificationTypesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeAutoScalingNotificationTypesRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "DescribeAutoScalingNotificationTypes");
             request.Parameters.Add("Version", "2011-01-01");
 
+            if(publicRequest != null)
+            {
+            }
             return request;
         }
     }

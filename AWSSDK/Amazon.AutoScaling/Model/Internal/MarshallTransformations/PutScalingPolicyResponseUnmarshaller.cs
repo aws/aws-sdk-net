@@ -13,28 +13,34 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for PutScalingPolicy operation
-    /// </summary>
-    internal class PutScalingPolicyResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for PutScalingPolicy operation
+    /// </summary>  
+    public class PutScalingPolicyResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             PutScalingPolicyResponse response = new PutScalingPolicyResponse();
-            
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
             while (context.Read())
             {
-                if (context.IsStartElement)                
+                if (context.IsStartElement)
                 {
                     if(context.TestExpression("PutScalingPolicyResult", 2))
                     {
@@ -47,35 +53,30 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
 
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceeded"))
             {
                 return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             return new AmazonAutoScalingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static PutScalingPolicyResponseUnmarshaller instance;
 
+        private static PutScalingPolicyResponseUnmarshaller instance;
         public static PutScalingPolicyResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new PutScalingPolicyResponseUnmarshaller();
+                instance = new PutScalingPolicyResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

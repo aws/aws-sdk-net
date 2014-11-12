@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeAutoScalingNotificationTypesResult response and response metadata.
+    /// Returns information about the DescribeAutoScalingNotificationTypesResult response and response metadata.
     /// </summary>
     public class DescribeAutoScalingNotificationTypesResponse : AmazonWebServiceResponse
     {
-        private DescribeAutoScalingNotificationTypesResult describeAutoScalingNotificationTypesResult;
+        private DescribeAutoScalingNotificationTypesResult _describeAutoScalingNotificationTypesResult;
 
         /// <summary>
         /// Gets and sets the DescribeAutoScalingNotificationTypesResult property.
-        /// The AutoScalingNotificationTypes data type.
+        /// Represents the output of a DescribeAutoScalingNotificationTypes operation.
         /// </summary>
         public DescribeAutoScalingNotificationTypesResult DescribeAutoScalingNotificationTypesResult
         {
             get
             {
-                if(this.describeAutoScalingNotificationTypesResult == null)
+                if(this._describeAutoScalingNotificationTypesResult == null)
                 {
-                    this.describeAutoScalingNotificationTypesResult = new DescribeAutoScalingNotificationTypesResult();
+                    this._describeAutoScalingNotificationTypesResult = new DescribeAutoScalingNotificationTypesResult();
                 }
-
-                return this.describeAutoScalingNotificationTypesResult;
+                return this._describeAutoScalingNotificationTypesResult;
             }
-            set { this.describeAutoScalingNotificationTypesResult = value; }
+            set { this._describeAutoScalingNotificationTypesResult = value; }
         }
     }
 }
-    

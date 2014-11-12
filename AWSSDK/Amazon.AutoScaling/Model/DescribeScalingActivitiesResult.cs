@@ -18,83 +18,82 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The output for the DescribeScalingActivities action. </para>
+    /// The output for the <a>DescribeScalingActivities</a> action.
     /// </summary>
     public partial class DescribeScalingActivitiesResult
     {
-        
-        private List<Activity> activities = new List<Activity>();
-        private string nextToken;
+        private List<Activity> _activities = new List<Activity>();
+        private string _nextToken;
+
 
         /// <summary>
-        /// A list of the requested scaling activities.
-        ///  
+        /// Gets and sets the property Activities. 
+        /// <para>
+        ///         A list of the requested scaling activities.        
+        /// </para>
         /// </summary>
         public List<Activity> Activities
         {
-            get { return this.activities; }
-            set { this.activities = value; }
+            get { return this._activities; }
+            set { this._activities = value; }
         }
+
         /// <summary>
-        /// Adds elements to the Activities collection
+        /// Sets the Activities property
         /// </summary>
         /// <param name="activities">The values to add to the Activities collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScalingActivitiesResult WithActivities(params Activity[] activities)
         {
-            foreach (Activity element in activities)
+            foreach (var element in activities)
             {
-                this.activities.Add(element);
+                this._activities.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Activities collection
+        /// Sets the Activities property
         /// </summary>
         /// <param name="activities">The values to add to the Activities collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScalingActivitiesResult WithActivities(IEnumerable<Activity> activities)
         {
-            foreach (Activity element in activities)
+            foreach (var element in activities)
             {
-                this.activities.Add(element);
+                this._activities.Add(element);
             }
-
             return this;
         }
-
         // Check to see if Activities property is set
         internal bool IsSetActivities()
         {
-            return this.activities.Count > 0;
+            return this._activities != null && this._activities.Count > 0; 
         }
 
+
         /// <summary>
-        /// Acts as a paging mechanism for large result sets. Set to a non-empty string if there are additional results waiting to be returned. Pass
-        /// this in to subsequent calls to return additional results.
-        ///  
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///         Acts as a paging mechanism for large result sets.        Set to a non-empty
+        /// string if there are additional        results waiting to be returned.        Pass
+        /// this in to subsequent calls to return additional results.        
         /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
+
 
         /// <summary>
         /// Sets the NextToken property
@@ -104,15 +103,15 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScalingActivitiesResult WithNextToken(string nextToken)
         {
-            this.nextToken = nextToken;
+            this._nextToken = nextToken;
             return this;
         }
-            
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
     }
 }

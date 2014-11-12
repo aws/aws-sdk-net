@@ -18,45 +18,43 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> A scaling Activity is a long-running process that represents a change to your AutoScalingGroup, such as changing the size of the
-    /// group. It can also be a process to replace an instance, or a process to perform any other long-running operations supported by the API.
-    /// </para>
+    /// A scaling Activity is a long-running process that             represents
+    /// a change to your AutoScalingGroup,             such as changing the size of the group.
+    ///             It can also be a process to replace an instance,             or a process
+    /// to perform any other long-running operations             supported by the API.
     /// </summary>
     public partial class Activity
     {
-        
-        private string activityId;
-        private string autoScalingGroupName;
-        private string description;
-        private string cause;
-        private DateTime? startTime;
-        private DateTime? endTime;
-        private string statusCode;
-        private string statusMessage;
-        private int? progress;
-        private string details;
+        private string _activityId;
+        private string _autoScalingGroupName;
+        private string _cause;
+        private string _description;
+        private string _details;
+        private DateTime? _endTime;
+        private int? _progress;
+        private DateTime? _startTime;
+        private string _statusCode;
+        private string _statusMessage;
+
 
         /// <summary>
-        /// Specifies the ID of the activity.
-        ///  
+        /// Gets and sets the property ActivityId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///         Specifies the ID of the activity.        
         /// </para>
         /// </summary>
         public string ActivityId
         {
-            get { return this.activityId; }
-            set { this.activityId = value; }
+            get { return this._activityId; }
+            set { this._activityId = value; }
         }
+
 
         /// <summary>
         /// Sets the ActivityId property
@@ -66,39 +64,29 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Activity WithActivityId(string activityId)
         {
-            this.activityId = activityId;
+            this._activityId = activityId;
             return this;
         }
-            
 
         // Check to see if ActivityId property is set
         internal bool IsSetActivityId()
         {
-            return this.activityId != null;
+            return this._activityId != null;
         }
 
+
         /// <summary>
-        /// The name of the Auto Scaling group.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///             The name of the Auto Scaling group.        
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
+
 
         /// <summary>
         /// Sets the AutoScalingGroupName property
@@ -108,77 +96,29 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Activity WithAutoScalingGroupName(string autoScalingGroupName)
         {
-            this.autoScalingGroupName = autoScalingGroupName;
+            this._autoScalingGroupName = autoScalingGroupName;
             return this;
         }
-            
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
         }
 
+
         /// <summary>
-        /// Contains a friendly, more verbose description of the scaling activity.
-        ///  
+        /// Gets and sets the property Cause. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Description
-        {
-            get { return this.description; }
-            set { this.description = value; }
-        }
-
-        /// <summary>
-        /// Sets the Description property
-        /// </summary>
-        /// <param name="description">The value to set for the Description property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public Activity WithDescription(string description)
-        {
-            this.description = description;
-            return this;
-        }
-            
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this.description != null;
-        }
-
-        /// <summary>
-        /// Contains the reason the activity was begun.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1023</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///         Contains the reason the activity was begun.        
         /// </para>
         /// </summary>
         public string Cause
         {
-            get { return this.cause; }
-            set { this.cause = value; }
+            get { return this._cause; }
+            set { this._cause = value; }
         }
+
 
         /// <summary>
         /// Sets the Cause property
@@ -188,202 +128,62 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Activity WithCause(string cause)
         {
-            this.cause = cause;
+            this._cause = cause;
             return this;
         }
-            
 
         // Check to see if Cause property is set
         internal bool IsSetCause()
         {
-            return this.cause != null;
+            return this._cause != null;
         }
+
 
         /// <summary>
-        /// Provides the start time of this activity.
-        ///  
-        /// </summary>
-        public DateTime StartTime
-        {
-            get { return this.startTime ?? default(DateTime); }
-            set { this.startTime = value; }
-        }
-
-        /// <summary>
-        /// Sets the StartTime property
-        /// </summary>
-        /// <param name="startTime">The value to set for the StartTime property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public Activity WithStartTime(DateTime startTime)
-        {
-            this.startTime = startTime;
-            return this;
-        }
-            
-
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
-        {
-            return this.startTime.HasValue;
-        }
-
-        /// <summary>
-        /// Provides the end time of this activity.
-        ///  
-        /// </summary>
-        public DateTime EndTime
-        {
-            get { return this.endTime ?? default(DateTime); }
-            set { this.endTime = value; }
-        }
-
-        /// <summary>
-        /// Sets the EndTime property
-        /// </summary>
-        /// <param name="endTime">The value to set for the EndTime property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public Activity WithEndTime(DateTime endTime)
-        {
-            this.endTime = endTime;
-            return this;
-        }
-            
-
-        // Check to see if EndTime property is set
-        internal bool IsSetEndTime()
-        {
-            return this.endTime.HasValue;
-        }
-
-        /// <summary>
-        /// Contains the current status of the activity.
-        ///  
+        /// Gets and sets the property Description. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>WaitingForSpotInstanceRequestId, WaitingForSpotInstanceId, WaitingForInstanceId, PreInService, InProgress, Successful, Failed, Cancelled</description>
-        ///     </item>
-        /// </list>
+        ///             Contains a friendly, more verbose description of the scaling activity.
+        ///        
         /// </para>
         /// </summary>
-        public string StatusCode
+        public string Description
         {
-            get { return this.statusCode; }
-            set { this.statusCode = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
+
         /// <summary>
-        /// Sets the StatusCode property
+        /// Sets the Description property
         /// </summary>
-        /// <param name="statusCode">The value to set for the StatusCode property </param>
+        /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public Activity WithStatusCode(string statusCode)
+        public Activity WithDescription(string description)
         {
-            this.statusCode = statusCode;
+            this._description = description;
             return this;
         }
-            
 
-        // Check to see if StatusCode property is set
-        internal bool IsSetStatusCode()
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
         {
-            return this.statusCode != null;
+            return this._description != null;
         }
 
+
         /// <summary>
-        /// Contains a friendly, more verbose description of the activity status.
-        ///  
+        /// Gets and sets the property Details. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string StatusMessage
-        {
-            get { return this.statusMessage; }
-            set { this.statusMessage = value; }
-        }
-
-        /// <summary>
-        /// Sets the StatusMessage property
-        /// </summary>
-        /// <param name="statusMessage">The value to set for the StatusMessage property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public Activity WithStatusMessage(string statusMessage)
-        {
-            this.statusMessage = statusMessage;
-            return this;
-        }
-            
-
-        // Check to see if StatusMessage property is set
-        internal bool IsSetStatusMessage()
-        {
-            return this.statusMessage != null;
-        }
-
-        /// <summary>
-        /// Specifies a value between 0 and 100 that indicates the progress of the activity.
-        ///  
-        /// </summary>
-        public int Progress
-        {
-            get { return this.progress ?? default(int); }
-            set { this.progress = value; }
-        }
-
-        /// <summary>
-        /// Sets the Progress property
-        /// </summary>
-        /// <param name="progress">The value to set for the Progress property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public Activity WithProgress(int progress)
-        {
-            this.progress = progress;
-            return this;
-        }
-            
-
-        // Check to see if Progress property is set
-        internal bool IsSetProgress()
-        {
-            return this.progress.HasValue;
-        }
-
-        /// <summary>
-        /// Contains details of the scaling activity.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///             Contains details of the scaling activity.        
         /// </para>
         /// </summary>
         public string Details
         {
-            get { return this.details; }
-            set { this.details = value; }
+            get { return this._details; }
+            set { this._details = value; }
         }
+
 
         /// <summary>
         /// Sets the Details property
@@ -393,15 +193,177 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Activity WithDetails(string details)
         {
-            this.details = details;
+            this._details = details;
             return this;
         }
-            
 
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this.details != null;
+            return this._details != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        ///         Provides the end time of this activity.        
+        /// </para>
+        /// </summary>
+        public DateTime EndTime
+        {
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the EndTime property
+        /// </summary>
+        /// <param name="endTime">The value to set for the EndTime property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Activity WithEndTime(DateTime endTime)
+        {
+            this._endTime = endTime;
+            return this;
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Progress. 
+        /// <para>
+        ///         Specifies a value between 0 and 100 that indicates the progress of the   
+        ///     activity.        
+        /// </para>
+        /// </summary>
+        public int Progress
+        {
+            get { return this._progress.GetValueOrDefault(); }
+            set { this._progress = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Progress property
+        /// </summary>
+        /// <param name="progress">The value to set for the Progress property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Activity WithProgress(int progress)
+        {
+            this._progress = progress;
+            return this;
+        }
+
+        // Check to see if Progress property is set
+        internal bool IsSetProgress()
+        {
+            return this._progress.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        ///         Provides the start time of this activity.        
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the StartTime property
+        /// </summary>
+        /// <param name="startTime">The value to set for the StartTime property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Activity WithStartTime(DateTime startTime)
+        {
+            this._startTime = startTime;
+            return this;
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StatusCode. 
+        /// <para>
+        ///         Contains the current status of the activity.        
+        /// </para>
+        /// </summary>
+        public string StatusCode
+        {
+            get { return this._statusCode; }
+            set { this._statusCode = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the StatusCode property
+        /// </summary>
+        /// <param name="statusCode">The value to set for the StatusCode property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Activity WithStatusCode(string statusCode)
+        {
+            this._statusCode = statusCode;
+            return this;
+        }
+
+        // Check to see if StatusCode property is set
+        internal bool IsSetStatusCode()
+        {
+            return this._statusCode != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        ///         Contains a friendly, more verbose description of the activity status.    
+        ///    
+        /// </para>
+        /// </summary>
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the StatusMessage property
+        /// </summary>
+        /// <param name="statusMessage">The value to set for the StatusMessage property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Activity WithStatusMessage(string statusMessage)
+        {
+            this._statusMessage = statusMessage;
+            return this;
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
+        }
+
     }
 }

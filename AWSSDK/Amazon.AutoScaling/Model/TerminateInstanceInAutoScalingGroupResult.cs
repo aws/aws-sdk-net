@@ -18,25 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The output for the TerminateInstanceInAutoScalingGroup action. </para>
+    /// The output for the <a>TerminateInstanceInAutoScalingGroup</a> action.
     /// </summary>
     public partial class TerminateInstanceInAutoScalingGroupResult
     {
-        
-        private Activity activity;
+        private Activity _activity;
+
 
         /// <summary>
-        /// A scaling Activity.
-        ///  
+        /// Gets and sets the property Activity. 
+        /// <para>
+        ///         A scaling Activity.        
+        /// </para>
         /// </summary>
         public Activity Activity
         {
-            get { return this.activity; }
-            set { this.activity = value; }
+            get { return this._activity; }
+            set { this._activity = value; }
         }
+
 
         /// <summary>
         /// Sets the Activity property
@@ -46,15 +52,15 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateInstanceInAutoScalingGroupResult WithActivity(Activity activity)
         {
-            this.activity = activity;
+            this._activity = activity;
             return this;
         }
-            
 
         // Check to see if Activity property is set
         internal bool IsSetActivity()
         {
-            return this.activity != null;
+            return this._activity != null;
         }
+
     }
 }

@@ -18,84 +18,41 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> A scaling action that is scheduled for a future time and date. An action can be scheduled up to thirty days in advance. </para>
-    /// <para> Starting with API version 2011-01-01, you can use <c>recurrence</c> to specify that a scaling action occurs regularly on a schedule.
+    /// A scaling action that is scheduled for a future time and date.       
+    ///     An action can be scheduled up to thirty days in advance.        
+    /// 
+    ///         
+    /// <para>
+    ///             Starting with API version 2011-01-01, you can use <code>recurrence</code>
+    ///             to specify that a scaling action occurs regularly on a schedule.        
+    /// 
     /// </para>
     /// </summary>
     public partial class DescribeScheduledActionsResult
     {
-        
-        private List<ScheduledUpdateGroupAction> scheduledUpdateGroupActions = new List<ScheduledUpdateGroupAction>();
-        private string nextToken;
+        private string _nextToken;
+        private List<ScheduledUpdateGroupAction> _scheduledUpdateGroupActions = new List<ScheduledUpdateGroupAction>();
+
 
         /// <summary>
-        /// A list of scheduled actions designed to update an Auto Scaling group.
-        ///  
-        /// </summary>
-        public List<ScheduledUpdateGroupAction> ScheduledUpdateGroupActions
-        {
-            get { return this.scheduledUpdateGroupActions; }
-            set { this.scheduledUpdateGroupActions = value; }
-        }
-        /// <summary>
-        /// Adds elements to the ScheduledUpdateGroupActions collection
-        /// </summary>
-        /// <param name="scheduledUpdateGroupActions">The values to add to the ScheduledUpdateGroupActions collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeScheduledActionsResult WithScheduledUpdateGroupActions(params ScheduledUpdateGroupAction[] scheduledUpdateGroupActions)
-        {
-            foreach (ScheduledUpdateGroupAction element in scheduledUpdateGroupActions)
-            {
-                this.scheduledUpdateGroupActions.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the ScheduledUpdateGroupActions collection
-        /// </summary>
-        /// <param name="scheduledUpdateGroupActions">The values to add to the ScheduledUpdateGroupActions collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeScheduledActionsResult WithScheduledUpdateGroupActions(IEnumerable<ScheduledUpdateGroupAction> scheduledUpdateGroupActions)
-        {
-            foreach (ScheduledUpdateGroupAction element in scheduledUpdateGroupActions)
-            {
-                this.scheduledUpdateGroupActions.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if ScheduledUpdateGroupActions property is set
-        internal bool IsSetScheduledUpdateGroupActions()
-        {
-            return this.scheduledUpdateGroupActions.Count > 0;
-        }
-
-        /// <summary>
-        /// A string that marks the start of the next batch of returned results.
-        ///  
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///             A string that marks the start of the next batch of returned results. 
+        ///       
         /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
+
 
         /// <summary>
         /// Sets the NextToken property
@@ -105,15 +62,64 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScheduledActionsResult WithNextToken(string nextToken)
         {
-            this.nextToken = nextToken;
+            this._nextToken = nextToken;
             return this;
         }
-            
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ScheduledUpdateGroupActions. 
+        /// <para>
+        ///             A list of scheduled actions designed to update an Auto Scaling group.
+        ///        
+        /// </para>
+        /// </summary>
+        public List<ScheduledUpdateGroupAction> ScheduledUpdateGroupActions
+        {
+            get { return this._scheduledUpdateGroupActions; }
+            set { this._scheduledUpdateGroupActions = value; }
+        }
+
+        /// <summary>
+        /// Sets the ScheduledUpdateGroupActions property
+        /// </summary>
+        /// <param name="scheduledUpdateGroupActions">The values to add to the ScheduledUpdateGroupActions collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeScheduledActionsResult WithScheduledUpdateGroupActions(params ScheduledUpdateGroupAction[] scheduledUpdateGroupActions)
+        {
+            foreach (var element in scheduledUpdateGroupActions)
+            {
+                this._scheduledUpdateGroupActions.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the ScheduledUpdateGroupActions property
+        /// </summary>
+        /// <param name="scheduledUpdateGroupActions">The values to add to the ScheduledUpdateGroupActions collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeScheduledActionsResult WithScheduledUpdateGroupActions(IEnumerable<ScheduledUpdateGroupAction> scheduledUpdateGroupActions)
+        {
+            foreach (var element in scheduledUpdateGroupActions)
+            {
+                this._scheduledUpdateGroupActions.Add(element);
+            }
+            return this;
+        }
+        // Check to see if ScheduledUpdateGroupActions property is set
+        internal bool IsSetScheduledUpdateGroupActions()
+        {
+            return this._scheduledUpdateGroupActions != null && this._scheduledUpdateGroupActions.Count > 0; 
+        }
+
     }
 }

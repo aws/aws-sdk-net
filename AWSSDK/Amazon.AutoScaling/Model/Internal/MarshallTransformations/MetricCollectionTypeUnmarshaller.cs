@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   MetricCollectionType Unmarshaller
-     /// </summary>
-    internal class MetricCollectionTypeUnmarshaller : IUnmarshaller<MetricCollectionType, XmlUnmarshallerContext>, IUnmarshaller<MetricCollectionType, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for MetricCollectionType Object
+    /// </summary>  
+    public class MetricCollectionTypeUnmarshaller : IUnmarshaller<MetricCollectionType, XmlUnmarshallerContext>, IUnmarshaller<MetricCollectionType, JsonUnmarshallerContext>
     {
-        public MetricCollectionType Unmarshall(XmlUnmarshallerContext context) 
+        public MetricCollectionType Unmarshall(XmlUnmarshallerContext context)
         {
-            MetricCollectionType metricCollectionType = new MetricCollectionType();
+            MetricCollectionType unmarshalledObject = new MetricCollectionType();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,39 +44,38 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("Metric", targetDepth))
                     {
-                        metricCollectionType.Metric = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Metric = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return metricCollectionType;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return metricCollectionType;
+            return unmarshalledObject;
         }
 
-        public MetricCollectionType Unmarshall(JsonUnmarshallerContext context) 
+        public MetricCollectionType Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static MetricCollectionTypeUnmarshaller instance;
-
-        public static MetricCollectionTypeUnmarshaller GetInstance() 
+        public static MetricCollectionTypeUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new MetricCollectionTypeUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new MetricCollectionTypeUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

@@ -18,639 +18,48 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>LaunchConfiguration</c> data type. </para>
+    /// The <code>LaunchConfiguration</code> data type.
     /// </summary>
     public partial class LaunchConfiguration
     {
-        
-        private string launchConfigurationName;
-        private string launchConfigurationARN;
-        private string imageId;
-        private string keyName;
-        private List<string> securityGroups = new List<string>();
-        private string userData;
-        private string instanceType;
-        private string kernelId;
-        private string ramdiskId;
-        private List<BlockDeviceMapping> blockDeviceMappings = new List<BlockDeviceMapping>();
-        private InstanceMonitoring instanceMonitoring;
-        private string spotPrice;
-        private string iamInstanceProfile;
-        private DateTime? createdTime;
-        private bool? ebsOptimized;
-        private bool? associatePublicIpAddress;
-        private string placementTenancy;
+        private bool? _associatePublicIpAddress;
+        private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
+        private DateTime? _createdTime;
+        private bool? _ebsOptimized;
+        private string _iamInstanceProfile;
+        private string _imageId;
+        private InstanceMonitoring _instanceMonitoring;
+        private string _instanceType;
+        private string _kernelId;
+        private string _keyName;
+        private string _launchConfigurationARN;
+        private string _launchConfigurationName;
+        private string _placementTenancy;
+        private string _ramdiskId;
+        private List<string> _securityGroups = new List<string>();
+        private string _spotPrice;
+        private string _userData;
+
 
         /// <summary>
-        /// Specifies the name of the launch configuration.
-        ///  
+        /// Gets and sets the property AssociatePublicIpAddress. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// Specifies whether the instance is associated with a public IP address (<code>true</code>)
+        /// or not (<code>false</code>).
         /// </para>
-        /// </summary>
-        public string LaunchConfigurationName
-        {
-            get { return this.launchConfigurationName; }
-            set { this.launchConfigurationName = value; }
-        }
-
-        /// <summary>
-        /// Sets the LaunchConfigurationName property
-        /// </summary>
-        /// <param name="launchConfigurationName">The value to set for the LaunchConfigurationName property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LaunchConfiguration WithLaunchConfigurationName(string launchConfigurationName)
-        {
-            this.launchConfigurationName = launchConfigurationName;
-            return this;
-        }
-            
-
-        // Check to see if LaunchConfigurationName property is set
-        internal bool IsSetLaunchConfigurationName()
-        {
-            return this.launchConfigurationName != null;
-        }
-
-        /// <summary>
-        /// The launch configuration's Amazon Resource Name (ARN).
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string LaunchConfigurationARN
-        {
-            get { return this.launchConfigurationARN; }
-            set { this.launchConfigurationARN = value; }
-        }
-
-        /// <summary>
-        /// Sets the LaunchConfigurationARN property
-        /// </summary>
-        /// <param name="launchConfigurationARN">The value to set for the LaunchConfigurationARN property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LaunchConfiguration WithLaunchConfigurationARN(string launchConfigurationARN)
-        {
-            this.launchConfigurationARN = launchConfigurationARN;
-            return this;
-        }
-            
-
-        // Check to see if LaunchConfigurationARN property is set
-        internal bool IsSetLaunchConfigurationARN()
-        {
-            return this.launchConfigurationARN != null;
-        }
-
-        /// <summary>
-        /// Provides the unique ID of the <i>Amazon Machine Image</i> (AMI) that was assigned during registration.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string ImageId
-        {
-            get { return this.imageId; }
-            set { this.imageId = value; }
-        }
-
-        /// <summary>
-        /// Sets the ImageId property
-        /// </summary>
-        /// <param name="imageId">The value to set for the ImageId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LaunchConfiguration WithImageId(string imageId)
-        {
-            this.imageId = imageId;
-            return this;
-        }
-            
-
-        // Check to see if ImageId property is set
-        internal bool IsSetImageId()
-        {
-            return this.imageId != null;
-        }
-
-        /// <summary>
-        /// Provides the name of the Amazon EC2 key pair.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string KeyName
-        {
-            get { return this.keyName; }
-            set { this.keyName = value; }
-        }
-
-        /// <summary>
-        /// Sets the KeyName property
-        /// </summary>
-        /// <param name="keyName">The value to set for the KeyName property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LaunchConfiguration WithKeyName(string keyName)
-        {
-            this.keyName = keyName;
-            return this;
-        }
-            
-
-        // Check to see if KeyName property is set
-        internal bool IsSetKeyName()
-        {
-            return this.keyName != null;
-        }
-
-        /// <summary>
-        /// A description of the security groups to associate with the Amazon EC2 instances.
-        ///  
-        /// </summary>
-        public List<string> SecurityGroups
-        {
-            get { return this.securityGroups; }
-            set { this.securityGroups = value; }
-        }
-        /// <summary>
-        /// Adds elements to the SecurityGroups collection
-        /// </summary>
-        /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LaunchConfiguration WithSecurityGroups(params string[] securityGroups)
-        {
-            foreach (string element in securityGroups)
-            {
-                this.securityGroups.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the SecurityGroups collection
-        /// </summary>
-        /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LaunchConfiguration WithSecurityGroups(IEnumerable<string> securityGroups)
-        {
-            foreach (string element in securityGroups)
-            {
-                this.securityGroups.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if SecurityGroups property is set
-        internal bool IsSetSecurityGroups()
-        {
-            return this.securityGroups.Count > 0;
-        }
-
-        /// <summary>
-        /// The user data available to the launched Amazon EC2 instances.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 21847</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string UserData
-        {
-            get { return this.userData; }
-            set { this.userData = value; }
-        }
-
-        /// <summary>
-        /// Sets the UserData property
-        /// </summary>
-        /// <param name="userData">The value to set for the UserData property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LaunchConfiguration WithUserData(string userData)
-        {
-            this.userData = userData;
-            return this;
-        }
-            
-
-        // Check to see if UserData property is set
-        internal bool IsSetUserData()
-        {
-            return this.userData != null;
-        }
-
-        /// <summary>
-        /// Specifies the instance type of the Amazon EC2 instance.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string InstanceType
-        {
-            get { return this.instanceType; }
-            set { this.instanceType = value; }
-        }
-
-        /// <summary>
-        /// Sets the InstanceType property
-        /// </summary>
-        /// <param name="instanceType">The value to set for the InstanceType property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LaunchConfiguration WithInstanceType(string instanceType)
-        {
-            this.instanceType = instanceType;
-            return this;
-        }
-            
-
-        // Check to see if InstanceType property is set
-        internal bool IsSetInstanceType()
-        {
-            return this.instanceType != null;
-        }
-
-        /// <summary>
-        /// Provides the ID of the kernel associated with the Amazon EC2 AMI.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string KernelId
-        {
-            get { return this.kernelId; }
-            set { this.kernelId = value; }
-        }
-
-        /// <summary>
-        /// Sets the KernelId property
-        /// </summary>
-        /// <param name="kernelId">The value to set for the KernelId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LaunchConfiguration WithKernelId(string kernelId)
-        {
-            this.kernelId = kernelId;
-            return this;
-        }
-            
-
-        // Check to see if KernelId property is set
-        internal bool IsSetKernelId()
-        {
-            return this.kernelId != null;
-        }
-
-        /// <summary>
-        /// Provides ID of the RAM disk associated with the Amazon EC2 AMI.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string RamdiskId
-        {
-            get { return this.ramdiskId; }
-            set { this.ramdiskId = value; }
-        }
-
-        /// <summary>
-        /// Sets the RamdiskId property
-        /// </summary>
-        /// <param name="ramdiskId">The value to set for the RamdiskId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LaunchConfiguration WithRamdiskId(string ramdiskId)
-        {
-            this.ramdiskId = ramdiskId;
-            return this;
-        }
-            
-
-        // Check to see if RamdiskId property is set
-        internal bool IsSetRamdiskId()
-        {
-            return this.ramdiskId != null;
-        }
-
-        /// <summary>
-        /// Specifies how block devices are exposed to the instance. Each mapping is made up of a <i>virtualName</i> and a <i>deviceName</i>.
-        ///  
-        /// </summary>
-        public List<BlockDeviceMapping> BlockDeviceMappings
-        {
-            get { return this.blockDeviceMappings; }
-            set { this.blockDeviceMappings = value; }
-        }
-        /// <summary>
-        /// Adds elements to the BlockDeviceMappings collection
-        /// </summary>
-        /// <param name="blockDeviceMappings">The values to add to the BlockDeviceMappings collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LaunchConfiguration WithBlockDeviceMappings(params BlockDeviceMapping[] blockDeviceMappings)
-        {
-            foreach (BlockDeviceMapping element in blockDeviceMappings)
-            {
-                this.blockDeviceMappings.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the BlockDeviceMappings collection
-        /// </summary>
-        /// <param name="blockDeviceMappings">The values to add to the BlockDeviceMappings collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LaunchConfiguration WithBlockDeviceMappings(IEnumerable<BlockDeviceMapping> blockDeviceMappings)
-        {
-            foreach (BlockDeviceMapping element in blockDeviceMappings)
-            {
-                this.blockDeviceMappings.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if BlockDeviceMappings property is set
-        internal bool IsSetBlockDeviceMappings()
-        {
-            return this.blockDeviceMappings.Count > 0;
-        }
-
-        /// <summary>
-        /// Controls whether instances in this group are launched with detailed monitoring or not.
-        ///  
-        /// </summary>
-        public InstanceMonitoring InstanceMonitoring
-        {
-            get { return this.instanceMonitoring; }
-            set { this.instanceMonitoring = value; }
-        }
-
-        /// <summary>
-        /// Sets the InstanceMonitoring property
-        /// </summary>
-        /// <param name="instanceMonitoring">The value to set for the InstanceMonitoring property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LaunchConfiguration WithInstanceMonitoring(InstanceMonitoring instanceMonitoring)
-        {
-            this.instanceMonitoring = instanceMonitoring;
-            return this;
-        }
-            
-
-        // Check to see if InstanceMonitoring property is set
-        internal bool IsSetInstanceMonitoring()
-        {
-            return this.instanceMonitoring != null;
-        }
-
-        /// <summary>
-        /// Specifies the price to bid when launching Spot Instances.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string SpotPrice
-        {
-            get { return this.spotPrice; }
-            set { this.spotPrice = value; }
-        }
-
-        /// <summary>
-        /// Sets the SpotPrice property
-        /// </summary>
-        /// <param name="spotPrice">The value to set for the SpotPrice property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LaunchConfiguration WithSpotPrice(string spotPrice)
-        {
-            this.spotPrice = spotPrice;
-            return this;
-        }
-            
-
-        // Check to see if SpotPrice property is set
-        internal bool IsSetSpotPrice()
-        {
-            return this.spotPrice != null;
-        }
-
-        /// <summary>
-        /// Provides the name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance. The instance
-        /// profile contains the IAM role.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string IamInstanceProfile
-        {
-            get { return this.iamInstanceProfile; }
-            set { this.iamInstanceProfile = value; }
-        }
-
-        /// <summary>
-        /// Sets the IamInstanceProfile property
-        /// </summary>
-        /// <param name="iamInstanceProfile">The value to set for the IamInstanceProfile property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LaunchConfiguration WithIamInstanceProfile(string iamInstanceProfile)
-        {
-            this.iamInstanceProfile = iamInstanceProfile;
-            return this;
-        }
-            
-
-        // Check to see if IamInstanceProfile property is set
-        internal bool IsSetIamInstanceProfile()
-        {
-            return this.iamInstanceProfile != null;
-        }
-
-        /// <summary>
-        /// Provides the creation date and time for this launch configuration.
-        ///  
-        /// </summary>
-        public DateTime CreatedTime
-        {
-            get { return this.createdTime ?? default(DateTime); }
-            set { this.createdTime = value; }
-        }
-
-        /// <summary>
-        /// Sets the CreatedTime property
-        /// </summary>
-        /// <param name="createdTime">The value to set for the CreatedTime property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LaunchConfiguration WithCreatedTime(DateTime createdTime)
-        {
-            this.createdTime = createdTime;
-            return this;
-        }
-            
-
-        // Check to see if CreatedTime property is set
-        internal bool IsSetCreatedTime()
-        {
-            return this.createdTime.HasValue;
-        }
-
-        /// <summary>
-        /// Specifies whether the instance is optimized for EBS I/O (<i>true</i>) or not (<i>false</i>).
-        ///  
-        /// </summary>
-        public bool EbsOptimized
-        {
-            get { return this.ebsOptimized ?? default(bool); }
-            set { this.ebsOptimized = value; }
-        }
-
-        /// <summary>
-        /// Sets the EbsOptimized property
-        /// </summary>
-        /// <param name="ebsOptimized">The value to set for the EbsOptimized property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LaunchConfiguration WithEbsOptimized(bool ebsOptimized)
-        {
-            this.ebsOptimized = ebsOptimized;
-            return this;
-        }
-            
-
-        // Check to see if EbsOptimized property is set
-        internal bool IsSetEbsOptimized()
-        {
-            return this.ebsOptimized.HasValue;
-        }
-
-        /// <summary>
-        /// Specifies whether the instance is associated with a public IP address (<c>true</c>) or not (<c>false</c>).
-        ///  
         /// </summary>
         public bool AssociatePublicIpAddress
         {
-            get { return this.associatePublicIpAddress ?? default(bool); }
-            set { this.associatePublicIpAddress = value; }
+            get { return this._associatePublicIpAddress.GetValueOrDefault(); }
+            set { this._associatePublicIpAddress = value; }
         }
+
 
         /// <summary>
         /// Sets the AssociatePublicIpAddress property
@@ -660,40 +69,405 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithAssociatePublicIpAddress(bool associatePublicIpAddress)
         {
-            this.associatePublicIpAddress = associatePublicIpAddress;
+            this._associatePublicIpAddress = associatePublicIpAddress;
             return this;
         }
-            
 
         // Check to see if AssociatePublicIpAddress property is set
         internal bool IsSetAssociatePublicIpAddress()
         {
-            return this.associatePublicIpAddress.HasValue;
+            return this._associatePublicIpAddress.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property BlockDeviceMappings. 
+        /// <para>
+        ///         Specifies how block devices are exposed to the instance.        Each mapping
+        /// is made up of a <i>virtualName</i> and a <i>deviceName</i>.        
+        /// </para>
+        /// </summary>
+        public List<BlockDeviceMapping> BlockDeviceMappings
+        {
+            get { return this._blockDeviceMappings; }
+            set { this._blockDeviceMappings = value; }
         }
 
         /// <summary>
-        /// Specifies the tenancy of the instance. It can be either <c>default</c> or <c>dedicated</c>. An instance with <c>dedicated</c> tenancy runs
-        /// in an isolated, single-tenant hardware and it can only be launched in a VPC.
-        ///  
+        /// Sets the BlockDeviceMappings property
+        /// </summary>
+        /// <param name="blockDeviceMappings">The values to add to the BlockDeviceMappings collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithBlockDeviceMappings(params BlockDeviceMapping[] blockDeviceMappings)
+        {
+            foreach (var element in blockDeviceMappings)
+            {
+                this._blockDeviceMappings.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the BlockDeviceMappings property
+        /// </summary>
+        /// <param name="blockDeviceMappings">The values to add to the BlockDeviceMappings collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithBlockDeviceMappings(IEnumerable<BlockDeviceMapping> blockDeviceMappings)
+        {
+            foreach (var element in blockDeviceMappings)
+            {
+                this._blockDeviceMappings.Add(element);
+            }
+            return this;
+        }
+        // Check to see if BlockDeviceMappings property is set
+        internal bool IsSetBlockDeviceMappings()
+        {
+            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///         Provides the creation date and time for this launch configuration.       
+        /// 
+        /// </para>
+        /// </summary>
+        public DateTime CreatedTime
+        {
+            get { return this._createdTime.GetValueOrDefault(); }
+            set { this._createdTime = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the CreatedTime property
+        /// </summary>
+        /// <param name="createdTime">The value to set for the CreatedTime property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithCreatedTime(DateTime createdTime)
+        {
+            this._createdTime = createdTime;
+            return this;
+        }
+
+        // Check to see if CreatedTime property is set
+        internal bool IsSetCreatedTime()
+        {
+            return this._createdTime.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property EbsOptimized. 
+        /// <para>
+        /// Specifies whether the instance is optimized for EBS I/O (<i>true</i>) or not (<i>false</i>).
+        /// </para>
+        /// </summary>
+        public bool EbsOptimized
+        {
+            get { return this._ebsOptimized.GetValueOrDefault(); }
+            set { this._ebsOptimized = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the EbsOptimized property
+        /// </summary>
+        /// <param name="ebsOptimized">The value to set for the EbsOptimized property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithEbsOptimized(bool ebsOptimized)
+        {
+            this._ebsOptimized = ebsOptimized;
+            return this;
+        }
+
+        // Check to see if EbsOptimized property is set
+        internal bool IsSetEbsOptimized()
+        {
+            return this._ebsOptimized.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property IamInstanceProfile. 
+        /// <para>
+        /// Provides the name or the Amazon Resource Name (ARN) of the             instance profile
+        /// associated with the IAM role for the instance.             The instance profile contains
+        /// the IAM role.        
+        /// </para>
+        /// </summary>
+        public string IamInstanceProfile
+        {
+            get { return this._iamInstanceProfile; }
+            set { this._iamInstanceProfile = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the IamInstanceProfile property
+        /// </summary>
+        /// <param name="iamInstanceProfile">The value to set for the IamInstanceProfile property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithIamInstanceProfile(string iamInstanceProfile)
+        {
+            this._iamInstanceProfile = iamInstanceProfile;
+            return this;
+        }
+
+        // Check to see if IamInstanceProfile property is set
+        internal bool IsSetIamInstanceProfile()
+        {
+            return this._iamInstanceProfile != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        ///         Provides the unique ID of the <i>Amazon Machine Image</i> (AMI)        that
+        /// was assigned during registration.        
+        /// </para>
+        /// </summary>
+        public string ImageId
+        {
+            get { return this._imageId; }
+            set { this._imageId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the ImageId property
+        /// </summary>
+        /// <param name="imageId">The value to set for the ImageId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithImageId(string imageId)
+        {
+            this._imageId = imageId;
+            return this;
+        }
+
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
+        {
+            return this._imageId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceMonitoring. 
+        /// <para>
+        ///         Controls whether instances in this group are launched with        detailed
+        /// monitoring or not.                    
+        /// </para>
+        /// </summary>
+        public InstanceMonitoring InstanceMonitoring
+        {
+            get { return this._instanceMonitoring; }
+            set { this._instanceMonitoring = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the InstanceMonitoring property
+        /// </summary>
+        /// <param name="instanceMonitoring">The value to set for the InstanceMonitoring property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithInstanceMonitoring(InstanceMonitoring instanceMonitoring)
+        {
+            this._instanceMonitoring = instanceMonitoring;
+            return this;
+        }
+
+        // Check to see if InstanceMonitoring property is set
+        internal bool IsSetInstanceMonitoring()
+        {
+            return this._instanceMonitoring != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        ///         Specifies the instance type of the Amazon EC2 instance.        
+        /// </para>
+        /// </summary>
+        public string InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the InstanceType property
+        /// </summary>
+        /// <param name="instanceType">The value to set for the InstanceType property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithInstanceType(string instanceType)
+        {
+            this._instanceType = instanceType;
+            return this;
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property KernelId. 
+        /// <para>
+        ///         Provides the ID of the kernel associated with the Amazon EC2 AMI.        
+        /// </para>
+        /// </summary>
+        public string KernelId
+        {
+            get { return this._kernelId; }
+            set { this._kernelId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the KernelId property
+        /// </summary>
+        /// <param name="kernelId">The value to set for the KernelId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithKernelId(string kernelId)
+        {
+            this._kernelId = kernelId;
+            return this;
+        }
+
+        // Check to see if KernelId property is set
+        internal bool IsSetKernelId()
+        {
+            return this._kernelId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property KeyName. 
+        /// <para>
+        ///         Provides the name of the Amazon EC2 key pair.        
+        /// </para>
+        /// </summary>
+        public string KeyName
+        {
+            get { return this._keyName; }
+            set { this._keyName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the KeyName property
+        /// </summary>
+        /// <param name="keyName">The value to set for the KeyName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithKeyName(string keyName)
+        {
+            this._keyName = keyName;
+            return this;
+        }
+
+        // Check to see if KeyName property is set
+        internal bool IsSetKeyName()
+        {
+            return this._keyName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property LaunchConfigurationARN. 
+        /// <para>
+        ///             The launch configuration's Amazon Resource Name (ARN).        
+        /// </para>
+        /// </summary>
+        public string LaunchConfigurationARN
+        {
+            get { return this._launchConfigurationARN; }
+            set { this._launchConfigurationARN = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the LaunchConfigurationARN property
+        /// </summary>
+        /// <param name="launchConfigurationARN">The value to set for the LaunchConfigurationARN property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithLaunchConfigurationARN(string launchConfigurationARN)
+        {
+            this._launchConfigurationARN = launchConfigurationARN;
+            return this;
+        }
+
+        // Check to see if LaunchConfigurationARN property is set
+        internal bool IsSetLaunchConfigurationARN()
+        {
+            return this._launchConfigurationARN != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property LaunchConfigurationName. 
+        /// <para>
+        ///         Specifies the name of the launch configuration.        
+        /// </para>
+        /// </summary>
+        public string LaunchConfigurationName
+        {
+            get { return this._launchConfigurationName; }
+            set { this._launchConfigurationName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the LaunchConfigurationName property
+        /// </summary>
+        /// <param name="launchConfigurationName">The value to set for the LaunchConfigurationName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithLaunchConfigurationName(string launchConfigurationName)
+        {
+            this._launchConfigurationName = launchConfigurationName;
+            return this;
+        }
+
+        // Check to see if LaunchConfigurationName property is set
+        internal bool IsSetLaunchConfigurationName()
+        {
+            return this._launchConfigurationName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PlacementTenancy. 
+        /// <para>
+        /// Specifies the tenancy of the instance. It can be either <code>default</code> or <code>dedicated</code>.
+        ///             An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant
+        /// hardware and it can only be launched in a VPC.
         /// </para>
         /// </summary>
         public string PlacementTenancy
         {
-            get { return this.placementTenancy; }
-            set { this.placementTenancy = value; }
+            get { return this._placementTenancy; }
+            set { this._placementTenancy = value; }
         }
+
 
         /// <summary>
         /// Sets the PlacementTenancy property
@@ -703,15 +477,160 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithPlacementTenancy(string placementTenancy)
         {
-            this.placementTenancy = placementTenancy;
+            this._placementTenancy = placementTenancy;
             return this;
         }
-            
 
         // Check to see if PlacementTenancy property is set
         internal bool IsSetPlacementTenancy()
         {
-            return this.placementTenancy != null;
+            return this._placementTenancy != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property RamdiskId. 
+        /// <para>
+        ///         Provides ID of the RAM disk associated with the Amazon EC2 AMI.        
+        /// </para>
+        /// </summary>
+        public string RamdiskId
+        {
+            get { return this._ramdiskId; }
+            set { this._ramdiskId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the RamdiskId property
+        /// </summary>
+        /// <param name="ramdiskId">The value to set for the RamdiskId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithRamdiskId(string ramdiskId)
+        {
+            this._ramdiskId = ramdiskId;
+            return this;
+        }
+
+        // Check to see if RamdiskId property is set
+        internal bool IsSetRamdiskId()
+        {
+            return this._ramdiskId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroups. 
+        /// <para>
+        ///         A description of the security        groups to associate with the Amazon EC2
+        /// instances.        
+        /// </para>
+        /// </summary>
+        public List<string> SecurityGroups
+        {
+            get { return this._securityGroups; }
+            set { this._securityGroups = value; }
+        }
+
+        /// <summary>
+        /// Sets the SecurityGroups property
+        /// </summary>
+        /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithSecurityGroups(params string[] securityGroups)
+        {
+            foreach (var element in securityGroups)
+            {
+                this._securityGroups.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the SecurityGroups property
+        /// </summary>
+        /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithSecurityGroups(IEnumerable<string> securityGroups)
+        {
+            foreach (var element in securityGroups)
+            {
+                this._securityGroups.Add(element);
+            }
+            return this;
+        }
+        // Check to see if SecurityGroups property is set
+        internal bool IsSetSecurityGroups()
+        {
+            return this._securityGroups != null && this._securityGroups.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SpotPrice. 
+        /// <para>
+        /// Specifies the price to bid when launching Spot Instances.
+        /// </para>
+        /// </summary>
+        public string SpotPrice
+        {
+            get { return this._spotPrice; }
+            set { this._spotPrice = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the SpotPrice property
+        /// </summary>
+        /// <param name="spotPrice">The value to set for the SpotPrice property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithSpotPrice(string spotPrice)
+        {
+            this._spotPrice = spotPrice;
+            return this;
+        }
+
+        // Check to see if SpotPrice property is set
+        internal bool IsSetSpotPrice()
+        {
+            return this._spotPrice != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property UserData. 
+        /// <para>
+        ///         The user data available to the launched Amazon EC2 instances.        
+        /// </para>
+        /// </summary>
+        public string UserData
+        {
+            get { return this._userData; }
+            set { this._userData = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the UserData property
+        /// </summary>
+        /// <param name="userData">The value to set for the UserData property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithUserData(string userData)
+        {
+            this._userData = userData;
+            return this;
+        }
+
+        // Check to see if UserData property is set
+        internal bool IsSetUserData()
+        {
+            return this._userData != null;
+        }
+
     }
 }

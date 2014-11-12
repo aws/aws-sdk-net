@@ -25,11 +25,10 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAutoScalingNotificationTypes operation.
-    /// <para> Returns a list of all notification types that are supported by Auto Scaling. </para>
+    /// Returns a list of all notification types that are supported by Auto Scaling.
     /// </summary>
-    /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeAutoScalingNotificationTypes"/>
-    public class DescribeAutoScalingNotificationTypesRequest : AmazonWebServiceRequest
+    public partial class DescribeAutoScalingNotificationTypesRequest : AmazonWebServiceRequest
     {
+
     }
 }
-    

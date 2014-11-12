@@ -12,15 +12,15 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 using System;
 
 using Amazon.Runtime;
 
 namespace Amazon.AutoScaling
 {
-
     /// <summary>
-    /// Configuration for accessing Auto Scaling service
+    /// Configuration for accessing Amazon AutoScaling service
     /// </summary>
     public class AmazonAutoScalingConfig : ClientConfig
     {
@@ -29,7 +29,7 @@ namespace Amazon.AutoScaling
         /// </summary>
         public AmazonAutoScalingConfig()
         {
-            this.ServiceURL = "https://autoscaling.amazonaws.com";
+            this.ServiceURL = "https://autoscaling.us-east-1.amazonaws.com";
             this.AuthenticationServiceName = "autoscaling";
         }
 
@@ -56,5 +56,3 @@ namespace Amazon.AutoScaling
         }
     }
 }
-
-    

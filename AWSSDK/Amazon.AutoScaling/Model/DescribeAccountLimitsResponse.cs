@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeAccountLimitsResult response and response metadata.
+    /// Returns information about the DescribeAccountLimitsResult response and response metadata.
     /// </summary>
     public class DescribeAccountLimitsResponse : AmazonWebServiceResponse
     {
-        private DescribeAccountLimitsResult describeAccountLimitsResult;
+        private DescribeAccountLimitsResult _describeAccountLimitsResult;
 
         /// <summary>
         /// Gets and sets the DescribeAccountLimitsResult property.
-        /// The output of the DescribeAccountLimitsResult action.
+        /// Represents the output of a DescribeAccountLimits operation.
         /// </summary>
         public DescribeAccountLimitsResult DescribeAccountLimitsResult
         {
             get
             {
-                if(this.describeAccountLimitsResult == null)
+                if(this._describeAccountLimitsResult == null)
                 {
-                    this.describeAccountLimitsResult = new DescribeAccountLimitsResult();
+                    this._describeAccountLimitsResult = new DescribeAccountLimitsResult();
                 }
-
-                return this.describeAccountLimitsResult;
+                return this._describeAccountLimitsResult;
             }
-            set { this.describeAccountLimitsResult = value; }
+            set { this._describeAccountLimitsResult = value; }
         }
     }
 }
-    

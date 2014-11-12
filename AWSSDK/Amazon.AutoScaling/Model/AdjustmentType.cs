@@ -18,55 +18,52 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> Specifies whether the PutScalingPolicy <c>ScalingAdjustment</c> parameter is an absolute number or a percentage of the current
-    /// capacity. </para>
+    /// Specifies whether the <a>PutScalingPolicy</a>             <code>ScalingAdjustment</code>
+    /// parameter is             an absolute number or a percentage of the current       
+    ///     capacity.
     /// </summary>
     public partial class AdjustmentType
     {
-        
-        private string adjustmentType;
+        private string _adjustmentType;
+
 
         /// <summary>
-        /// A policy adjustment type. Valid values are <c>ChangeInCapacity</c>, <c>ExactCapacity</c>, and <c>PercentChangeInCapacity</c>.
-        ///  
+        /// Gets and sets the property Name. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// A policy adjustment type. Valid values are <code>ChangeInCapacity</code>,        
+        ///    <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
         /// </para>
         /// </summary>
         public string Name
         {
-            get { return this.adjustmentType; }
-            set { this.adjustmentType = value; }
+            get { return this._adjustmentType; }
+            set { this._adjustmentType = value; }
         }
+
+
         /// <summary>
         /// Sets the Name property
         /// </summary>
-        /// <param name="name">The value to set for the Name property </param>
+        /// <param name="adjustmentType">The value to set for the Name property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public AdjustmentType WithName(string name)
+        public AdjustmentType WithName(string adjustmentType)
         {
-            this.adjustmentType = name;
+            this._adjustmentType = adjustmentType;
             return this;
         }
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.adjustmentType != null;
+            return this._adjustmentType != null;
         }
+
     }
 }

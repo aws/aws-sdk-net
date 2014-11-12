@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   TagDescription Unmarshaller
-     /// </summary>
-    internal class TagDescriptionUnmarshaller : IUnmarshaller<TagDescription, XmlUnmarshallerContext>, IUnmarshaller<TagDescription, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for TagDescription Object
+    /// </summary>  
+    public class TagDescriptionUnmarshaller : IUnmarshaller<TagDescription, XmlUnmarshallerContext>, IUnmarshaller<TagDescription, JsonUnmarshallerContext>
     {
-        public TagDescription Unmarshall(XmlUnmarshallerContext context) 
+        public TagDescription Unmarshall(XmlUnmarshallerContext context)
         {
-            TagDescription tagDescription = new TagDescription();
+            TagDescription unmarshalledObject = new TagDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,63 +44,62 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("ResourceId", targetDepth))
-                    {
-                        tagDescription.ResourceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ResourceType", targetDepth))
-                    {
-                        tagDescription.ResourceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("Key", targetDepth))
                     {
-                        tagDescription.Key = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("Value", targetDepth))
-                    {
-                        tagDescription.Value = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                    }
                     if (context.TestExpression("PropagateAtLaunch", targetDepth))
                     {
-                        tagDescription.PropagateAtLaunch = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        unmarshalledObject.PropagateAtLaunch = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ResourceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ResourceType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Value", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return tagDescription;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return tagDescription;
+            return unmarshalledObject;
         }
 
-        public TagDescription Unmarshall(JsonUnmarshallerContext context) 
+        public TagDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static TagDescriptionUnmarshaller instance;
-
-        public static TagDescriptionUnmarshaller GetInstance() 
+        public static TagDescriptionUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new TagDescriptionUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new TagDescriptionUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

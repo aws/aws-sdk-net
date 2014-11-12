@@ -25,37 +25,28 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableMetricsCollection operation.
-    /// <para> Disables monitoring of group metrics for the Auto Scaling group specified in <c>AutoScalingGroupName</c> .
-    /// You can specify the list of affected metrics with the <c>Metrics</c> parameter. </para>
+    /// Disables monitoring of group metrics for the            Auto Scaling group
+    /// specified in <code>AutoScalingGroupName</code>.            You can specify the list
+    /// of affected metrics with the            <code>Metrics</code> parameter.
     /// </summary>
-    /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DisableMetricsCollection"/>
-    public class DisableMetricsCollectionRequest : AmazonWebServiceRequest
+    public partial class DisableMetricsCollectionRequest : AmazonWebServiceRequest
     {
-        private string autoScalingGroupName;
-        private List<string> metrics = new List<string>();
+        private string _autoScalingGroupName;
+        private List<string> _metrics = new List<string>();
+
 
         /// <summary>
-        /// The name or ARN of the Auto Scaling Group.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The name or ARN of the Auto Scaling Group. 
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
+
 
         /// <summary>
         /// Sets the AutoScalingGroupName property
@@ -65,65 +56,93 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DisableMetricsCollectionRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
-            this.autoScalingGroupName = autoScalingGroupName;
+            this._autoScalingGroupName = autoScalingGroupName;
             return this;
         }
-            
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
         }
 
+
         /// <summary>
-        /// The list of metrics to disable. If no metrics are specified, all metrics are disabled. The following metrics are supported: <ul>
-        /// <li>GroupMinSize</li> <li>GroupMaxSize</li> <li>GroupDesiredCapacity</li> <li>GroupInServiceInstances</li> <li>GroupPendingInstances</li>
-        /// <li>GroupTerminatingInstances</li> <li>GroupTotalInstances</li> </ul>
-        ///  
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        ///             The list of metrics to disable.            If no metrics are specified,
+        /// all metrics are disabled.            The following metrics are supported:        
+        /// </para>
+        ///         <ul>            <li>
+        /// <para>
+        /// GroupMinSize
+        /// </para>
+        /// </li>            <li>
+        /// <para>
+        /// GroupMaxSize
+        /// </para>
+        /// </li>            <li>
+        /// <para>
+        /// GroupDesiredCapacity
+        /// </para>
+        /// </li>            <li>
+        /// <para>
+        /// GroupInServiceInstances
+        /// </para>
+        /// </li>            <li>
+        /// <para>
+        /// GroupPendingInstances
+        /// </para>
+        /// </li>            <li>
+        /// <para>
+        /// GroupTerminatingInstances
+        /// </para>
+        /// </li>            <li>
+        /// <para>
+        /// GroupTotalInstances
+        /// </para>
+        /// </li>        </ul>
         /// </summary>
         public List<string> Metrics
         {
-            get { return this.metrics; }
-            set { this.metrics = value; }
+            get { return this._metrics; }
+            set { this._metrics = value; }
         }
+
         /// <summary>
-        /// Adds elements to the Metrics collection
+        /// Sets the Metrics property
         /// </summary>
         /// <param name="metrics">The values to add to the Metrics collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DisableMetricsCollectionRequest WithMetrics(params string[] metrics)
         {
-            foreach (string element in metrics)
+            foreach (var element in metrics)
             {
-                this.metrics.Add(element);
+                this._metrics.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Metrics collection
+        /// Sets the Metrics property
         /// </summary>
         /// <param name="metrics">The values to add to the Metrics collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DisableMetricsCollectionRequest WithMetrics(IEnumerable<string> metrics)
         {
-            foreach (string element in metrics)
+            foreach (var element in metrics)
             {
-                this.metrics.Add(element);
+                this._metrics.Add(element);
             }
-
             return this;
         }
-
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this.metrics.Count > 0;
+            return this._metrics != null && this._metrics.Count > 0; 
         }
+
     }
 }
-    

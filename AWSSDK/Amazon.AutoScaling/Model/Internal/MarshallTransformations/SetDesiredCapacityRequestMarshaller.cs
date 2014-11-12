@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Set Desired Capacity Request Marshaller
+    /// SetDesiredCapacity Request Marshaller
     /// </summary>       
     public class SetDesiredCapacityRequestMarshaller : IMarshaller<IRequest, SetDesiredCapacityRequest>
     {
-        public IRequest Marshall(SetDesiredCapacityRequest setDesiredCapacityRequest)
+        public IRequest Marshall(SetDesiredCapacityRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(setDesiredCapacityRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "SetDesiredCapacity");
             request.Parameters.Add("Version", "2011-01-01");
-            if (setDesiredCapacityRequest != null && setDesiredCapacityRequest.IsSetAutoScalingGroupName())
-            {
-                request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(setDesiredCapacityRequest.AutoScalingGroupName));
-            }
-            if (setDesiredCapacityRequest != null && setDesiredCapacityRequest.IsSetDesiredCapacity())
-            {
-                request.Parameters.Add("DesiredCapacity", StringUtils.FromInt(setDesiredCapacityRequest.DesiredCapacity));
-            }
-            if (setDesiredCapacityRequest != null && setDesiredCapacityRequest.IsSetHonorCooldown())
-            {
-                request.Parameters.Add("HonorCooldown", StringUtils.FromBool(setDesiredCapacityRequest.HonorCooldown));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAutoScalingGroupName())
+                {
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
+                if(publicRequest.IsSetDesiredCapacity())
+                {
+                    request.Parameters.Add("DesiredCapacity", StringUtils.FromInt(publicRequest.DesiredCapacity));
+                }
+                if(publicRequest.IsSetHonorCooldown())
+                {
+                    request.Parameters.Add("HonorCooldown", StringUtils.FromBool(publicRequest.HonorCooldown));
+                }
+            }
             return request;
         }
     }

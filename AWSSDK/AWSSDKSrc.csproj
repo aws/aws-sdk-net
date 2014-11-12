@@ -157,6 +157,9 @@
     <Compile Include="Amazon.AutoScaling\Model\BlockDeviceMapping.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\CompleteLifecycleActionRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\CompleteLifecycleActionResponse.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\CompleteLifecycleActionResult.cs" />
     <Compile Include="Amazon.AutoScaling\Model\CreateAutoScalingGroupRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -187,6 +190,9 @@
     <Compile Include="Amazon.AutoScaling\Model\DeleteLaunchConfigurationResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DeleteLifecycleHookRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DeleteLifecycleHookResponse.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DeleteLifecycleHookResult.cs" />
     <Compile Include="Amazon.AutoScaling\Model\DeleteNotificationConfigurationRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -259,6 +265,12 @@
     <Compile Include="Amazon.AutoScaling\Model\DescribeLaunchConfigurationsResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeLifecycleHooksRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DescribeLifecycleHooksResponse.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DescribeLifecycleHooksResult.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DescribeLifecycleHookTypesRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DescribeLifecycleHookTypesResponse.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DescribeLifecycleHookTypesResult.cs" />
     <Compile Include="Amazon.AutoScaling\Model\DescribeMetricCollectionTypesRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -325,6 +337,9 @@
     <Compile Include="Amazon.AutoScaling\Model\DescribeTerminationPolicyTypesRequest.cs" />
     <Compile Include="Amazon.AutoScaling\Model\DescribeTerminationPolicyTypesResponse.cs" />
     <Compile Include="Amazon.AutoScaling\Model\DescribeTerminationPolicyTypesResult.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DetachInstancesRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DetachInstancesResponse.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DetachInstancesResult.cs" />
     <Compile Include="Amazon.AutoScaling\Model\DisableMetricsCollectionRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -343,12 +358,18 @@
     <Compile Include="Amazon.AutoScaling\Model\EnableMetricsCollectionResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\EnterStandbyRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\EnterStandbyResponse.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\EnterStandbyResult.cs" />
     <Compile Include="Amazon.AutoScaling\Model\ExecutePolicyRequest.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.AutoScaling\Model\ExecutePolicyResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\ExitStandbyRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\ExitStandbyResponse.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\ExitStandbyResult.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Filter.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -378,6 +399,9 @@
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\BlockDeviceMappingUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\CompleteLifecycleActionRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\CompleteLifecycleActionResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\CompleteLifecycleActionResultUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\CreateAutoScalingGroupRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -408,6 +432,9 @@
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeleteLaunchConfigurationResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeleteLifecycleHookRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeleteLifecycleHookResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeleteLifecycleHookResultUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeleteNotificationConfigurationRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -480,6 +507,12 @@
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeLaunchConfigurationsResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeLifecycleHooksRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeLifecycleHooksResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeLifecycleHooksResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeLifecycleHookTypesRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeLifecycleHookTypesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeLifecycleHookTypesResultUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeMetricCollectionTypesRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -546,6 +579,9 @@
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeTerminationPolicyTypesRequestMarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeTerminationPolicyTypesResponseUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeTerminationPolicyTypesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DetachInstancesRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DetachInstancesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DetachInstancesResultUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DisableMetricsCollectionRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -564,12 +600,18 @@
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\EnableMetricsCollectionResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\EnterStandbyRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\EnterStandbyResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\EnterStandbyResultUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\ExecutePolicyRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\ExecutePolicyResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\ExitStandbyRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\ExitStandbyResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\ExitStandbyResultUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\InstanceMonitoringUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -579,6 +621,7 @@
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\LaunchConfigurationUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\LifecycleHookUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\MetricCollectionTypeUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -591,6 +634,9 @@
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\ProcessTypeUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\PutLifecycleHookRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\PutLifecycleHookResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\PutLifecycleHookResultUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\PutNotificationConfigurationRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -612,6 +658,9 @@
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\PutScheduledUpdateGroupActionResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\RecordLifecycleActionHeartbeatRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\RecordLifecycleActionHeartbeatResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\RecordLifecycleActionHeartbeatResultUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\ResumeProcessesRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -669,6 +718,7 @@
     <Compile Include="Amazon.AutoScaling\Model\LaunchConfiguration.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\LifecycleHook.cs" />
     <Compile Include="Amazon.AutoScaling\Model\LimitExceededException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -684,6 +734,9 @@
     <Compile Include="Amazon.AutoScaling\Model\ProcessType.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\PutLifecycleHookRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\PutLifecycleHookResponse.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\PutLifecycleHookResult.cs" />
     <Compile Include="Amazon.AutoScaling\Model\PutNotificationConfigurationRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -705,6 +758,9 @@
     <Compile Include="Amazon.AutoScaling\Model\PutScheduledUpdateGroupActionResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\RecordLifecycleActionHeartbeatRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\RecordLifecycleActionHeartbeatResponse.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\RecordLifecycleActionHeartbeatResult.cs" />
     <Compile Include="Amazon.AutoScaling\Model\ResourceInUseException.cs">
       <SubType>Code</SubType>
     </Compile>

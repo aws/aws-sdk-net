@@ -18,83 +18,35 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>BlockDeviceMapping</c> data type. </para>
+    /// The <code>BlockDeviceMapping</code> data type.
     /// </summary>
     public partial class BlockDeviceMapping
     {
-        
-        private string virtualName;
-        private string deviceName;
-        private Ebs ebs;
-        private bool? noDevice;
+        private string _deviceName;
+        private Ebs _ebs;
+        private bool? _noDevice;
+        private string _virtualName;
+
 
         /// <summary>
-        /// The virtual name associated with the device.
-        ///  
+        /// Gets and sets the property DeviceName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string VirtualName
-        {
-            get { return this.virtualName; }
-            set { this.virtualName = value; }
-        }
-
-        /// <summary>
-        /// Sets the VirtualName property
-        /// </summary>
-        /// <param name="virtualName">The value to set for the VirtualName property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public BlockDeviceMapping WithVirtualName(string virtualName)
-        {
-            this.virtualName = virtualName;
-            return this;
-        }
-            
-
-        // Check to see if VirtualName property is set
-        internal bool IsSetVirtualName()
-        {
-            return this.virtualName != null;
-        }
-
-        /// <summary>
-        /// The name of the device within Amazon EC2 (for example, /dev/sdh or xvdh).
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///         The name of the device within Amazon EC2 (for example, /dev/sdh or xvdh).
+        ///        
         /// </para>
         /// </summary>
         public string DeviceName
         {
-            get { return this.deviceName; }
-            set { this.deviceName = value; }
+            get { return this._deviceName; }
+            set { this._deviceName = value; }
         }
+
 
         /// <summary>
         /// Sets the DeviceName property
@@ -104,26 +56,29 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BlockDeviceMapping WithDeviceName(string deviceName)
         {
-            this.deviceName = deviceName;
+            this._deviceName = deviceName;
             return this;
         }
-            
 
         // Check to see if DeviceName property is set
         internal bool IsSetDeviceName()
         {
-            return this.deviceName != null;
+            return this._deviceName != null;
         }
 
+
         /// <summary>
-        /// The Elastic Block Storage volume information.
-        ///  
+        /// Gets and sets the property Ebs. 
+        /// <para>
+        ///         The Elastic Block Storage volume information.        
+        /// </para>
         /// </summary>
         public Ebs Ebs
         {
-            get { return this.ebs; }
-            set { this.ebs = value; }
+            get { return this._ebs; }
+            set { this._ebs = value; }
         }
+
 
         /// <summary>
         /// Sets the Ebs property
@@ -133,27 +88,32 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BlockDeviceMapping WithEbs(Ebs ebs)
         {
-            this.ebs = ebs;
+            this._ebs = ebs;
             return this;
         }
-            
 
         // Check to see if Ebs property is set
         internal bool IsSetEbs()
         {
-            return this.ebs != null;
+            return this._ebs != null;
         }
 
+
         /// <summary>
-        /// Suppresses the device mapping. <note>If <c>NoDevice</c> is set to <c>true</c> for the root device, the instance might fail the EC2 health
-        /// check. Auto Scaling launches a replacement instance if the instance fails the health check.</note>
-        ///  
+        /// Gets and sets the property NoDevice. 
+        /// <para>
+        ///             Suppresses the device mapping.                    
+        /// </para>
+        ///         <note>If <code>NoDevice</code> is set to <code>true</code> for the root device,
+        /// the instance might fail the EC2 health check.             Auto Scaling launches a
+        /// replacement instance if the instance fails the health check.</note>
         /// </summary>
         public bool NoDevice
         {
-            get { return this.noDevice ?? default(bool); }
-            set { this.noDevice = value; }
+            get { return this._noDevice.GetValueOrDefault(); }
+            set { this._noDevice = value; }
         }
+
 
         /// <summary>
         /// Sets the NoDevice property
@@ -163,15 +123,47 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BlockDeviceMapping WithNoDevice(bool noDevice)
         {
-            this.noDevice = noDevice;
+            this._noDevice = noDevice;
             return this;
         }
-            
 
         // Check to see if NoDevice property is set
         internal bool IsSetNoDevice()
         {
-            return this.noDevice.HasValue;
+            return this._noDevice.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property VirtualName. 
+        /// <para>
+        /// The virtual name associated with the device.        
+        /// </para>
+        /// </summary>
+        public string VirtualName
+        {
+            get { return this._virtualName; }
+            set { this._virtualName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the VirtualName property
+        /// </summary>
+        /// <param name="virtualName">The value to set for the VirtualName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public BlockDeviceMapping WithVirtualName(string virtualName)
+        {
+            this._virtualName = virtualName;
+            return this;
+        }
+
+        // Check to see if VirtualName property is set
+        internal bool IsSetVirtualName()
+        {
+            return this._virtualName != null;
+        }
+
     }
 }

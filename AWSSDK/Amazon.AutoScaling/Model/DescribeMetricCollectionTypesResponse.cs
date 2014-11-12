@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeMetricCollectionTypesResult response and response metadata.
+    /// Returns information about the DescribeMetricCollectionTypesResult response and response metadata.
     /// </summary>
     public class DescribeMetricCollectionTypesResponse : AmazonWebServiceResponse
     {
-        private DescribeMetricCollectionTypesResult describeMetricCollectionTypesResult;
+        private DescribeMetricCollectionTypesResult _describeMetricCollectionTypesResult;
 
         /// <summary>
         /// Gets and sets the DescribeMetricCollectionTypesResult property.
-        /// The output of the DescribeMetricCollectionTypes action.
+        /// Represents the output of a DescribeMetricCollectionTypes operation.
         /// </summary>
         public DescribeMetricCollectionTypesResult DescribeMetricCollectionTypesResult
         {
             get
             {
-                if(this.describeMetricCollectionTypesResult == null)
+                if(this._describeMetricCollectionTypesResult == null)
                 {
-                    this.describeMetricCollectionTypesResult = new DescribeMetricCollectionTypesResult();
+                    this._describeMetricCollectionTypesResult = new DescribeMetricCollectionTypesResult();
                 }
-
-                return this.describeMetricCollectionTypesResult;
+                return this._describeMetricCollectionTypesResult;
             }
-            set { this.describeMetricCollectionTypesResult = value; }
+            set { this._describeMetricCollectionTypesResult = value; }
         }
     }
 }
-    

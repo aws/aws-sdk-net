@@ -12,63 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeAdjustmentTypesResult Unmarshaller
-     /// </summary>
-    internal class DescribeAdjustmentTypesResultUnmarshaller : IUnmarshaller<DescribeAdjustmentTypesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeAdjustmentTypesResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeAdjustmentTypes Object
+    /// </summary>  
+    public class DescribeAdjustmentTypesResultUnmarshaller : IUnmarshaller<DescribeAdjustmentTypesResult, XmlUnmarshallerContext>
     {
         public DescribeAdjustmentTypesResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeAdjustmentTypesResult describeAdjustmentTypesResult = new DescribeAdjustmentTypesResult();
+            DescribeAdjustmentTypesResult result = new DescribeAdjustmentTypesResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("AdjustmentTypes/member", targetDepth))
                     {
-                        describeAdjustmentTypesResult.AdjustmentTypes.Add(AdjustmentTypeUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = AdjustmentTypeUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.AdjustmentTypes.Add(item);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeAdjustmentTypesResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeAdjustmentTypesResult;
+            return result;
         }
 
-        public DescribeAdjustmentTypesResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeAdjustmentTypesResultUnmarshaller instance;
-
-        public static DescribeAdjustmentTypesResultUnmarshaller GetInstance() 
+        public static DescribeAdjustmentTypesResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeAdjustmentTypesResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeAdjustmentTypesResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

@@ -18,111 +18,143 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para>The output of the DescribeMetricCollectionTypes action.</para>
+    /// The output of the <a>DescribeMetricCollectionTypes</a> action.
     /// </summary>
     public partial class DescribeMetricCollectionTypesResult
     {
-        
-        private List<MetricCollectionType> metrics = new List<MetricCollectionType>();
-        private List<MetricGranularityType> granularities = new List<MetricGranularityType>();
+        private List<MetricGranularityType> _granularities = new List<MetricGranularityType>();
+        private List<MetricCollectionType> _metrics = new List<MetricCollectionType>();
+
 
         /// <summary>
-        /// The list of Metrics collected. The following metrics are supported: <ul> <li>GroupMinSize</li> <li>GroupMaxSize</li>
-        /// <li>GroupDesiredCapacity</li> <li>GroupInServiceInstances</li> <li>GroupPendingInstances</li> <li>GroupTerminatingInstances</li>
-        /// <li>GroupTotalInstances</li> </ul>
-        ///  
-        /// </summary>
-        public List<MetricCollectionType> Metrics
-        {
-            get { return this.metrics; }
-            set { this.metrics = value; }
-        }
-        /// <summary>
-        /// Adds elements to the Metrics collection
-        /// </summary>
-        /// <param name="metrics">The values to add to the Metrics collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeMetricCollectionTypesResult WithMetrics(params MetricCollectionType[] metrics)
-        {
-            foreach (MetricCollectionType element in metrics)
-            {
-                this.metrics.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the Metrics collection
-        /// </summary>
-        /// <param name="metrics">The values to add to the Metrics collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeMetricCollectionTypesResult WithMetrics(IEnumerable<MetricCollectionType> metrics)
-        {
-            foreach (MetricCollectionType element in metrics)
-            {
-                this.metrics.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if Metrics property is set
-        internal bool IsSetMetrics()
-        {
-            return this.metrics.Count > 0;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Granularities. 
+        /// <para>
         /// A list of granularities for the listed Metrics.
-        ///  
+        /// </para>
         /// </summary>
         public List<MetricGranularityType> Granularities
         {
-            get { return this.granularities; }
-            set { this.granularities = value; }
+            get { return this._granularities; }
+            set { this._granularities = value; }
         }
+
         /// <summary>
-        /// Adds elements to the Granularities collection
+        /// Sets the Granularities property
         /// </summary>
         /// <param name="granularities">The values to add to the Granularities collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeMetricCollectionTypesResult WithGranularities(params MetricGranularityType[] granularities)
         {
-            foreach (MetricGranularityType element in granularities)
+            foreach (var element in granularities)
             {
-                this.granularities.Add(element);
+                this._granularities.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Granularities collection
+        /// Sets the Granularities property
         /// </summary>
         /// <param name="granularities">The values to add to the Granularities collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeMetricCollectionTypesResult WithGranularities(IEnumerable<MetricGranularityType> granularities)
         {
-            foreach (MetricGranularityType element in granularities)
+            foreach (var element in granularities)
             {
-                this.granularities.Add(element);
+                this._granularities.Add(element);
             }
-
             return this;
         }
-
         // Check to see if Granularities property is set
         internal bool IsSetGranularities()
         {
-            return this.granularities.Count > 0;
+            return this._granularities != null && this._granularities.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        /// The list of Metrics collected. The following metrics are supported:        
+        /// </para>
+        ///         <ul>            <li>
+        /// <para>
+        /// GroupMinSize
+        /// </para>
+        /// </li>            <li>
+        /// <para>
+        /// GroupMaxSize
+        /// </para>
+        /// </li>            <li>
+        /// <para>
+        /// GroupDesiredCapacity
+        /// </para>
+        /// </li>            <li>
+        /// <para>
+        /// GroupInServiceInstances
+        /// </para>
+        /// </li>            <li>
+        /// <para>
+        /// GroupPendingInstances
+        /// </para>
+        /// </li>            <li>
+        /// <para>
+        /// GroupTerminatingInstances
+        /// </para>
+        /// </li>            <li>
+        /// <para>
+        /// GroupTotalInstances
+        /// </para>
+        /// </li>        </ul>
+        /// </summary>
+        public List<MetricCollectionType> Metrics
+        {
+            get { return this._metrics; }
+            set { this._metrics = value; }
+        }
+
+        /// <summary>
+        /// Sets the Metrics property
+        /// </summary>
+        /// <param name="metrics">The values to add to the Metrics collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeMetricCollectionTypesResult WithMetrics(params MetricCollectionType[] metrics)
+        {
+            foreach (var element in metrics)
+            {
+                this._metrics.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the Metrics property
+        /// </summary>
+        /// <param name="metrics">The values to add to the Metrics collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeMetricCollectionTypesResult WithMetrics(IEnumerable<MetricCollectionType> metrics)
+        {
+            foreach (var element in metrics)
+            {
+                this._metrics.Add(element);
+            }
+            return this;
+        }
+        // Check to see if Metrics property is set
+        internal bool IsSetMetrics()
+        {
+            return this._metrics != null && this._metrics.Count > 0; 
+        }
+
     }
 }

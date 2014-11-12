@@ -12,69 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeAutoScalingInstancesResult Unmarshaller
-     /// </summary>
-    internal class DescribeAutoScalingInstancesResultUnmarshaller : IUnmarshaller<DescribeAutoScalingInstancesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeAutoScalingInstancesResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeAutoScalingInstances Object
+    /// </summary>  
+    public class DescribeAutoScalingInstancesResultUnmarshaller : IUnmarshaller<DescribeAutoScalingInstancesResult, XmlUnmarshallerContext>
     {
         public DescribeAutoScalingInstancesResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeAutoScalingInstancesResult describeAutoScalingInstancesResult = new DescribeAutoScalingInstancesResult();
+            DescribeAutoScalingInstancesResult result = new DescribeAutoScalingInstancesResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("AutoScalingInstances/member", targetDepth))
                     {
-                        describeAutoScalingInstancesResult.AutoScalingInstances.Add(AutoScalingInstanceDetailsUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("NextToken", targetDepth))
-                    {
-                        describeAutoScalingInstancesResult.NextToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = AutoScalingInstanceDetailsUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.AutoScalingInstances.Add(item);
                         continue;
                     }
-                }
+                    if (context.TestExpression("NextToken", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.NextToken = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeAutoScalingInstancesResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeAutoScalingInstancesResult;
+            return result;
         }
 
-        public DescribeAutoScalingInstancesResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeAutoScalingInstancesResultUnmarshaller instance;
-
-        public static DescribeAutoScalingInstancesResultUnmarshaller GetInstance() 
+        public static DescribeAutoScalingInstancesResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeAutoScalingInstancesResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeAutoScalingInstancesResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

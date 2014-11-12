@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Terminate Instance In Auto Scaling Group Request Marshaller
+    /// TerminateInstanceInAutoScalingGroup Request Marshaller
     /// </summary>       
     public class TerminateInstanceInAutoScalingGroupRequestMarshaller : IMarshaller<IRequest, TerminateInstanceInAutoScalingGroupRequest>
     {
-        public IRequest Marshall(TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest)
+        public IRequest Marshall(TerminateInstanceInAutoScalingGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(terminateInstanceInAutoScalingGroupRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "TerminateInstanceInAutoScalingGroup");
             request.Parameters.Add("Version", "2011-01-01");
-            if (terminateInstanceInAutoScalingGroupRequest != null && terminateInstanceInAutoScalingGroupRequest.IsSetInstanceId())
-            {
-                request.Parameters.Add("InstanceId", StringUtils.FromString(terminateInstanceInAutoScalingGroupRequest.InstanceId));
-            }
-            if (terminateInstanceInAutoScalingGroupRequest != null && terminateInstanceInAutoScalingGroupRequest.IsSetShouldDecrementDesiredCapacity())
-            {
-                request.Parameters.Add("ShouldDecrementDesiredCapacity", StringUtils.FromBool(terminateInstanceInAutoScalingGroupRequest.ShouldDecrementDesiredCapacity));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetInstanceId())
+                {
+                    request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
+                }
+                if(publicRequest.IsSetShouldDecrementDesiredCapacity())
+                {
+                    request.Parameters.Add("ShouldDecrementDesiredCapacity", StringUtils.FromBool(publicRequest.ShouldDecrementDesiredCapacity));
+                }
+            }
             return request;
         }
     }

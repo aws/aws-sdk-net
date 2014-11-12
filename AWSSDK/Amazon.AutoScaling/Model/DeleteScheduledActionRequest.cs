@@ -25,36 +25,26 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteScheduledAction operation.
-    /// <para>Deletes a scheduled action previously created using the PutScheduledUpdateGroupAction.</para>
+    /// Deletes a scheduled action previously created using the <a>PutScheduledUpdateGroupAction</a>.
     /// </summary>
-    /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DeleteScheduledAction"/>
-    public class DeleteScheduledActionRequest : AmazonWebServiceRequest
+    public partial class DeleteScheduledActionRequest : AmazonWebServiceRequest
     {
-        private string autoScalingGroupName;
-        private string scheduledActionName;
+        private string _autoScalingGroupName;
+        private string _scheduledActionName;
+
 
         /// <summary>
-        /// The name of the Auto Scaling group.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
+
 
         /// <summary>
         /// Sets the AutoScalingGroupName property
@@ -64,39 +54,29 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteScheduledActionRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
-            this.autoScalingGroupName = autoScalingGroupName;
+            this._autoScalingGroupName = autoScalingGroupName;
             return this;
         }
-            
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
         }
 
+
         /// <summary>
-        /// The name of the action you want to delete.
-        ///  
+        /// Gets and sets the property ScheduledActionName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The name of the action you want to delete.
         /// </para>
         /// </summary>
         public string ScheduledActionName
         {
-            get { return this.scheduledActionName; }
-            set { this.scheduledActionName = value; }
+            get { return this._scheduledActionName; }
+            set { this._scheduledActionName = value; }
         }
+
 
         /// <summary>
         /// Sets the ScheduledActionName property
@@ -106,16 +86,15 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteScheduledActionRequest WithScheduledActionName(string scheduledActionName)
         {
-            this.scheduledActionName = scheduledActionName;
+            this._scheduledActionName = scheduledActionName;
             return this;
         }
-            
 
         // Check to see if ScheduledActionName property is set
         internal bool IsSetScheduledActionName()
         {
-            return this.scheduledActionName != null;
+            return this._scheduledActionName != null;
         }
+
     }
 }
-    

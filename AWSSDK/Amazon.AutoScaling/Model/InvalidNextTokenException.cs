@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.AutoScaling.Model
 {
     ///<summary>
-    /// AmazonAutoScaling exception
+    /// AutoScaling exception
     /// </summary>
     public class InvalidNextTokenException : AmazonAutoScalingException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.AutoScaling.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidNextTokenException(string message) 
+        public InvalidNextTokenException(string message) 
             : base(message) {}
           
-        internal InvalidNextTokenException(string message, Exception innerException) 
+        public InvalidNextTokenException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidNextTokenException(Exception innerException) 
+        public InvalidNextTokenException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidNextTokenException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidNextTokenException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidNextTokenException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidNextTokenException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

@@ -14,47 +14,49 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Notification Configurations Request Marshaller
+    /// DescribeNotificationConfigurations Request Marshaller
     /// </summary>       
     public class DescribeNotificationConfigurationsRequestMarshaller : IMarshaller<IRequest, DescribeNotificationConfigurationsRequest>
     {
-        public IRequest Marshall(DescribeNotificationConfigurationsRequest describeNotificationConfigurationsRequest)
+        public IRequest Marshall(DescribeNotificationConfigurationsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeNotificationConfigurationsRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "DescribeNotificationConfigurations");
             request.Parameters.Add("Version", "2011-01-01");
-            if (describeNotificationConfigurationsRequest != null)
-            {
-                List<string> autoScalingGroupNamesList = describeNotificationConfigurationsRequest.AutoScalingGroupNames;
 
-                int autoScalingGroupNamesListIndex = 1;
-                foreach (string autoScalingGroupNamesListValue in autoScalingGroupNamesList)
-                { 
-                    request.Parameters.Add("AutoScalingGroupNames.member." + autoScalingGroupNamesListIndex, StringUtils.FromString(autoScalingGroupNamesListValue));
-                    autoScalingGroupNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAutoScalingGroupNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AutoScalingGroupNames)
+                    {
+                        request.Parameters.Add("AutoScalingGroupNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
             }
-            if (describeNotificationConfigurationsRequest != null && describeNotificationConfigurationsRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("NextToken", StringUtils.FromString(describeNotificationConfigurationsRequest.NextToken));
-            }
-            if (describeNotificationConfigurationsRequest != null && describeNotificationConfigurationsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeNotificationConfigurationsRequest.MaxRecords));
-            }
-
             return request;
         }
     }

@@ -14,47 +14,49 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Auto Scaling Instances Request Marshaller
+    /// DescribeAutoScalingInstances Request Marshaller
     /// </summary>       
     public class DescribeAutoScalingInstancesRequestMarshaller : IMarshaller<IRequest, DescribeAutoScalingInstancesRequest>
     {
-        public IRequest Marshall(DescribeAutoScalingInstancesRequest describeAutoScalingInstancesRequest)
+        public IRequest Marshall(DescribeAutoScalingInstancesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeAutoScalingInstancesRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "DescribeAutoScalingInstances");
             request.Parameters.Add("Version", "2011-01-01");
-            if (describeAutoScalingInstancesRequest != null)
-            {
-                List<string> instanceIdsList = describeAutoScalingInstancesRequest.InstanceIds;
 
-                int instanceIdsListIndex = 1;
-                foreach (string instanceIdsListValue in instanceIdsList)
-                { 
-                    request.Parameters.Add("InstanceIds.member." + instanceIdsListIndex, StringUtils.FromString(instanceIdsListValue));
-                    instanceIdsListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetInstanceIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.InstanceIds)
+                    {
+                        request.Parameters.Add("InstanceIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
             }
-            if (describeAutoScalingInstancesRequest != null && describeAutoScalingInstancesRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeAutoScalingInstancesRequest.MaxRecords));
-            }
-            if (describeAutoScalingInstancesRequest != null && describeAutoScalingInstancesRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("NextToken", StringUtils.FromString(describeAutoScalingInstancesRequest.NextToken));
-            }
-
             return request;
         }
     }

@@ -18,82 +18,33 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>PoliciesType</c> data type. </para>
+    /// The <code>PoliciesType</code> data type.
     /// </summary>
     public partial class DescribePoliciesResult
     {
-        
-        private List<ScalingPolicy> scalingPolicies = new List<ScalingPolicy>();
-        private string nextToken;
+        private string _nextToken;
+        private List<ScalingPolicy> _scalingPolicies = new List<ScalingPolicy>();
+
 
         /// <summary>
-        /// A list of scaling policies.
-        ///  
-        /// </summary>
-        public List<ScalingPolicy> ScalingPolicies
-        {
-            get { return this.scalingPolicies; }
-            set { this.scalingPolicies = value; }
-        }
-        /// <summary>
-        /// Adds elements to the ScalingPolicies collection
-        /// </summary>
-        /// <param name="scalingPolicies">The values to add to the ScalingPolicies collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribePoliciesResult WithScalingPolicies(params ScalingPolicy[] scalingPolicies)
-        {
-            foreach (ScalingPolicy element in scalingPolicies)
-            {
-                this.scalingPolicies.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the ScalingPolicies collection
-        /// </summary>
-        /// <param name="scalingPolicies">The values to add to the ScalingPolicies collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribePoliciesResult WithScalingPolicies(IEnumerable<ScalingPolicy> scalingPolicies)
-        {
-            foreach (ScalingPolicy element in scalingPolicies)
-            {
-                this.scalingPolicies.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if ScalingPolicies property is set
-        internal bool IsSetScalingPolicies()
-        {
-            return this.scalingPolicies.Count > 0;
-        }
-
-        /// <summary>
-        /// A string that marks the start of the next batch of returned results.
-        ///  
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///             A string that marks the start of the next batch of returned results. 
+        ///                    
         /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
+
 
         /// <summary>
         /// Sets the NextToken property
@@ -103,15 +54,63 @@ namespace Amazon.AutoScaling.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePoliciesResult WithNextToken(string nextToken)
         {
-            this.nextToken = nextToken;
+            this._nextToken = nextToken;
             return this;
         }
-            
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ScalingPolicies. 
+        /// <para>
+        ///             A list of scaling policies.        
+        /// </para>
+        /// </summary>
+        public List<ScalingPolicy> ScalingPolicies
+        {
+            get { return this._scalingPolicies; }
+            set { this._scalingPolicies = value; }
+        }
+
+        /// <summary>
+        /// Sets the ScalingPolicies property
+        /// </summary>
+        /// <param name="scalingPolicies">The values to add to the ScalingPolicies collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribePoliciesResult WithScalingPolicies(params ScalingPolicy[] scalingPolicies)
+        {
+            foreach (var element in scalingPolicies)
+            {
+                this._scalingPolicies.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the ScalingPolicies property
+        /// </summary>
+        /// <param name="scalingPolicies">The values to add to the ScalingPolicies collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribePoliciesResult WithScalingPolicies(IEnumerable<ScalingPolicy> scalingPolicies)
+        {
+            foreach (var element in scalingPolicies)
+            {
+                this._scalingPolicies.Add(element);
+            }
+            return this;
+        }
+        // Check to see if ScalingPolicies property is set
+        internal bool IsSetScalingPolicies()
+        {
+            return this._scalingPolicies != null && this._scalingPolicies.Count > 0; 
+        }
+
     }
 }

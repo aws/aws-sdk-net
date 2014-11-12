@@ -14,43 +14,45 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Attach Instances Request Marshaller
+    /// AttachInstances Request Marshaller
     /// </summary>       
     public class AttachInstancesRequestMarshaller : IMarshaller<IRequest, AttachInstancesRequest>
     {
-        public IRequest Marshall(AttachInstancesRequest attachInstancesRequest)
+        public IRequest Marshall(AttachInstancesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(attachInstancesRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "AttachInstances");
             request.Parameters.Add("Version", "2011-01-01");
-            if (attachInstancesRequest != null)
-            {
-                List<string> instanceIdsList = attachInstancesRequest.InstanceIds;
 
-                int instanceIdsListIndex = 1;
-                foreach (string instanceIdsListValue in instanceIdsList)
-                { 
-                    request.Parameters.Add("InstanceIds.member." + instanceIdsListIndex, StringUtils.FromString(instanceIdsListValue));
-                    instanceIdsListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAutoScalingGroupName())
+                {
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
+                if(publicRequest.IsSetInstanceIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.InstanceIds)
+                    {
+                        request.Parameters.Add("InstanceIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-            if (attachInstancesRequest != null && attachInstancesRequest.IsSetAutoScalingGroupName())
-            {
-                request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(attachInstancesRequest.AutoScalingGroupName));
-            }
-
             return request;
         }
     }

@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeNotificationConfigurationsResult response and response metadata.
+    /// Returns information about the DescribeNotificationConfigurationsResult response and response metadata.
     /// </summary>
     public class DescribeNotificationConfigurationsResponse : AmazonWebServiceResponse
     {
-        private DescribeNotificationConfigurationsResult describeNotificationConfigurationsResult;
+        private DescribeNotificationConfigurationsResult _describeNotificationConfigurationsResult;
 
         /// <summary>
         /// Gets and sets the DescribeNotificationConfigurationsResult property.
-        /// The output of the DescribeNotificationConfigurations action.
+        /// Represents the output of a DescribeNotificationConfigurations operation.
         /// </summary>
         public DescribeNotificationConfigurationsResult DescribeNotificationConfigurationsResult
         {
             get
             {
-                if(this.describeNotificationConfigurationsResult == null)
+                if(this._describeNotificationConfigurationsResult == null)
                 {
-                    this.describeNotificationConfigurationsResult = new DescribeNotificationConfigurationsResult();
+                    this._describeNotificationConfigurationsResult = new DescribeNotificationConfigurationsResult();
                 }
-
-                return this.describeNotificationConfigurationsResult;
+                return this._describeNotificationConfigurationsResult;
             }
-            set { this.describeNotificationConfigurationsResult = value; }
+            set { this._describeNotificationConfigurationsResult = value; }
         }
     }
 }
-    

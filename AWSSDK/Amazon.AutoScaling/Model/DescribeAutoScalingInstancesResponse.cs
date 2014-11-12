@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeAutoScalingInstancesResult response and response metadata.
+    /// Returns information about the DescribeAutoScalingInstancesResult response and response metadata.
     /// </summary>
     public class DescribeAutoScalingInstancesResponse : AmazonWebServiceResponse
     {
-        private DescribeAutoScalingInstancesResult describeAutoScalingInstancesResult;
+        private DescribeAutoScalingInstancesResult _describeAutoScalingInstancesResult;
 
         /// <summary>
         /// Gets and sets the DescribeAutoScalingInstancesResult property.
-        /// The AutoScalingInstancesType data type.
+        /// Represents the output of a DescribeAutoScalingInstances operation.
         /// </summary>
         public DescribeAutoScalingInstancesResult DescribeAutoScalingInstancesResult
         {
             get
             {
-                if(this.describeAutoScalingInstancesResult == null)
+                if(this._describeAutoScalingInstancesResult == null)
                 {
-                    this.describeAutoScalingInstancesResult = new DescribeAutoScalingInstancesResult();
+                    this._describeAutoScalingInstancesResult = new DescribeAutoScalingInstancesResult();
                 }
-
-                return this.describeAutoScalingInstancesResult;
+                return this._describeAutoScalingInstancesResult;
             }
-            set { this.describeAutoScalingInstancesResult = value; }
+            set { this._describeAutoScalingInstancesResult = value; }
         }
     }
 }
-    

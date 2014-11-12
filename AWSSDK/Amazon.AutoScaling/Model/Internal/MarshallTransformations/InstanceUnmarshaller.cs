@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Instance Unmarshaller
-     /// </summary>
-    internal class InstanceUnmarshaller : IUnmarshaller<Instance, XmlUnmarshallerContext>, IUnmarshaller<Instance, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Instance Object
+    /// </summary>  
+    public class InstanceUnmarshaller : IUnmarshaller<Instance, XmlUnmarshallerContext>, IUnmarshaller<Instance, JsonUnmarshallerContext>
     {
-        public Instance Unmarshall(XmlUnmarshallerContext context) 
+        public Instance Unmarshall(XmlUnmarshallerContext context)
         {
-            Instance instance = new Instance();
+            Instance unmarshalledObject = new Instance();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,63 +44,62 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("InstanceId", targetDepth))
-                    {
-                        instance.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("AvailabilityZone", targetDepth))
                     {
-                        instance.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("LifecycleState", targetDepth))
-                    {
-                        instance.LifecycleState = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                    }
                     if (context.TestExpression("HealthStatus", targetDepth))
                     {
-                        instance.HealthStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
+                    if (context.TestExpression("InstanceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LaunchConfigurationName", targetDepth))
                     {
-                        instance.LaunchConfigurationName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.LaunchConfigurationName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LifecycleState", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.LifecycleState = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return instance;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return instance;
+            return unmarshalledObject;
         }
 
-        public Instance Unmarshall(JsonUnmarshallerContext context) 
+        public Instance Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static InstanceUnmarshaller instance;
-
-        public static InstanceUnmarshaller GetInstance() 
+        public static InstanceUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new InstanceUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new InstanceUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

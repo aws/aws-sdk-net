@@ -13,65 +13,65 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for PutNotificationConfiguration operation
-    /// </summary>
-    internal class PutNotificationConfigurationResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for PutNotificationConfiguration operation
+    /// </summary>  
+    public class PutNotificationConfigurationResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             PutNotificationConfigurationResponse response = new PutNotificationConfigurationResponse();
-            
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
             while (context.Read())
             {
                 if (context.IsStartElement)
                 {
-                    
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
                         response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
                     }
                 }
             }
-                
 
             return response;
         }
-        
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceeded"))
             {
                 return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             return new AmazonAutoScalingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static PutNotificationConfigurationResponseUnmarshaller instance;
 
+        private static PutNotificationConfigurationResponseUnmarshaller instance;
         public static PutNotificationConfigurationResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new PutNotificationConfigurationResponseUnmarshaller();
+                instance = new PutNotificationConfigurationResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

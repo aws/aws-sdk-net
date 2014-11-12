@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Auto Scaling Group Request Marshaller
+    /// DeleteAutoScalingGroup Request Marshaller
     /// </summary>       
     public class DeleteAutoScalingGroupRequestMarshaller : IMarshaller<IRequest, DeleteAutoScalingGroupRequest>
     {
-        public IRequest Marshall(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest)
+        public IRequest Marshall(DeleteAutoScalingGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteAutoScalingGroupRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "DeleteAutoScalingGroup");
             request.Parameters.Add("Version", "2011-01-01");
-            if (deleteAutoScalingGroupRequest != null && deleteAutoScalingGroupRequest.IsSetAutoScalingGroupName())
-            {
-                request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(deleteAutoScalingGroupRequest.AutoScalingGroupName));
-            }
-            if (deleteAutoScalingGroupRequest != null && deleteAutoScalingGroupRequest.IsSetForceDelete())
-            {
-                request.Parameters.Add("ForceDelete", StringUtils.FromBool(deleteAutoScalingGroupRequest.ForceDelete));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAutoScalingGroupName())
+                {
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
+                if(publicRequest.IsSetForceDelete())
+                {
+                    request.Parameters.Add("ForceDelete", StringUtils.FromBool(publicRequest.ForceDelete));
+                }
+            }
             return request;
         }
     }

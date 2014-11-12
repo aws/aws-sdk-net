@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   AdjustmentType Unmarshaller
-     /// </summary>
-    internal class AdjustmentTypeUnmarshaller : IUnmarshaller<AdjustmentType, XmlUnmarshallerContext>, IUnmarshaller<AdjustmentType, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for AdjustmentType Object
+    /// </summary>  
+    public class AdjustmentTypeUnmarshaller : IUnmarshaller<AdjustmentType, XmlUnmarshallerContext>, IUnmarshaller<AdjustmentType, JsonUnmarshallerContext>
     {
-        public AdjustmentType Unmarshall(XmlUnmarshallerContext context) 
+        public AdjustmentType Unmarshall(XmlUnmarshallerContext context)
         {
-            AdjustmentType adjustmentType = new AdjustmentType();
+            AdjustmentType unmarshalledObject = new AdjustmentType();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,39 +44,38 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("AdjustmentType", targetDepth))
                     {
-                        adjustmentType.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return adjustmentType;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return adjustmentType;
+            return unmarshalledObject;
         }
 
-        public AdjustmentType Unmarshall(JsonUnmarshallerContext context) 
+        public AdjustmentType Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static AdjustmentTypeUnmarshaller instance;
-
-        public static AdjustmentTypeUnmarshaller GetInstance() 
+        public static AdjustmentTypeUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new AdjustmentTypeUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new AdjustmentTypeUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

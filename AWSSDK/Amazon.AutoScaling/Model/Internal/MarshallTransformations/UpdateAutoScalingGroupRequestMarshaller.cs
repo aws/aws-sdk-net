@@ -14,90 +14,90 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Auto Scaling Group Request Marshaller
+    /// UpdateAutoScalingGroup Request Marshaller
     /// </summary>       
     public class UpdateAutoScalingGroupRequestMarshaller : IMarshaller<IRequest, UpdateAutoScalingGroupRequest>
     {
-        public IRequest Marshall(UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest)
+        public IRequest Marshall(UpdateAutoScalingGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(updateAutoScalingGroupRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "UpdateAutoScalingGroup");
             request.Parameters.Add("Version", "2011-01-01");
-            if (updateAutoScalingGroupRequest != null && updateAutoScalingGroupRequest.IsSetAutoScalingGroupName())
-            {
-                request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(updateAutoScalingGroupRequest.AutoScalingGroupName));
-            }
-            if (updateAutoScalingGroupRequest != null && updateAutoScalingGroupRequest.IsSetLaunchConfigurationName())
-            {
-                request.Parameters.Add("LaunchConfigurationName", StringUtils.FromString(updateAutoScalingGroupRequest.LaunchConfigurationName));
-            }
-            if (updateAutoScalingGroupRequest != null && updateAutoScalingGroupRequest.IsSetMinSize())
-            {
-                request.Parameters.Add("MinSize", StringUtils.FromInt(updateAutoScalingGroupRequest.MinSize));
-            }
-            if (updateAutoScalingGroupRequest != null && updateAutoScalingGroupRequest.IsSetMaxSize())
-            {
-                request.Parameters.Add("MaxSize", StringUtils.FromInt(updateAutoScalingGroupRequest.MaxSize));
-            }
-            if (updateAutoScalingGroupRequest != null && updateAutoScalingGroupRequest.IsSetDesiredCapacity())
-            {
-                request.Parameters.Add("DesiredCapacity", StringUtils.FromInt(updateAutoScalingGroupRequest.DesiredCapacity));
-            }
-            if (updateAutoScalingGroupRequest != null && updateAutoScalingGroupRequest.IsSetDefaultCooldown())
-            {
-                request.Parameters.Add("DefaultCooldown", StringUtils.FromInt(updateAutoScalingGroupRequest.DefaultCooldown));
-            }
-            if (updateAutoScalingGroupRequest != null)
-            {
-                List<string> availabilityZonesList = updateAutoScalingGroupRequest.AvailabilityZones;
 
-                int availabilityZonesListIndex = 1;
-                foreach (string availabilityZonesListValue in availabilityZonesList)
-                { 
-                    request.Parameters.Add("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.FromString(availabilityZonesListValue));
-                    availabilityZonesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAutoScalingGroupName())
+                {
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
+                if(publicRequest.IsSetAvailabilityZones())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AvailabilityZones)
+                    {
+                        request.Parameters.Add("AvailabilityZones" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetDefaultCooldown())
+                {
+                    request.Parameters.Add("DefaultCooldown", StringUtils.FromInt(publicRequest.DefaultCooldown));
+                }
+                if(publicRequest.IsSetDesiredCapacity())
+                {
+                    request.Parameters.Add("DesiredCapacity", StringUtils.FromInt(publicRequest.DesiredCapacity));
+                }
+                if(publicRequest.IsSetHealthCheckGracePeriod())
+                {
+                    request.Parameters.Add("HealthCheckGracePeriod", StringUtils.FromInt(publicRequest.HealthCheckGracePeriod));
+                }
+                if(publicRequest.IsSetHealthCheckType())
+                {
+                    request.Parameters.Add("HealthCheckType", StringUtils.FromString(publicRequest.HealthCheckType));
+                }
+                if(publicRequest.IsSetLaunchConfigurationName())
+                {
+                    request.Parameters.Add("LaunchConfigurationName", StringUtils.FromString(publicRequest.LaunchConfigurationName));
+                }
+                if(publicRequest.IsSetMaxSize())
+                {
+                    request.Parameters.Add("MaxSize", StringUtils.FromInt(publicRequest.MaxSize));
+                }
+                if(publicRequest.IsSetMinSize())
+                {
+                    request.Parameters.Add("MinSize", StringUtils.FromInt(publicRequest.MinSize));
+                }
+                if(publicRequest.IsSetPlacementGroup())
+                {
+                    request.Parameters.Add("PlacementGroup", StringUtils.FromString(publicRequest.PlacementGroup));
+                }
+                if(publicRequest.IsSetTerminationPolicies())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.TerminationPolicies)
+                    {
+                        request.Parameters.Add("TerminationPolicies" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetVPCZoneIdentifier())
+                {
+                    request.Parameters.Add("VPCZoneIdentifier", StringUtils.FromString(publicRequest.VPCZoneIdentifier));
                 }
             }
-            if (updateAutoScalingGroupRequest != null && updateAutoScalingGroupRequest.IsSetHealthCheckType())
-            {
-                request.Parameters.Add("HealthCheckType", StringUtils.FromString(updateAutoScalingGroupRequest.HealthCheckType));
-            }
-            if (updateAutoScalingGroupRequest != null && updateAutoScalingGroupRequest.IsSetHealthCheckGracePeriod())
-            {
-                request.Parameters.Add("HealthCheckGracePeriod", StringUtils.FromInt(updateAutoScalingGroupRequest.HealthCheckGracePeriod));
-            }
-            if (updateAutoScalingGroupRequest != null && updateAutoScalingGroupRequest.IsSetPlacementGroup())
-            {
-                request.Parameters.Add("PlacementGroup", StringUtils.FromString(updateAutoScalingGroupRequest.PlacementGroup));
-            }
-            if (updateAutoScalingGroupRequest != null && updateAutoScalingGroupRequest.IsSetVPCZoneIdentifier())
-            {
-                request.Parameters.Add("VPCZoneIdentifier", StringUtils.FromString(updateAutoScalingGroupRequest.VPCZoneIdentifier));
-            }
-            if (updateAutoScalingGroupRequest != null)
-            {
-                List<string> terminationPoliciesList = updateAutoScalingGroupRequest.TerminationPolicies;
-
-                int terminationPoliciesListIndex = 1;
-                foreach (string terminationPoliciesListValue in terminationPoliciesList)
-                { 
-                    request.Parameters.Add("TerminationPolicies.member." + terminationPoliciesListIndex, StringUtils.FromString(terminationPoliciesListValue));
-                    terminationPoliciesListIndex++;
-                }
-            }
-
             return request;
         }
     }

@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeTagsResult response and response metadata.
+    /// Returns information about the DescribeTagsResult response and response metadata.
     /// </summary>
     public class DescribeTagsResponse : AmazonWebServiceResponse
     {
-        private DescribeTagsResult describeTagsResult;
+        private DescribeTagsResult _describeTagsResult;
 
         /// <summary>
         /// Gets and sets the DescribeTagsResult property.
-        /// 
+        /// Represents the output of a DescribeTags operation.
         /// </summary>
         public DescribeTagsResult DescribeTagsResult
         {
             get
             {
-                if(this.describeTagsResult == null)
+                if(this._describeTagsResult == null)
                 {
-                    this.describeTagsResult = new DescribeTagsResult();
+                    this._describeTagsResult = new DescribeTagsResult();
                 }
-
-                return this.describeTagsResult;
+                return this._describeTagsResult;
             }
-            set { this.describeTagsResult = value; }
+            set { this._describeTagsResult = value; }
         }
     }
 }
-    
