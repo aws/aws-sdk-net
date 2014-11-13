@@ -52,7 +52,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             uriResourcePath = uriResourcePath.Replace("{archiveId}", publicRequest.IsSetArchiveId() ? StringUtils.FromString(publicRequest.ArchiveId) : string.Empty);
             uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            request.UseQueryString = true;
 
             return request;
         }

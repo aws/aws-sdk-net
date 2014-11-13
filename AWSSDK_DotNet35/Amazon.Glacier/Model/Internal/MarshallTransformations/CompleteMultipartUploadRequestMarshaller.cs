@@ -59,7 +59,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetChecksum())
                 request.Headers["x-amz-sha256-tree-hash"] = publicRequest.Checksum;
             request.ResourcePath = uriResourcePath;
-            request.UseQueryString = true;
 
             return request;
         }

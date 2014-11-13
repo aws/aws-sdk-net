@@ -50,7 +50,6 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             string uriResourcePath = "/identitypools/{IdentityPoolId}";
             uriResourcePath = uriResourcePath.Replace("{IdentityPoolId}", publicRequest.IsSetIdentityPoolId() ? StringUtils.FromString(publicRequest.IdentityPoolId) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            request.UseQueryString = true;
 
             return request;
         }

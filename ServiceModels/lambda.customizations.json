@@ -1,0 +1,56 @@
+{
+    "shapeModifiers": {
+        "InvokeAsyncRequest": {
+            "modify": [
+                {
+                    "InvokeArgs": { "emitPropertyName": "InvokeArgsStream" }
+                }
+            ]
+        }
+    },
+    "simpleMethods": {
+        "operations": {
+            "DeleteFunction": {
+                "methodForms": [
+                    [
+                        "FunctionName"
+                    ]
+                ]
+            },
+            "GetEventSource": {
+                "methodForms": [
+                    [
+                        "UUID"
+                    ]
+                ]
+            },
+            "GetFunction": {
+                "methodForms": [
+                    [
+                        "FunctionName"
+                    ]
+                ]
+            },
+            "GetFunctionConfiguration": {
+                "methodForms": [
+                    [
+                        "FunctionName"
+                    ]
+                ]
+            },
+            "ListFunctions": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "RemoveEventSource": {
+                "methodForms": [
+                    [
+                        "UUID"
+                    ]
+                ]
+            }
+        }
+    }
+}

@@ -35,7 +35,7 @@ using AWSSDK_DotNet35.UnitTests.TestTools;
 namespace AWSSDK_DotNet35.UnitTests.Marshalling
 {
     [TestClass]
-    public class CognitoSyncMarshallingTests
+    public partial class CognitoSyncMarshallingTests
     {
         static readonly ServiceModel service_model = Utils.LoadServiceModel("cognito-sync-2014-06-30.normal.json", "cognito-sync.customizations.json");
         

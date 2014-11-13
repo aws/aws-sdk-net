@@ -55,7 +55,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetRange())
                 request.Headers["Range"] = publicRequest.Range;
             request.ResourcePath = uriResourcePath;
-            request.UseQueryString = true;
 
             return request;
         }

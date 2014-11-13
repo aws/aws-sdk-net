@@ -58,7 +58,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetPartSize())
                 request.Headers["x-amz-part-size"] = Amazon.Runtime.Internal.Util.StringUtils.FromLong(publicRequest.PartSize);
             request.ResourcePath = uriResourcePath;
-            request.UseQueryString = true;
 
             return request;
         }

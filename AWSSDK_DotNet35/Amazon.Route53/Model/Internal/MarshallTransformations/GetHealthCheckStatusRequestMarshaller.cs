@@ -51,7 +51,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = uriResourcePath;
 
 
-            request.UseQueryString = true;
             return request;
         }
 

@@ -26,13 +26,66 @@ namespace Amazon.S3.Model
     /// </summary>
     public class GetBucketNotificationResponse : AmazonWebServiceResponse
     {
-        public List<TopicConfiguration> TopicConfigurations { get; set; }
-
-        // Check to see if TopicConfiguration property is set
-        internal bool IsSetTopicConfiguration()
+        List<TopicConfiguration> _topicConfigurations;
+        /// <summary>
+        /// Gets and sets the TopicConfigurations property. TopicConfigurations are configuration 
+        /// for Amazon S3 events to be sent to Amazon SNS topics.
+        /// </summary>
+        public List<TopicConfiguration> TopicConfigurations 
         {
-            return this.TopicConfigurations != null && TopicConfigurations.Count > 0;
+            get
+            {
+                if (this._topicConfigurations == null)
+                    this._topicConfigurations = new List<TopicConfiguration>();
+
+                return this._topicConfigurations;
+            }
+            set
+            {
+                this._topicConfigurations = value;
+            }
         }
+
+        List<QueueConfiguration> _queueConfigurations;
+        /// <summary>
+        /// Gets and sets the QueueConfigurations property. QueueConfigurations are configuration 
+        /// for Amazon S3 events to be sent to Amazon SQS queues.
+        /// </summary>
+        public List<QueueConfiguration> QueueConfigurations
+        {
+            get
+            {
+                if (this._queueConfigurations == null)
+                    this._queueConfigurations = new List<QueueConfiguration>();
+
+                return this._queueConfigurations;
+            }
+            set
+            {
+                this._queueConfigurations = value;
+            }
+        }
+
+        List<CloudFunctionConfiguration> _cloudFunctionConfigurations;
+        /// <summary>
+        /// Gets and sets the CloudFunctionConfigurations property. CloudFunctionConfigurations are configuration 
+        /// for Amazon S3 events to be sent to an Amazon Lambda cloud function.
+        /// </summary>
+        public List<CloudFunctionConfiguration> CloudFunctionConfigurations
+        {
+            get
+            {
+                if (this._cloudFunctionConfigurations == null)
+                    this._cloudFunctionConfigurations = new List<CloudFunctionConfiguration>();
+
+                return this._cloudFunctionConfigurations;
+            }
+            set
+            {
+                this._cloudFunctionConfigurations = value;
+            }
+        }
+
     }
 }
     

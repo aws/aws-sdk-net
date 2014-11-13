@@ -613,6 +613,64 @@ namespace Amazon.S3
 
     }
 
+    /// <summary>
+    /// A list of all event types that can configured with the bucket notification configuration.
+    /// </summary>
+    public sealed class EventType : ConstantClass
+    {
+        /// <summary>
+        /// The event encapsulates all the object create events
+        /// </summary>
+        public static readonly EventType ObjectCreatedAll = new EventType("s3:ObjectCreated:*");
+
+        /// <summary>
+        /// Event for put operations
+        /// </summary>
+        public static readonly EventType ObjectCreatedPut = new EventType("s3:ObjectCreated:Put");
+
+        /// <summary>
+        /// Event for post operations
+        /// </summary>
+        public static readonly EventType ObjectCreatedPost = new EventType("s3:ObjectCreated:Post");
+
+        /// <summary>
+        /// Event for copy operations
+        /// </summary>
+        public static readonly EventType ObjectCreatedCopy = new EventType("s3:ObjectCreated:Copy");
+
+        /// <summary>
+        /// Event for completing a multi part upload
+        /// </summary>
+        public static readonly EventType ObjectCreatedCompleteMultipartUpload = new EventType("s3:ObjectCreated:CompleteMultipartUpload");
+
+        /// <summary>
+        /// Event for objects stored in reduced redundancy and S3 detects the object is lost
+        /// </summary>
+        public static readonly EventType ReducedRedundancyLostObject = new EventType("s3:ReducedRedundancyLostObject");
+
+
+        public EventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static EventType FindValue(string value)
+        {
+            return FindValue<EventType>(value);
+        }
+
+        public static implicit operator EventType(string value)
+        {
+            return FindValue(value);
+        }
+
+    }
+
 
     internal enum S3QueryParameter
     {

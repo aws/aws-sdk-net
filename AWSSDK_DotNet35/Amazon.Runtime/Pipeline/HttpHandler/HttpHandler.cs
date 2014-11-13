@@ -326,7 +326,7 @@ namespace Amazon.Runtime.Internal
             httpRequest.Method = request.HttpMethod;
             if (request.MayContainRequestBody())
             {
-                if (request.Content == null && request.ContentStream == null)
+                if (request.Content == null && (request.ContentStream == null))
                 {
                     string queryString = AWSSDKUtils.GetParametersAsString(request.Parameters);
                     request.Content = Encoding.UTF8.GetBytes(queryString);

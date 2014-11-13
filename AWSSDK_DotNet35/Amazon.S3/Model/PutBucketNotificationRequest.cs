@@ -37,12 +37,38 @@ namespace Amazon.S3.Model
             return this.BucketName != null;
         }
 
+        /// <summary>
+        /// Gets and sets the TopicConfigurations property. TopicConfigurations are configuration for Amazon S3 
+        /// events to be sent to Amazon SNS topics.
+        /// </summary>
         public List<TopicConfiguration> TopicConfigurations {get; set;}
 
-        // Check to see if NotificationConfiguration property is set
         internal bool IsSetTopicConfigurations()
         {
             return this.TopicConfigurations != null && TopicConfigurations.Count > 0;
+        }
+
+        /// <summary>
+        /// Gets and sets the QueueConfigurations property. QueueConfigurations are configuration for Amazon S3 
+        /// events to be sent to Amazon SQS queues.
+        /// </summary>
+        public List<QueueConfiguration> QueueConfigurations { get; set; }
+
+        internal bool IsSetQueueConfigurations()
+        {
+            return this.QueueConfigurations != null && QueueConfigurations.Count > 0;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the CloudFunctionConfigurations property. CloudFunctionConfigurations are configuration for 
+        /// Amazon S3 events to be sent to an Amazon Lambda cloud function.
+        /// </summary>
+        public List<CloudFunctionConfiguration> CloudFunctionConfigurations { get; set; }
+
+        internal bool IsSetCloudFunctionConfigurations()
+        {
+            return this.CloudFunctionConfigurations != null && CloudFunctionConfigurations.Count > 0;
         }
     }
 }

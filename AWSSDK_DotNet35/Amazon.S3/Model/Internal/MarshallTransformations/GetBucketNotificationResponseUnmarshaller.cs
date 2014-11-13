@@ -62,6 +62,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         response.TopicConfigurations.Add(TopicConfigurationUnmarshaller.Instance.Unmarshall(context));
                         continue;
                     }
+                    if (context.TestExpression("QueueConfiguration", targetDepth))
+                    {
+                        response.QueueConfigurations.Add(QueueConfigurationUnmarshaller.Instance.Unmarshall(context));
+                        continue;
+                    }
+                    if (context.TestExpression("CloudFunctionConfiguration", targetDepth))
+                    {
+                        response.CloudFunctionConfigurations.Add(CloudFunctionConfigurationUnmarshaller.Instance.Unmarshall(context));
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

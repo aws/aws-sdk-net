@@ -50,9 +50,9 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/2013-01-01/documents/batch";
             request.AddSubResource("format", "sdk");
-            request.ContentStream =  publicRequest.Documents;
+            request.ContentStream =  publicRequest.Documents ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
-                publicRequest.Documents.Length.ToString(CultureInfo.InvariantCulture);
+                request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
         
             if(publicRequest.IsSetContentType())

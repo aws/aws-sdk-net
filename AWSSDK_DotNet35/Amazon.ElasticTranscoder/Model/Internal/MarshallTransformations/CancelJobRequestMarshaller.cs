@@ -50,7 +50,6 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             string uriResourcePath = "/2012-09-25/jobs/{Id}";
             uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            request.UseQueryString = true;
 
             return request;
         }

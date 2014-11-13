@@ -280,7 +280,16 @@
 			"service-url":"https://kinesis.us-east-1.amazonaws.com/",
             "mobile-platforms" : ["WinRT", "PCL", "WP8"]
 		},
-		{
+        {
+            "active": true,
+
+            "model": "lambda",
+            "base-name": "Lambda",
+            "region-lookup-name": "lambda",
+            "authentication-service-name": "lambda",
+            "mobile-platforms": [ "WinRT", "PCL", "WP8" ]
+        },		
+        {
 			"active" : true,
 			
 			"model" : "kms",

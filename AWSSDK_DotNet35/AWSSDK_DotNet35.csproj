@@ -442,6 +442,15 @@
     <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Lambda\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Lambda\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Lambda\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.OpsWorks\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -541,10 +550,14 @@
     <Compile Include="Amazon.S3\Internal\AmazonS3RedirectHandler.cs" />
     <Compile Include="Amazon.S3\Internal\AmazonS3ResponseHandler.cs" />
     <Compile Include="Amazon.S3\Internal\AmazonS3RetryPolicy.cs" />
+    <Compile Include="Amazon.S3\Model\CloudFunctionConfiguration.cs" />
+    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\CloudFunctionConfigurationUnmarshaller.cs" />
     <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\LifecycleRuleNoncurrentVersionExpirationUnmarshaller.cs" />
     <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\LifecycleRuleNoncurrentVersionTransitionUnmarshaller.cs" />
+    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\QueueConfigurationUnmarshaller.cs" />
     <Compile Include="Amazon.S3\Model\LifecycleRuleNoncurrentVersionExpiration.cs" />
     <Compile Include="Amazon.S3\Model\LifecycleRuleNoncurrentVersionTransition.cs" />
+    <Compile Include="Amazon.S3\Model\QueueConfiguration.cs" />
     <Compile Include="Amazon.S3\Model\StreamSizeMismatchException.cs" />
     <Compile Include="Amazon.S3\Util\AmazonS3Uri.cs" />
     <Compile Include="Amazon.SecurityToken\*.cs">
@@ -599,6 +612,7 @@
     <Compile Include="Amazon.SQS\AmazonSQSClient.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.SQS\AmazonSQSClient.Extension.cs" />
     <Compile Include="Amazon.SQS\AmazonSQSConfig.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -608,6 +622,7 @@
     <Compile Include="Amazon.SQS\IAmazonSQS.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.SQS\IAmazonSQS.Extension.cs" />
     <Compile Include="Amazon.SQS\ServiceEnumerations.cs">
       <SubType>Code</SubType>
     </Compile>

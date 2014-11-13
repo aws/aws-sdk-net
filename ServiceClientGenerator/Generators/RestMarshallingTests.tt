@@ -26,7 +26,7 @@ using AWSSDK_DotNet35.UnitTests.TestTools;
 namespace AWSSDK_DotNet35.UnitTests.Marshalling
 {
     [TestClass]
-    public class <#=this.Config.BaseName#>MarshallingTests
+    public partial class <#=this.Config.BaseName#>MarshallingTests
     {
         static readonly ServiceModel service_model = Utils.LoadServiceModel("<#= Path.GetFileName(this.Config.ModelPath)#>", "<#=this.Config.CustomizationsPath == null ? "" : Path.GetFileName(this.Config.CustomizationsPath) #>");
 		<#

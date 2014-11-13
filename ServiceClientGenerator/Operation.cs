@@ -316,10 +316,8 @@ namespace ServiceClientGenerator
         {
             get
             {
-                // If there aren't any members that are marshalled as part of the body or streamed	
                 return this.RequestStructure != null &&
-                    !this.RequestStructure.Members.Any(m => m.MarshallLocation == MarshallLocation.Body
-                    || m.IsMemoryStream);
+                    this.RequestStructure.Members.Any(m => m.MarshallLocation == MarshallLocation.QueryString);
             }
         }
 

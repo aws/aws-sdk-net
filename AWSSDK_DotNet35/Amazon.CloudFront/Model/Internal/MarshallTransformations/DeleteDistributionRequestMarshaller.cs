@@ -54,7 +54,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = uriResourcePath;
 
 
-            request.UseQueryString = true;
             return request;
         }
 

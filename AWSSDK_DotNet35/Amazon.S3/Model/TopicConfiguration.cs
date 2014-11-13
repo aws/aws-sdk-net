@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -20,23 +20,88 @@ using System.IO;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>Topic Configuration
+    /// <summary>
+    /// This class contains the configuration Amazon S3 uses to figure out what events you want to listen 
+    /// and send the event to an Amazon SNS topic.
+    /// <para>
+    /// The topic's policy must allow S3 to publish messages to it. The utility method 
+    /// <see cref="Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.AuthorizeS3ToPublish(string,string)"/>
+    /// can be used to help setup the topic policy.
+    /// </para>
     /// </summary>
     public class TopicConfiguration
     {
         /// <summary>
-        /// Bucket event for which to send notifications.
+        /// Gets and set the Id property. The Id will be provided in the event content and can be used 
+        /// to identify which configuration caused an event to fire. If the Id is not provided for the configuration, one will be generated.
         /// </summary>
-        public string Event { get; set; }
+        public string Id { get; set; }
 
-        // Check to see if Event property is set
-        internal bool IsSetEvent()
+        internal bool IsSetId()
         {
-            return this.Event != null;
+            return this.Id != null;
         }
 
         /// <summary>
-        /// Amazon SNS topic to which Amazon S3 will publish a message to report the specified events for the bucket.
+        /// Bucket event for which to send notifications.
+        /// <para>
+        /// Topic configurations can now contain multiple events. This property is obsolete in favor of the Events property.
+        /// This property will aways get or set the the zeroth element in the Events collection.
+        /// </para>
+        /// </summary>
+        [Obsolete("The Event property is now obsolete in favor the Events property.")]
+        public string Event 
+        { 
+            get
+            {
+                if (!this.IsSetEvents())
+                    return null;
+
+                return this.Events[0];
+            }
+            set
+            {
+                if (this.Events == null)
+                    this.Events = new List<EventType>();
+
+                if (this.Events.Count == 0)
+                    this.Events.Add(value);
+                else
+                    this.Events[0] = value;
+            }
+        }
+
+
+        List<EventType> _events;
+        /// <summary>
+        /// Gets and sets the Events property. These are the events the configuration will listen to and send to the Amazon SNS topic.
+        /// </summary>
+        public List<EventType> Events 
+        { 
+            get
+            {
+                if (this._events == null)
+                    this._events = new List<EventType>();
+
+                return this._events;
+            }
+            set { this._events = value; } 
+        }
+
+        // Check to see if Event property is set
+        internal bool IsSetEvents()
+        {
+            return this._events != null && this._events.Count > 0;
+        }
+
+        /// <summary>
+        /// Gets and sets the Topic property. Amazon SNS topic to which Amazon S3 will publish a message to report the 
+        /// specified events for the bucket.
+        /// <para>
+        /// The topic's policy must allow S3 to publish messages to it. The utility method 
+        /// <see cref="Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.AuthorizeS3ToPublish(string,string)"/>
+        /// can be used to help setup the topic policy.
+        /// </para>
         /// </summary>
         public string Topic { get; set; }
 

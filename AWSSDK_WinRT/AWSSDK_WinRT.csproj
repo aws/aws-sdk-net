@@ -237,6 +237,8 @@
     <Compile Include="Amazon.KeyManagementService\IAmazonKeyManagementService.cs" />
     <Compile Include="Amazon.Kinesis\AmazonKinesisClient.cs" />
     <Compile Include="Amazon.Kinesis\IAmazonKinesis.cs" />
+    <Compile Include="Amazon.Lambda\AmazonLambdaClient.cs" />
+    <Compile Include="Amazon.Lambda\IAmazonLambda.cs" />
     <Compile Include="Amazon.MissingTypes\ICloneable.cs" />
     <Compile Include="Amazon.OpsWorks\AmazonOpsWorksClient.cs" />
     <Compile Include="Amazon.OpsWorks\IAmazonOpsWorks.cs" />
@@ -638,6 +640,17 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Kinesis\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Lambda\*" Exclude="..\AWSSDK_DotNet35\Amazon.Lambda\IAmazonLambda.cs;..\AWSSDK_DotNet35\Amazon.Lambda\AmazonLambdaClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Lambda\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Lambda\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>

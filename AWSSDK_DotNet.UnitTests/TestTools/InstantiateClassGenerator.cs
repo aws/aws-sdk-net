@@ -152,7 +152,8 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 var type = info.PropertyType;
                 var propertyValue = info.GetMethod.Invoke(owningObject, new object[] { });
 
-                if (owningObject.GetType() == typeof(Amazon.Glacier.Model.GetJobOutputResponse)) 
+                if (owningObject.GetType() == typeof(Amazon.Glacier.Model.GetJobOutputResponse) ||
+                    owningObject.GetType() == typeof(Amazon.Lambda.Model.InvokeAsyncResponse)) 
                 {
                     if (info.Name == "Status")
                     {

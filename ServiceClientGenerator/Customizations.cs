@@ -421,10 +421,14 @@ namespace ServiceClientGenerator
                     }
                 }
 
+                string type = member.DetermineType();
+                if (type == "Stream")
+                    type = "System.IO.Stream";
+
                 if (currentParams == "")
-                    currentParams = member.DetermineType() + " " + CamelCaseParam(member.PropertyName);
+                    currentParams = type + " " + CamelCaseParam(member.PropertyName);
                 else
-                    currentParams = currentParams + ", " + member.DetermineType() + " " + CamelCaseParam(member.PropertyName);
+                    currentParams = currentParams + ", " + type + " " + CamelCaseParam(member.PropertyName);
             }
 
             return currentParams;

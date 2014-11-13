@@ -422,6 +422,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Lambda\*" Exclude="..\AWSSDK_DotNet35\Amazon.Lambda\IAmazonLambda.cs;..\AWSSDK_DotNet35\Amazon.Lambda\AmazonLambdaClient.cs;..\AWSSDK_DotNet35\Amazon.Lambda\IAmazonLambda.cs;..\AWSSDK_DotNet35\Amazon.Lambda\AmazonLambdaClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_WinRT\Amazon.Lambda\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Lambda\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Lambda\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\*" Exclude="..\AWSSDK_DotNet35\Amazon.S3\IAmazonS3.cs;..\AWSSDK_DotNet35\Amazon.S3\AmazonS3Client.cs">
       <Visible>false</Visible>
     </Compile>

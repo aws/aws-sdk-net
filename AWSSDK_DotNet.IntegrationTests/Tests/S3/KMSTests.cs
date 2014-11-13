@@ -173,7 +173,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var bucketName = S3TestUtils.CreateBucket(newClient);
                 try
                 {
-                    TestPresignedPut(bucketName, key, keyId);
+                    VerifyPresignedPut(bucketName, key, keyId);
                     VerifyObjectWithTransferUtility(bucketName);
                     TestPresignedGet(bucketName, key, keyId);
 
@@ -220,6 +220,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 VerifyObject(bucketName, key, usedKeyId);
                 VerifyObjectWithTransferUtility(bucketName);
 
+                TestCopyPart(bucketName, key, keyId);
+
                 var key2 = key + "Copy";
                 var copyResponse = Client.CopyObject(new CopyObjectRequest
                 {
@@ -265,7 +267,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             }
         }
-        private void TestPresignedPut(string bucketName, string key, string keyId)
+        private void VerifyPresignedPut(string bucketName, string key, string keyId)
         {
             GetPreSignedUrlRequest getPresignedUrlRequest = new GetPreSignedUrlRequest
             {
@@ -283,7 +285,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 try
                 {
-                    usedKeyId = TestPresignedPut(keyId, url);
+                    usedKeyId = VerifyPresignedPut(keyId, url);
                     break;
                 }
                 catch { }
@@ -293,8 +295,96 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             VerifyKeyId(keyId, usedKeyId);
             VerifyObject(bucketName, key, usedKeyId);
         }
+        private void TestCopyPart(string bucketName, string key, string keyId)
+        {
+            string dstKey = "dstObject";
+            string srcKey = key;
+            string srcVersionID;
+            string srcETag;
+            DateTime srcTimeStamp;
+            string uploadID = null;
 
-        private static string TestPresignedPut(string keyId, string url)
+            try
+            {
+                //Get the srcObjectTimestamp
+                GetObjectMetadataResponse gomr = Client.GetObjectMetadata(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = srcKey
+                });
+                srcTimeStamp = gomr.LastModified;
+                srcVersionID = gomr.VersionId;
+                srcETag = gomr.ETag;
+
+                //Start the multipart upload
+                InitiateMultipartUploadResponse imur = Client.InitiateMultipartUpload(new InitiateMultipartUploadRequest
+                {
+                    BucketName = bucketName,
+                    Key = dstKey,
+                    ServerSideEncryptionMethod = ServerSideEncryptionMethod.AWSKMS,
+                    ServerSideEncryptionKeyManagementServiceKeyId = keyId
+                });
+                Assert.AreEqual(ServerSideEncryptionMethod.AWSKMS, imur.ServerSideEncryptionMethod);
+                var usedKeyId = imur.ServerSideEncryptionKeyManagementServiceKeyId;
+                VerifyKeyId(keyId, usedKeyId);
+                uploadID = imur.UploadId;
+
+
+                CopyPartRequest request = new CopyPartRequest
+                {
+                    DestinationBucket = bucketName,
+                    DestinationKey = dstKey,
+                    SourceBucket = bucketName,
+                    SourceKey = srcKey,
+                    UploadId = uploadID,
+                    PartNumber = 1,
+                };
+                CopyPartResponse response = Client.CopyPart(request);
+                Assert.AreEqual(ServerSideEncryptionMethod.AWSKMS, response.ServerSideEncryptionMethod);
+                usedKeyId = response.ServerSideEncryptionKeyManagementServiceKeyId;
+                VerifyKeyId(keyId, usedKeyId);
+
+                //ETag
+                Assert.IsNotNull(response.ETag);
+                Assert.IsTrue((response.ETag != null) && (response.ETag.Length > 0));
+
+                //LastModified
+                Assert.IsNotNull(response.LastModified);
+                Assert.AreNotEqual(DateTime.MinValue, response.LastModified);
+
+                //PartNumber
+                Assert.IsTrue(response.PartNumber == 1);
+
+                var completeResponse = Client.CompleteMultipartUpload(new CompleteMultipartUploadRequest
+                {
+                    BucketName = bucketName,
+                    Key = dstKey,
+                    UploadId = uploadID,
+                    PartETags = new List<PartETag>()
+                    {
+                        new PartETag { ETag = response.ETag, PartNumber = response.PartNumber }
+                    }
+                });
+                Assert.AreEqual(ServerSideEncryptionMethod.AWSKMS, completeResponse.ServerSideEncryptionMethod);
+                usedKeyId = completeResponse.ServerSideEncryptionKeyManagementServiceKeyId;
+                VerifyKeyId(keyId, usedKeyId);
+            }
+            finally
+            {
+                //abort the multipart upload
+                if (uploadID != null)
+                {
+                    Client.AbortMultipartUpload(new AbortMultipartUploadRequest
+                    {
+                        BucketName = bucketName,
+                        Key = dstKey,
+                        UploadId = uploadID
+                    });
+                }
+            }
+        }
+
+        private string VerifyPresignedPut(string keyId, string url)
         {
             var webRequest = HttpWebRequest.Create(url);
             webRequest.Method = "PUT";

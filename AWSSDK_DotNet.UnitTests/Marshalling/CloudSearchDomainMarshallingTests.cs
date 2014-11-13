@@ -35,7 +35,7 @@ using AWSSDK_DotNet35.UnitTests.TestTools;
 namespace AWSSDK_DotNet35.UnitTests.Marshalling
 {
     [TestClass]
-    public class CloudSearchDomainMarshallingTests
+    public partial class CloudSearchDomainMarshallingTests
     {
         static readonly ServiceModel service_model = Utils.LoadServiceModel("cloudsearchdomain-2013-01-01.normal.json", "cloudsearchdomain.customizations.json");
         

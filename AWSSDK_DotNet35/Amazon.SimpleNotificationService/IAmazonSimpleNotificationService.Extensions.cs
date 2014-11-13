@@ -66,6 +66,15 @@ namespace Amazon.SimpleNotificationService
         /// successfully subscribed to the topic.</returns>
         string SubscribeQueue(string topicArn, IAmazonSQS sqsClient, string sqsQueueUrl);
         #endregion
+
+        /// <summary>
+        /// This is a utility method which updates the policy of a topic to allow the
+        /// S3 bucket to publish events to it.
+        /// </summary>
+        /// <param name="topicArn">The topic that will have its policy updated.</param>
+        /// <param name="bucket">The bucket that will be given access to publish from.</param>
+        void AuthorizeS3ToPublish(string topicArn, string bucket);
+
 #endif
     }
 }

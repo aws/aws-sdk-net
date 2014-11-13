@@ -27,6 +27,7 @@ using Amazon.SQS.Model;
 #if BCL
 using Amazon.Auth.AccessControlPolicy;
 using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
+using System.Globalization;
 #endif
 
 
@@ -169,6 +170,47 @@ namespace Amazon.SimpleNotificationService
             return false;
         }
         #endregion
+
+        /// <summary>
+        /// This is a utility method which updates the policy of a topic to allow the
+        /// S3 bucket to publish events to it.
+        /// </summary>
+        /// <param name="topicArn">The topic that will have its policy updated.</param>
+        /// <param name="bucket">The bucket that will be given access to publish from.</param>
+        public void AuthorizeS3ToPublish(string topicArn, string bucket)
+        {
+            var attributes = this.GetTopicAttributes(new GetTopicAttributesRequest
+                {
+                    TopicArn = topicArn
+                }).Attributes;
+
+            Policy policy;
+            if(attributes.ContainsKey("Policy") && !string.IsNullOrEmpty(attributes["Policy"]))
+            {
+                policy = Policy.FromJson(attributes["Policy"]);
+            }
+            else
+            {
+                policy = new Policy();
+            }
+
+            var sourceArn = string.Format(CultureInfo.InvariantCulture, "arn:aws:s3:*:*:{0}", bucket);
+
+            Statement statement = new Statement(Statement.StatementEffect.Allow);
+            statement.Actions.Add(SNSActionIdentifiers.Publish);
+            statement.Resources.Add(new Resource(topicArn));
+            statement.Conditions.Add(ConditionFactory.NewSourceArnCondition(sourceArn));
+            statement.Principals.Add(new Principal("*"));
+            policy.Statements.Add(statement);
+
+            var policyString = policy.ToJson();
+            this.SetTopicAttributes(new SetTopicAttributesRequest
+            {
+                TopicArn = topicArn,
+                AttributeName = "Policy",
+                AttributeValue = policyString
+            });
+        }
 #endif
     }
 }

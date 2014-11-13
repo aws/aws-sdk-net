@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -56,9 +56,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         if (topicConfiguartion != null)
                         {
                             xmlWriter.WriteStartElement("TopicConfiguration", "");
-                            if (topicConfiguartion.IsSetEvent())
+                            if (topicConfiguartion.IsSetId())
                             {
-                                xmlWriter.WriteElementString("Event", "", S3Transforms.ToXmlStringValue(topicConfiguartion.Event));
+                                xmlWriter.WriteElementString("Id", "", S3Transforms.ToXmlStringValue(topicConfiguartion.Id));
+                            }
+                            if (topicConfiguartion.IsSetEvents())
+                            {
+                                foreach(var evnt in topicConfiguartion.Events)
+                                {
+                                    xmlWriter.WriteElementString("Event", "", S3Transforms.ToXmlStringValue(evnt));
+                                }
                             }
                             if (topicConfiguartion.IsSetTopic())
                             {
@@ -68,6 +75,65 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         }
                     }
                 }
+
+                if (putBucketNotificationRequest.IsSetQueueConfigurations())
+                {
+                    foreach (var queueConfiguartion in putBucketNotificationRequest.QueueConfigurations)
+                    {
+                        if (queueConfiguartion != null)
+                        {
+                            xmlWriter.WriteStartElement("QueueConfiguration", "");
+                            if (queueConfiguartion.IsSetId())
+                            {
+                                xmlWriter.WriteElementString("Id", "", S3Transforms.ToXmlStringValue(queueConfiguartion.Id));
+                            }
+                            if (queueConfiguartion.IsSetEvents())
+                            {
+                                foreach (var evnt in queueConfiguartion.Events)
+                                {
+                                    xmlWriter.WriteElementString("Event", "", S3Transforms.ToXmlStringValue(evnt));
+                                }
+                            }
+                            if (queueConfiguartion.IsSetQueue())
+                            {
+                                xmlWriter.WriteElementString("Queue", "", S3Transforms.ToXmlStringValue(queueConfiguartion.Queue));
+                            }
+                            xmlWriter.WriteEndElement();
+                        }
+                    }
+                }
+
+                if (putBucketNotificationRequest.IsSetCloudFunctionConfigurations())
+                {
+                    foreach (var cloudFunctionConfiguartion in putBucketNotificationRequest.CloudFunctionConfigurations)
+                    {
+                        if (cloudFunctionConfiguartion != null)
+                        {
+                            xmlWriter.WriteStartElement("CloudFunctionConfiguration", "");
+                            if (cloudFunctionConfiguartion.IsSetId())
+                            {
+                                xmlWriter.WriteElementString("Id", "", S3Transforms.ToXmlStringValue(cloudFunctionConfiguartion.Id));
+                            }
+                            if (cloudFunctionConfiguartion.IsSetEvents())
+                            {
+                                foreach (var evnt in cloudFunctionConfiguartion.Events)
+                                {
+                                    xmlWriter.WriteElementString("Event", "", S3Transforms.ToXmlStringValue(evnt));
+                                }
+                            }
+                            if (cloudFunctionConfiguartion.IsSetCloudFunction())
+                            {
+                                xmlWriter.WriteElementString("CloudFunction", "", S3Transforms.ToXmlStringValue(cloudFunctionConfiguartion.CloudFunction));
+                            }
+                            if (cloudFunctionConfiguartion.IsSetInvocationRole())
+                            {
+                                xmlWriter.WriteElementString("InvocationRole", "", S3Transforms.ToXmlStringValue(cloudFunctionConfiguartion.InvocationRole));
+                            }
+                            xmlWriter.WriteEndElement();
+                        }
+                    }
+                }
+
 
                 xmlWriter.WriteEndElement();
             }

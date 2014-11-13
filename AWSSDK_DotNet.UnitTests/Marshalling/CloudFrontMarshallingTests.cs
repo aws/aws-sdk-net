@@ -35,7 +35,7 @@ using AWSSDK_DotNet35.UnitTests.TestTools;
 namespace AWSSDK_DotNet35.UnitTests.Marshalling
 {
     [TestClass]
-    public class CloudFrontMarshallingTests
+    public partial class CloudFrontMarshallingTests
     {
         static readonly ServiceModel service_model = Utils.LoadServiceModel("cloudfront-2014-10-21.normal.json", "cloudfront.customizations.json");
         

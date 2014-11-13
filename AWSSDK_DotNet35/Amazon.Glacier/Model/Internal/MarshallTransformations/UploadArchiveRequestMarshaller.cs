@@ -51,9 +51,9 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/archives";
             uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
             uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
-            request.ContentStream =  publicRequest.Body;
+            request.ContentStream =  publicRequest.Body ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
-                publicRequest.Body.Length.ToString(CultureInfo.InvariantCulture);
+                request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
         
             if(publicRequest.IsSetArchiveDescription())

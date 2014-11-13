@@ -107,9 +107,9 @@ using Amazon.Runtime.Internal.Util;
 		if(streamingMember!=null)		
 		{
 #>
-			request.ContentStream =  <#=variableName#>.<#=streamingMember.PropertyName#>;
+			request.ContentStream =  <#=variableName#>.<#=streamingMember.PropertyName#> ?? new MemoryStream();
 			request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
-				<#=variableName#>.<#=streamingMember.PropertyName#>.Length.ToString(CultureInfo.InvariantCulture);
+				request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
 			request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
 <#+
 		}				 
