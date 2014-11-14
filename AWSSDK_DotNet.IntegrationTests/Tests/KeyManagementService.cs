@@ -43,7 +43,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             BaseClean();
         }
 
-        [TestMethod]
+        // This test is disabled because it creates resources that cannot be removed, KMS keys.
+        //[TestMethod]
+        [TestCategory("KMS")]
         public void TestService()
         {
             var keys = GetKeys();

@@ -12,22 +12,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     [TestClass]
     public class CodeDeploy : TestBase<AmazonCodeDeployClient>
     {
-        static string currentProfileConfig;
-
-        [ClassInitialize]
-        public static void SetUp(TestContext ctx)
-        {
-            currentProfileConfig = AWSConfigs.AWSProfileName;
-            AWSConfigs.AWSProfileName = "jimflDev";
-        }
-
-        [ClassCleanup]
-        public static void Cleanup()
-        {
-            AWSConfigs.AWSProfileName = currentProfileConfig;
-            BaseClean();
-        }
-
         [TestMethod]
         public void TestListApplications()
         {

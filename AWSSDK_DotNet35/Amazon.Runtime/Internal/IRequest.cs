@@ -226,7 +226,7 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// This flag specifies if SigV4 is required for the current request.
         /// </summary>
-        bool RequireSigV4 { get; set; }
+        bool UseSigV4 { get; set; }
 
         /// <summary>
         /// The authentication region to use for the request.

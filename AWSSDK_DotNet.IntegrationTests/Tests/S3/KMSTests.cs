@@ -27,27 +27,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private static string largeTestContents = new string('@', (int)(TransferUtilityTests.MEG_SIZE * 19));
         private static string fileContents = "Test file contents";
         private const string profile = "trent";
-        private static string keyId;
+        private static string basePath = @"c:\temp\test\transferutility\";
 
         [ClassCleanup]
         public static void Cleanup()
         {
             BaseClean();
-
-            if (!string.IsNullOrEmpty(keyId))
-                KeyManagementService.Client.DisableKey(keyId);
         }
 
-        [ClassInitialize]
-        public static void Initialize(TestContext t)
-        {
-            keyId = KeyManagementService.Client.CreateKey(new Amazon.KeyManagementService.Model.CreateKeyRequest
-            {
-                KeyUsage = Amazon.KeyManagementService.KeyUsageType.ENCRYPT_DECRYPT,
-                Description = ".NET SDK S3 Test Key"
-            }).KeyMetadata.KeyId;
-        }
-        
         [TestMethod]
         [TestCategory("S3")]
         public void GetObjectFromNonDefaultEndpoint()
@@ -155,10 +142,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             TestPresignedUrls(keyId: null);
         }
 
-        [TestMethod]
+
+        // This test is disabled because it creates resources that cannot be removed, KMS keys.
+        //[TestMethod]
         [TestCategory("S3")]
         public void SpecificKeyTests()
         {
+            var keyId = KeyManagementService.Client.CreateKey(new Amazon.KeyManagementService.Model.CreateKeyRequest
+            {
+                KeyUsage = Amazon.KeyManagementService.KeyUsageType.ENCRYPT_DECRYPT,
+                Description = ".NET SDK S3 Test Key"
+            }).KeyMetadata.KeyId;
+
             TestSseKms(keyId);
             TestPresignedUrls(keyId);
         }
@@ -236,6 +231,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 usedKeyId = copyResponse.ServerSideEncryptionKeyManagementServiceKeyId;
                 VerifyKeyId(keyId, usedKeyId);
                 VerifyObject(bucketName, key2, usedKeyId);
+
+                TransferUtility utility = new TransferUtility(Client);
+                var smallUploadRequest = new TransferUtilityUploadRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    ServerSideEncryptionMethod = ServerSideEncryptionMethod.AWSKMS,
+                    ServerSideEncryptionKeyManagementServiceKeyId = keyId,
+                    InputStream = new MemoryStream(UTF8Encoding.UTF8.GetBytes(testContents))
+                };
+                utility.Upload(smallUploadRequest);
+                VerifyObject(bucketName, key, keyId);
+
+                var largeUploadRequest = new TransferUtilityUploadRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    ServerSideEncryptionMethod = ServerSideEncryptionMethod.AWSKMS,
+                    ServerSideEncryptionKeyManagementServiceKeyId = keyId,
+                    InputStream = new MemoryStream(UTF8Encoding.UTF8.GetBytes(largeTestContents))
+                };
+                utility.Upload(largeUploadRequest);
+                VerifyObject(bucketName, key, keyId);
+
+                TestUploadDirectory(bucketName, keyId);
             }
             finally
             {
@@ -243,6 +263,44 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
+        private void TestUploadDirectory(string bucketName, string keyId)
+        {
+            var directoryName = UtilityMethods.GenerateName("UploadDirectoryTest");
+
+            var directoryPath = Path.Combine(basePath, directoryName);
+            for (int i = 0; i < 5; i++)
+            {
+                var filePath = Path.Combine(Path.Combine(directoryPath, i.ToString()), "file.txt");
+                UtilityMethods.WriteFile(filePath, fileContents);
+            }
+
+            var config = new TransferUtilityConfig
+            {
+                ConcurrentServiceRequests = 10,
+            };
+            var transferUtility = new TransferUtility(Client, config);
+            var request = new TransferUtilityUploadDirectoryRequest
+            {
+                BucketName = bucketName,
+                Directory = directoryPath,
+                KeyPrefix = directoryName,
+                SearchPattern = "*",
+                SearchOption = SearchOption.AllDirectories,
+                ServerSideEncryptionMethod = ServerSideEncryptionMethod.AWSKMS,
+                ServerSideEncryptionKeyManagementServiceKeyId = keyId
+            };
+
+            HashSet<string> keys = new HashSet<string>();
+            request.UploadDirectoryFileRequestEvent += (s, e) =>
+            {
+                keys.Add(e.UploadRequest.Key);
+            };
+            transferUtility.UploadDirectory(request);
+            Assert.AreEqual(5, keys.Count);
+
+            foreach (var key in keys)
+                VerifyObject(bucketName, key, keyId);
+        }
         private void TestPresignedGet(string bucketName, string key, string keyId)
         {
             GetPreSignedUrlRequest getPresignedUrlRequest = new GetPreSignedUrlRequest

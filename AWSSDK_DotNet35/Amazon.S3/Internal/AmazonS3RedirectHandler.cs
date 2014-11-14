@@ -47,8 +47,8 @@ namespace Amazon.S3.Internal
             AmazonS3KmsHandler.EvaluateIfSigV4Required(executionContext.RequestContext.Request);
 
             var redirect = new AmazonS3Uri(redirectedLocation);
-            if (AWSConfigs.S3Config.UseSignatureVersion4 ||   
-                request.RequireSigV4 ||
+            if (AWSConfigs.S3Config.UseSignatureVersion4 ||
+                request.UseSigV4 ||
                 redirect.Region.GetEndpointForService("s3").SignatureVersionOverride == "4")
             {
                 // Resign if sigV4 is enabled, the request explicitly requires SigV4 or if the redirected region mandates sigV4.

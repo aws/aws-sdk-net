@@ -94,7 +94,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns>True if signature v4 request signing should be used</returns>
         protected static bool UseV4Signing(bool useSigV4Setting, IRequest request, ClientConfig config)
         {
-            if (useSigV4Setting || request.RequireSigV4 || config.SignatureVersion == "4")
+            if (useSigV4Setting || request.UseSigV4 || config.SignatureVersion == "4")
                 return true;
 
             // do a cascading series of checks to try and arrive at whether we have

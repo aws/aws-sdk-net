@@ -35,7 +35,7 @@ namespace Amazon.S3.Internal
             {
                 var region = new AmazonS3Uri(request.Endpoint.OriginalString).Region;
                 if(region != RegionEndpoint.USEast1)
-                    request.RequireSigV4 = true;
+                    request.UseSigV4 = true;
             }
         }
     }

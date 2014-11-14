@@ -399,16 +399,6 @@ namespace Amazon.S3.Model
                 return true;
             }
         }
-
-        internal override bool RequireSigV4
-        {
-            get
-            {
-                if (this.ServerSideEncryptionMethod == ServerSideEncryptionMethod.AWSKMS)
-                    return true;
-                return false;
-            }
-        }
     }
 }
     

@@ -286,16 +286,6 @@ namespace Amazon.S3.Model
         {
             return !System.String.IsNullOrEmpty(this.serverSideEncryptionCustomerProvidedKeyMD5);
         }
-
-        internal override bool RequireSigV4
-        {
-            get
-            {
-                if (this.ServerSideEncryptionMethod == ServerSideEncryptionMethod.AWSKMS)
-                    return true;
-                return false;
-            }
-        }
     }
 }
     

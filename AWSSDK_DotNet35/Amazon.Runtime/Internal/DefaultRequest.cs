@@ -66,7 +66,7 @@ namespace Amazon.Runtime.Internal
             this.serviceName = serviceName;
             this.originalRequest = request;
             this.requestName = this.originalRequest.GetType().Name;
-            this.RequireSigV4 = this.originalRequest.RequireSigV4;
+            this.UseSigV4 = this.originalRequest.UseSigV4;
         }
 
 
@@ -359,7 +359,7 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// This flag specifies if SigV4 is required for the current request.
         /// </summary>
-        public bool RequireSigV4 { get; set; }
+        public bool UseSigV4 { get; set; }
 
         /// <summary>
         /// The authentication region to use for the request.

@@ -41,6 +41,17 @@ namespace Amazon.S3.Internal
             var request = executionContext.RequestContext.Request;
             var config = executionContext.RequestContext.ClientConfig;
 
+            // If the marshalled request has the SSE header and it is set to KMS,
+            // force SigV4 for this request.
+            // Current operations that may set this header:
+            //  CopyObject, CopyPart, InitiateMultipart, PutObject
+            string sseHeaderValue;
+            if (request.Headers.TryGetValue(HeaderKeys.XAmzServerSideEncryptionHeader, out sseHeaderValue) &&
+                string.Equals(sseHeaderValue, ServerSideEncryptionMethod.AWSKMS.Value, StringComparison.Ordinal))
+            {
+                    request.UseSigV4 = true;
+            }
+
             var bucketName = GetBucketName(request.ResourcePath);
             if (string.IsNullOrEmpty(bucketName))
                 return;

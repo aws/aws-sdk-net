@@ -165,19 +165,19 @@ namespace Amazon.S3.Transfer.Internal
         private UploadPartRequest ConstructUploadPartRequest(int partNumber, long filePosition, InitiateMultipartUploadResponse initResponse)
         {
             var uploadRequest = new UploadPartRequest()
-                    {
-                        BucketName = this._fileTransporterRequest.BucketName,
-                        Key = this._fileTransporterRequest.Key,
-                        UploadId = initResponse.UploadId,
-                        PartNumber = partNumber,
-                        PartSize = this._partSize,
-                        ServerSideEncryptionCustomerMethod = this._fileTransporterRequest.ServerSideEncryptionCustomerMethod,
-                        ServerSideEncryptionCustomerProvidedKey = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKey,
-                        ServerSideEncryptionCustomerProvidedKeyMD5 = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKeyMD5,
+            {
+                BucketName = this._fileTransporterRequest.BucketName,
+                Key = this._fileTransporterRequest.Key,
+                UploadId = initResponse.UploadId,
+                PartNumber = partNumber,
+                PartSize = this._partSize,
+                ServerSideEncryptionCustomerMethod = this._fileTransporterRequest.ServerSideEncryptionCustomerMethod,
+                ServerSideEncryptionCustomerProvidedKey = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKey,
+                ServerSideEncryptionCustomerProvidedKeyMD5 = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKeyMD5,
 #if (BCL && !BCL45)
-                        Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._fileTransporterRequest.Timeout)
+                Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._fileTransporterRequest.Timeout)
 #endif
-                    };
+            };
 
 #if BCL
             if ((filePosition + this._partSize >= this._contentLength)
@@ -211,6 +211,12 @@ namespace Amazon.S3.Transfer.Internal
             {
                 uploadRequest.InputStream = this._fileTransporterRequest.InputStream;
             }
+
+            // If the InitiateMultipartUploadResponse indicates that this upload is
+            // using KMS, force SigV4 for each UploadPart request
+            bool useSigV4 = initResponse.ServerSideEncryptionMethod == ServerSideEncryptionMethod.AWSKMS;
+            if (useSigV4)
+                uploadRequest.UseSigV4 = true;
 
             return uploadRequest;
         }

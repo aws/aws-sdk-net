@@ -23,6 +23,15 @@ namespace Amazon.Runtime
     public abstract partial class AmazonWebServiceRequest : IRequestEvents
     {
         /// <summary>
+        /// This flag specifies if SigV4 will be used for the current request.
+        /// </summary>
+        internal bool UseSigV4
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Gets or Sets a value indicating if "Expect: 100-continue" HTTP header will be 
         /// sent by the client for this request. The default value is false.
         /// </summary>
@@ -34,14 +43,6 @@ namespace Amazon.Runtime
         internal virtual bool IncludeSHA256Header
         {
             get { return true; }
-        }
-
-        /// <summary>
-        /// This flag specifies if SigV4 is required for the current request.
-        /// </summary>
-        internal virtual bool RequireSigV4
-        {
-            get { return false; }
         }
 
         void IRequestEvents.AddBeforeRequestHandler(RequestEventHandler handler)
