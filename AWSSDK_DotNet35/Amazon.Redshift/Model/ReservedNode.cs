@@ -230,7 +230,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        ///  The state of the reserved Compute Node. 
+        ///  The state of the reserved compute node. 
         /// </para>
         ///  
         /// <para>

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The output for the <a>TerminateInstanceInAutoScalingGroup</a> action.
+    /// 
     /// </summary>
     public partial class TerminateInstanceInAutoScalingGroupResult : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Activity. 
         /// <para>
-        ///  A scaling Activity. 
+        /// A scaling activity.
         /// </para>
         /// </summary>
         public Activity Activity

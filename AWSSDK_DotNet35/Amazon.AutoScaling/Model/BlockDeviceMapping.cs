@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The <code>BlockDeviceMapping</code> data type.
+    /// Describes a block device mapping.
     /// </summary>
     public partial class BlockDeviceMapping
     {
@@ -40,7 +40,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DeviceName. 
         /// <para>
-        ///  The name of the device within Amazon EC2 (for example, /dev/sdh or xvdh). 
+        /// The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or
+        /// <code>xvdh</code>).
         /// </para>
         /// </summary>
         public string DeviceName
@@ -58,7 +59,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Ebs. 
         /// <para>
-        ///  The Elastic Block Storage volume information. 
+        /// The information about the Amazon EBS volume.
         /// </para>
         /// </summary>
         public Ebs Ebs
@@ -76,8 +77,11 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NoDevice. 
         /// <para>
-        ///  Suppresses the device mapping. 
+        /// Suppresses a device mapping.
         /// </para>
+        ///  <note>If <code>NoDevice</code> is set to <code>true</code> for the root device, the
+        /// instance might fail the EC2 health check. Auto Scaling launches a replacement instance
+        /// if the instance fails the health check.</note>
         /// </summary>
         public bool NoDevice
         {
@@ -94,7 +98,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property VirtualName. 
         /// <para>
-        /// The virtual name associated with the device. 
+        /// The name of the virtual device, <code>ephemeral0</code> to <code>ephemeral3</code>.
         /// </para>
         /// </summary>
         public string VirtualName

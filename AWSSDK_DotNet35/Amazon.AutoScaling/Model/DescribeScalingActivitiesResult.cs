@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The output for the <a>DescribeScalingActivities</a> action.
+    /// 
     /// </summary>
     public partial class DescribeScalingActivitiesResult : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Activities. 
         /// <para>
-        ///  A list of the requested scaling activities. 
+        /// The scaling activities.
         /// </para>
         /// </summary>
         public List<Activity> Activities
@@ -56,9 +56,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Acts as a paging mechanism for large result sets. Set to a non-empty string if there
-        /// are additional results waiting to be returned. Pass this in to subsequent calls to
-        /// return additional results. 
+        /// The token to use when requesting the next set of items. If there are no additional
+        /// items to return, the string is empty.
         /// </para>
         /// </summary>
         public string NextToken

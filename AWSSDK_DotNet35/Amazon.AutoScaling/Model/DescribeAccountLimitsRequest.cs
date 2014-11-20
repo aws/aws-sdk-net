@@ -29,20 +29,12 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountLimits operation.
-    /// Returns the limits for the Auto Scaling resources currently allowed for your AWS
-    /// account. 
+    /// Describes the current Auto Scaling resource limits for your AWS account.
     /// 
     ///  
     /// <para>
-    /// Your AWS account comes with default limits on resources for Auto Scaling. There is
-    /// a default limit of <code>20</code> Auto Scaling groups and <code>100</code> launch
-    /// configurations per region.
-    /// </para>
-    ///  
-    /// <para>
-    /// If you reach the limits for the number of Auto Scaling groups or the launch configurations,
-    /// you can go to the <a href="https://aws.amazon.com/support/">Support Center</a> and
-    /// place a request to raise the limits.
+    /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
+    /// Service Limits</a>.
     /// </para>
     /// </summary>
     public partial class DescribeAccountLimitsRequest : AmazonAutoScalingRequest

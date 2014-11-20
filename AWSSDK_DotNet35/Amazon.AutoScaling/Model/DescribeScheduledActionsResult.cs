@@ -28,14 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// A scaling action that is scheduled for a future time and date. An action can be scheduled
-    /// up to thirty days in advance. 
     /// 
-    ///  
-    /// <para>
-    ///  Starting with API version 2011-01-01, you can use <code>recurrence</code> to specify
-    /// that a scaling action occurs regularly on a schedule. 
-    /// </para>
     /// </summary>
     public partial class DescribeScheduledActionsResult : AmazonWebServiceResponse
     {
@@ -45,7 +38,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A string that marks the start of the next batch of returned results. 
+        /// The token to use when requesting the next set of items. If there are no additional
+        /// items to return, the string is empty.
         /// </para>
         /// </summary>
         public string NextToken
@@ -63,7 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScheduledUpdateGroupActions. 
         /// <para>
-        ///  A list of scheduled actions designed to update an Auto Scaling group. 
+        /// The scheduled actions.
         /// </para>
         /// </summary>
         public List<ScheduledUpdateGroupAction> ScheduledUpdateGroupActions

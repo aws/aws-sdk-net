@@ -29,10 +29,14 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePolicies operation.
-    /// Returns descriptions of what each policy does. This action supports pagination. If
-    /// the response includes a token, there are more records available. To get the additional
-    /// records, repeat the request with the response token as the <code>NextToken</code>
-    /// parameter.
+    /// Describes the policies for the specified Auto Scaling group.
+    /// 
+    ///  
+    /// <para>
+    /// You can specify a maximum number of items to be returned with a single call. If there
+    /// are more items to return, the call returns a token. To get the next set of items,
+    /// repeat the call with the returned token in the <code>NextToken</code> parameter.
+    /// </para>
     /// </summary>
     public partial class DescribePoliciesRequest : AmazonAutoScalingRequest
     {
@@ -44,7 +48,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name of the Auto Scaling group. 
+        /// The name of the group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -62,7 +66,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of policies that will be described with each call. 
+        /// The maximum number of items to be returned with each call.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -80,8 +84,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A string that is used to mark the start of the next batch of returned results for
-        /// pagination. 
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
         /// </para>
         /// </summary>
         public string NextToken
@@ -99,11 +103,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyNames. 
         /// <para>
-        ///  A list of policy names or policy ARNs to be described. If this list is omitted, all
-        /// policy names are described. If an auto scaling group name is provided, the results
-        /// are limited to that group. The list of requested policy names cannot contain more
-        /// than 50 items. If unknown policy names are requested, they are ignored with no error.
-        /// 
+        /// One or more policy names or policy ARNs to be described. If you omit this list, all
+        /// policy names are described. If an group name is provided, the results are limited
+        /// to that group. This list is limited to 50 items. If you specify an unknown policy
+        /// name, it is ignored with no error.
         /// </para>
         /// </summary>
         public List<string> PolicyNames

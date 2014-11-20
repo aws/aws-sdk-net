@@ -29,7 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePolicy operation.
-    /// Deletes a policy created by <a>PutScalingPolicy</a>.
+    /// Deletes the specified Auto Scaling policy.
     /// </summary>
     public partial class DeletePolicyRequest : AmazonAutoScalingRequest
     {
@@ -57,7 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The name or PolicyARN of the policy you want to delete.
+        /// The name or Amazon Resource Name (ARN) of the policy.
         /// </para>
         /// </summary>
         public string PolicyName

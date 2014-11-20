@@ -261,7 +261,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     MessageAttributes = new Dictionary<string, SNSMessageAttributeValue>
                     {
                         { "Color", new SNSMessageAttributeValue { StringValue = "Red", DataType = "String" } },
-                        { "Binary", new SNSMessageAttributeValue { DataType = "Binary", BinaryValue = new MemoryStream(Encoding.UTF8.GetBytes("Yes please")) } },
+                        //{ "Binary", new SNSMessageAttributeValue { DataType = "Binary", BinaryValue = new MemoryStream(Encoding.UTF8.GetBytes("Yes please")) } },
                         { "Prime", new SNSMessageAttributeValue { StringValue = "31", DataType = "Number" } },
                     }
                 };

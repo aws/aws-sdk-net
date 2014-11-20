@@ -34,7 +34,7 @@ namespace Amazon.Redshift.Model
     /// A cluster event is created when the reboot is completed. Any pending cluster modifications
     /// (see <a>ModifyCluster</a>) are applied at this reboot. For more information about
     /// managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-    /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i>
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>
     /// </summary>
     public partial class RebootClusterRequest : AmazonRedshiftRequest
     {

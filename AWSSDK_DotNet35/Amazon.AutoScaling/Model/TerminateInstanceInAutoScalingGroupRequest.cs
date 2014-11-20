@@ -29,7 +29,10 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the TerminateInstanceInAutoScalingGroup operation.
-    /// Terminates the specified instance. Optionally, the desired group size can be adjusted.
+    /// Terminates the specified instance and optionally adjusts the desired group size.
+    /// 
+    ///  <note>This call simply makes a termination request. The instances is not terminated
+    /// immediately.</note>
     /// </summary>
     public partial class TerminateInstanceInAutoScalingGroupRequest : AmazonAutoScalingRequest
     {
@@ -39,7 +42,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        ///  The ID of the Amazon EC2 instance to be terminated. 
+        /// The ID of the EC2 instance.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -57,8 +60,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ShouldDecrementDesiredCapacity. 
         /// <para>
-        ///  Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this instance should
-        /// also decrement the size of the <a>AutoScalingGroup</a>. 
+        /// If <code>true</code>, terminating this instance also decrements the size of the Auto
+        /// Scaling group.
         /// </para>
         /// </summary>
         public bool ShouldDecrementDesiredCapacity

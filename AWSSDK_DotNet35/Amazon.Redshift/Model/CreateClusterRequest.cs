@@ -34,7 +34,7 @@ namespace Amazon.Redshift.Model
     /// name or the cluster security group parameter, Amazon Redshift creates a non-VPC cluster,
     /// it associates the default cluster security group with the cluster. For more information
     /// about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-    /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i> .
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i> .
     /// </summary>
     public partial class CreateClusterRequest : AmazonRedshiftRequest
     {
@@ -52,6 +52,7 @@ namespace Amazon.Redshift.Model
         private bool? _encrypted;
         private string _hsmClientCertificateIdentifier;
         private string _hsmConfigurationIdentifier;
+        private string _kmsKeyId;
         private string _masterUsername;
         private string _masterUserPassword;
         private string _nodeType;
@@ -59,6 +60,7 @@ namespace Amazon.Redshift.Model
         private int? _port;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
+        private List<Tag> _tags = new List<Tag>();
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
         /// <summary>
@@ -366,7 +368,7 @@ namespace Amazon.Redshift.Model
         /// Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through
         /// an Internet gateway. For more information about provisioning clusters in EC2-VPC,
         /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
-        /// Platforms to Launch Your Cluster</a> in the Amazon Redshift Management Guide.
+        /// Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
         /// </para>
         /// </summary>
         public string ElasticIp
@@ -442,6 +444,25 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The AWS Key Management Service (KMS) key ID of the encryption key that you want to
+        /// use to encrypt data in the cluster.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
         ///  The user name associated with the master user account for the cluster that is being
@@ -501,7 +522,8 @@ namespace Amazon.Redshift.Model
         /// <para>
         ///  The node type to be provisioned for the cluster. For information about node types,
         /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
-        /// Working with Clusters</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -530,7 +552,8 @@ namespace Amazon.Redshift.Model
         ///  
         /// <para>
         /// For information about determining how many nodes you need, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
-        /// Working with Clusters</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -602,9 +625,10 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: The value selected for the cluster from which the snapshot was taken. For
-        /// more information about the time blocks for each region, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
-        /// Windows</a> in Amazon Redshift Management Guide. 
+        ///  Default: A 30-minute window selected at random from an 8-hour block of time per region,
+        /// occurring on a random day of the week. For more information about the time blocks
+        /// for each region, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+        /// Windows</a> in Amazon Redshift Cluster Management Guide.
         /// </para>
         ///  
         /// <para>
@@ -643,6 +667,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetPubliclyAccessible()
         {
             return this._publiclyAccessible.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tag instances.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

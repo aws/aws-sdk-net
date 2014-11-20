@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The <code>PoliciesType</code> data type.
+    /// 
     /// </summary>
     public partial class DescribePoliciesResult : AmazonWebServiceResponse
     {
@@ -38,7 +38,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A string that marks the start of the next batch of returned results. 
+        /// The token to use when requesting the next set of items. If there are no additional
+        /// items to return, the string is empty.
         /// </para>
         /// </summary>
         public string NextToken
@@ -56,7 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScalingPolicies. 
         /// <para>
-        ///  A list of scaling policies. 
+        /// The scaling policies.
         /// </para>
         /// </summary>
         public List<ScalingPolicy> ScalingPolicies

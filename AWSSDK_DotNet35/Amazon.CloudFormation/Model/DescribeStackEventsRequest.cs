@@ -32,6 +32,9 @@ namespace Amazon.CloudFormation.Model
     /// Returns all stack related events for a specified stack. For more information about
     /// a stack's event history, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
     /// in the AWS CloudFormation User Guide.
+    /// 
+    ///  <note>You can list events for stacks that have failed to create or have been deleted
+    /// by specifying the unique stack identifier (stack ID).</note>
     /// </summary>
     public partial class DescribeStackEventsRequest : AmazonCloudFormationRequest
     {

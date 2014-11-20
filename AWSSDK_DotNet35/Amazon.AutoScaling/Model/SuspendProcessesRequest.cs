@@ -29,21 +29,23 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the SuspendProcesses operation.
-    /// Suspends Auto Scaling processes for an Auto Scaling group. To suspend specific process
-    /// types, specify them by name with the <code>ScalingProcesses.member.N</code> parameter.
-    /// To suspend all process types, omit the <code>ScalingProcesses.member.N</code> parameter.
+    /// Suspends the specified Auto Scaling processes for the specified Auto Scaling group.
+    /// To suspend specific processes, use the <code>ScalingProcesses</code> parameter. To
+    /// suspend all processes, omit the <code>ScalingProcesses</code> parameter.
     /// 
-    /// 
-    ///  <important> 
+    ///  
     /// <para>
-    ///  Suspending either of the two primary process types, <code>Launch</code> or <code>Terminate</code>,
-    /// can prevent other process types from functioning properly. 
+    /// Note that if you suspend either the <code>Launch</code> or <code>Terminate</code>
+    /// process types, it can prevent other process types from functioning properly.
     /// </para>
-    ///  </important> 
+    ///  
     /// <para>
-    ///  To resume processes that have been suspended, use <a>ResumeProcesses</a> For more
-    /// information on suspending and resuming Auto Scaling process, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspend
-    /// and Resume Auto Scaling Process</a>. 
+    /// To resume processes that have been suspended, use <a>ResumeProcesses</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspend
+    /// and Resume Auto Scaling Processes</a> in the <i>Auto Scaling Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class SuspendProcessesRequest : AmazonAutoScalingRequest
@@ -54,7 +56,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name or Amazon Resource Name (ARN) of the Auto Scaling group. 
+        /// The name or Amazon Resource Name (ARN) of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -72,15 +74,11 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScalingProcesses. 
         /// <para>
-        ///  The processes that you want to suspend or resume, which can include one or more of
-        /// the following: 
+        /// One or more of the following processes:
         /// </para>
         ///  <ul> <li>Launch</li> <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
         /// <li>AZRebalance</li> <li>AlarmNotification</li> <li>ScheduledActions</li> <li>AddToLoadBalancer</li>
-        /// </ul> 
-        /// <para>
-        ///  To suspend all process types, omit this parameter. 
-        /// </para>
+        /// </ul>
         /// </summary>
         public List<string> ScalingProcesses
         {

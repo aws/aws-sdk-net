@@ -43,7 +43,8 @@ namespace Amazon.Redshift.Model
     ///  Parameters in the parameter group define specific behavior that applies to the databases
     /// you create on the cluster. For more information about managing parameter groups, go
     /// to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-    /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Management Guide</i>. 
+    /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+    /// 
     /// </para>
     /// </summary>
     public partial class CreateClusterParameterGroupRequest : AmazonRedshiftRequest
@@ -51,6 +52,7 @@ namespace Amazon.Redshift.Model
         private string _description;
         private string _parameterGroupFamily;
         private string _parameterGroupName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -109,7 +111,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li> <li>First character
         /// must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-        /// <li>Must be unique withing your AWS account.</li> </ul>
+        /// <li>Must be unique withing your AWS account.</li> </ul> <note>This value is stored
+        /// as a lower-case string.</note>
         /// </summary>
         public string ParameterGroupName
         {
@@ -121,6 +124,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetParameterGroupName()
         {
             return this._parameterGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tag instances.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

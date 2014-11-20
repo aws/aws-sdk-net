@@ -67,14 +67,21 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Capabilities. 
         /// <para>
-        /// The list of capabilities that you want to allow in the stack. If your stack contains
-        /// IAM resources, you must specify the CAPABILITY_IAM value for this parameter; otherwise,
-        /// this action returns an InsufficientCapabilities error. IAM resources are the following:
-        /// <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
-        /// <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
-        /// <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
-        /// <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
-        /// and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+        /// A list of capabilities that you must specify before AWS CloudFormation can create
+        /// or update certain stacks. Some stack templates might include resources that can affect
+        /// permissions in your AWS account. For those stacks, you must explicitly acknowledge
+        /// their capabilities by specifying this parameter. Currently, the only valid value is
+        /// <code>CAPABILITY_IAM</code>, which is required for the following resources: <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html">
+        /// AWS::CloudFormation::Stack</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+        /// AWS::IAM::AccessKey</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+        /// AWS::IAM::Group</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+        /// AWS::IAM::InstanceProfile</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+        /// AWS::IAM::Policy</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+        /// AWS::IAM::Role</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+        /// AWS::IAM::User</a>, and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+        /// AWS::IAM::UserToGroupAddition</a>. If your stack template contains these resources,
+        /// we recommend that you review any permissions associated with them. If you don't specify
+        /// this parameter, this action returns an InsufficientCapabilities error.
         /// </para>
         /// </summary>
         public List<string> Capabilities
@@ -131,6 +138,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The name or stack ID of the stack to update.
         /// </para>
+        ///  <note> Must contain only alphanumeric characters (case sensitive) and start with
+        /// an alpha character. Maximum length of the name is 255 characters. </note>
         /// </summary>
         public string StackName
         {

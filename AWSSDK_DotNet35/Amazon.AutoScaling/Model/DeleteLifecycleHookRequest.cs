@@ -29,9 +29,13 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLifecycleHook operation.
-    /// Deletes the specified lifecycle hook. If there are any outstanding lifecycle actions,
-    /// they are completed first (ABANDON for launching instances, CONTINUE for terminating
-    /// instances).
+    /// Deletes the specified lifecycle hook.
+    /// 
+    ///  
+    /// <para>
+    /// If there are any outstanding lifecycle actions, they are completed first (<code>ABANDON</code>
+    /// for launching instances, <code>CONTINUE</code> for terminating instances).
+    /// </para>
     /// </summary>
     public partial class DeleteLifecycleHookRequest : AmazonAutoScalingRequest
     {
@@ -41,7 +45,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// The name of the Auto Scaling group to which the lifecycle hook belongs.
+        /// The name of the Auto Scaling group for the lifecycle hook.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName

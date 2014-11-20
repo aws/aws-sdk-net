@@ -274,6 +274,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudFormation")]
+        public void GetTemplateSummaryMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetTemplateSummary");
+
+            var request = InstantiateClassGenerator.Execute<GetTemplateSummaryRequest>();
+            var marshaller = new GetTemplateSummaryRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetTemplateSummaryResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetTemplateSummaryResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
         public void ListStackResourcesMarshallTest()
         {
             var operation = service_model.FindOperation("ListStackResources");
@@ -328,6 +352,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var request = InstantiateClassGenerator.Execute<SetStackPolicyRequest>();
             var marshaller = new SetStackPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void SignalResourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("SignalResource");
+
+            var request = InstantiateClassGenerator.Execute<SignalResourceRequest>();
+            var marshaller = new SignalResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();

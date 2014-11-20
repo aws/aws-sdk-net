@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The output of the <a>DescribeAdjustmentTypes</a> action.
+    /// 
     /// </summary>
     public partial class DescribeAdjustmentTypesResult : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AdjustmentTypes. 
         /// <para>
-        ///  A list of specific policy adjustment types. 
+        /// The policy adjustment types.
         /// </para>
         /// </summary>
         public List<AdjustmentType> AdjustmentTypes

@@ -35,10 +35,15 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// For information on creating or updating a scheduled action for your Auto Scaling group,
-    /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scale
-    /// Based on a Schedule</a>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled
+    /// Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Auto Scaling supports the date and time expressed in "YYYY-MM-DDThh:mm:ssZ" format
+    /// in UTC/GMT only.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PutScheduledUpdateGroupActionRequest : AmazonAutoScalingRequest
     {
@@ -55,7 +60,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name or ARN of the Auto Scaling group. 
+        /// The name or Amazon Resource Name (ARN) of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName

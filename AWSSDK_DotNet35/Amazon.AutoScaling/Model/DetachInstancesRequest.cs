@@ -29,14 +29,14 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachInstances operation.
-    /// Using <code>DetachInstances</code>, you can remove an instance from an Auto Scaling
-    /// group. After the instances are detached, you can manage them independently from the
-    /// rest of the Auto Scaling group.
+    /// Removes one or more instances from the specified Auto Scaling group. After the instances
+    /// are detached, you can manage them independently from the rest of the Auto Scaling
+    /// group.
     /// 
     ///  
     /// <para>
-    /// To learn more about detaching instances, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html">Detach
-    /// Amazon EC2 Instances From Your Auto Scaling Group</a>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html">Detach
+    /// EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class DetachInstancesRequest : AmazonAutoScalingRequest
@@ -48,7 +48,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name of the Auto Scaling group from which to detach instances. 
+        /// The name of the group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -66,8 +66,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        ///  A list of instances to detach from the Auto Scaling group. You must specify at least
-        /// one instance ID. 
+        /// One or more instance IDs.
         /// </para>
         /// </summary>
         public List<string> InstanceIds
@@ -85,9 +84,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ShouldDecrementDesiredCapacity. 
         /// <para>
-        ///  Specifies if the detached instance should decrement the desired capacity value for
-        /// the Auto Scaling group. If set to <code>True</code>, the Auto Scaling group decrements
-        /// the desired capacity value by the number of instances detached. 
+        /// If <code>True</code>, the Auto Scaling group decrements the desired capacity value
+        /// by the number of instances detached.
         /// </para>
         /// </summary>
         public bool ShouldDecrementDesiredCapacity

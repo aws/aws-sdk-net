@@ -29,12 +29,14 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateOrUpdateTags operation.
-    /// Creates new tags or updates existing tags for an Auto Scaling group. 
+    /// Creates or updates tags for the specified Auto Scaling group.
     /// 
-    ///  
+    ///  <note> A tag's definition is composed of a resource ID, resource type, key and value,
+    /// and the propagate flag. Value and the propagate flag are optional parameters. See
+    /// the Request Parameters for more information. </note> 
     /// <para>
-    /// For information on creating tags for your Auto Scaling group, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tag
-    /// Your Auto Scaling Groups and Amazon EC2 Instances</a>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Add,
+    /// Modify, or Remove Auto Scaling Group Tags</a> in the <i>Auto Scaling Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateOrUpdateTagsRequest : AmazonAutoScalingRequest
@@ -53,12 +55,11 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// The <code>PropagateAtLaunch</code> flag defines whether the new tag will be applied
-        /// to instances launched by the Auto Scaling group. Valid values are <code>true</code>
-        /// or <code>false</code>. However, instances that are already running will not get the
-        /// new or updated tag. Likewise, when you modify a tag, the updated version will be applied
-        /// only to new instances launched by the Auto Scaling group after the change. Running
-        /// instances that had the previous version of the tag will continue to have the older
-        /// tag. 
+        /// to instances launched by the group. Valid values are <code>true</code> or <code>false</code>.
+        /// However, instances that are already running will not get the new or updated tag. Likewise,
+        /// when you modify a tag, the updated version will be applied only to new instances launched
+        /// by the group after the change. Running instances that had the previous version of
+        /// the tag will continue to have the older tag. 
         /// </para>
         ///  
         /// <para>

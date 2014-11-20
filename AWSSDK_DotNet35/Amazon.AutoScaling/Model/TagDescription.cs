@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The tag applied to an Auto Scaling group.
+    /// Describes a tag applied to an Auto Scaling group.
     /// </summary>
     public partial class TagDescription
     {
@@ -41,7 +41,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        ///  The key of the tag. 
+        /// The tag key.
         /// </para>
         /// </summary>
         public string Key
@@ -59,9 +59,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PropagateAtLaunch. 
         /// <para>
-        ///  Specifies whether the new tag will be applied to instances launched after the tag
-        /// is created. The same behavior applies to updates: If you change a tag, the changed
-        /// tag will be applied to all instances launched after you made the change. 
+        /// Specifies whether the tag is applied to instances launched after the tag is created.
+        /// The same behavior applies to updates: If you change a tag, it is applied to all instances
+        /// launched after you made the change.
         /// </para>
         /// </summary>
         public bool PropagateAtLaunch
@@ -79,7 +79,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        ///  The name of the Auto Scaling group. 
+        /// The name of the group.
         /// </para>
         /// </summary>
         public string ResourceId
@@ -97,8 +97,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        ///  The kind of resource to which the tag is applied. Currently, Auto Scaling supports
-        /// the <code>auto-scaling-group</code> resource type. 
+        /// The kind of resource to which the tag is applied. Currently, Auto Scaling supports
+        /// the <code>auto-scaling-group</code> resource type.
         /// </para>
         /// </summary>
         public string ResourceType
@@ -116,7 +116,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  The value of the tag. 
+        /// The tag value.
         /// </para>
         /// </summary>
         public string Value

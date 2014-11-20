@@ -29,13 +29,12 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the ExitStandby operation.
-    /// Move an instance out of Standby mode. 
+    /// Moves the specified instances out of <code>Standby</code> mode.
     /// 
     ///  
     /// <para>
-    /// To learn more about how to put instances that are in a Standby mode back into service,
-    /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html">Auto
-    /// Scaling InService State</a>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html">Auto
+    /// Scaling InService State</a> in the <i>Auto Scaling Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class ExitStandbyRequest : AmazonAutoScalingRequest
@@ -46,8 +45,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name of the Auto Scaling group from which to move instances out of Standby mode.
-        /// 
+        /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -65,8 +63,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        ///  A list of instances to move out of Standby mode. You must specify at least one instance
-        /// ID. 
+        /// One or more instance IDs. You must specify at least one instance ID.
         /// </para>
         /// </summary>
         public List<string> InstanceIds

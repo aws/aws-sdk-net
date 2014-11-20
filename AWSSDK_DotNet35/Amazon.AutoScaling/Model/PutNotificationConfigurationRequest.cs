@@ -35,13 +35,13 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// For more information see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html">Get
-    /// Email Notifications When Your Auto Scaling Group Changes</a>
+    /// For more information see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html">Getting
+    /// Notifications When Your Auto Scaling Group Changes</a> in the <i>Auto Scaling Developer
+    /// Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// A new <code>PutNotificationConfiguration</code> overwrites an existing configuration.
-    /// 
+    /// This configuration overwrites an existing configuration.
     /// </para>
     /// </summary>
     public partial class PutNotificationConfigurationRequest : AmazonAutoScalingRequest
@@ -53,7 +53,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name of the Auto Scaling group. 
+        /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName

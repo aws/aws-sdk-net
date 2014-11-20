@@ -507,6 +507,37 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  GetTemplateSummary
+
+        internal GetTemplateSummaryResponse GetTemplateSummary(GetTemplateSummaryRequest request)
+        {
+            var marshaller = new GetTemplateSummaryRequestMarshaller();
+            var unmarshaller = GetTemplateSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetTemplateSummaryRequest,GetTemplateSummaryResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTemplateSummary operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTemplateSummary operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetTemplateSummaryResponse> GetTemplateSummaryAsync(GetTemplateSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetTemplateSummaryRequestMarshaller();
+            var unmarshaller = GetTemplateSummaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTemplateSummaryRequest,GetTemplateSummaryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListStackResources
 
         internal ListStackResourcesResponse ListStackResources(ListStackResourcesRequest request)
@@ -599,6 +630,37 @@ namespace Amazon.CloudFormation
             var unmarshaller = SetStackPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetStackPolicyRequest,SetStackPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SignalResource
+
+        internal SignalResourceResponse SignalResource(SignalResourceRequest request)
+        {
+            var marshaller = new SignalResourceRequestMarshaller();
+            var unmarshaller = SignalResourceResponseUnmarshaller.Instance;
+
+            return Invoke<SignalResourceRequest,SignalResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SignalResource operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SignalResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SignalResourceResponse> SignalResourceAsync(SignalResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SignalResourceRequestMarshaller();
+            var unmarshaller = SignalResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SignalResourceRequest,SignalResourceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

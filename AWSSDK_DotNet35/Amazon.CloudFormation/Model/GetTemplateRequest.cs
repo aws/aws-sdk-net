@@ -37,6 +37,8 @@ namespace Amazon.CloudFormation.Model
     /// For deleted stacks, GetTemplate returns the template for up to 90 days after the stack
     /// has been deleted.
     /// </para>
+    ///  <note> If the template does not exist, a <code>ValidationError</code> is returned.
+    /// </note>
     /// </summary>
     public partial class GetTemplateRequest : AmazonCloudFormationRequest
     {

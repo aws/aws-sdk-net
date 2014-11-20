@@ -64,6 +64,7 @@ namespace Amazon.Redshift.Model
         private List<string> _sourceIds = new List<string>();
         private string _sourceType;
         private string _subscriptionName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -228,6 +229,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetSubscriptionName()
         {
             return this._subscriptionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tag instances.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

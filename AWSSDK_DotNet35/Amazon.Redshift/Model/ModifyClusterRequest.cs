@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model
     /// with a cluster do not need a reboot. However, modifying a parameter group requires
     /// a reboot for parameters to take effect. For more information about managing clusters,
     /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-    /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i> . 
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i> . 
     /// 
     ///  
     /// <para>
@@ -243,7 +243,8 @@ namespace Amazon.Redshift.Model
         /// new version must be specified. The new cluster parameter group can be the default
         /// for that cluster parameter group family. For more information about managing parameter
         /// groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-        /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -306,7 +307,9 @@ namespace Amazon.Redshift.Model
         ///  The new password for the cluster master user. This change is asynchronously applied
         /// as soon as possible. Between the time of the request and the completion of the request,
         /// the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code>
-        /// element of the operation response. 
+        /// element of the operation response. <note> Operations never return the password, so
+        /// this operation provides a way to regain access to the master user account for a cluster
+        /// if the password is lost. </note> 
         /// </para>
         ///  
         /// <para>

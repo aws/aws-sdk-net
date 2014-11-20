@@ -79,6 +79,8 @@
 		"Amazon.StorageGateway.IAmazonStorageGateway",
 		"Amazon.AWSSupport.IAmazonAWSSupport",
 		"Amazon.CognitoIdentity.IAmazonCognitoIdentity",
-		"Amazon.CognitoSync.IAmazonCognitoSync"		
+		"Amazon.CognitoSync.IAmazonCognitoSync",
+		"Amazon.KeyManagementService.IAmazonKeyManagementService",
+		"Amazon.Lambda.IAmazonLambda"
 	};
 #>

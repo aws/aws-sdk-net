@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -16,20 +17,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public const string TEMPLATE_TEXT = @"{
 	""AWSTemplateFormatVersion"" : ""2010-09-09"",
 
-	""Description"" : """",
+	""Description"" : ""This is a sample template"",
 
 	""Parameters"" : {
 		""TopicName"" : {
 		    ""Type"" : ""String"",
-            ""Default"" : ""TheTopic""
+            ""Default"" : ""TheTopic"",
+            ""Description"" : ""A topic.""
 		},
         ""QueueName"" : {
             ""Type"" : ""String"",
-            ""Default"" : ""TheQueue""
+            ""Default"" : ""TheQueue"",
+            ""Description"" : ""A queue.""
         }
 	},
 
 	""Resources"" : {
+
 		""TheQueue"" : {
 		    ""Type"" : ""AWS::SQS::Queue"",
 		    ""Properties"" : {
@@ -77,6 +81,40 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 Assert.IsNotNull(tp.ParameterKey);
             }
+        }
+
+        [TestMethod]
+        [TestCategory("CloudFormation")]
+        public void TestGetTemplateSummary()
+        {
+            GetTemplateSummaryResponse response = Client.GetTemplateSummary(new GetTemplateSummaryRequest
+            {
+                TemplateURL = TEMPLATE_URL
+            });
+            VerifyTemplateSummary(response);
+
+            response = Client.GetTemplateSummary(new GetTemplateSummaryRequest
+            {
+                TemplateBody = TEMPLATE_TEXT
+            });
+            VerifyTemplateSummary(response);
+        }
+
+        private static void VerifyTemplateSummary(GetTemplateSummaryResponse response)
+        {
+            Assert.IsNotNull(response.ResponseMetadata.RequestId);
+            Assert.IsNotNull(response.Capabilities);
+            Assert.AreEqual(0, response.Capabilities.Count);
+            Assert.IsNull(response.CapabilitiesReason);
+            Assert.IsNotNull(response.Description);
+            Assert.IsNotNull(response.Parameters);
+            foreach (ParameterDeclaration pd in response.Parameters)
+            {
+                Assert.IsNotNull(pd.ParameterKey);
+                Assert.IsNotNull(pd.ParameterType);
+                Assert.IsNotNull(pd.Description);
+            }
+            Assert.IsNotNull(response.Version);
         }
 
         [TestMethod]
@@ -140,6 +178,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 });
 
                 Client.CreateStack(createRequest);
+
                 WaitTillStackNotInProcess(stackName);
 
                 var stack = Client.DescribeStacks(new DescribeStacksRequest
@@ -155,9 +194,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     }).StackResources;
 
                 Assert.AreEqual(2, resources.Count);
+
+                GetTemplateSummaryResponse templateSummaryResponse = Client.GetTemplateSummary(new GetTemplateSummaryRequest
+                {
+                    StackName = stackName
+                });
+                VerifyTemplateSummary(templateSummaryResponse);
             }
             finally
             {
+                WaitTillStackNotInProcess(stackName);
                 Client.DeleteStack(new DeleteStackRequest() { StackName = stackName });
             }
         }

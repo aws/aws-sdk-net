@@ -29,8 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLifecycleHooks operation.
-    /// Describes the lifecycle hooks that currently belong to the specified Auto Scaling
-    /// group.
+    /// Describes the lifecycle hooks for the specified Auto Scaling group.
     /// </summary>
     public partial class DescribeLifecycleHooksRequest : AmazonAutoScalingRequest
     {
@@ -40,7 +39,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// The name of one or more Auto Scaling groups.
+        /// The name of the group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -58,7 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleHookNames. 
         /// <para>
-        /// The name of one or more lifecycle hooks.
+        /// The names of one or more lifecycle hooks.
         /// </para>
         /// </summary>
         public List<string> LifecycleHookNames

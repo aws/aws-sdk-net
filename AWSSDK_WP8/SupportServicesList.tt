@@ -19,5 +19,7 @@
 		"Amazon.SimpleNotificationService.IAmazonSimpleNotificationService",
 		"Amazon.SQS.IAmazonSQS",
 		"Amazon.CognitoSync.IAmazonCognitoSync",
+		"Amazon.KeyManagementService.IAmazonKeyManagementService",
+		"Amazon.Lambda.IAmazonLambda"
 	};
 #>

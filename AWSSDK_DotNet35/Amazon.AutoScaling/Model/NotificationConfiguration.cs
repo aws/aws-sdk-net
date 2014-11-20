@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The <code>NotificationConfiguration</code> data type.
+    /// Describes a notification.
     /// </summary>
     public partial class NotificationConfiguration
     {
@@ -39,7 +39,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  Specifies the Auto Scaling group name. 
+        /// The name of the group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -57,7 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NotificationType. 
         /// <para>
-        ///  The types of events for an action to start. 
+        /// The types of events for an action to start.
         /// </para>
         /// </summary>
         public string NotificationType
@@ -75,8 +75,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TopicARN. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
-        /// 
+        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
         /// </para>
         /// </summary>
         public string TopicARN

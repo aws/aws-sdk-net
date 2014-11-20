@@ -29,7 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the SetDesiredCapacity operation.
-    /// Sets the desired size of the specified <a>AutoScalingGroup</a>.
+    /// Sets the size of the specified <a>AutoScalingGroup</a>.
     /// </summary>
     public partial class SetDesiredCapacityRequest : AmazonAutoScalingRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name of the Auto Scaling group. 
+        /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -58,7 +58,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        ///  The new capacity setting for the Auto Scaling group. 
+        /// The number of EC2 instances that should be running in the Auto Scaling group.
         /// </para>
         /// </summary>
         public int DesiredCapacity
@@ -76,11 +76,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HonorCooldown. 
         /// <para>
-        ///  By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated
-        /// with the Auto Scaling group. Set to <code>True</code> if you want Auto Scaling to
-        /// wait for the cooldown period associated with the Auto Scaling group to complete before
-        /// initiating a scaling activity to set your Auto Scaling group to the new capacity setting.
-        /// 
+        /// By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated
+        /// with the Auto Scaling group. Specify <code>True</code> to make Auto Scaling to wait
+        /// for the cool-down period associated with the Auto Scaling group to complete before
+        /// initiating a scaling activity to set your Auto Scaling group to its new capacity.
         /// </para>
         /// </summary>
         public bool HonorCooldown

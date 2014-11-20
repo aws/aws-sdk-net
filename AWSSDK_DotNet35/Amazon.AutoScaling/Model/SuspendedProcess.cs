@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// An Auto Scaling process that has been suspended. For more information, see <a>ProcessType</a>.
+    /// Describes an Auto Scaling process that has been suspended. For more information, see
+    /// <a>ProcessType</a>.
     /// </summary>
     public partial class SuspendedProcess
     {
@@ -38,7 +39,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ProcessName. 
         /// <para>
-        ///  The name of the suspended process. 
+        /// The name of the suspended process.
         /// </para>
         /// </summary>
         public string ProcessName
@@ -56,7 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property SuspensionReason. 
         /// <para>
-        ///  The reason that the process was suspended. 
+        /// The reason that the process was suspended.
         /// </para>
         /// </summary>
         public string SuspensionReason

@@ -30,7 +30,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the PutScalingPolicy operation.
     /// Creates or updates a policy for an Auto Scaling group. To update an existing policy,
-    /// use the existing policy name and set the parameter(s) you want to change. Any existing
+    /// use the existing policy name and set the parameters you want to change. Any existing
     /// parameter not changed in an update to an existing policy is not changed in this update
     /// request.
     /// </summary>
@@ -46,15 +46,14 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AdjustmentType. 
         /// <para>
-        ///  Specifies whether the <code>ScalingAdjustment</code> is an absolute number or a percentage
+        /// Specifies whether the <code>ScalingAdjustment</code> is an absolute number or a percentage
         /// of the current capacity. Valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>,
-        /// and <code>PercentChangeInCapacity</code>. 
+        /// and <code>PercentChangeInCapacity</code>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about the adjustment types supported by Auto Scaling, see <a
-        /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Scale
-        /// Based on Demand</a>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
+        /// Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public string AdjustmentType
@@ -72,7 +71,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name or ARN of the Auto Scaling group. 
+        /// The name or ARN of the group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -90,13 +89,13 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Cooldown. 
         /// <para>
-        ///  The amount of time, in seconds, after a scaling activity completes and before the
-        /// next scaling activity can start. 
+        /// The amount of time, in seconds, after a scaling activity completes and before the
+        /// next scaling activity can start.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-        /// Period</a>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+        /// Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public int Cooldown
@@ -114,15 +113,14 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinAdjustmentStep. 
         /// <para>
-        ///  Used with <code>AdjustmentType</code> with the value <code>PercentChangeInCapacity</code>,
+        /// Used with <code>AdjustmentType</code> with the value <code>PercentChangeInCapacity</code>,
         /// the scaling policy changes the <code>DesiredCapacity</code> of the Auto Scaling group
         /// by at least the number of instances specified in the value. 
         /// </para>
         ///  
         /// <para>
-        ///  You will get a <code>ValidationError</code> if you use <code>MinAdjustmentStep</code>
+        /// You will get a <code>ValidationError</code> if you use <code>MinAdjustmentStep</code>
         /// on a policy with an <code>AdjustmentType</code> other than <code>PercentChangeInCapacity</code>.
-        /// 
         /// </para>
         /// </summary>
         public int MinAdjustmentStep
@@ -140,7 +138,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The name of the policy you want to create or update.
+        /// The name of the policy.
         /// </para>
         /// </summary>
         public string PolicyName
@@ -158,10 +156,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScalingAdjustment. 
         /// <para>
-        ///  The number of instances by which to scale. <code>AdjustmentType</code> determines
+        /// The number of instances by which to scale. <code>AdjustmentType</code> determines
         /// the interpretation of this number (e.g., as an absolute number or as a percentage
         /// of the existing Auto Scaling group size). A positive increment adds to the current
-        /// capacity and a negative value removes from the current capacity. 
+        /// capacity and a negative value removes from the current capacity.
         /// </para>
         /// </summary>
         public int ScalingAdjustment

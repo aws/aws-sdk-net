@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The <code>PolicyARNType</code> data type.
+    /// 
     /// </summary>
     public partial class PutScalingPolicyResult : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyARN. 
         /// <para>
-        ///  A policy's Amazon Resource Name (ARN). 
+        /// The Amazon Resource Name (ARN) of the policy.
         /// </para>
         /// </summary>
         public string PolicyARN

@@ -34,7 +34,8 @@ namespace Amazon.CloudFormation.Model
     /// If <code>PhysicalResourceId</code> is specified, the associated resources of the stack
     /// that the resource belongs to are returned.
     /// 
-    ///  
+    ///  <note>Only the first 100 resources will be returned. If your stack has more resources
+    /// than this, you should use <code>ListStackResources</code> instead.</note> 
     /// <para>
     /// For deleted stacks, <code>DescribeStackResources</code> returns resource information
     /// for up to 90 days after the stack has been deleted.
@@ -47,6 +48,8 @@ namespace Amazon.CloudFormation.Model
     /// and <code>PhysicalResourceId</code>, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
     /// CloudFormation User Guide</a>.
     /// </para>
+    ///  <note>A <code>ValidationError</code> is returned if you specify both <code>StackName</code>
+    /// and <code>PhysicalResourceId</code> in the same request.</note>
     /// </summary>
     public partial class DescribeStackResourcesRequest : AmazonCloudFormationRequest
     {

@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Specifies whether the <a>PutScalingPolicy</a> <code>ScalingAdjustment</code> parameter
-    /// is an absolute number or a percentage of the current capacity.
+    /// Describes a policy adjustment type.
     /// </summary>
     public partial class AdjustmentType
     {
@@ -38,8 +37,13 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// A policy adjustment type. Valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>,
+        /// The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>,
         /// and <code>PercentChangeInCapacity</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
+        /// Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public string Type

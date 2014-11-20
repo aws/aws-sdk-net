@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The <code>AutoScalingInstanceDetails</code> data type.
+    /// Describes an EC2 instance associated with an Auto Scaling group.
     /// </summary>
     public partial class AutoScalingInstanceDetails
     {
@@ -42,7 +42,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name of the Auto Scaling group associated with this instance. 
+        /// The name of the Auto Scaling group associated with the instance.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -60,7 +60,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        ///  The Availability Zone in which this instance resides. 
+        /// The Availability Zone for the instance.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -78,9 +78,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthStatus. 
         /// <para>
-        ///  The health status of this instance. "Healthy" means that the instance is healthy
-        /// and should remain in service. "Unhealthy" means that the instance is unhealthy. Auto
-        /// Scaling should terminate and replace it. 
+        /// The health status of this instance. "Healthy" means that the instance is healthy and
+        /// should remain in service. "Unhealthy" means that the instance is unhealthy and Auto
+        /// Scaling should terminate and replace it.
         /// </para>
         /// </summary>
         public string HealthStatus
@@ -98,7 +98,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        ///  The instance ID of the Amazon EC2 instance. 
+        /// The ID of the instance.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -116,7 +116,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
-        ///  The launch configuration associated with this instance. 
+        /// The launch configuration associated with the instance.
         /// </para>
         /// </summary>
         public string LaunchConfigurationName
@@ -134,8 +134,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleState. 
         /// <para>
-        ///  The life cycle state of this instance. for more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#instance-lifecycle">Instance
-        /// Lifecycle State</a> in the <i>Auto Scaling Developer Guide</i>. 
+        /// The lifecycle state for the instance. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates">Auto
+        /// Scaling Instance States</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public string LifecycleState

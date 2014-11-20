@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The Ebs data type.
+    /// Describes an Amazon EBS volume.
     /// </summary>
     public partial class Ebs
     {
@@ -41,11 +41,11 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DeleteOnTermination. 
         /// <para>
-        /// Indicates whether to delete the volume on instance termination. 
+        /// Indicates whether to delete the volume on instance termination.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>true</code> 
+        /// Default: <code>true</code>
         /// </para>
         /// </summary>
         public bool DeleteOnTermination
@@ -63,19 +63,16 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The number of I/O operations per second (IOPS) that the volume supports.
+        /// For Provisioned IOPS (SSD) volumes only. The number of I/O operations per second (IOPS)
+        /// to provision for the volume.
         /// </para>
         ///  
         /// <para>
-        /// The maximum ratio of IOPS to volume size is 30.0
+        /// Valid values: Range is 100 to 4000.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: Range is 100 to 4000.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None.
+        /// Default: None
         /// </para>
         /// </summary>
         public int Iops
@@ -93,7 +90,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property SnapshotId. 
         /// <para>
-        ///  The snapshot ID. 
+        /// The ID of the snapshot.
         /// </para>
         /// </summary>
         public string SnapshotId
@@ -116,12 +113,13 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// Valid values: If the volume type is <code>io1</code>, the minimum size of the volume
-        /// is 10.
+        /// is 10 GiB. If you specify <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
+        /// must be equal to or larger than the size of the snapshot.
         /// </para>
         ///  
         /// <para>
-        /// Default: If you're creating the volume from a snapshot, and you don't specify a volume
-        /// size, the default is the snapshot size.
+        /// Default: If you create a volume from a snapshot and you don't specify a volume size,
+        /// the default is the size of the snapshot.
         /// </para>
         ///  
         /// <para>
@@ -147,7 +145,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>standard | io1</code>
+        /// Valid values: <code>standard | io1 | gp2</code>
         /// </para>
         ///  
         /// <para>

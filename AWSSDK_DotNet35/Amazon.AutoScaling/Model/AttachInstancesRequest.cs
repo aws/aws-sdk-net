@@ -29,8 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachInstances operation.
-    /// Attaches one or more Amazon EC2 instances to an existing Auto Scaling group. After
-    /// the instance(s) is attached, it becomes a part of the Auto Scaling group. 
+    /// Attaches one or more EC2 instances to the specified Auto Scaling group.
     /// 
     ///  
     /// <para>
@@ -47,8 +46,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name of the Auto Scaling group to which to attach the specified instance(s).
-        /// 
+        /// The name of the group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -66,8 +64,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        ///  One or more IDs of the Amazon EC2 instances to attach to the specified Auto Scaling
-        /// group. You must specify at least one instance ID. 
+        /// One or more EC2 instance IDs. You must specify at least one ID.
         /// </para>
         /// </summary>
         public List<string> InstanceIds

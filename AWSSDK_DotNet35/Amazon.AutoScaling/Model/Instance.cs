@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The <code>Instance</code> data type.
+    /// Describes an EC2 instance.
     /// </summary>
     public partial class Instance
     {
@@ -41,7 +41,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        ///  Availability Zones associated with this instance. 
+        /// The Availability Zone associated with this instance.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -59,7 +59,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthStatus. 
         /// <para>
-        ///  The instance's health status. 
+        /// The health status of the instance.
         /// </para>
         /// </summary>
         public string HealthStatus
@@ -77,7 +77,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        ///  Specifies the ID of the Amazon EC2 instance. 
+        /// The ID of the instance.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -95,7 +95,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
-        ///  The launch configuration associated with this instance. 
+        /// The launch configuration associated with the instance.
         /// </para>
         /// </summary>
         public string LaunchConfigurationName
@@ -113,8 +113,13 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleState. 
         /// <para>
-        ///  Contains a description of the current <i>lifecycle</i> state. 
+        /// A description of the current lifecycle state.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>Quarantined</code> lifecycle state is not used.
+        /// </para>
+        ///  </note>
         /// </summary>
         public LifecycleState LifecycleState
         {

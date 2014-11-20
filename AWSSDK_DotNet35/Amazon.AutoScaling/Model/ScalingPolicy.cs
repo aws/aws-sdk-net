@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The <code>ScalingPolicy</code> data type.
+    /// Describes a scaling policy.
     /// </summary>
     public partial class ScalingPolicy
     {
@@ -44,9 +44,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AdjustmentType. 
         /// <para>
-        ///  Specifies whether the <code>ScalingAdjustment</code> is an absolute number or a percentage
+        /// Specifies whether the <code>ScalingAdjustment</code> is an absolute number or a percentage
         /// of the current capacity. Valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>,
-        /// and <code>PercentChangeInCapacity</code>. 
+        /// and <code>PercentChangeInCapacity</code>.
         /// </para>
         /// </summary>
         public string AdjustmentType
@@ -64,7 +64,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Alarms. 
         /// <para>
-        ///  A list of CloudWatch Alarms related to the policy. 
+        /// The CloudWatch Alarms related to the policy.
         /// </para>
         /// </summary>
         public List<Alarm> Alarms
@@ -82,7 +82,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name of the Auto Scaling group associated with this scaling policy. 
+        /// The name of the Auto Scaling group associated with this scaling policy.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -100,8 +100,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Cooldown. 
         /// <para>
-        ///  The amount of time, in seconds, after a scaling activity completes before any further
-        /// trigger-related scaling activities can start. 
+        /// The amount of time, in seconds, after a scaling activity completes before any further
+        /// trigger-related scaling activities can start.
         /// </para>
         /// </summary>
         public int Cooldown
@@ -119,8 +119,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinAdjustmentStep. 
         /// <para>
-        ///  Changes the <code>DesiredCapacity</code> of the Auto Scaling group by at least the
-        /// specified number of instances. 
+        /// Changes the <code>DesiredCapacity</code> of the Auto Scaling group by at least the
+        /// specified number of instances.
         /// </para>
         /// </summary>
         public int MinAdjustmentStep
@@ -138,7 +138,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyARN. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the policy. 
+        /// The Amazon Resource Name (ARN) of the policy.
         /// </para>
         /// </summary>
         public string PolicyARN
@@ -156,7 +156,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        ///  The name of the scaling policy. 
+        /// The name of the scaling policy.
         /// </para>
         /// </summary>
         public string PolicyName
@@ -174,8 +174,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScalingAdjustment. 
         /// <para>
-        ///  The number associated with the specified adjustment type. A positive value adds to
-        /// the current capacity and a negative value removes from the current capacity. 
+        /// The number associated with the specified adjustment type. A positive value adds to
+        /// the current capacity and a negative value removes from the current capacity.
         /// </para>
         /// </summary>
         public int ScalingAdjustment

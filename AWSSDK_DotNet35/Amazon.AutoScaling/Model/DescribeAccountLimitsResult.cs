@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The output of the <a>DescribeAccountLimitsResult</a> action.
+    /// 
     /// </summary>
     public partial class DescribeAccountLimitsResult : AmazonWebServiceResponse
     {
@@ -38,7 +38,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxNumberOfAutoScalingGroups. 
         /// <para>
-        ///  The maximum number of Auto Scaling groups allowed for your AWS account. 
+        /// The maximum number of groups allowed for your AWS account. The default limit is 20
+        /// per region.
         /// </para>
         /// </summary>
         public int MaxNumberOfAutoScalingGroups
@@ -56,7 +57,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxNumberOfLaunchConfigurations. 
         /// <para>
-        ///  The maximum number of launch configurations allowed for your AWS account. 
+        /// The maximum number of launch configurations allowed for your AWS account. The default
+        /// limit is 100 per region.
         /// </para>
         /// </summary>
         public int MaxNumberOfLaunchConfigurations

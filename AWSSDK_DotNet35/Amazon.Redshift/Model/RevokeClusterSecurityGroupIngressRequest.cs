@@ -32,7 +32,8 @@ namespace Amazon.Redshift.Model
     /// Revokes an ingress rule in an Amazon Redshift security group for a previously authorized
     /// IP range or Amazon EC2 security group. To add an ingress rule, see <a>AuthorizeClusterSecurityGroupIngress</a>.
     /// For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
-    /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Management Guide</i>.
+    /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management
+    /// Guide</i>.
     /// </summary>
     public partial class RevokeClusterSecurityGroupIngressRequest : AmazonRedshiftRequest
     {

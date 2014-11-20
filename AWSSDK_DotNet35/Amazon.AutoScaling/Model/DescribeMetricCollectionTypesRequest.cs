@@ -30,6 +30,14 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the DescribeMetricCollectionTypes operation.
     /// Returns a list of metrics and a corresponding list of granularities for each metric.
+    /// 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <code>GroupStandbyInstances</code> metric is not returned by default. You must
+    /// explicitly request it when calling <a>EnableMetricsCollection</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeMetricCollectionTypesRequest : AmazonAutoScalingRequest
     {

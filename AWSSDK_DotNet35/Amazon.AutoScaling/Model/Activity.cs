@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// A scaling Activity is a long-running process that represents a change to your AutoScalingGroup,
-    /// such as changing the size of the group. It can also be a process to replace an instance,
-    /// or a process to perform any other long-running operations supported by the API.
+    /// Describes a long-running process that represents a change to your Auto Scaling group,
+    /// such as changing its size. This can also be a process to replace an instance, or a
+    /// process to perform any other long-running operations.
     /// </summary>
     public partial class Activity
     {
@@ -48,7 +48,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ActivityId. 
         /// <para>
-        ///  Specifies the ID of the activity. 
+        /// The ID of the activity.
         /// </para>
         /// </summary>
         public string ActivityId
@@ -66,7 +66,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name of the Auto Scaling group. 
+        /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -84,7 +84,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Cause. 
         /// <para>
-        ///  Contains the reason the activity was begun. 
+        /// The reason the activity was begun.
         /// </para>
         /// </summary>
         public string Cause
@@ -102,7 +102,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  Contains a friendly, more verbose description of the scaling activity. 
+        /// A friendly, more verbose description of the scaling activity.
         /// </para>
         /// </summary>
         public string Description
@@ -120,7 +120,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        ///  Contains details of the scaling activity. 
+        /// The details about the scaling activity.
         /// </para>
         /// </summary>
         public string Details
@@ -138,7 +138,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        ///  Provides the end time of this activity. 
+        /// The end time of this activity.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -156,8 +156,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Progress. 
         /// <para>
-        ///  Specifies a value between 0 and 100 that indicates the progress of the activity.
-        /// 
+        /// A value between 0 and 100 that indicates the progress of the activity.
         /// </para>
         /// </summary>
         public int Progress
@@ -175,7 +174,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///  Provides the start time of this activity. 
+        /// The start time of this activity.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -193,7 +192,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        ///  Contains the current status of the activity. 
+        /// The current status of the activity.
         /// </para>
         /// </summary>
         public ScalingActivityStatusCode StatusCode
@@ -211,7 +210,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        ///  Contains a friendly, more verbose description of the activity status. 
+        /// A friendly, more verbose description of the activity status.
         /// </para>
         /// </summary>
         public string StatusMessage

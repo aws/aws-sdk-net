@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The output of the <a>DescribeNotificationConfigurations</a> action.
+    /// 
     /// </summary>
     public partial class DescribeNotificationConfigurationsResult : AmazonWebServiceResponse
     {
@@ -38,8 +38,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A string that is used to mark the start of the next batch of returned results for
-        /// pagination.
+        /// The token to use when requesting the next set of items. If there are no additional
+        /// items to return, the string is empty.
         /// </para>
         /// </summary>
         public string NextToken
@@ -57,7 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NotificationConfigurations. 
         /// <para>
-        /// The list of notification configurations.
+        /// The notification configurations.
         /// </para>
         /// </summary>
         public List<NotificationConfiguration> NotificationConfigurations

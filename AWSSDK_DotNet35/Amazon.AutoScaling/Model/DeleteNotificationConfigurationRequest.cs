@@ -29,7 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteNotificationConfiguration operation.
-    /// Deletes notifications created by <a>PutNotificationConfiguration</a>.
+    /// Deletes the specified notification.
     /// </summary>
     public partial class DeleteNotificationConfigurationRequest : AmazonAutoScalingRequest
     {

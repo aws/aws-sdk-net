@@ -95,6 +95,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 return new EventSubscriptionQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTagFault"))
+            {
+                return new InvalidTagException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("SNSInvalidTopic"))
             {
                 return new SNSInvalidTopicException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -126,6 +130,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("SubscriptionSeverityNotFound"))
             {
                 return new SubscriptionSeverityNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TagLimitExceededFault"))
+            {
+                return new TagLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }

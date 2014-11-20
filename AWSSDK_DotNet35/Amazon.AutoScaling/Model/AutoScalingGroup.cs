@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The AutoScalingGroup data type.
+    /// Describes an Auto Scaling group.
     /// </summary>
     public partial class AutoScalingGroup
     {
@@ -56,7 +56,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupARN. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the Auto Scaling group. 
+        /// The Amazon Resource Name (ARN) of the group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupARN
@@ -74,7 +74,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  Specifies the name of the group. 
+        /// The name of the group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -92,7 +92,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        ///  Contains a list of Availability Zones for the group. 
+        /// One or more Availability Zones for the group.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -110,7 +110,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        ///  Specifies the date and time the Auto Scaling group was created. 
+        /// The date and time the group was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -128,8 +128,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DefaultCooldown. 
         /// <para>
-        ///  The number of seconds after a scaling activity completes before any further scaling
-        /// activities can start. 
+        /// The number of seconds after a scaling activity completes before any further scaling
+        /// activities can start.
         /// </para>
         /// </summary>
         public int DefaultCooldown
@@ -147,7 +147,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        ///  Specifies the desired capacity for the Auto Scaling group. 
+        /// The size of the group.
         /// </para>
         /// </summary>
         public int DesiredCapacity
@@ -165,7 +165,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EnabledMetrics. 
         /// <para>
-        ///  A list of metrics enabled for this Auto Scaling group. 
+        /// The metrics enabled for this Auto Scaling group.
         /// </para>
         /// </summary>
         public List<EnabledMetric> EnabledMetrics
@@ -183,8 +183,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckGracePeriod. 
         /// <para>
-        ///  The length of time that Auto Scaling waits before checking an instance's health status.
-        /// The grace period begins when an instance comes into service. 
+        /// The amount of time that Auto Scaling waits before checking an instance's health status.
+        /// The grace period begins when an instance comes into service.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriod
@@ -202,8 +202,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckType. 
         /// <para>
-        ///  The service of interest for the health status check, either "EC2" for Amazon EC2
-        /// or "ELB" for Elastic Load Balancing. 
+        /// The service of interest for the health status check, which can be either <code>EC2</code>
+        /// for Amazon EC2 or <code>ELB</code> for Elastic Load Balancing.
         /// </para>
         /// </summary>
         public string HealthCheckType
@@ -221,7 +221,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        ///  Provides a summary list of Amazon EC2 instances. 
+        /// The EC2 instances associated with the group.
         /// </para>
         /// </summary>
         public List<Instance> Instances
@@ -239,7 +239,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
-        ///  Specifies the name of the associated <a>LaunchConfiguration</a>. 
+        /// The name of the associated launch configuration.
         /// </para>
         /// </summary>
         public string LaunchConfigurationName
@@ -257,7 +257,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerNames. 
         /// <para>
-        ///  A list of load balancers associated with this Auto Scaling group. 
+        /// One or more load balancers associated with the group.
         /// </para>
         /// </summary>
         public List<string> LoadBalancerNames
@@ -275,7 +275,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        ///  Contains the maximum size of the Auto Scaling group. 
+        /// The maximum size of the group.
         /// </para>
         /// </summary>
         public int MaxSize
@@ -293,7 +293,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        ///  Contains the minimum size of the Auto Scaling group. 
+        /// The minimum size of the group.
         /// </para>
         /// </summary>
         public int MinSize
@@ -311,9 +311,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PlacementGroup. 
         /// <para>
-        ///  The name of the cluster placement group, if applicable. For more information, go
-        /// to <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
-        /// Using Cluster Instances</a> in the Amazon EC2 User Guide. 
+        /// The name of the placement group into which you'll launch your instances, if any. For
+        /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// Groups</a>.
         /// </para>
         /// </summary>
         public string PlacementGroup
@@ -331,8 +331,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The current state of the Auto Scaling group when a <a>DeleteAutoScalingGroup</a>
-        /// action is in progress. 
+        /// The current state of the Auto Scaling group when a <a>DeleteAutoScalingGroup</a> action
+        /// is in progress.
         /// </para>
         /// </summary>
         public string Status
@@ -350,7 +350,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property SuspendedProcesses. 
         /// <para>
-        ///  Suspended processes associated with this Auto Scaling group. 
+        /// The suspended processes associated with the group.
         /// </para>
         /// </summary>
         public List<SuspendedProcess> SuspendedProcesses
@@ -368,7 +368,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  A list of tags for the Auto Scaling group. 
+        /// The tags for the Auto Scaling group.
         /// </para>
         /// </summary>
         public List<TagDescription> Tags
@@ -386,8 +386,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TerminationPolicies. 
         /// <para>
-        ///  A standalone termination policy or a list of termination policies for this Auto Scaling
-        /// group. 
+        /// The termination policies for this Auto Scaling group.
         /// </para>
         /// </summary>
         public List<string> TerminationPolicies
@@ -405,14 +404,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property VPCZoneIdentifier. 
         /// <para>
-        ///  The subnet identifier for the Amazon VPC connection, if applicable. You can specify
-        /// several subnets in a comma-separated list. 
+        /// One or more subnet IDs, if applicable, separated by commas.
         /// </para>
         ///  
         /// <para>
-        ///  When you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
-        /// ensure that the subnets' Availability Zones match the values you specify for <code>AvailabilityZones</code>.
-        /// 
+        /// If you specify <code>VPCZoneIdentifier</code> and <code>AvailabilityZones</code>,
+        /// ensure that the Availability Zones of the subnets match the values for <code>AvailabilityZones</code>.
         /// </para>
         /// </summary>
         public string VPCZoneIdentifier

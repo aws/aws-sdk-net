@@ -58,6 +58,7 @@ foreach (var subDirectory in Directory.GetDirectories(rootFolder))
 }
 
 supportedServicesInterfaces.Add("Amazon.DynamoDBv2.IAmazonDynamoDB");
+supportedServicesInterfaces.Remove("Amazon.CloudSearchDomain.IAmazonCloudSearchDomain");
 
 supportedServicesInterfaces.Sort();
 

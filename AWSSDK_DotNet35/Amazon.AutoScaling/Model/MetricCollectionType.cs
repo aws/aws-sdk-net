@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The MetricCollectionType data type.
+    /// Describes a metric.
     /// </summary>
     public partial class MetricCollectionType
     {
         private string _metric;
 
         /// <summary>
-        /// Gets and sets the property Metric.
+        /// Gets and sets the property Metric. 
+        /// <para>
+        /// The metric.
+        /// </para>
         /// </summary>
         public string Metric
         {

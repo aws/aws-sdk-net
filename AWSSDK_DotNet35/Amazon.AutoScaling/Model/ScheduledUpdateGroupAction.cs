@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This data type stores information about a scheduled update to an Auto Scaling group.
+    /// Describes a scheduled update to an Auto Scaling group.
     /// </summary>
     public partial class ScheduledUpdateGroupAction
     {
@@ -46,7 +46,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name of the Auto Scaling group to be updated. 
+        /// The name of the group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -64,7 +64,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        ///  The number of instances you prefer to maintain in your Auto Scaling group. 
+        /// The number of instances you prefer to maintain in the group.
         /// </para>
         /// </summary>
         public int DesiredCapacity
@@ -82,8 +82,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        ///  The time that the action is scheduled to end. This value can be up to one month in
-        /// the future. 
+        /// The time that the action is scheduled to end. This value can be up to one month in
+        /// the future.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -101,7 +101,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        ///  The maximum size of the Auto Scaling group. 
+        /// The maximum size of the group.
         /// </para>
         /// </summary>
         public int MaxSize
@@ -119,7 +119,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        ///  The minimum size of the Auto Scaling group. 
+        /// The minimum size of the group.
         /// </para>
         /// </summary>
         public int MinSize
@@ -137,7 +137,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Recurrence. 
         /// <para>
-        ///  The regular schedule that an action occurs. 
+        /// The regular schedule that an action occurs.
         /// </para>
         /// </summary>
         public string Recurrence
@@ -155,7 +155,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScheduledActionARN. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of this scheduled action. 
+        /// The Amazon Resource Name (ARN) of the scheduled action.
         /// </para>
         /// </summary>
         public string ScheduledActionARN
@@ -173,7 +173,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScheduledActionName. 
         /// <para>
-        ///  The name of this scheduled action. 
+        /// The name of the scheduled action.
         /// </para>
         /// </summary>
         public string ScheduledActionName
@@ -191,8 +191,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///  The time that the action is scheduled to begin. This value can be up to one month
-        /// in the future. 
+        /// The time that the action is scheduled to begin. This value can be up to one month
+        /// in the future.
         /// </para>
         ///  
         /// <para>
@@ -215,12 +215,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Time. 
         /// <para>
-        ///  <code>Time</code> is deprecated.
+        /// <code>Time</code> is deprecated.
         /// </para>
         ///  
         /// <para>
         /// The time that the action is scheduled to begin. <code>Time</code> is an alias for
-        /// <code>StartTime</code>. 
+        /// <code>StartTime</code>.
         /// </para>
         /// </summary>
         public DateTime Time

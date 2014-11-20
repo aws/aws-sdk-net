@@ -73,7 +73,8 @@ namespace Amazon.Redshift
         /// (CIDR) IP address range or an EC2 security group. You can add as many as 20 ingress
         /// rules to an Amazon Redshift security group. 
         /// 
-        ///  
+        ///  <note> The EC2 security group must be defined in the AWS region where the cluster
+        /// resides. </note> 
         /// <para>
         /// For an overview of CIDR blocks, see the Wikipedia article on <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
         /// Inter-Domain Routing</a>. 
@@ -83,7 +84,7 @@ namespace Amazon.Redshift
         ///  You must also associate the security group with a cluster so that clients running
         /// on these IP addresses or the EC2 instance are authorized to connect to the cluster.
         /// For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working
-        /// with Security Groups</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// with Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeClusterSecurityGroupIngress service method.</param>
@@ -141,7 +142,7 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
-        /// Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSnapshotAccess service method.</param>
@@ -204,7 +205,7 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
-        /// Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyClusterSnapshot service method.</param>
@@ -261,7 +262,7 @@ namespace Amazon.Redshift
         /// name or the cluster security group parameter, Amazon Redshift creates a non-VPC cluster,
         /// it associates the default cluster security group with the cluster. For more information
         /// about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-        /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i> .
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i> .
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
         /// 
@@ -275,7 +276,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterQuotaExceededException">
         /// The request would exceed the allowed number of cluster instances for this account.
         /// For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
-        /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
@@ -301,6 +302,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidSubnetException">
         /// The requested subnet is not valid, or not all of the subnets are in the same VPC.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidVPCNetworkStateException">
         /// The cluster subnet group does not cover all Availability Zones.
         /// </exception>
@@ -310,7 +314,10 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.NumberOfNodesQuotaExceededException">
         /// The operation would exceed the number of nodes allotted to the account. For information
         /// about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
-        /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// The request exceeds the limit of 10 tags for the resource.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
@@ -362,7 +369,8 @@ namespace Amazon.Redshift
         ///  Parameters in the parameter group define specific behavior that applies to the databases
         /// you create on the cluster. For more information about managing parameter groups, go
         /// to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-        /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateClusterParameterGroup service method.</param>
@@ -374,7 +382,13 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of cluster parameter
         /// groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
-        /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// The request exceeds the limit of 10 tags for the resource.
         /// </exception>
         CreateClusterParameterGroupResponse CreateClusterParameterGroup(CreateClusterParameterGroupRequest request);
 
@@ -415,8 +429,8 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
-        /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Management Guide</i>.
-        /// 
+        /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management
+        /// Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateClusterSecurityGroup service method.</param>
@@ -428,7 +442,13 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of cluster security
         /// groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
-        /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// The request exceeds the limit of 10 tags for the resource.
         /// </exception>
         CreateClusterSecurityGroupResponse CreateClusterSecurityGroup(CreateClusterSecurityGroupRequest request);
 
@@ -469,7 +489,7 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
-        /// Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateClusterSnapshot service method.</param>
@@ -486,6 +506,12 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// The request exceeds the limit of 10 tags for the resource.
         /// </exception>
         CreateClusterSnapshotResponse CreateClusterSnapshot(CreateClusterSnapshotRequest request);
 
@@ -527,7 +553,7 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For information about subnet groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon
-        /// Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// 
         /// </para>
         /// </summary>
@@ -540,15 +566,21 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupQuotaExceededException">
         /// The request would result in user exceeding the allowed number of cluster subnet groups.
         /// For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
-        /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterSubnetQuotaExceededException">
         /// The request would result in user exceeding the allowed number of subnets in a cluster
         /// subnet groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
-        /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidSubnetException">
         /// The requested subnet is not valid, or not all of the subnets are in the same VPC.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// The request exceeds the limit of 10 tags for the resource.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
@@ -618,7 +650,10 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.EventSubscriptionQuotaExceededException">
         /// The request would exceed the allowed number of event subscriptions for this account.
         /// For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
-        /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.SNSInvalidTopicException">
         /// Amazon SNS has responded that there is a problem with the specified Amazon SNS topic.
@@ -647,6 +682,9 @@ namespace Amazon.Redshift
         /// The value specified for the event severity was not one of the allowed values, or it
         /// specified a severity that does not apply to the specified source type. The allowed
         /// values are ERROR and INFO.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// The request exceeds the limit of 10 tags for the resource.
         /// </exception>
         CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request);
 
@@ -691,7 +729,7 @@ namespace Amazon.Redshift
         /// creating the HSM certificate, you must create an Amazon Redshift HSM configuration
         /// that provides a cluster the information needed to store and use encryption keys in
         /// the HSM. For more information, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
-        /// Security Modules</a> in the Amazon Redshift Management Guide.
+        /// Security Modules</a> in the Amazon Redshift Cluster Management Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHsmClientCertificate service method.</param>
@@ -704,7 +742,13 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.HsmClientCertificateQuotaExceededException">
         /// The quota for HSM client certificates has been reached. For information about increasing
         /// your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
-        /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// The request exceeds the limit of 10 tags for the resource.
         /// </exception>
         CreateHsmClientCertificateResponse CreateHsmClientCertificate(CreateHsmClientCertificateRequest request);
 
@@ -748,7 +792,7 @@ namespace Amazon.Redshift
         /// <para>
         /// In addition to creating an HSM configuration, you must also create an HSM client certificate.
         /// For more information, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
-        /// Security Modules</a> in the Amazon Redshift Management Guide.
+        /// Security Modules</a> in the Amazon Redshift Cluster Management Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHsmConfiguration service method.</param>
@@ -761,7 +805,13 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.HsmConfigurationQuotaExceededException">
         /// The quota for HSM configurations has been reached. For information about increasing
         /// your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
-        /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// The request exceeds the limit of 10 tags for the resource.
         /// </exception>
         CreateHsmConfigurationResponse CreateHsmConfiguration(CreateHsmConfigurationRequest request);
 
@@ -793,6 +843,64 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  CreateTags
+
+        /// <summary>
+        /// Adds one or more tags to a specified resource. 
+        /// 
+        ///  
+        /// <para>
+        ///  A resource can have up to 10 tags. If you try to create more than 10 tags for a resource,
+        /// you will receive an error and the attempt will fail. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you specify a key that already exists for the resource, the value for that key
+        /// will be updated with the new value. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTags service method.</param>
+        /// 
+        /// <returns>The response from the CreateTags service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// The request exceeds the limit of 10 tags for the resource.
+        /// </exception>
+        CreateTagsResponse CreateTags(CreateTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTags operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTags operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTags
+        ///         operation.</returns>
+        IAsyncResult BeginCreateTags(CreateTagsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTags operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTags.</param>
+        /// 
+        /// <returns>Returns a  CreateTagsResult from Redshift.</returns>
+        CreateTagsResponse EndCreateTags(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteCluster
 
         /// <summary>
@@ -800,7 +908,7 @@ namespace Amazon.Redshift
         /// indicates that the request was received correctly. Use <a>DescribeClusters</a> to
         /// monitor the status of the deletion. The delete operation cannot be canceled or reverted
         /// once submitted. For more information about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-        /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i> . 
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i> . 
         /// 
         ///  
         /// <para>
@@ -814,7 +922,7 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For more information about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-        /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i> . 
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i> . 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
@@ -865,7 +973,8 @@ namespace Amazon.Redshift
         #region  DeleteClusterParameterGroup
 
         /// <summary>
-        /// Deletes a specified Amazon Redshift parameter group.
+        /// Deletes a specified Amazon Redshift parameter group. <note>You cannot delete a parameter
+        /// group if it is associated with a cluster.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteClusterParameterGroup service method.</param>
         /// 
@@ -913,11 +1022,12 @@ namespace Amazon.Redshift
         /// <summary>
         /// Deletes an Amazon Redshift security group. 
         /// 
-        ///  
+        ///  <note>You cannot delete a security group that is associated with any clusters. You
+        /// cannot delete the default security group.</note> 
         /// <para>
         ///  For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
-        /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Management Guide</i>.
-        /// 
+        /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management
+        /// Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteClusterSecurityGroup service method.</param>
@@ -1197,6 +1307,48 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  DeleteTags
+
+        /// <summary>
+        /// Deletes a tag or tags from a resource. You must provide the ARN of the resource from
+        /// which you want to delete the tag or tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTags service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        DeleteTagsResponse DeleteTags(DeleteTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTags operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTags operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTags
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTags operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTags.</param>
+        /// 
+        /// <returns>Returns a  DeleteTagsResult from Redshift.</returns>
+        DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeClusterParameterGroups
 
         /// <summary>
@@ -1208,7 +1360,21 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-        /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all parameter groups that match any combination of the specified keys and values.
+        /// For example, if you have <code>owner</code> and <code>environment</code> for tag keys,
+        /// and <code>admin</code> and <code>test</code> for tag values, all parameter groups
+        /// that have any combination of those values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, parameter groups are returned
+        /// regardless of whether they have tag keys or values associated with them.
         /// </para>
         /// </summary>
         /// 
@@ -1227,7 +1393,21 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-        /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all parameter groups that match any combination of the specified keys and values.
+        /// For example, if you have <code>owner</code> and <code>environment</code> for tag keys,
+        /// and <code>admin</code> and <code>test</code> for tag values, all parameter groups
+        /// that have any combination of those values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, parameter groups are returned
+        /// regardless of whether they have tag keys or values associated with them.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterParameterGroups service method.</param>
@@ -1283,7 +1463,8 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-        /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterParameters service method.</param>
@@ -1329,7 +1510,21 @@ namespace Amazon.Redshift
         /// cluster database properties, maintenance and backup properties, and security and access
         /// properties. This operation supports pagination. For more information about managing
         /// clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-        /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i> .
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i> . 
+        /// 
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all clusters that match any combination of the specified keys and values. For example,
+        /// if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code>
+        /// and <code>test</code> for tag values, all clusters that have any combination of those
+        /// values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, clusters are returned regardless
+        /// of whether they have tag keys or values associated with them.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeClusters service method, as returned by Redshift.</returns>
@@ -1343,7 +1538,21 @@ namespace Amazon.Redshift
         /// cluster database properties, maintenance and backup properties, and security and access
         /// properties. This operation supports pagination. For more information about managing
         /// clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-        /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i> .
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i> . 
+        /// 
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all clusters that match any combination of the specified keys and values. For example,
+        /// if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code>
+        /// and <code>test</code> for tag values, all clusters that have any combination of those
+        /// values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, clusters are returned regardless
+        /// of whether they have tag keys or values associated with them.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusters service method.</param>
         /// 
@@ -1391,8 +1600,21 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
-        /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Management Guide</i>.
-        /// 
+        /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management
+        /// Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all security groups that match any combination of the specified keys and values. For
+        /// example, if you have <code>owner</code> and <code>environment</code> for tag keys,
+        /// and <code>admin</code> and <code>test</code> for tag values, all security groups that
+        /// have any combination of those values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, security groups are returned
+        /// regardless of whether they have tag keys or values associated with them.
         /// </para>
         /// </summary>
         /// 
@@ -1410,8 +1632,21 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
-        /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Management Guide</i>.
-        /// 
+        /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management
+        /// Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all security groups that match any combination of the specified keys and values. For
+        /// example, if you have <code>owner</code> and <code>environment</code> for tag keys,
+        /// and <code>admin</code> and <code>test</code> for tag values, all security groups that
+        /// have any combination of those values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, security groups are returned
+        /// regardless of whether they have tag keys or values associated with them.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterSecurityGroups service method.</param>
@@ -1456,7 +1691,22 @@ namespace Amazon.Redshift
         /// Returns one or more snapshot objects, which contain metadata about your cluster snapshots.
         /// By default, this operation returns information about all snapshots of all clusters
         /// that are owned by you AWS customer account. No information is returned for snapshots
-        /// owned by inactive AWS customer accounts.
+        /// owned by inactive AWS customer accounts. 
+        /// 
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all snapshots that match any combination of the specified keys and values. For example,
+        /// if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code>
+        /// and <code>test</code> for tag values, all snapshots that have any combination of those
+        /// values are returned. Only snapshots that you own are returned in the response; shared
+        /// snapshots are not returned with the tag key and tag value request parameters.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, snapshots are returned regardless
+        /// of whether they have tag keys or values associated with them.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeClusterSnapshots service method, as returned by Redshift.</returns>
@@ -1469,7 +1719,22 @@ namespace Amazon.Redshift
         /// Returns one or more snapshot objects, which contain metadata about your cluster snapshots.
         /// By default, this operation returns information about all snapshots of all clusters
         /// that are owned by you AWS customer account. No information is returned for snapshots
-        /// owned by inactive AWS customer accounts.
+        /// owned by inactive AWS customer accounts. 
+        /// 
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all snapshots that match any combination of the specified keys and values. For example,
+        /// if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code>
+        /// and <code>test</code> for tag values, all snapshots that have any combination of those
+        /// values are returned. Only snapshots that you own are returned in the response; shared
+        /// snapshots are not returned with the tag key and tag value request parameters.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, snapshots are returned regardless
+        /// of whether they have tag keys or values associated with them.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterSnapshots service method.</param>
         /// 
@@ -1512,7 +1777,21 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns one or more cluster subnet group objects, which contain metadata about your
         /// cluster subnet groups. By default, this operation returns information about all cluster
-        /// subnet groups that are defined in you AWS account.
+        /// subnet groups that are defined in you AWS account. 
+        /// 
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all subnet groups that match any combination of the specified keys and values. For
+        /// example, if you have <code>owner</code> and <code>environment</code> for tag keys,
+        /// and <code>admin</code> and <code>test</code> for tag values, all subnet groups that
+        /// have any combination of those values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, subnet groups are returned
+        /// regardless of whether they have tag keys or values associated with them.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeClusterSubnetGroups service method, as returned by Redshift.</returns>
@@ -1524,7 +1803,21 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns one or more cluster subnet group objects, which contain metadata about your
         /// cluster subnet groups. By default, this operation returns information about all cluster
-        /// subnet groups that are defined in you AWS account.
+        /// subnet groups that are defined in you AWS account. 
+        /// 
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all subnet groups that match any combination of the specified keys and values. For
+        /// example, if you have <code>owner</code> and <code>environment</code> for tag keys,
+        /// and <code>admin</code> and <code>test</code> for tag values, all subnet groups that
+        /// have any combination of those values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, subnet groups are returned
+        /// regardless of whether they have tag keys or values associated with them.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterSubnetGroups service method.</param>
         /// 
@@ -1568,7 +1861,7 @@ namespace Amazon.Redshift
         /// Returns descriptions of the available Amazon Redshift cluster versions. You can call
         /// this operation even before creating any clusters to learn more about the Amazon Redshift
         /// versions. For more information about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-        /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i>
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeClusterVersions service method, as returned by Redshift.</returns>
@@ -1578,7 +1871,7 @@ namespace Amazon.Redshift
         /// Returns descriptions of the available Amazon Redshift cluster versions. You can call
         /// this operation even before creating any clusters to learn more about the Amazon Redshift
         /// versions. For more information about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-        /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i>
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterVersions service method.</param>
         /// 
@@ -1621,7 +1914,8 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-        /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDefaultClusterParameters service method.</param>
@@ -1820,6 +2114,20 @@ namespace Amazon.Redshift
         /// Returns information about the specified HSM client certificate. If no certificate
         /// ID is specified, returns information about all the HSM certificates owned by your
         /// AWS customer account.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all HSM client certificates that match any combination of the specified keys and values.
+        /// For example, if you have <code>owner</code> and <code>environment</code> for tag keys,
+        /// and <code>admin</code> and <code>test</code> for tag values, all HSM client certificates
+        /// that have any combination of those values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, HSM client certificates
+        /// are returned regardless of whether they have tag keys or values associated with them.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeHsmClientCertificates service method, as returned by Redshift.</returns>
@@ -1832,6 +2140,20 @@ namespace Amazon.Redshift
         /// Returns information about the specified HSM client certificate. If no certificate
         /// ID is specified, returns information about all the HSM certificates owned by your
         /// AWS customer account.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all HSM client certificates that match any combination of the specified keys and values.
+        /// For example, if you have <code>owner</code> and <code>environment</code> for tag keys,
+        /// and <code>admin</code> and <code>test</code> for tag values, all HSM client certificates
+        /// that have any combination of those values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, HSM client certificates
+        /// are returned regardless of whether they have tag keys or values associated with them.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHsmClientCertificates service method.</param>
         /// 
@@ -1875,6 +2197,20 @@ namespace Amazon.Redshift
         /// Returns information about the specified Amazon Redshift HSM configuration. If no configuration
         /// ID is specified, returns information about all the HSM configurations owned by your
         /// AWS customer account.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all HSM connections that match any combination of the specified keys and values. For
+        /// example, if you have <code>owner</code> and <code>environment</code> for tag keys,
+        /// and <code>admin</code> and <code>test</code> for tag values, all HSM connections that
+        /// have any combination of those values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, HSM connections are returned
+        /// regardless of whether they have tag keys or values associated with them.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeHsmConfigurations service method, as returned by Redshift.</returns>
@@ -1887,6 +2223,20 @@ namespace Amazon.Redshift
         /// Returns information about the specified Amazon Redshift HSM configuration. If no configuration
         /// ID is specified, returns information about all the HSM configurations owned by your
         /// AWS customer account.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all HSM connections that match any combination of the specified keys and values. For
+        /// example, if you have <code>owner</code> and <code>environment</code> for tag keys,
+        /// and <code>admin</code> and <code>test</code> for tag values, all HSM connections that
+        /// have any combination of those values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, HSM connections are returned
+        /// regardless of whether they have tag keys or values associated with them.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHsmConfigurations service method.</param>
         /// 
@@ -1976,7 +2326,7 @@ namespace Amazon.Redshift
         /// the cost involved you might want to obtain a list of cluster options in the specific
         /// region and specify values when creating a cluster. For more information about managing
         /// clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-        /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i>
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeOrderableClusterOptions service method, as returned by Redshift.</returns>
@@ -1990,7 +2340,7 @@ namespace Amazon.Redshift
         /// the cost involved you might want to obtain a list of cluster options in the specific
         /// region and specify values when creating a cluster. For more information about managing
         /// clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-        /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i>
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrderableClusterOptions service method.</param>
         /// 
@@ -2038,7 +2388,7 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
-        /// Reserved Nodes</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
         /// </para>
         /// </summary>
         /// 
@@ -2059,7 +2409,7 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
-        /// Reserved Nodes</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedNodeOfferings service method.</param>
@@ -2199,6 +2549,71 @@ namespace Amazon.Redshift
         /// 
         /// <returns>Returns a  DescribeResizeResult from Redshift.</returns>
         DescribeResizeResponse EndDescribeResize(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeTags
+
+        /// <summary>
+        /// Returns a list of tags. You can return tags from a specific resource by specifying
+        /// an ARN, or you can return all tags for a given type of resource, such as clusters,
+        /// snapshots, and so on.
+        /// 
+        ///  
+        /// <para>
+        ///  The following are limitations for <code>DescribeTags</code>: <ul> <li>You cannot
+        /// specify an ARN and a resource-type value together in the same request.</li> <li>You
+        /// cannot use the <code>MaxRecords</code> and <code>Marker</code> parameters together
+        /// with the ARN parameter.</li> <li>The <code>MaxRecords</code> parameter can be a range
+        /// from 10 to 50 results to return in a request.</li> </ul> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all resources that match any combination of the specified keys and values. For example,
+        /// if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code>
+        /// and <code>test</code> for tag values, all resources that have any combination of those
+        /// values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, resources are returned regardless
+        /// of whether they have tag keys or values associated with them.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTags service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTags operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTags
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTags operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTags.</param>
+        /// 
+        /// <returns>Returns a  DescribeTagsResult from Redshift.</returns>
+        DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2422,7 +2837,7 @@ namespace Amazon.Redshift
         /// with a cluster do not need a reboot. However, modifying a parameter group requires
         /// a reboot for parameters to take effect. For more information about managing clusters,
         /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-        /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i> . 
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i> . 
         /// 
         ///  
         /// <para>
@@ -2464,7 +2879,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.NumberOfNodesQuotaExceededException">
         /// The operation would exceed the number of nodes allotted to the account. For information
         /// about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
-        /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
@@ -2510,7 +2925,8 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-        /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyClusterParameterGroup service method.</param>
@@ -2569,7 +2985,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterSubnetQuotaExceededException">
         /// The request would result in user exceeding the allowed number of subnets in a cluster
         /// subnet groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
-        /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidSubnetException">
         /// The requested subnet is not valid, or not all of the subnets are in the same VPC.
@@ -2743,7 +3159,7 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
-        /// Reserved Nodes</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedNodeOffering service method.</param>
@@ -2758,7 +3174,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ReservedNodeQuotaExceededException">
         /// Request would exceed the user's compute node quota. For information about increasing
         /// your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
-        /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </exception>
         PurchaseReservedNodeOfferingResponse PurchaseReservedNodeOffering(PurchaseReservedNodeOfferingRequest request);
 
@@ -2798,7 +3214,7 @@ namespace Amazon.Redshift
         /// A cluster event is created when the reboot is completed. Any pending cluster modifications
         /// (see <a>ModifyCluster</a>) are applied at this reboot. For more information about
         /// managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-        /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i>
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebootCluster service method.</param>
         /// 
@@ -2906,7 +3322,7 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
-        /// Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreFromClusterSnapshot service method.</param>
@@ -2925,7 +3341,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterQuotaExceededException">
         /// The request would exceed the allowed number of cluster instances for this account.
         /// For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
-        /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
@@ -2970,7 +3386,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.NumberOfNodesQuotaExceededException">
         /// The operation would exceed the number of nodes allotted to the account. For information
         /// about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
-        /// in Amazon Redshift</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
@@ -3011,7 +3427,8 @@ namespace Amazon.Redshift
         /// Revokes an ingress rule in an Amazon Redshift security group for a previously authorized
         /// IP range or Amazon EC2 security group. To add an ingress rule, see <a>AuthorizeClusterSecurityGroupIngress</a>.
         /// For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
-        /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management
+        /// Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeClusterSecurityGroupIngress service method.</param>
         /// 
@@ -3066,7 +3483,7 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
-        /// Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeSnapshotAccess service method.</param>

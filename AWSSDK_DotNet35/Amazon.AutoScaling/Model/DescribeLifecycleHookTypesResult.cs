@@ -37,7 +37,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleHookTypes. 
         /// <para>
-        /// Returns a list of all notification types supported by Auto Scaling. They are:
+        /// One or more of the following notification types:
         /// </para>
         ///  <ul> <li>
         /// <para>

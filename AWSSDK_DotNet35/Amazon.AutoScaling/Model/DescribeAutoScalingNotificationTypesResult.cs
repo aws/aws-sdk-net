@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The <code>AutoScalingNotificationTypes</code> data type.
+    /// 
     /// </summary>
     public partial class DescribeAutoScalingNotificationTypesResult : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingNotificationTypes. 
         /// <para>
-        /// Returns a list of all notification types supported by Auto Scaling. They are:
+        /// One or more of the following notification types:
         /// </para>
         ///  <ul> <li>
         /// <para>

@@ -35,7 +35,8 @@ namespace Amazon.Redshift.Model
     /// (CIDR) IP address range or an EC2 security group. You can add as many as 20 ingress
     /// rules to an Amazon Redshift security group. 
     /// 
-    ///  
+    ///  <note> The EC2 security group must be defined in the AWS region where the cluster
+    /// resides. </note> 
     /// <para>
     /// For an overview of CIDR blocks, see the Wikipedia article on <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
     /// Inter-Domain Routing</a>. 
@@ -45,7 +46,7 @@ namespace Amazon.Redshift.Model
     ///  You must also associate the security group with a cluster so that clients running
     /// on these IP addresses or the EC2 instance are authorized to connect to the cluster.
     /// For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working
-    /// with Security Groups</a> in the <i>Amazon Redshift Management Guide</i>.
+    /// with Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// </para>
     /// </summary>
     public partial class AuthorizeClusterSecurityGroupIngressRequest : AmazonRedshiftRequest

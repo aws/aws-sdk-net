@@ -29,13 +29,12 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the SetInstanceHealth operation.
-    /// Sets the health status of a specified instance that belongs to any of your Auto Scaling
-    /// groups. 
+    /// Sets the health status of the specified instance.
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-configure-healthcheck.html">Configure
-    /// Health Checks for Your Auto Scaling group</a>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+    /// Checks</a> in the <i>Auto Scaling Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class SetInstanceHealthRequest : AmazonAutoScalingRequest
@@ -67,7 +66,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        ///  The identifier of the Amazon EC2 instance. 
+        /// The ID of the EC2 instance.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -93,7 +92,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// For more information, see the <code>HealthCheckGracePeriod</code> parameter description
-        /// in the <a>CreateAutoScalingGroup</a> action. 
+        /// for <a>CreateAutoScalingGroup</a>.
         /// </para>
         /// </summary>
         public bool ShouldRespectGracePeriod

@@ -29,7 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTags operation.
-    /// Removes the specified tags or a set of tags from a set of resources.
+    /// Deletes the specified tags.
     /// </summary>
     public partial class DeleteTagsRequest : AmazonAutoScalingRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Each tag should be defined by its resource type, resource ID, key, value, and a propagate
         /// flag. Valid values are: Resource type = <i>auto-scaling-group</i>, Resource ID = <i>AutoScalingGroupName</i>,
-        /// key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or <i>false</i>. 
+        /// key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or <i>false</i>.
         /// </para>
         /// </summary>
         public List<Tag> Tags

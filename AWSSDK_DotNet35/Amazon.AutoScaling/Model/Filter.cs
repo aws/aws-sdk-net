@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The <code>Filter</code> data type.
+    /// Describes a filter.
     /// </summary>
     public partial class Filter
     {
@@ -38,9 +38,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the filter. Valid Name values are: <code>"auto-scaling-group"</code>,
-        /// <code>"key"</code>, <code>"value"</code>, and <code>"propagate-at-launch"</code>.
-        /// 
+        /// The name of the filter. The valid values are: <code>"auto-scaling-group"</code>, <code>"key"</code>,
+        /// <code>"value"</code>, and <code>"propagate-at-launch"</code>.
         /// </para>
         /// </summary>
         public string Name
@@ -58,7 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        ///  The value of the filter. 
+        /// The value of the filter.
         /// </para>
         /// </summary>
         public List<string> Values

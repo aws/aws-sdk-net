@@ -29,15 +29,14 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAutoScalingGroups operation.
-    /// Returns a full description of each Auto Scaling group in the given list. This includes
-    /// all Amazon EC2 instances that are members of the group. If a list of names is not
-    /// provided, the service returns the full details of all Auto Scaling groups. 
+    /// Describes one or more Auto Scaling groups. If a list of names is not provided, the
+    /// call describes all Auto Scaling groups.
     /// 
     ///  
     /// <para>
-    ///  This action supports pagination by returning a token if there are more pages to retrieve.
-    /// To get the next page, call this action again with the returned token as the <code>NextToken</code>
-    /// parameter. 
+    /// You can specify a maximum number of items to be returned with a single call. If there
+    /// are more items to return, the call returns a token. To get the next set of items,
+    /// repeat the call with the returned token in the <code>NextToken</code> parameter.
     /// </para>
     /// </summary>
     public partial class DescribeAutoScalingGroupsRequest : AmazonAutoScalingRequest
@@ -49,7 +48,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupNames. 
         /// <para>
-        ///  A list of Auto Scaling group names. 
+        /// The group names.
         /// </para>
         /// </summary>
         public List<string> AutoScalingGroupNames
@@ -67,7 +66,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of records to return. 
+        /// The maximum number of items to return with this call.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -85,7 +84,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A string that marks the start of the next batch of returned results. 
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
         /// </para>
         /// </summary>
         public string NextToken

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The <code>TerminationPolicyTypes</code> data type.
+    /// 
     /// </summary>
     public partial class DescribeTerminationPolicyTypesResult : AmazonWebServiceResponse
     {
@@ -37,9 +37,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TerminationPolicyTypes. 
         /// <para>
-        ///  Termination policies supported by Auto Scaling. They are: <code>OldestInstance</code>,
+        /// The Termination policies supported by Auto Scaling. They are: <code>OldestInstance</code>,
         /// <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
-        /// <code>Default</code> 
+        /// and <code>Default</code>.
         /// </para>
         /// </summary>
         public List<string> TerminationPolicyTypes

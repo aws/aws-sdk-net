@@ -36,6 +36,7 @@ namespace Amazon.Redshift.Model
         private string _description;
         private List<EC2SecurityGroup> _eC2SecurityGroups = new List<EC2SecurityGroup>();
         private List<IPRange> _iPRanges = new List<IPRange>();
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ClusterSecurityGroupName. 
@@ -109,6 +110,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetIPRanges()
         {
             return this._iPRanges != null && this._iPRanges.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of tags for the cluster security group.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

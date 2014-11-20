@@ -51,6 +51,7 @@ namespace Amazon.Redshift.Model
         private bool? _encrypted;
         private Endpoint _endpoint;
         private HsmStatus _hsmStatus;
+        private string _kmsKeyId;
         private string _masterUsername;
         private string _modifyStatus;
         private string _nodeType;
@@ -59,6 +60,7 @@ namespace Amazon.Redshift.Model
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
         private RestoreStatus _restoreStatus;
+        private List<Tag> _tags = new List<Tag>();
         private string _vpcId;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
 
@@ -425,6 +427,25 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The AWS Key Management Service (KMS) key ID of the encryption key used to encrypt
+        /// data in the cluster.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
         ///  The master user name for the cluster. This name is used to connect to the database
@@ -569,6 +590,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetRestoreStatus()
         {
             return this._restoreStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of tags for the cluster.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

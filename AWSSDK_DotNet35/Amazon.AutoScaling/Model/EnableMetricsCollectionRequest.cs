@@ -29,15 +29,12 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableMetricsCollection operation.
-    /// Enables monitoring of group metrics for the Auto Scaling group specified in <code>AutoScalingGroupName</code>.
-    /// You can specify the list of enabled metrics with the <code>Metrics</code> parameter.
-    /// 
+    /// Enables monitoring of the specified metrics for the specified Auto Scaling group.
     /// 
     ///  
     /// <para>
-    ///  Auto Scaling metrics collection can be turned on only if the <code>InstanceMonitoring</code>
-    /// flag, in the Auto Scaling group's launch configuration, is set to <code>True</code>.
-    /// 
+    /// You can only enable metrics collection if <code>InstanceMonitoring</code> in the launch
+    /// configuration for the group is set to <code>True</code>.
     /// </para>
     /// </summary>
     public partial class EnableMetricsCollectionRequest : AmazonAutoScalingRequest
@@ -67,8 +64,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Granularity. 
         /// <para>
-        ///  The granularity to associate with the metrics to collect. Currently, the only legal
-        /// granularity is "1Minute". 
+        /// The granularity to associate with the metrics to collect. Currently, the only valid
+        /// value is "1Minute".
         /// </para>
         /// </summary>
         public string Granularity
@@ -86,8 +83,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        ///  The list of metrics to collect. If no metrics are specified, all metrics are enabled.
-        /// The following metrics are supported: 
+        /// One or more of the following metrics:
         /// </para>
         ///  <ul> <li>
         /// <para>
@@ -121,7 +117,16 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// GroupTotalInstances
         /// </para>
-        /// </li> </ul>
+        /// </li> </ul> 
+        /// <para>
+        /// If you omit this parameter, all metrics are enabled.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>GroupStandbyInstances</code> metric is not returned by default. You must
+        /// explicitly request it when calling <a>EnableMetricsCollection</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> Metrics
         {

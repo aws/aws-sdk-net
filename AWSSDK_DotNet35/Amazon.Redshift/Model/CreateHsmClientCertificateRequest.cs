@@ -39,12 +39,13 @@ namespace Amazon.Redshift.Model
     /// creating the HSM certificate, you must create an Amazon Redshift HSM configuration
     /// that provides a cluster the information needed to store and use encryption keys in
     /// the HSM. For more information, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
-    /// Security Modules</a> in the Amazon Redshift Management Guide.
+    /// Security Modules</a> in the Amazon Redshift Cluster Management Guide.
     /// </para>
     /// </summary>
     public partial class CreateHsmClientCertificateRequest : AmazonRedshiftRequest
     {
         private string _hsmClientCertificateIdentifier;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property HsmClientCertificateIdentifier. 
@@ -63,6 +64,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetHsmClientCertificateIdentifier()
         {
             return this._hsmClientCertificateIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tag instances.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

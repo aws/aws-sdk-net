@@ -26,12 +26,16 @@ using Amazon.CloudWatch;
 using Amazon.DynamoDBv2;
 using Amazon.EC2;
 using Amazon.ElasticLoadBalancing;
+using Amazon.Kinesis;
 using Amazon.S3;
 using Amazon.SecurityToken;
 using Amazon.SimpleDB;
 using Amazon.SimpleEmail;
 using Amazon.SimpleNotificationService;
 using Amazon.SQS;
+using Amazon.CognitoSync;
+using Amazon.KeyManagementService;
+using Amazon.Lambda;
 
 namespace Amazon
 {
@@ -504,6 +508,98 @@ namespace Amazon
         public static IAmazonElasticLoadBalancing CreateAmazonElasticLoadBalancingClient(AWSCredentials credentials, AmazonElasticLoadBalancingConfig config)
         {
             return new AmazonElasticLoadBalancingClient(credentials, config);
+        }
+		#endregion
+
+		#region Amazon Kinesis
+
+        /// <summary>
+        /// Create a client for the Amazon Kinesis Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon Kinesis client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKinesis CreateAmazonKinesisClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonKinesisClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Kinesis Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon Kinesis client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKinesis CreateAmazonKinesisClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, AmazonKinesisConfig config
+            )
+        {
+            return new AmazonKinesisClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Kinesis Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon Kinesis client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKinesis CreateAmazonKinesisClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonKinesisClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Kinesis Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon Kinesis client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKinesis CreateAmazonKinesisClient(AWSCredentials credentials)
+        {
+            return new AmazonKinesisClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Kinesis Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon Kinesis client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKinesis CreateAmazonKinesisClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonKinesisClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Kinesis Service with AWSCredentials and an AmazonKinesis Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon Kinesis client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKinesis CreateAmazonKinesisClient(AWSCredentials credentials, AmazonKinesisConfig config)
+        {
+            return new AmazonKinesisClient(credentials, config);
         }
 		#endregion
 
@@ -1056,6 +1152,282 @@ namespace Amazon
         public static IAmazonSQS CreateAmazonSQSClient(AWSCredentials credentials, AmazonSQSConfig config)
         {
             return new AmazonSQSClient(credentials, config);
+        }
+		#endregion
+
+		#region Amazon CognitoSync
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonCognitoSyncClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, AmazonCognitoSyncConfig config
+            )
+        {
+            return new AmazonCognitoSyncClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonCognitoSyncClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(AWSCredentials credentials)
+        {
+            return new AmazonCognitoSyncClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonCognitoSyncClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with AWSCredentials and an AmazonCognitoSync Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(AWSCredentials credentials, AmazonCognitoSyncConfig config)
+        {
+            return new AmazonCognitoSyncClient(credentials, config);
+        }
+		#endregion
+
+		#region Amazon KeyManagementService
+
+        /// <summary>
+        /// Create a client for the Amazon KeyManagementService Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon KeyManagementService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKeyManagementService CreateAmazonKeyManagementServiceClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonKeyManagementServiceClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon KeyManagementService Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon KeyManagementService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKeyManagementService CreateAmazonKeyManagementServiceClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, AmazonKeyManagementServiceConfig config
+            )
+        {
+            return new AmazonKeyManagementServiceClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon KeyManagementService Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon KeyManagementService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKeyManagementService CreateAmazonKeyManagementServiceClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonKeyManagementServiceClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon KeyManagementService Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon KeyManagementService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKeyManagementService CreateAmazonKeyManagementServiceClient(AWSCredentials credentials)
+        {
+            return new AmazonKeyManagementServiceClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon KeyManagementService Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon KeyManagementService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKeyManagementService CreateAmazonKeyManagementServiceClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonKeyManagementServiceClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon KeyManagementService Service with AWSCredentials and an AmazonKeyManagementService Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon KeyManagementService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKeyManagementService CreateAmazonKeyManagementServiceClient(AWSCredentials credentials, AmazonKeyManagementServiceConfig config)
+        {
+            return new AmazonKeyManagementServiceClient(credentials, config);
+        }
+		#endregion
+
+		#region Amazon Lambda
+
+        /// <summary>
+        /// Create a client for the Amazon Lambda Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon Lambda client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonLambda CreateAmazonLambdaClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonLambdaClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Lambda Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon Lambda client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonLambda CreateAmazonLambdaClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, AmazonLambdaConfig config
+            )
+        {
+            return new AmazonLambdaClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Lambda Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon Lambda client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonLambda CreateAmazonLambdaClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonLambdaClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Lambda Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon Lambda client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonLambda CreateAmazonLambdaClient(AWSCredentials credentials)
+        {
+            return new AmazonLambdaClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Lambda Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon Lambda client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonLambda CreateAmazonLambdaClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonLambdaClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Lambda Service with AWSCredentials and an AmazonLambda Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon Lambda client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonLambda CreateAmazonLambdaClient(AWSCredentials credentials, AmazonLambdaConfig config)
+        {
+            return new AmazonLambdaClient(credentials, config);
         }
 		#endregion
 

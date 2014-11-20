@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The output of the <a>DescribeLifecycleHooks</a> action.
+    /// 
     /// </summary>
     public partial class DescribeLifecycleHooksResult : AmazonWebServiceResponse
     {
@@ -37,8 +37,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleHooks. 
         /// <para>
-        ///  A list describing the lifecycle hooks that belong to the specified Auto Scaling group.
-        /// 
+        /// The lifecycle hooks for the specified group.
         /// </para>
         /// </summary>
         public List<LifecycleHook> LifecycleHooks

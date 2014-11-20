@@ -73,6 +73,13 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.HsmPartitionName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Tags/Tag", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

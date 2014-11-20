@@ -35,14 +35,15 @@ namespace Amazon.Redshift.Model
     ///  
     /// <para>
     ///  For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
-    /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Management Guide</i>.
-    /// 
+    /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management
+    /// Guide</i>. 
     /// </para>
     /// </summary>
     public partial class CreateClusterSecurityGroupRequest : AmazonRedshiftRequest
     {
         private string _clusterSecurityGroupName;
         private string _description;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ClusterSecurityGroupName. 
@@ -89,6 +90,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tag instances.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

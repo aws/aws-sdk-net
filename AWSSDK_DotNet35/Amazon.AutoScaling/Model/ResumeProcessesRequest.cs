@@ -29,9 +29,11 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the ResumeProcesses operation.
-    /// Resumes all suspended Auto Scaling processes for an Auto Scaling group. For information
-    /// on suspending and resuming Auto Scaling process, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspend
-    /// and Resume Auto Scaling Process</a>.
+    /// Resumes the specified suspended Auto Scaling processes for the specified Auto Scaling
+    /// group. To resume specific processes, use the <code>ScalingProcesses</code> parameter.
+    /// To resume all processes, omit the <code>ScalingProcesses</code> parameter. For more
+    /// information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspend
+    /// and Resume Auto Scaling Processes</a> in the <i>Auto Scaling Developer Guide</i>.
     /// </summary>
     public partial class ResumeProcessesRequest : AmazonAutoScalingRequest
     {
@@ -41,7 +43,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name or Amazon Resource Name (ARN) of the Auto Scaling group. 
+        /// The name or Amazon Resource Name (ARN) of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -59,15 +61,11 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScalingProcesses. 
         /// <para>
-        ///  The processes that you want to suspend or resume, which can include one or more of
-        /// the following: 
+        /// One or more of the following processes:
         /// </para>
         ///  <ul> <li>Launch</li> <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
         /// <li>AZRebalance</li> <li>AlarmNotification</li> <li>ScheduledActions</li> <li>AddToLoadBalancer</li>
-        /// </ul> 
-        /// <para>
-        ///  To suspend all process types, omit this parameter. 
-        /// </para>
+        /// </ul>
         /// </summary>
         public List<string> ScalingProcesses
         {

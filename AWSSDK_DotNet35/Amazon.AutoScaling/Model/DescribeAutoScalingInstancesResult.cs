@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The <code>AutoScalingInstancesType</code> data type.
+    /// 
     /// </summary>
     public partial class DescribeAutoScalingInstancesResult : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingInstances. 
         /// <para>
-        ///  A list of Auto Scaling instances. 
+        /// The instances.
         /// </para>
         /// </summary>
         public List<AutoScalingInstanceDetails> AutoScalingInstances
@@ -56,7 +56,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A string that marks the start of the next batch of returned results. 
+        /// The token to use when requesting the next set of items. If there are no additional
+        /// items to return, the string is empty.
         /// </para>
         /// </summary>
         public string NextToken

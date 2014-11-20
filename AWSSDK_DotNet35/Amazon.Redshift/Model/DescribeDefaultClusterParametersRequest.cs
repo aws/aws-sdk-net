@@ -34,7 +34,8 @@ namespace Amazon.Redshift.Model
     ///  
     /// <para>
     ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-    /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Management Guide</i>. 
+    /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+    /// 
     /// </para>
     /// </summary>
     public partial class DescribeDefaultClusterParametersRequest : AmazonRedshiftRequest

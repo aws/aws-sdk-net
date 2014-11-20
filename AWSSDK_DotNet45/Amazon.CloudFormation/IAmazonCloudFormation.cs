@@ -66,6 +66,8 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Cancels an update on the specified stack. If the call completes successfully, the
         /// stack will roll back the update and revert to the previous stack configuration.
+        /// 
+        ///  <note>Only stacks that are in the UPDATE_IN_PROGRESS state can be canceled.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelUpdateStack service method.</param>
         /// 
@@ -154,6 +156,9 @@ namespace Amazon.CloudFormation
         /// Returns all stack related events for a specified stack. For more information about
         /// a stack's event history, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
         /// in the AWS CloudFormation User Guide.
+        /// 
+        ///  <note>You can list events for stacks that have failed to create or have been deleted
+        /// by specifying the unique stack identifier (stack ID).</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackEvents service method.</param>
         /// 
@@ -212,7 +217,8 @@ namespace Amazon.CloudFormation
         /// If <code>PhysicalResourceId</code> is specified, the associated resources of the stack
         /// that the resource belongs to are returned.
         /// 
-        ///  
+        ///  <note>Only the first 100 resources will be returned. If your stack has more resources
+        /// than this, you should use <code>ListStackResources</code> instead.</note> 
         /// <para>
         /// For deleted stacks, <code>DescribeStackResources</code> returns resource information
         /// for up to 90 days after the stack has been deleted.
@@ -225,6 +231,8 @@ namespace Amazon.CloudFormation
         /// and <code>PhysicalResourceId</code>, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
         /// CloudFormation User Guide</a>.
         /// </para>
+        ///  <note>A <code>ValidationError</code> is returned if you specify both <code>StackName</code>
+        /// and <code>PhysicalResourceId</code> in the same request.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackResources service method.</param>
         /// 
@@ -340,6 +348,8 @@ namespace Amazon.CloudFormation
         /// For deleted stacks, GetTemplate returns the template for up to 90 days after the stack
         /// has been deleted.
         /// </para>
+        ///  <note> If the template does not exist, a <code>ValidationError</code> is returned.
+        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTemplate service method.</param>
         /// 
@@ -357,6 +367,44 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetTemplateResponse> GetTemplateAsync(GetTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetTemplateSummary
+
+        /// <summary>
+        /// Returns information about a new or existing template. The <code>GetTemplateSummary</code>
+        /// action is useful for viewing parameter information, such as default parameter values
+        /// and parameter types, before you create or update a stack.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <code>GetTemplateSummary</code> action when you submit a template,
+        /// or you can get template information for a running or deleted stack.
+        /// </para>
+        ///  
+        /// <para>
+        /// For deleted stacks, <code>GetTemplateSummary</code> returns the template information
+        /// for up to 90 days after the stack has been deleted. If the template does not exist,
+        /// a <code>ValidationError</code> is returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTemplateSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetTemplateSummary service method, as returned by CloudFormation.</returns>
+        GetTemplateSummaryResponse GetTemplateSummary(GetTemplateSummaryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTemplateSummary operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTemplateSummary operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetTemplateSummaryResponse> GetTemplateSummaryAsync(GetTemplateSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -448,6 +496,35 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<SetStackPolicyResponse> SetStackPolicyAsync(SetStackPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SignalResource
+
+        /// <summary>
+        /// Sends a signal to the specified resource with a success or failure status. You can
+        /// use the SignalResource API in conjunction with a creation policy or update policy.
+        /// AWS CloudFormation doesn't proceed with a stack creation or update until resources
+        /// receive the required number of signals or the timeout period is exceeded. The SignalResource
+        /// API is useful in cases where you want to send signals from anywhere other than an
+        /// Amazon EC2 instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SignalResource service method.</param>
+        /// 
+        /// <returns>The response from the SignalResource service method, as returned by CloudFormation.</returns>
+        SignalResourceResponse SignalResource(SignalResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SignalResource operation.
+        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SignalResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<SignalResourceResponse> SignalResourceAsync(SignalResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

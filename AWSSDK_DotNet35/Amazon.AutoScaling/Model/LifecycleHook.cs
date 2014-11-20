@@ -28,17 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// A lifecycle hook tells Auto Scaling that you want to perform an action when an instance
-    /// launches or terminates. When you have a lifecycle hook in place, the Auto Scaling
-    /// group will either: 
+    /// Describes a lifecycle hook, which tells Auto Scaling that you want to perform an action
+    /// when an instance launches or terminates. When you have a lifecycle hook in place,
+    /// the Auto Scaling group will either:
     /// 
-    ///  <ul> <li> Pause the instance after it launches, but before it is put into service
-    /// </li> <li> Pause the instance as it terminates, but before it is fully terminated
-    /// </li> </ul> 
+    ///  <ul> <li>Pause the instance after it launches, but before it is put into service</li>
+    /// <li>Pause the instance as it terminates, but before it is fully terminated</li> </ul>
+    /// 
     /// <para>
-    /// To learn more, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
+    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
     /// Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto
-    /// Scaling Terminating State</a>.
+    /// Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class LifecycleHook
@@ -56,7 +56,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name of the Auto Scaling group to which the lifecycle action belongs. 
+        /// The name of the Auto Scaling group for the lifecycle hook.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -75,9 +75,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property DefaultResult. 
         /// <para>
         /// Defines the action the Auto Scaling group should take when the lifecycle hook timeout
-        /// elapses or if an unexpected failure occurs. The value for this parameter can be either
-        /// <code>CONTINUE</code> or <code>ABANDON</code>. The default value for this parameter
-        /// is <code>CONTINUE</code>.
+        /// elapses or if an unexpected failure occurs. The valid values are <code>CONTINUE</code>
+        /// and <code>ABANDON</code>. The default value is <code>CONTINUE</code>.
         /// </para>
         /// </summary>
         public string DefaultResult
@@ -114,8 +113,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HeartbeatTimeout. 
         /// <para>
-        /// Defines the amount of time that can elapse before the lifecycle hook times out. When
-        /// the lifecycle hook times out, Auto Scaling performs the action defined in the <code>DefaultResult</code>
+        /// The amount of time that can elapse before the lifecycle hook times out. When the lifecycle
+        /// hook times out, Auto Scaling performs the action defined in the <code>DefaultResult</code>
         /// parameter. You can prevent the lifecycle hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
         /// </para>
         /// </summary>
@@ -134,7 +133,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleHookName. 
         /// <para>
-        ///  The name of the lifecycle action hook. 
+        /// The name of the lifecycle hook.
         /// </para>
         /// </summary>
         public string LifecycleHookName
@@ -152,8 +151,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleTransition. 
         /// <para>
-        /// The Amazon EC2 instance state to which you want to attach the lifecycle hook. See
-        /// <a>DescribeLifecycleHooks</a> for a list of available lifecycle hook types.
+        /// The state of the EC2 instance to which you want to attach the lifecycle hook. For
+        /// a list of lifecycle hook types, see <a>DescribeLifecycleHooks</a>.
         /// </para>
         /// </summary>
         public string LifecycleTransition
@@ -171,8 +170,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NotificationMetadata. 
         /// <para>
-        /// Contains additional information that you want to include any time Auto Scaling sends
-        /// a message to the notification target.
+        /// Additional information that you want to include any time Auto Scaling sends a message
+        /// to the notification target.
         /// </para>
         /// </summary>
         public string NotificationMetadata
@@ -190,10 +189,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NotificationTargetARN. 
         /// <para>
-        /// The ARN of the notification target that Auto Scaling will use to notify you when an
-        /// instance is in the transition state for the lifecycle hook. This ARN target can be
-        /// either an SQS queue or an SNS topic. The notification message sent to the target will
-        /// include:
+        /// The ARN of the notification target that Auto Scaling uses to notify you when an instance
+        /// is in the transition state for the lifecycle hook. This ARN target can be either an
+        /// SQS queue or an SNS topic. The notification message sent to the target includes the
+        /// following:
         /// </para>
         ///  <ul> <li>Lifecycle action token</li> <li>User account ID</li> <li>Name of the Auto
         /// Scaling group</li> <li>Lifecycle hook name</li> <li>EC2 instance ID</li> <li>Lifecycle
@@ -214,8 +213,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The ARN of the Amazon IAM role that allows the Auto Scaling group to publish to the
-        /// specified notification target.
+        /// The ARN of the IAM role that allows the Auto Scaling group to publish to the specified
+        /// notification target.
         /// </para>
         /// </summary>
         public string RoleARN

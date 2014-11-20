@@ -29,12 +29,12 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the EnterStandby operation.
-    /// Move instances in an Auto Scaling group into a Standby mode. 
+    /// Moves the specified instances into <code>Standby</code> mode.
     /// 
     ///  
     /// <para>
-    /// To learn more about how to put instances into a Standby mode, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html">Auto
-    /// Scaling InService State</a>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html">Auto
+    /// Scaling InService State</a> in the <i>Auto Scaling Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class EnterStandbyRequest : AmazonAutoScalingRequest
@@ -46,8 +46,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name of the Auto Scaling group from which to move instances into Standby mode.
-        /// 
+        /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -65,8 +64,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        ///  The instances to move into Standby mode. You must specify at least one instance ID.
-        /// 
+        /// One or more instances to move into <code>Standby</code> mode. You must specify at
+        /// least one instance ID.
         /// </para>
         /// </summary>
         public List<string> InstanceIds
@@ -84,9 +83,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ShouldDecrementDesiredCapacity. 
         /// <para>
-        ///  Specifies whether the instances moved to Standby mode count as part of the Auto Scaling
-        /// group's desired capacity. If set, the desired capacity for the Auto Scaling group
-        /// decrements by the number of instances moved to Standby mode. 
+        /// Specifies whether the instances moved to <code>Standby</code> mode count as part of
+        /// the Auto Scaling group's desired capacity. If set, the desired capacity for the Auto
+        /// Scaling group decrements by the number of instances moved to <code>Standby</code>
+        /// mode.
         /// </para>
         /// </summary>
         public bool ShouldDecrementDesiredCapacity

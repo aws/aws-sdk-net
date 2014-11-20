@@ -29,8 +29,18 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAutoScalingGroup operation.
-    /// Deletes the specified Auto Scaling group if the group has no instances and no scaling
-    /// activities in progress.
+    /// Deletes the specified Auto Scaling group.
+    /// 
+    ///  
+    /// <para>
+    /// The group must have no instances and no scaling activities in progress.
+    /// </para>
+    ///  
+    /// <para>
+    /// To remove all instances before calling <a>DeleteAutoScalingGroup</a>, you can call
+    /// <a>UpdateAutoScalingGroup</a> to set the minimum and maximum size of the AutoScalingGroup
+    /// to zero.
+    /// </para>
     /// </summary>
     public partial class DeleteAutoScalingGroupRequest : AmazonAutoScalingRequest
     {
@@ -40,7 +50,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name of the Auto Scaling group to delete. 
+        /// The name of the group to delete.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -58,10 +68,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ForceDelete. 
         /// <para>
-        /// Starting with API version 2011-01-01, specifies that the Auto Scaling group will be
-        /// deleted along with all instances associated with the group, without waiting for all
-        /// instances to be terminated. This parameter also deletes any lifecycle actions associated
-        /// with the group. 
+        /// Specifies that the group will be deleted along with all instances associated with
+        /// the group, without waiting for all instances to be terminated. This parameter also
+        /// deletes any lifecycle actions associated with the group.
         /// </para>
         /// </summary>
         public bool ForceDelete

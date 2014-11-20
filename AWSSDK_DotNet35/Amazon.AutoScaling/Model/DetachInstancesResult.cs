@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The output of the <a>DetachInstances</a> action.
+    /// 
     /// </summary>
     public partial class DetachInstancesResult : AmazonWebServiceResponse
     {
@@ -37,8 +37,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Activities. 
         /// <para>
-        ///  A list describing the activities related to detaching the instances from the Auto
-        /// Scaling group. 
+        /// The activities related to detaching the instances from the Auto Scaling group.
         /// </para>
         /// </summary>
         public List<Activity> Activities

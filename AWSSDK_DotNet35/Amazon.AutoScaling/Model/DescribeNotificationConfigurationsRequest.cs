@@ -29,8 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeNotificationConfigurations operation.
-    /// Returns a list of notification actions associated with Auto Scaling groups for specified
-    /// events.
+    /// Describes the notification actions associated with the specified Auto Scaling group.
     /// </summary>
     public partial class DescribeNotificationConfigurationsRequest : AmazonAutoScalingRequest
     {
@@ -41,7 +40,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupNames. 
         /// <para>
-        ///  The name of the Auto Scaling group. 
+        /// The name of the group.
         /// </para>
         /// </summary>
         public List<string> AutoScalingGroupNames
@@ -59,7 +58,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// Maximum number of records to be returned. 
+        /// The maximum number of items to return with this call.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -77,8 +76,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A string that is used to mark the start of the next batch of returned results for
-        /// pagination. 
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
         /// </para>
         /// </summary>
         public string NextToken

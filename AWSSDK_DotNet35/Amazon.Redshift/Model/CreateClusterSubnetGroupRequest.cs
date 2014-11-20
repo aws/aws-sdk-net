@@ -36,7 +36,7 @@ namespace Amazon.Redshift.Model
     ///  
     /// <para>
     ///  For information about subnet groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon
-    /// Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Management Guide</i>.
+    /// Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// 
     /// </para>
     /// </summary>
@@ -45,6 +45,7 @@ namespace Amazon.Redshift.Model
         private string _clusterSubnetGroupName;
         private string _description;
         private List<string> _subnetIds = new List<string>();
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ClusterSubnetGroupName. 
@@ -110,6 +111,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetSubnetIds()
         {
             return this._subnetIds != null && this._subnetIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tag instances.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

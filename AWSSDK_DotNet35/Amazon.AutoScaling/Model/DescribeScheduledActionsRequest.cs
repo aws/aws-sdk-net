@@ -29,8 +29,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScheduledActions operation.
-    /// Lists all the actions scheduled for your Auto Scaling group that haven't been executed.
-    /// To see a list of actions already executed, see the activity record returned in <a>DescribeScalingActivities</a>.
+    /// Lists the actions scheduled for your Auto Scaling group that haven't been executed.
+    /// To list the actions that were already executed, use <a>DescribeScalingActivities</a>.
     /// </summary>
     public partial class DescribeScheduledActionsRequest : AmazonAutoScalingRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name of the Auto Scaling group. 
+        /// The name of the group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -62,8 +62,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        ///  The latest scheduled start time to return. If scheduled action names are provided,
-        /// this field is ignored. 
+        /// The latest scheduled start time to return. If scheduled action names are provided,
+        /// this parameter is ignored.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -81,7 +81,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of scheduled actions to return. 
+        /// The maximum number of items to return with this call.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -99,7 +99,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A string that marks the start of the next batch of returned results. 
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
         /// </para>
         /// </summary>
         public string NextToken
@@ -117,11 +118,15 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScheduledActionNames. 
         /// <para>
-        ///  A list of scheduled actions to be described. If this list is omitted, all scheduled
-        /// actions are described. The list of requested scheduled actions cannot contain more
-        /// than 50 items. If an auto scaling group name is provided, the results are limited
-        /// to that group. If unknown scheduled actions are requested, they are ignored with no
-        /// error. 
+        /// Describes one or more scheduled actions. If you omit this list, the call describes
+        /// all scheduled actions. If you specify an unknown scheduled action it is ignored with
+        /// no error.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can describe up to a maximum of 50 instances with a single call. If there are
+        /// more items to return, the call returns a token. To get the next set of items, repeat
+        /// the call with the returned token in the <code>NextToken</code> parameter.
         /// </para>
         /// </summary>
         public List<string> ScheduledActionNames
@@ -139,8 +144,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///  The earliest scheduled start time to return. If scheduled action names are provided,
-        /// this field will be ignored. 
+        /// The earliest scheduled start time to return. If scheduled action names are provided,
+        /// this parameter is ignored.
         /// </para>
         /// </summary>
         public DateTime StartTime

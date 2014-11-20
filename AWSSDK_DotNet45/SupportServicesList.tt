@@ -52,6 +52,9 @@
 		"Amazon.AWSSupport.IAmazonAWSSupport",
 		"Amazon.CognitoIdentity.IAmazonCognitoIdentity",
 		"Amazon.CognitoSync.IAmazonCognitoSync",
-        "Amazon.CodeDeploy.IAmazonCodeDeploy"
+		"Amazon.CodeDeploy.IAmazonCodeDeploy",
+		"Amazon.KeyManagementService.IAmazonKeyManagementService",
+		"Amazon.Lambda.IAmazonLambda",
+		"Amazon.ConfigService.IAmazonConfigService"
 	};
 #>

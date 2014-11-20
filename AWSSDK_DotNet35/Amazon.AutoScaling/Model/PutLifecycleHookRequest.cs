@@ -29,7 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the PutLifecycleHook operation.
-    /// Creates or updates a lifecycle hook for an Auto Scaling Group.
+    /// Creates or updates a lifecycle hook for the specified Auto Scaling Group.
     /// 
     ///  
     /// <para>
@@ -39,20 +39,20 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    ///  This operation is a part of the basic sequence for adding a lifecycle hook to an
-    /// Auto Scaling group: 
+    /// This operation is a part of the basic sequence for adding a lifecycle hook to an Auto
+    /// Scaling group:
     /// </para>
-    ///  <ol> <li> Create a notification target. A target can be either an Amazon SQS queue
-    /// or an Amazon SNS topic. </li> <li> Create an IAM role. This role allows Auto Scaling
-    /// to publish lifecycle notifications to the designated SQS queue or SNS topic. </li>
-    /// <li> <b>Create the lifecycle hook. You can create a hook that acts when instances
-    /// launch or when instances terminate.</b> </li> <li> If necessary, record the lifecycle
-    /// action heartbeat to keep the instance in a pending state. </li> <li> Complete the
-    /// lifecycle action. </li> </ol> 
+    ///  <ol> <li>Create a notification target. A target can be either an Amazon SQS queue
+    /// or an Amazon SNS topic.</li> <li>Create an IAM role. This role allows Auto Scaling
+    /// to publish lifecycle notifications to the designated SQS queue or SNS topic.</li>
+    /// <li><b>Create the lifecycle hook. You can create a hook that acts when instances launch
+    /// or when instances terminate.</b></li> <li>If necessary, record the lifecycle action
+    /// heartbeat to keep the instance in a pending state.</li> <li>Complete the lifecycle
+    /// action.</li> </ol> 
     /// <para>
-    /// To learn more, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
+    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
     /// Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto
-    /// Scaling Terminating State</a>.
+    /// Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class PutLifecycleHookRequest : AmazonAutoScalingRequest
@@ -151,6 +151,12 @@ namespace Amazon.AutoScaling.Model
         /// The Amazon EC2 instance state to which you want to attach the lifecycle hook. See
         /// <a>DescribeLifecycleHookTypes</a> for a list of available lifecycle hook types.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is required for new lifecycle hooks, but optional when updating existing
+        /// hooks.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string LifecycleTransition
         {
@@ -190,7 +196,12 @@ namespace Amazon.AutoScaling.Model
         /// instance is in the transition state for the lifecycle hook. This ARN target can be
         /// either an SQS queue or an SNS topic. 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This parameter is required for new lifecycle hooks, but optional when updating existing
+        /// hooks.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The notification message sent to the target will include:
         /// </para>
@@ -224,9 +235,15 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The ARN of the Amazon IAM role that allows the Auto Scaling group to publish to the
-        /// specified notification target.
+        /// The ARN of the IAM role that allows the Auto Scaling group to publish to the specified
+        /// notification target.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is required for new lifecycle hooks, but optional when updating existing
+        /// hooks.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string RoleARN
         {

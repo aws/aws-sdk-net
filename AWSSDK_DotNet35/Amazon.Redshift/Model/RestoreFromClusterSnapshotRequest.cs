@@ -44,7 +44,7 @@ namespace Amazon.Redshift.Model
     ///  
     /// <para>
     ///  For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
-    /// Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i>. 
+    /// Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
     /// </para>
     /// </summary>
     public partial class RestoreFromClusterSnapshotRequest : AmazonRedshiftRequest
@@ -59,6 +59,7 @@ namespace Amazon.Redshift.Model
         private string _elasticIp;
         private string _hsmClientCertificateIdentifier;
         private string _hsmConfigurationIdentifier;
+        private string _kmsKeyId;
         private string _ownerAccount;
         private int? _port;
         private string _preferredMaintenanceWindow;
@@ -310,6 +311,25 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The AWS Key Management Service (KMS) key ID of the encryption key that you want to
+        /// use to encrypt data in the cluster that you restore from a shared snapshot.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
         ///  The AWS customer account used to create or copy the snapshot. Required if you are
@@ -368,7 +388,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         ///  Default: The value selected for the cluster from which the snapshot was taken. For
         /// more information about the time blocks for each region, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
-        /// Windows</a> in Amazon Redshift Management Guide. 
+        /// Windows</a> in Amazon Redshift Cluster Management Guide. 
         /// </para>
         ///  
         /// <para>

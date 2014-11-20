@@ -40,7 +40,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name or the Amazon Resource Name (ARN) of the Auto Scaling group. 
+        /// The name or Amazon Resource Name (ARN) of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -65,12 +65,12 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Set to <code>False</code> if you want Auto Scaling to circumvent the cooldown period
         /// associated with the Auto Scaling group and execute the policy before the cooldown
-        /// period ends. 
+        /// period ends.
         /// </para>
         ///  
         /// <para>
-        /// For information about cooldown period, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-        /// Period</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+        /// Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public bool HonorCooldown
@@ -88,7 +88,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        ///  The name or ARN of the policy you want to run. 
+        /// The name or ARN of the policy.
         /// </para>
         /// </summary>
         public string PolicyName

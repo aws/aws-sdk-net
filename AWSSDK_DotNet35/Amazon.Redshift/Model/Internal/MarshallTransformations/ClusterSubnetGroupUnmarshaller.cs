@@ -74,6 +74,13 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.Subnets.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("Tags/Tag", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("VpcId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -33,7 +33,7 @@ namespace Amazon.Redshift.Model
     /// indicates that the request was received correctly. Use <a>DescribeClusters</a> to
     /// monitor the status of the deletion. The delete operation cannot be canceled or reverted
     /// once submitted. For more information about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-    /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i> . 
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i> . 
     /// 
     ///  
     /// <para>
@@ -47,7 +47,7 @@ namespace Amazon.Redshift.Model
     ///  
     /// <para>
     ///  For more information about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-    /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i> . 
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i> . 
     /// </para>
     /// </summary>
     public partial class DeleteClusterRequest : AmazonRedshiftRequest
@@ -116,7 +116,8 @@ namespace Amazon.Redshift.Model
         /// If <code>false</code>, a final cluster snapshot is created before the cluster is deleted.
         /// 
         /// </para>
-        ///  
+        ///  <note>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i>
+        /// is <code>false</code>.</note> 
         /// <para>
         /// Default: <code>false</code>
         /// </para>

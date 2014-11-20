@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The identifier of a node in a cluster. --&gt;
+    /// The identifier of a node in a cluster.
     /// </summary>
     public partial class ClusterNode
     {

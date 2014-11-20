@@ -37,7 +37,21 @@ namespace Amazon.Redshift.Model
     ///  
     /// <para>
     ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-    /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Management Guide</i>. 
+    /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+    /// all parameter groups that match any combination of the specified keys and values.
+    /// For example, if you have <code>owner</code> and <code>environment</code> for tag keys,
+    /// and <code>admin</code> and <code>test</code> for tag values, all parameter groups
+    /// that have any combination of those values are returned.
+    /// </para>
+    ///  
+    /// <para>
+    /// If both tag keys and values are omitted from the request, parameter groups are returned
+    /// regardless of whether they have tag keys or values associated with them.
     /// </para>
     /// </summary>
     public partial class DescribeClusterParameterGroupsRequest : AmazonRedshiftRequest
@@ -45,6 +59,8 @@ namespace Amazon.Redshift.Model
         private string _marker;
         private int? _maxRecords;
         private string _parameterGroupName;
+        private List<string> _tagKeys = new List<string>();
+        private List<string> _tagValues = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -115,6 +131,52 @@ namespace Amazon.Redshift.Model
         internal bool IsSetParameterGroupName()
         {
             return this._parameterGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// A tag key or keys for which you want to return all matching cluster parameter groups
+        /// that are associated with the specified key or keys. For example, suppose that you
+        /// have parameter groups that are tagged with keys called <code>owner</code> and <code>environment</code>.
+        /// If you specify both of these tag keys in the request, Amazon Redshift returns a response
+        /// with the parameter groups that have either or both of these tag keys associated with
+        /// them.
+        /// </para>
+        /// </summary>
+        public List<string> TagKeys
+        {
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
+        }
+
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
+        {
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagValues. 
+        /// <para>
+        /// A tag value or values for which you want to return all matching cluster parameter
+        /// groups that are associated with the specified tag value or values. For example, suppose
+        /// that you have parameter groups that are tagged with values called <code>admin</code>
+        /// and <code>test</code>. If you specify both of these tag values in the request, Amazon
+        /// Redshift returns a response with the parameter groups that have either or both of
+        /// these tag values associated with them.
+        /// </para>
+        /// </summary>
+        public List<string> TagValues
+        {
+            get { return this._tagValues; }
+            set { this._tagValues = value; }
+        }
+
+        // Check to see if TagValues property is set
+        internal bool IsSetTagValues()
+        {
+            return this._tagValues != null && this._tagValues.Count > 0; 
         }
 
     }

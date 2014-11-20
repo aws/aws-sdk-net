@@ -29,20 +29,19 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTags operation.
-    /// Lists the Auto Scaling group tags. 
+    /// Describes the specified tags.
     /// 
     ///  
     /// <para>
-    ///  You can use filters to limit results when describing tags. For example, you can query
-    /// for tags of a particular Auto Scaling group. You can specify multiple values for a
-    /// filter. A tag must match at least one of the specified values for it to be included
-    /// in the results. 
+    /// You can use filters to limit the results. For example, you can query for the tags
+    /// for a specific Auto Scaling group. You can specify multiple values for a filter. A
+    /// tag must match at least one of the specified values for it to be included in the results.
     /// </para>
     ///  
     /// <para>
-    ///  You can also specify multiple filters. The result includes information for a particular
-    /// tag only if it matches all your filters. If there's no match, no special message is
-    /// returned. 
+    /// You can also specify multiple filters. The result includes information for a particular
+    /// tag only if it matches all the filters. If there's no match, no special message is
+    /// returned.
     /// </para>
     /// </summary>
     public partial class DescribeTagsRequest : AmazonAutoScalingRequest
@@ -54,10 +53,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        ///  The value of the filter type used to identify the tags to be returned. For example,
+        /// The value of the filter type used to identify the tags to be returned. For example,
         /// you can filter so that tags are returned according to Auto Scaling group, the key
         /// and value, or whether the new tag will be applied to instances launched after the
-        /// tag is created (PropagateAtLaunch). 
+        /// tag is created (PropagateAtLaunch).
         /// </para>
         /// </summary>
         public List<Filter> Filters
@@ -75,7 +74,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of records to return. 
+        /// The maximum number of items to return with this call.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -93,7 +92,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A string that marks the start of the next batch of returned results. 
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
         /// </para>
         /// </summary>
         public string NextToken

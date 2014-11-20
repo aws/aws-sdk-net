@@ -32,7 +32,7 @@ namespace Amazon.Redshift.Model
     /// Returns descriptions of the available Amazon Redshift cluster versions. You can call
     /// this operation even before creating any clusters to learn more about the Amazon Redshift
     /// versions. For more information about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-    /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i>
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>
     /// </summary>
     public partial class DescribeClusterVersionsRequest : AmazonRedshiftRequest
     {

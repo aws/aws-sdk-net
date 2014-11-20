@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The output of the <a>DescribeMetricCollectionTypes</a> action.
+    /// 
     /// </summary>
     public partial class DescribeMetricCollectionTypesResult : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Granularities. 
         /// <para>
-        /// A list of granularities for the listed Metrics.
+        /// The granularities for the listed metrics.
         /// </para>
         /// </summary>
         public List<MetricGranularityType> Granularities
@@ -56,7 +56,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// The list of Metrics collected. The following metrics are supported: 
+        /// One or more of the following metrics:
         /// </para>
         ///  <ul> <li>
         /// <para>
@@ -90,7 +90,12 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// GroupTotalInstances
         /// </para>
-        /// </li> </ul>
+        /// </li> </ul> <note> 
+        /// <para>
+        /// The <code>GroupStandbyInstances</code> metric is not returned by default. You must
+        /// explicitly request it when calling <a>EnableMetricsCollection</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<MetricCollectionType> Metrics
         {

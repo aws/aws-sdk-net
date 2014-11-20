@@ -105,6 +105,46 @@ namespace Amazon.CloudFormation
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceSignalStatus.
+    /// </summary>
+    public class ResourceSignalStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILURE for ResourceSignalStatus
+        /// </summary>
+        public static readonly ResourceSignalStatus FAILURE = new ResourceSignalStatus("FAILURE");
+        /// <summary>
+        /// Constant SUCCESS for ResourceSignalStatus
+        /// </summary>
+        public static readonly ResourceSignalStatus SUCCESS = new ResourceSignalStatus("SUCCESS");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public ResourceSignalStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceSignalStatus FindValue(string value)
+        {
+            return FindValue<ResourceSignalStatus>(value);
+        }
+
+        public static implicit operator ResourceSignalStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceStatus.
     /// </summary>
     public class ResourceStatus : ConstantClass
@@ -134,6 +174,10 @@ namespace Amazon.CloudFormation
         /// Constant DELETE_IN_PROGRESS for ResourceStatus
         /// </summary>
         public static readonly ResourceStatus DELETE_IN_PROGRESS = new ResourceStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETE_SKIPPED for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus DELETE_SKIPPED = new ResourceStatus("DELETE_SKIPPED");
         /// <summary>
         /// Constant UPDATE_COMPLETE for ResourceStatus
         /// </summary>

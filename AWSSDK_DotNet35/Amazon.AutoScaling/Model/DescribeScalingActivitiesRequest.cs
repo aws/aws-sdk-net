@@ -29,19 +29,16 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScalingActivities operation.
-    /// Returns the scaling activities for the specified Auto Scaling group. 
+    /// Describes one or more scaling activities for the specified Auto Scaling group. If
+    /// you omit the <code>ActivityIds</code>, the call returns all activities from the past
+    /// six weeks. Activities are sorted by the start time. Activities still in progress appear
+    /// first on the list.
     /// 
     ///  
     /// <para>
-    ///  If the specified <code>ActivityIds</code> list is empty, all the activities from
-    /// the past six weeks are returned. Activities are sorted by the start time. Activities
-    /// still in progress appear first on the list. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  This action supports pagination. If the response includes a token, there are more
-    /// records available. To get the additional records, repeat the request with the response
-    /// token as the <code>NextToken</code> parameter. 
+    /// You can specify a maximum number of items to be returned with a single call. If there
+    /// are more items to return, the call returns a token. To get the next set of items,
+    /// repeat the call with the returned token in the <code>NextToken</code> parameter.
     /// </para>
     /// </summary>
     public partial class DescribeScalingActivitiesRequest : AmazonAutoScalingRequest
@@ -76,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name of the <a>AutoScalingGroup</a>. 
+        /// The name of the group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -94,7 +91,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of scaling activities to return. 
+        /// The maximum number of items to return with this call.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -112,8 +109,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A string that marks the start of the next batch of returned results for pagination.
-        /// 
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
         /// </para>
         /// </summary>
         public string NextToken

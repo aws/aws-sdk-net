@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The MetricGranularityType data type.
+    /// Describes a granularity of a metric.
     /// </summary>
     public partial class MetricGranularityType
     {
@@ -37,7 +37,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Granularity. 
         /// <para>
-        ///  The granularity of a Metric. 
+        /// The granularity.
         /// </para>
         /// </summary>
         public string Granularity

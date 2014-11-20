@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The output of the <a>EnterStandby</a> action.
+    /// 
     /// </summary>
     public partial class EnterStandbyResult : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Activities. 
         /// <para>
-        ///  A list describing the activities related to moving instances into Standby mode. 
+        /// The activities related to moving instances into <code>Standby</code> mode.
         /// </para>
         /// </summary>
         public List<Activity> Activities

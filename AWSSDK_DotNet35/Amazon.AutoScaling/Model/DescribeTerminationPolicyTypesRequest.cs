@@ -29,7 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTerminationPolicyTypes operation.
-    /// Returns a list of all termination policies supported by Auto Scaling.
+    /// Lists the termination policies supported by Auto Scaling.
     /// </summary>
     public partial class DescribeTerminationPolicyTypesRequest : AmazonAutoScalingRequest
     {

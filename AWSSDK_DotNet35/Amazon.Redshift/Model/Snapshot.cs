@@ -45,6 +45,7 @@ namespace Amazon.Redshift.Model
         private bool? _encrypted;
         private bool? _encryptedWithHSM;
         private long? _estimatedSecondsToCompletion;
+        private string _kmsKeyId;
         private string _masterUsername;
         private string _nodeType;
         private int? _numberOfNodes;
@@ -55,6 +56,7 @@ namespace Amazon.Redshift.Model
         private string _snapshotType;
         private string _sourceRegion;
         private string _status;
+        private List<Tag> _tags = new List<Tag>();
         private double? _totalBackupSizeInMegaBytes;
         private string _vpcId;
 
@@ -299,6 +301,25 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The AWS Key Management Service (KMS) key ID of the encryption key that was used to
+        /// encrypt data in the cluster from which the snapshot was taken.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
         ///  The master user name for the cluster. 
@@ -484,6 +505,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of tags for the cluster snapshot.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

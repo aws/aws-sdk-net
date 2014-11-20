@@ -29,13 +29,14 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLaunchConfigurations operation.
-    /// Returns a full description of the launch configurations, or the specified launch
-    /// configurations, if they exist. 
+    /// Describes one or more launch configurations. If you omit the list of names, then the
+    /// call describes all launch configurations.
     /// 
     ///  
     /// <para>
-    ///  If no name is specified, then the full details of all launch configurations are returned.
-    /// 
+    /// You can specify a maximum number of items to be returned with a single call. If there
+    /// are more items to return, the call returns a token. To get the next set of items,
+    /// repeat the call with the returned token in the <code>NextToken</code> parameter.
     /// </para>
     /// </summary>
     public partial class DescribeLaunchConfigurationsRequest : AmazonAutoScalingRequest
@@ -47,7 +48,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationNames. 
         /// <para>
-        ///  A list of launch configuration names. 
+        /// The launch configuration names.
         /// </para>
         /// </summary>
         public List<string> LaunchConfigurationNames
@@ -65,7 +66,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of launch configurations. The default is 100. 
+        /// The maximum number of items to return with this call. The default is 100.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -83,7 +84,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A string that marks the start of the next batch of returned results. 
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
         /// </para>
         /// </summary>
         public string NextToken

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model
     ///  
     /// <para>
     ///  For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
-    /// Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i>. 
+    /// Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
     /// </para>
     /// </summary>
     public partial class AuthorizeSnapshotAccessRequest : AmazonRedshiftRequest

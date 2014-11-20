@@ -35,13 +35,14 @@ namespace Amazon.Redshift.Model
     ///  
     /// <para>
     ///  For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
-    /// Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i>. 
+    /// Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
     /// </para>
     /// </summary>
     public partial class CreateClusterSnapshotRequest : AmazonRedshiftRequest
     {
         private string _clusterIdentifier;
         private string _snapshotIdentifier;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
@@ -88,6 +89,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetSnapshotIdentifier()
         {
             return this._snapshotIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tag instances.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

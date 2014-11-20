@@ -34,20 +34,20 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    ///  This operation is a part of the basic sequence for adding a lifecycle hook to an
-    /// Auto Scaling group: 
+    /// This operation is a part of the basic sequence for adding a lifecycle hook to an Auto
+    /// Scaling group:
     /// </para>
-    ///  <ol> <li> Create a notification target. A target can be either an Amazon SQS queue
-    /// or an Amazon SNS topic. </li> <li> Create an IAM role. This role allows Auto Scaling
-    /// to publish lifecycle notifications to the designated SQS queue or SNS topic. </li>
-    /// <li> Create the lifecycle hook. You can create a hook that acts when instances launch
-    /// or when instances terminate. </li> <li> If necessary, record the lifecycle action
-    /// heartbeat to keep the instance in a pending state. </li> <li> <b>Complete the lifecycle
-    /// action.</b> </li> </ol> 
+    ///  <ol> <li>Create a notification target. A target can be either an Amazon SQS queue
+    /// or an Amazon SNS topic.</li> <li>Create an IAM role. This role allows Auto Scaling
+    /// to publish lifecycle notifications to the designated SQS queue or SNS topic.</li>
+    /// <li>Create the lifecycle hook. You can create a hook that acts when instances launch
+    /// or when instances terminate.</li> <li>If necessary, record the lifecycle action heartbeat
+    /// to keep the instance in a pending state.</li> <li> <b>Complete the lifecycle action</b>.</li>
+    /// </ol> 
     /// <para>
-    /// To learn more, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
+    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
     /// Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto
-    /// Scaling Terminating State</a>.
+    /// Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class CompleteLifecycleActionRequest : AmazonAutoScalingRequest
@@ -60,7 +60,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// The name of the Auto Scaling group to which the lifecycle hook belongs.
+        /// The name of the group for the lifecycle hook.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -78,8 +78,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleActionResult. 
         /// <para>
-        /// The action the Auto Scaling group should take. The value for this parameter can be
-        /// either <code>CONTINUE</code> or <code>ABANDON</code>.
+        /// The action for the group to take. This parameter can be either <code>CONTINUE</code>
+        /// or <code>ABANDON</code>.
         /// </para>
         /// </summary>
         public string LifecycleActionResult

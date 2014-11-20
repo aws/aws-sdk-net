@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The <code>LaunchConfiguration</code> data type.
+    /// Describes a launch configuration.
     /// </summary>
     public partial class LaunchConfiguration
     {
@@ -53,7 +53,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AssociatePublicIpAddress. 
         /// <para>
-        /// Specifies whether the instance is associated with a public IP address (<code>true</code>)
+        /// Specifies whether the EC2 instances are associated with a public IP address (<code>true</code>)
         /// or not (<code>false</code>).
         /// </para>
         /// </summary>
@@ -72,8 +72,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
-        ///  Specifies how block devices are exposed to the instance. Each mapping is made up
-        /// of a <i>virtualName</i> and a <i>deviceName</i>. 
+        /// A block device mapping that specifies how block devices are exposed to the instance.
+        /// Each mapping is made up of a <code>virtualName</code> and a <code>deviceName</code>.
         /// </para>
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -91,7 +91,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        ///  Provides the creation date and time for this launch configuration. 
+        /// The creation date and time for the launch configuration.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -109,7 +109,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EbsOptimized. 
         /// <para>
-        /// Specifies whether the instance is optimized for EBS I/O (<i>true</i>) or not (<i>false</i>).
+        /// Controls whether the instance is optimized for EBS I/O (<code>true</code>) or not
+        /// (<code>false</code>).
         /// </para>
         /// </summary>
         public bool EbsOptimized
@@ -127,8 +128,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property IamInstanceProfile. 
         /// <para>
-        /// Provides the name or the Amazon Resource Name (ARN) of the instance profile associated
-        /// with the IAM role for the instance. The instance profile contains the IAM role. 
+        /// The name or Amazon Resource Name (ARN) of the instance profile associated with the
+        /// IAM role for the instance.
         /// </para>
         /// </summary>
         public string IamInstanceProfile
@@ -146,8 +147,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        ///  Provides the unique ID of the <i>Amazon Machine Image</i> (AMI) that was assigned
-        /// during registration. 
+        /// The ID of the Amazon Machine Image (AMI).
         /// </para>
         /// </summary>
         public string ImageId
@@ -165,8 +165,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceMonitoring. 
         /// <para>
-        ///  Controls whether instances in this group are launched with detailed monitoring or
-        /// not. 
+        /// Controls whether instances in this group are launched with detailed monitoring.
         /// </para>
         /// </summary>
         public InstanceMonitoring InstanceMonitoring
@@ -184,7 +183,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        ///  Specifies the instance type of the Amazon EC2 instance. 
+        /// The instance type for the EC2 instances.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -202,7 +201,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property KernelId. 
         /// <para>
-        ///  Provides the ID of the kernel associated with the Amazon EC2 AMI. 
+        /// The ID of the kernel associated with the AMI.
         /// </para>
         /// </summary>
         public string KernelId
@@ -220,7 +219,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property KeyName. 
         /// <para>
-        ///  Provides the name of the Amazon EC2 key pair. 
+        /// The name of the key pair.
         /// </para>
         /// </summary>
         public string KeyName
@@ -238,7 +237,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationARN. 
         /// <para>
-        ///  The launch configuration's Amazon Resource Name (ARN). 
+        /// The Amazon Resource Name (ARN) of the launch configuration.
         /// </para>
         /// </summary>
         public string LaunchConfigurationARN
@@ -256,7 +255,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
-        ///  Specifies the name of the launch configuration. 
+        /// The name of the launch configuration.
         /// </para>
         /// </summary>
         public string LaunchConfigurationName
@@ -274,9 +273,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PlacementTenancy. 
         /// <para>
-        /// Specifies the tenancy of the instance. It can be either <code>default</code> or <code>dedicated</code>.
+        /// The tenancy of the instance, either <code>default</code> or <code>dedicated</code>.
         /// An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant
-        /// hardware and it can only be launched in a VPC.
+        /// hardware and can only be launched in a VPC.
         /// </para>
         /// </summary>
         public string PlacementTenancy
@@ -294,7 +293,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property RamdiskId. 
         /// <para>
-        ///  Provides ID of the RAM disk associated with the Amazon EC2 AMI. 
+        /// The ID of the RAM disk associated with the AMI.
         /// </para>
         /// </summary>
         public string RamdiskId
@@ -312,8 +311,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        ///  A description of the security groups to associate with the Amazon EC2 instances.
-        /// 
+        /// The security groups to associate with the EC2 instances.
         /// </para>
         /// </summary>
         public List<string> SecurityGroups
@@ -331,7 +329,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property SpotPrice. 
         /// <para>
-        /// Specifies the price to bid when launching Spot Instances.
+        /// The price to bid when launching Spot Instances.
         /// </para>
         /// </summary>
         public string SpotPrice
@@ -349,7 +347,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        ///  The user data available to the launched Amazon EC2 instances. 
+        /// The user data available to the EC2 instances.
         /// </para>
         /// </summary>
         public string UserData

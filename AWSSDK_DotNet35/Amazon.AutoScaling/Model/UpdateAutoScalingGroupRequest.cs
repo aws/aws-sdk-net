@@ -31,12 +31,39 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the UpdateAutoScalingGroup operation.
     /// Updates the configuration for the specified <a>AutoScalingGroup</a>. 
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    ///  To update an Auto Scaling group with a launch configuration that has the <code>InstanceMonitoring</code>
+    /// flag set to <code>False</code>, you must first ensure that collection of group metrics
+    /// is disabled. Otherwise, calls to <a>UpdateAutoScalingGroup</a> will fail. If you have
+    /// previously enabled group metrics collection, you can disable collection of all group
+    /// metrics by calling <a>DisableMetricsCollection</a>. 
+    /// </para>
+    ///  </note> 
     /// <para>
     ///  The new settings are registered upon the completion of this call. Any launch configuration
     /// settings take effect on any triggers after this call returns. Scaling activities that
     /// are currently in progress aren't affected. 
     /// </para>
+    ///  <note> <ul> <li> 
+    /// <para>
+    /// If a new value is specified for <i>MinSize</i> without specifying the value for <i>DesiredCapacity</i>,
+    /// and if the new <i>MinSize</i> is larger than the current size of the Auto Scaling
+    /// group, there will be an implicit call to <a>SetDesiredCapacity</a> to set the group
+    /// to the new <i>MinSize</i>. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If a new value is specified for <i>MaxSize</i> without specifying the value for <i>DesiredCapacity</i>,
+    /// and the new <i>MaxSize</i> is smaller than the current size of the Auto Scaling group,
+    /// there will be an implicit call to <a>SetDesiredCapacity</a> to set the group to the
+    /// new <i>MaxSize</i>. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// All other optional parameters are left unchanged if not passed in the request.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class UpdateAutoScalingGroupRequest : AmazonAutoScalingRequest
     {
@@ -56,7 +83,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        ///  The name of the Auto Scaling group. 
+        /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -74,7 +101,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        ///  Availability Zones for the group. 
+        /// One or more Availability Zones for the group.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -92,9 +119,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DefaultCooldown. 
         /// <para>
-        ///  The amount of time, in seconds, after a scaling activity completes before any further
-        /// scaling activities can start. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
-        /// Period</a>. 
+        /// The amount of time, in seconds, after a scaling activity completes before another
+        /// scaling activity can start. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+        /// Auto Scaling Cooldowns</a>.
         /// </para>
         /// </summary>
         public int DefaultCooldown
@@ -112,7 +139,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        ///  The desired capacity for the Auto Scaling group. 
+        /// The number of EC2 instances that should be running in the Auto Scaling group. This
+        /// value must be greater than or equal to the minimum size of the group and less than
+        /// or equal to the maximum size of the group.
         /// </para>
         /// </summary>
         public int DesiredCapacity
@@ -130,9 +159,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckGracePeriod. 
         /// <para>
-        ///  The length of time that Auto Scaling waits before checking an instance's health status.
-        /// The grace period begins when the instance passes System Status and the Instance Status
-        /// checks from Amazon EC2. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeInstanceStatus.html">DescribeInstanceStatus</a>.
+        /// The amount of time, in second, that Auto Scaling waits before checking the health
+        /// status of an instance. The grace period begins when the instance passes System Status
+        /// and the Instance Status checks from Amazon EC2. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeInstanceStatus.html">DescribeInstanceStatus</a>.
         /// 
         /// </para>
         /// </summary>
@@ -171,7 +200,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
-        ///  The name of the launch configuration. 
+        /// The name of the launch configuration.
         /// </para>
         /// </summary>
         public string LaunchConfigurationName
@@ -189,7 +218,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        ///  The maximum size of the Auto Scaling group. 
+        /// The maximum size of the Auto Scaling group.
         /// </para>
         /// </summary>
         public int MaxSize
@@ -207,7 +236,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        ///  The minimum size of the Auto Scaling group. 
+        /// The minimum size of the Auto Scaling group.
         /// </para>
         /// </summary>
         public int MinSize
@@ -225,9 +254,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PlacementGroup. 
         /// <para>
-        ///  The name of the cluster placement group, if applicable. For more information, go
-        /// to <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
-        /// Using Cluster Instances</a> in the Amazon EC2 User Guide. 
+        /// The name of the placement group into which you'll launch your instances, if any. For
+        /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// Groups</a>.
         /// </para>
         /// </summary>
         public string PlacementGroup
@@ -251,10 +280,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        ///  For more information on creating a termination policy for your Auto Scaling group,
-        /// go to <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
-        /// Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto Scaling Developer
-        /// Guide</i>. 
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Choosing
+        /// a Termination Policy for Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public List<string> TerminationPolicies
@@ -283,10 +311,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        ///  For more information on creating your Auto Scaling group in Amazon VPC by specifying
-        /// subnets, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Launch
-        /// Auto Scaling Instances into Amazon VPC</a> in the the <i>Auto Scaling Developer Guide</i>.
-        /// 
+        ///  For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
+        /// Scaling and Amazon VPC</a> in the <i>Auto Scaling Developer Guide</i>. 
         /// </para>
         /// </summary>
         public string VPCZoneIdentifier

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The output of the <a>DescribeScalingProcessTypes</a> action.
+    /// 
     /// </summary>
     public partial class DescribeScalingProcessTypesResult : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Processes. 
         /// <para>
-        ///  A list of <a>ProcessType</a> names. 
+        /// The names of the process types.
         /// </para>
         /// </summary>
         public List<ProcessType> Processes
