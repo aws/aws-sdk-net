@@ -28,32 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Contains the output from the PollForTask action.
+    /// The attributes allowed or specified with a parameter object.
     /// </summary>
-    public partial class PollForTaskResult : AmazonWebServiceResponse
+    public partial class ParameterAttribute
     {
-        private TaskObject _taskObject;
+        private string _key;
+        private string _stringValue;
 
         /// <summary>
-        /// Gets and sets the property TaskObject. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// An instance of <a>TaskObject</a>. The returned object contains all the information
-        /// needed to complete the task that is being assigned to the task runner. One of the
-        /// fields returned in this object is taskId, which contains an identifier for the task
-        /// being assigned. The calling task runner uses taskId in subsequent calls to <a>ReportTaskProgress</a>
-        /// and <a>SetTaskStatus</a>.
+        /// The field identifier.
         /// </para>
         /// </summary>
-        public TaskObject TaskObject
+        public string Key
         {
-            get { return this._taskObject; }
-            set { this._taskObject = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if TaskObject property is set
-        internal bool IsSetTaskObject()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._taskObject != null;
+            return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StringValue. 
+        /// <para>
+        /// The field value, expressed as a String.
+        /// </para>
+        /// </summary>
+        public string StringValue
+        {
+            get { return this._stringValue; }
+            set { this._stringValue = value; }
+        }
+
+        // Check to see if StringValue property is set
+        internal bool IsSetStringValue()
+        {
+            return this._stringValue != null;
         }
 
     }

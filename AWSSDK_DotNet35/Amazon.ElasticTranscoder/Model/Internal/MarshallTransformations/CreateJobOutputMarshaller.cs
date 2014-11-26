@@ -77,6 +77,17 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetEncryption())
+            {
+                context.Writer.WritePropertyName("Encryption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EncryptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Encryption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("Key");
@@ -99,6 +110,17 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("SegmentDuration");
                 context.Writer.Write(requestObject.SegmentDuration);
+            }
+
+            if(requestObject.IsSetThumbnailEncryption())
+            {
+                context.Writer.WritePropertyName("ThumbnailEncryption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EncryptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.ThumbnailEncryption, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetThumbnailPattern())

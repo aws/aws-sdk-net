@@ -34,6 +34,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         private string _aspectRatio;
         private string _container;
+        private Encryption _encryption;
         private string _frameRate;
         private string _interlaced;
         private string _key;
@@ -95,6 +96,26 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetContainer()
         {
             return this._container != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Encryption. 
+        /// <para>
+        /// The encryption settings, if any, that are used for decrypting your input files. If
+        /// your input file is encrypted, you must specify the mode that Elastic Transcoder will
+        /// use to decrypt your file.
+        /// </para>
+        /// </summary>
+        public Encryption Encryption
+        {
+            get { return this._encryption; }
+            set { this._encryption = value; }
+        }
+
+        // Check to see if Encryption property is set
+        internal bool IsSetEncryption()
+        {
+            return this._encryption != null;
         }
 
         /// <summary>

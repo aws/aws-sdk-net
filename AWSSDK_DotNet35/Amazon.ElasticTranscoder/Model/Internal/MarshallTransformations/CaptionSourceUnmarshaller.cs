@@ -54,6 +54,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Encryption", targetDepth))
+                {
+                    var unmarshaller = EncryptionUnmarshaller.Instance;
+                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Key", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

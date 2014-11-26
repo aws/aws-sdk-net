@@ -33,21 +33,16 @@ namespace Amazon.DataPipeline
     /// <summary>
     /// Implementation for accessing DataPipeline
     ///
-    /// This is the <i>AWS Data Pipeline API Reference</i>. This guide provides descriptions
-    /// and samples of the AWS Data Pipeline API. 
+    /// AWS Data Pipeline is a web service that configures and manages a data-driven workflow
+    /// called a pipeline. AWS Data Pipeline handles the details of scheduling and ensuring
+    /// that data dependencies are met so your application can focus on processing the data.
     /// 
     ///  
     /// <para>
-    ///  AWS Data Pipeline is a web service that configures and manages a data-driven workflow
-    /// called a pipeline. AWS Data Pipeline handles the details of scheduling and ensuring
-    /// that data dependencies are met so your application can focus on processing the data.
-    /// </para>
-    ///  
-    /// <para>
-    ///  The AWS Data Pipeline API implements two main sets of functionality. The first set
-    /// of actions configure the pipeline in the web service. You call these actions to create
-    /// a pipeline and define data sources, schedules, dependencies, and the transforms to
-    /// be performed on the data. 
+    ///  The AWS Data Pipeline SDKs and CLI implements two main sets of functionality. The
+    /// first set of actions configure the pipeline in the web service. You perform these
+    /// actions to create a pipeline and define data sources, schedules, dependencies, and
+    /// the transforms to be performed on the data. 
     /// </para>
     ///  
     /// <para>
@@ -61,19 +56,12 @@ namespace Amazon.DataPipeline
     /// </para>
     ///  
     /// <para>
-    ///  AWS Data Pipeline provides an open-source implementation of a task runner called
-    /// AWS Data Pipeline Task Runner. AWS Data Pipeline Task Runner provides logic for common
-    /// data management scenarios, such as performing database queries and running data analysis
+    ///  AWS Data Pipeline provides a JAR implementation of a task runner called AWS Data
+    /// Pipeline Task Runner. AWS Data Pipeline Task Runner provides logic for common data
+    /// management scenarios, such as performing database queries and running data analysis
     /// using Amazon Elastic MapReduce (Amazon EMR). You can use AWS Data Pipeline Task Runner
     /// as your task runner, or you can write your own task runner to provide custom data
     /// management. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  The AWS Data Pipeline API uses the Signature Version 4 protocol for signing requests.
-    /// For more information about how to sign a request with this protocol, see <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-    /// Version 4 Signing Process</a>. In the code examples in this reference, the Signature
-    /// Version 4 Request parameters are represented as AuthParams. 
     /// </para>
     /// </summary>
     public partial class AmazonDataPipelineClient : AmazonServiceClient, IAmazonDataPipeline
@@ -261,7 +249,8 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// Validates a pipeline and initiates processing. If the pipeline does not pass validation,
-        /// activation fails. 
+        /// activation fails. You cannot perform this operation on FINISHED pipelines and attempting
+        /// to do so will return an InvalidRequestException. 
         /// 
         ///  
         /// <para>
@@ -924,7 +913,8 @@ namespace Amazon.DataPipeline
         /// pipeline. Changes to the pipeline are saved unless one of the following three validation
         /// errors exists in the pipeline. <ol> <li>An object is missing a name or identifier
         /// field.</li> <li>A string or reference field is empty.</li> <li>The number of objects
-        /// in the pipeline exceeds the maximum allowed objects.</li> </ol> 
+        /// in the pipeline exceeds the maximum allowed objects.</li> <li>The pipeline is in a
+        /// FINISHED state.</li> </ol> 
         /// </para>
         ///  
         /// <para>
@@ -1218,7 +1208,9 @@ namespace Amazon.DataPipeline
         /// <summary>
         /// Requests that the status of an array of physical or logical pipeline objects be updated
         /// in the pipeline. This update may not occur immediately, but is eventually consistent.
-        /// The status that can be set depends on the type of object.
+        /// The status that can be set depends on the type of object, e.g. DataNode or Activity.
+        /// You cannot perform this operation on FINISHED pipelines and attempting to do so will
+        /// return an InvalidRequestException.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetStatus service method.</param>
         /// 

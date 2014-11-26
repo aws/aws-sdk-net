@@ -56,6 +56,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAwsKmsKeyArn())
+                {
+                    context.Writer.WritePropertyName("AwsKmsKeyArn");
+                    context.Writer.Write(publicRequest.AwsKmsKeyArn);
+                }
+
                 if(publicRequest.IsSetContentConfig())
                 {
                     context.Writer.WritePropertyName("ContentConfig");

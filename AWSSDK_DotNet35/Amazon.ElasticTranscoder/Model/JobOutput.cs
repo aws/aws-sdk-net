@@ -39,6 +39,7 @@ namespace Amazon.ElasticTranscoder.Model
         private Captions _captions;
         private List<Clip> _composition = new List<Clip>();
         private long? _duration;
+        private Encryption _encryption;
         private int? _height;
         private string _id;
         private string _key;
@@ -47,6 +48,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string _segmentDuration;
         private string _status;
         private string _statusDetail;
+        private Encryption _thumbnailEncryption;
         private string _thumbnailPattern;
         private List<JobWatermark> _watermarks = new List<JobWatermark>();
         private int? _width;
@@ -190,6 +192,27 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetDuration()
         {
             return this._duration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Encryption. 
+        /// <para>
+        /// The encryption settings, if any, that you want Elastic Transcoder to apply to your
+        /// output files. If you choose to use encryption, you must specify a mode to use. If
+        /// you choose not to use encryption, Elastic Transcoder will write an unencrypted file
+        /// to your Amazon S3 bucket.
+        /// </para>
+        /// </summary>
+        public Encryption Encryption
+        {
+            get { return this._encryption; }
+            set { this._encryption = value; }
+        }
+
+        // Check to see if Encryption property is set
+        internal bool IsSetEncryption()
+        {
+            return this._encryption != null;
         }
 
         /// <summary>
@@ -385,6 +408,25 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetStatusDetail()
         {
             return this._statusDetail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThumbnailEncryption. 
+        /// <para>
+        /// The encryption settings, if any, that you want Elastic Transcoder to apply to your
+        /// thumbnail.
+        /// </para>
+        /// </summary>
+        public Encryption ThumbnailEncryption
+        {
+            get { return this._thumbnailEncryption; }
+            set { this._thumbnailEncryption = value; }
+        }
+
+        // Check to see if ThumbnailEncryption property is set
+        internal bool IsSetThumbnailEncryption()
+        {
+            return this._thumbnailEncryption != null;
         }
 
         /// <summary>

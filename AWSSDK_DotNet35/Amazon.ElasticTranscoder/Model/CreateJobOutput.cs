@@ -35,10 +35,12 @@ namespace Amazon.ElasticTranscoder.Model
         private JobAlbumArt _albumArt;
         private Captions _captions;
         private List<Clip> _composition = new List<Clip>();
+        private Encryption _encryption;
         private string _key;
         private string _presetId;
         private string _rotate;
         private string _segmentDuration;
+        private Encryption _thumbnailEncryption;
         private string _thumbnailPattern;
         private List<JobWatermark> _watermarks = new List<JobWatermark>();
 
@@ -168,6 +170,27 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Encryption. 
+        /// <para>
+        /// You can specify encryption settings for any output files that you want to use for
+        /// a transcoding job. This includes the output file and any watermarks, thumbnails, album
+        /// art, or captions that you want to use. You must specify encryption settings for each
+        /// file individually.
+        /// </para>
+        /// </summary>
+        public Encryption Encryption
+        {
+            get { return this._encryption; }
+            set { this._encryption = value; }
+        }
+
+        // Check to see if Encryption property is set
+        internal bool IsSetEncryption()
+        {
+            return this._encryption != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
         ///  The name to assign to the transcoded file. Elastic Transcoder saves the file in the
@@ -265,6 +288,25 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetSegmentDuration()
         {
             return this._segmentDuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThumbnailEncryption. 
+        /// <para>
+        /// The encryption settings, if any, that you want Elastic Transcoder to apply to your
+        /// thumbnail.
+        /// </para>
+        /// </summary>
+        public Encryption ThumbnailEncryption
+        {
+            get { return this._thumbnailEncryption; }
+            set { this._thumbnailEncryption = value; }
+        }
+
+        // Check to see if ThumbnailEncryption property is set
+        internal bool IsSetThumbnailEncryption()
+        {
+            return this._thumbnailEncryption != null;
         }
 
         /// <summary>

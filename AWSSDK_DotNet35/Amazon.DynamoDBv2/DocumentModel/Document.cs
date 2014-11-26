@@ -215,6 +215,50 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region DynamoDB conversion
 
         /// <summary>
+        /// <para>
+        /// Converts the current Document into a matching JSON string.
+        /// </para>
+        /// <para>
+        /// DynamoDB types are a superset of JSON types, thus the following DynamoDB cannot
+        /// be properly represented as JSON data:
+        ///  PrimitiveList (SS, NS, BS types) - these sets will be converted to JSON arrays
+        ///  Binary Primitive (B type) - binary data will be converted to Base64 strings
+        /// </para>
+        /// <para>
+        /// If the resultant JSON is passed to Document.FromJson, the binary values will be
+        /// treated as Base64 strings. Invoke Document.DecodeBase64Attributes to decode these
+        /// strings into binary data.
+        /// </para>
+        /// </summary>
+        /// <returns>JSON string corresponding to the current Document.</returns>
+        public string ToJson()
+        {
+            return JsonUtils.ToJson(this, prettyPrint: false);
+        }
+
+        /// <summary>
+        /// <para>
+        /// Converts the current Document into a matching pretty JSON string.
+        /// </para>
+        /// <para>
+        /// DynamoDB types are a superset of JSON types, thus the following DynamoDB cannot
+        /// be properly represented as JSON data:
+        ///  PrimitiveList (SS, NS, BS types) - these sets will be converted to JSON arrays
+        ///  Binary Primitive (B type) - binary data will be converted to Base64 strings
+        /// </para>
+        /// <para>
+        /// If the resultant JSON is passed to Document.FromJson, the binary values will be
+        /// treated as Base64 strings. Invoke Document.DecodeBase64Attributes to decode these
+        /// strings into binary data.
+        /// </para>
+        /// </summary>
+        /// <returns>JSON string corresponding to the current Document.</returns>
+        public string ToJsonPretty()
+        {
+            return JsonUtils.ToJson(this, prettyPrint: true);
+        }
+
+        /// <summary>
         /// Creates a map of attribute names mapped to AttributeValue objects.
         /// Converts .NET types using the conversion specified by AWSConfigs.DynamoDBConfig.ConversionSchema
         /// </summary>
@@ -314,6 +358,24 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public List<String> GetAttributeNames()
         {
             return new List<string>(this.currentValues.Keys);
+        }
+
+        /// <summary>
+        /// <para>
+        /// Decodes root-level Base64-encoded strings to their binary representations.
+        /// Use this method if the Document was constructed from JSON that contains
+        /// base64-encoded binary values, which result from calling ToJson on a Document
+        /// with binary data.
+        /// </para>
+        /// <para>
+        /// Individual strings become binary data.
+        /// List and sets of Base64-encoded strings become lists and sets of binary data.
+        /// </para>
+        /// </summary>
+        /// <param name="attributeNames">Names of root-level attributes to decode.</param>
+        public void DecodeBase64Attributes(params string[] attributeNames)
+        {
+            JsonUtils.DecodeBase64Attributes(this, attributeNames);
         }
 
         #endregion
@@ -489,6 +551,23 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             doc.CommitChanges();
             return doc;
+        }
+
+        /// <summary>
+        /// Creates a document from a JSON string.
+        /// The conversion is as follows:
+        ///  Objects are converted to DynamoDB M types.
+        ///  Arrays are converted to DynamoDB L types.
+        ///  Boolean types are converted to DynamoDB BOOL types.
+        ///  Null values are converted to DynamoDB NULL types.
+        ///  Numerics are converted to DynamoDB N types.
+        ///  Strings are converted to DynamoDB S types.
+        /// </summary>
+        /// <param name="json">JSON string.</param>
+        /// <returns>Document representing the JSON data.</returns>
+        public static Document FromJson(string json)
+        {
+            return JsonUtils.FromJson(json);
         }
         
         #endregion

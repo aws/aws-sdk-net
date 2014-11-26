@@ -51,6 +51,17 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Container);
             }
 
+            if(requestObject.IsSetEncryption())
+            {
+                context.Writer.WritePropertyName("Encryption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EncryptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Encryption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFrameRate())
             {
                 context.Writer.WritePropertyName("FrameRate");

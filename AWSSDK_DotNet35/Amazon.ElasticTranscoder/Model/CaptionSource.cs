@@ -32,10 +32,30 @@ namespace Amazon.ElasticTranscoder.Model
     /// </summary>
     public partial class CaptionSource
     {
+        private Encryption _encryption;
         private string _key;
         private string _label;
         private string _language;
         private string _timeOffset;
+
+        /// <summary>
+        /// Gets and sets the property Encryption. 
+        /// <para>
+        /// The encryption settings, if any, that you want Elastic Transcoder to apply to your
+        /// caption sources.
+        /// </para>
+        /// </summary>
+        public Encryption Encryption
+        {
+            get { return this._encryption; }
+            set { this._encryption = value; }
+        }
+
+        // Check to see if Encryption property is set
+        internal bool IsSetEncryption()
+        {
+            return this._encryption != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Key. 

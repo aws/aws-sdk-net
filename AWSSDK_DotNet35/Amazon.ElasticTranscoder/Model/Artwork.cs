@@ -46,6 +46,7 @@ namespace Amazon.ElasticTranscoder.Model
     public partial class Artwork
     {
         private string _albumArtFormat;
+        private Encryption _encryption;
         private string _inputKey;
         private string _maxHeight;
         private string _maxWidth;
@@ -68,6 +69,25 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetAlbumArtFormat()
         {
             return this._albumArtFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Encryption. 
+        /// <para>
+        /// The encryption settings, if any, that you want Elastic Transcoder to apply to your
+        /// artwork.
+        /// </para>
+        /// </summary>
+        public Encryption Encryption
+        {
+            get { return this._encryption; }
+            set { this._encryption = value; }
+        }
+
+        // Check to see if Encryption property is set
+        internal bool IsSetEncryption()
+        {
+            return this._encryption != null;
         }
 
         /// <summary>

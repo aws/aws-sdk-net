@@ -376,6 +376,19 @@ namespace ThirdParty.Json.LitJson
             context.ExpectingValue = false;
         }
 
+        public void WriteRaw(string str)
+        {
+            DoValidation(Condition.Value);
+            PutNewline();
+
+            if (str == null)
+                Put("null");
+            else
+                Put(str);
+
+            context.ExpectingValue = false;
+        }
+
         [CLSCompliant(false)]
         public void Write (ulong number)
         {

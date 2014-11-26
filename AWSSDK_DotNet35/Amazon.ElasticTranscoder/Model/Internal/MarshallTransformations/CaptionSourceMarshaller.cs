@@ -39,6 +39,17 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
     {
         public void Marshall(CaptionSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEncryption())
+            {
+                context.Writer.WritePropertyName("Encryption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EncryptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Encryption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("Key");

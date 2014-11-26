@@ -32,7 +32,45 @@ namespace Amazon.DataPipeline.Model
     /// </summary>
     public partial class GetPipelineDefinitionResult : AmazonWebServiceResponse
     {
+        private List<ParameterObject> _parameterObjects = new List<ParameterObject>();
+        private List<ParameterValue> _parameterValues = new List<ParameterValue>();
         private List<PipelineObject> _pipelineObjects = new List<PipelineObject>();
+
+        /// <summary>
+        /// Gets and sets the property ParameterObjects. 
+        /// <para>
+        /// Returns a list of parameter objects used in the pipeline definition.
+        /// </para>
+        /// </summary>
+        public List<ParameterObject> ParameterObjects
+        {
+            get { return this._parameterObjects; }
+            set { this._parameterObjects = value; }
+        }
+
+        // Check to see if ParameterObjects property is set
+        internal bool IsSetParameterObjects()
+        {
+            return this._parameterObjects != null && this._parameterObjects.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParameterValues. 
+        /// <para>
+        /// Returns a list of parameter values used in the pipeline definition.
+        /// </para>
+        /// </summary>
+        public List<ParameterValue> ParameterValues
+        {
+            get { return this._parameterValues; }
+            set { this._parameterValues = value; }
+        }
+
+        // Check to see if ParameterValues property is set
+        internal bool IsSetParameterValues()
+        {
+            return this._parameterValues != null && this._parameterValues.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property PipelineObjects. 

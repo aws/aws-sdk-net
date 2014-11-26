@@ -29,15 +29,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// </summary>
     public class PrimitiveList : DynamoDBEntry, IEquatable<PrimitiveList>
     {
-        //private static DynamoDBEntryConversion conversion = CreateConversion();
-        //private static DynamoDBEntryConversion CreateConversion()
-        //{
-        //    var conversion = new DynamoDBEntryConversion();
-        //    conversion.AddConverter(new PrimitiveCollectionConverterV1());
-
-        //    return conversion;
-        //}
-
         private static DynamoDBEntryConversion V1Conversion = DynamoDBEntryConversion.V1;
 
         #region Constructors

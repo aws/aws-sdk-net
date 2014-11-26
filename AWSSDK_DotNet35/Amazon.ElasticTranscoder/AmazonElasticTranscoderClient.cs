@@ -223,6 +223,10 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// The CancelJob operation cancels an unfinished job.
+        /// 
+        ///  <note>You can only cancel a job that has a status of <code>Submitted</code>. To prevent
+        /// a pipeline from starting to process a job while you're getting the job identifier,
+        /// use <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
         /// 
@@ -614,6 +618,12 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// The DeletePreset operation removes a preset that you've added in an AWS region.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can't delete the default presets that are included with Elastic Transcoder.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePreset service method.</param>
         /// 

@@ -34,8 +34,46 @@ namespace Amazon.DataPipeline.Model
     /// </summary>
     public partial class ValidatePipelineDefinitionRequest : AmazonDataPipelineRequest
     {
+        private List<ParameterObject> _parameterObjects = new List<ParameterObject>();
+        private List<ParameterValue> _parameterValues = new List<ParameterValue>();
         private string _pipelineId;
         private List<PipelineObject> _pipelineObjects = new List<PipelineObject>();
+
+        /// <summary>
+        /// Gets and sets the property ParameterObjects. 
+        /// <para>
+        /// A list of parameter objects used with the pipeline.
+        /// </para>
+        /// </summary>
+        public List<ParameterObject> ParameterObjects
+        {
+            get { return this._parameterObjects; }
+            set { this._parameterObjects = value; }
+        }
+
+        // Check to see if ParameterObjects property is set
+        internal bool IsSetParameterObjects()
+        {
+            return this._parameterObjects != null && this._parameterObjects.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParameterValues. 
+        /// <para>
+        /// A list of parameter values used with the pipeline.
+        /// </para>
+        /// </summary>
+        public List<ParameterValue> ParameterValues
+        {
+            get { return this._parameterValues; }
+            set { this._parameterValues = value; }
+        }
+
+        // Check to see if ParameterValues property is set
+        internal bool IsSetParameterValues()
+        {
+            return this._parameterValues != null && this._parameterValues.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property PipelineId. 

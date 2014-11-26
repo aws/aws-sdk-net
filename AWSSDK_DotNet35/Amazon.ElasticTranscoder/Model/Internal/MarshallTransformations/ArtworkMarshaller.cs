@@ -45,6 +45,17 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AlbumArtFormat);
             }
 
+            if(requestObject.IsSetEncryption())
+            {
+                context.Writer.WritePropertyName("Encryption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EncryptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Encryption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInputKey())
             {
                 context.Writer.WritePropertyName("InputKey");

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,29 +25,38 @@ using System.IO;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
-namespace Amazon.ElasticTranscoder.Model
+namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Container for the parameters to the CancelJob operation.
-    /// The CancelJob operation cancels an unfinished job.
-    /// 
-    ///  <note>You can only cancel a job that has a status of <code>Submitted</code>. To prevent
-    /// a pipeline from starting to process a job while you're getting the job identifier,
-    /// use <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</note>
+    /// Contains information about a parameter object.
     /// </summary>
-    public partial class CancelJobRequest : AmazonElasticTranscoderRequest
+    public partial class ParameterObject
     {
+        private List<ParameterAttribute> _attributes = new List<ParameterAttribute>();
         private string _id;
+
+        /// <summary>
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// The attributes of the parameter object.
+        /// </para>
+        /// </summary>
+        public List<ParameterAttribute> Attributes
+        {
+            get { return this._attributes; }
+            set { this._attributes = value; }
+        }
+
+        // Check to see if Attributes property is set
+        internal bool IsSetAttributes()
+        {
+            return this._attributes != null && this._attributes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the job that you want to cancel. 
-        /// </para>
-        ///  
-        /// <para>
-        /// To get a list of the jobs (including their <code>jobId</code>) that have a status
-        /// of <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
+        /// Identifier of the parameter object. 
         /// </para>
         /// </summary>
         public string Id

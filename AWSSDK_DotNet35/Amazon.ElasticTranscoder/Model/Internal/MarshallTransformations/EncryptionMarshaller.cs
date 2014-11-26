@@ -33,38 +33,39 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// JobWatermark Marshaller
+    /// Encryption Marshaller
     /// </summary>       
-    public class JobWatermarkMarshaller : IRequestMarshaller<JobWatermark, JsonMarshallerContext> 
+    public class EncryptionMarshaller : IRequestMarshaller<Encryption, JsonMarshallerContext> 
     {
-        public void Marshall(JobWatermark requestObject, JsonMarshallerContext context)
+        public void Marshall(Encryption requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEncryption())
+            if(requestObject.IsSetInitializationVector())
             {
-                context.Writer.WritePropertyName("Encryption");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EncryptionMarshaller.Instance;
-                marshaller.Marshall(requestObject.Encryption, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("InitializationVector");
+                context.Writer.Write(requestObject.InitializationVector);
             }
 
-            if(requestObject.IsSetInputKey())
+            if(requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("InputKey");
-                context.Writer.Write(requestObject.InputKey);
+                context.Writer.WritePropertyName("Key");
+                context.Writer.Write(requestObject.Key);
             }
 
-            if(requestObject.IsSetPresetWatermarkId())
+            if(requestObject.IsSetKeyMd5())
             {
-                context.Writer.WritePropertyName("PresetWatermarkId");
-                context.Writer.Write(requestObject.PresetWatermarkId);
+                context.Writer.WritePropertyName("KeyMd5");
+                context.Writer.Write(requestObject.KeyMd5);
+            }
+
+            if(requestObject.IsSetMode())
+            {
+                context.Writer.WritePropertyName("Mode");
+                context.Writer.Write(requestObject.Mode);
             }
 
         }
 
-        public readonly static JobWatermarkMarshaller Instance = new JobWatermarkMarshaller();
+        public readonly static EncryptionMarshaller Instance = new EncryptionMarshaller();
 
     }
 }

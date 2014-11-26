@@ -33,6 +33,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// </summary>
     public partial class CreatePipelineRequest : AmazonElasticTranscoderRequest
     {
+        private string _awsKmsKeyArn;
         private PipelineOutputConfig _contentConfig;
         private string _inputBucket;
         private string _name;
@@ -40,6 +41,32 @@ namespace Amazon.ElasticTranscoder.Model
         private string _outputBucket;
         private string _role;
         private PipelineOutputConfig _thumbnailConfig;
+
+        /// <summary>
+        /// Gets and sets the property AwsKmsKeyArn. 
+        /// <para>
+        /// The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>,
+        /// you don't need to provide a key with your job because a default key, known as an AWS-KMS
+        /// key, is created for you automatically. You need to provide an AWS-KMS key only if
+        /// you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code>
+        /// of <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.
+        /// </para>
+        /// </summary>
+        public string AwsKmsKeyArn
+        {
+            get { return this._awsKmsKeyArn; }
+            set { this._awsKmsKeyArn = value; }
+        }
+
+        // Check to see if AwsKmsKeyArn property is set
+        internal bool IsSetAwsKmsKeyArn()
+        {
+            return this._awsKmsKeyArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContentConfig. 

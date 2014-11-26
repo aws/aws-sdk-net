@@ -60,6 +60,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     unmarshalledObject.AlbumArtFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Encryption", targetDepth))
+                {
+                    var unmarshaller = EncryptionUnmarshaller.Instance;
+                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InputKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

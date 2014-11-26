@@ -30,7 +30,8 @@ namespace Amazon.DataPipeline.Model
     /// <summary>
     /// Container for the parameters to the ActivatePipeline operation.
     /// Validates a pipeline and initiates processing. If the pipeline does not pass validation,
-    /// activation fails. 
+    /// activation fails. You cannot perform this operation on FINISHED pipelines and attempting
+    /// to do so will return an InvalidRequestException. 
     /// 
     ///  
     /// <para>
@@ -41,7 +42,26 @@ namespace Amazon.DataPipeline.Model
     /// </summary>
     public partial class ActivatePipelineRequest : AmazonDataPipelineRequest
     {
+        private List<ParameterValue> _parameterValues = new List<ParameterValue>();
         private string _pipelineId;
+
+        /// <summary>
+        /// Gets and sets the property ParameterValues. 
+        /// <para>
+        /// Returns a list of parameter values to pass to the pipeline at activation.
+        /// </para>
+        /// </summary>
+        public List<ParameterValue> ParameterValues
+        {
+            get { return this._parameterValues; }
+            set { this._parameterValues = value; }
+        }
+
+        // Check to see if ParameterValues property is set
+        internal bool IsSetParameterValues()
+        {
+            return this._parameterValues != null && this._parameterValues.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property PipelineId. 

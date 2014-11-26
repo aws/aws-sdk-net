@@ -43,7 +43,26 @@ namespace Amazon.DataPipeline.Model
     /// </summary>
     public partial class ReportTaskProgressRequest : AmazonDataPipelineRequest
     {
+        private List<Field> _fields = new List<Field>();
         private string _taskId;
+
+        /// <summary>
+        /// Gets and sets the property Fields. 
+        /// <para>
+        /// Key-value pairs that define the properties of the ReportTaskProgressInput object.
+        /// </para>
+        /// </summary>
+        public List<Field> Fields
+        {
+            get { return this._fields; }
+            set { this._fields = value; }
+        }
+
+        // Check to see if Fields property is set
+        internal bool IsSetFields()
+        {
+            return this._fields != null && this._fields.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property TaskId. 

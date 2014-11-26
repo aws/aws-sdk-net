@@ -102,7 +102,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Interval. 
         /// <para>
-        /// The number of seconds between thumbnails. Specify an integer value.
+        /// The approximate number of seconds between thumbnails. Specify an integer value.
         /// </para>
         /// </summary>
         public string Interval

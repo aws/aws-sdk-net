@@ -78,6 +78,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Encryption", targetDepth))
+                {
+                    var unmarshaller = EncryptionUnmarshaller.Instance;
+                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Height", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -124,6 +130,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusDetail = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ThumbnailEncryption", targetDepth))
+                {
+                    var unmarshaller = EncryptionUnmarshaller.Instance;
+                    unmarshalledObject.ThumbnailEncryption = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ThumbnailPattern", targetDepth))

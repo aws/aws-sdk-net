@@ -57,6 +57,38 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetParameterObjects())
+                {
+                    context.Writer.WritePropertyName("parameterObjects");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestParameterObjectsListValue in publicRequest.ParameterObjects)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ParameterObjectMarshaller.Instance;
+                        marshaller.Marshall(publicRequestParameterObjectsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetParameterValues())
+                {
+                    context.Writer.WritePropertyName("parameterValues");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestParameterValuesListValue in publicRequest.ParameterValues)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ParameterValueMarshaller.Instance;
+                        marshaller.Marshall(publicRequestParameterValuesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetPipelineId())
                 {
                     context.Writer.WritePropertyName("pipelineId");

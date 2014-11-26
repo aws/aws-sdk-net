@@ -34,54 +34,30 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobInput Object
+    /// Response Unmarshaller for Encryption Object
     /// </summary>  
-    public class JobInputUnmarshaller : IUnmarshaller<JobInput, XmlUnmarshallerContext>, IUnmarshaller<JobInput, JsonUnmarshallerContext>
+    public class EncryptionUnmarshaller : IUnmarshaller<Encryption, XmlUnmarshallerContext>, IUnmarshaller<Encryption, JsonUnmarshallerContext>
     {
-        JobInput IUnmarshaller<JobInput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Encryption IUnmarshaller<Encryption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
-        public JobInput Unmarshall(JsonUnmarshallerContext context)
+        public Encryption Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JobInput unmarshalledObject = new JobInput();
+            Encryption unmarshalledObject = new Encryption();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AspectRatio", targetDepth))
+                if (context.TestExpression("InitializationVector", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AspectRatio = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Container", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Container = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Encryption", targetDepth))
-                {
-                    var unmarshaller = EncryptionUnmarshaller.Instance;
-                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FrameRate", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FrameRate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Interlaced", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Interlaced = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InitializationVector = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Key", targetDepth))
@@ -90,10 +66,16 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Resolution", targetDepth))
+                if (context.TestExpression("KeyMd5", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Resolution = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyMd5 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Mode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -102,9 +84,9 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         }
 
 
-        private static JobInputUnmarshaller _instance = new JobInputUnmarshaller();        
+        private static EncryptionUnmarshaller _instance = new EncryptionUnmarshaller();        
 
-        public static JobInputUnmarshaller Instance
+        public static EncryptionUnmarshaller Instance
         {
             get
             {

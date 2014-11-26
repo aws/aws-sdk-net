@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,29 +25,20 @@ using System.IO;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
-namespace Amazon.ElasticTranscoder.Model
+namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Container for the parameters to the CancelJob operation.
-    /// The CancelJob operation cancels an unfinished job.
-    /// 
-    ///  <note>You can only cancel a job that has a status of <code>Submitted</code>. To prevent
-    /// a pipeline from starting to process a job while you're getting the job identifier,
-    /// use <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</note>
+    /// A value or list of parameter values.
     /// </summary>
-    public partial class CancelJobRequest : AmazonElasticTranscoderRequest
+    public partial class ParameterValue
     {
         private string _id;
+        private string _stringValue;
 
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the job that you want to cancel. 
-        /// </para>
-        ///  
-        /// <para>
-        /// To get a list of the jobs (including their <code>jobId</code>) that have a status
-        /// of <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
+        /// Identifier of the parameter value.
         /// </para>
         /// </summary>
         public string Id
@@ -60,6 +51,24 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StringValue. 
+        /// <para>
+        /// The field value, expressed as a String.
+        /// </para>
+        /// </summary>
+        public string StringValue
+        {
+            get { return this._stringValue; }
+            set { this._stringValue = value; }
+        }
+
+        // Check to see if StringValue property is set
+        internal bool IsSetStringValue()
+        {
+            return this._stringValue != null;
         }
 
     }

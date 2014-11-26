@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
+ * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -24,52 +24,46 @@ using System.Net;
 using System.Text;
 using System.Xml.Serialization;
 
-using Amazon.ElasticTranscoder.Model;
+using Amazon.DataPipeline.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
-namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CaptionFormat Object
+    /// Response Unmarshaller for ParameterValue Object
     /// </summary>  
-    public class CaptionFormatUnmarshaller : IUnmarshaller<CaptionFormat, XmlUnmarshallerContext>, IUnmarshaller<CaptionFormat, JsonUnmarshallerContext>
+    public class ParameterValueUnmarshaller : IUnmarshaller<ParameterValue, XmlUnmarshallerContext>, IUnmarshaller<ParameterValue, JsonUnmarshallerContext>
     {
-        CaptionFormat IUnmarshaller<CaptionFormat, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ParameterValue IUnmarshaller<ParameterValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
-        public CaptionFormat Unmarshall(JsonUnmarshallerContext context)
+        public ParameterValue Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CaptionFormat unmarshalledObject = new CaptionFormat();
+            ParameterValue unmarshalledObject = new ParameterValue();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Encryption", targetDepth))
-                {
-                    var unmarshaller = EncryptionUnmarshaller.Instance;
-                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Format", targetDepth))
+                if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Pattern", targetDepth))
+                if (context.TestExpression("stringValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Pattern = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StringValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -78,9 +72,9 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         }
 
 
-        private static CaptionFormatUnmarshaller _instance = new CaptionFormatUnmarshaller();        
+        private static ParameterValueUnmarshaller _instance = new ParameterValueUnmarshaller();        
 
-        public static CaptionFormatUnmarshaller Instance
+        public static ParameterValueUnmarshaller Instance
         {
             get
             {

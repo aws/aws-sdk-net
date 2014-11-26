@@ -78,6 +78,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
               ]
             }";
 
+        // To test specifying KMS key, replace this value with a valid KMS Key Arn
+        private string kmsKeyArn = null;
         static IAmazonS3 s3Client;
         static IAmazonIdentityManagementService iamClient;
 
@@ -104,8 +106,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
-
-        [TestCategory("ElasticTranscoder")]
         [TestMethod]
         [TestCategory("ElasticTranscoder")]
         public void TestListPresets()
@@ -114,7 +114,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.IsTrue(presets.Count > 0);
         }
 
-        [TestCategory("ElasticTranscoder")]
         [TestMethod]
         [TestCategory("ElasticTranscoder")]
         public void TestPipelineOperations()
@@ -157,7 +156,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                             Progressing = string.Empty,
                             Warning = string.Empty
                         },
-                        Role = role.Arn
+                        Role = role.Arn,
+                        AwsKmsKeyArn = kmsKeyArn
                     }).Pipeline;
                 Assert.IsNotNull(pipeline);
                 Assert.AreEqual(pipeline.Name, pipelineName);
@@ -178,7 +178,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     new UpdatePipelineStatusRequest
                     {
                         Id = pipeline.Id,
-                        Status = "Paused" 
+                        Status = "Paused"
                     });
 
                 // Get pipeline

@@ -57,6 +57,22 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFields())
+                {
+                    context.Writer.WritePropertyName("fields");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFieldsListValue in publicRequest.Fields)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FieldMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFieldsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTaskId())
                 {
                     context.Writer.WritePropertyName("taskId");

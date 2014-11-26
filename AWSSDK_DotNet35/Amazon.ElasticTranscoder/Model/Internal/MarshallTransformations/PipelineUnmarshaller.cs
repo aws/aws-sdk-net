@@ -60,6 +60,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsKmsKeyArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AwsKmsKeyArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ContentConfig", targetDepth))
                 {
                     var unmarshaller = PipelineOutputConfigUnmarshaller.Instance;
