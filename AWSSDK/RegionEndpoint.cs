@@ -97,6 +97,8 @@ namespace Amazon
         /// </summary>
         public static readonly RegionEndpoint USGovCloudWest1 = new RegionEndpoint("us-gov-west-1", "US GovCloud West (Oregon)");
 
+
+
         private static Dictionary<string, RegionEndpoint> hashBySystemName;
 
         static RegionEndpoint()
@@ -120,7 +122,13 @@ namespace Amazon
         /// </summary>
         public static IEnumerable<RegionEndpoint> EnumerableAllRegions
         {
-            get { return hashBySystemName.Values; }
+            get 
+            {
+                if (!RegionEndpoint.loaded)
+                    RegionEndpoint.LoadEndpointDefinitions();
+
+                return hashBySystemName.Values; 
+            }
         }
 
         /// <summary>
