@@ -31,7 +31,13 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the UpdateAccountPasswordPolicy operation.
     /// Updates the password policy settings for the AWS account.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    ///  This action does not support partial updates. No parameters are required, but if
+    /// you do not specify a parameter, that parameter's value reverts to its default value.
+    /// See the <b>Request Parameters</b> section for each parameter's default value. 
+    /// </para>
+    ///  </note> 
     /// <para>
     ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
     /// an IAM Password Policy</a> in the <i>Using IAM</i> guide. 

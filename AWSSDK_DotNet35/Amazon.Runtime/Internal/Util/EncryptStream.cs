@@ -165,7 +165,7 @@ namespace Amazon.Runtime.Internal.Util
             }
             set
             {
-                BaseStream.Position = value;
+                Seek(offset: value, origin: SeekOrigin.Begin);
             }
         }
 
@@ -180,8 +180,6 @@ namespace Amazon.Runtime.Internal.Util
         public override long Seek(long offset, SeekOrigin origin)
         {
             long position = BaseStream.Seek(offset, origin);
-            if (position != 0)
-                throw new ArgumentException("EncryptStream only suppports seeking to the start of the stream");
 
             this.performedLastBlockTransform = false;
             this.Algorithm.Reset();

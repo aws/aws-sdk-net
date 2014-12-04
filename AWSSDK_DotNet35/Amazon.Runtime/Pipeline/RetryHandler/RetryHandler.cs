@@ -207,7 +207,7 @@ namespace Amazon.Runtime.Internal
                 if (hashStream != null)
                 {
                     hashStream.Reset();
-                    stream = hashStream.GetNonWrapperBaseStream();
+                    stream = hashStream.GetSeekableBaseStream();
                 }
                 stream.Position = requestContext.Request.OriginalStreamPosition;
             }

@@ -102,10 +102,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             CognitoIdentity.CreateIdentityPool(out poolId, out poolName);
 
-            var config = Client.GetIdentityPoolConfiguration(new GetIdentityPoolConfigurationRequest
+            Amazon.Util.AWSSDKUtils.Sleep(10); // The identity pool configuration is eventually consistent.
+
+            // Add retry logic to handle the eventual consistence of the identity pool getting created
+            GetIdentityPoolConfigurationResponse config = null;
+            int maxRetries = 5;
+            for (int i = 1; i <= maxRetries; i++)
             {
-                IdentityPoolId = poolId
-            });
+                try
+                {
+                    config = Client.GetIdentityPoolConfiguration(new GetIdentityPoolConfigurationRequest
+                    {
+                        IdentityPoolId = poolId
+                    });
+                    break;
+                }
+                catch(Exception)
+                {
+                    if (i == maxRetries)
+                        throw;
+                    else
+                        Amazon.Util.AWSSDKUtils.Sleep(10); 
+                }
+            }
+
+
             Assert.AreEqual(poolId, config.IdentityPoolId);
             Assert.IsNull(config.PushSync);
 
@@ -256,6 +277,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public void ConfigsTest()
         {
             CognitoIdentity.CreateIdentityPool(out poolId, out poolName);
+
+            Amazon.Util.AWSSDKUtils.Sleep(10); // The identity pool configuration is eventually consistent.
 
             var config = Client.GetIdentityPoolConfiguration(new GetIdentityPoolConfigurationRequest
             {

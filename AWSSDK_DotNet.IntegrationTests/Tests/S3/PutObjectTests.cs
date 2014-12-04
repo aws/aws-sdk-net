@@ -48,6 +48,38 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
+        public void PutObjectWithExternalEndpoint()
+        {            
+            var s3Client = new AmazonS3Client(new AmazonS3Config
+            {
+                ServiceURL = "https://s3-external-1.amazonaws.com",
+                SignatureVersion = "4"
+            });
+            var testBucketName = "testBucket" + random.Next();
+            var key = "testKey";
+            try
+            {
+                
+                s3Client.PutBucket(testBucketName);
+
+                s3Client.PutObject(new PutObjectRequest
+                {
+                    BucketName = testBucketName,
+                    Key = key,
+                    ContentBody = "testValue"
+                });
+
+                s3Client.GetObject(testBucketName, key);
+            }
+            finally
+            {
+                AmazonS3Util.DeleteS3BucketWithObjects(s3Client, testBucketName);
+                s3Client.Dispose();
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
         public void PutObject()
         {
             PutObjectRequest request = new PutObjectRequest()
@@ -918,8 +950,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 int newCount = Math.Min(MaxReadBytes, count);
                 return base.Read(buffer, offset, newCount);
             }
-
-            public override long Position { get; set; }
         }
     }
 

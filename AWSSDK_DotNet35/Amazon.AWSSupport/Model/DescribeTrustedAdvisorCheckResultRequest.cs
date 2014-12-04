@@ -32,20 +32,20 @@ namespace Amazon.AWSSupport.Model
     /// Returns the results of the Trusted Advisor check that has the specified check ID.
     /// Check IDs can be obtained by calling <a>DescribeTrustedAdvisorChecks</a>.
     /// 
-    ///     
+    ///  
     /// <para>
     /// The response contains a <a>TrustedAdvisorCheckResult</a> object, which contains these
     /// three objects:
     /// </para>
-    ///     <ul>      <li><a>TrustedAdvisorCategorySpecificSummary</a></li>      <li><a>TrustedAdvisorResourceDetail</a></li>
-    ///      <li><a>TrustedAdvisorResourcesSummary</a></li>    </ul>
+    ///  <ul> <li><a>TrustedAdvisorCategorySpecificSummary</a></li> <li><a>TrustedAdvisorResourceDetail</a></li>
+    /// <li><a>TrustedAdvisorResourcesSummary</a></li> </ul> 
     /// <para>
     /// In addition, the response contains these fields:
     /// </para>
-    ///     <ul>      <li><b>Status.</b> The alert status of the check: "ok" (green), "warning"
-    /// (yellow), "error" (red), or "not_available".</li>      <li><b>Timestamp.</b> The time
-    /// of the last refresh of the check.</li>      <li><b>CheckId.</b> The unique identifier
-    /// for the check.</li>    </ul>
+    ///  <ul> <li> <b>Status.</b> The alert status of the check: "ok" (green), "warning" (yellow),
+    /// "error" (red), or "not_available".</li> <li> <b>Timestamp.</b> The time of the last
+    /// refresh of the check.</li> <li> <b>CheckId.</b> The unique identifier for the check.</li>
+    /// </ul>
     /// </summary>
     public partial class DescribeTrustedAdvisorCheckResultRequest : AmazonAWSSupportRequest
     {

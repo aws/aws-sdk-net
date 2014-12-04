@@ -43,6 +43,10 @@ namespace Amazon.IdentityManagement.Model
     /// any attempt to assume an IAM role that specifies the IAM provider as a principal will
     /// fail until the certificate thumbprint is updated.
     /// </para>
+    ///  <note>Because trust for the OpenID Connect provider is ultimately derived from the
+    /// provider's certificate and is validated by the thumbprint, it is a best practice to
+    /// limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code> action to highly-privileged
+    /// users. </note>
     /// </summary>
     public partial class UpdateOpenIDConnectProviderThumbprintRequest : AmazonIdentityManagementServiceRequest
     {

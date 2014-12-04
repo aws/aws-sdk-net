@@ -68,6 +68,27 @@ namespace Amazon.Runtime.Internal.Util
         /// <summary>
         /// Returns the first base non-WrapperStream.
         /// </summary>
+        /// <returns>First base stream that is non-WrapperStream.</returns>
+        public Stream GetSeekableBaseStream()
+        {
+            Stream baseStream = this;
+            do
+            {
+                if (baseStream.CanSeek)
+                    return baseStream;
+
+                baseStream = (baseStream as WrapperStream).BaseStream;
+            } while (baseStream is WrapperStream);
+
+            if (!baseStream.CanSeek)
+                throw new InvalidOperationException("Unable to find seekable stream");
+
+            return baseStream;
+        }
+
+        /// <summary>
+        /// Returns the first base non-WrapperStream.
+        /// </summary>
         /// <param name="stream">Potential WrapperStream</param>
         /// <returns>Base non-WrapperStream.</returns>
         public static Stream GetNonWrapperBaseStream(Stream stream)

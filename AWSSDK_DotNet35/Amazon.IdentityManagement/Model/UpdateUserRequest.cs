@@ -33,7 +33,12 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  <important> You should understand the implications of changing a user's path or name.
     /// For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming
-    /// Users and Groups</a> in the <i>Using IAM</i> guide. </important>
+    /// Users and Groups</a> in the <i>Using IAM</i> guide. </important> <note> To change
+    /// a user name the requester must have appropriate permissions on both the source object
+    /// and the target object. For example, to change Bob to Robert, the entity making the
+    /// request must have permission on Bob and Robert, or must have permission on all (*).
+    /// For more information about permissions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
+    /// target="blank">Permissions and Policies</a>. </note>
     /// </summary>
     public partial class UpdateUserRequest : AmazonIdentityManagementServiceRequest
     {

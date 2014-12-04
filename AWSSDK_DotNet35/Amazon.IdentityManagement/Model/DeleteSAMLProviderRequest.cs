@@ -37,6 +37,8 @@ namespace Amazon.IdentityManagement.Model
     /// as a principal in their trust policies. Any attempt to assume a role that references
     /// a SAML provider that has been deleted will fail. 
     /// </para>
+    ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4</a>. </note>
     /// </summary>
     public partial class DeleteSAMLProviderRequest : AmazonIdentityManagementServiceRequest
     {

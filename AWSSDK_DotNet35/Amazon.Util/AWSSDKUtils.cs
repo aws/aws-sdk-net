@@ -40,7 +40,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "2.3.10.0";
+        internal const string SDKVersionNumber = "2.3.11.0";
 
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
@@ -358,6 +358,9 @@ namespace Amazon.Util
                 return DefaultRegion;
 
             string region = serviceAndRegion.Substring(separatorIndex + 1);
+            if (region.Equals("external-1"))
+                return RegionEndpoint.USEast1.SystemName;
+
             if (string.Equals(region, "us-gov", StringComparison.Ordinal))
                 return DefaultGovRegion;
 

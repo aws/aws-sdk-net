@@ -135,11 +135,13 @@ namespace Amazon.S3.Util
 
             if (match.Groups.Count > 2)
             {
-                // US 'classic' urls will not have a region code, so the region group
-                // will contain just 'amazonaws'
-                this.Region = match.Groups[2].Value.Equals("amazonaws", StringComparison.Ordinal) 
-                    ? RegionEndpoint.USEast1 
-                    : RegionEndpoint.GetBySystemName(match.Groups[2].Value);
+                // US 'classic' urls will not have a region code in the endpoint
+                var regionGroupValue = match.Groups[2].Value;
+                if (regionGroupValue.Equals("amazonaws", StringComparison.Ordinal)
+                    || regionGroupValue.Equals("external-1", StringComparison.Ordinal))
+                    this.Region = RegionEndpoint.USEast1;
+                else
+                    this.Region = RegionEndpoint.GetBySystemName(regionGroupValue);
             }
         }
 

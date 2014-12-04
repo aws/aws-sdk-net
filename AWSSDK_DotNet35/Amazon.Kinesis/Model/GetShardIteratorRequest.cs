@@ -46,13 +46,13 @@ namespace Amazon.Kinesis.Model
     /// parameter to read exactly from the position denoted by a specific sequence number
     /// by using the <code>AT_SEQUENCE_NUMBER</code> shard iterator type, or right after the
     /// sequence number by using the <code>AFTER_SEQUENCE_NUMBER</code> shard iterator type,
-    /// using sequence numbers returned by earlier calls to <a>PutRecord</a>, <a>GetRecords</a>,
-    /// or <a>DescribeStream</a>. You can specify the shard iterator type <code>TRIM_HORIZON</code>
-    /// in the request to cause <code>ShardIterator</code> to point to the last untrimmed
-    /// record in the shard in the system, which is the oldest data record in the shard. Or
-    /// you can point to just after the most recent record in the shard, by using the shard
-    /// iterator type <code>LATEST</code>, so that you always read the most recent data in
-    /// the shard. 
+    /// using sequence numbers returned by earlier calls to <a>PutRecord</a>, <a>PutRecords</a>,
+    /// <a>GetRecords</a>, or <a>DescribeStream</a>. You can specify the shard iterator type
+    /// <code>TRIM_HORIZON</code> in the request to cause <code>ShardIterator</code> to point
+    /// to the last untrimmed record in the shard in the system, which is the oldest data
+    /// record in the shard. Or you can point to just after the most recent record in the
+    /// shard, by using the shard iterator type <code>LATEST</code>, so that you always read
+    /// the most recent data in the shard. 
     /// </para>
     ///  
     /// <para>

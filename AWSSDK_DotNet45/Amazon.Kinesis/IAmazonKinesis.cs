@@ -99,7 +99,7 @@ namespace Amazon.Kinesis
         /// <para>
         /// You specify and control the number of shards that a stream is composed of. Each open
         /// shard can support up to 5 read transactions per second, up to a maximum total of 2
-        /// MB of data read per second. Each shard can support up to 1000 write transactions per
+        /// MB of data read per second. Each shard can support up to 1000 records written per
         /// second, up to a maximum total of 1 MB data written per second. You can add shards
         /// to a stream if the amount of data input increases and you can remove shards if the
         /// amount of data input decreases.
@@ -189,8 +189,8 @@ namespace Amazon.Kinesis
         ///  
         /// <para>
         /// <b>Note:</b> Amazon Kinesis might continue to accept data read and write operations,
-        /// such as <a>PutRecord</a> and <a>GetRecords</a>, on a stream in the <code>DELETING</code>
-        /// state until the stream deletion is complete.
+        /// such as <a>PutRecord</a>, <a>PutRecords</a>, and <a>GetRecords</a>, on a stream in
+        /// the <code>DELETING</code> state until the stream deletion is complete.
         /// </para>
         ///  
         /// <para>
@@ -327,8 +327,8 @@ namespace Amazon.Kinesis
         /// <para>
         /// Each data record can be up to 50 KB in size, and each shard can read up to 2 MB per
         /// second. You can ensure that your calls don't exceed the maximum supported size or
-        /// throughput by specifying the maximum number of records that <code>GetRecords</code>
-        /// can return in the <code>Limit</code> parameter. Consider your average record size
+        /// throughput by using the <code>Limit</code> parameter to specify the maximum number
+        /// of records that <code>GetRecords</code> can return. Consider your average record size
         /// when determining this limit. For example, if your average record size is 40 KB, you
         /// can limit the data returned to about 1 MB per call by specifying 25 as the limit.
         /// </para>
@@ -349,8 +349,8 @@ namespace Amazon.Kinesis
         /// <para>
         /// To detect whether the application is falling behind in processing, add a timestamp
         /// to your records and note how long it takes to process them. You can also monitor how
-        /// much data is in a stream using the CloudWatch metrics for <code>PutRecord</code>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring_with_cloudwatch.html">Monitoring
+        /// much data is in a stream using the CloudWatch metrics for write operations (<code>PutRecord</code>
+        /// and <code>PutRecords</code>). For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring_with_cloudwatch.html">Monitoring
         /// Amazon Kinesis with Amazon CloudWatch</a> in the <i>Amazon Kinesis Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -410,13 +410,13 @@ namespace Amazon.Kinesis
         /// parameter to read exactly from the position denoted by a specific sequence number
         /// by using the <code>AT_SEQUENCE_NUMBER</code> shard iterator type, or right after the
         /// sequence number by using the <code>AFTER_SEQUENCE_NUMBER</code> shard iterator type,
-        /// using sequence numbers returned by earlier calls to <a>PutRecord</a>, <a>GetRecords</a>,
-        /// or <a>DescribeStream</a>. You can specify the shard iterator type <code>TRIM_HORIZON</code>
-        /// in the request to cause <code>ShardIterator</code> to point to the last untrimmed
-        /// record in the shard in the system, which is the oldest data record in the shard. Or
-        /// you can point to just after the most recent record in the shard, by using the shard
-        /// iterator type <code>LATEST</code>, so that you always read the most recent data in
-        /// the shard. 
+        /// using sequence numbers returned by earlier calls to <a>PutRecord</a>, <a>PutRecords</a>,
+        /// <a>GetRecords</a>, or <a>DescribeStream</a>. You can specify the shard iterator type
+        /// <code>TRIM_HORIZON</code> in the request to cause <code>ShardIterator</code> to point
+        /// to the last untrimmed record in the shard in the system, which is the oldest data
+        /// record in the shard. Or you can point to just after the most recent record in the
+        /// shard, by using the shard iterator type <code>LATEST</code>, so that you always read
+        /// the most recent data in the shard. 
         /// </para>
         ///  
         /// <para>
@@ -692,19 +692,28 @@ namespace Amazon.Kinesis
         #region  PutRecord
 
         /// <summary>
-        /// Puts a data record from a producer into an Amazon Kinesis stream. You must call <code>PutRecord</code>
-        /// to send data from the producer into the Amazon Kinesis stream for real-time ingestion
-        /// and subsequent processing. You must specify the name of the stream that captures,
-        /// stores, and transports the data; a partition key; and the data blob itself. The data
-        /// blob could be a segment from a log file, geographic/location data, website clickstream
-        /// data, or any other data type.
+        /// Puts (writes) a single data record from a producer into an Amazon Kinesis stream.
+        /// Call <code>PutRecord</code> to send data from the producer into the Amazon Kinesis
+        /// stream for real-time ingestion and subsequent processing, one record at a time. Each
+        /// shard can support up to 1000 records written per second, up to a maximum total of
+        /// 1 MB data written per second.
         /// 
         ///  
         /// <para>
-        /// The partition key is used to distribute data across shards. Amazon Kinesis segregates
-        /// the data records that belong to a data stream into multiple shards, using the partition
-        /// key associated with each data record to determine which shard a given data record
-        /// belongs to. 
+        /// You must specify the name of the stream that captures, stores, and transports the
+        /// data; a partition key; and the data blob itself.
+        /// </para>
+        ///  
+        /// <para>
+        /// The data blob can be any type of data; for example, a segment from a log file, geographic/location
+        /// data, website clickstream data, and so on.
+        /// </para>
+        ///  
+        /// <para>
+        /// The partition key is used by Amazon Kinesis to distribute data across shards. Amazon
+        /// Kinesis segregates the data records that belong to a data stream into multiple shards,
+        /// using the partition key associated with each data record to determine which shard
+        /// a given data record belongs to. 
         /// </para>
         ///  
         /// <para>
@@ -769,6 +778,112 @@ namespace Amazon.Kinesis
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutRecordResponse> PutRecordAsync(PutRecordRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutRecords
+
+        /// <summary>
+        /// Puts (writes) multiple data records from a producer into an Amazon Kinesis stream
+        /// in a single call (also referred to as a <code>PutRecords</code> request). Use this
+        /// operation to send data from a data producer into the Amazon Kinesis stream for real-time
+        /// ingestion and processing. Each shard can support up to 1000 records written per second,
+        /// up to a maximum total of 1 MB data written per second.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify the name of the stream that captures, stores, and transports the
+        /// data; and an array of request <code>Records</code>, with each record in the array
+        /// requiring a partition key and data blob. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The data blob can be any type of data; for example, a segment from a log file, geographic/location
+        /// data, website clickstream data, and so on.
+        /// </para>
+        ///  
+        /// <para>
+        /// The partition key is used by Amazon Kinesis as input to a hash function that maps
+        /// the partition key and associated data to a specific shard. An MD5 hash function is
+        /// used to map partition keys to 128-bit integer values and to map associated data records
+        /// to shards. As a result of this hashing mechanism, all data records with the same partition
+        /// key map to the same shard within the stream. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-defn-partition-key">Partition
+        /// Key</a> in the <i>Amazon Kinesis Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each record in the <code>Records</code> array may include an optional parameter, <code>ExplicitHashKey</code>,
+        /// which overrides the partition key to shard mapping. This parameter allows a data producer
+        /// to determine explicitly the shard where the record is stored. For more information,
+        /// see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-putrecords">Adding
+        /// Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>PutRecords</code> response includes an array of response <code>Records</code>.
+        /// Each record in the response array directly correlates with a record in the request
+        /// array using natural ordering, from the top to the bottom of the request and response.
+        /// The response <code>Records</code> array always includes the same number of records
+        /// as the request array.
+        /// </para>
+        ///  
+        /// <para>
+        /// The response <code>Records</code> array includes both successfully and unsuccessfully
+        /// processed records. Amazon Kinesis attempts to process all records in each <code>PutRecords</code>
+        /// request. A single record failure does not stop the processing of subsequent records.
+        /// </para>
+        ///  
+        /// <para>
+        /// A successfully-processed record includes <code>ShardId</code> and <code>SequenceNumber</code>
+        /// values. The <code>ShardId</code> parameter identifies the shard in the stream where
+        /// the record is stored. The <code>SequenceNumber</code> parameter is an identifier assigned
+        /// to the put record, unique to all records in the stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// An unsuccessfully-processed record includes <code>ErrorCode</code> and <code>ErrorMessage</code>
+        /// values. <code>ErrorCode</code> reflects the type of error and can be one of the following
+        /// values: <code>ProvisionedThroughputExceededException</code> or <code>InternalFailure</code>.
+        /// <code>ErrorMessage</code> provides more detailed information about the <code>ProvisionedThroughputExceededException</code>
+        /// exception including the account ID, stream name, and shard ID of the record that was
+        /// throttled.
+        /// </para>
+        ///  
+        /// <para>
+        /// Data records are accessible for only 24 hours from the time that they are added to
+        /// an Amazon Kinesis stream.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRecords service method.</param>
+        /// 
+        /// <returns>The response from the PutRecords service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ProvisionedThroughputExceededException">
+        /// The request rate is too high, or the requested data is too large for the available
+        /// throughput. Reduce the frequency or size of your requests. For more information, see
+        /// <a href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html" target="_blank">Error
+        /// Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. It might not be specified correctly, or
+        /// it might not be in the <code>ACTIVE</code> state.
+        /// </exception>
+        PutRecordsResponse PutRecords(PutRecordsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRecords operation.
+        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRecords operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutRecordsResponse> PutRecordsAsync(PutRecordsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

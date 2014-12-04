@@ -98,7 +98,7 @@ namespace Amazon.Runtime.Internal
         /// Returns the HTTP response.
         /// </summary>
         /// <returns>The HTTP response.</returns>
-        public IWebResponseData GetResponse()
+        public virtual IWebResponseData GetResponse()
         {
             try
             {
@@ -207,7 +207,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         /// <returns></returns>
-        public async System.Threading.Tasks.Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
@@ -268,7 +268,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="asyncResult">IAsyncResult that represents an async operation.</param>
         /// <returns>The HTTP response.</returns>
-        public IWebResponseData EndGetResponse(IAsyncResult asyncResult)
+        public virtual IWebResponseData EndGetResponse(IAsyncResult asyncResult)
         {
             try
             {
@@ -293,7 +293,7 @@ namespace Amazon.Runtime.Internal
         /// Configures a request as per the request context.
         /// </summary>
         /// <param name="requestContext">The request context.</param>
-        public void ConfigureRequest(IRequestContext requestContext)
+        public virtual void ConfigureRequest(IRequestContext requestContext)
         {
             // Set HttpWebRequest specific properties which are
             // not exposed in the IHttpRequest interface.

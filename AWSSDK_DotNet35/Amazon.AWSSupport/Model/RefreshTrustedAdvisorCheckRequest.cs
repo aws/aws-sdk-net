@@ -32,15 +32,15 @@ namespace Amazon.AWSSupport.Model
     /// Requests a refresh of the Trusted Advisor check that has the specified check ID. Check
     /// IDs can be obtained by calling <a>DescribeTrustedAdvisorChecks</a>.
     /// 
-    ///       
+    ///  
     /// <para>
-    /// The response contains a <a>RefreshTrustedAdvisorCheckResult</a> object, which contains
+    /// The response contains a <a>TrustedAdvisorCheckRefreshStatus</a> object, which contains
     /// these fields:
     /// </para>
-    ///     <ul>      <li><b>Status.</b> The refresh status of the check: "none", "enqueued",
-    /// "processing", "success", or "abandoned".</li>      <li><b>MillisUntilNextRefreshable.</b>
-    /// The amount of time, in milliseconds, until the check is eligible for refresh.</li>
-    ///      <li><b>CheckId.</b> The unique identifier for the check.</li>    </ul>
+    ///  <ul> <li> <b>Status.</b> The refresh status of the check: "none", "enqueued", "processing",
+    /// "success", or "abandoned".</li> <li> <b>MillisUntilNextRefreshable.</b> The amount
+    /// of time, in milliseconds, until the check is eligible for refresh.</li> <li> <b>CheckId.</b>
+    /// The unique identifier for the check.</li> </ul>
     /// </summary>
     public partial class RefreshTrustedAdvisorCheckRequest : AmazonAWSSupportRequest
     {

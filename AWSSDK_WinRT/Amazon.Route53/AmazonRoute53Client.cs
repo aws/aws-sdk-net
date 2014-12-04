@@ -1022,5 +1022,36 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  UpdateHostedZoneComment
+
+        internal UpdateHostedZoneCommentResponse UpdateHostedZoneComment(UpdateHostedZoneCommentRequest request)
+        {
+            var marshaller = new UpdateHostedZoneCommentRequestMarshaller();
+            var unmarshaller = UpdateHostedZoneCommentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHostedZoneCommentRequest,UpdateHostedZoneCommentResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateHostedZoneComment operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneComment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateHostedZoneCommentResponse> UpdateHostedZoneCommentAsync(UpdateHostedZoneCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateHostedZoneCommentRequestMarshaller();
+            var unmarshaller = UpdateHostedZoneCommentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateHostedZoneCommentRequest,UpdateHostedZoneCommentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
     }
 }

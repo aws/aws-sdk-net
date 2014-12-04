@@ -721,6 +721,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void GetAccountAuthorizationDetailsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAccountAuthorizationDetails");
+
+            var request = InstantiateClassGenerator.Execute<GetAccountAuthorizationDetailsRequest>();
+            var marshaller = new GetAccountAuthorizationDetailsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetAccountAuthorizationDetailsResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetAccountAuthorizationDetailsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void GetAccountPasswordPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("GetAccountPasswordPolicy");

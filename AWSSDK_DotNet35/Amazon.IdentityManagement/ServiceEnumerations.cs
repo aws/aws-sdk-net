@@ -69,6 +69,50 @@ namespace Amazon.IdentityManagement
 
 
     /// <summary>
+    /// Constants used for properties of type EntityType.
+    /// </summary>
+    public class EntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Group for EntityType
+        /// </summary>
+        public static readonly EntityType Group = new EntityType("Group");
+        /// <summary>
+        /// Constant Role for EntityType
+        /// </summary>
+        public static readonly EntityType Role = new EntityType("Role");
+        /// <summary>
+        /// Constant User for EntityType
+        /// </summary>
+        public static readonly EntityType User = new EntityType("User");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public EntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EntityType FindValue(string value)
+        {
+            return FindValue<EntityType>(value);
+        }
+
+        public static implicit operator EntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReportFormatType.
     /// </summary>
     public class ReportFormatType : ConstantClass

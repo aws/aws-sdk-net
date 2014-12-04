@@ -30,7 +30,10 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the GetSAMLProvider operation.
     /// Returns the SAML provider metadocument that was uploaded when the provider was created
-    /// or updated.
+    /// or updated. 
+    /// 
+    ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4</a>. </note>
     /// </summary>
     public partial class GetSAMLProviderRequest : AmazonIdentityManagementServiceRequest
     {

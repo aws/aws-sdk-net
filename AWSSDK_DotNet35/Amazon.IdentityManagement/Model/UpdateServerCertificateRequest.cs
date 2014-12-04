@@ -33,7 +33,13 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  <important> You should understand the implications of changing a server certificate's
     /// path or name. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html">Managing
-    /// Server Certificates</a> in the <i>Using IAM</i> guide. </important>
+    /// Server Certificates</a> in the <i>Using IAM</i> guide. </important> <note> To change
+    /// a server certificate name the requester must have appropriate permissions on both
+    /// the source object and the target object. For example, to change the name from ProductionCert
+    /// to ProdCert, the entity making the request must have permission on ProductionCert
+    /// and ProdCert, or must have permission on all (*). For more information about permissions,
+    /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
+    /// target="blank">Permissions and Policies</a>. </note>
     /// </summary>
     public partial class UpdateServerCertificateRequest : AmazonIdentityManagementServiceRequest
     {

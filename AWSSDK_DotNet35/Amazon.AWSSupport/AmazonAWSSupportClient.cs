@@ -33,49 +33,49 @@ namespace Amazon.AWSSupport
     /// <summary>
     /// Implementation for accessing AWSSupport
     ///
-    /// AWS Support            
+    /// AWS Support 
     /// <para>
     /// The AWS Support API reference is intended for programmers who need detailed information
     /// about the AWS Support operations and data types. This service enables you to manage
     /// your AWS Support cases programmatically. It uses HTTP methods that return results
     /// in JSON format.
     /// </para>
-    ///         
+    ///  
     /// <para>
-    /// The AWS Support service also exposes a set of <a href="https://aws.amazon.com/support/trustedadvisor">Trusted
+    /// The AWS Support service also exposes a set of <a href="https://aws.amazon.com/premiumsupport/trustedadvisor/">Trusted
     /// Advisor</a> features. You can retrieve a list of checks and their descriptions, get
     /// check results, specify checks to refresh, and get the refresh status of checks. 
     /// </para>
-    ///          
+    ///  
     /// <para>
     /// The following list describes the AWS Support case management operations: 
     /// </para>
-    ///     <ul>      <li><b>Service names, issue categories, and available severity levels.
-    /// </b>The <a>DescribeServices</a> and <a>DescribeSeverityLevels</a> operations return
-    /// AWS service names, service codes, service categories, and problem severity levels.
-    /// You use these values when you call the <a>CreateCase</a> operation. </li>      <li><b>Case
-    /// creation, case details, and case resolution.</b> The <a>CreateCase</a>, <a>DescribeCases</a>,
+    ///  <ul> <li> <b>Service names, issue categories, and available severity levels. </b>The
+    /// <a>DescribeServices</a> and <a>DescribeSeverityLevels</a> operations return AWS service
+    /// names, service codes, service categories, and problem severity levels. You use these
+    /// values when you call the <a>CreateCase</a> operation. </li> <li> <b>Case creation,
+    /// case details, and case resolution.</b> The <a>CreateCase</a>, <a>DescribeCases</a>,
     /// <a>DescribeAttachment</a>, and <a>ResolveCase</a> operations create AWS Support cases,
-    /// retrieve information about cases, and resolve cases.</li>      <li><b>Case communication.</b>
+    /// retrieve information about cases, and resolve cases.</li> <li> <b>Case communication.</b>
     /// The <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>, and <a>AddAttachmentsToSet</a>
     /// operations retrieve and add communications and attachments to AWS Support cases. </li>
-    ///    </ul>        
+    /// </ul> 
     /// <para>
     /// The following list describes the operations available from the AWS Support service
-    /// for  Trusted Advisor:
+    /// for Trusted Advisor:
     /// </para>
-    ///     <ul>      <li><a>DescribeTrustedAdvisorChecks</a> returns the list of checks that
-    /// run against your AWS resources.</li>       <li>Using the <code>CheckId</code> for
-    /// a specific check returned by <a>DescribeTrustedAdvisorChecks</a>, you can call <a>DescribeTrustedAdvisorCheckResult</a>
-    /// to obtain the results for the check you specified.</li>       <li><a>DescribeTrustedAdvisorCheckSummaries</a>
-    /// returns summarized results for one or more Trusted Advisor checks.</li>      <li><a>RefreshTrustedAdvisorCheck</a>
-    /// requests that Trusted Advisor rerun a specified check. </li>      <li><a>DescribeTrustedAdvisorCheckRefreshStatuses</a>
-    /// reports the refresh status of one or more checks.  </li>    </ul>            
+    ///  <ul> <li> <a>DescribeTrustedAdvisorChecks</a> returns the list of checks that run
+    /// against your AWS resources.</li> <li>Using the <code>CheckId</code> for a specific
+    /// check returned by <a>DescribeTrustedAdvisorChecks</a>, you can call <a>DescribeTrustedAdvisorCheckResult</a>
+    /// to obtain the results for the check you specified.</li> <li> <a>DescribeTrustedAdvisorCheckSummaries</a>
+    /// returns summarized results for one or more Trusted Advisor checks.</li> <li> <a>RefreshTrustedAdvisorCheck</a>
+    /// requests that Trusted Advisor rerun a specified check. </li> <li> <a>DescribeTrustedAdvisorCheckRefreshStatuses</a>
+    /// reports the refresh status of one or more checks. </li> </ul> 
     /// <para>
     /// For authentication of requests, AWS Support uses <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4 Signing Process</a>.
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// See <a href="http://docs.aws.amazon.com/awssupport/latest/user/Welcome.html">About
     /// the AWS Support API</a> in the <i>AWS Support User Guide</i> for information about
@@ -272,7 +272,7 @@ namespace Amazon.AWSSupport
         /// in the response. If an <code>AttachmentSetId</code> is specified, the attachments
         /// are added to the specified set, if it exists.
         /// 
-        ///     
+        ///  
         /// <para>
         /// An attachment set is a temporary container for attachments that are to be added to
         /// a case or case communication. The set is available for one hour after it is created;
@@ -354,14 +354,13 @@ namespace Amazon.AWSSupport
         /// to copy on the communication using the <code>CcEmailAddresses</code> value. The <code>CommunicationBody</code>
         /// value contains the text of the communication.
         /// 
-        ///     
+        ///  
         /// <para>
         /// The response indicates the success or failure of the request.
         /// </para>
-        ///     
+        ///  
         /// <para>
-        /// This operation implements a subset of the behavior on the AWS Support <a href="https://aws.amazon.com/support">Your
-        /// Support Cases</a> web form.
+        /// This operation implements a subset of the features of the AWS Support Center.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddCommunicationToCase service method.</param>
@@ -428,37 +427,36 @@ namespace Amazon.AWSSupport
 
         /// <summary>
         /// Creates a new case in the AWS Support Center. This operation is modeled on the behavior
-        /// of the AWS Support Center <a href="https://aws.amazon.com/support/createCase">Open
-        /// a new case</a> page. Its parameters require you to specify the following information:
+        /// of the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+        /// Case</a> page. Its parameters require you to specify the following information: 
         /// 
-        /// 
-        ///     <ol>      <li><b>IssueType.</b> The type of issue for the case. You can specify
-        /// either "customer-service" or "technical." If you do not indicate a value, the default
-        /// is "technical." </li>      <li><b>ServiceCode.</b> The code for an AWS service. You
-        /// obtain the <code>ServiceCode</code> by calling <a>DescribeServices</a>. </li>    
-        ///  <li><b>CategoryCode.</b> The category for the service defined for the <code>ServiceCode</code>
-        /// value. You also obtain the category code for a service by calling <a>DescribeServices</a>.
-        /// Each AWS service defines its own set of category codes. </li>      <li><b>SeverityCode.</b>
-        /// A value that indicates the urgency of the case, which in turn determines the response
-        /// time according to your service level agreement with AWS Support. You obtain the SeverityCode
-        /// by calling <a>DescribeSeverityLevels</a>.</li>      <li><b>Subject.</b> The <b>Subject</b>
-        /// field  on the AWS Support Center <a href="https://aws.amazon.com/support/createCase">Open
-        /// a new case</a> page.</li>      <li><b>CommunicationBody.</b> The <b>Description</b>
-        /// field on the AWS Support Center <a href="https://aws.amazon.com/support/createCase">Open
-        /// a new case</a> page.</li>      <li><b>AttachmentSetId.</b> The ID of a set of attachments
-        /// that has been created by using <a>AddAttachmentsToSet</a>.</li>      <li><b>Language.</b>
-        /// The human language in which AWS Support handles the case. English and Japanese are
-        /// currently supported.</li>      <li><b>CcEmailAddresses.</b> The  AWS Support Center
-        /// <b>CC</b> field on the <a href="https://aws.amazon.com/support/createCase">Open a
-        /// new case</a> page. You can list email addresses to be copied on any correspondence
-        /// about the case. The account that opens the case is already identified by passing the
-        /// AWS Credentials in the HTTP POST method or in a method or function call from one of
-        /// the programming languages supported by an <a href="http://aws.amazon.com/tools/">AWS
-        /// SDK</a>. </li>    </ol>        <note>
+        ///  <ol> <li> <b>IssueType.</b> The type of issue for the case. You can specify either
+        /// "customer-service" or "technical." If you do not indicate a value, the default is
+        /// "technical." </li> <li> <b>ServiceCode.</b> The code for an AWS service. You obtain
+        /// the <code>ServiceCode</code> by calling <a>DescribeServices</a>. </li> <li> <b>CategoryCode.</b>
+        /// The category for the service defined for the <code>ServiceCode</code> value. You also
+        /// obtain the category code for a service by calling <a>DescribeServices</a>. Each AWS
+        /// service defines its own set of category codes. </li> <li> <b>SeverityCode.</b> A value
+        /// that indicates the urgency of the case, which in turn determines the response time
+        /// according to your service level agreement with AWS Support. You obtain the SeverityCode
+        /// by calling <a>DescribeSeverityLevels</a>.</li> <li> <b>Subject.</b> The <b>Subject</b>
+        /// field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+        /// Case</a> page.</li> <li> <b>CommunicationBody.</b> The <b>Description</b> field on
+        /// the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+        /// Case</a> page.</li> <li> <b>AttachmentSetId.</b> The ID of a set of attachments that
+        /// has been created by using <a>AddAttachmentsToSet</a>.</li> <li> <b>Language.</b> The
+        /// human language in which AWS Support handles the case. English and Japanese are currently
+        /// supported.</li> <li> <b>CcEmailAddresses.</b> The AWS Support Center <b>CC</b> field
+        /// on the <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
+        /// page. You can list email addresses to be copied on any correspondence about the case.
+        /// The account that opens the case is already identified by passing the AWS Credentials
+        /// in the HTTP POST method or in a method or function call from one of the programming
+        /// languages supported by an <a href="http://aws.amazon.com/tools/">AWS SDK</a>. </li>
+        /// </ol> <note>
         /// <para>
         /// To add additional communication or attachments to an existing case, use <a>AddCommunicationToCase</a>.
         /// </para>
-        ///  </note>        
+        ///  </note> 
         /// <para>
         /// A successful <a>CreateCase</a> request returns an AWS Support case number. Case numbers
         /// are used by the <a>DescribeCases</a> operation to retrieve existing AWS Support cases.
@@ -595,20 +593,22 @@ namespace Amazon.AWSSupport
         /// <summary>
         /// Returns a list of cases that you specify by passing one or more case IDs. In addition,
         /// you can filter the cases by date by setting values for the <code>AfterTime</code>
-        /// and <code>BeforeTime</code> request parameters. 
+        /// and <code>BeforeTime</code> request parameters. You can set values for the <code>IncludeResolvedCases</code>
+        /// and <code>IncludeCommunications</code> request parameters to control how much information
+        /// is returned. 
         /// 
-        ///     
+        ///  
         /// <para>
         /// Case data is available for 12 months after creation. If a case was created more than
         /// 12 months ago, a request for data might cause an error. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// The response returns the following in JSON format:
         /// </para>
-        ///      <ol>      <li>One or more <a>CaseDetails</a> data types. </li>      <li>One or
-        /// more <code>NextToken</code> values, which specify where to paginate the returned records
-        /// represented by the <code>CaseDetails</code> objects.</li>    </ol>
+        ///  <ol> <li>One or more <a>CaseDetails</a> data types. </li> <li>One or more <code>NextToken</code>
+        /// values, which specify where to paginate the returned records represented by the <code>CaseDetails</code>
+        /// objects.</li> </ol>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCases service method.</param>
         /// 
@@ -671,16 +671,16 @@ namespace Amazon.AWSSupport
         /// You can use the <code>CaseId</code> parameter to restrict the results to a particular
         /// case.
         /// 
-        ///     
+        ///  
         /// <para>
         /// Case data is available for 12 months after creation. If a case was created more than
         /// 12 months ago, a request for data might cause an error. 
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// You can use the <code>MaxResults</code> and <code>NextToken</code> parameters to control
         /// the pagination of the result set. Set <code>MaxResults</code> to the number of cases
-        /// you want displayed on each page, and use  <code>NextToken</code> to specify the resumption
+        /// you want displayed on each page, and use <code>NextToken</code> to specify the resumption
         /// of pagination.
         /// </para>
         /// </summary>
@@ -744,15 +744,15 @@ namespace Amazon.AWSSupport
         /// to each one. You then use service names and categories in your <a>CreateCase</a> requests.
         /// Each AWS service has its own set of categories.
         /// 
-        ///     
+        ///  
         /// <para>
         /// The service codes and category codes correspond to the values that are displayed in
         /// the <b>Service</b> and <b>Category</b> drop-down lists on the AWS Support Center <a
-        /// href="https://aws.amazon.com/support/createCase">Open a new case</a> page. The values
-        /// in those      fields, however, do not necessarily match the service codes and categories
-        /// returned by the        <code>DescribeServices</code> request. Always use the service
-        /// codes and categories obtained      programmatically. This practice ensures that you
-        /// always have the most recent set of service and category codes.
+        /// href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
+        /// The values in those fields, however, do not necessarily match the service codes and
+        /// categories returned by the <code>DescribeServices</code> request. Always use the service
+        /// codes and categories obtained programmatically. This practice ensures that you always
+        /// have the most recent set of service and category codes.
         /// </para>
         /// </summary>
         /// 
@@ -770,15 +770,15 @@ namespace Amazon.AWSSupport
         /// to each one. You then use service names and categories in your <a>CreateCase</a> requests.
         /// Each AWS service has its own set of categories.
         /// 
-        ///     
+        ///  
         /// <para>
         /// The service codes and category codes correspond to the values that are displayed in
         /// the <b>Service</b> and <b>Category</b> drop-down lists on the AWS Support Center <a
-        /// href="https://aws.amazon.com/support/createCase">Open a new case</a> page. The values
-        /// in those      fields, however, do not necessarily match the service codes and categories
-        /// returned by the        <code>DescribeServices</code> request. Always use the service
-        /// codes and categories obtained      programmatically. This practice ensures that you
-        /// always have the most recent set of service and category codes.
+        /// href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
+        /// The values in those fields, however, do not necessarily match the service codes and
+        /// categories returned by the <code>DescribeServices</code> request. Always use the service
+        /// codes and categories obtained programmatically. This practice ensures that you always
+        /// have the most recent set of service and category codes.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeServices service method.</param>
@@ -965,20 +965,20 @@ namespace Amazon.AWSSupport
         /// Returns the results of the Trusted Advisor check that has the specified check ID.
         /// Check IDs can be obtained by calling <a>DescribeTrustedAdvisorChecks</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// The response contains a <a>TrustedAdvisorCheckResult</a> object, which contains these
         /// three objects:
         /// </para>
-        ///     <ul>      <li><a>TrustedAdvisorCategorySpecificSummary</a></li>      <li><a>TrustedAdvisorResourceDetail</a></li>
-        ///      <li><a>TrustedAdvisorResourcesSummary</a></li>    </ul>
+        ///  <ul> <li><a>TrustedAdvisorCategorySpecificSummary</a></li> <li><a>TrustedAdvisorResourceDetail</a></li>
+        /// <li><a>TrustedAdvisorResourcesSummary</a></li> </ul> 
         /// <para>
         /// In addition, the response contains these fields:
         /// </para>
-        ///     <ul>      <li><b>Status.</b> The alert status of the check: "ok" (green), "warning"
-        /// (yellow), "error" (red), or "not_available".</li>      <li><b>Timestamp.</b> The time
-        /// of the last refresh of the check.</li>      <li><b>CheckId.</b> The unique identifier
-        /// for the check.</li>    </ul>
+        ///  <ul> <li> <b>Status.</b> The alert status of the check: "ok" (green), "warning" (yellow),
+        /// "error" (red), or "not_available".</li> <li> <b>Timestamp.</b> The time of the last
+        /// refresh of the check.</li> <li> <b>CheckId.</b> The unique identifier for the check.</li>
+        /// </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrustedAdvisorCheckResult service method.</param>
         /// 
@@ -1094,7 +1094,7 @@ namespace Amazon.AWSSupport
         /// Returns the summaries of the results of the Trusted Advisor checks that have the specified
         /// check IDs. Check IDs can be obtained by calling <a>DescribeTrustedAdvisorChecks</a>.
         /// 
-        ///         
+        ///  
         /// <para>
         /// The response contains an array of <a>TrustedAdvisorCheckSummary</a> objects.
         /// </para>
@@ -1155,15 +1155,15 @@ namespace Amazon.AWSSupport
         /// Requests a refresh of the Trusted Advisor check that has the specified check ID. Check
         /// IDs can be obtained by calling <a>DescribeTrustedAdvisorChecks</a>.
         /// 
-        ///       
+        ///  
         /// <para>
-        /// The response contains a <a>RefreshTrustedAdvisorCheckResult</a> object, which contains
+        /// The response contains a <a>TrustedAdvisorCheckRefreshStatus</a> object, which contains
         /// these fields:
         /// </para>
-        ///     <ul>      <li><b>Status.</b> The refresh status of the check: "none", "enqueued",
-        /// "processing", "success", or "abandoned".</li>      <li><b>MillisUntilNextRefreshable.</b>
-        /// The amount of time, in milliseconds, until the check is eligible for refresh.</li>
-        ///      <li><b>CheckId.</b> The unique identifier for the check.</li>    </ul>
+        ///  <ul> <li> <b>Status.</b> The refresh status of the check: "none", "enqueued", "processing",
+        /// "success", or "abandoned".</li> <li> <b>MillisUntilNextRefreshable.</b> The amount
+        /// of time, in milliseconds, until the check is eligible for refresh.</li> <li> <b>CheckId.</b>
+        /// The unique identifier for the check.</li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RefreshTrustedAdvisorCheck service method.</param>
         /// 

@@ -38,7 +38,7 @@ namespace Amazon.Kinesis.Model
     /// <para>
     /// You specify and control the number of shards that a stream is composed of. Each open
     /// shard can support up to 5 read transactions per second, up to a maximum total of 2
-    /// MB of data read per second. Each shard can support up to 1000 write transactions per
+    /// MB of data read per second. Each shard can support up to 1000 records written per
     /// second, up to a maximum total of 1 MB data written per second. You can add shards
     /// to a stream if the amount of data input increases and you can remove shards if the
     /// amount of data input decreases.

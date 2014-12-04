@@ -482,6 +482,37 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  PutRecords
+
+        internal PutRecordsResponse PutRecords(PutRecordsRequest request)
+        {
+            var marshaller = new PutRecordsRequestMarshaller();
+            var unmarshaller = PutRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<PutRecordsRequest,PutRecordsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRecords operation.
+        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRecords operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutRecordsResponse> PutRecordsAsync(PutRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutRecordsRequestMarshaller();
+            var unmarshaller = PutRecordsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutRecordsRequest,PutRecordsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RemoveTagsFromStream
 
         internal RemoveTagsFromStreamResponse RemoveTagsFromStream(RemoveTagsFromStreamRequest request)

@@ -32,7 +32,7 @@ namespace Amazon.AWSSupport.Model
     /// Returns the summaries of the results of the Trusted Advisor checks that have the specified
     /// check IDs. Check IDs can be obtained by calling <a>DescribeTrustedAdvisorChecks</a>.
     /// 
-    ///         
+    ///  
     /// <para>
     /// The response contains an array of <a>TrustedAdvisorCheckSummary</a> objects.
     /// </para>

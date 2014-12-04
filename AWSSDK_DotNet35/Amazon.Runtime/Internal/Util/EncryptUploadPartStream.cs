@@ -143,7 +143,7 @@ namespace Amazon.Runtime.Internal.Util
             }
             set
             {
-                BaseStream.Position = value;
+                Seek(offset: value, origin: SeekOrigin.Begin);
             }
         }
 
@@ -157,7 +157,10 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns>The new position within the current stream.</returns>
         public override long Seek(long offset, SeekOrigin origin)
         {
-            return BaseStream.Seek(offset, origin);
+            long position = BaseStream.Seek(offset, origin);
+            this.Algorithm.Reset();
+
+            return position;
         }
 
         #endregion

@@ -1317,5 +1317,40 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  UpdateHostedZoneComment
+
+        /// <summary>
+        /// To update the hosted zone comment, send a <code>POST</code> request to the <code>2013-04-01/hostedzone/<i>hosted
+        /// zone ID</i></code> resource. The request body must include an XML document with a
+        /// <code>UpdateHostedZoneCommentRequest</code> element. The response to this request
+        /// includes the modified <code>HostedZone</code> element.
+        /// 
+        ///  <note> The comment can have a maximum length of 256 characters.</note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneComment service method.</param>
+        /// 
+        /// <returns>The response from the UpdateHostedZoneComment service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// 
+        /// </exception>
+        UpdateHostedZoneCommentResponse UpdateHostedZoneComment(UpdateHostedZoneCommentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateHostedZoneComment operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneComment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateHostedZoneCommentResponse> UpdateHostedZoneCommentAsync(UpdateHostedZoneCommentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
     }
 }

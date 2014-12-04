@@ -34,16 +34,16 @@ namespace Amazon.AWSSupport.Model
     /// You can use the <code>CaseId</code> parameter to restrict the results to a particular
     /// case.
     /// 
-    ///     
+    ///  
     /// <para>
     /// Case data is available for 12 months after creation. If a case was created more than
     /// 12 months ago, a request for data might cause an error. 
     /// </para>
-    ///     
+    ///  
     /// <para>
     /// You can use the <code>MaxResults</code> and <code>NextToken</code> parameters to control
     /// the pagination of the result set. Set <code>MaxResults</code> to the number of cases
-    /// you want displayed on each page, and use  <code>NextToken</code> to specify the resumption
+    /// you want displayed on each page, and use <code>NextToken</code> to specify the resumption
     /// of pagination.
     /// </para>
     /// </summary>

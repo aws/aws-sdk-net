@@ -385,6 +385,9 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.Internal.Transform.BoolUnmarshaller.#GetInstance()")]
 [module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.Internal.Transform.DateTimeEpochLongMillisecondsUnmarshaller.#GetInstance()")]
 
+// Use properties, design decision to suppress
+[module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.Internal.Util.WrapperStream.#GetSeekableBaseStream()")]
+
 // Flag enums should have plural names, breaking changes
 [module: SuppressMessage("Microsoft.Naming", "CA1717:OnlyFlagsEnumsShouldHavePluralNames", Scope = "type", Target = "Amazon.DynamoDBv2.DocumentModel.ReturnValues")]
 [module: SuppressMessage("Microsoft.Naming", "CA1717:OnlyFlagsEnumsShouldHavePluralNames", Scope = "type", Target = "Amazon.DynamoDBv2.DocumentModel.SelectValues")]

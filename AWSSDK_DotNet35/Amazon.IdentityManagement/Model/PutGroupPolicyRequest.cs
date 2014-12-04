@@ -39,6 +39,12 @@ namespace Amazon.IdentityManagement.Model
     /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
     /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
     /// </para>
+    ///  <note> Because policy documents can be large, you should use POST rather than GET
+    /// when calling <code>PutGroupPolicy</code>. For information about setting up signatures
+    /// and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
+    /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+    /// Query Requests</a> in the <i>Using IAM</i> guide. </note>
     /// </summary>
     public partial class PutGroupPolicyRequest : AmazonIdentityManagementServiceRequest
     {

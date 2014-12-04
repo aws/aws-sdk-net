@@ -2270,5 +2270,68 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  UpdateHostedZoneComment
+
+        /// <summary>
+        /// To update the hosted zone comment, send a <code>POST</code> request to the <code>2013-04-01/hostedzone/<i>hosted
+        /// zone ID</i></code> resource. The request body must include an XML document with a
+        /// <code>UpdateHostedZoneCommentRequest</code> element. The response to this request
+        /// includes the modified <code>HostedZone</code> element.
+        /// 
+        ///  <note> The comment can have a maximum length of 256 characters.</note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneComment service method.</param>
+        /// 
+        /// <returns>The response from the UpdateHostedZoneComment service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// 
+        /// </exception>
+        public UpdateHostedZoneCommentResponse UpdateHostedZoneComment(UpdateHostedZoneCommentRequest request)
+        {
+            var marshaller = new UpdateHostedZoneCommentRequestMarshaller();
+            var unmarshaller = UpdateHostedZoneCommentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHostedZoneCommentRequest,UpdateHostedZoneCommentResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateHostedZoneComment operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneComment operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateHostedZoneComment
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateHostedZoneComment(UpdateHostedZoneCommentRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateHostedZoneCommentRequestMarshaller();
+            var unmarshaller = UpdateHostedZoneCommentResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateHostedZoneCommentRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateHostedZoneComment operation.
+        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateHostedZoneComment.</param>
+        /// 
+        /// <returns>Returns a  UpdateHostedZoneCommentResult from Route53.</returns>
+        public  UpdateHostedZoneCommentResponse EndUpdateHostedZoneComment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateHostedZoneCommentResponse>(asyncResult);
+        }
+
+        #endregion
+        
     }
 }

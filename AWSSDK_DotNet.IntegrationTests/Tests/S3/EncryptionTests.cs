@@ -18,6 +18,7 @@ using Amazon.S3.Util;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
+using Amazon.Runtime.Internal;
 
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
@@ -32,25 +33,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private static AmazonS3EncryptionClient s3EncryptionClientMetadataMode;
         private static AmazonS3EncryptionClient s3EncryptionClientFileMode;
+        private static EncryptionMaterials encryptionMaterials = new EncryptionMaterials(CreateAsymmetricProvider());
 
         [ClassInitialize]
         public static void Initialize(TestContext a)
         {
-            EncryptionMaterials encryptionMaterials = new EncryptionMaterials(generateAsymmetricProvider());
             s3EncryptionClientMetadataMode = new AmazonS3EncryptionClient(encryptionMaterials);
+            RetryUtilities.ForceConfigureClient(s3EncryptionClientMetadataMode);            
 
             AmazonS3CryptoConfiguration config = new AmazonS3CryptoConfiguration()
             {
                 StorageMode = CryptoStorageMode.InstructionFile
             };
-
             s3EncryptionClientFileMode = new AmazonS3EncryptionClient(config, encryptionMaterials);
+            RetryUtilities.ForceConfigureClient(s3EncryptionClientFileMode);            
+
 
             using (StreamWriter writer = File.CreateText(fileName))
             {
                 writer.Write(sampleContent);
             }
-
             bucketName = S3TestUtils.CreateBucket(s3EncryptionClientFileMode);
         }
 
@@ -469,23 +471,53 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Key = key
             };
 
-            GetObjectResponse getObjectResponse = s3EncryptionClient.GetObject(getObjectRequest);
-            var stream = getObjectResponse.ResponseStream;
-            using (stream)
-            using (var reader = new StreamReader(stream))
+            using (GetObjectResponse getObjectResponse = s3EncryptionClient.GetObject(getObjectRequest))
             {
-                string data = reader.ReadToEnd();
-                Assert.AreEqual(uploadedData, data);
+                using (var stream = getObjectResponse.ResponseStream)
+                using (var reader = new StreamReader(stream))
+                {
+                    string data = reader.ReadToEnd();
+                    Assert.AreEqual(uploadedData, data);
+                }
             }
         }
 
-        private static RSA generateAsymmetricProvider()
+        private static void TestGet2(string key, string uploadedFile, AmazonS3EncryptionClient s3EncryptionClient)
+        {
+            GetObjectRequest getObjectRequest = new GetObjectRequest
+            {
+                BucketName = bucketName,
+                Key = key
+            };
+
+            var destinationFile = fileName + ".downloaded";
+            using (GetObjectResponse getObjectResponse = s3EncryptionClient.GetObject(getObjectRequest))
+            {
+                getObjectResponse.WriteResponseStreamToFile(destinationFile);
+            }
+
+            var originalMd5 = HashFile(uploadedFile);
+            var downloadedMd5 = HashFile(destinationFile);
+            Assert.AreEqual(originalMd5, downloadedMd5);
+        }
+
+        private static string HashFile(string file)
+        {
+            var md5 = MD5.Create();
+            using(var stream = File.Open(file, FileMode.Open, FileAccess.Read, FileShare.None))
+            {
+                var hashBytes = md5.ComputeHash(stream);
+                return Convert.ToBase64String(hashBytes);
+            }
+        }
+
+        private static RSA CreateAsymmetricProvider()
         {
             RSA rsaProvider = RSA.Create();
             return rsaProvider;
         }
 
-        private static Aes generateSymmetricKey()
+        private static Aes CreateSymmetricKey()
         {
             Aes aesAlg = Aes.Create();
             return aesAlg;

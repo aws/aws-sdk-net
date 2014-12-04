@@ -46,6 +46,9 @@ namespace Amazon.IdentityManagement.Model
     /// of thumbprints of the server certificate(s) that the IdP uses. You get all of this
     /// information from the OIDC IdP that you want to use for access to AWS. 
     /// </para>
+    ///  <note>Because trust for the OIDC provider is ultimately derived from the IAM provider
+    /// that this action creates, it is a best practice to limit access to the <a>CreateOpenIDConnectProvider</a>
+    /// action to highly-privileged users. </note>
     /// </summary>
     public partial class CreateOpenIDConnectProviderRequest : AmazonIdentityManagementServiceRequest
     {

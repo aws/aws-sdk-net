@@ -44,6 +44,8 @@ namespace Amazon.IdentityManagement.Model
     /// for access keys under the AWS account, you can use this action to manage root credentials
     /// even if the AWS account has no associated users. 
     /// </para>
+    ///  <note> To ensure the security of your AWS account, the secret access key is accessible
+    /// only during key and user creation. </note>
     /// </summary>
     public partial class ListAccessKeysRequest : AmazonIdentityManagementServiceRequest
     {

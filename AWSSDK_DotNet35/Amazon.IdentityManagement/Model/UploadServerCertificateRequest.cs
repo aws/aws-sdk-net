@@ -38,6 +38,13 @@ namespace Amazon.IdentityManagement.Model
     ///  For information about the number of server certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
     /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
     /// </para>
+    ///  <note> Because the body of the public key certificate, private key, and the certificate
+    /// chain can be large, you should use POST rather than GET when calling <code>UploadServerCertificate</code>.
+    /// For information about setting up signatures and authorization through the API, go
+    /// to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
+    /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+    /// Query Requests</a> in the <i>Using IAM</i> guide. </note>
     /// </summary>
     public partial class UploadServerCertificateRequest : AmazonIdentityManagementServiceRequest
     {
@@ -112,6 +119,10 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter is optional. If it is not included, it defaults to a slash (/).
         /// </para>
+        ///  <note> If you are uploading a server certificate specifically for use with Amazon
+        /// CloudFront distributions, you must specify a path using the <code>--path</code> option.
+        /// The path must begin with <code>/cloudfront</code> and must include a trailing slash
+        /// (for example, <code>/cloudfront/test/</code>). </note>
         /// </summary>
         public string Path
         {

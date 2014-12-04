@@ -34,14 +34,13 @@ namespace Amazon.AWSSupport.Model
     /// to copy on the communication using the <code>CcEmailAddresses</code> value. The <code>CommunicationBody</code>
     /// value contains the text of the communication.
     /// 
-    ///     
+    ///  
     /// <para>
     /// The response indicates the success or failure of the request.
     /// </para>
-    ///     
+    ///  
     /// <para>
-    /// This operation implements a subset of the behavior on the AWS Support <a href="https://aws.amazon.com/support">Your
-    /// Support Cases</a> web form.
+    /// This operation implements a subset of the features of the AWS Support Center.
     /// </para>
     /// </summary>
     public partial class AddCommunicationToCaseRequest : AmazonAWSSupportRequest

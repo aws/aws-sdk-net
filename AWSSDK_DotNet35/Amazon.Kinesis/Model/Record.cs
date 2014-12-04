@@ -42,7 +42,7 @@ namespace Amazon.Kinesis.Model
         /// <para>
         /// The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis
         /// service, which does not inspect, interpret, or change the data in the blob in any
-        /// way. The maximum size of the data blob (the payload before Base64-encoding) is 50
+        /// way. The maximum size of the data blob (the payload before base64-encoding) is 50
         /// kilobytes (KB) 
         /// </para>
         /// </summary>

@@ -29,19 +29,28 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the PutRecord operation.
-    /// Puts a data record from a producer into an Amazon Kinesis stream. You must call <code>PutRecord</code>
-    /// to send data from the producer into the Amazon Kinesis stream for real-time ingestion
-    /// and subsequent processing. You must specify the name of the stream that captures,
-    /// stores, and transports the data; a partition key; and the data blob itself. The data
-    /// blob could be a segment from a log file, geographic/location data, website clickstream
-    /// data, or any other data type.
+    /// Puts (writes) a single data record from a producer into an Amazon Kinesis stream.
+    /// Call <code>PutRecord</code> to send data from the producer into the Amazon Kinesis
+    /// stream for real-time ingestion and subsequent processing, one record at a time. Each
+    /// shard can support up to 1000 records written per second, up to a maximum total of
+    /// 1 MB data written per second.
     /// 
     ///  
     /// <para>
-    /// The partition key is used to distribute data across shards. Amazon Kinesis segregates
-    /// the data records that belong to a data stream into multiple shards, using the partition
-    /// key associated with each data record to determine which shard a given data record
-    /// belongs to. 
+    /// You must specify the name of the stream that captures, stores, and transports the
+    /// data; a partition key; and the data blob itself.
+    /// </para>
+    ///  
+    /// <para>
+    /// The data blob can be any type of data; for example, a segment from a log file, geographic/location
+    /// data, website clickstream data, and so on.
+    /// </para>
+    ///  
+    /// <para>
+    /// The partition key is used by Amazon Kinesis to distribute data across shards. Amazon
+    /// Kinesis segregates the data records that belong to a data stream into multiple shards,
+    /// using the partition key associated with each data record to determine which shard
+    /// a given data record belongs to. 
     /// </para>
     ///  
     /// <para>
@@ -87,8 +96,8 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// The data blob to put into the record, which is Base64-encoded when the blob is serialized.
-        /// The maximum size of the data blob (the payload before Base64-encoding) is 50 kilobytes
+        /// The data blob to put into the record, which is base64-encoded when the blob is serialized.
+        /// The maximum size of the data blob (the payload before base64-encoding) is 50 kilobytes
         /// (KB) 
         /// </para>
         /// </summary>

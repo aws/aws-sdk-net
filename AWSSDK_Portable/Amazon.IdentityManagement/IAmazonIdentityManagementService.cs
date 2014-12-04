@@ -39,7 +39,13 @@ namespace Amazon.IdentityManagement
     /// For the user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using
     /// IAM</a>. 
     /// </para>
-    ///  
+    ///  <note> AWS provides SDKs that consist of libraries and sample code for various programming
+    /// languages and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a
+    /// convenient way to create programmatic access to IAM and AWS. For example, the SDKs
+    /// take care of tasks such as cryptographically signing requests (see below), managing
+    /// errors, and retrying requests automatically. For information about the AWS SDKs, including
+    /// how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools
+    /// for Amazon Web Services</a> page. </note> 
     /// <para>
     ///  We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However,
     /// you can also use the IAM Query API to make direct calls to the IAM web service. To
@@ -628,6 +634,22 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GenerateCredentialReportResponse> GenerateCredentialReportAsync(GenerateCredentialReportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAccountAuthorizationDetails
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountAuthorizationDetails operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountAuthorizationDetails operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetAccountAuthorizationDetailsResponse> GetAccountAuthorizationDetailsAsync(GetAccountAuthorizationDetailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

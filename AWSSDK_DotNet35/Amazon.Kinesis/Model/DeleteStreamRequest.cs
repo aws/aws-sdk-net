@@ -42,8 +42,8 @@ namespace Amazon.Kinesis.Model
     ///  
     /// <para>
     /// <b>Note:</b> Amazon Kinesis might continue to accept data read and write operations,
-    /// such as <a>PutRecord</a> and <a>GetRecords</a>, on a stream in the <code>DELETING</code>
-    /// state until the stream deletion is complete.
+    /// such as <a>PutRecord</a>, <a>PutRecords</a>, and <a>GetRecords</a>, on a stream in
+    /// the <code>DELETING</code> state until the stream deletion is complete.
     /// </para>
     ///  
     /// <para>

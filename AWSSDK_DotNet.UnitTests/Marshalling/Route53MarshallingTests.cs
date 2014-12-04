@@ -878,5 +878,36 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void UpdateHostedZoneCommentMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateHostedZoneComment");
+
+            var request = InstantiateClassGenerator.Execute<UpdateHostedZoneCommentRequest>();
+            var marshaller = new UpdateHostedZoneCommentRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("UpdateHostedZoneComment", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateHostedZoneCommentResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateHostedZoneCommentResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
             }
 }

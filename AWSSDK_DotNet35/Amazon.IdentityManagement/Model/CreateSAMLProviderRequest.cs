@@ -46,7 +46,8 @@ namespace Amazon.IdentityManagement.Model
     /// are received from the IdP. You must generate the metadata document using the identity
     /// management software that is used as your organization's IdP. 
     /// </para>
-    ///  
+    ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4</a>. </note> 
     /// <para>
     ///  For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSMgmtConsole-SAML.html">Giving
     /// Console Access Using SAML</a> and <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating

@@ -199,6 +199,22 @@ namespace Amazon.Kinesis
 
         #endregion
                 
+        #region  PutRecords
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRecords operation.
+        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRecords operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutRecordsResponse> PutRecordsAsync(PutRecordsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RemoveTagsFromStream
 
         /// <summary>

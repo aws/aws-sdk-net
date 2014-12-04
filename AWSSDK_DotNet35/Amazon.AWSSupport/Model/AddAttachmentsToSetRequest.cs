@@ -34,7 +34,7 @@ namespace Amazon.AWSSupport.Model
     /// in the response. If an <code>AttachmentSetId</code> is specified, the attachments
     /// are added to the specified set, if it exists.
     /// 
-    ///     
+    ///  
     /// <para>
     /// An attachment set is a temporary container for attachments that are to be added to
     /// a case or case communication. The set is available for one hour after it is created;

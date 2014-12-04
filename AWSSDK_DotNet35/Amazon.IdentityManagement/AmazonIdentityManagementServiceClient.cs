@@ -42,7 +42,13 @@ namespace Amazon.IdentityManagement
     /// For the user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using
     /// IAM</a>. 
     /// </para>
-    ///  
+    ///  <note> AWS provides SDKs that consist of libraries and sample code for various programming
+    /// languages and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a
+    /// convenient way to create programmatic access to IAM and AWS. For example, the SDKs
+    /// take care of tasks such as cryptographically signing requests (see below), managing
+    /// errors, and retrying requests automatically. For information about the AWS SDKs, including
+    /// how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools
+    /// for Amazon Web Services</a> page. </note> 
     /// <para>
     ///  We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However,
     /// you can also use the IAM Query API to make direct calls to the IAM web service. To
@@ -963,6 +969,9 @@ namespace Amazon.IdentityManagement
         /// of thumbprints of the server certificate(s) that the IdP uses. You get all of this
         /// information from the OIDC IdP that you want to use for access to AWS. 
         /// </para>
+        ///  <note>Because trust for the OIDC provider is ultimately derived from the IAM provider
+        /// that this action creates, it is a best practice to limit access to the <a>CreateOpenIDConnectProvider</a>
+        /// action to highly-privileged users. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOpenIDConnectProvider service method.</param>
         /// 
@@ -1117,7 +1126,8 @@ namespace Amazon.IdentityManagement
         /// are received from the IdP. You must generate the metadata document using the identity
         /// management software that is used as your organization's IdP. 
         /// </para>
-        ///  
+        ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4</a>. </note> 
         /// <para>
         ///  For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSMgmtConsole-SAML.html">Giving
         /// Console Access Using SAML</a> and <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
@@ -2093,6 +2103,8 @@ namespace Amazon.IdentityManagement
         /// as a principal in their trust policies. Any attempt to assume a role that references
         /// a SAML provider that has been deleted will fail. 
         /// </para>
+        ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4</a>. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSAMLProvider service method.</param>
         /// 
@@ -2423,6 +2435,10 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Deletes a virtual MFA device.
+        /// 
+        ///  <note> You must deactivate a user's virtual MFA device before you can delete it.
+        /// For information about deactivating MFA devices, see <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html">DeactivateMFADevice</a>.
+        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualMFADevice service method.</param>
         /// 
@@ -2628,6 +2644,58 @@ namespace Amazon.IdentityManagement
         public  GenerateCredentialReportResponse EndGenerateCredentialReport(IAsyncResult asyncResult)
         {
             return EndInvoke<GenerateCredentialReportResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAccountAuthorizationDetails
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountAuthorizationDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountAuthorizationDetails service method, as returned by IdentityManagementService.</returns>
+        public GetAccountAuthorizationDetailsResponse GetAccountAuthorizationDetails(GetAccountAuthorizationDetailsRequest request)
+        {
+            var marshaller = new GetAccountAuthorizationDetailsRequestMarshaller();
+            var unmarshaller = GetAccountAuthorizationDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountAuthorizationDetailsRequest,GetAccountAuthorizationDetailsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountAuthorizationDetails operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountAuthorizationDetails operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountAuthorizationDetails
+        ///         operation.</returns>
+        public IAsyncResult BeginGetAccountAuthorizationDetails(GetAccountAuthorizationDetailsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetAccountAuthorizationDetailsRequestMarshaller();
+            var unmarshaller = GetAccountAuthorizationDetailsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetAccountAuthorizationDetailsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccountAuthorizationDetails operation.
+        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountAuthorizationDetails.</param>
+        /// 
+        /// <returns>Returns a  GetAccountAuthorizationDetailsResult from IdentityManagementService.</returns>
+        public  GetAccountAuthorizationDetailsResponse EndGetAccountAuthorizationDetails(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccountAuthorizationDetailsResponse>(asyncResult);
         }
 
         #endregion
@@ -3300,7 +3368,10 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Returns the SAML provider metadocument that was uploaded when the provider was created
-        /// or updated.
+        /// or updated. 
+        /// 
+        ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4</a>. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSAMLProvider service method.</param>
         /// 
@@ -3573,6 +3644,8 @@ namespace Amazon.IdentityManagement
         /// for access keys under the AWS account, you can use this action to manage root credentials
         /// even if the AWS account has no associated users. 
         /// </para>
+        ///  <note> To ensure the security of your AWS account, the secret access key is accessible
+        /// only during key and user creation. </note>
         /// </summary>
         /// 
         /// <returns>The response from the ListAccessKeys service method, as returned by IdentityManagementService.</returns>
@@ -3601,6 +3674,8 @@ namespace Amazon.IdentityManagement
         /// for access keys under the AWS account, you can use this action to manage root credentials
         /// even if the AWS account has no associated users. 
         /// </para>
+        ///  <note> To ensure the security of your AWS account, the secret access key is accessible
+        /// only during key and user creation. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessKeys service method.</param>
         /// 
@@ -4372,6 +4447,9 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the SAML providers in the account.
+        /// 
+        ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4</a>. </note>
         /// </summary>
         /// 
         /// <returns>The response from the ListSAMLProviders service method, as returned by IdentityManagementService.</returns>
@@ -4382,6 +4460,9 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the SAML providers in the account.
+        /// 
+        ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4</a>. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSAMLProviders service method.</param>
         /// 
@@ -4840,6 +4921,12 @@ namespace Amazon.IdentityManagement
         /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
         /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
+        ///  <note> Because policy documents can be large, you should use POST rather than GET
+        /// when calling <code>PutGroupPolicy</code>. For information about setting up signatures
+        /// and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+        /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
+        /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        /// Query Requests</a> in the <i>Using IAM</i> guide. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutGroupPolicy service method.</param>
         /// 
@@ -4913,6 +5000,12 @@ namespace Amazon.IdentityManagement
         /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
         /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
+        ///  <note> Because policy documents can be large, you should use POST rather than GET
+        /// when calling <code>PutRolePolicy</code>. For information about setting up signatures
+        /// and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+        /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
+        /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        /// Query Requests</a> in the <i>Using IAM</i> guide. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRolePolicy service method.</param>
         /// 
@@ -4986,6 +5079,12 @@ namespace Amazon.IdentityManagement
         /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
         /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
+        ///  <note> Because policy documents can be large, you should use POST rather than GET
+        /// when calling <code>PutUserPolicy</code>. For information about setting up signatures
+        /// and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+        /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
+        /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        /// Query Requests</a> in the <i>Using IAM</i> guide. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutUserPolicy service method.</param>
         /// 
@@ -5394,7 +5493,13 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Updates the password policy settings for the AWS account.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  This action does not support partial updates. No parameters are required, but if
+        /// you do not specify a parameter, that parameter's value reverts to its default value.
+        /// See the <b>Request Parameters</b> section for each parameter's default value. 
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
         /// an IAM Password Policy</a> in the <i>Using IAM</i> guide. 
@@ -5422,7 +5527,13 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Updates the password policy settings for the AWS account.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  This action does not support partial updates. No parameters are required, but if
+        /// you do not specify a parameter, that parameter's value reverts to its default value.
+        /// See the <b>Request Parameters</b> section for each parameter's default value. 
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
         /// an IAM Password Policy</a> in the <i>Using IAM</i> guide. 
@@ -5560,7 +5671,12 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <important> You should understand the implications of changing a group's path or
         /// name. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming
-        /// Users and Groups</a> in the <i>Using IAM</i> guide. </important>
+        /// Users and Groups</a> in the <i>Using IAM</i> guide. </important> <note> To change
+        /// a group name the requester must have appropriate permissions on both the source object
+        /// and the target object. For example, to change Managers to MGRs, the entity making
+        /// the request must have permission on Managers and MGRs, or must have permission on
+        /// all (*). For more information about permissions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
+        /// target="blank">Permissions and Policies</a>. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
         /// 
@@ -5714,6 +5830,10 @@ namespace Amazon.IdentityManagement
         /// any attempt to assume an IAM role that specifies the IAM provider as a principal will
         /// fail until the certificate thumbprint is updated.
         /// </para>
+        ///  <note>Because trust for the OpenID Connect provider is ultimately derived from the
+        /// provider's certificate and is validated by the thumbprint, it is a best practice to
+        /// limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code> action to highly-privileged
+        /// users. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOpenIDConnectProviderThumbprint service method.</param>
         /// 
@@ -5774,6 +5894,9 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Updates the metadata document for an existing SAML provider.
+        /// 
+        ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4</a>. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSAMLProvider service method.</param>
         /// 
@@ -5841,7 +5964,13 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <important> You should understand the implications of changing a server certificate's
         /// path or name. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html">Managing
-        /// Server Certificates</a> in the <i>Using IAM</i> guide. </important>
+        /// Server Certificates</a> in the <i>Using IAM</i> guide. </important> <note> To change
+        /// a server certificate name the requester must have appropriate permissions on both
+        /// the source object and the target object. For example, to change the name from ProductionCert
+        /// to ProdCert, the entity making the request must have permission on ProductionCert
+        /// and ProdCert, or must have permission on all (*). For more information about permissions,
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
+        /// target="blank">Permissions and Policies</a>. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateServerCertificate service method.</param>
         /// 
@@ -5983,7 +6112,12 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <important> You should understand the implications of changing a user's path or name.
         /// For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming
-        /// Users and Groups</a> in the <i>Using IAM</i> guide. </important>
+        /// Users and Groups</a> in the <i>Using IAM</i> guide. </important> <note> To change
+        /// a user name the requester must have appropriate permissions on both the source object
+        /// and the target object. For example, to change Bob to Robert, the entity making the
+        /// request must have permission on Bob and Robert, or must have permission on all (*).
+        /// For more information about permissions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
+        /// target="blank">Permissions and Policies</a>. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
         /// 
@@ -6061,6 +6195,13 @@ namespace Amazon.IdentityManagement
         ///  For information about the number of server certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
         /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
+        ///  <note> Because the body of the public key certificate, private key, and the certificate
+        /// chain can be large, you should use POST rather than GET when calling <code>UploadServerCertificate</code>.
+        /// For information about setting up signatures and authorization through the API, go
+        /// to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+        /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
+        /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        /// Query Requests</a> in the <i>Using IAM</i> guide. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UploadServerCertificate service method.</param>
         /// 
@@ -6139,6 +6280,12 @@ namespace Amazon.IdentityManagement
         /// works for access keys under the AWS account, you can use this action to manage root
         /// credentials even if the AWS account has no associated users. 
         /// </para>
+        ///  <note> Because the body of a X.509 certificate can be large, you should use POST
+        /// rather than GET when calling <code>UploadSigningCertificate</code>. For information
+        /// about setting up signatures and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+        /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
+        /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        /// Query Requests</a> in the <i>Using IAM</i>guide. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UploadSigningCertificate service method.</param>
         /// 
