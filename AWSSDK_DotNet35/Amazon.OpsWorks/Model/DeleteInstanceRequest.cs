@@ -29,10 +29,14 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInstance operation.
-    /// Deletes a specified instance. You must stop an instance before you can delete it.
+    /// Deletes a specified instance, which terminates the associated Amazon EC2 instance.
+    /// You must stop an instance before you can delete it.
+    /// 
+    ///  
+    /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html">Deleting
     /// Instances</a>.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions

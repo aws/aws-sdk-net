@@ -49,10 +49,9 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property Attributes. 
         /// <para>
         /// <code>SenderId</code>, <code>SentTimestamp</code>, <code>ApproximateReceiveCount</code>,
-        /// and/or       <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code>
-        ///      and <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer
-        /// representing the             <a href="http://en.wikipedia.org/wiki/Unix_time">epoch
-        /// time</a> in milliseconds.
+        /// and/or <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code> and
+        /// <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer representing
+        /// the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -165,9 +164,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property ReceiptHandle. 
         /// <para>
-        /// An identifier associated with the act of receiving the message.       A new receipt
-        /// handle is returned every time you receive a message.       When deleting a message,
-        /// you provide the last received receipt handle to delete the message.
+        /// An identifier associated with the act of receiving the message. A new receipt handle
+        /// is returned every time you receive a message. When deleting a message, you provide
+        /// the last received receipt handle to delete the message.
         /// </para>
         /// </summary>
         public string ReceiptHandle

@@ -32,7 +32,7 @@ namespace Amazon.SQS.Model
     /// Returns a list of your queues that have the RedrivePolicy queue attribute configured
     /// with a dead letter queue.
     /// 
-    ///             
+    ///  
     /// <para>
     /// For more information about using dead letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
     /// Amazon SQS Dead Letter Queues</a>.

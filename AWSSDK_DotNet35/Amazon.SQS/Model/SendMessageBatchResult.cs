@@ -39,8 +39,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Failed. 
         /// <para>
-        /// A list of <a>BatchResultErrorEntry</a> items with the error detail about each    
-        ///  message that could not be enqueued.
+        /// A list of <a>BatchResultErrorEntry</a> items with the error detail about each message
+        /// that could not be enqueued.
         /// </para>
         /// </summary>
         public List<BatchResultErrorEntry> Failed

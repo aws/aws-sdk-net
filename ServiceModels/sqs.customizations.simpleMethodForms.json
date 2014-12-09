@@ -119,6 +119,13 @@
                         "QueueName"
                     ]
                 ]
+            },
+            "PurgeQueue"                  : {
+                "methodForms" : [
+                    [
+                        "QueueUrl"
+                    ]
+                ]
             }
         }
     }

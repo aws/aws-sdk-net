@@ -29,23 +29,22 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMessageBatch operation.
-    /// Deletes multiple messages.      This is a batch version of <a>DeleteMessage</a>. The
-    /// result of the delete      action on each message is reported individually in the response.
+    /// Deletes up to ten messages from the specified queue. This is a batch version of <a>DeleteMessage</a>.
+    /// The result of the delete action on each message is reported individually in the response.
     /// 
-    ///     <important>      
+    ///  <important> 
     /// <para>
-    ///         Because the batch request can result in a combination of successful and unsuccessful
-    /// actions,         you should check for batch errors even when the call returns an HTTP
-    /// status code of 200.      
+    ///  Because the batch request can result in a combination of successful and unsuccessful
+    /// actions, you should check for batch errors even when the call returns an HTTP status
+    /// code of 200. 
     /// </para>
-    ///     </important>    <note>Some API actions take lists of parameters. These lists are
-    /// specified using the <code>param.n</code> notation. Values      of <code>n</code> are
-    /// integers starting from 1. For example, a parameter list with two elements looks like
-    /// this:     </note>    
+    ///  </important> <note>Some API actions take lists of parameters. These lists are specified
+    /// using the <code>param.n</code> notation. Values of <code>n</code> are integers starting
+    /// from 1. For example, a parameter list with two elements looks like this: </note> 
     /// <para>
     /// <code>&amp;Attribute.1=this</code>
     /// </para>
-    ///     
+    ///  
     /// <para>
     /// <code>&amp;Attribute.2=that</code>
     /// </para>

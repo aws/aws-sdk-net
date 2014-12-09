@@ -63,8 +63,9 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// A custom AMI ID to be used to create the instance. The AMI should be based on one
         /// of the standard AWS OpsWorks AMIs: Amazon Linux, Ubuntu 12.04 LTS, or Ubuntu 14.04
-        /// LTS. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+        /// LTS. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>.
         /// </para>
+        ///  <note>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</note>
         /// </summary>
         public string AmiId
         {
@@ -102,15 +103,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AutoScalingType. 
         /// <para>
-        /// The instance auto scaling type, which has three possible values:
+        /// For load-based or time-based instances, the type.
         /// </para>
-        ///  <ul> <li> <b>AlwaysRunning</b>: A 24/7 instance, which is not affected by auto scaling.</li>
-        /// <li> <b>TimeBasedAutoScaling</b>: A time-based auto scaling instance, which is started
-        /// and stopped based on a specified schedule. To specify the schedule, call <a>SetTimeBasedAutoScaling</a>.</li>
-        /// <li> <b>LoadBasedAutoScaling</b>: A load-based auto scaling instance, which is started
-        /// and stopped based on load metrics. To use load-based auto scaling, you must enable
-        /// it for the instance layer and configure the thresholds by calling <a>SetLoadBasedAutoScaling</a>.</li>
-        /// </ul>
         /// </summary>
         public AutoScalingType AutoScalingType
         {
@@ -189,6 +183,12 @@ namespace Amazon.OpsWorks.Model
         /// or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu)
         /// on the instances. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We strongly recommend using the default value of <code>true</code> to ensure that
+        /// your instances have the latest security updates.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool InstallUpdatesOnBoot
         {
@@ -244,16 +244,16 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Os. 
         /// <para>
-        /// The instance operating system, which must be set to one of the following.
+        /// The instance's operating system, which must be set to one of the following.
         /// </para>
-        ///  <ul> <li>Standard operating systems: <code>Amazon Linux</code>, <code>Ubuntu 12.04
-        /// LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs: <code>Custom</code>
-        /// </li> </ul> 
+        ///  <ul> <li>Standard operating systems: an Amazon Linux version such as <code>Amazon
+        /// Linux 2014.09</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
+        /// <li>Custom AMIs: <code>Custom</code> </li> </ul> 
         /// <para>
-        /// The default option is <code>Amazon Linux</code>. If you set this parameter to <code>Custom</code>,
-        /// you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom
-        /// AMI that you want to use. For more information on the standard operating systems,
-        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+        /// The default option is the current Amazon Linux version. If you set this parameter
+        /// to <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter
+        /// to specify the custom AMI that you want to use. For more information on the standard
+        /// operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
         /// Systems</a>For more information on how to use custom AMIs with OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
         /// Custom AMIs</a>.
         /// </para>

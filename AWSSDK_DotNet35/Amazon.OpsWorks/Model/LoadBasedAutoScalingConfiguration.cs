@@ -40,8 +40,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DownScaling. 
         /// <para>
-        /// A <code>LoadBasedAutoscalingInstruction</code> object that describes the downscaling
-        /// configuration, which defines how and when AWS OpsWorks reduces the number of instances.
+        /// An <code>AutoScalingThresholds</code> object that describes the downscaling configuration,
+        /// which defines how and when AWS OpsWorks reduces the number of instances.
         /// </para>
         /// </summary>
         public AutoScalingThresholds DownScaling
@@ -95,8 +95,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property UpScaling. 
         /// <para>
-        /// A <code>LoadBasedAutoscalingInstruction</code> object that describes the upscaling
-        /// configuration, which defines how and when AWS OpsWorks increases the number of instances.
+        /// An <code>AutoScalingThresholds</code> object that describes the upscaling configuration,
+        /// which defines how and when AWS OpsWorks increases the number of instances.
         /// </para>
         /// </summary>
         public AutoScalingThresholds UpScaling

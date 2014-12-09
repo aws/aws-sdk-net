@@ -85,6 +85,10 @@ namespace Amazon.OpsWorks
     /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
     /// Versions</a>.
     /// </para>
+    ///  <note>You can still specify Chef 0.9 for your stack, but new features are not available
+    /// for Chef 0.9 stacks, and support is scheduled to end on July 24, 2014. We do not recommend
+    /// using Chef 0.9 for new stacks, and we recommend migrating your existing Chef 0.9 stacks
+    /// to Chef 11.10 as soon as possible.</note>
     /// </summary>
     public partial class AmazonOpsWorksClient : AmazonServiceClient, IAmazonOpsWorks
     {
@@ -267,6 +271,73 @@ namespace Amazon.OpsWorks
         #endregion
 
         
+        #region  AssignInstance
+
+        /// <summary>
+        /// Assign a registered instance to a custom layer. You cannot use this action with instances
+        /// that were created with AWS OpsWorks.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        /// level for the stack or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssignInstance service method.</param>
+        /// 
+        /// <returns>The response from the AssignInstance service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        public AssignInstanceResponse AssignInstance(AssignInstanceRequest request)
+        {
+            var marshaller = new AssignInstanceRequestMarshaller();
+            var unmarshaller = AssignInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<AssignInstanceRequest,AssignInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssignInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssignInstance operation on AmazonOpsWorksClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssignInstance
+        ///         operation.</returns>
+        public IAsyncResult BeginAssignInstance(AssignInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new AssignInstanceRequestMarshaller();
+            var unmarshaller = AssignInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AssignInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssignInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssignInstance.</param>
+        /// 
+        /// <returns>Returns a  AssignInstanceResult from OpsWorks.</returns>
+        public  AssignInstanceResponse EndAssignInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssignInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssignVolume
 
         /// <summary>
@@ -412,7 +483,13 @@ namespace Amazon.OpsWorks
         /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html">Elastic
         /// Load Balancing</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must create the Elastic Load Balancing instance separately, by using the Elastic
+        /// Load Balancing console, API, or CLI. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html">
+        /// Elastic Load Balancing Developer Guide</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
@@ -610,17 +687,10 @@ namespace Amazon.OpsWorks
         #region  CreateDeployment
 
         /// <summary>
-        /// Deploys a stack or app.
-        /// 
-        ///  <ul> <li>App deployment generates a <code>deploy</code> event, which runs the associated
-        /// recipes and passes them a JSON stack configuration object that includes information
-        /// about the app. </li> <li>Stack deployment runs the <code>deploy</code> recipes but
-        /// does not raise an event.</li> </ul> 
-        /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html">Deploying
+        /// Runs deployment or stack commands. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html">Deploying
         /// Apps</a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">Run
         /// Stack Commands</a>.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or
@@ -755,7 +825,15 @@ namespace Amazon.OpsWorks
         /// Creates a layer. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How
         /// to Create a Layer</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You should use <b>CreateLayer</b> for noncustom layer types such as PHP App Server
+        /// only if the stack does not have an existing layer of that type. A stack can have at
+        /// most one instance of each noncustom layer; if you attempt to create a second instance,
+        /// <b>CreateLayer</b> fails. A stack can have an arbitrary number of custom layers, so
+        /// you can call <b>CreateLayer</b> as many times as you like for that layer type.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
@@ -1012,10 +1090,14 @@ namespace Amazon.OpsWorks
         #region  DeleteInstance
 
         /// <summary>
-        /// Deletes a specified instance. You must stop an instance before you can delete it.
+        /// Deletes a specified instance, which terminates the associated Amazon EC2 instance.
+        /// You must stop an instance before you can delete it.
+        /// 
+        ///  
+        /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html">Deleting
         /// Instances</a>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
@@ -1080,8 +1162,8 @@ namespace Amazon.OpsWorks
         #region  DeleteLayer
 
         /// <summary>
-        /// Deletes a specified layer. You must first stop and then delete all associated instances.
-        /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">How
+        /// Deletes a specified layer. You must first stop and then delete all associated instances
+        /// or unassign registered instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">How
         /// to Delete a Layer</a>.
         /// 
         ///  
@@ -1148,8 +1230,8 @@ namespace Amazon.OpsWorks
         #region  DeleteStack
 
         /// <summary>
-        /// Deletes a specified stack. You must first delete all instances, layers, and apps.
-        /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">Shut
+        /// Deletes a specified stack. You must first delete all instances, layers, and apps or
+        /// deregister registered instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">Shut
         /// Down a Stack</a>.
         /// 
         ///  
@@ -1347,6 +1429,74 @@ namespace Amazon.OpsWorks
 
         #endregion
         
+        #region  DeregisterInstance
+
+        /// <summary>
+        /// Deregister a registered Amazon EC2 or on-premises instance. This action removes the
+        /// instance from the stack and returns it to your control. This action can not be used
+        /// with instances that were created with AWS OpsWorks.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        /// level for the stack or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterInstance service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterInstance service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        public DeregisterInstanceResponse DeregisterInstance(DeregisterInstanceRequest request)
+        {
+            var marshaller = new DeregisterInstanceRequestMarshaller();
+            var unmarshaller = DeregisterInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterInstanceRequest,DeregisterInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterInstance operation on AmazonOpsWorksClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterInstance
+        ///         operation.</returns>
+        public IAsyncResult BeginDeregisterInstance(DeregisterInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeregisterInstanceRequestMarshaller();
+            var unmarshaller = DeregisterInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeregisterInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeregisterInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterInstance.</param>
+        /// 
+        /// <returns>Returns a  DeregisterInstanceResult from OpsWorks.</returns>
+        public  DeregisterInstanceResponse EndDeregisterInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeregisterInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeregisterRdsDbInstance
 
         /// <summary>
@@ -1486,7 +1636,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Requests a description of a specified set of apps.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify at least one of the parameters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
@@ -1552,7 +1706,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes the results of specified commands.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify at least one of the parameters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
@@ -1618,7 +1776,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Requests a description of a specified set of deployments.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify at least one of the parameters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
@@ -1685,7 +1847,11 @@ namespace Amazon.OpsWorks
         /// Describes <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP addresses</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify at least one of the parameters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
@@ -1751,7 +1917,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes a stack's Elastic Load Balancing instances.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify at least one of the parameters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
@@ -1775,7 +1945,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes a stack's Elastic Load Balancing instances.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify at least one of the parameters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
@@ -1841,7 +2015,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Requests a description of a set of instances.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify at least one of the parameters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
@@ -1907,7 +2085,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Requests a description of one or more layers in a specified stack.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify at least one of the parameters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
@@ -1973,7 +2155,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes load-based auto scaling configurations for specified layers.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify at least one of the parameters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
@@ -2183,7 +2369,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describe an instance's RAID arrays.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify at least one of the parameters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
@@ -2400,6 +2590,72 @@ namespace Amazon.OpsWorks
 
         #endregion
         
+        #region  DescribeStackProvisioningParameters
+
+        /// <summary>
+        /// Requests a description of a stack's provisioning parameters.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        /// or Manage permissions level for the stack or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackProvisioningParameters service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStackProvisioningParameters service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        public DescribeStackProvisioningParametersResponse DescribeStackProvisioningParameters(DescribeStackProvisioningParametersRequest request)
+        {
+            var marshaller = new DescribeStackProvisioningParametersRequestMarshaller();
+            var unmarshaller = DescribeStackProvisioningParametersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStackProvisioningParametersRequest,DescribeStackProvisioningParametersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStackProvisioningParameters operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackProvisioningParameters operation on AmazonOpsWorksClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackProvisioningParameters
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeStackProvisioningParameters(DescribeStackProvisioningParametersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeStackProvisioningParametersRequestMarshaller();
+            var unmarshaller = DescribeStackProvisioningParametersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeStackProvisioningParametersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeStackProvisioningParameters operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStackProvisioningParameters.</param>
+        /// 
+        /// <returns>Returns a  DescribeStackProvisioningParametersResult from OpsWorks.</returns>
+        public  DescribeStackProvisioningParametersResponse EndDescribeStackProvisioningParameters(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeStackProvisioningParametersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeStacks
 
         /// <summary>
@@ -2562,7 +2818,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes time-based auto scaling configurations for specified instances.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify at least one of the parameters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
@@ -2718,7 +2978,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes an instance's Amazon EBS volumes.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify at least one of the parameters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
@@ -3114,6 +3378,76 @@ namespace Amazon.OpsWorks
 
         #endregion
         
+        #region  RegisterInstance
+
+        /// <summary>
+        /// Registers instances with a specified stack that were created outside of AWS OpsWorks.
+        /// 
+        ///  <note>We do not recommend using this action to register instances. The complete registration
+        /// operation has two primary steps, installing the AWS OpsWorks agent on the instance
+        /// and registering the instance with the stack. <code>RegisterInstance</code> handles
+        /// only the second step. You should instead use the AWS CLI <code>register</code> command,
+        /// which performs the entire registration operation.</note> 
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        /// level for the stack or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterInstance service method.</param>
+        /// 
+        /// <returns>The response from the RegisterInstance service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        public RegisterInstanceResponse RegisterInstance(RegisterInstanceRequest request)
+        {
+            var marshaller = new RegisterInstanceRequestMarshaller();
+            var unmarshaller = RegisterInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterInstanceRequest,RegisterInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterInstance operation on AmazonOpsWorksClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterInstance
+        ///         operation.</returns>
+        public IAsyncResult BeginRegisterInstance(RegisterInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new RegisterInstanceRequestMarshaller();
+            var unmarshaller = RegisterInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RegisterInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterInstance.</param>
+        /// 
+        /// <returns>Returns a  RegisterInstanceResult from OpsWorks.</returns>
+        public  RegisterInstanceResponse EndRegisterInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RegisterInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RegisterRdsDbInstance
 
         /// <summary>
@@ -3256,7 +3590,13 @@ namespace Amazon.OpsWorks
         /// information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing
         /// Load with Time-based and Load-based Instances</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// To use load-based auto scaling, you must create a set of load-based auto scaling instances.
+        /// Load-based auto scaling operates only on the instances from that set, so you must
+        /// ensure that you have created enough instances to handle the maximum anticipated load.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
@@ -3716,6 +4056,74 @@ namespace Amazon.OpsWorks
         public  StopStackResponse EndStopStack(IAsyncResult asyncResult)
         {
             return EndInvoke<StopStackResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UnassignInstance
+
+        /// <summary>
+        /// Unassigns a registered instance from all of it's layers. The instance remains in the
+        /// stack as an unassigned instance and can be assigned to another layer, as needed. You
+        /// cannot use this action with instances that were created with AWS OpsWorks.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        /// level for the stack or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnassignInstance service method.</param>
+        /// 
+        /// <returns>The response from the UnassignInstance service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        public UnassignInstanceResponse UnassignInstance(UnassignInstanceRequest request)
+        {
+            var marshaller = new UnassignInstanceRequestMarshaller();
+            var unmarshaller = UnassignInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<UnassignInstanceRequest,UnassignInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UnassignInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UnassignInstance operation on AmazonOpsWorksClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnassignInstance
+        ///         operation.</returns>
+        public IAsyncResult BeginUnassignInstance(UnassignInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UnassignInstanceRequestMarshaller();
+            var unmarshaller = UnassignInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UnassignInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UnassignInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnassignInstance.</param>
+        /// 
+        /// <returns>Returns a  UnassignInstanceResult from OpsWorks.</returns>
+        public  UnassignInstanceResponse EndUnassignInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UnassignInstanceResponse>(asyncResult);
         }
 
         #endregion

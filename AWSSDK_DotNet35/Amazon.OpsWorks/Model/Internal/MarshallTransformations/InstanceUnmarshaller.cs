@@ -108,6 +108,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     unmarshalledObject.Hostname = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InfrastructureClass", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InfrastructureClass = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InstallUpdatesOnBoot", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -172,6 +178,18 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PublicIp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RegisteredBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RegisteredBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReportedOs", targetDepth))
+                {
+                    var unmarshaller = ReportedOsUnmarshaller.Instance;
+                    unmarshalledObject.ReportedOs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RootDeviceType", targetDepth))

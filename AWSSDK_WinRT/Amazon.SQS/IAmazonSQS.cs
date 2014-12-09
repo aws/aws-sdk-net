@@ -30,39 +30,39 @@ namespace Amazon.SQS
     /// <summary>
     /// Interface for accessing SQS
     ///
-    /// Welcome to the <i>Amazon Simple Queue Service API Reference</i>. This section    
-    ///  describes who should read this guide, how the guide is organized, and other resources
-    /// related to the      Amazon Simple Queue Service (Amazon SQS).
+    /// Welcome to the <i>Amazon Simple Queue Service API Reference</i>. This section describes
+    /// who should read this guide, how the guide is organized, and other resources related
+    /// to the Amazon Simple Queue Service (Amazon SQS).
     /// 
-    ///     
+    ///  
     /// <para>
     /// Amazon SQS offers reliable and scalable hosted queues for storing messages as they
-    /// travel      between computers. By using Amazon SQS, you can move data between distributed
-    /// components of      your applications that perform different tasks without losing messages
-    /// or requiring each      component to be always available.
+    /// travel between computers. By using Amazon SQS, you can move data between distributed
+    /// components of your applications that perform different tasks without losing messages
+    /// or requiring each component to be always available.
     /// </para>
-    ///     
+    ///  
     /// <para>
-    /// Helpful Links:      <ul>        <li><a href="http://queue.amazonaws.com/doc/2012-11-05/QueueService.wsdl">Current
-    /// WSDL (2012-11-05)</a></li>        <li><a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html">Making
-    /// API Requests</a></li>        <li><a href="http://aws.amazon.com/sqs/">Amazon SQS product
-    /// page</a></li>        <li><a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
-    /// Amazon SQS Dead Letter Queues</a></li>                <li><a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region">Regions
-    /// and Endpoints</a></li>              </ul>    
+    /// Helpful Links: <ul> <li><a href="http://queue.amazonaws.com/doc/2012-11-05/QueueService.wsdl">Current
+    /// WSDL (2012-11-05)</a></li> <li><a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html">Making
+    /// API Requests</a></li> <li><a href="http://aws.amazon.com/sqs/">Amazon SQS product
+    /// page</a></li> <li><a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html">Using
+    /// Amazon SQS Message Attributes</a></li> <li><a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+    /// Amazon SQS Dead Letter Queues</a></li> <li><a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region">Regions
+    /// and Endpoints</a></li> </ul> 
     /// </para>
-    ///     
+    ///  
     /// <para>
     /// We also provide SDKs that enable you to access Amazon SQS from your preferred programming
-    /// language.     The SDKs contain functionality that automatically takes care of tasks
-    /// such as:
+    /// language. The SDKs contain functionality that automatically takes care of tasks such
+    /// as:
     /// </para>
-    ///     
+    ///  
     /// <para>
-    ///       <ul>        <li>Cryptographically signing your service requests</li>       
-    /// <li>Retrying requests</li>        <li>Handling error responses</li>      </ul>   
-    /// 
+    ///  <ul> <li>Cryptographically signing your service requests</li> <li>Retrying requests</li>
+    /// <li>Handling error responses</li> </ul> 
     /// </para>
-    ///     
+    ///  
     /// <para>
     /// For a list of available SDKs, go to <a href="http://aws.amazon.com/tools/">Tools for
     /// Amazon Web Services</a>.
@@ -244,6 +244,22 @@ namespace Amazon.SQS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ListQueuesResponse> ListQueuesAsync(ListQueuesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PurgeQueue
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PurgeQueue operation.
+        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PurgeQueue operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PurgeQueueResponse> PurgeQueueAsync(PurgeQueueRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

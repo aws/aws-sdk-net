@@ -29,29 +29,28 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteQueue operation.
-    /// Deletes the queue specified by the <b>queue        URL</b>, regardless of whether
-    /// the queue is empty. If the specified queue does not      exist, Amazon SQS returns
-    /// a successful response.    
+    /// Deletes the queue specified by the <b>queue URL</b>, regardless of whether the queue
+    /// is empty. If the specified queue does not exist, Amazon SQS returns a successful response.
     /// 
-    ///     <important>      
-    /// <para>
-    ///         Use <code>DeleteQueue</code> with care; once you delete your queue, any messages
-    ///        in the queue are no longer available.      
-    /// </para>
-    ///     </important>    
-    /// <para>
-    ///       When you delete a queue, the deletion process takes up to 60 seconds. Requests
-    /// you send      involving that queue during the 60 seconds might succeed. For example,
-    /// a      <a>SendMessage</a> request might succeed, but after the 60 seconds, the queue
-    /// and      that message you sent no longer exist. Also, when you delete a queue, you
-    /// must wait at least 60      seconds before creating a queue with the same name.   
     /// 
-    /// </para>
-    ///     
+    ///  <important> 
     /// <para>
-    ///       We reserve the right to delete queues that have had no activity for more than
-    /// 30 days. For more      information, see             <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html">How
-    ///        Amazon SQS Queues Work</a> in the <i>Amazon SQS Developer Guide</i>.    
+    ///  Use <code>DeleteQueue</code> with care; once you delete your queue, any messages
+    /// in the queue are no longer available. 
+    /// </para>
+    ///  </important> 
+    /// <para>
+    ///  When you delete a queue, the deletion process takes up to 60 seconds. Requests you
+    /// send involving that queue during the 60 seconds might succeed. For example, a <a>SendMessage</a>
+    /// request might succeed, but after the 60 seconds, the queue and that message you sent
+    /// no longer exist. Also, when you delete a queue, you must wait at least 60 seconds
+    /// before creating a queue with the same name. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  We reserve the right to delete queues that have had no activity for more than 30
+    /// days. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html">How
+    /// Amazon SQS Queues Work</a> in the <i>Amazon SQS Developer Guide</i>. 
     /// </para>
     /// </summary>
     public partial class DeleteQueueRequest : AmazonSQSRequest

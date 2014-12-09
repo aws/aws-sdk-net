@@ -29,8 +29,8 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the RemovePermission operation.
-    /// Revokes any permissions in the queue      policy that matches the specified <code>Label</code>
-    /// parameter. Only the owner      of the queue can remove permissions.
+    /// Revokes any permissions in the queue policy that matches the specified <code>Label</code>
+    /// parameter. Only the owner of the queue can remove permissions.
     /// </summary>
     public partial class RemovePermissionRequest : AmazonSQSRequest
     {
@@ -46,7 +46,7 @@ namespace Amazon.SQS.Model
         /// Instantiates RemovePermissionRequest with the parameterized properties
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on.</param>
-        /// <param name="label">The identification of the permission to remove. This is the label added with   the <a>AddPermission</a> action.</param>
+        /// <param name="label">The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.</param>
         public RemovePermissionRequest(string queueUrl, string label)
         {
             _queueUrl = queueUrl;
@@ -56,8 +56,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Label. 
         /// <para>
-        /// The identification of the permission to remove. This is the label added with     
-        /// the <a>AddPermission</a> action.
+        /// The identification of the permission to remove. This is the label added with the <a>AddPermission</a>
+        /// action.
         /// </para>
         /// </summary>
         public string Label

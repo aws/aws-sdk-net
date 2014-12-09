@@ -43,6 +43,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("OpsWorks")]
+        public void AssignInstanceMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<AssignInstanceRequest>();
+            var marshaller = new AssignInstanceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<AssignInstanceRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("OpsWorks")]
         public void AssignVolumeMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<AssignVolumeRequest>();
@@ -382,6 +398,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
             Comparer.CompareObjectToJson<DeregisterElasticIpRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("OpsWorks")]
+        public void DeregisterInstanceMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeregisterInstanceRequest>();
+            var marshaller = new DeregisterInstanceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeregisterInstanceRequest>(request,jsonRequest);
 
         }
 
@@ -796,6 +828,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("OpsWorks")]
+        public void DescribeStackProvisioningParametersMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeStackProvisioningParametersRequest>();
+            var marshaller = new DescribeStackProvisioningParametersRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeStackProvisioningParametersRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeStackProvisioningParameters").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeStackProvisioningParametersResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeStackProvisioningParametersResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("OpsWorks")]
         public void DescribeStacksMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeStacksRequest>();
@@ -1047,6 +1108,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("OpsWorks")]
+        public void RegisterInstanceMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<RegisterInstanceRequest>();
+            var marshaller = new RegisterInstanceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<RegisterInstanceRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("RegisterInstance").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = RegisterInstanceResponseUnmarshaller.Instance.Unmarshall(context)
+                as RegisterInstanceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("OpsWorks")]
         public void RegisterRdsDbInstanceMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<RegisterRdsDbInstanceRequest>();
@@ -1196,6 +1286,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
             Comparer.CompareObjectToJson<StopStackRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("OpsWorks")]
+        public void UnassignInstanceMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<UnassignInstanceRequest>();
+            var marshaller = new UnassignInstanceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<UnassignInstanceRequest>(request,jsonRequest);
 
         }
 

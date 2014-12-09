@@ -129,6 +129,17 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LayerId);
                 }
 
+                if(publicRequest.IsSetLifecycleEventConfiguration())
+                {
+                    context.Writer.WritePropertyName("LifecycleEventConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LifecycleEventConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LifecycleEventConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

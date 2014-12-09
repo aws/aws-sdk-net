@@ -99,7 +99,6 @@ returnAddress:
             var createJobResponse = Client.CreateJob(createJobRequest);
             string createdJobId = createJobResponse.JobId;
             Assert.IsNotNull(createdJobId);
-            Assert.IsNotNull(createJobResponse.AwsShippingAddress);
             Assert.AreEqual(JobType.Import, createJobResponse.JobType);
             Assert.IsNotNull(createJobResponse.Signature);
             Assert.IsNotNull(createJobResponse.SignatureFileContents);
@@ -129,7 +128,6 @@ returnAddress:
 
             // GetStatus
             var getStatusResponse = Client.GetStatus(new GetStatusRequest { JobId = createdJobId });
-            Assert.IsNotNull(getStatusResponse.AwsShippingAddress);
             Assert.IsNotNull(getStatusResponse.CreationDate);
             Assert.IsNotNull(getStatusResponse.CurrentManifest);
             Assert.AreEqual(createdJobId, getStatusResponse.JobId);

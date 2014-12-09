@@ -248,9 +248,14 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DefaultOs. 
         /// <para>
-        /// The cloned stack's default operating system, which must be set to <code>Amazon Linux</code>,
-        /// <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>. The default option
-        /// is <code>Amazon Linux</code>. 
+        /// The stacks's operating system, which must be set to one of the following.
+        /// </para>
+        ///  <ul> <li>Standard operating systems: an Amazon Linux version such as <code>Amazon
+        /// Linux 2014.09</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
+        /// <li>Custom AMIs: <code>Custom</code>. You specify the custom AMI you want to use when
+        /// you create instances.</li> </ul> 
+        /// <para>
+        ///  The default option is the current Amazon Linux version.
         /// </para>
         /// </summary>
         public string DefaultOs
@@ -406,6 +411,13 @@ namespace Amazon.OpsWorks.Model
         /// about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must set this parameter to a valid service role ARN or the action will fail; there
+        /// is no default value. You can specify the source stack's service role ARN, if you prefer,
+        /// but you must do so explicitly.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string ServiceRoleArn
         {

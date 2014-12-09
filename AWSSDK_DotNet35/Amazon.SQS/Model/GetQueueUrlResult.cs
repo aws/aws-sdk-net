@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// For more information, see       <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/UnderstandingResponses.html">Responses</a>
-    ///      in the <i>Amazon SQS Developer Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/UnderstandingResponses.html">Responses</a>
+    /// in the <i>Amazon SQS Developer Guide</i>.
     /// </summary>
     public partial class GetQueueUrlResult : AmazonWebServiceResponse
     {

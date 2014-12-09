@@ -82,9 +82,29 @@ namespace Amazon.OpsWorks
     /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
     /// Versions</a>.
     /// </para>
+    ///  <note>You can still specify Chef 0.9 for your stack, but new features are not available
+    /// for Chef 0.9 stacks, and support is scheduled to end on July 24, 2014. We do not recommend
+    /// using Chef 0.9 for new stacks, and we recommend migrating your existing Chef 0.9 stacks
+    /// to Chef 11.10 as soon as possible.</note>
     /// </summary>
     public partial interface IAmazonOpsWorks : IDisposable
     {
+                
+        #region  AssignInstance
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssignInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssignInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AssignInstanceResponse> AssignInstanceAsync(AssignInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
                 
         #region  AssignVolume
 
@@ -342,6 +362,22 @@ namespace Amazon.OpsWorks
 
         #endregion
                 
+        #region  DeregisterInstance
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeregisterInstanceResponse> DeregisterInstanceAsync(DeregisterInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeregisterRdsDbInstance
 
         /// <summary>
@@ -582,6 +618,22 @@ namespace Amazon.OpsWorks
 
         #endregion
                 
+        #region  DescribeStackProvisioningParameters
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStackProvisioningParameters operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackProvisioningParameters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeStackProvisioningParametersResponse> DescribeStackProvisioningParametersAsync(DescribeStackProvisioningParametersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeStacks
 
         /// <summary>
@@ -742,6 +794,22 @@ namespace Amazon.OpsWorks
 
         #endregion
                 
+        #region  RegisterInstance
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RegisterInstanceResponse> RegisterInstanceAsync(RegisterInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RegisterRdsDbInstance
 
         /// <summary>
@@ -883,6 +951,22 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<StopStackResponse> StopStackAsync(StopStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UnassignInstance
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UnassignInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UnassignInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UnassignInstanceResponse> UnassignInstanceAsync(UnassignInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

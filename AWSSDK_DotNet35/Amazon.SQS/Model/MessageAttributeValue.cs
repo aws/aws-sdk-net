@@ -32,7 +32,7 @@ namespace Amazon.SQS.Model
     /// has the same restrictions on the content as the message body. For more information,
     /// see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html">SendMessage</a>.
     /// 
-    ///         
+    ///  
     /// <para>
     /// Name, type, and value must not be empty or null. In addition, the message body should
     /// not be empty or null. All parts of the message attribute, including name, type, and

@@ -41,6 +41,7 @@ namespace Amazon.OpsWorks.Model
         private string _ec2InstanceId;
         private string _elasticIp;
         private string _hostname;
+        private string _infrastructureClass;
         private bool? _installUpdatesOnBoot;
         private string _instanceId;
         private string _instanceProfileArn;
@@ -52,6 +53,8 @@ namespace Amazon.OpsWorks.Model
         private string _privateIp;
         private string _publicDns;
         private string _publicIp;
+        private string _registeredBy;
+        private ReportedOs _reportedOs;
         private RootDeviceType _rootDeviceType;
         private string _rootDeviceVolumeId;
         private List<string> _securityGroupIds = new List<string>();
@@ -104,13 +107,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AutoScalingType. 
         /// <para>
-        /// The instance's auto scaling type, which has three possible values:
+        /// For load-based or time-based instances, the type.
         /// </para>
-        ///  <ul> <li> <b>AlwaysRunning</b>: A 24/7 instance, which is not affected by auto scaling.</li>
-        /// <li> <b>TimeBasedAutoScaling</b>: A time-based auto scaling instance, which is started
-        /// and stopped based on a specified schedule.</li> <li> <b>LoadBasedAutoScaling</b>:
-        /// A load-based auto scaling instance, which is started and stopped based on load metrics.</li>
-        /// </ul>
         /// </summary>
         public AutoScalingType AutoScalingType
         {
@@ -235,6 +233,24 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InfrastructureClass. 
+        /// <para>
+        /// For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>
+        /// </para>
+        /// </summary>
+        public string InfrastructureClass
+        {
+            get { return this._infrastructureClass; }
+            set { this._infrastructureClass = value; }
+        }
+
+        // Check to see if InfrastructureClass property is set
+        internal bool IsSetInfrastructureClass()
+        {
+            return this._infrastructureClass != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstallUpdatesOnBoot. 
         /// <para>
         /// Whether to install operating system and package updates when the instance boots. The
@@ -243,6 +259,12 @@ namespace Amazon.OpsWorks.Model
         /// <code>update_dependencies</code> stack command or manually running <code>yum</code>
         /// (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We strongly recommend using the default value of <code>true</code>, to ensure that
+        /// your instances have the latest security updates.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool InstallUpdatesOnBoot
         {
@@ -354,7 +376,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Os. 
         /// <para>
-        /// The instance operating system.
+        /// The instance's operating system.
         /// </para>
         /// </summary>
         public string Os
@@ -439,6 +461,42 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetPublicIp()
         {
             return this._publicIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegisteredBy. 
+        /// <para>
+        /// For registered instances, who performed the registration.
+        /// </para>
+        /// </summary>
+        public string RegisteredBy
+        {
+            get { return this._registeredBy; }
+            set { this._registeredBy = value; }
+        }
+
+        // Check to see if RegisteredBy property is set
+        internal bool IsSetRegisteredBy()
+        {
+            return this._registeredBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReportedOs. 
+        /// <para>
+        /// For registered instances, the reported operating system.
+        /// </para>
+        /// </summary>
+        public ReportedOs ReportedOs
+        {
+            get { return this._reportedOs; }
+            set { this._reportedOs = value; }
+        }
+
+        // Check to see if ReportedOs property is set
+        internal bool IsSetReportedOs()
+        {
+            return this._reportedOs != null;
         }
 
         /// <summary>
@@ -574,8 +632,9 @@ namespace Amazon.OpsWorks.Model
         /// The instance status:
         /// </para>
         ///  <ul> <li><code>booting</code></li> <li><code>connection_lost</code></li> <li><code>online</code></li>
-        /// <li><code>rebooting</code></li> <li><code>requested</code></li> <li><code>running_setup</code></li>
-        /// <li><code>setup_failed</code></li> <li><code>start_failed</code></li> <li><code>stopped</code></li>
+        /// <li><code>pending</code></li> <li><code>rebooting</code></li> <li><code>requested</code></li>
+        /// <li><code>running_setup</code></li> <li><code>setup_failed</code></li> <li><code>shutting_down</code></li>
+        /// <li><code>start_failed</code></li> <li><code>stopped</code></li> <li><code>stopping</code></li>
         /// <li><code>terminated</code></li> <li><code>terminating</code></li> </ul>
         /// </summary>
         public string Status

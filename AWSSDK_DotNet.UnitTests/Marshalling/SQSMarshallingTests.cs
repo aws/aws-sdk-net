@@ -288,6 +288,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SQS")]
+        public void PurgeQueueMarshallTest()
+        {
+            var operation = service_model.FindOperation("PurgeQueue");
+
+            var request = InstantiateClassGenerator.Execute<PurgeQueueRequest>();
+            var marshaller = new PurgeQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SQS")]
         public void ReceiveMessageMarshallTest()
         {
             var operation = service_model.FindOperation("ReceiveMessage");

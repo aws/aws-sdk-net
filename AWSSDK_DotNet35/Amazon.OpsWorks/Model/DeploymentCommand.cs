@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Used to specify a deployment operation.
+    /// Used to specify a stack or deployment command.
     /// </summary>
     public partial class DeploymentCommand
     {
@@ -43,8 +43,24 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>{"arg_name":["value1", "value2", ...]}</code>
+        /// <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2",
+        /// ...], ...}</code>
         /// </para>
+        ///  
+        /// <para>
+        /// The <code>update_dependencies</code> command takes two arguments:
+        /// </para>
+        ///  <ul> <li> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version
+        /// for instances whose OS you want to upgrade, such as <code>Amazon Linux 2014.09</code>.
+        /// You must also set the <code>allow_reboot</code> argument to true.</li> <li> <code>allow_reboot</code>
+        /// - Specifies whether to allow AWS OpsWorks to reboot the instances if necessary, after
+        /// installing the updates. This argument can be set to either <code>true</code> or <code>false</code>.
+        /// The default value is <code>false</code>.</li> </ul> 
+        /// <para>
+        /// For example, to upgrade an instance to Amazon Linux 2014.09, set <code>Args</code>
+        /// to the following.
+        /// </para>
+        ///  <code> { "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] } </code>
         /// </summary>
         public Dictionary<string, List<string>> Args
         {

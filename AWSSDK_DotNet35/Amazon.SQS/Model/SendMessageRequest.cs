@@ -29,26 +29,23 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the SendMessage operation.
-    /// Delivers a message to the specified      queue. With Amazon SQS, you now have
-    /// the ability to send large payload messages that are up      to 256KB (262,144 bytes)
-    /// in size. To send large payloads, you must use an AWS SDK that      supports SigV4
-    /// signing. To verify whether SigV4 is supported for an AWS SDK, check the SDK      release
-    /// notes.    
+    /// Delivers a message to the specified queue. With Amazon SQS, you now have the ability
+    /// to send large payload messages that are up to 256KB (262,144 bytes) in size. To send
+    /// large payloads, you must use an AWS SDK that supports SigV4 signing. To verify whether
+    /// SigV4 is supported for an AWS SDK, check the SDK release notes. 
     /// 
-    ///     <important>      
+    ///  <important> 
     /// <para>
-    ///         The following list shows the characters (in Unicode) allowed in your message,
-    /// according        to the W3C XML specification. For more information, go to       
-    ///         <a href="http://www.w3.org/TR/REC-xml/#charsets">http://www.w3.org/TR/REC-xml/#charsets</a>
-    ///                If you send any characters not included in the list, your request will
-    /// be rejected.      
+    ///  The following list shows the characters (in Unicode) allowed in your message, according
+    /// to the W3C XML specification. For more information, go to <a href="http://www.w3.org/TR/REC-xml/#charsets">http://www.w3.org/TR/REC-xml/#charsets</a>
+    /// If you send any characters not included in the list, your request will be rejected.
+    /// 
     /// </para>
-    ///       
+    ///  
     /// <para>
-    ///         #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF]
-    ///      
+    ///  #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF] 
     /// </para>
-    ///     </important>
+    ///  </important>
     /// </summary>
     public partial class SendMessageRequest : AmazonSQSRequest
     {
@@ -76,10 +73,10 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property DelaySeconds. 
         /// <para>
-        ///       The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages
-        /// with a positive <code>DelaySeconds</code> value       become available for processing
-        /// after the delay time is finished.      If you don't specify a value, the default value
-        /// for the queue applies.    
+        ///  The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages
+        /// with a positive <code>DelaySeconds</code> value become available for processing after
+        /// the delay time is finished. If you don't specify a value, the default value for the
+        /// queue applies. 
         /// </para>
         /// </summary>
         public int DelaySeconds

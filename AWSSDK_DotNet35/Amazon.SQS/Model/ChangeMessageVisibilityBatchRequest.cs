@@ -29,21 +29,21 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the ChangeMessageVisibilityBatch operation.
-    /// Changes the visibility timeout of multiple messages.      This is a batch version
-    /// of <a>ChangeMessageVisibility</a>. The      result of the action on each message is
-    /// reported individually in the      response. You can send up to 10 <a>ChangeMessageVisibility</a>
-    /// requests with each <code>ChangeMessageVisibilityBatch</code> action.
+    /// Changes the visibility timeout of multiple messages. This is a batch version of <a>ChangeMessageVisibility</a>.
+    /// The result of the action on each message is reported individually in the response.
+    /// You can send up to 10 <a>ChangeMessageVisibility</a> requests with each <code>ChangeMessageVisibilityBatch</code>
+    /// action.
     /// 
-    ///        <important>Because the batch request can result in a combination of successful
-    /// and unsuccessful actions,     you should check for batch errors even when the call
-    /// returns an HTTP status code of 200.</important>    <note>Some API actions take lists
-    /// of parameters. These lists are specified using the <code>param.n</code> notation.
-    /// Values      of <code>n</code> are integers starting from 1. For example, a parameter
-    /// list with two elements looks like this:     </note>    
+    ///  <important>Because the batch request can result in a combination of successful and
+    /// unsuccessful actions, you should check for batch errors even when the call returns
+    /// an HTTP status code of 200.</important> <note>Some API actions take lists of parameters.
+    /// These lists are specified using the <code>param.n</code> notation. Values of <code>n</code>
+    /// are integers starting from 1. For example, a parameter list with two elements looks
+    /// like this: </note> 
     /// <para>
     /// <code>&amp;Attribute.1=this</code>
     /// </para>
-    ///     
+    ///  
     /// <para>
     /// <code>&amp;Attribute.2=that</code>
     /// </para>
@@ -62,7 +62,7 @@ namespace Amazon.SQS.Model
         /// Instantiates ChangeMessageVisibilityBatchRequest with the parameterized properties
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on.</param>
-        /// <param name="entries">A list of receipt handles of the messages for which the visibility timeout   must be changed.</param>
+        /// <param name="entries">A list of receipt handles of the messages for which the visibility timeout must be changed.</param>
         public ChangeMessageVisibilityBatchRequest(string queueUrl, List<ChangeMessageVisibilityBatchRequestEntry> entries)
         {
             _queueUrl = queueUrl;
@@ -72,8 +72,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// A list of receipt handles of the messages for which the visibility timeout      must
-        /// be changed.
+        /// A list of receipt handles of the messages for which the visibility timeout must be
+        /// changed.
         /// </para>
         /// </summary>
         public List<ChangeMessageVisibilityBatchRequestEntry> Entries

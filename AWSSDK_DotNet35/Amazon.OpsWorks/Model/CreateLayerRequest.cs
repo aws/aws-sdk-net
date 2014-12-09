@@ -32,7 +32,15 @@ namespace Amazon.OpsWorks.Model
     /// Creates a layer. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How
     /// to Create a Layer</a>.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// You should use <b>CreateLayer</b> for noncustom layer types such as PHP App Server
+    /// only if the stack does not have an existing layer of that type. A stack can have at
+    /// most one instance of each noncustom layer; if you attempt to create a second instance,
+    /// <b>CreateLayer</b> fails. A stack can have an arbitrary number of custom layers, so
+    /// you can call <b>CreateLayer</b> as many times as you like for that layer type.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
     /// level for the stack, or an attached policy that explicitly grants permissions. For
@@ -50,6 +58,7 @@ namespace Amazon.OpsWorks.Model
         private List<string> _customSecurityGroupIds = new List<string>();
         private bool? _enableAutoHealing;
         private bool? _installUpdatesOnBoot;
+        private LifecycleEventConfiguration _lifecycleEventConfiguration;
         private string _name;
         private List<string> _packages = new List<string>();
         private string _shortname;
@@ -200,6 +209,12 @@ namespace Amazon.OpsWorks.Model
         /// or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu)
         /// on the instances. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We strongly recommend using the default value of <code>true</code>, to ensure that
+        /// your instances have the latest security updates.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool InstallUpdatesOnBoot
         {
@@ -211,6 +226,26 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetInstallUpdatesOnBoot()
         {
             return this._installUpdatesOnBoot.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LifecycleEventConfiguration. 
+        /// <para>
+        /// A LifeCycleEventConfiguration object that you can use to configure the Shutdown event
+        /// to specify an execution timeout and enable or disable Elastic Load Balancer connection
+        /// draining.
+        /// </para>
+        /// </summary>
+        public LifecycleEventConfiguration LifecycleEventConfiguration
+        {
+            get { return this._lifecycleEventConfiguration; }
+            set { this._lifecycleEventConfiguration = value; }
+        }
+
+        // Check to see if LifecycleEventConfiguration property is set
+        internal bool IsSetLifecycleEventConfiguration()
+        {
+            return this._lifecycleEventConfiguration != null;
         }
 
         /// <summary>
@@ -292,14 +327,8 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The layer type. A stack cannot have more than one built-in layer of the same type.
-        /// It can have any number of custom layers. This parameter must be set to one of the
-        /// following:
+        /// It can have any number of custom layers.
         /// </para>
-        ///  <ul> <li>custom: A custom layer</li> <li>db-master: A MySQL layer</li> <li>java-app:
-        /// A Java App Server layer</li> <li>rails-app: A Rails App Server layer</li> <li>lb:
-        /// An HAProxy layer</li> <li>memcached: A Memcached layer</li> <li>monitoring-master:
-        /// A Ganglia layer</li> <li>nodejs-app: A Node.js App Server layer</li> <li>php-app:
-        /// A PHP App Server layer</li> <li>web: A Static Web Server layer</li> </ul>
         /// </summary>
         public LayerType Type
         {

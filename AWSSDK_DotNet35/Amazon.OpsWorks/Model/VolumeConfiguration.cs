@@ -132,8 +132,10 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The volume type, standard or PIOPS.
+        /// The volume type:
         /// </para>
+        ///  <ul> <li> <code>standard</code> - Magnetic</li> <li> <code>io1</code> - Provisioned
+        /// IOPS (SSD)</li> <li> <code>gp2</code> - General Purpose (SSD)</li> </ul>
         /// </summary>
         public string VolumeType
         {

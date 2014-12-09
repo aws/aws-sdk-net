@@ -31,7 +31,11 @@ namespace Amazon.OpsWorks.Model
     /// Container for the parameters to the DescribeInstances operation.
     /// Requests a description of a set of instances.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// You must specify at least one of the parameters.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
     /// or Manage permissions level for the stack, or an attached policy that explicitly grants

@@ -45,7 +45,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates SendMessageBatchRequestEntry with the parameterized properties
         /// </summary>
-        /// <param name="id">An identifier for the message in this batch. This is used to communicate   the result. Note that the <code>Id</code>s of a batch request need to   be unique within the request.</param>
+        /// <param name="id">An identifier for the message in this batch. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</param>
         /// <param name="messageBody">Body of the message.</param>
         public SendMessageBatchRequestEntry(string id, string messageBody)
         {
@@ -74,9 +74,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// An identifier for the message in this batch. This is used to communicate      the
-        /// result. Note that the <code>Id</code>s of a batch request need to      be unique within
-        /// the request.
+        /// An identifier for the message in this batch. This is used to communicate the result.
+        /// Note that the <code>Id</code>s of a batch request need to be unique within the request.
         /// </para>
         /// </summary>
         public string Id

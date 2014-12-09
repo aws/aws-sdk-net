@@ -43,7 +43,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates DeleteMessageBatchRequestEntry with the parameterized properties
         /// </summary>
-        /// <param name="id">An identifier for this particular receipt handle. This is used to   communicate the result. Note that the <code>Id</code>s of a batch request   need to be unique within the request.</param>
+        /// <param name="id">An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</param>
         /// <param name="receiptHandle">A receipt handle.</param>
         public DeleteMessageBatchRequestEntry(string id, string receiptHandle)
         {
@@ -54,9 +54,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// An identifier for this particular receipt handle. This is used to      communicate
-        /// the result. Note that the <code>Id</code>s of a batch request      need to be unique
-        /// within the request.
+        /// An identifier for this particular receipt handle. This is used to communicate the
+        /// result. Note that the <code>Id</code>s of a batch request need to be unique within
+        /// the request.
         /// </para>
         /// </summary>
         public string Id

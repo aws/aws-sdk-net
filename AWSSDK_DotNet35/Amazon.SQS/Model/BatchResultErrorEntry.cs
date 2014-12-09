@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// This is used in the responses of batch API to give a detailed description      of
-    /// the result of an action on each entry in the request.
+    /// This is used in the responses of batch API to give a detailed description of the result
+    /// of an action on each entry in the request.
     /// </summary>
     public partial class BatchResultErrorEntry
     {

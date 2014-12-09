@@ -44,6 +44,7 @@ namespace Amazon.OpsWorks.Model
         private bool? _enableAutoHealing;
         private bool? _installUpdatesOnBoot;
         private string _layerId;
+        private LifecycleEventConfiguration _lifecycleEventConfiguration;
         private string _name;
         private List<string> _packages = new List<string>();
         private string _shortname;
@@ -244,6 +245,12 @@ namespace Amazon.OpsWorks.Model
         /// <code>update_dependencies</code> stack command or manually running <code>yum</code>
         /// (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We strongly recommend using the default value of <code>true</code>, to ensure that
+        /// your instances have the latest security updates.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool InstallUpdatesOnBoot
         {
@@ -273,6 +280,25 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetLayerId()
         {
             return this._layerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LifecycleEventConfiguration. 
+        /// <para>
+        /// A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event
+        /// configuration.
+        /// </para>
+        /// </summary>
+        public LifecycleEventConfiguration LifecycleEventConfiguration
+        {
+            get { return this._lifecycleEventConfiguration; }
+            set { this._lifecycleEventConfiguration = value; }
+        }
+
+        // Check to see if LifecycleEventConfiguration property is set
+        internal bool IsSetLifecycleEventConfiguration()
+        {
+            return this._lifecycleEventConfiguration != null;
         }
 
         /// <summary>
@@ -350,11 +376,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The layer type, which must be one of the following:
+        /// The layer type.
         /// </para>
-        ///  <ul> <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li> <li>MemcachedServer</li>
-        /// <li>MySqlMaster</li> <li>NodeJsAppServer</li> <li>PhpAppServer</li> <li>RailsAppServer</li>
-        /// <li>WebServer</li> </ul>
         /// </summary>
         public LayerType Type
         {

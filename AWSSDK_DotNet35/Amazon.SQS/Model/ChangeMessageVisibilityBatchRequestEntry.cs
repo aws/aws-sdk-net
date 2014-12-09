@@ -28,24 +28,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Encloses a receipt handle and an entry id for each message in      <a>ChangeMessageVisibilityBatch</a>.
+    /// Encloses a receipt handle and an entry id for each message in <a>ChangeMessageVisibilityBatch</a>.
     /// 
     /// 
-    ///         <important>      
+    ///  <important> 
     /// <para>
     /// All of the following parameters are list parameters that must be prefixed with <code>ChangeMessageVisibilityBatchRequestEntry.n</code>,
-    ///         where <code>n</code> is an integer value starting with 1. For example, a parameter
+    /// where <code>n</code> is an integer value starting with 1. For example, a parameter
     /// list for this action might look like this:
     /// </para>
-    ///                </important>    
+    ///  </important> 
     /// <para>
     /// <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code>
     /// </para>
-    ///     
+    ///  
     /// <para>
     /// <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=<replaceable>Your_Receipt_Handle</replaceable></code>
     /// </para>
-    ///     
+    ///  
     /// <para>
     /// <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code>
     /// </para>
@@ -64,7 +64,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates ChangeMessageVisibilityBatchRequestEntry with the parameterized properties
         /// </summary>
-        /// <param name="id">An identifier for this particular receipt handle. This is used to communicate   the result. Note that the <code>Id</code>s of a batch request need to be   unique within the request.</param>
+        /// <param name="id">An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</param>
         /// <param name="receiptHandle">A receipt handle.</param>
         public ChangeMessageVisibilityBatchRequestEntry(string id, string receiptHandle)
         {
@@ -75,9 +75,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// An identifier for this particular receipt handle. This is used to communicate    
-        ///  the result. Note that the <code>Id</code>s of a batch request need to be      unique
-        /// within the request.
+        /// An identifier for this particular receipt handle. This is used to communicate the
+        /// result. Note that the <code>Id</code>s of a batch request need to be unique within
+        /// the request.
         /// </para>
         /// </summary>
         public string Id

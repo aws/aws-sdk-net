@@ -37,7 +37,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Represents a message whose visibility timeout has been changed      successfully.
+        /// Represents a message whose visibility timeout has been changed successfully.
         /// </para>
         /// </summary>
         public string Id

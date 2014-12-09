@@ -126,6 +126,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     unmarshalledObject.LayerId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LifecycleEventConfiguration", targetDepth))
+                {
+                    var unmarshaller = LifecycleEventConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LifecycleEventConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

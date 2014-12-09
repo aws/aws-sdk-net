@@ -171,6 +171,8 @@ namespace Amazon.OpsWorks.Model
         /// to be associated with the app. You can specify up to ten environment variables. After
         /// you deploy the app, these variables are defined on the associated app server instance.
         /// </para>
+        ///  <note>This parameter is supported only by Chef 11.10 stacks. If you have specified
+        /// one or more environment variables, you cannot modify the stack's Chef version.</note>
         /// </summary>
         public List<EnvironmentVariable> Environment
         {

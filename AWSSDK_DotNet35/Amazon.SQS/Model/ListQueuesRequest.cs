@@ -29,9 +29,9 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListQueues operation.
-    /// Returns a list of your queues. The maximum number of      queues that can be returned
-    /// is 1000. If you specify a value for the optional      <code>QueueNamePrefix</code>
-    /// parameter, only queues with a name beginning with the      specified value are returned.
+    /// Returns a list of your queues. The maximum number of queues that can be returned is
+    /// 1000. If you specify a value for the optional <code>QueueNamePrefix</code> parameter,
+    /// only queues with a name beginning with the specified value are returned.
     /// </summary>
     public partial class ListQueuesRequest : AmazonSQSRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates ListQueuesRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueNamePrefix">A string to use for filtering the list results. Only those queues whose name   begins with the specified string are returned.</param>
+        /// <param name="queueNamePrefix">A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</param>
         public ListQueuesRequest(string queueNamePrefix)
         {
             _queueNamePrefix = queueNamePrefix;
@@ -54,8 +54,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property QueueNamePrefix. 
         /// <para>
-        /// A string to use for filtering the list results. Only those queues whose name     
-        /// begins with the specified string are returned.
+        /// A string to use for filtering the list results. Only those queues whose name begins
+        /// with the specified string are returned.
         /// </para>
         /// </summary>
         public string QueueNamePrefix

@@ -32,11 +32,15 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class InstancesCount
     {
+        private int? _assigning;
         private int? _booting;
         private int? _connectionLost;
+        private int? _deregistering;
         private int? _online;
         private int? _pending;
         private int? _rebooting;
+        private int? _registered;
+        private int? _registering;
         private int? _requested;
         private int? _runningSetup;
         private int? _setupFailed;
@@ -46,6 +50,25 @@ namespace Amazon.OpsWorks.Model
         private int? _stopping;
         private int? _terminated;
         private int? _terminating;
+        private int? _unassigning;
+
+        /// <summary>
+        /// Gets and sets the property Assigning. 
+        /// <para>
+        /// The number of instances in the Assigning state.
+        /// </para>
+        /// </summary>
+        public int Assigning
+        {
+            get { return this._assigning.GetValueOrDefault(); }
+            set { this._assigning = value; }
+        }
+
+        // Check to see if Assigning property is set
+        internal bool IsSetAssigning()
+        {
+            return this._assigning.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Booting. 
@@ -81,6 +104,24 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetConnectionLost()
         {
             return this._connectionLost.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Deregistering. 
+        /// <para>
+        /// The number of instances in the Deregistering state.
+        /// </para>
+        /// </summary>
+        public int Deregistering
+        {
+            get { return this._deregistering.GetValueOrDefault(); }
+            set { this._deregistering = value; }
+        }
+
+        // Check to see if Deregistering property is set
+        internal bool IsSetDeregistering()
+        {
+            return this._deregistering.HasValue; 
         }
 
         /// <summary>
@@ -135,6 +176,42 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetRebooting()
         {
             return this._rebooting.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Registered. 
+        /// <para>
+        /// The number of instances in the Registered state.
+        /// </para>
+        /// </summary>
+        public int Registered
+        {
+            get { return this._registered.GetValueOrDefault(); }
+            set { this._registered = value; }
+        }
+
+        // Check to see if Registered property is set
+        internal bool IsSetRegistered()
+        {
+            return this._registered.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Registering. 
+        /// <para>
+        /// The number of instances in the Registering state.
+        /// </para>
+        /// </summary>
+        public int Registering
+        {
+            get { return this._registering.GetValueOrDefault(); }
+            set { this._registering = value; }
+        }
+
+        // Check to see if Registering property is set
+        internal bool IsSetRegistering()
+        {
+            return this._registering.HasValue; 
         }
 
         /// <summary>
@@ -297,6 +374,24 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetTerminating()
         {
             return this._terminating.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Unassigning. 
+        /// <para>
+        /// The number of instances in the Unassigning state.
+        /// </para>
+        /// </summary>
+        public int Unassigning
+        {
+            get { return this._unassigning.GetValueOrDefault(); }
+            set { this._unassigning = value; }
+        }
+
+        // Check to see if Unassigning property is set
+        internal bool IsSetUnassigning()
+        {
+            return this._unassigning.HasValue; 
         }
 
     }

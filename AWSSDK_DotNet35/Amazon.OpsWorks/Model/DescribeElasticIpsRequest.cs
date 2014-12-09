@@ -32,7 +32,11 @@ namespace Amazon.OpsWorks.Model
     /// Describes <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
     /// IP addresses</a>.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// You must specify at least one of the parameters.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
     /// or Manage permissions level for the stack, or an attached policy that explicitly grants

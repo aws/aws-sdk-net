@@ -88,6 +88,10 @@ namespace Amazon.OpsWorks
     /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
     /// Versions</a>.
     /// </para>
+    ///  <note>You can still specify Chef 0.9 for your stack, but new features are not available
+    /// for Chef 0.9 stacks, and support is scheduled to end on July 24, 2014. We do not recommend
+    /// using Chef 0.9 for new stacks, and we recommend migrating your existing Chef 0.9 stacks
+    /// to Chef 11.10 as soon as possible.</note>
     /// </summary>
     public partial class AmazonOpsWorksClient : AmazonServiceClient, IAmazonOpsWorks
     {
@@ -214,6 +218,37 @@ namespace Amazon.OpsWorks
 
         #endregion
 
+        
+        #region  AssignInstance
+
+        internal AssignInstanceResponse AssignInstance(AssignInstanceRequest request)
+        {
+            var marshaller = new AssignInstanceRequestMarshaller();
+            var unmarshaller = AssignInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<AssignInstanceRequest,AssignInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssignInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssignInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AssignInstanceResponse> AssignInstanceAsync(AssignInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AssignInstanceRequestMarshaller();
+            var unmarshaller = AssignInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssignInstanceRequest,AssignInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
         
         #region  AssignVolume
 
@@ -711,6 +746,37 @@ namespace Amazon.OpsWorks
 
         #endregion
         
+        #region  DeregisterInstance
+
+        internal DeregisterInstanceResponse DeregisterInstance(DeregisterInstanceRequest request)
+        {
+            var marshaller = new DeregisterInstanceRequestMarshaller();
+            var unmarshaller = DeregisterInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterInstanceRequest,DeregisterInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeregisterInstanceResponse> DeregisterInstanceAsync(DeregisterInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeregisterInstanceRequestMarshaller();
+            var unmarshaller = DeregisterInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterInstanceRequest,DeregisterInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeregisterRdsDbInstance
 
         internal DeregisterRdsDbInstanceResponse DeregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request)
@@ -1188,6 +1254,37 @@ namespace Amazon.OpsWorks
 
         #endregion
         
+        #region  DescribeStackProvisioningParameters
+
+        internal DescribeStackProvisioningParametersResponse DescribeStackProvisioningParameters(DescribeStackProvisioningParametersRequest request)
+        {
+            var marshaller = new DescribeStackProvisioningParametersRequestMarshaller();
+            var unmarshaller = DescribeStackProvisioningParametersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStackProvisioningParametersRequest,DescribeStackProvisioningParametersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStackProvisioningParameters operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackProvisioningParameters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeStackProvisioningParametersResponse> DescribeStackProvisioningParametersAsync(DescribeStackProvisioningParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeStackProvisioningParametersRequestMarshaller();
+            var unmarshaller = DescribeStackProvisioningParametersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeStackProvisioningParametersRequest,DescribeStackProvisioningParametersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeStacks
 
         internal DescribeStacksResponse DescribeStacks()
@@ -1506,6 +1603,37 @@ namespace Amazon.OpsWorks
 
         #endregion
         
+        #region  RegisterInstance
+
+        internal RegisterInstanceResponse RegisterInstance(RegisterInstanceRequest request)
+        {
+            var marshaller = new RegisterInstanceRequestMarshaller();
+            var unmarshaller = RegisterInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterInstanceRequest,RegisterInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RegisterInstanceResponse> RegisterInstanceAsync(RegisterInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RegisterInstanceRequestMarshaller();
+            var unmarshaller = RegisterInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterInstanceRequest,RegisterInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RegisterRdsDbInstance
 
         internal RegisterRdsDbInstanceResponse RegisterRdsDbInstance(RegisterRdsDbInstanceRequest request)
@@ -1780,6 +1908,37 @@ namespace Amazon.OpsWorks
             var unmarshaller = StopStackResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopStackRequest,StopStackResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UnassignInstance
+
+        internal UnassignInstanceResponse UnassignInstance(UnassignInstanceRequest request)
+        {
+            var marshaller = new UnassignInstanceRequestMarshaller();
+            var unmarshaller = UnassignInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<UnassignInstanceRequest,UnassignInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UnassignInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UnassignInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UnassignInstanceResponse> UnassignInstanceAsync(UnassignInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UnassignInstanceRequestMarshaller();
+            var unmarshaller = UnassignInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UnassignInstanceRequest,UnassignInstanceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

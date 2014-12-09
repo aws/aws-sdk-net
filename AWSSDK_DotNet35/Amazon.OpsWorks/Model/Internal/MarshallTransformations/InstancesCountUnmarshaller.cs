@@ -54,6 +54,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Assigning", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Assigning = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Booting", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -64,6 +70,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.ConnectionLost = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Deregistering", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Deregistering = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Online", targetDepth))
@@ -82,6 +94,18 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.Rebooting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Registered", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Registered = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Registering", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Registering = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Requested", targetDepth))
@@ -136,6 +160,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.Terminating = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Unassigning", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Unassigning = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

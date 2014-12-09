@@ -232,9 +232,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DefaultOs. 
         /// <para>
-        /// The stack's default operating system, which must be set to <code>Amazon Linux</code>,
-        /// <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>. The default option
-        /// is <code>Amazon Linux</code>. 
+        /// The stack's default operating system. 
         /// </para>
         /// </summary>
         public string DefaultOs

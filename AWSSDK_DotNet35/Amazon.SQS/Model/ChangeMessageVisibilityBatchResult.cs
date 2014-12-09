@@ -28,9 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// For each message in the batch, the response contains a       <a>ChangeMessageVisibilityBatchResultEntry</a>
-    /// tag if the message succeeds or       a <a>BatchResultErrorEntry</a> tag if the message
-    /// fails.
+    /// For each message in the batch, the response contains a <a>ChangeMessageVisibilityBatchResultEntry</a>
+    /// tag if the message succeeds or a <a>BatchResultErrorEntry</a> tag if the message fails.
     /// </summary>
     public partial class ChangeMessageVisibilityBatchResult : AmazonWebServiceResponse
     {
