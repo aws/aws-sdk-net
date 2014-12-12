@@ -24,6 +24,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     [TestClass]
     public class PutObjectTest : TestBase<AmazonS3Client>
     {
+        public static readonly long MEG_SIZE = (int)Math.Pow(2, 20);
+
         private Random random = new Random();
         private static string bucketName;
 
@@ -46,6 +48,44 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             BaseClean();
         }
 
+ #if ASYNC_AWAIT
+        [TestMethod]
+        [TestCategory("S3")]
+        public async System.Threading.Tasks.Task PutObjectCancellationTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"CancellationTest\LargeFile");
+            string basePath = @"c:\temp\test\";
+            var path = Path.Combine(basePath, fileName);
+            UtilityMethods.GenerateFile(path, 50 * MEG_SIZE);
+
+            var putObjectRequest = new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = "CancellationTest" + random.Next(),
+                CannedACL = S3CannedACL.AuthenticatedRead,
+                FilePath = path
+            };
+
+            var cts = new CancellationTokenSource();
+            cts.CancelAfter(1000);
+            var token = cts.Token;
+            try
+            {
+                await Client.PutObjectAsync(putObjectRequest, token);
+            }
+            catch(OperationCanceledException exception)
+            {
+                Assert.AreEqual(token, exception.CancellationToken);
+                Assert.AreEqual(true, exception.CancellationToken.IsCancellationRequested);
+                return;
+            }
+            finally
+            {
+                Directory.Delete(basePath, true);
+            }
+            Assert.Fail("An OperationCanceledException was not thrown");
+        }
+#endif       
         [TestMethod]
         [TestCategory("S3")]
         public void PutObjectWithExternalEndpoint()

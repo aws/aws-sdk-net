@@ -175,11 +175,12 @@ namespace AWSSDK.UnitTests
             }
 
             public void WriteToRequestBody(HttpContent requestContent, Stream contentStream,
-                IDictionary<string, string> contentHeaders, int bufferSize)
+                IDictionary<string, string> contentHeaders, IRequestContext requestContext)
             {
                 Assert.IsNotNull(requestContent);
                 Assert.IsNotNull(contentStream);
                 Assert.IsNotNull(contentHeaders);
+                Assert.IsNotNull(requestContext);
             }
 
             public void WriteToRequestBody(HttpContent requestContent, byte[] content, IDictionary<string, string> contentHeaders)

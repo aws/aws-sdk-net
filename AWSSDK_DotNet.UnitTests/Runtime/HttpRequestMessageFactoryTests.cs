@@ -96,7 +96,7 @@ namespace AWSSDK.UnitTests
             var sourceStream = new MemoryStream(Encoding.UTF8.GetBytes("Test_Content"));
             var length = sourceStream.Length;
             var destinationStream = httpRequestMessage.Content;
-            request.WriteToRequestBody(destinationStream, sourceStream, headers, 1024);
+            request.WriteToRequestBody(destinationStream, sourceStream, headers, requestContext);
             Assert.AreEqual(length, httpRequestMessage.Content.Headers.ContentLength);
 
             var sourceContent = Encoding.UTF8.GetBytes("Test_Content123");

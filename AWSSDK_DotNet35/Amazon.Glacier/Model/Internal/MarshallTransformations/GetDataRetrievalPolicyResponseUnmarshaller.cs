@@ -34,18 +34,25 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InitiateJob operation
+    /// Response Unmarshaller for GetDataRetrievalPolicy operation
     /// </summary>  
-    public class InitiateJobResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetDataRetrievalPolicyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            InitiateJobResponse response = new InitiateJobResponse();
+            GetDataRetrievalPolicyResponse response = new GetDataRetrievalPolicyResponse();
 
-            if (context.ResponseData.IsHeaderPresent("x-amz-job-id"))
-                response.JobId = context.ResponseData.GetHeaderValue("x-amz-job-id");
-            if (context.ResponseData.IsHeaderPresent("Location"))
-                response.Location = context.ResponseData.GetHeaderValue("Location");
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("Policy", targetDepth))
+                {
+                    var unmarshaller = DataRetrievalPolicyUnmarshaller.Instance;
+                    response.Policy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -61,14 +68,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             {
                 return new MissingParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("PolicyEnforcedException"))
-            {
-                return new PolicyEnforcedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-            {
-                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
             {
                 return new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -76,13 +75,13 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             return new AmazonGlacierException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static InitiateJobResponseUnmarshaller _instance = new InitiateJobResponseUnmarshaller();        
+        private static GetDataRetrievalPolicyResponseUnmarshaller _instance = new GetDataRetrievalPolicyResponseUnmarshaller();        
 
-        internal static InitiateJobResponseUnmarshaller GetInstance()
+        internal static GetDataRetrievalPolicyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
-        public static InitiateJobResponseUnmarshaller Instance
+        public static GetDataRetrievalPolicyResponseUnmarshaller Instance
         {
             get
             {

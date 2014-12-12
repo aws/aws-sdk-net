@@ -721,6 +721,56 @@ namespace Amazon.Glacier
 
         #endregion
         
+        #region  GetDataRetrievalPolicy
+
+        /// <summary>
+        /// This operation returns the current data retrieval policy for the account and region
+        /// specified in the GET request. For more information about data retrieval policies,
+        /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
+        /// Glacier Data Retrieval Policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataRetrievalPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetDataRetrievalPolicy service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        GetDataRetrievalPolicyResponse GetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataRetrievalPolicy operation.
+        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataRetrievalPolicy operation on AmazonGlacierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataRetrievalPolicy
+        ///         operation.</returns>
+        IAsyncResult BeginGetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataRetrievalPolicy operation.
+        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataRetrievalPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetDataRetrievalPolicyResult from Glacier.</returns>
+        GetDataRetrievalPolicyResponse EndGetDataRetrievalPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetJobOutput
 
         /// <summary>
@@ -917,11 +967,20 @@ namespace Amazon.Glacier
         /// <para>
         /// Retrieving data from Amazon Glacier is a two-step process: 
         /// </para>
-        ///  <ol> <li>
+        ///  <ol> <li> 
         /// <para>
         /// Initiate a retrieval job.
         /// </para>
-        /// </li> <li>
+        ///  <note>
+        /// <para>
+        /// A data retrieval policy can cause your initiate retrieval job request to fail with
+        /// a PolicyEnforcedException exception. For more information about data retrieval policies,
+        /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
+        /// Glacier Data Retrieval Policies</a>. For more information about the PolicyEnforcedException
+        /// exception, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-error-responses.html">Error
+        /// Responses</a>.
+        /// </para>
+        ///  </note> </li> <li>
         /// <para>
         /// After the job completes, download the bytes.
         /// </para>
@@ -1071,6 +1130,10 @@ namespace Amazon.Glacier
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.PolicyEnforcedException">
+        /// Returned if a retrieval job would exceed the current data policy's retrieval rate
+        /// limit. For more information about data retrieval policies,
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
@@ -1597,6 +1660,63 @@ namespace Amazon.Glacier
         /// 
         /// <returns>Returns a  ListVaultsResult from Glacier.</returns>
         ListVaultsResponse EndListVaults(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SetDataRetrievalPolicy
+
+        /// <summary>
+        /// This operation sets and then enacts a data retrieval policy in the region specified
+        /// in the PUT request. You can set one policy per region for an AWS account. The policy
+        /// is enacted within a few minutes of a successful PUT operation. 
+        /// 
+        ///  
+        /// <para>
+        /// The set policy operation does not affect retrieval jobs that were in progress before
+        /// the policy was enacted. For more information about data retrieval policies, see <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
+        /// Glacier Data Retrieval Policies</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetDataRetrievalPolicy service method.</param>
+        /// 
+        /// <returns>The response from the SetDataRetrievalPolicy service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        SetDataRetrievalPolicyResponse SetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetDataRetrievalPolicy operation.
+        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetDataRetrievalPolicy operation on AmazonGlacierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetDataRetrievalPolicy
+        ///         operation.</returns>
+        IAsyncResult BeginSetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetDataRetrievalPolicy operation.
+        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetDataRetrievalPolicy.</param>
+        /// 
+        /// <returns>Returns a  SetDataRetrievalPolicyResult from Glacier.</returns>
+        SetDataRetrievalPolicyResponse EndSetDataRetrievalPolicy(IAsyncResult asyncResult);
 
         #endregion
         

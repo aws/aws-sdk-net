@@ -47,6 +47,7 @@ namespace Amazon.ElasticTranscoder.Model
         private List<CreateJobOutput> _outputs = new List<CreateJobOutput>();
         private string _pipelineId;
         private List<CreateJobPlaylist> _playlists = new List<CreateJobPlaylist>();
+        private Dictionary<string, string> _userMetadata = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Input. 
@@ -164,6 +165,27 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetPlaylists()
         {
             return this._playlists != null && this._playlists.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserMetadata. 
+        /// <para>
+        /// User-defined metadata that you want to associate with an Elastic Transcoder job. You
+        /// specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code>
+        /// pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs
+        /// will be returned in the same order in which you specify them.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> UserMetadata
+        {
+            get { return this._userMetadata; }
+            set { this._userMetadata = value; }
+        }
+
+        // Check to see if UserMetadata property is set
+        internal bool IsSetUserMetadata()
+        {
+            return this._userMetadata != null && this._userMetadata.Count > 0; 
         }
 
     }

@@ -61,7 +61,7 @@ using Amazon.Lambda;
 namespace Amazon
 {
     /// <summary>
-    /// The Amazon Web Services SDK provides devlopers with a coherent and unified interface to the
+    /// The Amazon Web Services SDK provides developers with a coherent and unified interface to the
     /// suite of Amazon Web Services. The intent is to facilitate the rapid building of
     /// applications that leverage multiple Amazon Web Services.
     /// <para>

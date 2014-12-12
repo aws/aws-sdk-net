@@ -121,6 +121,20 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetUserMetadata())
+                {
+                    context.Writer.WritePropertyName("UserMetadata");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestUserMetadataKvp in publicRequest.UserMetadata)
+                    {
+                        context.Writer.WritePropertyName(publicRequestUserMetadataKvp.Key);
+                        var publicRequestUserMetadataValue = publicRequestUserMetadataKvp.Value;
+
+                            context.Writer.Write(publicRequestUserMetadataValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

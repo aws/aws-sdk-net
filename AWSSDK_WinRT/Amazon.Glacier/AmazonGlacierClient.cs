@@ -459,6 +459,37 @@ namespace Amazon.Glacier
 
         #endregion
         
+        #region  GetDataRetrievalPolicy
+
+        internal GetDataRetrievalPolicyResponse GetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request)
+        {
+            var marshaller = new GetDataRetrievalPolicyRequestMarshaller();
+            var unmarshaller = GetDataRetrievalPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataRetrievalPolicyRequest,GetDataRetrievalPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataRetrievalPolicy operation.
+        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataRetrievalPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetDataRetrievalPolicyResponse> GetDataRetrievalPolicyAsync(GetDataRetrievalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDataRetrievalPolicyRequestMarshaller();
+            var unmarshaller = GetDataRetrievalPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDataRetrievalPolicyRequest,GetDataRetrievalPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetJobOutput
 
         internal GetJobOutputResponse GetJobOutput(GetJobOutputRequest request)
@@ -706,6 +737,37 @@ namespace Amazon.Glacier
             var unmarshaller = ListVaultsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListVaultsRequest,ListVaultsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetDataRetrievalPolicy
+
+        internal SetDataRetrievalPolicyResponse SetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request)
+        {
+            var marshaller = new SetDataRetrievalPolicyRequestMarshaller();
+            var unmarshaller = SetDataRetrievalPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<SetDataRetrievalPolicyRequest,SetDataRetrievalPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetDataRetrievalPolicy operation.
+        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetDataRetrievalPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SetDataRetrievalPolicyResponse> SetDataRetrievalPolicyAsync(SetDataRetrievalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetDataRetrievalPolicyRequestMarshaller();
+            var unmarshaller = SetDataRetrievalPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetDataRetrievalPolicyRequest,SetDataRetrievalPolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

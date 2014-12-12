@@ -80,8 +80,8 @@ namespace Amazon.Runtime
         /// <param name="requestContent">The destination where the content stream is written.</param>
         /// <param name="contentStream">The content stream to be written.</param>
         /// <param name="contentHeaders">HTTP content headers.</param>
-        /// <param name="bufferSize">The size of the buffer used to read and transfer the stream.</param>
-        void WriteToRequestBody(TRequestContent requestContent, Stream contentStream, IDictionary<string,string> contentHeaders, int bufferSize);
+        /// <param name="requestContext">The request context.</param>
+        void WriteToRequestBody(TRequestContent requestContent, Stream contentStream, IDictionary<string,string> contentHeaders, IRequestContext requestContext);
 
         /// <summary>
         /// Writes a byte array to the request body.

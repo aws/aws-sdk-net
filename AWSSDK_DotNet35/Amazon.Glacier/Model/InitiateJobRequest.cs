@@ -37,11 +37,20 @@ namespace Amazon.Glacier.Model
     /// <para>
     /// Retrieving data from Amazon Glacier is a two-step process: 
     /// </para>
-    ///  <ol> <li>
+    ///  <ol> <li> 
     /// <para>
     /// Initiate a retrieval job.
     /// </para>
-    /// </li> <li>
+    ///  <note>
+    /// <para>
+    /// A data retrieval policy can cause your initiate retrieval job request to fail with
+    /// a PolicyEnforcedException exception. For more information about data retrieval policies,
+    /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
+    /// Glacier Data Retrieval Policies</a>. For more information about the PolicyEnforcedException
+    /// exception, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-error-responses.html">Error
+    /// Responses</a>.
+    /// </para>
+    ///  </note> </li> <li>
     /// <para>
     /// After the job completes, download the bytes.
     /// </para>

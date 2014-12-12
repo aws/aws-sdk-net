@@ -149,10 +149,11 @@ namespace Amazon.Runtime
                     OriginalRequest = request,
                     Signer = Signer,
                     Unmarshaller = unmarshaller,
-                    IsAsync = true
+                    IsAsync = true,
+                    CancellationToken = cancellationToken
                 },
                 new ResponseContext()
-            ) { CancellationToken = cancellationToken };
+            );
 
             return this.RuntimePipeline.InvokeAsync<TResponse>(executionContext);
         }

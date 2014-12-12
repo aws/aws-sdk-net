@@ -36,6 +36,10 @@ namespace Amazon.Runtime
         bool IsSigned { get; set; }
         bool IsAsync { get; }
         int Retries { get; set; }
+
+#if BCL45 || WIN_RT || WINDOWS_PHONE
+        System.Threading.CancellationToken CancellationToken { get; }
+#endif
     }
 
     public interface IResponseContext
@@ -59,9 +63,7 @@ namespace Amazon.Runtime
     {
         IResponseContext ResponseContext { get; }
         IRequestContext RequestContext { get; }
-#if BCL45 || WIN_RT || WINDOWS_PHONE 
-        System.Threading.CancellationToken CancellationToken { get; } 
-#endif
+
     }
 
     public interface IAsyncExecutionContext
@@ -95,6 +97,11 @@ namespace Amazon.Runtime.Internal
         public ResponseUnmarshaller Unmarshaller { get; set; }
         public ImmutableCredentials ImmutableCredentials { get; set; }
 
+
+#if BCL45 || WIN_RT || WINDOWS_PHONE
+        public System.Threading.CancellationToken CancellationToken { get; set; }
+#endif
+
         public string RequestName
         {
             get { return this.OriginalRequest.GetType().Name; }
@@ -127,10 +134,6 @@ namespace Amazon.Runtime.Internal
     {
         public IRequestContext RequestContext { get; private set; }
         public IResponseContext ResponseContext { get; private set; }        
-
-#if BCL45 || WIN_RT || WINDOWS_PHONE
-        public System.Threading.CancellationToken CancellationToken { get; set; }
-#endif
 
         public ExecutionContext(bool enableMetrics)
         {

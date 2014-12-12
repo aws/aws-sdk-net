@@ -611,6 +611,42 @@ namespace Amazon.Glacier
 
         #endregion
         
+        #region  GetDataRetrievalPolicy
+
+        /// <summary>
+        /// This operation returns the current data retrieval policy for the account and region
+        /// specified in the GET request. For more information about data retrieval policies,
+        /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
+        /// Glacier Data Retrieval Policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataRetrievalPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetDataRetrievalPolicy service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        GetDataRetrievalPolicyResponse GetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataRetrievalPolicy operation.
+        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataRetrievalPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetDataRetrievalPolicyResponse> GetDataRetrievalPolicyAsync(GetDataRetrievalPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetJobOutput
 
         /// <summary>
@@ -779,11 +815,20 @@ namespace Amazon.Glacier
         /// <para>
         /// Retrieving data from Amazon Glacier is a two-step process: 
         /// </para>
-        ///  <ol> <li>
+        ///  <ol> <li> 
         /// <para>
         /// Initiate a retrieval job.
         /// </para>
-        /// </li> <li>
+        ///  <note>
+        /// <para>
+        /// A data retrieval policy can cause your initiate retrieval job request to fail with
+        /// a PolicyEnforcedException exception. For more information about data retrieval policies,
+        /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
+        /// Glacier Data Retrieval Policies</a>. For more information about the PolicyEnforcedException
+        /// exception, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-error-responses.html">Error
+        /// Responses</a>.
+        /// </para>
+        ///  </note> </li> <li>
         /// <para>
         /// After the job completes, download the bytes.
         /// </para>
@@ -933,6 +978,10 @@ namespace Amazon.Glacier
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.PolicyEnforcedException">
+        /// Returned if a retrieval job would exceed the current data policy's retrieval rate
+        /// limit. For more information about data retrieval policies,
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
@@ -1375,6 +1424,49 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ListVaultsResponse> ListVaultsAsync(ListVaultsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SetDataRetrievalPolicy
+
+        /// <summary>
+        /// This operation sets and then enacts a data retrieval policy in the region specified
+        /// in the PUT request. You can set one policy per region for an AWS account. The policy
+        /// is enacted within a few minutes of a successful PUT operation. 
+        /// 
+        ///  
+        /// <para>
+        /// The set policy operation does not affect retrieval jobs that were in progress before
+        /// the policy was enacted. For more information about data retrieval policies, see <a
+        /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
+        /// Glacier Data Retrieval Policies</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetDataRetrievalPolicy service method.</param>
+        /// 
+        /// <returns>The response from the SetDataRetrievalPolicy service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        SetDataRetrievalPolicyResponse SetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetDataRetrievalPolicy operation.
+        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetDataRetrievalPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<SetDataRetrievalPolicyResponse> SetDataRetrievalPolicyAsync(SetDataRetrievalPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

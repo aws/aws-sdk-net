@@ -58,6 +58,7 @@ namespace Amazon.Runtime.Internal
     /// </summary>    
     public class HttpRequest : IHttpRequest<Stream>
     {
+        private bool _isAborted = false;
         private HttpWebRequest _request;
 
         /// <summary>
@@ -133,18 +134,22 @@ namespace Amazon.Runtime.Internal
         /// <param name="requestContent">The destination where the content stream is written.</param>
         /// <param name="contentStream">The content stream to be written.</param>
         /// <param name="contentHeaders">HTTP content headers.</param>
-        /// <param name="bufferSize">The size of the buffer used to read and transfer the stream.</param>
-        public void WriteToRequestBody(Stream requestContent, Stream contentStream, IDictionary<string,string> contentHeaders, int bufferSize)
+        /// <param name="requestContext">The request context.</param>
+        public void WriteToRequestBody(Stream requestContent, Stream contentStream,
+            IDictionary<string, string> contentHeaders, IRequestContext requestContext)
         {
             bool gotException = false;
             try            
             {
-                var buffer = new byte[bufferSize];
+                var buffer = new byte[requestContext.ClientConfig.BufferSize];
                 int bytesRead = 0;
                 int bytesToRead = buffer.Length;
 
                 while ((bytesRead = contentStream.Read(buffer, 0, bytesToRead)) > 0)
                 {
+#if BCL45 || WIN_RT || WINDOWS_PHONE
+                    requestContext.CancellationToken.ThrowIfCancellationRequested();
+#endif
                     requestContent.Write(buffer, 0, bytesRead);
                 }
             }
@@ -188,7 +193,11 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         public void Abort()
         {
-            _request.Abort();
+            if (!_isAborted)
+            {
+                _request.Abort();
+                _isAborted = true;
+            }
         }
 
 #if BCL45 || WIN_RT || WINDOWS_PHONE
@@ -210,14 +219,24 @@ namespace Amazon.Runtime.Internal
         public virtual async System.Threading.Tasks.Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
-
             try
             {
-                var response = await _request.GetResponseAsync().ConfigureAwait(false) as HttpWebResponse;
-                return new HttpWebRequestResponseData(response);
+                using(cancellationToken.Register(()=> this.Abort(), useSynchronizationContext: false))
+                {
+                    var response = await _request.GetResponseAsync().ConfigureAwait(false) as HttpWebResponse;
+                    return new HttpWebRequestResponseData(response);
+                }
             }
             catch (WebException webException)
             {
+                // HttpWebRequest.Abort() throws a WebException.
+                // If request has been cancelled using cancellationToken, wrap the
+                // WebException in an OperationCancelledException.
+                if (cancellationToken.IsCancellationRequested)
+                {
+                    throw new OperationCanceledException(webException.Message, webException, cancellationToken);
+                }
+
                 var errorResponse = webException.Response as HttpWebResponse;
                 if (errorResponse != null)
                 {

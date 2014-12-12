@@ -41,6 +41,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string _pipelineId;
         private List<Playlist> _playlists = new List<Playlist>();
         private string _status;
+        private Dictionary<string, string> _userMetadata = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -233,6 +234,49 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserMetadata. 
+        /// <para>
+        /// User-defined metadata that you want to associate with an Elastic Transcoder job. You
+        /// specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code>
+        /// pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs
+        /// will be returned in the same order in which you specify them.
+        /// </para>
+        ///  
+        /// <para>
+        /// Metadata <code>keys</code> and <code>values</code> must use characters from the following
+        /// list:
+        /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// <code>0-9</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>A-Z</code> and <code>a-z</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>Space</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// The following symbols: <code>_.:/=+-%@</code>
+        /// </para>
+        /// </li> </ul>
+        /// </summary>
+        public Dictionary<string, string> UserMetadata
+        {
+            get { return this._userMetadata; }
+            set { this._userMetadata = value; }
+        }
+
+        // Check to see if UserMetadata property is set
+        internal bool IsSetUserMetadata()
+        {
+            return this._userMetadata != null && this._userMetadata.Count > 0; 
         }
 
     }

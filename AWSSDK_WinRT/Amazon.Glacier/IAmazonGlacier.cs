@@ -206,6 +206,22 @@ namespace Amazon.Glacier
 
         #endregion
                 
+        #region  GetDataRetrievalPolicy
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataRetrievalPolicy operation.
+        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataRetrievalPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetDataRetrievalPolicyResponse> GetDataRetrievalPolicyAsync(GetDataRetrievalPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetJobOutput
 
         /// <summary>
@@ -331,6 +347,22 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ListVaultsResponse> ListVaultsAsync(ListVaultsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SetDataRetrievalPolicy
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetDataRetrievalPolicy operation.
+        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetDataRetrievalPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<SetDataRetrievalPolicyResponse> SetDataRetrievalPolicyAsync(SetDataRetrievalPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

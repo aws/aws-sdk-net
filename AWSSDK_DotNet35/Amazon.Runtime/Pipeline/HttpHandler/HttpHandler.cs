@@ -118,7 +118,7 @@ namespace Amazon.Runtime.Internal
                         WriteContentToRequestBody(requestContent, httpRequest, executionContext.RequestContext);
                     }
                 
-                    var response = await httpRequest.GetResponseAsync(executionContext.CancellationToken).
+                    var response = await httpRequest.GetResponseAsync(executionContext.RequestContext.CancellationToken).
                         ConfigureAwait(false);                
                     executionContext.ResponseContext.HttpResponse = response;     
                 }
@@ -306,7 +306,7 @@ namespace Amazon.Runtime.Internal
                     : originalStream;
 
                 httpRequest.WriteToRequestBody(requestContent, inputStream, 
-                    requestContext.Request.Headers, requestContext.ClientConfig.BufferSize);
+                    requestContext.Request.Headers, requestContext);
 
             }
         }

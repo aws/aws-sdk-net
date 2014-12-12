@@ -138,7 +138,7 @@ namespace Amazon.Runtime.Internal.Settings
             this.disableWatcher(type);
             try
             {
-                string filePath = getFileFromType(type);
+                var filePath = getFileFromType(type);
 
                 if (settings == null || settings.Count == 0)
                 {
@@ -151,12 +151,12 @@ namespace Amazon.Runtime.Internal.Settings
                 }
 
                 // Cover the case where the file still has a lock on it from a previous IO access and needs time to let go.
-                int retryAttempt = 0;
+                var retryAttempt = 0;
                 while(true)
                 {
                     try
                     {
-                        using (StreamWriter writer = new StreamWriter(filePath))
+                        using (var writer = new StreamWriter(filePath))
                         {
                             settings.Persist(writer);
                             break;
@@ -165,7 +165,10 @@ namespace Amazon.Runtime.Internal.Settings
                     catch (Exception)
                     {
                         if (retryAttempt < 5)
+                        {
                             Thread.Sleep(1000);
+                            retryAttempt++;
+                        }
                         else
                             throw;
                     }
@@ -179,34 +182,45 @@ namespace Amazon.Runtime.Internal.Settings
 
         SettingsCollection loadSettingsType(string type)
         {
-            string filePath = getFileFromType(type);
+            var filePath = getFileFromType(type);
             if(!File.Exists(filePath))
             {
                 return new SettingsCollection();
             }
 
-            string content;
-            try
+            // cover case where SDK in another process might be writing to settings file,
+            // yielding IO contention exceptons
+            var retryAttempt = 0;
+            while (true)
             {
-                using (StreamReader reader = new StreamReader(filePath))
+                try
                 {
-                    content = reader.ReadToEnd();
+                    string content;
+                    using (var reader = new StreamReader(filePath))
+                    {
+                        content = reader.ReadToEnd();
+                    }
+
+                    var settings = JsonMapper.ToObject<Dictionary<string, Dictionary<string, object>>>(content);
+
+                    if (settings == null)
+                        settings = new Dictionary<string, Dictionary<string, object>>();
+
+                    decryptAnyEncryptedValues(settings);
+
+                    return new SettingsCollection(settings);
+                }
+                catch
+                {
+                    if (retryAttempt < 5)
+                    {
+                        Thread.Sleep(1000);
+                        retryAttempt++;
+                    }
+                    else
+                        return new SettingsCollection(); // give up
                 }
             }
-            catch
-            {
-                return new SettingsCollection();
-            }
-
-            Dictionary<string, Dictionary<string, object>> settings = 
-                JsonMapper.ToObject<Dictionary<string, Dictionary<string, object>>>(content);
-
-            if (settings == null)
-                settings = new Dictionary<string, Dictionary<string, object>>();
-
-            decryptAnyEncryptedValues(settings);
-
-            return new SettingsCollection(settings);
         }
 
         void decryptAnyEncryptedValues(Dictionary<string, Dictionary<string, object>> settings)

@@ -23,7 +23,7 @@ namespace AWSSDK.UnitTests
     {
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        public void Test()
+        public void TestHttpRequest()
         {
             IHttpRequestFactory<Stream> factory = new HttpWebRequestFactory();
             var request = factory.CreateHttpRequest(new Uri(@"https://testuri"));
@@ -105,11 +105,64 @@ namespace AWSSDK.UnitTests
             var sourceStream = new MemoryStream(Encoding.UTF8.GetBytes("Test_Content"));
             var length = sourceStream.Length;
             var destinationStream = new MemoryStream();
-            request.WriteToRequestBody(destinationStream, sourceStream, null, 1024);
+            request.WriteToRequestBody(destinationStream, sourceStream, null, requestContext);
 
             var sourceContent = Encoding.UTF8.GetBytes("Test_Content");
             destinationStream = new MemoryStream();
             request.WriteToRequestBody(destinationStream, sourceContent, null);
         }
+
+#if ASYNC_AWAIT
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestHttpRequestCancellation()
+        {
+            IHttpRequestFactory<Stream> factory = new HttpWebRequestFactory();
+            var request = factory.CreateHttpRequest(new Uri(@"https://testuri"));
+            request.Method = "PUT";
+            var httpWebRequest = ((HttpRequest)request).Request;
+            Assert.AreEqual("PUT", httpWebRequest.Method);
+
+            var putObjectRequest = new PutObjectRequest
+            {
+                BucketName = "TestBucket",
+                Key = "TestKey",
+                ContentBody = "Test_Content",
+            };
+            var requestContext = new RequestContext(true)
+            {
+                ClientConfig = new AmazonS3Config
+                {
+                },
+                Marshaller = new PutObjectRequestMarshaller(),
+                OriginalRequest = putObjectRequest,
+                Request = new PutObjectRequestMarshaller().Marshall(putObjectRequest),
+                Unmarshaller = new PutObjectResponseUnmarshaller(),
+            };
+
+            request.ConfigureRequest(requestContext);
+
+            var sourceStream = new MemoryStream(Encoding.UTF8.GetBytes("Test_Content"));
+            var length = sourceStream.Length;
+            var destinationStream = new MemoryStream();
+
+            var cts = new CancellationTokenSource();
+            cts.Cancel();           
+            var token = cts.Token;
+            requestContext.CancellationToken = token;
+            try
+            {
+                request.WriteToRequestBody(destinationStream, sourceStream, null, requestContext);
+            }
+            catch (OperationCanceledException exception)
+            {
+                Assert.AreEqual(token, exception.CancellationToken);
+                Assert.AreEqual(true, exception.CancellationToken.IsCancellationRequested);
+                return;
+            }
+            Assert.Fail("An OperationCanceledException was not thrown");
+        }
+#endif
     }
 }
