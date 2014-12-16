@@ -308,7 +308,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the CountClosedWorkflowExecutions operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CountClosedWorkflowExecutions operation.</param>
@@ -378,7 +377,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the CountOpenWorkflowExecutions operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CountOpenWorkflowExecutions operation.</param>
@@ -446,7 +444,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the CountPendingActivityTasks operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CountPendingActivityTasks operation.</param>
@@ -514,7 +511,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the CountPendingDecisionTasks operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CountPendingDecisionTasks operation.</param>
@@ -587,7 +583,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeprecateActivityType operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeprecateActivityType operation.</param>
@@ -659,7 +654,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeprecateDomain operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeprecateDomain operation.</param>
@@ -733,7 +727,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeprecateWorkflowType operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeprecateWorkflowType operation.</param>
@@ -803,7 +796,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeActivityType operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeActivityType operation.</param>
@@ -868,7 +860,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDomain operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomain operation.</param>
@@ -934,7 +925,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkflowExecution operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkflowExecution operation.</param>
@@ -1004,7 +994,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkflowType operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkflowType operation.</param>
@@ -1071,7 +1060,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetWorkflowExecutionHistory operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetWorkflowExecutionHistory operation.</param>
@@ -1140,7 +1128,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListActivityTypes operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListActivityTypes operation.</param>
@@ -1211,7 +1198,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListClosedWorkflowExecutions operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListClosedWorkflowExecutions operation.</param>
@@ -1274,7 +1260,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomains operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListDomains operation.</param>
@@ -1345,7 +1330,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListOpenWorkflowExecutions operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListOpenWorkflowExecutions operation.</param>
@@ -1412,7 +1396,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListWorkflowTypes operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListWorkflowTypes operation.</param>
@@ -1492,7 +1475,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the PollForActivityTask operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PollForActivityTask operation.</param>
@@ -1582,7 +1564,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the PollForDecisionTask operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PollForDecisionTask operation.</param>
@@ -1668,7 +1649,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the RecordActivityTaskHeartbeat operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RecordActivityTaskHeartbeat operation.</param>
@@ -1749,7 +1729,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterActivityType operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RegisterActivityType operation.</param>
@@ -1819,7 +1798,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterDomain operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RegisterDomain operation.</param>
@@ -1905,7 +1883,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterWorkflowType operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RegisterWorkflowType operation.</param>
@@ -1973,7 +1950,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the RequestCancelWorkflowExecution operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RequestCancelWorkflowExecution operation.</param>
@@ -2055,7 +2031,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the RespondActivityTaskCanceled operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RespondActivityTaskCanceled operation.</param>
@@ -2134,7 +2109,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the RespondActivityTaskCompleted operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RespondActivityTaskCompleted operation.</param>
@@ -2210,7 +2184,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the RespondActivityTaskFailed operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RespondActivityTaskFailed operation.</param>
@@ -2278,7 +2251,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the RespondDecisionTaskCompleted operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RespondDecisionTaskCompleted operation.</param>
@@ -2346,7 +2318,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the SignalWorkflowExecution operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SignalWorkflowExecution operation.</param>
@@ -2440,7 +2411,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartWorkflowExecution operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the StartWorkflowExecution operation.</param>
@@ -2509,7 +2479,6 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateWorkflowExecution operation.
-        /// <seealso cref="Amazon.SimpleWorkflow.IAmazonSimpleWorkflow"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the TerminateWorkflowExecution operation.</param>

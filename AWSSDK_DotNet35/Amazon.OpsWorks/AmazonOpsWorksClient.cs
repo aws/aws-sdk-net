@@ -304,7 +304,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssignInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AssignInstance operation on AmazonOpsWorksClient.</param>
@@ -325,7 +324,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AssignInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssignInstance.</param>
@@ -373,7 +371,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssignVolume operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AssignVolume operation on AmazonOpsWorksClient.</param>
@@ -394,7 +391,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AssignVolume operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssignVolume.</param>
@@ -442,7 +438,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateElasticIp operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AssociateElasticIp operation on AmazonOpsWorksClient.</param>
@@ -463,7 +458,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AssociateElasticIp operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateElasticIp.</param>
@@ -516,7 +510,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachElasticLoadBalancer operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AttachElasticLoadBalancer operation on AmazonOpsWorksClient.</param>
@@ -537,7 +530,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AttachElasticLoadBalancer operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachElasticLoadBalancer.</param>
@@ -583,7 +575,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the CloneStack operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CloneStack operation on AmazonOpsWorksClient.</param>
@@ -604,7 +595,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CloneStack operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCloneStack.</param>
@@ -650,7 +640,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateApp operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateApp operation on AmazonOpsWorksClient.</param>
@@ -671,7 +660,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateApp operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApp.</param>
@@ -718,7 +706,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDeployment operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateDeployment operation on AmazonOpsWorksClient.</param>
@@ -739,7 +726,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateDeployment operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDeployment.</param>
@@ -785,7 +771,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateInstance operation on AmazonOpsWorksClient.</param>
@@ -806,7 +791,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInstance.</param>
@@ -860,7 +844,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLayer operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateLayer operation on AmazonOpsWorksClient.</param>
@@ -881,7 +864,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateLayer operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLayer.</param>
@@ -924,7 +906,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStack operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateStack operation on AmazonOpsWorksClient.</param>
@@ -945,7 +926,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateStack operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStack.</param>
@@ -987,7 +967,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateUserProfile operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateUserProfile operation on AmazonOpsWorksClient.</param>
@@ -1008,7 +987,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateUserProfile operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUserProfile.</param>
@@ -1053,7 +1031,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteApp operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteApp operation on AmazonOpsWorksClient.</param>
@@ -1074,7 +1051,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteApp operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApp.</param>
@@ -1125,7 +1101,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteInstance operation on AmazonOpsWorksClient.</param>
@@ -1146,7 +1121,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInstance.</param>
@@ -1193,7 +1167,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLayer operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteLayer operation on AmazonOpsWorksClient.</param>
@@ -1214,7 +1187,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteLayer operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLayer.</param>
@@ -1261,7 +1233,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStack operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteStack operation on AmazonOpsWorksClient.</param>
@@ -1282,7 +1253,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteStack operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStack.</param>
@@ -1327,7 +1297,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteUserProfile operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteUserProfile operation on AmazonOpsWorksClient.</param>
@@ -1348,7 +1317,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteUserProfile operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUserProfile.</param>
@@ -1395,7 +1363,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterElasticIp operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeregisterElasticIp operation on AmazonOpsWorksClient.</param>
@@ -1416,7 +1383,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeregisterElasticIp operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterElasticIp.</param>
@@ -1463,7 +1429,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeregisterInstance operation on AmazonOpsWorksClient.</param>
@@ -1484,7 +1449,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeregisterInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterInstance.</param>
@@ -1529,7 +1493,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterRdsDbInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeregisterRdsDbInstance operation on AmazonOpsWorksClient.</param>
@@ -1550,7 +1513,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeregisterRdsDbInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterRdsDbInstance.</param>
@@ -1597,7 +1559,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterVolume operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeregisterVolume operation on AmazonOpsWorksClient.</param>
@@ -1618,7 +1579,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeregisterVolume operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterVolume.</param>
@@ -1667,7 +1627,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeApps operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeApps operation on AmazonOpsWorksClient.</param>
@@ -1688,7 +1647,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeApps operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeApps.</param>
@@ -1737,7 +1695,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCommands operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeCommands operation on AmazonOpsWorksClient.</param>
@@ -1758,7 +1715,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeCommands operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCommands.</param>
@@ -1807,7 +1763,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDeployments operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDeployments operation on AmazonOpsWorksClient.</param>
@@ -1828,7 +1783,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeDeployments operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDeployments.</param>
@@ -1878,7 +1832,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeElasticIps operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeElasticIps operation on AmazonOpsWorksClient.</param>
@@ -1899,7 +1852,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeElasticIps operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeElasticIps.</param>
@@ -1976,7 +1928,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeElasticLoadBalancers operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeElasticLoadBalancers operation on AmazonOpsWorksClient.</param>
@@ -1997,7 +1948,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeElasticLoadBalancers operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeElasticLoadBalancers.</param>
@@ -2046,7 +1996,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstances operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstances operation on AmazonOpsWorksClient.</param>
@@ -2067,7 +2016,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeInstances operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstances.</param>
@@ -2116,7 +2064,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLayers operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeLayers operation on AmazonOpsWorksClient.</param>
@@ -2137,7 +2084,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLayers operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLayers.</param>
@@ -2186,7 +2132,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBasedAutoScaling operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBasedAutoScaling operation on AmazonOpsWorksClient.</param>
@@ -2207,7 +2152,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLoadBasedAutoScaling operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoadBasedAutoScaling.</param>
@@ -2264,7 +2208,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMyUserProfile operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeMyUserProfile operation on AmazonOpsWorksClient.</param>
@@ -2285,7 +2228,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeMyUserProfile operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMyUserProfile.</param>
@@ -2330,7 +2272,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePermissions operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribePermissions operation on AmazonOpsWorksClient.</param>
@@ -2351,7 +2292,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribePermissions operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePermissions.</param>
@@ -2400,7 +2340,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRaidArrays operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeRaidArrays operation on AmazonOpsWorksClient.</param>
@@ -2421,7 +2360,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeRaidArrays operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRaidArrays.</param>
@@ -2466,7 +2404,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRdsDbInstances operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeRdsDbInstances operation on AmazonOpsWorksClient.</param>
@@ -2487,7 +2424,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeRdsDbInstances operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRdsDbInstances.</param>
@@ -2556,7 +2492,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServiceErrors operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeServiceErrors operation on AmazonOpsWorksClient.</param>
@@ -2577,7 +2512,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeServiceErrors operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeServiceErrors.</param>
@@ -2622,7 +2556,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackProvisioningParameters operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackProvisioningParameters operation on AmazonOpsWorksClient.</param>
@@ -2643,7 +2576,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeStackProvisioningParameters operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStackProvisioningParameters.</param>
@@ -2712,7 +2644,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStacks operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeStacks operation on AmazonOpsWorksClient.</param>
@@ -2733,7 +2664,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeStacks operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStacks.</param>
@@ -2779,7 +2709,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackSummary operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackSummary operation on AmazonOpsWorksClient.</param>
@@ -2800,7 +2729,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeStackSummary operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStackSummary.</param>
@@ -2849,7 +2777,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTimeBasedAutoScaling operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTimeBasedAutoScaling operation on AmazonOpsWorksClient.</param>
@@ -2870,7 +2797,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeTimeBasedAutoScaling operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTimeBasedAutoScaling.</param>
@@ -2939,7 +2865,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeUserProfiles operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeUserProfiles operation on AmazonOpsWorksClient.</param>
@@ -2960,7 +2885,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeUserProfiles operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeUserProfiles.</param>
@@ -3009,7 +2933,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVolumes operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumes operation on AmazonOpsWorksClient.</param>
@@ -3030,7 +2953,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeVolumes operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVolumes.</param>
@@ -3072,7 +2994,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachElasticLoadBalancer operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DetachElasticLoadBalancer operation on AmazonOpsWorksClient.</param>
@@ -3093,7 +3014,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DetachElasticLoadBalancer operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachElasticLoadBalancer.</param>
@@ -3140,7 +3060,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisassociateElasticIp operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisassociateElasticIp operation on AmazonOpsWorksClient.</param>
@@ -3161,7 +3080,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DisassociateElasticIp operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateElasticIp.</param>
@@ -3207,7 +3125,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetHostnameSuggestion operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetHostnameSuggestion operation on AmazonOpsWorksClient.</param>
@@ -3228,7 +3145,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetHostnameSuggestion operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHostnameSuggestion.</param>
@@ -3274,7 +3190,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the RebootInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RebootInstance operation on AmazonOpsWorksClient.</param>
@@ -3295,7 +3210,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RebootInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebootInstance.</param>
@@ -3344,7 +3258,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterElasticIp operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RegisterElasticIp operation on AmazonOpsWorksClient.</param>
@@ -3365,7 +3278,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RegisterElasticIp operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterElasticIp.</param>
@@ -3414,7 +3326,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RegisterInstance operation on AmazonOpsWorksClient.</param>
@@ -3435,7 +3346,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RegisterInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterInstance.</param>
@@ -3480,7 +3390,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterRdsDbInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RegisterRdsDbInstance operation on AmazonOpsWorksClient.</param>
@@ -3501,7 +3410,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RegisterRdsDbInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterRdsDbInstance.</param>
@@ -3549,7 +3457,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterVolume operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RegisterVolume operation on AmazonOpsWorksClient.</param>
@@ -3570,7 +3477,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RegisterVolume operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterVolume.</param>
@@ -3623,7 +3529,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBasedAutoScaling operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBasedAutoScaling operation on AmazonOpsWorksClient.</param>
@@ -3644,7 +3549,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetLoadBasedAutoScaling operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetLoadBasedAutoScaling.</param>
@@ -3690,7 +3594,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetPermission operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetPermission operation on AmazonOpsWorksClient.</param>
@@ -3711,7 +3614,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetPermission operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetPermission.</param>
@@ -3758,7 +3660,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetTimeBasedAutoScaling operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetTimeBasedAutoScaling operation on AmazonOpsWorksClient.</param>
@@ -3779,7 +3680,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetTimeBasedAutoScaling operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetTimeBasedAutoScaling.</param>
@@ -3825,7 +3725,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the StartInstance operation on AmazonOpsWorksClient.</param>
@@ -3846,7 +3745,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  StartInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartInstance.</param>
@@ -3891,7 +3789,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartStack operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the StartStack operation on AmazonOpsWorksClient.</param>
@@ -3912,7 +3809,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  StartStack operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartStack.</param>
@@ -3960,7 +3856,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the StopInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the StopInstance operation on AmazonOpsWorksClient.</param>
@@ -3981,7 +3876,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  StopInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopInstance.</param>
@@ -4026,7 +3920,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the StopStack operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the StopStack operation on AmazonOpsWorksClient.</param>
@@ -4047,7 +3940,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  StopStack operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopStack.</param>
@@ -4094,7 +3986,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the UnassignInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UnassignInstance operation on AmazonOpsWorksClient.</param>
@@ -4115,7 +4006,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UnassignInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnassignInstance.</param>
@@ -4162,7 +4052,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the UnassignVolume operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UnassignVolume operation on AmazonOpsWorksClient.</param>
@@ -4183,7 +4072,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UnassignVolume operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnassignVolume.</param>
@@ -4228,7 +4116,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateApp operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateApp operation on AmazonOpsWorksClient.</param>
@@ -4249,7 +4136,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateApp operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApp.</param>
@@ -4295,7 +4181,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateElasticIp operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateElasticIp operation on AmazonOpsWorksClient.</param>
@@ -4316,7 +4201,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateElasticIp operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateElasticIp.</param>
@@ -4361,7 +4245,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateInstance operation on AmazonOpsWorksClient.</param>
@@ -4382,7 +4265,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateInstance.</param>
@@ -4427,7 +4309,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateLayer operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateLayer operation on AmazonOpsWorksClient.</param>
@@ -4448,7 +4329,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateLayer operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLayer.</param>
@@ -4511,7 +4391,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateMyUserProfile operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateMyUserProfile operation on AmazonOpsWorksClient.</param>
@@ -4532,7 +4411,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateMyUserProfile operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMyUserProfile.</param>
@@ -4577,7 +4455,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateRdsDbInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateRdsDbInstance operation on AmazonOpsWorksClient.</param>
@@ -4598,7 +4475,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateRdsDbInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRdsDbInstance.</param>
@@ -4643,7 +4519,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStack operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateStack operation on AmazonOpsWorksClient.</param>
@@ -4664,7 +4539,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateStack operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStack.</param>
@@ -4709,7 +4583,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateUserProfile operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserProfile operation on AmazonOpsWorksClient.</param>
@@ -4730,7 +4603,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateUserProfile operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUserProfile.</param>
@@ -4776,7 +4648,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateVolume operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateVolume operation on AmazonOpsWorksClient.</param>
@@ -4797,7 +4668,6 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateVolume operation.
-        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVolume.</param>

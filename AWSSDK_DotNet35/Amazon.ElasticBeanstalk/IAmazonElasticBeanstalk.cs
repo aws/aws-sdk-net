@@ -73,7 +73,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the CheckDNSAvailability operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CheckDNSAvailability operation on AmazonElasticBeanstalkClient.</param>
@@ -89,7 +88,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CheckDNSAvailability operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCheckDNSAvailability.</param>
@@ -116,7 +114,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateApplication operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication operation on AmazonElasticBeanstalkClient.</param>
@@ -132,7 +129,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateApplication operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApplication.</param>
@@ -169,7 +165,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateApplicationVersion operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateApplicationVersion operation on AmazonElasticBeanstalkClient.</param>
@@ -185,7 +180,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateApplicationVersion operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApplicationVersion.</param>
@@ -224,7 +218,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateConfigurationTemplate operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationTemplate operation on AmazonElasticBeanstalkClient.</param>
@@ -240,7 +233,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateConfigurationTemplate operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConfigurationTemplate.</param>
@@ -269,7 +261,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateEnvironment operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment operation on AmazonElasticBeanstalkClient.</param>
@@ -285,7 +276,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateEnvironment operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEnvironment.</param>
@@ -346,7 +336,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStorageLocation operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateStorageLocation operation on AmazonElasticBeanstalkClient.</param>
@@ -362,7 +351,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateStorageLocation operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStorageLocation.</param>
@@ -389,7 +377,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteApplication operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication operation on AmazonElasticBeanstalkClient.</param>
@@ -405,7 +392,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteApplication operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApplication.</param>
@@ -442,7 +428,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteApplicationVersion operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationVersion operation on AmazonElasticBeanstalkClient.</param>
@@ -458,7 +443,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteApplicationVersion operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApplicationVersion.</param>
@@ -484,7 +468,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteConfigurationTemplate operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationTemplate operation on AmazonElasticBeanstalkClient.</param>
@@ -500,7 +483,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteConfigurationTemplate operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConfigurationTemplate.</param>
@@ -532,7 +514,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteEnvironmentConfiguration operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentConfiguration operation on AmazonElasticBeanstalkClient.</param>
@@ -548,7 +529,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteEnvironmentConfiguration operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEnvironmentConfiguration.</param>
@@ -577,7 +557,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeApplications operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeApplications operation on AmazonElasticBeanstalkClient.</param>
@@ -593,7 +572,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeApplications operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeApplications.</param>
@@ -622,7 +600,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeApplicationVersions operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationVersions operation on AmazonElasticBeanstalkClient.</param>
@@ -638,7 +615,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeApplicationVersions operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeApplicationVersions.</param>
@@ -673,7 +649,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConfigurationOptions operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationOptions operation on AmazonElasticBeanstalkClient.</param>
@@ -689,7 +664,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeConfigurationOptions operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConfigurationOptions.</param>
@@ -726,7 +700,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConfigurationSettings operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationSettings operation on AmazonElasticBeanstalkClient.</param>
@@ -742,7 +715,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeConfigurationSettings operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConfigurationSettings.</param>
@@ -768,7 +740,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEnvironmentResources operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentResources operation on AmazonElasticBeanstalkClient.</param>
@@ -784,7 +755,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeEnvironmentResources operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEnvironmentResources.</param>
@@ -813,7 +783,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEnvironments operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironments operation on AmazonElasticBeanstalkClient.</param>
@@ -829,7 +798,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeEnvironments operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEnvironments.</param>
@@ -858,7 +826,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents operation on AmazonElasticBeanstalkClient.</param>
@@ -874,7 +841,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeEvents operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEvents.</param>
@@ -903,7 +869,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListAvailableSolutionStacks operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListAvailableSolutionStacks operation on AmazonElasticBeanstalkClient.</param>
@@ -919,7 +884,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListAvailableSolutionStacks operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAvailableSolutionStacks.</param>
@@ -946,7 +910,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the RebuildEnvironment operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RebuildEnvironment operation on AmazonElasticBeanstalkClient.</param>
@@ -962,7 +925,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RebuildEnvironment operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebuildEnvironment.</param>
@@ -1007,7 +969,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the RequestEnvironmentInfo operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RequestEnvironmentInfo operation on AmazonElasticBeanstalkClient.</param>
@@ -1023,7 +984,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RequestEnvironmentInfo operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRequestEnvironmentInfo.</param>
@@ -1046,7 +1006,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the RestartAppServer operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RestartAppServer operation on AmazonElasticBeanstalkClient.</param>
@@ -1062,7 +1021,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RestartAppServer operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestartAppServer.</param>
@@ -1091,7 +1049,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the RetrieveEnvironmentInfo operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RetrieveEnvironmentInfo operation on AmazonElasticBeanstalkClient.</param>
@@ -1107,7 +1064,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RetrieveEnvironmentInfo operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRetrieveEnvironmentInfo.</param>
@@ -1129,7 +1085,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the SwapEnvironmentCNAMEs operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SwapEnvironmentCNAMEs operation on AmazonElasticBeanstalkClient.</param>
@@ -1145,7 +1100,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SwapEnvironmentCNAMEs operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSwapEnvironmentCNAMEs.</param>
@@ -1171,7 +1125,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateEnvironment operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the TerminateEnvironment operation on AmazonElasticBeanstalkClient.</param>
@@ -1187,7 +1140,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  TerminateEnvironment operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTerminateEnvironment.</param>
@@ -1209,7 +1161,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateApplication operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplication operation on AmazonElasticBeanstalkClient.</param>
@@ -1225,7 +1176,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateApplication operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApplication.</param>
@@ -1247,7 +1197,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateApplicationVersion operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationVersion operation on AmazonElasticBeanstalkClient.</param>
@@ -1263,7 +1212,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateApplicationVersion operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApplicationVersion.</param>
@@ -1296,7 +1244,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateConfigurationTemplate operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationTemplate operation on AmazonElasticBeanstalkClient.</param>
@@ -1312,7 +1259,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateConfigurationTemplate operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConfigurationTemplate.</param>
@@ -1353,7 +1299,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateEnvironment operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironment operation on AmazonElasticBeanstalkClient.</param>
@@ -1369,7 +1314,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateEnvironment operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEnvironment.</param>
@@ -1402,7 +1346,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Initiates the asynchronous execution of the ValidateConfigurationSettings operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ValidateConfigurationSettings operation on AmazonElasticBeanstalkClient.</param>
@@ -1418,7 +1361,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ValidateConfigurationSettings operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginValidateConfigurationSettings.</param>

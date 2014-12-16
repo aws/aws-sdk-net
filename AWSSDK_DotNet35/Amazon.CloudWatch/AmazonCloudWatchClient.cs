@@ -287,7 +287,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAlarms operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlarms operation on AmazonCloudWatchClient.</param>
@@ -308,7 +307,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteAlarms operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAlarms.</param>
@@ -359,7 +357,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAlarmHistory operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmHistory operation on AmazonCloudWatchClient.</param>
@@ -380,7 +377,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeAlarmHistory operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAlarmHistory.</param>
@@ -431,7 +427,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAlarms operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarms operation on AmazonCloudWatchClient.</param>
@@ -452,7 +447,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeAlarms operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAlarms.</param>
@@ -484,7 +478,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAlarmsForMetric operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmsForMetric operation on AmazonCloudWatchClient.</param>
@@ -505,7 +498,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeAlarmsForMetric operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAlarmsForMetric.</param>
@@ -537,7 +529,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableAlarmActions operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisableAlarmActions operation on AmazonCloudWatchClient.</param>
@@ -558,7 +549,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DisableAlarmActions operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableAlarmActions.</param>
@@ -589,7 +579,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableAlarmActions operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EnableAlarmActions operation on AmazonCloudWatchClient.</param>
@@ -610,7 +599,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  EnableAlarmActions operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableAlarmActions.</param>
@@ -687,7 +675,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetMetricStatistics operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetMetricStatistics operation on AmazonCloudWatchClient.</param>
@@ -708,7 +695,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetMetricStatistics operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMetricStatistics.</param>
@@ -767,7 +753,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListMetrics operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListMetrics operation on AmazonCloudWatchClient.</param>
@@ -788,7 +773,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListMetrics operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMetrics.</param>
@@ -831,7 +815,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutMetricAlarm operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutMetricAlarm operation on AmazonCloudWatchClient.</param>
@@ -852,7 +835,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutMetricAlarm operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMetricAlarm.</param>
@@ -913,7 +895,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutMetricData operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutMetricData operation on AmazonCloudWatchClient.</param>
@@ -934,7 +915,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutMetricData operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMetricData.</param>
@@ -974,7 +954,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetAlarmState operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetAlarmState operation on AmazonCloudWatchClient.</param>
@@ -995,7 +974,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetAlarmState operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetAlarmState.</param>

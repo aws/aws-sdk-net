@@ -314,7 +314,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddTags operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddTags operation on AmazonElasticLoadBalancingClient.</param>
@@ -335,7 +334,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddTags operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTags.</param>
@@ -383,7 +381,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the ApplySecurityGroupsToLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ApplySecurityGroupsToLoadBalancer operation on AmazonElasticLoadBalancingClient.</param>
@@ -404,7 +401,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ApplySecurityGroupsToLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginApplySecurityGroupsToLoadBalancer.</param>
@@ -456,7 +452,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachLoadBalancerToSubnets operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancerToSubnets operation on AmazonElasticLoadBalancingClient.</param>
@@ -477,7 +472,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AttachLoadBalancerToSubnets operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachLoadBalancerToSubnets.</param>
@@ -518,7 +512,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the ConfigureHealthCheck operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ConfigureHealthCheck operation on AmazonElasticLoadBalancingClient.</param>
@@ -539,7 +532,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ConfigureHealthCheck operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfigureHealthCheck.</param>
@@ -606,7 +598,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAppCookieStickinessPolicy operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateAppCookieStickinessPolicy operation on AmazonElasticLoadBalancingClient.</param>
@@ -627,7 +618,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateAppCookieStickinessPolicy operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAppCookieStickinessPolicy.</param>
@@ -693,7 +683,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLBCookieStickinessPolicy operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateLBCookieStickinessPolicy operation on AmazonElasticLoadBalancingClient.</param>
@@ -714,7 +703,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateLBCookieStickinessPolicy operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLBCookieStickinessPolicy.</param>
@@ -814,7 +802,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancer operation on AmazonElasticLoadBalancingClient.</param>
@@ -835,7 +822,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLoadBalancer.</param>
@@ -889,7 +875,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancerListeners operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancerListeners operation on AmazonElasticLoadBalancingClient.</param>
@@ -910,7 +895,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateLoadBalancerListeners operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLoadBalancerListeners.</param>
@@ -959,7 +943,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancerPolicy operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancerPolicy operation on AmazonElasticLoadBalancingClient.</param>
@@ -980,7 +963,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateLoadBalancerPolicy operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLoadBalancerPolicy.</param>
@@ -1027,7 +1009,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancer operation on AmazonElasticLoadBalancingClient.</param>
@@ -1048,7 +1029,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLoadBalancer.</param>
@@ -1082,7 +1062,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancerListeners operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancerListeners operation on AmazonElasticLoadBalancingClient.</param>
@@ -1103,7 +1082,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteLoadBalancerListeners operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLoadBalancerListeners.</param>
@@ -1141,7 +1119,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancerPolicy operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancerPolicy operation on AmazonElasticLoadBalancingClient.</param>
@@ -1162,7 +1139,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteLoadBalancerPolicy operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLoadBalancerPolicy.</param>
@@ -1216,7 +1192,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterInstancesFromLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeregisterInstancesFromLoadBalancer operation on AmazonElasticLoadBalancingClient.</param>
@@ -1237,7 +1212,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeregisterInstancesFromLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterInstancesFromLoadBalancer.</param>
@@ -1279,7 +1253,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstanceHealth operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceHealth operation on AmazonElasticLoadBalancingClient.</param>
@@ -1300,7 +1273,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeInstanceHealth operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceHealth.</param>
@@ -1338,7 +1310,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancerAttributes operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerAttributes operation on AmazonElasticLoadBalancingClient.</param>
@@ -1359,7 +1330,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLoadBalancerAttributes operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoadBalancerAttributes.</param>
@@ -1424,7 +1394,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancerPolicies operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerPolicies operation on AmazonElasticLoadBalancingClient.</param>
@@ -1445,7 +1414,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLoadBalancerPolicies operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoadBalancerPolicies.</param>
@@ -1498,7 +1466,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancerPolicyTypes operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerPolicyTypes operation on AmazonElasticLoadBalancingClient.</param>
@@ -1519,7 +1486,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLoadBalancerPolicyTypes operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoadBalancerPolicyTypes.</param>
@@ -1576,7 +1542,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancers operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers operation on AmazonElasticLoadBalancingClient.</param>
@@ -1597,7 +1562,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLoadBalancers operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoadBalancers.</param>
@@ -1631,7 +1595,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTags operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation on AmazonElasticLoadBalancingClient.</param>
@@ -1652,7 +1615,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeTags operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTags.</param>
@@ -1698,7 +1660,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachLoadBalancerFromSubnets operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DetachLoadBalancerFromSubnets operation on AmazonElasticLoadBalancingClient.</param>
@@ -1719,7 +1680,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DetachLoadBalancerFromSubnets operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachLoadBalancerFromSubnets.</param>
@@ -1773,7 +1733,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableAvailabilityZonesForLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisableAvailabilityZonesForLoadBalancer operation on AmazonElasticLoadBalancingClient.</param>
@@ -1794,7 +1753,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DisableAvailabilityZonesForLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableAvailabilityZonesForLoadBalancer.</param>
@@ -1841,7 +1799,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableAvailabilityZonesForLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EnableAvailabilityZonesForLoadBalancer operation on AmazonElasticLoadBalancingClient.</param>
@@ -1862,7 +1819,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  EnableAvailabilityZonesForLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableAvailabilityZonesForLoadBalancer.</param>
@@ -1919,7 +1875,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyLoadBalancerAttributes operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyLoadBalancerAttributes operation on AmazonElasticLoadBalancingClient.</param>
@@ -1940,7 +1895,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ModifyLoadBalancerAttributes operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyLoadBalancerAttributes.</param>
@@ -2009,7 +1963,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterInstancesWithLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RegisterInstancesWithLoadBalancer operation on AmazonElasticLoadBalancingClient.</param>
@@ -2030,7 +1983,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RegisterInstancesWithLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterInstancesWithLoadBalancer.</param>
@@ -2064,7 +2016,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTags operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RemoveTags operation on AmazonElasticLoadBalancingClient.</param>
@@ -2085,7 +2036,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RemoveTags operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTags.</param>
@@ -2138,7 +2088,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerListenerSSLCertificate operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerListenerSSLCertificate operation on AmazonElasticLoadBalancingClient.</param>
@@ -2159,7 +2108,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetLoadBalancerListenerSSLCertificate operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetLoadBalancerListenerSSLCertificate.</param>
@@ -2216,7 +2164,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerPoliciesForBackendServer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerPoliciesForBackendServer operation on AmazonElasticLoadBalancingClient.</param>
@@ -2237,7 +2184,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetLoadBalancerPoliciesForBackendServer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetLoadBalancerPoliciesForBackendServer.</param>
@@ -2281,7 +2227,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerPoliciesOfListener operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerPoliciesOfListener operation on AmazonElasticLoadBalancingClient.</param>
@@ -2302,7 +2247,6 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetLoadBalancerPoliciesOfListener operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetLoadBalancerPoliciesOfListener.</param>

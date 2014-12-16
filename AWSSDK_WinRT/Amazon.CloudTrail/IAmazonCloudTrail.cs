@@ -61,7 +61,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTrail operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateTrail operation.</param>
@@ -77,7 +76,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTrail operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrail operation.</param>
@@ -93,7 +91,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrails operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrails operation.</param>
@@ -109,7 +106,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetTrailStatus operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetTrailStatus operation.</param>
@@ -125,7 +121,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartLogging operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the StartLogging operation.</param>
@@ -141,7 +136,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Initiates the asynchronous execution of the StopLogging operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the StopLogging operation.</param>
@@ -157,7 +151,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateTrail operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrail operation.</param>

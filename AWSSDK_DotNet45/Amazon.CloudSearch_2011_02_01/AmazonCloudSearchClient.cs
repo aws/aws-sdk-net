@@ -260,7 +260,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDomain operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain operation.</param>
@@ -316,7 +315,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the DefineIndexField operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DefineIndexField operation.</param>
@@ -372,7 +370,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the DefineRankExpression operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DefineRankExpression operation.</param>
@@ -416,7 +413,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDomain operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain operation.</param>
@@ -467,7 +463,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteIndexField operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteIndexField operation.</param>
@@ -518,7 +513,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRankExpression operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteRankExpression operation.</param>
@@ -580,7 +574,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAvailabilityOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityOptions operation.</param>
@@ -628,7 +621,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDefaultSearchField operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDefaultSearchField operation.</param>
@@ -691,7 +683,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDomains operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomains operation.</param>
@@ -740,7 +731,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeIndexFields operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeIndexFields operation.</param>
@@ -789,7 +779,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRankExpressions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeRankExpressions operation.</param>
@@ -838,7 +827,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServiceAccessPolicies operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeServiceAccessPolicies operation.</param>
@@ -886,7 +874,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStemmingOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeStemmingOptions operation.</param>
@@ -934,7 +921,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStopwordOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeStopwordOptions operation.</param>
@@ -982,7 +968,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSynonymOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeSynonymOptions operation.</param>
@@ -1033,7 +1018,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the IndexDocuments operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the IndexDocuments operation.</param>
@@ -1096,7 +1080,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAvailabilityOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateAvailabilityOptions operation.</param>
@@ -1150,7 +1133,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDefaultSearchField operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateDefaultSearchField operation.</param>
@@ -1205,7 +1187,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateServiceAccessPolicies operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateServiceAccessPolicies operation.</param>
@@ -1261,7 +1242,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStemmingOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateStemmingOptions operation.</param>
@@ -1317,7 +1297,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStopwordOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateStopwordOptions operation.</param>
@@ -1373,7 +1352,6 @@ namespace Amazon.CloudSearch_2011_02_01
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSynonymOptions operation.
-        /// <seealso cref="Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateSynonymOptions operation.</param>

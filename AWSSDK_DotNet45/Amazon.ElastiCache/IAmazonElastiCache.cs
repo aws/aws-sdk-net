@@ -84,7 +84,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeCacheSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeCacheSecurityGroupIngress operation.</param>
@@ -126,7 +125,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopySnapshot operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CopySnapshot operation.</param>
@@ -196,7 +194,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCacheCluster operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateCacheCluster operation.</param>
@@ -239,7 +236,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCacheParameterGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateCacheParameterGroup operation.</param>
@@ -284,7 +280,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCacheSecurityGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateCacheSecurityGroup operation.</param>
@@ -329,7 +324,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCacheSubnetGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateCacheSubnetGroup operation.</param>
@@ -411,7 +405,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateReplicationGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationGroup operation.</param>
@@ -470,7 +463,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshot operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot operation.</param>
@@ -538,7 +530,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCacheCluster operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteCacheCluster operation.</param>
@@ -578,7 +569,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCacheParameterGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteCacheParameterGroup operation.</param>
@@ -615,7 +605,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCacheSecurityGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteCacheSecurityGroup operation.</param>
@@ -645,7 +634,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCacheSubnetGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteCacheSubnetGroup operation.</param>
@@ -712,7 +700,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteReplicationGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationGroup operation.</param>
@@ -750,7 +737,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSnapshot operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshot operation.</param>
@@ -861,7 +847,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheClusters operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeCacheClusters operation.</param>
@@ -894,7 +879,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheEngineVersions operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeCacheEngineVersions operation.</param>
@@ -949,7 +933,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheParameterGroups operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeCacheParameterGroups operation.</param>
@@ -984,7 +967,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheParameters operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeCacheParameters operation.</param>
@@ -1039,7 +1021,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheSecurityGroups operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeCacheSecurityGroups operation.</param>
@@ -1080,7 +1061,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheSubnetGroups operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeCacheSubnetGroups operation.</param>
@@ -1111,7 +1091,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEngineDefaultParameters operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultParameters operation.</param>
@@ -1172,7 +1151,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents operation.</param>
@@ -1225,7 +1203,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReplicationGroups operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationGroups operation.</param>
@@ -1276,7 +1253,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedCacheNodes operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedCacheNodes operation.</param>
@@ -1327,7 +1303,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedCacheNodesOfferings operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedCacheNodesOfferings operation.</param>
@@ -1388,7 +1363,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshots operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshots operation.</param>
@@ -1451,7 +1425,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyCacheCluster operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyCacheCluster operation.</param>
@@ -1491,7 +1464,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyCacheParameterGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyCacheParameterGroup operation.</param>
@@ -1528,7 +1500,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyCacheSubnetGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyCacheSubnetGroup operation.</param>
@@ -1596,7 +1567,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyReplicationGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationGroup operation.</param>
@@ -1636,7 +1606,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the PurchaseReservedCacheNodesOffering operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedCacheNodesOffering operation.</param>
@@ -1680,7 +1649,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the RebootCacheCluster operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RebootCacheCluster operation.</param>
@@ -1721,7 +1689,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetCacheParameterGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ResetCacheParameterGroup operation.</param>
@@ -1764,7 +1731,6 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeCacheSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RevokeCacheSecurityGroupIngress operation.</param>

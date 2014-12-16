@@ -88,7 +88,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <remarks>
         /// When set, this will determine where your data will
-        /// reside in S3. Refer <see cref="T:Amazon.S3.Model.S3Region"/>
+        /// reside in S3. Refer <see cref="T:Amazon.S3.S3Region"/>
         /// for a list of possible values.
         /// </remarks>
         public S3Region BucketRegion

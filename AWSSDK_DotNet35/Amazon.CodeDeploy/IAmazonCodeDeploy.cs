@@ -143,7 +143,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the BatchGetApplications operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the BatchGetApplications operation on AmazonCodeDeployClient.</param>
@@ -159,7 +158,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  BatchGetApplications operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetApplications.</param>
@@ -187,7 +185,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the BatchGetDeployments operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the BatchGetDeployments operation on AmazonCodeDeployClient.</param>
@@ -203,7 +200,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  BatchGetDeployments operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetDeployments.</param>
@@ -237,7 +233,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateApplication operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication operation on AmazonCodeDeployClient.</param>
@@ -253,7 +248,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateApplication operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApplication.</param>
@@ -311,7 +305,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDeployment operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateDeployment operation on AmazonCodeDeployClient.</param>
@@ -327,7 +320,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateDeployment operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDeployment.</param>
@@ -365,7 +357,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDeploymentConfig operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateDeploymentConfig operation on AmazonCodeDeployClient.</param>
@@ -381,7 +372,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateDeploymentConfig operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDeploymentConfig.</param>
@@ -445,7 +435,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDeploymentGroup operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateDeploymentGroup operation on AmazonCodeDeployClient.</param>
@@ -461,7 +450,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateDeploymentGroup operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDeploymentGroup.</param>
@@ -489,7 +477,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteApplication operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication operation on AmazonCodeDeployClient.</param>
@@ -505,7 +492,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteApplication operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApplication.</param>
@@ -542,7 +528,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDeploymentConfig operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeploymentConfig operation on AmazonCodeDeployClient.</param>
@@ -558,7 +543,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteDeploymentConfig operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDeploymentConfig.</param>
@@ -597,7 +581,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDeploymentGroup operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeploymentGroup operation on AmazonCodeDeployClient.</param>
@@ -613,7 +596,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteDeploymentGroup operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDeploymentGroup.</param>
@@ -644,7 +626,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetApplication operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetApplication operation on AmazonCodeDeployClient.</param>
@@ -660,7 +641,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetApplication operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApplication.</param>
@@ -700,7 +680,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetApplicationRevision operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetApplicationRevision operation on AmazonCodeDeployClient.</param>
@@ -716,7 +695,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetApplicationRevision operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApplicationRevision.</param>
@@ -747,7 +725,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDeployment operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetDeployment operation on AmazonCodeDeployClient.</param>
@@ -763,7 +740,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetDeployment operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeployment.</param>
@@ -794,7 +770,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDeploymentConfig operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetDeploymentConfig operation on AmazonCodeDeployClient.</param>
@@ -810,7 +785,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetDeploymentConfig operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeploymentConfig.</param>
@@ -850,7 +824,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDeploymentGroup operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetDeploymentGroup operation on AmazonCodeDeployClient.</param>
@@ -866,7 +839,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetDeploymentGroup operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeploymentGroup.</param>
@@ -903,7 +875,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDeploymentInstance operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetDeploymentInstance operation on AmazonCodeDeployClient.</param>
@@ -919,7 +890,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetDeploymentInstance operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeploymentInstance.</param>
@@ -971,7 +941,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListApplicationRevisions operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListApplicationRevisions operation on AmazonCodeDeployClient.</param>
@@ -987,7 +956,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListApplicationRevisions operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListApplicationRevisions.</param>
@@ -1022,7 +990,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListApplications operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListApplications operation on AmazonCodeDeployClient.</param>
@@ -1038,7 +1005,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListApplications operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListApplications.</param>
@@ -1073,7 +1039,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDeploymentConfigs operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListDeploymentConfigs operation on AmazonCodeDeployClient.</param>
@@ -1089,7 +1054,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListDeploymentConfigs operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeploymentConfigs.</param>
@@ -1123,7 +1087,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDeploymentGroups operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListDeploymentGroups operation on AmazonCodeDeployClient.</param>
@@ -1139,7 +1102,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListDeploymentGroups operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeploymentGroups.</param>
@@ -1179,7 +1141,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDeploymentInstances operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListDeploymentInstances operation on AmazonCodeDeployClient.</param>
@@ -1195,7 +1156,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListDeploymentInstances operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeploymentInstances.</param>
@@ -1245,7 +1205,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDeployments operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListDeployments operation on AmazonCodeDeployClient.</param>
@@ -1261,7 +1220,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListDeployments operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeployments.</param>
@@ -1301,7 +1259,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterApplicationRevision operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RegisterApplicationRevision operation on AmazonCodeDeployClient.</param>
@@ -1317,7 +1274,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RegisterApplicationRevision operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterApplicationRevision.</param>
@@ -1351,7 +1307,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the StopDeployment operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the StopDeployment operation on AmazonCodeDeployClient.</param>
@@ -1367,7 +1322,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  StopDeployment operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopDeployment.</param>
@@ -1401,7 +1355,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateApplication operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplication operation on AmazonCodeDeployClient.</param>
@@ -1417,7 +1370,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateApplication operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApplication.</param>
@@ -1475,7 +1427,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDeploymentGroup operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateDeploymentGroup operation on AmazonCodeDeployClient.</param>
@@ -1491,7 +1442,6 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateDeploymentGroup operation.
-        /// <seealso cref="Amazon.CodeDeploy.IAmazonCodeDeploy"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDeploymentGroup.</param>

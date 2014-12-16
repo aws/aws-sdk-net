@@ -42,7 +42,6 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelJob operation.
-        /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CancelJob operation.</param>
@@ -58,7 +57,6 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateJob operation.
-        /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateJob operation.</param>
@@ -74,7 +72,6 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePipeline operation.
-        /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreatePipeline operation.</param>
@@ -90,7 +87,6 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePreset operation.
-        /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreatePreset operation.</param>
@@ -106,7 +102,6 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePipeline operation.
-        /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeletePipeline operation.</param>
@@ -122,7 +117,6 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePreset operation.
-        /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeletePreset operation.</param>
@@ -138,7 +132,6 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobsByPipeline operation.
-        /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListJobsByPipeline operation.</param>
@@ -154,7 +147,6 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobsByStatus operation.
-        /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListJobsByStatus operation.</param>
@@ -170,7 +162,6 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListPipelines operation.
-        /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListPipelines operation.</param>
@@ -186,7 +177,6 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListPresets operation.
-        /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListPresets operation.</param>
@@ -202,7 +192,6 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReadJob operation.
-        /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ReadJob operation.</param>
@@ -218,7 +207,6 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReadPipeline operation.
-        /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ReadPipeline operation.</param>
@@ -234,7 +222,6 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReadPreset operation.
-        /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ReadPreset operation.</param>
@@ -250,7 +237,6 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Initiates the asynchronous execution of the TestRole operation.
-        /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the TestRole operation.</param>
@@ -266,7 +252,6 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdatePipeline operation.
-        /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdatePipeline operation.</param>
@@ -282,7 +267,6 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdatePipelineNotifications operation.
-        /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdatePipelineNotifications operation.</param>
@@ -298,7 +282,6 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdatePipelineStatus operation.
-        /// <seealso cref="Amazon.ElasticTranscoder.IAmazonElasticTranscoder"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdatePipelineStatus operation.</param>

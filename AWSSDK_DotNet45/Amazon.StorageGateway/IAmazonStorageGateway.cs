@@ -86,7 +86,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the ActivateGateway operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ActivateGateway operation.</param>
@@ -127,7 +126,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddCache operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddCache operation.</param>
@@ -168,7 +166,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddUploadBuffer operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddUploadBuffer operation.</param>
@@ -210,7 +207,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddWorkingStorage operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddWorkingStorage operation.</param>
@@ -243,7 +239,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelArchival operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CancelArchival operation.</param>
@@ -276,7 +271,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelRetrieval operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CancelRetrieval operation.</param>
@@ -318,7 +312,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCachediSCSIVolume operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateCachediSCSIVolume operation.</param>
@@ -369,7 +362,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshot operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot operation.</param>
@@ -418,7 +410,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshotFromVolumeRecoveryPoint operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshotFromVolumeRecoveryPoint operation.</param>
@@ -466,7 +457,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStorediSCSIVolume operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateStorediSCSIVolume operation.</param>
@@ -499,7 +489,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTapes operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateTapes operation.</param>
@@ -534,7 +523,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBandwidthRateLimit operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBandwidthRateLimit operation.</param>
@@ -567,7 +555,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteChapCredentials operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteChapCredentials operation.</param>
@@ -619,7 +606,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteGateway operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteGateway operation.</param>
@@ -660,7 +646,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSnapshotSchedule operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshotSchedule operation.</param>
@@ -692,7 +677,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTape operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteTape operation.</param>
@@ -724,7 +708,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTapeArchive operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteTapeArchive operation.</param>
@@ -774,7 +757,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVolume operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteVolume operation.</param>
@@ -815,7 +797,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeBandwidthRateLimit operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeBandwidthRateLimit operation.</param>
@@ -854,7 +835,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCache operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeCache operation.</param>
@@ -894,7 +874,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCachediSCSIVolumes operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeCachediSCSIVolumes operation.</param>
@@ -928,7 +907,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeChapCredentials operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeChapCredentials operation.</param>
@@ -963,7 +941,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeGatewayInformation operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeGatewayInformation operation.</param>
@@ -996,7 +973,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMaintenanceStartTime operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceStartTime operation.</param>
@@ -1030,7 +1006,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshotSchedule operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotSchedule operation.</param>
@@ -1064,7 +1039,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStorediSCSIVolumes operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeStorediSCSIVolumes operation.</param>
@@ -1125,7 +1099,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTapeArchives operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTapeArchives operation.</param>
@@ -1165,7 +1138,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTapeRecoveryPoints operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTapeRecoveryPoints operation.</param>
@@ -1199,7 +1171,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTapes operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTapes operation.</param>
@@ -1239,7 +1210,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeUploadBuffer operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeUploadBuffer operation.</param>
@@ -1277,7 +1247,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVTLDevices operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeVTLDevices operation.</param>
@@ -1317,7 +1286,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkingStorage operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkingStorage operation.</param>
@@ -1357,7 +1325,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableGateway operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisableGateway operation.</param>
@@ -1432,7 +1399,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListGateways operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListGateways operation.</param>
@@ -1472,7 +1438,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListLocalDisks operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListLocalDisks operation.</param>
@@ -1513,7 +1478,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListVolumeRecoveryPoints operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListVolumeRecoveryPoints operation.</param>
@@ -1556,7 +1520,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListVolumes operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListVolumes operation.</param>
@@ -1598,7 +1561,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the RetrieveTapeArchive operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RetrieveTapeArchive operation.</param>
@@ -1637,7 +1599,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the RetrieveTapeRecoveryPoint operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RetrieveTapeRecoveryPoint operation.</param>
@@ -1688,7 +1649,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the ShutdownGateway operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ShutdownGateway operation.</param>
@@ -1729,7 +1689,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartGateway operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the StartGateway operation.</param>
@@ -1775,7 +1734,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateBandwidthRateLimit operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateBandwidthRateLimit operation.</param>
@@ -1816,7 +1774,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateChapCredentials operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateChapCredentials operation.</param>
@@ -1850,7 +1807,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateGatewayInformation operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayInformation operation.</param>
@@ -1890,7 +1846,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateGatewaySoftwareNow operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateGatewaySoftwareNow operation.</param>
@@ -1924,7 +1879,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateMaintenanceStartTime operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateMaintenanceStartTime operation.</param>
@@ -1969,7 +1923,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSnapshotSchedule operation.
-        /// <seealso cref="Amazon.StorageGateway.IAmazonStorageGateway"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateSnapshotSchedule operation.</param>

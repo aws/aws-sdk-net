@@ -651,7 +651,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Initiates the asynchronous execution of the BatchGetItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the BatchGetItem operation on AmazonDynamoDBClient.</param>
@@ -672,7 +671,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Finishes the asynchronous execution of the  BatchGetItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetItem.</param>
@@ -938,7 +936,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Initiates the asynchronous execution of the BatchWriteItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the BatchWriteItem operation on AmazonDynamoDBClient.</param>
@@ -959,7 +956,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Finishes the asynchronous execution of the  BatchWriteItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchWriteItem.</param>
@@ -1095,7 +1091,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTable operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateTable operation on AmazonDynamoDBClient.</param>
@@ -1116,7 +1111,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateTable operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTable.</param>
@@ -1302,7 +1296,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteItem operation on AmazonDynamoDBClient.</param>
@@ -1323,7 +1316,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteItem.</param>
@@ -1451,7 +1443,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTable operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteTable operation on AmazonDynamoDBClient.</param>
@@ -1472,7 +1463,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteTable operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTable.</param>
@@ -1532,7 +1522,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTable operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTable operation on AmazonDynamoDBClient.</param>
@@ -1553,7 +1542,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeTable operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTable.</param>
@@ -1688,7 +1676,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetItem operation on AmazonDynamoDBClient.</param>
@@ -1709,7 +1696,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetItem.</param>
@@ -1816,7 +1802,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListTables operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListTables operation on AmazonDynamoDBClient.</param>
@@ -1837,7 +1822,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListTables operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTables.</param>
@@ -2050,7 +2034,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutItem operation on AmazonDynamoDBClient.</param>
@@ -2071,7 +2054,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutItem.</param>
@@ -2144,7 +2126,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Initiates the asynchronous execution of the Query operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the Query operation on AmazonDynamoDBClient.</param>
@@ -2165,7 +2146,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Finishes the asynchronous execution of the  Query operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginQuery.</param>
@@ -2395,7 +2375,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Initiates the asynchronous execution of the Scan operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the Scan operation on AmazonDynamoDBClient.</param>
@@ -2416,7 +2395,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Finishes the asynchronous execution of the  Scan operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginScan.</param>
@@ -2576,7 +2554,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateItem operation on AmazonDynamoDBClient.</param>
@@ -2597,7 +2574,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateItem.</param>
@@ -2743,7 +2719,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateTable operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateTable operation on AmazonDynamoDBClient.</param>
@@ -2764,7 +2739,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateTable operation.
-        /// <seealso cref="Amazon.DynamoDBv2.IAmazonDynamoDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTable.</param>

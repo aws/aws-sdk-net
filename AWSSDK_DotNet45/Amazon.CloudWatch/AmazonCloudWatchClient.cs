@@ -290,7 +290,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAlarms operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlarms operation.</param>
@@ -347,7 +346,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAlarmHistory operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmHistory operation.</param>
@@ -404,7 +402,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAlarms operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarms operation.</param>
@@ -442,7 +439,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAlarmsForMetric operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmsForMetric operation.</param>
@@ -480,7 +476,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableAlarmActions operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisableAlarmActions operation.</param>
@@ -517,7 +512,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableAlarmActions operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EnableAlarmActions operation.</param>
@@ -600,7 +594,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetMetricStatistics operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetMetricStatistics operation.</param>
@@ -665,7 +658,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListMetrics operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListMetrics operation.</param>
@@ -714,7 +706,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutMetricAlarm operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutMetricAlarm operation.</param>
@@ -781,7 +772,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutMetricData operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutMetricData operation.</param>
@@ -827,7 +817,6 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetAlarmState operation.
-        /// <seealso cref="Amazon.CloudWatch.IAmazonCloudWatch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetAlarmState operation.</param>

@@ -361,7 +361,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddPermission operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddPermission operation.</param>
@@ -487,7 +486,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the ChangeMessageVisibility operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ChangeMessageVisibility operation.</param>
@@ -597,7 +595,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the ChangeMessageVisibilityBatch operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ChangeMessageVisibilityBatch operation.</param>
@@ -735,7 +732,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateQueue operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateQueue operation.</param>
@@ -847,7 +843,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteMessage operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteMessage operation.</param>
@@ -959,7 +954,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteMessageBatch operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteMessageBatch operation.</param>
@@ -1053,7 +1047,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteQueue operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueue operation.</param>
@@ -1189,7 +1182,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetQueueAttributes operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetQueueAttributes operation.</param>
@@ -1265,7 +1257,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetQueueUrl operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetQueueUrl operation.</param>
@@ -1312,7 +1303,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDeadLetterSourceQueues operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListDeadLetterSourceQueues operation.</param>
@@ -1366,7 +1356,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListQueues operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListQueues operation.</param>
@@ -1450,7 +1439,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the PurgeQueue operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PurgeQueue operation.</param>
@@ -1640,7 +1628,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReceiveMessage operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ReceiveMessage operation.</param>
@@ -1694,7 +1681,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemovePermission operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission operation.</param>
@@ -1790,7 +1776,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the SendMessage operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SendMessage operation.</param>
@@ -1946,7 +1931,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the SendMessageBatch operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SendMessageBatch operation.</param>
@@ -2018,7 +2002,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetQueueAttributes operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetQueueAttributes operation.</param>

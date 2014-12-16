@@ -30,8 +30,8 @@ namespace Amazon.S3
 {
     /// <summary>
     /// A list of all possible CannedACLs that can be used
-    /// for S3 Buckets or S3 Objects. For more information about CannedACLs, refer:
-    /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/RESTAccessPolicy.html#RESTCannedAccessPolicies"/>
+    /// for S3 Buckets or S3 Objects. For more information about CannedACLs, refer to
+    /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/RESTAccessPolicy.html#RESTCannedAccessPolicies"/>.
     /// </summary>
     public sealed class S3CannedACL : ConstantClass
     {
@@ -109,8 +109,8 @@ namespace Amazon.S3
 
     /// <summary>
     /// A list of all possible S3 Bucket region possibilities. For
-    /// more information, refer:
-    /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/BucketConfiguration.html#LocationSelection"/>
+    /// more information, refer to 
+    /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/BucketConfiguration.html#LocationSelection"/>.
     /// </summary>
     public sealed class S3Region : ConstantClass
     {
@@ -181,8 +181,8 @@ namespace Amazon.S3
     }
 
     /// <summary>
-    /// A list of all ACL permissions. For more information, refer:
-    /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/S3_ACLs.html#S3_ACLs_Permissions"/>
+    /// A list of all ACL permissions. For more information, refer to
+    /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/S3_ACLs.html#S3_ACLs_Permissions"/>.
     /// </summary>
     public sealed class S3Permission : ConstantClass
     {

@@ -99,7 +99,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddPermission operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddPermission operation on AmazonSimpleNotificationServiceClient.</param>
@@ -115,7 +114,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddPermission operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddPermission.</param>
@@ -213,7 +211,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the ConfirmSubscription operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ConfirmSubscription operation on AmazonSimpleNotificationServiceClient.</param>
@@ -229,7 +226,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ConfirmSubscription operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfirmSubscription.</param>
@@ -271,7 +267,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePlatformApplication operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreatePlatformApplication operation on AmazonSimpleNotificationServiceClient.</param>
@@ -287,7 +282,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreatePlatformApplication operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePlatformApplication.</param>
@@ -339,7 +333,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePlatformEndpoint operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreatePlatformEndpoint operation on AmazonSimpleNotificationServiceClient.</param>
@@ -355,7 +348,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreatePlatformEndpoint operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePlatformEndpoint.</param>
@@ -415,7 +407,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTopic operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateTopic operation on AmazonSimpleNotificationServiceClient.</param>
@@ -431,7 +422,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateTopic operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTopic.</param>
@@ -464,7 +454,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteEndpoint operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint operation on AmazonSimpleNotificationServiceClient.</param>
@@ -480,7 +469,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteEndpoint operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEndpoint.</param>
@@ -513,7 +501,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePlatformApplication operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeletePlatformApplication operation on AmazonSimpleNotificationServiceClient.</param>
@@ -529,7 +516,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeletePlatformApplication operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePlatformApplication.</param>
@@ -589,7 +575,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTopic operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteTopic operation on AmazonSimpleNotificationServiceClient.</param>
@@ -605,7 +590,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteTopic operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTopic.</param>
@@ -641,7 +625,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetEndpointAttributes operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetEndpointAttributes operation on AmazonSimpleNotificationServiceClient.</param>
@@ -657,7 +640,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetEndpointAttributes operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEndpointAttributes.</param>
@@ -694,7 +676,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetPlatformApplicationAttributes operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetPlatformApplicationAttributes operation on AmazonSimpleNotificationServiceClient.</param>
@@ -710,7 +691,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetPlatformApplicationAttributes operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPlatformApplicationAttributes.</param>
@@ -764,7 +744,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSubscriptionAttributes operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetSubscriptionAttributes operation on AmazonSimpleNotificationServiceClient.</param>
@@ -780,7 +759,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetSubscriptionAttributes operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSubscriptionAttributes.</param>
@@ -836,7 +814,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetTopicAttributes operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetTopicAttributes operation on AmazonSimpleNotificationServiceClient.</param>
@@ -852,7 +829,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetTopicAttributes operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTopicAttributes.</param>
@@ -894,7 +870,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListEndpointsByPlatformApplication operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListEndpointsByPlatformApplication operation on AmazonSimpleNotificationServiceClient.</param>
@@ -910,7 +885,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListEndpointsByPlatformApplication operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEndpointsByPlatformApplication.</param>
@@ -973,7 +947,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListPlatformApplications operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListPlatformApplications operation on AmazonSimpleNotificationServiceClient.</param>
@@ -989,7 +962,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListPlatformApplications operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPlatformApplications.</param>
@@ -1062,7 +1034,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListSubscriptions operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListSubscriptions operation on AmazonSimpleNotificationServiceClient.</param>
@@ -1078,7 +1049,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListSubscriptions operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSubscriptions.</param>
@@ -1162,7 +1132,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListSubscriptionsByTopic operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListSubscriptionsByTopic operation on AmazonSimpleNotificationServiceClient.</param>
@@ -1178,7 +1147,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListSubscriptionsByTopic operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSubscriptionsByTopic.</param>
@@ -1251,7 +1219,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListTopics operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListTopics operation on AmazonSimpleNotificationServiceClient.</param>
@@ -1267,7 +1234,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListTopics operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTopics.</param>
@@ -1407,7 +1373,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the Publish operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the Publish operation on AmazonSimpleNotificationServiceClient.</param>
@@ -1423,7 +1388,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  Publish operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPublish.</param>
@@ -1478,7 +1442,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemovePermission operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission operation on AmazonSimpleNotificationServiceClient.</param>
@@ -1494,7 +1457,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RemovePermission operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemovePermission.</param>
@@ -1530,7 +1492,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetEndpointAttributes operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetEndpointAttributes operation on AmazonSimpleNotificationServiceClient.</param>
@@ -1546,7 +1507,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetEndpointAttributes operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetEndpointAttributes.</param>
@@ -1582,7 +1542,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetPlatformApplicationAttributes operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetPlatformApplicationAttributes operation on AmazonSimpleNotificationServiceClient.</param>
@@ -1598,7 +1557,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetPlatformApplicationAttributes operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetPlatformApplicationAttributes.</param>
@@ -1654,7 +1612,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetSubscriptionAttributes operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetSubscriptionAttributes operation on AmazonSimpleNotificationServiceClient.</param>
@@ -1670,7 +1627,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetSubscriptionAttributes operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetSubscriptionAttributes.</param>
@@ -1726,7 +1682,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetTopicAttributes operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetTopicAttributes operation on AmazonSimpleNotificationServiceClient.</param>
@@ -1742,7 +1697,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetTopicAttributes operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetTopicAttributes.</param>
@@ -1810,7 +1764,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the Subscribe operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the Subscribe operation on AmazonSimpleNotificationServiceClient.</param>
@@ -1826,7 +1779,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  Subscribe operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSubscribe.</param>
@@ -1892,7 +1844,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Initiates the asynchronous execution of the Unsubscribe operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the Unsubscribe operation on AmazonSimpleNotificationServiceClient.</param>
@@ -1908,7 +1859,6 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  Unsubscribe operation.
-        /// <seealso cref="Amazon.SimpleNotificationService.IAmazonSimpleNotificationService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnsubscribe.</param>

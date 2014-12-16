@@ -261,7 +261,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddTagsToStream operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToStream operation on AmazonKinesisClient.</param>
@@ -282,7 +281,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddTagsToStream operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTagsToStream.</param>
@@ -375,7 +373,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStream operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateStream operation on AmazonKinesisClient.</param>
@@ -396,7 +393,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateStream operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStream.</param>
@@ -464,7 +460,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStream operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteStream operation on AmazonKinesisClient.</param>
@@ -485,7 +480,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteStream operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStream.</param>
@@ -553,7 +547,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStream operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeStream operation on AmazonKinesisClient.</param>
@@ -574,7 +567,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeStream operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStream.</param>
@@ -676,7 +668,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetRecords operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetRecords operation on AmazonKinesisClient.</param>
@@ -697,7 +688,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetRecords operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRecords.</param>
@@ -792,7 +782,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetShardIterator operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetShardIterator operation on AmazonKinesisClient.</param>
@@ -813,7 +802,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetShardIterator operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetShardIterator.</param>
@@ -906,7 +894,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListStreams operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListStreams operation on AmazonKinesisClient.</param>
@@ -927,7 +914,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListStreams operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStreams.</param>
@@ -970,7 +956,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListTagsForStream operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForStream operation on AmazonKinesisClient.</param>
@@ -991,7 +976,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListTagsForStream operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForStream.</param>
@@ -1090,7 +1074,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Initiates the asynchronous execution of the MergeShards operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the MergeShards operation on AmazonKinesisClient.</param>
@@ -1111,7 +1094,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Finishes the asynchronous execution of the  MergeShards operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginMergeShards.</param>
@@ -1210,7 +1192,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutRecord operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutRecord operation on AmazonKinesisClient.</param>
@@ -1231,7 +1212,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutRecord operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRecord.</param>
@@ -1344,7 +1324,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutRecords operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutRecords operation on AmazonKinesisClient.</param>
@@ -1365,7 +1344,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutRecords operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRecords.</param>
@@ -1417,7 +1395,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTagsFromStream operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromStream operation on AmazonKinesisClient.</param>
@@ -1438,7 +1415,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RemoveTagsFromStream operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTagsFromStream.</param>
@@ -1551,7 +1527,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Initiates the asynchronous execution of the SplitShard operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SplitShard operation on AmazonKinesisClient.</param>
@@ -1572,7 +1547,6 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SplitShard operation.
-        /// <seealso cref="Amazon.Kinesis.IAmazonKinesis"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSplitShard.</param>

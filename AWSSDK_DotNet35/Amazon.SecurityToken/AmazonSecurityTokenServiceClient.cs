@@ -383,7 +383,6 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssumeRole operation.
-        /// <seealso cref="Amazon.SecurityToken.IAmazonSecurityTokenService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AssumeRole operation on AmazonSecurityTokenServiceClient.</param>
@@ -404,7 +403,6 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AssumeRole operation.
-        /// <seealso cref="Amazon.SecurityToken.IAmazonSecurityTokenService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssumeRole.</param>
@@ -516,7 +514,6 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssumeRoleWithSAML operation.
-        /// <seealso cref="Amazon.SecurityToken.IAmazonSecurityTokenService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AssumeRoleWithSAML operation on AmazonSecurityTokenServiceClient.</param>
@@ -537,7 +534,6 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AssumeRoleWithSAML operation.
-        /// <seealso cref="Amazon.SecurityToken.IAmazonSecurityTokenService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssumeRoleWithSAML.</param>
@@ -670,7 +666,6 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssumeRoleWithWebIdentity operation.
-        /// <seealso cref="Amazon.SecurityToken.IAmazonSecurityTokenService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AssumeRoleWithWebIdentity operation on AmazonSecurityTokenServiceClient.</param>
@@ -691,7 +686,6 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AssumeRoleWithWebIdentity operation.
-        /// <seealso cref="Amazon.SecurityToken.IAmazonSecurityTokenService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssumeRoleWithWebIdentity.</param>
@@ -752,7 +746,6 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Initiates the asynchronous execution of the DecodeAuthorizationMessage operation.
-        /// <seealso cref="Amazon.SecurityToken.IAmazonSecurityTokenService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DecodeAuthorizationMessage operation on AmazonSecurityTokenServiceClient.</param>
@@ -773,7 +766,6 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DecodeAuthorizationMessage operation.
-        /// <seealso cref="Amazon.SecurityToken.IAmazonSecurityTokenService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDecodeAuthorizationMessage.</param>
@@ -890,7 +882,6 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetFederationToken operation.
-        /// <seealso cref="Amazon.SecurityToken.IAmazonSecurityTokenService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetFederationToken operation on AmazonSecurityTokenServiceClient.</param>
@@ -911,7 +902,6 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetFederationToken operation.
-        /// <seealso cref="Amazon.SecurityToken.IAmazonSecurityTokenService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFederationToken.</param>
@@ -1016,7 +1006,6 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSessionToken operation.
-        /// <seealso cref="Amazon.SecurityToken.IAmazonSecurityTokenService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetSessionToken operation on AmazonSecurityTokenServiceClient.</param>
@@ -1037,7 +1026,6 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetSessionToken operation.
-        /// <seealso cref="Amazon.SecurityToken.IAmazonSecurityTokenService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSessionToken.</param>

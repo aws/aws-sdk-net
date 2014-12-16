@@ -54,7 +54,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <remarks>
         /// When set, this will determine the region the bucket exists in.
-        /// Refer <see cref="T:Amazon.S3.Model.S3Region"/>
+        /// Refer <see cref="T:Amazon.S3.S3Region"/>
         /// for a list of possible values.
         /// </remarks>
         public S3Region BucketRegion

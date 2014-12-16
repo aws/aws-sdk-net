@@ -270,7 +270,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDataset operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset operation on AmazonCognitoSyncClient.</param>
@@ -291,7 +290,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteDataset operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataset.</param>
@@ -337,7 +335,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDataset operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset operation on AmazonCognitoSyncClient.</param>
@@ -358,7 +355,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeDataset operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDataset.</param>
@@ -401,7 +397,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeIdentityPoolUsage operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityPoolUsage operation on AmazonCognitoSyncClient.</param>
@@ -422,7 +417,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeIdentityPoolUsage operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIdentityPoolUsage.</param>
@@ -465,7 +459,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeIdentityUsage operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityUsage operation on AmazonCognitoSyncClient.</param>
@@ -486,7 +479,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeIdentityUsage operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIdentityUsage.</param>
@@ -529,7 +521,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityPoolConfiguration operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityPoolConfiguration operation on AmazonCognitoSyncClient.</param>
@@ -550,7 +541,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetIdentityPoolConfiguration operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityPoolConfiguration.</param>
@@ -593,7 +583,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDatasets operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets operation on AmazonCognitoSyncClient.</param>
@@ -614,7 +603,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListDatasets operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDatasets.</param>
@@ -654,7 +642,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListIdentityPoolUsage operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityPoolUsage operation on AmazonCognitoSyncClient.</param>
@@ -675,7 +662,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListIdentityPoolUsage operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIdentityPoolUsage.</param>
@@ -722,7 +708,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListRecords operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListRecords operation on AmazonCognitoSyncClient.</param>
@@ -743,7 +728,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListRecords operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRecords.</param>
@@ -789,7 +773,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterDevice operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RegisterDevice operation on AmazonCognitoSyncClient.</param>
@@ -810,7 +793,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RegisterDevice operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterDevice.</param>
@@ -853,7 +835,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityPoolConfiguration operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityPoolConfiguration operation on AmazonCognitoSyncClient.</param>
@@ -874,7 +855,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetIdentityPoolConfiguration operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityPoolConfiguration.</param>
@@ -920,7 +900,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Initiates the asynchronous execution of the SubscribeToDataset operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SubscribeToDataset operation on AmazonCognitoSyncClient.</param>
@@ -941,7 +920,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SubscribeToDataset operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSubscribeToDataset.</param>
@@ -987,7 +965,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Initiates the asynchronous execution of the UnsubscribeFromDataset operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UnsubscribeFromDataset operation on AmazonCognitoSyncClient.</param>
@@ -1008,7 +985,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UnsubscribeFromDataset operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnsubscribeFromDataset.</param>
@@ -1064,7 +1040,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateRecords operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecords operation on AmazonCognitoSyncClient.</param>
@@ -1085,7 +1060,6 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateRecords operation.
-        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRecords.</param>

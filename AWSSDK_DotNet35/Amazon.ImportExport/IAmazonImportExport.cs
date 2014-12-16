@@ -69,7 +69,6 @@ namespace Amazon.ImportExport
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelJob operation.
-        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CancelJob operation on AmazonImportExportClient.</param>
@@ -85,7 +84,6 @@ namespace Amazon.ImportExport
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CancelJob operation.
-        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelJob.</param>
@@ -159,7 +157,6 @@ namespace Amazon.ImportExport
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateJob operation.
-        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateJob operation on AmazonImportExportClient.</param>
@@ -175,7 +172,6 @@ namespace Amazon.ImportExport
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateJob operation.
-        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateJob.</param>
@@ -213,7 +209,6 @@ namespace Amazon.ImportExport
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetStatus operation.
-        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetStatus operation on AmazonImportExportClient.</param>
@@ -229,7 +224,6 @@ namespace Amazon.ImportExport
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetStatus operation.
-        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStatus.</param>
@@ -280,7 +274,6 @@ namespace Amazon.ImportExport
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobs operation.
-        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListJobs operation on AmazonImportExportClient.</param>
@@ -296,7 +289,6 @@ namespace Amazon.ImportExport
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListJobs operation.
-        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobs.</param>
@@ -375,7 +367,6 @@ namespace Amazon.ImportExport
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateJob operation.
-        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateJob operation on AmazonImportExportClient.</param>
@@ -391,7 +382,6 @@ namespace Amazon.ImportExport
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateJob operation.
-        /// <seealso cref="Amazon.ImportExport.IAmazonImportExport"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJob.</param>

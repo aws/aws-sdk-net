@@ -44,7 +44,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the AcceptVpcPeeringConnection operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AcceptVpcPeeringConnection operation.</param>
@@ -60,7 +59,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the AllocateAddress operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AllocateAddress operation.</param>
@@ -76,7 +74,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssignPrivateIpAddresses operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AssignPrivateIpAddresses operation.</param>
@@ -92,7 +89,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateAddress operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AssociateAddress operation.</param>
@@ -108,7 +104,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateDhcpOptions operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AssociateDhcpOptions operation.</param>
@@ -124,7 +119,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateRouteTable operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AssociateRouteTable operation.</param>
@@ -140,7 +134,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachInternetGateway operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AttachInternetGateway operation.</param>
@@ -156,7 +149,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachNetworkInterface operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AttachNetworkInterface operation.</param>
@@ -172,7 +164,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachVolume operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AttachVolume operation.</param>
@@ -188,7 +179,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachVpnGateway operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AttachVpnGateway operation.</param>
@@ -204,7 +194,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeSecurityGroupEgress operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupEgress operation.</param>
@@ -220,7 +209,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupIngress operation.</param>
@@ -236,7 +224,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the BundleInstance operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the BundleInstance operation.</param>
@@ -252,7 +239,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelBundleTask operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CancelBundleTask operation.</param>
@@ -268,7 +254,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelConversionTask operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CancelConversionTask operation.</param>
@@ -284,7 +269,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelExportTask operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CancelExportTask operation.</param>
@@ -300,7 +284,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelReservedInstancesListing operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CancelReservedInstancesListing operation.</param>
@@ -316,7 +299,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelSpotInstanceRequests operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CancelSpotInstanceRequests operation.</param>
@@ -332,7 +314,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ConfirmProductInstance operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ConfirmProductInstance operation.</param>
@@ -348,7 +329,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyImage operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CopyImage operation.</param>
@@ -364,7 +344,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopySnapshot operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CopySnapshot operation.</param>
@@ -380,7 +359,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCustomerGateway operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomerGateway operation.</param>
@@ -396,7 +374,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDhcpOptions operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateDhcpOptions operation.</param>
@@ -412,7 +389,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateImage operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateImage operation.</param>
@@ -428,7 +404,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInstanceExportTask operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateInstanceExportTask operation.</param>
@@ -444,7 +419,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInternetGateway operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateInternetGateway operation.</param>
@@ -460,7 +434,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateKeyPair operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateKeyPair operation.</param>
@@ -476,7 +449,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateNetworkAcl operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkAcl operation.</param>
@@ -492,7 +464,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateNetworkAclEntry operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkAclEntry operation.</param>
@@ -508,7 +479,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateNetworkInterface operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInterface operation.</param>
@@ -524,7 +494,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePlacementGroup operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreatePlacementGroup operation.</param>
@@ -540,7 +509,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateReservedInstancesListing operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateReservedInstancesListing operation.</param>
@@ -556,7 +524,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateRoute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateRoute operation.</param>
@@ -572,7 +539,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateRouteTable operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateRouteTable operation.</param>
@@ -588,7 +554,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSecurityGroup operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateSecurityGroup operation.</param>
@@ -604,7 +569,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshot operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot operation.</param>
@@ -620,7 +584,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSpotDatafeedSubscription operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateSpotDatafeedSubscription operation.</param>
@@ -636,7 +599,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSubnet operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateSubnet operation.</param>
@@ -652,7 +614,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTags operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateTags operation.</param>
@@ -668,7 +629,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVolume operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateVolume operation.</param>
@@ -684,7 +644,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpc operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateVpc operation.</param>
@@ -700,7 +659,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpcPeeringConnection operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateVpcPeeringConnection operation.</param>
@@ -716,7 +674,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpnConnection operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnConnection operation.</param>
@@ -732,7 +689,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpnConnectionRoute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnConnectionRoute operation.</param>
@@ -748,7 +704,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpnGateway operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnGateway operation.</param>
@@ -764,7 +719,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCustomerGateway operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomerGateway operation.</param>
@@ -780,7 +734,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDhcpOptions operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteDhcpOptions operation.</param>
@@ -796,7 +749,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteInternetGateway operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteInternetGateway operation.</param>
@@ -812,7 +764,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteKeyPair operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteKeyPair operation.</param>
@@ -828,7 +779,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteNetworkAcl operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkAcl operation.</param>
@@ -844,7 +794,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteNetworkAclEntry operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkAclEntry operation.</param>
@@ -860,7 +809,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteNetworkInterface operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInterface operation.</param>
@@ -876,7 +824,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePlacementGroup operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeletePlacementGroup operation.</param>
@@ -892,7 +839,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRoute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteRoute operation.</param>
@@ -908,7 +854,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRouteTable operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteRouteTable operation.</param>
@@ -924,7 +869,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSecurityGroup operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityGroup operation.</param>
@@ -940,7 +884,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSnapshot operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshot operation.</param>
@@ -956,7 +899,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSpotDatafeedSubscription operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteSpotDatafeedSubscription operation.</param>
@@ -972,7 +914,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSubnet operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteSubnet operation.</param>
@@ -988,7 +929,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTags operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags operation.</param>
@@ -1004,7 +944,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVolume operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteVolume operation.</param>
@@ -1020,7 +959,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpc operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpc operation.</param>
@@ -1036,7 +974,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpcPeeringConnection operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcPeeringConnection operation.</param>
@@ -1052,7 +989,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpnConnection operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConnection operation.</param>
@@ -1068,7 +1004,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpnConnectionRoute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConnectionRoute operation.</param>
@@ -1084,7 +1019,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpnGateway operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpnGateway operation.</param>
@@ -1100,7 +1034,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterImage operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeregisterImage operation.</param>
@@ -1116,7 +1049,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAccountAttributes operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes operation.</param>
@@ -1132,7 +1064,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAddresses operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAddresses operation.</param>
@@ -1148,7 +1079,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAvailabilityZones operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityZones operation.</param>
@@ -1164,7 +1094,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeBundleTasks operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeBundleTasks operation.</param>
@@ -1180,7 +1109,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConversionTasks operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeConversionTasks operation.</param>
@@ -1196,7 +1124,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCustomerGateways operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeCustomerGateways operation.</param>
@@ -1212,7 +1139,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDhcpOptions operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDhcpOptions operation.</param>
@@ -1228,7 +1154,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeExportTasks operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks operation.</param>
@@ -1244,7 +1169,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeImageAttribute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeImageAttribute operation.</param>
@@ -1260,7 +1184,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeImages operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeImages operation.</param>
@@ -1276,7 +1199,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstanceAttribute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAttribute operation.</param>
@@ -1292,7 +1214,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstances operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstances operation.</param>
@@ -1308,7 +1229,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstanceStatus operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceStatus operation.</param>
@@ -1324,7 +1244,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInternetGateways operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeInternetGateways operation.</param>
@@ -1340,7 +1259,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeKeyPairs operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeKeyPairs operation.</param>
@@ -1356,7 +1274,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeNetworkAcls operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkAcls operation.</param>
@@ -1372,7 +1289,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeNetworkInterfaceAttribute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInterfaceAttribute operation.</param>
@@ -1388,7 +1304,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeNetworkInterfaces operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInterfaces operation.</param>
@@ -1404,7 +1319,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePlacementGroups operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribePlacementGroups operation.</param>
@@ -1420,7 +1334,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRegions operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeRegions operation.</param>
@@ -1436,7 +1349,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedInstances operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstances operation.</param>
@@ -1452,7 +1364,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedInstancesListings operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesListings operation.</param>
@@ -1468,7 +1379,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedInstancesModifications operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesModifications operation.</param>
@@ -1484,7 +1394,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedInstancesOfferings operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesOfferings operation.</param>
@@ -1500,7 +1409,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRouteTables operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeRouteTables operation.</param>
@@ -1516,7 +1424,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSecurityGroups operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroups operation.</param>
@@ -1532,7 +1439,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshotAttribute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotAttribute operation.</param>
@@ -1548,7 +1454,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshots operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshots operation.</param>
@@ -1564,7 +1469,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSpotDatafeedSubscription operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotDatafeedSubscription operation.</param>
@@ -1580,7 +1484,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSpotInstanceRequests operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotInstanceRequests operation.</param>
@@ -1596,7 +1499,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSpotPriceHistory operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotPriceHistory operation.</param>
@@ -1612,7 +1514,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSubnets operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeSubnets operation.</param>
@@ -1628,7 +1529,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTags operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation.</param>
@@ -1644,7 +1544,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVolumeAttribute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumeAttribute operation.</param>
@@ -1660,7 +1559,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVolumes operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumes operation.</param>
@@ -1676,7 +1574,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVolumeStatus operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumeStatus operation.</param>
@@ -1692,7 +1589,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpcAttribute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcAttribute operation.</param>
@@ -1708,7 +1604,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpcPeeringConnections operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcPeeringConnections operation.</param>
@@ -1724,7 +1619,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpcs operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcs operation.</param>
@@ -1740,7 +1634,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpnConnections operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpnConnections operation.</param>
@@ -1756,7 +1649,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpnGateways operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpnGateways operation.</param>
@@ -1772,7 +1664,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachInternetGateway operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DetachInternetGateway operation.</param>
@@ -1788,7 +1679,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachNetworkInterface operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DetachNetworkInterface operation.</param>
@@ -1804,7 +1694,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachVolume operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DetachVolume operation.</param>
@@ -1820,7 +1709,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachVpnGateway operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DetachVpnGateway operation.</param>
@@ -1836,7 +1724,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableVgwRoutePropagation operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisableVgwRoutePropagation operation.</param>
@@ -1852,7 +1739,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisassociateAddress operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAddress operation.</param>
@@ -1868,7 +1754,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisassociateRouteTable operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisassociateRouteTable operation.</param>
@@ -1884,7 +1769,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableVgwRoutePropagation operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EnableVgwRoutePropagation operation.</param>
@@ -1900,7 +1784,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableVolumeIO operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EnableVolumeIO operation.</param>
@@ -1916,7 +1799,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetConsoleOutput operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetConsoleOutput operation.</param>
@@ -1932,7 +1814,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetPasswordData operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetPasswordData operation.</param>
@@ -1948,7 +1829,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ImportInstance operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ImportInstance operation.</param>
@@ -1964,7 +1844,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ImportKeyPair operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ImportKeyPair operation.</param>
@@ -1980,7 +1859,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ImportVolume operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ImportVolume operation.</param>
@@ -1996,7 +1874,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyImageAttribute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyImageAttribute operation.</param>
@@ -2012,7 +1889,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyInstanceAttribute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceAttribute operation.</param>
@@ -2028,7 +1904,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyNetworkInterfaceAttribute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyNetworkInterfaceAttribute operation.</param>
@@ -2044,7 +1919,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyReservedInstances operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyReservedInstances operation.</param>
@@ -2060,7 +1934,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifySnapshotAttribute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotAttribute operation.</param>
@@ -2076,7 +1949,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifySubnetAttribute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifySubnetAttribute operation.</param>
@@ -2092,7 +1964,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyVolumeAttribute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyVolumeAttribute operation.</param>
@@ -2108,7 +1979,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyVpcAttribute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcAttribute operation.</param>
@@ -2124,7 +1994,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the MonitorInstances operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the MonitorInstances operation.</param>
@@ -2140,7 +2009,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the PurchaseReservedInstancesOffering operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedInstancesOffering operation.</param>
@@ -2156,7 +2024,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the RebootInstances operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RebootInstances operation.</param>
@@ -2172,7 +2039,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterImage operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RegisterImage operation.</param>
@@ -2188,7 +2054,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the RejectVpcPeeringConnection operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RejectVpcPeeringConnection operation.</param>
@@ -2204,7 +2069,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReleaseAddress operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ReleaseAddress operation.</param>
@@ -2220,7 +2084,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReplaceNetworkAclAssociation operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ReplaceNetworkAclAssociation operation.</param>
@@ -2236,7 +2099,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReplaceNetworkAclEntry operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ReplaceNetworkAclEntry operation.</param>
@@ -2252,7 +2114,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReplaceRoute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ReplaceRoute operation.</param>
@@ -2268,7 +2129,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReplaceRouteTableAssociation operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ReplaceRouteTableAssociation operation.</param>
@@ -2284,7 +2144,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReportInstanceStatus operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ReportInstanceStatus operation.</param>
@@ -2300,7 +2159,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the RequestSpotInstances operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances operation.</param>
@@ -2316,7 +2174,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetImageAttribute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ResetImageAttribute operation.</param>
@@ -2332,7 +2189,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetInstanceAttribute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ResetInstanceAttribute operation.</param>
@@ -2348,7 +2204,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetNetworkInterfaceAttribute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ResetNetworkInterfaceAttribute operation.</param>
@@ -2364,7 +2219,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetSnapshotAttribute operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ResetSnapshotAttribute operation.</param>
@@ -2380,7 +2234,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeSecurityGroupEgress operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RevokeSecurityGroupEgress operation.</param>
@@ -2396,7 +2249,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RevokeSecurityGroupIngress operation.</param>
@@ -2412,7 +2264,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the RunInstances operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RunInstances operation.</param>
@@ -2428,7 +2279,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartInstances operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the StartInstances operation.</param>
@@ -2444,7 +2294,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the StopInstances operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the StopInstances operation.</param>
@@ -2460,7 +2309,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateInstances operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the TerminateInstances operation.</param>
@@ -2476,7 +2324,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the UnassignPrivateIpAddresses operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UnassignPrivateIpAddresses operation.</param>
@@ -2492,7 +2339,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Initiates the asynchronous execution of the UnmonitorInstances operation.
-        /// <seealso cref="Amazon.EC2.IAmazonEC2"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UnmonitorInstances operation.</param>

@@ -186,7 +186,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the AbortMultipartUpload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload operation.</param>
@@ -217,7 +216,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the CompleteMultipartUpload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload operation.</param>
@@ -248,7 +246,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CopyObject operation.</param>
@@ -279,7 +276,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyPart operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CopyPart operation.</param>
@@ -310,7 +306,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucket operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucket operation.</param>
@@ -341,7 +336,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucketPolicy operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy operation.</param>
@@ -372,7 +366,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucketTagging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging operation.</param>
@@ -403,7 +396,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucketWebsite operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketWebsite operation.</param>
@@ -434,7 +426,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCORSConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration operation.</param>
@@ -465,7 +456,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLifecycleConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleConfiguration operation.</param>
@@ -496,7 +486,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteObject operation.</param>
@@ -527,7 +516,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteObjects operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteObjects operation.</param>
@@ -558,7 +546,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetACL operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetACL operation.</param>
@@ -589,7 +576,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketLocation operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLocation operation.</param>
@@ -620,7 +606,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketLogging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLogging operation.</param>
@@ -651,7 +636,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketNotification operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketNotification operation.</param>
@@ -682,7 +666,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketPolicy operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy operation.</param>
@@ -713,7 +696,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketRequestPayment operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketRequestPayment operation.</param>
@@ -744,7 +726,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketTagging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketTagging operation.</param>
@@ -775,7 +756,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketVersioning operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketVersioning operation.</param>
@@ -806,7 +786,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketWebsite operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketWebsite operation.</param>
@@ -837,7 +816,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetCORSConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration operation.</param>
@@ -868,7 +846,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetLifecycleConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetLifecycleConfiguration operation.</param>
@@ -899,7 +876,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetObject operation.</param>
@@ -930,7 +906,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetObjectMetadata operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetObjectMetadata operation.</param>
@@ -961,7 +936,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetObjectTorrent operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetObjectTorrent operation.</param>
@@ -992,7 +966,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the HeadBucket operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the HeadBucket operation.</param>
@@ -1023,7 +996,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the InitiateMultipartUpload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload operation.</param>
@@ -1058,7 +1030,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListBuckets operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListBuckets operation.</param>
@@ -1089,7 +1060,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListMultipartUploads operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads operation.</param>
@@ -1120,7 +1090,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListObjects operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListObjects operation.</param>
@@ -1151,7 +1120,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListParts operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListParts operation.</param>
@@ -1182,7 +1150,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListVersions operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListVersions operation.</param>
@@ -1213,7 +1180,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutACL operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutACL operation.</param>
@@ -1244,7 +1210,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucket operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucket operation.</param>
@@ -1275,7 +1240,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketLogging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketLogging operation.</param>
@@ -1306,7 +1270,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketNotification operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketNotification operation.</param>
@@ -1337,7 +1300,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketPolicy operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy operation.</param>
@@ -1368,7 +1330,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketRequestPayment operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment operation.</param>
@@ -1399,7 +1360,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketTagging operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketTagging operation.</param>
@@ -1430,7 +1390,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketVersioning operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning operation.</param>
@@ -1461,7 +1420,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketWebsite operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite operation.</param>
@@ -1492,7 +1450,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutCORSConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration operation.</param>
@@ -1523,7 +1480,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutLifecycleConfiguration operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration operation.</param>
@@ -1554,7 +1510,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutObject operation.</param>
@@ -1585,7 +1540,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreObject operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RestoreObject operation.</param>
@@ -1616,7 +1570,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadPart operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UploadPart operation.</param>

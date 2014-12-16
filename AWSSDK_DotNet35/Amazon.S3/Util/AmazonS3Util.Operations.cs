@@ -116,7 +116,7 @@ namespace Amazon.S3.Util
         ///// <param name="s3Object">The S3 Object whose storage class needs changing</param>
         ///// <param name="sClass">The new Storage Class for the object</param>
         ///// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
-        ///// <seealso cref="T:Amazon.S3.Model.S3StorageClass"/>
+        ///// <seealso cref="T:Amazon.S3.S3StorageClass"/>
         //public static void SetObjectStorageClass(S3Object s3Object, S3StorageClass sClass, IAmazonS3 s3Client)
         //{
         //    SetObjectStorageClass(s3Object.BucketName, s3Object.Key, sClass, s3Client);
@@ -130,24 +130,11 @@ namespace Amazon.S3.Util
         /// <param name="key">The key of the S3 Object whose storage class needs changing</param>
         /// <param name="sClass">The new Storage Class for the object</param>
         /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
-        /// <seealso cref="T:Amazon.S3.Model.S3StorageClass"/>
+        /// <seealso cref="T:Amazon.S3.S3StorageClass"/>
         public static void SetObjectStorageClass(IAmazonS3 s3Client, string bucketName, string key, S3StorageClass sClass)
         {
             SetObjectStorageClass(s3Client, bucketName, key, null, sClass);
         }
-
-        ///// <summary>
-        ///// Sets the storage class for the S3 Object Version to the value
-        ///// specified.
-        ///// </summary>
-        ///// <param name="s3ObjectVer">The S3 Object Version whose storage class needs changing</param>
-        ///// <param name="sClass">The new Storage Class for the object</param>
-        ///// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
-        ///// <seealso cref="T:Amazon.S3.Model.S3StorageClass"/>
-        //public static void SetObjectStorageClass(S3ObjectVersion s3ObjectVer, S3StorageClass sClass, IAmazonS3 s3Client)
-        //{
-        //    SetObjectStorageClass(s3ObjectVer.BucketName, s3ObjectVer.Key, s3ObjectVer.VersionId, sClass, s3Client);
-        //}
 
         /// <summary>
         /// Sets the storage class for the S3 Object's Version to the value
@@ -158,7 +145,7 @@ namespace Amazon.S3.Util
         /// <param name="version">The version of the S3 Object whose storage class needs changing</param>
         /// <param name="sClass">The new Storage Class for the object</param>
         /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
-        /// <seealso cref="T:Amazon.S3.Model.S3StorageClass"/>
+        /// <seealso cref="T:Amazon.S3.S3StorageClass"/>
         public static void SetObjectStorageClass(IAmazonS3 s3Client, string bucketName, string key, string version, S3StorageClass sClass)
         {
             CopyObjectRequest copyRequest;

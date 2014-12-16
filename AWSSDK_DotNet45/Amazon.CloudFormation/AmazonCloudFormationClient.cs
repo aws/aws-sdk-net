@@ -269,7 +269,6 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelUpdateStack operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CancelUpdateStack operation.</param>
@@ -318,7 +317,6 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStack operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateStack operation.</param>
@@ -357,7 +355,6 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStack operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteStack operation.</param>
@@ -399,7 +396,6 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackEvents operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackEvents operation.</param>
@@ -442,7 +438,6 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackResource operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackResource operation.</param>
@@ -499,7 +494,6 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackResources operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackResources operation.</param>
@@ -548,7 +542,6 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStacks operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeStacks operation.</param>
@@ -587,7 +580,6 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Initiates the asynchronous execution of the EstimateTemplateCost operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EstimateTemplateCost operation.</param>
@@ -625,7 +617,6 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetStackPolicy operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetStackPolicy operation.</param>
@@ -671,7 +662,6 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetTemplate operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetTemplate operation.</param>
@@ -722,7 +712,6 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetTemplateSummary operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetTemplateSummary operation.</param>
@@ -765,7 +754,6 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListStackResources operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListStackResources operation.</param>
@@ -818,7 +806,6 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListStacks operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListStacks operation.</param>
@@ -855,7 +842,6 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetStackPolicy operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetStackPolicy operation.</param>
@@ -897,7 +883,6 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Initiates the asynchronous execution of the SignalResource operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SignalResource operation.</param>
@@ -957,7 +942,6 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStack operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateStack operation.</param>
@@ -1004,7 +988,6 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Initiates the asynchronous execution of the ValidateTemplate operation.
-        /// <seealso cref="Amazon.CloudFormation.IAmazonCloudFormation"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ValidateTemplate operation.</param>

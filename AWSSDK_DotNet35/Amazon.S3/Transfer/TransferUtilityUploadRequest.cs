@@ -113,7 +113,7 @@ namespace Amazon.S3.Transfer
         /// 	Gets or sets the canned access control list (ACL)
         /// 	for the uploaded object.
         /// 	Please refer to 
-        /// 	<see cref="T:Amazon.S3.Model.S3CannedACL"/> for
+        /// 	<see cref="T:Amazon.S3.S3CannedACL"/> for
         /// 	information on Amazon S3 canned ACLs.
         /// </summary>
         /// <value>
@@ -176,7 +176,7 @@ namespace Amazon.S3.Transfer
         /// <summary>
         /// 	Gets or sets the storage class for the uploaded Amazon S3 object.
         /// 	Please refer to 
-        /// 	<see cref="T:Amazon.S3.Model.S3StorageClass"/> for
+        /// 	<see cref="T:Amazon.S3.S3StorageClass"/> for
         /// 	information on S3 Storage Classes.
         /// </summary>
         /// <value>

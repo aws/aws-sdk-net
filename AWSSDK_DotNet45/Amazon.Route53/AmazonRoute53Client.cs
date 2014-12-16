@@ -271,7 +271,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateVPCWithHostedZone operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AssociateVPCWithHostedZone operation.</param>
@@ -364,7 +363,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the ChangeResourceRecordSets operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ChangeResourceRecordSets operation.</param>
@@ -413,7 +411,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the ChangeTagsForResource operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ChangeTagsForResource operation.</param>
@@ -468,7 +465,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateHealthCheck operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateHealthCheck operation.</param>
@@ -569,7 +565,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateHostedZone operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateHostedZone operation.</param>
@@ -645,7 +640,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateReusableDelegationSet operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateReusableDelegationSet operation.</param>
@@ -700,7 +694,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteHealthCheck operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteHealthCheck operation.</param>
@@ -764,7 +757,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteHostedZone operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteHostedZone operation.</param>
@@ -822,7 +814,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteReusableDelegationSet operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteReusableDelegationSet operation.</param>
@@ -889,7 +880,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisassociateVPCFromHostedZone operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisassociateVPCFromHostedZone operation.</param>
@@ -944,7 +934,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetChange operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetChange operation.</param>
@@ -984,7 +973,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetCheckerIpRanges operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetCheckerIpRanges operation.</param>
@@ -1029,7 +1017,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetGeoLocation operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetGeoLocation operation.</param>
@@ -1077,7 +1064,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetHealthCheck operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheck operation.</param>
@@ -1115,7 +1101,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetHealthCheckCount operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckCount operation.</param>
@@ -1158,7 +1143,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetHealthCheckLastFailureReason operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckLastFailureReason operation.</param>
@@ -1200,7 +1184,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetHealthCheckStatus operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckStatus operation.</param>
@@ -1246,7 +1229,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetHostedZone operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetHostedZone operation.</param>
@@ -1293,7 +1275,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetReusableDelegationSet operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetReusableDelegationSet operation.</param>
@@ -1376,7 +1357,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListGeoLocations operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListGeoLocations operation.</param>
@@ -1455,7 +1435,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListHealthChecks operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListHealthChecks operation.</param>
@@ -1538,7 +1517,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListHostedZones operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListHostedZones operation.</param>
@@ -1626,7 +1604,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListResourceRecordSets operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListResourceRecordSets operation.</param>
@@ -1697,7 +1674,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListReusableDelegationSets operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListReusableDelegationSets operation.</param>
@@ -1746,7 +1722,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListTagsForResource operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
@@ -1795,7 +1770,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListTagsForResources operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResources operation.</param>
@@ -1849,7 +1823,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateHealthCheck operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateHealthCheck operation.</param>
@@ -1897,7 +1870,6 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateHostedZoneComment operation.
-        /// <seealso cref="Amazon.Route53.IAmazonRoute53"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneComment operation.</param>

@@ -111,7 +111,6 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLogGroup operation.
-        /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateLogGroup operation.</param>
@@ -156,7 +155,6 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLogStream operation.
-        /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateLogStream operation.</param>
@@ -193,7 +191,6 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLogGroup operation.
-        /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteLogGroup operation.</param>
@@ -230,7 +227,6 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLogStream operation.
-        /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteLogStream operation.</param>
@@ -266,7 +262,6 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteMetricFilter operation.
-        /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteMetricFilter operation.</param>
@@ -303,7 +298,6 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRetentionPolicy operation.
-        /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteRetentionPolicy operation.</param>
@@ -364,7 +358,6 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLogGroups operation.
-        /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeLogGroups operation.</param>
@@ -406,7 +399,6 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLogStreams operation.
-        /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeLogStreams operation.</param>
@@ -449,7 +441,6 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMetricFilters operation.
-        /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeMetricFilters operation.</param>
@@ -494,7 +485,6 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetLogEvents operation.
-        /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetLogEvents operation.</param>
@@ -553,7 +543,6 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutLogEvents operation.
-        /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutLogEvents operation.</param>
@@ -594,7 +583,6 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutMetricFilter operation.
-        /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutMetricFilter operation.</param>
@@ -631,7 +619,6 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutRetentionPolicy operation.
-        /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutRetentionPolicy operation.</param>
@@ -662,7 +649,6 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Initiates the asynchronous execution of the TestMetricFilter operation.
-        /// <seealso cref="Amazon.CloudWatchLogs.IAmazonCloudWatchLogs"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the TestMetricFilter operation.</param>

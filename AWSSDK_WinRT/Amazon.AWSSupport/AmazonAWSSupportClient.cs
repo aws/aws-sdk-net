@@ -224,7 +224,6 @@ namespace Amazon.AWSSupport
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddAttachmentsToSet operation.
-        /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddAttachmentsToSet operation.</param>
@@ -255,7 +254,6 @@ namespace Amazon.AWSSupport
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddCommunicationToCase operation.
-        /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddCommunicationToCase operation.</param>
@@ -286,7 +284,6 @@ namespace Amazon.AWSSupport
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCase operation.
-        /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateCase operation.</param>
@@ -317,7 +314,6 @@ namespace Amazon.AWSSupport
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAttachment operation.
-        /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAttachment operation.</param>
@@ -348,7 +344,6 @@ namespace Amazon.AWSSupport
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCases operation.
-        /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeCases operation.</param>
@@ -379,7 +374,6 @@ namespace Amazon.AWSSupport
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCommunications operation.
-        /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeCommunications operation.</param>
@@ -414,7 +408,6 @@ namespace Amazon.AWSSupport
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServices operation.
-        /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeServices operation.</param>
@@ -449,7 +442,6 @@ namespace Amazon.AWSSupport
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSeverityLevels operation.
-        /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeSeverityLevels operation.</param>
@@ -480,7 +472,6 @@ namespace Amazon.AWSSupport
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrustedAdvisorCheckRefreshStatuses operation.
-        /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrustedAdvisorCheckRefreshStatuses operation.</param>
@@ -511,7 +502,6 @@ namespace Amazon.AWSSupport
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrustedAdvisorCheckResult operation.
-        /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrustedAdvisorCheckResult operation.</param>
@@ -542,7 +532,6 @@ namespace Amazon.AWSSupport
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrustedAdvisorChecks operation.
-        /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrustedAdvisorChecks operation.</param>
@@ -573,7 +562,6 @@ namespace Amazon.AWSSupport
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrustedAdvisorCheckSummaries operation.
-        /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrustedAdvisorCheckSummaries operation.</param>
@@ -604,7 +592,6 @@ namespace Amazon.AWSSupport
 
         /// <summary>
         /// Initiates the asynchronous execution of the RefreshTrustedAdvisorCheck operation.
-        /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RefreshTrustedAdvisorCheck operation.</param>
@@ -635,7 +622,6 @@ namespace Amazon.AWSSupport
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResolveCase operation.
-        /// <seealso cref="Amazon.AWSSupport.IAmazonAWSSupport"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ResolveCase operation.</param>

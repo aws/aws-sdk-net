@@ -257,7 +257,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCloudFrontOriginAccessIdentity operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateCloudFrontOriginAccessIdentity operation.</param>
@@ -389,7 +388,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateDistribution operation.</param>
@@ -449,7 +447,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInvalidation operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateInvalidation operation.</param>
@@ -524,7 +521,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStreamingDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamingDistribution operation.</param>
@@ -601,7 +597,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCloudFrontOriginAccessIdentity operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteCloudFrontOriginAccessIdentity operation.</param>
@@ -678,7 +673,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteDistribution operation.</param>
@@ -755,7 +749,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStreamingDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteStreamingDistribution operation.</param>
@@ -814,7 +807,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetCloudFrontOriginAccessIdentity operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetCloudFrontOriginAccessIdentity operation.</param>
@@ -873,7 +865,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetCloudFrontOriginAccessIdentityConfig operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetCloudFrontOriginAccessIdentityConfig operation.</param>
@@ -932,7 +923,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetDistribution operation.</param>
@@ -991,7 +981,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDistributionConfig operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetDistributionConfig operation.</param>
@@ -1037,7 +1026,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetInvalidation operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetInvalidation operation.</param>
@@ -1096,7 +1084,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetStreamingDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetStreamingDistribution operation.</param>
@@ -1155,7 +1142,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetStreamingDistributionConfig operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetStreamingDistributionConfig operation.</param>
@@ -1208,7 +1194,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListCloudFrontOriginAccessIdentities operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListCloudFrontOriginAccessIdentities operation.</param>
@@ -1261,7 +1246,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDistributions operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListDistributions operation.</param>
@@ -1307,7 +1291,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListInvalidations operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListInvalidations operation.</param>
@@ -1360,7 +1343,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListStreamingDistributions operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListStreamingDistributions operation.</param>
@@ -1422,7 +1404,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateCloudFrontOriginAccessIdentity operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateCloudFrontOriginAccessIdentity operation.</param>
@@ -1551,7 +1532,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateDistribution operation.</param>
@@ -1628,7 +1608,6 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStreamingDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateStreamingDistribution operation.</param>

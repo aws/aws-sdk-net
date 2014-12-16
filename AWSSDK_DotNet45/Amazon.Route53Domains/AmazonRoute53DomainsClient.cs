@@ -247,7 +247,6 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// Initiates the asynchronous execution of the CheckDomainAvailability operation.
-        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CheckDomainAvailability operation.</param>
@@ -290,7 +289,6 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableDomainAutoRenew operation.
-        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisableDomainAutoRenew operation.</param>
@@ -346,7 +344,6 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableDomainTransferLock operation.
-        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisableDomainTransferLock operation.</param>
@@ -399,7 +396,6 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableDomainAutoRenew operation.
-        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EnableDomainAutoRenew operation.</param>
@@ -453,7 +449,6 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableDomainTransferLock operation.
-        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EnableDomainTransferLock operation.</param>
@@ -496,7 +491,6 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDomainDetail operation.
-        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetDomainDetail operation.</param>
@@ -538,7 +532,6 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetOperationDetail operation.
-        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetOperationDetail operation.</param>
@@ -597,7 +590,6 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomains operation.
-        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListDomains operation.</param>
@@ -654,7 +646,6 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListOperations operation.
-        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListOperations operation.</param>
@@ -730,7 +721,6 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterDomain operation.
-        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RegisterDomain operation.</param>
@@ -773,7 +763,6 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// Initiates the asynchronous execution of the RetrieveDomainAuthCode operation.
-        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RetrieveDomainAuthCode operation.</param>
@@ -863,7 +852,6 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// Initiates the asynchronous execution of the TransferDomain operation.
-        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the TransferDomain operation.</param>
@@ -923,7 +911,6 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDomainContact operation.
-        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainContact operation.</param>
@@ -987,7 +974,6 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDomainContactPrivacy operation.
-        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainContactPrivacy operation.</param>
@@ -1047,7 +1033,6 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDomainNameservers operation.
-        /// <seealso cref="Amazon.Route53Domains.IAmazonRoute53Domains"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainNameservers operation.</param>

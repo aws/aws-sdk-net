@@ -131,7 +131,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the AbortMultipartUpload operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload operation.</param>
@@ -218,7 +217,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the CompleteMultipartUpload operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload operation.</param>
@@ -291,7 +289,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVault operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateVault operation.</param>
@@ -354,7 +351,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteArchive operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteArchive operation.</param>
@@ -418,7 +414,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVault operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteVault operation.</param>
@@ -473,7 +468,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVaultNotifications operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteVaultNotifications operation.</param>
@@ -539,7 +533,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeJob operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeJob operation.</param>
@@ -599,7 +592,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVault operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeVault operation.</param>
@@ -635,7 +627,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDataRetrievalPolicy operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetDataRetrievalPolicy operation.</param>
@@ -730,7 +721,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetJobOutput operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetJobOutput operation.</param>
@@ -792,7 +782,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetVaultNotifications operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetVaultNotifications operation.</param>
@@ -994,7 +983,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the InitiateJob operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the InitiateJob operation.</param>
@@ -1075,7 +1063,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the InitiateMultipartUpload operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload operation.</param>
@@ -1164,7 +1151,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobs operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListJobs operation.</param>
@@ -1237,7 +1223,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListMultipartUploads operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads operation.</param>
@@ -1304,7 +1289,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListParts operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListParts operation.</param>
@@ -1415,7 +1399,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListVaults operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListVaults operation.</param>
@@ -1458,7 +1441,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetDataRetrievalPolicy operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetDataRetrievalPolicy operation.</param>
@@ -1532,7 +1514,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetVaultNotifications operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetVaultNotifications operation.</param>
@@ -1620,7 +1601,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadArchive operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UploadArchive operation.</param>
@@ -1715,7 +1695,6 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadMultipartPart operation.
-        /// <seealso cref="Amazon.Glacier.IAmazonGlacier"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UploadMultipartPart operation.</param>

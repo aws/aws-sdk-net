@@ -205,7 +205,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddSourceIdentifierToSubscription operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddSourceIdentifierToSubscription operation.</param>
@@ -236,7 +235,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddTagsToResource operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource operation.</param>
@@ -267,7 +265,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeDBSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeDBSecurityGroupIngress operation.</param>
@@ -298,7 +295,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyDBParameterGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CopyDBParameterGroup operation.</param>
@@ -329,7 +325,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyDBSnapshot operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CopyDBSnapshot operation.</param>
@@ -360,7 +355,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyOptionGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CopyOptionGroup operation.</param>
@@ -391,7 +385,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBInstance operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateDBInstance operation.</param>
@@ -422,7 +415,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBInstanceReadReplica operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateDBInstanceReadReplica operation.</param>
@@ -453,7 +445,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBParameterGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateDBParameterGroup operation.</param>
@@ -484,7 +475,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBSecurityGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateDBSecurityGroup operation.</param>
@@ -515,7 +505,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBSnapshot operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateDBSnapshot operation.</param>
@@ -546,7 +535,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBSubnetGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateDBSubnetGroup operation.</param>
@@ -577,7 +565,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateEventSubscription operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription operation.</param>
@@ -608,7 +595,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateOptionGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateOptionGroup operation.</param>
@@ -639,7 +625,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBInstance operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBInstance operation.</param>
@@ -670,7 +655,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBParameterGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBParameterGroup operation.</param>
@@ -701,7 +685,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBSecurityGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBSecurityGroup operation.</param>
@@ -732,7 +715,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBSnapshot operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBSnapshot operation.</param>
@@ -763,7 +745,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBSubnetGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBSubnetGroup operation.</param>
@@ -794,7 +775,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteEventSubscription operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteEventSubscription operation.</param>
@@ -825,7 +805,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteOptionGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteOptionGroup operation.</param>
@@ -860,7 +839,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBEngineVersions operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBEngineVersions operation.</param>
@@ -895,7 +873,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBInstances operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBInstances operation.</param>
@@ -926,7 +903,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBLogFiles operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBLogFiles operation.</param>
@@ -961,7 +937,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBParameterGroups operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBParameterGroups operation.</param>
@@ -992,7 +967,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBParameters operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBParameters operation.</param>
@@ -1027,7 +1001,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBSecurityGroups operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBSecurityGroups operation.</param>
@@ -1062,7 +1035,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBSnapshots operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBSnapshots operation.</param>
@@ -1097,7 +1069,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBSubnetGroups operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBSubnetGroups operation.</param>
@@ -1128,7 +1099,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEngineDefaultParameters operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultParameters operation.</param>
@@ -1163,7 +1133,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEventCategories operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories operation.</param>
@@ -1198,7 +1167,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents operation.</param>
@@ -1233,7 +1201,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEventSubscriptions operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventSubscriptions operation.</param>
@@ -1264,7 +1231,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOptionGroupOptions operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeOptionGroupOptions operation.</param>
@@ -1299,7 +1265,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOptionGroups operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeOptionGroups operation.</param>
@@ -1330,7 +1295,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOrderableDBInstanceOptions operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrderableDBInstanceOptions operation.</param>
@@ -1365,7 +1329,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedDBInstances operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedDBInstances operation.</param>
@@ -1400,7 +1363,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedDBInstancesOfferings operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedDBInstancesOfferings operation.</param>
@@ -1431,7 +1393,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DownloadDBLogFilePortion operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DownloadDBLogFilePortion operation.</param>
@@ -1462,7 +1423,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListTagsForResource operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
@@ -1493,7 +1453,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyDBInstance operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBInstance operation.</param>
@@ -1524,7 +1483,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyDBParameterGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBParameterGroup operation.</param>
@@ -1555,7 +1513,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyDBSubnetGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSubnetGroup operation.</param>
@@ -1586,7 +1543,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyEventSubscription operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyEventSubscription operation.</param>
@@ -1617,7 +1573,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyOptionGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyOptionGroup operation.</param>
@@ -1648,7 +1603,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the PromoteReadReplica operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PromoteReadReplica operation.</param>
@@ -1679,7 +1633,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the PurchaseReservedDBInstancesOffering operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedDBInstancesOffering operation.</param>
@@ -1710,7 +1663,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the RebootDBInstance operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RebootDBInstance operation.</param>
@@ -1741,7 +1693,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveSourceIdentifierFromSubscription operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RemoveSourceIdentifierFromSubscription operation.</param>
@@ -1772,7 +1723,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTagsFromResource operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource operation.</param>
@@ -1803,7 +1753,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetDBParameterGroup operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ResetDBParameterGroup operation.</param>
@@ -1834,7 +1783,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreDBInstanceFromDBSnapshot operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceFromDBSnapshot operation.</param>
@@ -1865,7 +1813,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreDBInstanceToPointInTime operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceToPointInTime operation.</param>
@@ -1896,7 +1843,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeDBSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.RDS.IAmazonRDS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RevokeDBSecurityGroupIngress operation.</param>

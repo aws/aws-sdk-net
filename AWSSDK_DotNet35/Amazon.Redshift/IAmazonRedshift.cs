@@ -107,7 +107,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeClusterSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeClusterSecurityGroupIngress operation on AmazonRedshiftClient.</param>
@@ -123,7 +122,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AuthorizeClusterSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAuthorizeClusterSecurityGroupIngress.</param>
@@ -162,7 +160,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeSnapshotAccess operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSnapshotAccess operation on AmazonRedshiftClient.</param>
@@ -178,7 +175,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AuthorizeSnapshotAccess operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAuthorizeSnapshotAccess.</param>
@@ -228,7 +224,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyClusterSnapshot operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CopyClusterSnapshot operation on AmazonRedshiftClient.</param>
@@ -244,7 +239,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CopyClusterSnapshot operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyClusterSnapshot.</param>
@@ -326,7 +320,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCluster operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster operation on AmazonRedshiftClient.</param>
@@ -342,7 +335,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateCluster operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCluster.</param>
@@ -394,7 +386,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateClusterParameterGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateClusterParameterGroup operation on AmazonRedshiftClient.</param>
@@ -410,7 +401,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateClusterParameterGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateClusterParameterGroup.</param>
@@ -454,7 +444,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateClusterSecurityGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateClusterSecurityGroup operation on AmazonRedshiftClient.</param>
@@ -470,7 +459,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateClusterSecurityGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateClusterSecurityGroup.</param>
@@ -517,7 +505,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateClusterSnapshot operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateClusterSnapshot operation on AmazonRedshiftClient.</param>
@@ -533,7 +520,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateClusterSnapshot operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateClusterSnapshot.</param>
@@ -589,7 +575,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateClusterSubnetGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateClusterSubnetGroup operation on AmazonRedshiftClient.</param>
@@ -605,7 +590,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateClusterSubnetGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateClusterSubnetGroup.</param>
@@ -690,7 +674,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateEventSubscription operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription operation on AmazonRedshiftClient.</param>
@@ -706,7 +689,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateEventSubscription operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEventSubscription.</param>
@@ -754,7 +736,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateHsmClientCertificate operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateHsmClientCertificate operation on AmazonRedshiftClient.</param>
@@ -770,7 +751,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateHsmClientCertificate operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHsmClientCertificate.</param>
@@ -817,7 +797,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateHsmConfiguration operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateHsmConfiguration operation on AmazonRedshiftClient.</param>
@@ -833,7 +812,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateHsmConfiguration operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHsmConfiguration.</param>
@@ -875,7 +853,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTags operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateTags operation on AmazonRedshiftClient.</param>
@@ -891,7 +868,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateTags operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTags.</param>
@@ -944,7 +920,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCluster operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster operation on AmazonRedshiftClient.</param>
@@ -960,7 +935,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteCluster operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCluster.</param>
@@ -991,7 +965,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteClusterParameterGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteClusterParameterGroup operation on AmazonRedshiftClient.</param>
@@ -1007,7 +980,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteClusterParameterGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteClusterParameterGroup.</param>
@@ -1043,7 +1015,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteClusterSecurityGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteClusterSecurityGroup operation on AmazonRedshiftClient.</param>
@@ -1059,7 +1030,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteClusterSecurityGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteClusterSecurityGroup.</param>
@@ -1098,7 +1068,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteClusterSnapshot operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteClusterSnapshot operation on AmazonRedshiftClient.</param>
@@ -1114,7 +1083,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteClusterSnapshot operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteClusterSnapshot.</param>
@@ -1145,7 +1113,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteClusterSubnetGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteClusterSubnetGroup operation on AmazonRedshiftClient.</param>
@@ -1161,7 +1128,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteClusterSubnetGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteClusterSubnetGroup.</param>
@@ -1191,7 +1157,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteEventSubscription operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteEventSubscription operation on AmazonRedshiftClient.</param>
@@ -1207,7 +1172,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteEventSubscription operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEventSubscription.</param>
@@ -1236,7 +1200,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteHsmClientCertificate operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteHsmClientCertificate operation on AmazonRedshiftClient.</param>
@@ -1252,7 +1215,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteHsmClientCertificate operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHsmClientCertificate.</param>
@@ -1281,7 +1243,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteHsmConfiguration operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteHsmConfiguration operation on AmazonRedshiftClient.</param>
@@ -1297,7 +1258,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteHsmConfiguration operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHsmConfiguration.</param>
@@ -1323,7 +1283,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTags operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags operation on AmazonRedshiftClient.</param>
@@ -1339,7 +1298,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteTags operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTags.</param>
@@ -1420,7 +1378,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterParameterGroups operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterParameterGroups operation on AmazonRedshiftClient.</param>
@@ -1436,7 +1393,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeClusterParameterGroups operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterParameterGroups.</param>
@@ -1477,7 +1433,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterParameters operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterParameters operation on AmazonRedshiftClient.</param>
@@ -1493,7 +1448,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeClusterParameters operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterParameters.</param>
@@ -1564,7 +1518,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusters operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusters operation on AmazonRedshiftClient.</param>
@@ -1580,7 +1533,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeClusters operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusters.</param>
@@ -1659,7 +1611,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterSecurityGroups operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterSecurityGroups operation on AmazonRedshiftClient.</param>
@@ -1675,7 +1626,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeClusterSecurityGroups operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterSecurityGroups.</param>
@@ -1746,7 +1696,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterSnapshots operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterSnapshots operation on AmazonRedshiftClient.</param>
@@ -1762,7 +1711,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeClusterSnapshots operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterSnapshots.</param>
@@ -1829,7 +1777,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterSubnetGroups operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterSubnetGroups operation on AmazonRedshiftClient.</param>
@@ -1845,7 +1792,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeClusterSubnetGroups operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterSubnetGroups.</param>
@@ -1880,7 +1826,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterVersions operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterVersions operation on AmazonRedshiftClient.</param>
@@ -1896,7 +1841,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeClusterVersions operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterVersions.</param>
@@ -1925,7 +1869,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDefaultClusterParameters operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDefaultClusterParameters operation on AmazonRedshiftClient.</param>
@@ -1941,7 +1884,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeDefaultClusterParameters operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDefaultClusterParameters.</param>
@@ -1974,7 +1916,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEventCategories operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories operation on AmazonRedshiftClient.</param>
@@ -1990,7 +1931,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeEventCategories operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventCategories.</param>
@@ -2025,7 +1965,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents operation on AmazonRedshiftClient.</param>
@@ -2041,7 +1980,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeEvents operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEvents.</param>
@@ -2082,7 +2020,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEventSubscriptions operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventSubscriptions operation on AmazonRedshiftClient.</param>
@@ -2098,7 +2035,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeEventSubscriptions operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventSubscriptions.</param>
@@ -2165,7 +2101,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeHsmClientCertificates operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeHsmClientCertificates operation on AmazonRedshiftClient.</param>
@@ -2181,7 +2116,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeHsmClientCertificates operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHsmClientCertificates.</param>
@@ -2248,7 +2182,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeHsmConfigurations operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeHsmConfigurations operation on AmazonRedshiftClient.</param>
@@ -2264,7 +2197,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeHsmConfigurations operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHsmConfigurations.</param>
@@ -2290,7 +2222,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoggingStatus operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoggingStatus operation on AmazonRedshiftClient.</param>
@@ -2306,7 +2237,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLoggingStatus operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoggingStatus.</param>
@@ -2349,7 +2279,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOrderableClusterOptions operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrderableClusterOptions operation on AmazonRedshiftClient.</param>
@@ -2365,7 +2294,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeOrderableClusterOptions operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeOrderableClusterOptions.</param>
@@ -2422,7 +2350,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedNodeOfferings operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedNodeOfferings operation on AmazonRedshiftClient.</param>
@@ -2438,7 +2365,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeReservedNodeOfferings operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedNodeOfferings.</param>
@@ -2473,7 +2399,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedNodes operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedNodes operation on AmazonRedshiftClient.</param>
@@ -2489,7 +2414,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeReservedNodes operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedNodes.</param>
@@ -2526,7 +2450,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeResize operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeResize operation on AmazonRedshiftClient.</param>
@@ -2542,7 +2465,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeResize operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeResize.</param>
@@ -2591,7 +2513,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTags operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation on AmazonRedshiftClient.</param>
@@ -2607,7 +2528,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeTags operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTags.</param>
@@ -2633,7 +2553,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableLogging operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisableLogging operation on AmazonRedshiftClient.</param>
@@ -2649,7 +2568,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DisableLogging operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableLogging.</param>
@@ -2684,7 +2602,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableSnapshotCopy operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisableSnapshotCopy operation on AmazonRedshiftClient.</param>
@@ -2700,7 +2617,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DisableSnapshotCopy operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableSnapshotCopy.</param>
@@ -2742,7 +2658,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableLogging operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EnableLogging operation on AmazonRedshiftClient.</param>
@@ -2758,7 +2673,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  EnableLogging operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableLogging.</param>
@@ -2802,7 +2716,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableSnapshotCopy operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EnableSnapshotCopy operation on AmazonRedshiftClient.</param>
@@ -2818,7 +2731,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  EnableSnapshotCopy operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableSnapshotCopy.</param>
@@ -2891,7 +2803,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyCluster operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyCluster operation on AmazonRedshiftClient.</param>
@@ -2907,7 +2818,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ModifyCluster operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyCluster.</param>
@@ -2944,7 +2854,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyClusterParameterGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyClusterParameterGroup operation on AmazonRedshiftClient.</param>
@@ -2960,7 +2869,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ModifyClusterParameterGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyClusterParameterGroup.</param>
@@ -3000,7 +2908,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyClusterSubnetGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyClusterSubnetGroup operation on AmazonRedshiftClient.</param>
@@ -3016,7 +2923,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ModifyClusterSubnetGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyClusterSubnetGroup.</param>
@@ -3071,7 +2977,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyEventSubscription operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyEventSubscription operation on AmazonRedshiftClient.</param>
@@ -3087,7 +2992,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ModifyEventSubscription operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyEventSubscription.</param>
@@ -3122,7 +3026,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifySnapshotCopyRetentionPeriod operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotCopyRetentionPeriod operation on AmazonRedshiftClient.</param>
@@ -3138,7 +3041,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ModifySnapshotCopyRetentionPeriod operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifySnapshotCopyRetentionPeriod.</param>
@@ -3180,7 +3082,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the PurchaseReservedNodeOffering operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedNodeOffering operation on AmazonRedshiftClient.</param>
@@ -3196,7 +3097,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PurchaseReservedNodeOffering operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseReservedNodeOffering.</param>
@@ -3229,7 +3129,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the RebootCluster operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RebootCluster operation on AmazonRedshiftClient.</param>
@@ -3245,7 +3144,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RebootCluster operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebootCluster.</param>
@@ -3278,7 +3176,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetClusterParameterGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ResetClusterParameterGroup operation on AmazonRedshiftClient.</param>
@@ -3294,7 +3191,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ResetClusterParameterGroup operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetClusterParameterGroup.</param>
@@ -3395,7 +3291,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreFromClusterSnapshot operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RestoreFromClusterSnapshot operation on AmazonRedshiftClient.</param>
@@ -3411,7 +3306,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RestoreFromClusterSnapshot operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreFromClusterSnapshot.</param>
@@ -3447,7 +3341,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeClusterSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RevokeClusterSecurityGroupIngress operation on AmazonRedshiftClient.</param>
@@ -3463,7 +3356,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RevokeClusterSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeClusterSecurityGroupIngress.</param>
@@ -3504,7 +3396,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeSnapshotAccess operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RevokeSnapshotAccess operation on AmazonRedshiftClient.</param>
@@ -3520,7 +3411,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RevokeSnapshotAccess operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeSnapshotAccess.</param>
@@ -3548,7 +3438,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Initiates the asynchronous execution of the RotateEncryptionKey operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RotateEncryptionKey operation on AmazonRedshiftClient.</param>
@@ -3564,7 +3453,6 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RotateEncryptionKey operation.
-        /// <seealso cref="Amazon.Redshift.IAmazonRedshift"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRotateEncryptionKey.</param>

@@ -248,7 +248,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteIdentity operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdentity operation on AmazonSimpleEmailServiceClient.</param>
@@ -269,7 +268,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteIdentity operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIdentity.</param>
@@ -307,7 +305,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVerifiedEmailAddress operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress operation on AmazonSimpleEmailServiceClient.</param>
@@ -328,7 +325,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteVerifiedEmailAddress operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVerifiedEmailAddress.</param>
@@ -383,7 +379,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityDkimAttributes operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityDkimAttributes operation on AmazonSimpleEmailServiceClient.</param>
@@ -404,7 +399,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetIdentityDkimAttributes operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityDkimAttributes.</param>
@@ -447,7 +441,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityNotificationAttributes operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityNotificationAttributes operation on AmazonSimpleEmailServiceClient.</param>
@@ -468,7 +461,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetIdentityNotificationAttributes operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityNotificationAttributes.</param>
@@ -505,7 +497,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityVerificationAttributes operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityVerificationAttributes operation on AmazonSimpleEmailServiceClient.</param>
@@ -526,7 +517,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetIdentityVerificationAttributes operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityVerificationAttributes.</param>
@@ -577,7 +567,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSendQuota operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetSendQuota operation on AmazonSimpleEmailServiceClient.</param>
@@ -598,7 +587,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetSendQuota operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSendQuota.</param>
@@ -659,7 +647,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSendStatistics operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetSendStatistics operation on AmazonSimpleEmailServiceClient.</param>
@@ -680,7 +667,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetSendStatistics operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSendStatistics.</param>
@@ -733,7 +719,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListIdentities operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListIdentities operation on AmazonSimpleEmailServiceClient.</param>
@@ -754,7 +739,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListIdentities operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIdentities.</param>
@@ -809,7 +793,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListVerifiedEmailAddresses operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListVerifiedEmailAddresses operation on AmazonSimpleEmailServiceClient.</param>
@@ -830,7 +813,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListVerifiedEmailAddresses operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVerifiedEmailAddresses.</param>
@@ -892,7 +874,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the SendEmail operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SendEmail operation on AmazonSimpleEmailServiceClient.</param>
@@ -913,7 +894,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SendEmail operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendEmail.</param>
@@ -984,7 +964,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the SendRawEmail operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SendRawEmail operation on AmazonSimpleEmailServiceClient.</param>
@@ -1005,7 +984,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SendRawEmail operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendRawEmail.</param>
@@ -1058,7 +1036,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityDkimEnabled operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityDkimEnabled operation on AmazonSimpleEmailServiceClient.</param>
@@ -1079,7 +1056,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetIdentityDkimEnabled operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityDkimEnabled.</param>
@@ -1125,7 +1101,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityFeedbackForwardingEnabled operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityFeedbackForwardingEnabled operation on AmazonSimpleEmailServiceClient.</param>
@@ -1146,7 +1121,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetIdentityFeedbackForwardingEnabled operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityFeedbackForwardingEnabled.</param>
@@ -1191,7 +1165,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityNotificationTopic operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityNotificationTopic operation on AmazonSimpleEmailServiceClient.</param>
@@ -1212,7 +1185,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetIdentityNotificationTopic operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityNotificationTopic.</param>
@@ -1264,7 +1236,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyDomainDkim operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the VerifyDomainDkim operation on AmazonSimpleEmailServiceClient.</param>
@@ -1285,7 +1256,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  VerifyDomainDkim operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyDomainDkim.</param>
@@ -1321,7 +1291,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyDomainIdentity operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the VerifyDomainIdentity operation on AmazonSimpleEmailServiceClient.</param>
@@ -1342,7 +1311,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  VerifyDomainIdentity operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyDomainIdentity.</param>
@@ -1381,7 +1349,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyEmailAddress operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the VerifyEmailAddress operation on AmazonSimpleEmailServiceClient.</param>
@@ -1402,7 +1369,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  VerifyEmailAddress operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyEmailAddress.</param>
@@ -1439,7 +1405,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyEmailIdentity operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the VerifyEmailIdentity operation on AmazonSimpleEmailServiceClient.</param>
@@ -1460,7 +1425,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  VerifyEmailIdentity operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyEmailIdentity.</param>

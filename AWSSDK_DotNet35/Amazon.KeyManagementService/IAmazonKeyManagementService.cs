@@ -166,7 +166,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAlias operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateAlias operation on AmazonKeyManagementServiceClient.</param>
@@ -182,7 +181,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateAlias operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAlias.</param>
@@ -233,7 +231,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateGrant operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateGrant operation on AmazonKeyManagementServiceClient.</param>
@@ -249,7 +246,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateGrant operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGrant.</param>
@@ -294,7 +290,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateKey operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateKey operation on AmazonKeyManagementServiceClient.</param>
@@ -310,7 +305,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateKey operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateKey.</param>
@@ -357,7 +351,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the Decrypt operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the Decrypt operation on AmazonKeyManagementServiceClient.</param>
@@ -373,7 +366,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  Decrypt operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDecrypt.</param>
@@ -423,7 +415,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAlias operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlias operation on AmazonKeyManagementServiceClient.</param>
@@ -439,7 +430,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteAlias operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAlias.</param>
@@ -495,7 +485,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeKey operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeKey operation on AmazonKeyManagementServiceClient.</param>
@@ -511,7 +500,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeKey operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeKey.</param>
@@ -567,7 +555,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableKey operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisableKey operation on AmazonKeyManagementServiceClient.</param>
@@ -583,7 +570,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DisableKey operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableKey.</param>
@@ -639,7 +625,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableKeyRotation operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisableKeyRotation operation on AmazonKeyManagementServiceClient.</param>
@@ -655,7 +640,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DisableKeyRotation operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableKeyRotation.</param>
@@ -719,7 +703,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableKey operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EnableKey operation on AmazonKeyManagementServiceClient.</param>
@@ -735,7 +718,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  EnableKey operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableKey.</param>
@@ -791,7 +773,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableKeyRotation operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EnableKeyRotation operation on AmazonKeyManagementServiceClient.</param>
@@ -807,7 +788,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  EnableKeyRotation operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableKeyRotation.</param>
@@ -853,7 +833,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the Encrypt operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the Encrypt operation on AmazonKeyManagementServiceClient.</param>
@@ -869,7 +848,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  Encrypt operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEncrypt.</param>
@@ -916,7 +894,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the GenerateDataKey operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKey operation on AmazonKeyManagementServiceClient.</param>
@@ -932,7 +909,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GenerateDataKey operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateDataKey.</param>
@@ -979,7 +955,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the GenerateDataKeyWithoutPlaintext operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKeyWithoutPlaintext operation on AmazonKeyManagementServiceClient.</param>
@@ -995,7 +970,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GenerateDataKeyWithoutPlaintext operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateDataKeyWithoutPlaintext.</param>
@@ -1039,7 +1013,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the GenerateRandom operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GenerateRandom operation on AmazonKeyManagementServiceClient.</param>
@@ -1055,7 +1028,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GenerateRandom operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateRandom.</param>
@@ -1112,7 +1084,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetKeyPolicy operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetKeyPolicy operation on AmazonKeyManagementServiceClient.</param>
@@ -1128,7 +1099,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetKeyPolicy operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetKeyPolicy.</param>
@@ -1186,7 +1156,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetKeyRotationStatus operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetKeyRotationStatus operation on AmazonKeyManagementServiceClient.</param>
@@ -1202,7 +1171,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetKeyRotationStatus operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetKeyRotationStatus.</param>
@@ -1231,7 +1199,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListAliases operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListAliases operation on AmazonKeyManagementServiceClient.</param>
@@ -1247,7 +1214,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListAliases operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAliases.</param>
@@ -1280,7 +1246,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListGrants operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListGrants operation on AmazonKeyManagementServiceClient.</param>
@@ -1296,7 +1261,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListGrants operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGrants.</param>
@@ -1331,7 +1295,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListKeyPolicies operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListKeyPolicies operation on AmazonKeyManagementServiceClient.</param>
@@ -1347,7 +1310,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListKeyPolicies operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListKeyPolicies.</param>
@@ -1376,7 +1338,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListKeys operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListKeys operation on AmazonKeyManagementServiceClient.</param>
@@ -1392,7 +1353,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListKeys operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListKeys.</param>
@@ -1476,7 +1436,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutKeyPolicy operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutKeyPolicy operation on AmazonKeyManagementServiceClient.</param>
@@ -1492,7 +1451,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutKeyPolicy operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutKeyPolicy.</param>
@@ -1544,7 +1502,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReEncrypt operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ReEncrypt operation on AmazonKeyManagementServiceClient.</param>
@@ -1560,7 +1517,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ReEncrypt operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReEncrypt.</param>
@@ -1612,7 +1568,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the RetireGrant operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RetireGrant operation on AmazonKeyManagementServiceClient.</param>
@@ -1628,7 +1583,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RetireGrant operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRetireGrant.</param>
@@ -1681,7 +1635,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeGrant operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RevokeGrant operation on AmazonKeyManagementServiceClient.</param>
@@ -1697,7 +1650,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RevokeGrant operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeGrant.</param>
@@ -1754,7 +1706,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateKeyDescription operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateKeyDescription operation on AmazonKeyManagementServiceClient.</param>
@@ -1770,7 +1721,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateKeyDescription operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateKeyDescription.</param>

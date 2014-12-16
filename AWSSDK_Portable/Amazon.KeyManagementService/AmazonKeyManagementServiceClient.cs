@@ -239,7 +239,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAlias operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateAlias operation.</param>
@@ -270,7 +269,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateGrant operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateGrant operation.</param>
@@ -301,7 +299,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateKey operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateKey operation.</param>
@@ -332,7 +329,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the Decrypt operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the Decrypt operation.</param>
@@ -363,7 +359,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAlias operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlias operation.</param>
@@ -394,7 +389,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeKey operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeKey operation.</param>
@@ -425,7 +419,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableKey operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisableKey operation.</param>
@@ -456,7 +449,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableKeyRotation operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DisableKeyRotation operation.</param>
@@ -487,7 +479,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableKey operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EnableKey operation.</param>
@@ -518,7 +509,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableKeyRotation operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EnableKeyRotation operation.</param>
@@ -549,7 +539,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the Encrypt operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the Encrypt operation.</param>
@@ -580,7 +569,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the GenerateDataKey operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKey operation.</param>
@@ -611,7 +599,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the GenerateDataKeyWithoutPlaintext operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKeyWithoutPlaintext operation.</param>
@@ -642,7 +629,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the GenerateRandom operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GenerateRandom operation.</param>
@@ -673,7 +659,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetKeyPolicy operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetKeyPolicy operation.</param>
@@ -704,7 +689,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetKeyRotationStatus operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetKeyRotationStatus operation.</param>
@@ -735,7 +719,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListAliases operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListAliases operation.</param>
@@ -766,7 +749,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListGrants operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListGrants operation.</param>
@@ -797,7 +779,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListKeyPolicies operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListKeyPolicies operation.</param>
@@ -828,7 +809,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListKeys operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListKeys operation.</param>
@@ -859,7 +839,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutKeyPolicy operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutKeyPolicy operation.</param>
@@ -890,7 +869,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReEncrypt operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ReEncrypt operation.</param>
@@ -921,7 +899,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the RetireGrant operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RetireGrant operation.</param>
@@ -952,7 +929,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeGrant operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RevokeGrant operation.</param>
@@ -983,7 +959,6 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateKeyDescription operation.
-        /// <seealso cref="Amazon.KeyManagementService.IAmazonKeyManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateKeyDescription operation.</param>

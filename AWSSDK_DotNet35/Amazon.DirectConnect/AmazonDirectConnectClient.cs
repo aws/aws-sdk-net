@@ -265,7 +265,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the AllocateConnectionOnInterconnect operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AllocateConnectionOnInterconnect operation on AmazonDirectConnectClient.</param>
@@ -286,7 +285,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AllocateConnectionOnInterconnect operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAllocateConnectionOnInterconnect.</param>
@@ -338,7 +336,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the AllocatePrivateVirtualInterface operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AllocatePrivateVirtualInterface operation on AmazonDirectConnectClient.</param>
@@ -359,7 +356,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AllocatePrivateVirtualInterface operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAllocatePrivateVirtualInterface.</param>
@@ -411,7 +407,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the AllocatePublicVirtualInterface operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AllocatePublicVirtualInterface operation on AmazonDirectConnectClient.</param>
@@ -432,7 +427,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AllocatePublicVirtualInterface operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAllocatePublicVirtualInterface.</param>
@@ -478,7 +472,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the ConfirmConnection operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ConfirmConnection operation on AmazonDirectConnectClient.</param>
@@ -499,7 +492,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ConfirmConnection operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfirmConnection.</param>
@@ -545,7 +537,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the ConfirmPrivateVirtualInterface operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ConfirmPrivateVirtualInterface operation on AmazonDirectConnectClient.</param>
@@ -566,7 +557,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ConfirmPrivateVirtualInterface operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfirmPrivateVirtualInterface.</param>
@@ -611,7 +601,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the ConfirmPublicVirtualInterface operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ConfirmPublicVirtualInterface operation on AmazonDirectConnectClient.</param>
@@ -632,7 +621,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ConfirmPublicVirtualInterface operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfirmPublicVirtualInterface.</param>
@@ -682,7 +670,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateConnection operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateConnection operation on AmazonDirectConnectClient.</param>
@@ -703,7 +690,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateConnection operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConnection.</param>
@@ -761,7 +747,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInterconnect operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateInterconnect operation on AmazonDirectConnectClient.</param>
@@ -782,7 +767,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateInterconnect operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInterconnect.</param>
@@ -823,7 +807,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePrivateVirtualInterface operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreatePrivateVirtualInterface operation on AmazonDirectConnectClient.</param>
@@ -844,7 +827,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreatePrivateVirtualInterface operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePrivateVirtualInterface.</param>
@@ -885,7 +867,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePublicVirtualInterface operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreatePublicVirtualInterface operation on AmazonDirectConnectClient.</param>
@@ -906,7 +887,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreatePublicVirtualInterface operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePublicVirtualInterface.</param>
@@ -953,7 +933,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteConnection operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteConnection operation on AmazonDirectConnectClient.</param>
@@ -974,7 +953,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteConnection operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConnection.</param>
@@ -1013,7 +991,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteInterconnect operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteInterconnect operation on AmazonDirectConnectClient.</param>
@@ -1034,7 +1011,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteInterconnect operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInterconnect.</param>
@@ -1073,7 +1049,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVirtualInterface operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualInterface operation on AmazonDirectConnectClient.</param>
@@ -1094,7 +1069,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteVirtualInterface operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVirtualInterface.</param>
@@ -1161,7 +1135,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConnections operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeConnections operation on AmazonDirectConnectClient.</param>
@@ -1182,7 +1155,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeConnections operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConnections.</param>
@@ -1221,7 +1193,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConnectionsOnInterconnect operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionsOnInterconnect operation on AmazonDirectConnectClient.</param>
@@ -1242,7 +1213,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeConnectionsOnInterconnect operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConnectionsOnInterconnect.</param>
@@ -1309,7 +1279,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInterconnects operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeInterconnects operation on AmazonDirectConnectClient.</param>
@@ -1330,7 +1299,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeInterconnects operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInterconnects.</param>
@@ -1389,7 +1357,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLocations operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocations operation on AmazonDirectConnectClient.</param>
@@ -1410,7 +1377,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeLocations operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLocations.</param>
@@ -1483,7 +1449,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVirtualGateways operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualGateways operation on AmazonDirectConnectClient.</param>
@@ -1504,7 +1469,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeVirtualGateways operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVirtualGateways.</param>
@@ -1593,7 +1557,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVirtualInterfaces operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualInterfaces operation on AmazonDirectConnectClient.</param>
@@ -1614,7 +1577,6 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeVirtualInterfaces operation.
-        /// <seealso cref="Amazon.DirectConnect.IAmazonDirectConnect"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVirtualInterfaces.</param>

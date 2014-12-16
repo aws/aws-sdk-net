@@ -66,7 +66,7 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// A canned access control list (ACL) to apply to the object.
-        /// Please refer to <see cref="T:Amazon.S3.Model.S3CannedACL"/> for information on S3 Canned ACLs.
+        /// Please refer to <see cref="T:Amazon.S3.S3CannedACL"/> for information on S3 Canned ACLs.
         /// </summary>
         public S3CannedACL CannedACL
         {

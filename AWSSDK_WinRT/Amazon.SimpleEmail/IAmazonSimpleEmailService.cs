@@ -47,7 +47,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteIdentity operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdentity operation.</param>
@@ -63,7 +62,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVerifiedEmailAddress operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress operation.</param>
@@ -79,7 +77,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityDkimAttributes operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityDkimAttributes operation.</param>
@@ -95,7 +92,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityNotificationAttributes operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityNotificationAttributes operation.</param>
@@ -111,7 +107,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityVerificationAttributes operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityVerificationAttributes operation.</param>
@@ -127,7 +122,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSendQuota operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetSendQuota operation.</param>
@@ -143,7 +137,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSendStatistics operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetSendStatistics operation.</param>
@@ -159,7 +152,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListIdentities operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListIdentities operation.</param>
@@ -175,7 +167,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListVerifiedEmailAddresses operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListVerifiedEmailAddresses operation.</param>
@@ -191,7 +182,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the SendEmail operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SendEmail operation.</param>
@@ -207,7 +197,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the SendRawEmail operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SendRawEmail operation.</param>
@@ -223,7 +212,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityDkimEnabled operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityDkimEnabled operation.</param>
@@ -239,7 +227,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityFeedbackForwardingEnabled operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityFeedbackForwardingEnabled operation.</param>
@@ -255,7 +242,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityNotificationTopic operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityNotificationTopic operation.</param>
@@ -271,7 +257,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyDomainDkim operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the VerifyDomainDkim operation.</param>
@@ -287,7 +272,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyDomainIdentity operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the VerifyDomainIdentity operation.</param>
@@ -303,7 +287,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyEmailAddress operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the VerifyEmailAddress operation.</param>
@@ -319,7 +302,6 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyEmailIdentity operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the VerifyEmailIdentity operation.</param>

@@ -358,7 +358,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddPermission operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddPermission operation on AmazonSQSClient.</param>
@@ -379,7 +378,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddPermission operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddPermission.</param>
@@ -499,7 +497,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the ChangeMessageVisibility operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ChangeMessageVisibility operation on AmazonSQSClient.</param>
@@ -520,7 +517,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ChangeMessageVisibility operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginChangeMessageVisibility.</param>
@@ -624,7 +620,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the ChangeMessageVisibilityBatch operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ChangeMessageVisibilityBatch operation on AmazonSQSClient.</param>
@@ -645,7 +640,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ChangeMessageVisibilityBatch operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginChangeMessageVisibilityBatch.</param>
@@ -777,7 +771,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateQueue operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateQueue operation on AmazonSQSClient.</param>
@@ -798,7 +791,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateQueue operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateQueue.</param>
@@ -904,7 +896,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteMessage operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteMessage operation on AmazonSQSClient.</param>
@@ -925,7 +916,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteMessage operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMessage.</param>
@@ -1031,7 +1021,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteMessageBatch operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteMessageBatch operation on AmazonSQSClient.</param>
@@ -1052,7 +1041,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteMessageBatch operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMessageBatch.</param>
@@ -1140,7 +1128,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteQueue operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueue operation on AmazonSQSClient.</param>
@@ -1161,7 +1148,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteQueue operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteQueue.</param>
@@ -1291,7 +1277,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetQueueAttributes operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetQueueAttributes operation on AmazonSQSClient.</param>
@@ -1312,7 +1297,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetQueueAttributes operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetQueueAttributes.</param>
@@ -1382,7 +1366,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetQueueUrl operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetQueueUrl operation on AmazonSQSClient.</param>
@@ -1403,7 +1386,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetQueueUrl operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetQueueUrl.</param>
@@ -1444,7 +1426,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDeadLetterSourceQueues operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListDeadLetterSourceQueues operation on AmazonSQSClient.</param>
@@ -1465,7 +1446,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListDeadLetterSourceQueues operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeadLetterSourceQueues.</param>
@@ -1513,7 +1493,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListQueues operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListQueues operation on AmazonSQSClient.</param>
@@ -1534,7 +1513,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListQueues operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListQueues.</param>
@@ -1612,7 +1590,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the PurgeQueue operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PurgeQueue operation on AmazonSQSClient.</param>
@@ -1633,7 +1610,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PurgeQueue operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurgeQueue.</param>
@@ -1817,7 +1793,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReceiveMessage operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ReceiveMessage operation on AmazonSQSClient.</param>
@@ -1838,7 +1813,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ReceiveMessage operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReceiveMessage.</param>
@@ -1886,7 +1860,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemovePermission operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission operation on AmazonSQSClient.</param>
@@ -1907,7 +1880,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RemovePermission operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemovePermission.</param>
@@ -1997,7 +1969,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the SendMessage operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SendMessage operation on AmazonSQSClient.</param>
@@ -2018,7 +1989,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SendMessage operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendMessage.</param>
@@ -2168,7 +2138,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the SendMessageBatch operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SendMessageBatch operation on AmazonSQSClient.</param>
@@ -2189,7 +2158,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SendMessageBatch operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendMessageBatch.</param>
@@ -2255,7 +2223,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetQueueAttributes operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetQueueAttributes operation on AmazonSQSClient.</param>
@@ -2276,7 +2243,6 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetQueueAttributes operation.
-        /// <seealso cref="Amazon.SQS.IAmazonSQS"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetQueueAttributes.</param>

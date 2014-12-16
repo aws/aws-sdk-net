@@ -114,7 +114,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDeliveryChannel operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeliveryChannel operation on AmazonConfigServiceClient.</param>
@@ -130,7 +129,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteDeliveryChannel operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDeliveryChannel.</param>
@@ -192,7 +190,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeliverConfigSnapshot operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeliverConfigSnapshot operation on AmazonConfigServiceClient.</param>
@@ -208,7 +205,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeliverConfigSnapshot operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeliverConfigSnapshot.</param>
@@ -259,7 +255,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConfigurationRecorders operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationRecorders operation on AmazonConfigServiceClient.</param>
@@ -275,7 +270,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeConfigurationRecorders operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConfigurationRecorders.</param>
@@ -318,7 +312,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConfigurationRecorderStatus operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationRecorderStatus operation on AmazonConfigServiceClient.</param>
@@ -334,7 +327,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeConfigurationRecorderStatus operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConfigurationRecorderStatus.</param>
@@ -385,7 +377,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDeliveryChannels operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDeliveryChannels operation on AmazonConfigServiceClient.</param>
@@ -401,7 +392,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeDeliveryChannels operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDeliveryChannels.</param>
@@ -444,7 +434,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDeliveryChannelStatus operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDeliveryChannelStatus operation on AmazonConfigServiceClient.</param>
@@ -460,7 +449,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeDeliveryChannelStatus operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDeliveryChannelStatus.</param>
@@ -514,7 +502,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetResourceConfigHistory operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetResourceConfigHistory operation on AmazonConfigServiceClient.</param>
@@ -530,7 +517,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetResourceConfigHistory operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourceConfigHistory.</param>
@@ -573,7 +559,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutConfigurationRecorder operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutConfigurationRecorder operation on AmazonConfigServiceClient.</param>
@@ -589,7 +574,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutConfigurationRecorder operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutConfigurationRecorder.</param>
@@ -648,7 +632,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutDeliveryChannel operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutDeliveryChannel operation on AmazonConfigServiceClient.</param>
@@ -664,7 +647,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutDeliveryChannel operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutDeliveryChannel.</param>
@@ -718,7 +700,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartConfigurationRecorder operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the StartConfigurationRecorder operation on AmazonConfigServiceClient.</param>
@@ -734,7 +715,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  StartConfigurationRecorder operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartConfigurationRecorder.</param>
@@ -770,7 +750,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Initiates the asynchronous execution of the StopConfigurationRecorder operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the StopConfigurationRecorder operation on AmazonConfigServiceClient.</param>
@@ -786,7 +765,6 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Finishes the asynchronous execution of the  StopConfigurationRecorder operation.
-        /// <seealso cref="Amazon.ConfigService.IAmazonConfigService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopConfigurationRecorder.</param>

@@ -29,7 +29,7 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Gets the access control lists (ACLs) for this request. 
-        /// Please refer to <see cref="T:Amazon.S3.Model.Grant"/> for information on
+        /// Please refer to <see cref="T:Amazon.S3.Model.S3Grant"/> for information on
         /// S3 Grants.
         /// </summary>
         public List<S3Grant> Grants

@@ -290,7 +290,6 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// Initiates the asynchronous execution of the ActivatePipeline operation.
-        /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ActivatePipeline operation.</param>
@@ -336,7 +335,6 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePipeline operation.
-        /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreatePipeline operation.</param>
@@ -395,7 +393,6 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePipeline operation.
-        /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeletePipeline operation.</param>
@@ -449,7 +446,6 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeObjects operation.
-        /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeObjects operation.</param>
@@ -512,7 +508,6 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePipelines operation.
-        /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribePipelines operation.</param>
@@ -568,7 +563,6 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// Initiates the asynchronous execution of the EvaluateExpression operation.
-        /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EvaluateExpression operation.</param>
@@ -621,7 +615,6 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetPipelineDefinition operation.
-        /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetPipelineDefinition operation.</param>
@@ -686,7 +679,6 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListPipelines operation.
-        /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListPipelines operation.</param>
@@ -750,7 +742,6 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// Initiates the asynchronous execution of the PollForTask operation.
-        /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PollForTask operation.</param>
@@ -818,7 +809,6 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutPipelineDefinition operation.
-        /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutPipelineDefinition operation.</param>
@@ -879,7 +869,6 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// Initiates the asynchronous execution of the QueryObjects operation.
-        /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the QueryObjects operation.</param>
@@ -944,7 +933,6 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReportTaskProgress operation.
-        /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ReportTaskProgress operation.</param>
@@ -992,7 +980,6 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReportTaskRunnerHeartbeat operation.
-        /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ReportTaskRunnerHeartbeat operation.</param>
@@ -1048,7 +1035,6 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetStatus operation.
-        /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetStatus operation.</param>
@@ -1106,7 +1092,6 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetTaskStatus operation.
-        /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetTaskStatus operation.</param>
@@ -1159,7 +1144,6 @@ namespace Amazon.DataPipeline
 
         /// <summary>
         /// Initiates the asynchronous execution of the ValidatePipelineDefinition operation.
-        /// <seealso cref="Amazon.DataPipeline.IAmazonDataPipeline"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ValidatePipelineDefinition operation.</param>

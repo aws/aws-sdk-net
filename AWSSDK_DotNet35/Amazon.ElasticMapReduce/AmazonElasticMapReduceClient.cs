@@ -247,7 +247,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddInstanceGroups operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddInstanceGroups operation on AmazonElasticMapReduceClient.</param>
@@ -268,7 +267,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddInstanceGroups operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddInstanceGroups.</param>
@@ -334,7 +332,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddJobFlowSteps operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddJobFlowSteps operation on AmazonElasticMapReduceClient.</param>
@@ -355,7 +352,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddJobFlowSteps operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddJobFlowSteps.</param>
@@ -395,7 +391,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddTags operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddTags operation on AmazonElasticMapReduceClient.</param>
@@ -416,7 +411,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddTags operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTags.</param>
@@ -471,7 +465,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCluster operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeCluster operation on AmazonElasticMapReduceClient.</param>
@@ -492,7 +485,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeCluster operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCluster.</param>
@@ -593,7 +585,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeJobFlows operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeJobFlows operation on AmazonElasticMapReduceClient.</param>
@@ -614,7 +605,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeJobFlows operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJobFlows.</param>
@@ -667,7 +657,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStep operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeStep operation on AmazonElasticMapReduceClient.</param>
@@ -688,7 +677,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeStep operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStep.</param>
@@ -741,7 +729,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListBootstrapActions operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListBootstrapActions operation on AmazonElasticMapReduceClient.</param>
@@ -762,7 +749,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListBootstrapActions operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBootstrapActions.</param>
@@ -823,7 +809,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListClusters operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListClusters operation on AmazonElasticMapReduceClient.</param>
@@ -844,7 +829,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListClusters operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClusters.</param>
@@ -897,7 +881,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstanceGroups operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListInstanceGroups operation on AmazonElasticMapReduceClient.</param>
@@ -918,7 +901,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListInstanceGroups operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstanceGroups.</param>
@@ -977,7 +959,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstances operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListInstances operation on AmazonElasticMapReduceClient.</param>
@@ -998,7 +979,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListInstances operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstances.</param>
@@ -1051,7 +1031,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListSteps operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListSteps operation on AmazonElasticMapReduceClient.</param>
@@ -1072,7 +1051,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListSteps operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSteps.</param>
@@ -1110,7 +1088,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyInstanceGroups operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceGroups operation on AmazonElasticMapReduceClient.</param>
@@ -1131,7 +1108,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ModifyInstanceGroups operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstanceGroups.</param>
@@ -1176,7 +1152,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTags operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RemoveTags operation on AmazonElasticMapReduceClient.</param>
@@ -1197,7 +1172,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RemoveTags operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTags.</param>
@@ -1264,7 +1238,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Initiates the asynchronous execution of the RunJobFlow operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RunJobFlow operation on AmazonElasticMapReduceClient.</param>
@@ -1285,7 +1258,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RunJobFlow operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRunJobFlow.</param>
@@ -1345,7 +1317,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetTerminationProtection operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetTerminationProtection operation on AmazonElasticMapReduceClient.</param>
@@ -1366,7 +1337,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetTerminationProtection operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetTerminationProtection.</param>
@@ -1405,7 +1375,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetVisibleToAllUsers operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the SetVisibleToAllUsers operation on AmazonElasticMapReduceClient.</param>
@@ -1426,7 +1395,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Finishes the asynchronous execution of the  SetVisibleToAllUsers operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetVisibleToAllUsers.</param>
@@ -1473,7 +1441,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateJobFlows operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the TerminateJobFlows operation on AmazonElasticMapReduceClient.</param>
@@ -1494,7 +1461,6 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Finishes the asynchronous execution of the  TerminateJobFlows operation.
-        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTerminateJobFlows.</param>

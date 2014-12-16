@@ -260,7 +260,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the BuildSuggesters operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the BuildSuggesters operation on AmazonCloudSearchClient.</param>
@@ -281,7 +280,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  BuildSuggesters operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBuildSuggesters.</param>
@@ -325,7 +323,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDomain operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain operation on AmazonCloudSearchClient.</param>
@@ -346,7 +343,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateDomain operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDomain.</param>
@@ -399,7 +395,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DefineAnalysisScheme operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DefineAnalysisScheme operation on AmazonCloudSearchClient.</param>
@@ -420,7 +415,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DefineAnalysisScheme operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDefineAnalysisScheme.</param>
@@ -473,7 +467,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DefineExpression operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DefineExpression operation on AmazonCloudSearchClient.</param>
@@ -494,7 +487,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DefineExpression operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDefineExpression.</param>
@@ -551,7 +543,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DefineIndexField operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DefineIndexField operation on AmazonCloudSearchClient.</param>
@@ -572,7 +563,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DefineIndexField operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDefineIndexField.</param>
@@ -626,7 +616,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DefineSuggester operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DefineSuggester operation on AmazonCloudSearchClient.</param>
@@ -647,7 +636,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DefineSuggester operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDefineSuggester.</param>
@@ -695,7 +683,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAnalysisScheme operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteAnalysisScheme operation on AmazonCloudSearchClient.</param>
@@ -716,7 +703,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteAnalysisScheme operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAnalysisScheme.</param>
@@ -758,7 +744,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDomain operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain operation on AmazonCloudSearchClient.</param>
@@ -779,7 +764,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteDomain operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomain.</param>
@@ -828,7 +812,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteExpression operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteExpression operation on AmazonCloudSearchClient.</param>
@@ -849,7 +832,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteExpression operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteExpression.</param>
@@ -898,7 +880,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteIndexField operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteIndexField operation on AmazonCloudSearchClient.</param>
@@ -919,7 +900,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteIndexField operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIndexField.</param>
@@ -967,7 +947,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSuggester operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteSuggester operation on AmazonCloudSearchClient.</param>
@@ -988,7 +967,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteSuggester operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSuggester.</param>
@@ -1038,7 +1016,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAnalysisSchemes operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAnalysisSchemes operation on AmazonCloudSearchClient.</param>
@@ -1059,7 +1036,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeAnalysisSchemes operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAnalysisSchemes.</param>
@@ -1116,7 +1092,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAvailabilityOptions operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityOptions operation on AmazonCloudSearchClient.</param>
@@ -1137,7 +1112,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeAvailabilityOptions operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAvailabilityOptions.</param>
@@ -1206,7 +1180,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDomains operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomains operation on AmazonCloudSearchClient.</param>
@@ -1227,7 +1200,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeDomains operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDomains.</param>
@@ -1276,7 +1248,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeExpressions operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeExpressions operation on AmazonCloudSearchClient.</param>
@@ -1297,7 +1268,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeExpressions operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExpressions.</param>
@@ -1346,7 +1316,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeIndexFields operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeIndexFields operation on AmazonCloudSearchClient.</param>
@@ -1367,7 +1336,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeIndexFields operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIndexFields.</param>
@@ -1414,7 +1382,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeScalingParameters operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingParameters operation on AmazonCloudSearchClient.</param>
@@ -1435,7 +1402,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeScalingParameters operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScalingParameters.</param>
@@ -1483,7 +1449,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServiceAccessPolicies operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeServiceAccessPolicies operation on AmazonCloudSearchClient.</param>
@@ -1504,7 +1469,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeServiceAccessPolicies operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeServiceAccessPolicies.</param>
@@ -1553,7 +1517,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSuggesters operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeSuggesters operation on AmazonCloudSearchClient.</param>
@@ -1574,7 +1537,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeSuggesters operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSuggesters.</param>
@@ -1619,7 +1581,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the IndexDocuments operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the IndexDocuments operation on AmazonCloudSearchClient.</param>
@@ -1640,7 +1601,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  IndexDocuments operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginIndexDocuments.</param>
@@ -1687,7 +1647,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomainNames operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListDomainNames operation on AmazonCloudSearchClient.</param>
@@ -1708,7 +1667,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListDomainNames operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomainNames.</param>
@@ -1766,7 +1724,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAvailabilityOptions operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateAvailabilityOptions operation on AmazonCloudSearchClient.</param>
@@ -1787,7 +1744,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateAvailabilityOptions operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAvailabilityOptions.</param>
@@ -1843,7 +1799,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateScalingParameters operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateScalingParameters operation on AmazonCloudSearchClient.</param>
@@ -1864,7 +1819,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateScalingParameters operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateScalingParameters.</param>
@@ -1915,7 +1869,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateServiceAccessPolicies operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateServiceAccessPolicies operation on AmazonCloudSearchClient.</param>
@@ -1936,7 +1889,6 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateServiceAccessPolicies operation.
-        /// <seealso cref="Amazon.CloudSearch.IAmazonCloudSearch"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateServiceAccessPolicies.</param>

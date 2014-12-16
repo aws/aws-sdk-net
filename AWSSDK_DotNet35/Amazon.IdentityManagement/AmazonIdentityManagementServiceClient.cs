@@ -327,7 +327,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddClientIDToOpenIDConnectProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddClientIDToOpenIDConnectProvider operation on AmazonIdentityManagementServiceClient.</param>
@@ -348,7 +347,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddClientIDToOpenIDConnectProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddClientIDToOpenIDConnectProvider.</param>
@@ -393,7 +391,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddRoleToInstanceProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddRoleToInstanceProfile operation on AmazonIdentityManagementServiceClient.</param>
@@ -414,7 +411,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddRoleToInstanceProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddRoleToInstanceProfile.</param>
@@ -453,7 +449,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddUserToGroup operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddUserToGroup operation on AmazonIdentityManagementServiceClient.</param>
@@ -474,7 +469,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddUserToGroup operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddUserToGroup.</param>
@@ -534,7 +528,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ChangePassword operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ChangePassword operation on AmazonIdentityManagementServiceClient.</param>
@@ -555,7 +548,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ChangePassword operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginChangePassword.</param>
@@ -648,7 +640,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAccessKey operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessKey operation on AmazonIdentityManagementServiceClient.</param>
@@ -669,7 +660,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateAccessKey operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAccessKey.</param>
@@ -709,7 +699,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAccountAlias operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateAccountAlias operation on AmazonIdentityManagementServiceClient.</param>
@@ -730,7 +719,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateAccountAlias operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAccountAlias.</param>
@@ -778,7 +766,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateGroup operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateGroup operation on AmazonIdentityManagementServiceClient.</param>
@@ -799,7 +786,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateGroup operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGroup.</param>
@@ -845,7 +831,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInstanceProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateInstanceProfile operation on AmazonIdentityManagementServiceClient.</param>
@@ -866,7 +851,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateInstanceProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInstanceProfile.</param>
@@ -915,7 +899,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoginProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateLoginProfile operation on AmazonIdentityManagementServiceClient.</param>
@@ -936,7 +919,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateLoginProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLoginProfile.</param>
@@ -997,7 +979,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateOpenIDConnectProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateOpenIDConnectProvider operation on AmazonIdentityManagementServiceClient.</param>
@@ -1018,7 +999,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateOpenIDConnectProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateOpenIDConnectProvider.</param>
@@ -1072,7 +1052,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateRole operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateRole operation on AmazonIdentityManagementServiceClient.</param>
@@ -1093,7 +1072,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateRole operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRole.</param>
@@ -1159,7 +1137,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSAMLProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateSAMLProvider operation on AmazonIdentityManagementServiceClient.</param>
@@ -1180,7 +1157,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateSAMLProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSAMLProvider.</param>
@@ -1228,7 +1204,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateUser operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateUser operation on AmazonIdentityManagementServiceClient.</param>
@@ -1249,7 +1224,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateUser operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUser.</param>
@@ -1302,7 +1276,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVirtualMFADevice operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateVirtualMFADevice operation on AmazonIdentityManagementServiceClient.</param>
@@ -1323,7 +1296,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateVirtualMFADevice operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVirtualMFADevice.</param>
@@ -1376,7 +1348,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeactivateMFADevice operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeactivateMFADevice operation on AmazonIdentityManagementServiceClient.</param>
@@ -1397,7 +1368,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeactivateMFADevice operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeactivateMFADevice.</param>
@@ -1444,7 +1414,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAccessKey operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessKey operation on AmazonIdentityManagementServiceClient.</param>
@@ -1465,7 +1434,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteAccessKey operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessKey.</param>
@@ -1506,7 +1474,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAccountAlias operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountAlias operation on AmazonIdentityManagementServiceClient.</param>
@@ -1527,7 +1494,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteAccountAlias operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccountAlias.</param>
@@ -1584,7 +1550,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAccountPasswordPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountPasswordPolicy operation on AmazonIdentityManagementServiceClient.</param>
@@ -1605,7 +1570,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteAccountPasswordPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccountPasswordPolicy.</param>
@@ -1649,7 +1613,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteGroup operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroup operation on AmazonIdentityManagementServiceClient.</param>
@@ -1670,7 +1633,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteGroup operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGroup.</param>
@@ -1709,7 +1671,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteGroupPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroupPolicy operation on AmazonIdentityManagementServiceClient.</param>
@@ -1730,7 +1691,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteGroupPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGroupPolicy.</param>
@@ -1783,7 +1743,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteInstanceProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceProfile operation on AmazonIdentityManagementServiceClient.</param>
@@ -1804,7 +1763,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteInstanceProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInstanceProfile.</param>
@@ -1856,7 +1814,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoginProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoginProfile operation on AmazonIdentityManagementServiceClient.</param>
@@ -1877,7 +1834,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteLoginProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLoginProfile.</param>
@@ -1928,7 +1884,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteOpenIDConnectProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteOpenIDConnectProvider operation on AmazonIdentityManagementServiceClient.</param>
@@ -1949,7 +1904,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteOpenIDConnectProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteOpenIDConnectProvider.</param>
@@ -1998,7 +1952,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRole operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteRole operation on AmazonIdentityManagementServiceClient.</param>
@@ -2019,7 +1972,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteRole operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRole.</param>
@@ -2058,7 +2010,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRolePolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteRolePolicy operation on AmazonIdentityManagementServiceClient.</param>
@@ -2079,7 +2030,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteRolePolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRolePolicy.</param>
@@ -2131,7 +2081,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSAMLProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteSAMLProvider operation on AmazonIdentityManagementServiceClient.</param>
@@ -2152,7 +2101,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteSAMLProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSAMLProvider.</param>
@@ -2204,7 +2152,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteServerCertificate operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteServerCertificate operation on AmazonIdentityManagementServiceClient.</param>
@@ -2225,7 +2172,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteServerCertificate operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteServerCertificate.</param>
@@ -2272,7 +2218,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSigningCertificate operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteSigningCertificate operation on AmazonIdentityManagementServiceClient.</param>
@@ -2293,7 +2238,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteSigningCertificate operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSigningCertificate.</param>
@@ -2337,7 +2281,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteUser operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser operation on AmazonIdentityManagementServiceClient.</param>
@@ -2358,7 +2301,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteUser operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUser.</param>
@@ -2397,7 +2339,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteUserPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteUserPolicy operation on AmazonIdentityManagementServiceClient.</param>
@@ -2418,7 +2359,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteUserPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUserPolicy.</param>
@@ -2465,7 +2405,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVirtualMFADevice operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualMFADevice operation on AmazonIdentityManagementServiceClient.</param>
@@ -2486,7 +2425,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteVirtualMFADevice operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVirtualMFADevice.</param>
@@ -2540,7 +2478,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableMFADevice operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the EnableMFADevice operation on AmazonIdentityManagementServiceClient.</param>
@@ -2561,7 +2498,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  EnableMFADevice operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableMFADevice.</param>
@@ -2614,7 +2550,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the GenerateCredentialReport operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GenerateCredentialReport operation on AmazonIdentityManagementServiceClient.</param>
@@ -2635,7 +2570,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GenerateCredentialReport operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateCredentialReport.</param>
@@ -2666,7 +2600,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetAccountAuthorizationDetails operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetAccountAuthorizationDetails operation on AmazonIdentityManagementServiceClient.</param>
@@ -2687,7 +2620,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetAccountAuthorizationDetails operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountAuthorizationDetails.</param>
@@ -2740,7 +2672,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetAccountPasswordPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetAccountPasswordPolicy operation on AmazonIdentityManagementServiceClient.</param>
@@ -2761,7 +2692,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetAccountPasswordPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountPasswordPolicy.</param>
@@ -2814,7 +2744,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetAccountSummary operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetAccountSummary operation on AmazonIdentityManagementServiceClient.</param>
@@ -2835,7 +2764,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetAccountSummary operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountSummary.</param>
@@ -2906,7 +2834,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetCredentialReport operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetCredentialReport operation on AmazonIdentityManagementServiceClient.</param>
@@ -2927,7 +2854,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetCredentialReport operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCredentialReport.</param>
@@ -2963,7 +2889,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetGroup operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetGroup operation on AmazonIdentityManagementServiceClient.</param>
@@ -2984,7 +2909,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetGroup operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGroup.</param>
@@ -3021,7 +2945,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetGroupPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetGroupPolicy operation on AmazonIdentityManagementServiceClient.</param>
@@ -3042,7 +2965,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetGroupPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGroupPolicy.</param>
@@ -3080,7 +3002,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetInstanceProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetInstanceProfile operation on AmazonIdentityManagementServiceClient.</param>
@@ -3101,7 +3022,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetInstanceProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInstanceProfile.</param>
@@ -3138,7 +3058,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetLoginProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetLoginProfile operation on AmazonIdentityManagementServiceClient.</param>
@@ -3159,7 +3078,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetLoginProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLoginProfile.</param>
@@ -3198,7 +3116,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetOpenIDConnectProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetOpenIDConnectProvider operation on AmazonIdentityManagementServiceClient.</param>
@@ -3219,7 +3136,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetOpenIDConnectProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOpenIDConnectProvider.</param>
@@ -3265,7 +3181,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetRole operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetRole operation on AmazonIdentityManagementServiceClient.</param>
@@ -3286,7 +3201,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetRole operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRole.</param>
@@ -3330,7 +3244,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetRolePolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetRolePolicy operation on AmazonIdentityManagementServiceClient.</param>
@@ -3351,7 +3264,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetRolePolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRolePolicy.</param>
@@ -3394,7 +3306,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSAMLProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetSAMLProvider operation on AmazonIdentityManagementServiceClient.</param>
@@ -3415,7 +3326,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetSAMLProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSAMLProvider.</param>
@@ -3450,7 +3360,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetServerCertificate operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetServerCertificate operation on AmazonIdentityManagementServiceClient.</param>
@@ -3471,7 +3380,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetServerCertificate operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetServerCertificate.</param>
@@ -3534,7 +3442,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetUser operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetUser operation on AmazonIdentityManagementServiceClient.</param>
@@ -3555,7 +3462,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetUser operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUser.</param>
@@ -3592,7 +3498,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetUserPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetUserPolicy operation on AmazonIdentityManagementServiceClient.</param>
@@ -3613,7 +3518,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetUserPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUserPolicy.</param>
@@ -3694,7 +3598,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListAccessKeys operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListAccessKeys operation on AmazonIdentityManagementServiceClient.</param>
@@ -3715,7 +3618,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListAccessKeys operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccessKeys.</param>
@@ -3772,7 +3674,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListAccountAliases operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAliases operation on AmazonIdentityManagementServiceClient.</param>
@@ -3793,7 +3694,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListAccountAliases operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccountAliases.</param>
@@ -3835,7 +3735,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListGroupPolicies operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListGroupPolicies operation on AmazonIdentityManagementServiceClient.</param>
@@ -3856,7 +3755,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListGroupPolicies operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGroupPolicies.</param>
@@ -3909,7 +3807,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListGroups operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListGroups operation on AmazonIdentityManagementServiceClient.</param>
@@ -3930,7 +3827,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListGroups operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGroups.</param>
@@ -3971,7 +3867,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListGroupsForUser operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListGroupsForUser operation on AmazonIdentityManagementServiceClient.</param>
@@ -3992,7 +3887,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListGroupsForUser operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGroupsForUser.</param>
@@ -4051,7 +3945,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstanceProfiles operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListInstanceProfiles operation on AmazonIdentityManagementServiceClient.</param>
@@ -4072,7 +3965,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListInstanceProfiles operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstanceProfiles.</param>
@@ -4116,7 +4008,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstanceProfilesForRole operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListInstanceProfilesForRole operation on AmazonIdentityManagementServiceClient.</param>
@@ -4137,7 +4028,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListInstanceProfilesForRole operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstanceProfilesForRole.</param>
@@ -4204,7 +4094,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListMFADevices operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListMFADevices operation on AmazonIdentityManagementServiceClient.</param>
@@ -4225,7 +4114,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListMFADevices operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMFADevices.</param>
@@ -4256,7 +4144,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListOpenIDConnectProviders operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListOpenIDConnectProviders operation on AmazonIdentityManagementServiceClient.</param>
@@ -4277,7 +4164,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListOpenIDConnectProviders operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOpenIDConnectProviders.</param>
@@ -4319,7 +4205,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListRolePolicies operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListRolePolicies operation on AmazonIdentityManagementServiceClient.</param>
@@ -4340,7 +4225,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListRolePolicies operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRolePolicies.</param>
@@ -4409,7 +4293,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListRoles operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListRoles operation on AmazonIdentityManagementServiceClient.</param>
@@ -4430,7 +4313,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListRoles operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRoles.</param>
@@ -4477,7 +4359,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListSAMLProviders operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListSAMLProviders operation on AmazonIdentityManagementServiceClient.</param>
@@ -4498,7 +4379,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListSAMLProviders operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSAMLProviders.</param>
@@ -4553,7 +4433,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListServerCertificates operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListServerCertificates operation on AmazonIdentityManagementServiceClient.</param>
@@ -4574,7 +4453,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListServerCertificates operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServerCertificates.</param>
@@ -4653,7 +4531,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListSigningCertificates operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListSigningCertificates operation on AmazonIdentityManagementServiceClient.</param>
@@ -4674,7 +4551,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListSigningCertificates operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSigningCertificates.</param>
@@ -4716,7 +4592,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListUserPolicies operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListUserPolicies operation on AmazonIdentityManagementServiceClient.</param>
@@ -4737,7 +4612,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListUserPolicies operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUserPolicies.</param>
@@ -4794,7 +4668,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListUsers operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListUsers operation on AmazonIdentityManagementServiceClient.</param>
@@ -4815,7 +4688,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListUsers operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUsers.</param>
@@ -4874,7 +4746,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListVirtualMFADevices operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListVirtualMFADevices operation on AmazonIdentityManagementServiceClient.</param>
@@ -4895,7 +4766,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListVirtualMFADevices operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVirtualMFADevices.</param>
@@ -4953,7 +4823,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutGroupPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutGroupPolicy operation on AmazonIdentityManagementServiceClient.</param>
@@ -4974,7 +4843,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutGroupPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutGroupPolicy.</param>
@@ -5032,7 +4900,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutRolePolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutRolePolicy operation on AmazonIdentityManagementServiceClient.</param>
@@ -5053,7 +4920,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutRolePolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRolePolicy.</param>
@@ -5111,7 +4977,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutUserPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutUserPolicy operation on AmazonIdentityManagementServiceClient.</param>
@@ -5132,7 +4997,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutUserPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutUserPolicy.</param>
@@ -5178,7 +5042,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveClientIDFromOpenIDConnectProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RemoveClientIDFromOpenIDConnectProvider operation on AmazonIdentityManagementServiceClient.</param>
@@ -5199,7 +5062,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RemoveClientIDFromOpenIDConnectProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveClientIDFromOpenIDConnectProvider.</param>
@@ -5248,7 +5110,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveRoleFromInstanceProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromInstanceProfile operation on AmazonIdentityManagementServiceClient.</param>
@@ -5269,7 +5130,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RemoveRoleFromInstanceProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveRoleFromInstanceProfile.</param>
@@ -5308,7 +5168,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveUserFromGroup operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RemoveUserFromGroup operation on AmazonIdentityManagementServiceClient.</param>
@@ -5329,7 +5188,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RemoveUserFromGroup operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveUserFromGroup.</param>
@@ -5379,7 +5237,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResyncMFADevice operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ResyncMFADevice operation on AmazonIdentityManagementServiceClient.</param>
@@ -5400,7 +5257,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ResyncMFADevice operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResyncMFADevice.</param>
@@ -5454,7 +5310,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAccessKey operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccessKey operation on AmazonIdentityManagementServiceClient.</param>
@@ -5475,7 +5330,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateAccessKey operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAccessKey.</param>
@@ -5564,7 +5418,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAccountPasswordPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountPasswordPolicy operation on AmazonIdentityManagementServiceClient.</param>
@@ -5585,7 +5438,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateAccountPasswordPolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAccountPasswordPolicy.</param>
@@ -5630,7 +5482,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAssumeRolePolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssumeRolePolicy operation on AmazonIdentityManagementServiceClient.</param>
@@ -5651,7 +5502,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateAssumeRolePolicy operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAssumeRolePolicy.</param>
@@ -5702,7 +5552,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateGroup operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateGroup operation on AmazonIdentityManagementServiceClient.</param>
@@ -5723,7 +5572,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateGroup operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGroup.</param>
@@ -5779,7 +5627,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateLoginProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateLoginProfile operation on AmazonIdentityManagementServiceClient.</param>
@@ -5800,7 +5647,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateLoginProfile operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLoginProfile.</param>
@@ -5856,7 +5702,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateOpenIDConnectProviderThumbprint operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateOpenIDConnectProviderThumbprint operation on AmazonIdentityManagementServiceClient.</param>
@@ -5877,7 +5722,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateOpenIDConnectProviderThumbprint operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateOpenIDConnectProviderThumbprint.</param>
@@ -5923,7 +5767,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSAMLProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateSAMLProvider operation on AmazonIdentityManagementServiceClient.</param>
@@ -5944,7 +5787,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateSAMLProvider operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSAMLProvider.</param>
@@ -5996,7 +5838,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateServerCertificate operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateServerCertificate operation on AmazonIdentityManagementServiceClient.</param>
@@ -6017,7 +5858,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateServerCertificate operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateServerCertificate.</param>
@@ -6071,7 +5911,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSigningCertificate operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateSigningCertificate operation on AmazonIdentityManagementServiceClient.</param>
@@ -6092,7 +5931,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateSigningCertificate operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSigningCertificate.</param>
@@ -6149,7 +5987,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateUser operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateUser operation on AmazonIdentityManagementServiceClient.</param>
@@ -6170,7 +6007,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateUser operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUser.</param>
@@ -6231,7 +6067,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadServerCertificate operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UploadServerCertificate operation on AmazonIdentityManagementServiceClient.</param>
@@ -6252,7 +6087,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UploadServerCertificate operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadServerCertificate.</param>
@@ -6322,7 +6156,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadSigningCertificate operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UploadSigningCertificate operation on AmazonIdentityManagementServiceClient.</param>
@@ -6343,7 +6176,6 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UploadSigningCertificate operation.
-        /// <seealso cref="Amazon.IdentityManagement.IAmazonIdentityManagementService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadSigningCertificate.</param>

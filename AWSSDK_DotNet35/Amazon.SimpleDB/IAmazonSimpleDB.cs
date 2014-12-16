@@ -71,7 +71,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Initiates the asynchronous execution of the BatchDeleteAttributes operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAttributes operation on AmazonSimpleDBClient.</param>
@@ -87,7 +86,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Finishes the asynchronous execution of the  BatchDeleteAttributes operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteAttributes.</param>
@@ -186,7 +184,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Initiates the asynchronous execution of the BatchPutAttributes operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the BatchPutAttributes operation on AmazonSimpleDBClient.</param>
@@ -202,7 +199,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Finishes the asynchronous execution of the  BatchPutAttributes operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchPutAttributes.</param>
@@ -245,7 +241,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDomain operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain operation on AmazonSimpleDBClient.</param>
@@ -261,7 +256,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateDomain operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDomain.</param>
@@ -309,7 +303,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAttributes operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteAttributes operation on AmazonSimpleDBClient.</param>
@@ -325,7 +318,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteAttributes operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAttributes.</param>
@@ -352,7 +344,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDomain operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain operation on AmazonSimpleDBClient.</param>
@@ -368,7 +359,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteDomain operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomain.</param>
@@ -398,7 +388,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Initiates the asynchronous execution of the DomainMetadata operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DomainMetadata operation on AmazonSimpleDBClient.</param>
@@ -414,7 +403,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DomainMetadata operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDomainMetadata.</param>
@@ -454,7 +442,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetAttributes operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetAttributes operation on AmazonSimpleDBClient.</param>
@@ -470,7 +457,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetAttributes operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAttributes.</param>
@@ -521,7 +507,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomains operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListDomains operation on AmazonSimpleDBClient.</param>
@@ -537,7 +522,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListDomains operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomains.</param>
@@ -622,7 +606,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutAttributes operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutAttributes operation on AmazonSimpleDBClient.</param>
@@ -638,7 +621,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Finishes the asynchronous execution of the  PutAttributes operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAttributes.</param>
@@ -704,7 +686,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Initiates the asynchronous execution of the Select operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the Select operation on AmazonSimpleDBClient.</param>
@@ -720,7 +701,6 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Finishes the asynchronous execution of the  Select operation.
-        /// <seealso cref="Amazon.SimpleDB.IAmazonSimpleDB"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSelect.</param>

@@ -285,7 +285,6 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateIdentityPool operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateIdentityPool operation.</param>
@@ -338,7 +337,6 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteIdentityPool operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityPool operation.</param>
@@ -391,7 +389,6 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeIdentityPool operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityPool operation.</param>
@@ -450,7 +447,6 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetId operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetId operation.</param>
@@ -512,7 +508,6 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetOpenIdToken operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetOpenIdToken operation.</param>
@@ -585,7 +580,6 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetOpenIdTokenForDeveloperIdentity operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetOpenIdTokenForDeveloperIdentity operation.</param>
@@ -637,7 +631,6 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListIdentities operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListIdentities operation.</param>
@@ -686,7 +679,6 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListIdentityPools operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityPools operation.</param>
@@ -749,7 +741,6 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Initiates the asynchronous execution of the LookupDeveloperIdentity operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the LookupDeveloperIdentity operation.</param>
@@ -810,7 +801,6 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Initiates the asynchronous execution of the MergeDeveloperIdentities operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the MergeDeveloperIdentities operation.</param>
@@ -868,7 +858,6 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Initiates the asynchronous execution of the UnlinkDeveloperIdentity operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UnlinkDeveloperIdentity operation.</param>
@@ -925,7 +914,6 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Initiates the asynchronous execution of the UnlinkIdentity operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UnlinkIdentity operation.</param>
@@ -980,7 +968,6 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateIdentityPool operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityPool operation.</param>

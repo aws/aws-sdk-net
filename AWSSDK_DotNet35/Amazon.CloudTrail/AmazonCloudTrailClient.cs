@@ -298,7 +298,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTrail operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateTrail operation on AmazonCloudTrailClient.</param>
@@ -319,7 +318,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  CreateTrail operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrail.</param>
@@ -356,7 +354,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTrail operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrail operation on AmazonCloudTrailClient.</param>
@@ -377,7 +374,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteTrail operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrail.</param>
@@ -418,7 +414,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrails operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrails operation on AmazonCloudTrailClient.</param>
@@ -439,7 +434,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DescribeTrails operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrails.</param>
@@ -478,7 +472,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetTrailStatus operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetTrailStatus operation on AmazonCloudTrailClient.</param>
@@ -499,7 +492,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetTrailStatus operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTrailStatus.</param>
@@ -536,7 +528,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartLogging operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the StartLogging operation on AmazonCloudTrailClient.</param>
@@ -557,7 +548,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  StartLogging operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartLogging.</param>
@@ -596,7 +586,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Initiates the asynchronous execution of the StopLogging operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the StopLogging operation on AmazonCloudTrailClient.</param>
@@ -617,7 +606,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  StopLogging operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopLogging.</param>
@@ -689,7 +677,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateTrail operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrail operation on AmazonCloudTrailClient.</param>
@@ -710,7 +697,6 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateTrail operation.
-        /// <seealso cref="Amazon.CloudTrail.IAmazonCloudTrail"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTrail.</param>

@@ -272,7 +272,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddEventSource operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddEventSource operation on AmazonLambdaClient.</param>
@@ -293,7 +292,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Finishes the asynchronous execution of the  AddEventSource operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddEventSource.</param>
@@ -359,7 +357,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteFunction operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteFunction operation on AmazonLambdaClient.</param>
@@ -380,7 +377,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Finishes the asynchronous execution of the  DeleteFunction operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFunction.</param>
@@ -456,7 +452,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetEventSource operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetEventSource operation on AmazonLambdaClient.</param>
@@ -477,7 +472,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetEventSource operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEventSource.</param>
@@ -549,7 +543,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetFunction operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetFunction operation on AmazonLambdaClient.</param>
@@ -570,7 +563,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetFunction operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFunction.</param>
@@ -640,7 +632,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetFunctionConfiguration operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetFunctionConfiguration operation on AmazonLambdaClient.</param>
@@ -661,7 +652,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Finishes the asynchronous execution of the  GetFunctionConfiguration operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFunctionConfiguration.</param>
@@ -708,7 +698,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the InvokeAsync operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the InvokeAsync operation on AmazonLambdaClient.</param>
@@ -729,7 +718,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Finishes the asynchronous execution of the  InvokeAsync operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInvokeAsync.</param>
@@ -778,7 +766,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListEventSources operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListEventSources operation on AmazonLambdaClient.</param>
@@ -799,7 +786,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListEventSources operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEventSources.</param>
@@ -861,7 +847,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListFunctions operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListFunctions operation on AmazonLambdaClient.</param>
@@ -882,7 +867,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Finishes the asynchronous execution of the  ListFunctions operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFunctions.</param>
@@ -960,7 +944,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveEventSource operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RemoveEventSource operation on AmazonLambdaClient.</param>
@@ -981,7 +964,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Finishes the asynchronous execution of the  RemoveEventSource operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveEventSource.</param>
@@ -1032,7 +1014,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateFunctionConfiguration operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionConfiguration operation on AmazonLambdaClient.</param>
@@ -1053,7 +1034,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UpdateFunctionConfiguration operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFunctionConfiguration.</param>
@@ -1103,7 +1083,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadFunction operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UploadFunction operation on AmazonLambdaClient.</param>
@@ -1124,7 +1103,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Finishes the asynchronous execution of the  UploadFunction operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadFunction.</param>

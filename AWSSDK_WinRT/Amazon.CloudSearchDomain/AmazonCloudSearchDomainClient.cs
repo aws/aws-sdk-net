@@ -95,7 +95,6 @@ namespace Amazon.CloudSearchDomain
 
         /// <summary>
         /// Initiates the asynchronous execution of the Search operation.
-        /// <seealso cref="Amazon.CloudSearchDomain.IAmazonCloudSearchDomain"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the Search operation.</param>
@@ -126,7 +125,6 @@ namespace Amazon.CloudSearchDomain
 
         /// <summary>
         /// Initiates the asynchronous execution of the Suggest operation.
-        /// <seealso cref="Amazon.CloudSearchDomain.IAmazonCloudSearchDomain"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the Suggest operation.</param>
@@ -157,7 +155,6 @@ namespace Amazon.CloudSearchDomain
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadDocuments operation.
-        /// <seealso cref="Amazon.CloudSearchDomain.IAmazonCloudSearchDomain"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UploadDocuments operation.</param>

@@ -275,7 +275,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddEventSource operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AddEventSource operation.</param>
@@ -347,7 +346,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteFunction operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteFunction operation.</param>
@@ -429,7 +427,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetEventSource operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetEventSource operation.</param>
@@ -507,7 +504,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetFunction operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetFunction operation.</param>
@@ -583,7 +579,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetFunctionConfiguration operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetFunctionConfiguration operation.</param>
@@ -636,7 +631,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the InvokeAsync operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the InvokeAsync operation.</param>
@@ -691,7 +685,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListEventSources operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListEventSources operation.</param>
@@ -759,7 +752,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListFunctions operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListFunctions operation.</param>
@@ -843,7 +835,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveEventSource operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RemoveEventSource operation.</param>
@@ -900,7 +891,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateFunctionConfiguration operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionConfiguration operation.</param>
@@ -956,7 +946,6 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadFunction operation.
-        /// <seealso cref="Amazon.Lambda.IAmazonLambda"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UploadFunction operation.</param>
