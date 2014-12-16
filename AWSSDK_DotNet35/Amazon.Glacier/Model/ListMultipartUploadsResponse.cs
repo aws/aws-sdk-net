@@ -18,13 +18,15 @@
  */
 
 using System;
+using System.Collections.Generic;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Glacier.Model
 {
     /// <summary>
     /// Configuration for accessing Amazon ListMultipartUploads service
     /// </summary>
-    public partial class ListMultipartUploadsResponse : ListMultipartUploadsResult
+    public partial class ListMultipartUploadsResponse : ListMultipartUploadsResult, IPageableResponse<UploadListElement, ListMultipartUploadsRequest>
     {
         /// <summary>
         /// Gets and sets the ListMultipartUploadsResult property.
@@ -37,6 +39,30 @@ namespace Amazon.Glacier.Model
             {
                 return this;
             }
+        }
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        bool IPageableResponse<UploadListElement, ListMultipartUploadsRequest>.MoreResultsAvailable()
+        {
+            return !String.IsNullOrEmpty(this.Marker);
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        void IPageableResponse<UploadListElement, ListMultipartUploadsRequest>.SetPaginationTokens(ListMultipartUploadsRequest request)
+        {
+            
+            request.UploadIdMarker = this.Marker;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        IEnumerable<UploadListElement> IPageableResponse<UploadListElement, ListMultipartUploadsRequest>.SelectResult()
+        {
+            return this.UploadsList;
         }
     }
 }

@@ -18,13 +18,15 @@
  */
 
 using System;
+using System.Collections.Generic;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Configuration for accessing Amazon ListStacks service
     /// </summary>
-    public partial class ListStacksResponse : ListStacksResult
+    public partial class ListStacksResponse : ListStacksResult, IPageableResponse<StackSummary, ListStacksRequest>
     {
         /// <summary>
         /// Gets and sets the ListStacksResult property.
@@ -37,6 +39,30 @@ namespace Amazon.CloudFormation.Model
             {
                 return this;
             }
+        }
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        bool IPageableResponse<StackSummary, ListStacksRequest>.MoreResultsAvailable()
+        {
+            return !String.IsNullOrEmpty(this.NextToken);
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        void IPageableResponse<StackSummary, ListStacksRequest>.SetPaginationTokens(ListStacksRequest request)
+        {
+            
+            request.NextToken = this.NextToken;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        IEnumerable<StackSummary> IPageableResponse<StackSummary, ListStacksRequest>.SelectResult()
+        {
+            return this.StackSummaries;
         }
     }
 }

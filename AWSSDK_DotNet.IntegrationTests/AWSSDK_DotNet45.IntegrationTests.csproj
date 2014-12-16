@@ -65,6 +65,7 @@
     <Compile Include=".\Tests\SecurityToken\*.cs" />
     <Compile Include=".\Tests\IAM\*.cs" />
     <Compile Include=".\Tests\RDS\*.cs" />
+	<Compile Include=".\Tests\ResourcesAPI\*.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AWSSDK_DotNet45\AWSSDK_DotNet45.csproj">

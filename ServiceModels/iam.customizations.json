@@ -1,23 +1,340 @@
 {
-  "noArgOverloads": [
-    "ListUsers",
-    "UpdateAccountPasswordPolicy",
-    "ListRoles",
-    "ListInstanceProfiles",
-    "ListAccessKeys",
-    "GetAccountPasswordPolicy",
-    "DeleteAccountPasswordPolicy",
-    "ListSAMLProviders",
-    "ListAccountAliases",
-    "ListGroups",
-    "ListMFADevices",
-    "ListSigningCertificates",
-    "ListVirtualMFADevices",
-    "GetAccountSummary",
-    "CreateAccessKey",
-    "GetUser",
-    "ListServerCertificates",
-    "GenerateCredentialReport",
-    "GetCredentialReport"
-  ]
+    "simpleMethods": {
+        "operations": {
+            "AddUserToGroup": {
+                "methodForms": [
+                    [
+                        "GroupName",
+                        "UserName"
+                    ]
+                ]
+            },
+            "ListUsers": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "ListRoles": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "ListInstanceProfiles": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "ListAccessKeys": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "GetAccountPasswordPolicy": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "DeleteAccountPasswordPolicy": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "ListSAMLProviders": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "ListAccountAliases": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "ListGroups": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "ListGroupPolicies": {
+                "methodForms": [
+                    [
+                        "GroupName"
+                    ]
+                ]
+            },
+            "ListMFADevices": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "ListSigningCertificates": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "ListVirtualMFADevices": {
+                "methodForms": [
+                    [
+
+                    ]
+                ]
+            },
+            "GetAccountSummary": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "CreateAccessKey": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "GetUser": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "GetGroup": {
+                "methodForms": [
+                    [
+                        "GroupName"
+                    ]
+                ]
+            },
+            "ListServerCertificates": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "GenerateCredentialReport": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "GetCredentialReport": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "DeleteAccessKey": {
+                "methodForms": [
+                    [
+                        "AccessKeyId"
+                    ]
+                ]
+            },
+            "DeleteAccountAlias": {
+                "methodForms": [
+                    [
+                        "AccountAlias"
+                    ]
+                ]
+            },
+            "CreateGroup": {
+                "methodForms": [
+                    [
+                        "GroupName"
+                    ]
+                ]
+            },
+            "PutGroupPolicy": {
+                "methodForms": [
+                    [
+                        "GroupName",
+                        "PolicyName",
+                        "PolicyDocument"
+                    ]
+                ]
+            },
+            "DeleteGroupPolicy": {
+                "methodForms": [
+                    [
+                        "GroupName",
+                        "PolicyName"
+                    ]
+                ]
+            },
+            "DeleteGroup": {
+                "methodForms": [
+                    [
+                        "GroupName"
+                    ]
+                ]
+            },
+            "RemoveUserFromGroup": {
+                "methodForms": [
+                    [
+                        "GroupName",
+                        "UserName"
+                    ]
+                ]
+            },
+            "AddRoleToInstanceProfile": {
+                "methodForms": [
+                    [
+                        "InstanceProfileName",
+                        "RoleName"
+                    ]
+                ]
+            },
+            "RemoveRoleFromInstanceProfile": {
+                "methodForms": [
+                    [
+                        "InstanceProfileName",
+                        "RoleName"
+                    ]
+                ]
+            },
+            "DeleteInstanceProfile": {
+                "methodForms": [
+                    [
+                        "InstanceProfileName"
+                    ]
+                ]
+            },
+            "DeleteLoginProfile": {
+                "methodForms": [
+                    [
+                        "UserName"
+                    ]
+                ]
+            },
+            "DeactivateMFADevice": {
+                "methodForms": [
+                    [
+                        "UserName",
+                        "SerialNumber"
+                    ]
+                ]
+            },
+            "CreateRole": {
+                "methodForms": [
+                    [
+                        "RoleName"
+                    ]
+                ]
+            },
+            "DeleteRole": {
+                "methodForms": [
+                    [
+                        "RoleName"
+                    ]
+                ]
+            },
+            "ListInstanceProfilesForRole": {
+                "methodForms": [
+                    [
+                        "RoleName"
+                    ]
+                ]
+            },
+            "ListRolePolicies": {
+                "methodForms": [
+                    [
+                        "RoleName"
+                    ]
+                ]
+            },
+            "DeleteRolePolicy": {
+                "methodForms": [
+                    [
+                        "RoleName",
+                        "PolicyName"
+                    ]
+                ]
+            },
+            "PutRolePolicy": {
+                "methodForms": [
+                    [
+                        "RoleName",
+                        "PolicyName",
+                        "PolicyDocument"
+                    ]
+                ]
+            },
+            "DeleteSAMLProvider": {
+                "methodForms": [
+                    [
+                        "SAMLProviderArn"
+                    ]
+                ]
+            },
+            "DeleteServerCertificate": {
+                "methodForms": [
+                    [
+                        "ServerCertificateName"
+                    ]
+                ]
+            },
+            "DeleteSigningCertificate": {
+                "methodForms": [
+                    [
+                        "CertificateId",
+                        "UserName"
+                    ]
+                ]
+            },
+            "PutUserPolicy": {
+                "methodForms": [
+                    [
+                        "UserName",
+                        "PolicyName",
+                        "PolicyDocument"
+                    ]
+                ]
+            },
+            "DeleteUser": {
+                "methodForms": [
+                    [
+                        "UserName"
+                    ]
+                ]
+            },
+            "CreateUser": {
+                "methodForms": [
+                    [
+                        "UserName"
+                    ]
+                ]
+            },
+            "ListGroupsForUser": {
+                "methodForms": [
+                    [
+                        "UserName"
+                    ]
+                ]
+            },
+            "ListUserPolicies": {
+                "methodForms": [
+                    [
+                        "UserName"
+                    ]
+                ]
+            },
+            "DeleteUserPolicy": {
+                "methodForms": [
+                    [
+                        "UserName",
+                        "PolicyName"
+                    ]
+                ]
+            }
+        }
+    }
 }

@@ -18,13 +18,15 @@
  */
 
 using System;
+using System.Collections.Generic;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Configuration for accessing Amazon ListAccessKeys service
     /// </summary>
-    public partial class ListAccessKeysResponse : ListAccessKeysResult
+    public partial class ListAccessKeysResponse : ListAccessKeysResult, IPageableResponse<AccessKeyMetadata, ListAccessKeysRequest>
     {
         /// <summary>
         /// Gets and sets the ListAccessKeysResult property.
@@ -37,6 +39,30 @@ namespace Amazon.IdentityManagement.Model
             {
                 return this;
             }
+        }
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        bool IPageableResponse<AccessKeyMetadata, ListAccessKeysRequest>.MoreResultsAvailable()
+        {
+            return this.IsTruncated;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        void IPageableResponse<AccessKeyMetadata, ListAccessKeysRequest>.SetPaginationTokens(ListAccessKeysRequest request)
+        {
+            
+            request.Marker = this.Marker;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        IEnumerable<AccessKeyMetadata> IPageableResponse<AccessKeyMetadata, ListAccessKeysRequest>.SelectResult()
+        {
+            return this.AccessKeyMetadata;
         }
     }
 }

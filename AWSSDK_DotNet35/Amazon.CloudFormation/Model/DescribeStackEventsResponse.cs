@@ -18,13 +18,15 @@
  */
 
 using System;
+using System.Collections.Generic;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Configuration for accessing Amazon DescribeStackEvents service
     /// </summary>
-    public partial class DescribeStackEventsResponse : DescribeStackEventsResult
+    public partial class DescribeStackEventsResponse : DescribeStackEventsResult, IPageableResponse<StackEvent, DescribeStackEventsRequest>
     {
         /// <summary>
         /// Gets and sets the DescribeStackEventsResult property.
@@ -37,6 +39,30 @@ namespace Amazon.CloudFormation.Model
             {
                 return this;
             }
+        }
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        bool IPageableResponse<StackEvent, DescribeStackEventsRequest>.MoreResultsAvailable()
+        {
+            return !String.IsNullOrEmpty(this.NextToken);
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        void IPageableResponse<StackEvent, DescribeStackEventsRequest>.SetPaginationTokens(DescribeStackEventsRequest request)
+        {
+            
+            request.NextToken = this.NextToken;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        IEnumerable<StackEvent> IPageableResponse<StackEvent, DescribeStackEventsRequest>.SelectResult()
+        {
+            return this.StackEvents;
         }
     }
 }

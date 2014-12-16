@@ -64,6 +64,7 @@
     <Compile Include=".\Tests\IAM\*.cs" />
     <Compile Include=".\Tests\RDS\*.cs" />
     <Compile Include=".\Utils\*.cs" />
+    <Compile Include="Tests\ResourcesAPI\*.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AWSSDK_DotNet35\AWSSDK_DotNet35.csproj">
@@ -77,6 +78,7 @@
     </None>
     <EmbeddedResource Include="Tests\CloudTrailBucketPolicy.json" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

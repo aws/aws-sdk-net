@@ -61,7 +61,12 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// The base name used in the client and the top level request class for a service
+        /// The official name for the service.
+        /// </summary>
+        public string ServiceName { get; set; }
+
+        /// <summary>
+        /// The base name used in the client and the top level request class for a service.        
         /// </summary>
         public string BaseName { get; set; }
 

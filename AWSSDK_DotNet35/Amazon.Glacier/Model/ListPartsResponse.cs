@@ -18,13 +18,15 @@
  */
 
 using System;
+using System.Collections.Generic;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Glacier.Model
 {
     /// <summary>
     /// Configuration for accessing Amazon ListParts service
     /// </summary>
-    public partial class ListPartsResponse : ListPartsResult
+    public partial class ListPartsResponse : ListPartsResult, IPageableResponse<PartListElement, ListPartsRequest>
     {
         /// <summary>
         /// Gets and sets the ListPartsResult property.
@@ -37,6 +39,30 @@ namespace Amazon.Glacier.Model
             {
                 return this;
             }
+        }
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        bool IPageableResponse<PartListElement, ListPartsRequest>.MoreResultsAvailable()
+        {
+            return !String.IsNullOrEmpty(this.Marker);
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        void IPageableResponse<PartListElement, ListPartsRequest>.SetPaginationTokens(ListPartsRequest request)
+        {
+            
+            request.Marker = this.Marker;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        IEnumerable<PartListElement> IPageableResponse<PartListElement, ListPartsRequest>.SelectResult()
+        {
+            return this.Parts;
         }
     }
 }

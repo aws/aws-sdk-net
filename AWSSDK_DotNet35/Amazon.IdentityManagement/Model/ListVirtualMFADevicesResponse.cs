@@ -18,13 +18,15 @@
  */
 
 using System;
+using System.Collections.Generic;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Configuration for accessing Amazon ListVirtualMFADevices service
     /// </summary>
-    public partial class ListVirtualMFADevicesResponse : ListVirtualMFADevicesResult
+    public partial class ListVirtualMFADevicesResponse : ListVirtualMFADevicesResult, IPageableResponse<VirtualMFADevice, ListVirtualMFADevicesRequest>
     {
         /// <summary>
         /// Gets and sets the ListVirtualMFADevicesResult property.
@@ -37,6 +39,30 @@ namespace Amazon.IdentityManagement.Model
             {
                 return this;
             }
+        }
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        bool IPageableResponse<VirtualMFADevice, ListVirtualMFADevicesRequest>.MoreResultsAvailable()
+        {
+            return this.IsTruncated;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        void IPageableResponse<VirtualMFADevice, ListVirtualMFADevicesRequest>.SetPaginationTokens(ListVirtualMFADevicesRequest request)
+        {
+            
+            request.Marker = this.Marker;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        IEnumerable<VirtualMFADevice> IPageableResponse<VirtualMFADevice, ListVirtualMFADevicesRequest>.SelectResult()
+        {
+            return this.VirtualMFADevices;
         }
     }
 }

@@ -18,13 +18,15 @@
  */
 
 using System;
+using System.Collections.Generic;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Configuration for accessing Amazon ListServerCertificates service
     /// </summary>
-    public partial class ListServerCertificatesResponse : ListServerCertificatesResult
+    public partial class ListServerCertificatesResponse : ListServerCertificatesResult, IPageableResponse<ServerCertificateMetadata, ListServerCertificatesRequest>
     {
         /// <summary>
         /// Gets and sets the ListServerCertificatesResult property.
@@ -37,6 +39,30 @@ namespace Amazon.IdentityManagement.Model
             {
                 return this;
             }
+        }
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        bool IPageableResponse<ServerCertificateMetadata, ListServerCertificatesRequest>.MoreResultsAvailable()
+        {
+            return this.IsTruncated;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        void IPageableResponse<ServerCertificateMetadata, ListServerCertificatesRequest>.SetPaginationTokens(ListServerCertificatesRequest request)
+        {
+            
+            request.Marker = this.Marker;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        IEnumerable<ServerCertificateMetadata> IPageableResponse<ServerCertificateMetadata, ListServerCertificatesRequest>.SelectResult()
+        {
+            return this.ServerCertificateMetadataList;
         }
     }
 }

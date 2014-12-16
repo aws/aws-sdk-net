@@ -18,13 +18,15 @@
  */
 
 using System;
+using System.Collections.Generic;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Configuration for accessing Amazon ListAccountAliases service
     /// </summary>
-    public partial class ListAccountAliasesResponse : ListAccountAliasesResult
+    public partial class ListAccountAliasesResponse : ListAccountAliasesResult, IPageableResponse<string, ListAccountAliasesRequest>
     {
         /// <summary>
         /// Gets and sets the ListAccountAliasesResult property.
@@ -37,6 +39,30 @@ namespace Amazon.IdentityManagement.Model
             {
                 return this;
             }
+        }
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        bool IPageableResponse<string, ListAccountAliasesRequest>.MoreResultsAvailable()
+        {
+            return this.IsTruncated;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        void IPageableResponse<string, ListAccountAliasesRequest>.SetPaginationTokens(ListAccountAliasesRequest request)
+        {
+            
+            request.Marker = this.Marker;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        IEnumerable<string> IPageableResponse<string, ListAccountAliasesRequest>.SelectResult()
+        {
+            return this.AccountAliases;
         }
     }
 }

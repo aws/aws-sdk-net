@@ -1,0 +1,246 @@
+﻿<#@ template language="C#" inherits="BaseResourceGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="ServiceClientGenerator.ResourcesApi" #>
+<#
+    AddLicenseHeader();
+#>
+
+using System;
+using System.IO;
+using System.Collections.Generic;
+using <#=this.Config.Namespace#>.Model;
+
+namespace <#=this.Config.Namespace#>.Resources
+{
+<# 
+    foreach (var resource in this.Config.ServiceModel.ResourceModel.Resources.Values) 
+    {
+#>
+
+    #region <#=resource.InterfaceName#>
+
+	/// <summary>
+    /// This interface represents the <#=resource.ClassName#> resource.
+    /// </summary>
+    public interface <#=resource.InterfaceName#>
+    {
+<#
+		GenerateIdentifierAttributes(resource);
+		if(resource.Shape != null)
+		{
+			GenerateAttributeProperties(resource);
+		}
+#>
+
+		# region Actions
+
+<# 
+	
+	foreach (var action in resource.Actions.Values) 
+	{
+#>
+		/// <summary>
+        /// Calls the <#=action.MethodName#> operation on the <#=resource.ClassName#> resource.
+        /// </summary>
+		/// <para>
+		/// This method internally calls the <#=action.RequestOperationName#> operation on the service.
+		/// </para>
+        /// <param name="request">Container for the necessary parameters to execute the <#=action.RequestOperationName#> operation.</param>
+<# 
+	if ( !action.ReturnTypeInterface.Equals("void"))
+	{
+#>
+        /// <returns>An instance of <#=action.ReturnTypeResource#> resource.</returns>
+<#
+	}
+#>
+		<#=action.ReturnTypeInterface#> <#=action.MethodName#>(<#=action.RequestType#> request);
+
+<#
+	foreach (var form in action.CustomForms.Select(f => f.WithoutIdentifiers()))
+	{
+#>
+        /// <summary>
+        /// Calls the <#=action.MethodName#> operation on the <#=resource.ClassName#> resource.
+		/// </summary>
+		/// <para>
+		/// This method internally calls the <#=action.RequestOperationName#> operation on the service.
+		/// </para>
+<# 
+	if ( !action.ReturnTypeInterface.Equals("void"))
+	{
+#>
+        /// <returns>An instance of <#=action.ReturnTypeResource#> resource.</returns>
+<#
+	}
+
+	foreach(var param in form.ParameterDocs)
+	{
+#>
+        <#=param.Value#>
+<#
+    }
+#>
+        <#=action.ReturnTypeInterface#> <#=action.MethodName#>(<#=form.Parameters#>);
+
+<#
+	    }
+	}
+#>
+
+		#endregion
+
+<#
+		if(resource.HasMany.Count > 0)
+		{
+#>
+		#region Enumerable collections
+
+<# 	
+			foreach (var action in resource.HasMany.Values) 
+			{
+#>
+		/// <summary>
+        /// Gets the <#=action.Name#> associated with this <#=resource.ClassName#>.        
+<#
+	if (action.IsPageable)
+	{
+#>
+		/// <para>
+        /// NOTE : This method calls a service operation that supports paging. Enumerating through the
+		/// result of this method can potentially make multiple service operation calls.
+		/// </para>
+<#
+	}
+#>
+		/// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the <#=action.RequestOperationName#> operation.</param>
+		/// <returns>Returns an enumerable collection of <#=action.Name#>.</returns>
+		IEnumerable<<#=action.ReturnTypeInterface#>> Get<#=action.MethodName#>(<#=action.RequestType#> request);
+
+<#
+	foreach (var form in action.CustomForms.Select(f => f.WithoutIdentifiers()))
+	{
+#>
+		/// <summary>
+        /// Gets the <#=action.Name#> associated with this <#=resource.ClassName#>.        
+<#
+	if (action.IsPageable)
+	{
+#>
+		/// <para>
+        /// NOTE : This method calls a service operation that supports paging. Enumerating through the
+		/// result of this method can potentially make multiple service operation calls.
+		/// </para>
+<#
+	}
+#>
+		/// </summary>
+<#
+	foreach(var param in form.ParameterDocs)
+	{
+#>
+        <#=param.Value#>
+<#
+    }
+	foreach(var param in form.ParameterDocs)
+	{
+#>
+        <#=param.Value#>
+<#
+    }
+#>
+		/// <returns>Returns an enumerable collection of <#=action.Name#>.</returns>
+        IEnumerable<<#=action.ReturnTypeInterface#>> Get<#=action.MethodName#>(<#=form.Parameters#>);
+
+<#
+	    }
+	}
+#>
+
+		#endregion
+<#
+		}
+		if(resource.SubResources.Count > 0)
+		{
+#>
+
+		#region Subresources
+
+<# 
+	
+			foreach (var subResource in resource.SubResources) 
+			{
+#>
+		/// <summary>
+        /// Gets <#= subResource.IdentifiersAsParameters(resource.SubResourceIdentifiers).Count() > 0 ? "a" : "the" #> <#=subResource.Name#> associated with this <#=resource.ClassName#> resource<#= subResource.IdentifiersAsParameters(resource.SubResourceIdentifiers).Count() > 0 ? " using its identifier." : "." #>
+		/// <para>
+		/// This method does not make a service call, it returns a resource instance
+		/// only with its identifier properties initialized. Accessing any non-identifier 
+		/// properties or operations on the resource that in turn access any non-identifier 
+		/// properties will cause the resource to make a service call to load its data.
+		/// </para>
+		/// <para>
+		/// NOTE : This method does not make a service call when the resource is initally
+		/// constructed. If you pass invalid identifiers to this method, it will return a resource
+		/// that may not exist on the server. In this case an exception will be thrown when 
+		/// the resource tries to load itself due to conditions listed in the previous section.
+		/// </para>
+        /// </summary>
+<#
+			foreach(var item in subResource.IdentifiersAsParameters(resource.SubResourceIdentifiers))
+			{
+#>
+		/// <param name="<#=item#>">The <#=item#> of the <#=subResource.Name#>.</param>
+<#			
+			}
+
+#>
+		/// <returns>Returns an instance of <#=subResource.Name#>.</returns>
+		<#=subResource.InterfaceName#> Get<#=subResource.ClassName#><#=subResource.GetResourceMethodPostFix(resource.SubResourceIdentifiers)#>(<#=subResource.IdentifiersAsConstructorParametersTrimmed(resource.SubResourceIdentifiers)#>);
+
+<#
+			}
+#>
+
+		#endregion
+<#
+		}		
+#>
+	}	
+	#endregion
+<#
+
+	}
+#>
+}
+
+<#+
+void GenerateIdentifierAttributes(Resource resource)
+{
+    foreach(var identifier in resource.Identifiers)
+    {
+#>
+        /// <summary>
+        /// Gets the value of the <#=identifier.Name#> identifier for this resource. 
+        /// </summary>		
+        string <#=identifier.Name#> { get; }
+
+<#+	
+    }
+}
+
+void GenerateAttributeProperties(Resource resource)
+{
+     foreach(var attribute in resource.Attributes)
+     {
+            FormatPropertyDocumentation(attribute.Member, "Gets the value of the property");
+#>        <#=attribute.Type#> <#=attribute.Member.PropertyName#> { get; }
+
+<#+	
+	}
+}
+#>

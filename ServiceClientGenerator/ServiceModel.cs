@@ -40,6 +40,16 @@ namespace ServiceClientGenerator
         public const string WrapperKey = "wrapper";
 
         /// <summary>
+        /// The contents of the paginator model if there is one.
+        /// </summary>
+        JsonData _paginatorConfig;
+
+        /// <summary>
+        /// The contents of the resources model if there is one.
+        /// </summary>
+        ResourcesApi.ResourceModel _resourceModel;
+
+        /// <summary>
         /// This model contains information about customizations needed during the generation process
         /// </summary>
         readonly CustomizationsModel _customizationModel;
@@ -76,6 +86,8 @@ namespace ServiceClientGenerator
                 InitializeServiceModel(reader);
 
             this._customizationModel = new CustomizationsModel(customizationModelPath);
+            InitializePaginators(serviceModelPath);
+            InitializeResources(serviceModelPath);
         }
 
         /// <summary>
@@ -86,6 +98,35 @@ namespace ServiceClientGenerator
         {
             this.DocumentRoot = JsonMapper.ToObject(reader);
             this._metadata = this.DocumentRoot[MetadataKey];
+        }
+
+        /// <summary>
+        /// This assumes that the paginators model file is the same name as the service model except s/normal/paginators/
+        /// </summary>
+        /// <param name="serviceModelPath"></param>
+        void InitializePaginators(string serviceModelPath)
+        {
+            var path = serviceModelPath.Replace("normal.json", "paginators.json");
+            if (File.Exists(path))
+            {
+                using(var reader = new StreamReader(path))
+                    this._paginatorConfig = JsonMapper.ToObject(reader);
+            }
+        }
+
+        void InitializeResources(string serviceModelPath)
+        {
+            var path = serviceModelPath.Replace("normal.json", "resources.json");
+            if (File.Exists(path))
+            {
+                using (var reader = new StreamReader(path))
+                {
+                    _resourceModel = new ResourcesApi.ResourceModel(reader, this);
+                    //var res = JsonMapper.ToObject<ModelReader.ResourceModel>(reader, true);
+                    
+                    //this._resourceModel = new ResourceModel(this, JsonMapper.ToObject(reader));
+                }
+            }
         }
 
         /// <summary>
@@ -266,6 +307,29 @@ namespace ServiceClientGenerator
                 }
                 return list.OrderBy(x => x.Name).ToList();
             }
+        }
+
+        public IList<Paginator> Paginators
+        {
+            get
+            {
+                return Paginator.ReadPaginators(this._paginatorConfig, this);
+            }
+        }
+
+        public bool HasPaginators
+        {
+            get { return this._paginatorConfig != null; }
+        }
+
+        public ResourcesApi.ResourceModel ResourceModel
+        {
+            get { return this._resourceModel; }
+        }
+
+        public bool HasResources
+        {
+            get { return this._resourceModel != null; }
         }
 
         /// <summary>

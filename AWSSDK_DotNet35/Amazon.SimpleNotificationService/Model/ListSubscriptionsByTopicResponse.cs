@@ -18,13 +18,15 @@
  */
 
 using System;
+using System.Collections.Generic;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Configuration for accessing Amazon ListSubscriptionsByTopic service
     /// </summary>
-    public partial class ListSubscriptionsByTopicResponse : ListSubscriptionsByTopicResult
+    public partial class ListSubscriptionsByTopicResponse : ListSubscriptionsByTopicResult, IPageableResponse<Subscription, ListSubscriptionsByTopicRequest>
     {
         /// <summary>
         /// Gets and sets the ListSubscriptionsByTopicResult property.
@@ -37,6 +39,30 @@ namespace Amazon.SimpleNotificationService.Model
             {
                 return this;
             }
+        }
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        bool IPageableResponse<Subscription, ListSubscriptionsByTopicRequest>.MoreResultsAvailable()
+        {
+            return !String.IsNullOrEmpty(this.NextToken);
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        void IPageableResponse<Subscription, ListSubscriptionsByTopicRequest>.SetPaginationTokens(ListSubscriptionsByTopicRequest request)
+        {
+            
+            request.NextToken = this.NextToken;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        IEnumerable<Subscription> IPageableResponse<Subscription, ListSubscriptionsByTopicRequest>.SelectResult()
+        {
+            return this.Subscriptions;
         }
     }
 }

@@ -18,13 +18,15 @@
  */
 
 using System;
+using System.Collections.Generic;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Configuration for accessing Amazon ListTopics service
     /// </summary>
-    public partial class ListTopicsResponse : ListTopicsResult
+    public partial class ListTopicsResponse : ListTopicsResult, IPageableResponse<Topic, ListTopicsRequest>
     {
         /// <summary>
         /// Gets and sets the ListTopicsResult property.
@@ -37,6 +39,30 @@ namespace Amazon.SimpleNotificationService.Model
             {
                 return this;
             }
+        }
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        bool IPageableResponse<Topic, ListTopicsRequest>.MoreResultsAvailable()
+        {
+            return !String.IsNullOrEmpty(this.NextToken);
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        void IPageableResponse<Topic, ListTopicsRequest>.SetPaginationTokens(ListTopicsRequest request)
+        {
+            
+            request.NextToken = this.NextToken;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        IEnumerable<Topic> IPageableResponse<Topic, ListTopicsRequest>.SelectResult()
+        {
+            return this.Topics;
         }
     }
 }

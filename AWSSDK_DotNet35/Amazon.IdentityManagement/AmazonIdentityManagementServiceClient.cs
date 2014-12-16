@@ -367,6 +367,35 @@ namespace Amazon.IdentityManagement
         /// with Roles</a>. For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
         /// Instance Profiles</a>.
         /// </summary>
+        /// <param name="instanceProfileName">The name of the instance profile to update.</param>
+        /// <param name="roleName">The name of the role to add.</param>
+        /// 
+        /// <returns>The response from the AddRoleToInstanceProfile service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
+        /// The request was rejected because it attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public AddRoleToInstanceProfileResponse AddRoleToInstanceProfile(string instanceProfileName, string roleName)
+        {
+            var request = new AddRoleToInstanceProfileRequest();
+            request.InstanceProfileName = instanceProfileName;
+            request.RoleName = roleName;
+            return AddRoleToInstanceProfile(request);
+        }
+
+        /// <summary>
+        /// Adds the specified role to the specified instance profile. For more information about
+        /// roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+        /// with Roles</a>. For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+        /// Instance Profiles</a>.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddRoleToInstanceProfile service method.</param>
         /// 
         /// <returns>The response from the AddRoleToInstanceProfile service method, as returned by IdentityManagementService.</returns>
@@ -424,6 +453,29 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  AddUserToGroup
+
+        /// <summary>
+        /// Adds the specified user to the specified group.
+        /// </summary>
+        /// <param name="groupName">The name of the group to update.</param>
+        /// <param name="userName">The name of the user to add.</param>
+        /// 
+        /// <returns>The response from the AddUserToGroup service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public AddUserToGroupResponse AddUserToGroup(string groupName, string userName)
+        {
+            var request = new AddUserToGroupRequest();
+            request.GroupName = groupName;
+            request.UserName = userName;
+            return AddUserToGroup(request);
+        }
 
         /// <summary>
         /// Adds the specified user to the specified group.
@@ -595,7 +647,8 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public CreateAccessKeyResponse CreateAccessKey()
         {
-            return CreateAccessKey(new CreateAccessKeyRequest());
+            var request = new CreateAccessKeyRequest();
+            return CreateAccessKey(request);
         }
 
         /// <summary>
@@ -732,6 +785,36 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  CreateGroup
+
+        /// <summary>
+        /// Creates a new group.
+        /// 
+        ///  
+        /// <para>
+        ///  For information about the number of groups you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="groupName">The name of the group to create. Do not include the path in this value.</param>
+        /// 
+        /// <returns>The response from the CreateGroup service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
+        /// The request was rejected because it attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public CreateGroupResponse CreateGroup(string groupName)
+        {
+            var request = new CreateGroupRequest();
+            request.GroupName = groupName;
+            return CreateGroup(request);
+        }
 
         /// <summary>
         /// Creates a new group.
@@ -1028,6 +1111,42 @@ namespace Amazon.IdentityManagement
         /// 
         /// </para>
         /// </summary>
+        /// <param name="roleName">The name of the role to create.</param>
+        /// 
+        /// <returns>The response from the CreateRole service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
+        /// The request was rejected because it attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
+        /// The request was rejected because the policy document was malformed. The error message
+        /// describes the specific error.
+        /// </exception>
+        public CreateRoleResponse CreateRole(string roleName)
+        {
+            var request = new CreateRoleRequest();
+            request.RoleName = roleName;
+            return CreateRole(request);
+        }
+
+        /// <summary>
+        /// Creates a new role for your AWS account. For more information about roles, go to
+        /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+        /// with Roles</a>. For information about limitations on role names and the number of
+        /// roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// 
+        ///  
+        /// <para>
+        ///  The example policy grants permission to an EC2 instance to assume the role. The policy
+        /// is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a
+        /// href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+        /// 
+        /// </para>
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRole service method.</param>
         /// 
         /// <returns>The response from the CreateRole service method, as returned by IdentityManagementService.</returns>
@@ -1180,6 +1299,36 @@ namespace Amazon.IdentityManagement
         /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
+        /// <param name="userName">The name of the user to create.</param>
+        /// 
+        /// <returns>The response from the CreateUser service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
+        /// The request was rejected because it attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public CreateUserResponse CreateUser(string userName)
+        {
+            var request = new CreateUserRequest();
+            request.UserName = userName;
+            return CreateUser(request);
+        }
+
+        /// <summary>
+        /// Creates a new user for your AWS account.
+        /// 
+        ///  
+        /// <para>
+        ///  For information about limitations on the number of users you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
         /// 
         /// <returns>The response from the CreateUser service method, as returned by IdentityManagementService.</returns>
@@ -1321,6 +1470,43 @@ namespace Amazon.IdentityManagement
         /// a Virtual MFA Device</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
+        /// <param name="userName">The name of the user whose MFA device you want to deactivate.</param>
+        /// <param name="serialNumber"> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </param>
+        /// 
+        /// <returns>The response from the DeactivateMFADevice service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityTemporarilyUnmodifiableException">
+        /// The request was rejected because it referenced an entity that is temporarily unmodifiable,
+        /// such as a user name that was deleted and then recreated. The error indicates that
+        /// the request is likely to succeed if you try again after waiting several minutes. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public DeactivateMFADeviceResponse DeactivateMFADevice(string userName, string serialNumber)
+        {
+            var request = new DeactivateMFADeviceRequest();
+            request.UserName = userName;
+            request.SerialNumber = serialNumber;
+            return DeactivateMFADevice(request);
+        }
+
+        /// <summary>
+        /// Deactivates the specified MFA device and removes it from association with the user
+        /// name for which it was originally enabled. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about creating and working with virtual MFA devices, go to <a
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
+        /// a Virtual MFA Device</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeactivateMFADevice service method.</param>
         /// 
         /// <returns>The response from the DeactivateMFADevice service method, as returned by IdentityManagementService.</returns>
@@ -1393,6 +1579,35 @@ namespace Amazon.IdentityManagement
         /// if the AWS account has no associated users. 
         /// </para>
         /// </summary>
+        /// <param name="accessKeyId">The access key ID for the access key ID and secret access key you want to delete.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessKey service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public DeleteAccessKeyResponse DeleteAccessKey(string accessKeyId)
+        {
+            var request = new DeleteAccessKeyRequest();
+            request.AccessKeyId = accessKeyId;
+            return DeleteAccessKey(request);
+        }
+
+        /// <summary>
+        /// Deletes the access key associated with the specified user.
+        /// 
+        ///  
+        /// <para>
+        ///  If you do not specify a user name, IAM determines the user name implicitly based
+        /// on the AWS access key ID signing the request. Because this action works for access
+        /// keys under the AWS account, you can use this action to manage root credentials even
+        /// if the AWS account has no associated users. 
+        /// </para>
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessKey service method.</param>
         /// 
         /// <returns>The response from the DeleteAccessKey service method, as returned by IdentityManagementService.</returns>
@@ -1447,6 +1662,29 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  DeleteAccountAlias
+
+        /// <summary>
+        /// Deletes the specified AWS account alias. For information about using an AWS account
+        /// alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+        /// an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide.
+        /// </summary>
+        /// <param name="accountAlias">The name of the account alias to delete.</param>
+        /// 
+        /// <returns>The response from the DeleteAccountAlias service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public DeleteAccountAliasResponse DeleteAccountAlias(string accountAlias)
+        {
+            var request = new DeleteAccountAliasRequest();
+            request.AccountAlias = accountAlias;
+            return DeleteAccountAlias(request);
+        }
 
         /// <summary>
         /// Deletes the specified AWS account alias. For information about using an AWS account
@@ -1523,7 +1761,8 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public DeleteAccountPasswordPolicyResponse DeleteAccountPasswordPolicy()
         {
-            return DeleteAccountPasswordPolicy(new DeleteAccountPasswordPolicyRequest());
+            var request = new DeleteAccountPasswordPolicyRequest();
+            return DeleteAccountPasswordPolicy(request);
         }
 
         /// <summary>
@@ -1588,6 +1827,32 @@ namespace Amazon.IdentityManagement
         /// Deletes the specified group. The group must not contain any users or have any attached
         /// policies.
         /// </summary>
+        /// <param name="groupName">The name of the group to delete.</param>
+        /// 
+        /// <returns>The response from the DeleteGroup service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.DeleteConflictException">
+        /// The request was rejected because it attempted to delete a resource that has attached
+        /// subordinate entities. The error message describes these entities.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public DeleteGroupResponse DeleteGroup(string groupName)
+        {
+            var request = new DeleteGroupRequest();
+            request.GroupName = groupName;
+            return DeleteGroup(request);
+        }
+
+        /// <summary>
+        /// Deletes the specified group. The group must not contain any users or have any attached
+        /// policies.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteGroup service method, as returned by IdentityManagementService.</returns>
@@ -1646,6 +1911,29 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  DeleteGroupPolicy
+
+        /// <summary>
+        /// Deletes the specified policy that is associated with the specified group.
+        /// </summary>
+        /// <param name="groupName">The name of the group the policy is associated with.</param>
+        /// <param name="policyName">The name of the policy document to delete.</param>
+        /// 
+        /// <returns>The response from the DeleteGroupPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public DeleteGroupPolicyResponse DeleteGroupPolicy(string groupName, string policyName)
+        {
+            var request = new DeleteGroupPolicyRequest();
+            request.GroupName = groupName;
+            request.PolicyName = policyName;
+            return DeleteGroupPolicy(request);
+        }
 
         /// <summary>
         /// Deletes the specified policy that is associated with the specified group.
@@ -1718,6 +2006,41 @@ namespace Amazon.IdentityManagement
         /// Instance Profiles</a>. 
         /// </para>
         /// </summary>
+        /// <param name="instanceProfileName">The name of the instance profile to delete.</param>
+        /// 
+        /// <returns>The response from the DeleteInstanceProfile service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.DeleteConflictException">
+        /// The request was rejected because it attempted to delete a resource that has attached
+        /// subordinate entities. The error message describes these entities.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public DeleteInstanceProfileResponse DeleteInstanceProfile(string instanceProfileName)
+        {
+            var request = new DeleteInstanceProfileRequest();
+            request.InstanceProfileName = instanceProfileName;
+            return DeleteInstanceProfile(request);
+        }
+
+        /// <summary>
+        /// Deletes the specified instance profile. The instance profile must not have an associated
+        /// role. 
+        /// 
+        ///  <important> Make sure you do not have any Amazon EC2 instances running with the instance
+        /// profile you are about to delete. Deleting a role or instance profile that is associated
+        /// with a running instance will break any applications running on the instance. </important>
+        /// 
+        /// <para>
+        ///  For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+        /// Instance Profiles</a>. 
+        /// </para>
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceProfile service method.</param>
         /// 
         /// <returns>The response from the DeleteInstanceProfile service method, as returned by IdentityManagementService.</returns>
@@ -1776,6 +2099,40 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  DeleteLoginProfile
+
+        /// <summary>
+        /// Deletes the password for the specified user, which terminates the user's ability
+        /// to access AWS services through the AWS Management Console. 
+        /// 
+        ///  <important> Deleting a user's password does not prevent a user from accessing IAM
+        /// through the command line interface or the API. To prevent all user access you must
+        /// also either make the access key inactive or delete it. For more information about
+        /// making keys inactive or deleting them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>.
+        /// </important>
+        /// </summary>
+        /// <param name="userName">The name of the user whose password you want to delete.</param>
+        /// 
+        /// <returns>The response from the DeleteLoginProfile service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityTemporarilyUnmodifiableException">
+        /// The request was rejected because it referenced an entity that is temporarily unmodifiable,
+        /// such as a user name that was deleted and then recreated. The error indicates that
+        /// the request is likely to succeed if you try again after waiting several minutes. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public DeleteLoginProfileResponse DeleteLoginProfile(string userName)
+        {
+            var request = new DeleteLoginProfileRequest();
+            request.UserName = userName;
+            return DeleteLoginProfile(request);
+        }
 
         /// <summary>
         /// Deletes the password for the specified user, which terminates the user's ability
@@ -1927,6 +2284,37 @@ namespace Amazon.IdentityManagement
         /// you are about to delete. Deleting a role or instance profile that is associated with
         /// a running instance will break any applications running on the instance. </important>
         /// </summary>
+        /// <param name="roleName">The name of the role to delete.</param>
+        /// 
+        /// <returns>The response from the DeleteRole service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.DeleteConflictException">
+        /// The request was rejected because it attempted to delete a resource that has attached
+        /// subordinate entities. The error message describes these entities.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public DeleteRoleResponse DeleteRole(string roleName)
+        {
+            var request = new DeleteRoleRequest();
+            request.RoleName = roleName;
+            return DeleteRole(request);
+        }
+
+        /// <summary>
+        /// Deletes the specified role. The role must not have any policies attached. For more
+        /// information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+        /// with Roles</a>. 
+        /// 
+        ///  <important> Make sure you do not have any Amazon EC2 instances running with the role
+        /// you are about to delete. Deleting a role or instance profile that is associated with
+        /// a running instance will break any applications running on the instance. </important>
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRole service method.</param>
         /// 
         /// <returns>The response from the DeleteRole service method, as returned by IdentityManagementService.</returns>
@@ -1989,6 +2377,29 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Deletes the specified policy associated with the specified role.
         /// </summary>
+        /// <param name="roleName">The name of the role the associated with the policy.</param>
+        /// <param name="policyName">The name of the policy document to delete.</param>
+        /// 
+        /// <returns>The response from the DeleteRolePolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public DeleteRolePolicyResponse DeleteRolePolicy(string roleName, string policyName)
+        {
+            var request = new DeleteRolePolicyRequest();
+            request.RoleName = roleName;
+            request.PolicyName = policyName;
+            return DeleteRolePolicy(request);
+        }
+
+        /// <summary>
+        /// Deletes the specified policy associated with the specified role.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRolePolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteRolePolicy service method, as returned by IdentityManagementService.</returns>
@@ -2043,6 +2454,40 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  DeleteSAMLProvider
+
+        /// <summary>
+        /// Deletes a SAML provider.
+        /// 
+        ///  
+        /// <para>
+        ///  Deleting the provider does not update any roles that reference the SAML provider
+        /// as a principal in their trust policies. Any attempt to assume a role that references
+        /// a SAML provider that has been deleted will fail. 
+        /// </para>
+        ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4</a>. </note>
+        /// </summary>
+        /// <param name="samlProviderArn">The Amazon Resource Name (ARN) of the SAML provider to delete.</param>
+        /// 
+        /// <returns>The response from the DeleteSAMLProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public DeleteSAMLProviderResponse DeleteSAMLProvider(string samlProviderArn)
+        {
+            var request = new DeleteSAMLProviderRequest();
+            request.SAMLProviderArn = samlProviderArn;
+            return DeleteSAMLProvider(request);
+        }
 
         /// <summary>
         /// Deletes a SAML provider.
@@ -2127,6 +2572,40 @@ namespace Amazon.IdentityManagement
         /// target="blank">DeleteLoadBalancerListeners</a> in the <i>Elastic Load Balancing API
         /// Reference</i>. </important>
         /// </summary>
+        /// <param name="serverCertificateName">The name of the server certificate you want to delete.</param>
+        /// 
+        /// <returns>The response from the DeleteServerCertificate service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.DeleteConflictException">
+        /// The request was rejected because it attempted to delete a resource that has attached
+        /// subordinate entities. The error message describes these entities.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public DeleteServerCertificateResponse DeleteServerCertificate(string serverCertificateName)
+        {
+            var request = new DeleteServerCertificateRequest();
+            request.ServerCertificateName = serverCertificateName;
+            return DeleteServerCertificate(request);
+        }
+
+        /// <summary>
+        /// Deletes the specified server certificate.
+        /// 
+        ///  <important> If you are using a server certificate with Elastic Load Balancing, deleting
+        /// the certificate could have implications for your application. If Elastic Load Balancing
+        /// doesn't detect the deletion of bound certificates, it may continue to use the certificates.
+        /// This could cause Elastic Load Balancing to stop accepting traffic. We recommend that
+        /// you remove the reference to the certificate from Elastic Load Balancing before using
+        /// this command to delete the certificate. For more information, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DeleteLoadBalancerListeners.html"
+        /// target="blank">DeleteLoadBalancerListeners</a> in the <i>Elastic Load Balancing API
+        /// Reference</i>. </important>
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteServerCertificate service method.</param>
         /// 
         /// <returns>The response from the DeleteServerCertificate service method, as returned by IdentityManagementService.</returns>
@@ -2185,6 +2664,37 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  DeleteSigningCertificate
+
+        /// <summary>
+        /// Deletes the specified signing certificate associated with the specified user.
+        /// 
+        ///  
+        /// <para>
+        ///  If you do not specify a user name, IAM determines the user name implicitly based
+        /// on the AWS access key ID signing the request. Because this action works for access
+        /// keys under the AWS account, you can use this action to manage root credentials even
+        /// if the AWS account has no associated users. 
+        /// </para>
+        /// </summary>
+        /// <param name="certificateId">The ID of the signing certificate to delete.</param>
+        /// <param name="userName">The name of the user the signing certificate belongs to.</param>
+        /// 
+        /// <returns>The response from the DeleteSigningCertificate service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public DeleteSigningCertificateResponse DeleteSigningCertificate(string certificateId, string userName)
+        {
+            var request = new DeleteSigningCertificateRequest();
+            request.CertificateId = certificateId;
+            request.UserName = userName;
+            return DeleteSigningCertificate(request);
+        }
 
         /// <summary>
         /// Deletes the specified signing certificate associated with the specified user.
@@ -2256,6 +2766,32 @@ namespace Amazon.IdentityManagement
         /// Deletes the specified user. The user must not belong to any groups, have any keys
         /// or signing certificates, or have any attached policies.
         /// </summary>
+        /// <param name="userName">The name of the user to delete.</param>
+        /// 
+        /// <returns>The response from the DeleteUser service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.DeleteConflictException">
+        /// The request was rejected because it attempted to delete a resource that has attached
+        /// subordinate entities. The error message describes these entities.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public DeleteUserResponse DeleteUser(string userName)
+        {
+            var request = new DeleteUserRequest();
+            request.UserName = userName;
+            return DeleteUser(request);
+        }
+
+        /// <summary>
+        /// Deletes the specified user. The user must not belong to any groups, have any keys
+        /// or signing certificates, or have any attached policies.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// 
         /// <returns>The response from the DeleteUser service method, as returned by IdentityManagementService.</returns>
@@ -2314,6 +2850,29 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  DeleteUserPolicy
+
+        /// <summary>
+        /// Deletes the specified policy associated with the specified user.
+        /// </summary>
+        /// <param name="userName">The name of the user the policy is associated with.</param>
+        /// <param name="policyName">The name of the policy document to delete.</param>
+        /// 
+        /// <returns>The response from the DeleteUserPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public DeleteUserPolicyResponse DeleteUserPolicy(string userName, string policyName)
+        {
+            var request = new DeleteUserPolicyRequest();
+            request.UserName = userName;
+            request.PolicyName = policyName;
+            return DeleteUserPolicy(request);
+        }
 
         /// <summary>
         /// Deletes the specified policy associated with the specified user.
@@ -2525,7 +3084,8 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public GenerateCredentialReportResponse GenerateCredentialReport()
         {
-            return GenerateCredentialReport(new GenerateCredentialReportRequest());
+            var request = new GenerateCredentialReportRequest();
+            return GenerateCredentialReport(request);
         }
 
         /// <summary>
@@ -2647,7 +3207,8 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public GetAccountPasswordPolicyResponse GetAccountPasswordPolicy()
         {
-            return GetAccountPasswordPolicy(new GetAccountPasswordPolicyRequest());
+            var request = new GetAccountPasswordPolicyRequest();
+            return GetAccountPasswordPolicy(request);
         }
 
         /// <summary>
@@ -2719,7 +3280,8 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the GetAccountSummary service method, as returned by IdentityManagementService.</returns>
         public GetAccountSummaryResponse GetAccountSummary()
         {
-            return GetAccountSummary(new GetAccountSummaryRequest());
+            var request = new GetAccountSummaryRequest();
+            return GetAccountSummary(request);
         }
 
         /// <summary>
@@ -2800,7 +3362,8 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public GetCredentialReportResponse GetCredentialReport()
         {
-            return GetCredentialReport(new GetCredentialReportRequest());
+            var request = new GetCredentialReportRequest();
+            return GetCredentialReport(request);
         }
 
         /// <summary>
@@ -2867,6 +3430,24 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  GetGroup
+
+        /// <summary>
+        /// Returns a list of users that are in the specified group. You can paginate the results
+        /// using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        /// </summary>
+        /// <param name="groupName">The name of the group.</param>
+        /// 
+        /// <returns>The response from the GetGroup service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public GetGroupResponse GetGroup(string groupName)
+        {
+            var request = new GetGroupRequest();
+            request.GroupName = groupName;
+            return GetGroup(request);
+        }
 
         /// <summary>
         /// Returns a list of users that are in the specified group. You can paginate the results
@@ -3412,7 +3993,8 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public GetUserResponse GetUser()
         {
-            return GetUser(new GetUserRequest());
+            var request = new GetUserRequest();
+            return GetUser(request);
         }
 
         /// <summary>
@@ -3559,7 +4141,8 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public ListAccessKeysResponse ListAccessKeys()
         {
-            return ListAccessKeys(new ListAccessKeysRequest());
+            var request = new ListAccessKeysRequest();
+            return ListAccessKeys(request);
         }
 
         /// <summary>
@@ -3647,7 +4230,8 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the ListAccountAliases service method, as returned by IdentityManagementService.</returns>
         public ListAccountAliasesResponse ListAccountAliases()
         {
-            return ListAccountAliases(new ListAccountAliasesRequest());
+            var request = new ListAccountAliasesRequest();
+            return ListAccountAliases(request);
         }
 
         /// <summary>
@@ -3707,6 +4291,30 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  ListGroupPolicies
+
+        /// <summary>
+        /// Lists the names of the policies associated with the specified group. If there are
+        /// none, the action returns an empty list. 
+        /// 
+        ///  
+        /// <para>
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="groupName">The name of the group to list policies for.</param>
+        /// 
+        /// <returns>The response from the ListGroupPolicies service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public ListGroupPoliciesResponse ListGroupPolicies(string groupName)
+        {
+            var request = new ListGroupPoliciesRequest();
+            request.GroupName = groupName;
+            return ListGroupPolicies(request);
+        }
 
         /// <summary>
         /// Lists the names of the policies associated with the specified group. If there are
@@ -3782,7 +4390,8 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the ListGroups service method, as returned by IdentityManagementService.</returns>
         public ListGroupsResponse ListGroups()
         {
-            return ListGroups(new ListGroupsRequest());
+            var request = new ListGroupsRequest();
+            return ListGroups(request);
         }
 
         /// <summary>
@@ -3840,6 +4449,29 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  ListGroupsForUser
+
+        /// <summary>
+        /// Lists the groups the specified user belongs to.
+        /// 
+        ///  
+        /// <para>
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="userName">The name of the user to list groups for.</param>
+        /// 
+        /// <returns>The response from the ListGroupsForUser service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public ListGroupsForUserResponse ListGroupsForUser(string userName)
+        {
+            var request = new ListGroupsForUserRequest();
+            request.UserName = userName;
+            return ListGroupsForUser(request);
+        }
 
         /// <summary>
         /// Lists the groups the specified user belongs to.
@@ -3917,7 +4549,8 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the ListInstanceProfiles service method, as returned by IdentityManagementService.</returns>
         public ListInstanceProfilesResponse ListInstanceProfiles()
         {
-            return ListInstanceProfiles(new ListInstanceProfilesRequest());
+            var request = new ListInstanceProfilesRequest();
+            return ListInstanceProfiles(request);
         }
 
         /// <summary>
@@ -3978,6 +4611,32 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  ListInstanceProfilesForRole
+
+        /// <summary>
+        /// Lists the instance profiles that have the specified associated role. If there are
+        /// none, the action returns an empty list. For more information about instance profiles,
+        /// go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+        /// Instance Profiles</a>. 
+        /// 
+        ///  
+        /// <para>
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="roleName">The name of the role to list instance profiles for.</param>
+        /// 
+        /// <returns>The response from the ListInstanceProfilesForRole service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public ListInstanceProfilesForRoleResponse ListInstanceProfilesForRole(string roleName)
+        {
+            var request = new ListInstanceProfilesForRoleRequest();
+            request.RoleName = roleName;
+            return ListInstanceProfilesForRole(request);
+        }
 
         /// <summary>
         /// Lists the instance profiles that have the specified associated role. If there are
@@ -4062,7 +4721,8 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public ListMFADevicesResponse ListMFADevices()
         {
-            return ListMFADevices(new ListMFADevicesRequest());
+            var request = new ListMFADevicesRequest();
+            return ListMFADevices(request);
         }
 
         /// <summary>
@@ -4188,6 +4848,30 @@ namespace Amazon.IdentityManagement
         /// parameters. 
         /// </para>
         /// </summary>
+        /// <param name="roleName">The name of the role to list policies for.</param>
+        /// 
+        /// <returns>The response from the ListRolePolicies service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public ListRolePoliciesResponse ListRolePolicies(string roleName)
+        {
+            var request = new ListRolePoliciesRequest();
+            request.RoleName = roleName;
+            return ListRolePolicies(request);
+        }
+
+        /// <summary>
+        /// Lists the names of the policies associated with the specified role. If there are
+        /// none, the action returns an empty list. 
+        /// 
+        ///  
+        /// <para>
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRolePolicies service method.</param>
         /// 
         /// <returns>The response from the ListRolePolicies service method, as returned by IdentityManagementService.</returns>
@@ -4260,7 +4944,8 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the ListRoles service method, as returned by IdentityManagementService.</returns>
         public ListRolesResponse ListRoles()
         {
-            return ListRoles(new ListRolesRequest());
+            var request = new ListRolesRequest();
+            return ListRoles(request);
         }
 
         /// <summary>
@@ -4337,7 +5022,8 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the ListSAMLProviders service method, as returned by IdentityManagementService.</returns>
         public ListSAMLProvidersResponse ListSAMLProviders()
         {
-            return ListSAMLProviders(new ListSAMLProvidersRequest());
+            var request = new ListSAMLProvidersRequest();
+            return ListSAMLProviders(request);
         }
 
         /// <summary>
@@ -4407,7 +5093,8 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the ListServerCertificates service method, as returned by IdentityManagementService.</returns>
         public ListServerCertificatesResponse ListServerCertificates()
         {
-            return ListServerCertificates(new ListServerCertificatesRequest());
+            var request = new ListServerCertificatesRequest();
+            return ListServerCertificates(request);
         }
 
         /// <summary>
@@ -4493,7 +5180,8 @@ namespace Amazon.IdentityManagement
         /// </exception>
         public ListSigningCertificatesResponse ListSigningCertificates()
         {
-            return ListSigningCertificates(new ListSigningCertificatesRequest());
+            var request = new ListSigningCertificatesRequest();
+            return ListSigningCertificates(request);
         }
 
         /// <summary>
@@ -4575,6 +5263,30 @@ namespace Amazon.IdentityManagement
         /// parameters. 
         /// </para>
         /// </summary>
+        /// <param name="userName">The name of the user to list policies for.</param>
+        /// 
+        /// <returns>The response from the ListUserPolicies service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public ListUserPoliciesResponse ListUserPolicies(string userName)
+        {
+            var request = new ListUserPoliciesRequest();
+            request.UserName = userName;
+            return ListUserPolicies(request);
+        }
+
+        /// <summary>
+        /// Lists the names of the policies associated with the specified user. If there are
+        /// none, the action returns an empty list. 
+        /// 
+        ///  
+        /// <para>
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUserPolicies service method.</param>
         /// 
         /// <returns>The response from the ListUserPolicies service method, as returned by IdentityManagementService.</returns>
@@ -4641,7 +5353,8 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the ListUsers service method, as returned by IdentityManagementService.</returns>
         public ListUsersResponse ListUsers()
         {
-            return ListUsers(new ListUsersRequest());
+            var request = new ListUsersRequest();
+            return ListUsers(request);
         }
 
         /// <summary>
@@ -4718,7 +5431,8 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the ListVirtualMFADevices service method, as returned by IdentityManagementService.</returns>
         public ListVirtualMFADevicesResponse ListVirtualMFADevices()
         {
-            return ListVirtualMFADevices(new ListVirtualMFADevicesRequest());
+            var request = new ListVirtualMFADevicesRequest();
+            return ListVirtualMFADevices(request);
         }
 
         /// <summary>
@@ -4779,6 +5493,50 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  PutGroupPolicy
+
+        /// <summary>
+        /// Adds (or updates) a policy document associated with the specified group. For information
+        /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
+        /// of Policies</a> in the <i>Using IAM</i> guide. 
+        /// 
+        ///  
+        /// <para>
+        ///  For information about limits on the number of policies you can associate with a group,
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        ///  <note> Because policy documents can be large, you should use POST rather than GET
+        /// when calling <code>PutGroupPolicy</code>. For information about setting up signatures
+        /// and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+        /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
+        /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        /// Query Requests</a> in the <i>Using IAM</i> guide. </note>
+        /// </summary>
+        /// <param name="groupName">The name of the group to associate the policy with.</param>
+        /// <param name="policyName">The name of the policy document.</param>
+        /// <param name="policyDocument">The policy document.</param>
+        /// 
+        /// <returns>The response from the PutGroupPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
+        /// The request was rejected because the policy document was malformed. The error message
+        /// describes the specific error.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public PutGroupPolicyResponse PutGroupPolicy(string groupName, string policyName, string policyDocument)
+        {
+            var request = new PutGroupPolicyRequest();
+            request.GroupName = groupName;
+            request.PolicyName = policyName;
+            request.PolicyDocument = policyDocument;
+            return PutGroupPolicy(request);
+        }
 
         /// <summary>
         /// Adds (or updates) a policy document associated with the specified group. For information
@@ -4875,6 +5633,50 @@ namespace Amazon.IdentityManagement
         /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
         /// Query Requests</a> in the <i>Using IAM</i> guide. </note>
         /// </summary>
+        /// <param name="roleName">The name of the role to associate the policy with.</param>
+        /// <param name="policyName">The name of the policy document.</param>
+        /// <param name="policyDocument">The policy document.</param>
+        /// 
+        /// <returns>The response from the PutRolePolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
+        /// The request was rejected because the policy document was malformed. The error message
+        /// describes the specific error.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public PutRolePolicyResponse PutRolePolicy(string roleName, string policyName, string policyDocument)
+        {
+            var request = new PutRolePolicyRequest();
+            request.RoleName = roleName;
+            request.PolicyName = policyName;
+            request.PolicyDocument = policyDocument;
+            return PutRolePolicy(request);
+        }
+
+        /// <summary>
+        /// Adds (or updates) a policy document associated with the specified role. For information
+        /// about policies, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
+        /// of Policies</a> in the <i>Using IAM</i> guide. 
+        /// 
+        ///  
+        /// <para>
+        ///  For information about limits on the policies you can associate with a role, see <a
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        ///  <note> Because policy documents can be large, you should use POST rather than GET
+        /// when calling <code>PutRolePolicy</code>. For information about setting up signatures
+        /// and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+        /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
+        /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        /// Query Requests</a> in the <i>Using IAM</i> guide. </note>
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRolePolicy service method.</param>
         /// 
         /// <returns>The response from the PutRolePolicy service method, as returned by IdentityManagementService.</returns>
@@ -4933,6 +5735,50 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  PutUserPolicy
+
+        /// <summary>
+        /// Adds (or updates) a policy document associated with the specified user. For information
+        /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
+        /// of Policies</a> in the <i>Using IAM</i> guide. 
+        /// 
+        ///  
+        /// <para>
+        ///  For information about limits on the number of policies you can associate with a user,
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        ///  <note> Because policy documents can be large, you should use POST rather than GET
+        /// when calling <code>PutUserPolicy</code>. For information about setting up signatures
+        /// and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+        /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
+        /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        /// Query Requests</a> in the <i>Using IAM</i> guide. </note>
+        /// </summary>
+        /// <param name="userName">The name of the user to associate the policy with.</param>
+        /// <param name="policyName">The name of the policy document.</param>
+        /// <param name="policyDocument">The policy document.</param>
+        /// 
+        /// <returns>The response from the PutUserPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
+        /// The request was rejected because the policy document was malformed. The error message
+        /// describes the specific error.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public PutUserPolicyResponse PutUserPolicy(string userName, string policyName, string policyDocument)
+        {
+            var request = new PutUserPolicyRequest();
+            request.UserName = userName;
+            request.PolicyName = policyName;
+            request.PolicyDocument = policyDocument;
+            return PutUserPolicy(request);
+        }
 
         /// <summary>
         /// Adds (or updates) a policy document associated with the specified user. For information
@@ -5089,6 +5935,39 @@ namespace Amazon.IdentityManagement
         /// Instance Profiles</a>. 
         /// </para>
         /// </summary>
+        /// <param name="instanceProfileName">The name of the instance profile to update.</param>
+        /// <param name="roleName">The name of the role to remove.</param>
+        /// 
+        /// <returns>The response from the RemoveRoleFromInstanceProfile service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public RemoveRoleFromInstanceProfileResponse RemoveRoleFromInstanceProfile(string instanceProfileName, string roleName)
+        {
+            var request = new RemoveRoleFromInstanceProfileRequest();
+            request.InstanceProfileName = instanceProfileName;
+            request.RoleName = roleName;
+            return RemoveRoleFromInstanceProfile(request);
+        }
+
+        /// <summary>
+        /// Removes the specified role from the specified instance profile.
+        /// 
+        ///  <important> Make sure you do not have any Amazon EC2 instances running with the role
+        /// you are about to remove from the instance profile. Removing a role from an instance
+        /// profile that is associated with a running instance will break any applications running
+        /// on the instance. </important> 
+        /// <para>
+        ///  For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+        /// with Roles</a>. For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+        /// Instance Profiles</a>. 
+        /// </para>
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromInstanceProfile service method.</param>
         /// 
         /// <returns>The response from the RemoveRoleFromInstanceProfile service method, as returned by IdentityManagementService.</returns>
@@ -5143,6 +6022,29 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  RemoveUserFromGroup
+
+        /// <summary>
+        /// Removes the specified user from the specified group.
+        /// </summary>
+        /// <param name="groupName">The name of the group to update.</param>
+        /// <param name="userName">The name of the user to remove.</param>
+        /// 
+        /// <returns>The response from the RemoveUserFromGroup service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public RemoveUserFromGroupResponse RemoveUserFromGroup(string groupName, string userName)
+        {
+            var request = new RemoveUserFromGroupRequest();
+            request.GroupName = groupName;
+            request.UserName = userName;
+            return RemoveUserFromGroup(request);
+        }
 
         /// <summary>
         /// Removes the specified user from the specified group.
@@ -5343,40 +6245,6 @@ namespace Amazon.IdentityManagement
         #endregion
         
         #region  UpdateAccountPasswordPolicy
-
-        /// <summary>
-        /// Updates the password policy settings for the AWS account.
-        /// 
-        ///  <note> 
-        /// <para>
-        ///  This action does not support partial updates. No parameters are required, but if
-        /// you do not specify a parameter, that parameter's value reverts to its default value.
-        /// See the <b>Request Parameters</b> section for each parameter's default value. 
-        /// </para>
-        ///  </note> 
-        /// <para>
-        ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-        /// an IAM Password Policy</a> in the <i>Using IAM</i> guide. 
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the UpdateAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
-        /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
-        /// </exception>
-        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
-        /// The request was rejected because the policy document was malformed. The error message
-        /// describes the specific error.
-        /// </exception>
-        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
-        /// </exception>
-        public UpdateAccountPasswordPolicyResponse UpdateAccountPasswordPolicy()
-        {
-            return UpdateAccountPasswordPolicy(new UpdateAccountPasswordPolicyRequest());
-        }
 
         /// <summary>
         /// Updates the password policy settings for the AWS account.

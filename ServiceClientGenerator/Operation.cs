@@ -296,6 +296,25 @@ namespace ServiceClientGenerator
             }
         }
 
+        public bool IsResponsePageable
+        {
+            get
+            {
+                return this.model.Paginators.Where(p => p.OperationName == this.Name).Count() > 0;
+            }
+        }
+
+        public Paginator ResponsePaginator
+        {
+            get
+            {
+                var paginators = this.model.Paginators.Where(p => p.OperationName == this.Name);
+                if (paginators.Count() > 0)
+                    return paginators.First();
+                return null;
+            }
+        }
+
         /// <summary>
         /// Determines if the request structure has query string members
         /// </summary>

@@ -195,7 +195,6 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         public void EnsureIdentityManagementCustomizationsExists()
         {
             EnsureParameterlessMethodExists(typeof(Amazon.IdentityManagement.AmazonIdentityManagementServiceClient), "ListUsers");
-            EnsureParameterlessMethodExists(typeof(Amazon.IdentityManagement.AmazonIdentityManagementServiceClient), "UpdateAccountPasswordPolicy");
             EnsureParameterlessMethodExists(typeof(Amazon.IdentityManagement.AmazonIdentityManagementServiceClient), "ListRoles");
             EnsureParameterlessMethodExists(typeof(Amazon.IdentityManagement.AmazonIdentityManagementServiceClient), "ListInstanceProfiles");
             EnsureParameterlessMethodExists(typeof(Amazon.IdentityManagement.AmazonIdentityManagementServiceClient), "ListAccessKeys");

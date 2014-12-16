@@ -18,13 +18,15 @@
  */
 
 using System;
+using System.Collections.Generic;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Configuration for accessing Amazon ListSigningCertificates service
     /// </summary>
-    public partial class ListSigningCertificatesResponse : ListSigningCertificatesResult
+    public partial class ListSigningCertificatesResponse : ListSigningCertificatesResult, IPageableResponse<SigningCertificate, ListSigningCertificatesRequest>
     {
         /// <summary>
         /// Gets and sets the ListSigningCertificatesResult property.
@@ -37,6 +39,30 @@ namespace Amazon.IdentityManagement.Model
             {
                 return this;
             }
+        }
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        bool IPageableResponse<SigningCertificate, ListSigningCertificatesRequest>.MoreResultsAvailable()
+        {
+            return this.IsTruncated;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        void IPageableResponse<SigningCertificate, ListSigningCertificatesRequest>.SetPaginationTokens(ListSigningCertificatesRequest request)
+        {
+            
+            request.Marker = this.Marker;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        IEnumerable<SigningCertificate> IPageableResponse<SigningCertificate, ListSigningCertificatesRequest>.SelectResult()
+        {
+            return this.Certificates;
         }
     }
 }

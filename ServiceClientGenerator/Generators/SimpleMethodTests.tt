@@ -32,7 +32,11 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             if (this.Config.ServiceModel.Customizations.SimpleMethodsModel.CreateSimpleMethods(operation.Name))
             {
                 var forms = this.Config.ServiceModel.Customizations.SimpleMethodsModel.SimpleMethods[operation.Name].Forms;
-                var members = this.Config.ServiceModel.FindShape(operation.RequestStructure.Name).Members;
+				IList<Member> members;
+				if (operation.RequestStructure != null)
+					members = this.Config.ServiceModel.FindShape(operation.RequestStructure.Name).Members;
+				else
+					members = new List<Member>();
 
                 foreach (var form in forms)
                 {

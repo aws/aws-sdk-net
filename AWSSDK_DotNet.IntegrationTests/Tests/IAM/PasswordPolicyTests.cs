@@ -55,11 +55,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
                 Assert.AreEqual(request.HardExpiry, policy.HardExpiry);
                 //Assert.IsTrue(policy.ExpirePasswords);
 
-                Client.UpdateAccountPasswordPolicy();
-
-                policy = Client.GetAccountPasswordPolicy().PasswordPolicy;
-                Assert.IsFalse(policy.RequireNumbers);
-                Assert.IsFalse(policy.RequireSymbols);
             }
             finally
             {

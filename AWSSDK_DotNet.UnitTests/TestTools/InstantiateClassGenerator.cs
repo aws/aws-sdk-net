@@ -168,6 +168,22 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             }
         }
 
+        public static void ValidateResourceObjectFullyInstantiated(object owningObject)
+        {
+            Assert.IsNotNull(owningObject, "Root object null");
+
+            var owningType = owningObject.GetType();
+            foreach (var info in owningType.GetProperties())
+            {
+                if (info.Name == "ContentLength")
+                    continue;
+
+                var type = info.PropertyType;
+                var propertyValue = info.GetMethod.Invoke(owningObject, new object[] { });
+                ValidatePropertyValueInstantiated(type, propertyValue, info.Name);
+            }
+        }
+
         private static void ValidatePropertyValueInstantiated(Type type, object propertyValue, string propertyName)
         {
             if (type == typeof(string))

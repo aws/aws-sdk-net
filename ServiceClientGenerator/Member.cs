@@ -440,6 +440,29 @@ namespace ServiceClientGenerator
             }
         }
 
+        public string DetermineListMemberType()
+        {
+            var extendedData = this.data;
+            var extendsNode = extendedData[ServiceModel.ShapeKey];
+            if (extendsNode == null)
+                throw new Exception("Missing extends for member " + this._name);
+
+            JsonData memberShape = null;
+            // if this shape is a collection, has the collected type been remapped?
+            var emitAsShapeName = this.model.Customizations.GetSubstituteShapeName(extendsNode.ToString());
+            if (emitAsShapeName == null)
+            {
+                memberShape = this.model.DocumentRoot[ServiceModel.ShapesKey][extendsNode.ToString()];
+            }
+            else
+            {
+                // we only handle remap to one level at present
+                memberShape = this.model.DocumentRoot[ServiceModel.ShapesKey][emitAsShapeName];
+            }
+
+            return DetermineType(memberShape["member"], true);
+        }
+
         /// <summary>
         /// Returns the type of the marshaller if it is customized, null otherwise
         /// </summary>

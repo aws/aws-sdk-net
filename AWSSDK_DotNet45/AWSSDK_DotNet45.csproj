@@ -291,6 +291,9 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\*" Exclude="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\*.bcl35.cs">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Resources\*">
+      <Visible>false</Visible>
+    </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Auth\*">
       <Visible>false</Visible>
     </Compile>
@@ -635,6 +638,9 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.IdentityManagement\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.IdentityManagement\Resources\*">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.IdentityManagement\Model\Internal\MarshallTransformations\*">

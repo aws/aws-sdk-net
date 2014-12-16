@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+    #line 1 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class ServiceInterface45 : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators
         public override string TransformText()
         {
             
-            #line 6 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 6 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
 
 	AddLicenseHeader();
 
@@ -39,35 +39,35 @@ namespace ServiceClientGenerator.Generators
             this.Write("\r\n\r\nusing System;\r\nusing System.Threading;\r\nusing System.Threading.Tasks;\r\nusing " +
                     "System.Collections.Generic;\r\n\r\nusing ");
             
-            #line 16 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 16 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model;\r\n\r\nnamespace ");
             
-            #line 18 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 18 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n");
             
-            #line 20 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 20 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
     this.FormatServiceInterfaceDocumentation(this.Config.ServiceModel.Documentation); 
             
             #line default
             #line hidden
             this.Write("\tpublic partial interface IAmazon");
             
-            #line 21 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 21 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write(" : IDisposable\r\n\t{\r\n\r\n\t\t");
             
-            #line 24 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 24 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
 
     // Generates definitions for each operation in the service model
 		foreach(var operation in this.Config.ServiceModel.Operations)
@@ -80,14 +80,14 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("\r\n\t\t#region  ");
             
-            #line 32 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 32 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n");
             
-            #line 34 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 34 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
 
         // Creates a parameterless definition of the operation if specified in the customizations file
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
@@ -97,28 +97,28 @@ namespace ServiceClientGenerator.Generators
             #line default
             #line hidden
             
-            #line 39 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 39 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
  this.FormatOperationDocumentation(operation, false); 
             
             #line default
             #line hidden
             this.Write("        ");
             
-            #line 40 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 40 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 40 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 40 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("();\r\n\r\n");
             
-            #line 42 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 42 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
 
         }
         // Adds simple method forms defined in the customizations file
@@ -128,56 +128,56 @@ namespace ServiceClientGenerator.Generators
             #line default
             #line hidden
             
-            #line 47 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 47 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
  this.FormatOperationDocumentation(operation); 
             
             #line default
             #line hidden
             this.Write("        ");
             
-            #line 48 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 48 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 48 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 48 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 48 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 48 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request request);\r\n\r\n");
             
-            #line 50 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 50 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
 AddAsyncDocumentation(operation.Name);
             
             #line default
             #line hidden
             this.Write("        Task<");
             
-            #line 51 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 51 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> ");
             
-            #line 51 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 51 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Async(");
             
-            #line 51 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 51 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -185,7 +185,7 @@ AddAsyncDocumentation(operation.Name);
             this.Write("Request request, CancellationToken cancellationToken = default(CancellationToken)" +
                     ");\r\n\r\n\t\t#endregion\r\n\t\t");
             
-            #line 54 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
+            #line 54 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\ServiceInterface45.tt"
 
 		}
 		

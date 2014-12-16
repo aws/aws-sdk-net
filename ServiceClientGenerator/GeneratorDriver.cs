@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Json.LitJson;
 
 using ServiceClientGenerator.Generators;
+using ServiceClientGenerator.Generators.Resources;
 
 namespace ServiceClientGenerator
 {
@@ -68,7 +69,15 @@ namespace ServiceClientGenerator
 
             // Any enumerations for the service
             this.ExecuteGenerator(new ServiceEnumerations(), "ServiceEnumerations.cs");
-            
+
+            // Paginators
+            if (config.ServiceModel.Paginators.Count > 0)
+            {
+                this.ExecuteGenerator(new ServicePaginators(), "Amazon" + config.BaseName + "Client.paginators.cs");
+                //if (config.ServiceModel.HasResources)
+                    this.ExecutePaginatorTestGenerator(new ServicePaginatorTests(), config.BaseName + "PaginatorTests.cs");
+            }
+
             // Generates the Request, Responce, Marshaller, Unmarshaller, and Exception objects for a given client operation
             foreach (var operation in this.config.ServiceModel.Operations)
             {
@@ -77,6 +86,13 @@ namespace ServiceClientGenerator
                 this.GenerateRequestMarshaller(operation);
                 this.GenerateResponseUnmarshaller(operation);
                 this.GenerateExceptions(operation);
+            }
+
+            if (config.ServiceModel.HasResources)
+            {
+                this.ExecuteGenerator(new ResourceInterfaces(), "Resources.cs", "Resources");
+                this.ExecuteGenerator(new ResourceImplementations(), "ResourceImplementations.cs", "Resources");
+                this.ExecuteGenerator(new ResourceRoot(), config.BaseName+".cs", "Resources");
             }
 
             // Generate any missed structures that are not defined or referenced by a request, response, marshaller, unmarshaller, or exception of an operation
@@ -222,8 +238,14 @@ namespace ServiceClientGenerator
                 // This generates the legacy response class which just extends from the result class.
                 var responseGenerator = new LegacyResponseClass()
                 {
-                    OperationName = operation.Name
+                    OperationName = operation.Name,
+                    IsPageable = operation.IsResponsePageable
                 };
+
+                if (responseGenerator.IsPageable)
+                {
+                    responseGenerator.Paginator = operation.ResponsePaginator;
+                }
 
                 this.ExecuteGenerator(responseGenerator, operation.Name + "Response.cs", "Model");
             }
@@ -561,6 +583,19 @@ namespace ServiceClientGenerator
             generator.Config = this.config;
             var text = generator.TransformText();
             WriteFile("Customizations", subNamespace, fileName, text, this.testDirectory);
+        }
+
+        /// <summary>
+        /// Runs the generator and saves the content in the test directory.
+        /// </summary>
+        /// <param name="generator">The generator to use for outputting the text of the cs file</param>
+        /// <param name="fileName">The name of the cs file</param>
+        /// <param name="subNamespace">Adds an additional directory for the namespace</param>
+        void ExecutePaginatorTestGenerator(BaseGenerator generator, string fileName, string subNamespace = null)
+        {
+            generator.Config = this.config;
+            var text = generator.TransformText();
+            WriteFile("Paginators", subNamespace, fileName, text, this.testDirectory);
         }
 
         /// <summary>

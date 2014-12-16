@@ -1,0 +1,213 @@
+﻿<#@ template language="C#" inherits="BaseResourceGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="ServiceClientGenerator.ResourcesApi" #>
+<#
+	AddLicenseHeader();
+#>
+
+using System;
+using System.Collections.Generic;
+
+using Amazon.Runtime.Resources;
+using <#=this.Config.Namespace#>;
+using <#=this.Config.Namespace#>.Model;
+
+namespace <#=this.Config.Namespace#>.Resources
+{
+    /// <summary>	
+	/// A service is the entry point for using the Resource API. This class allows you to 
+	/// access the top-level resources and operations associated with the
+	/// <#=this.Config.ServiceName#> service.
+    /// </summary>
+	public class <#=this.Config.BaseName#> : Service<IAmazon<#=this.Config.BaseName#>>
+	{
+
+		#region Constructors
+
+        /// <summary>
+        /// Constructs <#=this.Config.BaseName#> with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+		public <#=this.Config.BaseName#>() : base(new Amazon<#=this.Config.BaseName#>Client()) {}
+
+        /// <summary>
+        /// Constructs <#=this.Config.BaseName#> with an instance of Amazon<#=this.Config.BaseName#>Client.
+        /// </summary>     
+        /// <param name="client">The Amazon<#=this.Config.BaseName#>Client to use for requests.</param>   
+		public <#=this.Config.BaseName#>(IAmazon<#=this.Config.BaseName#> client)
+			: base(client)
+		{
+            this.ShouldDisposeClient = false;
+        }
+
+		#endregion
+ 
+		# region Methods for service-level operations
+<# 
+	
+	foreach (var action in this.Config.ServiceModel.ResourceModel.Service.Actions.Values) 
+	{
+#>
+
+        /// <summary>
+        /// Calls the <#=action.RequestOperationName#> operation on the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the <#=action.RequestOperationName#> operation.</param>
+<# 
+	if ( !action.ReturnTypeInterface.Equals("void"))
+	{
+#>
+        /// <returns>An instance of the <#=action.ReturnTypeResource#> resource.</returns>
+<#
+	}
+#>
+		public <#=action.ReturnTypeInterface#> <#=action.MethodName#>(<#=action.RequestType#> request)
+		{
+<#
+		GenerateAction(action);
+#>
+		}
+<#
+	foreach (var form in action.CustomForms)
+	{
+#>
+        /// <summary>
+        /// Calls the <#=action.Name#> on the service.
+		/// <summary>
+<#
+		foreach(var param in form.ParameterDocs)
+		{
+#>
+        <#=param.Value#>
+<#
+         }
+#>
+        /// <returns>An <#=action.ReturnTypeInterface#> associated with the service.</returns>
+        public <#=action.ReturnTypeInterface#> <#=action.MethodName#>(<#=form.Parameters#>)
+		{
+			var request = new <#=action.RequestType#>();
+<#
+              foreach(var member in form.Members)
+			  {
+#>
+			request.<#=member.PropertyName#> = <#=member.ArgumentName#>;
+<#
+			  }
+#>
+			return <#=action.MethodName#>(request);
+		 }
+
+<#
+	    }
+	}
+#>
+
+		#endregion
+
+		#region Methods to get resource collections associated with the service
+<# 
+	
+	foreach (var action in this.Config.ServiceModel.ResourceModel.Service.HasMany.Values) 
+	{
+#>
+        /// <summary>
+        /// Gets the <#=action.Name#> associated with the service.
+<# 
+	if (action.IsPageable)
+	{
+#>
+		/// <para>
+        /// NOTE : This method calls a service operation that supports paging. Enumerating through the
+		/// result of this method can potentially make multiple service operation calls.
+		/// </para>
+<#
+	}
+#>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the <#=action.RequestOperationName#> operation.</param>
+        /// <returns>An IEnumerable&lt;<#=action.ReturnTypeInterface#>&gt; that contains the <#=action.Name#> associated with the service.</returns>
+        public IEnumerable<<#=action.ReturnTypeInterface#>> Get<#=action.MethodName#>(<#=action.RequestType#> request)
+		{
+			<#GenerateHasMany(action);#>
+
+		}
+
+<#
+	foreach (var form in action.CustomForms)
+	{
+#>
+        /// <summary>
+        /// Gets the <#=action.Name#> associated with the service.
+		/// <summary>
+<#
+		foreach(var param in form.ParameterDocs)
+		{
+#>
+        <#=param.Value#>
+<#
+         }
+#>
+        /// <returns>An IEnumerable&lt;<#=action.ReturnTypeInterface#>&gt; that contains the <#=action.Name#> associated with the service.</returns>
+        public IEnumerable<<#=action.ReturnTypeInterface#>> Get<#=action.MethodName#>(<#=form.Parameters#>)
+		{
+			var request = new <#=action.RequestType#>();
+<#
+              foreach(var member in form.Members)
+			  {
+#>
+			request.<#=member.PropertyName#> = <#=member.ArgumentName#>;
+<#
+			  }
+#>
+			return Get<#=action.MethodName#>(request);
+		 }
+
+<#
+	    }
+	}
+#>
+
+		#endregion
+
+        #region Methods to get individual resources associated with the service
+
+<#
+    foreach(var resource in this.Config.ServiceModel.ResourceModel.TopLevelResources.Values)
+    {
+        FormatResourceReferenceFactoryDocumentation(resource);
+#>
+
+        public <#=resource.InterfaceName#> Get<#=resource.ClassName#><#=resource.GetResourceMethodPostFix()#>(<#=resource.IdentifiersAsConstructorParametersTrimmed()#>)
+        {
+            return new Internal.<#=resource.ClassName#>(<#=resource.IdentifiersAsConstructorParameterNames()#>client : this.Client);
+        }
+
+<#
+    }
+#>
+        #endregion
+
+		#region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
+	}
+}

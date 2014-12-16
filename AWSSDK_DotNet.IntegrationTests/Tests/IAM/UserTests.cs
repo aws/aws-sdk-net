@@ -86,6 +86,40 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
         [TestMethod]
         [TestCategory("IAM")]
+        public void TestEnumerateUsers()
+        {
+            var initialUsersCount = Client.ListUsers().Users.Count;
+            var usersToCreate = 5;
+            var userNames = new List<string>();
+            for (int i = 0; i < usersToCreate; i++)
+			{
+			    userNames.Add("sdk-testuser-" + DateTime.Now.Ticks);
+                var request = new CreateUserRequest() { UserName = userNames[i], Path = IAMUtil.TEST_PATH };
+                var response = Client.CreateUser(request);
+			}
+            try
+            {
+                var users = Client.ListUsersEnumerator(new ListUsersRequest
+                {
+                    MaxItems = 2
+                });
+
+                foreach (var user in userNames)
+                {
+                    Assert.IsTrue(users.Any(u => u.UserName == user));
+                }
+            }
+            finally
+            {
+                foreach (var user in userNames)
+                {
+                    Client.DeleteUser(new DeleteUserRequest() { UserName = user });
+                }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("IAM")]
         public void TestListUsers()
         {
             string username1 = IAMUtil.CreateTestUser(Client);

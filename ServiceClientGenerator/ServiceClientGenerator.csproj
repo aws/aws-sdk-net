@@ -58,10 +58,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AWSQueryResponseUnmarshaller.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generators\Resources\BaseResourceGenerator.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseResourceGenerator.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generators\BaseResponseUnmarshaller.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseResponseUnmarshaller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\Resources\ResourceImplementations.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceImplementations.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\Resources\ResourceInterfaces.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceInterfaces.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\Resources\ResourceRoot.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceRoot.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\ServicePaginators.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServicePaginators.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\ServicePaginatorTests.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServicePaginatorTests.tt</DependentUpon>
     </Compile>
     <Compile Include="Generators\WrappingResultGenerator.cs">
       <AutoGen>True</AutoGen>
@@ -175,6 +205,7 @@
     </Compile>
     <Compile Include="Member.cs" />
     <Compile Include="Operation.cs" />
+    <Compile Include="Paginator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Generators\BaseGenerator.cs">
@@ -230,6 +261,9 @@
     <Compile Include="Generators\StructureGenerator.extension.cs">
       <DependentUpon>StructureGenerator.tt</DependentUpon>
     </Compile>
+    <Compile Include="ResourceModel.cs" />
+    <Compile Include="ResourcesApi\ResourceModel.cs" />
+    <Compile Include="ResourcesApi\ResourceModelReader.cs" />
     <Compile Include="ServiceModel.cs" />
     <Compile Include="Shape.cs" />
     <Compile Include="SimpleModels.cs" />
@@ -271,6 +305,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>BaseMarshaller.cs</LastGenOutput>
     </None>
+    <None Include="Generators\Resources\BaseResourceGenerator.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>BaseResourceGenerator.cs</LastGenOutput>
+    </None>
     <None Include="Generators\BaseResponseUnmarshaller.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>BaseResponseUnmarshaller.cs</LastGenOutput>
@@ -278,6 +316,26 @@
     <None Include="Generators\BaseServiceException.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>BaseServiceException.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\Resources\ResourceImplementations.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ResourceImplementations.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\Resources\ResourceInterfaces.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ResourceInterfaces.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\Resources\ResourceRoot.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ResourceRoot.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\ServicePaginators.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ServicePaginators.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\ServicePaginatorTests.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ServicePaginatorTests.cs</LastGenOutput>
     </None>
     <None Include="Generators\WrappingResultGenerator.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -387,6 +445,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

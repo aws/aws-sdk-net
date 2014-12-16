@@ -1,0 +1,153 @@
+﻿<#@ template language="C#" inherits="BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    AddLicenseHeader();
+#>
+
+using System;
+using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+
+using Amazon.Runtime.Internal;
+using <#=this.Config.Namespace#>;
+using <#=this.Config.Namespace#>.Model;
+
+using AWSSDK_DotNet35.UnitTests.TestTools;
+
+namespace AWSSDK_DotNet35.UnitTests.Paginators
+{
+    [TestClass]
+    public class <#=this.Config.BaseName#>PaginatorTests
+    {
+
+<# foreach(var paginator in this.Config.ServiceModel.Paginators)
+   {
+#>
+        #region <#=paginator.OperationName#>Enumerator
+      
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Paginators")]
+        [TestCategory("<#=this.Config.BaseName#>")]
+        public void Test<#=paginator.OperationName#>Enumerator()
+        {
+            var mock = new Mock<IAmazon<#=this.Config.BaseName#>>();
+
+            mock.Setup(client => client.<#=paginator.OperationName#>(It.Is<<#=paginator.OperationName#>Request>(r => r.<#=paginator.InputToken[0]#> == null)))
+                .Returns(new <#=paginator.OperationName#>Response
+                {
+                    <#=paginator.OutputToken[0]#> = "A",
+<#
+        if (paginator.MoreResults != null) 
+        {
+#>
+                    <#=paginator.MoreResults#> = true,
+<#
+}
+#>
+                    <#=paginator.ResultKey#> = new List<<#=paginator.EnumerableMemberType#>> 
+                    {
+<#
+if(paginator.EnumerableMemberType == "string"){
+#>
+                        "item1.0", "item1.1"
+<#
+} else {
+#>
+                        new <#=paginator.EnumerableMemberType#> { <#=this.Config.ServiceModel.FindShape(paginator.EnumerableMemberType).Members.Where(m => m.DetermineType().Equals("string")).First()#> = "item1.0" },
+                        new <#=paginator.EnumerableMemberType#> { <#=this.Config.ServiceModel.FindShape(paginator.EnumerableMemberType).Members.Where(m => m.DetermineType().Equals("string")).First()#> = "item1.1" }
+<#
+}
+#>
+                    }
+                });
+
+            mock.Setup(client => client.<#=paginator.OperationName#>(It.Is<<#=paginator.OperationName#>Request>(r => r.<#=paginator.InputToken[0]#> == "A")))
+                .Returns(new <#=paginator.OperationName#>Response
+                {
+                    <#=paginator.OutputToken[0]#> = "AA",
+<#
+        if (paginator.MoreResults != null) 
+        {
+#>
+                    <#=paginator.MoreResults#> = true,
+<#
+}
+#>
+                    <#=paginator.ResultKey#> = new List<<#=paginator.EnumerableMemberType#>> 
+                    {
+<#
+if(paginator.EnumerableMemberType == "string"){
+#>
+                        "item2.0", "item2.1"
+<#
+} else {
+#>
+                        new <#=paginator.EnumerableMemberType#> { <#=this.Config.ServiceModel.FindShape(paginator.EnumerableMemberType).Members.Where(m => m.DetermineType().Equals("string")).First()#> = "item2.0" },
+                        new <#=paginator.EnumerableMemberType#> { <#=this.Config.ServiceModel.FindShape(paginator.EnumerableMemberType).Members.Where(m => m.DetermineType().Equals("string")).First()#> = "item2.1" }
+<#
+}
+#>
+                    }
+                });
+
+            mock.Setup(client => client.<#=paginator.OperationName#>(It.Is<<#=paginator.OperationName#>Request>(r => r.<#=paginator.InputToken[0]#> == "AA")))
+                .Returns(new <#=paginator.OperationName#>Response
+                {
+                    <#=paginator.ResultKey#> = new List<<#=paginator.EnumerableMemberType#>> 
+                    {
+<#
+if(paginator.EnumerableMemberType == "string"){
+#>
+                        "item3.0"
+<#
+} else {
+#>
+                        new <#=paginator.EnumerableMemberType#> { <#=this.Config.ServiceModel.FindShape(paginator.EnumerableMemberType).Members.Where(m => m.DetermineType().Equals("string")).First()#> = "item3.0" },
+<#
+}
+#>
+                    }
+                });
+
+            var items = Paginator.Paginate<<#=paginator.EnumerableMemberType#>, <#=paginator.OperationName#>Request, <#=paginator.OperationName#>Response>(new <#=paginator.OperationName#>Request(), mock.Object.<#=paginator.OperationName#>);
+
+            var itemEnumerator = items.GetEnumerator();
+
+            for (var i = 1; i <= 3; i++)
+            {
+                for (var j = 0; j < 2; j++)
+                {
+                    if (!itemEnumerator.MoveNext())
+                        break;
+                    mock.Verify(client => client.<#=paginator.OperationName#>(It.IsAny<<#=paginator.OperationName#>Request>()), Times.Exactly(i));
+<#
+if(paginator.EnumerableMemberType == "string"){
+#>
+                        Assert.AreEqual(String.Format("item{0}.{1}", i, j), itemEnumerator.Current);
+<#
+} else {
+#>
+                        Assert.AreEqual(String.Format("item{0}.{1}", i, j), itemEnumerator.Current.<#=this.Config.ServiceModel.FindShape(paginator.EnumerableMemberType).Members.Where(m => m.DetermineType().Equals("string")).First()#>);
+<#
+}
+#>
+                }
+            }
+
+            mock.Verify(client => client.<#=paginator.OperationName#>(It.IsAny<<#=paginator.OperationName#>Request>()), Times.Exactly(3));
+
+        }
+
+        #endregion
+
+<#
+   }       
+#> 
+      
+    }
+}

@@ -171,19 +171,7 @@
     <Compile Include="Amazon.CognitoSync\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.CloudFormation\AmazonCloudFormationClient.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\AmazonCloudFormationConfig.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\AmazonCloudFormationException.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\IAmazonCloudFormation.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\ServiceEnumerations.cs">
+    <Compile Include="Amazon.CloudFormation\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.CloudFormation\Internal\*.cs">
@@ -412,6 +400,9 @@
     <Compile Include="Amazon.IdentityManagement\Model\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.IdentityManagement\Resources\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -498,6 +489,7 @@
     <Compile Include="Amazon.Runtime\AmazonServiceClient.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\NullSigner.cs" />
     <Compile Include="Amazon.Runtime\Internal\AutoConstructedTypes.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Paginator.cs" />
     <Compile Include="Amazon.Runtime\Internal\Settings\PersistenceManager.cs" />
     <Compile Include="Amazon.Runtime\Internal\Settings\SettingsCollection.cs" />
     <Compile Include="Amazon.Runtime\Internal\Settings\SettingsConstants.cs" />
@@ -540,6 +532,9 @@
     <Compile Include="Amazon.Runtime\Pipeline\IPipelineHandler.cs" />
     <Compile Include="Amazon.Runtime\Pipeline\PipelineHandler.cs" />
     <Compile Include="Amazon.Runtime\Pipeline\RuntimePipeline.cs" />
+    <Compile Include="Amazon.Runtime\Resources\Resource.cs" />
+    <Compile Include="Amazon.Runtime\Resources\ResourceLoadException.cs" />
+    <Compile Include="Amazon.Runtime\Resources\Service.cs" />
     <Compile Include="Amazon.S3\Encryption\Internal\SetupDecryptionHandler.cs" />
     <Compile Include="Amazon.S3\Encryption\Internal\SetupEncryptionHandler.cs" />
     <Compile Include="Amazon.S3\Encryption\Internal\UserAgentHandler.cs" />

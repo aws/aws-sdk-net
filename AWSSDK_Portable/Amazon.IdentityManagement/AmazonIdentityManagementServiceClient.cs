@@ -360,10 +360,6 @@ namespace Amazon.IdentityManagement
         
         #region  CreateAccessKey
 
-        internal CreateAccessKeyResponse CreateAccessKey()
-        {
-            return CreateAccessKey(new CreateAccessKeyRequest());
-        }
         internal CreateAccessKeyResponse CreateAccessKey(CreateAccessKeyRequest request)
         {
             var marshaller = new CreateAccessKeyRequestMarshaller();
@@ -754,10 +750,6 @@ namespace Amazon.IdentityManagement
         
         #region  DeleteAccountPasswordPolicy
 
-        internal DeleteAccountPasswordPolicyResponse DeleteAccountPasswordPolicy()
-        {
-            return DeleteAccountPasswordPolicy(new DeleteAccountPasswordPolicyRequest());
-        }
         internal DeleteAccountPasswordPolicyResponse DeleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest request)
         {
             var marshaller = new DeleteAccountPasswordPolicyRequestMarshaller();
@@ -1208,10 +1200,6 @@ namespace Amazon.IdentityManagement
         
         #region  GenerateCredentialReport
 
-        internal GenerateCredentialReportResponse GenerateCredentialReport()
-        {
-            return GenerateCredentialReport(new GenerateCredentialReportRequest());
-        }
         internal GenerateCredentialReportResponse GenerateCredentialReport(GenerateCredentialReportRequest request)
         {
             var marshaller = new GenerateCredentialReportRequestMarshaller();
@@ -1272,10 +1260,6 @@ namespace Amazon.IdentityManagement
         
         #region  GetAccountPasswordPolicy
 
-        internal GetAccountPasswordPolicyResponse GetAccountPasswordPolicy()
-        {
-            return GetAccountPasswordPolicy(new GetAccountPasswordPolicyRequest());
-        }
         internal GetAccountPasswordPolicyResponse GetAccountPasswordPolicy(GetAccountPasswordPolicyRequest request)
         {
             var marshaller = new GetAccountPasswordPolicyRequestMarshaller();
@@ -1306,10 +1290,6 @@ namespace Amazon.IdentityManagement
         
         #region  GetAccountSummary
 
-        internal GetAccountSummaryResponse GetAccountSummary()
-        {
-            return GetAccountSummary(new GetAccountSummaryRequest());
-        }
         internal GetAccountSummaryResponse GetAccountSummary(GetAccountSummaryRequest request)
         {
             var marshaller = new GetAccountSummaryRequestMarshaller();
@@ -1340,10 +1320,6 @@ namespace Amazon.IdentityManagement
         
         #region  GetCredentialReport
 
-        internal GetCredentialReportResponse GetCredentialReport()
-        {
-            return GetCredentialReport(new GetCredentialReportRequest());
-        }
         internal GetCredentialReportResponse GetCredentialReport(GetCredentialReportRequest request)
         {
             var marshaller = new GetCredentialReportRequestMarshaller();
@@ -1644,10 +1620,6 @@ namespace Amazon.IdentityManagement
         
         #region  GetUser
 
-        internal GetUserResponse GetUser()
-        {
-            return GetUser(new GetUserRequest());
-        }
         internal GetUserResponse GetUser(GetUserRequest request)
         {
             var marshaller = new GetUserRequestMarshaller();
@@ -1708,10 +1680,6 @@ namespace Amazon.IdentityManagement
         
         #region  ListAccessKeys
 
-        internal ListAccessKeysResponse ListAccessKeys()
-        {
-            return ListAccessKeys(new ListAccessKeysRequest());
-        }
         internal ListAccessKeysResponse ListAccessKeys(ListAccessKeysRequest request)
         {
             var marshaller = new ListAccessKeysRequestMarshaller();
@@ -1742,10 +1710,6 @@ namespace Amazon.IdentityManagement
         
         #region  ListAccountAliases
 
-        internal ListAccountAliasesResponse ListAccountAliases()
-        {
-            return ListAccountAliases(new ListAccountAliasesRequest());
-        }
         internal ListAccountAliasesResponse ListAccountAliases(ListAccountAliasesRequest request)
         {
             var marshaller = new ListAccountAliasesRequestMarshaller();
@@ -1806,10 +1770,6 @@ namespace Amazon.IdentityManagement
         
         #region  ListGroups
 
-        internal ListGroupsResponse ListGroups()
-        {
-            return ListGroups(new ListGroupsRequest());
-        }
         internal ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
             var marshaller = new ListGroupsRequestMarshaller();
@@ -1870,10 +1830,6 @@ namespace Amazon.IdentityManagement
         
         #region  ListInstanceProfiles
 
-        internal ListInstanceProfilesResponse ListInstanceProfiles()
-        {
-            return ListInstanceProfiles(new ListInstanceProfilesRequest());
-        }
         internal ListInstanceProfilesResponse ListInstanceProfiles(ListInstanceProfilesRequest request)
         {
             var marshaller = new ListInstanceProfilesRequestMarshaller();
@@ -1934,10 +1890,6 @@ namespace Amazon.IdentityManagement
         
         #region  ListMFADevices
 
-        internal ListMFADevicesResponse ListMFADevices()
-        {
-            return ListMFADevices(new ListMFADevicesRequest());
-        }
         internal ListMFADevicesResponse ListMFADevices(ListMFADevicesRequest request)
         {
             var marshaller = new ListMFADevicesRequestMarshaller();
@@ -2028,10 +1980,6 @@ namespace Amazon.IdentityManagement
         
         #region  ListRoles
 
-        internal ListRolesResponse ListRoles()
-        {
-            return ListRoles(new ListRolesRequest());
-        }
         internal ListRolesResponse ListRoles(ListRolesRequest request)
         {
             var marshaller = new ListRolesRequestMarshaller();
@@ -2062,10 +2010,6 @@ namespace Amazon.IdentityManagement
         
         #region  ListSAMLProviders
 
-        internal ListSAMLProvidersResponse ListSAMLProviders()
-        {
-            return ListSAMLProviders(new ListSAMLProvidersRequest());
-        }
         internal ListSAMLProvidersResponse ListSAMLProviders(ListSAMLProvidersRequest request)
         {
             var marshaller = new ListSAMLProvidersRequestMarshaller();
@@ -2096,10 +2040,6 @@ namespace Amazon.IdentityManagement
         
         #region  ListServerCertificates
 
-        internal ListServerCertificatesResponse ListServerCertificates()
-        {
-            return ListServerCertificates(new ListServerCertificatesRequest());
-        }
         internal ListServerCertificatesResponse ListServerCertificates(ListServerCertificatesRequest request)
         {
             var marshaller = new ListServerCertificatesRequestMarshaller();
@@ -2130,10 +2070,6 @@ namespace Amazon.IdentityManagement
         
         #region  ListSigningCertificates
 
-        internal ListSigningCertificatesResponse ListSigningCertificates()
-        {
-            return ListSigningCertificates(new ListSigningCertificatesRequest());
-        }
         internal ListSigningCertificatesResponse ListSigningCertificates(ListSigningCertificatesRequest request)
         {
             var marshaller = new ListSigningCertificatesRequestMarshaller();
@@ -2194,10 +2130,6 @@ namespace Amazon.IdentityManagement
         
         #region  ListUsers
 
-        internal ListUsersResponse ListUsers()
-        {
-            return ListUsers(new ListUsersRequest());
-        }
         internal ListUsersResponse ListUsers(ListUsersRequest request)
         {
             var marshaller = new ListUsersRequestMarshaller();
@@ -2228,10 +2160,6 @@ namespace Amazon.IdentityManagement
         
         #region  ListVirtualMFADevices
 
-        internal ListVirtualMFADevicesResponse ListVirtualMFADevices()
-        {
-            return ListVirtualMFADevices(new ListVirtualMFADevicesRequest());
-        }
         internal ListVirtualMFADevicesResponse ListVirtualMFADevices(ListVirtualMFADevicesRequest request)
         {
             var marshaller = new ListVirtualMFADevicesRequestMarshaller();
@@ -2502,10 +2430,6 @@ namespace Amazon.IdentityManagement
         
         #region  UpdateAccountPasswordPolicy
 
-        internal UpdateAccountPasswordPolicyResponse UpdateAccountPasswordPolicy()
-        {
-            return UpdateAccountPasswordPolicy(new UpdateAccountPasswordPolicyRequest());
-        }
         internal UpdateAccountPasswordPolicyResponse UpdateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest request)
         {
             var marshaller = new UpdateAccountPasswordPolicyRequestMarshaller();

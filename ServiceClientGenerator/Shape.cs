@@ -240,7 +240,7 @@ namespace ServiceClientGenerator
             get
             {
                 IList<Member> map = new List<Member>();
-                JsonData members = this.data[MembersKey];
+                JsonData members = this.data != null ? this.data[MembersKey] : null;
                 if (members != null)
                 {
                     foreach (KeyValuePair<string, JsonData> kvp in members)

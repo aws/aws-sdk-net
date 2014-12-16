@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+    #line 1 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class LegacyResponseClass : BaseGenerator
     {
@@ -29,51 +29,114 @@ namespace ServiceClientGenerator.Generators
         public override string TransformText()
         {
             
-            #line 6 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            #line 6 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
 
 	AddLicenseHeader();
 
             
             #line default
             #line hidden
-            this.Write("\r\nusing System;\r\n\r\nnamespace ");
+            this.Write("\r\nusing System;\r\n");
             
-            #line 12 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            #line 11 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+    if (this.IsPageable) { 
+            
+            #line default
+            #line hidden
+            this.Write("using System.Collections.Generic;\r\nusing Amazon.Runtime.Internal;\r\n");
+            
+            #line 14 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+    } 
+            
+            #line default
+            #line hidden
+            this.Write("\r\nnamespace ");
+            
+            #line 16 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model\r\n{\r\n    /// <summary>\r\n    /// Configuration for accessing Amazon ");
             
-            #line 15 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            #line 19 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
-            this.Write(" service\r\n    /// </summary>\r\n\tpublic partial class ");
+            this.Write(" service\r\n    /// </summary>\r\n");
             
-            #line 17 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            #line 21 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+  if (this.IsPageable) { 
+            
+            #line default
+            #line hidden
+            this.Write("\tpublic partial class ");
+            
+            #line 22 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
             this.Write("Response : ");
             
-            #line 17 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            #line 22 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
-            this.Write("Result\r\n\t{\r\n        /// <summary>\r\n        /// Gets and sets the ");
+            this.Write("Result, IPageableResponse<");
             
-            #line 20 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            #line 22 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Paginator.EnumerableMemberType));
+            
+            #line default
+            #line hidden
+            this.Write(", ");
+            
+            #line 22 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
+            
+            #line default
+            #line hidden
+            this.Write("Request>\r\n");
+            
+            #line 23 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+  } else { 
+            
+            #line default
+            #line hidden
+            this.Write("    public partial class ");
+            
+            #line 24 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
+            
+            #line default
+            #line hidden
+            this.Write("Response : ");
+            
+            #line 24 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
+            
+            #line default
+            #line hidden
+            this.Write("Result\r\n");
+            
+            #line 25 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+  } 
+            
+            #line default
+            #line hidden
+            this.Write("    {\r\n        /// <summary>\r\n        /// Gets and sets the ");
+            
+            #line 27 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
             this.Write("Result property.\r\n        /// Represents the output of a ");
             
-            #line 21 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            #line 28 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
@@ -81,54 +144,191 @@ namespace ServiceClientGenerator.Generators
             this.Write(" operation.\r\n        /// </summary>\r\n        [Obsolete(@\"This property has been d" +
                     "eprecated. All properties of the ");
             
-            #line 23 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            #line 30 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
             this.Write("Result class are now available on the ");
             
-            #line 23 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            #line 30 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
             this.Write("Response class. You should use the properties on ");
             
-            #line 23 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            #line 30 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
             this.Write("Response instead of accessing them through ");
             
-            #line 23 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            #line 30 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
             this.Write("Result.\")]\r\n        public ");
             
-            #line 24 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            #line 31 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
             this.Write("Result ");
             
-            #line 24 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            #line 31 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
             this.Write("Result\r\n        {\r\n            get\r\n            {\r\n                return this;\r\n" +
-                    "            }\r\n        }\r\n    }\r\n}\r\n\r\n");
+                    "            }\r\n        }\r\n");
+            
+            #line 38 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+
+    if (this.IsPageable) 
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write(@"		
+		[System.Diagnostics.CodeAnalysis.SuppressMessage(""Microsoft.Design"", ""CA1033:InterfaceMethodsShouldBeCallableByChildTypes"",
+			Justification = ""Hide IPageableResponse implementation from being part of the public interface of this type."")]
+        bool IPageableResponse<");
+            
+            #line 45 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Paginator.EnumerableMemberType));
+            
+            #line default
+            #line hidden
+            this.Write(", ");
+            
+            #line 45 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
+            
+            #line default
+            #line hidden
+            this.Write("Request>.MoreResultsAvailable()\r\n        {\r\n            ");
+            
+            #line 47 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Paginator.FormatMoreResultsTest()));
+            
+            #line default
+            #line hidden
+            this.Write(@"
+        }
+
+		
+		[System.Diagnostics.CodeAnalysis.SuppressMessage(""Microsoft.Design"", ""CA1033:InterfaceMethodsShouldBeCallableByChildTypes"",
+			Justification = ""Hide IPageableResponse implementation from being part of the public interface of this type."")]
+        void IPageableResponse<");
+            
+            #line 53 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Paginator.EnumerableMemberType));
+            
+            #line default
+            #line hidden
+            this.Write(", ");
+            
+            #line 53 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
+            
+            #line default
+            #line hidden
+            this.Write("Request>.SetPaginationTokens(");
+            
+            #line 53 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
+            
+            #line default
+            #line hidden
+            this.Write("Request request)\r\n        {\r\n");
+            
+            #line 55 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+
+	for(var index=0; index<this.Paginator.InputToken.Count; index++){
+
+            
+            #line default
+            #line hidden
+            this.Write("            \r\n\t\t\trequest.");
+            
+            #line 58 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Paginator.InputToken[index]));
+            
+            #line default
+            #line hidden
+            this.Write(" = this.");
+            
+            #line 58 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Paginator.OutputToken[index]));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n");
+            
+            #line 59 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+
+	}
+
+            
+            #line default
+            #line hidden
+            this.Write(@"        }
+
+		
+		[System.Diagnostics.CodeAnalysis.SuppressMessage(""Microsoft.Design"", ""CA1033:InterfaceMethodsShouldBeCallableByChildTypes"",
+			Justification = ""Hide IPageableResponse implementation from being part of the public interface of this type."")]
+        IEnumerable<");
+            
+            #line 67 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Paginator.EnumerableMemberType));
+            
+            #line default
+            #line hidden
+            this.Write("> IPageableResponse<");
+            
+            #line 67 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Paginator.EnumerableMemberType));
+            
+            #line default
+            #line hidden
+            this.Write(", ");
+            
+            #line 67 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
+            
+            #line default
+            #line hidden
+            this.Write("Request>.SelectResult()\r\n        {\r\n            return this.");
+            
+            #line 69 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Paginator.ResultKey));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n        }\r\n");
+            
+            #line 71 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("    }\r\n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 34 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
+        #line 77 "C:\dev\net\sdk.resource.api\sdk\src\ServiceClientGenerator\Generators\LegacyResponseClass.tt"
 
-    public string OperationName { get; set; }
+    public string OperationName { get; set; }    
+    public bool IsPageable { get; set; }
+	public Paginator Paginator { get; set; }
 
         
         #line default

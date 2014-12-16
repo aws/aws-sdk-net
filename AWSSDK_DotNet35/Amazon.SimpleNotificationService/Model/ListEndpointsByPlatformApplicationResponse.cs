@@ -18,13 +18,15 @@
  */
 
 using System;
+using System.Collections.Generic;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Configuration for accessing Amazon ListEndpointsByPlatformApplication service
     /// </summary>
-    public partial class ListEndpointsByPlatformApplicationResponse : ListEndpointsByPlatformApplicationResult
+    public partial class ListEndpointsByPlatformApplicationResponse : ListEndpointsByPlatformApplicationResult, IPageableResponse<Endpoint, ListEndpointsByPlatformApplicationRequest>
     {
         /// <summary>
         /// Gets and sets the ListEndpointsByPlatformApplicationResult property.
@@ -37,6 +39,30 @@ namespace Amazon.SimpleNotificationService.Model
             {
                 return this;
             }
+        }
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        bool IPageableResponse<Endpoint, ListEndpointsByPlatformApplicationRequest>.MoreResultsAvailable()
+        {
+            return !String.IsNullOrEmpty(this.NextToken);
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        void IPageableResponse<Endpoint, ListEndpointsByPlatformApplicationRequest>.SetPaginationTokens(ListEndpointsByPlatformApplicationRequest request)
+        {
+            
+            request.NextToken = this.NextToken;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        IEnumerable<Endpoint> IPageableResponse<Endpoint, ListEndpointsByPlatformApplicationRequest>.SelectResult()
+        {
+            return this.Endpoints;
         }
     }
 }

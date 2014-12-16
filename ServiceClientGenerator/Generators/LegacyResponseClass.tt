@@ -8,14 +8,21 @@
 #>
 
 using System;
+<#    if (this.IsPageable) { #>
+using System.Collections.Generic;
+using Amazon.Runtime.Internal;
+<#    } #>
 
 namespace <#=this.Config.Namespace#>.Model
 {
     /// <summary>
     /// Configuration for accessing Amazon <#=this.OperationName#> service
     /// </summary>
-	public partial class <#=this.OperationName#>Response : <#=this.OperationName#>Result
-	{
+<#  if (this.IsPageable) { #>
+	public partial class <#=this.OperationName#>Response : <#=this.OperationName#>Result, IPageableResponse<<#=this.Paginator.EnumerableMemberType#>, <#=this.OperationName#>Request>
+<#  } else { #>
+    public partial class <#=this.OperationName#>Response : <#=this.OperationName#>Result
+<#  } #>    {
         /// <summary>
         /// Gets and sets the <#=this.OperationName#>Result property.
         /// Represents the output of a <#=this.OperationName#> operation.
@@ -28,9 +35,47 @@ namespace <#=this.Config.Namespace#>.Model
                 return this;
             }
         }
+<#
+    if (this.IsPageable) 
+    {
+#>
+		
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+			Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        bool IPageableResponse<<#=this.Paginator.EnumerableMemberType#>, <#=this.OperationName#>Request>.MoreResultsAvailable()
+        {
+            <#=this.Paginator.FormatMoreResultsTest()#>
+        }
+
+		
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+			Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        void IPageableResponse<<#=this.Paginator.EnumerableMemberType#>, <#=this.OperationName#>Request>.SetPaginationTokens(<#=this.OperationName#>Request request)
+        {
+<#
+	for(var index=0; index<this.Paginator.InputToken.Count; index++){
+#>            
+			request.<#=this.Paginator.InputToken[index]#> = this.<#=this.Paginator.OutputToken[index]#>;
+<#
+	}
+#>
+        }
+
+		
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+			Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        IEnumerable<<#=this.Paginator.EnumerableMemberType#>> IPageableResponse<<#=this.Paginator.EnumerableMemberType#>, <#=this.OperationName#>Request>.SelectResult()
+        {
+            return this.<#=this.Paginator.ResultKey#>;
+        }
+<#
+    }
+#>
     }
 }
 
 <#+
-    public string OperationName { get; set; }
+    public string OperationName { get; set; }    
+    public bool IsPageable { get; set; }
+	public Paginator Paginator { get; set; }
 #>

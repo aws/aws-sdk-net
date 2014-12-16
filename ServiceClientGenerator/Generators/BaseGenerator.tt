@@ -129,10 +129,15 @@
 <#+
     }
 
-    // Adds documentation to the members of a structure
     public void FormatPropertyDocumentation(Member member)
     {
-        var documentation = CleanupDocumentation(string.Format("Gets and sets the property {0}. {1}", member.PropertyName, member.Documentation));
+        FormatPropertyDocumentation(member, "Gets and sets the property");
+    }
+    
+    // Adds documentation to the members of a structure
+    public void FormatPropertyDocumentation(Member member, string blurb)
+    {
+        var documentation = CleanupDocumentation(string.Format("{0} {1}. {2}", blurb, member.PropertyName, member.Documentation));
 
 #>
         /// <summary>
@@ -364,7 +369,11 @@
         if (this.Config.ServiceModel.Customizations.SimpleMethodsModel.CreateSimpleMethods(operation.Name))
         {
             var forms = this.Config.ServiceModel.Customizations.SimpleMethodsModel.SimpleMethods[operation.Name].Forms;
-            var members = this.Config.ServiceModel.FindShape(operation.RequestStructure.Name).Members;
+            IList<Member> members;
+			if (operation.RequestStructure != null)
+				members = this.Config.ServiceModel.FindShape(operation.RequestStructure.Name).Members;
+			else
+				members = new List<Member>();
 
             foreach (var form in forms)
             {
@@ -402,7 +411,11 @@ foreach (var member in docMembers)
         if (this.Config.ServiceModel.Customizations.SimpleMethodsModel.CreateSimpleMethods(operation.Name))
         {
             var forms = this.Config.ServiceModel.Customizations.SimpleMethodsModel.SimpleMethods[operation.Name].Forms;
-            var members = this.Config.ServiceModel.FindShape(operation.RequestStructure.Name).Members;
+            IList<Member> members;
+			if (operation.RequestStructure != null)
+				members = this.Config.ServiceModel.FindShape(operation.RequestStructure.Name).Members;
+			else
+				members = new List<Member>();
 
             foreach (var form in forms)
             {

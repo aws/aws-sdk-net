@@ -116,6 +116,7 @@ namespace ServiceClientGenerator
                     Namespace = modelNode["namespace"] != null ? modelNode["namespace"].ToString() : null, // Namespace of the service if it's different from basename
                     LockedAPIVersion = modelNode["locked-api-version"] != null ? modelNode["locked-api-version"].ToString() : null,
                     BaseName = modelNode["base-name"].ToString(), // The name that is used as the client name and base request name
+                    ServiceName = modelNode["service-name"] != null ? modelNode["service-name"].ToString() : null,
                     RegionLookupName = modelNode["region-lookup-name"].ToString(),
                     AuthenticationServiceName = modelNode["authentication-service-name"] != null ? modelNode["authentication-service-name"].ToString() : null,
                     ServiceUrl = modelNode["service-url"] != null ? modelNode["service-url"].ToString() : null,

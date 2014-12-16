@@ -308,7 +308,7 @@ namespace Json.LitJson
             return op;
         }
 
-        private static object ReadValue (Type inst_type, JsonReader reader)
+        private static object ReadValue (Type inst_type, JsonReader reader, bool ignoreCase = false)
         {
             reader.Read ();
 
@@ -359,7 +359,11 @@ namespace Json.LitJson
 
                 // Maybe it's an enum
                 if (inst_type.IsEnum)
-                    return Enum.ToObject (inst_type, reader.Value);
+                {
+                    return Enum.Parse(inst_type, (string)reader.Value, ignoreCase);
+                    //return Enum.ToObject(inst_type, reader.Value);
+                }
+                    
 
                 // Try using an implicit conversion operator
                 MethodInfo conv_op = GetConvOp (inst_type, json_type);
@@ -398,7 +402,7 @@ namespace Json.LitJson
                 }
 
                 while (true) {
-                    object item = ReadValue (elem_type, reader);
+                    object item = ReadValue (elem_type, reader, ignoreCase);
                     if (reader.Token == JsonToken.ArrayEnd)
                         break;
 
@@ -428,6 +432,17 @@ namespace Json.LitJson
                         break;
 
                     string property = (string) reader.Value;
+                    if (ignoreCase)
+                    {
+                        foreach (var key in t_data.Properties.Keys)
+                        {
+                            if (key.Equals(property,StringComparison.InvariantCultureIgnoreCase))
+                            {
+                                property = key;
+                                break;
+                            }
+                        }                      
+                    }
 
                     if (t_data.Properties.ContainsKey (property)) {
                         PropertyMetadata prop_data =
@@ -435,7 +450,7 @@ namespace Json.LitJson
 
                         if (prop_data.IsField) {
                             ((FieldInfo) prop_data.Info).SetValue (
-                                instance, ReadValue (prop_data.Type, reader));
+                                instance, ReadValue (prop_data.Type, reader, ignoreCase));
                         } else {
                             PropertyInfo p_info =
                                 (PropertyInfo) prop_data.Info;
@@ -443,10 +458,10 @@ namespace Json.LitJson
                             if (p_info.CanWrite)
                                 p_info.SetValue (
                                     instance,
-                                    ReadValue (prop_data.Type, reader),
+                                    ReadValue (prop_data.Type, reader, ignoreCase),
                                     null);
                             else
-                                ReadValue (prop_data.Type, reader);
+                                ReadValue (prop_data.Type, reader, ignoreCase);
                         }
 
                     } else {
@@ -457,7 +472,7 @@ namespace Json.LitJson
 
                         ((IDictionary) instance).Add (
                             property, ReadValue (
-                                t_data.ElementType, reader));
+                                t_data.ElementType, reader, ignoreCase));
                     }
 
                 }
@@ -855,11 +870,11 @@ namespace Json.LitJson
             return (T) ReadValue (typeof (T), reader);
         }
 
-        public static T ToObject<T> (TextReader reader)
+        public static T ToObject<T> (TextReader reader, bool ignoreCase = false)
         {
             JsonReader json_reader = new JsonReader (reader);
 
-            return (T) ReadValue (typeof (T), json_reader);
+            return (T) ReadValue (typeof (T), json_reader, ignoreCase);
         }
 
         public static T ToObject<T> (string json)

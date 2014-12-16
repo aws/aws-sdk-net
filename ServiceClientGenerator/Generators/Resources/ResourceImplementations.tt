@@ -1,0 +1,279 @@
+﻿<#@ template language="C#" inherits="BaseResourceGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="ServiceClientGenerator.ResourcesApi" #>
+<#
+    AddLicenseHeader();
+#>
+
+using System;
+using System.IO;
+using System.Collections.Generic;
+using Amazon.Runtime.Resources;
+using <#=this.Config.Namespace#>.Model;
+
+namespace <#=this.Config.Namespace#>.Resources.Internal
+{
+<# 
+    foreach (var resource in this.Config.ServiceModel.ResourceModel.Resources.Values) 
+    {
+#>
+
+    #region <#=resource.ClassName#>
+
+    internal class <#=resource.ClassName#> : Resource<IAmazon<#=this.Config.BaseName#>>, <#=resource.InterfaceName#>
+    {
+<#        
+        GenerateIdentifierAttributes(resource);
+  
+        if(resource.Shape != null)
+		{
+			GenerateAttributeProperties(resource);
+			if(resource.CanBeConstructedFromModel)
+			{
+#>
+        public <#=resource.ClassName#>(Model.<#=resource.Shape.Name#> model, IAmazon<#=this.Config.BaseName#> client)
+            : base (client)
+        {
+            this.IsLoaded = true;
+<#
+		foreach(var identifier in resource.Identifiers)
+		{
+#>
+			this.<#=identifier.Name#> = model.<#=identifier.MemberName#>;
+<#	
+		}
+#>
+			CopyFrom(model);
+        }
+
+<#	
+			}
+			GenerateCopyFrom(resource);
+            if(resource.LoadAction != null)
+                GenerateLoadMethod(resource);
+        }		
+#>
+        public <#=resource.ClassName#>(<#=resource.IdentifiersAsConstructorParameters()#>IAmazon<#=this.Config.BaseName#> client)
+            : base (client)
+        {
+            this.IsLoaded = false;
+<#
+		foreach(var identifier in resource.Identifiers)
+		{
+#>
+			this.<#=identifier.Name#> = <#=identifier.Name.ToCamelCase()#>;
+<#	
+		}
+#>
+
+        }
+
+		# region Actions
+<# 
+	
+	foreach (var action in resource.Actions.Values) 
+	{
+#>
+
+		public <#=action.ReturnTypeInterface#> <#=action.MethodName#>(<#=action.RequestType#> request)
+		{
+<#
+		GenerateAction(action);
+#>
+		}
+<#
+	foreach (var form in action.CustomForms.Select(f => f.WithoutIdentifiers()))
+	{
+#>
+
+        public <#=action.ReturnTypeInterface#> <#=action.MethodName#>(<#=form.Parameters#>)
+		{
+			var request = new <#=action.RequestType#>();
+<#
+              foreach(var member in form.Members)
+			  {
+#>
+			request.<#=member.PropertyName#> = <#=member.ArgumentName#>;
+<#
+			  }
+#>
+			<#=action.ReturnTypeInterface.Equals("void") ? "" : "return "#><#=action.MethodName#>(request);
+		 }
+<#
+	    }
+	}
+#>
+
+		#endregion
+
+<#
+		if(resource.HasMany.Count > 0)
+		{
+#>
+		#region HasMany
+<# 
+	
+	foreach (var action in resource.HasMany.Values) 
+	{
+#>
+		public IEnumerable<<#=action.ReturnTypeInterface#>> Get<#=action.MethodName#>(<#=action.RequestType#> request)
+		{
+<#
+			GenerateHasMany(action);
+#>
+
+		}
+
+<#
+	foreach (var form in action.CustomForms.Select(f => f.WithoutIdentifiers()))
+	{
+#>
+        public IEnumerable<<#=action.ReturnTypeInterface#>> Get<#=action.MethodName#>(<#=form.Parameters#>)
+		{
+			var request = new <#=action.RequestType#>();
+<#
+              foreach(var member in form.Members)
+			  {
+#>
+			request.<#=member.PropertyName#> = <#=member.ArgumentName#>;
+<#
+			  }
+#>
+			return Get<#=action.MethodName#>(request);
+		 }
+
+<#
+	    }
+	}
+#>
+
+		#endregion
+<#
+		}
+
+		if(resource.SubResources.Count > 0)
+		{
+#>
+
+		#region Subresource
+
+<# 
+	
+	foreach (var subResource in resource.SubResources) 
+	{
+#>
+		public <#=subResource.InterfaceName#> Get<#=subResource.ClassName#><#=subResource.GetResourceMethodPostFix(resource.SubResourceIdentifiers)#>(<#=subResource.IdentifiersAsConstructorParametersTrimmed(resource.SubResourceIdentifiers)#>)
+        {
+            return new Internal.<#=subResource.ClassName#>(<#=subResource.IdentifiersAsConstructorParameterNames(resource.SubResourceIdentifiers)#>client : this.Client);
+        }
+<#
+	}
+#>
+
+		#endregion
+<#
+		}
+#>
+    }
+
+    #endregion
+<#
+    }
+#>
+}
+
+<#+
+void GenerateIdentifierAttributes(Resource resource)
+{
+    foreach(var identifier in resource.Identifiers)
+    {
+#>
+        public string <#=identifier.Name#> { get; private set; }
+
+<#+	
+    }
+}
+
+void GenerateAttributeProperties(Resource resource)
+{
+     foreach(var attribute in resource.Attributes)
+     {
+	    var memberType = attribute.IsResource ? 
+			"I" + attribute.Member.DetermineType() : attribute.Member.DetermineType();
+#>
+		private <#=attribute.Type#> <#=attribute.Member.VariableName#>;
+        public <#=attribute.Type#> <#=attribute.Member.PropertyName#>
+        {
+            get
+            {
+                this.CheckIfLoaded();
+                return <#=attribute.Member.PropertyName.ToClassMemberCase()#>;
+            }
+        }
+
+<#+	
+	}
+}
+
+void GenerateCopyFrom(Resource resource)
+{    
+#>
+		private void CopyFrom(Model.<#=resource.Shape.Name#> model)
+        {
+<#+		
+        foreach(var attribute in resource.Attributes)
+        {
+			if(attribute.IsResource)
+			{
+				if(attribute.Member.IsList)
+				{
+					var resourceType = attribute.Resource.InterfaceName;
+#>	
+			<#=attribute.Member.VariableName#> = new List<<#=attribute.Resource.InterfaceName#>>();
+			foreach(var item in model.<#=attribute.Member.PropertyName#>)
+				<#=attribute.Member.VariableName#>.Add(new <#=attribute.Resource.ClassName#>(item, this.Client));
+<#+
+				}
+				else
+				{
+#>	
+			<#=attribute.Member.VariableName#> = new <#=attribute.Member.Shape.Name#>(model.<#=attribute.Member.PropertyName#>, this.Client);
+<#+
+				}
+			}
+			else
+			{
+#>
+			<#=attribute.Member.VariableName#> = model.<#=attribute.Member.PropertyName#>;
+<#+	
+			}
+        } 
+#>
+		}
+
+<#+		
+}
+#>
+
+<#+
+
+    void GenerateLoadMethod(Resource resource)
+    {
+#>      
+        protected override void LoadResource()
+        {
+            var request = new <#=resource.LoadAction.RequestType#>();
+<#+
+        GenerateRequestMappings(resource.LoadAction);
+#>
+
+            var response = this.Client.<#=resource.LoadAction.RequestOperationName#>(request);
+            this.CopyFrom(<#=resource.LoadAction.Path.GetIdentifierExpression()#>);
+        }
+
+<#+
+    }
+#>

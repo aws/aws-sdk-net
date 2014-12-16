@@ -18,13 +18,15 @@
  */
 
 using System;
+using System.Collections.Generic;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Glacier.Model
 {
     /// <summary>
     /// Configuration for accessing Amazon ListVaults service
     /// </summary>
-    public partial class ListVaultsResponse : ListVaultsResult
+    public partial class ListVaultsResponse : ListVaultsResult, IPageableResponse<DescribeVaultOutput, ListVaultsRequest>
     {
         /// <summary>
         /// Gets and sets the ListVaultsResult property.
@@ -37,6 +39,30 @@ namespace Amazon.Glacier.Model
             {
                 return this;
             }
+        }
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        bool IPageableResponse<DescribeVaultOutput, ListVaultsRequest>.MoreResultsAvailable()
+        {
+            return !String.IsNullOrEmpty(this.Marker);
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        void IPageableResponse<DescribeVaultOutput, ListVaultsRequest>.SetPaginationTokens(ListVaultsRequest request)
+        {
+            
+            request.Marker = this.Marker;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        IEnumerable<DescribeVaultOutput> IPageableResponse<DescribeVaultOutput, ListVaultsRequest>.SelectResult()
+        {
+            return this.VaultList;
         }
     }
 }

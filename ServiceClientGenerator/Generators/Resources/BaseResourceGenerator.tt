@@ -1,0 +1,105 @@
+﻿<#@ template language="C#" inherits="BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="ServiceClientGenerator.ResourcesApi" #>
+
+<#+ 
+public void GenerateAction(ServiceClientGenerator.ResourcesApi.Action action)
+{
+	GenerateRequestMappings(action);
+#>
+			<#=action.ReturnTypeInterface.Equals("void") ? "" : "var response = "#>ResourcesUtilities.Invoke(request, this.Client.<#=action.RequestOperationName#>, "<#=action.Name#>");
+<#+
+	if(action.Resource!=null)	
+	{
+#>
+			return <#=action.ResourceConstructionExpression#>;
+			
+<#+
+	}
+}
+#>
+
+<#+ public void FormatResourceReferenceFactoryDocumentation(ServiceClientGenerator.ResourcesApi.Resource resource) 
+{
+#>
+        /// <summary>
+        /// Gets a <#=resource.ClassName#> resource associated with the service using 
+		/// its identifier.
+		/// <para>
+		/// This method does not make a service call, it returns a resource instance
+		/// only with its identifier properties initialized. Accessing any non-identifier 
+		/// properties or operations on the resource that in turn access any non-identifier 
+		/// properties will cause the resource to make a service call to load its data.
+		/// </para>
+		/// <para>
+		/// NOTE : This method does not make a service call when the resource is initally
+		/// constructed. If you pass invalid identifiers to this method, it will return a resource
+		/// that may not exist on the server. In this case an exception will be thrown when 
+		/// the resource tries to load itself due to conditions listed in the previous section.
+		/// </para>
+        /// </summary>
+<#+
+        foreach (var p in resource.Identifiers)
+        {           
+#>
+        /// <param name="<#=p.Name.ToCamelCase()#>">The <#=p.Name.ToLower()#> of the <#=resource.ClassName#>.</param>
+<#+
+        }
+#>
+        /// <returns>An instance of <#=resource.Name#> resource.</returns>
+<#+
+}
+
+ public void GenerateRequestMappings(ServiceClientGenerator.ResourcesApi.Action action)
+{
+	if(action.HasRequestParameterMappings)
+	{
+		foreach(var parameter in action.RequestParameterMappings)
+		{
+#>
+			request.<#=parameter.Target#> = <#=parameter.Source.GetIdentifierExpression()#>;
+<#+
+		}
+	}
+}
+
+public void GenerateHasMany(EnumerableAction action)
+{
+	GenerateRequestMappings(action);
+	if(!action.IsPageable && action.ReturnsResource)
+	{
+#>
+			var items = new List<<#=action.ReturnTypeInterface#>>();
+			foreach (var item in this.Client.<#=action.RequestOperationName#>(request))
+			{		
+				items.Add(new <#=action.ReturnType#>(item, this.Client));
+			}
+			return items;test
+<#+	
+	}
+	else if(!action.IsPageable && !action.ReturnsResource)
+	{
+#>		
+			var items = new List<<#=action.ReturnTypeInterface#>>();
+			foreach (var item in ResourcesUtilities.Invoke(request, this.Client.<#=action.RequestOperationName#>, "<#=action.Name#>")<#=action.ResultKey#>)
+			{		
+				items.Add(<#=action.ResourceConstructionExpression#>);
+			}
+			return items;
+<#+	
+	}
+	else if(action.IsPageable)
+	{
+#>		
+			foreach (var item in ResourcesUtilities.InvokePaginator(request, this.Client.<#=action.RequestOperationName#>, "<#=action.Name#>"))
+			{			
+				yield return <#=action.ResourceConstructionExpression#>;	
+			}
+<#+	
+	}
+}
+#>

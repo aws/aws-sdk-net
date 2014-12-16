@@ -18,13 +18,15 @@
  */
 
 using System;
+using System.Collections.Generic;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Configuration for accessing Amazon ListInstanceProfiles service
     /// </summary>
-    public partial class ListInstanceProfilesResponse : ListInstanceProfilesResult
+    public partial class ListInstanceProfilesResponse : ListInstanceProfilesResult, IPageableResponse<InstanceProfile, ListInstanceProfilesRequest>
     {
         /// <summary>
         /// Gets and sets the ListInstanceProfilesResult property.
@@ -37,6 +39,30 @@ namespace Amazon.IdentityManagement.Model
             {
                 return this;
             }
+        }
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        bool IPageableResponse<InstanceProfile, ListInstanceProfilesRequest>.MoreResultsAvailable()
+        {
+            return this.IsTruncated;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        void IPageableResponse<InstanceProfile, ListInstanceProfilesRequest>.SetPaginationTokens(ListInstanceProfilesRequest request)
+        {
+            
+            request.Marker = this.Marker;
+        }
+
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes",
+            Justification = "Hide IPageableResponse implementation from being part of the public interface of this type.")]
+        IEnumerable<InstanceProfile> IPageableResponse<InstanceProfile, ListInstanceProfilesRequest>.SelectResult()
+        {
+            return this.InstanceProfiles;
         }
     }
 }

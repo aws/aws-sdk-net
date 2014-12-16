@@ -253,6 +253,7 @@
 			
 			"model" : "iam",
 			"base-name" : "IdentityManagement",
+			"service-name" "AWS Identity and Access Management"
 			"namespace" : "Amazon.IdentityManagement",
 			"region-lookup-name" : "iam",
 			"service-url":"https://iam.amazonaws.com",

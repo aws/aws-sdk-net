@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+    #line 1 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class ServiceInterface : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators
         public override string TransformText()
         {
             
-            #line 6 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 6 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
 
 	AddLicenseHeader();
 
@@ -38,35 +38,35 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("\r\n\r\nusing System;\r\nusing System.Collections.Generic;\r\n\r\nusing ");
             
-            #line 14 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 14 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model;\r\n\r\nnamespace ");
             
-            #line 16 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 16 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n");
             
-            #line 18 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 18 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
     this.FormatServiceInterfaceDocumentation(this.Config.ServiceModel.Documentation); 
             
             #line default
             #line hidden
             this.Write("\tpublic partial interface IAmazon");
             
-            #line 19 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 19 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write(" : IDisposable\r\n\t{\r\n\r\n\t\t");
             
-            #line 22 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 22 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
 
 		foreach(var operation in this.Config.ServiceModel.Operations)
 		{
@@ -78,14 +78,14 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("\r\n\t\t#region  ");
             
-            #line 29 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 29 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n");
             
-            #line 31 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 31 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
 
         // Creates a method for the operation that takes no parameters if the operation has a request that requires no members to be set
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
@@ -95,28 +95,28 @@ namespace ServiceClientGenerator.Generators
             #line default
             #line hidden
             
-            #line 36 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 36 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
  this.FormatOperationDocumentation(operation, false); 
             
             #line default
             #line hidden
             this.Write("        ");
             
-            #line 37 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 37 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 37 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 37 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("();\r\n\r\n");
             
-            #line 39 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 39 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
 
         }
         AddSimpleClientMethodInterfaces(operation);
@@ -125,77 +125,77 @@ namespace ServiceClientGenerator.Generators
             #line default
             #line hidden
             
-            #line 43 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 43 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
  this.FormatOperationDocumentation(operation); 
             
             #line default
             #line hidden
             this.Write("        ");
             
-            #line 44 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 44 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 44 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 44 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 44 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 44 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request request);\r\n\r\n");
             
-            #line 46 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 46 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
 AddBeginAsyncDocumentation(operation.Name);
             
             #line default
             #line hidden
             this.Write("        IAsyncResult Begin");
             
-            #line 47 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 47 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 47 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 47 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request request, AsyncCallback callback, object state);\r\n\r\n\r\n\r\n");
             
-            #line 51 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 51 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
 AddEndAsyncDocumentation(operation.Name);
             
             #line default
             #line hidden
             this.Write("        ");
             
-            #line 52 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 52 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response End");
             
-            #line 52 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 52 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(IAsyncResult asyncResult);\r\n\r\n\t\t#endregion\r\n\t\t");
             
-            #line 55 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
+            #line 55 "C:\code\master\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\ServiceInterface.tt"
 
 		}
 		
