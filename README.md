@@ -27,6 +27,7 @@ This is the preview release of AWS Resource APIs for .NET. This branch contains 
 ```
 
 * [API Docs][docs-api]
+* [Binaries][sdk-binaries]
 * [Developer Guide] [docs-guide]
  * [IAM Resource API examples][docs-iam-examples]
 * [SDK Homepage][sdk-website]
