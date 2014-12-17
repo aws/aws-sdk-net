@@ -73,7 +73,7 @@ uses the service models defined in the **ServiceModels** folder. The easiest way
 the startup project in the **AWSSDK_DotNet.Core.sln** solution.
 
 [aws]: http://aws.amazon.com/
-[sdk-binaries] : https://github.com/aws/aws-sdk-net/tree/resourceAPI-preview/binaries
+[sdk-binaries]: https://github.com/aws/aws-sdk-net/tree/resourceAPI-preview/binaries
 [sdk-website]: http://aws.amazon.com/sdkfornet
 [sdk-forum]: http://developer.amazonwebservices.com/connect/forum.jspa?forumID=61
 [sdk-source]: https://github.com/aws/aws-sdk-net/tree/resourceAPI-preview
