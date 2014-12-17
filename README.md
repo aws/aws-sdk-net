@@ -1,6 +1,6 @@
 # AWS SDK for .NET - Preview for Resource APIs
 
-This is the preview release of AWS Resource APIs for .NET. This branch contains the source for the AWS SDK for .NET (branched from version 2.3.13.1) along with the new resource APIs. This release contains resource APIs for AWS Identity and Access Management (IAM); support for other services will be added in the near future. The preview is intended to provide early access to the new APIs and to get feedback from the community. For more information about the resource APIs, check the [developer guide][docs-guide].
+This is the preview release of AWS Resource APIs for .NET. This branch contains the source for the AWS SDK for .NET (branched from version 2.3.13.1) along with the new resource APIs. This release contains resource APIs for AWS Identity and Access Management (IAM); support for other services will be added in the near future. The preview is intended to provide early access to the new APIs and to get feedback from the community. For more information about the resource APIs, check the [developer guide][docs-guide] and the introductory [blog post][blog-post].
 
 **Important:** The resource APIs in the AWS SDK for .NET are currently provided as a preview. This means that these APIs may frequently change—including possible breaking changes—without advance notice. Until the resource APIs in the AWS SDK for .NET exit the preview stage, please be cautious about writing and distributing production-quality code that relies on these resource APIs.
 
@@ -43,7 +43,7 @@ This is the preview release of AWS Resource APIs for .NET. This branch contains 
 1. **Sign up for AWS** - Before you begin, you need an AWS account. Please see the [AWS Account and Credentials][docs-signup] section of the developer guide for information about how to create an AWS account and retrieve your AWS credentials.
 1. **Minimum requirements** - The resource APIs are supported on **Microsoft .NET Framework 3.5 and Microsoft .NET Framework 4.5**. 
 1. **Download the binaries** - The easiest way to get started is to download the [binaries][sdk-binaries] and reference them in your .NET project. If your project already references AWSSDK.dll, you must remove the existing reference before adding the new one.
-1. **Using the SDK** - This [developer guide][docs-guide] provides more information about the resource APIs.
+1. **Using the SDK** - The [developer guide][docs-guide] and this [blog post][blog-post] provide more information about the resource APIs.
 
 ## Source Layout
 
@@ -74,6 +74,7 @@ the startup project in the **AWSSDK_DotNet.Core.sln** solution.
 
 [aws]: http://aws.amazon.com/
 [sdk-binaries]: https://github.com/aws/aws-sdk-net/tree/resourceAPI-preview/binaries
+[blog-post]: http://blogs.aws.amazon.com/net/post/Tx3TUYIZ1KAW7PI/Preview-release-of-AWS-Resource-APIs-for-NET
 [sdk-website]: http://aws.amazon.com/sdkfornet
 [sdk-forum]: http://developer.amazonwebservices.com/connect/forum.jspa?forumID=61
 [sdk-source]: https://github.com/aws/aws-sdk-net/tree/resourceAPI-preview
