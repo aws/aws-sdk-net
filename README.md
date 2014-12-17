@@ -28,6 +28,7 @@ This is the preview release of AWS Resource APIs for .NET. This branch contains 
 
 * [API Docs][docs-api]
 * [Developer Guide] [docs-guide]
+** [IAM Resource API examples][docs-iam-examples]
 * [SDK Homepage][sdk-website]
 * [Forum][sdk-forum]
 * [GitHub Issues][sdk-issues]
@@ -84,4 +85,5 @@ the startup project in the **AWSSDK_DotNet.Core.sln** solution.
 [docs-signup]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-setup.html
 [aws-iam-credentials]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-roles.html
 [docs-guide]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/resource-level-apis-intro.html
+[docs-iam-examples]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/iam-resource-api-examples.html
 [credentials-management]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-config-creds.html
