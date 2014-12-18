@@ -38,8 +38,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the workflow type. This field is required. 
+        /// <b>Required.</b> The name of the workflow type.
         /// </para>
+        ///  <note>The combination of workflow type name and version must be unique with in a
+        /// domain.</note>
         /// </summary>
         public string Name
         {
@@ -56,8 +58,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        ///  The version of the workflow type. This field is required. 
+        /// <b>Required.</b> The version of the workflow type.
         /// </para>
+        ///  <note>The combination of workflow type name and version must be unique with in a
+        /// domain.</note>
         /// </summary>
         public string Version
         {

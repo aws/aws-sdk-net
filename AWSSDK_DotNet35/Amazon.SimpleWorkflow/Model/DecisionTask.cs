@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// A structure that represents a decision task. Decision tasks are sent to deciders
-    /// in order for them to make decisions.
+    /// A structure that represents a decision task. Decision tasks are sent to deciders in
+    /// order for them to make decisions.
     /// </summary>
     public partial class DecisionTask
     {
@@ -44,8 +44,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        ///  A paginated list of history events of the workflow execution. The decider uses this
-        /// during the processing of the decision task. 
+        /// A paginated list of history events of the workflow execution. The decider uses this
+        /// during the processing of the decision task.
         /// </para>
         /// </summary>
         public List<HistoryEvent> Events
@@ -63,8 +63,14 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        ///  Returns a value if the results are paginated. To get the next page of results, repeat
-        /// the request specifying this token and all other arguments unchanged. 
+        /// If a <code>NextPageToken</code> was returned by a previous call, there are more results
+        /// available. To retrieve the next page of results, make the call again using the returned
+        /// token in <code>nextPageToken</code>. Keep all other arguments unchanged.
+        /// </para>
+        ///  
+        /// <para>
+        /// The configured <code>maximumPageSize</code> determines how many results can be returned
+        /// in a single call.
         /// </para>
         /// </summary>
         public string NextPageToken
@@ -82,9 +88,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property PreviousStartedEventId. 
         /// <para>
-        ///  The id of the DecisionTaskStarted event of the previous decision task of this workflow
+        /// The id of the DecisionTaskStarted event of the previous decision task of this workflow
         /// execution that was processed by the decider. This can be used to determine the events
-        /// in the history new since the last decision task received by the decider. 
+        /// in the history new since the last decision task received by the decider.
         /// </para>
         /// </summary>
         public long PreviousStartedEventId
@@ -102,7 +108,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        ///  The id of the <code>DecisionTaskStarted</code> event recorded in the history. 
+        /// The id of the <code>DecisionTaskStarted</code> event recorded in the history.
         /// </para>
         /// </summary>
         public long StartedEventId
@@ -120,8 +126,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TaskToken. 
         /// <para>
-        ///  The opaque string used as a handle on the task. This token is used by workers to
-        /// communicate progress and response information back to the system about the task. 
+        /// The opaque string used as a handle on the task. This token is used by workers to communicate
+        /// progress and response information back to the system about the task.
         /// </para>
         /// </summary>
         public string TaskToken
@@ -139,7 +145,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowExecution. 
         /// <para>
-        ///  The workflow execution for which this decision task was created. 
+        /// The workflow execution for which this decision task was created.
         /// </para>
         /// </summary>
         public WorkflowExecution WorkflowExecution
@@ -157,7 +163,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowType. 
         /// <para>
-        ///  The type of the workflow execution for which this decision task was created. 
+        /// The type of the workflow execution for which this decision task was created.
         /// </para>
         /// </summary>
         public WorkflowType WorkflowType

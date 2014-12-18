@@ -60,7 +60,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property Ec2KeyName. 
         /// <para>
         /// The name of the Amazon EC2 key pair to use when connecting with SSH into the master
-        /// node as         a user named "hadoop".
+        /// node as a user named "hadoop".
         /// </para>
         /// </summary>
         public string Ec2KeyName
@@ -78,16 +78,15 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Ec2SubnetId. 
         /// <para>
-        ///          To launch the job flow in Amazon VPC, set this parameter to the identifier
-        /// of the Amazon VPC subnet where          you want the job flow to launch. If you do
-        /// not specify this value, the job flow is launched in the normal AWS cloud, outside
-        /// of          a VPC.       
+        ///  To launch the job flow in Amazon VPC, set this parameter to the identifier of the
+        /// Amazon VPC subnet where you want the job flow to launch. If you do not specify this
+        /// value, the job flow is launched in the normal AWS cloud, outside of a VPC. 
         /// </para>
-        ///       
+        ///  
         /// <para>
-        ///          Amazon VPC currently does not support cluster compute quadruple extra large
-        /// (cc1.4xlarge) instances.           Thus, you cannot specify the cc1.4xlarge instance
-        /// type for nodes of a job flow launched in a VPC.      
+        ///  Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge)
+        /// instances. Thus, you cannot specify the cc1.4xlarge instance type for nodes of a job
+        /// flow launched in a VPC. 
         /// </para>
         /// </summary>
         public string Ec2SubnetId

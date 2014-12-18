@@ -42,11 +42,12 @@ namespace Amazon.SimpleWorkflow.Model
         private string _scheduleToStartTimeout;
         private string _startToCloseTimeout;
         private TaskList _taskList;
+        private string _taskPriority;
 
         /// <summary>
         /// Gets and sets the property ActivityId. 
         /// <para>
-        ///  The unique id of the activity task. 
+        /// The unique id of the activity task.
         /// </para>
         /// </summary>
         public string ActivityId
@@ -64,7 +65,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ActivityType. 
         /// <para>
-        ///  The type of the activity task. 
+        /// The type of the activity task.
         /// </para>
         /// </summary>
         public ActivityType ActivityType
@@ -82,8 +83,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Control. 
         /// <para>
-        ///  Optional data attached to the event that can be used by the decider in subsequent
-        /// workflow tasks. This data is not sent to the activity. 
+        /// <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent
+        /// workflow tasks. This data is not sent to the activity.
         /// </para>
         /// </summary>
         public string Control
@@ -101,10 +102,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        ///  The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
+        /// The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
         /// that resulted in the scheduling of this activity task. This information can be useful
         /// for diagnosing problems by tracing back the chain of events leading up to this event.
-        /// 
         /// </para>
         /// </summary>
         public long DecisionTaskCompletedEventId
@@ -122,10 +122,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property HeartbeatTimeout. 
         /// <para>
-        ///  The maximum time before which the worker processing this task must report progress
+        /// The maximum time before which the worker processing this task must report progress
         /// by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity
         /// task is automatically timed out. If the worker subsequently attempts to record a heartbeat
-        /// or return a result, it will be ignored. 
+        /// or return a result, it will be ignored.
         /// </para>
         /// </summary>
         public string HeartbeatTimeout
@@ -143,7 +143,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        ///  The input provided to the activity task. 
+        /// The input provided to the activity task.
         /// </para>
         /// </summary>
         public string Input
@@ -161,7 +161,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ScheduleToCloseTimeout. 
         /// <para>
-        ///  The maximum amount of time for this activity task. 
+        /// The maximum amount of time for this activity task.
         /// </para>
         /// </summary>
         public string ScheduleToCloseTimeout
@@ -179,8 +179,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ScheduleToStartTimeout. 
         /// <para>
-        ///  The maximum amount of time the activity task can wait to be assigned to a worker.
-        /// 
+        /// The maximum amount of time the activity task can wait to be assigned to a worker.
         /// </para>
         /// </summary>
         public string ScheduleToStartTimeout
@@ -198,7 +197,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartToCloseTimeout. 
         /// <para>
-        ///  The maximum amount of time a worker may take to process the activity task. 
+        /// The maximum amount of time a worker may take to process the activity task.
         /// </para>
         /// </summary>
         public string StartToCloseTimeout
@@ -216,7 +215,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TaskList. 
         /// <para>
-        ///  The task list in which the activity task has been scheduled. 
+        /// The task list in which the activity task has been scheduled.
         /// </para>
         /// </summary>
         public TaskList TaskList
@@ -229,6 +228,36 @@ namespace Amazon.SimpleWorkflow.Model
         internal bool IsSetTaskList()
         {
             return this._taskList != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskPriority. 
+        /// <para>
+        /// <i>Optional.</i> The priority to assign to the scheduled activity task. This will
+        /// override any default priority that was assigned when the activity type was registered.
+        /// If not set, then the priority set on the activity type is used as the task priority.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
+        /// to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about setting task priority, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+        /// Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string TaskPriority
+        {
+            get { return this._taskPriority; }
+            set { this._taskPriority = value; }
+        }
+
+        // Check to see if TaskPriority property is set
+        internal bool IsSetTaskPriority()
+        {
+            return this._taskPriority != null;
         }
 
     }

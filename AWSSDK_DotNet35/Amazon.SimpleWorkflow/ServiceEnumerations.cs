@@ -299,6 +299,10 @@ namespace Amazon.SimpleWorkflow
     {
 
         /// <summary>
+        /// Constant CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED for ContinueAsNewWorkflowExecutionFailedCause
+        /// </summary>
+        public static readonly ContinueAsNewWorkflowExecutionFailedCause CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED = new ContinueAsNewWorkflowExecutionFailedCause("CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED");
+        /// <summary>
         /// Constant DEFAULT_CHILD_POLICY_UNDEFINED for ContinueAsNewWorkflowExecutionFailedCause
         /// </summary>
         public static readonly ContinueAsNewWorkflowExecutionFailedCause DEFAULT_CHILD_POLICY_UNDEFINED = new ContinueAsNewWorkflowExecutionFailedCause("DEFAULT_CHILD_POLICY_UNDEFINED");

@@ -37,7 +37,9 @@ namespace Amazon.ElasticMapReduce.Model
         private Ec2InstanceAttributes _ec2InstanceAttributes;
         private string _id;
         private string _logUri;
+        private string _masterPublicDnsName;
         private string _name;
+        private int? _normalizedInstanceHours;
         private string _requestedAmiVersion;
         private string _runningAmiVersion;
         private string _serviceRole;
@@ -134,6 +136,24 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MasterPublicDnsName. 
+        /// <para>
+        /// The public DNS name of the master Ec2 instance.
+        /// </para>
+        /// </summary>
+        public string MasterPublicDnsName
+        {
+            get { return this._masterPublicDnsName; }
+            set { this._masterPublicDnsName = value; }
+        }
+
+        // Check to see if MasterPublicDnsName property is set
+        internal bool IsSetMasterPublicDnsName()
+        {
+            return this._masterPublicDnsName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the cluster.
@@ -149,6 +169,28 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NormalizedInstanceHours. 
+        /// <para>
+        /// An approximation of the cost of the job flow, represented in m1.small/hours. This
+        /// value is incremented one time for every hour an m1.small instance runs. Larger instances
+        /// are weighted more, so an EC2 instance that is roughly four times more expensive would
+        /// result in the normalized instance hours being incremented by four. This result is
+        /// only an approximation and does not reflect the actual billing rate.
+        /// </para>
+        /// </summary>
+        public int NormalizedInstanceHours
+        {
+            get { return this._normalizedInstanceHours.GetValueOrDefault(); }
+            set { this._normalizedInstanceHours = value; }
+        }
+
+        // Check to see if NormalizedInstanceHours property is set
+        internal bool IsSetNormalizedInstanceHours()
+        {
+            return this._normalizedInstanceHours.HasValue; 
         }
 
         /// <summary>
@@ -191,8 +233,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The IAM role that was specified when the job flow was launched. Amazon ElasticMapReduce
-        /// will assume this role to work with AWS resources on your behalf.
+        /// The IAM role that will be assumed by the Amazon EMR service to access AWS resources
+        /// on your behalf.
         /// </para>
         /// </summary>
         public string ServiceRole
@@ -247,7 +289,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property TerminationProtected. 
         /// <para>
         /// Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from
-        /// being terminated by an API call or       user intervention, or in the event of a cluster
+        /// being terminated by an API call or user intervention, or in the event of a cluster
         /// error.
         /// </para>
         /// </summary>
@@ -269,8 +311,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// Indicates whether the job flow is visible to all IAM users of the AWS account associated
         /// with the job flow. If this value is set to <code>true</code>, all IAM users of that
         /// AWS account can view and manage the job flow if they have the proper policy permissions
-        /// set.          If this value is <code>false</code>, only the IAM user that created
-        /// the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a>
+        /// set. If this value is <code>false</code>, only the IAM user that created the cluster
+        /// can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a>
         /// action.
         /// </para>
         /// </summary>

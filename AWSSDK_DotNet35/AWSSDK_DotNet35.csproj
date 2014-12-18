@@ -906,7 +906,6 @@
     <Compile Include="Amazon.S3\Model\CopyPartRequest.cs" />
     <Compile Include="Amazon.S3\Model\CopyPartResponse.cs" />
     <Compile Include="Amazon.S3\Model\UploadPartRequest.bcl.cs" />
-    <Compile Include="Amazon.S3\Model\UploadPartRequest.bcl35.cs" />
     <Compile Include="Amazon.S3\Model\UploadPartRequest.cs" />
     <Compile Include="Amazon.S3\Model\UploadPartResponse.cs" />
     <Compile Include="Amazon.S3\Model\S3ObjectVersion.cs" />
@@ -922,9 +921,8 @@
     <Compile Include="Amazon.S3\Encryption\EncryptionMaterials.cs" />
     <Compile Include="Amazon.S3\Encryption\UploadPartContextForEncryption.cs" />
     <Compile Include="Amazon.S3\IAmazonS3.Extensions.cs" />
-    <Compile Include="Amazon.S3\Model\PutObjectRequest.bcl35.cs" />
-    <Compile Include="Amazon.S3\Model\CopyPartRequest.bcl35.cs" />
-    <Compile Include="Amazon.S3\Model\CopyObjectRequest.bcl35.cs" />
+    <Compile Include="Amazon.S3\Model\CopyPartRequest.bcl.cs" />
+    <Compile Include="Amazon.S3\Model\CopyObjectRequest.bcl.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketNotificationResponse.cs" />
     <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\LoggingEnabledUnmarshaller.cs" />
     <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\S3ErrorResponseUnmarshaller.cs" />

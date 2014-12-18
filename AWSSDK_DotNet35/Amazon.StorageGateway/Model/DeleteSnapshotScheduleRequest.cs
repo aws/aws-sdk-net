@@ -39,6 +39,12 @@ namespace Amazon.StorageGateway.Model
     /// with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify
     /// the volume by providing its Amazon Resource Name (ARN). 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// To list or delete a snapshot, you must use the Amazon EC2 API. in <i>Amazon Elastic
+    /// Compute Cloud API Reference</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteSnapshotScheduleRequest : AmazonStorageGatewayRequest
     {

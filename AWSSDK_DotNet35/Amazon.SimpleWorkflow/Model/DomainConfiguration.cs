@@ -37,7 +37,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowExecutionRetentionPeriodInDays. 
         /// <para>
-        ///  The retention period for workflow executions in this domain. 
+        /// The retention period for workflow executions in this domain.
         /// </para>
         /// </summary>
         public string WorkflowExecutionRetentionPeriodInDays

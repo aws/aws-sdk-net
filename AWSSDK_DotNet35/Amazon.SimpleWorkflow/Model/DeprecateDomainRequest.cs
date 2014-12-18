@@ -35,7 +35,8 @@ namespace Amazon.SimpleWorkflow.Model
     /// and workflow types registered in the domain. Executions that were started before the
     /// domain was deprecated will continue to run.
     /// 
-    ///  
+    ///  <note>This operation is eventually consistent. The results are best effort and may
+    /// not exactly reflect recent updates and changes.</note> 
     /// <para>
     /// <b>Access Control</b>
     /// </para>
@@ -50,8 +51,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// this action's parameters.</li> </ul> 
     /// <para>
     /// If the caller does not have sufficient permissions to invoke the action, or the parameter
-    /// values fall outside the specified constraints, the action fails by throwing <code>OperationNotPermitted</code>.
-    /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// values fall outside the specified constraints, the action fails. The associated event
+    /// attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details
+    /// and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
     /// IAM to Manage Access to Amazon SWF Workflows</a>.
     /// </para>
     /// </summary>

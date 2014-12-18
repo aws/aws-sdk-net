@@ -39,7 +39,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Result. 
         /// <para>
-        ///  The results of the activity task (if any). 
+        /// The results of the activity task (if any).
         /// </para>
         /// </summary>
         public string Result
@@ -57,9 +57,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ScheduledEventId. 
         /// <para>
-        ///  The id of the <code>ActivityTaskScheduled</code> event that was recorded when this
+        /// The id of the <code>ActivityTaskScheduled</code> event that was recorded when this
         /// activity task was scheduled. This information can be useful for diagnosing problems
-        /// by tracing back the chain of events leading up to this event. 
+        /// by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long ScheduledEventId
@@ -77,9 +77,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        ///  The Id of the <code>ActivityTaskStarted</code> event recorded when this activity
-        /// task was started. This information can be useful for diagnosing problems by tracing
-        /// back the chain of events leading up to this event. 
+        /// The Id of the <code>ActivityTaskStarted</code> event recorded when this activity task
+        /// was started. This information can be useful for diagnosing problems by tracing back
+        /// the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long StartedEventId

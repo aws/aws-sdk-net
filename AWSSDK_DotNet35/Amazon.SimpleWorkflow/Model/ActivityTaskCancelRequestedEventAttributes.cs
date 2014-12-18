@@ -38,7 +38,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ActivityId. 
         /// <para>
-        ///  The unique ID of the task. 
+        /// The unique ID of the task.
         /// </para>
         /// </summary>
         public string ActivityId
@@ -56,10 +56,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        ///  The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
+        /// The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
         /// task that resulted in the <code>RequestCancelActivityTask</code> decision for this
         /// cancellation request. This information can be useful for diagnosing problems by tracing
-        /// back the cause of events. 
+        /// back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long DecisionTaskCompletedEventId

@@ -40,8 +40,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        ///  Contains the content of the <code>details</code> parameter for the last call made
-        /// by the activity to <code>RecordActivityTaskHeartbeat</code>. 
+        /// Contains the content of the <code>details</code> parameter for the last call made
+        /// by the activity to <code>RecordActivityTaskHeartbeat</code>.
         /// </para>
         /// </summary>
         public string Details
@@ -59,9 +59,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ScheduledEventId. 
         /// <para>
-        ///  The id of the <code>ActivityTaskScheduled</code> event that was recorded when this
+        /// The id of the <code>ActivityTaskScheduled</code> event that was recorded when this
         /// activity task was scheduled. This information can be useful for diagnosing problems
-        /// by tracing back the chain of events leading up to this event. 
+        /// by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long ScheduledEventId
@@ -79,9 +79,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        ///  The Id of the <code>ActivityTaskStarted</code> event recorded when this activity
-        /// task was started. This information can be useful for diagnosing problems by tracing
-        /// back the chain of events leading up to this event. 
+        /// The Id of the <code>ActivityTaskStarted</code> event recorded when this activity task
+        /// was started. This information can be useful for diagnosing problems by tracing back
+        /// the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long StartedEventId
@@ -99,7 +99,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TimeoutType. 
         /// <para>
-        ///  The type of the timeout that caused this event. 
+        /// The type of the timeout that caused this event.
         /// </para>
         /// </summary>
         public ActivityTaskTimeoutType TimeoutType

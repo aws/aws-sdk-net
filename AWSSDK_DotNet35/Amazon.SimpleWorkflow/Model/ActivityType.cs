@@ -38,8 +38,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of this activity. 
+        /// The name of this activity.
         /// </para>
+        ///  <note>The combination of activity type name and version must be unique within a domain.</note>
         /// </summary>
         public string Name
         {
@@ -56,8 +57,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        ///  The version of this activity. 
+        /// The version of this activity.
         /// </para>
+        ///  <note>The combination of activity type name and version must be unique with in a
+        /// domain.</note>
         /// </summary>
         public string Version
         {

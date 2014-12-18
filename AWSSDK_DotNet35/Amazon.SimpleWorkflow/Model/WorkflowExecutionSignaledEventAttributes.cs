@@ -40,12 +40,12 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ExternalInitiatedEventId. 
         /// <para>
-        ///  The id of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding
+        /// The id of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding
         /// to the <code>SignalExternalWorkflow</code> decision to signal this workflow execution.The
         /// source event with this Id can be found in the history of the source workflow execution.
         /// This information can be useful for diagnosing problems by tracing back the chain of
         /// events leading up to this event. This field is set only if the signal was initiated
-        /// by another workflow execution. 
+        /// by another workflow execution.
         /// </para>
         /// </summary>
         public long ExternalInitiatedEventId
@@ -63,8 +63,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ExternalWorkflowExecution. 
         /// <para>
-        ///  The workflow execution that sent the signal. This is set only of the signal was sent
-        /// by another workflow execution. 
+        /// The workflow execution that sent the signal. This is set only of the signal was sent
+        /// by another workflow execution.
         /// </para>
         /// </summary>
         public WorkflowExecution ExternalWorkflowExecution
@@ -82,8 +82,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        ///  Inputs provided with the signal (if any). The decider can use the signal name and
-        /// inputs to determine how to process the signal. 
+        /// Inputs provided with the signal (if any). The decider can use the signal name and
+        /// inputs to determine how to process the signal.
         /// </para>
         /// </summary>
         public string Input
@@ -101,8 +101,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property SignalName. 
         /// <para>
-        ///  The name of the signal received. The decider can use the signal name and inputs to
-        /// determine how to the process the signal. 
+        /// The name of the signal received. The decider can use the signal name and inputs to
+        /// determine how to the process the signal.
         /// </para>
         /// </summary>
         public string SignalName

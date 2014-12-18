@@ -42,8 +42,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Control. 
         /// <para>
-        ///  Optional data attached to the event that can be used by the decider in subsequent
-        /// decision tasks. 
+        /// <i>Optional.</i> data attached to the event that can be used by the decider in subsequent
+        /// decision tasks.
         /// </para>
         /// </summary>
         public string Control
@@ -61,10 +61,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        ///  The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
+        /// The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
         /// task that resulted in the <code>SignalExternalWorkflowExecution</code> decision for
         /// this signal. This information can be useful for diagnosing problems by tracing back
-        /// the cause of events leading up to this event. 
+        /// the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long DecisionTaskCompletedEventId
@@ -82,7 +82,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        ///  Input provided to the signal (if any). 
+        /// Input provided to the signal (if any).
         /// </para>
         /// </summary>
         public string Input
@@ -100,8 +100,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property RunId. 
         /// <para>
-        ///  The <code>runId</code> of the external workflow execution to send the signal to.
-        /// 
+        /// The <code>runId</code> of the external workflow execution to send the signal to.
         /// </para>
         /// </summary>
         public string RunId
@@ -119,7 +118,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property SignalName. 
         /// <para>
-        ///  The name of the signal. 
+        /// The name of the signal.
         /// </para>
         /// </summary>
         public string SignalName
@@ -137,7 +136,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowId. 
         /// <para>
-        ///  The <code>workflowId</code> of the external workflow execution. 
+        /// The <code>workflowId</code> of the external workflow execution.
         /// </para>
         /// </summary>
         public string WorkflowId

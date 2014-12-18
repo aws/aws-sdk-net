@@ -1,0 +1,13 @@
+{
+    "simpleMethods" : {
+        "operations" : {
+            "ResetCache" : {
+                "methodForms" : [
+                    [
+                        "GatewayARN"
+                    ]
+                ]
+            }
+        }
+    }
+}

@@ -614,6 +614,21 @@ namespace Amazon.StorageGateway
 
         #endregion
                 
+        #region  ResetCache
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetCache operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ResetCacheResponse> ResetCacheAsync(ResetCacheRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RetrieveTapeArchive
 
         /// <summary>
@@ -761,6 +776,21 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<UpdateSnapshotScheduleResponse> UpdateSnapshotScheduleAsync(UpdateSnapshotScheduleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateVTLDeviceType
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVTLDeviceType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVTLDeviceType operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateVTLDeviceTypeResponse> UpdateVTLDeviceTypeAsync(UpdateVTLDeviceTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

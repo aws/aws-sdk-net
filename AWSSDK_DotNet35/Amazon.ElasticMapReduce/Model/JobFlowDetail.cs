@@ -69,10 +69,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property AmiVersion. 
         /// <para>
         /// The version of the AMI used to initialize Amazon EC2 instances in the job flow. For
-        /// a list of  AMI versions currently       supported by Amazon ElasticMapReduce, go to
-        /// <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
-        /// Versions Supported in Elastic MapReduce</a> in the       <i>Amazon Elastic MapReduce
-        /// Developer's Guide.</i>
+        /// a list of AMI versions currently supported by Amazon ElasticMapReduce, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+        /// Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer's
+        /// Guide.</i>
         /// </para>
         /// </summary>
         public string AmiVersion
@@ -217,8 +216,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The IAM role that was specified when the job flow was launched. Amazon ElasticMapReduce
-        /// will assume this role to work with AWS resources on your behalf.
+        /// The IAM role that will be assumed by the Amazon EMR service to access AWS resources
+        /// on your behalf.
         /// </para>
         /// </summary>
         public string ServiceRole

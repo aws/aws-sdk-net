@@ -34,6 +34,7 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private string _id;
         private string _name;
+        private int? _normalizedInstanceHours;
         private ClusterStatus _status;
 
         /// <summary>
@@ -70,6 +71,28 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NormalizedInstanceHours. 
+        /// <para>
+        /// An approximation of the cost of the job flow, represented in m1.small/hours. This
+        /// value is incremented one time for every hour an m1.small instance runs. Larger instances
+        /// are weighted more, so an EC2 instance that is roughly four times more expensive would
+        /// result in the normalized instance hours being incremented by four. This result is
+        /// only an approximation and does not reflect the actual billing rate.
+        /// </para>
+        /// </summary>
+        public int NormalizedInstanceHours
+        {
+            get { return this._normalizedInstanceHours.GetValueOrDefault(); }
+            set { this._normalizedInstanceHours = value; }
+        }
+
+        // Check to see if NormalizedInstanceHours property is set
+        internal bool IsSetNormalizedInstanceHours()
+        {
+            return this._normalizedInstanceHours.HasValue; 
         }
 
         /// <summary>

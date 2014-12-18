@@ -30,5 +30,56 @@ namespace Amazon.CognitoIdentity
             var getTokenResult = cib.GetOpenIdToken(getTokenRequest);
             return getTokenResult;
         }
+
+        /// <summary>
+        /// Gets the previously cached the identity id retrieved from Cognito. 
+        /// <para>
+        /// For the Windows Phone and Windows Store version of the SDK the identity id is stored in the 
+        /// Windows.Storage.ApplicationData.Current.LocalSettings or 
+        /// Windows.Storage.ApplicationData.Current.RoamingSettings depending on the IdentityIdCacheMode
+        /// property. By default IdentityIdCacheMode will be set LocalSettings.
+        /// </para>
+        /// <para>
+        /// For the base .NET 3.5 and .NET 4.5 version of the SDK the identity id is not cached. To support caching 
+        /// the CacheIdentityId, GetCachedIdentityId and ClearIdentityCache methods need to be overridden.
+        /// </para>
+        /// </summary>
+        /// <returns>The previously cached identity id</returns>
+        public virtual string GetCachedIdentityId()
+        {
+            // override this method to support caching
+            return null;
+        }
+
+        /// <summary>
+        /// Caches the identity id retrieved from Cognito. 
+        /// <para>
+        /// For the Windows Phone and Windows Store version of the SDK the identity id is stored in the 
+        /// Windows.Storage.ApplicationData.Current.LocalSettings or 
+        /// Windows.Storage.ApplicationData.Current.RoamingSettings depending on the IdentityIdCacheMode
+        /// property.
+        /// </para>
+        /// <para>
+        /// For the base .NET 3.5 and .NET 4.5 version of the SDK the identity id is not cached. To support caching 
+        /// the CacheIdentityId, GetCachedIdentityId and ClearIdentityCache methods need to be overridden.
+        /// </para>
+        /// </summary>
+        /// <param name="identityId">The Cognito identity id to cache</param>
+        public virtual void CacheIdentityId(string identityId)
+        {
+            // override this method to support caching
+        }
+
+        /// <summary>
+        /// Clears the currently identity id from the cache.
+        /// <para>
+        /// For the base .NET 3.5 and .NET 4.5 version of the SDK the identity id is not cached. To support caching 
+        /// the CacheIdentityId, GetCachedIdentityId and ClearIdentityCache methods need to be overridden.
+        /// </para>
+        /// </summary>
+        public virtual void ClearIdentityCache()
+        {
+            // override this method to support caching
+        }
     }
 }

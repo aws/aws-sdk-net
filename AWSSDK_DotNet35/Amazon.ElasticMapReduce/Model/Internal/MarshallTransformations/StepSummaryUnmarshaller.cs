@@ -54,6 +54,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ActionOnFailure", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ActionOnFailure = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Config", targetDepth))
+                {
+                    var unmarshaller = HadoopStepConfigUnmarshaller.Instance;
+                    unmarshalledObject.Config = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

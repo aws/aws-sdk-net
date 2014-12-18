@@ -66,6 +66,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.DefaultTaskList = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("defaultTaskPriority", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultTaskPriority = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("defaultTaskScheduleToCloseTimeout", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

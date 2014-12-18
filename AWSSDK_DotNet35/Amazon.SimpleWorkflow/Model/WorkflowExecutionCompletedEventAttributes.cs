@@ -38,10 +38,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        ///  The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
+        /// The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
         /// task that resulted in the <code>CompleteWorkflowExecution</code> decision to complete
         /// this execution. This information can be useful for diagnosing problems by tracing
-        /// back the cause of events. 
+        /// back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long DecisionTaskCompletedEventId
@@ -59,7 +59,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Result. 
         /// <para>
-        ///  The result produced by the workflow execution upon successful completion. 
+        /// The result produced by the workflow execution upon successful completion.
         /// </para>
         /// </summary>
         public string Result

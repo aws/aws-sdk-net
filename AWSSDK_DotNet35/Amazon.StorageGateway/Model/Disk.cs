@@ -38,6 +38,7 @@ namespace Amazon.StorageGateway.Model
         private string _diskNode;
         private string _diskPath;
         private long? _diskSizeInBytes;
+        private string _diskStatus;
 
         /// <summary>
         /// Gets and sets the property DiskAllocationResource.
@@ -127,6 +128,21 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetDiskSizeInBytes()
         {
             return this._diskSizeInBytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiskStatus.
+        /// </summary>
+        public string DiskStatus
+        {
+            get { return this._diskStatus; }
+            set { this._diskStatus = value; }
+        }
+
+        // Check to see if DiskStatus property is set
+        internal bool IsSetDiskStatus()
+        {
+            return this._diskStatus != null;
         }
 
     }

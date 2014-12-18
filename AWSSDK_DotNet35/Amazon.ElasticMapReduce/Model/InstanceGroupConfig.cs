@@ -60,8 +60,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property BidPrice. 
         /// <para>
-        /// Bid price for each Amazon EC2 instance in the         instance group when launching
-        /// nodes as Spot Instances, expressed in USD.
+        /// Bid price for each Amazon EC2 instance in the instance group when launching nodes
+        /// as Spot Instances, expressed in USD.
         /// </para>
         /// </summary>
         public string BidPrice

@@ -66,8 +66,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// key to allow the action to access only certain task lists.</li> </ul> 
     /// <para>
     /// If the caller does not have sufficient permissions to invoke the action, or the parameter
-    /// values fall outside the specified constraints, the action fails by throwing <code>OperationNotPermitted</code>.
-    /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// values fall outside the specified constraints, the action fails. The associated event
+    /// attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details
+    /// and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
     /// IAM to Manage Access to Amazon SWF Workflows</a>.
     /// </para>
     /// </summary>
@@ -83,7 +84,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain containing the task lists to poll. 
+        /// The name of the domain containing the task lists to poll.
         /// </para>
         /// </summary>
         public string Domain
@@ -101,9 +102,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Identity. 
         /// <para>
-        ///  Identity of the decider making the request, which is recorded in the DecisionTaskStarted
+        /// Identity of the decider making the request, which is recorded in the DecisionTaskStarted
         /// event in the workflow history. This enables diagnostic tracing when problems arise.
-        /// The form of this identity is user defined. 
+        /// The form of this identity is user defined.
         /// </para>
         /// </summary>
         public string Identity
@@ -121,11 +122,14 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property MaximumPageSize. 
         /// <para>
-        /// The maximum number of history events returned in each page. The default is 100, but
-        /// the caller can override this value to a page size <i>smaller</i> than the default.
-        /// You cannot specify a page size greater than 100. Note that the number of events may
-        /// be less than the maxiumum page size, in which case, the returned page will have fewer
-        /// results than the maximumPageSize specified.
+        /// The maximum number of results that will be returned per call. <code>nextPageToken</code>
+        /// can be used to obtain futher pages of results. The default is 100, which is the maximum
+        /// allowed page size. You can, however, specify a page size <i>smaller</i> than 100.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is an upper limit only; the actual number of results returned per call may be
+        /// fewer than the specified maximum.
         /// </para>
         /// </summary>
         public int MaximumPageSize
@@ -143,11 +147,20 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        ///  If on a previous call to this method a <code>NextPageToken</code> was returned, the
-        /// results are being paginated. To get the next page of results, repeat the call with
-        /// the returned token and all other arguments unchanged. 
+        /// If a <code>NextPageToken</code> was returned by a previous call, there are more results
+        /// available. To retrieve the next page of results, make the call again using the returned
+        /// token in <code>nextPageToken</code>. Keep all other arguments unchanged.
         /// </para>
-        ///  .
+        ///  
+        /// <para>
+        /// The configured <code>maximumPageSize</code> determines how many results can be returned
+        /// in a single call.
+        /// </para>
+        ///  <note>The <code>nextPageToken</code> returned by this action cannot be used with
+        /// <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a>
+        /// again (with the <code>nextPageToken</code>) to retrieve the next page of history records.
+        /// Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> will not return
+        /// a new decision task.</note>.
         /// </summary>
         public string NextPageToken
         {
@@ -184,7 +197,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TaskList. 
         /// <para>
-        ///  Specifies the task list to poll for decision tasks. 
+        /// Specifies the task list to poll for decision tasks.
         /// </para>
         ///  
         /// <para>

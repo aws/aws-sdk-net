@@ -60,6 +60,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// Specifies that the number of virtual tapes described be limited to the specified number.
         /// </para>
+        ///  <note>Amazon Web Services may impose its own limit, if this field is not set.</note>
         /// </summary>
         public int Limit
         {

@@ -33,7 +33,8 @@ namespace Amazon.SimpleWorkflow.Model
     /// you cannot create new tasks of that activity type. Tasks of this type that were scheduled
     /// before the type was deprecated will continue to run.
     /// 
-    ///  
+    ///  <note>This operation is eventually consistent. The results are best effort and may
+    /// not exactly reflect recent updates and changes.</note> 
     /// <para>
     /// <b>Access Control</b>
     /// </para>
@@ -45,14 +46,15 @@ namespace Amazon.SimpleWorkflow.Model
     ///  <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action
     /// to only specified domains.</li> <li>Use an <code>Action</code> element to allow or
     /// deny permission to call this action.</li> <li>Constrain the following parameters by
-    /// using a <code>Condition</code> element with the appropriate keys. <ul> <li> <code>activityType.name</code>:
-    /// String constraint. The key is <code>swf:activityType.name</code>.</li> <li> <code>activityType.version</code>:
+    /// using a <code>Condition</code> element with the appropriate keys. <ul> <li><code>activityType.name</code>:
+    /// String constraint. The key is <code>swf:activityType.name</code>.</li> <li><code>activityType.version</code>:
     /// String constraint. The key is <code>swf:activityType.version</code>.</li> </ul> </li>
     /// </ul> 
     /// <para>
     /// If the caller does not have sufficient permissions to invoke the action, or the parameter
-    /// values fall outside the specified constraints, the action fails by throwing <code>OperationNotPermitted</code>.
-    /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// values fall outside the specified constraints, the action fails. The associated event
+    /// attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details
+    /// and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
     /// IAM to Manage Access to Amazon SWF Workflows</a>.
     /// </para>
     /// </summary>

@@ -38,7 +38,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        ///  The configuration settings registered with the activity type. 
+        /// The configuration settings registered with the activity type.
         /// </para>
         /// </summary>
         public ActivityTypeConfiguration Configuration
@@ -56,12 +56,12 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TypeInfo. 
         /// <para>
-        ///  General information about the activity type. 
+        /// General information about the activity type.
         /// </para>
         ///  
         /// <para>
-        ///  The status of activity type (returned in the ActivityTypeInfo structure) can be one
-        /// of the following. 
+        /// The status of activity type (returned in the ActivityTypeInfo structure) can be one
+        /// of the following.
         /// </para>
         ///  <ul> <li> <b>REGISTERED</b>: The type is registered and available. Workers supporting
         /// this type should be running. </li> <li> <b>DEPRECATED</b>: The type was deprecated

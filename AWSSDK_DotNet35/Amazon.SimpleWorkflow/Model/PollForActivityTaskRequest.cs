@@ -37,12 +37,11 @@ namespace Amazon.SimpleWorkflow.Model
     /// an ActivityTask is returned, but that the value of taskToken is an empty string. If
     /// a task is returned, the worker should use its type to identify and process it correctly.
     /// 
-    /// 
-    ///  <important> Workers should set their client side socket timeout to at least 70 seconds
-    /// (10 seconds higher than the maximum time service may hold the poll request). </important>
+    ///  <important>Workers should set their client side socket timeout to at least 70 seconds
+    /// (10 seconds higher than the maximum time service may hold the poll request).</important>
     /// 
     /// <para>
-    ///  <b>Access Control</b> 
+    /// <b>Access Control</b>
     /// </para>
     ///  
     /// <para>
@@ -56,8 +55,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// key to allow the action to access only certain task lists.</li> </ul> 
     /// <para>
     /// If the caller does not have sufficient permissions to invoke the action, or the parameter
-    /// values fall outside the specified constraints, the action fails by throwing <code>OperationNotPermitted</code>.
-    /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// values fall outside the specified constraints, the action fails. The associated event
+    /// attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details
+    /// and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
     /// IAM to Manage Access to Amazon SWF Workflows</a>.
     /// </para>
     /// </summary>
@@ -70,7 +70,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain that contains the task lists being polled. 
+        /// The name of the domain that contains the task lists being polled.
         /// </para>
         /// </summary>
         public string Domain
@@ -88,9 +88,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Identity. 
         /// <para>
-        ///  Identity of the worker making the request, which is recorded in the <code>ActivityTaskStarted</code>
+        /// Identity of the worker making the request, recorded in the <code>ActivityTaskStarted</code>
         /// event in the workflow history. This enables diagnostic tracing when problems arise.
-        /// The form of this identity is user defined. 
+        /// The form of this identity is user defined.
         /// </para>
         /// </summary>
         public string Identity
@@ -108,7 +108,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TaskList. 
         /// <para>
-        ///  Specifies the task list to poll for activity tasks. 
+        /// Specifies the task list to poll for activity tasks.
         /// </para>
         ///  
         /// <para>

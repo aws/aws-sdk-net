@@ -29,8 +29,8 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// A job flow step consisting of a JAR file whose main function will be executed. The
-    /// main         function submits a job for Hadoop to execute and waits for the job to
-    /// finish or fail.
+    /// main function submits a job for Hadoop to execute and waits for the job to finish
+    /// or fail.
     /// </summary>
     public partial class HadoopJarStepConfig
     {
@@ -93,7 +93,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property MainClass. 
         /// <para>
         /// The name of the main class in the specified Java file. If not specified, the JAR file
-        ///         should specify a Main-Class in its manifest file.
+        /// should specify a Main-Class in its manifest file.
         /// </para>
         /// </summary>
         public string MainClass
@@ -112,7 +112,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property Properties. 
         /// <para>
         /// A list of Java properties that are set when the step runs. You can use these properties
-        /// to         pass key value pairs to your main function.
+        /// to pass key value pairs to your main function.
         /// </para>
         /// </summary>
         public List<KeyValue> Properties

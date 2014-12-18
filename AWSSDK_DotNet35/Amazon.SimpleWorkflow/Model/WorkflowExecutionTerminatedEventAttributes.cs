@@ -40,9 +40,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Cause. 
         /// <para>
-        ///  If set, indicates that the workflow execution was automatically terminated, and specifies
+        /// If set, indicates that the workflow execution was automatically terminated, and specifies
         /// the cause. This happens if the parent workflow execution times out or is terminated
-        /// and the child policy is set to terminate child executions. 
+        /// and the child policy is set to terminate child executions.
         /// </para>
         /// </summary>
         public WorkflowExecutionTerminatedCause Cause
@@ -60,13 +60,16 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ChildPolicy. 
         /// <para>
-        ///  The policy used for the child workflow executions of this workflow execution. The
-        /// supported child policies are:
+        /// The policy used for the child workflow executions of this workflow execution.
         /// </para>
-        ///  <ul> <li> <b>TERMINATE:</b> the child executions will be terminated.</li> <li> <b>REQUEST_CANCEL:</b>
+        ///  
+        /// <para>
+        /// The supported child policies are:
+        /// </para>
+        ///  <ul> <li><b>TERMINATE:</b> the child executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b>
         /// a request to cancel will be attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code>
         /// event in its history. It is up to the decider to take appropriate actions when it
-        /// receives an execution history with this event. </li> <li> <b>ABANDON:</b> no action
+        /// receives an execution history with this event.</li> <li><b>ABANDON:</b> no action
         /// will be taken. The child executions will continue to run.</li> </ul>
         /// </summary>
         public ChildPolicy ChildPolicy
@@ -84,7 +87,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        ///  The details provided for the termination (if any). 
+        /// The details provided for the termination (if any).
         /// </para>
         /// </summary>
         public string Details
@@ -102,7 +105,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        ///  The reason provided for the termination (if any). 
+        /// The reason provided for the termination (if any).
         /// </para>
         /// </summary>
         public string Reason

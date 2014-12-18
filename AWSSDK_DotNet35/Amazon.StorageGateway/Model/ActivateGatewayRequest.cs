@@ -36,6 +36,8 @@ namespace Amazon.StorageGateway.Model
     /// snapshots the gateway snapshot schedule window, an activation key, and a name for
     /// your gateway. The activation process also associates your gateway with your account;
     /// for more information, see <a>UpdateGatewayInformation</a>.
+    /// 
+    ///  <note>You must turn on the gateway VM before you can activate your gateway.</note>
     /// </summary>
     public partial class ActivateGatewayRequest : AmazonStorageGatewayRequest
     {
@@ -160,7 +162,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// <i>Valid Values</i>: "STK-L700" 
+        /// <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
         /// </para>
         /// </summary>
         public string MediumChangerType

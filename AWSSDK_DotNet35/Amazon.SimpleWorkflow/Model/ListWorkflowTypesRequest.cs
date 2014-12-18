@@ -32,10 +32,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// Returns information about workflow types in the specified domain. The results may
     /// be split into multiple pages that can be retrieved by making the call repeatedly.
     /// 
-    /// 
     ///  
     /// <para>
-    ///  <b>Access Control</b> 
+    /// <b>Access Control</b>
     /// </para>
     ///  
     /// <para>
@@ -48,8 +47,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// this action's parameters.</li> </ul> 
     /// <para>
     /// If the caller does not have sufficient permissions to invoke the action, or the parameter
-    /// values fall outside the specified constraints, the action fails by throwing <code>OperationNotPermitted</code>.
-    /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// values fall outside the specified constraints, the action fails. The associated event
+    /// attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details
+    /// and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
     /// IAM to Manage Access to Amazon SWF Workflows</a>.
     /// </para>
     /// </summary>
@@ -65,7 +65,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain in which the workflow types have been registered. 
+        /// The name of the domain in which the workflow types have been registered.
         /// </para>
         /// </summary>
         public string Domain
@@ -83,11 +83,14 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property MaximumPageSize. 
         /// <para>
-        ///  The maximum number of results returned in each page. The default is 100, but the
-        /// caller can override this value to a page size <i>smaller</i> than the default. You
-        /// cannot specify a page size greater than 100. Note that the number of types may be
-        /// less than the maxiumum page size, in which case, the returned page will have fewer
-        /// results than the maximumPageSize specified. 
+        /// The maximum number of results that will be returned per call. <code>nextPageToken</code>
+        /// can be used to obtain futher pages of results. The default is 100, which is the maximum
+        /// allowed page size. You can, however, specify a page size <i>smaller</i> than 100.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is an upper limit only; the actual number of results returned per call may be
+        /// fewer than the specified maximum.
         /// </para>
         /// </summary>
         public int MaximumPageSize
@@ -105,7 +108,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  If specified, lists the workflow type with this name. 
+        /// If specified, lists the workflow type with this name.
         /// </para>
         /// </summary>
         public string Name
@@ -123,9 +126,14 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        ///  If on a previous call to this method a <code>NextPageToken</code> was returned, the
-        /// results are being paginated. To get the next page of results, repeat the call with
-        /// the returned token and all other arguments unchanged. 
+        /// If a <code>NextPageToken</code> was returned by a previous call, there are more results
+        /// available. To retrieve the next page of results, make the call again using the returned
+        /// token in <code>nextPageToken</code>. Keep all other arguments unchanged.
+        /// </para>
+        ///  
+        /// <para>
+        /// The configured <code>maximumPageSize</code> determines how many results can be returned
+        /// in a single call.
         /// </para>
         /// </summary>
         public string NextPageToken
@@ -143,7 +151,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property RegistrationStatus. 
         /// <para>
-        ///  Specifies the registration status of the workflow types to list. 
+        /// Specifies the registration status of the workflow types to list.
         /// </para>
         /// </summary>
         public RegistrationStatus RegistrationStatus
@@ -161,9 +169,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ReverseOrder. 
         /// <para>
-        ///  When set to <code>true</code>, returns the results in reverse order. By default the
+        /// When set to <code>true</code>, returns the results in reverse order. By default the
         /// results are returned in ascending alphabetical order of the <code>name</code> of the
-        /// workflow types. 
+        /// workflow types.
         /// </para>
         /// </summary>
         public bool ReverseOrder

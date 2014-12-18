@@ -39,10 +39,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        ///  The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
+        /// The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
         /// task that resulted in the <code>RecordMarker</code> decision that requested this marker.
-        /// This information can be useful for diagnosing problems by tracing back the cause of
-        /// events. 
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.
         /// </para>
         /// </summary>
         public long DecisionTaskCompletedEventId
@@ -60,7 +60,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        ///  Details of the marker (if any). 
+        /// Details of the marker (if any).
         /// </para>
         /// </summary>
         public string Details
@@ -78,7 +78,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property MarkerName. 
         /// <para>
-        ///  The name of the marker. 
+        /// The name of the marker.
         /// </para>
         /// </summary>
         public string MarkerName

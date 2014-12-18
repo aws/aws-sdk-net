@@ -34,6 +34,7 @@ namespace Amazon.SimpleWorkflow.Model
     {
         private string _defaultTaskHeartbeatTimeout;
         private TaskList _defaultTaskList;
+        private string _defaultTaskPriority;
         private string _defaultTaskScheduleToCloseTimeout;
         private string _defaultTaskScheduleToStartTimeout;
         private string _defaultTaskStartToCloseTimeout;
@@ -41,19 +42,22 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DefaultTaskHeartbeatTimeout. 
         /// <para>
-        ///  The optional default maximum time, specified when registering the activity type,
-        /// before which a worker processing a task must report progress by calling <a>RecordActivityTaskHeartbeat</a>.
-        /// You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>. If the activity worker subsequently attempts to record a heartbeat
-        /// or returns a result, the activity worker receives an <code>UnknownResource</code>
-        /// fault. In this case, Amazon SWF no longer considers the activity task to be valid;
-        /// the activity worker should clean up the activity task. 
+        /// <i>Optional.</i> The default maximum time, in seconds, before which a worker processing
+        /// a task must report progress by calling <a>RecordActivityTaskHeartbeat</a>.
         /// </para>
         ///  
         /// <para>
-        /// The valid values are integers greater than or equal to <code>0</code>. An integer
-        /// value can be used to specify the duration in seconds while <code>NONE</code> can be
-        /// used to specify unlimited duration.
+        /// You can specify this value only when <i>registering</i> an activity type. The registered
+        /// default value can be overridden when you schedule a task through the <code>ScheduleActivityTask</code>
+        /// <a>Decision</a>. If the activity worker subsequently attempts to record a heartbeat
+        /// or returns a result, the activity worker receives an <code>UnknownResource</code>
+        /// fault. In this case, Amazon SWF no longer considers the activity task to be valid;
+        /// the activity worker should clean up the activity task.
+        /// </para>
+        ///  
+        /// <para>
+        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
+        /// "NONE" can be used to specify unlimited duration.
         /// </para>
         /// </summary>
         public string DefaultTaskHeartbeatTimeout
@@ -71,11 +75,11 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DefaultTaskList. 
         /// <para>
-        ///  The optional default task list specified for this activity type at registration.
-        /// This default task list is used if a task list is not provided when a task is scheduled
-        /// through the <code>ScheduleActivityTask</code> <a>Decision</a>. You can override this
-        /// default when scheduling a task through the <code>ScheduleActivityTask</code> <a>Decision</a>.
-        /// 
+        /// <i>Optional.</i> The default task list specified for this activity type at registration.
+        /// This default is used if a task list is not provided when a task is scheduled through
+        /// the <code>ScheduleActivityTask</code> <a>Decision</a>. You can override the default
+        /// registered task list when scheduling a task through the <code>ScheduleActivityTask</code>
+        /// <a>Decision</a>.
         /// </para>
         /// </summary>
         public TaskList DefaultTaskList
@@ -91,17 +95,46 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DefaultTaskScheduleToCloseTimeout. 
+        /// Gets and sets the property DefaultTaskPriority. 
         /// <para>
-        ///  The optional default maximum duration, specified when registering the activity type,
-        /// for tasks of this activity type. You can override this default when scheduling a task
-        /// through the <code>ScheduleActivityTask</code> <a>Decision</a>. 
+        /// <i>Optional.</i> The default task priority for tasks of this activity type, specified
+        /// at registration. If not set, then "0" will be used as the default priority. This default
+        /// can be overridden when scheduling an activity task.
         /// </para>
         ///  
         /// <para>
-        /// The valid values are integers greater than or equal to <code>0</code>. An integer
-        /// value can be used to specify the duration in seconds while <code>NONE</code> can be
-        /// used to specify unlimited duration.
+        /// Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
+        /// to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about setting task priority, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+        /// Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string DefaultTaskPriority
+        {
+            get { return this._defaultTaskPriority; }
+            set { this._defaultTaskPriority = value; }
+        }
+
+        // Check to see if DefaultTaskPriority property is set
+        internal bool IsSetDefaultTaskPriority()
+        {
+            return this._defaultTaskPriority != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultTaskScheduleToCloseTimeout. 
+        /// <para>
+        /// <i>Optional.</i> The default maximum duration, specified when registering the activity
+        /// type, for tasks of this activity type. You can override this default when scheduling
+        /// a task through the <code>ScheduleActivityTask</code> <a>Decision</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
+        /// "NONE" can be used to specify unlimited duration.
         /// </para>
         /// </summary>
         public string DefaultTaskScheduleToCloseTimeout
@@ -119,16 +152,15 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DefaultTaskScheduleToStartTimeout. 
         /// <para>
-        ///  The optional default maximum duration, specified when registering the activity type,
-        /// that a task of an activity type can wait before being assigned to a worker. You can
-        /// override this default when scheduling a task through the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>. 
+        /// <i>Optional.</i> The default maximum duration, specified when registering the activity
+        /// type, that a task of an activity type can wait before being assigned to a worker.
+        /// You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
+        /// <a>Decision</a>.
         /// </para>
         ///  
         /// <para>
-        /// The valid values are integers greater than or equal to <code>0</code>. An integer
-        /// value can be used to specify the duration in seconds while <code>NONE</code> can be
-        /// used to specify unlimited duration.
+        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
+        /// "NONE" can be used to specify unlimited duration.
         /// </para>
         /// </summary>
         public string DefaultTaskScheduleToStartTimeout
@@ -146,15 +178,14 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DefaultTaskStartToCloseTimeout. 
         /// <para>
-        ///  The optional default maximum duration for tasks of an activity type specified when
-        /// registering the activity type. You can override this default when scheduling a task
-        /// through the <code>ScheduleActivityTask</code> <a>Decision</a>. 
+        /// <i>Optional.</i> The default maximum duration for tasks of an activity type specified
+        /// when registering the activity type. You can override this default when scheduling
+        /// a task through the <code>ScheduleActivityTask</code> <a>Decision</a>.
         /// </para>
         ///  
         /// <para>
-        /// The valid values are integers greater than or equal to <code>0</code>. An integer
-        /// value can be used to specify the duration in seconds while <code>NONE</code> can be
-        /// used to specify unlimited duration.
+        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
+        /// "NONE" can be used to specify unlimited duration.
         /// </para>
         /// </summary>
         public string DefaultTaskStartToCloseTimeout

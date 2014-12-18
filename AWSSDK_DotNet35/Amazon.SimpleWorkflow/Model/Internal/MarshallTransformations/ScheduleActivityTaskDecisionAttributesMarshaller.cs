@@ -103,6 +103,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTaskPriority())
+            {
+                context.Writer.WritePropertyName("taskPriority");
+                context.Writer.Write(requestObject.TaskPriority);
+            }
+
         }
 
         public readonly static ScheduleActivityTaskDecisionAttributesMarshaller Instance = new ScheduleActivityTaskDecisionAttributesMarshaller();

@@ -34,7 +34,12 @@ namespace Amazon.StorageGateway.Model
     /// This operation is deprecated method in cached-volumes API version (20120630). Use
     /// AddUploadBuffer instead.
     /// 
-    ///  
+    ///  <note>
+    /// <para>
+    /// Working storage is also referred to as upload buffer. You can also use the <a>AddUploadBuffer</a>
+    /// operation to add upload buffer to a stored-volume gateway.
+    /// </para>
+    /// </note> 
     /// <para>
     /// In the request, you specify the gateway Amazon Resource Name (ARN) to which you want
     /// to add working storage, and one or more disk IDs that you want to configure as working

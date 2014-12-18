@@ -39,13 +39,14 @@ namespace Amazon.SimpleWorkflow.Model
         private string _newExecutionRunId;
         private List<string> _tagList = new List<string>();
         private TaskList _taskList;
+        private string _taskPriority;
         private string _taskStartToCloseTimeout;
         private WorkflowType _workflowType;
 
         /// <summary>
         /// Gets and sets the property ChildPolicy. 
         /// <para>
-        ///  The policy to use for the child workflow executions of the new execution if it is
+        /// The policy to use for the child workflow executions of the new execution if it is
         /// terminated by calling the <a>TerminateWorkflowExecution</a> action explicitly or due
         /// to an expired timeout.
         /// </para>
@@ -53,10 +54,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         /// The supported child policies are:
         /// </para>
-        ///  <ul> <li> <b>TERMINATE:</b> the child executions will be terminated.</li> <li> <b>REQUEST_CANCEL:</b>
+        ///  <ul> <li><b>TERMINATE:</b> the child executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b>
         /// a request to cancel will be attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code>
         /// event in its history. It is up to the decider to take appropriate actions when it
-        /// receives an execution history with this event. </li> <li> <b>ABANDON:</b> no action
+        /// receives an execution history with this event.</li> <li><b>ABANDON:</b> no action
         /// will be taken. The child executions will continue to run.</li> </ul>
         /// </summary>
         public ChildPolicy ChildPolicy
@@ -74,10 +75,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        ///  The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
+        /// The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
         /// task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that
         /// started this execution. This information can be useful for diagnosing problems by
-        /// tracing back the cause of events. 
+        /// tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long DecisionTaskCompletedEventId
@@ -95,13 +96,12 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ExecutionStartToCloseTimeout. 
         /// <para>
-        ///  The total duration allowed for the new workflow execution. 
+        /// The total duration allowed for the new workflow execution.
         /// </para>
         ///  
         /// <para>
-        /// The valid values are integers greater than or equal to <code>0</code>. An integer
-        /// value can be used to specify the duration in seconds while <code>NONE</code> can be
-        /// used to specify unlimited duration.
+        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
+        /// "NONE" can be used to specify unlimited duration.
         /// </para>
         /// </summary>
         public string ExecutionStartToCloseTimeout
@@ -119,7 +119,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        ///  The input provided to the new workflow execution. 
+        /// The input provided to the new workflow execution.
         /// </para>
         /// </summary>
         public string Input
@@ -137,7 +137,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property NewExecutionRunId. 
         /// <para>
-        ///  The <code>runId</code> of the new workflow execution. 
+        /// The <code>runId</code> of the new workflow execution.
         /// </para>
         /// </summary>
         public string NewExecutionRunId
@@ -155,7 +155,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TagList. 
         /// <para>
-        ///  The list of tags associated with the new workflow execution. 
+        /// The list of tags associated with the new workflow execution.
         /// </para>
         /// </summary>
         public List<string> TagList
@@ -186,15 +186,29 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TaskPriority.
+        /// </summary>
+        public string TaskPriority
+        {
+            get { return this._taskPriority; }
+            set { this._taskPriority = value; }
+        }
+
+        // Check to see if TaskPriority property is set
+        internal bool IsSetTaskPriority()
+        {
+            return this._taskPriority != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TaskStartToCloseTimeout. 
         /// <para>
-        ///  The maximum duration of decision tasks for the new workflow execution. 
+        /// The maximum duration of decision tasks for the new workflow execution.
         /// </para>
         ///  
         /// <para>
-        /// The valid values are integers greater than or equal to <code>0</code>. An integer
-        /// value can be used to specify the duration in seconds while <code>NONE</code> can be
-        /// used to specify unlimited duration.
+        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
+        /// "NONE" can be used to specify unlimited duration.
         /// </para>
         /// </summary>
         public string TaskStartToCloseTimeout

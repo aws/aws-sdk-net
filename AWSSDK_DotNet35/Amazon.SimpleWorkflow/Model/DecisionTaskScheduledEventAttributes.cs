@@ -28,24 +28,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>DecisionTaskScheduled</code> event.
+    /// Provides details about the <code>DecisionTaskScheduled</code> event.
     /// </summary>
     public partial class DecisionTaskScheduledEventAttributes
     {
         private string _startToCloseTimeout;
         private TaskList _taskList;
+        private string _taskPriority;
 
         /// <summary>
         /// Gets and sets the property StartToCloseTimeout. 
         /// <para>
-        ///  The maximum duration for this decision task. The task is considered timed out if
-        /// it does not completed within this duration. 
+        /// The maximum duration for this decision task. The task is considered timed out if it
+        /// does not completed within this duration.
         /// </para>
         ///  
         /// <para>
-        /// The valid values are integers greater than or equal to <code>0</code>. An integer
-        /// value can be used to specify the duration in seconds while <code>NONE</code> can be
-        /// used to specify unlimited duration.
+        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
+        /// "NONE" can be used to specify unlimited duration.
         /// </para>
         /// </summary>
         public string StartToCloseTimeout
@@ -63,7 +63,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TaskList. 
         /// <para>
-        ///  The name of the task list in which the decision task was scheduled. 
+        /// The name of the task list in which the decision task was scheduled.
         /// </para>
         /// </summary>
         public TaskList TaskList
@@ -76,6 +76,32 @@ namespace Amazon.SimpleWorkflow.Model
         internal bool IsSetTaskList()
         {
             return this._taskList != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskPriority. 
+        /// <para>
+        /// <i>Optional.</i> A task priority that, if set, specifies the priority for this decision
+        /// task. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code>
+        /// (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+        /// higher priority.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about setting task priority, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+        /// Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string TaskPriority
+        {
+            get { return this._taskPriority; }
+            set { this._taskPriority = value; }
+        }
+
+        // Check to see if TaskPriority property is set
+        internal bool IsSetTaskPriority()
+        {
+            return this._taskPriority != null;
         }
 
     }

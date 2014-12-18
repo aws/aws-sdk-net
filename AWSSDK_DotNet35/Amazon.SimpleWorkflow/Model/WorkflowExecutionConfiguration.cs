@@ -37,19 +37,24 @@ namespace Amazon.SimpleWorkflow.Model
         private ChildPolicy _childPolicy;
         private string _executionStartToCloseTimeout;
         private TaskList _taskList;
+        private string _taskPriority;
         private string _taskStartToCloseTimeout;
 
         /// <summary>
         /// Gets and sets the property ChildPolicy. 
         /// <para>
-        ///  The policy to use for the child workflow executions if this workflow execution is
+        /// The policy to use for the child workflow executions if this workflow execution is
         /// terminated, by calling the <a>TerminateWorkflowExecution</a> action explicitly or
-        /// due to an expired timeout. The supported child policies are:
+        /// due to an expired timeout.
         /// </para>
-        ///  <ul> <li> <b>TERMINATE:</b> the child executions will be terminated.</li> <li> <b>REQUEST_CANCEL:</b>
+        ///  
+        /// <para>
+        /// The supported child policies are:
+        /// </para>
+        ///  <ul> <li><b>TERMINATE:</b> the child executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b>
         /// a request to cancel will be attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code>
         /// event in its history. It is up to the decider to take appropriate actions when it
-        /// receives an execution history with this event. </li> <li> <b>ABANDON:</b> no action
+        /// receives an execution history with this event.</li> <li><b>ABANDON:</b> no action
         /// will be taken. The child executions will continue to run.</li> </ul>
         /// </summary>
         public ChildPolicy ChildPolicy
@@ -67,13 +72,12 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ExecutionStartToCloseTimeout. 
         /// <para>
-        ///  The total duration for this workflow execution. 
+        /// The total duration for this workflow execution.
         /// </para>
         ///  
         /// <para>
-        /// The valid values are integers greater than or equal to <code>0</code>. An integer
-        /// value can be used to specify the duration in seconds while <code>NONE</code> can be
-        /// used to specify unlimited duration.
+        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
+        /// "NONE" can be used to specify unlimited duration.
         /// </para>
         /// </summary>
         public string ExecutionStartToCloseTimeout
@@ -91,8 +95,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TaskList. 
         /// <para>
-        ///  The task list used for the decision tasks generated for this workflow execution.
-        /// 
+        /// The task list used for the decision tasks generated for this workflow execution.
         /// </para>
         /// </summary>
         public TaskList TaskList
@@ -108,15 +111,39 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TaskStartToCloseTimeout. 
+        /// Gets and sets the property TaskPriority. 
         /// <para>
-        ///  The maximum duration allowed for decision tasks for this workflow execution. 
+        /// The priority assigned to decision tasks for this workflow execution. Valid values
+        /// are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+        /// <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.
         /// </para>
         ///  
         /// <para>
-        /// The valid values are integers greater than or equal to <code>0</code>. An integer
-        /// value can be used to specify the duration in seconds while <code>NONE</code> can be
-        /// used to specify unlimited duration.
+        /// For more information about setting task priority, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+        /// Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string TaskPriority
+        {
+            get { return this._taskPriority; }
+            set { this._taskPriority = value; }
+        }
+
+        // Check to see if TaskPriority property is set
+        internal bool IsSetTaskPriority()
+        {
+            return this._taskPriority != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskStartToCloseTimeout. 
+        /// <para>
+        /// The maximum duration allowed for decision tasks for this workflow execution.
+        /// </para>
+        ///  
+        /// <para>
+        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
+        /// "NONE" can be used to specify unlimited duration.
         /// </para>
         /// </summary>
         public string TaskStartToCloseTimeout

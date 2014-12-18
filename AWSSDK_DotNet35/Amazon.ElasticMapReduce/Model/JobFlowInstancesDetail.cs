@@ -56,7 +56,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="masterInstanceType">The Amazon EC2 master node instance type.</param>
         /// <param name="slaveInstanceType">The Amazon EC2 slave node instance type.</param>
-        /// <param name="instanceCount">The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance   serves as both the master and slave node. If the value is greater than 1, one instance is   the master node and all others are slave nodes.</param>
+        /// <param name="instanceCount">The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master and slave node. If the value is greater than 1, one instance is the master node and all others are slave nodes.</param>
         public JobFlowInstancesDetail(string masterInstanceType, string slaveInstanceType, int instanceCount)
         {
             _masterInstanceType = masterInstanceType;
@@ -68,7 +68,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property Ec2KeyName. 
         /// <para>
         /// The name of an Amazon EC2 key pair that can be used to ssh to the master node of job
-        ///         flow.
+        /// flow.
         /// </para>
         /// </summary>
         public string Ec2KeyName
@@ -124,8 +124,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property InstanceCount. 
         /// <para>
         /// The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance
-        ///         serves as both the master and slave node. If the value is greater than 1,
-        /// one instance is         the master node and all others are slave nodes.
+        /// serves as both the master and slave node. If the value is greater than 1, one instance
+        /// is the master node and all others are slave nodes.
         /// </para>
         /// </summary>
         public int InstanceCount
@@ -234,11 +234,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property NormalizedInstanceHours. 
         /// <para>
         /// An approximation of the cost of the job flow, represented in m1.small/hours. This
-        /// value is         incremented once for every hour an m1.small runs. Larger instances
-        /// are weighted more, so an         Amazon EC2 instance that is roughly four times more
-        /// expensive would result in the         normalized instance hours being incremented
-        /// by four. This result is only an approximation         and does not reflect the actual
-        /// billing rate.
+        /// value is incremented once for every hour an m1.small runs. Larger instances are weighted
+        /// more, so an Amazon EC2 instance that is roughly four times more expensive would result
+        /// in the normalized instance hours being incremented by four. This result is only an
+        /// approximation and does not reflect the actual billing rate.
         /// </para>
         /// </summary>
         public int NormalizedInstanceHours
@@ -293,7 +292,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property TerminationProtected. 
         /// <para>
         /// Specifies whether the Amazon EC2 instances in the cluster are protected from termination
-        /// by API calls,          user intervention, or in the event of a job flow error. 
+        /// by API calls, user intervention, or in the event of a job flow error. 
         /// </para>
         /// </summary>
         public bool TerminationProtected

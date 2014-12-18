@@ -38,7 +38,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property RunId. 
         /// <para>
-        ///  A system generated unique identifier for the workflow execution. 
+        /// A system-generated unique identifier for the workflow execution.
         /// </para>
         /// </summary>
         public string RunId
@@ -56,7 +56,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowId. 
         /// <para>
-        ///  The user defined identifier associated with the workflow execution. 
+        /// The user defined identifier associated with the workflow execution.
         /// </para>
         /// </summary>
         public string WorkflowId

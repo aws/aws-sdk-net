@@ -36,11 +36,17 @@ namespace Amazon.EC2.Util
     /// </summary>
     public static class ImageUtilities
     {
+        #region Windows 2012 R2 Images
+
         public static readonly ImageDescriptor WINDOWS_2012R2_BASE = new ImageDescriptor("WINDOWS_2012R2_BASE");
 
         public static readonly ImageDescriptor WINDOWS_2012R2_SQL_SERVER_EXPRESS_2014 = new ImageDescriptor("WINDOWS_2012R2_SQL_SERVER_EXPRESS_2014");
         public static readonly ImageDescriptor WINDOWS_2012R2_SQL_SERVER_STANDARD_2014 = new ImageDescriptor("WINDOWS_2012R2_SQL_SERVER_STANDARD_2014");
         public static readonly ImageDescriptor WINDOWS_2012R2_SQL_SERVER_WEB_2014 = new ImageDescriptor("WINDOWS_2012R2_SQL_SERVER_WEB_2014");
+
+        #endregion
+
+        #region Windows 2012 (Original RTM) Images
 
         public static readonly ImageDescriptor WINDOWS_2012_BASE = new ImageDescriptor("WINDOWS_2012_BASE");
 
@@ -55,21 +61,40 @@ namespace Amazon.EC2.Util
         public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_EXPRESS_2008 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_EXPRESS_2008");
         public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_STANDARD_2008 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_STANDARD_2008");
         public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_WEB_2008 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_WEB_2008");
-        
-        public static readonly ImageDescriptor WINDOWS_2008_BASE = new ImageDescriptor("WINDOWS_2008_BASE");
-        
-        public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_EXPRESS_2012 = new ImageDescriptor("WINDOWS_2008_SQL_SERVER_EXPRESS_2012");
-        public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_STANDARD_2012 = new ImageDescriptor("WINDOWS_2008_SQL_SERVER_STANDARD_2012");
-        public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_WEB_2012 = new ImageDescriptor("WINDOWS_2008_SQL_SERVER_WEB_2012");
-        
-        public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_EXPRESS_2008 = new ImageDescriptor("WINDOWS_2008_SQL_SERVER_EXPRESS_2008");
-        public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_STANDARD_2008 = new ImageDescriptor("WINDOWS_2008_SQL_SERVER_STANDARD_2008");
-        public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_WEB_2008 = new ImageDescriptor("WINDOWS_2008_SQL_SERVER_WEB_2008");
-        
+
+        #endregion
+
+        #region Windows 2008 R2 Images
+
+        public static readonly ImageDescriptor WINDOWS_2008R2_BASE = new ImageDescriptor("WINDOWS_2008R2_BASE");
+
+        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_EXPRESS_2012 = new ImageDescriptor("WINDOWS_2008R2_SQL_SERVER_EXPRESS_2012");
+        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_STANDARD_2012 = new ImageDescriptor("WINDOWS_2008R2_SQL_SERVER_STANDARD_2012");
+        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_WEB_2012 = new ImageDescriptor("WINDOWS_2008R2_SQL_SERVER_WEB_2012");
+
+        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_EXPRESS_2008 = new ImageDescriptor("WINDOWS_2008R2_SQL_SERVER_EXPRESS_2008");
+        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_STANDARD_2008 = new ImageDescriptor("WINDOWS_2008R2_SQL_SERVER_STANDARD_2008");
+        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_WEB_2008 = new ImageDescriptor("WINDOWS_2008R2_SQL_SERVER_WEB_2008");
+
+        #endregion
+
+        #region Windows 2008 (Original RTM) Images
+
+        public static readonly ImageDescriptor WINDOWS_2008RTM_BASE = new ImageDescriptor("WINDOWS_2008RTM_BASE");
+
+        public static readonly ImageDescriptor WINDOWS_2008RTM_SQL_SERVER_EXPRESS_2008 = new ImageDescriptor("WINDOWS_2008RTM_SQL_SERVER_EXPRESS_2008");
+        public static readonly ImageDescriptor WINDOWS_2008RTM_SQL_SERVER_STANDARD_2008 = new ImageDescriptor("WINDOWS_2008RTM_SQL_SERVER_STANDARD_2008");
+
+        #endregion
+
+        #region Misc Images
+
         public static readonly ImageDescriptor WINDOWS_2008_BEANSTALK_IIS75 = new ImageDescriptor("WINDOWS_2008_BEANSTALK_IIS75");
         public static readonly ImageDescriptor WINDOWS_2012_BEANSTALK_IIS8 = new ImageDescriptor("WINDOWS_2012_BEANSTALK_IIS8");
 
         public static readonly ImageDescriptor VPC_NAT = new ImageDescriptor("VPC_NAT");
+
+        #endregion
 
         #region Obsolete Members
 
@@ -85,42 +110,63 @@ namespace Amazon.EC2.Util
         public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_STANDARD_2008_R2_SP2 = WINDOWS_2012_SQL_SERVER_STANDARD_2008;
         [Obsolete("Please use the WINDOWS_2012_SQL_SERVER_WEB_2008 member.")]
         public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_WEB_2008_R2_SP2 = WINDOWS_2012_SQL_SERVER_WEB_2008;
-        [Obsolete("Please use the WINDOWS_2008_BASE member.")]
-        public static readonly ImageDescriptor WINDOWS_2008_R2_SP1_BASE = WINDOWS_2008_BASE;
-        [Obsolete("Please use the WINDOWS_2008_SQL_SERVER_EXPRESS_2012 member.")]
-        public static readonly ImageDescriptor WINDOWS_2008_R2_SP1_SQL_SERVER_EXPRESS_2012 = WINDOWS_2008_SQL_SERVER_EXPRESS_2012;
-        [Obsolete("Please use the WINDOWS_2008_SQL_SERVER_STANDARD_2012 member.")]
-        public static readonly ImageDescriptor WINDOWS_2008_R2_SP1_SQL_SERVER_STANDARD_2012 = WINDOWS_2008_SQL_SERVER_STANDARD_2012;
-        [Obsolete("Please use the WINDOWS_2008_SQL_SERVER_WEB_2012 member.")]
-        public static readonly ImageDescriptor WINDOWS_2008_R2_SP1_SQL_SERVER_WEB_2012 = WINDOWS_2008_SQL_SERVER_WEB_2012;
-        [Obsolete("Please use the WINDOWS_2008_SQL_SERVER_EXPRESS_2008 member.")]
-        public static readonly ImageDescriptor WINDOWS_2008_R2_SP1_SQL_SERVER_EXPRESS_2008_R2_SP2 = WINDOWS_2008_SQL_SERVER_EXPRESS_2008;
-        [Obsolete("Please use the WINDOWS_2008_SQL_SERVER_STANDARD_2008 member.")]
-        public static readonly ImageDescriptor WINDOWS_2008_R2_SP1_SQL_SERVER_STANDARD_2008_R2_SP2 = WINDOWS_2008_SQL_SERVER_STANDARD_2008;
-        [Obsolete("Please use the WINDOWS_2008_SQL_SERVER_WEB_2008 member.")]
-        public static readonly ImageDescriptor WINDOWS_2008_R2_SP1_SQL_SERVER_WEB_2008_R2_SP2 = WINDOWS_2008_SQL_SERVER_WEB_2008;
-        [Obsolete("Please use the WINDOWS_2008_BASE member.")]
-        public static readonly ImageDescriptor WINDOWS_2008_R2_BASE = WINDOWS_2008_BASE;
-        [Obsolete("Please use the WINDOWS_2008_SQL_SERVER_EXPRESS_2012 member.")]
-        public static readonly ImageDescriptor WINDOWS_2008_R2_SQL_SERVER_EXPRESS_2012 = WINDOWS_2008_SQL_SERVER_EXPRESS_2012;
-        [Obsolete("Please use the WINDOWS_2008_SQL_SERVER_STANDARD_2012 member.")]
-        public static readonly ImageDescriptor WINDOWS_2008_R2_SQL_SERVER_STANDARD_2012 = WINDOWS_2008_SQL_SERVER_STANDARD_2012;
-        [Obsolete("Please use the WINDOWS_2008_SQL_SERVER_WEB_2012 member.")]
-        public static readonly ImageDescriptor WINDOWS_2008_R2_SQL_SERVER_WEB_2012 = WINDOWS_2008_SQL_SERVER_WEB_2012;
-        [Obsolete("Please use the WINDOWS_2008_SQL_SERVER_EXPRESS_2008 member.")]
-        public static readonly ImageDescriptor WINDOWS_2008_R2_SQL_SERVER_EXPRESS_2008_R2 = WINDOWS_2008_SQL_SERVER_EXPRESS_2008;
-        [Obsolete("Please use the WINDOWS_2008_SQL_SERVER_STANDARD_2008 member.")]
-        public static readonly ImageDescriptor WINDOWS_2008_R2_SQL_SERVER_STANDARD_2008_R2 = WINDOWS_2008_SQL_SERVER_STANDARD_2008;
-        [Obsolete("Please use the WINDOWS_2008_SQL_SERVER_WEB_2008 member.")]
-        public static readonly ImageDescriptor WINDOWS_2008_R2_SQL_SERVER_WEB_2008_R2 = WINDOWS_2008_SQL_SERVER_WEB_2008;
+
+        [Obsolete("Please use the WINDOWS_2008R2_BASE member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_R2_SP1_BASE = WINDOWS_2008R2_BASE;
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_EXPRESS_2012 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_R2_SP1_SQL_SERVER_EXPRESS_2012 = WINDOWS_2008R2_SQL_SERVER_EXPRESS_2012;
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_STANDARD_2012 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_R2_SP1_SQL_SERVER_STANDARD_2012 = WINDOWS_2008R2_SQL_SERVER_STANDARD_2012;
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_WEB_2012 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_R2_SP1_SQL_SERVER_WEB_2012 = WINDOWS_2008R2_SQL_SERVER_WEB_2012;
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_EXPRESS_2008 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_R2_SP1_SQL_SERVER_EXPRESS_2008_R2_SP2 = WINDOWS_2008R2_SQL_SERVER_EXPRESS_2008;
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_STANDARD_2008 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_R2_SP1_SQL_SERVER_STANDARD_2008_R2_SP2 = WINDOWS_2008R2_SQL_SERVER_STANDARD_2008;
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_WEB_2008 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_R2_SP1_SQL_SERVER_WEB_2008_R2_SP2 = WINDOWS_2008R2_SQL_SERVER_WEB_2008;
+        
+        [Obsolete("Please use the WINDOWS_2008R2_BASE member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_R2_BASE = WINDOWS_2008R2_BASE;
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_EXPRESS_2012 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_R2_SQL_SERVER_EXPRESS_2012 = WINDOWS_2008R2_SQL_SERVER_EXPRESS_2012;
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_STANDARD_2012 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_R2_SQL_SERVER_STANDARD_2012 = WINDOWS_2008R2_SQL_SERVER_STANDARD_2012;
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_WEB_2012 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_R2_SQL_SERVER_WEB_2012 = WINDOWS_2008R2_SQL_SERVER_WEB_2012;
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_EXPRESS_2008 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_R2_SQL_SERVER_EXPRESS_2008_R2 = WINDOWS_2008R2_SQL_SERVER_EXPRESS_2008;
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_STANDARD_2008 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_R2_SQL_SERVER_STANDARD_2008_R2 = WINDOWS_2008R2_SQL_SERVER_STANDARD_2008;
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_WEB_2008 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_R2_SQL_SERVER_WEB_2008_R2 = WINDOWS_2008R2_SQL_SERVER_WEB_2008;
+
+        // Legacy keys kept for backwards compatibility with user-code so the R2 ami gets served, now that we also have 2008RTM amis
+        // in the collection
+        [Obsolete("Please use the WINDOWS_2008R2_BASE member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_BASE = WINDOWS_2008R2_BASE;
+
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_EXPRESS_2012 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_EXPRESS_2012 = WINDOWS_2008R2_SQL_SERVER_EXPRESS_2012;
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_STANDARD_2012 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_STANDARD_2012 = WINDOWS_2008R2_SQL_SERVER_STANDARD_2012;
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_WEB_2012 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_WEB_2012 = WINDOWS_2008R2_SQL_SERVER_WEB_2012;
+
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_EXPRESS_2008 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_EXPRESS_2008 = WINDOWS_2008R2_SQL_SERVER_EXPRESS_2008;
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_STANDARD_2008 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_STANDARD_2008 = WINDOWS_2008R2_SQL_SERVER_STANDARD_2008;
+        [Obsolete("Please use the WINDOWS_2008R2_SQL_SERVER_WEB_2008 member.")]
+        public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_WEB_2008 = WINDOWS_2008R2_SQL_SERVER_WEB_2008;
 
         #endregion
 
         #region Initialization and private members
 
-        static Logger LOGGER = Logger.GetLogger(typeof(ImageUtilities));
+        static readonly Logger LOGGER = Logger.GetLogger(typeof(ImageUtilities));
 
-        private static readonly ImageDescriptor[] _WindowsDescriptors = new ImageDescriptor[]
+        private static readonly ImageDescriptor[] WindowsDescriptors =
         {
             WINDOWS_2012R2_BASE,
 
@@ -142,21 +188,26 @@ namespace Amazon.EC2.Util
             WINDOWS_2012_SQL_SERVER_STANDARD_2008,
             WINDOWS_2012_SQL_SERVER_WEB_2008,
             
-            WINDOWS_2008_BASE,
+            WINDOWS_2008R2_BASE,
             
-            WINDOWS_2008_SQL_SERVER_EXPRESS_2012,
-            WINDOWS_2008_SQL_SERVER_STANDARD_2012,
-            WINDOWS_2008_SQL_SERVER_WEB_2012,
+            WINDOWS_2008R2_SQL_SERVER_EXPRESS_2012,
+            WINDOWS_2008R2_SQL_SERVER_STANDARD_2012,
+            WINDOWS_2008R2_SQL_SERVER_WEB_2012,
             
-            WINDOWS_2008_SQL_SERVER_EXPRESS_2008,
-            WINDOWS_2008_SQL_SERVER_STANDARD_2008,
-            WINDOWS_2008_SQL_SERVER_WEB_2008,
+            WINDOWS_2008R2_SQL_SERVER_EXPRESS_2008,
+            WINDOWS_2008R2_SQL_SERVER_STANDARD_2008,
+            WINDOWS_2008R2_SQL_SERVER_WEB_2008,
             
+            WINDOWS_2008RTM_BASE,
+            
+            WINDOWS_2008RTM_SQL_SERVER_EXPRESS_2008,
+            WINDOWS_2008RTM_SQL_SERVER_STANDARD_2008,
+
             WINDOWS_2008_BEANSTALK_IIS75,
             WINDOWS_2012_BEANSTALK_IIS8
         };
 
-        private static readonly ImageDescriptor[] _LinuxDescriptors = new ImageDescriptor[]
+        private static readonly ImageDescriptor[] LinuxDescriptors =
         {
             VPC_NAT
         };
@@ -264,7 +315,7 @@ namespace Amazon.EC2.Util
                     }
                 }
 
-                foreach (var d in _WindowsDescriptors)
+                foreach (var d in WindowsDescriptors)
                 {
                     if (parsedDefinitionsMap.ContainsKey(d.DefinitionKey))
                         d.NamePrefix = parsedDefinitionsMap[d.DefinitionKey];
@@ -272,7 +323,7 @@ namespace Amazon.EC2.Util
                         LOGGER.InfoFormat("Parsing AMI definitions - did not find entry for Windows image descriptor '{0}' after parsing", d.DefinitionKey);
                 }
 
-                foreach (var d in _LinuxDescriptors)
+                foreach (var d in LinuxDescriptors)
                 {
                     if (parsedDefinitionsMap.ContainsKey(d.DefinitionKey))
                         d.NamePrefix = parsedDefinitionsMap[d.DefinitionKey];

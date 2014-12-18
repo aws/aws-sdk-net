@@ -42,7 +42,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ActivityId. 
         /// <para>
-        ///  The unique ID of the task.
+        /// The unique ID of the task.
         /// </para>
         /// </summary>
         public string ActivityId
@@ -60,7 +60,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ActivityType. 
         /// <para>
-        ///  The type of this activity task.
+        /// The type of this activity task.
         /// </para>
         /// </summary>
         public ActivityType ActivityType
@@ -78,7 +78,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        ///  The inputs provided when the activity task was scheduled. The form of the input is
+        /// The inputs provided when the activity task was scheduled. The form of the input is
         /// user defined and should be meaningful to the activity implementation.
         /// </para>
         /// </summary>
@@ -97,7 +97,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        ///  The id of the <code>ActivityTaskStarted</code> event recorded in the history.
+        /// The id of the <code>ActivityTaskStarted</code> event recorded in the history.
         /// </para>
         /// </summary>
         public long StartedEventId
@@ -115,8 +115,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TaskToken. 
         /// <para>
-        ///  The opaque string used as a handle on the task. This token is used by workers to
-        /// communicate progress and response information back to the system about the task.
+        /// The opaque string used as a handle on the task. This token is used by workers to communicate
+        /// progress and response information back to the system about the task.
         /// </para>
         /// </summary>
         public string TaskToken
@@ -134,7 +134,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowExecution. 
         /// <para>
-        ///  The workflow execution that started this activity task.
+        /// The workflow execution that started this activity task.
         /// </para>
         /// </summary>
         public WorkflowExecution WorkflowExecution

@@ -30,25 +30,23 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Container for the parameters to the RunJobFlow operation.
     /// RunJobFlow creates and starts running a new job flow. The job flow will run the steps
-    ///         specified. Once the job flow completes, the cluster is stopped and the HDFS
-    /// partition is         lost. To prevent loss of data, configure the last step of the
-    /// job flow to store results in         Amazon S3. If the <a>JobFlowInstancesConfig</a>
-    /// <code>KeepJobFlowAliveWhenNoSteps</code> parameter is         set to <code>TRUE</code>,
-    /// the job flow will transition to the WAITING state rather than         shutting down
-    /// once the steps have completed. 
+    /// specified. Once the job flow completes, the cluster is stopped and the HDFS partition
+    /// is lost. To prevent loss of data, configure the last step of the job flow to store
+    /// results in Amazon S3. If the <a>JobFlowInstancesConfig</a> <code>KeepJobFlowAliveWhenNoSteps</code>
+    /// parameter is set to <code>TRUE</code>, the job flow will transition to the WAITING
+    /// state rather than shutting down once the steps have completed. 
     /// 
-    ///             
+    ///  
     /// <para>
-    /// For additional protection, you can set the          <a>JobFlowInstancesConfig</a>
-    /// <code>TerminationProtected</code> parameter to <code>TRUE</code> to lock the     
-    ///     job flow and prevent it from being          terminated by API call, user intervention,
-    /// or in the event of a job flow error.
+    /// For additional protection, you can set the <a>JobFlowInstancesConfig</a> <code>TerminationProtected</code>
+    /// parameter to <code>TRUE</code> to lock the job flow and prevent it from being terminated
+    /// by API call, user intervention, or in the event of a job flow error.
     /// </para>
-    ///       
+    ///  
     /// <para>
     /// A maximum of 256 steps are allowed in each job flow.
     /// </para>
-    ///             
+    ///  
     /// <para>
     /// If your job flow is long-running (such as a Hive data warehouse) or complex, you may
     /// require more than 256 steps to process your data. You can bypass the 256-step limitation
@@ -58,7 +56,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// More than 256 Steps to a Job Flow</a> in the <i>Amazon Elastic MapReduce Developer's
     /// Guide</i>.
     /// </para>
-    ///       
+    ///  
     /// <para>
     /// For long running job flows, we recommend that you periodically store your results.
     /// </para>
@@ -88,7 +86,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Instantiates RunJobFlowRequest with the parameterized properties
         /// </summary>
         /// <param name="name">The name of the job flow.</param>
-        /// <param name="instances"> A specification of the number and type of Amazon EC2 instances on which to run the job   flow. </param>
+        /// <param name="instances"> A specification of the number and type of Amazon EC2 instances on which to run the job flow. </param>
         public RunJobFlowRequest(string name, JobFlowInstancesConfig instances)
         {
             _name = name;
@@ -119,20 +117,19 @@ namespace Amazon.ElasticMapReduce.Model
         /// The version of the Amazon Machine Image (AMI) to use when launching Amazon EC2 instances
         /// in the job flow. The following values are valid: 
         /// </para>
-        ///          <ul>            <li>"latest" (uses the latest AMI)</li>            <li>The
-        /// version number of the AMI to use, for example, "2.0"</li>         </ul>          
-        ///        
+        ///  <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of the AMI to
+        /// use, for example, "2.0"</li> </ul> 
         /// <para>
         /// If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both
-        /// Hadoop 0.18 and 0.20) you can use the             <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code>
-        /// parameter             to modify the version of Hadoop from the defaults shown above.
+        /// Hadoop 0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code>
+        /// parameter to modify the version of Hadoop from the defaults shown above.
         /// </para>
-        ///          
+        ///  
         /// <para>
-        /// For details about the AMI versions currently          supported by Amazon Elastic
-        /// MapReduce, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
-        /// Versions Supported in Elastic MapReduce</a> in the          <i>Amazon Elastic MapReduce
-        /// Developer's Guide.</i>         
+        /// For details about the AMI versions currently supported by Amazon Elastic MapReduce,
+        /// go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+        /// Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer's
+        /// Guide.</i> 
         /// </para>
         /// </summary>
         public string AmiVersion
@@ -151,7 +148,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property BootstrapActions. 
         /// <para>
         ///  A list of bootstrap actions that will be run before Hadoop is started on the cluster
-        ///         nodes. 
+        /// nodes. 
         /// </para>
         /// </summary>
         public List<BootstrapActionConfig> BootstrapActions
@@ -170,7 +167,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property Instances. 
         /// <para>
         ///  A specification of the number and type of Amazon EC2 instances on which to run the
-        /// job         flow. 
+        /// job flow. 
         /// </para>
         /// </summary>
         public JobFlowInstancesConfig Instances
@@ -208,8 +205,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property LogUri. 
         /// <para>
-        /// The location in Amazon S3 to write the log files of the job flow. If a value is  
-        ///       not provided, logs are not created.
+        /// The location in Amazon S3 to write the log files of the job flow. If a value is not
+        /// provided, logs are not created.
         /// </para>
         /// </summary>
         public string LogUri
@@ -247,14 +244,13 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// A list of strings that indicates third-party software to use with the job flow that
         /// accepts a user argument list. EMR accepts and forwards the argument list to the corresponding
-        /// installation         script as bootstrap action arguments. For more information, see
-        /// <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
+        /// installation script as bootstrap action arguments. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
         /// a Job Flow on the MapR Distribution for Hadoop</a>. Currently supported values are:
         /// </para>
-        ///       <ul>         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
-        ///         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>         <li>"mapr"
-        /// with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job
-        /// flow using MapR M3 or M5 Edition respectively.</li>      </ul>
+        ///  <ul> <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li> <li>"mapr-m5"
+        /// - launch the job flow using MapR M5 Edition.</li> <li>"mapr" with the user arguments
+        /// specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or
+        /// M5 Edition respectively.</li> </ul>
         /// </summary>
         public List<SupportedProductConfig> NewSupportedProducts
         {
@@ -271,8 +267,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// IAM role that Amazon ElasticMapReduce will assume to work with AWS resources on your
-        /// behalf. You may set this parameter to the name of an existing IAM role.
+        /// The IAM role that will be assumed by the Amazon EMR service to access AWS resources
+        /// on your behalf.
         /// </para>
         /// </summary>
         public string ServiceRole
@@ -312,9 +308,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// more information, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
         /// Third Party Applications with Amazon EMR</a>. Currently supported values are:
         /// </para>
-        ///          <ul>                        <li>"mapr-m3" - launch the job flow using MapR
-        /// M3 Edition.</li>            <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
-        ///         </ul>
+        ///  <ul> <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li> <li>"mapr-m5"
+        /// - launch the job flow using MapR M5 Edition.</li> </ul>
         /// </summary>
         public List<string> SupportedProducts
         {

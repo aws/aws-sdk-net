@@ -336,64 +336,69 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public void VPCTests()
         {
             var vpc1 = CreateVPC();
-
-            CreateHostedZoneRequest createRequest = new CreateHostedZoneRequest
-            {
-                Name = ZONE_NAME,
-                CallerReference = CALLER_REFERENCE,
-                HostedZoneConfig = new HostedZoneConfig { Comment = COMMENT },
-                VPC = vpc1
-            };
-            createdZoneId = Client.CreateHostedZone(createRequest).HostedZone.Id;
-
-            var hostedZoneInfo = Client.GetHostedZone(new GetHostedZoneRequest
-            {
-                Id = createdZoneId
-            });
-            Assert.IsNotNull(hostedZoneInfo.VPCs);
-            Assert.AreEqual(1, hostedZoneInfo.VPCs.Count);
-            Assert.IsTrue(hostedZoneInfo.HostedZone.Config.PrivateZone);
-
             var vpc2 = CreateVPC();
-            var changeInfo = Client.AssociateVPCWithHostedZone(new AssociateVPCWithHostedZoneRequest
-            {
-                VPC = vpc2,
-                Comment = COMMENT,
-                HostedZoneId = createdZoneId
-            }).ChangeInfo;
-            Assert.IsNotNull(changeInfo);
-            Assert.IsNotNull(changeInfo.Comment);
-            assertValidChangeInfo(changeInfo);
 
-            hostedZoneInfo = Client.GetHostedZone(new GetHostedZoneRequest
+            try
             {
-                Id = createdZoneId
-            });
-            Assert.IsNotNull(hostedZoneInfo.VPCs);
-            Assert.AreEqual(2, hostedZoneInfo.VPCs.Count);
+                CreateHostedZoneRequest createRequest = new CreateHostedZoneRequest
+                {
+                    Name = ZONE_NAME,
+                    CallerReference = CALLER_REFERENCE,
+                    HostedZoneConfig = new HostedZoneConfig { Comment = COMMENT },
+                    VPC = vpc1
+                };
+                createdZoneId = Client.CreateHostedZone(createRequest).HostedZone.Id;
 
-            changeInfo = Client.DisassociateVPCFromHostedZone(new DisassociateVPCFromHostedZoneRequest
+                var hostedZoneInfo = Client.GetHostedZone(new GetHostedZoneRequest
+                {
+                    Id = createdZoneId
+                });
+                Assert.IsNotNull(hostedZoneInfo.VPCs);
+                Assert.AreEqual(1, hostedZoneInfo.VPCs.Count);
+                Assert.IsTrue(hostedZoneInfo.HostedZone.Config.PrivateZone);
+
+                var changeInfo = Client.AssociateVPCWithHostedZone(new AssociateVPCWithHostedZoneRequest
+                {
+                    VPC = vpc2,
+                    Comment = COMMENT,
+                    HostedZoneId = createdZoneId
+                }).ChangeInfo;
+                Assert.IsNotNull(changeInfo);
+                Assert.IsNotNull(changeInfo.Comment);
+                assertValidChangeInfo(changeInfo);
+
+                hostedZoneInfo = Client.GetHostedZone(new GetHostedZoneRequest
+                {
+                    Id = createdZoneId
+                });
+                Assert.IsNotNull(hostedZoneInfo.VPCs);
+                Assert.AreEqual(2, hostedZoneInfo.VPCs.Count);
+
+                changeInfo = Client.DisassociateVPCFromHostedZone(new DisassociateVPCFromHostedZoneRequest
+                {
+                    HostedZoneId = createdZoneId,
+                    VPC = vpc2
+                }).ChangeInfo;
+                assertValidChangeInfo(changeInfo);
+
+                hostedZoneInfo = Client.GetHostedZone(new GetHostedZoneRequest
+                {
+                    Id = createdZoneId
+                });
+                Assert.IsNotNull(hostedZoneInfo.VPCs);
+                Assert.AreEqual(1, hostedZoneInfo.VPCs.Count);
+
+                changeInfo = Client.DeleteHostedZone(new DeleteHostedZoneRequest
+                {
+                    Id = createdZoneId
+                }).ChangeInfo;
+                assertValidChangeInfo(changeInfo);
+            }
+            finally
             {
-                HostedZoneId = createdZoneId,
-                VPC = vpc2
-            }).ChangeInfo;
-            assertValidChangeInfo(changeInfo);
-
-            hostedZoneInfo = Client.GetHostedZone(new GetHostedZoneRequest
-            {
-                Id = createdZoneId
-            });
-            Assert.IsNotNull(hostedZoneInfo.VPCs);
-            Assert.AreEqual(1, hostedZoneInfo.VPCs.Count);
-
-            changeInfo = Client.DeleteHostedZone(new DeleteHostedZoneRequest
-            {
-                Id = createdZoneId
-            }).ChangeInfo;
-            assertValidChangeInfo(changeInfo);
-
-            DeleteVPC(vpc1);
-            DeleteVPC(vpc2);
+                DeleteVPC(vpc1);
+                DeleteVPC(vpc2);
+            }
         }
 
         // Deletes a VPC

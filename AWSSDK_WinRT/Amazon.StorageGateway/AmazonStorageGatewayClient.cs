@@ -1306,6 +1306,36 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  ResetCache
+
+        internal ResetCacheResponse ResetCache(ResetCacheRequest request)
+        {
+            var marshaller = new ResetCacheRequestMarshaller();
+            var unmarshaller = ResetCacheResponseUnmarshaller.Instance;
+
+            return Invoke<ResetCacheRequest,ResetCacheResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetCache operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ResetCacheResponse> ResetCacheAsync(ResetCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ResetCacheRequestMarshaller();
+            var unmarshaller = ResetCacheResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResetCacheRequest,ResetCacheResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RetrieveTapeArchive
 
         internal RetrieveTapeArchiveResponse RetrieveTapeArchive(RetrieveTapeArchiveRequest request)
@@ -1601,6 +1631,36 @@ namespace Amazon.StorageGateway
             var unmarshaller = UpdateSnapshotScheduleResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSnapshotScheduleRequest,UpdateSnapshotScheduleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateVTLDeviceType
+
+        internal UpdateVTLDeviceTypeResponse UpdateVTLDeviceType(UpdateVTLDeviceTypeRequest request)
+        {
+            var marshaller = new UpdateVTLDeviceTypeRequestMarshaller();
+            var unmarshaller = UpdateVTLDeviceTypeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVTLDeviceTypeRequest,UpdateVTLDeviceTypeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVTLDeviceType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVTLDeviceType operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateVTLDeviceTypeResponse> UpdateVTLDeviceTypeAsync(UpdateVTLDeviceTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateVTLDeviceTypeRequestMarshaller();
+            var unmarshaller = UpdateVTLDeviceTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateVTLDeviceTypeRequest,UpdateVTLDeviceTypeResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

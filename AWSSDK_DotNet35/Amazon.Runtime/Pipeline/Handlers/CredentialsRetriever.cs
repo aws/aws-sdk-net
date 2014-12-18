@@ -58,5 +58,23 @@ namespace Amazon.Runtime.Internal
 
             executionContext.RequestContext.ImmutableCredentials = ic;
         }
+
+#if BCL45 || WIN_RT || WINDOWS_PHONE 
+        public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
+        {
+            ImmutableCredentials ic = null;
+            if (Credentials != null && !(Credentials is AnonymousAWSCredentials))
+            {
+                using(executionContext.RequestContext.Metrics.StartEvent(Metric.CredentialsRequestTime))
+                {
+                    ic = await Credentials.GetCredentialsAsync().ConfigureAwait(false);
+                }
+            }
+
+            executionContext.RequestContext.ImmutableCredentials = ic;
+
+            return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
+        }
+#endif
     }
 }

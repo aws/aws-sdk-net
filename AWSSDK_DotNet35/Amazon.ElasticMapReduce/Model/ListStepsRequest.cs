@@ -35,6 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private string _clusterId;
         private string _marker;
+        private List<string> _stepIds = new List<string>();
         private List<string> _stepStates = new List<string>();
 
         /// <summary>
@@ -71,6 +72,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetMarker()
         {
             return this._marker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StepIds. 
+        /// <para>
+        /// The filter to limit the step list based on the identifier of the steps.
+        /// </para>
+        /// </summary>
+        public List<string> StepIds
+        {
+            get { return this._stepIds; }
+            set { this._stepIds = value; }
+        }
+
+        // Check to see if StepIds property is set
+        internal bool IsSetStepIds()
+        {
+            return this._stepIds != null && this._stepIds.Count > 0; 
         }
 
         /// <summary>

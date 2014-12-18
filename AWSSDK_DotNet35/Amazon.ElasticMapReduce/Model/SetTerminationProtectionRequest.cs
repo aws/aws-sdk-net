@@ -30,30 +30,27 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Container for the parameters to the SetTerminationProtection operation.
     /// SetTerminationProtection locks a job flow so the Amazon EC2 instances in the cluster
-    ///          cannot be terminated by user intervention, an API call, or in the event of
-    /// a job-flow error.          The cluster still terminates upon successful completion
-    /// of the job flow. Calling          SetTerminationProtection on a job flow is analogous
-    /// to calling the          Amazon EC2 DisableAPITermination API on all of the EC2 instances
-    /// in a cluster.
+    /// cannot be terminated by user intervention, an API call, or in the event of a job-flow
+    /// error. The cluster still terminates upon successful completion of the job flow. Calling
+    /// SetTerminationProtection on a job flow is analogous to calling the Amazon EC2 DisableAPITermination
+    /// API on all of the EC2 instances in a cluster.
     /// 
-    ///             
+    ///  
     /// <para>
     ///  SetTerminationProtection is used to prevent accidental termination of a job flow
-    /// and to          ensure that in the event of an error, the instances will persist so
-    /// you can recover          any data stored in their ephemeral instance storage.
+    /// and to ensure that in the event of an error, the instances will persist so you can
+    /// recover any data stored in their ephemeral instance storage.
     /// </para>
-    ///             
+    ///  
     /// <para>
     ///  To terminate a job flow that has been locked by setting SetTerminationProtection
-    /// to <code>true</code>,          you must first unlock the job flow by a subsequent
-    /// call to SetTerminationProtection          in which you set the value to <code>false</code>.
-    /// 
+    /// to <code>true</code>, you must first unlock the job flow by a subsequent call to SetTerminationProtection
+    /// in which you set the value to <code>false</code>. 
     /// </para>
-    ///             
+    ///  
     /// <para>
     ///  For more information, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">Protecting
-    /// a Job Flow from Termination</a> in the          <i>Amazon Elastic MapReduce Developer's
-    /// Guide.</i>
+    /// a Job Flow from Termination</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
     /// </para>
     /// </summary>
     public partial class SetTerminationProtectionRequest : AmazonElasticMapReduceRequest
@@ -65,7 +62,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property JobFlowIds. 
         /// <para>
         ///  A list of strings that uniquely identify the job flows to protect. This identifier
-        /// is returned by         <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a>
+        /// is returned by <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a>
         /// . 
         /// </para>
         /// </summary>
@@ -84,9 +81,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property TerminationProtected. 
         /// <para>
-        ///  A Boolean that indicates whether to protect the job flow and          prevent the
-        /// Amazon EC2 instances in the cluster from shutting down due to          API calls,
-        /// user intervention, or job-flow error. 
+        ///  A Boolean that indicates whether to protect the job flow and prevent the Amazon EC2
+        /// instances in the cluster from shutting down due to API calls, user intervention, or
+        /// job-flow error. 
         /// </para>
         /// </summary>
         public bool TerminationProtected

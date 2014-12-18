@@ -38,8 +38,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Identity. 
         /// <para>
-        ///  Identity of the worker that was assigned this task. This aids diagnostics when problems
-        /// arise. The form of this identity is user defined. 
+        /// Identity of the worker that was assigned this task. This aids diagnostics when problems
+        /// arise. The form of this identity is user defined.
         /// </para>
         /// </summary>
         public string Identity
@@ -57,9 +57,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ScheduledEventId. 
         /// <para>
-        ///  The id of the <code>ActivityTaskScheduled</code> event that was recorded when this
+        /// The id of the <code>ActivityTaskScheduled</code> event that was recorded when this
         /// activity task was scheduled. This information can be useful for diagnosing problems
-        /// by tracing back the chain of events leading up to this event. 
+        /// by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long ScheduledEventId

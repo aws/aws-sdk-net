@@ -40,7 +40,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        ///  Details of the cancellation (if any). 
+        /// Details of the cancellation (if any).
         /// </para>
         /// </summary>
         public string Details
@@ -58,9 +58,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property LatestCancelRequestedEventId. 
         /// <para>
-        ///  If set, contains the Id of the last <code>ActivityTaskCancelRequested</code> event
+        /// If set, contains the Id of the last <code>ActivityTaskCancelRequested</code> event
         /// recorded for this activity task. This information can be useful for diagnosing problems
-        /// by tracing back the chain of events leading up to this event. 
+        /// by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long LatestCancelRequestedEventId
@@ -78,9 +78,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ScheduledEventId. 
         /// <para>
-        ///  The id of the <code>ActivityTaskScheduled</code> event that was recorded when this
+        /// The id of the <code>ActivityTaskScheduled</code> event that was recorded when this
         /// activity task was scheduled. This information can be useful for diagnosing problems
-        /// by tracing back the chain of events leading up to this event. 
+        /// by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long ScheduledEventId
@@ -98,9 +98,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        ///  The Id of the <code>ActivityTaskStarted</code> event recorded when this activity
-        /// task was started. This information can be useful for diagnosing problems by tracing
-        /// back the chain of events leading up to this event. 
+        /// The Id of the <code>ActivityTaskStarted</code> event recorded when this activity task
+        /// was started. This information can be useful for diagnosing problems by tracing back
+        /// the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long StartedEventId

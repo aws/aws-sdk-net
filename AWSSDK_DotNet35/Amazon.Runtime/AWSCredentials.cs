@@ -116,6 +116,13 @@ namespace Amazon.Runtime
         /// </summary>
         /// <returns></returns>
         public abstract ImmutableCredentials GetCredentials();
+
+#if BCL45 || WIN_RT || WINDOWS_PHONE
+        public virtual System.Threading.Tasks.Task<ImmutableCredentials> GetCredentialsAsync()
+        {
+            return System.Threading.Tasks.Task.Run<ImmutableCredentials>(() => this.GetCredentials());
+        }
+#endif
     }
 
     /// <summary>
@@ -573,36 +580,58 @@ namespace Amazon.Runtime
                 if (ShouldUpdate)
                 {
                     _currentState = GenerateNewCredentials();
-
-                    // Check if the new credentials are already expired
-                    if (ShouldUpdate)
-                    {
-                        throw new AmazonClientException("The retrieved credentials have already expired");
-                    }
-
-                    // Offset the Expiration by PreemptExpiryTime
-                    _currentState.Expiration -= PreemptExpiryTime;
-
-                    if (ShouldUpdate)
-                    {
-                        // This could happen if the default value of PreemptExpiryTime is
-                        // overriden and set too high such that ShouldUpdate returns true.
-                        _logger.InfoFormat(
-                            "The preempt expiry time is set too high: Current time = {0}, Credentials expiry time = {1}, Preempt expiry time = {2}.",
-                            DateTime.Now,
-                            _currentState.Expiration,
-                            PreemptExpiryTime);
-                    }
+                    UpdateToGeneratedCredentials(_currentState);
                 }
 
                 return _currentState.Credentials.Copy();
             }
         }
 
+#if BCL45 || WIN_RT || WINDOWS_PHONE
+        public async override System.Threading.Tasks.Task<ImmutableCredentials> GetCredentialsAsync()
+        {
+            // If credentials are expired, update
+            if (ShouldUpdate)
+            {
+                var state = await GenerateNewCredentialsAsync().ConfigureAwait(false);
+                lock (this._refreshLock)
+                {
+                    _currentState = state;
+                    UpdateToGeneratedCredentials(_currentState);
+                }
+            }
+
+            return _currentState.Credentials.Copy();
+        }
+#endif
+
         #endregion
 
 
         #region Private/protected credential update methods
+
+        private void UpdateToGeneratedCredentials(CredentialsRefreshState state)
+        {
+            // Check if the new credentials are already expired
+            if (ShouldUpdate)
+            {
+                throw new AmazonClientException("The retrieved credentials have already expired");
+            }
+
+            // Offset the Expiration by PreemptExpiryTime
+            state.Expiration -= PreemptExpiryTime;
+
+            if (ShouldUpdate)
+            {
+                // This could happen if the default value of PreemptExpiryTime is
+                // overriden and set too high such that ShouldUpdate returns true.
+                _logger.InfoFormat(
+                    "The preempt expiry time is set too high: Current time = {0}, Credentials expiry time = {1}, Preempt expiry time = {2}.",
+                    DateTime.Now,
+                    _currentState.Expiration,
+                    PreemptExpiryTime);
+            }
+        }
 
         // Test credentials existence and expiration time
         private bool ShouldUpdate
@@ -627,6 +656,19 @@ namespace Amazon.Runtime
         {
             throw new NotImplementedException();
         }
+
+#if BCL45 || WIN_RT || WINDOWS_PHONE
+        /// <summary>
+        /// When overridden in a derived class, generates new credentials and new expiration date.
+        /// 
+        /// Called on first credentials request and when expiration date is in the past.
+        /// </summary>
+        /// <returns></returns>
+        protected virtual System.Threading.Tasks.Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
+        {
+            return System.Threading.Tasks.Task.Run(() => this.GenerateNewCredentials());
+        }
+#endif
 
         /// <summary>
         /// Clears currently-stored credentials, forcing the next GetCredentials call to generate new credentials.

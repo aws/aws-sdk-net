@@ -31,8 +31,8 @@ namespace Amazon.ElasticMapReduce.Model
     /// Container for the parameters to the ListClusters operation.
     /// Provides the status of all clusters visible to this AWS account. Allows you to filter
     /// the list of clusters based on certain criteria; for example, filtering by cluster
-    /// creation date and time or by status.         This call returns a maximum of 50 clusters
-    /// per call, but returns a marker to track the paging of the cluster list across multiple
+    /// creation date and time or by status. This call returns a maximum of 50 clusters per
+    /// call, but returns a marker to track the paging of the cluster list across multiple
     /// ListClusters calls.
     /// </summary>
     public partial class ListClustersRequest : AmazonElasticMapReduceRequest
@@ -45,7 +45,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ClusterStates. 
         /// <para>
-        /// The cluster state filters to apply when listing clusters.      
+        /// The cluster state filters to apply when listing clusters. 
         /// </para>
         /// </summary>
         public List<string> ClusterStates
@@ -63,7 +63,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property CreatedAfter. 
         /// <para>
-        /// The creation date and time beginning value filter for listing clusters      .
+        /// The creation date and time beginning value filter for listing clusters .
         /// </para>
         /// </summary>
         public DateTime CreatedAfter
@@ -81,7 +81,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property CreatedBefore. 
         /// <para>
-        /// The creation date and time end value filter for listing clusters      .
+        /// The creation date and time end value filter for listing clusters .
         /// </para>
         /// </summary>
         public DateTime CreatedBefore
@@ -99,7 +99,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The pagination token that indicates the next set of results to retrieve.      
+        /// The pagination token that indicates the next set of results to retrieve. 
         /// </para>
         /// </summary>
         public string Marker

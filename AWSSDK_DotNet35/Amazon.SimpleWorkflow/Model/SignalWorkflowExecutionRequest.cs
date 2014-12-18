@@ -29,14 +29,17 @@ namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
     /// Container for the parameters to the SignalWorkflowExecution operation.
-    /// Records a <code>WorkflowExecutionSignaled</code> event in the workflow execution
-    /// history and creates a decision task for the workflow execution identified by the given
-    /// domain, workflowId and runId. The event is recorded with the specified user defined
-    /// signalName and input (if provided).
+    /// Records a <code>WorkflowExecutionSignaled</code> event in the workflow execution history
+    /// and creates a decision task for the workflow execution identified by the given domain,
+    /// workflowId and runId. The event is recorded with the specified user defined signalName
+    /// and input (if provided).
     /// 
-    ///  
+    ///  <note> If a runId is not specified, then the <code>WorkflowExecutionSignaled</code>
+    /// event is recorded in the history of the current open workflow with the matching workflowId
+    /// in the domain.</note> <note> If the specified workflow execution is not open, this
+    /// method fails with <code>UnknownResource</code>.</note> 
     /// <para>
-    ///  <b>Access Control</b>
+    /// <b>Access Control</b>
     /// </para>
     ///  
     /// <para>
@@ -49,8 +52,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// this action's parameters.</li> </ul> 
     /// <para>
     /// If the caller does not have sufficient permissions to invoke the action, or the parameter
-    /// values fall outside the specified constraints, the action fails by throwing <code>OperationNotPermitted</code>.
-    /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// values fall outside the specified constraints, the action fails. The associated event
+    /// attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details
+    /// and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
     /// IAM to Manage Access to Amazon SWF Workflows</a>.
     /// </para>
     /// </summary>
@@ -65,7 +69,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain containing the workflow execution to signal.
+        /// The name of the domain containing the workflow execution to signal.
         /// </para>
         /// </summary>
         public string Domain
@@ -83,8 +87,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        ///  Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target
-        /// workflow execution's history.
+        /// Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow
+        /// execution's history.
         /// </para>
         /// </summary>
         public string Input
@@ -102,7 +106,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property RunId. 
         /// <para>
-        ///  The runId of the workflow execution to signal.
+        /// The runId of the workflow execution to signal.
         /// </para>
         /// </summary>
         public string RunId
@@ -120,7 +124,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property SignalName. 
         /// <para>
-        ///  The name of the signal. This name must be meaningful to the target workflow.
+        /// The name of the signal. This name must be meaningful to the target workflow.
         /// </para>
         /// </summary>
         public string SignalName
@@ -138,7 +142,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowId. 
         /// <para>
-        ///  The workflowId of the workflow execution to signal.
+        /// The workflowId of the workflow execution to signal.
         /// </para>
         /// </summary>
         public string WorkflowId

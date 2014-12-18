@@ -38,7 +38,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        ///  The number of tasks in the task list. 
+        /// The number of tasks in the task list.
         /// </para>
         /// </summary>
         public int Count
@@ -56,8 +56,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Truncated. 
         /// <para>
-        ///  If set to true, indicates that the actual count was more than the maximum supported
-        /// by this API and the count returned is the truncated value. 
+        /// If set to true, indicates that the actual count was more than the maximum supported
+        /// by this API and the count returned is the truncated value.
         /// </para>
         /// </summary>
         public bool Truncated

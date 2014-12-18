@@ -32,7 +32,8 @@ namespace Amazon.SimpleWorkflow.Model
     /// Returns the number of open workflow executions within the given domain that meet the
     /// specified filtering criteria.
     /// 
-    ///  
+    ///  <note>This operation is eventually consistent. The results are best effort and may
+    /// not exactly reflect recent updates and changes.</note> 
     /// <para>
     /// <b>Access Control</b>
     /// </para>
@@ -44,15 +45,16 @@ namespace Amazon.SimpleWorkflow.Model
     ///  <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action
     /// to only specified domains.</li> <li>Use an <code>Action</code> element to allow or
     /// deny permission to call this action.</li> <li>Constrain the following parameters by
-    /// using a <code>Condition</code> element with the appropriate keys. <ul> <li> <code>tagFilter.tag</code>:
-    /// String constraint. The key is <code>swf:tagFilter.tag</code>.</li> <li> <code>typeFilter.name</code>:
-    /// String constraint. The key is <code>swf:typeFilter.name</code>.</li> <li> <code>typeFilter.version</code>:
+    /// using a <code>Condition</code> element with the appropriate keys. <ul> <li><code>tagFilter.tag</code>:
+    /// String constraint. The key is <code>swf:tagFilter.tag</code>.</li> <li><code>typeFilter.name</code>:
+    /// String constraint. The key is <code>swf:typeFilter.name</code>.</li> <li><code>typeFilter.version</code>:
     /// String constraint. The key is <code>swf:typeFilter.version</code>.</li> </ul> </li>
     /// </ul> 
     /// <para>
     /// If the caller does not have sufficient permissions to invoke the action, or the parameter
-    /// values fall outside the specified constraints, the action fails by throwing <code>OperationNotPermitted</code>.
-    /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// values fall outside the specified constraints, the action fails. The associated event
+    /// attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details
+    /// and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
     /// IAM to Manage Access to Amazon SWF Workflows</a>.
     /// </para>
     /// </summary>
@@ -88,6 +90,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// If specified, only workflow executions matching the <code>WorkflowId</code> in the
         /// filter are counted.
         /// </para>
+        ///  <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+        /// are mutually exclusive. You can specify at most one of these in a request.</note>
         /// </summary>
         public WorkflowExecutionFilter ExecutionFilter
         {
@@ -125,6 +129,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         /// If specified, only executions that have a tag that matches the filter are counted.
         /// </para>
+        ///  <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+        /// are mutually exclusive. You can specify at most one of these in a request.</note>
         /// </summary>
         public TagFilter TagFilter
         {
@@ -143,6 +149,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         /// Specifies the type of the workflow executions to be counted.
         /// </para>
+        ///  <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+        /// are mutually exclusive. You can specify at most one of these in a request.</note>
         /// </summary>
         public WorkflowTypeFilter TypeFilter
         {

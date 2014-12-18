@@ -32,20 +32,21 @@ namespace Amazon.SimpleWorkflow.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Access Control</b> 
+    /// <b>Access Control</b>
     /// </para>
     ///  
     /// <para>
-    /// You can use IAM policies to control this decision's access to Amazon SWF in much the
-    /// same way as for the regular API:
+    /// You can use IAM policies to control this decision's access to Amazon SWF resources
+    /// as follows:
     /// </para>
-    ///  <ul> <li>Use a <code>Resource</code> element with the domain name to limit the decision
+    ///  <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action
     /// to only specified domains.</li> <li>Use an <code>Action</code> element to allow or
-    /// deny permission to specify this decision.</li> <li>Constrain the following parameters
-    /// by using a <code>Condition</code> element with the appropriate keys. <ul> <li> <code>tagList.member.N</code>:
-    /// TBD</li> <li> <code>taskList</code>:String constraint. The key is "swf:taskList.name".</li>
-    /// <li> <code>workflowType.name</code>: String constraint. The key is "swf:workflowType.name".</li>
-    /// <li> <code>workflowType.version</code>: String constraint. The key is "swf:workflowType.version".</li>
+    /// deny permission to call this action.</li> <li>Constrain the following parameters by
+    /// using a <code>Condition</code> element with the appropriate keys. <ul> <li> <code>tagList.member.N</code>:
+    /// The key is "swf:tagList.N" where N is the tag number from 0 to 4, inclusive.</li>
+    /// <li><code>taskList</code>: String constraint. The key is <code>swf:taskList.name</code>.</li>
+    /// <li><code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.</li>
+    /// <li><code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.</li>
     /// </ul> </li> </ul> 
     /// <para>
     /// If the caller does not have sufficient permissions to invoke the action, or the parameter
@@ -63,6 +64,7 @@ namespace Amazon.SimpleWorkflow.Model
         private string _input;
         private List<string> _tagList = new List<string>();
         private TaskList _taskList;
+        private string _taskPriority;
         private string _taskStartToCloseTimeout;
         private string _workflowId;
         private WorkflowType _workflowType;
@@ -70,17 +72,23 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ChildPolicy. 
         /// <para>
-        ///  If set, specifies the policy to use for the child workflow executions if the workflow
-        /// execution being started is terminated by calling the <a>TerminateWorkflowExecution</a>
+        /// <i>Optional.</i> If set, specifies the policy to use for the child workflow executions
+        /// if the workflow execution being started is terminated by calling the <a>TerminateWorkflowExecution</a>
         /// action explicitly or due to an expired timeout. This policy overrides the default
         /// child policy specified when registering the workflow type using <a>RegisterWorkflowType</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// The supported child policies are:
         /// </para>
-        ///  <ul> <li> <b>TERMINATE:</b> the child executions will be terminated.</li> <li> <b>REQUEST_CANCEL:</b>
+        ///  <ul> <li><b>TERMINATE:</b> the child executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b>
         /// a request to cancel will be attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code>
         /// event in its history. It is up to the decider to take appropriate actions when it
-        /// receives an execution history with this event. </li> <li> <b>ABANDON:</b> no action
-        /// will be taken. The child executions will continue to run.</li> </ul>
+        /// receives an execution history with this event.</li> <li><b>ABANDON:</b> no action
+        /// will be taken. The child executions will continue to run.</li> </ul> <note>A child
+        /// policy for this workflow execution must be specified either as a default for the workflow
+        /// type or through this parameter. If neither this parameter is set nor a default child
+        /// policy was specified at registration time then a fault will be returned.</note>
         /// </summary>
         public ChildPolicy ChildPolicy
         {
@@ -97,8 +105,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Control. 
         /// <para>
-        ///  Optional data attached to the event that can be used by the decider in subsequent
-        /// workflow tasks. This data is not sent to the child workflow execution. 
+        /// <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent
+        /// workflow tasks. This data is not sent to the child workflow execution.
         /// </para>
         /// </summary>
         public string Control
@@ -116,15 +124,18 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ExecutionStartToCloseTimeout. 
         /// <para>
-        ///  The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout
-        /// specified when registering the workflow type. 
+        /// The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout
+        /// specified when registering the workflow type.
         /// </para>
         ///  
         /// <para>
-        /// The valid values are integers greater than or equal to <code>0</code>. An integer
-        /// value can be used to specify the duration in seconds while <code>NONE</code> can be
-        /// used to specify unlimited duration.
+        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
+        /// "NONE" can be used to specify unlimited duration.
         /// </para>
+        ///  <note>An execution start-to-close timeout for this workflow execution must be specified
+        /// either as a default for the workflow type or through this parameter. If neither this
+        /// parameter is set nor a default execution start-to-close timeout was specified at registration
+        /// time then a fault will be returned.</note>
         /// </summary>
         public string ExecutionStartToCloseTimeout
         {
@@ -141,7 +152,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        ///  The input to be provided to the workflow execution. 
+        /// The input to be provided to the workflow execution.
         /// </para>
         /// </summary>
         public string Input
@@ -159,10 +170,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TagList. 
         /// <para>
-        ///  The list of tags to associate with the child workflow execution. A maximum of 5 tags
+        /// The list of tags to associate with the child workflow execution. A maximum of 5 tags
         /// can be specified. You can list workflow executions with a specific tag by calling
         /// <a>ListOpenWorkflowExecutions</a> or <a>ListClosedWorkflowExecutions</a> and specifying
-        /// a <a>TagFilter</a>. 
+        /// a <a>TagFilter</a>.
         /// </para>
         /// </summary>
         public List<string> TagList
@@ -180,10 +191,12 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TaskList. 
         /// <para>
-        ///  The name of the task list to be used for decision tasks of the child workflow execution.
-        /// 
+        /// The name of the task list to be used for decision tasks of the child workflow execution.
         /// </para>
-        ///  
+        ///  <note>A task list for this workflow execution must be specified either as a default
+        /// for the workflow type or through this parameter. If neither this parameter is set
+        /// nor a default task list was specified at registration time then a fault will be returned.</note>
+        /// 
         /// <para>
         /// The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or
@@ -204,18 +217,48 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TaskStartToCloseTimeout. 
+        /// Gets and sets the property TaskPriority. 
         /// <para>
-        ///  Specifies the maximum duration of decision tasks for this workflow execution. This
-        /// parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when
-        /// registering the workflow type using <a>RegisterWorkflowType</a>. 
+        /// <i>Optional.</i> A task priority that, if set, specifies the priority for a decision
+        /// task of this workflow execution. This overrides the defaultTaskPriority specified
+        /// when registering the workflow type. Valid values are integers that range from Java's
+        /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
+        /// Higher numbers indicate higher priority.
         /// </para>
         ///  
         /// <para>
-        /// The valid values are integers greater than or equal to <code>0</code>. An integer
-        /// value can be used to specify the duration in seconds while <code>NONE</code> can be
-        /// used to specify unlimited duration.
+        /// For more information about setting task priority, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+        /// Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
         /// </para>
+        /// </summary>
+        public string TaskPriority
+        {
+            get { return this._taskPriority; }
+            set { this._taskPriority = value; }
+        }
+
+        // Check to see if TaskPriority property is set
+        internal bool IsSetTaskPriority()
+        {
+            return this._taskPriority != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskStartToCloseTimeout. 
+        /// <para>
+        /// Specifies the maximum duration of decision tasks for this workflow execution. This
+        /// parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when
+        /// registering the workflow type using <a>RegisterWorkflowType</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
+        /// "NONE" can be used to specify unlimited duration.
+        /// </para>
+        ///  <note>A task start-to-close timeout for this workflow execution must be specified
+        /// either as a default for the workflow type or through this parameter. If neither this
+        /// parameter is set nor a default task start-to-close timeout was specified at registration
+        /// time then a fault will be returned.</note>
         /// </summary>
         public string TaskStartToCloseTimeout
         {
@@ -232,7 +275,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowId. 
         /// <para>
-        ///  The <code>workflowId</code> of the workflow execution. This field is required. 
+        /// <b>Required.</b> The <code>workflowId</code> of the workflow execution.
         /// </para>
         ///  
         /// <para>
@@ -257,7 +300,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowType. 
         /// <para>
-        ///  The type of the workflow execution to be started. This field is required. 
+        /// <b>Required.</b> The type of the workflow execution to be started.
         /// </para>
         /// </summary>
         public WorkflowType WorkflowType

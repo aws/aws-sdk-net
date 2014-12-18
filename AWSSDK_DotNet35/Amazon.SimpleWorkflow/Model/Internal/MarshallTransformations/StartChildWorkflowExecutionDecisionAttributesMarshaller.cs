@@ -85,6 +85,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTaskPriority())
+            {
+                context.Writer.WritePropertyName("taskPriority");
+                context.Writer.Write(requestObject.TaskPriority);
+            }
+
             if(requestObject.IsSetTaskStartToCloseTimeout())
             {
                 context.Writer.WritePropertyName("taskStartToCloseTimeout");

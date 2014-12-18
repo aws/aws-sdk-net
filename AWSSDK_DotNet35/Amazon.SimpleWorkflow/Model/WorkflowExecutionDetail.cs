@@ -41,8 +41,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ExecutionConfiguration. 
         /// <para>
-        ///  The configuration settings for this workflow execution including timeout values,
-        /// tasklist etc. 
+        /// The configuration settings for this workflow execution including timeout values, tasklist
+        /// etc.
         /// </para>
         /// </summary>
         public WorkflowExecutionConfiguration ExecutionConfiguration
@@ -60,7 +60,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ExecutionInfo. 
         /// <para>
-        ///  Information about the workflow execution. 
+        /// Information about the workflow execution.
         /// </para>
         /// </summary>
         public WorkflowExecutionInfo ExecutionInfo
@@ -99,8 +99,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property LatestExecutionContext. 
         /// <para>
         /// The latest executionContext provided by the decider for this workflow execution. A
-        /// decider can provide an executionContext, which is a free form string, when closing
-        /// a decision task using <a>RespondDecisionTaskCompleted</a>.
+        /// decider can provide an executionContext (a free-form string) when closing a decision
+        /// task using <a>RespondDecisionTaskCompleted</a>.
         /// </para>
         /// </summary>
         public string LatestExecutionContext

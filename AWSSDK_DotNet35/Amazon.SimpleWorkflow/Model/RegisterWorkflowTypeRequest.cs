@@ -30,18 +30,18 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// Container for the parameters to the RegisterWorkflowType operation.
     /// Registers a new <i>workflow type</i> and its configuration settings in the specified
-    /// domain. 
+    /// domain.
     /// 
     ///  
     /// <para>
-    ///  The retention period for the workflow history is set by the <a>RegisterDomain</a>
-    /// action. 
+    /// The retention period for the workflow history is set by the <a>RegisterDomain</a>
+    /// action.
     /// </para>
-    ///  <important> If the type already exists, then a <code>TypeAlreadyExists</code> fault
+    ///  <important>If the type already exists, then a <code>TypeAlreadyExists</code> fault
     /// is returned. You cannot change the configuration settings of a workflow type once
     /// it is registered and it must be registered as a new version.</important> 
     /// <para>
-    ///  <b>Access Control</b> 
+    /// <b>Access Control</b>
     /// </para>
     ///  
     /// <para>
@@ -57,8 +57,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// String constraint. The key is <code>swf:version</code>.</li> </ul> </li> </ul> 
     /// <para>
     /// If the caller does not have sufficient permissions to invoke the action, or the parameter
-    /// values fall outside the specified constraints, the action fails by throwing <code>OperationNotPermitted</code>.
-    /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// values fall outside the specified constraints, the action fails. The associated event
+    /// attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details
+    /// and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
     /// IAM to Manage Access to Amazon SWF Workflows</a>.
     /// </para>
     /// </summary>
@@ -67,6 +68,7 @@ namespace Amazon.SimpleWorkflow.Model
         private ChildPolicy _defaultChildPolicy;
         private string _defaultExecutionStartToCloseTimeout;
         private TaskList _defaultTaskList;
+        private string _defaultTaskPriority;
         private string _defaultTaskStartToCloseTimeout;
         private string _description;
         private string _domain;
@@ -80,13 +82,16 @@ namespace Amazon.SimpleWorkflow.Model
         /// a workflow execution of this type is terminated, by calling the <a>TerminateWorkflowExecution</a>
         /// action explicitly or due to an expired timeout. This default can be overridden when
         /// starting a workflow execution using the <a>StartWorkflowExecution</a> action or the
-        /// <code>StartChildWorkflowExecution</code> <a>Decision</a>. The supported child policies
-        /// are:
+        /// <code>StartChildWorkflowExecution</code> <a>Decision</a>.
         /// </para>
-        ///  <ul> <li> <b>TERMINATE:</b> the child executions will be terminated.</li> <li> <b>REQUEST_CANCEL:</b>
+        ///  
+        /// <para>
+        /// The supported child policies are:
+        /// </para>
+        ///  <ul> <li><b>TERMINATE:</b> the child executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b>
         /// a request to cancel will be attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code>
         /// event in its history. It is up to the decider to take appropriate actions when it
-        /// receives an execution history with this event. </li> <li> <b>ABANDON:</b> no action
+        /// receives an execution history with this event.</li> <li><b>ABANDON:</b> no action
         /// will be taken. The child executions will continue to run.</li> </ul>
         /// </summary>
         public ChildPolicy DefaultChildPolicy
@@ -110,11 +115,11 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds. The valid values are integers greater than or
-        /// equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot
-        /// specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there
-        /// is a one-year max limit on the time that a workflow execution can run. Exceeding this
-        /// limit will always cause the workflow execution to time out.
+        /// The duration is specified in seconds; an integer greater than or equal to 0. Unlike
+        /// some of the other timeout parameters in Amazon SWF, you cannot specify a value of
+        /// "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max
+        /// limit on the time that a workflow execution can run. Exceeding this limit will always
+        /// cause the workflow execution to time out.
         /// </para>
         /// </summary>
         public string DefaultExecutionStartToCloseTimeout
@@ -151,18 +156,43 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DefaultTaskStartToCloseTimeout. 
+        /// Gets and sets the property DefaultTaskPriority. 
         /// <para>
-        ///  If set, specifies the default maximum duration of decision tasks for this workflow
-        /// type. This default can be overridden when starting a workflow execution using the
-        /// <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>. 
+        /// The default task priority to assign to the workflow type. If not assigned, then "0"
+        /// will be used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code>
+        /// (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+        /// higher priority.
         /// </para>
         ///  
         /// <para>
-        /// The valid values are integers greater than or equal to <code>0</code>. An integer
-        /// value can be used to specify the duration in seconds while <code>NONE</code> can be
-        /// used to specify unlimited duration.
+        /// For more information about setting task priority, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+        /// Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string DefaultTaskPriority
+        {
+            get { return this._defaultTaskPriority; }
+            set { this._defaultTaskPriority = value; }
+        }
+
+        // Check to see if DefaultTaskPriority property is set
+        internal bool IsSetDefaultTaskPriority()
+        {
+            return this._defaultTaskPriority != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultTaskStartToCloseTimeout. 
+        /// <para>
+        /// If set, specifies the default maximum duration of decision tasks for this workflow
+        /// type. This default can be overridden when starting a workflow execution using the
+        /// <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
+        /// "NONE" can be used to specify unlimited duration.
         /// </para>
         /// </summary>
         public string DefaultTaskStartToCloseTimeout
@@ -198,7 +228,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain in which to register the workflow type. 
+        /// The name of the domain in which to register the workflow type.
         /// </para>
         /// </summary>
         public string Domain
@@ -216,7 +246,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the workflow type. 
+        /// The name of the workflow type.
         /// </para>
         ///  
         /// <para>
@@ -241,9 +271,11 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        ///  The version of the workflow type. 
+        /// The version of the workflow type.
         /// </para>
-        ///  
+        ///  <note>The workflow type consists of the name and version, the combination of which
+        /// must be unique within the domain. To get a list of all currently registered workflow
+        /// types, use the <a>ListWorkflowTypes</a> action.</note> 
         /// <para>
         /// The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or

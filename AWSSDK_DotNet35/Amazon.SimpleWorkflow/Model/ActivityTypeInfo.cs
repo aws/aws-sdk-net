@@ -41,7 +41,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ActivityType. 
         /// <para>
-        ///  The <a>ActivityType</a> type structure representing the activity type. 
+        /// The <a>ActivityType</a> type structure representing the activity type.
         /// </para>
         /// </summary>
         public ActivityType ActivityType
@@ -59,8 +59,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        ///  The date and time this activity type was created through <a>RegisterActivityType</a>.
-        /// 
+        /// The date and time this activity type was created through <a>RegisterActivityType</a>.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -78,7 +77,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DeprecationDate. 
         /// <para>
-        ///  If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called. 
+        /// If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called.
         /// </para>
         /// </summary>
         public DateTime DeprecationDate
@@ -96,7 +95,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the activity type provided in <a>RegisterActivityType</a>. 
+        /// The description of the activity type provided in <a>RegisterActivityType</a>.
         /// </para>
         /// </summary>
         public string Description
@@ -114,7 +113,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The current status of the activity type. 
+        /// The current status of the activity type.
         /// </para>
         /// </summary>
         public RegistrationStatus Status

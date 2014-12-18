@@ -41,8 +41,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Control. 
         /// <para>
-        ///  Optional data attached to the event that can be used by the decider in subsequent
-        /// workflow tasks. 
+        /// <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent
+        /// workflow tasks.
         /// </para>
         /// </summary>
         public string Control
@@ -60,10 +60,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        ///  The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
+        /// The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
         /// task that resulted in the <code>RequestCancelExternalWorkflowExecution</code> decision
         /// for this cancellation request. This information can be useful for diagnosing problems
-        /// by tracing back the cause of events. 
+        /// by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long DecisionTaskCompletedEventId
@@ -81,7 +81,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property RunId. 
         /// <para>
-        ///  The <code>runId</code> of the external workflow execution to be canceled. 
+        /// The <code>runId</code> of the external workflow execution to be canceled.
         /// </para>
         /// </summary>
         public string RunId
@@ -99,7 +99,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowId. 
         /// <para>
-        ///  The <code>workflowId</code> of the external workflow execution to be canceled. 
+        /// The <code>workflowId</code> of the external workflow execution to be canceled.
         /// </para>
         /// </summary>
         public string WorkflowId

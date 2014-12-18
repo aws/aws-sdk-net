@@ -102,6 +102,8 @@ namespace Amazon.StorageGateway.Model
         /// An array of strings, where each string represents the Amazon Resource Name (ARN) of
         /// a VTL device.
         /// </para>
+        ///  <note>All of the specified VTL devices must be from the same gateway. If no VTL devices
+        /// are specified, the result will contain all devices on the specified gateway.</note>
         /// </summary>
         public List<string> VTLDeviceARNs
         {

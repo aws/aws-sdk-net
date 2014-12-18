@@ -27,11 +27,14 @@ namespace Amazon.CognitoIdentity
         private bool IsIdentitySet { get { return !string.IsNullOrEmpty(identityId); } }
 
         // Updates IdentityId to new value and fires IdentityChangedEvent
-        private void UpdateIdentity(string newIdentityId)
+        private void UpdateIdentity(string newIdentityId, bool updateCache)
         {
             // No-op if new IdentityId is same as old
             if (string.Equals(identityId, newIdentityId, StringComparison.Ordinal))
                 return;
+
+            if (updateCache)
+                this.CacheIdentityId(newIdentityId);
 
             // Swap in new identity
             string oldIdentityId = identityId;
@@ -98,6 +101,7 @@ namespace Amazon.CognitoIdentity
         {
             identityId = null;
             ClearCredentials();
+            ClearIdentityCache();
         }
 
         /// <summary>
@@ -138,19 +142,27 @@ namespace Amazon.CognitoIdentity
         {
             if (!IsIdentitySet)
             {
-                var getIdRequest = new GetIdRequest
+                var cachedIdentityId = this.GetCachedIdentityId();
+                if (string.IsNullOrEmpty(cachedIdentityId))
                 {
-                    AccountId = AccountId,
-                    IdentityPoolId = IdentityPoolId,
-                    Logins = Logins
-                };
+                    var getIdRequest = new GetIdRequest
+                    {
+                        AccountId = AccountId,
+                        IdentityPoolId = IdentityPoolId,
+                        Logins = Logins
+                    };
 #if BCL
-                var response = cib.GetId(getIdRequest);
+                    var response = cib.GetId(getIdRequest);
 #else
-                var response = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<GetIdResponse>(() => cib.GetIdAsync(getIdRequest));
+                    var response = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<GetIdResponse>(() => cib.GetIdAsync(getIdRequest));
 #endif
 
-                UpdateIdentity(response.IdentityId);
+                    UpdateIdentity(response.IdentityId, true);
+                }
+                else
+                {
+                    UpdateIdentity(cachedIdentityId, false);
+                }
             }
 
             return identityId;
@@ -166,15 +178,24 @@ namespace Amazon.CognitoIdentity
         {
             if (!IsIdentitySet)
             {
-                var getIdRequest = new GetIdRequest
+                var cachedIdentityId = this.GetCachedIdentityId();
+                if (string.IsNullOrEmpty(cachedIdentityId))
                 {
-                    AccountId = AccountId,
-                    IdentityPoolId = IdentityPoolId,
-                    Logins = Logins
-                };
-                var getIdResult = await cib.GetIdAsync(getIdRequest);
+                    var getIdRequest = new GetIdRequest
+                    {
+                        AccountId = AccountId,
+                        IdentityPoolId = IdentityPoolId,
+                        Logins = Logins
+                    };
 
-                UpdateIdentity(getIdResult.IdentityId);
+                    var getIdResult = await cib.GetIdAsync(getIdRequest);
+
+                    UpdateIdentity(getIdResult.IdentityId, true);
+                }
+                else
+                {
+                    UpdateIdentity(cachedIdentityId, false);
+                }
             }
 
             return identityId;
@@ -248,6 +269,46 @@ namespace Amazon.CognitoIdentity
 
         #region Overrides
 
+#if BCL45 || WIN_RT || WINDOWS_PHONE 
+        protected override async System.Threading.Tasks.Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
+        {
+            // Retrieve Open Id Token
+            // (Reuses existing IdentityId or creates a new one)
+            var getTokenRequest = new GetOpenIdTokenRequest { IdentityId = await GetIdentityIdAsync().ConfigureAwait(false) };
+            // If logins are set, pass them to the GetOpenId call
+            if (Logins.Count > 0)
+                getTokenRequest.Logins = Logins;
+            var getTokenResult = await cib.GetOpenIdTokenAsync(getTokenRequest).ConfigureAwait(false);
+            string token = getTokenResult.Token;
+
+            // IdentityId may have changed, save the new value
+            UpdateIdentity(getTokenResult.IdentityId, true);
+
+            // Pick role to use, depending on Logins
+            string roleArn = UnAuthRoleArn;
+            if (Logins.Count > 0)
+                roleArn = AuthRoleArn;
+            if (string.IsNullOrEmpty(roleArn))
+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                    "Unable to determine Role ARN. AuthRoleArn = [{0}], UnAuthRoleArn = [{1}], Logins.Count = {2}",
+                    AuthRoleArn, UnAuthRoleArn, Logins.Count));
+
+            // Assume role with Open Id Token
+            var assumeRequest = new AssumeRoleWithWebIdentityRequest
+            {
+                WebIdentityToken = token,
+                RoleArn = roleArn,
+                RoleSessionName = "NetProviderSession",
+                DurationSeconds = DefaultDurationSeconds
+            };
+            var credentials = (await sts.AssumeRoleWithWebIdentityAsync(assumeRequest).ConfigureAwait(false)).Credentials;
+
+            // Return new refresh state (credentials and expiration)
+            var credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration);
+            return credentialsState;
+        }
+#endif
+
         // Retrieves credentials from Cognito Identity and STS
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
@@ -261,7 +322,7 @@ namespace Amazon.CognitoIdentity
             string token = getTokenResult.Token;
 
             // IdentityId may have changed, save the new value
-            UpdateIdentity(getTokenResult.IdentityId);
+            UpdateIdentity(getTokenResult.IdentityId, true);
 
             // Pick role to use, depending on Logins
             string roleArn = UnAuthRoleArn;

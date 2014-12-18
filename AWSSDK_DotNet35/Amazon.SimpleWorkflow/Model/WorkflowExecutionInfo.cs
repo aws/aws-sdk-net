@@ -45,7 +45,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property CancelRequested. 
         /// <para>
-        ///  Set to true if a cancellation is requested for this workflow execution. 
+        /// Set to true if a cancellation is requested for this workflow execution.
         /// </para>
         /// </summary>
         public bool CancelRequested
@@ -63,13 +63,14 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property CloseStatus. 
         /// <para>
-        ///  If the execution status is closed then this specifies how the execution was closed:
+        /// If the execution status is closed then this specifies how the execution was closed:
         /// </para>
-        ///  <ul> <li>COMPLETED: the execution was successfully completed.</li> <li>CANCELED:
-        /// the execution was canceled.Cancellation allows the implementation to gracefully clean
-        /// up before the execution is closed.</li> <li>TERMINATED: the execution was force terminated.</li>
-        /// <li>FAILED: the execution failed to complete.</li> <li>TIMED_OUT: the execution did
-        /// not complete in the alloted time and was automatically timed out.</li> <li>CONTINUED_AS_NEW:
+        ///  <ul> <li> <code>COMPLETED</code>: the execution was successfully completed.</li>
+        /// <li> <code>CANCELED</code>: the execution was canceled.Cancellation allows the implementation
+        /// to gracefully clean up before the execution is closed.</li> <li> <code>TERMINATED</code>:
+        /// the execution was force terminated.</li> <li> <code>FAILED</code>: the execution failed
+        /// to complete.</li> <li> <code>TIMED_OUT</code>: the execution did not complete in the
+        /// alloted time and was automatically timed out.</li> <li> <code>CONTINUED_AS_NEW</code>:
         /// the execution is logically continued. This means the current execution was completed
         /// and a new execution was started to carry on the workflow.</li> </ul>
         /// </summary>
@@ -88,8 +89,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property CloseTimestamp. 
         /// <para>
-        ///  The time when the workflow execution was closed. Set only if the execution status
-        /// is CLOSED. 
+        /// The time when the workflow execution was closed. Set only if the execution status
+        /// is CLOSED.
         /// </para>
         /// </summary>
         public DateTime CloseTimestamp
@@ -107,7 +108,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Execution. 
         /// <para>
-        ///  The workflow execution this information is about. 
+        /// The workflow execution this information is about.
         /// </para>
         /// </summary>
         public WorkflowExecution Execution
@@ -125,7 +126,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ExecutionStatus. 
         /// <para>
-        ///  The current status of the execution. 
+        /// The current status of the execution.
         /// </para>
         /// </summary>
         public ExecutionStatus ExecutionStatus
@@ -143,8 +144,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Parent. 
         /// <para>
-        ///  If this workflow execution is a child of another execution then contains the workflow
-        /// execution that started this execution. 
+        /// If this workflow execution is a child of another execution then contains the workflow
+        /// execution that started this execution.
         /// </para>
         /// </summary>
         public WorkflowExecution Parent
@@ -162,7 +163,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartTimestamp. 
         /// <para>
-        ///  The time when the execution was started. 
+        /// The time when the execution was started.
         /// </para>
         /// </summary>
         public DateTime StartTimestamp
@@ -180,9 +181,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TagList. 
         /// <para>
-        ///  The list of tags associated with the workflow execution. Tags can be used to identify
+        /// The list of tags associated with the workflow execution. Tags can be used to identify
         /// and list workflow executions of interest through the visibility APIs. A workflow execution
-        /// can have a maximum of 5 tags. 
+        /// can have a maximum of 5 tags.
         /// </para>
         /// </summary>
         public List<string> TagList
@@ -200,7 +201,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowType. 
         /// <para>
-        ///  The type of the workflow execution. 
+        /// The type of the workflow execution.
         /// </para>
         /// </summary>
         public WorkflowType WorkflowType

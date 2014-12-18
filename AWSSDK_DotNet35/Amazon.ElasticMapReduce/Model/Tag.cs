@@ -30,9 +30,8 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// A key/value pair containing user-defined metadata that you can associate with an Amazon
     /// EMR resource. Tags make it easier to associate clusters in various ways, such as grouping
-    /// clu\sters to track your Amazon EMR resource allocation costs.                    
-    ///                                                                                  
-    ///                                         For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+    /// clu\ sters to track your Amazon EMR resource allocation costs. For more information,
+    /// see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
     /// Amazon EMR Resources</a>.
     /// </summary>
     public partial class Tag
@@ -48,8 +47,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Instantiates Tag with the parameterized properties
         /// </summary>
-        /// <param name="key">A user-defined key, which is the minimum required information for a valid tag.                             For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>.          </param>
-        /// <param name="value">A user-defined value, which is optional in a tag.                                     For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>.          </param>
+        /// <param name="key">A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </param>
+        /// <param name="value">A user-defined value, which is optional in a tag. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </param>
         public Tag(string key, string value)
         {
             _key = key;
@@ -59,10 +58,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// A user-defined key, which is the minimum required information for a valid tag.   
-        ///                                                                                  
-        ///                            For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
-        /// Amazon EMR Resources</a>.                                  
+        /// A user-defined key, which is the minimum required information for a valid tag. For
+        /// more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+        /// Amazon EMR Resources</a>. 
         /// </para>
         /// </summary>
         public string Key
@@ -80,10 +78,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// A user-defined value, which is optional in a tag.                                
-        ///                                                                                  
-        ///                            For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
-        /// Amazon EMR Resources</a>.                                  
+        /// A user-defined value, which is optional in a tag. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+        /// Amazon EMR Resources</a>. 
         /// </para>
         /// </summary>
         public string Value

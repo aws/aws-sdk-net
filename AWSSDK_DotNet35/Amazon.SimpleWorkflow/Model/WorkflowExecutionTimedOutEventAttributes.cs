@@ -38,14 +38,17 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ChildPolicy. 
         /// <para>
-        ///  The policy used for the child workflow executions of this workflow execution. The
-        /// supported child policies are: <ul> <li> <b>TERMINATE:</b> the child executions will
-        /// be terminated.</li> <li> <b>REQUEST_CANCEL:</b> a request to cancel will be attempted
-        /// for each child execution by recording a <code>WorkflowExecutionCancelRequested</code>
-        /// event in its history. It is up to the decider to take appropriate actions when it
-        /// receives an execution history with this event. </li> <li> <b>ABANDON:</b> no action
-        /// will be taken. The child executions will continue to run.</li> </ul> 
+        /// The policy used for the child workflow executions of this workflow execution.
         /// </para>
+        ///  
+        /// <para>
+        /// The supported child policies are:
+        /// </para>
+        ///  <ul> <li><b>TERMINATE:</b> the child executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b>
+        /// a request to cancel will be attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code>
+        /// event in its history. It is up to the decider to take appropriate actions when it
+        /// receives an execution history with this event.</li> <li><b>ABANDON:</b> no action
+        /// will be taken. The child executions will continue to run.</li> </ul>
         /// </summary>
         public ChildPolicy ChildPolicy
         {
@@ -62,7 +65,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TimeoutType. 
         /// <para>
-        ///  The type of timeout that caused this event. 
+        /// The type of timeout that caused this event.
         /// </para>
         /// </summary>
         public WorkflowExecutionTimeoutType TimeoutType

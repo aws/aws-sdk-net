@@ -30,9 +30,8 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Container for the parameters to the ModifyInstanceGroups operation.
     /// ModifyInstanceGroups modifies the number of nodes and configuration settings of an
-    /// instance         group. The input parameters include the new target instance count
-    /// for the group and the         instance group ID. The call will either succeed or fail
-    /// atomically.
+    /// instance group. The input parameters include the new target instance count for the
+    /// group and the instance group ID. The call will either succeed or fail atomically.
     /// </summary>
     public partial class ModifyInstanceGroupsRequest : AmazonElasticMapReduceRequest
     {

@@ -32,6 +32,12 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.DynamoDBv2.DataModel.DynamoDBContext.#DeleteAsync`1(System.Object,System.Object,System.Threading.CancellationToken)")]
 [module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.DynamoDBv2.DataModel.DynamoDBContext.#DeleteAsync`1(System.Object,Amazon.DynamoDBv2.DataModel.DynamoDBOperationConfig,System.Threading.CancellationToken)")]
 
+// Suppressions for IDynamoDBContext generic methods
+[module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.DynamoDBv2.DataModel.IDynamoDBContext.#DeleteAsync`1(System.Object,System.Threading.CancellationToken)")]
+[module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.DynamoDBv2.DataModel.IDynamoDBContext.#DeleteAsync`1(System.Object,Amazon.DynamoDBv2.DataModel.DynamoDBOperationConfig,System.Threading.CancellationToken)")]
+[module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.DynamoDBv2.DataModel.IDynamoDBContext.#DeleteAsync`1(System.Object,System.Object,System.Threading.CancellationToken)")]
+[module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.DynamoDBv2.DataModel.IDynamoDBContext.#DeleteAsync`1(System.Object,System.Object,Amazon.DynamoDBv2.DataModel.DynamoDBOperationConfig,System.Threading.CancellationToken)")]
+
 // Uri objects instead of strings
 [module: SuppressMessage("Microsoft.Usage", "CA2234:PassSystemUriObjectsInsteadOfStrings", Scope = "member", Target = "Amazon.Runtime.AmazonWebServiceClient.#ConfigureHttpClient()")]
 

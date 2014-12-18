@@ -40,8 +40,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Control. 
         /// <para>
-        ///  Optional data attached to the event that can be used by the decider in subsequent
-        /// workflow tasks. 
+        /// <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent
+        /// workflow tasks.
         /// </para>
         /// </summary>
         public string Control
@@ -59,10 +59,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        ///  The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
+        /// The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
         /// task that resulted in the <code>StartTimer</code> decision for this activity task.
-        /// This information can be useful for diagnosing problems by tracing back the cause of
-        /// events. 
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.
         /// </para>
         /// </summary>
         public long DecisionTaskCompletedEventId
@@ -80,12 +80,11 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartToFireTimeout. 
         /// <para>
-        ///  The duration of time after which the timer will fire. 
+        /// The duration of time after which the timer will fire.
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds. The valid values are integers greater than or
-        /// equal to 0.
+        /// The duration is specified in seconds; an integer greater than or equal to 0.
         /// </para>
         /// </summary>
         public string StartToFireTimeout
@@ -103,7 +102,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TimerId. 
         /// <para>
-        ///  The unique Id of the timer that was started. 
+        /// The unique Id of the timer that was started.
         /// </para>
         /// </summary>
         public string TimerId

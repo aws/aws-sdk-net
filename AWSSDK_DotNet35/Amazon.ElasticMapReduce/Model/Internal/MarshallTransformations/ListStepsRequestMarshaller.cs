@@ -69,6 +69,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Marker);
                 }
 
+                if(publicRequest.IsSetStepIds())
+                {
+                    context.Writer.WritePropertyName("StepIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestStepIdsListValue in publicRequest.StepIds)
+                    {
+                            context.Writer.Write(publicRequestStepIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetStepStates())
                 {
                     context.Writer.WritePropertyName("StepStates");

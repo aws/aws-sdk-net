@@ -68,6 +68,8 @@ namespace Amazon.StorageGateway
         /// snapshots the gateway snapshot schedule window, an activation key, and a name for
         /// your gateway. The activation process also associates your gateway with your account;
         /// for more information, see <a>UpdateGatewayInformation</a>.
+        /// 
+        ///  <note>You must turn on the gateway VM before you can activate your gateway.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ActivateGateway service method.</param>
         /// 
@@ -222,7 +224,12 @@ namespace Amazon.StorageGateway
         /// This operation is deprecated method in cached-volumes API version (20120630). Use
         /// AddUploadBuffer instead.
         /// 
-        ///  
+        ///  <note>
+        /// <para>
+        /// Working storage is also referred to as upload buffer. You can also use the <a>AddUploadBuffer</a>
+        /// operation to add upload buffer to a stored-volume gateway.
+        /// </para>
+        /// </note> 
         /// <para>
         /// In the request, you specify the gateway Amazon Resource Name (ARN) to which you want
         /// to add working storage, and one or more disk IDs that you want to configure as working
@@ -364,7 +371,9 @@ namespace Amazon.StorageGateway
         /// This operation creates a cached volume on a specified cached gateway. This operation
         /// is supported only for the gateway-cached volume architecture.
         /// 
-        ///  
+        ///  <note>Cache storage must be allocated to the gateway before you can create a cached
+        /// volume. Use the <a>AddCache</a> operation to add cache storage to a gateway. </note>
+        /// 
         /// <para>
         /// In the request, you must specify the gateway, size of the volume in bytes, the iSCSI
         /// target name, an IP address on which to expose the target, and a unique client token.
@@ -435,6 +444,8 @@ namespace Amazon.StorageGateway
         /// ID. You can use this snapshot ID to check the snapshot progress or later use it when
         /// you want to create a volume from a snapshot.
         /// </para>
+        ///  <note>To list or delete a snapshot, you must use the Amazon EC2 API. For more information,
+        /// .</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
         /// 
@@ -496,6 +507,12 @@ namespace Amazon.StorageGateway
         /// AWS Storage Gateway returns you a snapshot ID. You can use this snapshot ID to check
         /// the snapshot progress or later use it when you want to create a volume from a snapshot.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To list or delete a snapshot, you must use the Amazon EC2 API. For more information,
+        /// in <i>Amazon Elastic Compute Cloud API Reference</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshotFromVolumeRecoveryPoint service method.</param>
         /// 
@@ -601,6 +618,9 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Creates one or more virtual tapes. You write data to the virtual tapes and then archive
         /// the tapes.
+        /// 
+        ///  <note>Cache storage must be allocated to the gateway before you can create virtual
+        /// tapes. Use the <a>AddCache</a> operation to add cache storage to a gateway. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTapes service method.</param>
         /// 
@@ -810,6 +830,12 @@ namespace Amazon.StorageGateway
         /// with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify
         /// the volume by providing its Amazon Resource Name (ARN). 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To list or delete a snapshot, you must use the Amazon EC2 API. in <i>Amazon Elastic
+        /// Compute Cloud API Reference</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshotSchedule service method.</param>
         /// 
@@ -1666,7 +1692,12 @@ namespace Amazon.StorageGateway
         /// is supported only for the gateway-stored volume architecture. This operation is deprecated
         /// in cached-volumes API version (20120630). Use DescribeUploadBuffer instead.
         /// 
-        ///  
+        ///  <note>
+        /// <para>
+        /// Working storage is also referred to as upload buffer. You can also use the DescribeUploadBuffer
+        /// operation to add upload buffer to a stored-volume gateway.
+        /// </para>
+        /// </note> 
         /// <para>
         /// The response includes disk IDs that are configured as working storage, and it includes
         /// the amount of working storage allocated and used.
@@ -1853,14 +1884,18 @@ namespace Amazon.StorageGateway
         #region  ListLocalDisks
 
         /// <summary>
-        /// This operation returns a list of the local disks of a gateway. To specify which gateway
-        /// to describe you use the Amazon Resource Name (ARN) of the gateway in the body of the
-        /// request.
+        /// This operation returns a list of the gateway's local disks. To specify which gateway
+        /// to describe, you use the Amazon Resource Name (ARN) of the gateway in the body of
+        /// the request.
         /// 
         ///  
         /// <para>
-        /// The request returns all disks, specifying which are configured as working storage,
-        /// stored volume or not configured at all.
+        /// The request returns a list of all disks, specifying which are configured as working
+        /// storage, cache storage, or stored volume or not configured at all. The response includes
+        /// a <code>DiskStatus</code> field. This field can have a value of present (the disk
+        /// is availble to use), missing (the disk is no longer connected to the gateway), or
+        /// mismatch (the disk node is occupied by a disk that has incorrect metadata or the disk
+        /// content is corrupted). 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLocalDisks service method.</param>
@@ -2010,6 +2045,70 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  ResetCache
+
+        /// <summary>
+        /// This operation resets all cache disks and makes the disks available for reconfiguration
+        /// as cache storage. When a cache is reset, the gateway loses its cache storage. At this
+        /// point you can reconfigure the disks as cache disks.
+        /// </summary>
+        /// <param name="gatewayARN">A property of ResetCacheRequest used to execute the ResetCache service method.</param>
+        /// 
+        /// <returns>The response from the ResetCache service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        ResetCacheResponse ResetCache(string gatewayARN);
+
+        /// <summary>
+        /// This operation resets all cache disks and makes the disks available for reconfiguration
+        /// as cache storage. When a cache is reset, the gateway loses its cache storage. At this
+        /// point you can reconfigure the disks as cache disks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetCache service method.</param>
+        /// 
+        /// <returns>The response from the ResetCache service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        ResetCacheResponse ResetCache(ResetCacheRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetCache operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetCache
+        ///         operation.</returns>
+        IAsyncResult BeginResetCache(ResetCacheRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResetCache operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetCache.</param>
+        /// 
+        /// <returns>Returns a  ResetCacheResult from StorageGateway.</returns>
+        ResetCacheResponse EndResetCache(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RetrieveTapeArchive
 
         /// <summary>
@@ -2075,6 +2174,9 @@ namespace Amazon.StorageGateway
         /// the tape is consistent. If your gateway crashes, virtual tapes that have recovery
         /// points can be recovered to a new gateway.
         /// </para>
+        ///  <note>The virtual tape can be retrieved to only one gateway. The retrieved tape is
+        /// read-only. The virtual tape can be retrieved to only a gateway-VTL. There is no charge
+        /// for retrieving recovery points.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetrieveTapeRecoveryPoint service method.</param>
         /// 
@@ -2126,14 +2228,18 @@ namespace Amazon.StorageGateway
         /// The operation shuts down the gateway service component running in the storage gateway's
         /// virtual machine (VM) and not the VM.
         /// </para>
-        ///  
+        ///  <note>If you want to shut down the VM, it is recommended that you first shut down
+        /// the gateway component in the VM to avoid unpredictable conditions.</note> 
         /// <para>
         /// After the gateway is shutdown, you cannot call any other API except <a>StartGateway</a>,
         /// <a>DescribeGatewayInformation</a>, and <a>ListGateways</a>. For more information,
         /// see <a>ActivateGateway</a>. Your applications cannot read from or write to the gateway's
         /// storage volumes, and there are no snapshots taken.
         /// </para>
-        ///  
+        ///  <note>When you make a shutdown request, you will get a <code>200 OK</code> success
+        /// response immediately. However, it might take some time for the gateway to shut down.
+        /// You can call the <a>DescribeGatewayInformation</a> API to check the status. For more
+        /// information, see <a>ActivateGateway</a>.</note> 
         /// <para>
         /// If do not intend to use the gateway again, you must delete the gateway (using <a>DeleteGateway</a>)
         /// to no longer pay software charges associated with the gateway.
@@ -2186,7 +2292,10 @@ namespace Amazon.StorageGateway
         /// read from or write to the gateway's storage volumes and you will be able to take snapshot
         /// backups.
         /// 
-        ///  
+        ///  <note>When you make a request, you will get a 200 OK success response immediately.
+        /// However, it might take some time for the gateway to be ready. You should call <a>DescribeGatewayInformation</a>
+        /// and check the status before making any additional API calls. For more information,
+        /// see <a>ActivateGateway</a>.</note> 
         /// <para>
         /// To specify which gateway to start, use the Amazon Resource Name (ARN) of the gateway
         /// in your request.
@@ -2394,10 +2503,13 @@ namespace Amazon.StorageGateway
         /// This operation updates the gateway virtual machine (VM) software. The request immediately
         /// triggers the software update. 
         /// 
-        ///  <important>A software update forces a system restart of your gateway. You can minimize
-        /// the chance of any disruption to your applications by increasing your iSCSI Initiators'
-        /// timeouts. For more information about increasing iSCSI Initiator timeouts for Windows
-        /// and Linux, see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
+        ///  <note>When you make this request, you get a <code>200 OK</code> success response
+        /// immediately. However, it might take some time for the update to complete. You can
+        /// call <a>DescribeGatewayInformation</a> to verify the gateway is in the <code>STATE_RUNNING</code>
+        /// state.</note> <important>A software update forces a system restart of your gateway.
+        /// You can minimize the chance of any disruption to your applications by increasing your
+        /// iSCSI Initiators' timeouts. For more information about increasing iSCSI Initiator
+        /// timeouts for Windows and Linux, see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
         /// Your Windows iSCSI Settings</a> and <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing
         /// Your Linux iSCSI Settings</a>, respectively.</important>
         /// </summary>
@@ -2540,6 +2652,52 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>Returns a  UpdateSnapshotScheduleResult from StorageGateway.</returns>
         UpdateSnapshotScheduleResponse EndUpdateSnapshotSchedule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateVTLDeviceType
+
+        /// <summary>
+        /// This operation updates the type of medium changer in a gateway-VTL. When you activate
+        /// a gateway-VTL, you select a medium changer type for the gateway-VTL. This operation
+        /// enables you to select a different type of medium changer after a gateway-VTL is activated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVTLDeviceType service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVTLDeviceType service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        UpdateVTLDeviceTypeResponse UpdateVTLDeviceType(UpdateVTLDeviceTypeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVTLDeviceType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVTLDeviceType operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVTLDeviceType
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateVTLDeviceType(UpdateVTLDeviceTypeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateVTLDeviceType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVTLDeviceType.</param>
+        /// 
+        /// <returns>Returns a  UpdateVTLDeviceTypeResult from StorageGateway.</returns>
+        UpdateVTLDeviceTypeResponse EndUpdateVTLDeviceType(IAsyncResult asyncResult);
 
         #endregion
         

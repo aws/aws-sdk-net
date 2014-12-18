@@ -40,10 +40,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property InitiatedEventId. 
         /// <para>
-        ///  The id of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding
+        /// The id of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding
         /// to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child
         /// workflow execution. This information can be useful for diagnosing problems by tracing
-        /// back the chain of events leading up to this event. 
+        /// back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long InitiatedEventId
@@ -61,9 +61,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        ///  The Id of the <code>ChildWorkflowExecutionStarted</code> event recorded when this
+        /// The Id of the <code>ChildWorkflowExecutionStarted</code> event recorded when this
         /// child workflow execution was started. This information can be useful for diagnosing
-        /// problems by tracing back the chain of events leading up to this event. 
+        /// problems by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long StartedEventId
@@ -81,7 +81,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowExecution. 
         /// <para>
-        ///  The child workflow execution that was terminated. 
+        /// The child workflow execution that was terminated.
         /// </para>
         /// </summary>
         public WorkflowExecution WorkflowExecution
@@ -99,7 +99,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowType. 
         /// <para>
-        ///  The type of the child workflow execution. 
+        /// The type of the child workflow execution.
         /// </para>
         /// </summary>
         public WorkflowType WorkflowType

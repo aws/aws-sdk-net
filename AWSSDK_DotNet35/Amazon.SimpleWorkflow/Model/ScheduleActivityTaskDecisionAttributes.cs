@@ -32,20 +32,21 @@ namespace Amazon.SimpleWorkflow.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Access Control</b> 
+    /// <b>Access Control</b>
     /// </para>
     ///  
     /// <para>
-    /// You can use IAM policies to control this decision's access to Amazon SWF in much the
-    /// same way as for the regular API:
+    /// You can use IAM policies to control this decision's access to Amazon SWF resources
+    /// as follows:
     /// </para>
-    ///  <ul> <li>Use a <code>Resource</code> element with the domain name to limit the decision
+    ///  <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action
     /// to only specified domains.</li> <li>Use an <code>Action</code> element to allow or
-    /// deny permission to specify this decision.</li> <li>Constrain the following parameters
-    /// by using a <code>Condition</code> element with the appropriate keys. <ul> <li> <code>activityType.name</code>:
-    /// String constraint. The key is "swf:activityType.name".</li> <li> <code>activityType.version</code>:
-    /// String constraint. The key is "swf:activityType.version".</li> <li> <code>taskList</code>:
-    /// String constraint. The key is "swf:taskList.name".</li> </ul> </li> </ul> 
+    /// deny permission to call this action.</li> <li>Constrain the following parameters by
+    /// using a <code>Condition</code> element with the appropriate keys. <ul> <li><code>activityType.name</code>:
+    /// String constraint. The key is <code>swf:activityType.name</code>.</li> <li><code>activityType.version</code>:
+    /// String constraint. The key is <code>swf:activityType.version</code>.</li> <li><code>taskList</code>:
+    /// String constraint. The key is <code>swf:taskList.name</code>.</li> </ul> </li> </ul>
+    /// 
     /// <para>
     /// If the caller does not have sufficient permissions to invoke the action, or the parameter
     /// values fall outside the specified constraints, the action fails. The associated event
@@ -65,11 +66,12 @@ namespace Amazon.SimpleWorkflow.Model
         private string _scheduleToStartTimeout;
         private string _startToCloseTimeout;
         private TaskList _taskList;
+        private string _taskPriority;
 
         /// <summary>
         /// Gets and sets the property ActivityId. 
         /// <para>
-        ///  The <code>activityId</code> of the activity task. This field is required. 
+        /// <b>Required.</b> The <code>activityId</code> of the activity task.
         /// </para>
         ///  
         /// <para>
@@ -94,7 +96,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ActivityType. 
         /// <para>
-        ///  The type of the activity task to schedule. This field is required. 
+        /// <b>Required.</b> The type of the activity task to schedule.
         /// </para>
         /// </summary>
         public ActivityType ActivityType
@@ -112,8 +114,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Control. 
         /// <para>
-        ///  Optional data attached to the event that can be used by the decider in subsequent
-        /// workflow tasks. This data is not sent to the activity. 
+        /// <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent
+        /// workflow tasks. This data is not sent to the activity.
         /// </para>
         /// </summary>
         public string Control
@@ -131,18 +133,16 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property HeartbeatTimeout. 
         /// <para>
-        ///  If set, specifies the maximum time before which a worker processing a task of this
+        /// If set, specifies the maximum time before which a worker processing a task of this
         /// type must report progress by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout
         /// is exceeded, the activity task is automatically timed out. If the worker subsequently
         /// attempts to record a heartbeat or returns a result, it will be ignored. This overrides
         /// the default heartbeat timeout specified when registering the activity type using <a>RegisterActivityType</a>.
-        /// 
         /// </para>
         ///  
         /// <para>
-        /// The valid values are integers greater than or equal to <code>0</code>. An integer
-        /// value can be used to specify the duration in seconds while <code>NONE</code> can be
-        /// used to specify unlimited duration.
+        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
+        /// "NONE" can be used to specify unlimited duration.
         /// </para>
         /// </summary>
         public string HeartbeatTimeout
@@ -160,7 +160,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        ///  The input provided to the activity task. 
+        /// The input provided to the activity task.
         /// </para>
         /// </summary>
         public string Input
@@ -178,14 +178,17 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ScheduleToCloseTimeout. 
         /// <para>
-        ///  The maximum duration for this activity task. 
+        /// The maximum duration for this activity task.
         /// </para>
         ///  
         /// <para>
-        /// The valid values are integers greater than or equal to <code>0</code>. An integer
-        /// value can be used to specify the duration in seconds while <code>NONE</code> can be
-        /// used to specify unlimited duration.
+        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
+        /// "NONE" can be used to specify unlimited duration.
         /// </para>
+        ///  <note>A schedule-to-close timeout for this activity task must be specified either
+        /// as a default for the activity type or through this field. If neither this field is
+        /// set nor a default schedule-to-close timeout was specified at registration time then
+        /// a fault will be returned.</note>
         /// </summary>
         public string ScheduleToCloseTimeout
         {
@@ -202,16 +205,19 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ScheduleToStartTimeout. 
         /// <para>
-        ///  If set, specifies the maximum duration the activity task can wait to be assigned
-        /// to a worker. This overrides the default schedule-to-start timeout specified when registering
-        /// the activity type using <a>RegisterActivityType</a>. 
+        /// <i>Optional.</i> If set, specifies the maximum duration the activity task can wait
+        /// to be assigned to a worker. This overrides the default schedule-to-start timeout specified
+        /// when registering the activity type using <a>RegisterActivityType</a>.
         /// </para>
         ///  
         /// <para>
-        /// The valid values are integers greater than or equal to <code>0</code>. An integer
-        /// value can be used to specify the duration in seconds while <code>NONE</code> can be
-        /// used to specify unlimited duration.
+        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
+        /// "NONE" can be used to specify unlimited duration.
         /// </para>
+        ///  <note>A schedule-to-start timeout for this activity task must be specified either
+        /// as a default for the activity type or through this field. If neither this field is
+        /// set nor a default schedule-to-start timeout was specified at registration time then
+        /// a fault will be returned.</note>
         /// </summary>
         public string ScheduleToStartTimeout
         {
@@ -228,16 +234,19 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartToCloseTimeout. 
         /// <para>
-        ///  If set, specifies the maximum duration a worker may take to process this activity
+        /// If set, specifies the maximum duration a worker may take to process this activity
         /// task. This overrides the default start-to-close timeout specified when registering
-        /// the activity type using <a>RegisterActivityType</a>. 
+        /// the activity type using <a>RegisterActivityType</a>.
         /// </para>
         ///  
         /// <para>
-        /// The valid values are integers greater than or equal to <code>0</code>. An integer
-        /// value can be used to specify the duration in seconds while <code>NONE</code> can be
-        /// used to specify unlimited duration.
+        /// The duration is specified in seconds; an integer greater than or equal to 0. The value
+        /// "NONE" can be used to specify unlimited duration.
         /// </para>
+        ///  <note>A start-to-close timeout for this activity task must be specified either as
+        /// a default for the activity type or through this field. If neither this field is set
+        /// nor a default start-to-close timeout was specified at registration time then a fault
+        /// will be returned.</note>
         /// </summary>
         public string StartToCloseTimeout
         {
@@ -254,11 +263,14 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TaskList. 
         /// <para>
-        ///  If set, specifies the name of the task list in which to schedule the activity task.
+        /// If set, specifies the name of the task list in which to schedule the activity task.
         /// If not specified, the <code>defaultTaskList</code> registered with the activity type
-        /// will be used. 
+        /// will be used.
         /// </para>
-        ///  
+        ///  <note>A task list for this activity task must be specified either as a default for
+        /// the activity type or through this field. If neither this field is set nor a default
+        /// task list was specified at registration time then a fault will be returned.</note>
+        /// 
         /// <para>
         /// The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or
@@ -276,6 +288,33 @@ namespace Amazon.SimpleWorkflow.Model
         internal bool IsSetTaskList()
         {
             return this._taskList != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskPriority. 
+        /// <para>
+        /// <i>Optional.</i> If set, specifies the priority with which the activity task is to
+        /// be assigned to a worker. This overrides the defaultTaskPriority specified when registering
+        /// the activity type using <a>RegisterActivityType</a>. Valid values are integers that
+        /// range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+        /// (2147483647). Higher numbers indicate higher priority.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about setting task priority, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+        /// Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string TaskPriority
+        {
+            get { return this._taskPriority; }
+            set { this._taskPriority = value; }
+        }
+
+        // Check to see if TaskPriority property is set
+        internal bool IsSetTaskPriority()
+        {
+            return this._taskPriority != null;
         }
 
     }

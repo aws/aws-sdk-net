@@ -31,6 +31,9 @@ namespace Amazon.StorageGateway.Model
     /// Container for the parameters to the CreateTapes operation.
     /// Creates one or more virtual tapes. You write data to the virtual tapes and then archive
     /// the tapes.
+    /// 
+    ///  <note>Cache storage must be allocated to the gateway before you can create virtual
+    /// tapes. Use the <a>AddCache</a> operation to add cache storage to a gateway. </note>
     /// </summary>
     public partial class CreateTapesRequest : AmazonStorageGatewayRequest
     {
@@ -46,6 +49,8 @@ namespace Amazon.StorageGateway.Model
         /// A unique identifier that you use to retry a request. If you retry a request, use the
         /// same <code>ClientToken</code> you specified in the initial request.
         /// </para>
+        ///  <note>Using the same <code>ClientToken</code> prevents creating the tape multiple
+        /// times.</note>
         /// </summary>
         public string ClientToken
         {
@@ -103,6 +108,8 @@ namespace Amazon.StorageGateway.Model
         /// A prefix you append to the barcode of the virtual tape you are creating. This makes
         /// a barcode unique.
         /// </para>
+        ///  <note>The prefix must be 1 to 4 characters in length and must be upper-case letters
+        /// A-Z.</note>
         /// </summary>
         public string TapeBarcodePrefix
         {
@@ -121,6 +128,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// The size, in bytes, of the virtual tapes you want to create.
         /// </para>
+        ///  <note>The size must be gigabyte (1024*1024*1024 byte) aligned.</note>
         /// </summary>
         public long TapeSizeInBytes
         {

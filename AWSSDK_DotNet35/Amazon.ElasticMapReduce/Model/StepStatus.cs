@@ -39,7 +39,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The execution state of the cluster step.      
+        /// The execution state of the cluster step. 
         /// </para>
         /// </summary>
         public StepState State
@@ -57,7 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property StateChangeReason. 
         /// <para>
-        /// The reason for the step execution status change.      
+        /// The reason for the step execution status change. 
         /// </para>
         /// </summary>
         public StepStateChangeReason StateChangeReason
@@ -75,7 +75,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Timeline. 
         /// <para>
-        /// The timeline of the cluster step status over time.      
+        /// The timeline of the cluster step status over time. 
         /// </para>
         /// </summary>
         public StepTimeline Timeline

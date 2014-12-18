@@ -78,6 +78,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// The Media Access Control (MAC) address of the interface.
         /// </para>
+        ///  <note>This is currently unsupported and will not be returned in output.</note>
         /// </summary>
         public string MacAddress
         {

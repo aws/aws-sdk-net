@@ -36,16 +36,10 @@ namespace Amazon.ElasticMapReduce
     /// <summary>
     /// Implementation for accessing ElasticMapReduce
     ///
-    /// This is the <i>Amazon Elastic MapReduce API Reference</i>. This guide provides descriptions
-    /// and         samples of the Amazon Elastic MapReduce APIs.
-    /// 
-    ///       
-    /// <para>
     /// Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process
-    /// large amounts of         data efficiently. Amazon EMR uses Hadoop processing combined
-    /// with several AWS         products to do tasks such as web indexing, data mining, log
-    /// file analysis, machine         learning, scientific simulation, and data warehousing.
-    /// </para>
+    /// large amounts of data efficiently. Amazon EMR uses Hadoop processing combined with
+    /// several AWS products to do tasks such as web indexing, data mining, log file analysis,
+    /// machine learning, scientific simulation, and data warehousing.
     /// </summary>
     public partial class AmazonElasticMapReduceClient : AmazonServiceClient, IAmazonElasticMapReduce
     {

@@ -37,7 +37,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the task list. 
+        /// The name of the task list.
         /// </para>
         /// </summary>
         public string Name

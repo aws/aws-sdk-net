@@ -32,17 +32,17 @@ namespace Amazon.SimpleWorkflow.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Access Control</b> 
+    /// <b>Access Control</b>
     /// </para>
     ///  
     /// <para>
-    /// You can use IAM policies to control this decision's access to Amazon SWF in much the
-    /// same way as for the regular API:
+    /// You can use IAM policies to control this decision's access to Amazon SWF resources
+    /// as follows:
     /// </para>
-    ///  <ul> <li>Use a <code>Resource</code> element with the domain name to limit the decision
+    ///  <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action
     /// to only specified domains.</li> <li>Use an <code>Action</code> element to allow or
-    /// deny permission to specify this decision.</li> <li>You cannot use an IAM policy to
-    /// constrain this action's parameters.</li> </ul> 
+    /// deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain
+    /// this action's parameters.</li> </ul> 
     /// <para>
     /// If the caller does not have sufficient permissions to invoke the action, or the parameter
     /// values fall outside the specified constraints, the action fails. The associated event
@@ -59,7 +59,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        ///  Optional details of the marker. 
+        /// <i>Optional.</i> details of the marker.
         /// </para>
         /// </summary>
         public string Details
@@ -77,7 +77,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property MarkerName. 
         /// <para>
-        ///  The name of the marker. This file is required. 
+        /// <b>Required.</b> The name of the marker.
         /// </para>
         /// </summary>
         public string MarkerName

@@ -39,7 +39,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the domain provided through <a>RegisterDomain</a>. 
+        /// The description of the domain provided through <a>RegisterDomain</a>.
         /// </para>
         /// </summary>
         public string Description
@@ -57,7 +57,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the domain. This name is unique within the account. 
+        /// The name of the domain. This name is unique within the account.
         /// </para>
         /// </summary>
         public string Name
@@ -75,7 +75,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of the domain: 
+        /// The status of the domain:
         /// </para>
         ///  <ul> <li> <b>REGISTERED</b>: The domain is properly registered and available. You
         /// can use this domain for registering types and creating new workflow executions. </li>

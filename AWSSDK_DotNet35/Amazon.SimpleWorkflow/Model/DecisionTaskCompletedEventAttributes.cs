@@ -39,7 +39,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ExecutionContext. 
         /// <para>
-        ///  User defined context for the workflow execution. 
+        /// User defined context for the workflow execution.
         /// </para>
         /// </summary>
         public string ExecutionContext
@@ -57,9 +57,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ScheduledEventId. 
         /// <para>
-        ///  The id of the <code>DecisionTaskScheduled</code> event that was recorded when this
+        /// The id of the <code>DecisionTaskScheduled</code> event that was recorded when this
         /// decision task was scheduled. This information can be useful for diagnosing problems
-        /// by tracing back the chain of events leading up to this event. 
+        /// by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long ScheduledEventId
@@ -77,9 +77,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        ///  The Id of the <code>DecisionTaskStarted</code> event recorded when this decision
-        /// task was started. This information can be useful for diagnosing problems by tracing
-        /// back the chain of events leading up to this event. 
+        /// The Id of the <code>DecisionTaskStarted</code> event recorded when this decision task
+        /// was started. This information can be useful for diagnosing problems by tracing back
+        /// the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long StartedEventId

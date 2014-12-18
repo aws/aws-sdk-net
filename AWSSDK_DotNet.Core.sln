@@ -132,6 +132,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceModels", "ServiceMod
 		ServiceModels\sqs.customizations.simpleMethodForms.json = ServiceModels\sqs.customizations.simpleMethodForms.json
 		ServiceModels\storagegateway-2013-06-30.normal.json = ServiceModels\storagegateway-2013-06-30.normal.json
 		ServiceModels\storagegateway.customizations.json = ServiceModels\storagegateway.customizations.json
+		ServiceModels\storagegateway.customizations.simpleMethodForms.json = ServiceModels\storagegateway.customizations.simpleMethodForms.json
 		ServiceModels\sts-2011-06-15.normal.json = ServiceModels\sts-2011-06-15.normal.json
 		ServiceModels\sts.customizations.constructors.json = ServiceModels\sts.customizations.constructors.json
 		ServiceModels\sts.customizations.json = ServiceModels\sts.customizations.json
