@@ -1,6 +1,12 @@
 # AWS SDK for .NET - Preview for Resource APIs
 
-This is the preview release of AWS Resource APIs for .NET. This branch contains the source for the AWS SDK for .NET (branched from version 2.3.13.1) along with the new resource APIs. This release contains resource APIs for AWS Identity and Access Management (IAM); support for other services will be added in the near future. The preview is intended to provide early access to the new APIs and to get feedback from the community. For more information about the resource APIs, check the [developer guide][docs-guide] and the introductory [blog post][blog-post].
+This is the preview release of AWS Resource APIs for .NET. This branch contains the source for the AWS SDK for .NET (branched from version 2.3.13.1) along with the new resource APIs. The preview is intended to provide early access to the new APIs and to get feedback from the community. For more information about the resource APIs, check the [developer guide][docs-guide] and the introductory [blog post][blog-post].
+
+Resource APIs for the following services are supported in the current release, support for other services will be added in the near future.
+* Amazon Simple Notification Service
+* Amazon Simple Queue Service
+* AWS CloudFormation 
+* AWS Identity and Access Management
 
 **Important:** The resource APIs in the AWS SDK for .NET are currently provided as a preview. This means that these APIs may frequently change—including possible breaking changes—without advance notice. Until the resource APIs in the AWS SDK for .NET exit the preview stage, please be cautious about writing and distributing production-quality code that relies on these resource APIs.
 
@@ -36,7 +42,7 @@ This is the preview release of AWS Resource APIs for .NET. This branch contains 
 
 ## Features
 
-* Brand new high level object oriented APIs to work with AWS based resources. Resource APIs for AWS Identity and Access Management (IAM) are available in this release; support for other services will be added in near future.
+* Brand new high level object oriented APIs to work with AWS based resources. Resource APIs for CloudFormation, IAM, SNS and SQS is available in the current release.
 * Write less code - The new API has features like simplified method overloads and inferring identifier parameters, this allows you to write less code to achieve the same results as compared to the request-response style low level API.
 * Auto pagination for operations that support paging - The resource APIs will make multiple service calls for APIs that support paging as you enumerate through the results. You do not have to write additional code to make multiple service calls and to capture/resend pagination tokens.
 
