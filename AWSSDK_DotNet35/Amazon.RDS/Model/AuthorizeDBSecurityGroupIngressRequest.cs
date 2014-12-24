@@ -44,11 +44,11 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class AuthorizeDBSecurityGroupIngressRequest : AmazonRDSRequest
     {
-        private string _cIDRIP;
-        private string _dBSecurityGroupName;
-        private string _eC2SecurityGroupId;
-        private string _eC2SecurityGroupName;
-        private string _eC2SecurityGroupOwnerId;
+        private string _cidrip;
+        private string _dbSecurityGroupName;
+        private string _ec2SecurityGroupId;
+        private string _ec2SecurityGroupName;
+        private string _ec2SecurityGroupOwnerId;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -61,7 +61,7 @@ namespace Amazon.RDS.Model
         /// <param name="dbSecurityGroupName"> The name of the DB security group to add authorization to. </param>
         public AuthorizeDBSecurityGroupIngressRequest(string dbSecurityGroupName)
         {
-            _dBSecurityGroupName = dbSecurityGroupName;
+            _dbSecurityGroupName = dbSecurityGroupName;
         }
 
         /// <summary>
@@ -72,14 +72,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string CIDRIP
         {
-            get { return this._cIDRIP; }
-            set { this._cIDRIP = value; }
+            get { return this._cidrip; }
+            set { this._cidrip = value; }
         }
 
         // Check to see if CIDRIP property is set
         internal bool IsSetCIDRIP()
         {
-            return this._cIDRIP != null;
+            return this._cidrip != null;
         }
 
         /// <summary>
@@ -90,14 +90,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSecurityGroupName
         {
-            get { return this._dBSecurityGroupName; }
-            set { this._dBSecurityGroupName = value; }
+            get { return this._dbSecurityGroupName; }
+            set { this._dbSecurityGroupName = value; }
         }
 
         // Check to see if DBSecurityGroupName property is set
         internal bool IsSetDBSecurityGroupName()
         {
-            return this._dBSecurityGroupName != null;
+            return this._dbSecurityGroupName != null;
         }
 
         /// <summary>
@@ -110,14 +110,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string EC2SecurityGroupId
         {
-            get { return this._eC2SecurityGroupId; }
-            set { this._eC2SecurityGroupId = value; }
+            get { return this._ec2SecurityGroupId; }
+            set { this._ec2SecurityGroupId = value; }
         }
 
         // Check to see if EC2SecurityGroupId property is set
         internal bool IsSetEC2SecurityGroupId()
         {
-            return this._eC2SecurityGroupId != null;
+            return this._ec2SecurityGroupId != null;
         }
 
         /// <summary>
@@ -130,14 +130,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string EC2SecurityGroupName
         {
-            get { return this._eC2SecurityGroupName; }
-            set { this._eC2SecurityGroupName = value; }
+            get { return this._ec2SecurityGroupName; }
+            set { this._ec2SecurityGroupName = value; }
         }
 
         // Check to see if EC2SecurityGroupName property is set
         internal bool IsSetEC2SecurityGroupName()
         {
-            return this._eC2SecurityGroupName != null;
+            return this._ec2SecurityGroupName != null;
         }
 
         /// <summary>
@@ -152,14 +152,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string EC2SecurityGroupOwnerId
         {
-            get { return this._eC2SecurityGroupOwnerId; }
-            set { this._eC2SecurityGroupOwnerId = value; }
+            get { return this._ec2SecurityGroupOwnerId; }
+            set { this._ec2SecurityGroupOwnerId = value; }
         }
 
         // Check to see if EC2SecurityGroupOwnerId property is set
         internal bool IsSetEC2SecurityGroupOwnerId()
         {
-            return this._eC2SecurityGroupOwnerId != null;
+            return this._ec2SecurityGroupOwnerId != null;
         }
 
     }

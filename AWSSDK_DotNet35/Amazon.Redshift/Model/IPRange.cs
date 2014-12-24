@@ -32,7 +32,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class IPRange
     {
-        private string _cIDRIP;
+        private string _cidrip;
         private string _status;
         private List<Tag> _tags = new List<Tag>();
 
@@ -44,14 +44,14 @@ namespace Amazon.Redshift.Model
         /// </summary>
         public string CIDRIP
         {
-            get { return this._cIDRIP; }
-            set { this._cIDRIP = value; }
+            get { return this._cidrip; }
+            set { this._cidrip = value; }
         }
 
         // Check to see if CIDRIP property is set
         internal bool IsSetCIDRIP()
         {
-            return this._cIDRIP != null;
+            return this._cidrip != null;
         }
 
         /// <summary>

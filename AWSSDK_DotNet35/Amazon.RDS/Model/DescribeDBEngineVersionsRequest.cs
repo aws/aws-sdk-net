@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBEngineVersionsRequest : AmazonRDSRequest
     {
-        private string _dBParameterGroupFamily;
+        private string _dbParameterGroupFamily;
         private bool? _defaultOnly;
         private string _engine;
         private string _engineVersion;
@@ -62,14 +62,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBParameterGroupFamily
         {
-            get { return this._dBParameterGroupFamily; }
-            set { this._dBParameterGroupFamily = value; }
+            get { return this._dbParameterGroupFamily; }
+            set { this._dbParameterGroupFamily = value; }
         }
 
         // Check to see if DBParameterGroupFamily property is set
         internal bool IsSetDBParameterGroupFamily()
         {
-            return this._dBParameterGroupFamily != null;
+            return this._dbParameterGroupFamily != null;
         }
 
         /// <summary>

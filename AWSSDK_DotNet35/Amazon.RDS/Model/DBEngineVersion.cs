@@ -32,9 +32,9 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DBEngineVersion
     {
-        private string _dBEngineDescription;
-        private string _dBEngineVersionDescription;
-        private string _dBParameterGroupFamily;
+        private string _dbEngineDescription;
+        private string _dbEngineVersionDescription;
+        private string _dbParameterGroupFamily;
         private CharacterSet _defaultCharacterSet;
         private string _engine;
         private string _engineVersion;
@@ -53,14 +53,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBEngineDescription
         {
-            get { return this._dBEngineDescription; }
-            set { this._dBEngineDescription = value; }
+            get { return this._dbEngineDescription; }
+            set { this._dbEngineDescription = value; }
         }
 
         // Check to see if DBEngineDescription property is set
         internal bool IsSetDBEngineDescription()
         {
-            return this._dBEngineDescription != null;
+            return this._dbEngineDescription != null;
         }
 
         /// <summary>
@@ -71,14 +71,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBEngineVersionDescription
         {
-            get { return this._dBEngineVersionDescription; }
-            set { this._dBEngineVersionDescription = value; }
+            get { return this._dbEngineVersionDescription; }
+            set { this._dbEngineVersionDescription = value; }
         }
 
         // Check to see if DBEngineVersionDescription property is set
         internal bool IsSetDBEngineVersionDescription()
         {
-            return this._dBEngineVersionDescription != null;
+            return this._dbEngineVersionDescription != null;
         }
 
         /// <summary>
@@ -89,14 +89,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBParameterGroupFamily
         {
-            get { return this._dBParameterGroupFamily; }
-            set { this._dBParameterGroupFamily = value; }
+            get { return this._dbParameterGroupFamily; }
+            set { this._dbParameterGroupFamily = value; }
         }
 
         // Check to see if DBParameterGroupFamily property is set
         internal bool IsSetDBParameterGroupFamily()
         {
-            return this._dBParameterGroupFamily != null;
+            return this._dbParameterGroupFamily != null;
         }
 
         /// <summary>

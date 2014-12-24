@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBInstancesResult : AmazonWebServiceResponse
     {
-        private List<DBInstance> _dBInstances = new List<DBInstance>();
+        private List<DBInstance> _dbInstances = new List<DBInstance>();
         private string _marker;
 
         /// <summary>
@@ -44,14 +44,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public List<DBInstance> DBInstances
         {
-            get { return this._dBInstances; }
-            set { this._dBInstances = value; }
+            get { return this._dbInstances; }
+            set { this._dbInstances = value; }
         }
 
         // Check to see if DBInstances property is set
         internal bool IsSetDBInstances()
         {
-            return this._dBInstances != null && this._dBInstances.Count > 0; 
+            return this._dbInstances != null && this._dbInstances.Count > 0; 
         }
 
         /// <summary>

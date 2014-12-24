@@ -403,6 +403,9 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudFormation\Model\*">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudFormation\Resources\*">
+      <Visible>false</Visible>
+    </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudFormation\Util\*">
       <Visible>false</Visible>
     </Compile>
@@ -844,6 +847,9 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.SimpleNotificationService\Model\*">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.SimpleNotificationService\Resources\*">
+      <Visible>false</Visible>
+    </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
@@ -873,6 +879,9 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.SQS\Util\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.SQS\Resources\*">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.SQS\Model\Internal\MarshallTransformations\*">

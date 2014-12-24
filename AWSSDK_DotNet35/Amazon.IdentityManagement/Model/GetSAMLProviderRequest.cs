@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class GetSAMLProviderRequest : AmazonIdentityManagementServiceRequest
     {
-        private string _sAMLProviderArn;
+        private string _samlProviderArn;
 
         /// <summary>
         /// Gets and sets the property SAMLProviderArn. 
@@ -47,14 +47,14 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public string SAMLProviderArn
         {
-            get { return this._sAMLProviderArn; }
-            set { this._sAMLProviderArn = value; }
+            get { return this._samlProviderArn; }
+            set { this._samlProviderArn = value; }
         }
 
         // Check to see if SAMLProviderArn property is set
         internal bool IsSetSAMLProviderArn()
         {
-            return this._sAMLProviderArn != null;
+            return this._samlProviderArn != null;
         }
 
     }

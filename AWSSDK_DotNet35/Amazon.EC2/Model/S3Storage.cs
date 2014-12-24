@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class S3Storage
     {
-        private string _aWSAccessKeyId;
+        private string _awsAccessKeyId;
         private string _bucket;
         private string _prefix;
         private string _uploadPolicy;
@@ -48,14 +48,14 @@ namespace Amazon.EC2.Model
         /// </summary>
         public string AWSAccessKeyId
         {
-            get { return this._aWSAccessKeyId; }
-            set { this._aWSAccessKeyId = value; }
+            get { return this._awsAccessKeyId; }
+            set { this._awsAccessKeyId = value; }
         }
 
         // Check to see if AWSAccessKeyId property is set
         internal bool IsSetAWSAccessKeyId()
         {
-            return this._aWSAccessKeyId != null;
+            return this._awsAccessKeyId != null;
         }
 
         /// <summary>

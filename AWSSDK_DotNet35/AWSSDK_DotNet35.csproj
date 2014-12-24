@@ -180,6 +180,9 @@
     <Compile Include="Amazon.CloudFormation\Model\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Resources\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -594,6 +597,15 @@
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.SimpleNotificationService\Resources\ResourceImplementations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.SimpleNotificationService\Resources\Resources.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.SimpleNotificationService\Resources\SimpleNotificationService.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.SimpleNotificationService\Util\Message.cs" />
     <Compile Include="Amazon.SimpleWorkflow\*.cs">
       <SubType>Code</SubType>
@@ -619,6 +631,9 @@
     </Compile>
     <Compile Include="Amazon.SQS\IAmazonSQS.Extension.cs" />
     <Compile Include="Amazon.SQS\ServiceEnumerations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.SQS\Resources\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.SQS\Internal\ProcessRequestHandler.cs" />

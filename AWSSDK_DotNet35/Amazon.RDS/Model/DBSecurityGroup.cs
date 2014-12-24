@@ -40,10 +40,10 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DBSecurityGroup
     {
-        private string _dBSecurityGroupDescription;
-        private string _dBSecurityGroupName;
-        private List<EC2SecurityGroup> _eC2SecurityGroups = new List<EC2SecurityGroup>();
-        private List<IPRange> _iPRanges = new List<IPRange>();
+        private string _dbSecurityGroupDescription;
+        private string _dbSecurityGroupName;
+        private List<EC2SecurityGroup> _ec2SecurityGroups = new List<EC2SecurityGroup>();
+        private List<IPRange> _ipRanges = new List<IPRange>();
         private string _ownerId;
         private string _vpcId;
 
@@ -55,14 +55,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSecurityGroupDescription
         {
-            get { return this._dBSecurityGroupDescription; }
-            set { this._dBSecurityGroupDescription = value; }
+            get { return this._dbSecurityGroupDescription; }
+            set { this._dbSecurityGroupDescription = value; }
         }
 
         // Check to see if DBSecurityGroupDescription property is set
         internal bool IsSetDBSecurityGroupDescription()
         {
-            return this._dBSecurityGroupDescription != null;
+            return this._dbSecurityGroupDescription != null;
         }
 
         /// <summary>
@@ -73,14 +73,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSecurityGroupName
         {
-            get { return this._dBSecurityGroupName; }
-            set { this._dBSecurityGroupName = value; }
+            get { return this._dbSecurityGroupName; }
+            set { this._dbSecurityGroupName = value; }
         }
 
         // Check to see if DBSecurityGroupName property is set
         internal bool IsSetDBSecurityGroupName()
         {
-            return this._dBSecurityGroupName != null;
+            return this._dbSecurityGroupName != null;
         }
 
         /// <summary>
@@ -91,14 +91,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public List<EC2SecurityGroup> EC2SecurityGroups
         {
-            get { return this._eC2SecurityGroups; }
-            set { this._eC2SecurityGroups = value; }
+            get { return this._ec2SecurityGroups; }
+            set { this._ec2SecurityGroups = value; }
         }
 
         // Check to see if EC2SecurityGroups property is set
         internal bool IsSetEC2SecurityGroups()
         {
-            return this._eC2SecurityGroups != null && this._eC2SecurityGroups.Count > 0; 
+            return this._ec2SecurityGroups != null && this._ec2SecurityGroups.Count > 0; 
         }
 
         /// <summary>
@@ -109,14 +109,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public List<IPRange> IPRanges
         {
-            get { return this._iPRanges; }
-            set { this._iPRanges = value; }
+            get { return this._ipRanges; }
+            set { this._ipRanges = value; }
         }
 
         // Check to see if IPRanges property is set
         internal bool IsSetIPRanges()
         {
-            return this._iPRanges != null && this._iPRanges.Count > 0; 
+            return this._ipRanges != null && this._ipRanges.Count > 0; 
         }
 
         /// <summary>

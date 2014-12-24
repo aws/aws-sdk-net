@@ -43,13 +43,13 @@ namespace Amazon.RDS.Model
         private string _availabilityZone;
         private int? _backupRetentionPeriod;
         private string _characterSetName;
-        private string _dBInstanceClass;
-        private string _dBInstanceIdentifier;
-        private string _dBInstanceStatus;
-        private string _dBName;
-        private List<DBParameterGroupStatus> _dBParameterGroups = new List<DBParameterGroupStatus>();
-        private List<DBSecurityGroupMembership> _dBSecurityGroups = new List<DBSecurityGroupMembership>();
-        private DBSubnetGroup _dBSubnetGroup;
+        private string _dbInstanceClass;
+        private string _dbInstanceIdentifier;
+        private string _dbInstanceStatus;
+        private string _dbName;
+        private List<DBParameterGroupStatus> _dbParameterGroups = new List<DBParameterGroupStatus>();
+        private List<DBSecurityGroupMembership> _dbSecurityGroups = new List<DBSecurityGroupMembership>();
+        private DBSubnetGroup _dbSubnetGroup;
         private Endpoint _endpoint;
         private string _engine;
         private string _engineVersion;
@@ -171,14 +171,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceClass
         {
-            get { return this._dBInstanceClass; }
-            set { this._dBInstanceClass = value; }
+            get { return this._dbInstanceClass; }
+            set { this._dbInstanceClass = value; }
         }
 
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this._dBInstanceClass != null;
+            return this._dbInstanceClass != null;
         }
 
         /// <summary>
@@ -190,14 +190,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceIdentifier
         {
-            get { return this._dBInstanceIdentifier; }
-            set { this._dBInstanceIdentifier = value; }
+            get { return this._dbInstanceIdentifier; }
+            set { this._dbInstanceIdentifier = value; }
         }
 
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this._dBInstanceIdentifier != null;
+            return this._dbInstanceIdentifier != null;
         }
 
         /// <summary>
@@ -208,14 +208,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceStatus
         {
-            get { return this._dBInstanceStatus; }
-            set { this._dBInstanceStatus = value; }
+            get { return this._dbInstanceStatus; }
+            set { this._dbInstanceStatus = value; }
         }
 
         // Check to see if DBInstanceStatus property is set
         internal bool IsSetDBInstanceStatus()
         {
-            return this._dBInstanceStatus != null;
+            return this._dbInstanceStatus != null;
         }
 
         /// <summary>
@@ -251,14 +251,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBName
         {
-            get { return this._dBName; }
-            set { this._dBName = value; }
+            get { return this._dbName; }
+            set { this._dbName = value; }
         }
 
         // Check to see if DBName property is set
         internal bool IsSetDBName()
         {
-            return this._dBName != null;
+            return this._dbName != null;
         }
 
         /// <summary>
@@ -269,14 +269,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public List<DBParameterGroupStatus> DBParameterGroups
         {
-            get { return this._dBParameterGroups; }
-            set { this._dBParameterGroups = value; }
+            get { return this._dbParameterGroups; }
+            set { this._dbParameterGroups = value; }
         }
 
         // Check to see if DBParameterGroups property is set
         internal bool IsSetDBParameterGroups()
         {
-            return this._dBParameterGroups != null && this._dBParameterGroups.Count > 0; 
+            return this._dbParameterGroups != null && this._dbParameterGroups.Count > 0; 
         }
 
         /// <summary>
@@ -288,14 +288,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public List<DBSecurityGroupMembership> DBSecurityGroups
         {
-            get { return this._dBSecurityGroups; }
-            set { this._dBSecurityGroups = value; }
+            get { return this._dbSecurityGroups; }
+            set { this._dbSecurityGroups = value; }
         }
 
         // Check to see if DBSecurityGroups property is set
         internal bool IsSetDBSecurityGroups()
         {
-            return this._dBSecurityGroups != null && this._dBSecurityGroups.Count > 0; 
+            return this._dbSecurityGroups != null && this._dbSecurityGroups.Count > 0; 
         }
 
         /// <summary>
@@ -307,14 +307,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public DBSubnetGroup DBSubnetGroup
         {
-            get { return this._dBSubnetGroup; }
-            set { this._dBSubnetGroup = value; }
+            get { return this._dbSubnetGroup; }
+            set { this._dbSubnetGroup = value; }
         }
 
         // Check to see if DBSubnetGroup property is set
         internal bool IsSetDBSubnetGroup()
         {
-            return this._dBSubnetGroup != null;
+            return this._dbSubnetGroup != null;
         }
 
         /// <summary>

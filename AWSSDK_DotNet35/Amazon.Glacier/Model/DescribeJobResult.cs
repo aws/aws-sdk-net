@@ -44,8 +44,8 @@ namespace Amazon.Glacier.Model
         private string _jobDescription;
         private string _jobId;
         private string _retrievalByteRange;
-        private string _sHA256TreeHash;
-        private string _sNSTopic;
+        private string _sha256TreeHash;
+        private string _snsTopic;
         private StatusCode _statusCode;
         private string _statusMessage;
         private string _vaultARN;
@@ -312,14 +312,14 @@ namespace Amazon.Glacier.Model
         /// </summary>
         public string SHA256TreeHash
         {
-            get { return this._sHA256TreeHash; }
-            set { this._sHA256TreeHash = value; }
+            get { return this._sha256TreeHash; }
+            set { this._sha256TreeHash = value; }
         }
 
         // Check to see if SHA256TreeHash property is set
         internal bool IsSetSHA256TreeHash()
         {
-            return this._sHA256TreeHash != null;
+            return this._sha256TreeHash != null;
         }
 
         /// <summary>
@@ -330,14 +330,14 @@ namespace Amazon.Glacier.Model
         /// </summary>
         public string SNSTopic
         {
-            get { return this._sNSTopic; }
-            set { this._sNSTopic = value; }
+            get { return this._snsTopic; }
+            set { this._snsTopic = value; }
         }
 
         // Check to see if SNSTopic property is set
         internal bool IsSetSNSTopic()
         {
-            return this._sNSTopic != null;
+            return this._snsTopic != null;
         }
 
         /// <summary>

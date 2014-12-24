@@ -60,7 +60,7 @@ namespace Amazon.SQS.Model
     public partial class AddPermissionRequest : AmazonSQSRequest
     {
         private List<string> _actions = new List<string>();
-        private List<string> _aWSAccountIds = new List<string>();
+        private List<string> _awsAccountIds = new List<string>();
         private string _label;
         private string _queueUrl;
 
@@ -80,7 +80,7 @@ namespace Amazon.SQS.Model
         {
             _queueUrl = queueUrl;
             _label = label;
-            _aWSAccountIds = awsAccountIds;
+            _awsAccountIds = awsAccountIds;
             _actions = actions;
         }
 
@@ -125,14 +125,14 @@ namespace Amazon.SQS.Model
         /// </summary>
         public List<string> AWSAccountIds
         {
-            get { return this._aWSAccountIds; }
-            set { this._aWSAccountIds = value; }
+            get { return this._awsAccountIds; }
+            set { this._awsAccountIds = value; }
         }
 
         // Check to see if AWSAccountIds property is set
         internal bool IsSetAWSAccountIds()
         {
-            return this._aWSAccountIds != null && this._aWSAccountIds.Count > 0; 
+            return this._awsAccountIds != null && this._awsAccountIds.Count > 0; 
         }
 
         /// <summary>

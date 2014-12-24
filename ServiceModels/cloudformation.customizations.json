@@ -1,10 +1,39 @@
 
 {
-	"noArgOverloads": [
-		"DescribeStacks",
-		"ListStacks",
-		"ValidateTemplate"
-	],
+	"simpleMethods": {
+        "operations": {
+            "DescribeStacks": {
+                "methodForms": [
+                    []
+                ]
+            },
+            "ListStacks": {
+                "methodForms": [
+                    []
+                ]
+            },
+			"CancelUpdateStack": {
+                "methodForms": [
+                    ["StackName"]
+                ]
+            },			
+			"DeleteStack": {
+                "methodForms": [
+                    ["StackName"]
+                ]
+            },
+			"DescribeStackEvents": {
+                "methodForms": [
+                    ["StackName"]
+                ]
+            },
+			"ListStackResources": {
+                "methodForms": [
+                    ["StackName"]
+                ]
+            }
+		}
+	},
 	"runtimePipelineOverride":{
 		"overrides":[
 			{"operation":"addAfter", "newType":"Amazon.CloudFormation.Internal.ProcessRequestHandler", "targetType":"Amazon.Runtime.Internal.Marshaller"}

@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DeleteDBSecurityGroupRequest : AmazonRDSRequest
     {
-        private string _dBSecurityGroupName;
+        private string _dbSecurityGroupName;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -46,7 +46,7 @@ namespace Amazon.RDS.Model
         /// <param name="dbSecurityGroupName"> The name of the DB security group to delete.   Constraints:  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>May not contain spaces</li> </ul></param>
         public DeleteDBSecurityGroupRequest(string dbSecurityGroupName)
         {
-            _dBSecurityGroupName = dbSecurityGroupName;
+            _dbSecurityGroupName = dbSecurityGroupName;
         }
 
         /// <summary>
@@ -64,14 +64,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSecurityGroupName
         {
-            get { return this._dBSecurityGroupName; }
-            set { this._dBSecurityGroupName = value; }
+            get { return this._dbSecurityGroupName; }
+            set { this._dbSecurityGroupName = value; }
         }
 
         // Check to see if DBSecurityGroupName property is set
         internal bool IsSetDBSecurityGroupName()
         {
-            return this._dBSecurityGroupName != null;
+            return this._dbSecurityGroupName != null;
         }
 
     }

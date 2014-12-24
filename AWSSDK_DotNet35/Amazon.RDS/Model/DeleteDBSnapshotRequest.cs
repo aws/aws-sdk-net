@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DeleteDBSnapshotRequest : AmazonRDSRequest
     {
-        private string _dBSnapshotIdentifier;
+        private string _dbSnapshotIdentifier;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -46,7 +46,7 @@ namespace Amazon.RDS.Model
         /// <param name="dbSnapshotIdentifier"> The DBSnapshot identifier.  Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</param>
         public DeleteDBSnapshotRequest(string dbSnapshotIdentifier)
         {
-            _dBSnapshotIdentifier = dbSnapshotIdentifier;
+            _dbSnapshotIdentifier = dbSnapshotIdentifier;
         }
 
         /// <summary>
@@ -62,14 +62,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSnapshotIdentifier
         {
-            get { return this._dBSnapshotIdentifier; }
-            set { this._dBSnapshotIdentifier = value; }
+            get { return this._dbSnapshotIdentifier; }
+            set { this._dbSnapshotIdentifier = value; }
         }
 
         // Check to see if DBSnapshotIdentifier property is set
         internal bool IsSetDBSnapshotIdentifier()
         {
-            return this._dBSnapshotIdentifier != null;
+            return this._dbSnapshotIdentifier != null;
         }
 
     }

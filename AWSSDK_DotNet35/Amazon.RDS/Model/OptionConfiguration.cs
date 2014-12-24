@@ -32,7 +32,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class OptionConfiguration
     {
-        private List<string> _dBSecurityGroupMemberships = new List<string>();
+        private List<string> _dbSecurityGroupMemberships = new List<string>();
         private string _optionName;
         private List<OptionSetting> _optionSettings = new List<OptionSetting>();
         private int? _port;
@@ -46,14 +46,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public List<string> DBSecurityGroupMemberships
         {
-            get { return this._dBSecurityGroupMemberships; }
-            set { this._dBSecurityGroupMemberships = value; }
+            get { return this._dbSecurityGroupMemberships; }
+            set { this._dbSecurityGroupMemberships = value; }
         }
 
         // Check to see if DBSecurityGroupMemberships property is set
         internal bool IsSetDBSecurityGroupMemberships()
         {
-            return this._dBSecurityGroupMemberships != null && this._dBSecurityGroupMemberships.Count > 0; 
+            return this._dbSecurityGroupMemberships != null && this._dbSecurityGroupMemberships.Count > 0; 
         }
 
         /// <summary>

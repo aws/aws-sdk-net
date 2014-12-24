@@ -389,7 +389,7 @@
 foreach (var member in docMembers)
 {
 #>
-            request.<#=member.PropertyName#> = <#=this.Config.ServiceModel.Customizations.SimpleMethodsModel.CamelCaseParam(member.PropertyName)#>;
+            request.<#=member.PropertyName#> = <#=GeneratorHelpers.CamelCaseParam(member.PropertyName)#>;
 <#+
         
 }

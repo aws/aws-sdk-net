@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DBSecurityGroupMembership
     {
-        private string _dBSecurityGroupName;
+        private string _dbSecurityGroupName;
         private string _status;
 
         /// <summary>
@@ -51,14 +51,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSecurityGroupName
         {
-            get { return this._dBSecurityGroupName; }
-            set { this._dBSecurityGroupName = value; }
+            get { return this._dbSecurityGroupName; }
+            set { this._dbSecurityGroupName = value; }
         }
 
         // Check to see if DBSecurityGroupName property is set
         internal bool IsSetDBSecurityGroupName()
         {
-            return this._dBSecurityGroupName != null;
+            return this._dbSecurityGroupName != null;
         }
 
         /// <summary>

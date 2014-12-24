@@ -39,8 +39,8 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DBSubnetGroup
     {
-        private string _dBSubnetGroupDescription;
-        private string _dBSubnetGroupName;
+        private string _dbSubnetGroupDescription;
+        private string _dbSubnetGroupName;
         private string _subnetGroupStatus;
         private List<Subnet> _subnets = new List<Subnet>();
         private string _vpcId;
@@ -53,14 +53,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSubnetGroupDescription
         {
-            get { return this._dBSubnetGroupDescription; }
-            set { this._dBSubnetGroupDescription = value; }
+            get { return this._dbSubnetGroupDescription; }
+            set { this._dbSubnetGroupDescription = value; }
         }
 
         // Check to see if DBSubnetGroupDescription property is set
         internal bool IsSetDBSubnetGroupDescription()
         {
-            return this._dBSubnetGroupDescription != null;
+            return this._dbSubnetGroupDescription != null;
         }
 
         /// <summary>
@@ -71,14 +71,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSubnetGroupName
         {
-            get { return this._dBSubnetGroupName; }
-            set { this._dBSubnetGroupName = value; }
+            get { return this._dbSubnetGroupName; }
+            set { this._dbSubnetGroupName = value; }
         }
 
         // Check to see if DBSubnetGroupName property is set
         internal bool IsSetDBSubnetGroupName()
         {
-            return this._dBSubnetGroupName != null;
+            return this._dbSubnetGroupName != null;
         }
 
         /// <summary>

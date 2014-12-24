@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBSecurityGroupsResult : AmazonWebServiceResponse
     {
-        private List<DBSecurityGroup> _dBSecurityGroups = new List<DBSecurityGroup>();
+        private List<DBSecurityGroup> _dbSecurityGroups = new List<DBSecurityGroup>();
         private string _marker;
 
         /// <summary>
@@ -44,14 +44,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public List<DBSecurityGroup> DBSecurityGroups
         {
-            get { return this._dBSecurityGroups; }
-            set { this._dBSecurityGroups = value; }
+            get { return this._dbSecurityGroups; }
+            set { this._dbSecurityGroups = value; }
         }
 
         // Check to see if DBSecurityGroups property is set
         internal bool IsSetDBSecurityGroups()
         {
-            return this._dBSecurityGroups != null && this._dBSecurityGroups.Count > 0; 
+            return this._dbSecurityGroups != null && this._dbSecurityGroups.Count > 0; 
         }
 
         /// <summary>

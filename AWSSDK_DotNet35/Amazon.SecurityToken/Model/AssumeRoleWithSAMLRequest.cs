@@ -91,7 +91,7 @@ namespace Amazon.SecurityToken.Model
         private string _policy;
         private string _principalArn;
         private string _roleArn;
-        private string _sAMLAssertion;
+        private string _samlAssertion;
 
         /// <summary>
         /// Gets and sets the property DurationSeconds. 
@@ -192,14 +192,14 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         public string SAMLAssertion
         {
-            get { return this._sAMLAssertion; }
-            set { this._sAMLAssertion = value; }
+            get { return this._samlAssertion; }
+            set { this._samlAssertion = value; }
         }
 
         // Check to see if SAMLAssertion property is set
         internal bool IsSetSAMLAssertion()
         {
-            return this._sAMLAssertion != null;
+            return this._samlAssertion != null;
         }
 
     }

@@ -60,10 +60,24 @@ namespace ServiceClientGenerator
             }
         }
 
+        private string _serviceName;
+
         /// <summary>
         /// The official name for the service.
         /// </summary>
-        public string ServiceName { get; set; }
+        public string ServiceName
+        {
+            get
+            {
+                if (null == _serviceName)
+                    _serviceName = _serviceModel.ServiceFullName;
+                return _serviceName;
+            }
+            set
+            {
+                _serviceName = value;
+            }
+        }
 
         /// <summary>
         /// The base name used in the client and the top level request class for a service.        

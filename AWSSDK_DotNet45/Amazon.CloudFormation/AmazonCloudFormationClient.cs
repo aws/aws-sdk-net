@@ -256,6 +256,22 @@ namespace Amazon.CloudFormation
         /// 
         ///  <note>Only stacks that are in the UPDATE_IN_PROGRESS state can be canceled.</note>
         /// </summary>
+        /// <param name="stackName">The name or the unique identifier associated with the stack.</param>
+        /// 
+        /// <returns>The response from the CancelUpdateStack service method, as returned by CloudFormation.</returns>
+        public CancelUpdateStackResponse CancelUpdateStack(string stackName)
+        {
+            var request = new CancelUpdateStackRequest();
+            request.StackName = stackName;
+            return CancelUpdateStack(request);
+        }
+
+        /// <summary>
+        /// Cancels an update on the specified stack. If the call completes successfully, the
+        /// stack will roll back the update and revert to the previous stack configuration.
+        /// 
+        ///  <note>Only stacks that are in the UPDATE_IN_PROGRESS state can be canceled.</note>
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelUpdateStack service method.</param>
         /// 
         /// <returns>The response from the CancelUpdateStack service method, as returned by CloudFormation.</returns>
@@ -342,6 +358,21 @@ namespace Amazon.CloudFormation
         /// Deleted stacks do not show up in the <a>DescribeStacks</a> API if the deletion has
         /// been completed successfully.
         /// </summary>
+        /// <param name="stackName">The name or the unique identifier associated with the stack.</param>
+        /// 
+        /// <returns>The response from the DeleteStack service method, as returned by CloudFormation.</returns>
+        public DeleteStackResponse DeleteStack(string stackName)
+        {
+            var request = new DeleteStackRequest();
+            request.StackName = stackName;
+            return DeleteStack(request);
+        }
+
+        /// <summary>
+        /// Deletes a specified stack. Once the call completes successfully, stack deletion starts.
+        /// Deleted stacks do not show up in the <a>DescribeStacks</a> API if the deletion has
+        /// been completed successfully.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStack service method.</param>
         /// 
         /// <returns>The response from the DeleteStack service method, as returned by CloudFormation.</returns>
@@ -374,6 +405,24 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  DescribeStackEvents
+
+        /// <summary>
+        /// Returns all stack related events for a specified stack. For more information about
+        /// a stack's event history, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
+        /// in the AWS CloudFormation User Guide.
+        /// 
+        ///  <note>You can list events for stacks that have failed to create or have been deleted
+        /// by specifying the unique stack identifier (stack ID).</note>
+        /// </summary>
+        /// <param name="stackName">The name or the unique identifier associated with the stack, which are not always interchangeable: <ul> <li>Running stacks: You can specify either the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must specify the unique stack ID.</li> </ul> Default: There is no default value.</param>
+        /// 
+        /// <returns>The response from the DescribeStackEvents service method, as returned by CloudFormation.</returns>
+        public DescribeStackEventsResponse DescribeStackEvents(string stackName)
+        {
+            var request = new DescribeStackEventsRequest();
+            request.StackName = stackName;
+            return DescribeStackEvents(request);
+        }
 
         /// <summary>
         /// Returns all stack related events for a specified stack. For more information about
@@ -522,7 +571,8 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
         public DescribeStacksResponse DescribeStacks()
         {
-            return DescribeStacks(new DescribeStacksRequest());
+            var request = new DescribeStacksRequest();
+            return DescribeStacks(request);
         }
 
         /// <summary>
@@ -741,6 +791,25 @@ namespace Amazon.CloudFormation
         /// after the stack has been deleted.
         /// </para>
         /// </summary>
+        /// <param name="stackName">The name or the unique identifier associated with the stack, which are not always interchangeable: <ul> <li>Running stacks: You can specify either the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must specify the unique stack ID.</li> </ul> Default: There is no default value.</param>
+        /// 
+        /// <returns>The response from the ListStackResources service method, as returned by CloudFormation.</returns>
+        public ListStackResourcesResponse ListStackResources(string stackName)
+        {
+            var request = new ListStackResourcesRequest();
+            request.StackName = stackName;
+            return ListStackResources(request);
+        }
+
+        /// <summary>
+        /// Returns descriptions of all resources of the specified stack.
+        /// 
+        ///  
+        /// <para>
+        /// For deleted stacks, ListStackResources returns resource information for up to 90 days
+        /// after the stack has been deleted.
+        /// </para>
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStackResources service method.</param>
         /// 
         /// <returns>The response from the ListStackResources service method, as returned by CloudFormation.</returns>
@@ -784,7 +853,8 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
         public ListStacksResponse ListStacks()
         {
-            return ListStacks(new ListStacksRequest());
+            var request = new ListStacksRequest();
+            return ListStacks(request);
         }
 
         /// <summary>
@@ -961,16 +1031,6 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  ValidateTemplate
-
-        /// <summary>
-        /// Validates a specified template.
-        /// </summary>
-        /// 
-        /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
-        public ValidateTemplateResponse ValidateTemplate()
-        {
-            return ValidateTemplate(new ValidateTemplateRequest());
-        }
 
         /// <summary>
         /// Validates a specified template.

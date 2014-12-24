@@ -39,10 +39,10 @@ namespace Amazon.RDS.Model
         private bool? _applyImmediately;
         private bool? _autoMinorVersionUpgrade;
         private int? _backupRetentionPeriod;
-        private string _dBInstanceClass;
-        private string _dBInstanceIdentifier;
-        private string _dBParameterGroupName;
-        private List<string> _dBSecurityGroups = new List<string>();
+        private string _dbInstanceClass;
+        private string _dbInstanceIdentifier;
+        private string _dbParameterGroupName;
+        private List<string> _dbSecurityGroups = new List<string>();
         private string _engineVersion;
         private int? _iops;
         private string _masterUserPassword;
@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model
         /// <param name="dbInstanceIdentifier"> The DB instance identifier. This value is stored as a lowercase string.  Constraints: <ul> <li>Must be the identifier for an existing DB instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
         public ModifyDBInstanceRequest(string dbInstanceIdentifier)
         {
-            _dBInstanceIdentifier = dbInstanceIdentifier;
+            _dbInstanceIdentifier = dbInstanceIdentifier;
         }
 
         /// <summary>
@@ -321,14 +321,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceClass
         {
-            get { return this._dBInstanceClass; }
-            set { this._dBInstanceClass = value; }
+            get { return this._dbInstanceClass; }
+            set { this._dbInstanceClass = value; }
         }
 
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this._dBInstanceClass != null;
+            return this._dbInstanceClass != null;
         }
 
         /// <summary>
@@ -346,14 +346,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceIdentifier
         {
-            get { return this._dBInstanceIdentifier; }
-            set { this._dBInstanceIdentifier = value; }
+            get { return this._dbInstanceIdentifier; }
+            set { this._dbInstanceIdentifier = value; }
         }
 
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this._dBInstanceIdentifier != null;
+            return this._dbInstanceIdentifier != null;
         }
 
         /// <summary>
@@ -377,14 +377,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBParameterGroupName
         {
-            get { return this._dBParameterGroupName; }
-            set { this._dBParameterGroupName = value; }
+            get { return this._dbParameterGroupName; }
+            set { this._dbParameterGroupName = value; }
         }
 
         // Check to see if DBParameterGroupName property is set
         internal bool IsSetDBParameterGroupName()
         {
-            return this._dBParameterGroupName != null;
+            return this._dbParameterGroupName != null;
         }
 
         /// <summary>
@@ -404,14 +404,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public List<string> DBSecurityGroups
         {
-            get { return this._dBSecurityGroups; }
-            set { this._dBSecurityGroups = value; }
+            get { return this._dbSecurityGroups; }
+            set { this._dbSecurityGroups = value; }
         }
 
         // Check to see if DBSecurityGroups property is set
         internal bool IsSetDBSecurityGroups()
         {
-            return this._dBSecurityGroups != null && this._dBSecurityGroups.Count > 0; 
+            return this._dbSecurityGroups != null && this._dbSecurityGroups.Count > 0; 
         }
 
         /// <summary>

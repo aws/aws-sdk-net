@@ -32,8 +32,8 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class EC2SecurityGroup
     {
-        private string _eC2SecurityGroupName;
-        private string _eC2SecurityGroupOwnerId;
+        private string _ec2SecurityGroupName;
+        private string _ec2SecurityGroupOwnerId;
         private string _status;
 
         /// <summary>
@@ -49,14 +49,14 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         public string EC2SecurityGroupName
         {
-            get { return this._eC2SecurityGroupName; }
-            set { this._eC2SecurityGroupName = value; }
+            get { return this._ec2SecurityGroupName; }
+            set { this._ec2SecurityGroupName = value; }
         }
 
         // Check to see if EC2SecurityGroupName property is set
         internal bool IsSetEC2SecurityGroupName()
         {
-            return this._eC2SecurityGroupName != null;
+            return this._ec2SecurityGroupName != null;
         }
 
         /// <summary>
@@ -67,14 +67,14 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         public string EC2SecurityGroupOwnerId
         {
-            get { return this._eC2SecurityGroupOwnerId; }
-            set { this._eC2SecurityGroupOwnerId = value; }
+            get { return this._ec2SecurityGroupOwnerId; }
+            set { this._ec2SecurityGroupOwnerId = value; }
         }
 
         // Check to see if EC2SecurityGroupOwnerId property is set
         internal bool IsSetEC2SecurityGroupOwnerId()
         {
-            return this._eC2SecurityGroupOwnerId != null;
+            return this._ec2SecurityGroupOwnerId != null;
         }
 
         /// <summary>

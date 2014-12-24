@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.Resources
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+    #line 1 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class ResourceImplementations : BaseResourceGenerator
     {
@@ -30,7 +30,7 @@ namespace ServiceClientGenerator.Generators.Resources
         public override string TransformText()
         {
             
-            #line 7 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 7 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
     AddLicenseHeader();
 
@@ -40,21 +40,21 @@ namespace ServiceClientGenerator.Generators.Resources
             this.Write("\r\nusing System;\r\nusing System.IO;\r\nusing System.Collections.Generic;\r\nusing Amazo" +
                     "n.Runtime.Resources;\r\nusing ");
             
-            #line 15 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 15 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model;\r\n\r\nnamespace ");
             
-            #line 17 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 17 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Resources.Internal\r\n{\r\n");
             
-            #line 19 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 19 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
  
     foreach (var resource in this.Config.ServiceModel.ResourceModel.Resources.Values) 
     {
@@ -64,64 +64,87 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\r\n    #region ");
             
-            #line 24 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 24 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resource.ClassName));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n    internal class ");
             
-            #line 26 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 26 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resource.ClassName));
             
             #line default
             #line hidden
             this.Write(" : Resource<IAmazon");
             
-            #line 26 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 26 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write(">, ");
             
-            #line 26 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 26 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resource.InterfaceName));
             
             #line default
             #line hidden
             this.Write("\r\n    {\r\n");
             
-            #line 28 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 28 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
         
         GenerateIdentifierAttributes(resource);
   
         if(resource.Shape != null)
 		{
 			GenerateAttributeProperties(resource);
-			if(resource.CanBeConstructedFromModel)
-			{
 
             
             #line default
             #line hidden
             this.Write("        public ");
             
-            #line 37 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 35 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resource.ClassName));
             
             #line default
             #line hidden
             this.Write("(Model.");
             
-            #line 37 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 35 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resource.Shape.Name));
             
             #line default
             #line hidden
-            this.Write(" model, IAmazon");
+            this.Write(" model,\r\n");
             
-            #line 37 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 36 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+		foreach(var identifier in resource.UnmappedIdentifiers)
+		{
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tstring ");
+            
+            #line 39 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(identifier.Name.ToCamelCase()));
+            
+            #line default
+            #line hidden
+            this.Write(",\r\n");
+            
+            #line 40 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+
+		}
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tIAmazon");
+            
+            #line 42 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -129,32 +152,60 @@ namespace ServiceClientGenerator.Generators.Resources
             this.Write(" client)\r\n            : base (client)\r\n        {\r\n            this.IsLoaded = tru" +
                     "e;\r\n");
             
-            #line 41 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 46 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 		foreach(var identifier in resource.Identifiers)
 		{
+			if(!resource.UnmappedIdentifiers.Exists(i => i.Name.Equals(identifier.Name)))
+			{
 
             
             #line default
             #line hidden
             this.Write("\t\t\tthis.");
             
-            #line 45 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 52 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(identifier.Name));
             
             #line default
             #line hidden
             this.Write(" = model.");
             
-            #line 45 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 52 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(identifier.MemberName));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 46 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 53 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 	
+			}
+			else
+			{
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tthis.");
+            
+            #line 58 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(identifier.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" = ");
+            
+            #line 58 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(identifier.Name.ToCamelCase()));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n");
+            
+            #line 59 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+	
+			}
 		}
 
             
@@ -162,9 +213,9 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\t\t\tCopyFrom(model);\r\n        }\r\n\r\n");
             
-            #line 52 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 66 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 	
-			}
+
 			GenerateCopyFrom(resource);
             if(resource.LoadAction != null)
                 GenerateLoadMethod(resource);
@@ -175,21 +226,21 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("        public ");
             
-            #line 59 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 73 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resource.ClassName));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 59 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 73 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resource.IdentifiersAsConstructorParameters()));
             
             #line default
             #line hidden
             this.Write("IAmazon");
             
-            #line 59 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 73 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -197,7 +248,7 @@ namespace ServiceClientGenerator.Generators.Resources
             this.Write(" client)\r\n            : base (client)\r\n        {\r\n            this.IsLoaded = fal" +
                     "se;\r\n");
             
-            #line 63 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 77 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 		foreach(var identifier in resource.Identifiers)
 		{
@@ -207,30 +258,30 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\t\t\tthis.");
             
-            #line 67 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 81 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(identifier.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 67 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 81 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(identifier.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 68 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 82 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 	
 		}
 
             
             #line default
             #line hidden
-            this.Write("\r\n        }\r\n\r\n\t\t# region Actions\r\n");
+            this.Write("\r\n        }\r\n\r\n\t\t#region Actions\r\n");
             
-            #line 75 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 89 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
  
 	
 	foreach (var action in resource.Actions.Values) 
@@ -241,28 +292,28 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\r\n\t\tpublic ");
             
-            #line 81 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(action.ReturnTypeInterface));
+            #line 95 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(action.ReturnTypeExpression));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 81 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 95 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.MethodName));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 81 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 95 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.RequestType));
             
             #line default
             #line hidden
             this.Write(" request)\r\n\t\t{\r\n");
             
-            #line 83 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 97 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 		GenerateAction(action);
 
@@ -271,7 +322,7 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\t\t}\r\n");
             
-            #line 87 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 101 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 	foreach (var form in action.CustomForms.Select(f => f.WithoutIdentifiers()))
 	{
@@ -281,35 +332,35 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\r\n        public ");
             
-            #line 92 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(action.ReturnTypeInterface));
+            #line 106 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(action.ReturnTypeExpression));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 92 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 106 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.MethodName));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 92 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 106 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(form.Parameters));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t{\r\n\t\t\tvar request = new ");
             
-            #line 94 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 108 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.RequestType));
             
             #line default
             #line hidden
             this.Write("();\r\n");
             
-            #line 95 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 109 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
               foreach(var member in form.Members)
 			  {
@@ -319,21 +370,21 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\t\t\trequest.");
             
-            #line 99 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 113 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 99 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 113 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.ArgumentName));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 100 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 114 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 			  }
 
@@ -342,20 +393,20 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\t\t\t");
             
-            #line 103 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(action.ReturnTypeInterface.Equals("void") ? "" : "return "));
+            #line 117 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(action.IsVoidReturnType ? "" : "return "));
             
             #line default
             #line hidden
             
-            #line 103 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 117 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.MethodName));
             
             #line default
             #line hidden
             this.Write("(request);\r\n\t\t }\r\n");
             
-            #line 105 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 119 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 	    }
 	}
@@ -365,7 +416,7 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\r\n\t\t#endregion\r\n\r\n");
             
-            #line 112 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 126 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 		if(resource.HasMany.Count > 0)
 		{
@@ -375,7 +426,7 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\t\t#region HasMany\r\n");
             
-            #line 117 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 131 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
  
 	
 	foreach (var action in resource.HasMany.Values) 
@@ -386,28 +437,28 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\t\tpublic IEnumerable<");
             
-            #line 122 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 136 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.ReturnTypeInterface));
             
             #line default
             #line hidden
             this.Write("> Get");
             
-            #line 122 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 136 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.MethodName));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 122 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 136 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.RequestType));
             
             #line default
             #line hidden
             this.Write(" request)\r\n\t\t{\r\n");
             
-            #line 124 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 138 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 			GenerateHasMany(action);
 
@@ -416,7 +467,7 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\r\n\t\t}\r\n\r\n");
             
-            #line 130 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 144 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 	foreach (var form in action.CustomForms.Select(f => f.WithoutIdentifiers()))
 	{
@@ -426,35 +477,35 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("        public IEnumerable<");
             
-            #line 134 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 148 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.ReturnTypeInterface));
             
             #line default
             #line hidden
             this.Write("> Get");
             
-            #line 134 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 148 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.MethodName));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 134 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 148 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(form.Parameters));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t{\r\n\t\t\tvar request = new ");
             
-            #line 136 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 150 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.RequestType));
             
             #line default
             #line hidden
             this.Write("();\r\n");
             
-            #line 137 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 151 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
               foreach(var member in form.Members)
 			  {
@@ -464,21 +515,21 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\t\t\trequest.");
             
-            #line 141 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 155 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 141 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 155 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.ArgumentName));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 142 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 156 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 			  }
 
@@ -487,14 +538,14 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\t\t\treturn Get");
             
-            #line 145 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 159 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.MethodName));
             
             #line default
             #line hidden
             this.Write("(request);\r\n\t\t }\r\n\r\n");
             
-            #line 148 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 162 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 	    }
 	}
@@ -504,7 +555,7 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\r\n\t\t#endregion\r\n");
             
-            #line 154 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 168 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 		}
 
@@ -516,7 +567,7 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\r\n\t\t#region Subresource\r\n\r\n");
             
-            #line 163 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 177 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
  
 	
 	foreach (var subResource in resource.SubResources) 
@@ -527,48 +578,48 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\t\tpublic ");
             
-            #line 168 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 182 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(subResource.InterfaceName));
             
             #line default
             #line hidden
             this.Write(" Get");
             
-            #line 168 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 182 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(subResource.ClassName));
             
             #line default
             #line hidden
             
-            #line 168 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 182 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(subResource.GetResourceMethodPostFix(resource.SubResourceIdentifiers)));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 168 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 182 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(subResource.IdentifiersAsConstructorParametersTrimmed(resource.SubResourceIdentifiers)));
             
             #line default
             #line hidden
             this.Write(")\r\n        {\r\n            return new Internal.");
             
-            #line 170 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 184 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(subResource.ClassName));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 170 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 184 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(subResource.IdentifiersAsConstructorParameterNames(resource.SubResourceIdentifiers)));
             
             #line default
             #line hidden
             this.Write("client : this.Client);\r\n        }\r\n");
             
-            #line 172 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 186 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 	}
 
@@ -577,7 +628,7 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("\r\n\t\t#endregion\r\n");
             
-            #line 177 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 191 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 		}
 
@@ -586,7 +637,7 @@ namespace ServiceClientGenerator.Generators.Resources
             #line hidden
             this.Write("    }\r\n\r\n    #endregion\r\n");
             
-            #line 183 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+            #line 197 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
     }
 
@@ -597,7 +648,7 @@ namespace ServiceClientGenerator.Generators.Resources
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 188 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 202 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 void GenerateIdentifierAttributes(Resource resource)
 {
@@ -608,28 +659,28 @@ void GenerateIdentifierAttributes(Resource resource)
         #line default
         #line hidden
         
-        #line 193 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 207 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write("        public string ");
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 208 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(identifier.Name));
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 208 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(" { get; private set; }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 210 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 	
     }
 }
@@ -645,63 +696,63 @@ void GenerateAttributeProperties(Resource resource)
         #line default
         #line hidden
         
-        #line 206 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 220 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write("\t\tprivate ");
 
         
         #line default
         #line hidden
         
-        #line 207 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 221 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Type));
 
         
         #line default
         #line hidden
         
-        #line 207 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 221 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(" ");
 
         
         #line default
         #line hidden
         
-        #line 207 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 221 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Member.VariableName));
 
         
         #line default
         #line hidden
         
-        #line 207 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 221 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(";\r\n        public ");
 
         
         #line default
         #line hidden
         
-        #line 208 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 222 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Type));
 
         
         #line default
         #line hidden
         
-        #line 208 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 222 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(" ");
 
         
         #line default
         #line hidden
         
-        #line 208 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 222 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 208 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 222 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write("\r\n        {\r\n            get\r\n            {\r\n                this.CheckIfLoaded()" +
         ";\r\n                return ");
 
@@ -709,21 +760,21 @@ this.Write("\r\n        {\r\n            get\r\n            {\r\n               
         #line default
         #line hidden
         
-        #line 213 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 227 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Member.PropertyName.ToClassMemberCase()));
 
         
         #line default
         #line hidden
         
-        #line 213 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 227 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(";\r\n            }\r\n        }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 217 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 231 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 	
 	}
 }
@@ -735,28 +786,28 @@ void GenerateCopyFrom(Resource resource)
         #line default
         #line hidden
         
-        #line 223 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 237 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write("\t\tprivate void CopyFrom(Model.");
 
         
         #line default
         #line hidden
         
-        #line 224 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 238 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(resource.Shape.Name));
 
         
         #line default
         #line hidden
         
-        #line 224 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 238 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(" model)\r\n        {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 226 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 240 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 		
         foreach(var attribute in resource.Attributes)
         {
@@ -770,84 +821,84 @@ this.Write(" model)\r\n        {\r\n");
         #line default
         #line hidden
         
-        #line 234 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 248 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write("\t\r\n\t\t\t");
 
         
         #line default
         #line hidden
         
-        #line 235 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 249 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Member.VariableName));
 
         
         #line default
         #line hidden
         
-        #line 235 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 249 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(" = new List<");
 
         
         #line default
         #line hidden
         
-        #line 235 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 249 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Resource.InterfaceName));
 
         
         #line default
         #line hidden
         
-        #line 235 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 249 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(">();\r\n\t\t\tforeach(var item in model.");
 
         
         #line default
         #line hidden
         
-        #line 236 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 250 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 236 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 250 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(")\r\n\t\t\t\t");
 
         
         #line default
         #line hidden
         
-        #line 237 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 251 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Member.VariableName));
 
         
         #line default
         #line hidden
         
-        #line 237 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 251 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(".Add(new ");
 
         
         #line default
         #line hidden
         
-        #line 237 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 251 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Resource.ClassName));
 
         
         #line default
         #line hidden
         
-        #line 237 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 251 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write("(item, this.Client));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 238 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 252 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 				}
 				else
@@ -857,56 +908,56 @@ this.Write("(item, this.Client));\r\n");
         #line default
         #line hidden
         
-        #line 242 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 256 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write("\t\r\n\t\t\t");
 
         
         #line default
         #line hidden
         
-        #line 243 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 257 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Member.VariableName));
 
         
         #line default
         #line hidden
         
-        #line 243 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 257 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(" = new ");
 
         
         #line default
         #line hidden
         
-        #line 243 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 257 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Member.Shape.Name));
 
         
         #line default
         #line hidden
         
-        #line 243 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 257 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write("(model.");
 
         
         #line default
         #line hidden
         
-        #line 243 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 257 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 243 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 257 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(", this.Client);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 244 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 258 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 				}
 			}
@@ -917,42 +968,42 @@ this.Write(", this.Client);\r\n");
         #line default
         #line hidden
         
-        #line 249 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 263 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write("\t\t\t");
 
         
         #line default
         #line hidden
         
-        #line 250 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 264 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Member.VariableName));
 
         
         #line default
         #line hidden
         
-        #line 250 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 264 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(" = model.");
 
         
         #line default
         #line hidden
         
-        #line 250 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 264 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 250 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 264 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 251 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 265 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 	
 			}
         } 
@@ -961,14 +1012,14 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 254 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 268 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write("\t\t}\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 257 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 271 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 		
 }
 
@@ -976,7 +1027,7 @@ this.Write("\t\t}\r\n\r\n");
         #line default
         #line hidden
         
-        #line 261 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 275 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
 
     void GenerateLoadMethod(Resource resource)
@@ -986,7 +1037,7 @@ this.Write("\t\t}\r\n\r\n");
         #line default
         #line hidden
         
-        #line 265 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 279 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write("      \r\n        protected override void LoadResource()\r\n        {\r\n            va" +
         "r request = new ");
 
@@ -994,21 +1045,21 @@ this.Write("      \r\n        protected override void LoadResource()\r\n        
         #line default
         #line hidden
         
-        #line 268 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 282 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(resource.LoadAction.RequestType));
 
         
         #line default
         #line hidden
         
-        #line 268 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 282 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write("();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 269 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 283 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
         GenerateRequestMappings(resource.LoadAction);
 
@@ -1016,42 +1067,42 @@ this.Write("();\r\n");
         #line default
         #line hidden
         
-        #line 271 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 285 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write("\r\n            var response = this.Client.");
 
         
         #line default
         #line hidden
         
-        #line 273 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 287 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(resource.LoadAction.RequestOperationName));
 
         
         #line default
         #line hidden
         
-        #line 273 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 287 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write("(request);\r\n            this.CopyFrom(");
 
         
         #line default
         #line hidden
         
-        #line 274 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 288 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(resource.LoadAction.Path.GetIdentifierExpression()));
 
         
         #line default
         #line hidden
         
-        #line 274 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 288 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 this.Write(");\r\n        }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 277 "C:\Users\jimfl\code\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
+        #line 291 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\ResourceAPI\sdk\src\ServiceClientGenerator\Generators\Resources\ResourceImplementations.tt"
 
     }
 

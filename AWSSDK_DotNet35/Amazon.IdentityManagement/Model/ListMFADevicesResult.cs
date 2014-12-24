@@ -34,7 +34,7 @@ namespace Amazon.IdentityManagement.Model
     {
         private bool? _isTruncated;
         private string _marker;
-        private List<MFADevice> _mFADevices = new List<MFADevice>();
+        private List<MFADevice> _mfaDevices = new List<MFADevice>();
 
         /// <summary>
         /// Gets and sets the property IsTruncated. 
@@ -84,14 +84,14 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public List<MFADevice> MFADevices
         {
-            get { return this._mFADevices; }
-            set { this._mFADevices = value; }
+            get { return this._mfaDevices; }
+            set { this._mfaDevices = value; }
         }
 
         // Check to see if MFADevices property is set
         internal bool IsSetMFADevices()
         {
-            return this._mFADevices != null && this._mFADevices.Count > 0; 
+            return this._mfaDevices != null && this._mfaDevices.Count > 0; 
         }
 
     }

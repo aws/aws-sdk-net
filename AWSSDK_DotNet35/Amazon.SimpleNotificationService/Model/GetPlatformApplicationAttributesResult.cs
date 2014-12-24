@@ -39,14 +39,13 @@ namespace Amazon.SimpleNotificationService.Model
         /// <para>
         /// Attributes include the following:
         /// </para>
-        ///     <ul>                        <li><code>EventEndpointCreated</code> -- Topic ARN
-        /// to which EndpointCreated event notifications should be sent.</li>      <li><code>EventEndpointDeleted</code>
-        /// -- Topic ARN to which EndpointDeleted event notifications should be sent.</li>   
-        ///   <li><code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
-        /// notifications should be sent.</li>            <li><code>EventDeliveryFailure</code>
-        /// -- Topic ARN to which DeliveryFailure event notifications should be sent upon Direct
-        /// Publish delivery failure (permanent) to one of the application's endpoints.</li> 
-        ///         </ul>
+        ///  <ul> <li> <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated
+        /// event notifications should be sent.</li> <li> <code>EventEndpointDeleted</code> --
+        /// Topic ARN to which EndpointDeleted event notifications should be sent.</li> <li> <code>EventEndpointUpdated</code>
+        /// -- Topic ARN to which EndpointUpdate event notifications should be sent.</li> <li>
+        /// <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications
+        /// should be sent upon Direct Publish delivery failure (permanent) to one of the application's
+        /// endpoints.</li> </ul>
         /// </summary>
         public Dictionary<string, string> Attributes
         {

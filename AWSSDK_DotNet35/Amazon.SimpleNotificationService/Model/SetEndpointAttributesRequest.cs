@@ -30,7 +30,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the SetEndpointAttributes operation.
     /// Sets the attributes for an endpoint for a device on one of the supported push notification
-    /// services, such as GCM and APNS.      For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+    /// services, such as GCM and APNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
     /// Amazon SNS Mobile Push Notifications</a>.
     /// </summary>
     public partial class SetEndpointAttributesRequest : AmazonSimpleNotificationServiceRequest
@@ -43,15 +43,15 @@ namespace Amazon.SimpleNotificationService.Model
         /// <para>
         /// A map of the endpoint attributes. Attributes in this map include the following:
         /// </para>
-        ///     <ul>            <li><code>CustomUserData</code> -- arbitrary user data to associate
-        /// with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format
-        /// and less than 2KB.</li>      <li><code>Enabled</code> -- flag that enables/disables
-        /// delivery to the endpoint.         Amazon SNS will set this to false when a notification
-        /// service indicates to Amazon SNS that the endpoint is invalid.         Users can set
-        /// it back to true, typically after updating Token.</li>            <li><code>Token</code>
-        /// -- device token, also referred to as a registration id, for an app and mobile device.
-        ///         This is returned from the notification service when an app and mobile device
-        /// are registered with the notification service.</li>               </ul>
+        ///  <ul> <li> <code>CustomUserData</code> -- arbitrary user data to associate with the
+        /// endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and
+        /// less than 2KB.</li> <li> <code>Enabled</code> -- flag that enables/disables delivery
+        /// to the endpoint. Amazon SNS will set this to false when a notification service indicates
+        /// to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically
+        /// after updating Token.</li> <li> <code>Token</code> -- device token, also referred
+        /// to as a registration id, for an app and mobile device. This is returned from the notification
+        /// service when an app and mobile device are registered with the notification service.</li>
+        /// </ul>
         /// </summary>
         public Dictionary<string, string> Attributes
         {

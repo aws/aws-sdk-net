@@ -1,7 +1,191 @@
 {
-  "noArgOverloads": [
-    "ListPlatformApplications",
-	"ListSubscriptions",
-	"ListTopics"
-  ]
+    "simpleMethods": {
+        "operations": {
+            "ListPlatformApplications": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "ListSubscriptions": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "ListTopics": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "ListSubscriptionsByTopic": {
+                "methodForms": [
+                    [
+                        "TopicArn"
+                    ]
+                ]
+            },
+            "DeleteTopic": {
+                "methodForms": [
+                    [
+                        "TopicArn"
+                    ]
+                ]
+            },            
+            "CreateTopic": {
+                "methodForms": [
+                    [
+                        "Name"
+                    ]
+                ]
+            },
+            "SetTopicAttributes": {
+                "methodForms": [
+                    [
+                        "AttributeName",
+                        "AttributeValue",
+                        "TopicArn"
+                    ]
+                ]
+            },
+            "AddPermission": {
+                "methodForms": [
+                    [
+                        "TopicArn",
+                        "Label",
+                        "AWSAccountId",
+                        "ActionName"
+                    ]
+                ]
+            },
+            "Subscribe": {
+                "methodForms": [
+                    [
+                        "Endpoint",
+                        "Protocol",
+                        "TopicArn"
+                    ]
+                ]
+            },
+            "Publish": {
+                "methodForms": [
+                    [
+                        "Message",
+                        "TopicArn"
+                    ],
+                    [
+                        "Message",
+                        "Subject",
+                        "TopicArn"
+                    ]
+                ]
+            },
+            "Unsubscribe": {
+                "methodForms": [
+                    [
+                        "SubscriptionArn"
+                    ]
+                ]
+            },
+            "SetSubscriptionAttributes": {
+                "methodForms": [
+                    [
+                        "AttributeName",
+                        "AttributeValue",
+                        "SubscriptionArn"
+                    ]
+                ]
+            },
+            "ConfirmSubscription": {
+                "methodForms": [
+                    [
+                        "Token",
+                        "TopicArn"
+                    ],
+                    [
+                        "TopicArn",
+                        "Token",
+                        "AuthenticateOnUnsubscribe"
+                    ]
+                ]
+            },
+            "RemovePermission": {
+                "methodForms": [
+                    [
+                        "Label",
+                        "TopicArn"
+                    ]
+                ]
+            },
+            "ListEndpointsByPlatformApplication": {
+                "methodForms": [
+                    [
+                        "PlatformApplicationArn"
+                    ]
+                ]
+            },
+            "CreatePlatformApplication": {
+                "methodForms": [
+                    [
+                        "Name",
+                        "Platform",
+                        "Attributes"
+                    ]
+                ]
+            },
+            "CreatePlatformEndpoint": {
+                "methodForms": [
+                    [
+                        "Token",
+                        "PlatformApplicationArn"
+                    ]
+                ]
+            },
+            "DeleteEndpoint": {
+                "methodForms": [
+                    [
+                        "EndpointArn"
+                    ]
+                ]
+            },
+            "DeletePlatformApplication": {
+                "methodForms": [
+                    [
+                        "PlatformApplicationArn"
+                    ]
+                ]
+            },
+            "SetEndpointAttributes": {
+                "methodForms": [
+                    [
+                        "Attributes",
+                        "EndpointArn"
+                    ]
+                ]
+            },
+            "SetPlatformApplicationAttributes": {
+                "methodForms": [
+                    [
+                        "Attributes",
+                        "PlatformApplicationArn"
+                    ]
+                ]
+            },
+            "GetTopicAttributes"        : {
+                "methodForms" : [
+                    [
+                        "TopicArn"
+                    ]
+                ]
+            },
+            "GetSubscriptionAttributes" : {
+                "methodForms" : [
+                    [
+                        "SubscriptionArn"
+                    ]
+                ]
+            }
+        }
+    }
 }

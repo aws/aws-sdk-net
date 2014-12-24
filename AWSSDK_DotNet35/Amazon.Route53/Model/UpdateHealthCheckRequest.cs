@@ -43,7 +43,7 @@ namespace Amazon.Route53.Model
     {
         private string _healthCheckId;
         private long? _healthCheckVersion;
-        private string _iPAddress;
+        private string _ipAddress;
         private int? _port;
         private string _resourcePath;
         private string _fullyQualifiedDomainName;
@@ -101,14 +101,14 @@ namespace Amazon.Route53.Model
         /// </summary>
         public string IPAddress
         {
-            get { return this._iPAddress; }
-            set { this._iPAddress = value; }
+            get { return this._ipAddress; }
+            set { this._ipAddress = value; }
         }
 
         // Check to see if IPAddress property is set
         internal bool IsSetIPAddress()
         {
-            return this._iPAddress != null;
+            return this._ipAddress != null;
         }
 
         /// <summary>

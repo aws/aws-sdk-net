@@ -375,10 +375,6 @@ namespace Amazon.CloudFormation
         
         #region  DescribeStacks
 
-        internal DescribeStacksResponse DescribeStacks()
-        {
-            return DescribeStacks(new DescribeStacksRequest());
-        }
         internal DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
         {
             var marshaller = new DescribeStacksRequestMarshaller();
@@ -559,10 +555,6 @@ namespace Amazon.CloudFormation
         
         #region  ListStacks
 
-        internal ListStacksResponse ListStacks()
-        {
-            return ListStacks(new ListStacksRequest());
-        }
         internal ListStacksResponse ListStacks(ListStacksRequest request)
         {
             var marshaller = new ListStacksRequestMarshaller();
@@ -683,10 +675,6 @@ namespace Amazon.CloudFormation
         
         #region  ValidateTemplate
 
-        internal ValidateTemplateResponse ValidateTemplate()
-        {
-            return ValidateTemplate(new ValidateTemplateRequest());
-        }
         internal ValidateTemplateResponse ValidateTemplate(ValidateTemplateRequest request)
         {
             var marshaller = new ValidateTemplateRequestMarshaller();

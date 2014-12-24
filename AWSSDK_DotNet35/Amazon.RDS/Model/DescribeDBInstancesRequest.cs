@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBInstancesRequest : AmazonRDSRequest
     {
-        private string _dBInstanceIdentifier;
+        private string _dbInstanceIdentifier;
         private List<Filter> _filters = new List<Filter>();
         private string _marker;
         private int? _maxRecords;
@@ -60,14 +60,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceIdentifier
         {
-            get { return this._dBInstanceIdentifier; }
-            set { this._dBInstanceIdentifier = value; }
+            get { return this._dbInstanceIdentifier; }
+            set { this._dbInstanceIdentifier = value; }
         }
 
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this._dBInstanceIdentifier != null;
+            return this._dbInstanceIdentifier != null;
         }
 
         /// <summary>

@@ -113,7 +113,7 @@ namespace Amazon.IdentityManagement.Resources
         }
         /// <summary>
         /// Calls the CreateGroup on the service.
-        /// <summary>
+        /// </summary>
         /// <param name="groupName">The name of the group to create. Do not include the path in this value.</param>
         /// <returns>An IGroup associated with the service.</returns>
         public IGroup CreateGroup(string groupName)
@@ -149,7 +149,7 @@ namespace Amazon.IdentityManagement.Resources
         }
         /// <summary>
         /// Calls the CreateRole on the service.
-        /// <summary>
+        /// </summary>
         /// <param name="roleName">The name of the role to create.</param>
         /// <returns>An IRole associated with the service.</returns>
         public IRole CreateRole(string roleName)
@@ -209,7 +209,7 @@ namespace Amazon.IdentityManagement.Resources
         }
         /// <summary>
         /// Calls the CreateUser on the service.
-        /// <summary>
+        /// </summary>
         /// <param name="userName">The name of the user to create.</param>
         /// <returns>An IUser associated with the service.</returns>
         public IUser CreateUser(string userName)
@@ -256,7 +256,7 @@ namespace Amazon.IdentityManagement.Resources
 
         /// <summary>
         /// Gets the AccountAliases associated with the service.
-        /// <summary>
+        /// </summary>
         /// <returns>An IEnumerable&lt;IAccountAlias&gt; that contains the AccountAliases associated with the service.</returns>
         public IEnumerable<IAccountAlias> GetAccountAliases()
         {
@@ -285,7 +285,7 @@ namespace Amazon.IdentityManagement.Resources
 
         /// <summary>
         /// Gets the Groups associated with the service.
-        /// <summary>
+        /// </summary>
         /// <returns>An IEnumerable&lt;IGroup&gt; that contains the Groups associated with the service.</returns>
         public IEnumerable<IGroup> GetGroups()
         {
@@ -314,7 +314,7 @@ namespace Amazon.IdentityManagement.Resources
 
         /// <summary>
         /// Gets the InstanceProfiles associated with the service.
-        /// <summary>
+        /// </summary>
         /// <returns>An IEnumerable&lt;IInstanceProfile&gt; that contains the InstanceProfiles associated with the service.</returns>
         public IEnumerable<IInstanceProfile> GetInstanceProfiles()
         {
@@ -343,7 +343,7 @@ namespace Amazon.IdentityManagement.Resources
 
         /// <summary>
         /// Gets the Roles associated with the service.
-        /// <summary>
+        /// </summary>
         /// <returns>An IEnumerable&lt;IRole&gt; that contains the Roles associated with the service.</returns>
         public IEnumerable<IRole> GetRoles()
         {
@@ -370,7 +370,7 @@ namespace Amazon.IdentityManagement.Resources
 
         /// <summary>
         /// Gets the SamlProviders associated with the service.
-        /// <summary>
+        /// </summary>
         /// <returns>An IEnumerable&lt;ISamlProvider&gt; that contains the SamlProviders associated with the service.</returns>
         public IEnumerable<ISamlProvider> GetSamlProviders()
         {
@@ -399,7 +399,7 @@ namespace Amazon.IdentityManagement.Resources
 
         /// <summary>
         /// Gets the ServerCertificates associated with the service.
-        /// <summary>
+        /// </summary>
         /// <returns>An IEnumerable&lt;IServerCertificate&gt; that contains the ServerCertificates associated with the service.</returns>
         public IEnumerable<IServerCertificate> GetServerCertificates()
         {
@@ -428,7 +428,7 @@ namespace Amazon.IdentityManagement.Resources
 
         /// <summary>
         /// Gets the SigningCertificates associated with the service.
-        /// <summary>
+        /// </summary>
         /// <returns>An IEnumerable&lt;ISigningCertificate&gt; that contains the SigningCertificates associated with the service.</returns>
         public IEnumerable<ISigningCertificate> GetSigningCertificates()
         {
@@ -457,7 +457,7 @@ namespace Amazon.IdentityManagement.Resources
 
         /// <summary>
         /// Gets the Users associated with the service.
-        /// <summary>
+        /// </summary>
         /// <returns>An IEnumerable&lt;IUser&gt; that contains the Users associated with the service.</returns>
         public IEnumerable<IUser> GetUsers()
         {
@@ -486,7 +486,7 @@ namespace Amazon.IdentityManagement.Resources
 
         /// <summary>
         /// Gets the VirtualMfaDevices associated with the service.
-        /// <summary>
+        /// </summary>
         /// <returns>An IEnumerable&lt;IVirtualMfaDevice&gt; that contains the VirtualMfaDevices associated with the service.</returns>
         public IEnumerable<IVirtualMfaDevice> GetVirtualMfaDevices()
         {

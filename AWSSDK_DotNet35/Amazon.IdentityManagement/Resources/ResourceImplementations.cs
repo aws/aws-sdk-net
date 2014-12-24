@@ -64,7 +64,8 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
-        public AccessKey(Model.AccessKey model, IAmazonIdentityManagementService client)
+        public AccessKey(Model.AccessKey model,
+            IAmazonIdentityManagementService client)
             : base (client)
         {
             this.IsLoaded = true;
@@ -89,7 +90,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         }
 
-        # region Actions
+        #region Actions
 
         public void Activate(UpdateAccessKeyRequest request)
         {
@@ -140,7 +141,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         }
 
-        # region Actions
+        #region Actions
 
         public void Delete(DeleteAccountAliasRequest request)
         {
@@ -264,7 +265,8 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
-        public AccountPasswordPolicy(Model.PasswordPolicy model, IAmazonIdentityManagementService client)
+        public AccountPasswordPolicy(Model.PasswordPolicy model,
+            IAmazonIdentityManagementService client)
             : base (client)
         {
             this.IsLoaded = true;
@@ -301,7 +303,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         }
 
-        # region Actions
+        #region Actions
 
         public void Delete(DeleteAccountPasswordPolicyRequest request)
         {
@@ -339,7 +341,8 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
-        public AccountSummary(Model.GetAccountSummaryResponse model, IAmazonIdentityManagementService client)
+        public AccountSummary(Model.GetAccountSummaryResponse model,
+            IAmazonIdentityManagementService client)
             : base (client)
         {
             this.IsLoaded = true;
@@ -367,7 +370,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         }
 
-        # region Actions
+        #region Actions
 
         #endregion
 
@@ -421,7 +424,8 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
-        public Group(Model.Group model, IAmazonIdentityManagementService client)
+        public Group(Model.Group model,
+            IAmazonIdentityManagementService client)
             : base (client)
         {
             this.IsLoaded = true;
@@ -455,7 +459,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         }
 
-        # region Actions
+        #region Actions
 
         public void AddUser(AddUserToGroupRequest request)
         {
@@ -601,7 +605,8 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
-        public GroupPolicy(Model.GetGroupPolicyResponse model, IAmazonIdentityManagementService client)
+        public GroupPolicy(Model.GetGroupPolicyResponse model,
+            IAmazonIdentityManagementService client)
             : base (client)
         {
             this.IsLoaded = true;
@@ -635,7 +640,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         }
 
-        # region Actions
+        #region Actions
 
         public void Delete(DeleteGroupPolicyRequest request)
         {
@@ -726,7 +731,8 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
-        public InstanceProfile(Model.InstanceProfile model, IAmazonIdentityManagementService client)
+        public InstanceProfile(Model.InstanceProfile model,
+            IAmazonIdentityManagementService client)
             : base (client)
         {
             this.IsLoaded = true;
@@ -764,7 +770,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         }
 
-        # region Actions
+        #region Actions
 
         public void AddRole(AddRoleToInstanceProfileRequest request)
         {
@@ -836,7 +842,8 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
-        public LoginProfile(Model.LoginProfile model, IAmazonIdentityManagementService client)
+        public LoginProfile(Model.LoginProfile model,
+            IAmazonIdentityManagementService client)
             : base (client)
         {
             this.IsLoaded = true;
@@ -868,7 +875,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         }
 
-        # region Actions
+        #region Actions
 
         public void Create(CreateLoginProfileRequest request)
         {
@@ -918,7 +925,8 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
-        public MfaDevice(Model.MFADevice model, IAmazonIdentityManagementService client)
+        public MfaDevice(Model.MFADevice model,
+            IAmazonIdentityManagementService client)
             : base (client)
         {
             this.IsLoaded = true;
@@ -941,7 +949,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         }
 
-        # region Actions
+        #region Actions
 
         public void Deactivate(DeactivateMFADeviceRequest request)
         {
@@ -1032,7 +1040,8 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
-        public Role(Model.Role model, IAmazonIdentityManagementService client)
+        public Role(Model.Role model,
+            IAmazonIdentityManagementService client)
             : base (client)
         {
             this.IsLoaded = true;
@@ -1067,7 +1076,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         }
 
-        # region Actions
+        #region Actions
 
         public void Delete(DeleteRoleRequest request)
         {
@@ -1157,7 +1166,8 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
-        public RolePolicy(Model.GetRolePolicyResponse model, IAmazonIdentityManagementService client)
+        public RolePolicy(Model.GetRolePolicyResponse model,
+            IAmazonIdentityManagementService client)
             : base (client)
         {
             this.IsLoaded = true;
@@ -1191,7 +1201,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         }
 
-        # region Actions
+        #region Actions
 
         public void Delete(DeleteRolePolicyRequest request)
         {
@@ -1242,13 +1252,13 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
-        private string _sAMLMetadataDocument;
+        private string _samlMetadataDocument;
         public string SAMLMetadataDocument
         {
             get
             {
                 this.CheckIfLoaded();
-                return _sAMLMetadataDocument;
+                return _samlMetadataDocument;
             }
         }
 
@@ -1262,10 +1272,20 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
+        public SamlProvider(Model.GetSAMLProviderResponse model,
+            string arn,
+            IAmazonIdentityManagementService client)
+            : base (client)
+        {
+            this.IsLoaded = true;
+            this.Arn = arn;
+            CopyFrom(model);
+        }
+
         private void CopyFrom(Model.GetSAMLProviderResponse model)
         {
             _createDate = model.CreateDate;
-            _sAMLMetadataDocument = model.SAMLMetadataDocument;
+            _samlMetadataDocument = model.SAMLMetadataDocument;
             _validUntil = model.ValidUntil;
         }
 
@@ -1287,7 +1307,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         }
 
-        # region Actions
+        #region Actions
 
         public void Delete(DeleteSAMLProviderRequest request)
         {
@@ -1349,6 +1369,16 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
+        public ServerCertificate(Model.ServerCertificate model,
+            string name,
+            IAmazonIdentityManagementService client)
+            : base (client)
+        {
+            this.IsLoaded = true;
+            this.Name = name;
+            CopyFrom(model);
+        }
+
         private void CopyFrom(Model.ServerCertificate model)
         {
             _certificateBody = model.CertificateBody;
@@ -1374,7 +1404,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         }
 
-        # region Actions
+        #region Actions
 
         public void Delete(DeleteServerCertificateRequest request)
         {
@@ -1448,7 +1478,8 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
-        public SigningCertificate(Model.SigningCertificate model, IAmazonIdentityManagementService client)
+        public SigningCertificate(Model.SigningCertificate model,
+            IAmazonIdentityManagementService client)
             : base (client)
         {
             this.IsLoaded = true;
@@ -1472,7 +1503,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         }
 
-        # region Actions
+        #region Actions
 
         public void Activate(UpdateSigningCertificateRequest request)
         {
@@ -1563,7 +1594,8 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
-        public User(Model.User model, IAmazonIdentityManagementService client)
+        public User(Model.User model,
+            IAmazonIdentityManagementService client)
             : base (client)
         {
             this.IsLoaded = true;
@@ -1598,7 +1630,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         }
 
-        # region Actions
+        #region Actions
 
         public void AddGroup(AddUserToGroupRequest request)
         {
@@ -1800,7 +1832,8 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
-        public UserPolicy(Model.GetUserPolicyResponse model, IAmazonIdentityManagementService client)
+        public UserPolicy(Model.GetUserPolicyResponse model,
+            IAmazonIdentityManagementService client)
             : base (client)
         {
             this.IsLoaded = true;
@@ -1834,7 +1867,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         }
 
-        # region Actions
+        #region Actions
 
         public void Delete(DeleteUserPolicyRequest request)
         {
@@ -1895,13 +1928,13 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
-        private MemoryStream _qRCodePNG;
+        private MemoryStream _qrCodePNG;
         public MemoryStream QRCodePNG
         {
             get
             {
                 this.CheckIfLoaded();
-                return _qRCodePNG;
+                return _qrCodePNG;
             }
         }
 
@@ -1915,7 +1948,8 @@ namespace Amazon.IdentityManagement.Resources.Internal
             }
         }
 
-        public VirtualMfaDevice(Model.VirtualMFADevice model, IAmazonIdentityManagementService client)
+        public VirtualMfaDevice(Model.VirtualMFADevice model,
+            IAmazonIdentityManagementService client)
             : base (client)
         {
             this.IsLoaded = true;
@@ -1927,7 +1961,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             _base32StringSeed = model.Base32StringSeed;
             _enableDate = model.EnableDate;
-            _qRCodePNG = model.QRCodePNG;
+            _qrCodePNG = model.QRCodePNG;
     
             _user = new User(model.User, this.Client);
         }
@@ -1940,7 +1974,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         }
 
-        # region Actions
+        #region Actions
 
         public void Delete(DeleteVirtualMFADeviceRequest request)
         {

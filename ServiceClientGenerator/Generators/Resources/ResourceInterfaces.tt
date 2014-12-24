@@ -35,7 +35,7 @@ namespace <#=this.Config.Namespace#>.Resources
 		}
 #>
 
-		# region Actions
+		#region Actions
 
 <# 
 	
@@ -49,15 +49,15 @@ namespace <#=this.Config.Namespace#>.Resources
 		/// This method internally calls the <#=action.RequestOperationName#> operation on the service.
 		/// </para>
         /// <param name="request">Container for the necessary parameters to execute the <#=action.RequestOperationName#> operation.</param>
-<# 
-	if ( !action.ReturnTypeInterface.Equals("void"))
-	{
-#>
-        /// <returns>An instance of <#=action.ReturnTypeResource#> resource.</returns>
 <#
-	}
+        if (!action.IsVoidReturnType)
+        {
 #>
-		<#=action.ReturnTypeInterface#> <#=action.MethodName#>(<#=action.RequestType#> request);
+        <#=action.ReturnTypeComment#>
+<#
+        }
+#>
+		<#=action.ReturnTypeExpression#> <#=action.MethodName#>(<#=action.RequestType#> request);
 
 <#
 	foreach (var form in action.CustomForms.Select(f => f.WithoutIdentifiers()))
@@ -69,13 +69,13 @@ namespace <#=this.Config.Namespace#>.Resources
 		/// <para>
 		/// This method internally calls the <#=action.RequestOperationName#> operation on the service.
 		/// </para>
-<# 
-	if ( !action.ReturnTypeInterface.Equals("void"))
-	{
-#>
-        /// <returns>An instance of <#=action.ReturnTypeResource#> resource.</returns>
 <#
-	}
+        if (!action.IsVoidReturnType)
+        {
+#>
+        <#=action.ReturnTypeComment#>
+<#
+        }
 
 	foreach(var param in form.ParameterDocs)
 	{
@@ -84,7 +84,7 @@ namespace <#=this.Config.Namespace#>.Resources
 <#
     }
 #>
-        <#=action.ReturnTypeInterface#> <#=action.MethodName#>(<#=form.Parameters#>);
+        <#=action.ReturnTypeExpression#> <#=action.MethodName#>(<#=form.Parameters#>);
 
 <#
 	    }
@@ -140,12 +140,6 @@ namespace <#=this.Config.Namespace#>.Resources
 #>
 		/// </summary>
 <#
-	foreach(var param in form.ParameterDocs)
-	{
-#>
-        <#=param.Value#>
-<#
-    }
 	foreach(var param in form.ParameterDocs)
 	{
 #>

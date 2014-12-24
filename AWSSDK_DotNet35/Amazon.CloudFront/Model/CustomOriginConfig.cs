@@ -32,8 +32,8 @@ namespace Amazon.CloudFront.Model
     /// </summary>
     public partial class CustomOriginConfig
     {
-        private int? _hTTPPort;
-        private int? _hTTPSPort;
+        private int? _httpPort;
+        private int? _httpsPort;
         private OriginProtocolPolicy _originProtocolPolicy;
 
         /// <summary>
@@ -41,14 +41,14 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         public int HTTPPort
         {
-            get { return this._hTTPPort.GetValueOrDefault(); }
-            set { this._hTTPPort = value; }
+            get { return this._httpPort.GetValueOrDefault(); }
+            set { this._httpPort = value; }
         }
 
         // Check to see if HTTPPort property is set
         internal bool IsSetHTTPPort()
         {
-            return this._hTTPPort.HasValue; 
+            return this._httpPort.HasValue; 
         }
 
         /// <summary>
@@ -56,14 +56,14 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         public int HTTPSPort
         {
-            get { return this._hTTPSPort.GetValueOrDefault(); }
-            set { this._hTTPSPort = value; }
+            get { return this._httpsPort.GetValueOrDefault(); }
+            set { this._httpsPort = value; }
         }
 
         // Check to see if HTTPSPort property is set
         internal bool IsSetHTTPSPort()
         {
-            return this._hTTPSPort.HasValue; 
+            return this._httpsPort.HasValue; 
         }
 
         /// <summary>

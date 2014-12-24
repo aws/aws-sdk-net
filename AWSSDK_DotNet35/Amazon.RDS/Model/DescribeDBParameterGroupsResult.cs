@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBParameterGroupsResult : AmazonWebServiceResponse
     {
-        private List<DBParameterGroup> _dBParameterGroups = new List<DBParameterGroup>();
+        private List<DBParameterGroup> _dbParameterGroups = new List<DBParameterGroup>();
         private string _marker;
 
         /// <summary>
@@ -44,14 +44,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public List<DBParameterGroup> DBParameterGroups
         {
-            get { return this._dBParameterGroups; }
-            set { this._dBParameterGroups = value; }
+            get { return this._dbParameterGroups; }
+            set { this._dbParameterGroups = value; }
         }
 
         // Check to see if DBParameterGroups property is set
         internal bool IsSetDBParameterGroups()
         {
-            return this._dBParameterGroups != null && this._dBParameterGroups.Count > 0; 
+            return this._dbParameterGroups != null && this._dbParameterGroups.Count > 0; 
         }
 
         /// <summary>

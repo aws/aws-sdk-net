@@ -32,7 +32,7 @@ namespace Amazon.CloudSearch.Model
     /// </summary>
     public partial class DomainStatus
     {
-        private string _aRN;
+        private string _arn;
         private bool? _created;
         private bool? _deleted;
         private ServiceEndpoint _docService;
@@ -51,14 +51,14 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         public string ARN
         {
-            get { return this._aRN; }
-            set { this._aRN = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
         // Check to see if ARN property is set
         internal bool IsSetARN()
         {
-            return this._aRN != null;
+            return this._arn != null;
         }
 
         /// <summary>

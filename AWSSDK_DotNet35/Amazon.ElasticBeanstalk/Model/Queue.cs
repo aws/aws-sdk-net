@@ -33,7 +33,7 @@ namespace Amazon.ElasticBeanstalk.Model
     public partial class Queue
     {
         private string _name;
-        private string _uRL;
+        private string _url;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -61,14 +61,14 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public string URL
         {
-            get { return this._uRL; }
-            set { this._uRL = value; }
+            get { return this._url; }
+            set { this._url = value; }
         }
 
         // Check to see if URL property is set
         internal bool IsSetURL()
         {
-            return this._uRL != null;
+            return this._url != null;
         }
 
     }

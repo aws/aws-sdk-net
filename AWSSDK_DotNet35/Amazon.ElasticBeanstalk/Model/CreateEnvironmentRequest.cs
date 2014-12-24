@@ -34,7 +34,7 @@ namespace Amazon.ElasticBeanstalk.Model
     public partial class CreateEnvironmentRequest : AmazonElasticBeanstalkRequest
     {
         private string _applicationName;
-        private string _cNAMEPrefix;
+        private string _cnamePrefix;
         private string _description;
         private string _environmentName;
         private List<ConfigurationOptionSetting> _optionSettings = new List<ConfigurationOptionSetting>();
@@ -94,14 +94,14 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public string CNAMEPrefix
         {
-            get { return this._cNAMEPrefix; }
-            set { this._cNAMEPrefix = value; }
+            get { return this._cnamePrefix; }
+            set { this._cnamePrefix = value; }
         }
 
         // Check to see if CNAMEPrefix property is set
         internal bool IsSetCNAMEPrefix()
         {
-            return this._cNAMEPrefix != null;
+            return this._cnamePrefix != null;
         }
 
         /// <summary>

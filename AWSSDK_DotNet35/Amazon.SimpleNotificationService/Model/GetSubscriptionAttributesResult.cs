@@ -39,14 +39,13 @@ namespace Amazon.SimpleNotificationService.Model
         /// <para>
         /// A map of the subscription's attributes. Attributes in this map include the following:
         /// </para>
-        ///     <ul>      <li><code>SubscriptionArn</code> -- the subscription's ARN</li>    
-        ///  <li><code>TopicArn</code> -- the topic ARN that the subscription is associated with</li>
-        ///      <li><code>Owner</code> -- the AWS account ID of the subscription's owner</li>
-        ///      <li><code>ConfirmationWasAuthenticated</code> -- true if the subscription confirmation
-        /// request was authenticated</li>      <li><code>DeliveryPolicy</code> -- the JSON serialization
-        /// of the subscription's delivery policy</li>      <li><code>EffectiveDeliveryPolicy</code>
-        /// -- the JSON serialization of the effective delivery policy that takes     into account
-        /// the topic delivery policy and account system defaults</li>    </ul>
+        ///  <ul> <li> <code>SubscriptionArn</code> -- the subscription's ARN</li> <li> <code>TopicArn</code>
+        /// -- the topic ARN that the subscription is associated with</li> <li> <code>Owner</code>
+        /// -- the AWS account ID of the subscription's owner</li> <li> <code>ConfirmationWasAuthenticated</code>
+        /// -- true if the subscription confirmation request was authenticated</li> <li> <code>DeliveryPolicy</code>
+        /// -- the JSON serialization of the subscription's delivery policy</li> <li> <code>EffectiveDeliveryPolicy</code>
+        /// -- the JSON serialization of the effective delivery policy that takes into account
+        /// the topic delivery policy and account system defaults</li> </ul>
         /// </summary>
         public Dictionary<string, string> Attributes
         {

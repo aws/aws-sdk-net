@@ -253,7 +253,7 @@
 			
 			"model" : "iam",
 			"base-name" : "IdentityManagement",
-			"service-name" "AWS Identity and Access Management"
+			"service-name": "AWS Identity and Access Management",
 			"namespace" : "Amazon.IdentityManagement",
 			"region-lookup-name" : "iam",
 			"service-url":"https://iam.amazonaws.com",
@@ -392,6 +392,7 @@
 			
 			"model" : "sns",
 			"base-name" : "SimpleNotificationService",
+			"service-name" : "Amazon Simple Notification Service",
 			"region-lookup-name" : "sns",
 			"authentication-service-name" : "sns",
             "mobile-platforms" : ["WinRT", "PCL", "WP8"]

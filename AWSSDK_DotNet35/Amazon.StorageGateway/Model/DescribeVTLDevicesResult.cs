@@ -34,7 +34,7 @@ namespace Amazon.StorageGateway.Model
     {
         private string _gatewayARN;
         private string _marker;
-        private List<VTLDevice> _vTLDevices = new List<VTLDevice>();
+        private List<VTLDevice> _vtlDevices = new List<VTLDevice>();
 
         /// <summary>
         /// Gets and sets the property GatewayARN.
@@ -81,14 +81,14 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         public List<VTLDevice> VTLDevices
         {
-            get { return this._vTLDevices; }
-            set { this._vTLDevices = value; }
+            get { return this._vtlDevices; }
+            set { this._vtlDevices = value; }
         }
 
         // Check to see if VTLDevices property is set
         internal bool IsSetVTLDevices()
         {
-            return this._vTLDevices != null && this._vTLDevices.Count > 0; 
+            return this._vtlDevices != null && this._vtlDevices.Count > 0; 
         }
 
     }

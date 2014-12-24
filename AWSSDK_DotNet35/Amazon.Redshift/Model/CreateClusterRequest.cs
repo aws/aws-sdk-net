@@ -47,7 +47,7 @@ namespace Amazon.Redshift.Model
         private string _clusterSubnetGroupName;
         private string _clusterType;
         private string _clusterVersion;
-        private string _dBName;
+        private string _dbName;
         private string _elasticIp;
         private bool? _encrypted;
         private string _hsmClientCertificateIdentifier;
@@ -348,14 +348,14 @@ namespace Amazon.Redshift.Model
         /// </summary>
         public string DBName
         {
-            get { return this._dBName; }
-            set { this._dBName = value; }
+            get { return this._dbName; }
+            set { this._dbName = value; }
         }
 
         // Check to see if DBName property is set
         internal bool IsSetDBName()
         {
-            return this._dBName != null;
+            return this._dbName != null;
         }
 
         /// <summary>

@@ -40,7 +40,7 @@ namespace Amazon.Redshift.Model
         private string _clusterIdentifier;
         private string _clusterVersion;
         private double? _currentBackupRateInMegaBytesPerSecond;
-        private string _dBName;
+        private string _dbName;
         private long? _elapsedTimeInSeconds;
         private bool? _encrypted;
         private bool? _encryptedWithHSM;
@@ -214,14 +214,14 @@ namespace Amazon.Redshift.Model
         /// </summary>
         public string DBName
         {
-            get { return this._dBName; }
-            set { this._dBName = value; }
+            get { return this._dbName; }
+            set { this._dbName = value; }
         }
 
         // Check to see if DBName property is set
         internal bool IsSetDBName()
         {
-            return this._dBName != null;
+            return this._dbName != null;
         }
 
         /// <summary>

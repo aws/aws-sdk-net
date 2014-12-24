@@ -32,7 +32,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </summary>
     public partial class CreateLoadBalancerResult : AmazonWebServiceResponse
     {
-        private string _dNSName;
+        private string _dnsName;
 
         /// <summary>
         /// Gets and sets the property DNSName. 
@@ -42,14 +42,14 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public string DNSName
         {
-            get { return this._dNSName; }
-            set { this._dNSName = value; }
+            get { return this._dnsName; }
+            set { this._dnsName = value; }
         }
 
         // Check to see if DNSName property is set
         internal bool IsSetDNSName()
         {
-            return this._dNSName != null;
+            return this._dnsName != null;
         }
 
     }

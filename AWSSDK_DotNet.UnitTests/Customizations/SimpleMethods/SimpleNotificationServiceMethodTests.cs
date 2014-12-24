@@ -37,19 +37,26 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         public void SimpleNotificationServiceSimpleMethodTests()
         {
             EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "AddPermission", new Type[] { typeof(string), typeof(string), typeof(List<string>), typeof(List<string>), });
-            EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "ConfirmSubscription", new Type[] { typeof(string), typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "ConfirmSubscription", new Type[] { typeof(string), typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "ConfirmSubscription", new Type[] { typeof(string), typeof(string), typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "CreatePlatformApplication", new Type[] { typeof(string), typeof(string), typeof(Dictionary<string, string>), });
+            EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "CreatePlatformEndpoint", new Type[] { typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "CreateTopic", new Type[] { typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "DeleteEndpoint", new Type[] { typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "DeletePlatformApplication", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "DeleteTopic", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "GetSubscriptionAttributes", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "GetTopicAttributes", new Type[] { typeof(string), });
-            EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "ListSubscriptions", new Type[] { typeof(string), });
-            EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "ListSubscriptionsByTopic", new Type[] { typeof(string), typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "ListEndpointsByPlatformApplication", new Type[] { typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "ListPlatformApplications", new Type[] { });
+            EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "ListSubscriptions", new Type[] { });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "ListSubscriptionsByTopic", new Type[] { typeof(string), });
-            EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "ListTopics", new Type[] { typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "ListTopics", new Type[] { });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "Publish", new Type[] { typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "Publish", new Type[] { typeof(string), typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "RemovePermission", new Type[] { typeof(string), typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "SetEndpointAttributes", new Type[] { typeof(Dictionary<string, string>), typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "SetPlatformApplicationAttributes", new Type[] { typeof(Dictionary<string, string>), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "SetSubscriptionAttributes", new Type[] { typeof(string), typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "SetTopicAttributes", new Type[] { typeof(string), typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient), "Subscribe", new Type[] { typeof(string), typeof(string), typeof(string), });

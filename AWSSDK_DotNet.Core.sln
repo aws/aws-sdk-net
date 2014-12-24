@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30324.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK_DotNet35", "AWSSDK_DotNet35\AWSSDK_DotNet35.csproj", "{40E91E2D-70F3-463D-9E3E-408AE2A70BA8}"
 EndProject
@@ -127,6 +127,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceModels", "ServiceMod
 		ServiceModels\sns.customizations.json = ServiceModels\sns.customizations.json
 		ServiceModels\sns.customizations.simpleMethodForms.json = ServiceModels\sns.customizations.simpleMethodForms.json
 		ServiceModels\sqs-2012-11-05.normal.json = ServiceModels\sqs-2012-11-05.normal.json
+		ServiceModels\sqs-2012-11-05.resources.json = ServiceModels\sqs-2012-11-05.resources.json
 		ServiceModels\sqs.customizations.constructors.json = ServiceModels\sqs.customizations.constructors.json
 		ServiceModels\sqs.customizations.json = ServiceModels\sqs.customizations.json
 		ServiceModels\sqs.customizations.simpleMethodForms.json = ServiceModels\sqs.customizations.simpleMethodForms.json

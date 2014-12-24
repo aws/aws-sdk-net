@@ -37,11 +37,11 @@ namespace Amazon.RDS.Model
     {
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
-        private string _dBInstanceClass;
-        private string _dBInstanceIdentifier;
-        private string _dBName;
-        private string _dBSnapshotIdentifier;
-        private string _dBSubnetGroupName;
+        private string _dbInstanceClass;
+        private string _dbInstanceIdentifier;
+        private string _dbName;
+        private string _dbSnapshotIdentifier;
+        private string _dbSubnetGroupName;
         private string _engine;
         private int? _iops;
         private string _licenseModel;
@@ -66,8 +66,8 @@ namespace Amazon.RDS.Model
         /// <param name="dbSnapshotIdentifier"> The identifier for the DB snapshot to restore from.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
         public RestoreDBInstanceFromDBSnapshotRequest(string dbInstanceIdentifier, string dbSnapshotIdentifier)
         {
-            _dBInstanceIdentifier = dbInstanceIdentifier;
-            _dBSnapshotIdentifier = dbSnapshotIdentifier;
+            _dbInstanceIdentifier = dbInstanceIdentifier;
+            _dbSnapshotIdentifier = dbSnapshotIdentifier;
         }
 
         /// <summary>
@@ -135,14 +135,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceClass
         {
-            get { return this._dBInstanceClass; }
-            set { this._dBInstanceClass = value; }
+            get { return this._dbInstanceClass; }
+            set { this._dbInstanceClass = value; }
         }
 
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this._dBInstanceClass != null;
+            return this._dbInstanceClass != null;
         }
 
         /// <summary>
@@ -164,14 +164,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceIdentifier
         {
-            get { return this._dBInstanceIdentifier; }
-            set { this._dBInstanceIdentifier = value; }
+            get { return this._dbInstanceIdentifier; }
+            set { this._dbInstanceIdentifier = value; }
         }
 
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this._dBInstanceIdentifier != null;
+            return this._dbInstanceIdentifier != null;
         }
 
         /// <summary>
@@ -182,14 +182,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBName
         {
-            get { return this._dBName; }
-            set { this._dBName = value; }
+            get { return this._dbName; }
+            set { this._dbName = value; }
         }
 
         // Check to see if DBName property is set
         internal bool IsSetDBName()
         {
-            return this._dBName != null;
+            return this._dbName != null;
         }
 
         /// <summary>
@@ -207,14 +207,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSnapshotIdentifier
         {
-            get { return this._dBSnapshotIdentifier; }
-            set { this._dBSnapshotIdentifier = value; }
+            get { return this._dbSnapshotIdentifier; }
+            set { this._dbSnapshotIdentifier = value; }
         }
 
         // Check to see if DBSnapshotIdentifier property is set
         internal bool IsSetDBSnapshotIdentifier()
         {
-            return this._dBSnapshotIdentifier != null;
+            return this._dbSnapshotIdentifier != null;
         }
 
         /// <summary>
@@ -225,14 +225,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSubnetGroupName
         {
-            get { return this._dBSubnetGroupName; }
-            set { this._dBSubnetGroupName = value; }
+            get { return this._dbSubnetGroupName; }
+            set { this._dbSubnetGroupName = value; }
         }
 
         // Check to see if DBSubnetGroupName property is set
         internal bool IsSetDBSubnetGroupName()
         {
-            return this._dBSubnetGroupName != null;
+            return this._dbSubnetGroupName != null;
         }
 
         /// <summary>

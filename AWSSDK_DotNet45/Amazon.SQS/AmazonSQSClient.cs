@@ -1287,6 +1287,29 @@ namespace Amazon.SQS
         /// Amazon SQS Dead Letter Queues</a>.
         /// </para>
         /// </summary>
+        /// <param name="queueUrl">The queue URL of a dead letter queue.</param>
+        /// 
+        /// <returns>The response from the ListDeadLetterSourceQueues service method, as returned by SQS.</returns>
+        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
+        /// The queue referred to does not exist.
+        /// </exception>
+        public ListDeadLetterSourceQueuesResponse ListDeadLetterSourceQueues(string queueUrl)
+        {
+            var request = new ListDeadLetterSourceQueuesRequest();
+            request.QueueUrl = queueUrl;
+            return ListDeadLetterSourceQueues(request);
+        }
+
+        /// <summary>
+        /// Returns a list of your queues that have the RedrivePolicy queue attribute configured
+        /// with a dead letter queue.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using dead letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+        /// Amazon SQS Dead Letter Queues</a>.
+        /// </para>
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeadLetterSourceQueues service method.</param>
         /// 
         /// <returns>The response from the ListDeadLetterSourceQueues service method, as returned by SQS.</returns>
@@ -1539,6 +1562,91 @@ namespace Amazon.SQS
         {
             var request = new ReceiveMessageRequest();
             request.QueueUrl = queueUrl;
+            return ReceiveMessage(request);
+        }
+
+        /// <summary>
+        /// Retrieves one or more messages, with a maximum limit of 10 messages, from the specified
+        /// queue. Long poll support is enabled by using the <code>WaitTimeSeconds</code> parameter.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon
+        /// SQS Long Poll</a> in the <i>Amazon SQS Developer Guide</i>. 
+        /// 
+        ///  
+        /// <para>
+        ///  Short poll is the default behavior where a weighted random set of machines is sampled
+        /// on a <code>ReceiveMessage</code> call. This means only the messages on the sampled
+        /// machines are returned. If the number of messages in the queue is small (less than
+        /// 1000), it is likely you will get fewer messages than you requested per <code>ReceiveMessage</code>
+        /// call. If the number of messages in the queue is extremely small, you might not receive
+        /// any messages in a particular <code>ReceiveMessage</code> response; in which case you
+        /// should repeat the request. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For each message returned, the response includes the following: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  Message body 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  MD5 digest of the message body. For information about MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Message ID you received when you sent the message to the queue. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Receipt handle. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Message attributes. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  MD5 digest of the message attributes. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  The receipt handle is the identifier you must provide when deleting the message.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+        /// and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can provide the <code>VisibilityTimeout</code> parameter in your request, which
+        /// will be applied to the messages that Amazon SQS returns in the response. If you do
+        /// not include the parameter, the overall visibility timeout for the queue is used for
+        /// the returned messages. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+        /// Timeout</a> in the <i>Amazon SQS Developer Guide</i>. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  Going forward, new attributes might be added. If you are writing code that calls
+        /// this action, we recommend that you structure your code so that it can handle new attributes
+        /// gracefully. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on.</param>
+        /// <param name="maxNumberOfMessages">The maximum number of messages to return. Amazon SQS never returns more messages than this value but may return fewer. Values can be from 1 to 10. Default is 1. All of the messages are not necessarily returned.</param>
+        /// 
+        /// <returns>The response from the ReceiveMessage service method, as returned by SQS.</returns>
+        /// <exception cref="Amazon.SQS.Model.OverLimitException">
+        /// The action that you requested would violate a limit. For example, ReceiveMessage returns
+        /// this error if the maximum number of messages inflight has already been reached. <a>AddPermission</a>
+        /// returns this error if the maximum number of permissions for the queue has already
+        /// been reached.
+        /// </exception>
+        public ReceiveMessageResponse ReceiveMessage(string queueUrl, int maxNumberOfMessages)
+        {
+            var request = new ReceiveMessageRequest();
+            request.QueueUrl = queueUrl;
+            request.MaxNumberOfMessages = maxNumberOfMessages;
             return ReceiveMessage(request);
         }
 

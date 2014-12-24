@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeReservedDBInstancesRequest : AmazonRDSRequest
     {
-        private string _dBInstanceClass;
+        private string _dbInstanceClass;
         private string _duration;
         private List<Filter> _filters = new List<Filter>();
         private string _marker;
@@ -59,14 +59,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceClass
         {
-            get { return this._dBInstanceClass; }
-            set { this._dBInstanceClass = value; }
+            get { return this._dbInstanceClass; }
+            set { this._dbInstanceClass = value; }
         }
 
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this._dBInstanceClass != null;
+            return this._dbInstanceClass != null;
         }
 
         /// <summary>

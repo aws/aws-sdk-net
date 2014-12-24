@@ -33,8 +33,8 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class CreateDBSnapshotRequest : AmazonRDSRequest
     {
-        private string _dBInstanceIdentifier;
-        private string _dBSnapshotIdentifier;
+        private string _dbInstanceIdentifier;
+        private string _dbSnapshotIdentifier;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -49,8 +49,8 @@ namespace Amazon.RDS.Model
         /// <param name="dbInstanceIdentifier"> The DB instance identifier. This is the unique key that identifies a DB instance.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
         public CreateDBSnapshotRequest(string dbSnapshotIdentifier, string dbInstanceIdentifier)
         {
-            _dBSnapshotIdentifier = dbSnapshotIdentifier;
-            _dBInstanceIdentifier = dbInstanceIdentifier;
+            _dbSnapshotIdentifier = dbSnapshotIdentifier;
+            _dbInstanceIdentifier = dbInstanceIdentifier;
         }
 
         /// <summary>
@@ -69,14 +69,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceIdentifier
         {
-            get { return this._dBInstanceIdentifier; }
-            set { this._dBInstanceIdentifier = value; }
+            get { return this._dbInstanceIdentifier; }
+            set { this._dbInstanceIdentifier = value; }
         }
 
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this._dBInstanceIdentifier != null;
+            return this._dbInstanceIdentifier != null;
         }
 
         /// <summary>
@@ -97,14 +97,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSnapshotIdentifier
         {
-            get { return this._dBSnapshotIdentifier; }
-            set { this._dBSnapshotIdentifier = value; }
+            get { return this._dbSnapshotIdentifier; }
+            set { this._dbSnapshotIdentifier = value; }
         }
 
         // Check to see if DBSnapshotIdentifier property is set
         internal bool IsSetDBSnapshotIdentifier()
         {
-            return this._dBSnapshotIdentifier != null;
+            return this._dbSnapshotIdentifier != null;
         }
 
         /// <summary>

@@ -69,7 +69,12 @@
                 "methodForms" : [
                     [
                         "QueueUrl"
+                    ],
+                    [
+                        "QueueUrl", 
+                        "MaxNumberOfMessages"
                     ]
+
                 ]
             },
             "RemovePermission"             : {
@@ -120,7 +125,14 @@
                     ]
                 ]
             },
-            "PurgeQueue"                  : {
+            "PurgeQueue": {
+                "methodForms": [
+                    [
+                        "QueueUrl"
+                    ]
+                ]
+            },
+            "ListDeadLetterSourceQueues"                  : {
                 "methodForms" : [
                     [
                         "QueueUrl"

@@ -37,7 +37,7 @@ namespace Amazon.Glacier.Model
         private string _format;
         private InventoryRetrievalJobInput _inventoryRetrievalParameters;
         private string _retrievalByteRange;
-        private string _sNSTopic;
+        private string _snsTopic;
         private string _type;
 
         /// <summary>
@@ -177,14 +177,14 @@ namespace Amazon.Glacier.Model
         /// </summary>
         public string SNSTopic
         {
-            get { return this._sNSTopic; }
-            set { this._sNSTopic = value; }
+            get { return this._snsTopic; }
+            set { this._snsTopic = value; }
         }
 
         // Check to see if SNSTopic property is set
         internal bool IsSetSNSTopic()
         {
-            return this._sNSTopic != null;
+            return this._snsTopic != null;
         }
 
         /// <summary>

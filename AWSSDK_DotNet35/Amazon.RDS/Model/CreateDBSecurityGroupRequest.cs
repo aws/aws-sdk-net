@@ -33,8 +33,8 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class CreateDBSecurityGroupRequest : AmazonRDSRequest
     {
-        private string _dBSecurityGroupDescription;
-        private string _dBSecurityGroupName;
+        private string _dbSecurityGroupDescription;
+        private string _dbSecurityGroupName;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -49,8 +49,8 @@ namespace Amazon.RDS.Model
         /// <param name="dbSecurityGroupDescription"> The description for the DB security group. </param>
         public CreateDBSecurityGroupRequest(string dbSecurityGroupName, string dbSecurityGroupDescription)
         {
-            _dBSecurityGroupName = dbSecurityGroupName;
-            _dBSecurityGroupDescription = dbSecurityGroupDescription;
+            _dbSecurityGroupName = dbSecurityGroupName;
+            _dbSecurityGroupDescription = dbSecurityGroupDescription;
         }
 
         /// <summary>
@@ -61,14 +61,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSecurityGroupDescription
         {
-            get { return this._dBSecurityGroupDescription; }
-            set { this._dBSecurityGroupDescription = value; }
+            get { return this._dbSecurityGroupDescription; }
+            set { this._dbSecurityGroupDescription = value; }
         }
 
         // Check to see if DBSecurityGroupDescription property is set
         internal bool IsSetDBSecurityGroupDescription()
         {
-            return this._dBSecurityGroupDescription != null;
+            return this._dbSecurityGroupDescription != null;
         }
 
         /// <summary>
@@ -89,14 +89,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSecurityGroupName
         {
-            get { return this._dBSecurityGroupName; }
-            set { this._dBSecurityGroupName = value; }
+            get { return this._dbSecurityGroupName; }
+            set { this._dbSecurityGroupName = value; }
         }
 
         // Check to see if DBSecurityGroupName property is set
         internal bool IsSetDBSecurityGroupName()
         {
-            return this._dBSecurityGroupName != null;
+            return this._dbSecurityGroupName != null;
         }
 
         /// <summary>

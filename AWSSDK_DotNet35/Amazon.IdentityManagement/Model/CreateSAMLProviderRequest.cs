@@ -58,7 +58,7 @@ namespace Amazon.IdentityManagement.Model
     public partial class CreateSAMLProviderRequest : AmazonIdentityManagementServiceRequest
     {
         private string _name;
-        private string _sAMLMetadataDocument;
+        private string _samlMetadataDocument;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -96,14 +96,14 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public string SAMLMetadataDocument
         {
-            get { return this._sAMLMetadataDocument; }
-            set { this._sAMLMetadataDocument = value; }
+            get { return this._samlMetadataDocument; }
+            set { this._samlMetadataDocument = value; }
         }
 
         // Check to see if SAMLMetadataDocument property is set
         internal bool IsSetSAMLMetadataDocument()
         {
-            return this._sAMLMetadataDocument != null;
+            return this._samlMetadataDocument != null;
         }
 
     }

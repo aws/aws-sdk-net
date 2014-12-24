@@ -29,7 +29,7 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEndpoint operation.
-    /// Deletes the endpoint from Amazon SNS. This action is idempotent.       For more information,
+    /// Deletes the endpoint from Amazon SNS. This action is idempotent. For more information,
     /// see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
     /// SNS Mobile Push Notifications</a>.
     /// </summary>

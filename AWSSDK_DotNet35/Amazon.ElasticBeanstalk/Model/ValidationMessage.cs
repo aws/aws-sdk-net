@@ -33,7 +33,7 @@ namespace Amazon.ElasticBeanstalk.Model
     public partial class ValidationMessage
     {
         private string _message;
-        private string _namespace;
+        private string _awsNamespace;
         private string _optionName;
         private ValidationSeverity _severity;
 
@@ -68,14 +68,14 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public string Namespace
         {
-            get { return this._namespace; }
-            set { this._namespace = value; }
+            get { return this._awsNamespace; }
+            set { this._awsNamespace = value; }
         }
 
         // Check to see if Namespace property is set
         internal bool IsSetNamespace()
         {
-            return this._namespace != null;
+            return this._awsNamespace != null;
         }
 
         /// <summary>

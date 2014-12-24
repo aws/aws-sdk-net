@@ -344,62 +344,6 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Sets the first character of the param to lower, if it's an acronym it lowers it all until the next word
-        /// </summary>
-        /// <param name="param">The name of the parameter name for the constructor</param>
-        /// <returns>The parameter as a camel cased name</returns>
-        public string CamelCaseParam(string param)
-        {
-            if (param.Length < 2 || char.IsUpper(param.ToCharArray()[0]) && char.IsLower(param.ToCharArray()[1]))
-            {
-                if ((char.ToLower(param.ToCharArray()[0]) + param.Substring(1)).Equals("namespace"))
-                {
-                    return "awsNamespace";
-                }
-                return param.Length < 2 ? param.ToLower() : char.ToLower(param.ToCharArray()[0]) + param.Substring(1);
-            }
-
-            // If it gets here it's an accronym
-
-            int secondWord = 0;
-            for (int i = 0; i < param.ToCharArray().Length - 1; i++)
-            {
-                if (char.IsUpper(param.ToCharArray()[i]) && char.IsLower(param.ToCharArray()[i + 1]))
-                {
-                    secondWord = i;
-                    break;
-                }
-                else if (char.IsUpper(param.ToCharArray()[i]) && char.IsUpper(param.ToCharArray()[i + 1]))
-                {
-                    continue;
-                }
-            }
-
-            if (secondWord == 0)
-            {
-                if (param.ToLower().Equals("namespace"))
-                {
-                    return "awsNamespace";
-                }
-                return param.ToLower();
-            }
-
-            var camelParam = new StringBuilder();
-            for (int i = 0; i < secondWord; i++)
-            {
-                camelParam.Append(char.ToLower(param.ToCharArray()[i]));
-            }
-            camelParam.Append(param.Substring(secondWord));
-
-            if (camelParam.ToString().Equals("namespace"))
-            {
-                return "awsNamespace";
-            }
-
-            return camelParam.ToString();
-        }
-
-        /// <summary>
         /// Generates the code for parameters of the method
         /// </summary>
         /// <param name="form">The form of the method contains names of all the members used</param>
@@ -426,9 +370,9 @@ namespace ServiceClientGenerator
                     type = "System.IO.Stream";
 
                 if (currentParams == "")
-                    currentParams = type + " " + CamelCaseParam(member.PropertyName);
+                    currentParams = type + " " + GeneratorHelpers.CamelCaseParam(member.PropertyName);
                 else
-                    currentParams = currentParams + ", " + type + " " + CamelCaseParam(member.PropertyName);
+                    currentParams = currentParams + ", " + type + " " + GeneratorHelpers.CamelCaseParam(member.PropertyName);
             }
 
             return currentParams;

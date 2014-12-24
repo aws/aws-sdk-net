@@ -212,5 +212,85 @@ namespace Amazon.SimpleNotificationService
             });
         }
 #endif
+
+        /// <summary>
+        /// Returns a list of the requester's subscriptions. Each call returns a limited list
+        ///      of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
+        /// is also returned. Use the <code>NextToken</code> parameter in a       new <code>ListSubscriptions</code>
+        /// call to get further results.
+        /// </summary>
+        /// <param name="nextToken">Token returned by the previous <code>ListSubscriptions</code> request.</param>
+        /// 
+        /// <returns>The response from the ListSubscriptions service method, as returned by SimpleNotificationService.</returns>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
+        /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
+        /// Indicates that a request parameter does not comply with the associated constraints.
+        /// </exception>
+        public ListSubscriptionsResponse ListSubscriptions(string nextToken)
+        {
+            var request = new ListSubscriptionsRequest();
+            request.NextToken = nextToken;
+            return ListSubscriptions(request);
+        }
+
+        /// <summary>
+        /// Returns a list of the subscriptions to a specific topic. Each call returns       a
+        /// limited list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
+        /// is also returned. Use the <code>NextToken</code>       parameter in a new <code>ListSubscriptionsByTopic</code>
+        /// call to get further results.
+        /// </summary>
+        /// <param name="topicArn">The ARN of the topic for which you wish to find subscriptions.</param>
+        /// <param name="nextToken">Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</param>
+        /// 
+        /// <returns>The response from the ListSubscriptionsByTopic service method, as returned by SimpleNotificationService.</returns>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
+        /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
+        /// Indicates that a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
+        /// Indicates that the requested resource does not exist.
+        /// </exception>
+        public ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(string topicArn, string nextToken)
+        {
+            var request = new ListSubscriptionsByTopicRequest();
+            request.TopicArn = topicArn;
+            request.NextToken = nextToken;
+            return ListSubscriptionsByTopic(request);
+        }
+
+        /// <summary>
+        /// Returns a list of the requester's topics. Each call returns a limited list of topics,
+        /// up to 100. If      there are more topics, a <code>NextToken</code> is also returned.
+        /// Use the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to
+        /// get      further results.
+        /// </summary>
+        /// <param name="nextToken">Token returned by the previous <code>ListTopics</code> request.</param>
+        /// 
+        /// <returns>The response from the ListTopics service method, as returned by SimpleNotificationService.</returns>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
+        /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
+        /// Indicates that a request parameter does not comply with the associated constraints.
+        /// </exception>
+        public ListTopicsResponse ListTopics(string nextToken)
+        {
+            var request = new ListTopicsRequest();
+            request.NextToken = nextToken;
+            return ListTopics(request);
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class ResetDBParameterGroupRequest : AmazonRDSRequest
     {
-        private string _dBParameterGroupName;
+        private string _dbParameterGroupName;
         private List<Parameter> _parameters = new List<Parameter>();
         private bool? _resetAllParameters;
 
@@ -54,7 +54,7 @@ namespace Amazon.RDS.Model
         /// <param name="dbParameterGroupName"> The name of the DB parameter group.  Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
         public ResetDBParameterGroupRequest(string dbParameterGroupName)
         {
-            _dBParameterGroupName = dbParameterGroupName;
+            _dbParameterGroupName = dbParameterGroupName;
         }
 
         /// <summary>
@@ -72,14 +72,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBParameterGroupName
         {
-            get { return this._dBParameterGroupName; }
-            set { this._dBParameterGroupName = value; }
+            get { return this._dbParameterGroupName; }
+            set { this._dbParameterGroupName = value; }
         }
 
         // Check to see if DBParameterGroupName property is set
         internal bool IsSetDBParameterGroupName()
         {
-            return this._dBParameterGroupName != null;
+            return this._dbParameterGroupName != null;
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DeleteDBSubnetGroupRequest : AmazonRDSRequest
     {
-        private string _dBSubnetGroupName;
+        private string _dbSubnetGroupName;
 
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
@@ -50,14 +50,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSubnetGroupName
         {
-            get { return this._dBSubnetGroupName; }
-            set { this._dBSubnetGroupName = value; }
+            get { return this._dbSubnetGroupName; }
+            set { this._dbSubnetGroupName = value; }
         }
 
         // Check to see if DBSubnetGroupName property is set
         internal bool IsSetDBSubnetGroupName()
         {
-            return this._dBSubnetGroupName != null;
+            return this._dbSubnetGroupName != null;
         }
 
     }

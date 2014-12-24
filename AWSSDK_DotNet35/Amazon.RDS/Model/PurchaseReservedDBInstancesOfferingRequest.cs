@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class PurchaseReservedDBInstancesOfferingRequest : AmazonRDSRequest
     {
-        private int? _dBInstanceCount;
+        private int? _dbInstanceCount;
         private string _reservedDBInstanceId;
         private string _reservedDBInstancesOfferingId;
         private List<Tag> _tags = new List<Tag>();
@@ -64,14 +64,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public int DBInstanceCount
         {
-            get { return this._dBInstanceCount.GetValueOrDefault(); }
-            set { this._dBInstanceCount = value; }
+            get { return this._dbInstanceCount.GetValueOrDefault(); }
+            set { this._dbInstanceCount = value; }
         }
 
         // Check to see if DBInstanceCount property is set
         internal bool IsSetDBInstanceCount()
         {
-            return this._dBInstanceCount.HasValue; 
+            return this._dbInstanceCount.HasValue; 
         }
 
         /// <summary>

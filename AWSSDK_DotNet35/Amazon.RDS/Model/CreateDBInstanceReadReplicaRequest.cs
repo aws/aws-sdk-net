@@ -47,9 +47,9 @@ namespace Amazon.RDS.Model
     {
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
-        private string _dBInstanceClass;
-        private string _dBInstanceIdentifier;
-        private string _dBSubnetGroupName;
+        private string _dbInstanceClass;
+        private string _dbInstanceIdentifier;
+        private string _dbSubnetGroupName;
         private int? _iops;
         private string _optionGroupName;
         private int? _port;
@@ -70,7 +70,7 @@ namespace Amazon.RDS.Model
         /// <param name="sourceDBInstanceIdentifier"> The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to five read replicas.  Constraints: <ul> <li>Must be the identifier of an existing DB instance.</li> <li>Can specify a DB instance that is a read replica only if the source is running MySQL 5.6.</li> <li>The specified DB instance must have automatic backups enabled, its backup retention period must be greater than 0.</li> <li>If the source DB instance is in the same region as the read replica, specify a valid DB instance identifier.</li> <li>If the source DB instance is in a different region than the read replica, specify a valid DB instance ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul></param>
         public CreateDBInstanceReadReplicaRequest(string dbInstanceIdentifier, string sourceDBInstanceIdentifier)
         {
-            _dBInstanceIdentifier = dbInstanceIdentifier;
+            _dbInstanceIdentifier = dbInstanceIdentifier;
             _sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
         }
 
@@ -142,14 +142,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceClass
         {
-            get { return this._dBInstanceClass; }
-            set { this._dBInstanceClass = value; }
+            get { return this._dbInstanceClass; }
+            set { this._dbInstanceClass = value; }
         }
 
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this._dBInstanceClass != null;
+            return this._dbInstanceClass != null;
         }
 
         /// <summary>
@@ -161,14 +161,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceIdentifier
         {
-            get { return this._dBInstanceIdentifier; }
-            set { this._dBInstanceIdentifier = value; }
+            get { return this._dbInstanceIdentifier; }
+            set { this._dbInstanceIdentifier = value; }
         }
 
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this._dBInstanceIdentifier != null;
+            return this._dbInstanceIdentifier != null;
         }
 
         /// <summary>
@@ -192,14 +192,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSubnetGroupName
         {
-            get { return this._dBSubnetGroupName; }
-            set { this._dBSubnetGroupName = value; }
+            get { return this._dbSubnetGroupName; }
+            set { this._dbSubnetGroupName = value; }
         }
 
         // Check to see if DBSubnetGroupName property is set
         internal bool IsSetDBSubnetGroupName()
         {
-            return this._dBSubnetGroupName != null;
+            return this._dbSubnetGroupName != null;
         }
 
         /// <summary>

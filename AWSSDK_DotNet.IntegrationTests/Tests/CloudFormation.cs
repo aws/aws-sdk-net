@@ -100,7 +100,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             VerifyTemplateSummary(response);
         }
 
-        private static void VerifyTemplateSummary(GetTemplateSummaryResponse response)
+        internal static void VerifyTemplateSummary(GetTemplateSummaryResponse response)
         {
             Assert.IsNotNull(response.ResponseMetadata.RequestId);
             Assert.IsNotNull(response.Capabilities);
@@ -208,7 +208,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
-        static void WaitTillStackNotInProcess(string stackname)
+        internal static void WaitTillStackNotInProcess(string stackname)
         {
             DescribeStacksResponse response = null;
             do

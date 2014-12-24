@@ -50,7 +50,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class ModifyDBParameterGroupRequest : AmazonRDSRequest
     {
-        private string _dBParameterGroupName;
+        private string _dbParameterGroupName;
         private List<Parameter> _parameters = new List<Parameter>();
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.RDS.Model
         /// <param name="parameters"> An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters may be modified in a single request.  Valid Values (for the application method): <code>immediate | pending-reboot</code></param>
         public ModifyDBParameterGroupRequest(string dbParameterGroupName, List<Parameter> parameters)
         {
-            _dBParameterGroupName = dbParameterGroupName;
+            _dbParameterGroupName = dbParameterGroupName;
             _parameters = parameters;
         }
 
@@ -84,14 +84,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBParameterGroupName
         {
-            get { return this._dBParameterGroupName; }
-            set { this._dBParameterGroupName = value; }
+            get { return this._dbParameterGroupName; }
+            set { this._dbParameterGroupName = value; }
         }
 
         // Check to see if DBParameterGroupName property is set
         internal bool IsSetDBParameterGroupName()
         {
-            return this._dBParameterGroupName != null;
+            return this._dbParameterGroupName != null;
         }
 
         /// <summary>

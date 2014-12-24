@@ -44,8 +44,8 @@ namespace Amazon.CloudWatch.Model
         private int? _evaluationPeriods;
         private List<string> _insufficientDataActions = new List<string>();
         private string _metricName;
-        private string _namespace;
-        private List<string> _oKActions = new List<string>();
+        private string _awsNamespace;
+        private List<string> _okActions = new List<string>();
         private int? _period;
         private string _stateReason;
         private string _stateReasonData;
@@ -274,14 +274,14 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         public string Namespace
         {
-            get { return this._namespace; }
-            set { this._namespace = value; }
+            get { return this._awsNamespace; }
+            set { this._awsNamespace = value; }
         }
 
         // Check to see if Namespace property is set
         internal bool IsSetNamespace()
         {
-            return this._namespace != null;
+            return this._awsNamespace != null;
         }
 
         /// <summary>
@@ -295,14 +295,14 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         public List<string> OKActions
         {
-            get { return this._oKActions; }
-            set { this._oKActions = value; }
+            get { return this._okActions; }
+            set { this._okActions = value; }
         }
 
         // Check to see if OKActions property is set
         internal bool IsSetOKActions()
         {
-            return this._oKActions != null && this._oKActions.Count > 0; 
+            return this._okActions != null && this._okActions.Count > 0; 
         }
 
         /// <summary>

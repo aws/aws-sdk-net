@@ -37,7 +37,7 @@ namespace Amazon.ElastiCache.Model
     {
         private string _cacheSecurityGroupName;
         private string _description;
-        private List<EC2SecurityGroup> _eC2SecurityGroups = new List<EC2SecurityGroup>();
+        private List<EC2SecurityGroup> _ec2SecurityGroups = new List<EC2SecurityGroup>();
         private string _ownerId;
 
         /// <summary>
@@ -85,14 +85,14 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         public List<EC2SecurityGroup> EC2SecurityGroups
         {
-            get { return this._eC2SecurityGroups; }
-            set { this._eC2SecurityGroups = value; }
+            get { return this._ec2SecurityGroups; }
+            set { this._ec2SecurityGroups = value; }
         }
 
         // Check to see if EC2SecurityGroups property is set
         internal bool IsSetEC2SecurityGroups()
         {
-            return this._eC2SecurityGroups != null && this._eC2SecurityGroups.Count > 0; 
+            return this._ec2SecurityGroups != null && this._ec2SecurityGroups.Count > 0; 
         }
 
         /// <summary>

@@ -39,9 +39,9 @@ namespace Amazon.RDS.Model
     {
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
-        private string _dBInstanceClass;
-        private string _dBName;
-        private string _dBSubnetGroupName;
+        private string _dbInstanceClass;
+        private string _dbName;
+        private string _dbSubnetGroupName;
         private string _engine;
         private int? _iops;
         private string _licenseModel;
@@ -143,14 +143,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceClass
         {
-            get { return this._dBInstanceClass; }
-            set { this._dBInstanceClass = value; }
+            get { return this._dbInstanceClass; }
+            set { this._dbInstanceClass = value; }
         }
 
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this._dBInstanceClass != null;
+            return this._dbInstanceClass != null;
         }
 
         /// <summary>
@@ -161,14 +161,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBName
         {
-            get { return this._dBName; }
-            set { this._dBName = value; }
+            get { return this._dbName; }
+            set { this._dbName = value; }
         }
 
         // Check to see if DBName property is set
         internal bool IsSetDBName()
         {
-            return this._dBName != null;
+            return this._dbName != null;
         }
 
         /// <summary>
@@ -179,14 +179,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSubnetGroupName
         {
-            get { return this._dBSubnetGroupName; }
-            set { this._dBSubnetGroupName = value; }
+            get { return this._dbSubnetGroupName; }
+            set { this._dbSubnetGroupName = value; }
         }
 
         // Check to see if DBSubnetGroupName property is set
         internal bool IsSetDBSubnetGroupName()
         {
-            return this._dBSubnetGroupName != null;
+            return this._dbSubnetGroupName != null;
         }
 
         /// <summary>

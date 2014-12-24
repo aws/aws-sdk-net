@@ -45,9 +45,11 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.SQS.AmazonSQSClient), "DeleteQueue", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SQS.AmazonSQSClient), "GetQueueAttributes", new Type[] { typeof(string), typeof(List<string>), });
             EnsureSimpleMethodExists(typeof(Amazon.SQS.AmazonSQSClient), "GetQueueUrl", new Type[] { typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.SQS.AmazonSQSClient), "ListDeadLetterSourceQueues", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SQS.AmazonSQSClient), "ListQueues", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SQS.AmazonSQSClient), "PurgeQueue", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SQS.AmazonSQSClient), "ReceiveMessage", new Type[] { typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.SQS.AmazonSQSClient), "ReceiveMessage", new Type[] { typeof(string), typeof(int), });
             EnsureSimpleMethodExists(typeof(Amazon.SQS.AmazonSQSClient), "RemovePermission", new Type[] { typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SQS.AmazonSQSClient), "SendMessage", new Type[] { typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SQS.AmazonSQSClient), "SendMessageBatch", new Type[] { typeof(string), typeof(List<SendMessageBatchRequestEntry>), });

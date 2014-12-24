@@ -68,7 +68,7 @@ namespace <#=this.Config.Namespace#>.Resources
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the <#=action.RequestOperationName#> operation.</param>
 <# 
-	if ( !action.ReturnTypeInterface.Equals("void"))
+	if ( !action.IsVoidReturnType)
 	{
 #>
         /// <returns>An instance of the <#=action.ReturnTypeResource#> resource.</returns>
@@ -87,7 +87,7 @@ namespace <#=this.Config.Namespace#>.Resources
 #>
         /// <summary>
         /// Calls the <#=action.Name#> on the service.
-		/// <summary>
+		/// </summary>
 <#
 		foreach(var param in form.ParameterDocs)
 		{
@@ -152,7 +152,7 @@ namespace <#=this.Config.Namespace#>.Resources
 #>
         /// <summary>
         /// Gets the <#=action.Name#> associated with the service.
-		/// <summary>
+		/// </summary>
 <#
 		foreach(var param in form.ParameterDocs)
 		{

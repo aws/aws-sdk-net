@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ServiceClientGenerator.ResourcesApi
 {
@@ -132,6 +131,15 @@ namespace ServiceClientGenerator.ResourcesApi
         public List<Attribute> Attributes { get; set; }
 
         public Shape Shape { get; set; }
+
+        /// <summary>
+        /// Identifiers that do not appear in the shape that this 
+        /// resource corresponds to. This information is used to
+        /// generate additional constructors to construct a resource
+        /// a model and additional identifiers.
+        /// E.g. Cloudformation StackResourceSummary.
+        /// </summary>
+        public List<Identifier> UnmappedIdentifiers { get; private set; } 
  
         public bool CanBeConstructedFromModel
         {
@@ -142,7 +150,7 @@ namespace ServiceClientGenerator.ResourcesApi
                     foreach (var identifier in this.Identifiers)
                     {
                         if (this.Shape.Members.SingleOrDefault(
-                            m=>m.PropertyName.Equals(identifier.MemberName)) == null)
+                            m => m.PropertyName.Equals(identifier.MemberName)) == null)
                         {
                             return false;
                         }
@@ -168,10 +176,23 @@ namespace ServiceClientGenerator.ResourcesApi
                 this.Shape = serviceModel.FindShape(resource.Shape);    
             }
 
-            this.Identifiers = new List<Identifier>();
+            this.Identifiers = new List<Identifier>();            
             foreach (var item in resource.Identifiers)
             {
                 this.Identifiers.Add(new Identifier(item));
+            }
+
+            this.UnmappedIdentifiers = new List<Identifier>();
+            if (this.Shape != null)
+            {
+                foreach (var identifier in this.Identifiers)
+                {
+                    if (this.Shape.Members.SingleOrDefault(
+                        m => m.PropertyName.Equals(identifier.MemberName)) == null)
+                    {
+                        this.UnmappedIdentifiers.Add(identifier);
+                    }
+                }
             }
 
             this.Actions = new Dictionary<string, Action>();
@@ -445,6 +466,43 @@ namespace ServiceClientGenerator.ResourcesApi
         public string ReturnTypeResource { get; set; }
 
         /// <summary>
+        /// If the return type is an array, gives the return type
+        /// as an IEnumerable otherwise the plain return type is
+        /// handed back.
+        /// </summary>
+        public string ReturnTypeExpression
+        {
+            get
+            {
+                if (IsCollectionReturnType)
+                    return string.Format("IEnumerable<{0}>", ReturnTypeInterface);
+
+                return ReturnTypeInterface;
+            }
+        }
+
+        public bool IsCollectionReturnType
+        {
+            get { return Resource != null && Resource.Path != null && Resource.Path.IsArrayExpression; }
+        }
+
+        public bool IsVoidReturnType
+        {
+            get { return ReturnTypeInterface.Equals("void"); }    
+        }
+
+        public string ReturnTypeComment
+        {
+            get
+            {
+                if (IsCollectionReturnType)
+                    return string.Format("/// <returns>A collection of {0} resources.</returns>", ReturnTypeResource);
+
+                return string.Format("/// <returns>An instance of {0} resource.</returns>", ReturnTypeResource);
+            }
+        }
+
+        /// <summary>
         /// The resource concrete type returned by the action.
         /// </summary>
         public string ReturnType { get; set; }
@@ -463,6 +521,11 @@ namespace ServiceClientGenerator.ResourcesApi
         /// The request type for the low level API.
         /// </summary>
         public string RequestType { get; set; }
+
+        /// <summary>
+        /// The name of the request (input) shape.
+        /// </summary>
+        public string RequestShape { get; set; }
 
         /// <summary>
         /// Indicates if the low level API for this action returns
@@ -537,11 +600,27 @@ namespace ServiceClientGenerator.ResourcesApi
                     if (this.Cardinality == ResourcesApi.Cardinality.One)
                     {
                         parameters.AppendFormat("model : {0}, ", this.Resource.Path.GetIdentifierExpression());
+
+                        
                     }
                     else if (this.Cardinality == ResourcesApi.Cardinality.Many)
                     {
                         parameters.Append("model : item, ");
-                    }                    
+                    }
+
+                    var resource = _serviceModel.ResourceModel.Resources[this.Resource.Type];
+                    if (resource.UnmappedIdentifiers.Count() > 0)
+                    {
+                        foreach (var item in this.Resource.Identifiers)
+                        {
+                            if (resource.UnmappedIdentifiers.Exists(i => i.Name.Equals(item.Target)))
+                            {
+                                parameters.AppendFormat("{0} : {1}, ",
+                                item.Target.ToCamelCase(),
+                                item.Source.GetIdentifierExpression());
+                            }
+                        }
+                    }
                 }
                 else
                 {
@@ -587,6 +666,7 @@ namespace ServiceClientGenerator.ResourcesApi
             this.RequestOperationName = this.Operation.Name;
             this.BaseOperationName = this.Operation.Name;
             this.RequestType = this.Operation.Name + "Request";
+            this.RequestShape = this.Operation.RequestStructure == null ? string.Empty : this.Operation.RequestStructure.Name;
 
             if (!string.IsNullOrEmpty(_action.Path))
                this.Path = new JmesPath(_action.Path, SourceType.ResponsePath, _serviceModel);
@@ -686,7 +766,10 @@ namespace ServiceClientGenerator.ResourcesApi
         public CustomActionForm(Action action, List<string> form)
         {
             this._action = action;
-            var shape = action.ServiceModel.FindShape(action.RequestType);
+            Shape shape = null;
+            if (!string.IsNullOrEmpty(action.RequestShape))
+                shape = action.ServiceModel.FindShape(action.RequestShape);
+
             if (shape != null)
             {
                 Members = (from m in shape.Members
@@ -773,6 +856,22 @@ namespace ServiceClientGenerator.ResourcesApi
 
         public string Target { get; private set; }
 
+        public bool IsTargetArrayType
+        {
+            get { return Target.EndsWith("[]"); }
+        }
+
+        public string NonArrayedTarget
+        {
+            get
+            {
+                if (IsTargetArrayType)
+                    return Target.TrimEnd('[', ']');
+
+                return Target;
+            }
+        }
+
         public IdentifierMapping(string source, SourceType sourceType, string target,
             ServiceModel serviceModel)
         {
@@ -818,12 +917,15 @@ namespace ServiceClientGenerator.ResourcesApi
         {
             if (this.SourceType == ResourcesApi.SourceType.ResponsePath)
             {
-                if (_path.Equals("$"))
+                if (_path.Equals("$") || _path.Equals("@"))
                 {
                     return "response";
                 }
                 else if (this.IsArrayExpression)
                 {
+                    if (isExpressionForLoop)
+                        return "response." + _path.TrimEnd('[',']');
+                                                       
                     return string.IsNullOrWhiteSpace(_memberExpression) ?
                         "item" : "item." + _memberExpression;
                 }
@@ -931,21 +1033,5 @@ namespace ServiceClientGenerator.ResourcesApi
         }
 
     }    
-
-    public static class StringExtensions
-    {
-        public static string ToCamelCase(this string s)
-        {
-            var txt = s[0].ToString().ToLower();
-            if (s.Length > 1)
-                txt += s.Substring(1);
-            return txt;
-        }
-
-        public static string ToClassMemberCase(this string s)
-        {
-            return "_" + s.ToCamelCase();
-        }
-    }
 }
 

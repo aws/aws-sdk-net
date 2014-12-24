@@ -34,7 +34,7 @@ namespace Amazon.IdentityManagement.Model
     {
         private MemoryStream _base32StringSeed;
         private DateTime? _enableDate;
-        private MemoryStream _qRCodePNG;
+        private MemoryStream _qrCodePNG;
         private string _serialNumber;
         private User _user;
 
@@ -87,14 +87,14 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public MemoryStream QRCodePNG
         {
-            get { return this._qRCodePNG; }
-            set { this._qRCodePNG = value; }
+            get { return this._qrCodePNG; }
+            set { this._qrCodePNG = value; }
         }
 
         // Check to see if QRCodePNG property is set
         internal bool IsSetQRCodePNG()
         {
-            return this._qRCodePNG != null;
+            return this._qrCodePNG != null;
         }
 
         /// <summary>

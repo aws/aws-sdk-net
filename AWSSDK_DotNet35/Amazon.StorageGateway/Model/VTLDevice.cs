@@ -33,10 +33,10 @@ namespace Amazon.StorageGateway.Model
     public partial class VTLDevice
     {
         private DeviceiSCSIAttributes _deviceiSCSIAttributes;
-        private string _vTLDeviceARN;
-        private string _vTLDeviceProductIdentifier;
-        private string _vTLDeviceType;
-        private string _vTLDeviceVendor;
+        private string _vtlDeviceARN;
+        private string _vtlDeviceProductIdentifier;
+        private string _vtlDeviceType;
+        private string _vtlDeviceVendor;
 
         /// <summary>
         /// Gets and sets the property DeviceiSCSIAttributes. 
@@ -65,14 +65,14 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         public string VTLDeviceARN
         {
-            get { return this._vTLDeviceARN; }
-            set { this._vTLDeviceARN = value; }
+            get { return this._vtlDeviceARN; }
+            set { this._vtlDeviceARN = value; }
         }
 
         // Check to see if VTLDeviceARN property is set
         internal bool IsSetVTLDeviceARN()
         {
-            return this._vTLDeviceARN != null;
+            return this._vtlDeviceARN != null;
         }
 
         /// <summary>
@@ -80,14 +80,14 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         public string VTLDeviceProductIdentifier
         {
-            get { return this._vTLDeviceProductIdentifier; }
-            set { this._vTLDeviceProductIdentifier = value; }
+            get { return this._vtlDeviceProductIdentifier; }
+            set { this._vtlDeviceProductIdentifier = value; }
         }
 
         // Check to see if VTLDeviceProductIdentifier property is set
         internal bool IsSetVTLDeviceProductIdentifier()
         {
-            return this._vTLDeviceProductIdentifier != null;
+            return this._vtlDeviceProductIdentifier != null;
         }
 
         /// <summary>
@@ -95,14 +95,14 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         public string VTLDeviceType
         {
-            get { return this._vTLDeviceType; }
-            set { this._vTLDeviceType = value; }
+            get { return this._vtlDeviceType; }
+            set { this._vtlDeviceType = value; }
         }
 
         // Check to see if VTLDeviceType property is set
         internal bool IsSetVTLDeviceType()
         {
-            return this._vTLDeviceType != null;
+            return this._vtlDeviceType != null;
         }
 
         /// <summary>
@@ -110,14 +110,14 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         public string VTLDeviceVendor
         {
-            get { return this._vTLDeviceVendor; }
-            set { this._vTLDeviceVendor = value; }
+            get { return this._vtlDeviceVendor; }
+            set { this._vtlDeviceVendor = value; }
         }
 
         // Check to see if VTLDeviceVendor property is set
         internal bool IsSetVTLDeviceVendor()
         {
-            return this._vTLDeviceVendor != null;
+            return this._vtlDeviceVendor != null;
         }
 
     }

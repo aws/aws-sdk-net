@@ -39,8 +39,8 @@ namespace Amazon.RDS.Model
     {
         private int? _allocatedStorage;
         private string _availabilityZone;
-        private string _dBInstanceIdentifier;
-        private string _dBSnapshotIdentifier;
+        private string _dbInstanceIdentifier;
+        private string _dbSnapshotIdentifier;
         private string _engine;
         private string _engineVersion;
         private DateTime? _instanceCreateTime;
@@ -104,14 +104,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceIdentifier
         {
-            get { return this._dBInstanceIdentifier; }
-            set { this._dBInstanceIdentifier = value; }
+            get { return this._dbInstanceIdentifier; }
+            set { this._dbInstanceIdentifier = value; }
         }
 
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this._dBInstanceIdentifier != null;
+            return this._dbInstanceIdentifier != null;
         }
 
         /// <summary>
@@ -122,14 +122,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSnapshotIdentifier
         {
-            get { return this._dBSnapshotIdentifier; }
-            set { this._dBSnapshotIdentifier = value; }
+            get { return this._dbSnapshotIdentifier; }
+            set { this._dbSnapshotIdentifier = value; }
         }
 
         // Check to see if DBSnapshotIdentifier property is set
         internal bool IsSetDBSnapshotIdentifier()
         {
-            return this._dBSnapshotIdentifier != null;
+            return this._dbSnapshotIdentifier != null;
         }
 
         /// <summary>

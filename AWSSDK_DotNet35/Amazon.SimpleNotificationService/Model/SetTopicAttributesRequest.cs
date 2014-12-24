@@ -61,7 +61,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The name of the attribute you want to set. Only a subset of the topic's attributes
         /// are mutable.
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code>
         /// </para>

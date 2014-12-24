@@ -54,6 +54,7 @@ namespace ServiceClientGenerator.ModelReader
         public Dictionary<string, Action> HasMany { get; set; }
         public Dictionary<string, Action> BelongsTo { get; set; }
         public SubResources SubResources { get; set; }
+        public Dictionary<string, Action> BatchActions { get; set; }
     }
 
     public class Identifier

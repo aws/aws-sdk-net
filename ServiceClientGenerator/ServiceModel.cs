@@ -19,6 +19,7 @@ namespace ServiceClientGenerator
     {
         public const string TargetPrefixKey = "targetPrefix";
         public const string JsonVersionKey = "jsonVersion";
+        public const string ServiceFullNameKey = "serviceFullName";
         public const string ApiVersionKey = "apiVersion";
         public const string MetadataKey = "metadata";
         public const string SignatureVersionKey = "signatureVersion";
@@ -157,6 +158,20 @@ namespace ServiceClientGenerator
                 if (version == "1")
                     version = "1.0";
                 return version;
+            }
+        }
+
+        /// <summary>
+        /// Return the service full name in the metadata
+        /// </summary>
+        public string ServiceFullName
+        {
+            get
+            {
+                var name = this._metadata[ServiceFullNameKey];
+                if (name != null)
+                    return name.ToString();
+                return null;
             }
         }
 

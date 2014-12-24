@@ -33,9 +33,9 @@ namespace Amazon.CloudFront.Model
     public partial class ViewerCertificate
     {
         private bool? _cloudFrontDefaultCertificate;
-        private string _iAMCertificateId;
+        private string _iamCertificateId;
         private MinimumProtocolVersion _minimumProtocolVersion;
-        private SSLSupportMethod _sSLSupportMethod;
+        private SSLSupportMethod _sslSupportMethod;
 
         /// <summary>
         /// Gets and sets the property CloudFrontDefaultCertificate. If you want viewers to use
@@ -63,14 +63,14 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         public string IAMCertificateId
         {
-            get { return this._iAMCertificateId; }
-            set { this._iAMCertificateId = value; }
+            get { return this._iamCertificateId; }
+            set { this._iamCertificateId = value; }
         }
 
         // Check to see if IAMCertificateId property is set
         internal bool IsSetIAMCertificateId()
         {
-            return this._iAMCertificateId != null;
+            return this._iamCertificateId != null;
         }
 
         /// <summary>
@@ -110,14 +110,14 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         public SSLSupportMethod SSLSupportMethod
         {
-            get { return this._sSLSupportMethod; }
-            set { this._sSLSupportMethod = value; }
+            get { return this._sslSupportMethod; }
+            set { this._sslSupportMethod = value; }
         }
 
         // Check to see if SSLSupportMethod property is set
         internal bool IsSetSSLSupportMethod()
         {
-            return this._sSLSupportMethod != null;
+            return this._sslSupportMethod != null;
         }
 
     }

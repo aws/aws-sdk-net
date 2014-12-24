@@ -68,7 +68,7 @@ namespace Amazon.IdentityManagement.Resources
         StatusType Status { get; }
 
 
-        # region Actions
+        #region Actions
 
         /// <summary>
         /// Calls the Activate operation on the AccessKey resource.
@@ -124,7 +124,7 @@ namespace Amazon.IdentityManagement.Resources
         string Name { get; }
 
 
-        # region Actions
+        #region Actions
 
         /// <summary>
         /// Calls the Delete operation on the AccountAlias resource.
@@ -239,7 +239,7 @@ namespace Amazon.IdentityManagement.Resources
         bool RequireUppercaseCharacters { get; }
 
 
-        # region Actions
+        #region Actions
 
         /// <summary>
         /// Calls the Delete operation on the AccountPasswordPolicy resource.
@@ -384,7 +384,7 @@ namespace Amazon.IdentityManagement.Resources
         Dictionary<string, int> SummaryMap { get; }
 
 
-        # region Actions
+        #region Actions
 
 
         #endregion
@@ -442,7 +442,7 @@ namespace Amazon.IdentityManagement.Resources
         string Path { get; }
 
 
-        # region Actions
+        #region Actions
 
         /// <summary>
         /// Calls the AddUser operation on the Group resource.
@@ -647,7 +647,7 @@ namespace Amazon.IdentityManagement.Resources
         string PolicyDocument { get; }
 
 
-        # region Actions
+        #region Actions
 
         /// <summary>
         /// Calls the Delete operation on the GroupPolicy resource.
@@ -748,7 +748,7 @@ namespace Amazon.IdentityManagement.Resources
         List<IRole> Roles { get; }
 
 
-        # region Actions
+        #region Actions
 
         /// <summary>
         /// Calls the AddRole operation on the InstanceProfile resource.
@@ -838,7 +838,7 @@ namespace Amazon.IdentityManagement.Resources
         bool PasswordResetRequired { get; }
 
 
-        # region Actions
+        #region Actions
 
         /// <summary>
         /// Calls the Create operation on the LoginProfile resource.
@@ -907,7 +907,7 @@ namespace Amazon.IdentityManagement.Resources
         DateTime EnableDate { get; }
 
 
-        # region Actions
+        #region Actions
 
         /// <summary>
         /// Calls the Deactivate operation on the MfaDevice resource.
@@ -1014,7 +1014,7 @@ namespace Amazon.IdentityManagement.Resources
         string RoleId { get; }
 
 
-        # region Actions
+        #region Actions
 
         /// <summary>
         /// Calls the Delete operation on the Role resource.
@@ -1144,7 +1144,7 @@ namespace Amazon.IdentityManagement.Resources
         string PolicyDocument { get; }
 
 
-        # region Actions
+        #region Actions
 
         /// <summary>
         /// Calls the Delete operation on the RolePolicy resource.
@@ -1224,7 +1224,7 @@ namespace Amazon.IdentityManagement.Resources
         DateTime ValidUntil { get; }
 
 
-        # region Actions
+        #region Actions
 
         /// <summary>
         /// Calls the Delete operation on the SamlProvider resource.
@@ -1295,7 +1295,7 @@ namespace Amazon.IdentityManagement.Resources
         ServerCertificateMetadata ServerCertificateMetadata { get; }
 
 
-        # region Actions
+        #region Actions
 
         /// <summary>
         /// Calls the Delete operation on the ServerCertificate resource.
@@ -1376,7 +1376,7 @@ namespace Amazon.IdentityManagement.Resources
         string UserName { get; }
 
 
-        # region Actions
+        #region Actions
 
         /// <summary>
         /// Calls the Activate operation on the SigningCertificate resource.
@@ -1490,7 +1490,7 @@ namespace Amazon.IdentityManagement.Resources
         string UserId { get; }
 
 
-        # region Actions
+        #region Actions
 
         /// <summary>
         /// Calls the AddGroup operation on the User resource.
@@ -1805,7 +1805,7 @@ namespace Amazon.IdentityManagement.Resources
         string PolicyDocument { get; }
 
 
-        # region Actions
+        #region Actions
 
         /// <summary>
         /// Calls the Delete operation on the UserPolicy resource.
@@ -1895,7 +1895,7 @@ namespace Amazon.IdentityManagement.Resources
         IUser User { get; }
 
 
-        # region Actions
+        #region Actions
 
         /// <summary>
         /// Calls the Delete operation on the VirtualMfaDevice resource.

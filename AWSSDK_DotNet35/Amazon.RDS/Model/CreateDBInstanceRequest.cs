@@ -38,12 +38,12 @@ namespace Amazon.RDS.Model
         private string _availabilityZone;
         private int? _backupRetentionPeriod;
         private string _characterSetName;
-        private string _dBInstanceClass;
-        private string _dBInstanceIdentifier;
-        private string _dBName;
-        private string _dBParameterGroupName;
-        private List<string> _dBSecurityGroups = new List<string>();
-        private string _dBSubnetGroupName;
+        private string _dbInstanceClass;
+        private string _dbInstanceIdentifier;
+        private string _dbName;
+        private string _dbParameterGroupName;
+        private List<string> _dbSecurityGroups = new List<string>();
+        private string _dbSubnetGroupName;
         private string _engine;
         private string _engineVersion;
         private int? _iops;
@@ -78,9 +78,9 @@ namespace Amazon.RDS.Model
         /// <param name="masterUserPassword"> The password for the master database user. Can be any printable ASCII character except "/", """, or "@".  Type: String <b>MySQL</b>  Constraints: Must contain from 8 to 41 characters.  <b>Oracle</b>  Constraints: Must contain from 8 to 30 characters.  <b>SQL Server</b>  Constraints: Must contain from 8 to 128 characters. </param>
         public CreateDBInstanceRequest(string dbInstanceIdentifier, int allocatedStorage, string dbInstanceClass, string engine, string masterUsername, string masterUserPassword)
         {
-            _dBInstanceIdentifier = dbInstanceIdentifier;
+            _dbInstanceIdentifier = dbInstanceIdentifier;
             _allocatedStorage = allocatedStorage;
-            _dBInstanceClass = dbInstanceClass;
+            _dbInstanceClass = dbInstanceClass;
             _engine = engine;
             _masterUsername = masterUsername;
             _masterUserPassword = masterUserPassword;
@@ -261,14 +261,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceClass
         {
-            get { return this._dBInstanceClass; }
-            set { this._dBInstanceClass = value; }
+            get { return this._dbInstanceClass; }
+            set { this._dbInstanceClass = value; }
         }
 
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this._dBInstanceClass != null;
+            return this._dbInstanceClass != null;
         }
 
         /// <summary>
@@ -289,14 +289,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceIdentifier
         {
-            get { return this._dBInstanceIdentifier; }
-            set { this._dBInstanceIdentifier = value; }
+            get { return this._dbInstanceIdentifier; }
+            set { this._dbInstanceIdentifier = value; }
         }
 
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this._dBInstanceIdentifier != null;
+            return this._dbInstanceIdentifier != null;
         }
 
         /// <summary>
@@ -365,14 +365,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBName
         {
-            get { return this._dBName; }
-            set { this._dBName = value; }
+            get { return this._dbName; }
+            set { this._dbName = value; }
         }
 
         // Check to see if DBName property is set
         internal bool IsSetDBName()
         {
-            return this._dBName != null;
+            return this._dbName != null;
         }
 
         /// <summary>
@@ -391,14 +391,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBParameterGroupName
         {
-            get { return this._dBParameterGroupName; }
-            set { this._dBParameterGroupName = value; }
+            get { return this._dbParameterGroupName; }
+            set { this._dbParameterGroupName = value; }
         }
 
         // Check to see if DBParameterGroupName property is set
         internal bool IsSetDBParameterGroupName()
         {
-            return this._dBParameterGroupName != null;
+            return this._dbParameterGroupName != null;
         }
 
         /// <summary>
@@ -413,14 +413,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public List<string> DBSecurityGroups
         {
-            get { return this._dBSecurityGroups; }
-            set { this._dBSecurityGroups = value; }
+            get { return this._dbSecurityGroups; }
+            set { this._dbSecurityGroups = value; }
         }
 
         // Check to see if DBSecurityGroups property is set
         internal bool IsSetDBSecurityGroups()
         {
-            return this._dBSecurityGroups != null && this._dBSecurityGroups.Count > 0; 
+            return this._dbSecurityGroups != null && this._dbSecurityGroups.Count > 0; 
         }
 
         /// <summary>
@@ -435,14 +435,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSubnetGroupName
         {
-            get { return this._dBSubnetGroupName; }
-            set { this._dBSubnetGroupName = value; }
+            get { return this._dbSubnetGroupName; }
+            set { this._dbSubnetGroupName = value; }
         }
 
         // Check to see if DBSubnetGroupName property is set
         internal bool IsSetDBSubnetGroupName()
         {
-            return this._dBSubnetGroupName != null;
+            return this._dbSubnetGroupName != null;
         }
 
         /// <summary>

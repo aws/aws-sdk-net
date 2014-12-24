@@ -57,8 +57,8 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class CreateDBParameterGroupRequest : AmazonRDSRequest
     {
-        private string _dBParameterGroupFamily;
-        private string _dBParameterGroupName;
+        private string _dbParameterGroupFamily;
+        private string _dbParameterGroupName;
         private string _description;
         private List<Tag> _tags = new List<Tag>();
 
@@ -75,8 +75,8 @@ namespace Amazon.RDS.Model
         /// <param name="description"> The description for the DB parameter group. </param>
         public CreateDBParameterGroupRequest(string dbParameterGroupName, string dbParameterGroupFamily, string description)
         {
-            _dBParameterGroupName = dbParameterGroupName;
-            _dBParameterGroupFamily = dbParameterGroupFamily;
+            _dbParameterGroupName = dbParameterGroupName;
+            _dbParameterGroupFamily = dbParameterGroupFamily;
             _description = description;
         }
 
@@ -91,14 +91,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBParameterGroupFamily
         {
-            get { return this._dBParameterGroupFamily; }
-            set { this._dBParameterGroupFamily = value; }
+            get { return this._dbParameterGroupFamily; }
+            set { this._dbParameterGroupFamily = value; }
         }
 
         // Check to see if DBParameterGroupFamily property is set
         internal bool IsSetDBParameterGroupFamily()
         {
-            return this._dBParameterGroupFamily != null;
+            return this._dbParameterGroupFamily != null;
         }
 
         /// <summary>
@@ -116,14 +116,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBParameterGroupName
         {
-            get { return this._dBParameterGroupName; }
-            set { this._dBParameterGroupName = value; }
+            get { return this._dbParameterGroupName; }
+            set { this._dbParameterGroupName = value; }
         }
 
         // Check to see if DBParameterGroupName property is set
         internal bool IsSetDBParameterGroupName()
         {
-            return this._dBParameterGroupName != null;
+            return this._dbParameterGroupName != null;
         }
 
         /// <summary>

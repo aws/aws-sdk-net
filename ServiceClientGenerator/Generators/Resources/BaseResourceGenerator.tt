@@ -11,14 +11,19 @@ public void GenerateAction(ServiceClientGenerator.ResourcesApi.Action action)
 {
 	GenerateRequestMappings(action);
 #>
-			<#=action.ReturnTypeInterface.Equals("void") ? "" : "var response = "#>ResourcesUtilities.Invoke(request, this.Client.<#=action.RequestOperationName#>, "<#=action.Name#>");
+			<#=action.IsVoidReturnType ? "" : "var response = "#>ResourcesUtilities.Invoke(request, this.Client.<#=action.RequestOperationName#>, "<#=action.Name#>");
 <#+
 	if(action.Resource!=null)	
 	{
+            if (action.IsCollectionReturnType)
+                GenerateReturnCollection(action);
+            else
+            {
 #>
 			return <#=action.ResourceConstructionExpression#>;
 			
 <#+
+            }
 	}
 }
 #>
@@ -60,12 +65,33 @@ public void GenerateAction(ServiceClientGenerator.ResourcesApi.Action action)
 	{
 		foreach(var parameter in action.RequestParameterMappings)
 		{
+            if (parameter.IsTargetArrayType)
+            {
 #>
-			request.<#=parameter.Target#> = <#=parameter.Source.GetIdentifierExpression()#>;
+            request.<#=parameter.NonArrayedTarget#>.Add(<#=parameter.Source.GetIdentifierExpression()#>);
 <#+
+            }
+            else
+            {
+#>
+            request.<#=parameter.Target#> = <#=parameter.Source.GetIdentifierExpression()#>;
+<#+
+            }
 		}
 	}
 }
+
+public void GenerateReturnCollection(ServiceClientGenerator.ResourcesApi.Action action)
+{
+#>
+            var items = new List<<#=action.ReturnTypeInterface#>>();
+            foreach (var item in <#=action.Resource.Path.GetIdentifierExpression(true)#>)
+            {
+			    items.Add(<#=action.ResourceConstructionExpression#>);
+            }
+            return items;
+<#+    
+} 
 
 public void GenerateHasMany(EnumerableAction action)
 {

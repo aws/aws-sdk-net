@@ -41,7 +41,7 @@ namespace Amazon.Route53.Model
     public partial class AliasTarget
     {
         private string _hostedZoneId;
-        private string _dNSName;
+        private string _dnsName;
         private bool? _evaluateTargetHealth;
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Amazon.Route53.Model
         public AliasTarget(string hostedZoneId, string dnsName)
         {
             _hostedZoneId = hostedZoneId;
-            _dNSName = dnsName;
+            _dnsName = dnsName;
         }
 
         /// <summary>
@@ -100,14 +100,14 @@ namespace Amazon.Route53.Model
         /// </summary>
         public string DNSName
         {
-            get { return this._dNSName; }
-            set { this._dNSName = value; }
+            get { return this._dnsName; }
+            set { this._dnsName = value; }
         }
 
         // Check to see if DNSName property is set
         internal bool IsSetDNSName()
         {
-            return this._dNSName != null;
+            return this._dnsName != null;
         }
 
         /// <summary>

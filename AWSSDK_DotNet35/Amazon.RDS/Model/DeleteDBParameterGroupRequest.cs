@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DeleteDBParameterGroupRequest : AmazonRDSRequest
     {
-        private string _dBParameterGroupName;
+        private string _dbParameterGroupName;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -47,7 +47,7 @@ namespace Amazon.RDS.Model
         /// <param name="dbParameterGroupName"> The name of the DB parameter group.  Constraints: <ul> <li>Must be the name of an existing DB parameter group</li> <li>You cannot delete a default DB parameter group</li> <li>Cannot be associated with any DB instances</li> </ul></param>
         public DeleteDBParameterGroupRequest(string dbParameterGroupName)
         {
-            _dBParameterGroupName = dbParameterGroupName;
+            _dbParameterGroupName = dbParameterGroupName;
         }
 
         /// <summary>
@@ -65,14 +65,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBParameterGroupName
         {
-            get { return this._dBParameterGroupName; }
-            set { this._dBParameterGroupName = value; }
+            get { return this._dbParameterGroupName; }
+            set { this._dbParameterGroupName = value; }
         }
 
         // Check to see if DBParameterGroupName property is set
         internal bool IsSetDBParameterGroupName()
         {
-            return this._dBParameterGroupName != null;
+            return this._dbParameterGroupName != null;
         }
 
     }
