@@ -192,7 +192,8 @@ namespace Amazon.SQS.Resources
         /// This method internally calls the ChangeMessageVisibilityBatch operation on the service.
         /// </para>
         /// <param name="request">Container for the necessary parameters to execute the ChangeMessageVisibilityBatch operation.</param>
-        void ChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request);
+        /// <returns>An instance of  resource.</returns>
+        ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request);
 
         /// <summary>
         /// Calls the ChangeMessageVisibilityBatch operation on the Queue resource.
@@ -200,8 +201,9 @@ namespace Amazon.SQS.Resources
         /// <para>
         /// This method internally calls the ChangeMessageVisibilityBatch operation on the service.
         /// </para>
+        /// <returns>An instance of  resource.</returns>
         /// <param name="entries">A list of receipt handles of the messages for which the visibility timeout must be changed.</param>
-        void ChangeMessageVisibilityBatch(List<ChangeMessageVisibilityBatchRequestEntry> entries);
+        ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(List<ChangeMessageVisibilityBatchRequestEntry> entries);
 
         /// <summary>
         /// Calls the Delete operation on the Queue resource.
@@ -227,7 +229,8 @@ namespace Amazon.SQS.Resources
         /// This method internally calls the DeleteMessageBatch operation on the service.
         /// </para>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMessageBatch operation.</param>
-        void DeleteMessages(DeleteMessageBatchRequest request);
+        /// <returns>An instance of  resource.</returns>
+        DeleteMessageBatchResponse DeleteMessages(DeleteMessageBatchRequest request);
 
         /// <summary>
         /// Calls the DeleteMessages operation on the Queue resource.
@@ -235,8 +238,9 @@ namespace Amazon.SQS.Resources
         /// <para>
         /// This method internally calls the DeleteMessageBatch operation on the service.
         /// </para>
+        /// <returns>An instance of  resource.</returns>
         /// <param name="entries">A list of receipt handles for the messages to be deleted.</param>
-        void DeleteMessages(List<DeleteMessageBatchRequestEntry> entries);
+        DeleteMessageBatchResponse DeleteMessages(List<DeleteMessageBatchRequestEntry> entries);
 
         /// <summary>
         /// Calls the Purge operation on the Queue resource.
@@ -309,7 +313,8 @@ namespace Amazon.SQS.Resources
         /// This method internally calls the SendMessage operation on the service.
         /// </para>
         /// <param name="request">Container for the necessary parameters to execute the SendMessage operation.</param>
-        void SendMessage(SendMessageRequest request);
+        /// <returns>An instance of  resource.</returns>
+        SendMessageResponse SendMessage(SendMessageRequest request);
 
         /// <summary>
         /// Calls the SendMessage operation on the Queue resource.
@@ -317,8 +322,9 @@ namespace Amazon.SQS.Resources
         /// <para>
         /// This method internally calls the SendMessage operation on the service.
         /// </para>
+        /// <returns>An instance of  resource.</returns>
         /// <param name="messageBody">The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding important note.</param>
-        void SendMessage(string messageBody);
+        SendMessageResponse SendMessage(string messageBody);
 
         /// <summary>
         /// Calls the SendMessages operation on the Queue resource.
@@ -327,7 +333,8 @@ namespace Amazon.SQS.Resources
         /// This method internally calls the SendMessageBatch operation on the service.
         /// </para>
         /// <param name="request">Container for the necessary parameters to execute the SendMessageBatch operation.</param>
-        void SendMessages(SendMessageBatchRequest request);
+        /// <returns>An instance of  resource.</returns>
+        SendMessageBatchResponse SendMessages(SendMessageBatchRequest request);
 
         /// <summary>
         /// Calls the SendMessages operation on the Queue resource.
@@ -335,8 +342,9 @@ namespace Amazon.SQS.Resources
         /// <para>
         /// This method internally calls the SendMessageBatch operation on the service.
         /// </para>
+        /// <returns>An instance of  resource.</returns>
         /// <param name="entries">A list of <a>SendMessageBatchRequestEntry</a> items.</param>
-        void SendMessages(List<SendMessageBatchRequestEntry> entries);
+        SendMessageBatchResponse SendMessages(List<SendMessageBatchRequestEntry> entries);
 
         /// <summary>
         /// Calls the SetAttributes operation on the Queue resource.

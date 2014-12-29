@@ -397,6 +397,9 @@
     <Compile Include="Amazon.Glacier\Transfer\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Glacier\Resources\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\*.cs">
       <SubType>Code</SubType>
     </Compile>

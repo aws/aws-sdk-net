@@ -138,7 +138,7 @@ namespace Amazon.SQS.Resources.Internal
             var request = new ChangeMessageVisibilityRequest();
             request.VisibilityTimeout = visibilityTimeout;
             ChangeVisibility(request);
-         }
+        }
 
         public void Delete(DeleteMessageRequest request)
         {
@@ -151,7 +151,7 @@ namespace Amazon.SQS.Resources.Internal
         {
             var request = new DeleteMessageRequest();
             Delete(request);
-         }
+        }
 
         #endregion
 
@@ -190,6 +190,11 @@ namespace Amazon.SQS.Resources.Internal
             _attributes = model.Attributes;
         }
 
+        private void CopyFrom(Model.GetQueueAttributesResponse model)
+        {
+            _attributes = model.Attributes;
+        }
+
       
         protected override void LoadResource()
         {
@@ -224,20 +229,21 @@ namespace Amazon.SQS.Resources.Internal
             request.AWSAccountIds = awsAccountIds;
             request.Label = label;
             AddPermission(request);
-         }
-
-        public void ChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request)
-        {
-            request.QueueUrl = this.Url;
-            ResourcesUtilities.Invoke(request, this.Client.ChangeMessageVisibilityBatch, "ChangeMessageVisibilityBatch");
         }
 
-        public void ChangeMessageVisibilityBatch(List<ChangeMessageVisibilityBatchRequestEntry> entries)
+        public ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request)
+        {
+            request.QueueUrl = this.Url;
+            var response = ResourcesUtilities.Invoke(request, this.Client.ChangeMessageVisibilityBatch, "ChangeMessageVisibilityBatch");
+           return response;
+        }
+
+        public ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(List<ChangeMessageVisibilityBatchRequestEntry> entries)
         {
             var request = new ChangeMessageVisibilityBatchRequest();
             request.Entries = entries;
-            ChangeMessageVisibilityBatch(request);
-         }
+            return ChangeMessageVisibilityBatch(request);
+        }
 
         public void Delete(DeleteQueueRequest request)
         {
@@ -249,20 +255,21 @@ namespace Amazon.SQS.Resources.Internal
         {
             var request = new DeleteQueueRequest();
             Delete(request);
-         }
-
-        public void DeleteMessages(DeleteMessageBatchRequest request)
-        {
-            request.QueueUrl = this.Url;
-            ResourcesUtilities.Invoke(request, this.Client.DeleteMessageBatch, "DeleteMessages");
         }
 
-        public void DeleteMessages(List<DeleteMessageBatchRequestEntry> entries)
+        public DeleteMessageBatchResponse DeleteMessages(DeleteMessageBatchRequest request)
+        {
+            request.QueueUrl = this.Url;
+            var response = ResourcesUtilities.Invoke(request, this.Client.DeleteMessageBatch, "DeleteMessages");
+           return response;
+        }
+
+        public DeleteMessageBatchResponse DeleteMessages(List<DeleteMessageBatchRequestEntry> entries)
         {
             var request = new DeleteMessageBatchRequest();
             request.Entries = entries;
-            DeleteMessages(request);
-         }
+            return DeleteMessages(request);
+        }
 
         public void Purge(PurgeQueueRequest request)
         {
@@ -274,7 +281,7 @@ namespace Amazon.SQS.Resources.Internal
         {
             var request = new PurgeQueueRequest();
             Purge(request);
-         }
+        }
 
         public IEnumerable<IMessage> ReceiveMessages(ReceiveMessageRequest request)
         {
@@ -292,14 +299,14 @@ namespace Amazon.SQS.Resources.Internal
         {
             var request = new ReceiveMessageRequest();
             return ReceiveMessages(request);
-         }
+        }
 
         public IEnumerable<IMessage> ReceiveMessages(int maxNumberOfMessages)
         {
             var request = new ReceiveMessageRequest();
             request.MaxNumberOfMessages = maxNumberOfMessages;
             return ReceiveMessages(request);
-         }
+        }
 
         public void RemovePermission(RemovePermissionRequest request)
         {
@@ -312,33 +319,35 @@ namespace Amazon.SQS.Resources.Internal
             var request = new RemovePermissionRequest();
             request.Label = label;
             RemovePermission(request);
-         }
-
-        public void SendMessage(SendMessageRequest request)
-        {
-            request.QueueUrl = this.Url;
-            ResourcesUtilities.Invoke(request, this.Client.SendMessage, "SendMessage");
         }
 
-        public void SendMessage(string messageBody)
+        public SendMessageResponse SendMessage(SendMessageRequest request)
+        {
+            request.QueueUrl = this.Url;
+            var response = ResourcesUtilities.Invoke(request, this.Client.SendMessage, "SendMessage");
+           return response;
+        }
+
+        public SendMessageResponse SendMessage(string messageBody)
         {
             var request = new SendMessageRequest();
             request.MessageBody = messageBody;
-            SendMessage(request);
-         }
-
-        public void SendMessages(SendMessageBatchRequest request)
-        {
-            request.QueueUrl = this.Url;
-            ResourcesUtilities.Invoke(request, this.Client.SendMessageBatch, "SendMessages");
+            return SendMessage(request);
         }
 
-        public void SendMessages(List<SendMessageBatchRequestEntry> entries)
+        public SendMessageBatchResponse SendMessages(SendMessageBatchRequest request)
+        {
+            request.QueueUrl = this.Url;
+            var response = ResourcesUtilities.Invoke(request, this.Client.SendMessageBatch, "SendMessages");
+           return response;
+        }
+
+        public SendMessageBatchResponse SendMessages(List<SendMessageBatchRequestEntry> entries)
         {
             var request = new SendMessageBatchRequest();
             request.Entries = entries;
-            SendMessages(request);
-         }
+            return SendMessages(request);
+        }
 
         public void SetAttributes(SetQueueAttributesRequest request)
         {
@@ -351,7 +360,7 @@ namespace Amazon.SQS.Resources.Internal
             var request = new SetQueueAttributesRequest();
             request.Attributes = attributes;
             SetAttributes(request);
-         }
+        }
 
         #endregion
 
@@ -373,7 +382,7 @@ namespace Amazon.SQS.Resources.Internal
         {
             var request = new ListDeadLetterSourceQueuesRequest();
             return GetDeadLetterSourceQueues(request);
-         }
+        }
 
 
         #endregion

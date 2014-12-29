@@ -197,7 +197,8 @@ namespace Amazon.SimpleNotificationService.Resources
         /// This method internally calls the Publish operation on the service.
         /// </para>
         /// <param name="request">Container for the necessary parameters to execute the Publish operation.</param>
-        void Publish(PublishRequest request);
+        /// <returns>An instance of  resource.</returns>
+        PublishResponse Publish(PublishRequest request);
 
         /// <summary>
         /// Calls the Publish operation on the PlatformEndpoint resource.
@@ -205,9 +206,10 @@ namespace Amazon.SimpleNotificationService.Resources
         /// <para>
         /// This method internally calls the Publish operation on the service.
         /// </para>
+        /// <returns>An instance of  resource.</returns>
         /// <param name="message">The message you want to send to the topic. If you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter. See the Examples section for the format of the JSON object.  Constraints: Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not 262144 characters). JSON-specific constraints: <ul> <li>Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li>The values will be parsed (unescaped) before they are used in outgoing messages.</li> <li>Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending).</li> <li>Values have a minimum length of 0 (the empty string, "", is allowed).</li> <li>Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes).</li> <li>Non-string values will cause the key to be ignored.</li> <li>Keys that do not correspond to supported transport protocols are ignored.</li> <li>Duplicate keys are not allowed.</li> <li>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</li> </ul> </param>
         /// <param name="topicArn">The topic you want to publish to.</param>
-        void Publish(string message, string topicArn);
+        PublishResponse Publish(string message, string topicArn);
 
         /// <summary>
         /// Calls the Publish operation on the PlatformEndpoint resource.
@@ -215,10 +217,11 @@ namespace Amazon.SimpleNotificationService.Resources
         /// <para>
         /// This method internally calls the Publish operation on the service.
         /// </para>
+        /// <returns>An instance of  resource.</returns>
         /// <param name="message">The message you want to send to the topic. If you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter. See the Examples section for the format of the JSON object.  Constraints: Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not 262144 characters). JSON-specific constraints: <ul> <li>Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li>The values will be parsed (unescaped) before they are used in outgoing messages.</li> <li>Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending).</li> <li>Values have a minimum length of 0 (the empty string, "", is allowed).</li> <li>Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes).</li> <li>Non-string values will cause the key to be ignored.</li> <li>Keys that do not correspond to supported transport protocols are ignored.</li> <li>Duplicate keys are not allowed.</li> <li>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</li> </ul> </param>
         /// <param name="subject">Optional parameter to be used as the "Subject" line when the message is delivered to email endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints. Constraints: Subjects must be ASCII text that begins with a letter, number, or punctuation mark; must not include line breaks or control characters; and must be less than 100 characters long.</param>
         /// <param name="topicArn">The topic you want to publish to.</param>
-        void Publish(string message, string subject, string topicArn);
+        PublishResponse Publish(string message, string subject, string topicArn);
 
         /// <summary>
         /// Calls the SetAttributes operation on the PlatformEndpoint resource.
@@ -425,7 +428,8 @@ namespace Amazon.SimpleNotificationService.Resources
         /// This method internally calls the Publish operation on the service.
         /// </para>
         /// <param name="request">Container for the necessary parameters to execute the Publish operation.</param>
-        void Publish(PublishRequest request);
+        /// <returns>An instance of  resource.</returns>
+        PublishResponse Publish(PublishRequest request);
 
         /// <summary>
         /// Calls the Publish operation on the Topic resource.
@@ -433,8 +437,9 @@ namespace Amazon.SimpleNotificationService.Resources
         /// <para>
         /// This method internally calls the Publish operation on the service.
         /// </para>
+        /// <returns>An instance of  resource.</returns>
         /// <param name="message">The message you want to send to the topic. If you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter. See the Examples section for the format of the JSON object.  Constraints: Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not 262144 characters). JSON-specific constraints: <ul> <li>Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li>The values will be parsed (unescaped) before they are used in outgoing messages.</li> <li>Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending).</li> <li>Values have a minimum length of 0 (the empty string, "", is allowed).</li> <li>Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes).</li> <li>Non-string values will cause the key to be ignored.</li> <li>Keys that do not correspond to supported transport protocols are ignored.</li> <li>Duplicate keys are not allowed.</li> <li>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</li> </ul> </param>
-        void Publish(string message);
+        PublishResponse Publish(string message);
 
         /// <summary>
         /// Calls the Publish operation on the Topic resource.
@@ -442,9 +447,10 @@ namespace Amazon.SimpleNotificationService.Resources
         /// <para>
         /// This method internally calls the Publish operation on the service.
         /// </para>
+        /// <returns>An instance of  resource.</returns>
         /// <param name="message">The message you want to send to the topic. If you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter. See the Examples section for the format of the JSON object.  Constraints: Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not 262144 characters). JSON-specific constraints: <ul> <li>Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li>The values will be parsed (unescaped) before they are used in outgoing messages.</li> <li>Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending).</li> <li>Values have a minimum length of 0 (the empty string, "", is allowed).</li> <li>Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes).</li> <li>Non-string values will cause the key to be ignored.</li> <li>Keys that do not correspond to supported transport protocols are ignored.</li> <li>Duplicate keys are not allowed.</li> <li>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</li> </ul> </param>
         /// <param name="subject">Optional parameter to be used as the "Subject" line when the message is delivered to email endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints. Constraints: Subjects must be ASCII text that begins with a letter, number, or punctuation mark; must not include line breaks or control characters; and must be less than 100 characters long.</param>
-        void Publish(string message, string subject);
+        PublishResponse Publish(string message, string subject);
 
         /// <summary>
         /// Calls the RemovePermission operation on the Topic resource.

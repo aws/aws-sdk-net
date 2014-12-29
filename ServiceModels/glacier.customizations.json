@@ -4,9 +4,158 @@
 			{"operation":"addAfter", "newType":"Amazon.Glacier.Internal.ProcessRequestHandler", "targetType":"Amazon.Runtime.Internal.Marshaller"}
 		]
 	},
-	"noArgOverloads": [
-		"ListVaults"
-	],
+	"simpleMethods": {
+		"operations": {
+			"ListVaults": {
+				"methodForms": [
+					[
+					]
+				]
+			},
+			"CreateVault": {
+				"methodForms": [
+					[
+						"AccountId",
+						"VaultName"
+					]
+				]
+			},
+			"DeleteVault": {
+				"methodForms": [
+					[
+						"AccountId",
+						"VaultName"
+					]
+				]
+			},
+			"DeleteArchive": {
+				"methodForms": [
+					[
+						"AccountId",
+						"VaultName",
+						"ArchiveId"
+					]
+				]
+			},
+			"GetJobOutput": {
+				"methodForms": [
+					[
+						"AccountId",
+						"VaultName",
+						"JobId"
+					]
+				]
+			},
+			"AbortMultipartUpload": {
+				"methodForms": [
+					[
+						"AccountId",
+						"VaultName",
+						"UploadId"
+					]
+				]
+			},
+			"CompleteMultipartUpload": {
+				"methodForms": [
+					[
+						"AccountId",
+						"VaultName",
+						"UploadId",
+						"ArchiveSize",
+						"Checksum"
+					]
+				]
+			},
+			"ListParts": {
+				"methodForms": [
+					[
+						"AccountId",
+						"VaultName",
+						"UploadId"
+					]
+				]
+			},
+			"UploadMultipartPart": {
+				"methodForms": [
+					[
+						"AccountId",
+						"VaultName",
+						"UploadId",
+						"Checksum",
+						"Body",
+						"Range"
+					]
+				]
+			},
+			"SetVaultNotifications": {
+				"methodForms": [
+					[
+						"AccountId",
+						"VaultName",
+						"VaultNotificationConfig"
+					]
+				]
+			},
+			"DeleteVaultNotifications": {
+				"methodForms": [
+					[
+						"AccountId",
+						"VaultName"
+					]
+				]
+			},
+			"InitiateMultipartUpload": {
+				"methodForms": [
+					[
+						"AccountId",
+						"VaultName",
+						"ArchiveDescription"
+					],
+					[
+						"AccountId",
+						"VaultName",
+						"ArchiveDescription",
+						"PartSize"
+					]
+				]
+			},
+			"UploadArchive": {
+				"methodForms": [
+					[
+						"AccountId",
+						"VaultName",
+						"Checksum",
+						"Body"
+					]
+				]
+			},
+			"ListJobs": {
+				"methodForms": [
+					[
+						"AccountId",
+						"VaultName"
+					]
+				]
+			},
+			"ListMultipartUploads": {
+				"methodForms": [
+					[
+						"AccountId",
+						"VaultName"
+					]
+				]
+			},
+			"InitiateJob": {
+				"methodForms": [
+					[
+						"AccountId",
+						"VaultName",
+						"JobParameters"
+					]
+				]
+			}
+		}
+	},
 	"shapeModifiers": {
         "ListMultipartUploadsInput": {
             "modify": [

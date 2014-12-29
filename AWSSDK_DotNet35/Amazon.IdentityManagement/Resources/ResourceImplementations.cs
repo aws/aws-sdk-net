@@ -119,7 +119,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new DeleteAccessKeyRequest();
             Delete(request);
-         }
+        }
 
         #endregion
 
@@ -153,7 +153,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new DeleteAccountAliasRequest();
             Delete(request);
-         }
+        }
 
         #endregion
 
@@ -314,7 +314,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new DeleteAccountPasswordPolicyRequest();
             Delete(request);
-         }
+        }
 
         public void Update(UpdateAccountPasswordPolicyRequest request)
         {
@@ -472,19 +472,20 @@ namespace Amazon.IdentityManagement.Resources.Internal
             var request = new AddUserToGroupRequest();
             request.UserName = userName;
             AddUser(request);
-         }
-
-        public void Create(CreateGroupRequest request)
-        {
-            request.GroupName = this.Name;
-            ResourcesUtilities.Invoke(request, this.Client.CreateGroup, "Create");
         }
 
-        public void Create()
+        public CreateGroupResponse Create(CreateGroupRequest request)
+        {
+            request.GroupName = this.Name;
+            var response = ResourcesUtilities.Invoke(request, this.Client.CreateGroup, "Create");
+           return response;
+        }
+
+        public CreateGroupResponse Create()
         {
             var request = new CreateGroupRequest();
-            Create(request);
-         }
+            return Create(request);
+        }
 
         public IGroupPolicy CreatePolicy(PutGroupPolicyRequest request)
         {
@@ -500,7 +501,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
             request.PolicyDocument = policyDocument;
             request.PolicyName = policyName;
             return CreatePolicy(request);
-         }
+        }
 
         public void Delete(DeleteGroupRequest request)
         {
@@ -512,7 +513,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new DeleteGroupRequest();
             Delete(request);
-         }
+        }
 
         public void RemoveUser(RemoveUserFromGroupRequest request)
         {
@@ -525,7 +526,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
             var request = new RemoveUserFromGroupRequest();
             request.UserName = userName;
             RemoveUser(request);
-         }
+        }
 
         public IGroup Update(UpdateGroupRequest request)
         {
@@ -553,7 +554,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new ListGroupPoliciesRequest();
             return GetPolicies(request);
-         }
+        }
 
         public IEnumerable<IUser> GetUsers(GetGroupRequest request)
         {
@@ -570,7 +571,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new GetGroupRequest();
             return GetUsers(request);
-         }
+        }
 
 
         #endregion
@@ -653,7 +654,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new DeleteGroupPolicyRequest();
             Delete(request);
-         }
+        }
 
         public void Put(PutGroupPolicyRequest request)
         {
@@ -667,7 +668,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
             var request = new PutGroupPolicyRequest();
             request.PolicyDocument = policyDocument;
             Put(request);
-         }
+        }
 
         #endregion
 
@@ -783,7 +784,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
             var request = new AddRoleToInstanceProfileRequest();
             request.RoleName = roleName;
             AddRole(request);
-         }
+        }
 
         public void Delete(DeleteInstanceProfileRequest request)
         {
@@ -795,7 +796,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new DeleteInstanceProfileRequest();
             Delete(request);
-         }
+        }
 
         public void RemoveRole(RemoveRoleFromInstanceProfileRequest request)
         {
@@ -808,7 +809,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
             var request = new RemoveRoleFromInstanceProfileRequest();
             request.RoleName = roleName;
             RemoveRole(request);
-         }
+        }
 
         #endregion
 
@@ -877,10 +878,11 @@ namespace Amazon.IdentityManagement.Resources.Internal
 
         #region Actions
 
-        public void Create(CreateLoginProfileRequest request)
+        public CreateLoginProfileResponse Create(CreateLoginProfileRequest request)
         {
             request.UserName = this.UserName;
-            ResourcesUtilities.Invoke(request, this.Client.CreateLoginProfile, "Create");
+            var response = ResourcesUtilities.Invoke(request, this.Client.CreateLoginProfile, "Create");
+           return response;
         }
 
         public void Delete(DeleteLoginProfileRequest request)
@@ -893,7 +895,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new DeleteLoginProfileRequest();
             Delete(request);
-         }
+        }
 
         public void Update(UpdateLoginProfileRequest request)
         {
@@ -962,7 +964,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new DeactivateMFADeviceRequest();
             Deactivate(request);
-         }
+        }
 
         public void Enable(EnableMFADeviceRequest request)
         {
@@ -1088,7 +1090,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new DeleteRoleRequest();
             Delete(request);
-         }
+        }
 
         public void UpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest request)
         {
@@ -1114,7 +1116,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new ListInstanceProfilesForRoleRequest();
             return GetInstanceProfiles(request);
-         }
+        }
 
         public IEnumerable<IRolePolicy> GetPolicies(ListRolePoliciesRequest request)
         {
@@ -1131,7 +1133,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new ListRolePoliciesRequest();
             return GetPolicies(request);
-         }
+        }
 
 
         #endregion
@@ -1214,7 +1216,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new DeleteRolePolicyRequest();
             Delete(request);
-         }
+        }
 
         public void Put(PutRolePolicyRequest request)
         {
@@ -1228,7 +1230,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
             var request = new PutRolePolicyRequest();
             request.PolicyDocument = policyDocument;
             Put(request);
-         }
+        }
 
         #endregion
 
@@ -1319,12 +1321,13 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new DeleteSAMLProviderRequest();
             Delete(request);
-         }
+        }
 
-        public void Update(UpdateSAMLProviderRequest request)
+        public UpdateSAMLProviderResponse Update(UpdateSAMLProviderRequest request)
         {
             request.SAMLProviderArn = this.Arn;
-            ResourcesUtilities.Invoke(request, this.Client.UpdateSAMLProvider, "Update");
+            var response = ResourcesUtilities.Invoke(request, this.Client.UpdateSAMLProvider, "Update");
+           return response;
         }
 
         #endregion
@@ -1416,7 +1419,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new DeleteServerCertificateRequest();
             Delete(request);
-         }
+        }
 
         public IServerCertificate Update(UpdateServerCertificateRequest request)
         {
@@ -1530,7 +1533,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
             var request = new DeleteSigningCertificateRequest();
             request.UserName = userName;
             Delete(request);
-         }
+        }
 
         #endregion
 
@@ -1643,7 +1646,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
             var request = new AddUserToGroupRequest();
             request.GroupName = groupName;
             AddGroup(request);
-         }
+        }
 
         public IAccessKey CreateAccessKey(CreateAccessKeyRequest request)
         {
@@ -1657,7 +1660,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new CreateAccessKeyRequest();
             return CreateAccessKey(request);
-         }
+        }
 
         public IUserPolicy CreatePolicy(PutUserPolicyRequest request)
         {
@@ -1673,7 +1676,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
             request.PolicyDocument = policyDocument;
             request.PolicyName = policyName;
             return CreatePolicy(request);
-         }
+        }
 
         public void Delete(DeleteUserRequest request)
         {
@@ -1685,7 +1688,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new DeleteUserRequest();
             Delete(request);
-         }
+        }
 
         public IMfaDevice EnableMfa(EnableMFADeviceRequest request)
         {
@@ -1706,7 +1709,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
             var request = new RemoveUserFromGroupRequest();
             request.GroupName = groupName;
             RemoveGroup(request);
-         }
+        }
 
         public IUser Update(UpdateUserRequest request)
         {
@@ -1734,7 +1737,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new ListAccessKeysRequest();
             return GetAccessKeys(request);
-         }
+        }
 
         public IEnumerable<IGroup> GetGroups(ListGroupsForUserRequest request)
         {
@@ -1751,7 +1754,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new ListGroupsForUserRequest();
             return GetGroups(request);
-         }
+        }
 
         public IEnumerable<IMfaDevice> GetMfaDevices(ListMFADevicesRequest request)
         {
@@ -1768,7 +1771,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new ListMFADevicesRequest();
             return GetMfaDevices(request);
-         }
+        }
 
         public IEnumerable<IUserPolicy> GetPolicies(ListUserPoliciesRequest request)
         {
@@ -1785,7 +1788,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new ListUserPoliciesRequest();
             return GetPolicies(request);
-         }
+        }
 
 
         #endregion
@@ -1880,7 +1883,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
         {
             var request = new DeleteUserPolicyRequest();
             Delete(request);
-         }
+        }
 
         public void Put(PutUserPolicyRequest request)
         {
@@ -1894,7 +1897,7 @@ namespace Amazon.IdentityManagement.Resources.Internal
             var request = new PutUserPolicyRequest();
             request.PolicyDocument = policyDocument;
             Put(request);
-         }
+        }
 
         #endregion
 

@@ -693,10 +693,6 @@ namespace Amazon.Glacier
         
         #region  ListVaults
 
-        internal ListVaultsResponse ListVaults()
-        {
-            return ListVaults(new ListVaultsRequest());
-        }
         internal ListVaultsResponse ListVaults(ListVaultsRequest request)
         {
             var marshaller = new ListVaultsRequestMarshaller();

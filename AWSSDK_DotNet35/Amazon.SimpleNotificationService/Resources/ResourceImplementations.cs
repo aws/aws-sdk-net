@@ -90,7 +90,7 @@ namespace Amazon.SimpleNotificationService.Resources.Internal
             var request = new CreatePlatformEndpointRequest();
             request.Token = token;
             return CreatePlatformEndpoint(request);
-         }
+        }
 
         public void Delete(DeletePlatformApplicationRequest request)
         {
@@ -102,7 +102,7 @@ namespace Amazon.SimpleNotificationService.Resources.Internal
         {
             var request = new DeletePlatformApplicationRequest();
             Delete(request);
-         }
+        }
 
         public void SetAttributes(SetPlatformApplicationAttributesRequest request)
         {
@@ -115,7 +115,7 @@ namespace Amazon.SimpleNotificationService.Resources.Internal
             var request = new SetPlatformApplicationAttributesRequest();
             request.Attributes = attributes;
             SetAttributes(request);
-         }
+        }
 
         #endregion
 
@@ -135,7 +135,7 @@ namespace Amazon.SimpleNotificationService.Resources.Internal
         {
             var request = new ListEndpointsByPlatformApplicationRequest();
             return GetEndpoints(request);
-         }
+        }
 
 
         #endregion
@@ -204,30 +204,31 @@ namespace Amazon.SimpleNotificationService.Resources.Internal
         {
             var request = new DeleteEndpointRequest();
             Delete(request);
-         }
-
-        public void Publish(PublishRequest request)
-        {
-            request.TargetArn = this.Arn;
-            ResourcesUtilities.Invoke(request, this.Client.Publish, "Publish");
         }
 
-        public void Publish(string message, string topicArn)
+        public PublishResponse Publish(PublishRequest request)
+        {
+            request.TargetArn = this.Arn;
+            var response = ResourcesUtilities.Invoke(request, this.Client.Publish, "Publish");
+           return response;
+        }
+
+        public PublishResponse Publish(string message, string topicArn)
         {
             var request = new PublishRequest();
             request.Message = message;
             request.TopicArn = topicArn;
-            Publish(request);
-         }
+            return Publish(request);
+        }
 
-        public void Publish(string message, string subject, string topicArn)
+        public PublishResponse Publish(string message, string subject, string topicArn)
         {
             var request = new PublishRequest();
             request.Message = message;
             request.Subject = subject;
             request.TopicArn = topicArn;
-            Publish(request);
-         }
+            return Publish(request);
+        }
 
         public void SetAttributes(SetEndpointAttributesRequest request)
         {
@@ -240,7 +241,7 @@ namespace Amazon.SimpleNotificationService.Resources.Internal
             var request = new SetEndpointAttributesRequest();
             request.Attributes = attributes;
             SetAttributes(request);
-         }
+        }
 
         #endregion
 
@@ -309,7 +310,7 @@ namespace Amazon.SimpleNotificationService.Resources.Internal
         {
             var request = new UnsubscribeRequest();
             Delete(request);
-         }
+        }
 
         public void SetAttributes(SetSubscriptionAttributesRequest request)
         {
@@ -323,7 +324,7 @@ namespace Amazon.SimpleNotificationService.Resources.Internal
             request.AttributeName = attributeName;
             request.AttributeValue = attributeValue;
             SetAttributes(request);
-         }
+        }
 
         #endregion
 
@@ -395,7 +396,7 @@ namespace Amazon.SimpleNotificationService.Resources.Internal
             request.AWSAccountId = awsAccountId;
             request.Label = label;
             AddPermission(request);
-         }
+        }
 
         public ISubscription ConfirmSubscription(ConfirmSubscriptionRequest request)
         {
@@ -410,7 +411,7 @@ namespace Amazon.SimpleNotificationService.Resources.Internal
             var request = new ConfirmSubscriptionRequest();
             request.Token = token;
             return ConfirmSubscription(request);
-         }
+        }
 
         public ISubscription ConfirmSubscription(string authenticateOnUnsubscribe, string token)
         {
@@ -418,7 +419,7 @@ namespace Amazon.SimpleNotificationService.Resources.Internal
             request.AuthenticateOnUnsubscribe = authenticateOnUnsubscribe;
             request.Token = token;
             return ConfirmSubscription(request);
-         }
+        }
 
         public void Delete(DeleteTopicRequest request)
         {
@@ -430,28 +431,29 @@ namespace Amazon.SimpleNotificationService.Resources.Internal
         {
             var request = new DeleteTopicRequest();
             Delete(request);
-         }
-
-        public void Publish(PublishRequest request)
-        {
-            request.TopicArn = this.Arn;
-            ResourcesUtilities.Invoke(request, this.Client.Publish, "Publish");
         }
 
-        public void Publish(string message)
+        public PublishResponse Publish(PublishRequest request)
+        {
+            request.TopicArn = this.Arn;
+            var response = ResourcesUtilities.Invoke(request, this.Client.Publish, "Publish");
+           return response;
+        }
+
+        public PublishResponse Publish(string message)
         {
             var request = new PublishRequest();
             request.Message = message;
-            Publish(request);
-         }
+            return Publish(request);
+        }
 
-        public void Publish(string message, string subject)
+        public PublishResponse Publish(string message, string subject)
         {
             var request = new PublishRequest();
             request.Message = message;
             request.Subject = subject;
-            Publish(request);
-         }
+            return Publish(request);
+        }
 
         public void RemovePermission(RemovePermissionRequest request)
         {
@@ -464,7 +466,7 @@ namespace Amazon.SimpleNotificationService.Resources.Internal
             var request = new RemovePermissionRequest();
             request.Label = label;
             RemovePermission(request);
-         }
+        }
 
         public void SetAttributes(SetTopicAttributesRequest request)
         {
@@ -478,7 +480,7 @@ namespace Amazon.SimpleNotificationService.Resources.Internal
             request.AttributeName = attributeName;
             request.AttributeValue = attributeValue;
             SetAttributes(request);
-         }
+        }
 
         public ISubscription Subscribe(SubscribeRequest request)
         {
@@ -494,7 +496,7 @@ namespace Amazon.SimpleNotificationService.Resources.Internal
             request.Endpoint = endpoint;
             request.Protocol = protocol;
             return Subscribe(request);
-         }
+        }
 
         #endregion
 
@@ -514,7 +516,7 @@ namespace Amazon.SimpleNotificationService.Resources.Internal
         {
             var request = new ListSubscriptionsByTopicRequest();
             return GetSubscriptions(request);
-         }
+        }
 
 
         #endregion

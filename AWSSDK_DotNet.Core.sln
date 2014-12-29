@@ -84,6 +84,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceModels", "ServiceMod
 		ServiceModels\email.customizations.json = ServiceModels\email.customizations.json
 		ServiceModels\galaxy-2013-09-30.normal.json = ServiceModels\galaxy-2013-09-30.normal.json
 		ServiceModels\glacier-2012-06-01.normal.json = ServiceModels\glacier-2012-06-01.normal.json
+		ServiceModels\glacier-2012-06-01.resources.json = ServiceModels\glacier-2012-06-01.resources.json
 		ServiceModels\glacier.customizations.constructors.json = ServiceModels\glacier.customizations.constructors.json
 		ServiceModels\glacier.customizations.json = ServiceModels\glacier.customizations.json
 		ServiceModels\iam-2010-05-08.normal.json = ServiceModels\iam-2010-05-08.normal.json

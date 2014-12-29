@@ -3,6 +3,7 @@
 This is the preview release of AWS Resource APIs for .NET. This branch contains the source for the AWS SDK for .NET (branched from version 2.3.13.1) along with the new resource APIs. The preview is intended to provide early access to the new APIs and to get feedback from the community. For more information about the resource APIs, check the [developer guide][docs-guide] and the introductory [blog post][blog-post].
 
 Resource APIs for the following services are supported in the current release, support for other services will be added in the near future.
+* Amazon Glacier
 * Amazon Simple Notification Service
 * Amazon Simple Queue Service
 * AWS CloudFormation 

@@ -285,7 +285,8 @@ namespace Amazon.CloudFormation.Resources
         /// This method internally calls the UpdateStack operation on the service.
         /// </para>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStack operation.</param>
-        void Update(UpdateStackRequest request);
+        /// <returns>An instance of  resource.</returns>
+        UpdateStackResponse Update(UpdateStackRequest request);
 
 
         #endregion

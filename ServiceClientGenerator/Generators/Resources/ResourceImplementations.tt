@@ -65,7 +65,7 @@ namespace <#=this.Config.Namespace#>.Resources.Internal
 
 <#	
 
-			GenerateCopyFrom(resource);
+			GenerateCopyFrom(resource, resource.Shape.Name);
             if(resource.LoadAction != null)
                 GenerateLoadMethod(resource);
         }		
@@ -78,7 +78,7 @@ namespace <#=this.Config.Namespace#>.Resources.Internal
 		foreach(var identifier in resource.Identifiers)
 		{
 #>
-			this.<#=identifier.Name#> = <#=identifier.Name.ToCamelCase()#>;
+			this.<#=identifier.Name.ToPascalCase()#> = <#=identifier.Name.ToCamelCase()#>;
 <#	
 		}
 #>
@@ -115,7 +115,7 @@ namespace <#=this.Config.Namespace#>.Resources.Internal
 			  }
 #>
 			<#=action.IsVoidReturnType ? "" : "return "#><#=action.MethodName#>(request);
-		 }
+		}
 <#
 	    }
 	}
@@ -157,10 +157,10 @@ namespace <#=this.Config.Namespace#>.Resources.Internal
 			  }
 #>
 			return Get<#=action.MethodName#>(request);
-		 }
+		}
 
 <#
-	    }
+	   }
 	}
 #>
 
@@ -232,10 +232,10 @@ void GenerateAttributeProperties(Resource resource)
 	}
 }
 
-void GenerateCopyFrom(Resource resource)
+void GenerateCopyFrom(Resource resource, string shapeName)
 {    
 #>
-		private void CopyFrom(Model.<#=resource.Shape.Name#> model)
+		private void CopyFrom(Model.<#=shapeName#> model)
         {
 <#+		
         foreach(var attribute in resource.Attributes)
@@ -276,6 +276,10 @@ void GenerateCopyFrom(Resource resource)
 
     void GenerateLoadMethod(Resource resource)
     {
+	    if(resource.LoadAction.Path.GetIdentifierExpression() == "response" && resource.Shape.Name != resource.LoadAction.BaseOperationName + "Response")
+		{
+			GenerateCopyFrom(resource, resource.LoadAction.BaseOperationName + "Response");
+		}
 #>      
         protected override void LoadResource()
         {

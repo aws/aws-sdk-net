@@ -680,6 +680,9 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Glacier\Transfer\*">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Glacier\Resources\*">
+      <Visible>false</Visible>
+    </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Glacier\Transfer\Internal\*">
       <Visible>false</Visible>
     </Compile>

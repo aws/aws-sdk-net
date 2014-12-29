@@ -362,5 +362,19 @@ namespace ServiceClientGenerator
         {
             return "_" + s.ToCamelCase();
         }
+
+        public static string ToPascalCase(this string s)
+        {
+            if (s.IndexOf('.') < 0)
+            {
+                string txt = s[0].ToString().ToUpper();
+                if (s.Length > 1)
+                    txt += s.Substring(1);
+                return txt;
+            }
+
+            return String.Join(".", from sub in s.Split(new char[] { '.' })
+                                    select sub.ToPascalCase());
+        }
     }
 }

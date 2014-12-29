@@ -17,7 +17,7 @@ public void GenerateAction(ServiceClientGenerator.ResourcesApi.Action action)
 	{
             if (action.IsCollectionReturnType)
                 GenerateReturnCollection(action);
-            else
+            else 
             {
 #>
 			return <#=action.ResourceConstructionExpression#>;
@@ -25,6 +25,13 @@ public void GenerateAction(ServiceClientGenerator.ResourcesApi.Action action)
 <#+
             }
 	}
+	if (action.Resource == null && !action.IsVoidReturnType)
+	{
+#>
+           return response;
+<#+
+	}
+	
 }
 #>
 
@@ -74,7 +81,7 @@ public void GenerateAction(ServiceClientGenerator.ResourcesApi.Action action)
             else
             {
 #>
-            request.<#=parameter.Target#> = <#=parameter.Source.GetIdentifierExpression()#>;
+            request.<#=parameter.Target.ToPascalCase()#> = <#=parameter.Source.GetIdentifierExpression()#>;
 <#+
             }
 		}

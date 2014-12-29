@@ -167,11 +167,7 @@ namespace ServiceClientGenerator
                             return overrideName;
                     }
                 }
-
-                string txt = this._name[0].ToString().ToUpper();
-                if (this._name.Length > 1)
-                    txt += this._name.Substring(1);
-                return txt;
+                return this._name.ToPascalCase();
             }
         }
 

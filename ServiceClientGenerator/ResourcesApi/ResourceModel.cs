@@ -150,7 +150,7 @@ namespace ServiceClientGenerator.ResourcesApi
                     foreach (var identifier in this.Identifiers)
                     {
                         if (this.Shape.Members.SingleOrDefault(
-                            m => m.PropertyName.Equals(identifier.MemberName)) == null)
+                            m=>m.PropertyName.Equals(identifier.MemberName, StringComparison.InvariantCultureIgnoreCase)) == null)
                         {
                             return false;
                         }
@@ -528,6 +528,11 @@ namespace ServiceClientGenerator.ResourcesApi
         public string RequestShape { get; set; }
 
         /// <summary>
+        /// The name of the response (output) shape.
+        /// </summary>
+        public string ResponseShape { get; set; }
+
+        /// <summary>
         /// Indicates if the low level API for this action returns
         /// data for all attributes of the resource.
         /// </summary>
@@ -571,7 +576,7 @@ namespace ServiceClientGenerator.ResourcesApi
                 {
                     foreach (var item in _action.Request.Params)
                     {
-                        parameters.Add(new IdentifierMapping(item, _serviceModel));
+                        parameters.Add(new IdentifierMapping(item, _serviceModel.FindOperation(this.BaseOperationName).RequestStructure, _serviceModel));
                     }
                 }
                 return parameters;
@@ -655,6 +660,8 @@ namespace ServiceClientGenerator.ResourcesApi
             get { return this._serviceModel; }
         }
 
+        
+
         public Action(string name, ModelReader.Action action,
             ServiceModel serviceModel)
         {
@@ -667,6 +674,7 @@ namespace ServiceClientGenerator.ResourcesApi
             this.BaseOperationName = this.Operation.Name;
             this.RequestType = this.Operation.Name + "Request";
             this.RequestShape = this.Operation.RequestStructure == null ? string.Empty : this.Operation.RequestStructure.Name;
+            this.ResponseShape = this.Operation.ResponseStructure == null ? string.Empty : this.Operation.ResponseStructure.Name;
 
             if (!string.IsNullOrEmpty(_action.Path))
                this.Path = new JmesPath(_action.Path, SourceType.ResponsePath, _serviceModel);
@@ -679,8 +687,19 @@ namespace ServiceClientGenerator.ResourcesApi
             }
             else
             {
-                this.ReturnType = "void";
-                this.ReturnTypeInterface = this.ReturnType;
+                Shape responseShape = null;
+                if (!String.IsNullOrEmpty(this.ResponseShape)
+                    && (responseShape = _serviceModel.FindShape(this.ResponseShape)) != null
+                    && responseShape.Members.Count() > 0)
+                {
+                    this.ReturnType = this.Operation.Name + "Response";
+                    this.ReturnTypeInterface = this.ReturnType;
+                }
+                else
+                {
+                    this.ReturnType = "void";
+                    this.ReturnTypeInterface = this.ReturnType;
+                }
             }
 
             if (action.Resource != null)
@@ -803,7 +822,7 @@ namespace ServiceClientGenerator.ResourcesApi
         public CustomActionForm WithoutIdentifiers(IList<string> identifiers)
         {
             var newMembers = from m in this.Members
-                             where !identifiers.Contains(m.PropertyName)
+                             where !identifiers.Contains(m.PropertyName, StringComparer.InvariantCultureIgnoreCase)
                              select m.PropertyName;
 
             return new CustomActionForm(this._action, newMembers.ToList());
@@ -853,6 +872,7 @@ namespace ServiceClientGenerator.ResourcesApi
     {
         public SourceType SourceType { get; private set; }
         public JmesPath Source { get; private set; }
+        public Shape TargetShape { get; private set; }
 
         public string Target { get; private set; }
 
@@ -873,21 +893,29 @@ namespace ServiceClientGenerator.ResourcesApi
         }
 
         public IdentifierMapping(string source, SourceType sourceType, string target,
-            ServiceModel serviceModel)
+            ServiceModel serviceModel) : this(source, sourceType, target, null, serviceModel) { }
+
+        public IdentifierMapping(string source, SourceType sourceType, string target,
+            Shape targetShape, ServiceModel serviceModel)
         {
             this.SourceType = sourceType;
             this.Source = new JmesPath(source,
-                sourceType, serviceModel);
+                sourceType, targetShape, serviceModel);
             this.Target = target;
+            this.TargetShape = targetShape;
         }
 
         public IdentifierMapping(ModelReader.IdentifierMapping identifierMapping,
-            ServiceModel serviceModel)
+             ServiceModel serviceModel)
+            : this(identifierMapping, null, serviceModel) { }
+
+        public IdentifierMapping(ModelReader.IdentifierMapping identifierMapping,
+            Shape targetShape, ServiceModel serviceModel)
         {
             this.SourceType = identifierMapping.SourceType;
-            this.Source = new JmesPath(identifierMapping.Source,
-                identifierMapping.SourceType, serviceModel);
             this.Target = identifierMapping.Target;
+            this.TargetShape = targetShape;
+            this.Source = new JmesPath(identifierMapping, targetShape, serviceModel);
         }
     }
 
@@ -897,6 +925,8 @@ namespace ServiceClientGenerator.ResourcesApi
         string _path;
         string _leadingArrayExpression =  string.Empty;
         string _memberExpression = string.Empty;
+        Shape _targetShape;
+        Member _targetMember;
 
         public bool IsArrayExpression
         {
@@ -910,6 +940,31 @@ namespace ServiceClientGenerator.ResourcesApi
             _serviceModel = serviceModel;
             _path = path;
             this.SourceType = type;
+            ParsePath();
+        }
+
+        public JmesPath(string path, SourceType type, Shape targetShape, ServiceModel serviceModel)
+        {
+            _serviceModel = serviceModel;
+            _targetShape = targetShape;
+            _path = path;
+            this.SourceType = type;
+            ParsePath();
+        }
+
+        public JmesPath(ModelReader.IdentifierMapping identifierMapping, Shape targetShape, ServiceModel serviceModel)
+        {
+            _serviceModel = serviceModel;
+            _path = identifierMapping.Source;
+            _targetShape = targetShape;
+            this.SourceType = identifierMapping.SourceType;
+            if (_targetShape != null)
+            {
+                _targetMember = targetShape.Members
+                    .Where(m => m.PropertyName.Equals(identifierMapping.Target,
+                        StringComparison.InvariantCultureIgnoreCase))
+                    .SingleOrDefault();
+            }
             ParsePath();
         }
 
@@ -930,22 +985,53 @@ namespace ServiceClientGenerator.ResourcesApi
                         "item" : "item." + _memberExpression;
                 }
                 else
-                    return "response." + _memberExpression;             
+                    return "response." + _memberExpression.ToPascalCase();             
             }
             else if (this.SourceType == ResourcesApi.SourceType.Identifier ||
                 this.SourceType == ResourcesApi.SourceType.DataMember)
             {
-                return "this." + _memberExpression;
+                return "this." + _memberExpression.ToPascalCase();
             }
             else if (this.SourceType == ResourcesApi.SourceType.RequestParameter)
             {
-                return "request." + _memberExpression;
+                return "request." + _memberExpression.ToPascalCase();
             }
             else if (this.SourceType == ResourcesApi.SourceType.String)
             {
-                return string.Format("\"{0}\"",_path);
+                return ConvertConstantExpression();
             }
             throw new NotImplementedException();
+        }
+
+        public string ConvertConstantExpression()
+        {
+            if (_targetMember != null)
+            {
+                var typeOverride = _targetMember.OverrideDataType;
+
+                if ((typeOverride != null && typeOverride.DataType.Equals("bool")) 
+                    || _targetMember.Shape.IsBoolean)
+                {
+                    var val = Convert.ToBoolean(_path);
+                    return _path;
+                }
+
+                if ((typeOverride != null && typeOverride.DataType.Equals("int")) 
+                    || _targetMember.Shape.IsInt)
+                {
+                    var val = Convert.ToInt32(_path);
+                    return _path;
+                }
+
+                if ((typeOverride != null && typeOverride.DataType.Equals("long")) 
+                    || _targetMember.Shape.IsLong)
+                {
+                    var val = Convert.ToInt64(_path);
+                    return _path;
+                }
+            }
+            
+            return String.Format("\"{0}\"", _path);
         }
 
         public string GetMemberExpression()
@@ -967,43 +1053,103 @@ namespace ServiceClientGenerator.ResourcesApi
             return leading;
         }
 
-        void ParsePath()
+        void ParsePath(IEnumerable<string> segments, Shape currentShape)
         {
-            var segments = _path.Split('.');
+            if (null == segments || segments.Count() < 1)
+                return;
 
-            if (segments.Count() == 1)
+            _targetShape = currentShape;
+            var segment = segments.ElementAt(0);
+
+            if (segment.Contains("[]"))
             {
-                if (segments[0].Contains("[]"))
+                _leadingArrayExpression = segment;
+            }
+            else
+            {
+                if ((this.SourceType == SourceType.RequestParameter || this.SourceType == SourceType.ResponsePath) && currentShape != null)
                 {
-                    _leadingArrayExpression = segments[0];
-                    return;
+                    var name = segment.Contains("[]") ? segment.Substring(0, segment.IndexOf('[')) : segment;
+                    var targetMember = currentShape.Members.SingleOrDefault(m => m.PropertyName.Equals(name, StringComparison.InvariantCultureIgnoreCase));
+                    if (targetMember != null)
+                        _memberExpression = _memberExpression + "." + targetMember.PropertyName;
+                    else
+                        _memberExpression = _memberExpression + "." + segment;
                 }
                 else
-                {
-                    _memberExpression = segments[0];
-                    return;
-                }
+                    _memberExpression = _memberExpression + "." + segment;
             }
-            
-            var lastArraySegment = segments.LastOrDefault(s => s.Contains("[]"));
 
-            bool memberExpressionReached = lastArraySegment == null;
-            foreach (var segment in segments)
-            {
-                if (!memberExpressionReached)
-                {
-                    if (segment == lastArraySegment)
-                        memberExpressionReached = true;
-
-                    continue;
-                }
-
-                _memberExpression = _memberExpression + "." + segment;
-            }
-            // Remove leading "." from member expression
-            _memberExpression = _memberExpression.TrimStart('.');
-
+            ParsePath(segments.Skip(1), ShapeForMember(currentShape, segment));
         }
+
+        void ParsePath()
+        {
+            ParsePath(_path.Split('.'), _targetShape);
+            _memberExpression = _memberExpression.TrimStart('.');
+        }
+
+        Shape ShapeForMember(Shape shape, string memberName)
+        {
+            if (null != shape)
+            {
+                var name = memberName.Contains("[]") ? memberName.Substring(0, memberName.IndexOf('[')) : memberName;
+               var member = shape.Members.SingleOrDefault(m => m.MarshallName == name);
+                if (member != null)
+                    return member.Shape;
+            }
+            return null;
+        }
+
+    //    void ParsePath()
+    //    {
+    //        var segments = _path.Split('.');
+
+    //        if (segments.Count() == 1)
+    //        {
+    //            if (segments[0].Contains("[]"))
+    //            {
+    //                _leadingArrayExpression = segments[0];
+    //                return;
+    //            }
+    //            else
+    //            {
+    //                _memberExpression = segments[0];
+    //                Member targetMember = null;
+    //                if (_targetShape != null)
+        //                    targetMember = _targetShape.Members.SingleOrDefault(m => m.MarshallName == _memberExpression);
+    //                if (targetMember != null)
+    //                    _memberExpression = targetMember.PropertyName;
+    //                return;
+    //            }
+    //        }
+            
+    //        var lastArraySegment = segments.LastOrDefault(s => s.Contains("[]"));
+
+    //        bool memberExpressionReached = lastArraySegment == null;
+    //        var currentShape = _targetShape;
+    //        foreach (var segment in segments)
+    //        {
+    //            if (!memberExpressionReached)
+    //            {
+    //                if (segment == lastArraySegment)
+    //                    memberExpressionReached = true;
+
+    //                continue;
+    //            }
+
+    //            Member targetMember = null;;
+    //            if (currentShape != null)
+    //                targetMember = currentShape.Members.Where(m => m.MarshallName == segment.Substring(0, segment.IndexOf('['))).SingleOrDefault();
+    //            if (targetMember != null)
+    //                _memberExpression = _memberExpression + "." + targetMember.PropertyName;
+    //            else
+    //                _memberExpression = _memberExpression + "." + segment;
+    //        }
+    //        // Remove leading "." from member expression
+    //        _memberExpression = _memberExpression.TrimStart('.');
+
+    //    }
     }
 
     public enum SourceType

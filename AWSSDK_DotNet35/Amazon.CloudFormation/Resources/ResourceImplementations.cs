@@ -352,7 +352,7 @@ namespace Amazon.CloudFormation.Resources.Internal
         {
             var request = new CancelUpdateStackRequest();
             CancelUpdate(request);
-         }
+        }
 
         public void Delete(DeleteStackRequest request)
         {
@@ -364,12 +364,13 @@ namespace Amazon.CloudFormation.Resources.Internal
         {
             var request = new DeleteStackRequest();
             Delete(request);
-         }
+        }
 
-        public void Update(UpdateStackRequest request)
+        public UpdateStackResponse Update(UpdateStackRequest request)
         {
             request.StackName = this.Name;
-            ResourcesUtilities.Invoke(request, this.Client.UpdateStack, "Update");
+            var response = ResourcesUtilities.Invoke(request, this.Client.UpdateStack, "Update");
+           return response;
         }
 
         #endregion
@@ -390,7 +391,7 @@ namespace Amazon.CloudFormation.Resources.Internal
         {
             var request = new DescribeStackEventsRequest();
             return GetEvents(request);
-         }
+        }
 
         public IEnumerable<IStackResourceSummary> GetResourceSummaries(ListStackResourcesRequest request)
         {
@@ -407,7 +408,7 @@ namespace Amazon.CloudFormation.Resources.Internal
         {
             var request = new ListStackResourcesRequest();
             return GetResourceSummaries(request);
-         }
+        }
 
 
         #endregion

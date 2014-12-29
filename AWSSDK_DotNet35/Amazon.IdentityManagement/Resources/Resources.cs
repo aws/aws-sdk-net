@@ -469,7 +469,8 @@ namespace Amazon.IdentityManagement.Resources
         /// This method internally calls the CreateGroup operation on the service.
         /// </para>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroup operation.</param>
-        void Create(CreateGroupRequest request);
+        /// <returns>An instance of  resource.</returns>
+        CreateGroupResponse Create(CreateGroupRequest request);
 
         /// <summary>
         /// Calls the Create operation on the Group resource.
@@ -477,7 +478,8 @@ namespace Amazon.IdentityManagement.Resources
         /// <para>
         /// This method internally calls the CreateGroup operation on the service.
         /// </para>
-        void Create();
+        /// <returns>An instance of  resource.</returns>
+        CreateGroupResponse Create();
 
         /// <summary>
         /// Calls the CreatePolicy operation on the Group resource.
@@ -847,7 +849,8 @@ namespace Amazon.IdentityManagement.Resources
         /// This method internally calls the CreateLoginProfile operation on the service.
         /// </para>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoginProfile operation.</param>
-        void Create(CreateLoginProfileRequest request);
+        /// <returns>An instance of  resource.</returns>
+        CreateLoginProfileResponse Create(CreateLoginProfileRequest request);
 
         /// <summary>
         /// Calls the Delete operation on the LoginProfile resource.
@@ -1250,7 +1253,8 @@ namespace Amazon.IdentityManagement.Resources
         /// This method internally calls the UpdateSAMLProvider operation on the service.
         /// </para>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSAMLProvider operation.</param>
-        void Update(UpdateSAMLProviderRequest request);
+        /// <returns>An instance of  resource.</returns>
+        UpdateSAMLProviderResponse Update(UpdateSAMLProviderRequest request);
 
 
         #endregion
