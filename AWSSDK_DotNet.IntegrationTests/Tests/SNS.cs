@@ -351,6 +351,38 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
+        [TestMethod]
+        [TestCategory("SNS")]
+        public void FindTopic()
+        {
+            // create new topic
+            var name = "dotnetsdk" + DateTime.Now.Ticks;
+            var createTopicRequest = new CreateTopicRequest
+            {
+                Name = name
+            };
+            var createTopicResult = Client.CreateTopic(createTopicRequest);
+            var topicArn = createTopicResult.TopicArn;
+
+            try
+            {
+                // find the topic by name
+                var foundTopic = Client.FindTopic(name);
+
+                // verify that the topic was fund
+                Assert.IsNotNull(foundTopic);
+            }
+            finally
+            {
+                // delete the topic
+                var deleteTopicRequest = new DeleteTopicRequest
+                {
+                    TopicArn = topicArn
+                };
+                Client.DeleteTopic(deleteTopicRequest);
+            }
+        }
+
         private static List<Topic> GetAllTopics()
         {
             var allTopics = new List<Topic>();
