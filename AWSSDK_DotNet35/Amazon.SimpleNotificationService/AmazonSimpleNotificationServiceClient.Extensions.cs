@@ -171,6 +171,62 @@ namespace Amazon.SimpleNotificationService
             return false;
         }
         #endregion
+
+        #region FindTopic
+
+        /// <summary>
+        /// Finds an existing Amazon SNS topic by iterating all SNS topics until a match is found.
+        /// <para>
+        /// The ListTopics method is used to fetch upto 100 SNS topics at a time until a SNS topic 
+        /// with an TopicArn that matches <paramref name="topicName"/> is found.
+        /// </para>
+        /// </summary>
+        /// <param name="topicName">The name of the topic find</param>
+        /// <returns>The matched SNS topic.</returns>
+        public Topic FindTopic(string topicName)
+        {
+            var nextToken = string.Empty;
+
+            do
+            {
+                var response = this.ListTopics(new ListTopicsRequest { NextToken = nextToken });
+
+                var matchedTopic = response.Topics.FirstOrDefault(x => TopicNameMatcher(x.TopicArn, topicName));
+
+                if (matchedTopic != null)
+                {
+                    return matchedTopic;
+                }
+
+                nextToken = response.NextToken;
+
+            } while (!string.IsNullOrEmpty(nextToken));
+
+            return null;
+        }
+
+        private static bool TopicNameMatcher(string topicArn, string topicName)
+        {
+            if (String.IsNullOrEmpty(topicArn))
+            {
+                return false;
+            }
+
+            if (String.IsNullOrEmpty(topicName))
+            {
+                return false;
+            }
+
+            int indexOfLastColon = topicArn.LastIndexOf(":", StringComparison.OrdinalIgnoreCase);
+            
+            if (indexOfLastColon.Equals(-1))
+            {
+                return false;
+            }
+
+            return topicArn.Substring(indexOfLastColon + 1).Equals(topicName);
+        }
+        #endregion
 #endif
     }
 }

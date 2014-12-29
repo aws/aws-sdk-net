@@ -16,7 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Amazon.SimpleNotificationService.Model;
 using Amazon.SQS;
 using Amazon.SQS.Model;
 
@@ -65,6 +65,19 @@ namespace Amazon.SimpleNotificationService
         /// <returns>The subscription ARN as returned by Amazon SNS when the queue is 
         /// successfully subscribed to the topic.</returns>
         string SubscribeQueue(string topicArn, IAmazonSQS sqsClient, string sqsQueueUrl);
+        #endregion
+
+        #region FindTopic
+        /// <summary>
+        /// Finds an existing Amazon SNS topic by iterating all SNS topics until a match is found.
+        /// <para>
+        /// The ListTopics method is used to fetch upto 100 SNS topics at a time until a SNS topic 
+        /// with an TopicArn that matches <paramref name="topicName"/> is found.
+        /// </para>
+        /// </summary>
+        /// <param name="topicName">The name of the topic find</param>
+        /// <returns>The matched SNS topic.</returns>
+        Topic FindTopic(string topicName);
         #endregion
 #endif
     }
