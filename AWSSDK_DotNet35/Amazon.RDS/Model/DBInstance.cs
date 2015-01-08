@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -43,18 +43,20 @@ namespace Amazon.RDS.Model
         private string _availabilityZone;
         private int? _backupRetentionPeriod;
         private string _characterSetName;
-        private string _dBInstanceClass;
-        private string _dBInstanceIdentifier;
-        private string _dBInstanceStatus;
-        private string _dBName;
-        private List<DBParameterGroupStatus> _dBParameterGroups = new List<DBParameterGroupStatus>();
-        private List<DBSecurityGroupMembership> _dBSecurityGroups = new List<DBSecurityGroupMembership>();
-        private DBSubnetGroup _dBSubnetGroup;
+        private string _dbInstanceClass;
+        private string _dbInstanceIdentifier;
+        private string _dbInstanceStatus;
+        private string _dbiResourceId;
+        private string _dbName;
+        private List<DBParameterGroupStatus> _dbParameterGroups = new List<DBParameterGroupStatus>();
+        private List<DBSecurityGroupMembership> _dbSecurityGroups = new List<DBSecurityGroupMembership>();
+        private DBSubnetGroup _dbSubnetGroup;
         private Endpoint _endpoint;
         private string _engine;
         private string _engineVersion;
         private DateTime? _instanceCreateTime;
         private int? _iops;
+        private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
         private string _licenseModel;
         private string _masterUsername;
@@ -68,6 +70,7 @@ namespace Amazon.RDS.Model
         private string _readReplicaSourceDBInstanceIdentifier;
         private string _secondaryAvailabilityZone;
         private List<DBInstanceStatusInfo> _statusInfos = new List<DBInstanceStatusInfo>();
+        private bool? _storageEncrypted;
         private string _storageType;
         private string _tdeCredentialArn;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
@@ -171,14 +174,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceClass
         {
-            get { return this._dBInstanceClass; }
-            set { this._dBInstanceClass = value; }
+            get { return this._dbInstanceClass; }
+            set { this._dbInstanceClass = value; }
         }
 
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this._dBInstanceClass != null;
+            return this._dbInstanceClass != null;
         }
 
         /// <summary>
@@ -190,14 +193,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceIdentifier
         {
-            get { return this._dBInstanceIdentifier; }
-            set { this._dBInstanceIdentifier = value; }
+            get { return this._dbInstanceIdentifier; }
+            set { this._dbInstanceIdentifier = value; }
         }
 
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this._dBInstanceIdentifier != null;
+            return this._dbInstanceIdentifier != null;
         }
 
         /// <summary>
@@ -208,26 +211,47 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceStatus
         {
-            get { return this._dBInstanceStatus; }
-            set { this._dBInstanceStatus = value; }
+            get { return this._dbInstanceStatus; }
+            set { this._dbInstanceStatus = value; }
         }
 
         // Check to see if DBInstanceStatus property is set
         internal bool IsSetDBInstanceStatus()
         {
-            return this._dBInstanceStatus != null;
+            return this._dbInstanceStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DbiResourceId. 
+        /// <para>
+        ///  If <code>StorageEncrypted</code> is true, the region-unique, immutable identifier
+        /// for the encrypted DB instance. This identifier is found in AWS CloudTrail log entries
+        /// whenever the KMS key for the DB instance is accessed. 
+        /// </para>
+        /// </summary>
+        public string DbiResourceId
+        {
+            get { return this._dbiResourceId; }
+            set { this._dbiResourceId = value; }
+        }
+
+        // Check to see if DbiResourceId property is set
+        internal bool IsSetDbiResourceId()
+        {
+            return this._dbiResourceId != null;
         }
 
         /// <summary>
         /// Gets and sets the property DBName. 
         /// <para>
         /// The meaning of this parameter differs according to the database engine you use. For
-        /// example, this value returns only MySQL information when returning values from CreateDBInstanceReadReplica
-        /// since read replicas are only supported for MySQL.
+        /// example, this value returns either MySQL or PostgreSQL information when returning
+        /// values from CreateDBInstanceReadReplica since Read Replicas are only supported for
+        /// MySQL and PostgreSQL.
         /// </para>
         ///  
         /// <para>
-        /// <b>MySQL</b>
+        /// <b>MySQL, SQL Server, PostgreSQL</b>
         /// </para>
         ///  
         /// <para>
@@ -251,14 +275,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBName
         {
-            get { return this._dBName; }
-            set { this._dBName = value; }
+            get { return this._dbName; }
+            set { this._dbName = value; }
         }
 
         // Check to see if DBName property is set
         internal bool IsSetDBName()
         {
-            return this._dBName != null;
+            return this._dbName != null;
         }
 
         /// <summary>
@@ -269,14 +293,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public List<DBParameterGroupStatus> DBParameterGroups
         {
-            get { return this._dBParameterGroups; }
-            set { this._dBParameterGroups = value; }
+            get { return this._dbParameterGroups; }
+            set { this._dbParameterGroups = value; }
         }
 
         // Check to see if DBParameterGroups property is set
         internal bool IsSetDBParameterGroups()
         {
-            return this._dBParameterGroups != null && this._dBParameterGroups.Count > 0; 
+            return this._dbParameterGroups != null && this._dbParameterGroups.Count > 0; 
         }
 
         /// <summary>
@@ -288,14 +312,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public List<DBSecurityGroupMembership> DBSecurityGroups
         {
-            get { return this._dBSecurityGroups; }
-            set { this._dBSecurityGroups = value; }
+            get { return this._dbSecurityGroups; }
+            set { this._dbSecurityGroups = value; }
         }
 
         // Check to see if DBSecurityGroups property is set
         internal bool IsSetDBSecurityGroups()
         {
-            return this._dBSecurityGroups != null && this._dBSecurityGroups.Count > 0; 
+            return this._dbSecurityGroups != null && this._dbSecurityGroups.Count > 0; 
         }
 
         /// <summary>
@@ -307,14 +331,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public DBSubnetGroup DBSubnetGroup
         {
-            get { return this._dBSubnetGroup; }
-            set { this._dBSubnetGroup = value; }
+            get { return this._dbSubnetGroup; }
+            set { this._dbSubnetGroup = value; }
         }
 
         // Check to see if DBSubnetGroup property is set
         internal bool IsSetDBSubnetGroup()
         {
-            return this._dBSubnetGroup != null;
+            return this._dbSubnetGroup != null;
         }
 
         /// <summary>
@@ -405,6 +429,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetIops()
         {
             return this._iops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        ///  If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted
+        /// DB instance. 
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>
@@ -591,7 +634,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReadReplicaDBInstanceIdentifiers. 
         /// <para>
-        ///  Contains one or more identifiers of the read replicas associated with this DB instance.
+        ///  Contains one or more identifiers of the Read Replicas associated with this DB instance.
         /// 
         /// </para>
         /// </summary>
@@ -610,7 +653,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReadReplicaSourceDBInstanceIdentifier. 
         /// <para>
-        ///  Contains the identifier of the source DB instance if this DB instance is a read replica.
+        ///  Contains the identifier of the source DB instance if this DB instance is a Read Replica.
         /// 
         /// </para>
         /// </summary>
@@ -648,7 +691,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StatusInfos. 
         /// <para>
-        ///  The status of a read replica. If the instance is not a read replica, this will be
+        ///  The status of a Read Replica. If the instance is not a Read Replica, this will be
         /// blank. 
         /// </para>
         /// </summary>
@@ -665,9 +708,27 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageEncrypted. 
+        /// <para>
+        ///  Specifies whether the DB instance is encrypted. 
+        /// </para>
+        /// </summary>
+        public bool StorageEncrypted
+        {
+            get { return this._storageEncrypted.GetValueOrDefault(); }
+            set { this._storageEncrypted = value; }
+        }
+
+        // Check to see if StorageEncrypted property is set
+        internal bool IsSetStorageEncrypted()
+        {
+            return this._storageEncrypted.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        ///  Specifies storage type associated with DB Instance. 
+        ///  Specifies the storage type associated with DB instance. 
         /// </para>
         /// </summary>
         public string StorageType

@@ -1,5 +1,14 @@
 {
-	"models" : [		
+	"models" : [	
+        {
+            "active": true,
+
+            "model": "cloudhsm",
+            "base-name": "CloudHSM",
+            "region-lookup-name": "cloudhsm",
+            "authentication-service-name": "cloudhsm",
+            "mobile-platforms": [ ]
+        }, 	
 		{
 			"active" : true,
 			
@@ -178,15 +187,25 @@
 			"max-retries" : 10,
             "mobile-platforms" : ["WinRT"]
 		},
-		{
+        {
+            "active": true,
+
+            "model": "ec2",
+            "base-name": "EC2",
+            "region-lookup-name": "ec2",
+            "authentication-service-name": "ec2",
+            "service-url": "https://ec2.us-east-1.amazonaws.com",
+            "mobile-platforms": [ "WinRT", "PCL", "WP8" ]
+        },
+        {
 			"active" : true,
 			
-			"model" : "ec2",
-			"base-name" : "EC2",
-			"region-lookup-name" : "ec2",
-			"authentication-service-name" : "ec2",
-			"service-url":"https://ec2.us-east-1.amazonaws.com",
-            "mobile-platforms" : ["WinRT", "PCL", "WP8"]
+			"model" : "ecs",
+			"base-name" : "ECS",
+			"region-lookup-name" : "ecs",
+			"authentication-service-name" : "ecs",
+			"service-url":"https://ecs.us-east-1.amazonaws.com",
+            "mobile-platforms" : ["WinRT"]
 		},
 		{
 			"active" : true,
@@ -288,7 +307,7 @@
             "region-lookup-name": "lambda",
             "authentication-service-name": "lambda",
             "mobile-platforms": [ "WinRT", "PCL", "WP8" ]
-        },		
+        },	       
         {
 			"active" : true,
 			

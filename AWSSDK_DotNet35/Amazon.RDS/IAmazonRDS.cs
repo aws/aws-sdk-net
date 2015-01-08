@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 
 
@@ -155,6 +155,45 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  ApplyPendingMaintenanceAction
+
+        /// <summary>
+        /// Applies a pending maintenance action to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ApplyPendingMaintenanceAction service method.</param>
+        /// 
+        /// <returns>The response from the ApplyPendingMaintenanceAction service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
+        /// The specified Resource ID was not found.
+        /// </exception>
+        ApplyPendingMaintenanceActionResponse ApplyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ApplyPendingMaintenanceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ApplyPendingMaintenanceAction operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndApplyPendingMaintenanceAction
+        ///         operation.</returns>
+        IAsyncResult BeginApplyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ApplyPendingMaintenanceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginApplyPendingMaintenanceAction.</param>
+        /// 
+        /// <returns>Returns a  ApplyPendingMaintenanceActionResult from RDS.</returns>
+        ApplyPendingMaintenanceActionResponse EndApplyPendingMaintenanceAction(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AuthorizeDBSecurityGroupIngress
 
         /// <summary>
@@ -165,7 +204,9 @@ namespace Amazon.RDS
         /// for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId
         /// and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). 
         /// 
-        ///  
+        ///  <note> You cannot authorize ingress from an EC2 security group in one Region to an
+        /// Amazon RDS DB instance in another. You cannot authorize ingress from a VPC security
+        /// group in one VPC to an Amazon RDS DB instance in another. </note> 
         /// <para>
         /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
         /// Tutorial</a>. 
@@ -218,7 +259,7 @@ namespace Amazon.RDS
         #region  CopyDBParameterGroup
 
         /// <summary>
-        /// Copies the specified DBParameterGroup.
+        /// Copies the specified DB parameter group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBParameterGroup service method.</param>
         /// 
@@ -312,7 +353,7 @@ namespace Amazon.RDS
         #region  CopyOptionGroup
 
         /// <summary>
-        /// Copies the specified Option Group.
+        /// Copies the specified option group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyOptionGroup service method.</param>
         /// 
@@ -401,6 +442,9 @@ namespace Amazon.RDS
         /// DB subnet group does not cover all Availability Zones after it is created because
         /// users' change.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// Error accessing KMS key.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -445,11 +489,11 @@ namespace Amazon.RDS
         #region  CreateDBInstanceReadReplica
 
         /// <summary>
-        /// Creates a DB instance that acts as a read replica of a source DB instance. 
+        /// Creates a DB instance that acts as a Read Replica of a source DB instance. 
         /// 
         ///  
         /// <para>
-        ///  All read replica DB instances are created as Single-AZ deployments with backups disabled.
+        ///  All Read Replica DB instances are created as Single-AZ deployments with backups disabled.
         /// All other DB instance attributes (including DB security groups and DB parameter groups)
         /// are inherited from the source DB instance, except as specified below. 
         /// </para>
@@ -505,6 +549,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// DB subnet group does not cover all Availability Zones after it is created because
         /// users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// Error accessing KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -947,7 +994,10 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted cannot be
-        /// associated with any DB instances.
+        /// associated with any DB instances. 
+        /// 
+        ///  <note> The specified DB parameter group cannot be associated with any DB instances.
+        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBParameterGroup service method.</param>
         /// 
@@ -989,7 +1039,9 @@ namespace Amazon.RDS
         #region  DeleteDBSecurityGroup
 
         /// <summary>
-        /// Deletes a DB security group.
+        /// Deletes a DB security group. 
+        /// 
+        ///  <note>The specified DB security group must not be associated with any DB instances.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBSecurityGroup service method.</param>
         /// 
@@ -1032,6 +1084,9 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated.
+        /// 
+        /// 
+        ///  <note>The DBSnapshot must be in the <code>available</code> state to be deleted.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBSnapshot service method.</param>
         /// 
@@ -1073,7 +1128,9 @@ namespace Amazon.RDS
         #region  DeleteDBSubnetGroup
 
         /// <summary>
-        /// Deletes a DB subnet group.
+        /// Deletes a DB subnet group. 
+        /// 
+        ///  <note>The specified database subnet group must not be associated with any DB instances.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBSubnetGroup service method.</param>
         /// 
@@ -1907,6 +1964,46 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribePendingMaintenanceActions
+
+        /// <summary>
+        /// Returns a list of resources (for example, DB Instances) that have at least one pending
+        /// maintenance action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePendingMaintenanceActions service method.</param>
+        /// 
+        /// <returns>The response from the DescribePendingMaintenanceActions service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
+        /// The specified Resource ID was not found.
+        /// </exception>
+        DescribePendingMaintenanceActionsResponse DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePendingMaintenanceActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePendingMaintenanceActions operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePendingMaintenanceActions
+        ///         operation.</returns>
+        IAsyncResult BeginDescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePendingMaintenanceActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePendingMaintenanceActions.</param>
+        /// 
+        /// <returns>Returns a  DescribePendingMaintenanceActionsResult from RDS.</returns>
+        DescribePendingMaintenanceActionsResponse EndDescribePendingMaintenanceActions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeReservedDBInstances
 
         /// <summary>
@@ -2189,7 +2286,13 @@ namespace Amazon.RDS
         /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
         /// request. 
         /// 
-        ///  <important> 
+        ///  <note> 
+        /// <para>
+        ///  Changes to dynamic parameters are applied immediately. Changes to static parameters
+        /// require a reboot without failover to the DB instance associated with the parameter
+        /// group before the change can take effect. 
+        /// </para>
+        ///  </note> <important> 
         /// <para>
         /// After you modify a DB parameter group, you should wait at least 5 minutes before creating
         /// your first DB instance that uses that DB parameter group as the default parameter
@@ -2404,7 +2507,16 @@ namespace Amazon.RDS
         #region  PromoteReadReplica
 
         /// <summary>
-        /// Promotes a read replica DB instance to a standalone DB instance.
+        /// Promotes a Read Replica DB instance to a standalone DB instance. 
+        /// 
+        ///  <note>
+        /// <para>
+        /// We recommend that you enable automated backups on your Read Replica before promoting
+        /// the Read Replica. This ensures that no backup is taken during the promotion process.
+        /// Once the instance is promoted to a primary instance, backups are taken based on your
+        /// backup settings.
+        /// </para>
+        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PromoteReadReplica service method.</param>
         /// 
@@ -2694,6 +2806,18 @@ namespace Amazon.RDS
         /// Creates a new DB instance from a DB snapshot. The target database is created from
         /// the source database restore point with the same configuration as the original source
         /// database, except that the new RDS instance is created with the default security group.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// If your intent is to replace your original DB instance with the new, restored DB instance,
+        /// then rename your original DB instance before you call the RestoreDBInstanceFromDBSnapshot
+        /// action. RDS does not allow two DB instances with the same name. Once you have renamed
+        /// your original DB instance with a different identifier, then you can pass the original
+        /// name of the DB instance as the DBInstanceIdentifier in the call to the RestoreDBInstanceFromDBSnapshot
+        /// action. The result is that you will replace the original DB instance with the DB instance
+        /// created from the snapshot.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceFromDBSnapshot service method.</param>
         /// 
@@ -2740,6 +2864,9 @@ namespace Amazon.RDS
         /// DB subnet group does not cover all Availability Zones after it is created because
         /// users' change.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// Error accessing KMS key.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -2785,7 +2912,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Restores a DB instance to an arbitrary point-in-time. Users can restore to any point
-        /// in time before the latestRestorableTime for up to backupRetentionPeriod days. The
+        /// in time before the LatestRestorableTime for up to BackupRetentionPeriod days. The
         /// target database is created from the source database with the same configuration as
         /// the original database except that the DB instance is created with the default DB security
         /// group.
@@ -2834,6 +2961,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// DB subnet group does not cover all Availability Zones after it is created because
         /// users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// Error accessing KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.

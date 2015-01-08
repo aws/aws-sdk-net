@@ -145,6 +145,8 @@
     <Compile Include="Amazon.AutoScaling\IAmazonAutoScaling.cs" />
     <Compile Include="Amazon.AWSSupport\AmazonAWSSupportClient.cs" />
     <Compile Include="Amazon.AWSSupport\IAmazonAWSSupport.cs" />
+    <Compile Include="Amazon.CloudHSM\AmazonCloudHSMClient.cs" />
+    <Compile Include="Amazon.CloudHSM\IAmazonCloudHSM.cs" />
     <Compile Include="Amazon.CodeDeploy\AmazonCodeDeployClient.cs" />
     <Compile Include="Amazon.CodeDeploy\IAmazonCodeDeploy.cs" />
     <Compile Include="Amazon.CognitoIdentity\AmazonCognitoIdentityClient.cs" />
@@ -203,6 +205,8 @@
     <Compile Include="Amazon.DynamoDBv2\IAmazonDynamoDB.cs" />
     <Compile Include="Amazon.EC2\AmazonEC2Client.cs" />
     <Compile Include="Amazon.EC2\IAmazonEC2.cs" />
+    <Compile Include="Amazon.ECS\AmazonECSClient.cs" />
+    <Compile Include="Amazon.ECS\IAmazonECS.cs" />
     <Compile Include="Amazon.ElastiCache\AmazonElastiCacheClient.cs" />
     <Compile Include="Amazon.ElastiCache\IAmazonElastiCache.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\AmazonElasticBeanstalkClient.cs" />
@@ -340,6 +344,17 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Auth\AccessControlPolicy\Internal\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudHSM\*" Exclude="..\AWSSDK_DotNet35\Amazon.CloudHSM\IAmazonCloudHSM.cs;..\AWSSDK_DotNet35\Amazon.CloudHSM\AmazonCloudHSMClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudHSM\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudHSM\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>
@@ -566,6 +581,17 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.EC2\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.ECS\*" Exclude="..\AWSSDK_DotNet35\Amazon.ECS\IAmazonECS.cs;..\AWSSDK_DotNet35\Amazon.ECS\AmazonECSClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.ECS\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.ECS\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>

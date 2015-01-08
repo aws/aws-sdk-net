@@ -210,6 +210,15 @@ namespace ServiceClientGenerator
             get { return this._name; }
         }
 
+        private string Customize(string typeName, string propertyName)
+        {
+            var custom = this.model.Customizations.GetPropertyModifier(typeName, propertyName);
+            if (custom != null)
+                return custom.EmitName;
+
+            return propertyName;
+        }
+
         /// <summary>
         /// A list of all the values for the Enumeration found in the json model
         /// </summary>
@@ -218,8 +227,16 @@ namespace ServiceClientGenerator
             get
             {
                 var enumValues = this._data[EnumKey];
+
                 var list = (from object value in enumValues
                             select new EnumEntry(value.ToString())).ToList();
+
+                foreach(var item in list)
+                {
+                    var custom = this.model.Customizations.GetPropertyModifier(this.Name, item.MarshallName);
+                    if (custom != null)
+                        item.CustomPropertyName = custom.EmitName;
+                }
 
                 return list.OrderBy(x => x.PropertyName).ToList();
             }
@@ -255,6 +272,8 @@ namespace ServiceClientGenerator
                 '-', '/', '.', ' ',':'
             };
 
+            public string CustomPropertyName { get; set; }
+
             /// <summary>
             /// Then name of the entry to be used by the generator to represnet the entry in the code
             /// </summary>
@@ -262,6 +281,8 @@ namespace ServiceClientGenerator
             {
                 get
                 {
+                    if (this.CustomPropertyName != null)
+                        return this.CustomPropertyName;
                     var sb = new StringBuilder();
                     var tokens = this.MarshallName.Split(CapitalizingSeparators, StringSplitOptions.RemoveEmptyEntries);
                     foreach (var token in tokens)

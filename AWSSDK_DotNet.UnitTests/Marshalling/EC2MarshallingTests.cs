@@ -178,6 +178,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void AttachClassicLinkVpcMarshallTest()
+        {
+            var operation = service_model.FindOperation("AttachClassicLinkVpc");
+
+            var request = InstantiateClassGenerator.Execute<AttachClassicLinkVpcRequest>();
+            var marshaller = new AttachClassicLinkVpcRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = AttachClassicLinkVpcResponseUnmarshaller.Instance.Unmarshall(context)
+                as AttachClassicLinkVpcResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void AttachInternetGatewayMarshallTest()
         {
             var operation = service_model.FindOperation("AttachInternetGateway");
@@ -1583,6 +1607,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeClassicLinkInstancesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeClassicLinkInstances");
+
+            var request = InstantiateClassGenerator.Execute<DescribeClassicLinkInstancesRequest>();
+            var marshaller = new DescribeClassicLinkInstancesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeClassicLinkInstancesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeClassicLinkInstancesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeConversionTasksMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeConversionTasks");
@@ -2375,6 +2423,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeVpcClassicLinkMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeVpcClassicLink");
+
+            var request = InstantiateClassGenerator.Execute<DescribeVpcClassicLinkRequest>();
+            var marshaller = new DescribeVpcClassicLinkRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeVpcClassicLinkResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeVpcClassicLinkResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeVpcPeeringConnectionsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeVpcPeeringConnections");
@@ -2462,6 +2534,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DescribeVpnGatewaysResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeVpnGatewaysResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DetachClassicLinkVpcMarshallTest()
+        {
+            var operation = service_model.FindOperation("DetachClassicLinkVpc");
+
+            var request = InstantiateClassGenerator.Execute<DetachClassicLinkVpcRequest>();
+            var marshaller = new DetachClassicLinkVpcRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DetachClassicLinkVpcResponseUnmarshaller.Instance.Unmarshall(context)
+                as DetachClassicLinkVpcResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -2571,6 +2667,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DisableVpcClassicLinkMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableVpcClassicLink");
+
+            var request = InstantiateClassGenerator.Execute<DisableVpcClassicLinkRequest>();
+            var marshaller = new DisableVpcClassicLinkRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisableVpcClassicLinkResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisableVpcClassicLinkResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DisassociateAddressMarshallTest()
         {
             var operation = service_model.FindOperation("DisassociateAddress");
@@ -2639,6 +2759,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void EnableVpcClassicLinkMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableVpcClassicLink");
+
+            var request = InstantiateClassGenerator.Execute<EnableVpcClassicLinkRequest>();
+            var marshaller = new EnableVpcClassicLinkRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = EnableVpcClassicLinkResponseUnmarshaller.Instance.Unmarshall(context)
+                as EnableVpcClassicLinkResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         

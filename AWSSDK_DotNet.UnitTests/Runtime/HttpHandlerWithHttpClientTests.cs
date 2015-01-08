@@ -71,7 +71,6 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(httpRequest.IsConfigureRequestCalled);
             Assert.IsTrue(httpRequest.IsSetRequestHeadersCalled);
             Assert.IsTrue(httpRequest.IsDisposed);
-            Assert.IsTrue(httpRequest.IsAborted);
         }
 
         private ExecutionContext CreateExecutionContextForListBuckets()

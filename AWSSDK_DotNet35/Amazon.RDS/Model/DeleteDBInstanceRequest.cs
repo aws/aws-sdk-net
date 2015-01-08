@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -45,7 +45,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DeleteDBInstanceRequest : AmazonRDSRequest
     {
-        private string _dBInstanceIdentifier;
+        private string _dbInstanceIdentifier;
         private string _finalDBSnapshotIdentifier;
         private bool? _skipFinalSnapshot;
 
@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         /// <param name="dbInstanceIdentifier"> The DB instance identifier for the DB instance to be deleted. This parameter isn't case sensitive.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
         public DeleteDBInstanceRequest(string dbInstanceIdentifier)
         {
-            _dBInstanceIdentifier = dbInstanceIdentifier;
+            _dbInstanceIdentifier = dbInstanceIdentifier;
         }
 
         /// <summary>
@@ -79,14 +79,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceIdentifier
         {
-            get { return this._dBInstanceIdentifier; }
-            set { this._dBInstanceIdentifier = value; }
+            get { return this._dbInstanceIdentifier; }
+            set { this._dbInstanceIdentifier = value; }
         }
 
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this._dBInstanceIdentifier != null;
+            return this._dbInstanceIdentifier != null;
         }
 
         /// <summary>
@@ -95,13 +95,14 @@ namespace Amazon.RDS.Model
         ///  The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is
         /// set to <code>false</code>. 
         /// </para>
-        ///  
+        ///  <note> Specifying this parameter and also setting the SkipFinalShapshot parameter
+        /// to true results in an error. </note> 
         /// <para>
         /// Constraints:
         /// </para>
         ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
         /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// <li>Cannot be specified when deleting a read replica.</li> </ul>
+        /// <li>Cannot be specified when deleting a Read Replica.</li> </ul>
         /// </summary>
         public string FinalDBSnapshotIdentifier
         {
@@ -124,9 +125,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>true</code> when deleting a read replica.
+        /// Specify <code>true</code> when deleting a Read Replica.
         /// </para>
-        ///  
+        ///  <note>The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot
+        /// is <code>false</code>.</note> 
         /// <para>
         /// Default: <code>false</code>
         /// </para>

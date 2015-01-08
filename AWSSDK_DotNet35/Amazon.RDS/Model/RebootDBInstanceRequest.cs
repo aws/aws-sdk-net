@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -53,7 +53,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class RebootDBInstanceRequest : AmazonRDSRequest
     {
-        private string _dBInstanceIdentifier;
+        private string _dbInstanceIdentifier;
         private bool? _forceFailover;
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model
         /// <param name="dbInstanceIdentifier"> The DB instance identifier. This parameter is stored as a lowercase string.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
         public RebootDBInstanceRequest(string dbInstanceIdentifier)
         {
-            _dBInstanceIdentifier = dbInstanceIdentifier;
+            _dbInstanceIdentifier = dbInstanceIdentifier;
         }
 
         /// <summary>
@@ -85,14 +85,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceIdentifier
         {
-            get { return this._dBInstanceIdentifier; }
-            set { this._dBInstanceIdentifier = value; }
+            get { return this._dbInstanceIdentifier; }
+            set { this._dbInstanceIdentifier = value; }
         }
 
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this._dBInstanceIdentifier != null;
+            return this._dbInstanceIdentifier != null;
         }
 
         /// <summary>

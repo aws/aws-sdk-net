@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key of the tag.
+        /// The tag key.
         /// </para>
         /// </summary>
         public string Key
@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource.
+        /// The resource type.
         /// </para>
         /// </summary>
         public ResourceType ResourceType
@@ -94,7 +94,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the tag.
+        /// The tag value.
         /// </para>
         /// </summary>
         public string Value

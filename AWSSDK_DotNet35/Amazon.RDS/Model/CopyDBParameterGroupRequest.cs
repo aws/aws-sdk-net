@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CopyDBParameterGroup operation.
-    /// Copies the specified DBParameterGroup.
+    /// Copies the specified DB parameter group.
     /// </summary>
     public partial class CopyDBParameterGroupRequest : AmazonRDSRequest
     {
@@ -41,23 +41,18 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceDBParameterGroupIdentifier. 
         /// <para>
-        ///  The identifier or ARN for the source DB Parameter Group. 
+        ///  The identifier or ARN for the source DB parameter group. 
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must specify a valid DB Parameter Group.</li> <li>If the source DB Parameter
-        /// Group is in the same region as the copy, specify a valid DB Parameter Group identifier,
-        /// or a valid ARN.</li> <li>If the source DB Parameter Group is in a different region
-        /// than the copy, specify a valid DB parameter group ARN.</li> </ul> 
-        /// <para>
-        /// Example: <code>my-db-param-group</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>
-        /// </para>
+        ///  <ul> <li>Must specify a valid DB parameter group.</li> <li>If the source DB parameter
+        /// group is in the same region as the copy, specify a valid DB parameter group identifier,
+        /// for example <code>my-db-param-group</code>, or a valid ARN.</li> <li>If the source
+        /// DB parameter group is in a different region than the copy, specify a valid DB parameter
+        /// group ARN, for example <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>.</li>
+        /// </ul>
         /// </summary>
         public string SourceDBParameterGroupIdentifier
         {
@@ -89,7 +84,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TargetDBParameterGroupDescription. 
         /// <para>
-        ///  The description for the copied DB Parameter Group. 
+        /// A description for the copied DB parameter group.
         /// </para>
         /// </summary>
         public string TargetDBParameterGroupDescription
@@ -107,7 +102,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TargetDBParameterGroupIdentifier. 
         /// <para>
-        ///  The identifier for the copied DB Parameter Group. 
+        /// The identifier for the copied DB parameter group.
         /// </para>
         ///  
         /// <para>

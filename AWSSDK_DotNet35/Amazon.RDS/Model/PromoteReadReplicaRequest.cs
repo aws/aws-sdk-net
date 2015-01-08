@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,12 +29,21 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the PromoteReadReplica operation.
-    /// Promotes a read replica DB instance to a standalone DB instance.
+    /// Promotes a Read Replica DB instance to a standalone DB instance. 
+    /// 
+    ///  <note>
+    /// <para>
+    /// We recommend that you enable automated backups on your Read Replica before promoting
+    /// the Read Replica. This ensures that no backup is taken during the promotion process.
+    /// Once the instance is promoted to a primary instance, backups are taken based on your
+    /// backup settings.
+    /// </para>
+    /// </note>
     /// </summary>
     public partial class PromoteReadReplicaRequest : AmazonRDSRequest
     {
         private int? _backupRetentionPeriod;
-        private string _dBInstanceIdentifier;
+        private string _dbInstanceIdentifier;
         private string _preferredBackupWindow;
 
         /// <summary>
@@ -74,7 +83,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be the identifier for an existing read replica DB instance</li> <li>Must
+        ///  <ul> <li>Must be the identifier for an existing Read Replica DB instance</li> <li>Must
         /// contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must
         /// be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
         /// </ul> 
@@ -84,14 +93,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceIdentifier
         {
-            get { return this._dBInstanceIdentifier; }
-            set { this._dBInstanceIdentifier = value; }
+            get { return this._dbInstanceIdentifier; }
+            set { this._dbInstanceIdentifier = value; }
         }
 
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this._dBInstanceIdentifier != null;
+            return this._dbInstanceIdentifier != null;
         }
 
         /// <summary>

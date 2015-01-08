@@ -3,6 +3,7 @@
 The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web Services][aws] and build scalable solutions with Amazon S3, Amazon DynamoDB, Amazon Glacier, and more. You can get started in minutes using [NuGet][nuget-info] or by getting the [source code][sdk-source].
 
 * [API Docs][docs-api]
+* [AWS .NET Developer Blog][dotnet-blog]
 * [SDK Homepage][sdk-website]
 * [Forum][sdk-forum]
 * [GitHub Issues][sdk-issues]
@@ -65,3 +66,4 @@ the startup project in the **AWSSDK_DotNet.Core.sln** solution.
 [aws-iam-credentials]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-roles.html
 [docs-guide]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/welcome.html
 [credentials-management]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-config-creds.html
+[dotnet-blog]: http://blogs.aws.amazon.com/net/

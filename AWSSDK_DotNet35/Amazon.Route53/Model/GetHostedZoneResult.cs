@@ -34,7 +34,7 @@ namespace Amazon.Route53.Model
     {
         private HostedZone _hostedZone;
         private DelegationSet _delegationSet;
-        private List<VPC> _vPCs = new List<VPC>();
+        private List<VPC> _vpCs = new List<VPC>();
 
         /// <summary>
         /// Gets and sets the property HostedZone. 
@@ -82,14 +82,14 @@ namespace Amazon.Route53.Model
         /// </summary>
         public List<VPC> VPCs
         {
-            get { return this._vPCs; }
-            set { this._vPCs = value; }
+            get { return this._vpCs; }
+            set { this._vpCs = value; }
         }
 
         // Check to see if VPCs property is set
         internal bool IsSetVPCs()
         {
-            return this._vPCs != null && this._vPCs.Count > 0; 
+            return this._vpCs != null && this._vpCs.Count > 0; 
         }
 
     }

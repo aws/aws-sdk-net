@@ -44,7 +44,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     {
         private string _loadBalancerName;
         private int? _loadBalancerPort;
-        private string _sSLCertificateId;
+        private string _sslCertificateId;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -61,7 +61,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             _loadBalancerName = loadBalancerName;
             _loadBalancerPort = loadBalancerPort;
-            _sSLCertificateId = sslCertificateId;
+            _sslCertificateId = sslCertificateId;
         }
 
         /// <summary>
@@ -111,14 +111,14 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public string SSLCertificateId
         {
-            get { return this._sSLCertificateId; }
-            set { this._sSLCertificateId = value; }
+            get { return this._sslCertificateId; }
+            set { this._sslCertificateId = value; }
         }
 
         // Check to see if SSLCertificateId property is set
         internal bool IsSetSSLCertificateId()
         {
-            return this._sSLCertificateId != null;
+            return this._sslCertificateId != null;
         }
 
     }

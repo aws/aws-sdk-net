@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -97,6 +97,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBInstanceStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DbiResourceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DbiResourceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DBName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -151,6 +157,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("KmsKeyId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("LatestRestorableTime", targetDepth))
@@ -232,6 +244,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         var unmarshaller = DBInstanceStatusInfoUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.StatusInfos.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("StorageEncrypted", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.StorageEncrypted = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StorageType", targetDepth))

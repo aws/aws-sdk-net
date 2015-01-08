@@ -34,8 +34,8 @@ namespace Amazon.SQS.Model
     {
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private string _body;
-        private string _mD5OfBody;
-        private string _mD5OfMessageAttributes;
+        private string _md5OfBody;
+        private string _md5OfMessageAttributes;
         private Dictionary<string, MessageAttributeValue> _messageAttributes = new Dictionary<string, MessageAttributeValue>();
         private string _messageId;
         private string _receiptHandle;
@@ -92,14 +92,14 @@ namespace Amazon.SQS.Model
         /// </summary>
         public string MD5OfBody
         {
-            get { return this._mD5OfBody; }
-            set { this._mD5OfBody = value; }
+            get { return this._md5OfBody; }
+            set { this._md5OfBody = value; }
         }
 
         // Check to see if MD5OfBody property is set
         internal bool IsSetMD5OfBody()
         {
-            return this._mD5OfBody != null;
+            return this._md5OfBody != null;
         }
 
         /// <summary>
@@ -112,14 +112,14 @@ namespace Amazon.SQS.Model
         /// </summary>
         public string MD5OfMessageAttributes
         {
-            get { return this._mD5OfMessageAttributes; }
-            set { this._mD5OfMessageAttributes = value; }
+            get { return this._md5OfMessageAttributes; }
+            set { this._md5OfMessageAttributes = value; }
         }
 
         // Check to see if MD5OfMessageAttributes property is set
         internal bool IsSetMD5OfMessageAttributes()
         {
-            return this._mD5OfMessageAttributes != null;
+            return this._md5OfMessageAttributes != null;
         }
 
         /// <summary>

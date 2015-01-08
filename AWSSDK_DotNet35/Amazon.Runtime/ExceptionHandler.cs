@@ -39,15 +39,23 @@ namespace Amazon.Runtime
 
         internal static WebServiceExceptionEventArgs Create(Exception exception, IRequest request)
         {
-            WebServiceExceptionEventArgs args = new WebServiceExceptionEventArgs
-            {
-                Headers = request.Headers,
-                Parameters = request.Parameters,
-                ServiceName = request.ServiceName,
-                Request = request.OriginalRequest,
-                Endpoint = request.Endpoint,
-                Exception = exception
-            };
+            WebServiceExceptionEventArgs args;
+            if (request == null)
+                args = new WebServiceExceptionEventArgs
+                {
+                    Exception = exception
+                };
+            else
+                args = new WebServiceExceptionEventArgs
+                {
+                    Headers = request.Headers,
+                    Parameters = request.Parameters,
+                    ServiceName = request.ServiceName,
+                    Request = request.OriginalRequest,
+                    Endpoint = request.Endpoint,
+                    Exception = exception
+                };
+
             return args;
         }
 

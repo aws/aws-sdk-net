@@ -48,6 +48,32 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             BaseClean();
         }
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestHttpErrorResponseUnmarshalling()
+        {
+            try
+            {
+                Client.PutObject(new PutObjectRequest
+                {
+                    BucketName = UtilityMethods.GenerateName("NonExistentBucket"),
+                    Key = "1",
+                    ContentBody = "TestContent"
+                });
+            }
+            catch (AmazonS3Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                Console.WriteLine(exception.ErrorCode);
+                Console.WriteLine(exception.StatusCode);
+
+                Assert.AreEqual("The specified bucket does not exist", exception.Message);
+                Assert.AreEqual("NoSuchBucket", exception.ErrorCode);
+                Assert.AreEqual(HttpStatusCode.NotFound, exception.StatusCode);
+            }
+        }
+
+
  #if ASYNC_AWAIT
         [TestMethod]
         [TestCategory("S3")]

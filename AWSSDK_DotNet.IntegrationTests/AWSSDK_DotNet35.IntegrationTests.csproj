@@ -64,6 +64,7 @@
     <Compile Include=".\Tests\IAM\*.cs" />
     <Compile Include=".\Tests\RDS\*.cs" />
     <Compile Include=".\Utils\*.cs" />
+    <Compile Include="Tests\CloudHSM.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AWSSDK_DotNet35\AWSSDK_DotNet35.csproj">

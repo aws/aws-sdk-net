@@ -1,0 +1,84 @@
+{ 
+	"shapeModifiers": {
+        "ClientVersion": {
+            "modify": [
+                {
+                    "5.1": { "emitPropertyName": "v5_1" }
+                },
+                {
+                    "5.3": { "emitPropertyName": "v5_3" }
+                }
+            ]
+        },
+	},
+    "simpleMethods" : {
+        "operations" : {
+            "CreateHapg" : {
+                "methodForms" : [
+                    [
+                        "Label"
+                    ]
+                ]
+            },
+            "DeleteHapg" : {
+                "methodForms" : [
+                    [
+                        "HapgArn"
+                    ]
+                ]
+            },
+            "DeleteHsm" : {
+                "methodForms" : [
+                    [
+                        "HsmArn"
+                    ]
+                ]
+            },
+            "DeleteLunaClient" : {
+                "methodForms" : [
+                    [
+                        "ClientArn"
+                    ]
+                ]
+            },
+            "DescribeHapg" : {
+                "methodForms" : [
+                    [
+                        "HapgArn"
+                    ]
+                ]
+            },
+            "DescribeHsm" : {
+                "methodForms" : [
+                    [
+                        "HsmArn"
+                    ]
+                ]
+            },
+            "ListAvailableZones" : {
+                "methodForms" : [
+                    [
+                    ]
+                ]
+            },
+            "ListHapgs" : {
+                "methodForms" : [
+                    [
+                    ]
+                ]
+            },
+            "ListHsms" : {
+                "methodForms" : [
+                    [
+                    ]
+                ]
+            },
+            "ListLunaClients" : {
+                "methodForms" : [
+                    [
+                    ]
+                ]
+            }
+        }
+    }
+}

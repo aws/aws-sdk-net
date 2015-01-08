@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,11 +29,11 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBInstanceReadReplica operation.
-    /// Creates a DB instance that acts as a read replica of a source DB instance. 
+    /// Creates a DB instance that acts as a Read Replica of a source DB instance. 
     /// 
     ///  
     /// <para>
-    ///  All read replica DB instances are created as Single-AZ deployments with backups disabled.
+    ///  All Read Replica DB instances are created as Single-AZ deployments with backups disabled.
     /// All other DB instance attributes (including DB security groups and DB parameter groups)
     /// are inherited from the source DB instance, except as specified below. 
     /// </para>
@@ -47,9 +47,9 @@ namespace Amazon.RDS.Model
     {
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
-        private string _dBInstanceClass;
-        private string _dBInstanceIdentifier;
-        private string _dBSubnetGroupName;
+        private string _dbInstanceClass;
+        private string _dbInstanceIdentifier;
+        private string _dbSubnetGroupName;
         private int? _iops;
         private string _optionGroupName;
         private int? _port;
@@ -66,18 +66,18 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates CreateDBInstanceReadReplicaRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbInstanceIdentifier"> The DB instance identifier of the read replica. This is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </param>
-        /// <param name="sourceDBInstanceIdentifier"> The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to five read replicas.  Constraints: <ul> <li>Must be the identifier of an existing DB instance.</li> <li>Can specify a DB instance that is a read replica only if the source is running MySQL 5.6.</li> <li>The specified DB instance must have automatic backups enabled, its backup retention period must be greater than 0.</li> <li>If the source DB instance is in the same region as the read replica, specify a valid DB instance identifier.</li> <li>If the source DB instance is in a different region than the read replica, specify a valid DB instance ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul></param>
+        /// <param name="dbInstanceIdentifier"> The DB instance identifier of the Read Replica. This is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </param>
+        /// <param name="sourceDBInstanceIdentifier"> The identifier of the DB instance that will act as the source for the Read Replica. Each DB instance can have up to five Read Replicas.  Constraints: <ul> <li>Must be the identifier of an existing DB instance.</li> <li>Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6.</li> <li>Can specify a DB instance that is a PostgreSQL Read Replica only if the source is running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have automatic backups enabled, its backup retention period must be greater than 0.</li> <li>If the source DB instance is in the same region as the Read Replica, specify a valid DB instance identifier.</li> <li>If the source DB instance is in a different region than the Read Replica, specify a valid DB instance ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul></param>
         public CreateDBInstanceReadReplicaRequest(string dbInstanceIdentifier, string sourceDBInstanceIdentifier)
         {
-            _dBInstanceIdentifier = dbInstanceIdentifier;
+            _dbInstanceIdentifier = dbInstanceIdentifier;
             _sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
         }
 
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        ///  Indicates that minor engine upgrades will be applied automatically to the read replica
+        ///  Indicates that minor engine upgrades will be applied automatically to the Read Replica
         /// during the maintenance window. 
         /// </para>
         ///  
@@ -100,7 +100,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        ///  The Amazon EC2 Availability Zone that the read replica will be created in. 
+        ///  The Amazon EC2 Availability Zone that the Read Replica will be created in. 
         /// </para>
         ///  
         /// <para>
@@ -126,7 +126,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        ///  The compute and memory capacity of the read replica. 
+        ///  The compute and memory capacity of the Read Replica. 
         /// </para>
         ///  
         /// <para>
@@ -142,33 +142,33 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceClass
         {
-            get { return this._dBInstanceClass; }
-            set { this._dBInstanceClass = value; }
+            get { return this._dbInstanceClass; }
+            set { this._dbInstanceClass = value; }
         }
 
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this._dBInstanceClass != null;
+            return this._dbInstanceClass != null;
         }
 
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        ///  The DB instance identifier of the read replica. This is the unique key that identifies
+        ///  The DB instance identifier of the Read Replica. This is the unique key that identifies
         /// a DB instance. This parameter is stored as a lowercase string. 
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier
         {
-            get { return this._dBInstanceIdentifier; }
-            set { this._dBInstanceIdentifier = value; }
+            get { return this._dbInstanceIdentifier; }
+            set { this._dbInstanceIdentifier = value; }
         }
 
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this._dBInstanceIdentifier != null;
+            return this._dbInstanceIdentifier != null;
         }
 
         /// <summary>
@@ -184,22 +184,22 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li>Can only be specified if the source DB instance identifier specifies a DB
         /// instance in another region.</li> <li>The specified DB subnet group must be in the
-        /// same region in which the operation is running.</li> <li> All read replicas in one
+        /// same region in which the operation is running.</li> <li> All Read Replicas in one
         /// region that are created from the same source DB instance must either: <ul> <li>Specify
-        /// DB subnet groups from the same VPC. All these read replicas will be created in the
-        /// same VPC.</li> <li>Not specify a DB subnet group. All these read replicas will be
+        /// DB subnet groups from the same VPC. All these Read Replicas will be created in the
+        /// same VPC.</li> <li>Not specify a DB subnet group. All these Read Replicas will be
         /// created outside of any VPC.</li> </ul> </li> </ul>
         /// </summary>
         public string DBSubnetGroupName
         {
-            get { return this._dBSubnetGroupName; }
-            set { this._dBSubnetGroupName = value; }
+            get { return this._dbSubnetGroupName; }
+            set { this._dbSubnetGroupName = value; }
         }
 
         // Check to see if DBSubnetGroupName property is set
         internal bool IsSetDBSubnetGroupName()
         {
-            return this._dBSubnetGroupName != null;
+            return this._dbSubnetGroupName != null;
         }
 
         /// <summary>
@@ -302,20 +302,21 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceDBInstanceIdentifier. 
         /// <para>
-        ///  The identifier of the DB instance that will act as the source for the read replica.
-        /// Each DB instance can have up to five read replicas. 
+        ///  The identifier of the DB instance that will act as the source for the Read Replica.
+        /// Each DB instance can have up to five Read Replicas. 
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
         ///  <ul> <li>Must be the identifier of an existing DB instance.</li> <li>Can specify
-        /// a DB instance that is a read replica only if the source is running MySQL 5.6.</li>
-        /// <li>The specified DB instance must have automatic backups enabled, its backup retention
-        /// period must be greater than 0.</li> <li>If the source DB instance is in the same region
-        /// as the read replica, specify a valid DB instance identifier.</li> <li>If the source
-        /// DB instance is in a different region than the read replica, specify a valid DB instance
-        /// ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+        /// a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6.</li>
+        /// <li>Can specify a DB instance that is a PostgreSQL Read Replica only if the source
+        /// is running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have automatic
+        /// backups enabled, its backup retention period must be greater than 0.</li> <li>If the
+        /// source DB instance is in the same region as the Read Replica, specify a valid DB instance
+        /// identifier.</li> <li>If the source DB instance is in a different region than the Read
+        /// Replica, specify a valid DB instance ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
         /// Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
         /// </summary>
         public string SourceDBInstanceIdentifier
@@ -333,7 +334,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        ///  Specifies storage type to be associated with the DB Instance read replica. 
+        ///  Specifies the storage type to be associated with the Read Replica. 
         /// </para>
         ///  
         /// <para>
@@ -343,6 +344,11 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
         /// parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
+        /// <code>standard</code> 
         /// </para>
         /// </summary>
         public string StorageType

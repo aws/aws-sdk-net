@@ -29,7 +29,39 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountAttributes operation.
-    /// Describes the specified attribute of your AWS account.
+    /// Describes attributes of your AWS account. The following are the supported account
+    /// attributes:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// <code>supported-platforms</code>: Indicates whether your account can launch instances
+    /// into EC2-Classic and EC2-VPC, or only into EC2-VPC.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// <code>max-instances</code>: The maximum number of On-Demand instances that you can
+    /// run.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
+    /// groups that you can assign to a network interface.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
+    /// can allocate for use with EC2-Classic. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
+    /// you can allocate for use with EC2-VPC.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeAccountAttributesRequest : AmazonEC2Request
     {

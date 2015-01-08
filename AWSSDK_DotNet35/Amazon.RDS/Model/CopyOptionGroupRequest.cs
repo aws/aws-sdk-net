@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CopyOptionGroup operation.
-    /// Copies the specified Option Group.
+    /// Copies the specified option group.
     /// </summary>
     public partial class CopyOptionGroupRequest : AmazonRDSRequest
     {
@@ -41,23 +41,17 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceOptionGroupIdentifier. 
         /// <para>
-        ///  The identifier or ARN for the source Option Group. 
+        /// The identifier or ARN for the source option group. 
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must specify a valid Option Group.</li> <li>If the source Option Group is
-        /// in the same region as the copy, specify a valid Option Group identifier, or a valid
-        /// ARN.</li> <li>If the source Option Group is in a different region than the copy, specify
-        /// a valid Option group ARN.</li> </ul> 
-        /// <para>
-        /// Example: <code>my-option-group</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>
-        /// </para>
+        ///  <ul> <li>Must specify a valid option group.</li> <li>If the source option group is
+        /// in the same region as the copy, specify a valid option group identifier, for example
+        /// <code>my-option-group</code>, or a valid ARN.</li> <li>If the source option group
+        /// is in a different region than the copy, specify a valid option group ARN, for example
+        /// <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</li> </ul>
         /// </summary>
         public string SourceOptionGroupIdentifier
         {
@@ -89,7 +83,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TargetOptionGroupDescription. 
         /// <para>
-        ///  The description for the copied Option Group. 
+        /// The description for the copied option group. 
         /// </para>
         /// </summary>
         public string TargetOptionGroupDescription
@@ -107,7 +101,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TargetOptionGroupIdentifier. 
         /// <para>
-        ///  The identifier for the copied Option Group. 
+        /// The identifier for the copied option group. 
         /// </para>
         ///  
         /// <para>

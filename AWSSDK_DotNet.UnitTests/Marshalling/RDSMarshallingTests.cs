@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 
 
@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class RDSMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("rds-2014-09-01.normal.json", "rds.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("rds-2014-10-31.normal.json", "rds.customizations.json");
         
 
         [TestMethod]
@@ -79,6 +79,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ApplyPendingMaintenanceActionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ApplyPendingMaintenanceAction");
+
+            var request = InstantiateClassGenerator.Execute<ApplyPendingMaintenanceActionRequest>();
+            var marshaller = new ApplyPendingMaintenanceActionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ApplyPendingMaintenanceActionResponseUnmarshaller.Instance.Unmarshall(context)
+                as ApplyPendingMaintenanceActionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -874,6 +898,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DescribeOrderableDBInstanceOptionsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeOrderableDBInstanceOptionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void DescribePendingMaintenanceActionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribePendingMaintenanceActions");
+
+            var request = InstantiateClassGenerator.Execute<DescribePendingMaintenanceActionsRequest>();
+            var marshaller = new DescribePendingMaintenanceActionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribePendingMaintenanceActionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribePendingMaintenanceActionsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 using Amazon.SimpleNotificationService.Model;
 using Amazon.SQS;
 using Amazon.SQS.Model;
@@ -79,6 +80,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>The matched SNS topic.</returns>
         Topic FindTopic(string topicName);
         #endregion
+
 
         /// <summary>
         /// This is a utility method which updates the policy of a topic to allow the

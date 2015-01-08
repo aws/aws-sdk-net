@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,11 +29,13 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBSecurityGroup operation.
-    /// Deletes a DB security group.
+    /// Deletes a DB security group. 
+    /// 
+    ///  <note>The specified DB security group must not be associated with any DB instances.</note>
     /// </summary>
     public partial class DeleteDBSecurityGroupRequest : AmazonRDSRequest
     {
-        private string _dBSecurityGroupName;
+        private string _dbSecurityGroupName;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -43,10 +45,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates DeleteDBSecurityGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbSecurityGroupName"> The name of the DB security group to delete.   Constraints:  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>May not contain spaces</li> </ul></param>
+        /// <param name="dbSecurityGroupName"> The name of the DB security group to delete.  <note>You cannot delete the default DB security group.</note>  Constraints:  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>May not contain spaces</li> </ul></param>
         public DeleteDBSecurityGroupRequest(string dbSecurityGroupName)
         {
-            _dBSecurityGroupName = dbSecurityGroupName;
+            _dbSecurityGroupName = dbSecurityGroupName;
         }
 
         /// <summary>
@@ -54,7 +56,7 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  The name of the DB security group to delete. 
         /// </para>
-        ///  
+        ///  <note>You cannot delete the default DB security group.</note> 
         /// <para>
         ///  Constraints: 
         /// </para>
@@ -64,14 +66,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSecurityGroupName
         {
-            get { return this._dBSecurityGroupName; }
-            set { this._dBSecurityGroupName = value; }
+            get { return this._dbSecurityGroupName; }
+            set { this._dbSecurityGroupName = value; }
         }
 
         // Check to see if DBSecurityGroupName property is set
         internal bool IsSetDBSecurityGroupName()
         {
-            return this._dBSecurityGroupName != null;
+            return this._dbSecurityGroupName != null;
         }
 
     }

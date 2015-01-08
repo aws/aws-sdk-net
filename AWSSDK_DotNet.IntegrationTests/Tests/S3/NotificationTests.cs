@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                             {
                                 Id = "the-queue-test",
                                 Queue = queueArn,
-                                Events = new List<EventType>{EventType.ObjectCreatedPut}
+                                Events = {EventType.ObjectCreatedPut}
                             }
                         }
                     };
@@ -127,6 +127,36 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual("the-queue-test", getResponse.QueueConfigurations[0].Id);
                     Assert.AreEqual(queueArn, getResponse.QueueConfigurations[0].Queue);
 
+                    // Purge queue to remove test message sent configuration was setup.
+                    sqsClient.PurgeQueue(createResponse.QueueUrl);
+                    Thread.Sleep(1000);
+
+                    var putObjectRequest = new PutObjectRequest
+                        {
+                            BucketName = bucketName,
+                            Key = "data.txt",
+                            ContentBody = "Important Data"
+                        };
+
+                    s3Client.PutObject(putObjectRequest);
+
+                    string messageBody = null;
+                    for(int i = 0; i < 5 && messageBody == null; i++)
+                    {
+                        var receiveResponse = sqsClient.ReceiveMessage(new ReceiveMessageRequest { QueueUrl = createResponse.QueueUrl, WaitTimeSeconds = 20 });
+                        if (receiveResponse.Messages.Count != 0)
+                        {
+                            messageBody = receiveResponse.Messages[0].Body;
+                        }
+                    }
+
+
+                    var evnt = S3EventNotification.ParseJson(messageBody);
+
+                    Assert.AreEqual(1, evnt.Records.Count);
+                    Assert.AreEqual(putObjectRequest.BucketName, evnt.Records[0].S3.Bucket.Name);
+                    Assert.AreEqual(putObjectRequest.Key, evnt.Records[0].S3.Object.Key);
+                    Assert.AreEqual(putObjectRequest.ContentBody.Length, evnt.Records[0].S3.Object.Size);
                 }
                 finally
                 {

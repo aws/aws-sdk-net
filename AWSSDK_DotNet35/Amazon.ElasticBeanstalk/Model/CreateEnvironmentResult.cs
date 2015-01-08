@@ -33,7 +33,7 @@ namespace Amazon.ElasticBeanstalk.Model
     public partial class CreateEnvironmentResult : AmazonWebServiceResponse
     {
         private string _applicationName;
-        private string _cNAME;
+        private string _cname;
         private DateTime? _dateCreated;
         private DateTime? _dateUpdated;
         private string _description;
@@ -74,14 +74,14 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public string CNAME
         {
-            get { return this._cNAME; }
-            set { this._cNAME = value; }
+            get { return this._cname; }
+            set { this._cname = value; }
         }
 
         // Check to see if CNAME property is set
         internal bool IsSetCNAME()
         {
-            return this._cNAME != null;
+            return this._cname != null;
         }
 
         /// <summary>

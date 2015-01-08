@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,8 +34,8 @@ namespace Amazon.RDS.Model
     public partial class ReservedDBInstance
     {
         private string _currencyCode;
-        private string _dBInstanceClass;
-        private int? _dBInstanceCount;
+        private string _dbInstanceClass;
+        private int? _dbInstanceCount;
         private int? _duration;
         private double? _fixedPrice;
         private bool? _multiAZ;
@@ -74,14 +74,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceClass
         {
-            get { return this._dBInstanceClass; }
-            set { this._dBInstanceClass = value; }
+            get { return this._dbInstanceClass; }
+            set { this._dbInstanceClass = value; }
         }
 
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this._dBInstanceClass != null;
+            return this._dbInstanceClass != null;
         }
 
         /// <summary>
@@ -92,14 +92,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public int DBInstanceCount
         {
-            get { return this._dBInstanceCount.GetValueOrDefault(); }
-            set { this._dBInstanceCount = value; }
+            get { return this._dbInstanceCount.GetValueOrDefault(); }
+            set { this._dbInstanceCount = value; }
         }
 
         // Check to see if DBInstanceCount property is set
         internal bool IsSetDBInstanceCount()
         {
-            return this._dBInstanceCount.HasValue; 
+            return this._dbInstanceCount.HasValue; 
         }
 
         /// <summary>

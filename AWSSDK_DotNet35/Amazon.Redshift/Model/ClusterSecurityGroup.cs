@@ -34,8 +34,8 @@ namespace Amazon.Redshift.Model
     {
         private string _clusterSecurityGroupName;
         private string _description;
-        private List<EC2SecurityGroup> _eC2SecurityGroups = new List<EC2SecurityGroup>();
-        private List<IPRange> _iPRanges = new List<IPRange>();
+        private List<EC2SecurityGroup> _ec2SecurityGroups = new List<EC2SecurityGroup>();
+        private List<IPRange> _ipRanges = new List<IPRange>();
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -83,14 +83,14 @@ namespace Amazon.Redshift.Model
         /// </summary>
         public List<EC2SecurityGroup> EC2SecurityGroups
         {
-            get { return this._eC2SecurityGroups; }
-            set { this._eC2SecurityGroups = value; }
+            get { return this._ec2SecurityGroups; }
+            set { this._ec2SecurityGroups = value; }
         }
 
         // Check to see if EC2SecurityGroups property is set
         internal bool IsSetEC2SecurityGroups()
         {
-            return this._eC2SecurityGroups != null && this._eC2SecurityGroups.Count > 0; 
+            return this._ec2SecurityGroups != null && this._ec2SecurityGroups.Count > 0; 
         }
 
         /// <summary>
@@ -102,14 +102,14 @@ namespace Amazon.Redshift.Model
         /// </summary>
         public List<IPRange> IPRanges
         {
-            get { return this._iPRanges; }
-            set { this._iPRanges = value; }
+            get { return this._ipRanges; }
+            set { this._ipRanges = value; }
         }
 
         // Check to see if IPRanges property is set
         internal bool IsSetIPRanges()
         {
-            return this._iPRanges != null && this._iPRanges.Count > 0; 
+            return this._ipRanges != null && this._ipRanges.Count > 0; 
         }
 
         /// <summary>

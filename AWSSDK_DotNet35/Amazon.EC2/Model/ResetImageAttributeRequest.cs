@@ -30,6 +30,12 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ResetImageAttribute operation.
     /// Resets an attribute of an AMI to its default value.
+    /// 
+    ///  <note>
+    /// <para>
+    ///  The productCodes attribute can't be reset. 
+    /// </para>
+    /// </note>
     /// </summary>
     public partial class ResetImageAttributeRequest : AmazonEC2Request
     {

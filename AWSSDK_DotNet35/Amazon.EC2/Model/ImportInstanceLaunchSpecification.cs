@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         private Placement _placement;
         private string _privateIpAddress;
         private string _subnetId;
-        private string _userData;
+        private UserData _userData;
 
         /// <summary>
         /// Gets and sets the property AdditionalInfo.
@@ -132,8 +132,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// The instance type. This is not supported for VMs imported into a VPC, which are assigned
+        /// the default security group. After a VM is imported into a VPC, you can specify another
+        /// security group using the AWS Management Console. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information
+        /// about the Linux instance types you can import, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+        /// You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.
         /// </para>
         /// </summary>
         public InstanceType InstanceType
@@ -221,7 +225,7 @@ namespace Amazon.EC2.Model
         /// User data to be made available to the instance.
         /// </para>
         /// </summary>
-        public string UserData
+        public UserData UserData
         {
             get { return this._userData; }
             set { this._userData = value; }

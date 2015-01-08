@@ -33,7 +33,7 @@ namespace Amazon.KeyManagementService.Model
     public partial class KeyMetadata
     {
         private string _arn;
-        private string _aWSAccountId;
+        private string _awsAccountId;
         private DateTime? _creationDate;
         private string _description;
         private bool? _enabled;
@@ -66,14 +66,14 @@ namespace Amazon.KeyManagementService.Model
         /// </summary>
         public string AWSAccountId
         {
-            get { return this._aWSAccountId; }
-            set { this._aWSAccountId = value; }
+            get { return this._awsAccountId; }
+            set { this._awsAccountId = value; }
         }
 
         // Check to see if AWSAccountId property is set
         internal bool IsSetAWSAccountId()
         {
-            return this._aWSAccountId != null;
+            return this._awsAccountId != null;
         }
 
         /// <summary>

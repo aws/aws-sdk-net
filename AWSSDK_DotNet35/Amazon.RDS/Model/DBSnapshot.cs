@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -39,12 +39,14 @@ namespace Amazon.RDS.Model
     {
         private int? _allocatedStorage;
         private string _availabilityZone;
-        private string _dBInstanceIdentifier;
-        private string _dBSnapshotIdentifier;
+        private string _dbInstanceIdentifier;
+        private string _dbSnapshotIdentifier;
+        private bool? _encrypted;
         private string _engine;
         private string _engineVersion;
         private DateTime? _instanceCreateTime;
         private int? _iops;
+        private string _kmsKeyId;
         private string _licenseModel;
         private string _masterUsername;
         private string _optionGroupName;
@@ -104,14 +106,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceIdentifier
         {
-            get { return this._dBInstanceIdentifier; }
-            set { this._dBInstanceIdentifier = value; }
+            get { return this._dbInstanceIdentifier; }
+            set { this._dbInstanceIdentifier = value; }
         }
 
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this._dBInstanceIdentifier != null;
+            return this._dbInstanceIdentifier != null;
         }
 
         /// <summary>
@@ -122,14 +124,32 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSnapshotIdentifier
         {
-            get { return this._dBSnapshotIdentifier; }
-            set { this._dBSnapshotIdentifier = value; }
+            get { return this._dbSnapshotIdentifier; }
+            set { this._dbSnapshotIdentifier = value; }
         }
 
         // Check to see if DBSnapshotIdentifier property is set
         internal bool IsSetDBSnapshotIdentifier()
         {
-            return this._dBSnapshotIdentifier != null;
+            return this._dbSnapshotIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        ///  Specifies whether the DB snapshot is encrypted. 
+        /// </para>
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
         }
 
         /// <summary>
@@ -203,6 +223,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetIops()
         {
             return this._iops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        ///  If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot.
+        /// 
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>
@@ -371,7 +410,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        ///  Specifies storage type associated with DB Snapshot. 
+        ///  Specifies the storage type associated with DB Snapshot. 
         /// </para>
         /// </summary>
         public string StorageType

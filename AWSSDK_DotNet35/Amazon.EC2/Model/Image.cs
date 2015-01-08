@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     {
         private ArchitectureValues _architecture;
         private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
+        private string _creationDate;
         private string _description;
         private HypervisorType _hypervisor;
         private string _imageId;
@@ -89,6 +90,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetBlockDeviceMappings()
         {
             return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreationDate.
+        /// </summary>
+        public string CreationDate
+        {
+            get { return this._creationDate; }
+            set { this._creationDate = value; }
+        }
+
+        // Check to see if CreationDate property is set
+        internal bool IsSetCreationDate()
+        {
+            return this._creationDate != null;
         }
 
         /// <summary>

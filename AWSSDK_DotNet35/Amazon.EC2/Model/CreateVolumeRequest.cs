@@ -30,7 +30,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CreateVolume operation.
     /// Creates an Amazon EBS volume that can be attached to an instance in the same Availability
-    /// Zone. The volume is created in the specified region.
+    /// Zone. The volume is created in the regional endpoint that you send the HTTP request
+    /// to. For more information see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+    /// and Endpoints</a>.
     /// 
     ///  
     /// <para>
@@ -111,7 +113,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Specifies whether the volume should be encrypted.
+        /// Specifies whether the volume should be encrypted. Encrypted Amazon EBS volumes may
+        /// only be attached to instances that support Amazon EBS encryption. Volumes that are
+        /// created from encrypted snapshots are automatically encrypted. There is no way to create
+        /// an encrypted volume from an unencrypted snapshot or vice versa. If your AMI uses encrypted
+        /// volumes, you can only launch it on supported instance types. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -148,12 +156,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The full ARN of the AWS Key Management Service (KMS) Customer Master Key (CMK) to
-        /// use when creating the encrypted volume. This parameter is only required if you want
-        /// to use a non-default CMK; if this parameter is not specified, the default CMK is used.
-        /// The ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of
-        /// the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and
-        /// then the CMK ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+        /// The full ARN of the AWS Key Management Service (KMS) master key to use when creating
+        /// the encrypted volume. This parameter is only required if you want to use a non-default
+        /// master key; if this parameter is not specified, the default master key is used. The
+        /// ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+        /// master key, the AWS account ID of the master key owner, the <code>key</code> namespace,
+        /// and then the master key ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
         /// </para>
         /// </summary>
         public string KmsKeyId

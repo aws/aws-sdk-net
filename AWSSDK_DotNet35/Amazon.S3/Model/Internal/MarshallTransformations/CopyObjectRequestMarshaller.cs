@@ -96,9 +96,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             AmazonS3Util.SetMetadataHeaders(request, copyObjectRequest.Metadata);
 
+            var destinationKey = copyObjectRequest.DestinationKey.StartsWith("/", StringComparison.Ordinal) 
+                                    ? copyObjectRequest.DestinationKey.Substring(1) 
+                                    : copyObjectRequest.DestinationKey;
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                  S3Transforms.ToStringValue(copyObjectRequest.DestinationBucket),
-                                                 S3Transforms.ToStringValue(copyObjectRequest.DestinationKey));
+                                                 S3Transforms.ToStringValue(destinationKey));
 
 
             request.UseQueryString = true;
@@ -111,7 +114,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             string source;
             if (!String.IsNullOrEmpty(key))
             {
-                source = AmazonS3Util.UrlEncode(String.Concat("/", bucket, "/", key), true);
+                var sourceKey = key.StartsWith("/", StringComparison.Ordinal)
+                                        ? key.Substring(1)
+                                        : key;
+                source = AmazonS3Util.UrlEncode(String.Concat("/", bucket, "/", sourceKey), true);
                 if (!String.IsNullOrEmpty(version))
                 {
                     source = string.Format(CultureInfo.InvariantCulture, "{0}?versionId={1}", source, AmazonS3Util.UrlEncode(version, true));

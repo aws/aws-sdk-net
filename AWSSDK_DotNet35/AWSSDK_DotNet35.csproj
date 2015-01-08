@@ -152,6 +152,15 @@
     <Compile Include="Amazon.CodeDeploy\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudHSM\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CloudHSM\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CloudHSM\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.CognitoIdentity\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -340,6 +349,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.EC2\Util\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.ECS\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.ECS\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.ECS\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.ElastiCache\*.cs">
@@ -560,6 +578,7 @@
     <Compile Include="Amazon.S3\Model\QueueConfiguration.cs" />
     <Compile Include="Amazon.S3\Model\StreamSizeMismatchException.cs" />
     <Compile Include="Amazon.S3\Util\AmazonS3Uri.cs" />
+    <Compile Include="Amazon.S3\Util\S3EventNotification.cs" />
     <Compile Include="Amazon.SecurityToken\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1059,6 +1078,7 @@
     <Compile Include="Amazon.Runtime\Internal\Util\WrapperStream.cs" />
     <Compile Include="Amazon.Util\AWSConfigs.Models.bcl.cs" />
     <Compile Include="Amazon.Util\AWSConfigs.Models.cs" />
+    <Compile Include="Amazon.Util\AWSPublicIPAddressRanges.cs" />
     <Compile Include="Amazon.Util\AWSSDKUtils.bcl.cs" />
     <Compile Include="Amazon.Util\ReferenceTracking.cs" />
     <Compile Include="Amazon.Util\CryptoUtil.cs" />

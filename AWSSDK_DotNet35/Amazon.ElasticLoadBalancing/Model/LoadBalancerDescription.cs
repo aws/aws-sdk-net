@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private string _canonicalHostedZoneName;
         private string _canonicalHostedZoneNameID;
         private DateTime? _createdTime;
-        private string _dNSName;
+        private string _dnsName;
         private HealthCheck _healthCheck;
         private List<Instance> _instances = new List<Instance>();
         private List<ListenerDescription> _listenerDescriptions = new List<ListenerDescription>();
@@ -47,7 +47,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<string> _securityGroups = new List<string>();
         private SourceSecurityGroup _sourceSecurityGroup;
         private List<string> _subnets = new List<string>();
-        private string _vPCId;
+        private string _vpcId;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -160,14 +160,14 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public string DNSName
         {
-            get { return this._dNSName; }
-            set { this._dNSName = value; }
+            get { return this._dnsName; }
+            set { this._dnsName = value; }
         }
 
         // Check to see if DNSName property is set
         internal bool IsSetDNSName()
         {
-            return this._dNSName != null;
+            return this._dnsName != null;
         }
 
         /// <summary>
@@ -359,14 +359,14 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public string VPCId
         {
-            get { return this._vPCId; }
-            set { this._vPCId = value; }
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
         }
 
         // Check to see if VPCId property is set
         internal bool IsSetVPCId()
         {
-            return this._vPCId != null;
+            return this._vpcId != null;
         }
 
     }

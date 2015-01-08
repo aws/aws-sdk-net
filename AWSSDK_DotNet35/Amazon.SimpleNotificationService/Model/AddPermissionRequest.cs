@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model
     public partial class AddPermissionRequest : AmazonSimpleNotificationServiceRequest
     {
         private List<string> _actionName = new List<string>();
-        private List<string> _aWSAccountId = new List<string>();
+        private List<string> _awsAccountId = new List<string>();
         private string _label;
         private string _topicArn;
 
@@ -55,7 +55,7 @@ namespace Amazon.SimpleNotificationService.Model
         {
             _topicArn = topicArn;
             _label = label;
-            _aWSAccountId = awsAccountId;
+            _awsAccountId = awsAccountId;
             _actionName = actionName;
         }
 
@@ -91,14 +91,14 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         public List<string> AWSAccountId
         {
-            get { return this._aWSAccountId; }
-            set { this._aWSAccountId = value; }
+            get { return this._awsAccountId; }
+            set { this._awsAccountId = value; }
         }
 
         // Check to see if AWSAccountId property is set
         internal bool IsSetAWSAccountId()
         {
-            return this._aWSAccountId != null && this._aWSAccountId.Count > 0; 
+            return this._awsAccountId != null && this._awsAccountId.Count > 0; 
         }
 
         /// <summary>

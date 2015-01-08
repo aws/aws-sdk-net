@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the RestoreDBInstanceToPointInTime operation.
     /// Restores a DB instance to an arbitrary point-in-time. Users can restore to any point
-    /// in time before the latestRestorableTime for up to backupRetentionPeriod days. The
+    /// in time before the LatestRestorableTime for up to BackupRetentionPeriod days. The
     /// target database is created from the source database with the same configuration as
     /// the original database except that the DB instance is created with the default DB security
     /// group.
@@ -39,9 +39,9 @@ namespace Amazon.RDS.Model
     {
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
-        private string _dBInstanceClass;
-        private string _dBName;
-        private string _dBSubnetGroupName;
+        private string _dbInstanceClass;
+        private string _dbName;
+        private string _dbSubnetGroupName;
         private string _engine;
         private int? _iops;
         private string _licenseModel;
@@ -143,14 +143,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceClass
         {
-            get { return this._dBInstanceClass; }
-            set { this._dBInstanceClass = value; }
+            get { return this._dbInstanceClass; }
+            set { this._dbInstanceClass = value; }
         }
 
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this._dBInstanceClass != null;
+            return this._dbInstanceClass != null;
         }
 
         /// <summary>
@@ -158,17 +158,22 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  The database name for the restored DB instance. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not used for the MySQL engine.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string DBName
         {
-            get { return this._dBName; }
-            set { this._dBName = value; }
+            get { return this._dbName; }
+            set { this._dbName = value; }
         }
 
         // Check to see if DBName property is set
         internal bool IsSetDBName()
         {
-            return this._dBName != null;
+            return this._dbName != null;
         }
 
         /// <summary>
@@ -179,14 +184,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSubnetGroupName
         {
-            get { return this._dBSubnetGroupName; }
-            set { this._dBSubnetGroupName = value; }
+            get { return this._dbSubnetGroupName; }
+            set { this._dbSubnetGroupName = value; }
         }
 
         // Check to see if DBSubnetGroupName property is set
         internal bool IsSetDBSubnetGroupName()
         {
-            return this._dBSubnetGroupName != null;
+            return this._dbSubnetGroupName != null;
         }
 
         /// <summary>
@@ -204,7 +209,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>oracle-ee</code>
+        ///  Valid Values: <code>MySQL</code> | <code>oracle-se1</code> | <code>oracle-se</code>
+        /// | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+        /// <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> 
         /// </para>
         /// </summary>
         public string Engine
@@ -303,11 +310,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        ///  The name of the option group to be used for the restored DB instance.
+        /// The name of the option group to be used for the restored DB instance.
         /// </para>
         ///  
         /// <para>
-        ///  Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot
+        /// Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot
         /// be removed from an option group, and that option group cannot be removed from a DB
         /// instance once it is associated with a DB instance 
         /// </para>
@@ -442,7 +449,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        ///  Specifies storage type to be associated with the DB Instance. 
+        ///  Specifies the storage type to be associated with the DB instance. 
         /// </para>
         ///  
         /// <para>
@@ -452,6 +459,11 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
         /// parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
+        /// <code>standard</code> 
         /// </para>
         /// </summary>
         public string StorageType

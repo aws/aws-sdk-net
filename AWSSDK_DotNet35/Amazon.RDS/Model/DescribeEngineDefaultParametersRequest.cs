@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeEngineDefaultParametersRequest : AmazonRDSRequest
     {
-        private string _dBParameterGroupFamily;
+        private string _dbParameterGroupFamily;
         private List<Filter> _filters = new List<Filter>();
         private string _marker;
         private int? _maxRecords;
@@ -50,7 +50,7 @@ namespace Amazon.RDS.Model
         /// <param name="dbParameterGroupFamily"> The name of the DB parameter group family. </param>
         public DescribeEngineDefaultParametersRequest(string dbParameterGroupFamily)
         {
-            _dBParameterGroupFamily = dbParameterGroupFamily;
+            _dbParameterGroupFamily = dbParameterGroupFamily;
         }
 
         /// <summary>
@@ -61,14 +61,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBParameterGroupFamily
         {
-            get { return this._dBParameterGroupFamily; }
-            set { this._dBParameterGroupFamily = value; }
+            get { return this._dbParameterGroupFamily; }
+            set { this._dbParameterGroupFamily = value; }
         }
 
         // Check to see if DBParameterGroupFamily property is set
         internal bool IsSetDBParameterGroupFamily()
         {
-            return this._dBParameterGroupFamily != null;
+            return this._dbParameterGroupFamily != null;
         }
 
         /// <summary>

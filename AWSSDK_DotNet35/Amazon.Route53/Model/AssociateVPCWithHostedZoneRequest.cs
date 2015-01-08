@@ -45,7 +45,7 @@ namespace Amazon.Route53.Model
     public partial class AssociateVPCWithHostedZoneRequest : AmazonRoute53Request
     {
         private string _hostedZoneId;
-        private VPC _vPC;
+        private VPC _vpc;
         private string _comment;
 
         /// <summary>
@@ -79,14 +79,14 @@ namespace Amazon.Route53.Model
         /// </summary>
         public VPC VPC
         {
-            get { return this._vPC; }
-            set { this._vPC = value; }
+            get { return this._vpc; }
+            set { this._vpc = value; }
         }
 
         // Check to see if VPC property is set
         internal bool IsSetVPC()
         {
-            return this._vPC != null;
+            return this._vpc != null;
         }
 
         /// <summary>

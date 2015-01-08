@@ -341,6 +341,57 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AttachClassicLinkVpc
+
+        /// <summary>
+        /// Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of
+        /// the VPC's security groups. You cannot link an EC2-Classic instance to more than one
+        /// VPC at a time. You can only link an instance that's in the <code>running</code> state.
+        /// An instance is automatically unlinked from a VPC when it's stopped - you can link
+        /// it to the VPC again when you restart it.
+        /// 
+        ///  
+        /// <para>
+        /// After you've linked an instance, you cannot change the VPC security groups that are
+        /// associated with it. To change the security groups, you must first unlink the instance,
+        /// and then link it again. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Linking your instance to a VPC is sometimes referred to as <i>attaching</i> your instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachClassicLinkVpc service method.</param>
+        /// 
+        /// <returns>The response from the AttachClassicLinkVpc service method, as returned by EC2.</returns>
+        AttachClassicLinkVpcResponse AttachClassicLinkVpc(AttachClassicLinkVpcRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachClassicLinkVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachClassicLinkVpc operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachClassicLinkVpc
+        ///         operation.</returns>
+        IAsyncResult BeginAttachClassicLinkVpc(AttachClassicLinkVpcRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AttachClassicLinkVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachClassicLinkVpc.</param>
+        /// 
+        /// <returns>Returns a  AttachClassicLinkVpcResult from EC2.</returns>
+        AttachClassicLinkVpcResponse EndAttachClassicLinkVpc(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AttachInternetGateway
 
         /// <summary>
@@ -664,8 +715,8 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// This procedure is not applicable for Linux/Unix instances or Windows instances that
-        /// are backed by Amazon EBS.
+        /// This action is not applicable for Linux/Unix instances or Windows instances that are
+        /// backed by Amazon EBS.
         /// </para>
         ///  </note> 
         /// <para>
@@ -955,10 +1006,9 @@ namespace Amazon.EC2
         #region  CopyImage
 
         /// <summary>
-        /// Initiates the copy of an AMI from the specified source region to the region in which
-        /// the request was made. You specify the destination region by using its endpoint when
-        /// making the request. AMIs that use encrypted Amazon EBS snapshots cannot be copied
-        /// with this method.
+        /// Initiates the copy of an AMI from the specified source region to the current region.
+        /// You specify the destination region by using its endpoint when making the request.
+        /// AMIs that use encrypted Amazon EBS snapshots cannot be copied with this method.
         /// 
         ///  
         /// <para>
@@ -1010,7 +1060,12 @@ namespace Amazon.EC2
         /// Copies of encrypted Amazon EBS snapshots remain encrypted. Copies of unencrypted snapshots
         /// remain unencrypted.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Copying snapshots that were encrypted with non-default AWS Key Management Service
+        /// (KMS) master keys is not supported at this time. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
         /// an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -1123,14 +1178,17 @@ namespace Amazon.EC2
         /// - If you're using AmazonProvidedDNS in <code>us-east-1</code>, specify <code>ec2.internal</code>.
         /// If you're using AmazonProvidedDNS in another region, specify <code>region.compute.internal</code>
         /// (for example, <code>ap-northeast-1.compute.internal</code>). Otherwise, specify a
-        /// domain name (for example, <code>MyCompany.com</code>). If specifying more than one
-        /// domain name, separate them with spaces.</li> <li> <code>ntp-servers</code> - The IP
-        /// addresses of up to four Network Time Protocol (NTP) servers.</li> <li> <code>netbios-name-servers</code>
-        /// - The IP addresses of up to four NetBIOS name servers.</li> <li> <code>netbios-node-type</code>
-        /// - The NetBIOS node type (1, 2, 4, or 8). We recommend that you specify 2 (broadcast
-        /// and multicast are not currently supported). For more information about these node
-        /// types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>. </li> </ul>
-        /// 
+        /// domain name (for example, <code>MyCompany.com</code>). <b>Important</b>: Some Linux
+        /// operating systems accept multiple domain names separated by spaces. However, Windows
+        /// and other Linux operating systems treat the value as a single domain, which results
+        /// in unexpected behavior. If your DHCP options set is associated with a VPC that has
+        /// instances with multiple operating systems, specify only one domain name.</li> <li>
+        /// <code>ntp-servers</code> - The IP addresses of up to four Network Time Protocol (NTP)
+        /// servers.</li> <li> <code>netbios-name-servers</code> - The IP addresses of up to four
+        /// NetBIOS name servers.</li> <li> <code>netbios-node-type</code> - The NetBIOS node
+        /// type (1, 2, 4, or 8). We recommend that you specify 2 (broadcast and multicast are
+        /// not currently supported). For more information about these node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC
+        /// 2132</a>. </li> </ul> 
         /// <para>
         /// Your VPC automatically starts out with a set of DHCP options that includes only a
         /// DNS server that we provide (AmazonProvidedDNS). If you create a set of options, and
@@ -1989,9 +2047,9 @@ namespace Amazon.EC2
         #region  CreateTags
 
         /// <summary>
-        /// Adds or overwrites one or more tags for the specified EC2 resource or resources. Each
-        /// resource can have a maximum of 10 tags. Each tag consists of a key and optional value.
-        /// Tag keys must be unique per resource.
+        /// Adds or overwrites one or more tags for the specified Amazon EC2 resource or resources.
+        /// Each resource can have a maximum of 10 tags. Each tag consists of a key and optional
+        /// value. Tag keys must be unique per resource.
         /// 
         ///  
         /// <para>
@@ -2034,7 +2092,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates an Amazon EBS volume that can be attached to an instance in the same Availability
-        /// Zone. The volume is created in the specified region.
+        /// Zone. The volume is created in the regional endpoint that you send the HTTP request
+        /// to. For more information see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// and Endpoints</a>.
         /// 
         ///  
         /// <para>
@@ -3226,14 +3286,78 @@ namespace Amazon.EC2
         #region  DescribeAccountAttributes
 
         /// <summary>
-        /// Describes the specified attribute of your AWS account.
+        /// Describes attributes of your AWS account. The following are the supported account
+        /// attributes:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// <code>supported-platforms</code>: Indicates whether your account can launch instances
+        /// into EC2-Classic and EC2-VPC, or only into EC2-VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>max-instances</code>: The maximum number of On-Demand instances that you can
+        /// run.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
+        /// groups that you can assign to a network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
+        /// can allocate for use with EC2-Classic. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
+        /// you can allocate for use with EC2-VPC.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by EC2.</returns>
         DescribeAccountAttributesResponse DescribeAccountAttributes();
 
         /// <summary>
-        /// Describes the specified attribute of your AWS account.
+        /// Describes attributes of your AWS account. The following are the supported account
+        /// attributes:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// <code>supported-platforms</code>: Indicates whether your account can launch instances
+        /// into EC2-Classic and EC2-VPC, or only into EC2-VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>max-instances</code>: The maximum number of On-Demand instances that you can
+        /// run.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
+        /// groups that you can assign to a network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
+        /// can allocate for use with EC2-Classic. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
+        /// you can allocate for use with EC2-VPC.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
         /// 
@@ -3442,6 +3566,44 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  DescribeBundleTasksResult from EC2.</returns>
         DescribeBundleTasksResponse EndDescribeBundleTasks(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeClassicLinkInstances
+
+        /// <summary>
+        /// Describes one or more of your linked EC2-Classic instances. This request only returns
+        /// information about EC2-Classic instances linked to a VPC through ClassicLink; you cannot
+        /// use this request to return information about other instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClassicLinkInstances service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClassicLinkInstances service method, as returned by EC2.</returns>
+        DescribeClassicLinkInstancesResponse DescribeClassicLinkInstances(DescribeClassicLinkInstancesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClassicLinkInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClassicLinkInstances operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClassicLinkInstances
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeClassicLinkInstances(DescribeClassicLinkInstancesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClassicLinkInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClassicLinkInstances.</param>
+        /// 
+        /// <returns>Returns a  DescribeClassicLinkInstancesResult from EC2.</returns>
+        DescribeClassicLinkInstancesResponse EndDescribeClassicLinkInstances(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5551,6 +5713,42 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeVpcClassicLink
+
+        /// <summary>
+        /// Describes the ClassicLink status of one or more VPCs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLink service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcClassicLink service method, as returned by EC2.</returns>
+        DescribeVpcClassicLinkResponse DescribeVpcClassicLink(DescribeVpcClassicLinkRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcClassicLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLink operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcClassicLink
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeVpcClassicLink(DescribeVpcClassicLinkRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVpcClassicLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcClassicLink.</param>
+        /// 
+        /// <returns>Returns a  DescribeVpcClassicLinkResult from EC2.</returns>
+        DescribeVpcClassicLinkResponse EndDescribeVpcClassicLink(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeVpcPeeringConnections
 
         /// <summary>
@@ -5748,6 +5946,44 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  DescribeVpnGatewaysResult from EC2.</returns>
         DescribeVpnGatewaysResponse EndDescribeVpnGateways(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DetachClassicLinkVpc
+
+        /// <summary>
+        /// Unlinks (detaches) a linked EC2-Classic instance from a VPC. After the instance has
+        /// been unlinked, the VPC security groups are no longer associated with it. An instance
+        /// is automatically unlinked from a VPC when it's stopped.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachClassicLinkVpc service method.</param>
+        /// 
+        /// <returns>The response from the DetachClassicLinkVpc service method, as returned by EC2.</returns>
+        DetachClassicLinkVpcResponse DetachClassicLinkVpc(DetachClassicLinkVpcRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachClassicLinkVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachClassicLinkVpc operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachClassicLinkVpc
+        ///         operation.</returns>
+        IAsyncResult BeginDetachClassicLinkVpc(DetachClassicLinkVpcRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetachClassicLinkVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachClassicLinkVpc.</param>
+        /// 
+        /// <returns>Returns a  DetachClassicLinkVpcResult from EC2.</returns>
+        DetachClassicLinkVpcResponse EndDetachClassicLinkVpc(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5961,6 +6197,43 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableVpcClassicLink
+
+        /// <summary>
+        /// Disables ClassicLink for a VPC. You cannot disable ClassicLink for a VPC that has
+        /// EC2-Classic instances linked to it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLink service method.</param>
+        /// 
+        /// <returns>The response from the DisableVpcClassicLink service method, as returned by EC2.</returns>
+        DisableVpcClassicLinkResponse DisableVpcClassicLink(DisableVpcClassicLinkRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableVpcClassicLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLink operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableVpcClassicLink
+        ///         operation.</returns>
+        IAsyncResult BeginDisableVpcClassicLink(DisableVpcClassicLinkRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableVpcClassicLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableVpcClassicLink.</param>
+        /// 
+        /// <returns>Returns a  DisableVpcClassicLinkResult from EC2.</returns>
+        DisableVpcClassicLinkResponse EndDisableVpcClassicLink(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociateAddress
 
         /// <summary>
@@ -6125,6 +6398,48 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  EnableVolumeIOResult from EC2.</returns>
         EnableVolumeIOResponse EndEnableVolumeIO(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableVpcClassicLink
+
+        /// <summary>
+        /// Enables a VPC for ClassicLink. You can then link EC2-Classic instances to your ClassicLink-enabled
+        /// VPC to allow communication over private IP addresses. You cannot enable your VPC for
+        /// ClassicLink if any of your VPC's route tables have existing routes for address ranges
+        /// within the <code>10.0.0.0/8</code> IP address range, excluding local routes for VPCs
+        /// in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges. For
+        /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// in the Amazon Elastic Compute Cloud User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLink service method.</param>
+        /// 
+        /// <returns>The response from the EnableVpcClassicLink service method, as returned by EC2.</returns>
+        EnableVpcClassicLinkResponse EnableVpcClassicLink(EnableVpcClassicLinkRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableVpcClassicLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLink operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableVpcClassicLink
+        ///         operation.</returns>
+        IAsyncResult BeginEnableVpcClassicLink(EnableVpcClassicLinkRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableVpcClassicLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableVpcClassicLink.</param>
+        /// 
+        /// <returns>Returns a  EnableVpcClassicLinkResult from EC2.</returns>
+        EnableVpcClassicLinkResponse EndEnableVpcClassicLink(IAsyncResult asyncResult);
 
         #endregion
         
@@ -7276,6 +7591,12 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Resets an attribute of an AMI to its default value.
+        /// 
+        ///  <note>
+        /// <para>
+        ///  The productCodes attribute can't be reset. 
+        /// </para>
+        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetImageAttribute service method.</param>
         /// 

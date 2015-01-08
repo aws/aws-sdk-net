@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class IPRange
     {
-        private string _cIDRIP;
+        private string _cidrip;
         private string _status;
 
         /// <summary>
@@ -49,14 +49,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string CIDRIP
         {
-            get { return this._cIDRIP; }
-            set { this._cIDRIP = value; }
+            get { return this._cidrip; }
+            set { this._cidrip = value; }
         }
 
         // Check to see if CIDRIP property is set
         internal bool IsSetCIDRIP()
         {
-            return this._cIDRIP != null;
+            return this._cidrip != null;
         }
 
         /// <summary>

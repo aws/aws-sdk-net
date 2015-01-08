@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBSubnetGroupsResult : AmazonWebServiceResponse
     {
-        private List<DBSubnetGroup> _dBSubnetGroups = new List<DBSubnetGroup>();
+        private List<DBSubnetGroup> _dbSubnetGroups = new List<DBSubnetGroup>();
         private string _marker;
 
         /// <summary>
@@ -44,14 +44,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public List<DBSubnetGroup> DBSubnetGroups
         {
-            get { return this._dBSubnetGroups; }
-            set { this._dBSubnetGroups = value; }
+            get { return this._dbSubnetGroups; }
+            set { this._dbSubnetGroups = value; }
         }
 
         // Check to see if DBSubnetGroups property is set
         internal bool IsSetDBSubnetGroups()
         {
-            return this._dBSubnetGroups != null && this._dBSubnetGroups.Count > 0; 
+            return this._dbSubnetGroups != null && this._dbSubnetGroups.Count > 0; 
         }
 
         /// <summary>

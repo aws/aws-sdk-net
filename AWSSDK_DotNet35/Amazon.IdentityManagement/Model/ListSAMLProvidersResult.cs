@@ -32,7 +32,7 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class ListSAMLProvidersResult : AmazonWebServiceResponse
     {
-        private List<SAMLProviderListEntry> _sAMLProviderList = new List<SAMLProviderListEntry>();
+        private List<SAMLProviderListEntry> _samlProviderList = new List<SAMLProviderListEntry>();
 
         /// <summary>
         /// Gets and sets the property SAMLProviderList. 
@@ -42,14 +42,14 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public List<SAMLProviderListEntry> SAMLProviderList
         {
-            get { return this._sAMLProviderList; }
-            set { this._sAMLProviderList = value; }
+            get { return this._samlProviderList; }
+            set { this._samlProviderList = value; }
         }
 
         // Check to see if SAMLProviderList property is set
         internal bool IsSetSAMLProviderList()
         {
-            return this._sAMLProviderList != null && this._sAMLProviderList.Count > 0; 
+            return this._samlProviderList != null && this._samlProviderList.Count > 0; 
         }
 
     }

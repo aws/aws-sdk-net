@@ -156,6 +156,11 @@ namespace Amazon.Runtime.Internal
             catch(Exception)
             {
                 gotException = true;
+
+                // If an exception occured while reading the input stream,
+                // Abort the request to signal failure to the server and prevent
+                // potentially writing an incomplete stream to the server.
+                this.Abort();
                 throw;
             }
             finally
@@ -229,7 +234,7 @@ namespace Amazon.Runtime.Internal
             }
             catch (WebException webException)
             {
-                // HttpWebRequest.Abort() throws a WebException.
+                // After HttpWebRequest.Abort() is called, GetResponseAsync throws a WebException.
                 // If request has been cancelled using cancellationToken, wrap the
                 // WebException in an OperationCancelledException.
                 if (cancellationToken.IsCancellationRequested)

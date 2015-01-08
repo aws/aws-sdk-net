@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,7 +32,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class Option
     {
-        private List<DBSecurityGroupMembership> _dBSecurityGroupMemberships = new List<DBSecurityGroupMembership>();
+        private List<DBSecurityGroupMembership> _dbSecurityGroupMemberships = new List<DBSecurityGroupMembership>();
         private string _optionDescription;
         private string _optionName;
         private List<OptionSetting> _optionSettings = new List<OptionSetting>();
@@ -50,14 +50,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public List<DBSecurityGroupMembership> DBSecurityGroupMemberships
         {
-            get { return this._dBSecurityGroupMemberships; }
-            set { this._dBSecurityGroupMemberships = value; }
+            get { return this._dbSecurityGroupMemberships; }
+            set { this._dbSecurityGroupMemberships = value; }
         }
 
         // Check to see if DBSecurityGroupMemberships property is set
         internal bool IsSetDBSecurityGroupMemberships()
         {
-            return this._dBSecurityGroupMemberships != null && this._dBSecurityGroupMemberships.Count > 0; 
+            return this._dbSecurityGroupMemberships != null && this._dbSecurityGroupMemberships.Count > 0; 
         }
 
         /// <summary>

@@ -211,9 +211,18 @@ namespace ServiceClientGenerator
                     var operation = new Operation(this, kvp.Key, kvp.Value);
                     if(!operation.IsExcluded)
                         list.Add(operation);
+                    else
+                        ExcludedOperations.Add(operation.Name);
                 }
                 return list.OrderBy(x => x.Name).ToList();
             }
+        }
+
+        readonly HashSet<string> _excludedOperations = new HashSet<string>();
+
+        public HashSet<string> ExcludedOperations
+        {
+            get { return _excludedOperations; }
         }
 
         /// <summary>

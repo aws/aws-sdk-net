@@ -72,9 +72,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImportManifestUrl. 
         /// <para>
-        /// A presigned URL for the import manifest stored in Amazon S3. For information about
-        /// creating a presigned URL for an Amazon S3 object, read the "Query String Request Authentication
-        /// Alternative" section of the <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
+        /// A presigned URL for the import manifest stored in Amazon S3 and presented here as
+        /// an Amazon S3 presigned URL. For information about creating a presigned URL for an
+        /// Amazon S3 object, read the "Query String Request Authentication Alternative" section
+        /// of the <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
         /// REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         /// </summary>

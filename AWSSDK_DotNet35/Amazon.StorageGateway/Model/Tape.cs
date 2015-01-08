@@ -37,7 +37,7 @@ namespace Amazon.StorageGateway.Model
         private string _tapeBarcode;
         private long? _tapeSizeInBytes;
         private string _tapeStatus;
-        private string _vTLDevice;
+        private string _vtlDevice;
 
         /// <summary>
         /// Gets and sets the property Progress. 
@@ -142,14 +142,14 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         public string VTLDevice
         {
-            get { return this._vTLDevice; }
-            set { this._vTLDevice = value; }
+            get { return this._vtlDevice; }
+            set { this._vtlDevice = value; }
         }
 
         // Check to see if VTLDevice property is set
         internal bool IsSetVTLDevice()
         {
-            return this._vTLDevice != null;
+            return this._vtlDevice != null;
         }
 
     }

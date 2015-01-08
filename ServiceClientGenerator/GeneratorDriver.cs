@@ -440,12 +440,20 @@ namespace ServiceClientGenerator
         /// </summary>
         void GenerateStructures()
         {
+            var excludedOperations = config.ServiceModel.ExcludedOperations;
+
             foreach (var definition in this.config.ServiceModel.Structures)
             {
                 if (!this.processedStructures.Contains(definition.Name) && !definition.IsException)
                 {
                     // if the shape had a substitution, we can skip generation
                     if (this.config.ServiceModel.Customizations.IsSubstitutedShape(definition.Name))
+                        continue;
+
+                    // if the shape is a request or response type and the parent operation
+                    // was excluded, then skip generation
+                    var opName = definition.RelatedOperationName;
+                    if (!string.IsNullOrEmpty(opName) && excludedOperations.Contains(opName))
                         continue;
 
                     var generator = new StructureGenerator()

@@ -39,7 +39,7 @@ namespace Amazon.Route53.Model
         private ResourceRecordSetRegion _region;
         private GeoLocation _geoLocation;
         private ResourceRecordSetFailover _failover;
-        private long? _tTL;
+        private long? _ttl;
         private List<ResourceRecord> _resourceRecords = new List<ResourceRecord>();
         private AliasTarget _aliasTarget;
         private string _healthCheckId;
@@ -217,14 +217,14 @@ namespace Amazon.Route53.Model
         /// </summary>
         public long TTL
         {
-            get { return this._tTL.GetValueOrDefault(); }
-            set { this._tTL = value; }
+            get { return this._ttl.GetValueOrDefault(); }
+            set { this._ttl = value; }
         }
 
         // Check to see if TTL property is set
         internal bool IsSetTTL()
         {
-            return this._tTL.HasValue; 
+            return this._ttl.HasValue; 
         }
 
         /// <summary>

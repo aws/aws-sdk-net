@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
     public partial class OrderableDBInstanceOption
     {
         private List<AvailabilityZone> _availabilityZones = new List<AvailabilityZone>();
-        private string _dBInstanceClass;
+        private string _dbInstanceClass;
         private string _engine;
         private string _engineVersion;
         private string _licenseModel;
@@ -47,6 +47,7 @@ namespace Amazon.RDS.Model
         private bool? _readReplicaCapable;
         private string _storageType;
         private bool? _supportsIops;
+        private bool? _supportsStorageEncryption;
         private bool? _vpc;
 
         /// <summary>
@@ -75,14 +76,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceClass
         {
-            get { return this._dBInstanceClass; }
-            set { this._dBInstanceClass = value; }
+            get { return this._dbInstanceClass; }
+            set { this._dbInstanceClass = value; }
         }
 
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this._dBInstanceClass != null;
+            return this._dbInstanceClass != null;
         }
 
         /// <summary>
@@ -160,7 +161,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReadReplicaCapable. 
         /// <para>
-        ///  Indicates whether this orderable DB instance can have a read replica. 
+        ///  Indicates whether this orderable DB instance can have a Read Replica. 
         /// </para>
         /// </summary>
         public bool ReadReplicaCapable
@@ -209,6 +210,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsIops()
         {
             return this._supportsIops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsStorageEncryption. 
+        /// <para>
+        ///  Indicates whether this orderable DB instance supports encrypted storage. 
+        /// </para>
+        /// </summary>
+        public bool SupportsStorageEncryption
+        {
+            get { return this._supportsStorageEncryption.GetValueOrDefault(); }
+            set { this._supportsStorageEncryption = value; }
+        }
+
+        // Check to see if SupportsStorageEncryption property is set
+        internal bool IsSetSupportsStorageEncryption()
+        {
+            return this._supportsStorageEncryption.HasValue; 
         }
 
         /// <summary>

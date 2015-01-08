@@ -227,6 +227,7 @@ namespace Amazon.SimpleNotificationService
         }
         #endregion
 
+
         /// <summary>
         /// This is a utility method which updates the policy of a topic to allow the
         /// S3 bucket to publish events to it.

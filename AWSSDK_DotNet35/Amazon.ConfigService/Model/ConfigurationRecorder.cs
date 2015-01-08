@@ -33,7 +33,7 @@ namespace Amazon.ConfigService.Model
     public partial class ConfigurationRecorder
     {
         private string _name;
-        private string _roleARN;
+        private string _rolearn;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -63,14 +63,14 @@ namespace Amazon.ConfigService.Model
         /// </summary>
         public string RoleARN
         {
-            get { return this._roleARN; }
-            set { this._roleARN = value; }
+            get { return this._rolearn; }
+            set { this._rolearn = value; }
         }
 
         // Check to see if RoleARN property is set
         internal bool IsSetRoleARN()
         {
-            return this._roleARN != null;
+            return this._rolearn != null;
         }
 
     }

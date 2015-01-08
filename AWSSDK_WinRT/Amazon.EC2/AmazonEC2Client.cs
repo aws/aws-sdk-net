@@ -359,6 +359,36 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AttachClassicLinkVpc
+
+        internal AttachClassicLinkVpcResponse AttachClassicLinkVpc(AttachClassicLinkVpcRequest request)
+        {
+            var marshaller = new AttachClassicLinkVpcRequestMarshaller();
+            var unmarshaller = AttachClassicLinkVpcResponseUnmarshaller.Instance;
+
+            return Invoke<AttachClassicLinkVpcRequest,AttachClassicLinkVpcResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachClassicLinkVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachClassicLinkVpc operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AttachClassicLinkVpcResponse> AttachClassicLinkVpcAsync(AttachClassicLinkVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AttachClassicLinkVpcRequestMarshaller();
+            var unmarshaller = AttachClassicLinkVpcResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AttachClassicLinkVpcRequest,AttachClassicLinkVpcResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AttachInternetGateway
 
         internal AttachInternetGatewayResponse AttachInternetGateway(AttachInternetGatewayRequest request)
@@ -2333,6 +2363,36 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeClassicLinkInstances
+
+        internal DescribeClassicLinkInstancesResponse DescribeClassicLinkInstances(DescribeClassicLinkInstancesRequest request)
+        {
+            var marshaller = new DescribeClassicLinkInstancesRequestMarshaller();
+            var unmarshaller = DescribeClassicLinkInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClassicLinkInstancesRequest,DescribeClassicLinkInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClassicLinkInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClassicLinkInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeClassicLinkInstancesResponse> DescribeClassicLinkInstancesAsync(DescribeClassicLinkInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeClassicLinkInstancesRequestMarshaller();
+            var unmarshaller = DescribeClassicLinkInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeClassicLinkInstancesRequest,DescribeClassicLinkInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeConversionTasks
 
         internal DescribeConversionTasksResponse DescribeConversionTasks()
@@ -3431,6 +3491,36 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeVpcClassicLink
+
+        internal DescribeVpcClassicLinkResponse DescribeVpcClassicLink(DescribeVpcClassicLinkRequest request)
+        {
+            var marshaller = new DescribeVpcClassicLinkRequestMarshaller();
+            var unmarshaller = DescribeVpcClassicLinkResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcClassicLinkRequest,DescribeVpcClassicLinkResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcClassicLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLink operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeVpcClassicLinkResponse> DescribeVpcClassicLinkAsync(DescribeVpcClassicLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeVpcClassicLinkRequestMarshaller();
+            var unmarshaller = DescribeVpcClassicLinkResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVpcClassicLinkRequest,DescribeVpcClassicLinkResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeVpcPeeringConnections
 
         internal DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections()
@@ -3562,6 +3652,36 @@ namespace Amazon.EC2
             var unmarshaller = DescribeVpnGatewaysResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeVpnGatewaysRequest,DescribeVpnGatewaysResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetachClassicLinkVpc
+
+        internal DetachClassicLinkVpcResponse DetachClassicLinkVpc(DetachClassicLinkVpcRequest request)
+        {
+            var marshaller = new DetachClassicLinkVpcRequestMarshaller();
+            var unmarshaller = DetachClassicLinkVpcResponseUnmarshaller.Instance;
+
+            return Invoke<DetachClassicLinkVpcRequest,DetachClassicLinkVpcResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachClassicLinkVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachClassicLinkVpc operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DetachClassicLinkVpcResponse> DetachClassicLinkVpcAsync(DetachClassicLinkVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DetachClassicLinkVpcRequestMarshaller();
+            var unmarshaller = DetachClassicLinkVpcResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetachClassicLinkVpcRequest,DetachClassicLinkVpcResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3717,6 +3837,36 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableVpcClassicLink
+
+        internal DisableVpcClassicLinkResponse DisableVpcClassicLink(DisableVpcClassicLinkRequest request)
+        {
+            var marshaller = new DisableVpcClassicLinkRequestMarshaller();
+            var unmarshaller = DisableVpcClassicLinkResponseUnmarshaller.Instance;
+
+            return Invoke<DisableVpcClassicLinkRequest,DisableVpcClassicLinkResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableVpcClassicLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLink operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DisableVpcClassicLinkResponse> DisableVpcClassicLinkAsync(DisableVpcClassicLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DisableVpcClassicLinkRequestMarshaller();
+            var unmarshaller = DisableVpcClassicLinkResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableVpcClassicLinkRequest,DisableVpcClassicLinkResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateAddress
 
         internal DisassociateAddressResponse DisassociateAddress(DisassociateAddressRequest request)
@@ -3832,6 +3982,36 @@ namespace Amazon.EC2
             var unmarshaller = EnableVolumeIOResponseUnmarshaller.Instance;
 
             return InvokeAsync<EnableVolumeIORequest,EnableVolumeIOResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableVpcClassicLink
+
+        internal EnableVpcClassicLinkResponse EnableVpcClassicLink(EnableVpcClassicLinkRequest request)
+        {
+            var marshaller = new EnableVpcClassicLinkRequestMarshaller();
+            var unmarshaller = EnableVpcClassicLinkResponseUnmarshaller.Instance;
+
+            return Invoke<EnableVpcClassicLinkRequest,EnableVpcClassicLinkResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableVpcClassicLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLink operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<EnableVpcClassicLinkResponse> EnableVpcClassicLinkAsync(EnableVpcClassicLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new EnableVpcClassicLinkRequestMarshaller();
+            var unmarshaller = EnableVpcClassicLinkResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableVpcClassicLinkRequest,EnableVpcClassicLinkResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

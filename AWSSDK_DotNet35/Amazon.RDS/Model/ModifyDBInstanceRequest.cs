@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -39,10 +39,10 @@ namespace Amazon.RDS.Model
         private bool? _applyImmediately;
         private bool? _autoMinorVersionUpgrade;
         private int? _backupRetentionPeriod;
-        private string _dBInstanceClass;
-        private string _dBInstanceIdentifier;
-        private string _dBParameterGroupName;
-        private List<string> _dBSecurityGroups = new List<string>();
+        private string _dbInstanceClass;
+        private string _dbInstanceIdentifier;
+        private string _dbParameterGroupName;
+        private List<string> _dbSecurityGroups = new List<string>();
         private string _engineVersion;
         private int? _iops;
         private string _masterUserPassword;
@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model
         /// <param name="dbInstanceIdentifier"> The DB instance identifier. This value is stored as a lowercase string.  Constraints: <ul> <li>Must be the identifier for an existing DB instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
         public ModifyDBInstanceRequest(string dbInstanceIdentifier)
         {
-            _dBInstanceIdentifier = dbInstanceIdentifier;
+            _dbInstanceIdentifier = dbInstanceIdentifier;
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Amazon.RDS.Model
         /// degradation. While the migration takes place, nightly backups for the instance will
         /// be suspended. No other Amazon RDS operations can take place for the instance, including
         /// modifying the instance, rebooting the instance, deleting the instance, creating a
-        /// read replica for the instance, and creating a DB snapshot of the instance. 
+        /// Read Replica for the instance, and creating a DB snapshot of the instance. 
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -278,9 +278,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be a value from 0 to 35</li> <li>Can be specified for a read replica
-        /// only if the source is running MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance
-        /// is a source to read replicas</li> </ul>
+        ///  <ul> <li>Must be a value from 0 to 35</li> <li>Can be specified for a MySQL Read
+        /// Replica only if the source is running MySQL 5.6</li> <li>Can be specified for a PostgreSQL
+        /// Read Replica only if the source is running PostgreSQL 9.3.5</li> <li>Cannot be set
+        /// to 0 if the DB instance is a source to Read Replicas</li> </ul>
         /// </summary>
         public int BackupRetentionPeriod
         {
@@ -321,14 +322,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceClass
         {
-            get { return this._dBInstanceClass; }
-            set { this._dBInstanceClass = value; }
+            get { return this._dbInstanceClass; }
+            set { this._dbInstanceClass = value; }
         }
 
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this._dBInstanceClass != null;
+            return this._dbInstanceClass != null;
         }
 
         /// <summary>
@@ -346,14 +347,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBInstanceIdentifier
         {
-            get { return this._dBInstanceIdentifier; }
-            set { this._dBInstanceIdentifier = value; }
+            get { return this._dbInstanceIdentifier; }
+            set { this._dbInstanceIdentifier = value; }
         }
 
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
-            return this._dBInstanceIdentifier != null;
+            return this._dbInstanceIdentifier != null;
         }
 
         /// <summary>
@@ -377,14 +378,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBParameterGroupName
         {
-            get { return this._dBParameterGroupName; }
-            set { this._dBParameterGroupName = value; }
+            get { return this._dbParameterGroupName; }
+            set { this._dbParameterGroupName = value; }
         }
 
         // Check to see if DBParameterGroupName property is set
         internal bool IsSetDBParameterGroupName()
         {
-            return this._dBParameterGroupName != null;
+            return this._dbParameterGroupName != null;
         }
 
         /// <summary>
@@ -404,14 +405,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public List<string> DBSecurityGroups
         {
-            get { return this._dBSecurityGroups; }
-            set { this._dBSecurityGroups = value; }
+            get { return this._dbSecurityGroups; }
+            set { this._dbSecurityGroups = value; }
         }
 
         // Check to see if DBSecurityGroups property is set
         internal bool IsSetDBSecurityGroups()
         {
-            return this._dBSecurityGroups != null && this._dBSecurityGroups.Count > 0; 
+            return this._dbSecurityGroups != null && this._dbSecurityGroups.Count > 0; 
         }
 
         /// <summary>
@@ -431,7 +432,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>5.1.42</code>
+        /// For a list of valid engine versions, see <a>CreateDBInstance</a>.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -490,7 +491,7 @@ namespace Amazon.RDS.Model
         /// degradation. While the migration takes place, nightly backups for the instance will
         /// be suspended. No other Amazon RDS operations can take place for the instance, including
         /// modifying the instance, rebooting the instance, deleting the instance, creating a
-        /// read replica for the instance, and creating a DB snapshot of the instance. 
+        /// Read Replica for the instance, and creating a DB snapshot of the instance. 
         /// </para>
         /// </summary>
         public int Iops
@@ -527,6 +528,9 @@ namespace Amazon.RDS.Model
         /// Constraints: Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric
         /// characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
         /// </para>
+        ///  <note> Amazon RDS API actions never return the password, so this action provides
+        /// a way to regain access to a master instance user if the password is lost. This includes
+        /// restoring privileges that may have been accidentally revoked. </note>
         /// </summary>
         public string MasterUserPassword
         {
@@ -550,7 +554,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Cannot be specified if the DB instance is a read replica.
+        /// Constraints: Cannot be specified if the DB instance is a Read Replica.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -696,7 +700,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        ///  Specifies storage type to be associated with the DB Instance. 
+        ///  Specifies the storage type to be associated with the DB instance. 
         /// </para>
         ///  
         /// <para>
@@ -706,6 +710,11 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
         /// parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
+        /// <code>standard</code> 
         /// </para>
         /// </summary>
         public string StorageType

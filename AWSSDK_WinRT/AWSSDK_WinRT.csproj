@@ -217,6 +217,8 @@
     <Compile Include="Amazon.DynamoDBv2\IAmazonDynamoDB.cs" />
     <Compile Include="Amazon.EC2\AmazonEC2Client.cs" />
     <Compile Include="Amazon.EC2\IAmazonEC2.cs" />
+    <Compile Include="Amazon.ECS\AmazonECSClient.cs" />
+    <Compile Include="Amazon.ECS\IAmazonECS.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\AmazonElasticBeanstalkClient.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\IAmazonElasticBeanstalk.cs" />
     <Compile Include="Amazon.ElastiCache\AmazonElastiCacheClient.cs" />
@@ -518,6 +520,17 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.EC2\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.ECS\*" Exclude="..\AWSSDK_DotNet35\Amazon.ECS\IAmazonECS.cs;..\AWSSDK_DotNet35\Amazon.ECS\AmazonECSClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.ECS\Model\*" Exclude="..\AWSSDK_DotNet35\Amazon.ECS\Model\GetPasswordDataResult.Extensions.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.ECS\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>

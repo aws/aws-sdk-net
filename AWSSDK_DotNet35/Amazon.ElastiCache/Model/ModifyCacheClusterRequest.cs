@@ -37,7 +37,7 @@ namespace Amazon.ElastiCache.Model
     {
         private bool? _applyImmediately;
         private bool? _autoMinorVersionUpgrade;
-        private AZMode _aZMode;
+        private AZMode _azMode;
         private string _cacheClusterId;
         private List<string> _cacheNodeIdsToRemove = new List<string>();
         private string _cacheParameterGroupName;
@@ -145,14 +145,14 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         public AZMode AZMode
         {
-            get { return this._aZMode; }
-            set { this._aZMode = value; }
+            get { return this._azMode; }
+            set { this._azMode = value; }
         }
 
         // Check to see if AZMode property is set
         internal bool IsSetAZMode()
         {
-            return this._aZMode != null;
+            return this._azMode != null;
         }
 
         /// <summary>

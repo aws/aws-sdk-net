@@ -104,10 +104,7 @@ namespace ServiceClientGenerator
                 if (string.IsNullOrEmpty(memberName))
                     memberName = this._name;
 
-                var txt = "_" + memberName[0].ToString().ToLower();
-                if (memberName.Length > 1)
-                    txt += memberName.Substring(1);
-                return txt;
+                return memberName.ToClassMemberCase();
             }
         }
 
@@ -119,10 +116,7 @@ namespace ServiceClientGenerator
             get
             {
                 // ignoring any property renaming when used as an argument at this time
-                var txt = this._name[0].ToString().ToLower();
-                if (this._name.Length > 1)
-                    txt += this._name.Substring(1);
-                return txt;
+                return GeneratorHelpers.CamelCaseParam(this._name);
             }
         }
 

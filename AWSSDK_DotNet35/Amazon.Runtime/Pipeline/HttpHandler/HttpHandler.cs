@@ -76,13 +76,6 @@ namespace Amazon.Runtime.Internal
                     executionContext.ResponseContext.HttpResponse = httpRequest.GetResponse();
                 }
             }
-            catch(Exception)
-            {
-                if (httpRequest != null)
-                    httpRequest.Abort();
-
-                throw;
-            }
             finally
             {
                 if (httpRequest != null)
@@ -124,14 +117,7 @@ namespace Amazon.Runtime.Internal
                 }
                 // The response is not unmarshalled yet.
                 return null;
-            }
-            catch (Exception)
-            {
-                if (httpRequest != null)
-                    httpRequest.Abort();
-
-                throw;
-            }
+            }            
             finally
             {
                 if (httpRequest != null)
@@ -193,8 +179,7 @@ namespace Amazon.Runtime.Internal
                 }
 
                 if (httpRequest != null)
-                {
-                    httpRequest.Abort();
+                {                    
                     httpRequest.Dispose();
                 }
 
@@ -219,8 +204,7 @@ namespace Amazon.Runtime.Internal
                 httpRequest.BeginGetResponse(new AsyncCallback(GetResponseCallback), executionContext);
             }
             catch(Exception exception)
-            {                
-                httpRequest.Abort();
+            {   
                 httpRequest.Dispose();
 
                 // Capture the exception and invoke outer handlers to 
@@ -243,9 +227,7 @@ namespace Amazon.Runtime.Internal
                 executionContext.ResponseContext.HttpResponse = httpResponse;
             }
             catch (Exception exception)
-            {                
-                httpRequest.Abort();
-
+            {   
                 // Capture the exception and invoke outer handlers to 
                 // process the exception.
                 executionContext.ResponseContext.AsyncResult.Exception = exception;

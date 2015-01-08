@@ -41,15 +41,15 @@ namespace Amazon.DynamoDBv2.Model
     public partial class AttributeValue
     {
         private MemoryStream _b;
-        private bool? _bOOL;
-        private List<MemoryStream> _bS = new List<MemoryStream>();
+        private bool? _bool;
+        private List<MemoryStream> _bs = new List<MemoryStream>();
         private List<AttributeValue> _l = new List<AttributeValue>();
         private Dictionary<string, AttributeValue> _m = new Dictionary<string, AttributeValue>();
         private string _n;
-        private List<string> _nS = new List<string>();
-        private bool? _nULL;
+        private List<string> _ns = new List<string>();
+        private bool? _null;
         private string _s;
-        private List<string> _sS = new List<string>();
+        private List<string> _ss = new List<string>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -71,7 +71,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <param name="ss">A String Set data type.</param>
         public AttributeValue(List<string> ss)
         {
-            _sS = ss;
+            _ss = ss;
         }
 
         /// <summary>
@@ -100,14 +100,14 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         public bool BOOL
         {
-            get { return this._bOOL.GetValueOrDefault(); }
-            set { this._bOOL = value; }
+            get { return this._bool.GetValueOrDefault(); }
+            set { this._bool = value; }
         }
 
         // Check to see if BOOL property is set
         internal bool IsSetBOOL()
         {
-            return this._bOOL.HasValue; 
+            return this._bool.HasValue; 
         }
 
         /// <summary>
@@ -118,14 +118,14 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         public List<MemoryStream> BS
         {
-            get { return this._bS; }
-            set { this._bS = value; }
+            get { return this._bs; }
+            set { this._bs = value; }
         }
 
         // Check to see if BS property is set
         internal bool IsSetBS()
         {
-            return this._bS != null && this._bS.Count > 0; 
+            return this._bs != null && this._bs.Count > 0; 
         }
 
         /// <summary>
@@ -190,14 +190,14 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         public List<string> NS
         {
-            get { return this._nS; }
-            set { this._nS = value; }
+            get { return this._ns; }
+            set { this._ns = value; }
         }
 
         // Check to see if NS property is set
         internal bool IsSetNS()
         {
-            return this._nS != null && this._nS.Count > 0; 
+            return this._ns != null && this._ns.Count > 0; 
         }
 
         /// <summary>
@@ -208,14 +208,14 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         public bool NULL
         {
-            get { return this._nULL.GetValueOrDefault(); }
-            set { this._nULL = value; }
+            get { return this._null.GetValueOrDefault(); }
+            set { this._null = value; }
         }
 
         // Check to see if NULL property is set
         internal bool IsSetNULL()
         {
-            return this._nULL.HasValue; 
+            return this._null.HasValue; 
         }
 
         /// <summary>
@@ -244,14 +244,14 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         public List<string> SS
         {
-            get { return this._sS; }
-            set { this._sS = value; }
+            get { return this._ss; }
+            set { this._ss = value; }
         }
 
         // Check to see if SS property is set
         internal bool IsSetSS()
         {
-            return this._sS != null && this._sS.Count > 0; 
+            return this._ss != null && this._ss.Count > 0; 
         }
 
     }

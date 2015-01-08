@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,18 +29,20 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBSubnetGroup operation.
-    /// Deletes a DB subnet group.
+    /// Deletes a DB subnet group. 
+    /// 
+    ///  <note>The specified database subnet group must not be associated with any DB instances.</note>
     /// </summary>
     public partial class DeleteDBSubnetGroupRequest : AmazonRDSRequest
     {
-        private string _dBSubnetGroupName;
+        private string _dbSubnetGroupName;
 
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
         ///  The name of the database subnet group to delete. 
         /// </para>
-        ///  
+        ///  <note>You cannot delete the default subnet group.</note> 
         /// <para>
         ///  Constraints: 
         /// </para>
@@ -50,14 +52,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSubnetGroupName
         {
-            get { return this._dBSubnetGroupName; }
-            set { this._dBSubnetGroupName = value; }
+            get { return this._dbSubnetGroupName; }
+            set { this._dbSubnetGroupName = value; }
         }
 
         // Check to see if DBSubnetGroupName property is set
         internal bool IsSetDBSubnetGroupName()
         {
-            return this._dBSubnetGroupName != null;
+            return this._dbSubnetGroupName != null;
         }
 
     }

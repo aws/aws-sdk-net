@@ -32,22 +32,22 @@ namespace Amazon.Route53.Model
     /// </summary>
     public partial class VPC
     {
-        private VPCRegion _vPCRegion;
-        private string _vPCId;
+        private VPCRegion _vpcRegion;
+        private string _vpcId;
 
         /// <summary>
         /// Gets and sets the property VPCRegion.
         /// </summary>
         public VPCRegion VPCRegion
         {
-            get { return this._vPCRegion; }
-            set { this._vPCRegion = value; }
+            get { return this._vpcRegion; }
+            set { this._vpcRegion = value; }
         }
 
         // Check to see if VPCRegion property is set
         internal bool IsSetVPCRegion()
         {
-            return this._vPCRegion != null;
+            return this._vpcRegion != null;
         }
 
         /// <summary>
@@ -55,14 +55,14 @@ namespace Amazon.Route53.Model
         /// </summary>
         public string VPCId
         {
-            get { return this._vPCId; }
-            set { this._vPCId = value; }
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
         }
 
         // Check to see if VPCId property is set
         internal bool IsSetVPCId()
         {
-            return this._vPCId != null;
+            return this._vpcId != null;
         }
 
     }

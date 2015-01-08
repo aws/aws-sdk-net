@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    ///  This data type is used as a request parameter in the <a>DeleteDBParameterGroup</a>
+    /// This data type is used as a request parameter in the <a>DeleteDBParameterGroup</a>
     /// action, and as a response element in the <a>DescribeDBParameterGroups</a> action.
     /// 
     /// </para>

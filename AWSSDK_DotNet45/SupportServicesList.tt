@@ -28,6 +28,7 @@
 		"Amazon.DirectConnect.IAmazonDirectConnect",
 		"Amazon.DynamoDBv2.IAmazonDynamoDB",
 		"Amazon.EC2.IAmazonEC2",
+		"Amazon.ECS.IAmazonECS",
 		"Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk",
 		"Amazon.ElastiCache.IAmazonElastiCache",
 		"Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing",

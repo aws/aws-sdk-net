@@ -33,7 +33,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     public partial class Policies
     {
         private List<AppCookieStickinessPolicy> _appCookieStickinessPolicies = new List<AppCookieStickinessPolicy>();
-        private List<LBCookieStickinessPolicy> _lBCookieStickinessPolicies = new List<LBCookieStickinessPolicy>();
+        private List<LBCookieStickinessPolicy> _lbCookieStickinessPolicies = new List<LBCookieStickinessPolicy>();
         private List<string> _otherPolicies = new List<string>();
 
         /// <summary>
@@ -69,14 +69,14 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public List<LBCookieStickinessPolicy> LBCookieStickinessPolicies
         {
-            get { return this._lBCookieStickinessPolicies; }
-            set { this._lBCookieStickinessPolicies = value; }
+            get { return this._lbCookieStickinessPolicies; }
+            set { this._lbCookieStickinessPolicies = value; }
         }
 
         // Check to see if LBCookieStickinessPolicies property is set
         internal bool IsSetLBCookieStickinessPolicies()
         {
-            return this._lBCookieStickinessPolicies != null && this._lBCookieStickinessPolicies.Count > 0; 
+            return this._lbCookieStickinessPolicies != null && this._lbCookieStickinessPolicies.Count > 0; 
         }
 
         /// <summary>

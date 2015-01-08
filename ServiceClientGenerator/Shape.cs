@@ -558,5 +558,32 @@ namespace ServiceClientGenerator
                 return req;
             }
         }
+
+        /// <summary>
+        /// If the shape is a request or response type, strips off the suffix
+        /// to yield the parent operation. Null is returned if the shape is a
+        /// regular model shape.
+        /// </summary>
+        public string RelatedOperationName
+        {
+            get
+            {
+                const string RequestSuffix = "Request";
+                const string ResponseSuffix = "Response";
+                const string ResultSuffix = "Result";
+
+                var len = Name.Length;
+                if (Name.EndsWith(RequestSuffix, StringComparison.Ordinal))
+                    return Name.Substring(0, len - RequestSuffix.Length);
+
+                if (Name.EndsWith(ResponseSuffix, StringComparison.Ordinal))
+                    return Name.Substring(0, len - ResponseSuffix.Length);
+
+                if (Name.EndsWith(ResultSuffix, StringComparison.Ordinal))
+                    return Name.Substring(0, len - ResultSuffix.Length);
+
+                return null;
+            }
+        }
     }
 }

@@ -33,7 +33,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class CheckDNSAvailabilityRequest : AmazonElasticBeanstalkRequest
     {
-        private string _cNAMEPrefix;
+        private string _cnamePrefix;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -46,7 +46,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <param name="cnamePrefix"> The prefix used when this CNAME is reserved. </param>
         public CheckDNSAvailabilityRequest(string cnamePrefix)
         {
-            _cNAMEPrefix = cnamePrefix;
+            _cnamePrefix = cnamePrefix;
         }
 
         /// <summary>
@@ -57,14 +57,14 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public string CNAMEPrefix
         {
-            get { return this._cNAMEPrefix; }
-            set { this._cNAMEPrefix = value; }
+            get { return this._cnamePrefix; }
+            set { this._cnamePrefix = value; }
         }
 
         // Check to see if CNAMEPrefix property is set
         internal bool IsSetCNAMEPrefix()
         {
-            return this._cNAMEPrefix != null;
+            return this._cnamePrefix != null;
         }
 
     }

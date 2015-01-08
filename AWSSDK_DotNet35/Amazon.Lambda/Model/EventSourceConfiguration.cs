@@ -40,7 +40,7 @@ namespace Amazon.Lambda.Model
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
         private string _role;
         private string _status;
-        private string _uUID;
+        private string _uuid;
 
         /// <summary>
         /// Gets and sets the property BatchSize. 
@@ -201,14 +201,14 @@ namespace Amazon.Lambda.Model
         /// </summary>
         public string UUID
         {
-            get { return this._uUID; }
-            set { this._uUID = value; }
+            get { return this._uuid; }
+            set { this._uuid = value; }
         }
 
         // Check to see if UUID property is set
         internal bool IsSetUUID()
         {
-            return this._uUID != null;
+            return this._uuid != null;
         }
 
     }

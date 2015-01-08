@@ -67,7 +67,6 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(httpRequest.IsConfigureRequestCalled);
             Assert.IsTrue(httpRequest.IsSetRequestHeadersCalled);
             Assert.IsTrue(httpRequest.IsDisposed);            
-            Assert.IsTrue(httpRequest.IsAborted);
         }
 
 #if BCL45
@@ -118,7 +117,6 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(httpRequest.IsConfigureRequestCalled);
             Assert.IsTrue(httpRequest.IsSetRequestHeadersCalled);
             Assert.IsTrue(httpRequest.IsDisposed);
-            Assert.IsTrue(httpRequest.IsAborted);
         }
 
 #elif !BCL45 && BCL
@@ -172,7 +170,6 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(httpRequest.IsConfigureRequestCalled);
             Assert.IsTrue(httpRequest.IsSetRequestHeadersCalled);
             Assert.IsTrue(httpRequest.IsDisposed);
-            Assert.IsTrue(httpRequest.IsAborted);
         }
 #endif
 

@@ -33,7 +33,7 @@ namespace Amazon.Glacier.Model
     public partial class PartListElement
     {
         private string _rangeInBytes;
-        private string _sHA256TreeHash;
+        private string _sha256TreeHash;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -67,14 +67,14 @@ namespace Amazon.Glacier.Model
         /// </summary>
         public string SHA256TreeHash
         {
-            get { return this._sHA256TreeHash; }
-            set { this._sHA256TreeHash = value; }
+            get { return this._sha256TreeHash; }
+            set { this._sha256TreeHash = value; }
         }
 
         // Check to see if SHA256TreeHash property is set
         internal bool IsSetSHA256TreeHash()
         {
-            return this._sHA256TreeHash != null;
+            return this._sha256TreeHash != null;
         }
 
     }

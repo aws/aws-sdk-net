@@ -106,7 +106,17 @@ namespace Amazon.CloudSearchDomain.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about defining and using expressions, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html">Configuring
+        /// You specify the expressions in JSON using the form <code>{"EXPRESSIONNAME":"EXPRESSION"}</code>.
+        /// You can define and use multiple expressions in a search request. For example:
+        /// </para>
+        ///  
+        /// <para>
+        /// <code> {"expression1":"_score*rating", "expression2":"(1/rank)*year"} </code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about the variables, operators, and functions you can use in expressions,
+        /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html#writing-expressions">Writing
         /// Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -163,6 +173,39 @@ namespace Amazon.CloudSearchDomain.Model
         /// <para>
         /// If no facet options are specified, facet counts are computed for all field values,
         /// the facets are sorted by facet count, and the top 10 facets are returned in the results.
+        /// </para>
+        ///  
+        /// <para>
+        /// To count particular buckets of values, use the <code>buckets</code> option. For example,
+        /// the following request uses the <code>buckets</code> option to calculate and return
+        /// facet counts by decade.
+        /// </para>
+        ///  
+        /// <para>
+        /// <code> {"year":{"buckets":["[1970,1979]","[1980,1989]","[1990,1999]","[2000,2009]","[2010,}"]}}
+        /// </code>
+        /// </para>
+        ///  
+        /// <para>
+        /// To sort facets by facet count, use the <code>count</code> option. For example, the
+        /// following request sets the <code>sort</code> option to <code>count</code> to sort
+        /// the facet values by facet count, with the facet values that have the most matching
+        /// documents listed first. Setting the <code>size</code> option to 3 returns only the
+        /// top three facet values.
+        /// </para>
+        ///  
+        /// <para>
+        /// <code> {"year":{"sort":"count","size":3}} </code>
+        /// </para>
+        ///  
+        /// <para>
+        /// To sort the facets by value, use the <code>bucket</code> option. For example, the
+        /// following request sets the <code>sort</code> option to <code>bucket</code> to sort
+        /// the facet values numerically by year, with earliest year listed first. 
+        /// </para>
+        ///  
+        /// <para>
+        /// <code> {"year":{"sort":"bucket"}} </code>
         /// </para>
         ///  
         /// <para>
@@ -236,6 +279,16 @@ namespace Amazon.CloudSearchDomain.Model
         /// If no highlight options are specified for a field, the returned field text is treated
         /// as HTML and the first match is highlighted with emphasis tags: <code>&amp;lt;em&gt;search-term&amp;lt;/em&amp;gt;</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// For example, the following request retrieves highlights for the <code>actors</code>
+        /// and <code>title</code> fields.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{ "actors": {}, "title": {"format": "text","max_phrases": 2,"pre_tag": "<b>","post_tag":
+        /// "</b>"} }</code>
+        /// </para>
         /// </summary>
         public string Highlight
         {
@@ -307,7 +360,7 @@ namespace Amazon.CloudSearchDomain.Model
         /// Gets and sets the property QueryOptions. 
         /// <para>
         /// Configures options for the query parser specified in the <code>queryParser</code>
-        /// parameter.
+        /// parameter. You specify the options in JSON using the following form <code>{"OPTION1":"VALUE1","OPTION2":VALUE2"..."OPTIONN":"VALUEN"}.</code>
         /// </para>
         ///  
         /// <para>

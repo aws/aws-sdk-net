@@ -39,7 +39,12 @@ namespace Amazon.EC2.Model
     /// Copies of encrypted Amazon EBS snapshots remain encrypted. Copies of unencrypted snapshots
     /// remain unencrypted.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Copying snapshots that were encrypted with non-default AWS Key Management Service
+    /// (KMS) master keys is not supported at this time. 
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
     /// an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.

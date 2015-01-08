@@ -51,7 +51,7 @@ namespace Amazon.CloudWatch.Model
     public partial class PutMetricDataRequest : AmazonCloudWatchRequest
     {
         private List<MetricDatum> _metricData = new List<MetricDatum>();
-        private string _namespace;
+        private string _awsNamespace;
 
         /// <summary>
         /// Gets and sets the property MetricData. 
@@ -79,14 +79,14 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         public string Namespace
         {
-            get { return this._namespace; }
-            set { this._namespace = value; }
+            get { return this._awsNamespace; }
+            set { this._awsNamespace = value; }
         }
 
         // Check to see if Namespace property is set
         internal bool IsSetNamespace()
         {
-            return this._namespace != null;
+            return this._awsNamespace != null;
         }
 
     }

@@ -151,7 +151,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.LaunchSpecification.IsSetUserData())
                     {
-                        request.Parameters.Add("LaunchSpecification" + "." + "UserData", StringUtils.FromString(publicRequest.LaunchSpecification.UserData));
+                        if(publicRequest.LaunchSpecification.UserData.IsSetData())
+                        {
+                            request.Parameters.Add("LaunchSpecification" + "." + "UserData" + "." + "Data", StringUtils.FromString(publicRequest.LaunchSpecification.UserData.Data));
+                        }
                     }
                 }
                 if(publicRequest.IsSetPlatform())

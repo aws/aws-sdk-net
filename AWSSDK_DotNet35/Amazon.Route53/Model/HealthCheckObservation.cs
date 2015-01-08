@@ -33,7 +33,7 @@ namespace Amazon.Route53.Model
     /// </summary>
     public partial class HealthCheckObservation
     {
-        private string _iPAddress;
+        private string _ipAddress;
         private StatusReport _statusReport;
 
         /// <summary>
@@ -44,14 +44,14 @@ namespace Amazon.Route53.Model
         /// </summary>
         public string IPAddress
         {
-            get { return this._iPAddress; }
-            set { this._iPAddress = value; }
+            get { return this._ipAddress; }
+            set { this._ipAddress = value; }
         }
 
         // Check to see if IPAddress property is set
         internal bool IsSetIPAddress()
         {
-            return this._iPAddress != null;
+            return this._ipAddress != null;
         }
 
         /// <summary>

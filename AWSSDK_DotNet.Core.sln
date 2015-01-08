@@ -36,6 +36,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceModels", "ServiceMod
 		ServiceModels\cloudfront-2014-05-31.normal.json = ServiceModels\cloudfront-2014-05-31.normal.json
 		ServiceModels\cloudfront.customizations.constructors.json = ServiceModels\cloudfront.customizations.constructors.json
 		ServiceModels\cloudfront.customizations.json = ServiceModels\cloudfront.customizations.json
+		ServiceModels\cloudhsm-2014-05-30.normal.json = ServiceModels\cloudhsm-2014-05-30.normal.json
 		ServiceModels\cloudsearch-.customizations.json = ServiceModels\cloudsearch-.customizations.json
 		ServiceModels\cloudsearch-2011-02-01-customizations.json = ServiceModels\cloudsearch-2011-02-01-customizations.json
 		ServiceModels\cloudsearch-2011-02-01.normal.json = ServiceModels\cloudsearch-2011-02-01.normal.json

@@ -1,0 +1,16 @@
+{
+    "operationModifiers": {
+        "DiscoverPollEndpoint": {
+            "exclude": true
+        },
+		"RegisterContainerInstance": {
+            "exclude": true
+        },
+		"SubmitContainerStateChange": {
+            "exclude": true
+        },
+		"SubmitTaskStateChange": {
+            "exclude": true
+        }
+    }
+}

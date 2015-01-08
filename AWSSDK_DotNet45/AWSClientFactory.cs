@@ -32,6 +32,7 @@ using Amazon.DataPipeline;
 using Amazon.DirectConnect;
 using Amazon.DynamoDBv2;
 using Amazon.EC2;
+using Amazon.ECS;
 using Amazon.ElasticBeanstalk;
 using Amazon.ElastiCache;
 using Amazon.ElasticLoadBalancing;
@@ -1788,6 +1789,162 @@ namespace Amazon
         public static IAmazonEC2 CreateAmazonEC2Client(AWSCredentials credentials, AmazonEC2Config config)
         {
             return new AmazonEC2Client(credentials, config);
+        }
+        #endregion
+
+        #region Amazon ECS
+
+        /// <summary>
+        /// Create a client for the Amazon ECS Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <returns>An Amazon ECS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonECS CreateAmazonECSClient()
+        {
+            return new AmazonECSClient();
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ECS Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon ECS client</returns>
+        public static IAmazonECS CreateAmazonECSClient(AmazonECSConfig config)
+        {
+            return new AmazonECSClient(config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ECS Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon ECS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonECS CreateAmazonECSClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonECSClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ECS Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon ECS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonECS CreateAmazonECSClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, AmazonECSConfig config
+            )
+        {
+            return new AmazonECSClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ECS Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ECS client</returns>
+        public static IAmazonECS CreateAmazonECSClient(RegionEndpoint region)
+        {
+            return new AmazonECSClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ECS Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ECS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonECS CreateAmazonECSClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonECSClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ECS Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon ECS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonECS CreateAmazonECSClient(AWSCredentials credentials)
+        {
+            return new AmazonECSClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ECS Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ECS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonECS CreateAmazonECSClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonECSClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ECS Service with AWSCredentials and an AmazonECS Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon ECS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonECS CreateAmazonECSClient(AWSCredentials credentials, AmazonECSConfig config)
+        {
+            return new AmazonECSClient(credentials, config);
         }
         #endregion
 

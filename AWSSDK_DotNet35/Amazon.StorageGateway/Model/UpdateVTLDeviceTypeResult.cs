@@ -32,7 +32,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class UpdateVTLDeviceTypeResult : AmazonWebServiceResponse
     {
-        private string _vTLDeviceARN;
+        private string _vtlDeviceARN;
 
         /// <summary>
         /// Gets and sets the property VTLDeviceARN. 
@@ -42,14 +42,14 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         public string VTLDeviceARN
         {
-            get { return this._vTLDeviceARN; }
-            set { this._vTLDeviceARN = value; }
+            get { return this._vtlDeviceARN; }
+            set { this._vtlDeviceARN = value; }
         }
 
         // Check to see if VTLDeviceARN property is set
         internal bool IsSetVTLDeviceARN()
         {
-            return this._vTLDeviceARN != null;
+            return this._vtlDeviceARN != null;
         }
 
     }

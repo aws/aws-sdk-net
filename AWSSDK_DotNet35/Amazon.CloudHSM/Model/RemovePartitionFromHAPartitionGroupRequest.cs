@@ -1,0 +1,70 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the cloudhsm-2014-05-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.CloudHSM.Model
+{
+    /// <summary>
+    /// Container for the parameters to the RemovePartitionFromHAPartitionGroup operation.
+    /// Adds a partition to an HA partition group
+    /// </summary>
+    public partial class RemovePartitionFromHAPartitionGroupRequest : AmazonCloudHSMRequest
+    {
+        private string _hAPartitionGroupArn;
+        private string _partitionArn;
+
+        /// <summary>
+        /// Gets and sets the property HAPartitionGroupArn.
+        /// </summary>
+        public string HAPartitionGroupArn
+        {
+            get { return this._hAPartitionGroupArn; }
+            set { this._hAPartitionGroupArn = value; }
+        }
+
+        // Check to see if HAPartitionGroupArn property is set
+        internal bool IsSetHAPartitionGroupArn()
+        {
+            return this._hAPartitionGroupArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PartitionArn.
+        /// </summary>
+        public string PartitionArn
+        {
+            get { return this._partitionArn; }
+            set { this._partitionArn = value; }
+        }
+
+        // Check to see if PartitionArn property is set
+        internal bool IsSetPartitionArn()
+        {
+            return this._partitionArn != null;
+        }
+
+    }
+}

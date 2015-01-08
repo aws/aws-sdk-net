@@ -62,7 +62,7 @@ namespace Amazon.Route53.Model
     public partial class CreateHostedZoneRequest : AmazonRoute53Request
     {
         private string _name;
-        private VPC _vPC;
+        private VPC _vpc;
         private string _callerReference;
         private HostedZoneConfig _hostedZoneConfig;
         private string _delegationSetId;
@@ -119,14 +119,14 @@ namespace Amazon.Route53.Model
         /// </summary>
         public VPC VPC
         {
-            get { return this._vPC; }
-            set { this._vPC = value; }
+            get { return this._vpc; }
+            set { this._vpc = value; }
         }
 
         // Check to see if VPC property is set
         internal bool IsSetVPC()
         {
-            return this._vPC != null;
+            return this._vpc != null;
         }
 
         /// <summary>

@@ -23,7 +23,12 @@ using Amazon.Runtime.Internal;
 
 namespace Amazon.DynamoDBv2.Internal
 {
-    internal class DynamoDBRetryPolicy : DefaultRetryPolicy
+    /// <summary>
+    /// Custom DynamoDB retry policy.
+    /// This policy has a slightly different exponential backoff logic compared
+    /// to the default retry policy.
+    /// </summary>
+    public class DynamoDBRetryPolicy : DefaultRetryPolicy
     {
         public DynamoDBRetryPolicy(int maxRetries)
             : base(maxRetries)

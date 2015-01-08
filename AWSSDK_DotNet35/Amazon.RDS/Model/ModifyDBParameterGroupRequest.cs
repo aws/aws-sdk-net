@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,7 +34,13 @@ namespace Amazon.RDS.Model
     /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
     /// request. 
     /// 
-    ///  <important> 
+    ///  <note> 
+    /// <para>
+    ///  Changes to dynamic parameters are applied immediately. Changes to static parameters
+    /// require a reboot without failover to the DB instance associated with the parameter
+    /// group before the change can take effect. 
+    /// </para>
+    ///  </note> <important> 
     /// <para>
     /// After you modify a DB parameter group, you should wait at least 5 minutes before creating
     /// your first DB instance that uses that DB parameter group as the default parameter
@@ -50,7 +56,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class ModifyDBParameterGroupRequest : AmazonRDSRequest
     {
-        private string _dBParameterGroupName;
+        private string _dbParameterGroupName;
         private List<Parameter> _parameters = new List<Parameter>();
 
         /// <summary>
@@ -62,10 +68,10 @@ namespace Amazon.RDS.Model
         /// Instantiates ModifyDBParameterGroupRequest with the parameterized properties
         /// </summary>
         /// <param name="dbParameterGroupName"> The name of the DB parameter group.  Constraints: <ul> <li>Must be the name of an existing DB parameter group</li> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
-        /// <param name="parameters"> An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters may be modified in a single request.  Valid Values (for the application method): <code>immediate | pending-reboot</code></param>
+        /// <param name="parameters"> An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters may be modified in a single request.  Valid Values (for the application method): <code>immediate | pending-reboot</code> <note>You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover. </note></param>
         public ModifyDBParameterGroupRequest(string dbParameterGroupName, List<Parameter> parameters)
         {
-            _dBParameterGroupName = dbParameterGroupName;
+            _dbParameterGroupName = dbParameterGroupName;
             _parameters = parameters;
         }
 
@@ -84,14 +90,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBParameterGroupName
         {
-            get { return this._dBParameterGroupName; }
-            set { this._dBParameterGroupName = value; }
+            get { return this._dbParameterGroupName; }
+            set { this._dbParameterGroupName = value; }
         }
 
         // Check to see if DBParameterGroupName property is set
         internal bool IsSetDBParameterGroupName()
         {
-            return this._dBParameterGroupName != null;
+            return this._dbParameterGroupName != null;
         }
 
         /// <summary>
@@ -106,6 +112,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Valid Values (for the application method): <code>immediate | pending-reboot</code>
         /// </para>
+        ///  <note>You can use the immediate value with dynamic parameters only. You can use the
+        /// pending-reboot value for both dynamic and static parameters, and changes are applied
+        /// when you reboot the DB instance without failover. </note>
         /// </summary>
         public List<Parameter> Parameters
         {

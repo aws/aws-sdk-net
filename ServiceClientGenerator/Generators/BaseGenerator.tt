@@ -194,7 +194,7 @@
 <#+  foreach(var item in members)
     {
 #>
-        /// <param name="<#=this.Config.ServiceModel.Customizations.SimpleConstructorsModel.CamelCaseParam(item.PropertyName)#>"><#=item.GetParamDocumentationForOperation(operation.Name)#></param>
+        /// <param name="<#=GeneratorHelpers.CamelCaseParam(item.PropertyName)#>"><#=item.GetParamDocumentationForOperation(operation.Name)#></param>
 <#+
     }
 #>
@@ -350,7 +350,7 @@
         foreach (var member in members)
         {
 #>
-        /// <param name="<#=this.Config.ServiceModel.Customizations.SimpleConstructorsModel.CamelCaseParam(member.PropertyName)#>"><#=member.GetParamDocumentationForConstructor(className)#></param>
+        /// <param name="<#=GeneratorHelpers.CamelCaseParam(member.PropertyName)#>"><#=member.GetParamDocumentationForConstructor(className)#></param>
 <#+
         }
     }
@@ -380,7 +380,7 @@
 foreach (var member in docMembers)
 {
 #>
-            request.<#=member.PropertyName#> = <#=this.Config.ServiceModel.Customizations.SimpleMethodsModel.CamelCaseParam(member.PropertyName)#>;
+            request.<#=member.PropertyName#> = <#=GeneratorHelpers.CamelCaseParam(member.PropertyName)#>;
 <#+
         
 }
@@ -447,7 +447,7 @@ foreach (var member in docMembers)
 foreach (var member in docMembers)
 {
 #>
-            <#=member.VariableName#> = <#=this.Config.ServiceModel.Customizations.SimpleConstructorsModel.CamelCaseParam(member.PropertyName)#>;
+            <#=member.VariableName#> = <#=GeneratorHelpers.CamelCaseParam(member.PropertyName)#>;
 <#+
         
 }

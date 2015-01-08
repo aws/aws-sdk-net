@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBSnapshotsResult : AmazonWebServiceResponse
     {
-        private List<DBSnapshot> _dBSnapshots = new List<DBSnapshot>();
+        private List<DBSnapshot> _dbSnapshots = new List<DBSnapshot>();
         private string _marker;
 
         /// <summary>
@@ -44,14 +44,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public List<DBSnapshot> DBSnapshots
         {
-            get { return this._dBSnapshots; }
-            set { this._dBSnapshots = value; }
+            get { return this._dbSnapshots; }
+            set { this._dbSnapshots = value; }
         }
 
         // Check to see if DBSnapshots property is set
         internal bool IsSetDBSnapshots()
         {
-            return this._dBSnapshots != null && this._dBSnapshots.Count > 0; 
+            return this._dbSnapshots != null && this._dbSnapshots.Count > 0; 
         }
 
         /// <summary>

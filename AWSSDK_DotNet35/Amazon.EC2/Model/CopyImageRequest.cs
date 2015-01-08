@@ -29,10 +29,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CopyImage operation.
-    /// Initiates the copy of an AMI from the specified source region to the region in which
-    /// the request was made. You specify the destination region by using its endpoint when
-    /// making the request. AMIs that use encrypted Amazon EBS snapshots cannot be copied
-    /// with this method.
+    /// Initiates the copy of an AMI from the specified source region to the current region.
+    /// You specify the destination region by using its endpoint when making the request.
+    /// AMIs that use encrypted Amazon EBS snapshots cannot be copied with this method.
     /// 
     ///  
     /// <para>

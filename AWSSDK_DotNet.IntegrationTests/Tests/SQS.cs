@@ -81,6 +81,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 }
             });
 
+            // Wait a bit to make sure the attribute has fully propagated.
+            Thread.Sleep(1000);
+
             var response = Client.ListDeadLetterSourceQueues(new ListDeadLetterSourceQueuesRequest
             {
                 QueueUrl = deadQueueURL

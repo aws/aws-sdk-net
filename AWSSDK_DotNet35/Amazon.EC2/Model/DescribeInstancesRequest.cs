@@ -100,13 +100,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>group-id</code> - The ID of the security group for the instance. If the instance
-        /// is in EC2-Classic or a default VPC, you can use <code>group-name</code> instead.
+        /// <code>group-id</code> - The ID of the security group for the instance. EC2-Classic
+        /// only.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>group-name</code> - The name of the security group for the instance. If the
-        /// instance is in a nondefault VPC, you must use <code>group-id</code> instead.
+        /// <code>group-name</code> - The name of the security group for the instance. EC2-Classic
+        /// only.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -149,15 +149,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance.group-id</code> - The ID of the security group for the instance. If
-        /// the instance is in EC2-Classic or a default VPC, you can use <code>instance.group-name</code>
-        /// instead.
+        /// <code>instance.group-id</code> - The ID of the security group for the instance. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// <code>instance.group-name</code> - The name of the security group for the instance.
-        /// If the instance is in a nondefault VPC, you must use <code>instance.group-id</code>
-        /// instead.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>

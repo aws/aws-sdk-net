@@ -32,7 +32,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class InstanceGroupModifyConfig
     {
-        private List<string> _eC2InstanceIdsToTerminate = new List<string>();
+        private List<string> _ec2InstanceIdsToTerminate = new List<string>();
         private int? _instanceCount;
         private string _instanceGroupId;
 
@@ -61,14 +61,14 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         public List<string> EC2InstanceIdsToTerminate
         {
-            get { return this._eC2InstanceIdsToTerminate; }
-            set { this._eC2InstanceIdsToTerminate = value; }
+            get { return this._ec2InstanceIdsToTerminate; }
+            set { this._ec2InstanceIdsToTerminate = value; }
         }
 
         // Check to see if EC2InstanceIdsToTerminate property is set
         internal bool IsSetEC2InstanceIdsToTerminate()
         {
-            return this._eC2InstanceIdsToTerminate != null && this._eC2InstanceIdsToTerminate.Count > 0; 
+            return this._ec2InstanceIdsToTerminate != null && this._ec2InstanceIdsToTerminate.Count > 0; 
         }
 
         /// <summary>

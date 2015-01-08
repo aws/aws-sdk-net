@@ -52,6 +52,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
+            request.Content = System.Text.Encoding.UTF8.GetBytes("{}");
 
             return request;
         }

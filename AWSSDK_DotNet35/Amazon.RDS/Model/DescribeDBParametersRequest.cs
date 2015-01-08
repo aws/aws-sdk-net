@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBParametersRequest : AmazonRDSRequest
     {
-        private string _dBParameterGroupName;
+        private string _dbParameterGroupName;
         private List<Filter> _filters = new List<Filter>();
         private string _marker;
         private int? _maxRecords;
@@ -50,7 +50,7 @@ namespace Amazon.RDS.Model
         /// <param name="dbParameterGroupName"> The name of a specific DB parameter group to return details for.  Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
         public DescribeDBParametersRequest(string dbParameterGroupName)
         {
-            _dBParameterGroupName = dbParameterGroupName;
+            _dbParameterGroupName = dbParameterGroupName;
         }
 
         /// <summary>
@@ -68,14 +68,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBParameterGroupName
         {
-            get { return this._dBParameterGroupName; }
-            set { this._dBParameterGroupName = value; }
+            get { return this._dbParameterGroupName; }
+            set { this._dbParameterGroupName = value; }
         }
 
         // Check to see if DBParameterGroupName property is set
         internal bool IsSetDBParameterGroupName()
         {
-            return this._dBParameterGroupName != null;
+            return this._dbParameterGroupName != null;
         }
 
         /// <summary>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// option group option settings are used to display settings available for each option
+    /// Option group option settings are used to display settings available for each option
     /// with their default values and other information. These values are used with the DescribeOptionGroupOptions
     /// action.
     /// </summary>

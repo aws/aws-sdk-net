@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BundleId. 
         /// <para>
-        /// The ID for this bundle task.
+        /// The ID of the bundle task.
         /// </para>
         /// </summary>
         public string BundleId

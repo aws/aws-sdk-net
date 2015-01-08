@@ -72,6 +72,7 @@
     <Compile Include="Runtime\RedirectHandlerTests.cs" />
     <Compile Include="Runtime\AmazonServiceClientTests.cs" />
     <Compile Include="Runtime\UnmarshallerTests.cs" />
+    <Compile Include="S3EventNotificationTests.cs" />
     <Compile Include="TestTools\Comparer.cs" />
     <Compile Include="TestTools\AWSQueryValidator.cs" />
     <Compile Include="TestTools\ComparerTests.cs" />

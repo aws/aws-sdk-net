@@ -80,6 +80,12 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 
 <#
 	}
+	else if (this.Config.ServiceModel.Type == ServiceType.Json)
+	{
+#>
+            request.Content = System.Text.Encoding.UTF8.GetBytes("{}");
+<#
+	}
 
 	// If there aren't any members that are marshalled as part of the body or streamed	
 	if(this.Operation.UseQueryString)

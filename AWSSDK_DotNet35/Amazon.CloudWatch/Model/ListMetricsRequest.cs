@@ -37,7 +37,7 @@ namespace Amazon.CloudWatch.Model
     {
         private List<DimensionFilter> _dimensions = new List<DimensionFilter>();
         private string _metricName;
-        private string _namespace;
+        private string _awsNamespace;
         private string _nextToken;
 
         /// <summary>
@@ -84,14 +84,14 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         public string Namespace
         {
-            get { return this._namespace; }
-            set { this._namespace = value; }
+            get { return this._awsNamespace; }
+            set { this._awsNamespace = value; }
         }
 
         // Check to see if Namespace property is set
         internal bool IsSetNamespace()
         {
-            return this._namespace != null;
+            return this._awsNamespace != null;
         }
 
         /// <summary>

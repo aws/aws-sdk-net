@@ -33,7 +33,7 @@ namespace Amazon.Glacier.Model
     public partial class VaultNotificationConfig
     {
         private List<string> _events = new List<string>();
-        private string _sNSTopic;
+        private string _snsTopic;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -47,7 +47,7 @@ namespace Amazon.Glacier.Model
         /// <param name="events">A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.</param>
         public VaultNotificationConfig(string snsTopic, List<string> events)
         {
-            _sNSTopic = snsTopic;
+            _snsTopic = snsTopic;
             _events = events;
         }
 
@@ -78,14 +78,14 @@ namespace Amazon.Glacier.Model
         /// </summary>
         public string SNSTopic
         {
-            get { return this._sNSTopic; }
-            set { this._sNSTopic = value; }
+            get { return this._snsTopic; }
+            set { this._snsTopic = value; }
         }
 
         // Check to see if SNSTopic property is set
         internal bool IsSetSNSTopic()
         {
-            return this._sNSTopic != null;
+            return this._snsTopic != null;
         }
 
     }

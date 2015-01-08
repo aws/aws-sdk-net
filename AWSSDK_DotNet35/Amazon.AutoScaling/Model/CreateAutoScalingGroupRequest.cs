@@ -54,7 +54,7 @@ namespace Amazon.AutoScaling.Model
         private string _placementGroup;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _terminationPolicies = new List<string>();
-        private string _vPCZoneIdentifier;
+        private string _vpcZoneIdentifier;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -394,14 +394,14 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         public string VPCZoneIdentifier
         {
-            get { return this._vPCZoneIdentifier; }
-            set { this._vPCZoneIdentifier = value; }
+            get { return this._vpcZoneIdentifier; }
+            set { this._vpcZoneIdentifier = value; }
         }
 
         // Check to see if VPCZoneIdentifier property is set
         internal bool IsSetVPCZoneIdentifier()
         {
-            return this._vPCZoneIdentifier != null;
+            return this._vpcZoneIdentifier != null;
         }
 
     }

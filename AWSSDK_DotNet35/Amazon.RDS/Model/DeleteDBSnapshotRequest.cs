@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-09-01.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -30,10 +30,13 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DeleteDBSnapshot operation.
     /// Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated.
+    /// 
+    /// 
+    ///  <note>The DBSnapshot must be in the <code>available</code> state to be deleted.</note>
     /// </summary>
     public partial class DeleteDBSnapshotRequest : AmazonRDSRequest
     {
-        private string _dBSnapshotIdentifier;
+        private string _dbSnapshotIdentifier;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -46,7 +49,7 @@ namespace Amazon.RDS.Model
         /// <param name="dbSnapshotIdentifier"> The DBSnapshot identifier.  Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</param>
         public DeleteDBSnapshotRequest(string dbSnapshotIdentifier)
         {
-            _dBSnapshotIdentifier = dbSnapshotIdentifier;
+            _dbSnapshotIdentifier = dbSnapshotIdentifier;
         }
 
         /// <summary>
@@ -62,14 +65,14 @@ namespace Amazon.RDS.Model
         /// </summary>
         public string DBSnapshotIdentifier
         {
-            get { return this._dBSnapshotIdentifier; }
-            set { this._dBSnapshotIdentifier = value; }
+            get { return this._dbSnapshotIdentifier; }
+            set { this._dbSnapshotIdentifier = value; }
         }
 
         // Check to see if DBSnapshotIdentifier property is set
         internal bool IsSetDBSnapshotIdentifier()
         {
-            return this._dBSnapshotIdentifier != null;
+            return this._dbSnapshotIdentifier != null;
         }
 
     }
