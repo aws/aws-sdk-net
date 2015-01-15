@@ -87,11 +87,6 @@
     <Compile Include="Amazon.Runtime\Internal\Util\HashingWrapper.portable.cs" />
     <Compile Include="Amazon.S3\AmazonS3Client.cs" />
     <Compile Include="Amazon.S3\IAmazonS3.cs" />
-    <Compile Include="Amazon.S3\Model\GetObjectResponse.storagefile.cs" />
-    <Compile Include="Amazon.S3\Model\PutObjectRequest.storagefile.cs" />
-    <Compile Include="Amazon.S3\Model\UploadPartRequest.storagefile.cs" />
-    <Compile Include="Amazon.S3\TransferUtility\TransferUtilityDownloadRequest.storagefile.cs" />
-    <Compile Include="Amazon.S3\TransferUtility\TransferUtilityUploadRequest.storagefile.cs" />
     <Compile Include="Amazon.SecurityToken\AmazonSecurityTokenServiceClient.cs" />
     <Compile Include="Amazon.SecurityToken\IAmazonSecurityTokenService.cs" />
     <Compile Include="Amazon.SimpleDB\AmazonSimpleDBClient.cs" />
@@ -489,6 +484,12 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_WinRT\Amazon.S3\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_WinRT\Amazon.S3\Transfer\*.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Transfer\BaseDownloadRequest.cs">

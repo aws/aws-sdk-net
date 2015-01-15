@@ -34,60 +34,60 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Playlist Object
+    /// Response Unmarshaller for HlsContentProtection Object
     /// </summary>  
-    public class PlaylistUnmarshaller : IUnmarshaller<Playlist, XmlUnmarshallerContext>, IUnmarshaller<Playlist, JsonUnmarshallerContext>
+    public class HlsContentProtectionUnmarshaller : IUnmarshaller<HlsContentProtection, XmlUnmarshallerContext>, IUnmarshaller<HlsContentProtection, JsonUnmarshallerContext>
     {
-        Playlist IUnmarshaller<Playlist, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        HlsContentProtection IUnmarshaller<HlsContentProtection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
-        public Playlist Unmarshall(JsonUnmarshallerContext context)
+        public HlsContentProtection Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Playlist unmarshalledObject = new Playlist();
+            HlsContentProtection unmarshalledObject = new HlsContentProtection();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Format", targetDepth))
+                if (context.TestExpression("InitializationVector", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InitializationVector = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("HlsContentProtection", targetDepth))
-                {
-                    var unmarshaller = HlsContentProtectionUnmarshaller.Instance;
-                    unmarshalledObject.HlsContentProtection = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Key", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("OutputKeys", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.OutputKeys = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("KeyMd5", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyMd5 = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("StatusDetail", targetDepth))
+                if (context.TestExpression("KeyStoragePolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusDetail = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyStoragePolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LicenseAcquisitionUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LicenseAcquisitionUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Method", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Method = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -96,9 +96,9 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         }
 
 
-        private static PlaylistUnmarshaller _instance = new PlaylistUnmarshaller();        
+        private static HlsContentProtectionUnmarshaller _instance = new HlsContentProtectionUnmarshaller();        
 
-        public static PlaylistUnmarshaller Instance
+        public static HlsContentProtectionUnmarshaller Instance
         {
             get
             {

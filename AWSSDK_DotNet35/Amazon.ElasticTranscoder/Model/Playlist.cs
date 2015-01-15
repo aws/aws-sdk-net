@@ -37,6 +37,7 @@ namespace Amazon.ElasticTranscoder.Model
     public partial class Playlist
     {
         private string _format;
+        private HlsContentProtection _hlsContentProtection;
         private string _name;
         private List<string> _outputKeys = new List<string>();
         private string _status;
@@ -59,6 +60,25 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetFormat()
         {
             return this._format != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HlsContentProtection. 
+        /// <para>
+        /// The HLS content protection settings, if any, that you want Elastic Transcoder to apply
+        /// to the output files associated with this playlist.
+        /// </para>
+        /// </summary>
+        public HlsContentProtection HlsContentProtection
+        {
+            get { return this._hlsContentProtection; }
+            set { this._hlsContentProtection = value; }
+        }
+
+        // Check to see if HlsContentProtection property is set
+        internal bool IsSetHlsContentProtection()
+        {
+            return this._hlsContentProtection != null;
         }
 
         /// <summary>

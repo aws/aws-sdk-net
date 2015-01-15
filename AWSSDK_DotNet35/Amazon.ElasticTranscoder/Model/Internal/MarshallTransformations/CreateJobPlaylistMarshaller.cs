@@ -45,6 +45,17 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Format);
             }
 
+            if(requestObject.IsSetHlsContentProtection())
+            {
+                context.Writer.WritePropertyName("HlsContentProtection");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HlsContentProtectionMarshaller.Instance;
+                marshaller.Marshall(requestObject.HlsContentProtection, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

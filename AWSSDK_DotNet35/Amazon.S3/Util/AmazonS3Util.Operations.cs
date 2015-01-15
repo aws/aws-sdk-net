@@ -31,6 +31,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 using Amazon.S3.Model;
 using Amazon.Util;
 
@@ -46,7 +47,9 @@ namespace Amazon.S3.Util
         /// <summary>
         /// Determines whether an S3 bucket exists or not.
         /// This is done by:
-        /// 1. Creating a PreSigned Url for the bucket (with an expiry date at the end of this decade)
+        /// 1. Creating a PreSigned Url for the bucket. To work with Signature V4 only regions, as
+        /// well as Signature V4-optional regions, we keep the expiry to within the maximum for V4 
+        /// (which is one week).
         /// 2. Making a HEAD request to the Url
         /// </summary>
         /// <param name="bucketName">The name of the bucket to check.</param>
@@ -64,20 +67,20 @@ namespace Amazon.S3.Util
                 throw new ArgumentNullException("bucketName", "The bucketName cannot be null or the empty string!");
             }
 
-            GetPreSignedUrlRequest request = new GetPreSignedUrlRequest();
-            request.BucketName = bucketName;
-            if (AWSConfigs.S3Config.UseSignatureVersion4)
-                request.Expires = DateTime.Now.AddDays(6);
-            else
-                request.Expires = new DateTime(2019, 12, 31);
-            request.Verb = HttpVerb.HEAD;
-            request.Protocol = Protocol.HTTP;
-            string url = s3Client.GetPreSignedURL(request);
-            Uri uri = new Uri(url);
+            var request = new GetPreSignedUrlRequest
+            {
+                BucketName = bucketName, 
+                Expires = DateTime.Now.AddDays(1), 
+                Verb = HttpVerb.HEAD, 
+                Protocol = Protocol.HTTP
+            };
 
-            HttpWebRequest httpRequest = WebRequest.Create(uri) as HttpWebRequest;
+            var url = s3Client.GetPreSignedURL(request);
+            var uri = new Uri(url);
+
+            var httpRequest = WebRequest.Create(uri) as HttpWebRequest;
             httpRequest.Method = "HEAD";
-            AmazonS3Client concreteClient = s3Client as AmazonS3Client;
+            var concreteClient = s3Client as AmazonS3Client;
             if (concreteClient != null)
             {
                 concreteClient.ConfigureProxy(httpRequest);
@@ -85,7 +88,7 @@ namespace Amazon.S3.Util
 
             try
             {
-                using (HttpWebResponse httpResponse = httpRequest.GetResponse() as HttpWebResponse)
+                using (var httpResponse = httpRequest.GetResponse() as HttpWebResponse)
                 {
                     // If all went well, the bucket was found!
                     return true;
@@ -93,11 +96,11 @@ namespace Amazon.S3.Util
             }
             catch (WebException we)
             {
-                using (HttpWebResponse errorResponse = we.Response as HttpWebResponse)
+                using (var errorResponse = we.Response as HttpWebResponse)
                 {
                     if (errorResponse != null)
                     {
-                        HttpStatusCode code = errorResponse.StatusCode;
+                        var code = errorResponse.StatusCode;
                         return code != HttpStatusCode.NotFound &&
                             code != HttpStatusCode.BadRequest;
                     }

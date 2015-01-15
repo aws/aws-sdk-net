@@ -648,4 +648,19 @@ namespace Amazon
         /// </summary>
         Always = 2
     }
+
+    /// <summary>
+    /// Format for metrics data in the logs
+    /// </summary>
+    public enum LogMetricsFormatOption
+    {
+        /// <summary>
+        /// Emit metrics in human-readable format
+        /// </summary>
+        Standard = 0,
+        /// <summary>
+        /// Emit metrics as JSON data
+        /// </summary>
+        JSON = 1
+    }
 }

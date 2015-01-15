@@ -193,6 +193,13 @@ namespace Amazon.Util
         /// </summary>
         public bool LogMetrics { get; set; }
 
+        public LogMetricsFormatOption LogMetricsFormat { get; set; }
+
+        /// <summary>
+        /// A custom formatter added through Configuration
+        /// </summary>
+        public Amazon.Runtime.IMetricsFormatter LogMetricsCustomFormatter { get; set; }
+
         internal LoggingConfig()
         {
             LogTo = AWSConfigs._logging;

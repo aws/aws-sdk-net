@@ -558,6 +558,7 @@
     <Compile Include="Amazon.Runtime\Pipeline\IPipelineHandler.cs" />
     <Compile Include="Amazon.Runtime\Pipeline\PipelineHandler.cs" />
     <Compile Include="Amazon.Runtime\Pipeline\RuntimePipeline.cs" />
+    <Compile Include="Amazon.Runtime\RequestMetrics.cs" />
     <Compile Include="Amazon.S3\Encryption\Internal\SetupDecryptionHandler.cs" />
     <Compile Include="Amazon.S3\Encryption\Internal\SetupEncryptionHandler.cs" />
     <Compile Include="Amazon.S3\Encryption\Internal\UserAgentHandler.cs" />
@@ -1008,7 +1009,6 @@
     <Compile Include="Amazon.Runtime\AmazonClientException.cs" />
     <Compile Include="Amazon.Runtime\AmazonServiceException.cs" />
     <Compile Include="Amazon.Runtime\AmazonUnmarshallingException.cs" />
-    <Compile Include="Amazon.Runtime\AmazonWebServiceClient.cs" />
     <Compile Include="Amazon.Runtime\AmazonWebServiceRequest.cs" />
     <Compile Include="Amazon.Runtime\Internal\AmazonWebServiceRequest.bcl.cs" />
     <Compile Include="Amazon.Runtime\AmazonWebServiceResponse.cs" />

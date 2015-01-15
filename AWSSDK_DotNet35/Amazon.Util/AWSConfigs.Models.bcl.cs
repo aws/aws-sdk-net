@@ -19,8 +19,8 @@
  *
  */
 
+using Amazon.Runtime;
 using System;
-
 using System.Collections.Generic;
 
 namespace Amazon.Util
@@ -87,6 +87,12 @@ namespace Amazon.Util
                 LogTo = section.LogTo;
                 LogResponses = section.LogResponses;
                 LogMetrics = section.LogMetrics.GetValueOrDefault(false);
+                LogMetricsFormat = section.LogMetricsFormat;
+                if (section.LogMetricsCustomFormatter != null
+                    && typeof(IMetricsFormatter).IsAssignableFrom(section.LogMetricsCustomFormatter))
+                {
+                    LogMetricsCustomFormatter = Activator.CreateInstance(section.LogMetricsCustomFormatter) as IMetricsFormatter;
+                }
             }
         }
     }

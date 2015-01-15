@@ -13,7 +13,7 @@ namespace Amazon.CloudSearchDomain.Internal
 #if BCL
         protected override void PostInvoke(IExecutionContext executionContext)
         {
-            var uploadDocumentsRequest = executionContext.RequestContext.Request as UploadDocumentsRequest;
+            var uploadDocumentsRequest = executionContext.RequestContext.OriginalRequest as UploadDocumentsRequest;
 
             if (uploadDocumentsRequest != null)
             {

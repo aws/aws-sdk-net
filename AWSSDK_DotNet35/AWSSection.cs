@@ -232,6 +232,8 @@ namespace Amazon
         private const string logToKey = "logTo";
         private const string logResponsesKey = "logResponses";
         private const string logMetricsKey = "logMetrics";
+        private const string logMetricsFormatKey = "logMetricsFormat";
+        private const string logMetricsCustomFormatterKey = "logMetricsCustomFormatter";
 
         [ConfigurationProperty(logToKey)]
         public LoggingOptions LogTo
@@ -252,6 +254,21 @@ namespace Amazon
         {
             get { return (bool?)this[logMetricsKey]; }
             set { this[logMetricsKey] = value; }
+        }
+
+        [ConfigurationProperty(logMetricsFormatKey)]
+        public LogMetricsFormatOption LogMetricsFormat
+        {
+            get { return (LogMetricsFormatOption)this[logMetricsFormatKey]; }
+            set { this[logMetricsFormatKey] = value; }
+        }
+
+        [TypeConverter(typeof(TypeNameConverter))]
+        [ConfigurationProperty(logMetricsCustomFormatterKey)]
+        public Type LogMetricsCustomFormatter
+        {
+            get { return (Type)this[logMetricsCustomFormatterKey]; }
+            set { this[logMetricsCustomFormatterKey] = value; }
         }
     }
 

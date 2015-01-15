@@ -256,8 +256,8 @@
     <Compile Include="Amazon.S3\Model\GetObjectResponse.storagefile.cs" />
     <Compile Include="Amazon.S3\Model\PutObjectRequest.storagefile.cs" />
     <Compile Include="Amazon.S3\Model\UploadPartRequest.storagefile.cs" />
-    <Compile Include="Amazon.S3\TransferUtility\TransferUtilityDownloadRequest.storagefile.cs" />
-    <Compile Include="Amazon.S3\TransferUtility\TransferUtilityUploadRequest.storagefile.cs" />
+    <Compile Include="Amazon.S3\Transfer\TransferUtilityDownloadRequest.storagefile.cs" />
+    <Compile Include="Amazon.S3\Transfer\TransferUtilityUploadRequest.storagefile.cs" />
     <Compile Include="Amazon.SecurityToken\AssumeRoleAWSCredentials.async.cs" />
     <Compile Include="Amazon.SecurityToken\AmazonSecurityTokenServiceClient.cs" />
     <Compile Include="Amazon.SecurityToken\IAmazonSecurityTokenService.cs" />

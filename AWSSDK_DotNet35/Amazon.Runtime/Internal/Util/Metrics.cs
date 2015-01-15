@@ -21,6 +21,7 @@ using System.Linq;
 using System.Text;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
 
 #if (WIN_RT || WINDOWS_PHONE)
 using Amazon.MissingTypes;
@@ -28,7 +29,7 @@ using Amazon.MissingTypes;
 
 namespace Amazon.Runtime.Internal.Util
 {
-    public class RequestMetrics
+    public class RequestMetrics : IRequestMetrics
     {
         #region Private members
 
@@ -86,17 +87,17 @@ namespace Amazon.Runtime.Internal.Util
         /// <summary>
         /// Collection of properties being tracked
         /// </summary>
-        private Dictionary<Metric, List<object>> Properties { get; set; }
+        public Dictionary<Metric, List<object>> Properties { get; set; }
 
         /// <summary>
         /// Timings for metrics being tracked
         /// </summary>
-        private Dictionary<Metric, List<Timing>> Timings { get; set; }
+        public Dictionary<Metric, List<IMetricsTiming>> Timings { get; set; }
 
         /// <summary>
         /// Counters being tracked
         /// </summary>
-        private Dictionary<Metric, long> Counters { get; set; }
+        public Dictionary<Metric, long> Counters { get; set; }
 
         /// <summary>
         /// Whether metrics are enabled for the request
@@ -114,7 +115,7 @@ namespace Amazon.Runtime.Internal.Util
         {
             stopWatch = Stopwatch.StartNew();
             Properties = new Dictionary<Metric, List<object>>();
-            Timings = new Dictionary<Metric, List<Timing>>();
+            Timings = new Dictionary<Metric, List<IMetricsTiming>>();
             Counters = new Dictionary<Metric, long>();
             inFlightTimings = new Dictionary<Metric, Timing>();
             IsEnabled = false;
@@ -161,10 +162,10 @@ namespace Amazon.Runtime.Internal.Util
 
                 if (IsEnabled)
                 {
-                    List<Timing> list;
+                    List<IMetricsTiming> list;
                     if (!Timings.TryGetValue(metric, out list))
                     {
-                        list = new List<Timing>();
+                        list = new List<IMetricsTiming>();
                         Timings[metric] = list;
                     }
                     list.Add(timing);
@@ -293,6 +294,36 @@ namespace Amazon.Runtime.Internal.Util
                 return "Metrics logging disabled";
 
             StringBuilder builder = new StringBuilder();
+
+            // Check for a custom formatter
+            if (AWSConfigs.LoggingConfig.LogMetricsCustomFormatter != null)
+            {
+                try
+                {
+                    lock(metricsLock)
+                    {
+                        builder.Append(AWSConfigs.LoggingConfig.LogMetricsCustomFormatter.FormatMetrics(this));
+                    }
+                    return builder.ToString();
+                }
+                catch (Exception e)
+                {
+                    builder.Append("[Custom metrics formatter failed: ")
+                        .Append(e.Message).Append("] ");
+                }
+            }
+
+            // If no custom formatter, or formatter fails, check to see if JSON is configured
+            if (AWSConfigs.LoggingConfig.LogMetricsFormat == LogMetricsFormatOption.JSON)
+            {
+                lock (metricsLock)
+                {
+                    builder.Append(this.ToJSON());
+                }
+                return builder.ToString();
+            }
+
+            // Standard format.
             lock (metricsLock)
             {
                 foreach (var kvp in Properties)
@@ -304,7 +335,7 @@ namespace Amazon.Runtime.Internal.Util
                 foreach (var kvp in Timings)
                 {
                     Metric metric = kvp.Key;
-                    List<Timing> list = kvp.Value;
+                    List<IMetricsTiming> list = kvp.Value;
                     foreach (var timing in list)
                     {
                         if (timing.IsFinished)
@@ -322,48 +353,70 @@ namespace Amazon.Runtime.Internal.Util
             return builder.ToString();
         }
 
+        /// <summary>
+        /// Return a JSON represenation of the current metrics
+        /// </summary>
+        /// <returns></returns>
+        public string ToJSON()
+        {
+            if (!this.IsEnabled)
+                return "{ }";
+ 
+            var sb = new StringBuilder();
+            var jw = new JsonWriter(sb);
+ 
+            jw.WriteObjectStart();
+            jw.WritePropertyName("properties");
+            jw.WriteObjectStart();
+            foreach (var kvp in this.Properties)
+            {
+                jw.WritePropertyName(kvp.Key.ToString());
+                if (kvp.Value.Count > 1)
+                    jw.WriteArrayStart();
+                foreach (var obj in kvp.Value)
+                {
+                    jw.Write(obj.ToString());
+                }
+                if (kvp.Value.Count > 1)
+                    jw.WriteArrayEnd();
+            }
+            jw.WriteObjectEnd();
+            jw.WritePropertyName("timings");
+            jw.WriteObjectStart();
+            foreach (var kvp in this.Timings)
+            {
+                jw.WritePropertyName(kvp.Key.ToString());
+                List<Amazon.Runtime.IMetricsTiming> timings = kvp.Value;
+                if (timings.Count > 1)
+                    jw.WriteArrayStart();
+                foreach (var timing in kvp.Value)
+                {
+                    if (timing.IsFinished)
+                        jw.Write(timing.ElapsedTime.TotalMilliseconds);
+                }
+                if (timings.Count > 1)
+                    jw.WriteArrayEnd();
+            }
+            jw.WriteObjectEnd();
+            jw.WritePropertyName("counters");
+            jw.WriteObjectStart();
+            foreach (var kvp in this.Counters)
+            {
+                jw.WritePropertyName(kvp.Key.ToString());
+                jw.Write(kvp.Value);
+            }
+            jw.WriteObjectEnd();
+            jw.WriteObjectEnd();
+            return sb.ToString();
+        }
+
         #endregion
-    }
-
-    // Set of predefined Metrics.
-    internal enum Metric
-    {
-        // response enums
-        AWSErrorCode,
-        AWSRequestID,
-        AmzId2,
-        BytesProcessed,
-        Exception,
-        RedirectLocation,
-        ResponseProcessingTime,
-        ResponseUnmarshallTime,
-        ResponseReadTime,
-        StatusCode,
-
-        // request enums
-        AttemptCount,
-        CredentialsRequestTime,
-        HttpRequestTime,
-        ProxyHost,
-        ProxyPort,
-        RequestSigningTime,
-        RetryPauseTime,
-        StringToSign,
-        CanonicalRequest,
-
-        // overall enums
-        AsyncCall,
-        ClientExecuteTime,
-        MethodName,
-        ServiceEndpoint,
-        ServiceName,
-        RequestSize,
     }
 
     /// <summary>
     /// Timing information for a metric
     /// </summary>
-    internal class Timing
+    internal class Timing : IMetricsTiming
     {
         private long startTime;
         private long endTime;
