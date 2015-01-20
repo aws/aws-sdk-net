@@ -138,6 +138,38 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             return fileMD5;
         }
 
+        public static T WaitUntilSuccess<T>(Func<T> loadFunction, int sleepSeconds = 5, int maxWaitSeconds = 300)
+        {
+            T result = default(T);
+            WaitUntil(() =>
+            {
+                try
+                {
+                    result = loadFunction();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }, sleepSeconds, maxWaitSeconds);
+            return result;
+        }
+        public static void WaitUntilSuccess(Action action, int sleepSeconds = 5, int maxWaitSeconds = 300)
+        {
+            WaitUntil(() =>
+            {
+                try
+                {
+                    action();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }, sleepSeconds, maxWaitSeconds);
+        }
         public static void WaitUntil(Func<bool> matchFunction, int sleepSeconds = 5, int maxWaitSeconds = 300)
         {
             if (sleepSeconds < 0) throw new ArgumentOutOfRangeException("sleepSeconds");

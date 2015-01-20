@@ -6,6 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
 using System.Net;
+using System.Reflection;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
@@ -38,6 +39,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 client.Dispose();
                 client = null;
             }
+        }
+
+        public static void SetEndpoint(AmazonServiceClient client, string serviceUrl)
+        {
+            var clientConfig = client
+                .GetType()
+                .GetProperty("Config", BindingFlags.Instance | BindingFlags.NonPublic)
+                .GetValue(client, null) as ClientConfig;
+            clientConfig.ServiceURL = serviceUrl;
         }
     }
 }

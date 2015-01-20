@@ -32,8 +32,28 @@ namespace Amazon.CognitoIdentity.Model
     /// </summary>
     public partial class IdentityDescription
     {
+        private DateTime? _creationDate;
         private string _identityId;
+        private DateTime? _lastModifiedDate;
         private List<string> _logins = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// Date on which the identity was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreationDate
+        {
+            get { return this._creationDate.GetValueOrDefault(); }
+            set { this._creationDate = value; }
+        }
+
+        // Check to see if CreationDate property is set
+        internal bool IsSetCreationDate()
+        {
+            return this._creationDate.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property IdentityId. A unique identifier in the format REGION:GUID.
@@ -48,6 +68,24 @@ namespace Amazon.CognitoIdentity.Model
         internal bool IsSetIdentityId()
         {
             return this._identityId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedDate. 
+        /// <para>
+        /// Date on which the identity was last modified.
+        /// </para>
+        /// </summary>
+        public DateTime LastModifiedDate
+        {
+            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            set { this._lastModifiedDate = value; }
+        }
+
+        // Check to see if LastModifiedDate property is set
+        internal bool IsSetLastModifiedDate()
+        {
+            return this._lastModifiedDate.HasValue; 
         }
 
         /// <summary>

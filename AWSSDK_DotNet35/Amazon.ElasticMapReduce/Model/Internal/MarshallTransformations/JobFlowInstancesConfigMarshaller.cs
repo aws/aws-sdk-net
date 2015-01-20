@@ -39,6 +39,28 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     {
         public void Marshall(JobFlowInstancesConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAdditionalMasterSecurityGroups())
+            {
+                context.Writer.WritePropertyName("AdditionalMasterSecurityGroups");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAdditionalMasterSecurityGroupsListValue in requestObject.AdditionalMasterSecurityGroups)
+                {
+                        context.Writer.Write(requestObjectAdditionalMasterSecurityGroupsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetAdditionalSlaveSecurityGroups())
+            {
+                context.Writer.WritePropertyName("AdditionalSlaveSecurityGroups");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAdditionalSlaveSecurityGroupsListValue in requestObject.AdditionalSlaveSecurityGroups)
+                {
+                        context.Writer.Write(requestObjectAdditionalSlaveSecurityGroupsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetEc2KeyName())
             {
                 context.Writer.WritePropertyName("Ec2KeyName");
@@ -49,6 +71,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Ec2SubnetId");
                 context.Writer.Write(requestObject.Ec2SubnetId);
+            }
+
+            if(requestObject.IsSetEmrManagedMasterSecurityGroup())
+            {
+                context.Writer.WritePropertyName("EmrManagedMasterSecurityGroup");
+                context.Writer.Write(requestObject.EmrManagedMasterSecurityGroup);
+            }
+
+            if(requestObject.IsSetEmrManagedSlaveSecurityGroup())
+            {
+                context.Writer.WritePropertyName("EmrManagedSlaveSecurityGroup");
+                context.Writer.Write(requestObject.EmrManagedSlaveSecurityGroup);
             }
 
             if(requestObject.IsSetHadoopVersion())

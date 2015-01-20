@@ -95,6 +95,19 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetClassicLinkVPCId())
+                {
+                    request.Parameters.Add("ClassicLinkVPCId", StringUtils.FromString(publicRequest.ClassicLinkVPCId));
+                }
+                if(publicRequest.IsSetClassicLinkVPCSecurityGroups())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ClassicLinkVPCSecurityGroups)
+                    {
+                        request.Parameters.Add("ClassicLinkVPCSecurityGroups" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetEbsOptimized())
                 {
                     request.Parameters.Add("EbsOptimized", StringUtils.FromBool(publicRequest.EbsOptimized));

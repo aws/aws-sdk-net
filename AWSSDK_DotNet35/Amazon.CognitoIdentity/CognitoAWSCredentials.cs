@@ -214,6 +214,19 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Constructs a new CognitoAWSCredentials instance, which will use the
+        /// specified Amazon Cognito identity pool to get short lived session credentials.
+        /// </summary>
+        /// <param name="identityPoolId">The Amazon Cogntio identity pool to use</param>
+        /// <param name="region">Region to use when accessing Amazon Cognito and AWS Security Token Service.</param>
+        public CognitoAWSCredentials(string identityPoolId, RegionEndpoint region)
+            : this(
+                accountId: null, identityPoolId: identityPoolId,
+                unAuthRoleArn: null, authRoleArn: null,
+                region: region)
+        { }
+
+        /// <summary>
+        /// Constructs a new CognitoAWSCredentials instance, which will use the
         /// specified Amazon Cognito identity pool to make a requests to the
         /// AWS Security Token Service (STS) to request short lived session credentials.
         /// </summary>
@@ -249,10 +262,7 @@ namespace Amazon.CognitoIdentity
             string unAuthRoleArn, string authRoleArn,
             IAmazonCognitoIdentity cibClient, IAmazonSecurityTokenService stsClient)
         {
-            if (string.IsNullOrEmpty(accountId)) throw new ArgumentNullException("accountId");
             if (string.IsNullOrEmpty(identityPoolId)) throw new ArgumentNullException("identityPoolId");
-            if (string.IsNullOrEmpty(unAuthRoleArn) && string.IsNullOrEmpty(authRoleArn))
-                throw new InvalidOperationException("At least one of unAuthRoleArn or authRoleArn must be specified");
             if (cibClient == null) throw new ArgumentNullException("cibClient");
             if (stsClient == null) throw new ArgumentNullException("stsClient");
 
@@ -270,11 +280,33 @@ namespace Amazon.CognitoIdentity
         #region Overrides
 
 #if BCL45 || WIN_RT || WINDOWS_PHONE 
+
         protected override async System.Threading.Tasks.Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
         {
+            CredentialsRefreshState credentialsState;
+
+            // Pick role to use, depending on Logins
+            string roleArn = UnAuthRoleArn;
+            if (Logins.Count > 0)
+                roleArn = AuthRoleArn;
+            bool roleSpecified = !string.IsNullOrEmpty(roleArn);
+
+            // Get credentials from determined role or from identity pool
+            if (roleSpecified)
+                credentialsState = await GetCredentialsForRoleAsync(roleArn);
+            else
+                credentialsState = await GetPoolCredentialsAsync();
+
+            return credentialsState;
+        }
+
+        private async System.Threading.Tasks.Task<CredentialsRefreshState> GetCredentialsForRoleAsync(string roleArn)
+        {
+            CredentialsRefreshState credentialsState;
             // Retrieve Open Id Token
             // (Reuses existing IdentityId or creates a new one)
-            var getTokenRequest = new GetOpenIdTokenRequest { IdentityId = await GetIdentityIdAsync().ConfigureAwait(false) };
+            var identityId = await GetIdentityIdAsync().ConfigureAwait(false);
+            var getTokenRequest = new GetOpenIdTokenRequest { IdentityId = identityId };
             // If logins are set, pass them to the GetOpenId call
             if (Logins.Count > 0)
                 getTokenRequest.Logins = Logins;
@@ -283,15 +315,6 @@ namespace Amazon.CognitoIdentity
 
             // IdentityId may have changed, save the new value
             UpdateIdentity(getTokenResult.IdentityId, true);
-
-            // Pick role to use, depending on Logins
-            string roleArn = UnAuthRoleArn;
-            if (Logins.Count > 0)
-                roleArn = AuthRoleArn;
-            if (string.IsNullOrEmpty(roleArn))
-                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
-                    "Unable to determine Role ARN. AuthRoleArn = [{0}], UnAuthRoleArn = [{1}], Logins.Count = {2}",
-                    AuthRoleArn, UnAuthRoleArn, Logins.Count));
 
             // Assume role with Open Id Token
             var assumeRequest = new AssumeRoleWithWebIdentityRequest
@@ -304,14 +327,64 @@ namespace Amazon.CognitoIdentity
             var credentials = (await sts.AssumeRoleWithWebIdentityAsync(assumeRequest).ConfigureAwait(false)).Credentials;
 
             // Return new refresh state (credentials and expiration)
-            var credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration);
+            credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration);
             return credentialsState;
         }
+
+        // Retrieves credentials for the roles defined on the identity pool
+        private async System.Threading.Tasks.Task<CredentialsRefreshState> GetPoolCredentialsAsync()
+        {
+            CredentialsRefreshState credentialsState;
+            var identityId = await GetIdentityIdAsync().ConfigureAwait(false);
+            var getCredentialsRequest = new GetCredentialsForIdentityRequest { IdentityId = identityId };
+            if (Logins.Count > 0)
+                getCredentialsRequest.Logins = Logins;
+            var credentials = (await cib.GetCredentialsForIdentityAsync(getCredentialsRequest).ConfigureAwait(false)).Credentials;
+
+            credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration);
+            return credentialsState;
+        }
+
 #endif
 
-        // Retrieves credentials from Cognito Identity and STS
+        // Retrieves credentials from Cognito Identity and optionally STS
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
+            CredentialsRefreshState credentialsState;
+
+            // Pick role to use, depending on Logins
+            string roleArn = UnAuthRoleArn;
+            if (Logins.Count > 0)
+                roleArn = AuthRoleArn;
+            bool roleSpecified = !string.IsNullOrEmpty(roleArn);
+
+            // Get credentials from determined role or from identity pool
+            if (roleSpecified)
+                credentialsState = GetCredentialsForRole(roleArn);
+            else
+                credentialsState = GetPoolCredentials();
+
+            // Return new refresh state (credentials and expiration)
+            return credentialsState;
+        }
+
+        // Retrieves credentials for the roles defined on the identity pool
+        private CredentialsRefreshState GetPoolCredentials()
+        {
+            CredentialsRefreshState credentialsState;
+            var getCredentialsRequest = new GetCredentialsForIdentityRequest { IdentityId = GetIdentityId() };
+            if (Logins.Count > 0)
+                getCredentialsRequest.Logins = Logins;
+            var credentials = GetCredentialsForIdentity(getCredentialsRequest);
+
+            credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration);
+            return credentialsState;
+        }
+
+        // Retrieves credentials for the specific role, by making a call to STS
+        private CredentialsRefreshState GetCredentialsForRole(string roleArn)
+        {
+            CredentialsRefreshState credentialsState;
             // Retrieve Open Id Token
             // (Reuses existing IdentityId or creates a new one)
             var getTokenRequest = new GetOpenIdTokenRequest { IdentityId = GetIdentityId() };
@@ -324,15 +397,6 @@ namespace Amazon.CognitoIdentity
             // IdentityId may have changed, save the new value
             UpdateIdentity(getTokenResult.IdentityId, true);
 
-            // Pick role to use, depending on Logins
-            string roleArn = UnAuthRoleArn;
-            if (Logins.Count > 0)
-                roleArn = AuthRoleArn;
-            if (string.IsNullOrEmpty(roleArn))
-                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
-                    "Unable to determine Role ARN. AuthRoleArn = [{0}], UnAuthRoleArn = [{1}], Logins.Count = {2}",
-                    AuthRoleArn, UnAuthRoleArn, Logins.Count));
-
             // Assume role with Open Id Token
             var assumeRequest = new AssumeRoleWithWebIdentityRequest
             {
@@ -343,8 +407,7 @@ namespace Amazon.CognitoIdentity
             };
             var credentials = GetStsCredentials(assumeRequest);
 
-            // Return new refresh state (credentials and expiration)
-            var credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration);
+            credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration);
             return credentialsState;
         }
 

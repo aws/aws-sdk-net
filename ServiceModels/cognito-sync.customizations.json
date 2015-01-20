@@ -12,5 +12,23 @@
                 "constructorInput":"this.Credentials"
             }
         ]
-    } 
+    },
+    "simpleMethods" : {
+        "operations" : {
+            "GetIdentityPoolConfiguration" : {
+                "methodForms" : [
+                    [
+                        "IdentityPoolId"
+                    ]
+                ]
+            },
+            "DescribeIdentityPoolUsage" : {
+                "methodForms" : [
+                    [
+                        "IdentityPoolId"
+                    ]
+                ]
+            }
+        }
+    }
 }

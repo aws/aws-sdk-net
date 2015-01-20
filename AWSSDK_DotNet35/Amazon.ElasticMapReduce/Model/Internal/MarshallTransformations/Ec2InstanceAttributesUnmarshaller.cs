@@ -54,6 +54,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AdditionalMasterSecurityGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalMasterSecurityGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AdditionalSlaveSecurityGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalSlaveSecurityGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Ec2AvailabilityZone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -70,6 +82,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Ec2SubnetId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EmrManagedMasterSecurityGroup", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EmrManagedMasterSecurityGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EmrManagedSlaveSecurityGroup", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EmrManagedSlaveSecurityGroup = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IamInstanceProfile", targetDepth))

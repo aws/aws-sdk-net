@@ -59,12 +59,24 @@ namespace Amazon.CognitoIdentity
     /// </para>
     ///  
     /// <para>
-    /// Next, make an unsigned call to <a>GetOpenIdToken</a>, which returns the OpenID token
-    /// necessary to call STS and retrieve AWS credentials. This call expects the same <code>Logins</code>
-    /// map as the <code>GetId</code> call, as well as the <code>IdentityID</code> originally
-    /// returned by <code>GetId</code>. The token returned by <code>GetOpenIdToken</code>
-    /// can be passed to the STS operation <a href="http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">AssumeRoleWithWebIdentity</a>
+    /// Next, make an unsigned call to <a>GetCredentialsForIdentity</a>. This call expects
+    /// the same <code>Logins</code> map as the <code>GetId</code> call, as well as the <code>IdentityID</code>
+    /// originally returned by <code>GetId</code>. Assuming your identity pool has been configured
+    /// via the <a>SetIdentityPoolRoles</a> operation, <code>GetCredentialsForIdentity</code>
+    /// will return AWS credentials for your use. If your pool has not been configured with
+    /// <code>SetIdentityPoolRoles</code>, or if you want to follow legacy flow, make an unsigned
+    /// call to <a>GetOpenIdToken</a>, which returns the OpenID token necessary to call STS
+    /// and retrieve AWS credentials. This call expects the same <code>Logins</code> map as
+    /// the <code>GetId</code> call, as well as the <code>IdentityID</code> originally returned
+    /// by <code>GetId</code>. The token returned by <code>GetOpenIdToken</code> can be passed
+    /// to the STS operation <a href="http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">AssumeRoleWithWebIdentity</a>
     /// to retrieve AWS credentials.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you want to use Amazon Cognito in an Android, iOS, or Unity application, you will
+    /// probably want to make API calls via the AWS Mobile SDK. To learn more, see the <a
+    /// href="http://docs.aws.amazon.com/mobile/index.html">AWS Mobile SDK Developer Guide</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCognitoIdentityClient : AmazonServiceClient, IAmazonCognitoIdentity
@@ -253,6 +265,36 @@ namespace Amazon.CognitoIdentity
 
         #endregion
         
+        #region  DescribeIdentity
+
+        internal DescribeIdentityResponse DescribeIdentity(DescribeIdentityRequest request)
+        {
+            var marshaller = new DescribeIdentityRequestMarshaller();
+            var unmarshaller = DescribeIdentityResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIdentityRequest,DescribeIdentityResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIdentity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentity operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeIdentityResponse> DescribeIdentityAsync(DescribeIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeIdentityRequestMarshaller();
+            var unmarshaller = DescribeIdentityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeIdentityRequest,DescribeIdentityResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeIdentityPool
 
         internal DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request)
@@ -283,6 +325,36 @@ namespace Amazon.CognitoIdentity
 
         #endregion
         
+        #region  GetCredentialsForIdentity
+
+        internal GetCredentialsForIdentityResponse GetCredentialsForIdentity(GetCredentialsForIdentityRequest request)
+        {
+            var marshaller = new GetCredentialsForIdentityRequestMarshaller();
+            var unmarshaller = GetCredentialsForIdentityResponseUnmarshaller.Instance;
+
+            return Invoke<GetCredentialsForIdentityRequest,GetCredentialsForIdentityResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCredentialsForIdentity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCredentialsForIdentity operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetCredentialsForIdentityResponse> GetCredentialsForIdentityAsync(GetCredentialsForIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetCredentialsForIdentityRequestMarshaller();
+            var unmarshaller = GetCredentialsForIdentityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCredentialsForIdentityRequest,GetCredentialsForIdentityResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetId
 
         internal GetIdResponse GetId(GetIdRequest request)
@@ -308,6 +380,36 @@ namespace Amazon.CognitoIdentity
             var unmarshaller = GetIdResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetIdRequest,GetIdResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIdentityPoolRoles
+
+        internal GetIdentityPoolRolesResponse GetIdentityPoolRoles(GetIdentityPoolRolesRequest request)
+        {
+            var marshaller = new GetIdentityPoolRolesRequestMarshaller();
+            var unmarshaller = GetIdentityPoolRolesResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdentityPoolRolesRequest,GetIdentityPoolRolesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdentityPoolRoles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityPoolRoles operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetIdentityPoolRolesResponse> GetIdentityPoolRolesAsync(GetIdentityPoolRolesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetIdentityPoolRolesRequestMarshaller();
+            var unmarshaller = GetIdentityPoolRolesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIdentityPoolRolesRequest,GetIdentityPoolRolesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -488,6 +590,36 @@ namespace Amazon.CognitoIdentity
             var unmarshaller = MergeDeveloperIdentitiesResponseUnmarshaller.Instance;
 
             return InvokeAsync<MergeDeveloperIdentitiesRequest,MergeDeveloperIdentitiesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetIdentityPoolRoles
+
+        internal SetIdentityPoolRolesResponse SetIdentityPoolRoles(SetIdentityPoolRolesRequest request)
+        {
+            var marshaller = new SetIdentityPoolRolesRequestMarshaller();
+            var unmarshaller = SetIdentityPoolRolesResponseUnmarshaller.Instance;
+
+            return Invoke<SetIdentityPoolRolesRequest,SetIdentityPoolRolesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetIdentityPoolRoles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityPoolRoles operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SetIdentityPoolRolesResponse> SetIdentityPoolRolesAsync(SetIdentityPoolRolesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetIdentityPoolRolesRequestMarshaller();
+            var unmarshaller = SetIdentityPoolRolesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetIdentityPoolRolesRequest,SetIdentityPoolRolesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

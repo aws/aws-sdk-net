@@ -17,7 +17,7 @@ namespace Amazon.CognitoIdentity
     /// </summary>
     public partial class CognitoAWSCredentials : RefreshingAWSCredentials
     {
-        private Credentials GetStsCredentials(AssumeRoleWithWebIdentityRequest assumeRequest)
+        private Amazon.SecurityToken.Model.Credentials GetStsCredentials(AssumeRoleWithWebIdentityRequest assumeRequest)
         {
             var assumeResult = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<AssumeRoleWithWebIdentityResponse>(() => sts.AssumeRoleWithWebIdentityAsync(assumeRequest));
             var credentials = assumeResult.Credentials;
@@ -28,6 +28,13 @@ namespace Amazon.CognitoIdentity
         {
             var getTokenResult = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<GetOpenIdTokenResponse>(() => cib.GetOpenIdTokenAsync(getTokenRequest));
             return getTokenResult;
+        }
+
+        private Amazon.CognitoIdentity.Model.Credentials GetCredentialsForIdentity(GetCredentialsForIdentityRequest getCredentialsRequest)
+        {
+            var getCredentialsResult = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<GetCredentialsForIdentityResponse>(() => cib.GetCredentialsForIdentityAsync(getCredentialsRequest));
+            var credentials = getCredentialsResult.Credentials;
+            return credentials;
         }
 
         /// <summary>

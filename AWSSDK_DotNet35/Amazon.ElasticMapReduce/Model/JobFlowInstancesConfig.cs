@@ -35,8 +35,12 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class JobFlowInstancesConfig
     {
+        private List<string> _additionalMasterSecurityGroups = new List<string>();
+        private List<string> _additionalSlaveSecurityGroups = new List<string>();
         private string _ec2KeyName;
         private string _ec2SubnetId;
+        private string _emrManagedMasterSecurityGroup;
+        private string _emrManagedSlaveSecurityGroup;
         private string _hadoopVersion;
         private int? _instanceCount;
         private List<InstanceGroupConfig> _instanceGroups = new List<InstanceGroupConfig>();
@@ -50,6 +54,42 @@ namespace Amazon.ElasticMapReduce.Model
         /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
         public JobFlowInstancesConfig() { }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalMasterSecurityGroups. 
+        /// <para>
+        /// A list of additional Amazon EC2 security group IDs for the master node.
+        /// </para>
+        /// </summary>
+        public List<string> AdditionalMasterSecurityGroups
+        {
+            get { return this._additionalMasterSecurityGroups; }
+            set { this._additionalMasterSecurityGroups = value; }
+        }
+
+        // Check to see if AdditionalMasterSecurityGroups property is set
+        internal bool IsSetAdditionalMasterSecurityGroups()
+        {
+            return this._additionalMasterSecurityGroups != null && this._additionalMasterSecurityGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalSlaveSecurityGroups. 
+        /// <para>
+        /// A list of additional Amazon EC2 security group IDs for the slave nodes.
+        /// </para>
+        /// </summary>
+        public List<string> AdditionalSlaveSecurityGroups
+        {
+            get { return this._additionalSlaveSecurityGroups; }
+            set { this._additionalSlaveSecurityGroups = value; }
+        }
+
+        // Check to see if AdditionalSlaveSecurityGroups property is set
+        internal bool IsSetAdditionalSlaveSecurityGroups()
+        {
+            return this._additionalSlaveSecurityGroups != null && this._additionalSlaveSecurityGroups.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Ec2KeyName. 
@@ -95,6 +135,44 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetEc2SubnetId()
         {
             return this._ec2SubnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmrManagedMasterSecurityGroup. 
+        /// <para>
+        /// The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce)
+        /// for the master node.
+        /// </para>
+        /// </summary>
+        public string EmrManagedMasterSecurityGroup
+        {
+            get { return this._emrManagedMasterSecurityGroup; }
+            set { this._emrManagedMasterSecurityGroup = value; }
+        }
+
+        // Check to see if EmrManagedMasterSecurityGroup property is set
+        internal bool IsSetEmrManagedMasterSecurityGroup()
+        {
+            return this._emrManagedMasterSecurityGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmrManagedSlaveSecurityGroup. 
+        /// <para>
+        /// The identifier of the Amazon EC2 security group (managed by Amazon ElasticMapReduce)
+        /// for the slave nodes.
+        /// </para>
+        /// </summary>
+        public string EmrManagedSlaveSecurityGroup
+        {
+            get { return this._emrManagedSlaveSecurityGroup; }
+            set { this._emrManagedSlaveSecurityGroup = value; }
+        }
+
+        // Check to see if EmrManagedSlaveSecurityGroup property is set
+        internal bool IsSetEmrManagedSlaveSecurityGroup()
+        {
+            return this._emrManagedSlaveSecurityGroup != null;
         }
 
         /// <summary>

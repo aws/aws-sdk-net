@@ -52,7 +52,7 @@ namespace Amazon.S3.IO
         private bool bucketExist;
         private bool fileExist;
         private long lastWriteCounter = 0;
-        private long lastFlushMarker = 0;
+        private long lastFlushMarker = -1;
 
         internal S3FileStream(IAmazonS3 s3Client, string bucket, string key, FileMode mode)
             : this(s3Client, bucket, key, mode, FileAccess.ReadWrite, MIN_SIZE)
@@ -292,17 +292,10 @@ namespace Amazon.S3.IO
                 {
                     if (!this.bucketExist)
                     {
-                        //file.S3Client.PutBucket(new PutBucketRequest().WithBucketName(file.BucketName).WithUseClientRegion(true));
                         file.S3Client.PutBucket(new PutBucketRequest { BucketName = file.BucketName });
                         this.bucketExist = true;
                     }
 
-                    //var request = (PutObjectRequest)new PutObjectRequest()
-                    //    .WithBucketName(file.BucketName)
-                    //    .WithKey(S3Helper.EncodeKey(file.ObjectKey))
-                    //    .WithAutoCloseStream(false)
-                    //    .WithInputStream(buffer)
-                    //    .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler);
                     var request = new PutObjectRequest
                     {
                         BucketName = file.BucketName,

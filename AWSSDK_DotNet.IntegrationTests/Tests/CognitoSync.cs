@@ -1,7 +1,9 @@
 ﻿using Amazon;
 using Amazon.CognitoIdentity;
+using Amazon.CognitoIdentity.Model;
 using Amazon.CognitoSync;
 using Amazon.CognitoSync.Model;
+using Amazon.Runtime;
 using Amazon.SecurityToken;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
@@ -28,6 +30,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         private static TimeSpan roleTimeout = TimeSpan.FromMinutes(1);
         private static TimeSpan roleTestPeriod = TimeSpan.FromSeconds(5);
         private const string notAuthorizedMessage = "Not authorized to perform sts:AssumeRoleWithWebIdentity";
+        private const string invalidPoolConfigurationMessage = "Invalid identity pool configuration. Check assigned IAM roles for this pool.";
         private static List<string> topicArns = new List<string>();
         private static string platformApplicationArn = null;
 
@@ -44,11 +47,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             CognitoIdentity.CleanupIdentityPools();
 
-            foreach (var roleName in roleNames)
-            {
-                DeleteRole(roleName);
-            }
-            roleNames.Clear();
+            CleanupCreatedRoles();
 
             if (facebookUser != null)
             {
@@ -67,6 +66,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         PlatformApplicationArn = platformApplicationArn
                     });
             }
+        }
+
+        public static void CleanupCreatedRoles()
+        {
+            foreach (var roleName in roleNames)
+            {
+                DeleteRole(roleName);
+            }
+            roleNames.Clear();
         }
 
         [ClassCleanup]
@@ -102,31 +110,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             CognitoIdentity.CreateIdentityPool(out poolId, out poolName);
 
-            Amazon.Util.AWSSDKUtils.Sleep(10); // The identity pool configuration is eventually consistent.
-
             // Add retry logic to handle the eventual consistence of the identity pool getting created
             GetIdentityPoolConfigurationResponse config = null;
-            int maxRetries = 5;
-            for (int i = 1; i <= maxRetries; i++)
-            {
-                try
-                {
-                    config = Client.GetIdentityPoolConfiguration(new GetIdentityPoolConfigurationRequest
-                    {
-                        IdentityPoolId = poolId
-                    });
-                    break;
-                }
-                catch(Exception)
-                {
-                    if (i == maxRetries)
-                        throw;
-                    else
-                        Amazon.Util.AWSSDKUtils.Sleep(10); 
-                }
-            }
+            UtilityMethods.WaitUntilSuccess(() => config = Client.GetIdentityPoolConfiguration(poolId));
 
-
+            Assert.IsNotNull(config);
             Assert.AreEqual(poolId, config.IdentityPoolId);
             Assert.IsNull(config.PushSync);
 
@@ -140,9 +128,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreNotEqual(0, usages.Count);
             Assert.AreEqual(usagesCount, usages.Count);
 
+            TestAuthenticatedClient(usePoolRoles: true);
+            TestAuthenticatedClient(usePoolRoles: false);
+        }
+
+        private void TestAuthenticatedClient(bool usePoolRoles)
+        {
             // Some operations require an authenticated client
             CognitoAWSCredentials credentials;
-            using (var authenticatedClient = CreateAuthenticatedClient(poolId, out credentials))
+            using (var authenticatedClient = CreateAuthenticatedClient(poolId, usePoolRoles, out credentials))
             {
                 var datasets = GetAllDatasets(Client, poolId, credentials.GetIdentityId());
                 Assert.AreEqual(0, datasets.Count);
@@ -205,24 +199,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             CognitoIdentity.CreateIdentityPool(out poolId, out poolName);
 
-            var credentials = GetCognitoCredentials(poolId);
+            var credentials = GetCognitoCredentials(poolId, usePoolRoles: false);
+            TestCredentials(credentials);
+            credentials = GetCognitoCredentials(poolId, usePoolRoles: true);
+            TestCredentials(credentials);
+        }
+
+        public static void TestCredentials(AWSCredentials credentials)
+        {
             using (var client = new Amazon.S3.AmazonS3Client(credentials))
             {
                 // Retries to handle credentials not being full propagated yet.
-                for (int retries = 0; retries <= 5; retries++ )
-                {
-                    Thread.Sleep(1000 * retries);               
-                    try
-                    {
-                        client.ListBuckets();
-                        break;
-                    }
-                    catch (Amazon.S3.AmazonS3Exception e)
-                    {
-                        if (e.StatusCode == System.Net.HttpStatusCode.Forbidden && retries != 5)
-                            continue;
-                    }
-                }
+                UtilityMethods.WaitUntilSuccess(() => client.ListBuckets());
             }
         }
 
@@ -235,9 +223,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             CognitoIdentity.CreateIdentityPool(out poolId, out poolName);
 
+            TestCredentials(usePoolRoles: false);
+            TestCredentials(usePoolRoles: true);
+        }
+
+        private void TestCredentials(bool usePoolRoles)
+        {
             int credentialsChanges = 0;
             CognitoAWSCredentials credentials;
-            using (var authenticatedClient = CreateAuthenticatedClient(poolId, out credentials))
+            using (var authenticatedClient = CreateAuthenticatedClient(poolId, usePoolRoles, out credentials))
             {
                 // Log and count identity changes
                 credentials.IdentityChangedEvent += (sender, args) =>
@@ -277,8 +271,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public void ConfigsTest()
         {
             CognitoIdentity.CreateIdentityPool(out poolId, out poolName);
-
-            Amazon.Util.AWSSDKUtils.Sleep(10); // The identity pool configuration is eventually consistent.
 
             var config = Client.GetIdentityPoolConfiguration(new GetIdentityPoolConfigurationRequest
             {
@@ -441,33 +433,42 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual(1, records.Count);
         }
 
-        private static AmazonCognitoSyncClient CreateAuthenticatedClient(string poolId, out CognitoAWSCredentials credentials)
+        private static AmazonCognitoSyncClient CreateAuthenticatedClient(string poolId, bool usePoolRoles, out CognitoAWSCredentials credentials)
         {
-            credentials = GetCognitoCredentials(poolId);
+            credentials = GetCognitoCredentials(poolId, usePoolRoles);
 
             var authenticatedClient = new AmazonCognitoSyncClient(credentials);
             return authenticatedClient;
         }
-        private static CognitoAWSCredentials GetCognitoCredentials(string poolId)
+        private static CognitoAWSCredentials GetCognitoCredentials(string poolId, bool usePoolRoles)
         {
-            string roleArn = PrepareRole();
-            return GetCognitoCredentials(poolId, roleArn);
-        }
-        private static CognitoAWSCredentials GetCognitoCredentials(string poolId, string roleArn)
-        {
+            // If using pool roles, no need to prepare a role
+            string roleArn = usePoolRoles ? null : PrepareRole();
+
             var latest = DateTime.Now + roleTimeout;
             do
             {
-                CognitoAWSCredentials credentials = new CognitoAWSCredentials(
-                    UtilityMethods.AccountId, poolId,
-                    roleArn,    // The same role is used for unAuthRoleArn
-                    roleArn,    // and authRoleArn
-                    AWSConfigs.RegionEndpoint);
+                CognitoAWSCredentials credentials;
+                if (usePoolRoles)
+                    credentials = new CognitoAWSCredentials(poolId, AWSConfigs.RegionEndpoint);
+                else
+                    credentials = new CognitoAWSCredentials(
+                        null, poolId,
+                        roleArn,    // The same role is used for unAuthRoleArn
+                        roleArn,    // and authRoleArn
+                        AWSConfigs.RegionEndpoint);
 
                 try
                 {
                     credentials.GetCredentials();
                     return credentials;
+                }
+                catch(InvalidIdentityPoolConfigurationException iipce)
+                {
+                    Assert.IsNotNull(iipce);
+                    Assert.AreEqual(invalidPoolConfigurationMessage, iipce.Message);
+                    Console.WriteLine("Pool not yet ready, sleeping for " + roleTestPeriod);
+                    Thread.Sleep(roleTestPeriod);
                 }
                 catch (AmazonSecurityTokenServiceException astse)
                 {
@@ -480,7 +481,24 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             throw new InvalidOperationException("Role should have been ready by now");
         }
-        private static string PrepareRole()
+        private static void DeleteRole(string roleName)
+        {
+            using (var identityClient = new Amazon.IdentityManagement.AmazonIdentityManagementServiceClient())
+            {
+                identityClient.DeleteRolePolicy(new Amazon.IdentityManagement.Model.DeleteRolePolicyRequest
+                {
+                    PolicyName = policyName,
+                    RoleName = roleName
+                });
+
+                identityClient.DeleteRole(new Amazon.IdentityManagement.Model.DeleteRoleRequest
+                {
+                    RoleName = roleName
+                });
+            }
+        }
+
+        public static string PrepareRole()
         {
             // Assume role policy which accepts OAuth tokens from Google, Facebook or Cognito, and allows AssumeRoleWithWebIdentity action.
             string assumeRolePolicy = @"{
@@ -536,23 +554,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             return roleArn;
         }
-        private static void DeleteRole(string roleName)
-        {
-            using (var identityClient = new Amazon.IdentityManagement.AmazonIdentityManagementServiceClient())
-            {
-                identityClient.DeleteRolePolicy(new Amazon.IdentityManagement.Model.DeleteRolePolicyRequest
-                {
-                    PolicyName = policyName,
-                    RoleName = roleName
-                });
-
-                identityClient.DeleteRole(new Amazon.IdentityManagement.Model.DeleteRoleRequest
-                {
-                    RoleName = roleName
-                });
-            }
-        }
-
         public static List<IdentityPoolUsage> GetAllIdentityPoolUsages()
         {
             return GetAllIdentityPoolUsagesHelper().ToList();

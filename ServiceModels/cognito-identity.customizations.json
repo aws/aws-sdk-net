@@ -1,0 +1,60 @@
+{ 
+    "simpleMethods" : {
+        "operations" : {
+            "DescribeIdentity" : {
+                "methodForms" : [
+                    [
+                        "IdentityId"
+                    ]
+                ]
+            },
+            "GetCredentialsForIdentity" : {
+                "methodForms" : [
+                    [
+                        "IdentityId"
+                    ],
+                    [
+                        "IdentityId",
+                        "Logins"
+                    ]
+                ]
+            },
+            "GetIdentityPoolRoles" : {
+                "methodForms" : [
+                    [
+                        "IdentityPoolId"
+                    ]
+                ]
+            },
+            "SetIdentityPoolRoles" : {
+                "methodForms" : [
+                    [
+                        "IdentityPoolId",
+                        "Roles"
+                    ]
+                ]
+            },
+            "DeleteIdentityPool" : {
+                "methodForms" : [
+                    [
+                        "IdentityPoolId"
+                    ]
+                ]
+            },
+            "DescribeIdentityPool" : {
+                "methodForms" : [
+                    [
+                        "IdentityPoolId"
+                    ]
+                ]
+            },
+            "GetOpenIdToken" : {
+                "methodForms" : [
+                    [
+                        "IdentityId"
+                    ]
+                ]
+            }
+        }
+    }
+}

@@ -34,6 +34,8 @@ namespace Amazon.AutoScaling.Model
     {
         private bool? _associatePublicIpAddress;
         private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
+        private string _classicLinkVPCId;
+        private List<string> _classicLinkVPCSecurityGroups = new List<string>();
         private DateTime? _createdTime;
         private bool? _ebsOptimized;
         private string _iamInstanceProfile;
@@ -86,6 +88,48 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetBlockDeviceMappings()
         {
             return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClassicLinkVPCId. 
+        /// <para>
+        /// The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter
+        /// can only be used if you are launching EC2-Classic instances. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ClassicLinkVPCId
+        {
+            get { return this._classicLinkVPCId; }
+            set { this._classicLinkVPCId = value; }
+        }
+
+        // Check to see if ClassicLinkVPCId property is set
+        internal bool IsSetClassicLinkVPCId()
+        {
+            return this._classicLinkVPCId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClassicLinkVPCSecurityGroups. 
+        /// <para>
+        /// The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
+        /// This parameter is required if <code>ClassicLinkVPCId</code> is specified, and cannot
+        /// be used otherwise. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<string> ClassicLinkVPCSecurityGroups
+        {
+            get { return this._classicLinkVPCSecurityGroups; }
+            set { this._classicLinkVPCSecurityGroups = value; }
+        }
+
+        // Check to see if ClassicLinkVPCSecurityGroups property is set
+        internal bool IsSetClassicLinkVPCSecurityGroups()
+        {
+            return this._classicLinkVPCSecurityGroups != null && this._classicLinkVPCSecurityGroups.Count > 0; 
         }
 
         /// <summary>

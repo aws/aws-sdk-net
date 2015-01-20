@@ -8,6 +8,8 @@ using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon.CognitoIdentity;
 using Amazon.CognitoIdentity.Model;
 using Amazon;
+using System.Threading;
+using Amazon.Runtime;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
@@ -21,11 +23,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         private string poolName = null;
         private string poolId = null;
         private static List<string> allPoolIds = new List<string>();
+        private const PoolRoles poolRoles = PoolRoles.Unauthenticated | PoolRoles.Authenticated;
+
+        [Flags]
+        enum PoolRoles
+        {
+            None = 0,
+            Authenticated = 1,
+            Unauthenticated = 2
+        }
 
         [TestCleanup]
         public void Cleanup()
         {
             CleanupIdentityPools();
+            CognitoSync.CleanupCreatedRoles();
         }
 
         [ClassCleanup]
@@ -64,7 +76,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             CreateIdentityPool(out poolId, out poolName);
 
+            DateTime identityCreationTime = DateTime.UtcNow;
             var identityId = CreateIdentity(poolId, poolName);
+
+            var identity = Client.DescribeIdentity(identityId);
+            Assert.AreEqual(identityId, identity.IdentityId);
+            Assert.IsTrue((identity.CreationDate - identityCreationTime).GetAbsolute() < TimeSpan.FromMinutes(1));
+            Assert.AreEqual(0, identity.Logins.Count);
+
+            Credentials credentials = UtilityMethods.WaitUntilSuccess<Credentials>(() => Client.GetCredentialsForIdentity(identityId).Credentials);
+            Assert.IsNotNull(credentials);
+            CognitoSync.TestCredentials(credentials);
 
             var getOpenIdResult = Client.GetOpenIdToken(new GetOpenIdTokenRequest
             {
@@ -80,6 +102,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             identities = GetAllIdentities(poolId);
             Assert.IsNotNull(identities);
             Assert.AreEqual(1, identities.Count);
+
+            var roles = Client.GetIdentityPoolRoles(new GetIdentityPoolRolesRequest
+            {
+                IdentityPoolId = poolId
+            }).Roles;
+            Assert.AreEqual(NumberOfPoolRoles, roles.Count);
         }
 
         #region Public helper methods
@@ -151,7 +179,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var request = new CreateIdentityPoolRequest
             {
                 IdentityPoolName = poolName,
-                AllowUnauthenticatedIdentities = true,
+                AllowUnauthenticatedIdentities = true
             };
             var createPoolResult = Client.CreateIdentityPool(request);
             Assert.IsNotNull(createPoolResult.IdentityPoolId);
@@ -166,6 +194,39 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             });
             Assert.AreEqual(poolId, describePoolResult.IdentityPoolId);
             Assert.AreEqual(poolName, describePoolResult.IdentityPoolName);
+
+            var getIdentityPoolRolesResult = Client.GetIdentityPoolRoles(poolId);
+            Assert.AreEqual(poolId, getIdentityPoolRolesResult.IdentityPoolId);
+            Assert.AreEqual(0, getIdentityPoolRolesResult.Roles.Count);
+
+            var roles = new Dictionary<string, string>(StringComparer.Ordinal);
+            if ((poolRoles & PoolRoles.Unauthenticated) == PoolRoles.Unauthenticated)
+                roles["unauthenticated"] = CognitoSync.PrepareRole();
+            if ((poolRoles & PoolRoles.Authenticated) == PoolRoles.Authenticated)
+                roles["authenticated"] = CognitoSync.PrepareRole();
+
+            Client.SetIdentityPoolRoles(new SetIdentityPoolRolesRequest
+            {
+                IdentityPoolId = poolId,
+                Roles = roles
+            });
+
+            getIdentityPoolRolesResult = Client.GetIdentityPoolRoles(poolId);
+            Assert.AreEqual(poolId, getIdentityPoolRolesResult.IdentityPoolId);
+            Assert.AreEqual(NumberOfPoolRoles, getIdentityPoolRolesResult.Roles.Count);
+        }
+
+        private static int NumberOfPoolRoles
+        {
+            get
+            {
+                int count = 0;
+                if ((poolRoles & PoolRoles.Authenticated) == PoolRoles.Authenticated)
+                    count++;
+                if ((poolRoles & PoolRoles.Unauthenticated) == PoolRoles.Unauthenticated)
+                    count++;
+                return count;
+            }
         }
 
         public static void UpdateIdentityPool(string poolId, string poolName, Dictionary<string, string> providers)

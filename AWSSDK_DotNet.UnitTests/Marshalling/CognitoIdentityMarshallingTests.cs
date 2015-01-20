@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class CognitoIdentityMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("cognito-identity-2014-06-30.normal.json", "");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("cognito-identity-2014-06-30.normal.json", "cognito-identity.customizations.json");
         
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -88,6 +88,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CognitoIdentity")]
+        public void DescribeIdentityMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeIdentityRequest>();
+            var marshaller = new DescribeIdentityRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeIdentityRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeIdentity").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeIdentityResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeIdentityResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CognitoIdentity")]
         public void DescribeIdentityPoolMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeIdentityPoolRequest>();
@@ -117,6 +146,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CognitoIdentity")]
+        public void GetCredentialsForIdentityMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetCredentialsForIdentityRequest>();
+            var marshaller = new GetCredentialsForIdentityRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetCredentialsForIdentityRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetCredentialsForIdentity").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetCredentialsForIdentityResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetCredentialsForIdentityResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CognitoIdentity")]
         public void GetIdMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<GetIdRequest>();
@@ -138,6 +196,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetIdResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetIdResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CognitoIdentity")]
+        public void GetIdentityPoolRolesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetIdentityPoolRolesRequest>();
+            var marshaller = new GetIdentityPoolRolesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetIdentityPoolRolesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetIdentityPoolRoles").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetIdentityPoolRolesResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetIdentityPoolRolesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -313,6 +400,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = MergeDeveloperIdentitiesResponseUnmarshaller.Instance.Unmarshall(context)
                 as MergeDeveloperIdentitiesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CognitoIdentity")]
+        public void SetIdentityPoolRolesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<SetIdentityPoolRolesRequest>();
+            var marshaller = new SetIdentityPoolRolesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<SetIdentityPoolRolesRequest>(request,jsonRequest);
+
         }
 
         

@@ -18,10 +18,16 @@ namespace Amazon.CognitoIdentity
     /// </summary>
     public partial class CognitoAWSCredentials : RefreshingAWSCredentials
     {
-        private Credentials GetStsCredentials(AssumeRoleWithWebIdentityRequest assumeRequest)
+        private Amazon.SecurityToken.Model.Credentials GetStsCredentials(AssumeRoleWithWebIdentityRequest assumeRequest)
         {
             var assumeResult = sts.AssumeRoleWithWebIdentity(assumeRequest);
             var credentials = assumeResult.Credentials;
+            return credentials;
+        }
+
+        private Amazon.CognitoIdentity.Model.Credentials GetCredentialsForIdentity(GetCredentialsForIdentityRequest getCredentialsRequest)
+        {
+            var credentials = cib.GetCredentialsForIdentity(getCredentialsRequest).Credentials;
             return credentials;
         }
 

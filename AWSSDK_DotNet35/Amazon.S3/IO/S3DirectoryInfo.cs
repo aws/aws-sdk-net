@@ -273,10 +273,6 @@ namespace Amazon.S3.IO
                                     .FirstOrDefault();
                         if (lastWrittenObject != null)
                         {
-                            //ret = DateTime.ParseExact(lastWrittenObject.LastModified,
-                            //         "ddd, dd MMM yyyy HH:mm:ss \\G\\M\\T",
-                            //         null,
-                            //         System.Globalization.DateTimeStyles.AssumeUniversal);
                             ret = lastWrittenObject.LastModified;
                         }
                     }

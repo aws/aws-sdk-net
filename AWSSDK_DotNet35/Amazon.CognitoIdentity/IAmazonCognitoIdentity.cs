@@ -51,12 +51,24 @@ namespace Amazon.CognitoIdentity
     /// </para>
     ///  
     /// <para>
-    /// Next, make an unsigned call to <a>GetOpenIdToken</a>, which returns the OpenID token
-    /// necessary to call STS and retrieve AWS credentials. This call expects the same <code>Logins</code>
-    /// map as the <code>GetId</code> call, as well as the <code>IdentityID</code> originally
-    /// returned by <code>GetId</code>. The token returned by <code>GetOpenIdToken</code>
-    /// can be passed to the STS operation <a href="http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">AssumeRoleWithWebIdentity</a>
+    /// Next, make an unsigned call to <a>GetCredentialsForIdentity</a>. This call expects
+    /// the same <code>Logins</code> map as the <code>GetId</code> call, as well as the <code>IdentityID</code>
+    /// originally returned by <code>GetId</code>. Assuming your identity pool has been configured
+    /// via the <a>SetIdentityPoolRoles</a> operation, <code>GetCredentialsForIdentity</code>
+    /// will return AWS credentials for your use. If your pool has not been configured with
+    /// <code>SetIdentityPoolRoles</code>, or if you want to follow legacy flow, make an unsigned
+    /// call to <a>GetOpenIdToken</a>, which returns the OpenID token necessary to call STS
+    /// and retrieve AWS credentials. This call expects the same <code>Logins</code> map as
+    /// the <code>GetId</code> call, as well as the <code>IdentityID</code> originally returned
+    /// by <code>GetId</code>. The token returned by <code>GetOpenIdToken</code> can be passed
+    /// to the STS operation <a href="http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">AssumeRoleWithWebIdentity</a>
     /// to retrieve AWS credentials.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you want to use Amazon Cognito in an Android, iOS, or Unity application, you will
+    /// probably want to make API calls via the AWS Mobile SDK. To learn more, see the <a
+    /// href="http://docs.aws.amazon.com/mobile/index.html">AWS Mobile SDK Developer Guide</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCognitoIdentity : IDisposable
@@ -124,6 +136,30 @@ namespace Amazon.CognitoIdentity
         /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
         /// with the pool.
         /// </summary>
+        /// <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
+        /// 
+        /// <returns>The response from the DeleteIdentityPool service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        DeleteIdentityPoolResponse DeleteIdentityPool(string identityPoolId);
+
+        /// <summary>
+        /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
+        /// with the pool.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityPool service method.</param>
         /// 
         /// <returns>The response from the DeleteIdentityPool service method, as returned by CognitoIdentity.</returns>
@@ -170,7 +206,107 @@ namespace Amazon.CognitoIdentity
 
         #endregion
         
+        #region  DescribeIdentity
+
+        /// <summary>
+        /// Returns metadata related to the given identity, including when the identity was created
+        /// and any associated linked logins.
+        /// </summary>
+        /// <param name="identityId">A unique identifier in the format REGION:GUID.</param>
+        /// 
+        /// <returns>The response from the DescribeIdentity service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        DescribeIdentityResponse DescribeIdentity(string identityId);
+
+        /// <summary>
+        /// Returns metadata related to the given identity, including when the identity was created
+        /// and any associated linked logins.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentity service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIdentity service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        DescribeIdentityResponse DescribeIdentity(DescribeIdentityRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIdentity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentity operation on AmazonCognitoIdentityClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIdentity
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeIdentity(DescribeIdentityRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeIdentity operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIdentity.</param>
+        /// 
+        /// <returns>Returns a  DescribeIdentityResult from CognitoIdentity.</returns>
+        DescribeIdentityResponse EndDescribeIdentity(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeIdentityPool
+
+        /// <summary>
+        /// Gets details about a particular identity pool, including the pool name, ID description,
+        /// creation date, and current number of users.
+        /// </summary>
+        /// <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
+        /// 
+        /// <returns>The response from the DescribeIdentityPool service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        DescribeIdentityPoolResponse DescribeIdentityPool(string identityPoolId);
 
         /// <summary>
         /// Gets details about a particular identity pool, including the pool name, ID description,
@@ -219,6 +355,134 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  DescribeIdentityPoolResult from CognitoIdentity.</returns>
         DescribeIdentityPoolResponse EndDescribeIdentityPool(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetCredentialsForIdentity
+
+        /// <summary>
+        /// Returns credentials for the the provided identity ID. Any provided logins will be
+        /// validated against supported login providers. If the token is for cognito-identity.amazonaws.com,
+        /// it will be passed through to AWS Security Token Service with the appropriate role
+        /// for the token.
+        /// </summary>
+        /// <param name="identityId">A unique identifier in the format REGION:GUID.</param>
+        /// 
+        /// <returns>The response from the GetCredentialsForIdentity service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidIdentityPoolConfigurationException">
+        /// Thrown if the identity pool has no role associated for the given auth type (auth/unauth)
+        /// or if the AssumeRole fails.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// Thrown when a user tries to use a login which is already linked to another account.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        GetCredentialsForIdentityResponse GetCredentialsForIdentity(string identityId);
+
+        /// <summary>
+        /// Returns credentials for the the provided identity ID. Any provided logins will be
+        /// validated against supported login providers. If the token is for cognito-identity.amazonaws.com,
+        /// it will be passed through to AWS Security Token Service with the appropriate role
+        /// for the token.
+        /// </summary>
+        /// <param name="identityId">A unique identifier in the format REGION:GUID.</param>
+        /// <param name="logins">A set of optional name-value pairs that map provider names to provider tokens.</param>
+        /// 
+        /// <returns>The response from the GetCredentialsForIdentity service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidIdentityPoolConfigurationException">
+        /// Thrown if the identity pool has no role associated for the given auth type (auth/unauth)
+        /// or if the AssumeRole fails.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// Thrown when a user tries to use a login which is already linked to another account.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        GetCredentialsForIdentityResponse GetCredentialsForIdentity(string identityId, Dictionary<string, string> logins);
+
+        /// <summary>
+        /// Returns credentials for the the provided identity ID. Any provided logins will be
+        /// validated against supported login providers. If the token is for cognito-identity.amazonaws.com,
+        /// it will be passed through to AWS Security Token Service with the appropriate role
+        /// for the token.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCredentialsForIdentity service method.</param>
+        /// 
+        /// <returns>The response from the GetCredentialsForIdentity service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidIdentityPoolConfigurationException">
+        /// Thrown if the identity pool has no role associated for the given auth type (auth/unauth)
+        /// or if the AssumeRole fails.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// Thrown when a user tries to use a login which is already linked to another account.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        GetCredentialsForIdentityResponse GetCredentialsForIdentity(GetCredentialsForIdentityRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCredentialsForIdentity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCredentialsForIdentity operation on AmazonCognitoIdentityClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCredentialsForIdentity
+        ///         operation.</returns>
+        IAsyncResult BeginGetCredentialsForIdentity(GetCredentialsForIdentityRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCredentialsForIdentity operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCredentialsForIdentity.</param>
+        /// 
+        /// <returns>Returns a  GetCredentialsForIdentityResult from CognitoIdentity.</returns>
+        GetCredentialsForIdentityResponse EndGetCredentialsForIdentity(IAsyncResult asyncResult);
 
         #endregion
         
@@ -280,7 +544,120 @@ namespace Amazon.CognitoIdentity
 
         #endregion
         
+        #region  GetIdentityPoolRoles
+
+        /// <summary>
+        /// Gets the roles for an identity pool.
+        /// </summary>
+        /// <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
+        /// 
+        /// <returns>The response from the GetIdentityPoolRoles service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// Thrown when a user tries to use a login which is already linked to another account.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        GetIdentityPoolRolesResponse GetIdentityPoolRoles(string identityPoolId);
+
+        /// <summary>
+        /// Gets the roles for an identity pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityPoolRoles service method.</param>
+        /// 
+        /// <returns>The response from the GetIdentityPoolRoles service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// Thrown when a user tries to use a login which is already linked to another account.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        GetIdentityPoolRolesResponse GetIdentityPoolRoles(GetIdentityPoolRolesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdentityPoolRoles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityPoolRoles operation on AmazonCognitoIdentityClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdentityPoolRoles
+        ///         operation.</returns>
+        IAsyncResult BeginGetIdentityPoolRoles(GetIdentityPoolRolesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIdentityPoolRoles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityPoolRoles.</param>
+        /// 
+        /// <returns>Returns a  GetIdentityPoolRolesResult from CognitoIdentity.</returns>
+        GetIdentityPoolRolesResponse EndGetIdentityPoolRoles(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetOpenIdToken
+
+        /// <summary>
+        /// Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned
+        /// by <a>GetId</a>. You can optionally add additional logins for the identity. Supplying
+        /// multiple logins creates an implicit link.
+        /// 
+        ///  
+        /// <para>
+        /// The OpenId token is valid for 15 minutes.
+        /// </para>
+        /// </summary>
+        /// <param name="identityId">A unique identifier in the format REGION:GUID.</param>
+        /// 
+        /// <returns>The response from the GetOpenIdToken service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// Thrown when a user tries to use a login which is already linked to another account.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        GetOpenIdTokenResponse GetOpenIdToken(string identityId);
 
         /// <summary>
         /// Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned
@@ -631,6 +1008,89 @@ namespace Amazon.CognitoIdentity
         /// 
         /// <returns>Returns a  MergeDeveloperIdentitiesResult from CognitoIdentity.</returns>
         MergeDeveloperIdentitiesResponse EndMergeDeveloperIdentities(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SetIdentityPoolRoles
+
+        /// <summary>
+        /// Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code>
+        /// action.
+        /// </summary>
+        /// <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
+        /// <param name="roles">The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</param>
+        /// 
+        /// <returns>The response from the SetIdentityPoolRoles service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// Thrown when a user tries to use a login which is already linked to another account.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        SetIdentityPoolRolesResponse SetIdentityPoolRoles(string identityPoolId, Dictionary<string, string> roles);
+
+        /// <summary>
+        /// Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code>
+        /// action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityPoolRoles service method.</param>
+        /// 
+        /// <returns>The response from the SetIdentityPoolRoles service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// Thrown when a user tries to use a login which is already linked to another account.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        SetIdentityPoolRolesResponse SetIdentityPoolRoles(SetIdentityPoolRolesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetIdentityPoolRoles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityPoolRoles operation on AmazonCognitoIdentityClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetIdentityPoolRoles
+        ///         operation.</returns>
+        IAsyncResult BeginSetIdentityPoolRoles(SetIdentityPoolRolesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetIdentityPoolRoles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityPoolRoles.</param>
+        /// 
+        /// <returns>Returns a  SetIdentityPoolRolesResult from CognitoIdentity.</returns>
+        SetIdentityPoolRolesResponse EndSetIdentityPoolRoles(IAsyncResult asyncResult);
 
         #endregion
         

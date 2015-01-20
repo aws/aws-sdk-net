@@ -53,12 +53,24 @@ namespace Amazon.CognitoIdentity
     /// </para>
     ///  
     /// <para>
-    /// Next, make an unsigned call to <a>GetOpenIdToken</a>, which returns the OpenID token
-    /// necessary to call STS and retrieve AWS credentials. This call expects the same <code>Logins</code>
-    /// map as the <code>GetId</code> call, as well as the <code>IdentityID</code> originally
-    /// returned by <code>GetId</code>. The token returned by <code>GetOpenIdToken</code>
-    /// can be passed to the STS operation <a href="http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">AssumeRoleWithWebIdentity</a>
+    /// Next, make an unsigned call to <a>GetCredentialsForIdentity</a>. This call expects
+    /// the same <code>Logins</code> map as the <code>GetId</code> call, as well as the <code>IdentityID</code>
+    /// originally returned by <code>GetId</code>. Assuming your identity pool has been configured
+    /// via the <a>SetIdentityPoolRoles</a> operation, <code>GetCredentialsForIdentity</code>
+    /// will return AWS credentials for your use. If your pool has not been configured with
+    /// <code>SetIdentityPoolRoles</code>, or if you want to follow legacy flow, make an unsigned
+    /// call to <a>GetOpenIdToken</a>, which returns the OpenID token necessary to call STS
+    /// and retrieve AWS credentials. This call expects the same <code>Logins</code> map as
+    /// the <code>GetId</code> call, as well as the <code>IdentityID</code> originally returned
+    /// by <code>GetId</code>. The token returned by <code>GetOpenIdToken</code> can be passed
+    /// to the STS operation <a href="http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">AssumeRoleWithWebIdentity</a>
     /// to retrieve AWS credentials.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you want to use Amazon Cognito in an Android, iOS, or Unity application, you will
+    /// probably want to make API calls via the AWS Mobile SDK. To learn more, see the <a
+    /// href="http://docs.aws.amazon.com/mobile/index.html">AWS Mobile SDK Developer Guide</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCognitoIdentity : IDisposable
@@ -94,6 +106,21 @@ namespace Amazon.CognitoIdentity
 
         #endregion
                 
+        #region  DescribeIdentity
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIdentity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentity operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeIdentityResponse> DescribeIdentityAsync(DescribeIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeIdentityPool
 
         /// <summary>
@@ -109,6 +136,21 @@ namespace Amazon.CognitoIdentity
 
         #endregion
                 
+        #region  GetCredentialsForIdentity
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCredentialsForIdentity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCredentialsForIdentity operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetCredentialsForIdentityResponse> GetCredentialsForIdentityAsync(GetCredentialsForIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetId
 
         /// <summary>
@@ -121,6 +163,21 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetIdResponse> GetIdAsync(GetIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetIdentityPoolRoles
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdentityPoolRoles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityPoolRoles operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetIdentityPoolRolesResponse> GetIdentityPoolRolesAsync(GetIdentityPoolRolesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -211,6 +268,21 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<MergeDeveloperIdentitiesResponse> MergeDeveloperIdentitiesAsync(MergeDeveloperIdentitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SetIdentityPoolRoles
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetIdentityPoolRoles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityPoolRoles operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<SetIdentityPoolRolesResponse> SetIdentityPoolRolesAsync(SetIdentityPoolRolesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

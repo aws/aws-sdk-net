@@ -62,6 +62,19 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.BlockDeviceMappings.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ClassicLinkVPCId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ClassicLinkVPCId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ClassicLinkVPCSecurityGroups/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ClassicLinkVPCSecurityGroups.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("CreatedTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
