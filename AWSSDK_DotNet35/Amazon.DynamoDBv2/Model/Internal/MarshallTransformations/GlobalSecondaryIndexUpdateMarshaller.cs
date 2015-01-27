@@ -39,6 +39,28 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
     {
         public void Marshall(GlobalSecondaryIndexUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCreate())
+            {
+                context.Writer.WritePropertyName("Create");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CreateGlobalSecondaryIndexActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Create, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDelete())
+            {
+                context.Writer.WritePropertyName("Delete");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DeleteGlobalSecondaryIndexActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Delete, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetUpdate())
             {
                 context.Writer.WritePropertyName("Update");

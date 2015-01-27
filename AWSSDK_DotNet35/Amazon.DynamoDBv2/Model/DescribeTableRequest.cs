@@ -31,6 +31,15 @@ namespace Amazon.DynamoDBv2.Model
     /// Container for the parameters to the DescribeTable operation.
     /// Returns information about the table, including the current status of the table, when
     /// it was created, the primary key schema, and any indexes on the table.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If you issue a DescribeTable request immediately after a CreateTable request, DynamoDB
+    /// might return a ResourceNotFoundException. This is because DescribeTable uses an eventually
+    /// consistent query, and the metadata for your table might not be available at that moment.
+    /// Wait for a few seconds, and then try the DescribeTable request again.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeTableRequest : AmazonDynamoDBRequest
     {

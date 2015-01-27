@@ -62,6 +62,9 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidJobIdException">
         /// The JOBID was missing, not found, or not associated with the AWS account.
         /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
+        /// The client tool version is invalid.
+        /// </exception>
         /// <exception cref="Amazon.ImportExport.Model.UnableToCancelJobIdException">
         /// AWS Import/Export cannot cancel the job
         /// </exception>
@@ -108,6 +111,11 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.BucketPermissionException">
         /// The account specified does not have the appropriate bucket permissions.
         /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.CreateJobQuotaExceededException">
+        /// Each account can create only a certain number of jobs per day. If you need to create
+        /// more than this, please contact awsimportexport@amazon.com to explain your particular
+        /// use case.
+        /// </exception>
         /// <exception cref="Amazon.ImportExport.Model.InvalidAccessKeyIdException">
         /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
         /// value. The manifest and the request authentication must use the same AWS Access Key
@@ -122,14 +130,17 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidFileSystemException">
         /// File system specified in export manifest is invalid.
         /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidJobIdException">
+        /// The JOBID was missing, not found, or not associated with the AWS account.
+        /// </exception>
         /// <exception cref="Amazon.ImportExport.Model.InvalidManifestFieldException">
         /// One or more manifest fields was invalid. Please correct and resubmit.
         /// </exception>
         /// <exception cref="Amazon.ImportExport.Model.InvalidParameterException">
         /// One or more parameters had an invalid value.
         /// </exception>
-        /// <exception cref="Amazon.ImportExport.Model.InvalidParameterException">
-        /// One or more parameters had an invalid value.
+        /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
+        /// The client tool version is invalid.
         /// </exception>
         /// <exception cref="Amazon.ImportExport.Model.MalformedManifestException">
         /// Your manifest is not well-formed.
@@ -181,6 +192,67 @@ namespace Amazon.ImportExport
 
         #endregion
         
+        #region  GetShippingLabel
+
+        /// <summary>
+        /// This operation returns information about a job, including where the job is in the
+        /// processing pipeline, the status of the results, and the signature value associated
+        /// with the job. You can only return information about jobs you own.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetShippingLabel service method.</param>
+        /// 
+        /// <returns>The response from the GetShippingLabel service method, as returned by ImportExport.</returns>
+        /// <exception cref="Amazon.ImportExport.Model.CanceledJobIdException">
+        /// The specified job ID has been canceled and is no longer valid.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.ExpiredJobIdException">
+        /// Indicates that the specified job has expired out of the system.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAccessKeyIdException">
+        /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
+        /// value. The manifest and the request authentication must use the same AWS Access Key
+        /// ID.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAddressException">
+        /// The address specified in the manifest is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidJobIdException">
+        /// The JOBID was missing, not found, or not associated with the AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
+        /// The client tool version is invalid.
+        /// </exception>
+        GetShippingLabelResponse GetShippingLabel(GetShippingLabelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetShippingLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetShippingLabel operation on AmazonImportExportClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetShippingLabel
+        ///         operation.</returns>
+        IAsyncResult BeginGetShippingLabel(GetShippingLabelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetShippingLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetShippingLabel.</param>
+        /// 
+        /// <returns>Returns a  GetShippingLabelResult from ImportExport.</returns>
+        GetShippingLabelResponse EndGetShippingLabel(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetStatus
 
         /// <summary>
@@ -204,6 +276,9 @@ namespace Amazon.ImportExport
         /// </exception>
         /// <exception cref="Amazon.ImportExport.Model.InvalidJobIdException">
         /// The JOBID was missing, not found, or not associated with the AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
+        /// The client tool version is invalid.
         /// </exception>
         GetStatusResponse GetStatus(GetStatusRequest request);
 
@@ -251,6 +326,9 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidParameterException">
         /// One or more parameters had an invalid value.
         /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
+        /// The client tool version is invalid.
+        /// </exception>
         ListJobsResponse ListJobs();
 
         /// <summary>
@@ -269,6 +347,9 @@ namespace Amazon.ImportExport
         /// </exception>
         /// <exception cref="Amazon.ImportExport.Model.InvalidParameterException">
         /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
+        /// The client tool version is invalid.
         /// </exception>
         ListJobsResponse ListJobs(ListJobsRequest request);
 
@@ -341,6 +422,9 @@ namespace Amazon.ImportExport
         /// <exception cref="Amazon.ImportExport.Model.InvalidParameterException">
         /// One or more parameters had an invalid value.
         /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
+        /// The client tool version is invalid.
+        /// </exception>
         /// <exception cref="Amazon.ImportExport.Model.MalformedManifestException">
         /// Your manifest is not well-formed.
         /// </exception>
@@ -362,6 +446,9 @@ namespace Amazon.ImportExport
         /// The specified bucket does not exist. Create the specified bucket or change the manifest's
         /// bucket, exportBucket, or logBucket field to a bucket that the account, as specified
         /// by the manifest's Access Key ID, has write permissions to.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.UnableToUpdateJobIdException">
+        /// AWS Import/Export cannot update the job
         /// </exception>
         UpdateJobResponse UpdateJob(UpdateJobRequest request);
 

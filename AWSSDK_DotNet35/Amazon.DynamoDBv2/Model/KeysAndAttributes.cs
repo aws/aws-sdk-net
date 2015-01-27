@@ -89,7 +89,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ExpressionAttributeNames. 
         /// <para>
         /// One or more substitution tokens for simplifying complex expressions. The following
-        /// are some use cases for an <i>ExpressionAttributeNames</i> value:
+        /// are some use cases for using <i>ExpressionAttributeNames</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -119,7 +119,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// <code>{"n":"order.customerInfo.LastName"}</code>
+        /// <code>{"#name":"order.customerInfo.LastName"}</code>
         /// </para>
         /// </li></ul> 
         /// <para>
@@ -127,9 +127,13 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// <code>#n = "Smith" OR #n = "Jones"</code>
+        /// <code>#name = "Smith" OR #name = "Jones"</code>
         /// </para>
-        /// </li></ul>
+        /// </li></ul> 
+        /// <para>
+        /// For more information on expression attribute names, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> ExpressionAttributeNames
         {
@@ -165,14 +169,19 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ProjectionExpression. 
         /// <para>
-        /// One or more attributes to retrieve from the table. These attributes can include scalars,
-        /// sets, or elements of a JSON document. The attributes in the expression must be separated
-        /// by commas.
+        /// A string that identifies one or more attributes to retrieve from the table. These
+        /// attributes can include scalars, sets, or elements of a JSON document. The attributes
+        /// in the expression must be separated by commas.
         /// </para>
         ///  
         /// <para>
         /// If no attribute names are specified, then all attributes will be returned. If any
         /// of the requested attributes are not found, they will not appear in the result.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on projection expressions, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public string ProjectionExpression

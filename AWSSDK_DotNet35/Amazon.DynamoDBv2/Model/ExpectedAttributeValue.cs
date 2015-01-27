@@ -99,7 +99,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// String value comparisons for greater than, equals, or less than are based on ASCII
         /// character code values. For example, <code>a</code> is greater than <code>A</code>,
-        /// and <code>aa</code> is greater than <code>B</code>. For a list of code values, see
+        /// and <code>a</code> is greater than <code>B</code>. For a list of code values, see
         /// <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
         /// </para>
         ///  
@@ -224,12 +224,26 @@ namespace Amazon.DynamoDBv2.Model
         /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for
         /// all datatypes, including lists and maps.
         /// </para>
-        ///  </li> <li> 
+        ///  <note>
+        /// <para>
+        /// This operator tests for the existence of an attribute, not its data type. If the data
+        /// type of attribute "<code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>,
+        /// the result is a Boolean <i>true</i>. This result is because the attribute "<code>a</code>"
+        /// exists; its data type is not relevant to the <code>NOT_NULL</code> comparison operator.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for
         /// all datatypes, including lists and maps.
         /// </para>
-        ///  </li> <li> 
+        ///  <note>
+        /// <para>
+        /// This operator tests for the nonexistence of an attribute, not its data type. If the
+        /// data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>,
+        /// the result is a Boolean <i>false</i>. This is because the attribute "<code>a</code>"
+        /// exists; its data type is not relevant to the <code>NULL</code> comparison operator.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         /// <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
         /// </para>

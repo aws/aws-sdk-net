@@ -28,19 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the properties of a local secondary index.
+    /// Represents a global secondary index to be deleted from an existing table.
     /// </summary>
-    public partial class LocalSecondaryIndex
+    public partial class DeleteGlobalSecondaryIndexAction
     {
         private string _indexName;
-        private List<KeySchemaElement> _keySchema = new List<KeySchemaElement>();
-        private Projection _projection;
 
         /// <summary>
         /// Gets and sets the property IndexName. 
         /// <para>
-        /// The name of the local secondary index. The name must be unique among all other indexes
-        /// on this table.
+        /// The name of the global secondary index to be deleted.
         /// </para>
         /// </summary>
         public string IndexName
@@ -53,40 +50,6 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetIndexName()
         {
             return this._indexName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property KeySchema. 
-        /// <para>
-        /// The complete key schema for the local secondary index, consisting of one or more pairs
-        /// of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).
-        /// </para>
-        /// </summary>
-        public List<KeySchemaElement> KeySchema
-        {
-            get { return this._keySchema; }
-            set { this._keySchema = value; }
-        }
-
-        // Check to see if KeySchema property is set
-        internal bool IsSetKeySchema()
-        {
-            return this._keySchema != null && this._keySchema.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Projection.
-        /// </summary>
-        public Projection Projection
-        {
-            get { return this._projection; }
-            set { this._projection = value; }
-        }
-
-        // Check to see if Projection property is set
-        internal bool IsSetProjection()
-        {
-            return this._projection != null;
         }
 
     }

@@ -57,6 +57,22 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAttributeDefinitions())
+                {
+                    context.Writer.WritePropertyName("AttributeDefinitions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAttributeDefinitionsListValue in publicRequest.AttributeDefinitions)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AttributeDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAttributeDefinitionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetGlobalSecondaryIndexUpdates())
                 {
                     context.Writer.WritePropertyName("GlobalSecondaryIndexUpdates");

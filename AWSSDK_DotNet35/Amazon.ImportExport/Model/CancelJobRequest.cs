@@ -34,7 +34,23 @@ namespace Amazon.ImportExport.Model
     /// </summary>
     public partial class CancelJobRequest : AmazonImportExportRequest
     {
+        private string _apiVersion;
         private string _jobId;
+
+        /// <summary>
+        /// Gets and sets the property APIVersion.
+        /// </summary>
+        public string APIVersion
+        {
+            get { return this._apiVersion; }
+            set { this._apiVersion = value; }
+        }
+
+        // Check to see if APIVersion property is set
+        internal bool IsSetAPIVersion()
+        {
+            return this._apiVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JobId.

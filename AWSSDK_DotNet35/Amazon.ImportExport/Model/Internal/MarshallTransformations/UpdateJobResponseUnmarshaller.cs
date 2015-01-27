@@ -76,6 +76,13 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("ArtifactList/member", targetDepth))
+                    {
+                        var unmarshaller = ArtifactUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.ArtifactList.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("Success", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -138,6 +145,10 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
             {
                 return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidVersionException"))
+            {
+                return new InvalidVersionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("MalformedManifestException"))
             {
                 return new MalformedManifestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -161,6 +172,10 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchBucketException"))
             {
                 return new NoSuchBucketException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnableToUpdateJobIdException"))
+            {
+                return new UnableToUpdateJobIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonImportExportException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }

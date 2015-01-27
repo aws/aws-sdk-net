@@ -25,28 +25,28 @@ namespace Amazon.ImportExport.Model
     ///<summary>
     /// ImportExport exception
     /// </summary>
-    public class CreateJobQuotaExceededException : AmazonImportExportException 
+    public class InvalidVersionException : AmazonImportExportException 
     {
         /// <summary>
-        /// Constructs a new CreateJobQuotaExceededException with the specified error
+        /// Constructs a new InvalidVersionException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public CreateJobQuotaExceededException(string message) 
+        public InvalidVersionException(string message) 
             : base(message) {}
           
-        public CreateJobQuotaExceededException(string message, Exception innerException) 
+        public InvalidVersionException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        public CreateJobQuotaExceededException(Exception innerException) 
+        public InvalidVersionException(Exception innerException) 
             : base(innerException) {}
             
-        public CreateJobQuotaExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidVersionException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        public CreateJobQuotaExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidVersionException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
     }

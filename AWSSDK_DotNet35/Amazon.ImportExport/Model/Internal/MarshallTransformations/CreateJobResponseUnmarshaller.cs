@@ -76,10 +76,11 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("AwsShippingAddress", targetDepth))
+                    if (context.TestExpression("ArtifactList/member", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.AwsShippingAddress = unmarshaller.Unmarshall(context);
+                        var unmarshaller = ArtifactUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.ArtifactList.Add(item);
                         continue;
                     }
                     if (context.TestExpression("JobId", targetDepth))
@@ -126,6 +127,10 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
             {
                 return new BucketPermissionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("CreateJobQuotaExceededException"))
+            {
+                return new CreateJobQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAccessKeyIdException"))
             {
                 return new InvalidAccessKeyIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -142,6 +147,10 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
             {
                 return new InvalidFileSystemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidJobIdException"))
+            {
+                return new InvalidJobIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidManifestFieldException"))
             {
                 return new InvalidManifestFieldException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -150,9 +159,9 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
             {
                 return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidVersionException"))
             {
-                return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidVersionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("MalformedManifestException"))
             {

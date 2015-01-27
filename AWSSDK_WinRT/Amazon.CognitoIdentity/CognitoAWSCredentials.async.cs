@@ -30,11 +30,10 @@ namespace Amazon.CognitoIdentity
             return getTokenResult;
         }
 
-        private Amazon.CognitoIdentity.Model.Credentials GetCredentialsForIdentity(GetCredentialsForIdentityRequest getCredentialsRequest)
+        private GetCredentialsForIdentityResponse GetCredentialsForIdentity(GetCredentialsForIdentityRequest getCredentialsRequest)
         {
             var getCredentialsResult = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<GetCredentialsForIdentityResponse>(() => cib.GetCredentialsForIdentityAsync(getCredentialsRequest));
-            var credentials = getCredentialsResult.Credentials;
-            return credentials;
+            return getCredentialsResult;
         }
 
         /// <summary>

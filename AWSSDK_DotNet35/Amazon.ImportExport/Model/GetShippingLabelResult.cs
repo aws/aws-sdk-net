@@ -28,41 +28,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ImportExport.Model
 {
     /// <summary>
-    /// A discrete item that contains the description and URL of an artifact (such as a PDF).
+    /// 
     /// </summary>
-    public partial class Artifact
+    public partial class GetShippingLabelResult : AmazonWebServiceResponse
     {
-        private string _description;
-        private string _url;
+        private string _shippingLabelURL;
+        private string _warning;
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property ShippingLabelURL.
         /// </summary>
-        public string Description
+        public string ShippingLabelURL
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._shippingLabelURL; }
+            set { this._shippingLabelURL = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if ShippingLabelURL property is set
+        internal bool IsSetShippingLabelURL()
         {
-            return this._description != null;
+            return this._shippingLabelURL != null;
         }
 
         /// <summary>
-        /// Gets and sets the property URL.
+        /// Gets and sets the property Warning.
         /// </summary>
-        public string URL
+        public string Warning
         {
-            get { return this._url; }
-            set { this._url = value; }
+            get { return this._warning; }
+            set { this._warning = value; }
         }
 
-        // Check to see if URL property is set
-        internal bool IsSetURL()
+        // Check to see if Warning property is set
+        internal bool IsSetWarning()
         {
-            return this._url != null;
+            return this._warning != null;
         }
 
     }

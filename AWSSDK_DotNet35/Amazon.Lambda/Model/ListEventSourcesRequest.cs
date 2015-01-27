@@ -29,10 +29,15 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEventSources operation.
-    /// Returns a list of event source mappings. For each mapping, the API returns configuration
-    /// information (see <a>AddEventSource</a>). You can optionally specify filters to retrieve
-    /// specific event source mappings.
+    /// Returns a list of event source mappings you created using the <code>AddEventSource</code>
+    /// (see <a>AddEventSource</a>), where you identify a stream as event source. This list
+    /// does not include Amazon S3 event sources. 
     /// 
+    ///  
+    /// <para>
+    /// For each mapping, the API returns configuration information. You can optionally specify
+    /// filters to retrieve specific event source mappings.
+    /// </para>
     ///  
     /// <para>
     /// This operation requires permission for the <code>lambda:ListEventSources</code> action.

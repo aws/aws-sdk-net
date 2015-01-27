@@ -37,10 +37,26 @@ namespace Amazon.ImportExport.Model
     /// </summary>
     public partial class CreateJobRequest : AmazonImportExportRequest
     {
+        private string _apiVersion;
         private JobType _jobType;
         private string _manifest;
         private string _manifestAddendum;
         private bool? _validateOnly;
+
+        /// <summary>
+        /// Gets and sets the property APIVersion.
+        /// </summary>
+        public string APIVersion
+        {
+            get { return this._apiVersion; }
+            set { this._apiVersion = value; }
+        }
+
+        // Check to see if APIVersion property is set
+        internal bool IsSetAPIVersion()
+        {
+            return this._apiVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JobType.

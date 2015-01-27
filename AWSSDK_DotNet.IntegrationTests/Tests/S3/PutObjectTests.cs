@@ -146,6 +146,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
+        public void PutObjectWithLeadingSlash()
+        {
+            foreach(var useV4 in new bool[] { false, true })
+            {
+                AWSConfigs.S3Config.UseSignatureVersion4 = useV4;
+                using(var client = new AmazonS3Client())
+                {
+                    PutObjectRequest request = new PutObjectRequest()
+                    {
+                        BucketName = bucketName,
+                        Key = "/contentBodyPut" + random.Next(),
+                        ContentBody = "This is the content body!",
+                        CannedACL = S3CannedACL.AuthenticatedRead
+                    };
+                    request.Metadata.Add("Subject", "Content-As-Object");
+                    PutObjectResponse response = client.PutObject(request);
+
+                    Console.WriteLine("S3 generated ETag: {0}", response.ETag);
+                    Assert.IsTrue(response.ETag.Length > 0);
+                }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
         public void PutObject()
         {
             PutObjectRequest request = new PutObjectRequest()

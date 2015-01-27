@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents a global secondary index.
+    /// Represents the properties of a global secondary index.
     /// </summary>
     public partial class GlobalSecondaryIndex
     {

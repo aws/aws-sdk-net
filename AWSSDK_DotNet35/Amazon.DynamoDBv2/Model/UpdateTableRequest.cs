@@ -29,33 +29,34 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTable operation.
-    /// Updates the provisioned throughput for the given table. Setting the throughput for
-    /// a table helps you manage performance and is part of the provisioned throughput feature
-    /// of DynamoDB.
+    /// Updates the provisioned throughput for the given table, or manages the global secondary
+    /// indexes on the table.
     /// 
     ///  
     /// <para>
-    /// The provisioned throughput values can be upgraded or downgraded based on the maximums
-    /// and minimums listed in the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+    /// You can increase or decrease the table's provisioned throughput values within the
+    /// maximums and minimums listed in the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
     /// section in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// The table must be in the <code>ACTIVE</code> state for this operation to succeed.
-    /// <i>UpdateTable</i> is an asynchronous operation; while executing the operation, the
-    /// table is in the <code>UPDATING</code> state. While the table is in the <code>UPDATING</code>
-    /// state, the table still has the provisioned throughput from before the call. The new
-    /// provisioned throughput setting is in effect only when the table returns to the <code>ACTIVE</code>
-    /// state after the <i>UpdateTable</i> operation. 
+    /// In addition, you can use <i>UpdateTable</i> to add, modify or delete global secondary
+    /// indexes on the table. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
+    /// Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
     /// </para>
     ///  
     /// <para>
-    /// You cannot add, modify or delete indexes using <i>UpdateTable</i>. Indexes can only
-    /// be defined at table creation time.
+    /// The table must be in the <code>ACTIVE</code> state for <i>UpdateTable</i> to succeed.
+    /// <i>UpdateTable</i> is an asynchronous operation; while executing the operation, the
+    /// table is in the <code>UPDATING</code> state. While the table is in the <code>UPDATING</code>
+    /// state, the table still has the provisioned throughput from before the call. The table's
+    /// new provisioned throughput settings go into effect when the table returns to the <code>ACTIVE</code>
+    /// state; at that point, the <i>UpdateTable</i> operation is complete. 
     /// </para>
     /// </summary>
     public partial class UpdateTableRequest : AmazonDynamoDBRequest
     {
+        private List<AttributeDefinition> _attributeDefinitions = new List<AttributeDefinition>();
         private List<GlobalSecondaryIndexUpdate> _globalSecondaryIndexUpdates = new List<GlobalSecondaryIndexUpdate>();
         private ProvisionedThroughput _provisionedThroughput;
         private string _tableName;
@@ -77,11 +78,45 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AttributeDefinitions. 
+        /// <para>
+        /// An array of attributes that describe the key schema for the table and indexes. If
+        /// you are adding a new global secondary index to the table, <i>AttributeDefinitions</i>
+        /// must include the key element(s) of the new index.
+        /// </para>
+        /// </summary>
+        public List<AttributeDefinition> AttributeDefinitions
+        {
+            get { return this._attributeDefinitions; }
+            set { this._attributeDefinitions = value; }
+        }
+
+        // Check to see if AttributeDefinitions property is set
+        internal bool IsSetAttributeDefinitions()
+        {
+            return this._attributeDefinitions != null && this._attributeDefinitions.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property GlobalSecondaryIndexUpdates. 
         /// <para>
-        /// An array of one or more global secondary indexes on the table, together with provisioned
-        /// throughput settings for each index.
+        /// An array of one or more global secondary indexes for the table. For each index in
+        /// the array, you can specify one action:
         /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// <i>Create</i> - add a new global secondary index to the table.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <i>Update</i> - modify the provisioned throughput settings of an existing global secondary
+        /// index.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <i>Delete</i> - remove a global secondary index from the table.
+        /// </para>
+        /// </li> </ul>
         /// </summary>
         public List<GlobalSecondaryIndexUpdate> GlobalSecondaryIndexUpdates
         {

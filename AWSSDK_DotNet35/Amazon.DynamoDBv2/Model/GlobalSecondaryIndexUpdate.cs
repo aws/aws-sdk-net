@@ -28,18 +28,90 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the new provisioned throughput settings to apply to a global secondary
-    /// index.
+    /// Represents one of the following:
+    /// 
+    ///  <ul> <li>
+    /// <para>
+    /// A new global secondary index to be added to an existing table.
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// New provisioned throughput parameters for an existing global secondary index.
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// An existing global secondary index to be removed from an existing table.
+    /// </para>
+    /// </li> </ul>
     /// </summary>
     public partial class GlobalSecondaryIndexUpdate
     {
+        private CreateGlobalSecondaryIndexAction _create;
+        private DeleteGlobalSecondaryIndexAction _delete;
         private UpdateGlobalSecondaryIndexAction _update;
+
+        /// <summary>
+        /// Gets and sets the property Create. 
+        /// <para>
+        /// The parameters required for creating a global secondary index on an existing table:
+        /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// <code>IndexName </code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>KeySchema </code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>AttributeDefinitions </code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>Projection </code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>ProvisionedThroughput </code>
+        /// </para>
+        /// </li> </ul>
+        /// </summary>
+        public CreateGlobalSecondaryIndexAction Create
+        {
+            get { return this._create; }
+            set { this._create = value; }
+        }
+
+        // Check to see if Create property is set
+        internal bool IsSetCreate()
+        {
+            return this._create != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Delete. 
+        /// <para>
+        /// The name of an existing global secondary index to be removed.
+        /// </para>
+        /// </summary>
+        public DeleteGlobalSecondaryIndexAction Delete
+        {
+            get { return this._delete; }
+            set { this._delete = value; }
+        }
+
+        // Check to see if Delete property is set
+        internal bool IsSetDelete()
+        {
+            return this._delete != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Update. 
         /// <para>
-        /// The name of a global secondary index, along with the updated provisioned throughput
-        /// settings that are to be applied to that index.
+        /// The name of an existing global secondary index, along with new provisioned throughput
+        /// settings to be applied to that index.
         /// </para>
         /// </summary>
         public UpdateGlobalSecondaryIndexAction Update

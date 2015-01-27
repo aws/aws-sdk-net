@@ -37,7 +37,13 @@ namespace Amazon.DynamoDBv2.Model
     /// not exist, DynamoDB returns a <i>ResourceNotFoundException</i>. If table is already
     /// in the <code>DELETING</code> state, no error is returned. 
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// DynamoDB might continue to accept data read and write operations, such as <i>GetItem</i>
+    /// and <i>PutItem</i>, on a table in the <code>DELETING</code> state until the table
+    /// deletion is complete.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// When you delete a table, any indexes on that table are also deleted.
     /// </para>

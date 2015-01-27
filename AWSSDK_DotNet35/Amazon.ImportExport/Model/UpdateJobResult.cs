@@ -32,8 +32,24 @@ namespace Amazon.ImportExport.Model
     /// </summary>
     public partial class UpdateJobResult : AmazonWebServiceResponse
     {
+        private List<Artifact> _artifactList = new List<Artifact>();
         private bool? _success;
         private string _warningMessage;
+
+        /// <summary>
+        /// Gets and sets the property ArtifactList.
+        /// </summary>
+        public List<Artifact> ArtifactList
+        {
+            get { return this._artifactList; }
+            set { this._artifactList = value; }
+        }
+
+        // Check to see if ArtifactList property is set
+        internal bool IsSetArtifactList()
+        {
+            return this._artifactList != null && this._artifactList.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Success.

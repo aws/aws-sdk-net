@@ -354,9 +354,7 @@ namespace Amazon.Runtime
                 resourcePath = string.Empty;
             else
             {
-                if (resourcePath.StartsWith("//", StringComparison.Ordinal))
-                    resourcePath = resourcePath.Substring(2);
-                else if (resourcePath.StartsWith("/", StringComparison.Ordinal))
+                if (resourcePath.StartsWith("/", StringComparison.Ordinal))
                     resourcePath = resourcePath.Substring(1);
             }
 

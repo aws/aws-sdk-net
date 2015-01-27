@@ -32,13 +32,13 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CancelJob operation
+    /// Response Unmarshaller for GetShippingLabel operation
     /// </summary>  
-    public class CancelJobResponseUnmarshaller : XmlResponseUnmarshaller
+    public class GetShippingLabelResponseUnmarshaller : XmlResponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            CancelJobResponse response = new CancelJobResponse();
+            GetShippingLabelResponse response = new GetShippingLabelResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -46,7 +46,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("CancelJobResult", 2))
+                    if(context.TestExpression("GetShippingLabelResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -62,7 +62,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, CancelJobResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, GetShippingLabelResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -76,10 +76,16 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("Success", targetDepth))
+                    if (context.TestExpression("ShippingLabelURL", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        response.Success = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.ShippingLabelURL = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Warning", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Warning = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -104,27 +110,31 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
             {
                 return new InvalidAccessKeyIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAddressException"))
+            {
+                return new InvalidAddressException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidJobIdException"))
             {
                 return new InvalidJobIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
+            {
+                return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidVersionException"))
             {
                 return new InvalidVersionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("UnableToCancelJobIdException"))
-            {
-                return new UnableToCancelJobIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonImportExportException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static CancelJobResponseUnmarshaller _instance = new CancelJobResponseUnmarshaller();        
+        private static GetShippingLabelResponseUnmarshaller _instance = new GetShippingLabelResponseUnmarshaller();        
 
-        internal static CancelJobResponseUnmarshaller GetInstance()
+        internal static GetShippingLabelResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
-        public static CancelJobResponseUnmarshaller Instance
+        public static GetShippingLabelResponseUnmarshaller Instance
         {
             get
             {

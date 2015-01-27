@@ -92,6 +92,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ImportExport")]
+        public void GetShippingLabelMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetShippingLabel");
+
+            var request = InstantiateClassGenerator.Execute<GetShippingLabelRequest>();
+            var marshaller = new GetShippingLabelRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetShippingLabelResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetShippingLabelResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ImportExport")]
         public void GetStatusMarshallTest()
         {
             var operation = service_model.FindOperation("GetStatus");

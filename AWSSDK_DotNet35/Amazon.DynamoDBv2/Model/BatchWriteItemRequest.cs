@@ -34,7 +34,12 @@ namespace Amazon.DynamoDBv2.Model
     /// can comprise as many as 25 put or delete requests. Individual items to be written
     /// can be as large as 400 KB.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// <i>BatchWriteItem</i> cannot update items. To update items, use the <i>UpdateItem</i>
+    /// API.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// The individual <i>PutItem</i> and <i>DeleteItem</i> operations specified in <i>BatchWriteItem</i>
     /// are atomic; however <i>BatchWriteItem</i> as a whole is not. If any requested operations

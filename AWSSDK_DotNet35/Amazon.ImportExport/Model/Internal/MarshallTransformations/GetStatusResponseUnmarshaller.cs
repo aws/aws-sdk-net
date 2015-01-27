@@ -76,10 +76,11 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("AwsShippingAddress", targetDepth))
+                    if (context.TestExpression("ArtifactList/member", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.AwsShippingAddress = unmarshaller.Unmarshall(context);
+                        var unmarshaller = ArtifactUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.ArtifactList.Add(item);
                         continue;
                     }
                     if (context.TestExpression("Carrier", targetDepth))
@@ -197,6 +198,10 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidJobIdException"))
             {
                 return new InvalidJobIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidVersionException"))
+            {
+                return new InvalidVersionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonImportExportException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }

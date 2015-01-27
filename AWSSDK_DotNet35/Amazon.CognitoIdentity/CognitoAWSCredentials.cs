@@ -339,8 +339,12 @@ namespace Amazon.CognitoIdentity
             var getCredentialsRequest = new GetCredentialsForIdentityRequest { IdentityId = identityId };
             if (Logins.Count > 0)
                 getCredentialsRequest.Logins = Logins;
-            var credentials = (await cib.GetCredentialsForIdentityAsync(getCredentialsRequest).ConfigureAwait(false)).Credentials;
+            var response = (await cib.GetCredentialsForIdentityAsync(getCredentialsRequest).ConfigureAwait(false));
 
+            // IdentityId may have changed, save the new value
+            UpdateIdentity(response.IdentityId, true);
+
+            var credentials = response.Credentials;
             credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration);
             return credentialsState;
         }
@@ -375,8 +379,12 @@ namespace Amazon.CognitoIdentity
             var getCredentialsRequest = new GetCredentialsForIdentityRequest { IdentityId = GetIdentityId() };
             if (Logins.Count > 0)
                 getCredentialsRequest.Logins = Logins;
-            var credentials = GetCredentialsForIdentity(getCredentialsRequest);
+            var response = GetCredentialsForIdentity(getCredentialsRequest);
 
+            // IdentityId may have changed, save the new value
+            UpdateIdentity(response.IdentityId, true);
+
+            var credentials = response.Credentials;
             credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration);
             return credentialsState;
         }

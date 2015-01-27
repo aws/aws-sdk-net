@@ -42,9 +42,10 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  
     /// <para>
-    /// If you want to create multiple tables with secondary indexes on them, you must create
-    /// them sequentially. Only one table with secondary indexes can be in the <code>CREATING</code>
-    /// state at any given time.
+    /// You can optionally define secondary indexes on the new table, as part of the <i>CreateTable</i>
+    /// operation. If you want to create multiple tables with secondary indexes on them, you
+    /// must create the tables sequentially. Only one table with secondary indexes can be
+    /// in the <code>CREATING</code> state at any given time.
     /// </para>
     ///  
     /// <para>

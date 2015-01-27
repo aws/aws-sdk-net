@@ -107,6 +107,14 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// <i>Backfilling</i> - If true, then the index is currently in the backfilling phase.
+        /// Backfilling occurs only when a new global secondary index is added to the table; it
+        /// is the process by which DynamoDB populates the new index with data from the table.
+        /// (This attribute does not appear for indexes that were created during a <i>CreateTable</i>
+        /// operation.)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// <i>IndexName</i> - The name of the global secondary index.
         /// </para>
         ///  </li> <li> 

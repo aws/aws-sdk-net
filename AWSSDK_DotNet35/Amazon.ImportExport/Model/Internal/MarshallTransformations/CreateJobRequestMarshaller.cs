@@ -48,6 +48,10 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAPIVersion())
+                {
+                    request.Parameters.Add("APIVersion", StringUtils.FromString(publicRequest.APIVersion));
+                }
                 if(publicRequest.IsSetJobType())
                 {
                     request.Parameters.Add("JobType", StringUtils.FromString(publicRequest.JobType));

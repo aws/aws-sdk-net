@@ -32,6 +32,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class GlobalSecondaryIndexDescription
     {
+        private bool? _backfilling;
         private string _indexName;
         private long? _indexSizeBytes;
         private IndexStatus _indexStatus;
@@ -39,6 +40,34 @@ namespace Amazon.DynamoDBv2.Model
         private List<KeySchemaElement> _keySchema = new List<KeySchemaElement>();
         private Projection _projection;
         private ProvisionedThroughputDescription _provisionedThroughput;
+
+        /// <summary>
+        /// Gets and sets the property Backfilling. 
+        /// <para>
+        /// Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process
+        /// of reading items from the table and determining whether they can be added to the index.
+        /// (Not all items will qualify: For example, a hash key attribute cannot have any duplicates.)
+        /// If an item can be added to the index, DynamoDB will do so. After all items have been
+        /// processed, the backfilling operation is complete and <i>Backfilling</i> is false.
+        /// </para>
+        ///  <note>
+        /// <para>
+        /// For indexes that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i>
+        /// attribute does not appear in the <i>DescribeTable</i> output.
+        /// </para>
+        /// </note>
+        /// </summary>
+        public bool Backfilling
+        {
+            get { return this._backfilling.GetValueOrDefault(); }
+            set { this._backfilling = value; }
+        }
+
+        // Check to see if Backfilling property is set
+        internal bool IsSetBackfilling()
+        {
+            return this._backfilling.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property IndexName. 
@@ -94,8 +123,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>DELETING</i> - The index is being deleted, as the result of a <i>DeleteTable</i>
-        /// operation.
+        /// <i>DELETING</i> - The index is being deleted, as the result of an <i>UpdateTable</i>
+        /// or <i>DeleteTable</i> operation.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -25,10 +25,10 @@ namespace Amazon.CognitoIdentity
             return credentials;
         }
 
-        private Amazon.CognitoIdentity.Model.Credentials GetCredentialsForIdentity(GetCredentialsForIdentityRequest getCredentialsRequest)
+        private GetCredentialsForIdentityResponse GetCredentialsForIdentity(GetCredentialsForIdentityRequest getCredentialsRequest)
         {
-            var credentials = cib.GetCredentialsForIdentity(getCredentialsRequest).Credentials;
-            return credentials;
+            var result = cib.GetCredentialsForIdentity(getCredentialsRequest);
+            return result;
         }
 
         private GetOpenIdTokenResponse GetOpenId(GetOpenIdTokenRequest getTokenRequest)

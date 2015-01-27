@@ -239,10 +239,8 @@
     <Compile Include="Amazon.Route53\IAmazonRoute53.cs" />
     <Compile Include="Amazon.Route53Domains\AmazonRoute53DomainsClient.cs" />
     <Compile Include="Amazon.Route53Domains\IAmazonRoute53Domains.cs" />
-    <Compile Include="Amazon.Runtime\AmazonWebServiceClient.cs" />
     <Compile Include="Amazon.Runtime\Internal\AsyncRunner.cs" />
     <Compile Include="Amazon.Runtime\Internal\Transform\HttpClientResponseData.cs" />
-    <Compile Include="Amazon.Runtime\Internal\WebRequestState.cs" />
     <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\HttpRequestMessageFactory.cs" />
     <Compile Include="Amazon.S3\AmazonS3Client.cs" />
     <Compile Include="Amazon.S3\IAmazonS3.cs" />

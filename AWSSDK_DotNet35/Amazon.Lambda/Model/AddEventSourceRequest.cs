@@ -29,14 +29,15 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the AddEventSource operation.
-    /// Identifies an Amazon Kinesis stream as the event source for an AWS Lambda function.
-    /// AWS Lambda invokes the specified function when records are posted to the stream.
+    /// Identifies a stream as an event source for an AWS Lambda function. It can be either
+    /// an Amazon Kinesis stream or a Amazon DynamoDB stream. AWS Lambda invokes the specified
+    /// function when records are posted to the stream.
     /// 
     ///  
     /// <para>
     /// This is the pull model, where AWS Lambda invokes the function. For more information,
     /// go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-    /// LambdaL How it Works</a> in the AWS Lambda Developer Guide.
+    /// Lambda: How it Works</a> in the AWS Lambda Developer Guide.
     /// </para>
     ///  
     /// <para>
@@ -44,6 +45,13 @@ namespace Amazon.Lambda.Model
     /// the event source mapping. You provide the configuration information (for example,
     /// which stream to read from and which AWS Lambda function to invoke) for the event source
     /// mapping in the request body.
+    /// </para>
+    ///  
+    /// <para>
+    ///  Each event source, such as a Kinesis stream, can only be associated with one AWS
+    /// Lambda function. If you call <a>AddEventSource</a> for an event source that is already
+    /// mapped to another AWS Lambda function, the existing mapping is updated to call the
+    /// new function instead of the old one. 
     /// </para>
     ///  
     /// <para>

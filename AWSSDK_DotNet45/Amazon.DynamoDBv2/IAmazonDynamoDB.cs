@@ -30,7 +30,11 @@ namespace Amazon.DynamoDBv2
     /// <summary>
     /// Interface for accessing DynamoDB
     ///
-    /// Amazon DynamoDB <b>Overview</b> 
+    /// Amazon DynamoDB 
+    /// <para>
+    ///  <b>Overview</b>
+    /// </para>
+    ///  
     /// <para>
     /// This is the Amazon DynamoDB API Reference. This guide provides descriptions and samples
     /// of the low-level DynamoDB API. For information about DynamoDB application development,
@@ -61,8 +65,6 @@ namespace Amazon.DynamoDBv2
     /// <para>
     ///  <b>Managing Tables</b> 
     /// </para>
-    ///  
-    /// <para>
     ///  <ul> <li> 
     /// <para>
     /// <i>CreateTable</i> - Creates a table with user-specified provisioned throughput settings.
@@ -92,8 +94,6 @@ namespace Amazon.DynamoDBv2
     /// <i>DeleteTable</i> - Deletes a table and all of its indexes.
     /// </para>
     ///  </li> </ul> 
-    /// </para>
-    ///  
     /// <para>
     /// For conceptual information about managing tables, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html">Working
     /// with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -102,8 +102,6 @@ namespace Amazon.DynamoDBv2
     /// <para>
     ///  <b>Reading Data</b> 
     /// </para>
-    ///  
-    /// <para>
     ///  <ul> <li> 
     /// <para>
     /// <i>GetItem</i> - Returns a set of attributes for the item that has a given primary
@@ -134,8 +132,6 @@ namespace Amazon.DynamoDBv2
     /// predictable performance.
     /// </para>
     ///  </li> </ul> 
-    /// </para>
-    ///  
     /// <para>
     /// For conceptual information about reading data, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
     /// with Items</a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
@@ -145,8 +141,6 @@ namespace Amazon.DynamoDBv2
     /// <para>
     ///  <b>Modifying Data</b> 
     /// </para>
-    ///  
-    /// <para>
     ///  <ul> <li> 
     /// <para>
     /// <i>PutItem</i> - Creates a new item, or replaces an existing item with a new item
@@ -175,8 +169,6 @@ namespace Amazon.DynamoDBv2
     /// of up to 25 items to put or delete, with a maximum total request size of 16 MB. 
     /// </para>
     ///  </li> </ul> 
-    /// </para>
-    ///  
     /// <para>
     /// For conceptual information about modifying data, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
     /// with Items</a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
@@ -469,7 +461,12 @@ namespace Amazon.DynamoDBv2
         /// can comprise as many as 25 put or delete requests. Individual items to be written
         /// can be as large as 400 KB.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// <i>BatchWriteItem</i> cannot update items. To update items, use the <i>UpdateItem</i>
+        /// API.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The individual <i>PutItem</i> and <i>DeleteItem</i> operations specified in <i>BatchWriteItem</i>
         /// are atomic; however <i>BatchWriteItem</i> as a whole is not. If any requested operations
@@ -588,7 +585,12 @@ namespace Amazon.DynamoDBv2
         /// can comprise as many as 25 put or delete requests. Individual items to be written
         /// can be as large as 400 KB.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// <i>BatchWriteItem</i> cannot update items. To update items, use the <i>UpdateItem</i>
+        /// API.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The individual <i>PutItem</i> and <i>DeleteItem</i> operations specified in <i>BatchWriteItem</i>
         /// are atomic; however <i>BatchWriteItem</i> as a whole is not. If any requested operations
@@ -730,9 +732,10 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// If you want to create multiple tables with secondary indexes on them, you must create
-        /// them sequentially. Only one table with secondary indexes can be in the <code>CREATING</code>
-        /// state at any given time.
+        /// You can optionally define secondary indexes on the new table, as part of the <i>CreateTable</i>
+        /// operation. If you want to create multiple tables with secondary indexes on them, you
+        /// must create the tables sequentially. Only one table with secondary indexes can be
+        /// in the <code>CREATING</code> state at any given time.
         /// </para>
         ///  
         /// <para>
@@ -784,9 +787,10 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// If you want to create multiple tables with secondary indexes on them, you must create
-        /// them sequentially. Only one table with secondary indexes can be in the <code>CREATING</code>
-        /// state at any given time.
+        /// You can optionally define secondary indexes on the new table, as part of the <i>CreateTable</i>
+        /// operation. If you want to create multiple tables with secondary indexes on them, you
+        /// must create the tables sequentially. Only one table with secondary indexes can be
+        /// in the <code>CREATING</code> state at any given time.
         /// </para>
         ///  
         /// <para>
@@ -1010,7 +1014,13 @@ namespace Amazon.DynamoDBv2
         /// not exist, DynamoDB returns a <i>ResourceNotFoundException</i>. If table is already
         /// in the <code>DELETING</code> state, no error is returned. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// DynamoDB might continue to accept data read and write operations, such as <i>GetItem</i>
+        /// and <i>PutItem</i>, on a table in the <code>DELETING</code> state until the table
+        /// deletion is complete.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// When you delete a table, any indexes on that table are also deleted.
         /// </para>
@@ -1060,7 +1070,13 @@ namespace Amazon.DynamoDBv2
         /// not exist, DynamoDB returns a <i>ResourceNotFoundException</i>. If table is already
         /// in the <code>DELETING</code> state, no error is returned. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// DynamoDB might continue to accept data read and write operations, such as <i>GetItem</i>
+        /// and <i>PutItem</i>, on a table in the <code>DELETING</code> state until the table
+        /// deletion is complete.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// When you delete a table, any indexes on that table are also deleted.
         /// </para>
@@ -1119,6 +1135,15 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// Returns information about the table, including the current status of the table, when
         /// it was created, the primary key schema, and any indexes on the table.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you issue a DescribeTable request immediately after a CreateTable request, DynamoDB
+        /// might return a ResourceNotFoundException. This is because DescribeTable uses an eventually
+        /// consistent query, and the metadata for your table might not be available at that moment.
+        /// Wait for a few seconds, and then try the DescribeTable request again.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="tableName"> The name of the table to describe.</param>
         /// 
@@ -1135,6 +1160,15 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// Returns information about the table, including the current status of the table, when
         /// it was created, the primary key schema, and any indexes on the table.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you issue a DescribeTable request immediately after a CreateTable request, DynamoDB
+        /// might return a ResourceNotFoundException. This is because DescribeTable uses an eventually
+        /// consistent query, and the metadata for your table might not be available at that moment.
+        /// Wait for a few seconds, and then try the DescribeTable request again.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTable service method.</param>
         /// 
@@ -1382,7 +1416,13 @@ namespace Amazon.DynamoDBv2
         /// the update) or a copy of the updated item (after the update). For more information,
         /// see the <i>ReturnValues</i> description below.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// To prevent a new item from replacing an existing item, use a conditional put operation
+        /// with <i>ComparisonOperator</i> set to <code>NULL</code> for the primary key attribute,
+        /// or attributes.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information about using this API, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
         /// with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -1441,7 +1481,13 @@ namespace Amazon.DynamoDBv2
         /// the update) or a copy of the updated item (after the update). For more information,
         /// see the <i>ReturnValues</i> description below.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// To prevent a new item from replacing an existing item, use a conditional put operation
+        /// with <i>ComparisonOperator</i> set to <code>NULL</code> for the primary key attribute,
+        /// or attributes.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information about using this API, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
         /// with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -1501,7 +1547,13 @@ namespace Amazon.DynamoDBv2
         /// the update) or a copy of the updated item (after the update). For more information,
         /// see the <i>ReturnValues</i> description below.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// To prevent a new item from replacing an existing item, use a conditional put operation
+        /// with <i>ComparisonOperator</i> set to <code>NULL</code> for the primary key attribute,
+        /// or attributes.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information about using this API, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
         /// with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -1688,7 +1740,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested items.</param>
-        /// <param name="scanFilter"><important> There is a newer parameter available. Use <i>FilterExpression</i> instead. Note that if you use <i>ScanFilter</i> and <i>FilterExpression</i> at the same time, DynamoDB will return a <i>ValidationException</i> exception. This parameter does not support lists or maps. </important> A condition that evaluates the scan results and returns only the desired values. If you specify more than one condition in the <i>ScanFilter</i> map, then by default all of the conditions must evaluate to true. In other words, the conditions are ANDed together. (You can use the <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do this, then at least one of the conditions must evaluate to true, rather than all of them.) Each <i>ScanFilter</i> element consists of an attribute name to compare, along with the following: <ul> <li> <i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute. The number of values in the list depends on the operator specified in <i>ComparisonOperator</i> . For type Number, value comparisons are numeric. String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <code>a</code> is greater than <code>A</code>, and <code>aa</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>. For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query expressions. For information on specifying data types in JSON, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For example, equals, greater than, less than, etc. The following comparison operators are available: <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> For complete descriptions of all comparison operators, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>. </li> </ul></param>
+        /// <param name="scanFilter"><important> There is a newer parameter available. Use <i>FilterExpression</i> instead. Note that if you use <i>ScanFilter</i> and <i>FilterExpression</i> at the same time, DynamoDB will return a <i>ValidationException</i> exception. This parameter does not support lists or maps. </important> A condition that evaluates the scan results and returns only the desired values. If you specify more than one condition in the <i>ScanFilter</i> map, then by default all of the conditions must evaluate to true. In other words, the conditions are ANDed together. (You can use the <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do this, then at least one of the conditions must evaluate to true, rather than all of them.) Each <i>ScanFilter</i> element consists of an attribute name to compare, along with the following: <ul> <li> <i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute. The number of values in the list depends on the operator specified in <i>ComparisonOperator</i> . For type Number, value comparisons are numeric. String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>. For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query expressions. For information on specifying data types in JSON, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For example, equals, greater than, less than, etc. The following comparison operators are available: <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> For complete descriptions of all comparison operators, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>. </li> </ul></param>
         /// 
         /// <returns>The response from the Scan service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
@@ -1736,7 +1788,7 @@ namespace Amazon.DynamoDBv2
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested items.</param>
         /// <param name="attributesToGet"><important>There is a newer parameter available. Use <i>ProjectionExpression</i> instead. Note that if you use <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same time, DynamoDB will return a <i>ValidationException</i> exception. This parameter allows you to retrieve lists or maps; however, it cannot retrieve individual list or map elements.</important> The names of one or more attributes to retrieve. If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines capacity units consumed based on item size, not on the amount of data that is returned to an application.</param>
-        /// <param name="scanFilter"><important> There is a newer parameter available. Use <i>FilterExpression</i> instead. Note that if you use <i>ScanFilter</i> and <i>FilterExpression</i> at the same time, DynamoDB will return a <i>ValidationException</i> exception. This parameter does not support lists or maps. </important> A condition that evaluates the scan results and returns only the desired values. If you specify more than one condition in the <i>ScanFilter</i> map, then by default all of the conditions must evaluate to true. In other words, the conditions are ANDed together. (You can use the <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do this, then at least one of the conditions must evaluate to true, rather than all of them.) Each <i>ScanFilter</i> element consists of an attribute name to compare, along with the following: <ul> <li> <i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute. The number of values in the list depends on the operator specified in <i>ComparisonOperator</i> . For type Number, value comparisons are numeric. String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <code>a</code> is greater than <code>A</code>, and <code>aa</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>. For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query expressions. For information on specifying data types in JSON, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For example, equals, greater than, less than, etc. The following comparison operators are available: <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> For complete descriptions of all comparison operators, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>. </li> </ul></param>
+        /// <param name="scanFilter"><important> There is a newer parameter available. Use <i>FilterExpression</i> instead. Note that if you use <i>ScanFilter</i> and <i>FilterExpression</i> at the same time, DynamoDB will return a <i>ValidationException</i> exception. This parameter does not support lists or maps. </important> A condition that evaluates the scan results and returns only the desired values. If you specify more than one condition in the <i>ScanFilter</i> map, then by default all of the conditions must evaluate to true. In other words, the conditions are ANDed together. (You can use the <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do this, then at least one of the conditions must evaluate to true, rather than all of them.) Each <i>ScanFilter</i> element consists of an attribute name to compare, along with the following: <ul> <li> <i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute. The number of values in the list depends on the operator specified in <i>ComparisonOperator</i> . For type Number, value comparisons are numeric. String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>. For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query expressions. For information on specifying data types in JSON, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For example, equals, greater than, less than, etc. The following comparison operators are available: <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> For complete descriptions of all comparison operators, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>. </li> </ul></param>
         /// 
         /// <returns>The response from the Scan service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
@@ -1831,7 +1883,7 @@ namespace Amazon.DynamoDBv2
         /// </summary>
         /// <param name="tableName">The name of the table containing the item to update. </param>
         /// <param name="key">The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify both the hash attribute and the range attribute.</param>
-        /// <param name="attributeUpdates"><important> There is a newer parameter available. Use <i>UpdateExpression</i> instead. Note that if you use <i>AttributeUpdates</i> and <i>UpdateExpression</i> at the same time, DynamoDB will return a <i>ValidationException</i> exception. This parameter can be used for modifying top-level attributes; however, it does not support individual list or map elements. </important> The names of attributes to be modified, the action to perform on each, and the new value for each. If you are updating an attribute that is an index key attribute for any indexes on that table, the attribute type must match the index key type defined in the <i>AttributesDefinition</i> of the table description. You can use <i>UpdateItem</i> to update any nonkey attributes. Attribute values cannot be null. String and Binary type attributes must have lengths greater than zero. Set type attributes must not be empty. Requests with empty values will be rejected with a <i>ValidationException</i> exception. Each <i>AttributeUpdates</i> element consists of an attribute name to modify, along with the following: <ul> <li> <i>Value</i> - The new value, if applicable, for this attribute. </li> <li> <i>Action</i> - A value that specifies how to perform the update. This action is only valid for an existing attribute whose data type is Number or is a set; do not use <code>ADD</code> for other data types.  If an item with the specified primary key is found in the table, the following values perform the following actions: <ul> <li> <code>PUT</code> - Adds the specified attribute to the item. If the attribute already exists, it is replaced by the new value.  </li> <li> <code>DELETE</code> - Removes the attribute and its value, if no value is specified for <code>DELETE</code>. The data type of the specified value must match the existing value's data type. If a set of values is specified, then those values are subtracted from the old set. For example, if the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specifies <code>[a,c]</code>, then the final attribute value is <code>[b]</code>. Specifying an empty set is an error. </li> <li> <code>ADD</code> - Adds the specified value to the item, if the attribute does not already exist. If the attribute does exist, then the behavior of <code>ADD</code> depends on the data type of the attribute: <ul> <li> If the existing attribute is a number, and if <i>Value</i> is also a number, then <i>Value</i> is mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is subtracted from the existing attribute. </li> <li> If the existing data type is a set, and if <i>Value</i> is also a set, then <i>Value</i> is appended to the existing set. For example, if the attribute value is the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then the final attribute value is <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is specified for a set attribute and the attribute type specified does not match the existing set type.  Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, <i>Value</i> must also be a set of strings. </li> </ul> </li> </ul> If no item with the specified key is found in the table, the following values perform the following actions:  <ul> <li> <code>PUT</code> - Causes DynamoDB to create a new item with the specified primary key, and then adds the attribute.  </li> <li> <code>DELETE</code> - Causes nothing to happen; there is no attribute to delete. </li> <li> <code>ADD</code> - Causes DynamoDB to creat an item with the supplied primary key and number (or set of numbers) for the attribute value. The only data types allowed are Number and Number Set. </li> </ul> </li> </ul> If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</param>
+        /// <param name="attributeUpdates"><important> There is a newer parameter available. Use <i>UpdateExpression</i> instead. Note that if you use <i>AttributeUpdates</i> and <i>UpdateExpression</i> at the same time, DynamoDB will return a <i>ValidationException</i> exception. This parameter can be used for modifying top-level attributes; however, it does not support individual list or map elements. </important> The names of attributes to be modified, the action to perform on each, and the new value for each. If you are updating an attribute that is an index key attribute for any indexes on that table, the attribute type must match the index key type defined in the <i>AttributesDefinition</i> of the table description. You can use <i>UpdateItem</i> to update any nonkey attributes. Attribute values cannot be null. String and Binary type attributes must have lengths greater than zero. Set type attributes must not be empty. Requests with empty values will be rejected with a <i>ValidationException</i> exception. Each <i>AttributeUpdates</i> element consists of an attribute name to modify, along with the following: <ul> <li> <i>Value</i> - The new value, if applicable, for this attribute. </li> <li> <i>Action</i> - A value that specifies how to perform the update. This action is only valid for an existing attribute whose data type is Number or is a set; do not use <code>ADD</code> for other data types.  If an item with the specified primary key is found in the table, the following values perform the following actions: <ul> <li> <code>PUT</code> - Adds the specified attribute to the item. If the attribute already exists, it is replaced by the new value.  </li> <li> <code>DELETE</code> - Removes the attribute and its value, if no value is specified for <code>DELETE</code>. The data type of the specified value must match the existing value's data type. If a set of values is specified, then those values are subtracted from the old set. For example, if the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specifies <code>[a,c]</code>, then the final attribute value is <code>[b]</code>. Specifying an empty set is an error. </li> <li> <code>ADD</code> - Adds the specified value to the item, if the attribute does not already exist. If the attribute does exist, then the behavior of <code>ADD</code> depends on the data type of the attribute: <ul> <li> If the existing attribute is a number, and if <i>Value</i> is also a number, then <i>Value</i> is mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is subtracted from the existing attribute. <note> If you use <code>ADD</code> to increment or decrement a number value for an item that doesn't exist before the update, DynamoDB uses 0 as the initial value. Similarly, if you use <code>ADD</code> for an existing item to increment or decrement an attribute value that doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value. For example, suppose that the item you want to update doesn't have an attribute named <i>itemcount</i>, but you decide to <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the <i>itemcount</i> attribute, set its initial value to <code>0</code>, and finally add <code>3</code> to it. The result will be a new <i>itemcount</i> attribute, with a value of <code>3</code>. </note> </li> <li> If the existing data type is a set, and if <i>Value</i> is also a set, then <i>Value</i> is appended to the existing set. For example, if the attribute value is the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then the final attribute value is <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is specified for a set attribute and the attribute type specified does not match the existing set type.  Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, <i>Value</i> must also be a set of strings. </li> </ul> </li> </ul> If no item with the specified key is found in the table, the following values perform the following actions:  <ul> <li> <code>PUT</code> - Causes DynamoDB to create a new item with the specified primary key, and then adds the attribute.  </li> <li> <code>DELETE</code> - Nothing happens, because attributes cannot be deleted from a nonexistent item. The operation succeeds, but DynamoDB does not create a new item. </li> <li> <code>ADD</code> - Causes DynamoDB to create an item with the supplied primary key and number (or set of numbers) for the attribute value. The only data types allowed are Number and Number Set. </li> </ul> </li> </ul> If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</param>
         /// 
         /// <returns>The response from the UpdateItem service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
@@ -1872,7 +1924,7 @@ namespace Amazon.DynamoDBv2
         /// </summary>
         /// <param name="tableName">The name of the table containing the item to update. </param>
         /// <param name="key">The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify both the hash attribute and the range attribute.</param>
-        /// <param name="attributeUpdates"><important> There is a newer parameter available. Use <i>UpdateExpression</i> instead. Note that if you use <i>AttributeUpdates</i> and <i>UpdateExpression</i> at the same time, DynamoDB will return a <i>ValidationException</i> exception. This parameter can be used for modifying top-level attributes; however, it does not support individual list or map elements. </important> The names of attributes to be modified, the action to perform on each, and the new value for each. If you are updating an attribute that is an index key attribute for any indexes on that table, the attribute type must match the index key type defined in the <i>AttributesDefinition</i> of the table description. You can use <i>UpdateItem</i> to update any nonkey attributes. Attribute values cannot be null. String and Binary type attributes must have lengths greater than zero. Set type attributes must not be empty. Requests with empty values will be rejected with a <i>ValidationException</i> exception. Each <i>AttributeUpdates</i> element consists of an attribute name to modify, along with the following: <ul> <li> <i>Value</i> - The new value, if applicable, for this attribute. </li> <li> <i>Action</i> - A value that specifies how to perform the update. This action is only valid for an existing attribute whose data type is Number or is a set; do not use <code>ADD</code> for other data types.  If an item with the specified primary key is found in the table, the following values perform the following actions: <ul> <li> <code>PUT</code> - Adds the specified attribute to the item. If the attribute already exists, it is replaced by the new value.  </li> <li> <code>DELETE</code> - Removes the attribute and its value, if no value is specified for <code>DELETE</code>. The data type of the specified value must match the existing value's data type. If a set of values is specified, then those values are subtracted from the old set. For example, if the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specifies <code>[a,c]</code>, then the final attribute value is <code>[b]</code>. Specifying an empty set is an error. </li> <li> <code>ADD</code> - Adds the specified value to the item, if the attribute does not already exist. If the attribute does exist, then the behavior of <code>ADD</code> depends on the data type of the attribute: <ul> <li> If the existing attribute is a number, and if <i>Value</i> is also a number, then <i>Value</i> is mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is subtracted from the existing attribute. </li> <li> If the existing data type is a set, and if <i>Value</i> is also a set, then <i>Value</i> is appended to the existing set. For example, if the attribute value is the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then the final attribute value is <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is specified for a set attribute and the attribute type specified does not match the existing set type.  Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, <i>Value</i> must also be a set of strings. </li> </ul> </li> </ul> If no item with the specified key is found in the table, the following values perform the following actions:  <ul> <li> <code>PUT</code> - Causes DynamoDB to create a new item with the specified primary key, and then adds the attribute.  </li> <li> <code>DELETE</code> - Causes nothing to happen; there is no attribute to delete. </li> <li> <code>ADD</code> - Causes DynamoDB to creat an item with the supplied primary key and number (or set of numbers) for the attribute value. The only data types allowed are Number and Number Set. </li> </ul> </li> </ul> If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</param>
+        /// <param name="attributeUpdates"><important> There is a newer parameter available. Use <i>UpdateExpression</i> instead. Note that if you use <i>AttributeUpdates</i> and <i>UpdateExpression</i> at the same time, DynamoDB will return a <i>ValidationException</i> exception. This parameter can be used for modifying top-level attributes; however, it does not support individual list or map elements. </important> The names of attributes to be modified, the action to perform on each, and the new value for each. If you are updating an attribute that is an index key attribute for any indexes on that table, the attribute type must match the index key type defined in the <i>AttributesDefinition</i> of the table description. You can use <i>UpdateItem</i> to update any nonkey attributes. Attribute values cannot be null. String and Binary type attributes must have lengths greater than zero. Set type attributes must not be empty. Requests with empty values will be rejected with a <i>ValidationException</i> exception. Each <i>AttributeUpdates</i> element consists of an attribute name to modify, along with the following: <ul> <li> <i>Value</i> - The new value, if applicable, for this attribute. </li> <li> <i>Action</i> - A value that specifies how to perform the update. This action is only valid for an existing attribute whose data type is Number or is a set; do not use <code>ADD</code> for other data types.  If an item with the specified primary key is found in the table, the following values perform the following actions: <ul> <li> <code>PUT</code> - Adds the specified attribute to the item. If the attribute already exists, it is replaced by the new value.  </li> <li> <code>DELETE</code> - Removes the attribute and its value, if no value is specified for <code>DELETE</code>. The data type of the specified value must match the existing value's data type. If a set of values is specified, then those values are subtracted from the old set. For example, if the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specifies <code>[a,c]</code>, then the final attribute value is <code>[b]</code>. Specifying an empty set is an error. </li> <li> <code>ADD</code> - Adds the specified value to the item, if the attribute does not already exist. If the attribute does exist, then the behavior of <code>ADD</code> depends on the data type of the attribute: <ul> <li> If the existing attribute is a number, and if <i>Value</i> is also a number, then <i>Value</i> is mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is subtracted from the existing attribute. <note> If you use <code>ADD</code> to increment or decrement a number value for an item that doesn't exist before the update, DynamoDB uses 0 as the initial value. Similarly, if you use <code>ADD</code> for an existing item to increment or decrement an attribute value that doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value. For example, suppose that the item you want to update doesn't have an attribute named <i>itemcount</i>, but you decide to <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the <i>itemcount</i> attribute, set its initial value to <code>0</code>, and finally add <code>3</code> to it. The result will be a new <i>itemcount</i> attribute, with a value of <code>3</code>. </note> </li> <li> If the existing data type is a set, and if <i>Value</i> is also a set, then <i>Value</i> is appended to the existing set. For example, if the attribute value is the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then the final attribute value is <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is specified for a set attribute and the attribute type specified does not match the existing set type.  Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, <i>Value</i> must also be a set of strings. </li> </ul> </li> </ul> If no item with the specified key is found in the table, the following values perform the following actions:  <ul> <li> <code>PUT</code> - Causes DynamoDB to create a new item with the specified primary key, and then adds the attribute.  </li> <li> <code>DELETE</code> - Nothing happens, because attributes cannot be deleted from a nonexistent item. The operation succeeds, but DynamoDB does not create a new item. </li> <li> <code>ADD</code> - Causes DynamoDB to create an item with the supplied primary key and number (or set of numbers) for the attribute value. The only data types allowed are Number and Number Set. </li> </ul> </li> </ul> If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</param>
         /// <param name="returnValues">Use <i>ReturnValues</i> if you want to get the item attributes as they appeared either before or after they were updated. For <i>UpdateItem</i>, the valid values are: <ul> <li> <code>NONE</code> - If <i>ReturnValues</i> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <i>ReturnValues</i>.) </li> <li> <code>ALL_OLD</code> - If <i>UpdateItem</i> overwrote an attribute name-value pair, then the content of the old item is returned. </li> <li> <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned. </li> <li> <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned. </li> <li> <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned. </li> </ul></param>
         /// 
         /// <returns>The response from the UpdateItem service method, as returned by DynamoDB.</returns>
@@ -1955,29 +2007,29 @@ namespace Amazon.DynamoDBv2
         #region  UpdateTable
 
         /// <summary>
-        /// Updates the provisioned throughput for the given table. Setting the throughput for
-        /// a table helps you manage performance and is part of the provisioned throughput feature
-        /// of DynamoDB.
+        /// Updates the provisioned throughput for the given table, or manages the global secondary
+        /// indexes on the table.
         /// 
         ///  
         /// <para>
-        /// The provisioned throughput values can be upgraded or downgraded based on the maximums
-        /// and minimums listed in the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+        /// You can increase or decrease the table's provisioned throughput values within the
+        /// maximums and minimums listed in the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
         /// section in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// The table must be in the <code>ACTIVE</code> state for this operation to succeed.
-        /// <i>UpdateTable</i> is an asynchronous operation; while executing the operation, the
-        /// table is in the <code>UPDATING</code> state. While the table is in the <code>UPDATING</code>
-        /// state, the table still has the provisioned throughput from before the call. The new
-        /// provisioned throughput setting is in effect only when the table returns to the <code>ACTIVE</code>
-        /// state after the <i>UpdateTable</i> operation. 
+        /// In addition, you can use <i>UpdateTable</i> to add, modify or delete global secondary
+        /// indexes on the table. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
+        /// Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
         /// </para>
         ///  
         /// <para>
-        /// You cannot add, modify or delete indexes using <i>UpdateTable</i>. Indexes can only
-        /// be defined at table creation time.
+        /// The table must be in the <code>ACTIVE</code> state for <i>UpdateTable</i> to succeed.
+        /// <i>UpdateTable</i> is an asynchronous operation; while executing the operation, the
+        /// table is in the <code>UPDATING</code> state. While the table is in the <code>UPDATING</code>
+        /// state, the table still has the provisioned throughput from before the call. The table's
+        /// new provisioned throughput settings go into effect when the table returns to the <code>ACTIVE</code>
+        /// state; at that point, the <i>UpdateTable</i> operation is complete. 
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table to be updated.</param>
@@ -2014,29 +2066,29 @@ namespace Amazon.DynamoDBv2
         UpdateTableResponse UpdateTable(string tableName, ProvisionedThroughput provisionedThroughput);
 
         /// <summary>
-        /// Updates the provisioned throughput for the given table. Setting the throughput for
-        /// a table helps you manage performance and is part of the provisioned throughput feature
-        /// of DynamoDB.
+        /// Updates the provisioned throughput for the given table, or manages the global secondary
+        /// indexes on the table.
         /// 
         ///  
         /// <para>
-        /// The provisioned throughput values can be upgraded or downgraded based on the maximums
-        /// and minimums listed in the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+        /// You can increase or decrease the table's provisioned throughput values within the
+        /// maximums and minimums listed in the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
         /// section in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// The table must be in the <code>ACTIVE</code> state for this operation to succeed.
-        /// <i>UpdateTable</i> is an asynchronous operation; while executing the operation, the
-        /// table is in the <code>UPDATING</code> state. While the table is in the <code>UPDATING</code>
-        /// state, the table still has the provisioned throughput from before the call. The new
-        /// provisioned throughput setting is in effect only when the table returns to the <code>ACTIVE</code>
-        /// state after the <i>UpdateTable</i> operation. 
+        /// In addition, you can use <i>UpdateTable</i> to add, modify or delete global secondary
+        /// indexes on the table. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
+        /// Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
         /// </para>
         ///  
         /// <para>
-        /// You cannot add, modify or delete indexes using <i>UpdateTable</i>. Indexes can only
-        /// be defined at table creation time.
+        /// The table must be in the <code>ACTIVE</code> state for <i>UpdateTable</i> to succeed.
+        /// <i>UpdateTable</i> is an asynchronous operation; while executing the operation, the
+        /// table is in the <code>UPDATING</code> state. While the table is in the <code>UPDATING</code>
+        /// state, the table still has the provisioned throughput from before the call. The table's
+        /// new provisioned throughput settings go into effect when the table returns to the <code>ACTIVE</code>
+        /// state; at that point, the <i>UpdateTable</i> operation is complete. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTable service method.</param>

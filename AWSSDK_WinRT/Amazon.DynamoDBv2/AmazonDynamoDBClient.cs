@@ -36,7 +36,11 @@ namespace Amazon.DynamoDBv2
     /// <summary>
     /// Implementation for accessing DynamoDB
     ///
-    /// Amazon DynamoDB <b>Overview</b> 
+    /// Amazon DynamoDB 
+    /// <para>
+    ///  <b>Overview</b>
+    /// </para>
+    ///  
     /// <para>
     /// This is the Amazon DynamoDB API Reference. This guide provides descriptions and samples
     /// of the low-level DynamoDB API. For information about DynamoDB application development,
@@ -67,8 +71,6 @@ namespace Amazon.DynamoDBv2
     /// <para>
     ///  <b>Managing Tables</b> 
     /// </para>
-    ///  
-    /// <para>
     ///  <ul> <li> 
     /// <para>
     /// <i>CreateTable</i> - Creates a table with user-specified provisioned throughput settings.
@@ -98,8 +100,6 @@ namespace Amazon.DynamoDBv2
     /// <i>DeleteTable</i> - Deletes a table and all of its indexes.
     /// </para>
     ///  </li> </ul> 
-    /// </para>
-    ///  
     /// <para>
     /// For conceptual information about managing tables, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html">Working
     /// with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -108,8 +108,6 @@ namespace Amazon.DynamoDBv2
     /// <para>
     ///  <b>Reading Data</b> 
     /// </para>
-    ///  
-    /// <para>
     ///  <ul> <li> 
     /// <para>
     /// <i>GetItem</i> - Returns a set of attributes for the item that has a given primary
@@ -140,8 +138,6 @@ namespace Amazon.DynamoDBv2
     /// predictable performance.
     /// </para>
     ///  </li> </ul> 
-    /// </para>
-    ///  
     /// <para>
     /// For conceptual information about reading data, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
     /// with Items</a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
@@ -151,8 +147,6 @@ namespace Amazon.DynamoDBv2
     /// <para>
     ///  <b>Modifying Data</b> 
     /// </para>
-    ///  
-    /// <para>
     ///  <ul> <li> 
     /// <para>
     /// <i>PutItem</i> - Creates a new item, or replaces an existing item with a new item
@@ -181,8 +175,6 @@ namespace Amazon.DynamoDBv2
     /// of up to 25 items to put or delete, with a maximum total request size of 16 MB. 
     /// </para>
     ///  </li> </ul> 
-    /// </para>
-    ///  
     /// <para>
     /// For conceptual information about modifying data, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
     /// with Items</a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query

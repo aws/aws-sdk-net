@@ -202,7 +202,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ExpressionAttributeNames. 
         /// <para>
         /// One or more substitution tokens for simplifying complex expressions. The following
-        /// are some use cases for an <i>ExpressionAttributeNames</i> value:
+        /// are some use cases for using <i>ExpressionAttributeNames</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -232,7 +232,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// <code>{"n":"order.customerInfo.LastName"}</code>
+        /// <code>{"#name":"order.customerInfo.LastName"}</code>
         /// </para>
         /// </li></ul> 
         /// <para>
@@ -240,9 +240,13 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// <code>#n = "Smith" OR #n = "Jones"</code>
+        /// <code>#name = "Smith" OR #name = "Jones"</code>
         /// </para>
-        /// </li></ul>
+        /// </li></ul> 
+        /// <para>
+        /// For more information on expression attribute names, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> ExpressionAttributeNames
         {
@@ -263,30 +267,36 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <b>:</b> character in an expression to dereference an attribute value. For
-        /// example, consider the following expression:
+        /// Use the <b>:</b> (colon) character in an expression to dereference an attribute value.
+        /// For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i>
+        /// attribute was one of the following: 
         /// </para>
-        ///  <ul><li>
+        ///  
         /// <para>
-        /// <code>ProductStatus IN ("Available","Backordered","Discontinued")</code>
+        /// <code>Available | Backordered | Discontinued</code>
         /// </para>
-        /// </li></ul> 
+        ///  
         /// <para>
-        /// Now suppose that you specified the following for <i>ExpressionAttributeValues</i>:
+        /// You would first need to specify <i>ExpressionAttributeValues</i> as follows:
         /// </para>
-        ///  <ul><li>
+        ///  
         /// <para>
-        /// <code>{ "a":{"S":"Available"}, "b":{"S":"Backordered"}, "d":{"S":"Discontinued"} }</code>
+        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"}
+        /// }</code>
         /// </para>
-        /// </li></ul> 
+        ///  
         /// <para>
-        /// The expression can now be simplified as follows:
+        /// You could then use these values in an expression, such as this:
         /// </para>
-        ///  <ul><li> 
+        ///  
         /// <para>
-        /// <code>ProductStatus IN (:a,:b,:c)</code>
+        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
         /// </para>
-        /// </li></ul>
+        ///  
+        /// <para>
+        /// For more information on expression attribute values, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+        /// Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> ExpressionAttributeValues
         {
@@ -352,14 +362,19 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ProjectionExpression. 
         /// <para>
-        /// One or more attributes to retrieve from the table. These attributes can include scalars,
-        /// sets, or elements of a JSON document. The attributes in the expression must be separated
-        /// by commas.
+        /// A string that identifies one or more attributes to retrieve from the table. These
+        /// attributes can include scalars, sets, or elements of a JSON document. The attributes
+        /// in the expression must be separated by commas.
         /// </para>
         ///  
         /// <para>
         /// If no attribute names are specified, then all attributes will be returned. If any
         /// of the requested attributes are not found, they will not appear in the result.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on projection expressions, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public string ProjectionExpression
@@ -431,7 +446,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// String value comparisons for greater than, equals, or less than are based on ASCII
         /// character code values. For example, <code>a</code> is greater than <code>A</code>,
-        /// and <code>aa</code> is greater than <code>B</code>. For a list of code values, see
+        /// and <code>a</code> is greater than <code>B</code>. For a list of code values, see
         /// <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
         /// </para>
         ///  

@@ -32,7 +32,7 @@ namespace Amazon.ImportExport.Model
     /// </summary>
     public partial class GetStatusResult : AmazonWebServiceResponse
     {
-        private string _awsShippingAddress;
+        private List<Artifact> _artifactList = new List<Artifact>();
         private string _carrier;
         private DateTime? _creationDate;
         private string _currentManifest;
@@ -50,18 +50,18 @@ namespace Amazon.ImportExport.Model
         private string _trackingNumber;
 
         /// <summary>
-        /// Gets and sets the property AwsShippingAddress.
+        /// Gets and sets the property ArtifactList.
         /// </summary>
-        public string AwsShippingAddress
+        public List<Artifact> ArtifactList
         {
-            get { return this._awsShippingAddress; }
-            set { this._awsShippingAddress = value; }
+            get { return this._artifactList; }
+            set { this._artifactList = value; }
         }
 
-        // Check to see if AwsShippingAddress property is set
-        internal bool IsSetAwsShippingAddress()
+        // Check to see if ArtifactList property is set
+        internal bool IsSetArtifactList()
         {
-            return this._awsShippingAddress != null;
+            return this._artifactList != null && this._artifactList.Count > 0; 
         }
 
         /// <summary>
