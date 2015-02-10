@@ -118,7 +118,7 @@ namespace Amazon.Runtime
         /// <returns></returns>
         public abstract ImmutableCredentials GetCredentials();
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE
+#if AWS_ASYNC_API
         public virtual System.Threading.Tasks.Task<ImmutableCredentials> GetCredentialsAsync()
         {
             return System.Threading.Tasks.Task.Run<ImmutableCredentials>(() => this.GetCredentials());
@@ -671,7 +671,7 @@ namespace Amazon.Runtime
             }
         }
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE
+#if AWS_ASYNC_API
         public async override System.Threading.Tasks.Task<ImmutableCredentials> GetCredentialsAsync()
         {
             // If credentials are expired, update
@@ -699,7 +699,10 @@ namespace Amazon.Runtime
             // Check if the new credentials are already expired
             if (ShouldUpdate)
             {
-                throw new AmazonClientException("The retrieved credentials have already expired");
+                var errorMessage = string.Format(CultureInfo.InvariantCulture,
+                    "The retrieved credentials have already expired: Now = {0}, Credentials expiration = {1}",
+                    DateTime.Now, state.Expiration);
+                throw new AmazonClientException(errorMessage);
             }
 
             // Offset the Expiration by PreemptExpiryTime
@@ -722,11 +725,16 @@ namespace Amazon.Runtime
         {
             get
             {
-                return
-                    (                                                   // should update if:
-                        _currentState == null ||                        //  credentials have not been loaded yet
-                        DateTime.Now >= this._currentState.Expiration   //  past the expiration time
-                    );
+                // should update if:
+
+                //  credentials have not been loaded yet
+                if (_currentState == null)
+                    return true;
+
+                //  it's past the expiration time
+                var now = DateTime.UtcNow;
+                var exp = _currentState.Expiration.ToUniversalTime();
+                return (now > exp);
             }
         }
 
@@ -741,7 +749,7 @@ namespace Amazon.Runtime
             throw new NotImplementedException();
         }
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE
+#if AWS_ASYNC_API
         /// <summary>
         /// When overridden in a derived class, generates new credentials and new expiration date.
         /// 
@@ -904,7 +912,7 @@ namespace Amazon.Runtime
             // New expiry time = Now + _refreshAttemptPeriod + PreemptExpiryTime
             var newExpiryTime = DateTime.Now + _refreshAttemptPeriod + PreemptExpiryTime;
             // Use this only if the time is earlier than the default expiration time
-            if (newExpiryTime > state.Expiration)
+            if (newExpiryTime.ToUniversalTime() > state.Expiration.ToUniversalTime())
                 newExpiryTime = state.Expiration;
 
             return new CredentialsRefreshState

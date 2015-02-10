@@ -81,7 +81,7 @@ namespace Amazon
     /// member. Use the factory instance to create clients for all the Web Services needed by
     /// the application.</para>
     /// </summary>
-
+    [Obsolete("This class is obsolete and will be removed in a future update. Please use the client constructors for the corresponding service instead. http://blogs.aws.amazon.com/net/post/Tx2JT7AYCL2F6CB/")]
     public static class AWSClientFactory
     {
 <#

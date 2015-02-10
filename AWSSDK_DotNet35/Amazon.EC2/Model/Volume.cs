@@ -123,7 +123,7 @@ namespace Amazon.EC2.Model
         /// of the volume and the rate at which the volume accumulates I/O credits for bursting.
         /// For more information on General Purpose (SSD) baseline performance, I/O credits, and
         /// bursting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-        /// EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
         /// </para>
         ///  
         /// <para>

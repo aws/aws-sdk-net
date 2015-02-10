@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a Spot Instance request.
+    /// Describes the status of a Spot Instance request.
     /// </summary>
     public partial class SpotInstanceStatus
     {
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The status code of the request.
+        /// The status code.
         /// </para>
         /// </summary>
         public string Code
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The description for the status code for the Spot request.
+        /// The description for the status code.
         /// </para>
         /// </summary>
         public string Message

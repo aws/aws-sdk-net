@@ -593,7 +593,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property SshKeyName. 
         /// <para>
-        /// The instance SSH key name.
+        /// The instance's Amazon EC2 key pair name.
         /// </para>
         /// </summary>
         public string SshKeyName

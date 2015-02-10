@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
-    /// AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
     /// </para>
     /// </summary>
     public partial class CopyImageRequest : AmazonEC2Request
@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-        /// to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
         /// </para>
         /// </summary>
         public string ClientToken

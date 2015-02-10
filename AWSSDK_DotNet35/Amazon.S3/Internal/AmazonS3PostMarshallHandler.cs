@@ -29,9 +29,52 @@ using System.Globalization;
 
 namespace Amazon.S3.Internal
 {
-    public class AmazonS3PostMarshallHandler : GenericHandler
+    public class AmazonS3PostMarshallHandler : PipelineHandler
     {
-        protected override void PreInvoke(IExecutionContext executionContext)
+        /// <summary>
+        /// Calls pre invoke logic before calling the next handler 
+        /// in the pipeline.
+        /// </summary>
+        /// <param name="executionContext">The execution context which contains both the
+        /// requests and response context.</param>
+        public override void InvokeSync(IExecutionContext executionContext)
+        {
+            PreInvoke(executionContext);
+            base.InvokeSync(executionContext);
+        }
+#if AWS_ASYNC_API
+
+        /// <summary>
+        /// Calls pre invoke logic before calling the next handler 
+        /// in the pipeline.
+        /// </summary>
+        /// <typeparam name="T">The response type for the current request.</typeparam>
+        /// <param name="executionContext">The execution context, it contains the
+        /// request and response context.</param>
+        /// <returns>A task that represents the asynchronous operation.</returns>
+        public override System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
+        {
+            PreInvoke(executionContext);
+            return base.InvokeAsync<T>(executionContext);                        
+        }
+
+#elif AWS_APM_API
+
+        /// <summary>
+        /// Calls pre invoke logic before calling the next handler 
+        /// in the pipeline.
+        /// </summary>
+        /// <param name="executionContext">The execution context which contains both the
+        /// requests and response context.</param>
+        /// <returns>IAsyncResult which represent an async operation.</returns>
+        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
+        {
+            PreInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
+            return base.InvokeAsync(executionContext);
+        }
+#endif
+
+        protected void PreInvoke(IExecutionContext executionContext)
         {
             ProcessRequestHandlers(executionContext);
         }
@@ -95,8 +138,22 @@ namespace Amazon.S3.Internal
 
         private static void ValidateHttpsOnlyHeaders(IRequest request)
         {
+            ValidateSseKeyHeaders(request);
+            ValidateSseHeaderValue(request);
+        }
+        private static void ValidateSseHeaderValue(IRequest request)
+        {
+            string sseHeaderValue;
+            if (request.Headers.TryGetValue(HeaderKeys.XAmzServerSideEncryptionHeader, out sseHeaderValue) &&
+                string.Equals(sseHeaderValue, ServerSideEncryptionMethod.AWSKMS))
+            {
+                throw new AmazonClientException("Request specifying Server Side Encryption with AWS KMS managed keys can only be transmitted over HTTPS");
+            }
+        }
+        private static void ValidateSseKeyHeaders(IRequest request)
+        {
             var foundHttpsOnlyHeaders = request.Headers
-                .Where(kvp => !string.IsNullOrEmpty(kvp.Value) && httpsOnlyHeaders.Contains(kvp.Key))
+                .Where(kvp => !string.IsNullOrEmpty(kvp.Value) && sseKeyHeaders.Contains(kvp.Key))
                 .Select(kvp => kvp.Key)
                 .ToArray();
             if (foundHttpsOnlyHeaders.Length > 0)
@@ -108,7 +165,7 @@ namespace Amazon.S3.Internal
             }
         }
 
-        private static HashSet<string> httpsOnlyHeaders = new HashSet<string>
+        private static HashSet<string> sseKeyHeaders = new HashSet<string>
         {
             HeaderKeys.XAmzSSECustomerKeyHeader,
             HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader

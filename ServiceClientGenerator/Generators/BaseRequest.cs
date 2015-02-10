@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\BaseRequest.tt"
+    #line 1 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseRequest.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class BaseRequest : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators
         public override string TransformText()
         {
             
-            #line 6 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\BaseRequest.tt"
+            #line 6 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseRequest.tt"
 
 	AddLicenseHeader();
 
@@ -38,21 +38,21 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("\r\nusing Amazon.Runtime;\r\n\r\nnamespace ");
             
-            #line 12 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\BaseRequest.tt"
+            #line 12 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseRequest.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    /// <summary>\r\n    /// Base class for ");
             
-            #line 15 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\BaseRequest.tt"
+            #line 15 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseRequest.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write(" operation requests.\r\n    /// </summary>\r\n    public partial class Amazon");
             
-            #line 17 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\BaseRequest.tt"
+            #line 17 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseRequest.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default

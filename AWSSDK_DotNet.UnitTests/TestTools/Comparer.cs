@@ -15,8 +15,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AWSSDK_DotNet35.UnitTests.TestTools
 {
     public class Comparer
-    {      
-
+    {
         //static long ConvertToLong(int input)
         //{
         //    return (long)input;
@@ -27,6 +26,13 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         //    var output = new MemoryStream(Convert.FromBase64String(input));
         //    return output;
         //}
+
+        public static HashSet<string> propertiesToIgnore = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        {
+            "Amazon.DynamoDBv2.Model.AttributeValue.IsBOOLSet",
+            "Amazon.DynamoDBv2.Model.AttributeValue.IsLSet",
+            "Amazon.DynamoDBv2.Model.AttributeValue.IsMSet",
+        };
 
         public static void CompareObjectToJson<T>(T obj, string json)
         {
@@ -113,6 +119,10 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
             foreach (var propInfo in type.GetProperties())
             {
+                var fullName = propInfo.DeclaringType.FullName + "." + propInfo.Name;
+                if (propertiesToIgnore.Contains(fullName))
+                    continue;
+
                 var propType = propInfo.PropertyType;
                 var a = propInfo.GetValue(x);
                 var b = propInfo.GetValue(y);

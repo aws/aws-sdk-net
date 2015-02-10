@@ -30,11 +30,11 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeSpotInstanceRequests operation.
     /// Describes the Spot Instance requests that belong to your account. Spot Instances are
-    /// instances that Amazon EC2 starts on your behalf when the maximum price that you specify
-    /// exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based
-    /// on available Spot Instance capacity and current Spot Instance requests. For more information
-    /// about Spot Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">Spot
-    /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// instances that Amazon EC2 launches when the bid price that you specify exceeds the
+    /// current Spot Price. Amazon EC2 periodically sets the Spot Price based on available
+    /// Spot Instance capacity and current Spot Instance requests. For more information, see
+    /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+    /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
     /// 
     ///  
     /// <para>
@@ -193,9 +193,9 @@ namespace Amazon.EC2.Model
         /// <para>
         /// <code>state</code> - The state of the Spot Instance request (<code>open</code> | <code>active</code>
         /// | <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot bid status
-        /// information can help you track your Amazon EC2 Spot Instance requests. For information,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
-        /// Spot Requests with Bid Status Codes</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// information can help you track your Amazon EC2 Spot Instance requests. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+        /// Bid Status</a> in the Amazon Elastic Compute Cloud User Guide for Linux.
         /// </para>
         ///  </li> <li> 
         /// <para>

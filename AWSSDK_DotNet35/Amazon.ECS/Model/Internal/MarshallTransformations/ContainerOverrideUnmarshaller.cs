@@ -29,6 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -36,45 +38,37 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ContainerOverrideUnmarshaller : IUnmarshaller<ContainerOverride, XmlUnmarshallerContext>, IUnmarshaller<ContainerOverride, JsonUnmarshallerContext>
     {
-        public ContainerOverride Unmarshall(XmlUnmarshallerContext context)
+        ContainerOverride IUnmarshaller<ContainerOverride, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            ContainerOverride unmarshalledObject = new ContainerOverride();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("command/member", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Command.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("name", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
-            }
-
-            return unmarshalledObject;
+            throw new NotImplementedException();
         }
 
         public ContainerOverride Unmarshall(JsonUnmarshallerContext context)
         {
-            return null;
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ContainerOverride unmarshalledObject = new ContainerOverride();
+        
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("command", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Command = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
+          
+            return unmarshalledObject;
         }
 
 

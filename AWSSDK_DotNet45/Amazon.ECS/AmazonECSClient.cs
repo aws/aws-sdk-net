@@ -378,8 +378,13 @@ namespace Amazon.ECS
         #region  DeregisterTaskDefinition
 
         /// <summary>
+        /// NOT YET IMPLEMENTED.
+        /// 
+        ///  
+        /// <para>
         /// Deregisters the specified task definition. You will no longer be able to run tasks
         /// from this definition after deregistration.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterTaskDefinition service method.</param>
         /// 

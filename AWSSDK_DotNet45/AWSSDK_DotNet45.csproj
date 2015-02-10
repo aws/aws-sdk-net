@@ -17,7 +17,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;BCL;BCL45;CODE_ANALYSIS</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\AWSSDK.XML</DocumentationFile>
@@ -30,7 +30,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;BCL;BCL45;CODE_ANALYSIS</DefineConstants>
+    <DefineConstants>TRACE;BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\AWSSDK.XML</DocumentationFile>
@@ -95,12 +95,6 @@
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\ErrorCallbackHandler.cs">
       <Link>Amazon.Runtime\Pipeline\Handlers\ErrorCallbackHandler.cs</Link>
-    </Compile>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\GenericExceptionHandler.cs">
-      <Link>Amazon.Runtime\Pipeline\Handlers\GenericExceptionHandler.cs</Link>
-    </Compile>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\GenericHandler.cs">
-      <Link>Amazon.Runtime\Pipeline\Handlers\GenericHandler.cs</Link>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\Marshaller.cs">
       <Link>Amazon.Runtime\Pipeline\Handlers\Marshaller.cs</Link>

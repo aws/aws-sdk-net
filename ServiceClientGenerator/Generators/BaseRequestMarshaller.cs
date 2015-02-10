@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\BaseRequestMarshaller.tt"
+    #line 1 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseRequestMarshaller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class BaseRequestMarshaller : BaseMarshaller
     {
@@ -32,7 +32,7 @@ namespace ServiceClientGenerator.Generators
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 7 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\BaseRequestMarshaller.tt"
+        #line 7 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseRequestMarshaller.tt"
 
     // The operation the marshaller will be used on
 	public Operation Operation { get; set; }	

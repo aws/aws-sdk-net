@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+    #line 1 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class StructureGenerator : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators
         public override string TransformText()
         {
             
-            #line 6 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 6 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
 
 	AddLicenseHeader();
 
@@ -40,14 +40,14 @@ namespace ServiceClientGenerator.Generators
                     "\r\nusing System.Text;\r\nusing System.IO;\r\n\r\nusing Amazon.Runtime;\r\nusing Amazon.Ru" +
                     "ntime.Internal;\r\n\r\nnamespace ");
             
-            #line 18 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 18 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model\r\n{\r\n");
             
-            #line 20 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 20 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
 
 	if(this.StructureType == StructureType.Request)
 		this.FormatOperationRequestDocumentation(this.Operation);
@@ -61,20 +61,20 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("\tpublic partial class ");
             
-            #line 28 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 28 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.ClassName));
             
             #line default
             #line hidden
             
-            #line 28 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 28 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.BaseClassString));
             
             #line default
             #line hidden
             this.Write("\r\n\t{\r\n");
             
-            #line 30 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 30 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
 
         if(this.Structure != null)
         {
@@ -86,14 +86,14 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("        private ");
             
-            #line 36 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 36 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write(" _response;\r\n");
             
-            #line 37 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 37 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
 
             }
             else
@@ -108,33 +108,33 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("        private ");
             
-            #line 46 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 46 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
             
             #line default
             #line hidden
             
-            #line 46 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 46 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.IsNullable ? "?" : ""));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 46 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 46 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             
-            #line 46 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 46 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.ShouldInstantiate ? string.Format(" = new {0}();", member.DetermineType()) : ";"));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 47 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 47 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
 
                 }
             }
@@ -145,7 +145,7 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("\r\n");
             
-            #line 53 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 53 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
 
         if(this.Structure != null)
         {
@@ -157,14 +157,14 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("        public ");
             
-            #line 59 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 59 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 59 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 59 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -172,7 +172,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("\r\n        {\r\n            get { return this._response; }\r\n            set { this._" +
                     "response = value; }\r\n        }\r\n");
             
-            #line 64 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 64 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
 
             }
             else
@@ -187,41 +187,41 @@ namespace ServiceClientGenerator.Generators
             #line default
             #line hidden
             
-            #line 74 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 74 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
  this.FormatPropertyDocumentation(member); 
             
             #line default
             #line hidden
             this.Write("        ");
             
-            #line 75 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 75 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.AccessModifier));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 75 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 75 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
             
             #line default
             #line hidden
             
-            #line 75 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 75 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.UseNullable ? "?" : ""));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 75 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 75 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write("\r\n        {\r\n");
             
-            #line 77 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 77 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
 
                     if(member.IsNullable && !member.UseNullable)
                     {
@@ -231,14 +231,14 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("            get { return this.");
             
-            #line 81 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 81 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             this.Write(".GetValueOrDefault(); }\r\n");
             
-            #line 82 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 82 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
 
                     }
                     else
@@ -249,14 +249,14 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("            get { return this.");
             
-            #line 87 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 87 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             this.Write("; }\r\n");
             
-            #line 88 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 88 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
 
                     }
 
@@ -265,30 +265,107 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("            set { this.");
             
-            #line 91 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 91 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
-            this.Write(" = value; }\r\n        }\r\n\r\n        // Check to see if ");
+            this.Write(" = value; }\r\n        }\r\n\r\n");
             
-            #line 94 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 94 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+
+                    if (member.EmitIsSetProperties)
+                    {
+
+            
+            #line default
+            #line hidden
+            this.Write("        /// <summary>\r\n        /// This property is set to true if the property <" +
+                    "seealso cref=\"");
+            
+            #line 99 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+            
+            #line default
+            #line hidden
+            this.Write(@"""/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool Is");
+            
+            #line 108 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+            
+            #line default
+            #line hidden
+            this.Write("Set\r\n        {\r\n            get\r\n            {\r\n                return Amazon.Uti" +
+                    "l.AWSSDKUtils.GetIsSet(this.");
+            
+            #line 112 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
+            
+            #line default
+            #line hidden
+            this.Write(");\r\n            }\r\n            set\r\n            {\r\n                Amazon.Util.AW" +
+                    "SSDKUtils.SetIsSet(value, ref this.");
+            
+            #line 116 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
+            
+            #line default
+            #line hidden
+            this.Write(");\r\n            }\r\n        }\r\n\r\n");
+            
+            #line 120 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+
+                    }
+
+            
+            #line default
+            #line hidden
+            this.Write("        // Check to see if ");
+            
+            #line 123 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" property is set\r\n        internal bool IsSet");
             
-            #line 95 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 124 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write("()\r\n        {\r\n");
             
-            #line 97 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 126 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
 
-                    if(member.IsNullable)
+                    if (member.EmitIsSetProperties)
+                    {
+
+            
+            #line default
+            #line hidden
+            this.Write("            return this.Is");
+            
+            #line 130 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+            
+            #line default
+            #line hidden
+            this.Write("Set; \r\n");
+            
+            #line 131 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+
+                    }
+                    else if (member.IsNullable)
                     {
 
             
@@ -296,17 +373,17 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("            return this.");
             
-            #line 101 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 136 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             this.Write(".HasValue; \r\n");
             
-            #line 102 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 137 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
 
                     }
-                    else if(member.IsMap || member.IsList)
+                    else if (member.IsMap || member.IsList)
                     {
 
             
@@ -314,21 +391,21 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("            return this.");
             
-            #line 107 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 142 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             this.Write(" != null && this.");
             
-            #line 107 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 142 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             this.Write(".Count > 0; \r\n");
             
-            #line 108 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 143 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
 
                     }
                     else
@@ -339,14 +416,14 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("            return this.");
             
-            #line 113 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 148 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             this.Write(" != null;\r\n");
             
-            #line 114 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 149 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
 
                     }
 
@@ -355,7 +432,7 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("        }\r\n\r\n");
             
-            #line 119 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+            #line 154 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
 
                 }
             }
@@ -368,7 +445,7 @@ namespace ServiceClientGenerator.Generators
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 128 "C:\codebase\GitBranches\sdk.runtime\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
+        #line 163 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\StructureGenerator.tt"
 
     // Set to true when the service model specifies a shape that should be wrapped in a response. ElastiCache CreateCacheCluster is an example of this.
     public bool IsWrapped { get; set; }

@@ -16,6 +16,7 @@
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using System;
 using System.IO;
 
 namespace Amazon.Runtime.Internal
@@ -23,7 +24,7 @@ namespace Amazon.Runtime.Internal
     /// <summary>
     /// This handler retrieved the AWS credentials to be used for the current call.
     /// </summary>
-    public class CredentialsRetriever : GenericHandler
+    public class CredentialsRetriever : PipelineHandler
     {
         /// <summary>
         /// The constructor for CredentialsRetriever.
@@ -45,7 +46,7 @@ namespace Amazon.Runtime.Internal
         /// invoking the next handler.
         /// </summary>
         /// <param name="executionContext"></param>
-        protected override void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             ImmutableCredentials ic = null;
             if (Credentials != null && !(Credentials is AnonymousAWSCredentials))
@@ -59,7 +60,28 @@ namespace Amazon.Runtime.Internal
             executionContext.RequestContext.ImmutableCredentials = ic;
         }
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE 
+        /// <summary>
+        /// Calls pre invoke logic before calling the next handler 
+        /// in the pipeline.
+        /// </summary>
+        /// <param name="executionContext">The execution context which contains both the
+        /// requests and response context.</param>
+        public override void InvokeSync(IExecutionContext executionContext)
+        {
+            PreInvoke(executionContext);
+            base.InvokeSync(executionContext);
+        }
+
+#if AWS_ASYNC_API 
+
+        /// <summary>
+        /// Calls pre invoke logic before calling the next handler 
+        /// in the pipeline.
+        /// </summary>
+        /// <typeparam name="T">The response type for the current request.</typeparam>
+        /// <param name="executionContext">The execution context, it contains the
+        /// request and response context.</param>
+        /// <returns>A task that represents the asynchronous operation.</returns>
         public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             ImmutableCredentials ic = null;
@@ -75,6 +97,22 @@ namespace Amazon.Runtime.Internal
 
             return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
         }
+
+#elif AWS_APM_API
+
+        /// <summary>
+        /// Calls pre invoke logic before calling the next handler 
+        /// in the pipeline.
+        /// </summary>
+        /// <param name="executionContext">The execution context which contains both the
+        /// requests and response context.</param>
+        /// <returns>IAsyncResult which represent an async operation.</returns>
+        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
+        {
+            PreInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
+            return base.InvokeAsync(executionContext);
+        }
 #endif
+
     }
 }

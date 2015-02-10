@@ -25,9 +25,48 @@ using Amazon.S3.Model;
 
 namespace Amazon.S3.Internal
 {
-    public class AmazonS3ExceptionHandler : GenericExceptionHandler
+    public class AmazonS3ExceptionHandler : PipelineHandler
     {
-        protected override void HandleException(IExecutionContext executionContext, Exception exception)
+        public override void InvokeSync(IExecutionContext executionContext)
+        {
+            try
+            {
+                base.InvokeSync(executionContext);
+            }
+            catch (Exception exception)
+            {
+                HandleException(executionContext, exception);
+                throw;
+            }
+        }
+
+#if AWS_ASYNC_API
+        public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
+        {
+            try
+            {
+                return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
+            }
+            catch(Exception exception)
+            {
+                HandleException(executionContext, exception);
+                throw;
+            }
+        }
+#elif AWS_APM_API
+        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
+        {
+            var exception = executionContext.ResponseContext.AsyncResult.Exception;
+            if (executionContext.ResponseContext.AsyncResult.Exception != null)
+            {
+                HandleException(ExecutionContext.CreateFromAsyncContext(executionContext), exception);
+            }
+            // Call outer handler
+            base.InvokeAsyncCallback(executionContext);
+        }
+#endif
+
+        protected void HandleException(IExecutionContext executionContext, Exception exception)
         {
 
             var putObjectRequest = executionContext.RequestContext.OriginalRequest as PutObjectRequest;

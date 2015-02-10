@@ -19,8 +19,9 @@ using System.IO;
 using System.Linq;
 
 using Amazon.DynamoDBv2.Model;
-using Amazon.Util;
+using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -276,6 +277,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public Dictionary<string, AttributeValue> ToAttributeMap(DynamoDBEntryConversion conversion)
         {
             if (conversion == null) throw new ArgumentNullException("conversion");
+
             Dictionary<string, AttributeValue> ret = new Dictionary<string, AttributeValue>();
 
             foreach (var attribute in currentValues)
@@ -686,7 +688,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 }
             }
 
-            return new AttributeValue { M = map };
+            var attributeValue = new AttributeValue();
+            attributeValue.M = map;
+            attributeValue.IsMSet = true;
+
+            return attributeValue;
         }
 
         public override object Clone()

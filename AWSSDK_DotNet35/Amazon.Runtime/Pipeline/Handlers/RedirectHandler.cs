@@ -41,7 +41,7 @@ namespace Amazon.Runtime.Internal
             } while (HandleRedirect(executionContext));
         }
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE 
+#if AWS_ASYNC_API 
 
         /// <summary>
         /// Processes HTTP redirects and reissues the call to the
@@ -61,7 +61,7 @@ namespace Amazon.Runtime.Internal
             return result;
         }
 
-#elif BCL && !BCL45
+#elif AWS_APM_API
 
         /// <summary>
         /// Processes HTTP redirects and reissues the call to the

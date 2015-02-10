@@ -105,7 +105,7 @@ namespace Amazon.Runtime.Internal.Transform
             
             return _response.GetResponseStream();
         }
-#if BCL45 || WIN_RT || WINDOWS_PHONE 
+#if AWS_ASYNC_API 
         public System.Threading.Tasks.Task<Stream> OpenResponseAsync()
         {            
             throw new NotSupportedException();

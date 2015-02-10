@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -39,30 +41,49 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((DescribeTasksRequest)input);
         }
-    
+
         public IRequest Marshall(DescribeTasksRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECS");
-            request.Parameters.Add("Action", "DescribeTasks");
-            request.Parameters.Add("Version", "2014-11-13");
+            string target = "AmazonEC2ContainerServiceV20141113.DescribeTasks";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            string uriResourcePath = "/";
+            request.ResourcePath = uriResourcePath;
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetCluster())
                 {
-                    request.Parameters.Add("cluster", StringUtils.FromString(publicRequest.Cluster));
+                    context.Writer.WritePropertyName("cluster");
+                    context.Writer.Write(publicRequest.Cluster);
                 }
+
                 if(publicRequest.IsSetTasks())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Tasks)
+                    context.Writer.WritePropertyName("tasks");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTasksListValue in publicRequest.Tasks)
                     {
-                        request.Parameters.Add("tasks" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                            context.Writer.Write(publicRequestTasksListValue);
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
+
+
     }
 }

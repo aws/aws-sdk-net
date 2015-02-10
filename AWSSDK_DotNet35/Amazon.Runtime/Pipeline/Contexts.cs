@@ -37,7 +37,7 @@ namespace Amazon.Runtime
         bool IsAsync { get; }
         int Retries { get; set; }
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE
+#if AWS_ASYNC_API
         System.Threading.CancellationToken CancellationToken { get; }
 #endif
     }
@@ -98,7 +98,7 @@ namespace Amazon.Runtime.Internal
         public ImmutableCredentials ImmutableCredentials { get; set; }
 
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE
+#if AWS_ASYNC_API
         public System.Threading.CancellationToken CancellationToken { get; set; }
 #endif
 

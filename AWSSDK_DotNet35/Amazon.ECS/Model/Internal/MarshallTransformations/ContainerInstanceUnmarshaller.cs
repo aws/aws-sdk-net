@@ -29,6 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -36,70 +38,61 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ContainerInstanceUnmarshaller : IUnmarshaller<ContainerInstance, XmlUnmarshallerContext>, IUnmarshaller<ContainerInstance, JsonUnmarshallerContext>
     {
-        public ContainerInstance Unmarshall(XmlUnmarshallerContext context)
+        ContainerInstance IUnmarshaller<ContainerInstance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            ContainerInstance unmarshalledObject = new ContainerInstance();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("agentConnected", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.AgentConnected = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("containerInstanceArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ContainerInstanceArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ec2InstanceId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Ec2InstanceId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("registeredResources/member", targetDepth))
-                    {
-                        var unmarshaller = ResourceUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.RegisteredResources.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("remainingResources/member", targetDepth))
-                    {
-                        var unmarshaller = ResourceUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.RemainingResources.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("status", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
-            }
-
-            return unmarshalledObject;
+            throw new NotImplementedException();
         }
 
         public ContainerInstance Unmarshall(JsonUnmarshallerContext context)
         {
-            return null;
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ContainerInstance unmarshalledObject = new ContainerInstance();
+        
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("agentConnected", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AgentConnected = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("containerInstanceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContainerInstanceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ec2InstanceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Ec2InstanceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("registeredResources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Resource, ResourceUnmarshaller>(ResourceUnmarshaller.Instance);
+                    unmarshalledObject.RegisteredResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("remainingResources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Resource, ResourceUnmarshaller>(ResourceUnmarshaller.Instance);
+                    unmarshalledObject.RemainingResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
+          
+            return unmarshalledObject;
         }
 
 

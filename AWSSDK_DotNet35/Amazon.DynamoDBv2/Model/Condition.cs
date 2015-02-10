@@ -82,7 +82,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares
-        /// binary values, for example when evaluating query expressions.
+        /// binary values.
         /// </para>
         /// </summary>
         public List<AttributeValue> AttributeValueList
@@ -125,7 +125,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, Binary, String Set, Number Set, or Binary Set. If an item contains
-        /// an <i>AttributeValue</i> element of a different type than the one specified in the
+        /// an <i>AttributeValue</i> element of a different type than the one provided in the
         /// request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
         /// <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6",
         /// "2", "1"]}</code>.
@@ -139,7 +139,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
         /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i>
-        /// of a different type than the one specified in the request, the value does not match.
+        /// of a different type than the one provided in the request, the value does not match.
         /// For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
         /// does not equal <code>{"NS":["6", "2", "1"]}</code>.
         /// </para>
@@ -151,8 +151,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
-        /// element of a different type than the one specified in the request, the value does
-        /// not match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+        /// element of a different type than the one provided in the request, the value does not
+        /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
         /// Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
         /// </para>
         ///  <p/> </li> <li> 
@@ -163,7 +163,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
         /// Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i> element
-        /// of a different type than the one specified in the request, the value does not match.
+        /// of a different type than the one provided in the request, the value does not match.
         /// For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
         /// does not compare to <code>{"NS":["6", "2", "1"]}</code>.
         /// </para>
@@ -175,8 +175,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
-        /// element of a different type than the one specified in the request, the value does
-        /// not match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+        /// element of a different type than the one provided in the request, the value does not
+        /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
         /// Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
         /// </para>
         ///  <p/> </li> <li> 
@@ -187,8 +187,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
-        /// element of a different type than the one specified in the request, the value does
-        /// not match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+        /// element of a different type than the one provided in the request, the value does not
+        /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
         /// Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
         /// </para>
         ///  <p/> </li> <li> 
@@ -288,7 +288,7 @@ namespace Amazon.DynamoDBv2.Model
         /// type, either String, Number, or Binary (not a set type). A target attribute matches
         /// if the target value is greater than, or equal to, the first element and less than,
         /// or equal to, the second element. If an item contains an <i>AttributeValue</i> element
-        /// of a different type than the one specified in the request, the value does not match.
+        /// of a different type than the one provided in the request, the value does not match.
         /// For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
         /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
         /// </para>

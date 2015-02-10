@@ -87,7 +87,7 @@ namespace Amazon.Runtime.Internal
             return (T)executionContext.ResponseContext.Response;
         }
 
-#elif BCL && !BCL45
+#elif AWS_APM_API
 
         /// <summary>
         /// Unmarshalls the response returned by the HttpHandler.

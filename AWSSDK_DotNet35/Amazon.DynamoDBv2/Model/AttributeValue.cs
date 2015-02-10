@@ -104,10 +104,32 @@ namespace Amazon.DynamoDBv2.Model
             set { this._bool = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="BOOL"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsBOOLSet
+        {
+            get
+            {
+                return Amazon.Util.AWSSDKUtils.GetIsSet(this._bool);
+            }
+            set
+            {
+                Amazon.Util.AWSSDKUtils.SetIsSet(value, ref this._bool);
+            }
+        }
+
         // Check to see if BOOL property is set
         internal bool IsSetBOOL()
         {
-            return this._bool.HasValue; 
+            return this.IsBOOLSet; 
         }
 
         /// <summary>
@@ -140,10 +162,32 @@ namespace Amazon.DynamoDBv2.Model
             set { this._l = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="L"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsLSet
+        {
+            get
+            {
+                return Amazon.Util.AWSSDKUtils.GetIsSet(this._l);
+            }
+            set
+            {
+                Amazon.Util.AWSSDKUtils.SetIsSet(value, ref this._l);
+            }
+        }
+
         // Check to see if L property is set
         internal bool IsSetL()
         {
-            return this._l != null && this._l.Count > 0; 
+            return this.IsLSet; 
         }
 
         /// <summary>
@@ -158,10 +202,32 @@ namespace Amazon.DynamoDBv2.Model
             set { this._m = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="M"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsMSet
+        {
+            get
+            {
+                return Amazon.Util.AWSSDKUtils.GetIsSet(this._m);
+            }
+            set
+            {
+                Amazon.Util.AWSSDKUtils.SetIsSet(value, ref this._m);
+            }
+        }
+
         // Check to see if M property is set
         internal bool IsSetM()
         {
-            return this._m != null && this._m.Count > 0; 
+            return this.IsMSet; 
         }
 
         /// <summary>

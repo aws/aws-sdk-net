@@ -705,7 +705,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 ConditionalOperator = currentConfig.ConditionalOperator,
                 AttributesToGet = currentConfig.AttributesToGet,
                 Select = currentConfig.Select,
-                CollectResults = currentConfig.CollectResults
+                CollectResults = currentConfig.CollectResults,
+                IndexName = currentConfig.IndexName
             };
 
             if (currentConfig.TotalSegments != 0)

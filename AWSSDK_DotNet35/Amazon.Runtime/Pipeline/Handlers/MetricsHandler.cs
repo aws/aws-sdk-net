@@ -46,7 +46,7 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE 
+#if AWS_ASYNC_API 
 
         /// <summary>
         /// Captures the overall execution time and logs final metrics.
@@ -72,7 +72,7 @@ namespace Amazon.Runtime.Internal
             }            
         }
 
-#elif BCL && !BCL45
+#elif AWS_APM_API
 
         /// <summary>
         /// Captures the overall execution time.

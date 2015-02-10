@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -39,58 +41,66 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((StartTaskRequest)input);
         }
-    
+
         public IRequest Marshall(StartTaskRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECS");
-            request.Parameters.Add("Action", "StartTask");
-            request.Parameters.Add("Version", "2014-11-13");
+            string target = "AmazonEC2ContainerServiceV20141113.StartTask";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            string uriResourcePath = "/";
+            request.ResourcePath = uriResourcePath;
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetCluster())
                 {
-                    request.Parameters.Add("cluster", StringUtils.FromString(publicRequest.Cluster));
+                    context.Writer.WritePropertyName("cluster");
+                    context.Writer.Write(publicRequest.Cluster);
                 }
+
                 if(publicRequest.IsSetContainerInstances())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ContainerInstances)
+                    context.Writer.WritePropertyName("containerInstances");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestContainerInstancesListValue in publicRequest.ContainerInstances)
                     {
-                        request.Parameters.Add("containerInstances" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                            context.Writer.Write(publicRequestContainerInstancesListValue);
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetOverrides())
                 {
-                    if(publicRequest.Overrides.IsSetContainerOverrides())
-                    {
-                        int publicRequestOverrideslistValueIndex = 1;
-                        foreach(var publicRequestOverrideslistValue in publicRequest.Overrides.ContainerOverrides)
-                        {
-                            if(publicRequestOverrideslistValue.IsSetCommand())
-                            {
-                                int publicRequestOverrideslistValuelistValueIndex = 1;
-                                foreach(var publicRequestOverrideslistValuelistValue in publicRequestOverrideslistValue.Command)
-                                {
-                                    request.Parameters.Add("overrides" + "." + "containerOverrides" + "." + "member" + "." + publicRequestOverrideslistValueIndex + "." + "command" + "." + "member" + "." + publicRequestOverrideslistValuelistValueIndex, StringUtils.FromString(publicRequestOverrideslistValuelistValue));
-                                    publicRequestOverrideslistValuelistValueIndex++;
-                                }
-                            }
-                            if(publicRequestOverrideslistValue.IsSetName())
-                            {
-                                request.Parameters.Add("overrides" + "." + "containerOverrides" + "." + "member" + "." + publicRequestOverrideslistValueIndex + "." + "name", StringUtils.FromString(publicRequestOverrideslistValue.Name));
-                            }
-                            publicRequestOverrideslistValueIndex++;
-                        }
-                    }
+                    context.Writer.WritePropertyName("overrides");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TaskOverrideMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Overrides, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
+
                 if(publicRequest.IsSetTaskDefinition())
                 {
-                    request.Parameters.Add("taskDefinition", StringUtils.FromString(publicRequest.TaskDefinition));
+                    context.Writer.WritePropertyName("taskDefinition");
+                    context.Writer.Write(publicRequest.TaskDefinition);
                 }
+
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
+
+
     }
 }

@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
@@ -200,6 +201,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         private void TestHashTable(string hashTableName)
         {
             // Put item
+            var nonEmptyListAV = new AttributeValue();
+            nonEmptyListAV.L = new List<AttributeValue>
+            {
+                new AttributeValue { S = "Data" },
+                new AttributeValue { N = "12" }
+            };
+            // optional call to IsLSet = true, no-op
+            nonEmptyListAV.IsLSet = true;
+            Assert.AreEqual(2, nonEmptyListAV.L.Count);
+
+            var emptyListAV = new AttributeValue();
+            emptyListAV.L = null;
+            // call to IsLSet = true sets L to empty list
+            emptyListAV.IsLSet = true;
+            Assert.AreEqual(0, emptyListAV.L.Count);
+            emptyListAV.L = new List<AttributeValue>();
+            // call to IsLSet = true sets L to empty list
+            emptyListAV.IsLSet = true;
+            Assert.AreEqual(0, emptyListAV.L.Count);
+
+            var boolAV = new AttributeValue();
+            Assert.IsFalse(boolAV.IsBOOLSet);
+            boolAV.BOOL = false;
+            Assert.IsTrue(boolAV.IsBOOLSet);
+
             Client.PutItem(hashTableName, new Dictionary<string, AttributeValue>
             {
                 { "Id", new AttributeValue { N = "1" } },
@@ -209,6 +235,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 { "Seller", new AttributeValue { S = "Big River" } },
                 { "Price", new AttributeValue { N = "900" } },
                 { "Null", new AttributeValue { NULL = true } },
+                { "EmptyList", emptyListAV },
+                { "NonEmptyList", nonEmptyListAV },
+                { "EmptyMap", new AttributeValue { IsMSet = true } },
+                { "BoolFalse", boolAV }
             });
 
             // Get item
@@ -217,6 +247,34 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 { "Id", new AttributeValue { N = "1" } }
             };
             var item = Client.GetItem(hashTableName, key1).Item;
+
+            // Verify empty collections and value type
+            Assert.IsTrue(item["EmptyList"].IsLSet);
+            Assert.IsFalse(item["EmptyList"].IsMSet);
+            Assert.IsTrue(item["EmptyMap"].IsMSet);
+            Assert.IsFalse(item["EmptyMap"].IsLSet);
+            Assert.IsTrue(item["BoolFalse"].IsBOOLSet);
+            Assert.IsFalse(item["BoolFalse"].BOOL);
+            Assert.IsTrue(item["NonEmptyList"].IsLSet);
+            Assert.AreEqual(nonEmptyListAV.L.Count, item["NonEmptyList"].L.Count);
+
+            // Get nonexistent item
+            var key2 = new Dictionary<string, AttributeValue>
+            {
+                { "Id", new AttributeValue { N = "999" } }
+            };
+            var getItemResult = Client.GetItem(hashTableName, key2);
+            Assert.IsFalse(getItemResult.IsItemSet);
+
+            // Get empty item
+            getItemResult = Client.GetItem(new GetItemRequest
+            {
+                TableName = hashTableName,
+                Key = key1,
+                ProjectionExpression = "Coffee"
+            });
+            Assert.IsTrue(getItemResult.IsItemSet);
+            Assert.AreEqual(0, getItemResult.Item.Count);
 
             // Update item
             Client.UpdateItem(hashTableName, key1, new Dictionary<string, AttributeValueUpdate>
@@ -251,7 +309,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(1, items.Count);
 
             // Update non-existent item
-            var key2 = new Dictionary<string, AttributeValue>
+            key2 = new Dictionary<string, AttributeValue>
             {
                 { "Id", new AttributeValue { N = "2" } }
             };
@@ -302,6 +360,36 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 }
             }).Items;
             Assert.AreEqual(1, items.Count);
+
+            // Scan global index
+            items = Client.Scan(new ScanRequest
+            {
+                TableName = hashTableName,
+                IndexName = "GlobalIndex",
+                ScanFilter = new Dictionary<string, Condition> 
+                {
+                    // First condition will be HashKey EQ [Value]
+                    {
+                        "Company",
+                        new Condition
+                        {
+                            ComparisonOperator = ComparisonOperator.EQ,
+                            AttributeValueList = new List<AttributeValue> { new AttributeValue { S = "CloudsAreGrate" } }
+                        }
+                    },
+                    // Second condition will be RangeKey [Conditon] [Value]
+                    {
+                        "Price",
+                        new Condition
+                        {
+                            ComparisonOperator = ComparisonOperator.GT,
+                            AttributeValueList = new List<AttributeValue> { new AttributeValue { N = "50" } }
+                        }
+                    }
+                }
+            }).Items;
+            Assert.AreEqual(1, items.Count);
+
         }
         private void TestHashRangeTable(string hashRangeTableName)
         {
@@ -379,6 +467,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 }
             }).Items;
             Assert.AreEqual(2, items.Count);
+
+            // Query table with no range-key condition and no returned attributes
+            items = Client.Query(new QueryRequest
+            {
+                TableName = hashRangeTableName,
+                KeyConditions = new Dictionary<string, Condition> 
+                {
+                    // First Query condition must be HashKey EQ [Value]
+                    {
+                        "Name",
+                        new Condition
+                        {
+                            ComparisonOperator = ComparisonOperator.EQ,
+                            AttributeValueList = new List<AttributeValue> { new AttributeValue { S = "Diane" } }
+                        }
+                    },
+                },
+                ProjectionExpression = "Coffee"
+            }).Items;
+            Assert.AreEqual(2, items.Count);
+            Assert.AreEqual(0, items[0].Count);
+            Assert.AreEqual(0, items[1].Count);
 
             // Query global index
             items = Client.Query(new QueryRequest
@@ -477,6 +587,112 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 QueryFilter = new Dictionary<string, Condition> 
                 {
                     // QueryFilter conditions must be non-key attributes
+                    {
+                        "Score",
+                        new Condition
+                        {
+                            ComparisonOperator = ComparisonOperator.GT,
+                            AttributeValueList = new List<AttributeValue> { new AttributeValue { N = "120" } }
+                        }
+                    }
+                }
+            }).Items;
+            Assert.AreEqual(1, items.Count);
+
+            // Scan global index
+            items = Client.Scan(new ScanRequest
+            {
+                TableName = hashRangeTableName,
+                IndexName = "GlobalIndex",
+                ScanFilter = new Dictionary<string, Condition> 
+                {
+                    // First condition will be HashKey EQ [Value]
+                    {
+                        "Company",
+                        new Condition
+                        {
+                            ComparisonOperator = ComparisonOperator.EQ,
+                            AttributeValueList = new List<AttributeValue> { new AttributeValue { S = "Big River" } }
+                        }
+                    },
+                    // Second condition will be RangeKey [Conditon] [Value]
+                    {
+                        "Score",
+                        new Condition
+                        {
+                            ComparisonOperator = ComparisonOperator.GT,
+                            AttributeValueList = new List<AttributeValue> { new AttributeValue { N = "100" } }
+                        }
+                    }
+                }
+            }).Items;
+            Assert.AreEqual(1, items.Count);
+
+            // Scan local index with no range-key condition
+            items = Client.Scan(new ScanRequest
+            {
+                TableName = hashRangeTableName,
+                IndexName = "LocalIndex",
+                ScanFilter = new Dictionary<string, Condition> 
+                {
+                    // First condition will be HashKey EQ [Value]
+                    {
+                        "Name",
+                        new Condition
+                        {
+                            ComparisonOperator = ComparisonOperator.EQ,
+                            AttributeValueList = new List<AttributeValue> { new AttributeValue { S = "Diane" } }
+                        }
+                    },
+                }
+            }).Items;
+            Assert.AreEqual(2, items.Count);
+
+            // Scan local index with range-key condition
+            items = Client.Scan(new ScanRequest
+            {
+                TableName = hashRangeTableName,
+                IndexName = "LocalIndex",
+                ScanFilter = new Dictionary<string, Condition> 
+                {
+                    // First condition will be HashKey EQ [Value]
+                    {
+                        "Name",
+                        new Condition
+                        {
+                            ComparisonOperator = ComparisonOperator.EQ,
+                            AttributeValueList = new List<AttributeValue> { new AttributeValue { S = "Diane" } }
+                        }
+                    },
+                    // Second condition will be RangeKey [Conditon] [Value]
+                    {
+                        "Manager",
+                        new Condition
+                        {
+                            ComparisonOperator = ComparisonOperator.EQ,
+                            AttributeValueList = new List<AttributeValue> { new AttributeValue { S = "Francis" } }
+                        }
+                    }
+                }
+            }).Items;
+
+            // Scan local index with a non-key condition
+            items = Client.Scan(new ScanRequest
+            {
+                TableName = hashRangeTableName,
+                IndexName = "LocalIndex",
+                ScanFilter = new Dictionary<string, Condition> 
+                {
+                    // First condition will be HashKey EQ [Value]
+                    {
+                        "Name",
+                        new Condition
+                        {
+                            ComparisonOperator = ComparisonOperator.EQ,
+                            AttributeValueList = new List<AttributeValue> { new AttributeValue { S = "Diane" } }
+                        }
+                    },
+                    // Non-key attributes condition
                     {
                         "Score",
                         new Condition

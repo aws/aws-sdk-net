@@ -399,6 +399,7 @@ namespace ServiceClientGenerator
         public const string NoArgOverloadsKey = "noArgOverloads";
         public const string SuppressResultGenerationKey = "suppressResultGeneration";
         public const string UseNullableTypeKey = "useNullableType";
+        public const string EmitIsSetPropertiesKey = "emitIsSetProperties";
         public const string GlobalShapeKey = "*";
         public const string ShapeSubstitutionsKey = "shapeSubstitutions";
         public const string EmitAsShapeKey = "emitAsShape";
@@ -661,6 +662,32 @@ namespace ServiceClientGenerator
                 if (string.Equals(name.ToString(), propertyName))
                     return true;
             }
+            return false;
+        }
+
+        /// <summary>
+        /// Determines if the collection property can be empty when being
+        /// sent to the service.
+        /// </summary>
+        /// <param name="shapeName">The name of the shape the property is in</param>
+        /// <param name="propertyName">The name of the property</param>
+        /// <returns>If the collection property can be empty</returns>
+        public bool EmitIsSetProperties(string shapeName, string propertyName)
+        {
+            var data = _documentRoot[EmitIsSetPropertiesKey];
+            if (data == null)
+                return false;
+
+            var shape = data[shapeName] as JsonData;
+            if (shape == null || !shape.IsArray)
+                return false;
+
+            foreach(var name in shape)
+            {
+                if (string.Equals(name.ToString(), propertyName))
+                    return true;
+            }
+
             return false;
         }
 

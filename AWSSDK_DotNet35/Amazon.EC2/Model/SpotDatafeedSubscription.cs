@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the datafeed for a Spot Instance.
+    /// Describes the data feed for a Spot Instance.
     /// </summary>
     public partial class SpotDatafeedSubscription
     {
@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The Amazon S3 bucket where the Spot Instance datafeed is located.
+        /// The Amazon S3 bucket where the Spot Instance data feed is located.
         /// </para>
         /// </summary>
         public string Bucket
@@ -95,7 +95,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// The prefix that is prepended to datafeed files.
+        /// The prefix that is prepended to data feed files.
         /// </para>
         /// </summary>
         public string Prefix
@@ -113,7 +113,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the Spot Instance datafeed subscription.
+        /// The state of the Spot Instance data feed subscription.
         /// </para>
         /// </summary>
         public DatafeedSubscriptionState State

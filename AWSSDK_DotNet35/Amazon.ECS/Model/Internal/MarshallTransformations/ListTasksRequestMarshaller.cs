@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -39,37 +41,62 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((ListTasksRequest)input);
         }
-    
+
         public IRequest Marshall(ListTasksRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECS");
-            request.Parameters.Add("Action", "ListTasks");
-            request.Parameters.Add("Version", "2014-11-13");
+            string target = "AmazonEC2ContainerServiceV20141113.ListTasks";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            string uriResourcePath = "/";
+            request.ResourcePath = uriResourcePath;
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetCluster())
                 {
-                    request.Parameters.Add("cluster", StringUtils.FromString(publicRequest.Cluster));
+                    context.Writer.WritePropertyName("cluster");
+                    context.Writer.Write(publicRequest.Cluster);
                 }
+
                 if(publicRequest.IsSetContainerInstance())
                 {
-                    request.Parameters.Add("containerInstance", StringUtils.FromString(publicRequest.ContainerInstance));
+                    context.Writer.WritePropertyName("containerInstance");
+                    context.Writer.Write(publicRequest.ContainerInstance);
                 }
+
                 if(publicRequest.IsSetFamily())
                 {
-                    request.Parameters.Add("family", StringUtils.FromString(publicRequest.Family));
+                    context.Writer.WritePropertyName("family");
+                    context.Writer.Write(publicRequest.Family);
                 }
+
                 if(publicRequest.IsSetMaxResults())
                 {
-                    request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
+
                 if(publicRequest.IsSetNextToken())
                 {
-                    request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
+
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
+
+
     }
 }

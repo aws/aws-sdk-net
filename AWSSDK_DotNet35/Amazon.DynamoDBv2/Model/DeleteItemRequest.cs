@@ -72,7 +72,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates DeleteItemRequest with the parameterized properties
         /// </summary>
         /// <param name="tableName">The name of the table from which to delete the item.</param>
-        /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to delete. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify both the hash attribute and the range attribute.</param>
+        /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to delete. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide both the hash attribute and the range attribute.</param>
         public DeleteItemRequest(string tableName, Dictionary<string, AttributeValue> key)
         {
             _tableName = tableName;
@@ -83,7 +83,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates DeleteItemRequest with the parameterized properties
         /// </summary>
         /// <param name="tableName">The name of the table from which to delete the item.</param>
-        /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to delete. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify both the hash attribute and the range attribute.</param>
+        /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to delete. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide both the hash attribute and the range attribute.</param>
         /// <param name="returnValues">Use <i>ReturnValues</i> if you want to get the item attributes as they appeared before they were deleted. For <i>DeleteItem</i>, the valid values are: <ul> <li> <code>NONE</code> - If <i>ReturnValues</i> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <i>ReturnValues</i>.) </li> <li> <code>ALL_OLD</code> - The content of the old item is returned. </li> </ul></param>
         public DeleteItemRequest(string tableName, Dictionary<string, AttributeValue> key, ReturnValue returnValues)
         {
@@ -98,10 +98,6 @@ namespace Amazon.DynamoDBv2.Model
         /// There is a newer parameter available. Use <i>ConditionExpression</i> instead. Note
         /// that if you use <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
         /// same time, DynamoDB will return a <i>ValidationException</i> exception.
-        /// </para>
-        ///  
-        /// <para>
-        /// This parameter does not support lists or maps.
         /// </para>
         ///  </important> 
         /// <para>
@@ -125,6 +121,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The operation will succeed only if the entire map evaluates to true.
         /// </para>
+        ///  <note>
+        /// <para>
+        /// This parameter does not support attributes of type List or Map.
+        /// </para>
+        /// </note>
         /// </summary>
         public ConditionalOperator ConditionalOperator
         {
@@ -191,10 +192,6 @@ namespace Amazon.DynamoDBv2.Model
         /// that if you use <i>Expected</i> and <i> ConditionExpression </i> at the same time,
         /// DynamoDB will return a <i>ValidationException</i> exception.
         /// </para>
-        ///  
-        /// <para>
-        /// This parameter does not support lists or maps.
-        /// </para>
         ///  </important> 
         /// <para>
         /// A map of attribute/condition pairs. <i>Expected</i> provides a conditional block for
@@ -243,7 +240,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// For type Binary, DynamoDB treats each byte of the binary data as unsigned when it
-        /// compares binary values, for example when evaluating query expressions.
+        /// compares binary values.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -272,7 +269,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, Binary, String Set, Number Set, or Binary Set. If an item contains
-        /// an <i>AttributeValue</i> element of a different type than the one specified in the
+        /// an <i>AttributeValue</i> element of a different type than the one provided in the
         /// request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
         /// <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6",
         /// "2", "1"]}</code>.
@@ -286,7 +283,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
         /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i>
-        /// of a different type than the one specified in the request, the value does not match.
+        /// of a different type than the one provided in the request, the value does not match.
         /// For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
         /// does not equal <code>{"NS":["6", "2", "1"]}</code>.
         /// </para>
@@ -298,8 +295,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
-        /// element of a different type than the one specified in the request, the value does
-        /// not match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+        /// element of a different type than the one provided in the request, the value does not
+        /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
         /// Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
         /// </para>
         ///  <p/> </li> <li> 
@@ -310,7 +307,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
         /// Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i> element
-        /// of a different type than the one specified in the request, the value does not match.
+        /// of a different type than the one provided in the request, the value does not match.
         /// For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
         /// does not compare to <code>{"NS":["6", "2", "1"]}</code>.
         /// </para>
@@ -322,8 +319,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
-        /// element of a different type than the one specified in the request, the value does
-        /// not match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+        /// element of a different type than the one provided in the request, the value does not
+        /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
         /// Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
         /// </para>
         ///  <p/> </li> <li> 
@@ -334,8 +331,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
-        /// element of a different type than the one specified in the request, the value does
-        /// not match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+        /// element of a different type than the one provided in the request, the value does not
+        /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
         /// Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
         /// </para>
         ///  <p/> </li> <li> 
@@ -435,7 +432,7 @@ namespace Amazon.DynamoDBv2.Model
         /// type, either String, Number, or Binary (not a set type). A target attribute matches
         /// if the target value is greater than, or equal to, the first element and less than,
         /// or equal to, the second element. If an item contains an <i>AttributeValue</i> element
-        /// of a different type than the one specified in the request, the value does not match.
+        /// of a different type than the one provided in the request, the value does not match.
         /// For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
         /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
         /// </para>
@@ -472,16 +469,21 @@ namespace Amazon.DynamoDBv2.Model
         /// assumption is valid and the condition evaluates to true. If the value is found, despite
         /// the assumption that it does not exist, the condition evaluates to false.
         /// </para>
-        /// </li> </ul> </li> 
+        /// </li> </ul> 
         /// <para>
         /// Note that the default value for <i>Exists</i> is <code>true</code>.
         /// </para>
-        ///  </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// The <i>Value</i> and <i>Exists</i> parameters are incompatible with <i>AttributeValueList</i>
         /// and <i>ComparisonOperator</i>. Note that if you use both sets of parameters at once,
         /// DynamoDB will return a <i>ValidationException</i> exception.
         /// </para>
+        ///  <note>
+        /// <para>
+        /// This parameter does not support attributes of type List or Map.
+        /// </para>
+        /// </note>
         /// </summary>
         public Dictionary<string, ExpectedAttributeValue> Expected
         {
@@ -498,12 +500,12 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ExpressionAttributeNames. 
         /// <para>
-        /// One or more substitution tokens for simplifying complex expressions. The following
+        /// One or more substitution tokens for attribute names in an expression. The following
         /// are some use cases for using <i>ExpressionAttributeNames</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To shorten an attribute name that is very long or unwieldy in an expression.
+        /// To access an attribute whose name conflicts with a DynamoDB reserved word.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -517,29 +519,37 @@ namespace Amazon.DynamoDBv2.Model
         ///  </li> </ul> 
         /// <para>
         /// Use the <b>#</b> character in an expression to dereference an attribute name. For
-        /// example, consider the following expression:
+        /// example, consider the following attribute name:
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// <code>order.customerInfo.LastName = "Smith" OR order.customerInfo.LastName = "Jones"</code>
+        /// <code>Percentile</code>
         /// </para>
         /// </li></ul> 
         /// <para>
-        /// Now suppose that you specified the following for <i>ExpressionAttributeNames</i>:
+        /// The name of this attribute conflicts with a reserved word, so it cannot be used directly
+        /// in an expression. (For the complete list of reserved words, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+        /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you
+        /// could specify the following for <i>ExpressionAttributeNames</i>:
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// <code>{"#name":"order.customerInfo.LastName"}</code>
+        /// <code>{"#P":"Percentile"}</code>
         /// </para>
         /// </li></ul> 
         /// <para>
-        /// The expression can now be simplified as follows:
+        /// You could then use this substitution in an expression, as in this example:
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// <code>#name = "Smith" OR #name = "Jones"</code>
+        /// <code>#P = :val</code>
         /// </para>
-        /// </li></ul> 
+        /// </li></ul> <note>
+        /// <para>
+        /// Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>,
+        /// which are placeholders for the actual value at runtime.
+        /// </para>
+        /// </note> 
         /// <para>
         /// For more information on expression attribute names, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -616,8 +626,8 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// For the primary key, you must provide all of the attributes. For example, with a hash
-        /// type primary key, you only need to specify the hash attribute. For a hash-and-range
-        /// type primary key, you must specify both the hash attribute and the range attribute.
+        /// type primary key, you only need to provide the hash attribute. For a hash-and-range
+        /// type primary key, you must provide both the hash attribute and the range attribute.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> Key

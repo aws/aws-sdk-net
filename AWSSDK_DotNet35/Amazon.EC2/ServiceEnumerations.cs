@@ -1567,6 +1567,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant AllUpfront for OfferingTypeValues
+        /// </summary>
+        public static readonly OfferingTypeValues AllUpfront = new OfferingTypeValues("All Upfront");
+        /// <summary>
         /// Constant HeavyUtilization for OfferingTypeValues
         /// </summary>
         public static readonly OfferingTypeValues HeavyUtilization = new OfferingTypeValues("Heavy Utilization");
@@ -1578,6 +1582,14 @@ namespace Amazon.EC2
         /// Constant MediumUtilization for OfferingTypeValues
         /// </summary>
         public static readonly OfferingTypeValues MediumUtilization = new OfferingTypeValues("Medium Utilization");
+        /// <summary>
+        /// Constant NoUpfront for OfferingTypeValues
+        /// </summary>
+        public static readonly OfferingTypeValues NoUpfront = new OfferingTypeValues("No Upfront");
+        /// <summary>
+        /// Constant PartialUpfront for OfferingTypeValues
+        /// </summary>
+        public static readonly OfferingTypeValues PartialUpfront = new OfferingTypeValues("Partial Upfront");
 
         /// <summary>
         /// Default Constructor

@@ -2,12 +2,13 @@
   "metadata":{
     "apiVersion":"2014-11-13",
     "endpointPrefix":"ecs",
+    "jsonVersion":"1.1",
     "serviceAbbreviation":"Amazon ECS",
     "serviceFullName":"Amazon EC2 Container Service",
     "signatureVersion":"v4",
     "signingName":"ecs",
-    "xmlNamespace":"http://ecs.amazonaws.com/doc/2014-11-13/",
-    "protocol":"query"
+    "targetPrefix":"AmazonEC2ContainerServiceV20141113",
+    "protocol":"json"
   },
   "documentation":"<p>Amazon EC2 Container Service (Amazon ECS) is a highly scalable, fast, container management service that makes it easy to run, stop, and manage Docker containers on a cluster of Amazon EC2 instances. Amazon ECS lets you launch and stop container-enabled applications with simple API calls, allows you to get the state of your cluster from a centralized service, and gives you access to many familiar Amazon EC2 features like security groups, Amazon EBS volumes, and IAM roles.</p> <p>You can use Amazon ECS to schedule the placement of containers across your cluster based on your resource needs, isolation policies, and availability requirements. Amazon EC2 Container Service eliminates the need for you to operate your own cluster management and configuration management systems or worry about scaling your management infrastructure.</p>",
   "operations":{
@@ -18,14 +19,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"CreateClusterRequest"},
-      "output":{
-        "shape":"CreateClusterResponse",
-        "resultWrapper":"CreateClusterResult"
-      },
+      "output":{"shape":"CreateClusterResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -43,14 +42,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"DeleteClusterRequest"},
-      "output":{
-        "shape":"DeleteClusterResponse",
-        "resultWrapper":"DeleteClusterResult"
-      },
+      "output":{"shape":"DeleteClusterResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -68,14 +65,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"DeregisterContainerInstanceRequest"},
-      "output":{
-        "shape":"DeregisterContainerInstanceResponse",
-        "resultWrapper":"DeregisterContainerInstanceResult"
-      },
+      "output":{"shape":"DeregisterContainerInstanceResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -93,14 +88,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"DeregisterTaskDefinitionRequest"},
-      "output":{
-        "shape":"DeregisterTaskDefinitionResponse",
-        "resultWrapper":"DeregisterTaskDefinitionResult"
-      },
+      "output":{"shape":"DeregisterTaskDefinitionResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -109,7 +102,7 @@
           "documentation":"<p>These errors are usually caused by something the client did, such as use an action or resource on behalf of a user that doesn't have permission to use the action or resource, or specify an identifier that is not valid.</p>"
         }
       ],
-      "documentation":"<p>Deregisters the specified task definition. You will no longer be able to run tasks from this definition after deregistration.</p>"
+      "documentation":"<p>NOT YET IMPLEMENTED.</p> <p>Deregisters the specified task definition. You will no longer be able to run tasks from this definition after deregistration.</p>"
     },
     "DescribeClusters":{
       "name":"DescribeClusters",
@@ -118,14 +111,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"DescribeClustersRequest"},
-      "output":{
-        "shape":"DescribeClustersResponse",
-        "resultWrapper":"DescribeClustersResult"
-      },
+      "output":{"shape":"DescribeClustersResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -143,14 +134,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"DescribeContainerInstancesRequest"},
-      "output":{
-        "shape":"DescribeContainerInstancesResponse",
-        "resultWrapper":"DescribeContainerInstancesResult"
-      },
+      "output":{"shape":"DescribeContainerInstancesResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -168,14 +157,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"DescribeTaskDefinitionRequest"},
-      "output":{
-        "shape":"DescribeTaskDefinitionResponse",
-        "resultWrapper":"DescribeTaskDefinitionResult"
-      },
+      "output":{"shape":"DescribeTaskDefinitionResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -193,14 +180,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"DescribeTasksRequest"},
-      "output":{
-        "shape":"DescribeTasksResponse",
-        "resultWrapper":"DescribeTasksResult"
-      },
+      "output":{"shape":"DescribeTasksResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -218,14 +203,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"DiscoverPollEndpointRequest"},
-      "output":{
-        "shape":"DiscoverPollEndpointResponse",
-        "resultWrapper":"DiscoverPollEndpointResult"
-      },
+      "output":{"shape":"DiscoverPollEndpointResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -243,14 +226,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"ListClustersRequest"},
-      "output":{
-        "shape":"ListClustersResponse",
-        "resultWrapper":"ListClustersResult"
-      },
+      "output":{"shape":"ListClustersResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -268,14 +249,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"ListContainerInstancesRequest"},
-      "output":{
-        "shape":"ListContainerInstancesResponse",
-        "resultWrapper":"ListContainerInstancesResult"
-      },
+      "output":{"shape":"ListContainerInstancesResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -293,14 +272,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"ListTaskDefinitionsRequest"},
-      "output":{
-        "shape":"ListTaskDefinitionsResponse",
-        "resultWrapper":"ListTaskDefinitionsResult"
-      },
+      "output":{"shape":"ListTaskDefinitionsResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -318,14 +295,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"ListTasksRequest"},
-      "output":{
-        "shape":"ListTasksResponse",
-        "resultWrapper":"ListTasksResult"
-      },
+      "output":{"shape":"ListTasksResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -343,14 +318,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"RegisterContainerInstanceRequest"},
-      "output":{
-        "shape":"RegisterContainerInstanceResponse",
-        "resultWrapper":"RegisterContainerInstanceResult"
-      },
+      "output":{"shape":"RegisterContainerInstanceResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -368,14 +341,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"RegisterTaskDefinitionRequest"},
-      "output":{
-        "shape":"RegisterTaskDefinitionResponse",
-        "resultWrapper":"RegisterTaskDefinitionResult"
-      },
+      "output":{"shape":"RegisterTaskDefinitionResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -393,14 +364,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"RunTaskRequest"},
-      "output":{
-        "shape":"RunTaskResponse",
-        "resultWrapper":"RunTaskResult"
-      },
+      "output":{"shape":"RunTaskResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -418,14 +387,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"StartTaskRequest"},
-      "output":{
-        "shape":"StartTaskResponse",
-        "resultWrapper":"StartTaskResult"
-      },
+      "output":{"shape":"StartTaskResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -443,14 +410,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"StopTaskRequest"},
-      "output":{
-        "shape":"StopTaskResponse",
-        "resultWrapper":"StopTaskResult"
-      },
+      "output":{"shape":"StopTaskResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -468,14 +433,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"SubmitContainerStateChangeRequest"},
-      "output":{
-        "shape":"SubmitContainerStateChangeResponse",
-        "resultWrapper":"SubmitContainerStateChangeResult"
-      },
+      "output":{"shape":"SubmitContainerStateChangeResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -493,14 +456,12 @@
         "requestUri":"/"
       },
       "input":{"shape":"SubmitTaskStateChangeRequest"},
-      "output":{
-        "shape":"SubmitTaskStateChangeResponse",
-        "resultWrapper":"SubmitTaskStateChangeResult"
-      },
+      "output":{"shape":"SubmitTaskStateChangeResponse"},
       "errors":[
         {
           "shape":"ServerException",
           "exception":true,
+          "fault":true,
           "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
         },
         {
@@ -711,7 +672,7 @@
       "members":{
         "cluster":{
           "shape":"String",
-          "documentation":"<p>The cluster you want to delete.</p>"
+          "documentation":"<p>The short name or full Amazon Resource Name (ARN) of the cluster that you want to delete.</p>"
         }
       }
     },
@@ -859,6 +820,10 @@
         "containerInstance":{
           "shape":"String",
           "documentation":"<p>The container instance UUID or full Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance UUID. For example, arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>"
+        },
+        "cluster":{
+          "shape":"String",
+          "documentation":"<p>The cluster that the container instance belongs to.</p>"
         }
       }
     },
@@ -1184,6 +1149,7 @@
         "message":{"shape":"String"}
       },
       "exception":true,
+      "fault":true,
       "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
     },
     "StartTaskRequest":{

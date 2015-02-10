@@ -147,7 +147,7 @@ namespace Amazon.Runtime.Internal
 
                 while ((bytesRead = contentStream.Read(buffer, 0, bytesToRead)) > 0)
                 {
-#if BCL45 || WIN_RT || WINDOWS_PHONE
+#if AWS_ASYNC_API
                     requestContext.CancellationToken.ThrowIfCancellationRequested();
 #endif
                     requestContent.Write(buffer, 0, bytesRead);
@@ -205,7 +205,7 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE
+#if AWS_ASYNC_API
 
         /// <summary>
         /// Gets a handle to the request content.
@@ -253,7 +253,7 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#elif BCL && !BCL45
+#elif AWS_APM_API
 
         /// <summary>
         /// Initiates the operation to gets a handle to the request content.

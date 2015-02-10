@@ -29,8 +29,13 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterTaskDefinition operation.
+    /// NOT YET IMPLEMENTED.
+    /// 
+    ///  
+    /// <para>
     /// Deregisters the specified task definition. You will no longer be able to run tasks
     /// from this definition after deregistration.
+    /// </para>
     /// </summary>
     public partial class DeregisterTaskDefinitionRequest : AmazonECSRequest
     {

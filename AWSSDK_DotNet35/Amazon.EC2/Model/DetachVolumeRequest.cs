@@ -40,14 +40,13 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// If the root volume is detached from an instance with an AWS Marketplace product code,
-    /// then the AWS Marketplace product codes from that volume are no longer associated with
-    /// the instance.
+    /// When a volume with an AWS Marketplace product code is detached from an instance, the
+    /// product code is no longer associated with the instance.
     /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detaching
-    /// an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
     /// </para>
     /// </summary>
     public partial class DetachVolumeRequest : AmazonEC2Request

@@ -39,7 +39,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ConsumedCapacity. 
         /// <para>
-        /// The write capacity units consumed by the operation.
+        /// The read capacity units consumed by the operation.
         /// </para>
         ///  
         /// <para>
@@ -107,7 +107,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  </li> <li> 
         /// <para>
         /// <i>AttributesToGet</i> - One or more attributes to be retrieved from the table or
-        /// index. By default, all attributes are returned. If a specified attribute is not found,
+        /// index. By default, all attributes are returned. If a requested attribute is not found,
         /// it does not appear in the result.
         /// </para>
         ///  </li> <li> 

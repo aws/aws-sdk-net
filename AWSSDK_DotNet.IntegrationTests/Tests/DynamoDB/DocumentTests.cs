@@ -33,6 +33,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Load tables using provided conversion schema
                 LoadTables(conversion, out hashTable, out hashRangeTable);
 
+                // Test saving and loading empty lists and maps
+                TestEmptyCollections(hashTable);
+
                 // Test operations on hash-key table
                 TestHashTable(hashTable, conversion);
 
@@ -57,6 +60,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Test expressions for scan
                 TestExpressionsOnScan(hashRangeTable);
             }
+        }
+
+        private void TestEmptyCollections(Table hashTable)
+        {
+            Document doc = new Document();
+            doc["Id"] = 1;
+            doc["EmptyList"] = new DynamoDBList();
+            doc["EmptyMap"] = new Document();
+            hashTable.PutItem(doc);
+
+            Document retrieved = hashTable.GetItem(doc);
+
+            DynamoDBEntry mapEntry;
+            Assert.IsTrue(retrieved.TryGetValue("EmptyMap", out mapEntry));
+            Assert.IsNotNull(mapEntry);
+            Assert.IsNotNull(mapEntry.AsDocument());
+            Assert.AreEqual(0, mapEntry.AsDocument().Count);
+
+            DynamoDBEntry listEntry;
+            Assert.IsTrue(retrieved.TryGetValue("EmptyList", out listEntry));
+            Assert.IsNotNull(listEntry);
+            Assert.IsNotNull(listEntry.AsDynamoDBList());
+            Assert.AreEqual(0, listEntry.AsDynamoDBList().Entries.Count);
         }
 
         private void TestHashTable(Table hashTable, DynamoDBEntryConversion conversion)
@@ -326,6 +352,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Query global index
             var queryFilter = new QueryFilter("Company", QueryOperator.Equal, "Big River");
             queryFilter.AddCondition("Score", QueryOperator.GreaterThan, 100);
+            items = hashRangeTable.Query(new QueryOperationConfig
+            {
+                IndexName = "GlobalIndex",
+                Filter = queryFilter
+            }).GetRemaining();
+            Assert.AreEqual(1, items.Count);
+
+            // Scan local index
+            var scanFilter = new ScanFilter();
+            scanFilter.AddCondition("Name", ScanOperator.Equal, "Diane");
+            items = hashRangeTable.Scan(new ScanOperationConfig
+            {
+                IndexName = "LocalIndex",
+                Filter = scanFilter
+            }).GetRemaining();
+            Assert.AreEqual(2, items.Count);
+
+            // Scan global index
+            scanFilter = new ScanFilter();
+            scanFilter.AddCondition("Company", ScanOperator.Equal, "Big River");
+            scanFilter.AddCondition("Score", ScanOperator.GreaterThan, 100);
             items = hashRangeTable.Query(new QueryOperationConfig
             {
                 IndexName = "GlobalIndex",

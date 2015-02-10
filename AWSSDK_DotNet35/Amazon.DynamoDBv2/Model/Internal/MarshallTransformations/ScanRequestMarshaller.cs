@@ -132,6 +132,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FilterExpression);
                 }
 
+                if(publicRequest.IsSetIndexName())
+                {
+                    context.Writer.WritePropertyName("IndexName");
+                    context.Writer.Write(publicRequest.IndexName);
+                }
+
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("Limit");

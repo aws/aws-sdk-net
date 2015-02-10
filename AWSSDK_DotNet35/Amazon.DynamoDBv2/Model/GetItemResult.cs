@@ -62,10 +62,32 @@ namespace Amazon.DynamoDBv2.Model
             set { this._item = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="Item"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsItemSet
+        {
+            get
+            {
+                return Amazon.Util.AWSSDKUtils.GetIsSet(this._item);
+            }
+            set
+            {
+                Amazon.Util.AWSSDKUtils.SetIsSet(value, ref this._item);
+            }
+        }
+
         // Check to see if Item property is set
         internal bool IsSetItem()
         {
-            return this._item != null && this._item.Count > 0; 
+            return this.IsItemSet; 
         }
 
     }

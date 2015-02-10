@@ -271,8 +271,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DefaultSshKeyName. 
         /// <para>
-        /// A default SSH key for the stack's instances. You can override this value when you
-        /// create or update an instance.
+        /// A default Amazon EC2 key pair for the stack's instances. You can override this value
+        /// when you create or update an instance.
         /// </para>
         /// </summary>
         public string DefaultSshKeyName

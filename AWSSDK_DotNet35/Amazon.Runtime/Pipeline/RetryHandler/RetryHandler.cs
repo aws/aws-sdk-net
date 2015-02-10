@@ -99,7 +99,7 @@ namespace Amazon.Runtime.Internal
             } while (shouldRetry);
         }
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE 
+#if AWS_ASYNC_API 
 
         /// <summary>
         /// Invokes the inner handler and performs a retry, if required as per the
@@ -147,7 +147,7 @@ namespace Amazon.Runtime.Internal
 
 #endif
 
-#if BCL && !BCL45 
+#if AWS_APM_API 
 
         /// <summary>
         /// Invokes the inner handler and performs a retry, if required as per the

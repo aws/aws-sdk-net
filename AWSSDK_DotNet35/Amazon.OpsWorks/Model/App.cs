@@ -196,9 +196,15 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Environment. 
         /// <para>
         /// An array of <code>EnvironmentVariable</code> objects that specify environment variables
-        /// to be associated with the app. You can specify up to ten environment variables. After
-        /// you deploy the app, these variables are defined on the associated app server instances.
+        /// to be associated with the app. After you deploy the app, these variables are defined
+        /// on the associated app server instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
+        /// Environment Variables</a>. 
         /// </para>
+        ///  <note> There is no specific limit on the number of environment variables. However,
+        /// the size of the associated data structure - which includes the variables' names, values,
+        /// and protected flag values - cannot exceed 10 KB (10240 Bytes). This limit should accommodate
+        /// most if not all use cases, but if you do exceed it, you will cause an exception (API)
+        /// with an "Environment: is too large (maximum is 10KB)" message. </note>
         /// </summary>
         public List<EnvironmentVariable> Environment
         {

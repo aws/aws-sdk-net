@@ -112,7 +112,7 @@ namespace Amazon.DynamoDBv2
     /// <para>
     /// <i>GetItem</i> - Returns a set of attributes for the item that has a given primary
     /// key. By default, <i>GetItem</i> performs an eventually consistent read; however, applications
-    /// can specify a strongly consistent read instead.
+    /// can request a strongly consistent read instead.
     /// </para>
     ///  </li> <li> 
     /// <para>

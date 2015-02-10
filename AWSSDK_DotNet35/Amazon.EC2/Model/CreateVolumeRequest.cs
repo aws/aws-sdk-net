@@ -45,13 +45,13 @@ namespace Amazon.EC2.Model
     /// volumes may only be attached to instances that support Amazon EBS encryption. Volumes
     /// that are created from encrypted snapshots are also automatically encrypted. For more
     /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-    /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
     /// or Restoring an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
-    /// Guide</i>.
+    /// Guide for Linux</i>.
     /// </para>
     /// </summary>
     public partial class CreateVolumeRequest : AmazonEC2Request
@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         /// Instantiates CreateVolumeRequest with the parameterized properties
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone in which to create the volume. Use <a>DescribeAvailabilityZones</a> to list the Availability Zones that are currently available to you.</param>
-        /// <param name="size">The size of the volume, in GiBs. Constraints: If the volume type is <code>io1</code>, the minimum size of the volume is 4 GiB. Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.</param>
+        /// <param name="size">The size of the volume, in GiBs. Constraints: If the volume type is <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise, the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you specify a snapshot, the volume size must be equal to or larger than the snapshot size. Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.</param>
         public CreateVolumeRequest(string availabilityZone, int size)
         {
             _availabilityZone = availabilityZone;
@@ -119,7 +119,8 @@ namespace Amazon.EC2.Model
         /// an encrypted volume from an unencrypted snapshot or vice versa. If your AMI uses encrypted
         /// volumes, you can only launch it on supported instance types. For more information,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
+        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// 
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -184,7 +185,9 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// Constraints: If the volume type is <code>io1</code>, the minimum size of the volume
-        /// is 4 GiB.
+        /// is 4 GiB; otherwise, the minimum size is 1 GiB. The maximum volume size is 1024 GiB.
+        /// If you specify a snapshot, the volume size must be equal to or larger than the snapshot
+        /// size.
         /// </para>
         ///  
         /// <para>

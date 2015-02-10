@@ -216,7 +216,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotPrice. 
         /// <para>
-        /// The maximum hourly price for any Spot Instance launched to fulfill the request.
+        /// The maximum hourly price (bid) for any Spot Instance launched to fulfill the request.
         /// </para>
         /// </summary>
         public string SpotPrice
@@ -235,9 +235,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property State. 
         /// <para>
         /// The state of the Spot Instance request. Spot bid status information can help you track
-        /// your Spot Instance requests. For information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
-        /// Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.
+        /// your Spot Instance requests. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+        /// Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
         /// </para>
         /// </summary>
         public SpotInstanceState State

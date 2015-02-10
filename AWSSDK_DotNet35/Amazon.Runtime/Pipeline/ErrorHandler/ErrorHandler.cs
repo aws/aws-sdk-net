@@ -81,7 +81,7 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE 
+#if AWS_ASYNC_API 
 
         /// <summary>
         /// Handles and processes any exception thrown from underlying handlers.
@@ -118,7 +118,7 @@ namespace Amazon.Runtime.Internal
             return null;
         }        
 
-#elif BCL && !BCL45
+#elif AWS_APM_API
 
         /// <summary>
         ///  Handles and processes any exception thrown from underlying handlers.

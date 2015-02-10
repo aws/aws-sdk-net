@@ -34,8 +34,8 @@ namespace Amazon.DynamoDBv2.Model
     ///  
     /// <para>
     /// For each primary key, you must provide <i>all</i> of the key attributes. For example,
-    /// with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range
-    /// type primary key, you must specify <i>both</i> the hash attribute and the range attribute.
+    /// with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range
+    /// type primary key, you must provide <i>both</i> the hash attribute and the range attribute.
     /// </para>
     /// </summary>
     public partial class KeysAndAttributes
@@ -88,12 +88,12 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ExpressionAttributeNames. 
         /// <para>
-        /// One or more substitution tokens for simplifying complex expressions. The following
+        /// One or more substitution tokens for attribute names in an expression. The following
         /// are some use cases for using <i>ExpressionAttributeNames</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To shorten an attribute name that is very long or unwieldy in an expression.
+        /// To access an attribute whose name conflicts with a DynamoDB reserved word.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -107,29 +107,37 @@ namespace Amazon.DynamoDBv2.Model
         ///  </li> </ul> 
         /// <para>
         /// Use the <b>#</b> character in an expression to dereference an attribute name. For
-        /// example, consider the following expression:
+        /// example, consider the following attribute name:
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// <code>order.customerInfo.LastName = "Smith" OR order.customerInfo.LastName = "Jones"</code>
+        /// <code>Percentile</code>
         /// </para>
         /// </li></ul> 
         /// <para>
-        /// Now suppose that you specified the following for <i>ExpressionAttributeNames</i>:
+        /// The name of this attribute conflicts with a reserved word, so it cannot be used directly
+        /// in an expression. (For the complete list of reserved words, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+        /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you
+        /// could specify the following for <i>ExpressionAttributeNames</i>:
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// <code>{"#name":"order.customerInfo.LastName"}</code>
+        /// <code>{"#P":"Percentile"}</code>
         /// </para>
         /// </li></ul> 
         /// <para>
-        /// The expression can now be simplified as follows:
+        /// You could then use this substitution in an expression, as in this example:
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// <code>#name = "Smith" OR #name = "Jones"</code>
+        /// <code>#P = :val</code>
         /// </para>
-        /// </li></ul> 
+        /// </li></ul> <note>
+        /// <para>
+        /// Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>,
+        /// which are placeholders for the actual value at runtime.
+        /// </para>
+        /// </note> 
         /// <para>
         /// For more information on expression attribute names, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -171,7 +179,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// A string that identifies one or more attributes to retrieve from the table. These
         /// attributes can include scalars, sets, or elements of a JSON document. The attributes
-        /// in the expression must be separated by commas.
+        /// in the <i>ProjectionExpression</i> must be separated by commas.
         /// </para>
         ///  
         /// <para>
@@ -180,7 +188,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on projection expressions, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>

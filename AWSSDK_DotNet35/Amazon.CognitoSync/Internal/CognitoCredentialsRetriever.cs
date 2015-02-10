@@ -58,7 +58,7 @@ namespace Amazon.CognitoSync.Internal
                 SetIdentity(executionContext, cognitoCredentials.GetIdentityId(), cognitoCredentials.IdentityPoolId);       
             }
         }
-#else
+#elif AWS_ASYNC_API
         public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             T result = await base.InvokeAsync<T>(executionContext);

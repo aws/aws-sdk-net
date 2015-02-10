@@ -11,6 +11,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
+using Amazon.Runtime;
 
 namespace AWSSDK_DotNet.IntegrationTests.Utils
 {
@@ -46,6 +47,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 }
 
                 return _accountId;
+            }
+        }
+
+        public static AWSCredentials CreateTemporaryCredentials()
+        {
+            using (var sts = new Amazon.SecurityToken.AmazonSecurityTokenServiceClient())
+            {
+                var creds = sts.GetSessionToken().Credentials;
+                return creds;
             }
         }
 

@@ -213,11 +213,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var dynamoDBList = entry as DynamoDBList;
             if (dynamoDBList != null)
-                return (dynamoDBList.Entries != null && dynamoDBList.Entries.Count > 0);
+                return (dynamoDBList.Entries != null);
 
             var document = entry as Document;
             if (document != null)
-                return (document.Count > 0);
+                return true;
 
             throw new InvalidOperationException("Unrecognized DynamoDBEntry object");
         }
@@ -962,7 +962,8 @@ namespace Amazon.DynamoDBv2.DataModel
                 AttributesToGet = storageConfig.AttributesToGet,
                 Select = SelectValues.SpecificAttributes,
                 Filter = filter,
-                ConditionalOperator = flatConfig.ConditionalOperator
+                ConditionalOperator = flatConfig.ConditionalOperator,
+                IndexName = flatConfig.IndexName
             };
             Search scan = table.Scan(scanConfig);
             return new ContextSearch(scan, flatConfig);

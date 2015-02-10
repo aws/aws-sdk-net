@@ -136,7 +136,7 @@ namespace Amazon.Runtime.Internal
             return executionContext.ResponseContext;
         }
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE
+#if AWS_ASYNC_API
 
         /// <summary>
         /// Invokes the pipeline asynchronously.
@@ -151,7 +151,7 @@ namespace Amazon.Runtime.Internal
             return _handler.InvokeAsync<T>(executionContext);
         }
 
-#elif BCL && !BCL45
+#elif AWS_APM_API
 
         /// <summary>
         /// Invokes the pipeline asynchronously.

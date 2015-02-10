@@ -96,7 +96,7 @@ namespace Amazon.Runtime
         /// </summary>
         void Abort();
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE
+#if AWS_ASYNC_API
 
         /// <summary>
         /// Gets a handle to the request content.
@@ -111,7 +111,7 @@ namespace Amazon.Runtime
         /// <returns></returns>
         System.Threading.Tasks.Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken);
 
-#elif BCL && !BCL45
+#elif AWS_APM_API
 
         /// <summary>
         /// Initiates the operation to gets a handle to the request content.

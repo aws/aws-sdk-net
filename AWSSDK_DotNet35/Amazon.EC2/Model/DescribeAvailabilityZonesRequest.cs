@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
-    /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
     /// </para>
     /// </summary>
     public partial class DescribeAvailabilityZonesRequest : AmazonEC2Request

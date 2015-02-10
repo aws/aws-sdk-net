@@ -30,11 +30,10 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CancelSpotInstanceRequests operation.
     /// Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon
-    /// EC2 starts on your behalf when the maximum price that you specify exceeds the current
+    /// EC2 starts on your behalf when the bid price that you specify exceeds the current
     /// Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance
-    /// capacity and current Spot Instance requests. For more information about Spot Instances,
-    /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">Spot
-    /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// capacity and current Spot Instance requests. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+    /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
     /// 
     ///  <important> 
     /// <para>

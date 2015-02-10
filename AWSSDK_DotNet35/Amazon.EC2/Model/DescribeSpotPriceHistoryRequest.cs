@@ -29,29 +29,18 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSpotPriceHistory operation.
-    /// Describes the Spot Price history. Spot Instances are instances that Amazon EC2 starts
-    /// on your behalf when the maximum price that you specify exceeds the current Spot Price.
-    /// Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity
-    /// and current Spot Instance requests. For more information about Spot Instances, see
-    /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">Spot
-    /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Describes the Spot Price history. The prices returned are listed in chronological
+    /// order, from the oldest to the most recent, for up to the past 90 days. For more information,
+    /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
+    /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+    /// Linux</i>.
     /// 
     ///  
     /// <para>
-    /// When you specify an Availability Zone, this operation describes the price history
-    /// for the specified Availability Zone with the most recent set of prices listed first.
-    /// If you don't specify an Availability Zone, you get the prices across all Availability
-    /// Zones, starting with the most recent set. However, if you're using an API version
-    /// earlier than 2011-05-15, you get the lowest price across the region for the specified
-    /// time period. The prices returned are listed in chronological order, from the oldest
-    /// to the most recent.
-    /// </para>
-    ///  
-    /// <para>
-    /// When you specify the start and end time options, this operation returns two pieces
-    /// of data: the prices of the instance types within the time range that you specified
-    /// and the time when the price changed. The price is valid within the time period that
-    /// you specified; the response merely indicates the last time that the price changed.
+    /// When you specify a start and end time, this operation returns the prices of the instance
+    /// types within the time range that you specified and the time when the price changed.
+    /// The price is valid within the time period that you specified; the response merely
+    /// indicates the last time that the price changed.
     /// </para>
     /// </summary>
     public partial class DescribeSpotPriceHistoryRequest : AmazonEC2Request
@@ -68,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone.
+        /// Filters the results by the specified Availability Zone.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -86,7 +75,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end date and time of the Spot Price history data.
+        /// The date and time, up to the current date, from which to stop retrieving the price
+        /// history data.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -148,7 +138,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceTypes. 
         /// <para>
-        /// One or more instance types.
+        /// Filters the results by the specified instance types.
         /// </para>
         /// </summary>
         public List<string> InstanceTypes
@@ -166,7 +156,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The number of rows to return.
+        /// The maximum number of items to return for this call. The call also returns a token
+        /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -184,7 +175,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The next set of rows to return.
+        /// The token for the next set of items. (You received this token from a prior call.)
         /// </para>
         /// </summary>
         public string NextToken
@@ -202,7 +193,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ProductDescriptions. 
         /// <para>
-        /// One or more basic product descriptions.
+        /// Filters the results by the specified basic product descriptions.
         /// </para>
         /// </summary>
         public List<string> ProductDescriptions
@@ -220,7 +211,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start date and time of the Spot Price history data.
+        /// The date and time, up to the past 90 days, from which to start retrieving the price
+        /// history data.
         /// </para>
         /// </summary>
         public DateTime StartTime

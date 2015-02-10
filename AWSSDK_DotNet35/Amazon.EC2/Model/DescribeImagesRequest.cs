@@ -245,7 +245,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Filters the images by the owner. Specify an AWS account ID, <code>amazon</code> (owner
         /// is Amazon), <code>aws-marketplace</code> (owner is AWS Marketplace), <code>self</code>
-        /// (owner is the sender of the request), or <code>all</code> (all owners).
+        /// (owner is the sender of the request). Omitting this option returns all images for
+        /// which you have launch permissions, regardless of ownership.
         /// </para>
         /// </summary>
         public List<string> Owners

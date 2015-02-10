@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+    #line 1 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class JsonRPCStructureMarshaller : BaseRequestMarshaller
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators
         public override string TransformText()
         {
             
-            #line 6 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+            #line 6 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 
 	AddLicenseHeader();
 
@@ -40,42 +40,42 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("using ThirdParty.Json.LitJson;\r\n\r\nnamespace ");
             
-            #line 13 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+            #line 13 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model.Internal.MarshallTransformations\r\n{\r\n\t/// <summary>\r\n\t/// ");
             
-            #line 16 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+            #line 16 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write(" Marshaller\r\n\t/// </summary>       \r\n\tpublic class ");
             
-            #line 18 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+            #line 18 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write("Marshaller : IRequestMarshaller<");
             
-            #line 18 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+            #line 18 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write(", JsonMarshallerContext> \r\n\t{\r\n\t\tpublic void Marshall(");
             
-            #line 20 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+            #line 20 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write(" requestObject, JsonMarshallerContext context)\r\n\t\t{\r\n");
             
-            #line 22 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+            #line 22 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 
     ProcessMembers(0, "requestObject", this.Structure.Members);
 
@@ -84,14 +84,14 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("\t\t}\r\n\r\n\t\tpublic readonly static ");
             
-            #line 27 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+            #line 27 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write("Marshaller Instance = new ");
             
-            #line 27 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+            #line 27 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -100,7 +100,7 @@ namespace ServiceClientGenerator.Generators
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 32 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 32 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 
 	protected void ProcessMembers(int level, string variableName, IEnumerable<Member> members)
 	{
@@ -111,91 +111,91 @@ namespace ServiceClientGenerator.Generators
         #line default
         #line hidden
         
-        #line 38 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 38 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 38 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 38 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("            if(");
 
         
         #line default
         #line hidden
         
-        #line 38 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 38 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 38 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 38 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 38 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 38 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 38 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 38 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("())\r\n");
 
         
         #line default
         #line hidden
         
-        #line 39 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 39 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 39 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 39 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("            {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 40 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 40 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 40 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 40 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WritePropertyName(\"");
 
         
         #line default
         #line hidden
         
-        #line 40 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 40 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 40 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 40 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 41 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 41 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 
 			if(member.IsStructure || member.IsList || member.IsMap)
 			{
@@ -208,35 +208,35 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 49 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 49 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 49 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.Write(");
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 49 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation + "(" + variableName + "." + member.PropertyName + ")"));
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 49 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 50 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 50 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 
             }
 			else if(member.IsMemoryStream)
@@ -246,35 +246,35 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 55 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 55 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 55 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 55 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.Write(StringUtils.FromMemoryStream(");
 
         
         #line default
         #line hidden
         
-        #line 55 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 55 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName + "." + member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 55 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 55 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 56 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 56 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 
 			}
 			else
@@ -284,35 +284,35 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 61 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 61 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 61 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 61 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.Write(");
 
         
         #line default
         #line hidden
         
-        #line 61 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 61 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName + "." + member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 61 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 61 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 62 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 
 			}
 
@@ -320,21 +320,21 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 65 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 65 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 65 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 65 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("            }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 67 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 
 		}
 	}
@@ -346,70 +346,70 @@ this.Write("            }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 73 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 73 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("\r\n");
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 75 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 75 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                var marshaller = ");
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 75 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(structure.Name));
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 75 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("Marshaller.Instance;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 76 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 76 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 76 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 76 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                marshaller.Marshall(");
 
         
         #line default
         #line hidden
         
-        #line 76 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 76 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 76 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 76 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(", context);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 77 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 77 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 
     }
 
@@ -424,77 +424,77 @@ this.Write(", context);\r\n");
         #line default
         #line hidden
         
-        #line 87 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 87 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 87 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 87 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteArrayStart();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 88 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 88 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 88 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 88 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                foreach(var ");
 
         
         #line default
         #line hidden
         
-        #line 88 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 88 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
 
         
         #line default
         #line hidden
         
-        #line 88 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 88 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("ListValue in ");
 
         
         #line default
         #line hidden
         
-        #line 88 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 88 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 88 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 88 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(")\r\n");
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 89 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 89 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 90 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 90 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
  
 				ProcessStructure(level + 1, flatVariableName + "ListValue", structure.ListShape);
 
@@ -502,35 +502,35 @@ this.Write("                {\r\n");
         #line default
         #line hidden
         
-        #line 93 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 93 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 93 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 93 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 94 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 94 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 94 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 94 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteArrayEnd();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 95 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 
 			}
 			else if(structure.IsMap)
@@ -540,147 +540,147 @@ this.Write("                context.Writer.WriteArrayEnd();\r\n");
         #line default
         #line hidden
         
-        #line 100 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 100 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 100 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 100 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteObjectStart();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 101 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 101 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 101 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 101 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                foreach (var ");
 
         
         #line default
         #line hidden
         
-        #line 101 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 101 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
 
         
         #line default
         #line hidden
         
-        #line 101 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 101 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("Kvp in ");
 
         
         #line default
         #line hidden
         
-        #line 101 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 101 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 101 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 101 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(")\r\n");
 
         
         #line default
         #line hidden
         
-        #line 102 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 102 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 102 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 102 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 103 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 103 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 103 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 103 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                    context.Writer.WritePropertyName(");
 
         
         #line default
         #line hidden
         
-        #line 103 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 103 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
 
         
         #line default
         #line hidden
         
-        #line 103 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 103 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("Kvp.Key);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 104 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 104 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                    var ");
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 104 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 104 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("Value = ");
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 104 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 104 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("Kvp.Value;\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 106 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 106 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
  
 				ProcessStructure(level + 1, flatVariableName + "Value", structure.ValueShape);
 
@@ -688,35 +688,35 @@ this.Write("Kvp.Value;\r\n\r\n");
         #line default
         #line hidden
         
-        #line 109 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 109 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 109 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 110 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 110 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteObjectEnd();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 111 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 111 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 
 			}
 			else if(structure.IsStructure)
@@ -726,91 +726,91 @@ this.Write("                context.Writer.WriteObjectEnd();\r\n");
         #line default
         #line hidden
         
-        #line 116 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 116 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 116 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 116 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteObjectStart();\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 118 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 118 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 118 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 118 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                var marshaller = ");
 
         
         #line default
         #line hidden
         
-        #line 118 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 118 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(structure.Name));
 
         
         #line default
         #line hidden
         
-        #line 118 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 118 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("Marshaller.Instance;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 119 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 119 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                marshaller.Marshall(");
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 119 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 119 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(", context);\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 121 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 121 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 121 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 121 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteObjectEnd();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 122 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 122 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 
 			}
 			else if(structure.IsMemoryStream)
@@ -820,35 +820,35 @@ this.Write("                context.Writer.WriteObjectEnd();\r\n");
         #line default
         #line hidden
         
-        #line 127 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 127 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 127 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 127 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.Write(StringUtils.FromMemoryStream(");
 
         
         #line default
         #line hidden
         
-        #line 127 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 127 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 127 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 127 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 128 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 128 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 
 			}
 			else
@@ -858,35 +858,35 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 133 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 133 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 133 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 133 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write("                    context.Writer.Write(");
 
         
         #line default
         #line hidden
         
-        #line 133 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 133 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 133 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 133 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 134 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
+        #line 134 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\JsonRPCStructureMarshaller.tt"
 
 			}
 	}

@@ -52,7 +52,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;BCL;BCL35;CODE_ANALYSIS</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;BCL;BCL35;AWS_APM_API;CODE_ANALYSIS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\AWSSDK.xml</DocumentationFile>
@@ -66,7 +66,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;BCL;BCL35;CODE_ANALYSIS</DefineConstants>
+    <DefineConstants>TRACE;BCL;BCL35;AWS_APM_API;CODE_ANALYSIS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\AWSSDK.xml</DocumentationFile>
@@ -522,6 +522,7 @@
     <Compile Include="Amazon.Runtime\Internal\Settings\UserCrypto.cs" />
     <Compile Include="Amazon.Runtime\Internal\Transform\CustomMarshallTransformations.cs" />
     <Compile Include="Amazon.Runtime\Internal\Transform\IRequestMarshaller.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Util\Collections.cs" />
     <Compile Include="Amazon.Runtime\Internal\Util\ILogger.cs" />
     <Compile Include="Amazon.Runtime\Internal\Util\NonDisposingWrapperStream.cs" />
     <Compile Include="Amazon.Runtime\Pipeline\ErrorHandler\ExceptionHandler.cs" />
@@ -535,8 +536,6 @@
     </Compile>
     <Compile Include="Amazon.Runtime\Pipeline\Handlers\CallbackHandler.cs" />
     <Compile Include="Amazon.Runtime\Pipeline\Handlers\ErrorCallbackHandler.cs" />
-    <Compile Include="Amazon.Runtime\Pipeline\Handlers\GenericExceptionHandler.cs" />
-    <Compile Include="Amazon.Runtime\Pipeline\Handlers\GenericHandler.cs" />
     <Compile Include="Amazon.Runtime\Pipeline\Handlers\MetricsHandler.cs" />
     <Compile Include="Amazon.Runtime\Pipeline\HttpErrorResponseException.cs" />
     <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\HttpHandler.cs" />

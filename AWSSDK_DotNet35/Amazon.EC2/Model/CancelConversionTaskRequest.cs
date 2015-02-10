@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
     /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-    /// Elastic Compute Cloud User Guide</i>.
+    /// Elastic Compute Cloud User Guide for Linux</i>.
     /// </para>
     /// </summary>
     public partial class CancelConversionTaskRequest : AmazonEC2Request

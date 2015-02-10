@@ -76,7 +76,7 @@ namespace Amazon.DynamoDBv2.Model
     /// such as from Amazon Elastic MapReduce (EMR), or copy data from another database into
     /// DynamoDB. In order to improve performance with these large-scale operations, <i>BatchWriteItem</i>
     /// does not behave in the same way as individual <i>PutItem</i> and <i>DeleteItem</i>
-    /// calls would For example, you cannot specify conditions on individual put and delete
+    /// calls would. For example, you cannot specify conditions on individual put and delete
     /// requests, and <i>BatchWriteItem</i> does not return deleted items in the response.
     /// </para>
     ///  
@@ -84,8 +84,7 @@ namespace Amazon.DynamoDBv2.Model
     /// If you use a programming language that supports concurrency, such as Java, you can
     /// use threads to write items in parallel. Your application must include the necessary
     /// logic to manage the threads. With languages that don't support threading, such as
-    /// PHP, you must update or delete the specified items one at a time. In both situations,
-    /// <i>BatchWriteItem</i> provides an alternative where the API performs the specified
+    /// PHP, you must update provides an alternative where the API performs the specified
     /// put and delete operations in parallel, giving you the power of the thread pool approach
     /// without having to introduce complexity into your application.
     /// </para>
@@ -142,7 +141,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates BatchWriteItemRequest with the parameterized properties
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a list of operations to be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the map consists of the following: <ul> <li> <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted is identified by a <i>Key</i> subelement: <ul> <li> <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify <i>both</i> the hash attribute and the range attribute. </li> </ul> </li> <li> <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is identified by an <i>Item</i> subelement: <ul> <li> <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <i>ValidationException</i> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names and, for each table, a list of operations to be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the map consists of the following: <ul> <li> <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted is identified by a <i>Key</i> subelement: <ul> <li> <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide <i>both</i> the hash attribute and the range attribute. </li> </ul> </li> <li> <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is identified by an <i>Item</i> subelement: <ul> <li> <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <i>ValidationException</i> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
         public BatchWriteItemRequest(Dictionary<string, List<WriteRequest>> requestItems)
         {
             _requestItems = requestItems;
@@ -165,8 +164,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item.
         /// Each entry in this map consists of an attribute name and an attribute value. For each
         /// primary key, you must provide <i>all</i> of the key attributes. For example, with
-        /// a hash type primary key, you only need to specify the hash attribute. For a hash-and-range
-        /// type primary key, you must specify <i>both</i> the hash attribute and the range attribute.
+        /// a hash type primary key, you only need to provide the hash attribute. For a hash-and-range
+        /// type primary key, you must provide <i>both</i> the hash attribute and the range attribute.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>

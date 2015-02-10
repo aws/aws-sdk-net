@@ -29,6 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -36,97 +38,85 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ContainerDefinitionUnmarshaller : IUnmarshaller<ContainerDefinition, XmlUnmarshallerContext>, IUnmarshaller<ContainerDefinition, JsonUnmarshallerContext>
     {
-        public ContainerDefinition Unmarshall(XmlUnmarshallerContext context)
+        ContainerDefinition IUnmarshaller<ContainerDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            ContainerDefinition unmarshalledObject = new ContainerDefinition();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("command/member", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Command.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("cpu", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.Cpu = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("entryPoint/member", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.EntryPoint.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("environment/member", targetDepth))
-                    {
-                        var unmarshaller = KeyValuePairUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Environment.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("essential", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.Essential = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("image", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Image = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("links/member", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Links.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("memory", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.Memory = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("name", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("portMappings/member", targetDepth))
-                    {
-                        var unmarshaller = PortMappingUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.PortMappings.Add(item);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
-            }
-
-            return unmarshalledObject;
+            throw new NotImplementedException();
         }
 
         public ContainerDefinition Unmarshall(JsonUnmarshallerContext context)
         {
-            return null;
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ContainerDefinition unmarshalledObject = new ContainerDefinition();
+        
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("command", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Command = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("cpu", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Cpu = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("entryPoint", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.EntryPoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("environment", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<KeyValuePair, KeyValuePairUnmarshaller>(KeyValuePairUnmarshaller.Instance);
+                    unmarshalledObject.Environment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("essential", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Essential = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("image", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Image = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("links", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Links = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("memory", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Memory = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("portMappings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PortMapping, PortMappingUnmarshaller>(PortMappingUnmarshaller.Instance);
+                    unmarshalledObject.PortMappings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
+          
+            return unmarshalledObject;
         }
 
 

@@ -22,7 +22,7 @@ namespace Amazon.Runtime.Internal
     /// An abstract pipeline handler that has implements IPipelineHandler,
     /// and has the default implmentation. This is the base class for most of
     /// the handler implementations.
-    /// </summary>
+    /// </summary>    
     public abstract partial class PipelineHandler : IPipelineHandler
     {
 
@@ -49,6 +49,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="executionContext">The execution context which contains both the
         /// requests and response context.</param>
+        [System.Diagnostics.DebuggerHidden]
         public virtual void InvokeSync(IExecutionContext executionContext)
         {
             if (this.InnerHandler != null)
@@ -59,7 +60,7 @@ namespace Amazon.Runtime.Internal
             throw new InvalidOperationException("Cannot invoke InnerHandler. InnerHandler is not set.");
         }
 
-#if BCL && !BCL45 
+#if AWS_APM_API 
 
         /// <summary>
         /// Contains the processing logic for an asynchronous request invocation.
@@ -69,6 +70,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="executionContext">The execution context which contains both the
         /// requests and response context.</param>
         /// <returns>IAsyncResult which represent an async operation.</returns>
+        [System.Diagnostics.DebuggerHidden]
         public virtual IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
         {
             if (this.InnerHandler != null)
@@ -85,6 +87,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="executionContext">The execution context, it contains the
         /// request and response context.</param>
+        [System.Diagnostics.DebuggerHidden]
         public void AsyncCallback(IAsyncExecutionContext executionContext)
         {
             try
@@ -125,6 +128,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="executionContext">The execution context, it contains the
         /// request and response context.</param>
+        [System.Diagnostics.DebuggerHidden]
         protected virtual void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
         {
             if (this.OuterHandler!=null)
@@ -147,7 +151,7 @@ namespace Amazon.Runtime.Internal
         }
 #endif
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE
+#if AWS_ASYNC_API
 
         /// <summary>
         /// Contains the processing logic for an asynchronous request invocation.
@@ -158,6 +162,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="executionContext">The execution context, it contains the
         /// request and response context.</param>
         /// <returns>A task that represents the asynchronous operation.</returns>
+        [System.Diagnostics.DebuggerHidden]
         public virtual System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
             where T : AmazonWebServiceResponse, new()
         {

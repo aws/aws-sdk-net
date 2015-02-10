@@ -33,10 +33,6 @@ using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.S3.Util;
 using Map = System.Collections.Generic.Dictionary<Amazon.S3.S3QueryParameter, string>;
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE
-using System.Threading.Tasks;
-#endif
-
 namespace Amazon.S3
 {
     public partial class AmazonS3Client : AmazonServiceClient, IAmazonS3

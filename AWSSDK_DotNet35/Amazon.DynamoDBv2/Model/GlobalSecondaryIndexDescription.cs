@@ -113,18 +113,15 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>CREATING</i> - The index is being created, as the result of a <i>CreateTable</i>
-        /// or <i>UpdateTable</i> operation.
+        /// <i>CREATING</i> - The index is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>UPDATING</i> - The index is being updated, as the result of a <i>CreateTable</i>
-        /// or <i>UpdateTable</i> operation.
+        /// <i>UPDATING</i> - The index is being updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>DELETING</i> - The index is being deleted, as the result of an <i>UpdateTable</i>
-        /// or <i>DeleteTable</i> operation.
+        /// <i>DELETING</i> - The index is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>

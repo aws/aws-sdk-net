@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-    /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
     /// </para>
     /// </summary>
     public partial class CreateReservedInstancesListingRequest : AmazonEC2Request
@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier you provide to ensure idempotency of your listings.
         /// This helps avoid duplicate listings. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-        /// Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
         /// </para>
         /// </summary>
         public string ClientToken

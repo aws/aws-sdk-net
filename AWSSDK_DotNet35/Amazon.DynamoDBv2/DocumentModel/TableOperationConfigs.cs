@@ -182,6 +182,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public ScanFilter Filter { get; set; }
 
         /// <summary>
+        /// Name of the index to scan against.
+        /// </summary>
+        public string IndexName { get; set; }
+
+        /// <summary>
         /// Enum specifying what data to return from query.
         /// </summary>
         public SelectValues Select { get; set; }

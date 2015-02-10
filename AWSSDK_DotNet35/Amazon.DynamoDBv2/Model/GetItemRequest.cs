@@ -59,7 +59,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates GetItemRequest with the parameterized properties
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested item.</param>
-        /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify both the hash attribute and the range attribute.</param>
+        /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide both the hash attribute and the range attribute.</param>
         public GetItemRequest(string tableName, Dictionary<string, AttributeValue> key)
         {
             _tableName = tableName;
@@ -70,7 +70,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates GetItemRequest with the parameterized properties
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested item.</param>
-        /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify both the hash attribute and the range attribute.</param>
+        /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide both the hash attribute and the range attribute.</param>
         /// <param name="consistentRead">A value that if set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, eventually consistent reads are used.</param>
         public GetItemRequest(string tableName, Dictionary<string, AttributeValue> key, bool consistentRead)
         {
@@ -88,12 +88,12 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter allows you to retrieve lists or maps; however, it cannot retrieve individual
-        /// list or map elements.
+        /// This parameter allows you to retrieve attributes of type List or Map; however, it
+        /// cannot retrieve individual elements within a List or a Map.
         /// </para>
         /// </important> 
         /// <para>
-        /// The names of one or more attributes to retrieve. If no attribute names are specified,
+        /// The names of one or more attributes to retrieve. If no attribute names are provided,
         /// then all attributes will be returned. If any of the requested attributes are not found,
         /// they will not appear in the result.
         /// </para>
@@ -138,12 +138,12 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ExpressionAttributeNames. 
         /// <para>
-        /// One or more substitution tokens for simplifying complex expressions. The following
+        /// One or more substitution tokens for attribute names in an expression. The following
         /// are some use cases for using <i>ExpressionAttributeNames</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To shorten an attribute name that is very long or unwieldy in an expression.
+        /// To access an attribute whose name conflicts with a DynamoDB reserved word.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -157,29 +157,37 @@ namespace Amazon.DynamoDBv2.Model
         ///  </li> </ul> 
         /// <para>
         /// Use the <b>#</b> character in an expression to dereference an attribute name. For
-        /// example, consider the following expression:
+        /// example, consider the following attribute name:
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// <code>order.customerInfo.LastName = "Smith" OR order.customerInfo.LastName = "Jones"</code>
+        /// <code>Percentile</code>
         /// </para>
         /// </li></ul> 
         /// <para>
-        /// Now suppose that you specified the following for <i>ExpressionAttributeNames</i>:
+        /// The name of this attribute conflicts with a reserved word, so it cannot be used directly
+        /// in an expression. (For the complete list of reserved words, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+        /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you
+        /// could specify the following for <i>ExpressionAttributeNames</i>:
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// <code>{"#name":"order.customerInfo.LastName"}</code>
+        /// <code>{"#P":"Percentile"}</code>
         /// </para>
         /// </li></ul> 
         /// <para>
-        /// The expression can now be simplified as follows:
+        /// You could then use this substitution in an expression, as in this example:
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// <code>#name = "Smith" OR #name = "Jones"</code>
+        /// <code>#P = :val</code>
         /// </para>
-        /// </li></ul> 
+        /// </li></ul> <note>
+        /// <para>
+        /// Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>,
+        /// which are placeholders for the actual value at runtime.
+        /// </para>
+        /// </note> 
         /// <para>
         /// For more information on expression attribute names, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -206,8 +214,8 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// For the primary key, you must provide all of the attributes. For example, with a hash
-        /// type primary key, you only need to specify the hash attribute. For a hash-and-range
-        /// type primary key, you must specify both the hash attribute and the range attribute.
+        /// type primary key, you only need to provide the hash attribute. For a hash-and-range
+        /// type primary key, you must provide both the hash attribute and the range attribute.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> Key
@@ -236,7 +244,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on projection expressions, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>

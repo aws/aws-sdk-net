@@ -15,12 +15,11 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-
-using Amazon.DynamoDBv2.Model;
 using System.IO;
+using System.Linq;
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
-using Amazon.Util;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -151,11 +150,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal override AttributeValue ConvertToAttributeValue(AttributeConversionConfig conversionConfig)
         {
-            if (Entries == null || Entries.Count == 0)
+            if (Entries == null)
                 return null;
 
             AttributeValue attribute = new AttributeValue();
-            //DynamoDBEntryConversion.VerifySchemaSupport(supportsLists: true);
 
             var items = new List<AttributeValue>();
             foreach (var entry in Entries)
@@ -169,6 +167,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
 
             attribute.L = items;
+            attribute.IsLSet = true;
 
             return attribute;
         }

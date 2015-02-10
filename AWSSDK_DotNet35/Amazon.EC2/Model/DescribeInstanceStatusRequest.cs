@@ -101,9 +101,10 @@ namespace Amazon.EC2.Model
     /// <para>
     /// For more information about failed status checks, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
     /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
-    /// Guide</i>. For more information about working with scheduled events, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions">Working
+    /// Guide for Linux</i>. For more information about working with scheduled events, see
+    /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions">Working
     /// with an Instance That Has a Scheduled Event</a> in the <i>Amazon Elastic Compute Cloud
-    /// User Guide</i>.
+    /// User Guide for Linux</i>.
     /// </para>
     /// </summary>
     public partial class DescribeInstanceStatusRequest : AmazonEC2Request

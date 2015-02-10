@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -39,108 +41,54 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((RegisterTaskDefinitionRequest)input);
         }
-    
+
         public IRequest Marshall(RegisterTaskDefinitionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECS");
-            request.Parameters.Add("Action", "RegisterTaskDefinition");
-            request.Parameters.Add("Version", "2014-11-13");
+            string target = "AmazonEC2ContainerServiceV20141113.RegisterTaskDefinition";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            string uriResourcePath = "/";
+            request.ResourcePath = uriResourcePath;
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetContainerDefinitions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ContainerDefinitions)
+                    context.Writer.WritePropertyName("containerDefinitions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestContainerDefinitionsListValue in publicRequest.ContainerDefinitions)
                     {
-                        if(publicRequestlistValue.IsSetCommand())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Command)
-                            {
-                                request.Parameters.Add("containerDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "command" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
-                                publicRequestlistValuelistValueIndex++;
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetCpu())
-                        {
-                            request.Parameters.Add("containerDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "cpu", StringUtils.FromInt(publicRequestlistValue.Cpu));
-                        }
-                        if(publicRequestlistValue.IsSetEntryPoint())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.EntryPoint)
-                            {
-                                request.Parameters.Add("containerDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "entryPoint" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
-                                publicRequestlistValuelistValueIndex++;
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetEnvironment())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Environment)
-                            {
-                                if(publicRequestlistValuelistValue.IsSetName())
-                                {
-                                    request.Parameters.Add("containerDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "environment" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "name", StringUtils.FromString(publicRequestlistValuelistValue.Name));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetValue())
-                                {
-                                    request.Parameters.Add("containerDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "environment" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
-                                }
-                                publicRequestlistValuelistValueIndex++;
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetEssential())
-                        {
-                            request.Parameters.Add("containerDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "essential", StringUtils.FromBool(publicRequestlistValue.Essential));
-                        }
-                        if(publicRequestlistValue.IsSetImage())
-                        {
-                            request.Parameters.Add("containerDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "image", StringUtils.FromString(publicRequestlistValue.Image));
-                        }
-                        if(publicRequestlistValue.IsSetLinks())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Links)
-                            {
-                                request.Parameters.Add("containerDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "links" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
-                                publicRequestlistValuelistValueIndex++;
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetMemory())
-                        {
-                            request.Parameters.Add("containerDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "memory", StringUtils.FromInt(publicRequestlistValue.Memory));
-                        }
-                        if(publicRequestlistValue.IsSetName())
-                        {
-                            request.Parameters.Add("containerDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "name", StringUtils.FromString(publicRequestlistValue.Name));
-                        }
-                        if(publicRequestlistValue.IsSetPortMappings())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PortMappings)
-                            {
-                                if(publicRequestlistValuelistValue.IsSetContainerPort())
-                                {
-                                    request.Parameters.Add("containerDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "portMappings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "containerPort", StringUtils.FromInt(publicRequestlistValuelistValue.ContainerPort));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetHostPort())
-                                {
-                                    request.Parameters.Add("containerDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "portMappings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "hostPort", StringUtils.FromInt(publicRequestlistValuelistValue.HostPort));
-                                }
-                                publicRequestlistValuelistValueIndex++;
-                            }
-                        }
-                        publicRequestlistValueIndex++;
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ContainerDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestContainerDefinitionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetFamily())
                 {
-                    request.Parameters.Add("family", StringUtils.FromString(publicRequest.Family));
+                    context.Writer.WritePropertyName("family");
+                    context.Writer.Write(publicRequest.Family);
                 }
+
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
+
+
     }
 }

@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
     /// Elastic Block Store</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-    /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
     /// </para>
     /// </summary>
     public partial class CreateSnapshotRequest : AmazonEC2Request

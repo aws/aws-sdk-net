@@ -52,8 +52,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                 response.ContentRange = context.ResponseData.GetHeaderValue("Content-Range");
             if (context.ResponseData.IsHeaderPresent("Content-Type"))
                 response.ContentType = context.ResponseData.GetHeaderValue("Content-Type");
-            response.Status = (int)context.ResponseData.StatusCode;            
-            response.Body = context.Stream;        
+            response.Status = (int)context.ResponseData.StatusCode;
+            response.Body = context.Stream;
 
             return response;
         }

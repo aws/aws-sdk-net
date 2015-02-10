@@ -136,6 +136,41 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
+        public void TestKmsOverHttp()
+        {
+            var config = new AmazonS3Config
+            {
+                RegionEndpoint = AWSConfigs.RegionEndpoint,
+                UseHttp = true
+            };
+            using(var client = new AmazonS3Client(config))
+            {
+                var bucketName = S3TestUtils.CreateBucket(client);
+                try
+                {
+                    var putObjectRequest = new PutObjectRequest
+                    {
+                        BucketName = bucketName,
+                        Key = key,
+                        ContentBody = testContents,
+                        ServerSideEncryptionMethod = ServerSideEncryptionMethod.AWSKMS
+                    };
+                    Action action = () =>
+                    {
+                        client.PutObject(putObjectRequest);
+                    };
+
+                    AssertExtensions.ExpectException(action, typeof(AmazonClientException));
+                }
+                finally
+                {
+                    AmazonS3Util.DeleteS3BucketWithObjects(client, bucketName);
+                }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
         public void DefaultKeyTests()
         {
             TestSseKms(keyId: null);

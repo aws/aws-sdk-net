@@ -29,14 +29,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ListTasks operation
     /// </summary>  
-    public class ListTasksResponseUnmarshaller : XmlResponseUnmarshaller
+    public class ListTasksResponseUnmarshaller : JsonResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             ListTasksResponse response = new ListTasksResponse();
 
@@ -44,61 +46,26 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.IsStartElement)
-                {                    
-                    if(context.TestExpression("ListTasksResult", 2))
-                    {
-                        UnmarshallResult(context, response);                        
-                        continue;
-                    }
-                    
-                    if (context.TestExpression("ResponseMetadata", 2))
-                    {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
-                    }
+                if (context.TestExpression("nextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("taskArns", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.TaskArns = unmarshaller.Unmarshall(context);
+                    continue;
                 }
             }
 
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, ListTasksResponse response)
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-
-                    if (context.TestExpression("nextToken", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.NextToken = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("taskArns/member", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        response.TaskArns.Add(item);
-                        continue;
-                    }
-                } 
-           }
-
-            return;
-        }
-
-
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             if (errorResponse.Code != null && errorResponse.Code.Equals("ClientException"))
             {
                 return new ClientException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -109,6 +76,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             }
             return new AmazonECSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
         private static ListTasksResponseUnmarshaller _instance = new ListTasksResponseUnmarshaller();        
 
         internal static ListTasksResponseUnmarshaller GetInstance()

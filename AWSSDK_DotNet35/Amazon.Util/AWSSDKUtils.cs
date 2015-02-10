@@ -25,6 +25,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
+using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Util
@@ -40,7 +41,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "2.3.18.0";
+        internal const string SDKVersionNumber = "2.3.19.0";
 
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
@@ -184,6 +185,85 @@ namespace Amazon.Util
         }
 
 
+
+        #endregion
+
+        #region IsSet methods
+
+        /*
+            Set
+              Collection
+                True -> set to empty AlwaysSend*
+                False -> set to empty collection type
+              Value type
+                True -> set to default(T)
+                False -> set to null
+
+            Get
+              Collection
+                Field is AlwaysSend* OR has items -> True
+                Otherwise -> False
+              Value type
+                Field is any value -> True
+                Null -> False
+         */
+
+        internal static void SetIsSet<T>(bool isSet, ref Nullable<T> field)
+            where T : struct
+        {
+            if (isSet)
+                field = default(T);
+            else
+                field = null;
+        }
+        internal static void SetIsSet<T>(bool isSet, ref List<T> field)
+        {
+            if (isSet)
+                field = new AlwaysSendList<T>(field);
+            else
+                field = new List<T>();
+        }
+        internal static void SetIsSet<TKey, TValue>(bool isSet, ref Dictionary<TKey, TValue> field)
+        {
+            if (isSet)
+                field = new AlwaysSendDictionary<TKey, TValue>(field);
+            else
+                field = new Dictionary<TKey, TValue>();
+        }
+
+        internal static bool GetIsSet<T>(Nullable<T> field)
+            where T : struct
+        {
+            return (field.HasValue);
+        }
+        internal static bool GetIsSet<T>(List<T> field)
+        {
+            if (field == null)
+                return false;
+
+            if (field.Count > 0)
+                return true;
+
+            var sl = field as AlwaysSendList<T>;
+            if (sl != null)
+                return true;
+
+            return false;
+        }
+        internal static bool GetIsSet<TKey, TVvalue>(Dictionary<TKey, TVvalue> field)
+        {
+            if (field == null)
+                return false;
+
+            if (field.Count > 0)
+                return true;
+
+            var sd = field as AlwaysSendDictionary<TKey, TVvalue>;
+            if (sd != null)
+                return true;
+
+            return false;
+        }
 
         #endregion
 

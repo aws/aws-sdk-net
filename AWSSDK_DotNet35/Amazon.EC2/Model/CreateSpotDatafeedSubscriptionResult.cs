@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotDatafeedSubscription. 
         /// <para>
-        /// The Spot Instance datafeed subscription.
+        /// The Spot Instance data feed subscription.
         /// </para>
         /// </summary>
         public SpotDatafeedSubscription SpotDatafeedSubscription

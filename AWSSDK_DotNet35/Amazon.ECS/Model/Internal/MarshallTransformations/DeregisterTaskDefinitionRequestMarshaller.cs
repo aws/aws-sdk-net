@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -39,21 +41,38 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((DeregisterTaskDefinitionRequest)input);
         }
-    
+
         public IRequest Marshall(DeregisterTaskDefinitionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECS");
-            request.Parameters.Add("Action", "DeregisterTaskDefinition");
-            request.Parameters.Add("Version", "2014-11-13");
+            string target = "AmazonEC2ContainerServiceV20141113.DeregisterTaskDefinition";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            string uriResourcePath = "/";
+            request.ResourcePath = uriResourcePath;
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetTaskDefinition())
                 {
-                    request.Parameters.Add("taskDefinition", StringUtils.FromString(publicRequest.TaskDefinition));
+                    context.Writer.WritePropertyName("taskDefinition");
+                    context.Writer.Write(publicRequest.TaskDefinition);
                 }
+
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
+
+
     }
 }

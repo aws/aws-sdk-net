@@ -26,6 +26,7 @@ using Amazon.AutoScaling;
 using Amazon.AWSSupport;
 using Amazon.CloudFormation;
 using Amazon.CloudFront;
+using Amazon.CloudHSM;
 using Amazon.CloudSearch;
 using Amazon.CloudTrail;
 using Amazon.CloudWatch;
@@ -75,7 +76,7 @@ namespace Amazon
     /// member. Use the factory instance to create clients for all the Web Services needed by
     /// the application.</para>
     /// </summary>
-
+    [Obsolete("This class is obsolete and will be removed in a future update. Please use the client constructors for the corresponding service instead. http://blogs.aws.amazon.com/net/post/Tx2JT7AYCL2F6CB/")]
     public static class AWSClientFactory
     {
         #region Amazon AutoScaling
@@ -699,6 +700,162 @@ namespace Amazon
         public static IAmazonCloudFront CreateAmazonCloudFrontClient(AWSCredentials credentials, AmazonCloudFrontConfig config)
         {
             return new AmazonCloudFrontClient(credentials, config);
+        }
+		#endregion
+
+        #region Amazon CloudHSM
+
+        /// <summary>
+        /// Create a client for the Amazon CloudHSM Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <returns>An Amazon CloudHSM client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudHSM CreateAmazonCloudHSMClient()
+        {
+            return new AmazonCloudHSMClient();
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudHSM Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CloudHSM client</returns>
+        public static IAmazonCloudHSM CreateAmazonCloudHSMClient(AmazonCloudHSMConfig config)
+        {
+            return new AmazonCloudHSMClient(config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudHSM Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon CloudHSM client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudHSM CreateAmazonCloudHSMClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonCloudHSMClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudHSM Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon CloudHSM client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudHSM CreateAmazonCloudHSMClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, AmazonCloudHSMConfig config
+            )
+        {
+            return new AmazonCloudHSMClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudHSM Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CloudHSM client</returns>
+        public static IAmazonCloudHSM CreateAmazonCloudHSMClient(RegionEndpoint region)
+        {
+            return new AmazonCloudHSMClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudHSM Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CloudHSM client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudHSM CreateAmazonCloudHSMClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonCloudHSMClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudHSM Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon CloudHSM client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudHSM CreateAmazonCloudHSMClient(AWSCredentials credentials)
+        {
+            return new AmazonCloudHSMClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudHSM Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CloudHSM client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudHSM CreateAmazonCloudHSMClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonCloudHSMClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudHSM Service with AWSCredentials and an AmazonCloudHSM Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CloudHSM client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudHSM CreateAmazonCloudHSMClient(AWSCredentials credentials, AmazonCloudHSMConfig config)
+        {
+            return new AmazonCloudHSMClient(credentials, config);
         }
 		#endregion
 

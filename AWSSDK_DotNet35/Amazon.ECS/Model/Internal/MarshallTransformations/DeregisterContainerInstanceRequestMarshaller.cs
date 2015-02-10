@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -39,29 +41,50 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((DeregisterContainerInstanceRequest)input);
         }
-    
+
         public IRequest Marshall(DeregisterContainerInstanceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECS");
-            request.Parameters.Add("Action", "DeregisterContainerInstance");
-            request.Parameters.Add("Version", "2014-11-13");
+            string target = "AmazonEC2ContainerServiceV20141113.DeregisterContainerInstance";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            string uriResourcePath = "/";
+            request.ResourcePath = uriResourcePath;
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetCluster())
                 {
-                    request.Parameters.Add("cluster", StringUtils.FromString(publicRequest.Cluster));
+                    context.Writer.WritePropertyName("cluster");
+                    context.Writer.Write(publicRequest.Cluster);
                 }
+
                 if(publicRequest.IsSetContainerInstance())
                 {
-                    request.Parameters.Add("containerInstance", StringUtils.FromString(publicRequest.ContainerInstance));
+                    context.Writer.WritePropertyName("containerInstance");
+                    context.Writer.Write(publicRequest.ContainerInstance);
                 }
+
                 if(publicRequest.IsSetForce())
                 {
-                    request.Parameters.Add("force", StringUtils.FromBool(publicRequest.Force));
+                    context.Writer.WritePropertyName("force");
+                    context.Writer.Write(publicRequest.Force);
                 }
+
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
+
+
     }
 }

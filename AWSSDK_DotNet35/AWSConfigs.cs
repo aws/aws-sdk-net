@@ -20,17 +20,14 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Globalization;
 
 #if !WIN_RT
-using System.Configuration;
+
 #endif
 
 using Amazon.Util;
-using Amazon.Runtime.Internal.Util;
 
 namespace Amazon
 {

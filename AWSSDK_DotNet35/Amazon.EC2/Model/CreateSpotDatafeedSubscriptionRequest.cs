@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSpotDatafeedSubscription operation.
-    /// Creates a datafeed for Spot Instances, enabling you to view Spot Instance usage logs.
-    /// You can create one data feed per AWS account. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">Spot
-    /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
+    /// You can create one data feed per AWS account. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+    /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
     /// </summary>
     public partial class CreateSpotDatafeedSubscriptionRequest : AmazonEC2Request
     {
@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateSpotDatafeedSubscriptionRequest with the parameterized properties
         /// </summary>
-        /// <param name="bucket">The Amazon S3 bucket in which to store the Spot Instance datafeed. Constraints: Must be a valid bucket associated with your AWS account.</param>
+        /// <param name="bucket">The Amazon S3 bucket in which to store the Spot Instance data feed.</param>
         public CreateSpotDatafeedSubscriptionRequest(string bucket)
         {
             _bucket = bucket;
@@ -55,11 +55,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The Amazon S3 bucket in which to store the Spot Instance datafeed.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must be a valid bucket associated with your AWS account.
+        /// The Amazon S3 bucket in which to store the Spot Instance data feed.
         /// </para>
         /// </summary>
         public string Bucket
@@ -77,7 +73,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// A prefix for the datafeed file names.
+        /// A prefix for the data feed file names.
         /// </para>
         /// </summary>
         public string Prefix

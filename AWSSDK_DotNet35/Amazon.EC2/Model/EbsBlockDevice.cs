@@ -85,7 +85,7 @@ namespace Amazon.EC2.Model
         /// of the volume and the rate at which the volume accumulates I/O credits for bursting.
         /// For more information on General Purpose (SSD) baseline performance, I/O credits, and
         /// bursting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-        /// EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
         /// </para>
         ///  
         /// <para>
@@ -136,7 +136,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// Constraints: If the volume type is <code>io1</code>, the minimum size of the volume
-        /// is 10 GiB; otherwise, the minimum size is 1 GiB. The maximum volume size is 1024 GiB.
+        /// is 4 GiB; otherwise, the minimum size is 1 GiB. The maximum volume size is 1024 GiB.
         /// If you specify a snapshot, the volume size must be equal to or larger than the snapshot
         /// size.
         /// </para>

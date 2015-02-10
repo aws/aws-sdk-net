@@ -149,6 +149,17 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Determines if the member is customized to emit an Is[Name]Set property.
+        /// </summary>
+        public bool EmitIsSetProperties
+        {
+            get
+            {
+                return this.model.Customizations.EmitIsSetProperties(OwningShape.Name, this._name);
+            }
+        }
+
+        /// <summary>
         /// The name of the member as the first character upper: NameHere
         /// Uses the custom name instead if it exists
         /// </summary>

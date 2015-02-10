@@ -42,7 +42,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         {
             InvokeAsyncResponse response = new InvokeAsyncResponse();
 
-            response.Status = (int)context.ResponseData.StatusCode;            
+            response.Status = (int)context.ResponseData.StatusCode;
 
             return response;
         }

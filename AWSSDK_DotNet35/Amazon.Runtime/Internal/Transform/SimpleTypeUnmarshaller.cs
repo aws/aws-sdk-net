@@ -15,10 +15,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Xml;
 using System.Globalization;
+using System.IO;
+
+using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
 namespace Amazon.Runtime.Internal.Transform
@@ -531,10 +531,13 @@ namespace Amazon.Runtime.Internal.Transform
         public List<I> Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read(); // Read [ or null
-            List<I> list = new List<I>();
             if (context.CurrentTokenType == JsonToken.Null)
-                return list;
+                return new List<I>();
 
+            // If a list is present in the response, use AlwaysSendList,
+            // so if the response was empty, reusing the object in the request we will
+            // end up sending the same empty collection back.
+            List<I> list = new AlwaysSendList<I>();
             while (!context.Peek(JsonToken.ArrayEnd)) // Peek for ]
             {
                 list.Add(iUnmarshaller.Unmarshall(context));
@@ -562,15 +565,18 @@ namespace Amazon.Runtime.Internal.Transform
         public Dictionary<K, V> Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read(); // Read { or null
-            Dictionary<K, V> dictionary = new Dictionary<K, V>();
             if (context.CurrentTokenType == JsonToken.Null)
-                return dictionary;
+                return new Dictionary<K,V>();
 
+            // If a dictionary is present in the response, use AlwaysSendDictionary,
+            // so if the response was empty, reusing the object in the request we will
+            // end up sending the same empty collection back.
+            Dictionary<K, V> dictionary = new AlwaysSendDictionary<K, V>();
             while (!context.Peek(JsonToken.ObjectEnd)) // Peek }
-                {
-                    KeyValuePair<K, V> item = KVUnmarshaller.Unmarshall(context);
-                    dictionary.Add(item.Key, item.Value);
-                }
+            {
+                KeyValuePair<K, V> item = KVUnmarshaller.Unmarshall(context);
+                dictionary.Add(item.Key, item.Value);
+            }
             context.Read(); // Read }
             return dictionary;
 

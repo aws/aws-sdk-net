@@ -22,7 +22,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             List<string> toDelete = new List<string>();
             foreach (MetricAlarm alarm in describeResult.MetricAlarms)
             {
-                if (alarm.MetricName.StartsWith(ALARM_BASENAME))
+                if (alarm.MetricName.StartsWith(ALARM_BASENAME) || alarm.AlarmName.StartsWith("An Alarm Name 2"))
                 {
                     toDelete.Add(alarm.AlarmName);
                 }

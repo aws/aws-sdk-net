@@ -50,12 +50,13 @@ namespace Amazon.EC2.Model
     /// and any other devices attached during the instance launch are automatically deleted.
     /// For more information about the differences between stopping and terminating instances,
     /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-    /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information about troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
-    /// Terminating Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Terminating Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+    /// Linux</i>.
     /// </para>
     /// </summary>
     public partial class TerminateInstancesRequest : AmazonEC2Request

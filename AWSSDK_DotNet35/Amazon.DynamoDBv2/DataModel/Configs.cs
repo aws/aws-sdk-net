@@ -114,8 +114,8 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool? BackwardQuery { get; set; }
 
         /// <summary>
-        /// Property indicating the name of the index to query against.
-        /// This value is optional if the index name can be inferred from the query call.
+        /// Property indicating the name of the index to query or scan against.
+        /// This value is optional if the index name can be inferred from the call.
         /// </summary>
         public string IndexName { get; set; }
 
@@ -357,8 +357,8 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool? BackwardQuery { get; set; }
 
         /// <summary>
-        /// Property indicating the name of the index to query against.
-        /// This value is optional if the index name can be inferred from the query call.
+        /// Property indicating the name of the index to query or scan against.
+        /// This value is optional if the index name can be inferred from the call.
         /// </summary>
         public string IndexName { get; set; }
 

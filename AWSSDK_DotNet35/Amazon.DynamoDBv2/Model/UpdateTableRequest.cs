@@ -101,7 +101,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property GlobalSecondaryIndexUpdates. 
         /// <para>
         /// An array of one or more global secondary indexes for the table. For each index in
-        /// the array, you can specify one action:
+        /// the array, you can request one action:
         /// </para>
         ///  <ul> <li>
         /// <para>

@@ -20,15 +20,58 @@ namespace Amazon.Runtime.Internal
     /// <summary>
     /// This handler resolves the endpoint to be used for the current request.
     /// </summary>
-    public class EndpointResolver : GenericHandler
+    public class EndpointResolver : PipelineHandler
     {
+        /// <summary>
+        /// Calls pre invoke logic before calling the next handler 
+        /// in the pipeline.
+        /// </summary>
+        /// <param name="executionContext">The execution context which contains both the
+        /// requests and response context.</param>
+        public override void InvokeSync(IExecutionContext executionContext)
+        {
+            PreInvoke(executionContext);
+            base.InvokeSync(executionContext);
+        }
+#if AWS_ASYNC_API 
+
+        /// <summary>
+        /// Calls pre invoke logic before calling the next handler 
+        /// in the pipeline.
+        /// </summary>
+        /// <typeparam name="T">The response type for the current request.</typeparam>
+        /// <param name="executionContext">The execution context, it contains the
+        /// request and response context.</param>
+        /// <returns>A task that represents the asynchronous operation.</returns>
+        public override System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
+        {
+            PreInvoke(executionContext);
+            return base.InvokeAsync<T>(executionContext);                        
+        }
+
+#elif AWS_APM_API
+
+        /// <summary>
+        /// Calls pre invoke logic before calling the next handler 
+        /// in the pipeline.
+        /// </summary>
+        /// <param name="executionContext">The execution context which contains both the
+        /// requests and response context.</param>
+        /// <returns>IAsyncResult which represent an async operation.</returns>
+        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
+        {
+            PreInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
+            return base.InvokeAsync(executionContext);
+        }
+#endif
+
         /// <summary>
         /// Resolves the endpoint to be used for the current request
         /// before invoking the next handler.
         /// </summary>
         /// <param name="executionContext">The execution context, it contains the
         /// request and response context.</param>
-        protected override void PreInvoke(IExecutionContext executionContext)
+        protected void PreInvoke(IExecutionContext executionContext)
         {
             var requestContext = executionContext.RequestContext;
             if(requestContext.Request.Endpoint == null)

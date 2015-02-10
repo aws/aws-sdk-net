@@ -11,5 +11,15 @@
                 "constructorInput":"new Amazon.DynamoDBv2.Internal.DynamoDBRetryPolicy(this.Config.MaxErrorRetry)"
             }
         ]
-    } 
+    },
+    "emitIsSetProperties":{
+        "AttributeValue" : [
+            "BOOL",
+            "M",
+            "L"
+        ],
+        "GetItemOutput" : [
+            "Item"
+        ]
+    }
 }

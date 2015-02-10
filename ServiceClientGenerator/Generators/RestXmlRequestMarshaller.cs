@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+    #line 1 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class RestXmlRequestMarshaller : BaseRequestMarshaller
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators
         public override string TransformText()
         {
             
-            #line 6 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+            #line 6 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 
 	AddLicenseHeader();
 	
@@ -40,28 +40,28 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("using System.Xml;\r\n\r\nnamespace ");
             
-            #line 13 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+            #line 13 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model.Internal.MarshallTransformations\r\n{\r\n\t/// <summary>\r\n\t/// ");
             
-            #line 16 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+            #line 16 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write(" Request Marshaller\r\n\t/// </summary>       \r\n\tpublic class ");
             
-            #line 18 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+            #line 18 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("RequestMarshaller : IMarshaller<IRequest, ");
             
-            #line 18 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+            #line 18 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -70,14 +70,14 @@ namespace ServiceClientGenerator.Generators
                     "arshall(AmazonWebServiceRequest input)\r\n        {\r\n            return this.Marsh" +
                     "all((");
             
-            #line 22 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+            #line 22 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("Request)input);\r\n        }\r\n\r\n\t\tpublic IRequest Marshall(");
             
-            #line 25 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+            #line 25 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -85,14 +85,14 @@ namespace ServiceClientGenerator.Generators
             this.Write("Request publicRequest)\r\n\t\t{\r\n\t\t\tvar request = new DefaultRequest(publicRequest, \"" +
                     "");
             
-            #line 27 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+            #line 27 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\");\r\n");
             
-            #line 28 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+            #line 28 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 
 	// Assign HttpMethod if present or default to POST
 	if(!string.IsNullOrWhiteSpace(this.Operation.HttpMethod)){		
@@ -102,14 +102,14 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("\t\t\trequest.HttpMethod = \"");
             
-            #line 32 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+            #line 32 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.HttpMethod));
             
             #line default
             #line hidden
             this.Write("\";\r\n");
             
-            #line 33 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+            #line 33 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 
 	}
 	var requestStructure = this.Operation.RequestStructure;
@@ -126,7 +126,7 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("\t\t\trequest.ResourcePath = uriResourcePath;\r\n\r\n");
             
-            #line 46 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+            #line 46 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
    
 	// Process any members which are marshalled as part of the request body
 	if(this.Operation.RequestHasBodyMembers)
@@ -139,7 +139,7 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("\r\n");
             
-            #line 54 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+            #line 54 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 
 	// If there aren't any members that are marshalled as part of the body or streamed	
 	if(this.Operation.UseQueryString)
@@ -150,7 +150,7 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("\t\t\trequest.UseQueryString = true;\r\n");
             
-            #line 60 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+            #line 60 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 	}	
 
             
@@ -160,7 +160,7 @@ namespace ServiceClientGenerator.Generators
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 69 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 69 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 
 
 	void ProcessRequestBodyMembers(string variableName, Operation operation)
@@ -170,7 +170,7 @@ namespace ServiceClientGenerator.Generators
         #line default
         #line hidden
         
-        #line 73 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 73 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\tvar stringWriter = new StringWriter(CultureInfo.InvariantCulture);\r\n\t\t\tusing (" +
         "var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encodin" +
         "g = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))\r\n\t\t\t{   \r\n");
@@ -179,7 +179,7 @@ this.Write("\t\t\tvar stringWriter = new StringWriter(CultureInfo.InvariantCultu
         #line default
         #line hidden
         
-        #line 77 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 77 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 
 		if(operation.RequestPayloadMember==null)
 		{
@@ -188,42 +188,42 @@ this.Write("\t\t\tvar stringWriter = new StringWriter(CultureInfo.InvariantCultu
         #line default
         #line hidden
         
-        #line 80 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 80 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\txmlWriter.WriteStartElement(\"");
 
         
         #line default
         #line hidden
         
-        #line 81 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 81 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Input.LocationName));
 
         
         #line default
         #line hidden
         
-        #line 81 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 81 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 81 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 81 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.XmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 81 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 81 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\");\t\r\n");
 
         
         #line default
         #line hidden
         
-        #line 82 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 82 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 
 		}
 		else
@@ -233,42 +233,42 @@ this.Write("\");\t\r\n");
         #line default
         #line hidden
         
-        #line 86 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 86 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\txmlWriter.WriteStartElement(\"");
 
         
         #line default
         #line hidden
         
-        #line 87 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 87 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.RequestPayloadMember.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 87 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 87 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 87 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 87 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.XmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 87 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 87 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\");\t\t\t\t\t\t\t\t\r\n");
 
         
         #line default
         #line hidden
         
-        #line 88 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 88 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 
 		}
 		var childmembers = operation.RequestPayloadMember == null ? operation.RequestBodyMembers : operation.RequestPayloadMember.Shape.Members;
@@ -294,112 +294,112 @@ this.Write("\");\t\t\t\t\t\t\t\t\r\n");
         #line default
         #line hidden
         
-        #line 108 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 108 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\tif(");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 109 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 109 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 109 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 109 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("())\r\n\t\t\t\t\txmlWriter.WriteElementString(\"");
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 110 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 110 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 110 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.XmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 110 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\", StringUtils.From");
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 110 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.GetPrimitiveType()));
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 110 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 110 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 110 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 110 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 110 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("));\t\t\t\t\t\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 112 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 112 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 
 			}
 			
@@ -409,7 +409,7 @@ this.Write("));\t\t\t\t\t\r\n\r\n");
         #line default
         #line hidden
         
-        #line 116 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 116 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(@"
 				xmlWriter.WriteEndElement();
 			}
@@ -429,7 +429,7 @@ this.Write(@"
         #line default
         #line hidden
         
-        #line 130 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 130 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 				       
 	}
 
@@ -456,112 +456,112 @@ this.Write(@"
         #line default
         #line hidden
         
-        #line 151 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 151 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\tif(");
 
         
         #line default
         #line hidden
         
-        #line 152 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 152 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 152 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 152 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 152 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 152 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 152 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 152 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("())\r\n\t\t\t\t\txmlWriter.WriteElementString(\"");
 
         
         #line default
         #line hidden
         
-        #line 153 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 153 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 153 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 153 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 153 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 153 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 153 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 153 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\", StringUtils.From");
 
         
         #line default
         #line hidden
         
-        #line 153 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 153 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.GetPrimitiveType()));
 
         
         #line default
         #line hidden
         
-        #line 153 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 153 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 153 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 153 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 153 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 153 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 153 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 153 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 153 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 153 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("));\t\t\t\t \r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 155 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 155 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 
 			}
 		}
@@ -579,56 +579,56 @@ this.Write("));\t\t\t\t \r\n\r\n");
         #line default
         #line hidden
         
-        #line 167 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 167 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\t\r\n\t\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 168 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 168 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 168 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 168 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(" != null) \r\n\t\t\t\t{\r\n\t\t\t\t\txmlWriter.WriteStartElement(\"");
 
         
         #line default
         #line hidden
         
-        #line 170 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 170 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallName));
 
         
         #line default
         #line hidden
         
-        #line 170 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 170 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 170 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 170 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 170 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 170 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\");\t\t\t\r\n");
 
         
         #line default
         #line hidden
         
-        #line 171 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 171 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 
 			PushIndent("	");
 			ProcessMembers(variableName, shape.Members, xmlNamespace);
@@ -638,14 +638,14 @@ this.Write("\");\t\t\t\r\n");
         #line default
         #line hidden
         
-        #line 175 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 175 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\t\txmlWriter.WriteEndElement();\r\n\t\t\t\t}\r\n");
 
         
         #line default
         #line hidden
         
-        #line 178 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 178 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 		
 	}
 
@@ -658,140 +658,140 @@ this.Write("\t\t\t\t\txmlWriter.WriteEndElement();\r\n\t\t\t\t}\r\n");
         #line default
         #line hidden
         
-        #line 185 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 185 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\tvar ");
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 186 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listVariable));
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 186 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(" = ");
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 186 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 186 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 186 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 186 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(";\r\n\t\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 187 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 187 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listVariable));
 
         
         #line default
         #line hidden
         
-        #line 187 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 187 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(" != null && ");
 
         
         #line default
         #line hidden
         
-        #line 187 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 187 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listVariable));
 
         
         #line default
         #line hidden
         
-        #line 187 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 187 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(".Count > 0) \r\n\t\t\t\t{\t\t\t\t\t\t\r\n\t\t\t\t\txmlWriter.WriteStartElement(\"");
 
         
         #line default
         #line hidden
         
-        #line 189 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 189 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 189 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 189 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 189 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 189 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 189 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 189 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\");\r\n\t\t\t\t\tforeach (var ");
 
         
         #line default
         #line hidden
         
-        #line 190 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 190 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listItemVariable));
 
         
         #line default
         #line hidden
         
-        #line 190 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 190 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(" in ");
 
         
         #line default
         #line hidden
         
-        #line 190 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 190 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listVariable));
 
         
         #line default
         #line hidden
         
-        #line 190 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 190 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(") \r\n\t\t\t\t\t{\r\n");
 
         
         #line default
         #line hidden
         
-        #line 192 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 192 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 
 			PushIndent("	");			
 			if(member.Shape.ListShape.IsStructure)
@@ -806,56 +806,56 @@ this.Write(") \r\n\t\t\t\t\t{\r\n");
         #line default
         #line hidden
         
-        #line 201 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 201 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\t\txmlWriter.WriteStartElement(\"");
 
         
         #line default
         #line hidden
         
-        #line 202 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 202 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ListMarshallName));
 
         
         #line default
         #line hidden
         
-        #line 202 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 202 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 202 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 202 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 202 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 202 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\");\r\n                    xmlWriter.WriteValue(");
 
         
         #line default
         #line hidden
         
-        #line 203 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 203 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listItemVariable));
 
         
         #line default
         #line hidden
         
-        #line 203 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 203 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write(");\r\n                    xmlWriter.WriteEndElement();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 205 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 205 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 				
 			}
 			PopIndent();			
@@ -864,14 +864,14 @@ this.Write(");\r\n                    xmlWriter.WriteEndElement();\r\n");
         #line default
         #line hidden
         
-        #line 208 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 208 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\t\t}\t\t\t\r\n\t\t\t\t\txmlWriter.WriteEndElement();\t\t\t\r\n\t\t\t\t}\r\n");
 
         
         #line default
         #line hidden
         
-        #line 212 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
+        #line 212 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\RestXmlRequestMarshaller.tt"
 				
 	}
 

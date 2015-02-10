@@ -168,7 +168,7 @@ namespace Amazon.CognitoIdentity
             return identityId;
         }
 
-#if !BCL35
+#if AWS_ASYNC_API
         /// <summary>
         /// Gets the Identity Id corresponding to the credentials retrieved from Cognito.
         /// Note: this setting may change during execution. To be notified of its
@@ -279,7 +279,7 @@ namespace Amazon.CognitoIdentity
 
         #region Overrides
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE 
+#if AWS_ASYNC_API
 
         protected override async System.Threading.Tasks.Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
         {

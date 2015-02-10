@@ -29,6 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -36,50 +38,43 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class NetworkBindingUnmarshaller : IUnmarshaller<NetworkBinding, XmlUnmarshallerContext>, IUnmarshaller<NetworkBinding, JsonUnmarshallerContext>
     {
-        public NetworkBinding Unmarshall(XmlUnmarshallerContext context)
+        NetworkBinding IUnmarshaller<NetworkBinding, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            NetworkBinding unmarshalledObject = new NetworkBinding();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("bindIP", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.BindIP = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("containerPort", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.ContainerPort = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("hostPort", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.HostPort = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
-            }
-
-            return unmarshalledObject;
+            throw new NotImplementedException();
         }
 
         public NetworkBinding Unmarshall(JsonUnmarshallerContext context)
         {
-            return null;
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            NetworkBinding unmarshalledObject = new NetworkBinding();
+        
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("bindIP", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BindIP = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("containerPort", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ContainerPort = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("hostPort", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.HostPort = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
+          
+            return unmarshalledObject;
         }
 
 

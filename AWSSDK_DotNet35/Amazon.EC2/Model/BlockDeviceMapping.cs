@@ -94,9 +94,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VirtualName. 
         /// <para>
-        /// The virtual device name (ephemeral[0..3]). The number of available instance store
-        /// volumes depends on the instance type. After you connect to the instance, you must
-        /// mount the volume.
+        /// The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered
+        /// starting from 0. An instance type with 2 available instance store volumes can specify
+        /// mappings for <code>ephemeral0</code> and <code>ephemeral1</code>.The number of available
+        /// instance store volumes depends on the instance type. After you connect to the instance,
+        /// you must mount the volume.
         /// </para>
         ///  
         /// <para>

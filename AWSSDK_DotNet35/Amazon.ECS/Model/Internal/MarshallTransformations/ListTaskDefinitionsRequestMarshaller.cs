@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -39,29 +41,50 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((ListTaskDefinitionsRequest)input);
         }
-    
+
         public IRequest Marshall(ListTaskDefinitionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECS");
-            request.Parameters.Add("Action", "ListTaskDefinitions");
-            request.Parameters.Add("Version", "2014-11-13");
+            string target = "AmazonEC2ContainerServiceV20141113.ListTaskDefinitions";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            string uriResourcePath = "/";
+            request.ResourcePath = uriResourcePath;
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetFamilyPrefix())
                 {
-                    request.Parameters.Add("familyPrefix", StringUtils.FromString(publicRequest.FamilyPrefix));
+                    context.Writer.WritePropertyName("familyPrefix");
+                    context.Writer.Write(publicRequest.FamilyPrefix);
                 }
+
                 if(publicRequest.IsSetMaxResults())
                 {
-                    request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
+
                 if(publicRequest.IsSetNextToken())
                 {
-                    request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
+
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
+
+
     }
 }

@@ -70,7 +70,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates CreateTableRequest with the parameterized properties
         /// </summary>
         /// <param name="tableName">The name of the table to create.</param>
-        /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <i>KeySchema</i> must also be defined in the <i>AttributeDefinitions</i> array. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <i>KeySchemaElement</i> in the array is composed of: <ul> <li> <i>AttributeName</i> - The name of this key attribute. </li> <li> <i>KeyType</i> - Determines whether the key attribute is <code>HASH</code> or <code>RANGE</code>. </li> </ul> For a primary key that consists of a hash attribute, you must specify exactly one element with a <i>KeyType</i> of <code>HASH</code>. For a primary key that consists of hash and range attributes, you must specify exactly two elements, in this order: The first element must have a <i>KeyType</i> of <code>HASH</code>, and the second element must have a <i>KeyType</i> of <code>RANGE</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
+        /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <i>KeySchema</i> must also be defined in the <i>AttributeDefinitions</i> array. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <i>KeySchemaElement</i> in the array is composed of: <ul> <li> <i>AttributeName</i> - The name of this key attribute. </li> <li> <i>KeyType</i> - Determines whether the key attribute is <code>HASH</code> or <code>RANGE</code>. </li> </ul> For a primary key that consists of a hash attribute, you must provide exactly one element with a <i>KeyType</i> of <code>HASH</code>. For a primary key that consists of hash and range attributes, you must provide exactly two elements, in this order: The first element must have a <i>KeyType</i> of <code>HASH</code>, and the second element must have a <i>KeyType</i> of <code>RANGE</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         public CreateTableRequest(string tableName, List<KeySchemaElement> keySchema)
         {
             _tableName = tableName;
@@ -81,7 +81,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates CreateTableRequest with the parameterized properties
         /// </summary>
         /// <param name="tableName">The name of the table to create.</param>
-        /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <i>KeySchema</i> must also be defined in the <i>AttributeDefinitions</i> array. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <i>KeySchemaElement</i> in the array is composed of: <ul> <li> <i>AttributeName</i> - The name of this key attribute. </li> <li> <i>KeyType</i> - Determines whether the key attribute is <code>HASH</code> or <code>RANGE</code>. </li> </ul> For a primary key that consists of a hash attribute, you must specify exactly one element with a <i>KeyType</i> of <code>HASH</code>. For a primary key that consists of hash and range attributes, you must specify exactly two elements, in this order: The first element must have a <i>KeyType</i> of <code>HASH</code>, and the second element must have a <i>KeyType</i> of <code>RANGE</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
+        /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <i>KeySchema</i> must also be defined in the <i>AttributeDefinitions</i> array. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <i>KeySchemaElement</i> in the array is composed of: <ul> <li> <i>AttributeName</i> - The name of this key attribute. </li> <li> <i>KeyType</i> - Determines whether the key attribute is <code>HASH</code> or <code>RANGE</code>. </li> </ul> For a primary key that consists of a hash attribute, you must provide exactly one element with a <i>KeyType</i> of <code>HASH</code>. For a primary key that consists of hash and range attributes, you must provide exactly two elements, in this order: The first element must have a <i>KeyType</i> of <code>HASH</code>, and the second element must have a <i>KeyType</i> of <code>RANGE</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="attributeDefinitions">An array of attributes that describe the key schema for the table and indexes.</param>
         /// <param name="provisionedThroughput">Sets the CreateTableRequest ProvisionedThroughput property</param>
         public CreateTableRequest(string tableName, List<KeySchemaElement> keySchema, List<AttributeDefinition> attributeDefinitions, ProvisionedThroughput provisionedThroughput)
@@ -156,7 +156,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         /// <i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are projected
-        /// into the secondary index. The total count of attributes specified in <i>NonKeyAttributes</i>,
+        /// into the secondary index. The total count of attributes provided in <i>NonKeyAttributes</i>,
         /// summed across all of the secondary indexes, must not exceed 20. If you project the
         /// same attribute into two different indexes, this counts as two distinct attributes
         /// when determining the total.
@@ -202,12 +202,12 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For a primary key that consists of a hash attribute, you must specify exactly one
+        /// For a primary key that consists of a hash attribute, you must provide exactly one
         /// element with a <i>KeyType</i> of <code>HASH</code>.
         /// </para>
         ///  
         /// <para>
-        /// For a primary key that consists of hash and range attributes, you must specify exactly
+        /// For a primary key that consists of hash and range attributes, you must provide exactly
         /// two elements, in this order: The first element must have a <i>KeyType</i> of <code>HASH</code>,
         /// and the second element must have a <i>KeyType</i> of <code>RANGE</code>.
         /// </para>
@@ -281,7 +281,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         /// <i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are projected
-        /// into the secondary index. The total count of attributes specified in <i>NonKeyAttributes</i>,
+        /// into the secondary index. The total count of attributes provided in <i>NonKeyAttributes</i>,
         /// summed across all of the secondary indexes, must not exceed 20. If you project the
         /// same attribute into two different indexes, this counts as two distinct attributes
         /// when determining the total.

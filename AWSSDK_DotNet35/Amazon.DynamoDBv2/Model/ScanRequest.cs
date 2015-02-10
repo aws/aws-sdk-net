@@ -30,8 +30,8 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Container for the parameters to the Scan operation.
     /// The <i>Scan</i> operation returns one or more items and item attributes by accessing
-    /// every item in the table. To have DynamoDB return fewer items, you can provide a <i>ScanFilter</i>
-    /// operation.
+    /// every item in a table or a secondary index. To have DynamoDB return fewer items, you
+    /// can provide a <i>ScanFilter</i> operation.
     /// 
     ///  
     /// <para>
@@ -48,9 +48,9 @@ namespace Amazon.DynamoDBv2.Model
     ///  
     /// <para>
     /// By default, <i>Scan</i> operations proceed sequentially; however, for faster performance
-    /// on large tables, applications can request a parallel <i>Scan</i> operation by specifying
-    /// the <i>Segment</i> and <i>TotalSegments</i> parameters. For more information, see
-    /// <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
+    /// on a large table or secondary index, applications can request a parallel <i>Scan</i>
+    /// operation by providing the <i>Segment</i> and <i>TotalSegments</i> parameters. For
+    /// more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
     /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -62,6 +62,7 @@ namespace Amazon.DynamoDBv2.Model
         private Dictionary<string, string> _expressionAttributeNames = new Dictionary<string, string>();
         private Dictionary<string, AttributeValue> _expressionAttributeValues = new Dictionary<string, AttributeValue>();
         private string _filterExpression;
+        private string _indexName;
         private int? _limit;
         private string _projectionExpression;
         private ReturnConsumedCapacity _returnConsumedCapacity;
@@ -79,7 +80,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates ScanRequest with the parameterized properties
         /// </summary>
-        /// <param name="tableName">The name of the table containing the requested items.</param>
+        /// <param name="tableName">The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</param>
         public ScanRequest(string tableName)
         {
             _tableName = tableName;
@@ -94,12 +95,12 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter allows you to retrieve lists or maps; however, it cannot retrieve individual
-        /// list or map elements.
+        /// This parameter allows you to retrieve attributes of type List or Map; however, it
+        /// cannot retrieve individual elements within a List or a Map.
         /// </para>
         /// </important> 
         /// <para>
-        /// The names of one or more attributes to retrieve. If no attribute names are specified,
+        /// The names of one or more attributes to retrieve. If no attribute names are provided,
         /// then all attributes will be returned. If any of the requested attributes are not found,
         /// they will not appear in the result.
         /// </para>
@@ -129,13 +130,9 @@ namespace Amazon.DynamoDBv2.Model
         /// that if you use <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
         /// same time, DynamoDB will return a <i>ValidationException</i> exception.
         /// </para>
-        ///  
+        ///  </important> 
         /// <para>
-        /// This parameter does not support lists or maps.
-        /// </para>
-        /// </important> 
-        /// <para>
-        /// A logical operator to apply to the conditions in the <i>ScanFilter</i> map:
+        /// A logical operator to apply to the conditions in a <i>ScanFilter</i> map:
         /// </para>
         ///  <ul> <li>
         /// <para>
@@ -155,6 +152,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The operation will succeed only if the entire map evaluates to true.
         /// </para>
+        ///  <note>
+        /// <para>
+        /// This parameter does not support attributes of type List or Map.
+        /// </para>
+        /// </note>
         /// </summary>
         public ConditionalOperator ConditionalOperator
         {
@@ -201,12 +203,12 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ExpressionAttributeNames. 
         /// <para>
-        /// One or more substitution tokens for simplifying complex expressions. The following
+        /// One or more substitution tokens for attribute names in an expression. The following
         /// are some use cases for using <i>ExpressionAttributeNames</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To shorten an attribute name that is very long or unwieldy in an expression.
+        /// To access an attribute whose name conflicts with a DynamoDB reserved word.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -220,29 +222,37 @@ namespace Amazon.DynamoDBv2.Model
         ///  </li> </ul> 
         /// <para>
         /// Use the <b>#</b> character in an expression to dereference an attribute name. For
-        /// example, consider the following expression:
+        /// example, consider the following attribute name:
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// <code>order.customerInfo.LastName = "Smith" OR order.customerInfo.LastName = "Jones"</code>
+        /// <code>Percentile</code>
         /// </para>
         /// </li></ul> 
         /// <para>
-        /// Now suppose that you specified the following for <i>ExpressionAttributeNames</i>:
+        /// The name of this attribute conflicts with a reserved word, so it cannot be used directly
+        /// in an expression. (For the complete list of reserved words, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+        /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you
+        /// could specify the following for <i>ExpressionAttributeNames</i>:
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// <code>{"#name":"order.customerInfo.LastName"}</code>
+        /// <code>{"#P":"Percentile"}</code>
         /// </para>
         /// </li></ul> 
         /// <para>
-        /// The expression can now be simplified as follows:
+        /// You could then use this substitution in an expression, as in this example:
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// <code>#name = "Smith" OR #name = "Jones"</code>
+        /// <code>#P = :val</code>
         /// </para>
-        /// </li></ul> 
+        /// </li></ul> <note>
+        /// <para>
+        /// Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>,
+        /// which are placeholders for the actual value at runtime.
+        /// </para>
+        /// </note> 
         /// <para>
         /// For more information on expression attribute names, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -313,12 +323,19 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property FilterExpression. 
         /// <para>
-        /// A condition that evaluates the scan results and returns only the desired values.
+        /// A string that contains conditions that DynamoDB applies after the <i>Scan</i> operation,
+        /// but before the data is returned to you. Items that do not satisfy the <i>FilterExpression</i>
+        /// criteria are not returned.
         /// </para>
-        ///  
+        ///  <note>
         /// <para>
-        /// The condition you specify is applied to the items scanned; any items that do not match
-        /// the expression are not returned.
+        /// A <i>FilterExpression</i> is applied after the items have already been read; the process
+        /// of filtering does not consume any additional read capacity units.
+        /// </para>
+        /// </note> 
+        /// <para>
+        /// For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+        /// Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public string FilterExpression
@@ -331,6 +348,26 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetFilterExpression()
         {
             return this._filterExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IndexName. 
+        /// <para>
+        /// The name of a secondary index to scan. This index can be any local secondary index
+        /// or global secondary index. Note that if you use the <code>IndexName</code> parameter,
+        /// you must also provide <code>TableName</code>.
+        /// </para>
+        /// </summary>
+        public string IndexName
+        {
+            get { return this._indexName; }
+            set { this._indexName = value; }
+        }
+
+        // Check to see if IndexName property is set
+        internal bool IsSetIndexName()
+        {
+            return this._indexName != null;
         }
 
         /// <summary>
@@ -362,9 +399,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ProjectionExpression. 
         /// <para>
-        /// A string that identifies one or more attributes to retrieve from the table. These
-        /// attributes can include scalars, sets, or elements of a JSON document. The attributes
-        /// in the expression must be separated by commas.
+        /// A string that identifies one or more attributes to retrieve from the specified table
+        /// or index. These attributes can include scalars, sets, or elements of a JSON document.
+        /// The attributes in the expression must be separated by commas.
         /// </para>
         ///  
         /// <para>
@@ -373,7 +410,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on projection expressions, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -411,15 +448,15 @@ namespace Amazon.DynamoDBv2.Model
         /// if you use <i>ScanFilter</i> and <i>FilterExpression</i> at the same time, DynamoDB
         /// will return a <i>ValidationException</i> exception.
         /// </para>
-        ///  
-        /// <para>
-        /// This parameter does not support lists or maps.
-        /// </para>
         ///  </important> 
         /// <para>
         /// A condition that evaluates the scan results and returns only the desired values.
         /// </para>
-        ///  
+        ///  <note>
+        /// <para>
+        /// This parameter does not support attributes of type List or Map.
+        /// </para>
+        /// </note> 
         /// <para>
         /// If you specify more than one condition in the <i>ScanFilter</i> map, then by default
         /// all of the conditions must evaluate to true. In other words, the conditions are ANDed
@@ -452,7 +489,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares
-        /// binary values, for example when evaluating query expressions.
+        /// binary values.
         /// </para>
         ///  
         /// <para>
@@ -500,8 +537,8 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// Segment IDs are zero-based, so the first segment is always 0. For example, if you
-        /// want to scan a table using four application threads, the first thread specifies a
-        /// <i>Segment</i> value of 0, the second thread specifies 1, and so on.
+        /// want to use four application threads to scan a table or an index, then the first thread
+        /// specifies a <i>Segment</i> value of 0, the second thread specifies 1, and so on.
         /// </para>
         ///  
         /// <para>
@@ -516,7 +553,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <i>Segment</i>, you must also specify <i>TotalSegments</i>.
+        /// If you provide <i>Segment</i>, you must also provide <i>TotalSegments</i>.
         /// </para>
         /// </summary>
         public int Segment
@@ -576,7 +613,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table containing the requested items.
+        /// The name of the table containing the requested items; or, if you provide <code>IndexName</code>,
+        /// the name of the table to which that index belongs.
         /// </para>
         /// </summary>
         public string TableName
@@ -597,8 +635,8 @@ namespace Amazon.DynamoDBv2.Model
         /// For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents the total number
         /// of segments into which the <i>Scan</i> operation will be divided. The value of <i>TotalSegments</i>
         /// corresponds to the number of application workers that will perform the parallel scan.
-        /// For example, if you want to scan a table using four application threads, specify a
-        /// <i>TotalSegments</i> value of 4.
+        /// For example, if you want to use four application threads to scan a table or an index,
+        /// specify a <i>TotalSegments</i> value of 4.
         /// </para>
         ///  
         /// <para>

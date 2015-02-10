@@ -168,8 +168,17 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Environment. 
         /// <para>
         /// An array of <code>EnvironmentVariable</code> objects that specify environment variables
-        /// to be associated with the app. You can specify up to ten environment variables. After
-        /// you deploy the app, these variables are defined on the associated app server instance.
+        /// to be associated with the app. After you deploy the app, these variables are defined
+        /// on the associated app server instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
+        /// Environment Variables</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  There is no specific limit on the number of environment variables. However, the size
+        /// of the associated data structure - which includes the variables' names, values, and
+        /// protected flag values - cannot exceed 10 KB (10240 Bytes). This limit should accommodate
+        /// most if not all use cases. Exceeding it will cause an exception with the message,
+        /// "Environment: is too large (maximum is 10KB)." 
         /// </para>
         ///  <note>This parameter is supported only by Chef 11.10 stacks. If you have specified
         /// one or more environment variables, you cannot modify the stack's Chef version.</note>

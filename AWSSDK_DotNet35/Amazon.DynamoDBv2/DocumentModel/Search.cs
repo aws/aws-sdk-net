@@ -162,7 +162,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public int Count { get { return GetCount(); } }
 
         /// <summary>
-        /// Name of the index to query against.
+        /// Name of the index to query or scan against.
         /// </summary>
         public string IndexName { get; internal set; }
 
@@ -194,6 +194,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             ScanFilter = Filter.ToConditions(SourceTable.Conversion),
                             Select = EnumMapper.Convert(Select),
                         };
+                        if (!string.IsNullOrEmpty(this.IndexName))
+                            scanReq.IndexName = this.IndexName;
                         if (this.FilterExpression != null && this.FilterExpression.IsSet)
                             this.FilterExpression.ApplyExpression(scanReq, SourceTable.Conversion);
                         if (scanReq.ScanFilter != null && scanReq.ScanFilter.Count > 1)
@@ -217,8 +219,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             ret.Add(doc);
                             if (CollectResults)
                             {
-                            Matches.Add(doc);
-                        }
+                                Matches.Add(doc);
+                            }
                         }
                         NextKey = scanResult.LastEvaluatedKey;
                         if (NextKey == null || NextKey.Count == 0)
@@ -375,12 +377,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                 TableName = TableName,
                                 Select = EnumMapper.Convert(SelectValues.Count),
                                 ExclusiveStartKey = NextKey,
-                                ScanFilter = Filter.ToConditions(SourceTable.Conversion),
+                                ScanFilter = Filter.ToConditions(SourceTable.Conversion)
                             };
+                            if (!string.IsNullOrEmpty(this.IndexName))
+                                scanReq.IndexName = this.IndexName;
                             if (this.FilterExpression != null && this.FilterExpression.IsSet)
-                            {
                                 this.FilterExpression.ApplyExpression(scanReq, SourceTable.Conversion);
-                            }
                             if (scanReq.ScanFilter != null && scanReq.ScanFilter.Count > 1)
                                 scanReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
 

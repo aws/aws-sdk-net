@@ -26,7 +26,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;AWS_ASYNC_API</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -38,7 +38,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>Bin\Release</OutputPath>
-    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;AWS_ASYNC_API</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -172,12 +172,6 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\ErrorCallbackHandler.cs">
       <Link>Amazon.Runtime\Pipeline\Handlers\ExceptionHandler.cs</Link>
     </Compile>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\GenericExceptionHandler.cs">
-      <Link>Amazon.Runtime\Pipeline\Handlers\GenericExceptionHandler.cs</Link>
-    </Compile>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\GenericHandler.cs">
-      <Link>Amazon.Runtime\Pipeline\Handlers\GenericHandler.cs</Link>
-    </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Pipeline\Handlers\Marshaller.cs">
       <Link>Amazon.Runtime\Pipeline\Handlers\Marshaller.cs</Link>
     </Compile>
@@ -302,7 +296,7 @@
     </Compile>
     <Compile Include="..\AWSSDK_WinRT\Amazon.CognitoIdentity\*">
       <Visible>false</Visible>
-    </Compile>    
+    </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\Model\*">
       <Visible>false</Visible>
     </Compile>

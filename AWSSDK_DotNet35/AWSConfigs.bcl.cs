@@ -26,8 +26,12 @@ using System.ComponentModel;
 
 using System.Configuration;
 using System.Diagnostics;
+using System.Linq;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using System.Xml;
+using System.Reflection;
+using System.Text;
 
 namespace Amazon
 {
@@ -127,6 +131,142 @@ namespace Amazon
             }
         }
 
+        #region Generate Config Template
 
+        /// <summary>
+        /// Generates a sample XML representation of the SDK condiguration section.
+        /// </summary>
+        /// <remarks>
+        /// The XML returned has an example of every tag in the SDK configuration
+        /// section, and sample input for each attribute. This can be included in 
+        /// an App.config or Web.config and edited to suit. Where a section contains
+        /// a collection, multiple of the same tag will be output.
+        /// </remarks>
+        /// <returns>Sample XML configuration string.</returns>
+        public static string GenerateConfigTemplate()
+        {
+            Assembly a = typeof(AWSConfigs).Assembly;
+            Type t = a.GetType("Amazon.AWSSection");
+
+            var xmlSettings = new XmlWriterSettings
+            {
+                OmitXmlDeclaration = true,
+                Indent = true,
+                IndentChars = "    ",
+                NewLineOnAttributes = true,
+                NewLineChars = "\n"
+            };
+
+            var sb = new StringBuilder();
+
+            using (var xml = XmlWriter.Create(sb, xmlSettings))
+            {
+                FormatConfigSection(t, xml, tag: "aws");
+            }
+
+            return sb.ToString();
+        }
+
+        private static void FormatConfigSection(Type section, XmlWriter xml, string tag = null)
+        {
+            var props = section.GetProperties(
+                BindingFlags.Instance |
+                BindingFlags.Public |
+                BindingFlags.DeclaredOnly);
+
+            var attrs = props.Where(p => !IsConfigurationElement(p)).ToList();
+            var subsections = props.Where(p => IsConfigurationElement(p)
+                && !IsConfigurationElementCollection(p)).ToList();
+            var collections = props.Where(p => IsConfigurationElementCollection(p)).ToList();
+
+            xml.WriteStartElement(tag);
+            foreach (var prop in attrs)
+            {
+                var name = ConfigurationPropertyName(prop);
+                xml.WriteAttributeString(name, GetExampleForType(prop));
+            }
+
+            foreach (var prop in subsections)
+            {
+                var sectionName = ConfigurationPropertyName(prop);
+                if (!string.IsNullOrEmpty(sectionName))
+                    FormatConfigSection(prop.PropertyType, xml, sectionName);
+            }
+
+            foreach (var coll in collections)
+            {
+                FormatConfigurationListItems(coll, xml);
+            }
+
+            xml.WriteEndElement();
+        }
+
+        private static string GetExampleForType(PropertyInfo prop)
+        {
+            if (prop.PropertyType.Equals(typeof(bool?)))
+                return "true | false";
+            if (prop.PropertyType.Equals(typeof(int?)))
+                return "1234";
+            if (prop.PropertyType.Equals(typeof(String)))
+                return "string value";
+            if (prop.PropertyType.Equals(typeof(Type)))
+                return "NameSpace.Class, Assembly";
+
+            if (prop.PropertyType.IsEnum)
+            {
+                var members = Enum.GetNames(prop.PropertyType);
+                var separator = IsFlagsEnum(prop) ? ", " : " | ";
+                return string.Join(separator, members.ToArray());
+            }
+
+            return "( " + prop.PropertyType.FullName + " )";
+        }
+
+        private static void FormatConfigurationListItems(PropertyInfo section, XmlWriter xml)
+        {
+            var sectionName = ConfigurationPropertyName(section);
+            var itemType = TypeOfConfigurationCollectionItem(section);
+
+            var item = Activator.CreateInstance(section.PropertyType);
+            var nameProperty = section.PropertyType.GetProperty("ItemPropertyName",
+                                    BindingFlags.NonPublic | BindingFlags.Instance);
+            var itemTagName = nameProperty.GetValue(item, null).ToString();
+
+            FormatConfigSection(itemType, xml, itemTagName);
+            FormatConfigSection(itemType, xml, itemTagName);
+        }
+
+        private static bool IsFlagsEnum(PropertyInfo prop)
+        {
+            return prop.PropertyType.GetCustomAttributes(typeof(FlagsAttribute), false).Any();
+        }
+
+        private static bool IsConfigurationElement(PropertyInfo prop)
+        {
+            return typeof(ConfigurationElement).IsAssignableFrom(prop.PropertyType);
+        }
+
+        private static bool IsConfigurationElementCollection(PropertyInfo prop)
+        {
+            return typeof(ConfigurationElementCollection).IsAssignableFrom(prop.PropertyType);
+        }
+
+        private static Type TypeOfConfigurationCollectionItem(PropertyInfo prop)
+        {
+            var configCollAttr = prop.PropertyType
+                .GetCustomAttributes(typeof(ConfigurationCollectionAttribute), false)
+                .First();
+            return ((ConfigurationCollectionAttribute)configCollAttr).ItemType;
+        }
+
+        private static string ConfigurationPropertyName(PropertyInfo prop)
+        {
+            var configAttr = prop.GetCustomAttributes(typeof(ConfigurationPropertyAttribute), false)
+                .FirstOrDefault() as ConfigurationPropertyAttribute;
+
+            return null == configAttr ? prop.Name : configAttr.Name;
+        }
+
+        #endregion
     }
 }

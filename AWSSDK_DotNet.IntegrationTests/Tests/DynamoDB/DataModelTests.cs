@@ -28,6 +28,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Recreate context
                 CreateContext(conversion);
 
+                TestEmptyCollections(conversion);
+
                 TestContextConversions();
                 TestUnsupportedTypes();
 
@@ -191,6 +193,34 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsNotNull(docV2["KeySizes"].AsPrimitiveList());
         }
 
+        private void TestEmptyCollections(DynamoDBEntryConversion conversion)
+        {
+            // Check if the conversion being used is V1
+            // In V1 conversion, lists are stored as sets, which cannot
+            // be empty, so for V1 we are not testing empty lists
+            var isV1 = (conversion == DynamoDBEntryConversion.V1);
+
+            // Create and save item
+            Product product = new Product
+            {
+                Id = 1,
+                Map = new Dictionary<string, string>()
+            };
+            if (!isV1)
+                product.Components = new List<string>();
+
+            Context.Save(product);
+
+            // Load and test the item
+            var retrieved = Context.Load(product);
+            if (!isV1)
+            {
+                Assert.IsNotNull(retrieved.Components);
+                Assert.AreEqual(0, retrieved.Components.Count);
+            }
+            Assert.IsNotNull(retrieved.Map);
+            Assert.AreEqual(0, retrieved.Map.Count);
+        }
         private void TestHashObjects()
         {
             // Create and save item
@@ -464,6 +494,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             employees = Context.Query<Employee>("Diane", QueryOperator.GreaterThan, 30).ToList();
             Assert.AreEqual(1, employees.Count);
 
+            
+            // Index Query
+
             // Query local index for items with Hash-Key = "Diane"
             employees = Context.Query<Employee>("Diane", new DynamoDBOperationConfig { IndexName = "LocalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
@@ -488,6 +521,45 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     }
                 }).ToList();
             Assert.AreEqual(1, employees.Count);
+
+
+            // Index Scan
+
+            // Scan local index for items with Hash-Key = "Diane"
+            employees = Context.Scan<Employee>(
+                new List<ScanCondition> { new ScanCondition("Name", ScanOperator.Equal, "Diane") },
+                new DynamoDBOperationConfig { IndexName = "LocalIndex" }).ToList();
+            Assert.AreEqual(2, employees.Count);
+
+            // Scan local index for items with Hash-Key = "Diane" and Range-Key = "Eva"
+            employees = Context.Scan<Employee>(
+                new List<ScanCondition>
+                {
+                    new ScanCondition("Name", ScanOperator.Equal, "Diane"),
+                    new ScanCondition("ManagerName", ScanOperator.Equal, "Eva")
+                },                
+                new DynamoDBOperationConfig { IndexName = "LocalIndex" }).ToList();
+            Assert.AreEqual(2, employees.Count);
+
+            // Scan global index for item with Hash-Key (Company) = "Big River"
+            employees = Context.Scan<Employee>(
+                new List<ScanCondition> { new ScanCondition("CompanyName", ScanOperator.Equal, "Big River") },
+                new DynamoDBOperationConfig { IndexName = "GlobalIndex" }).ToList();
+            Assert.AreEqual(2, employees.Count);
+
+            // Scan global index for item with Hash-Key (Company) = "Big River", with QueryFilter for CurrentStatus = Status.Active
+            employees = Context.Scan<Employee>(
+                new List<ScanCondition>
+                {
+                    new ScanCondition("CompanyName", ScanOperator.Equal, "Big River"),
+                    new ScanCondition("CurrentStatus", ScanOperator.Equal, Status.Active)
+                },
+                new DynamoDBOperationConfig
+                {
+                    IndexName = "GlobalIndex"
+                }).ToList();
+            Assert.AreEqual(1, employees.Count);
+
         }
 
         private void TestBatchOperations()

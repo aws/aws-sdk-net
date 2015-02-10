@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// Deletes the specified placement group. You must terminate all instances in the placement
     /// group before you can delete the placement group. For more information about placement
     /// groups and cluster instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-    /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
     /// </summary>
     public partial class DeletePlacementGroupRequest : AmazonEC2Request
     {

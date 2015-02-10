@@ -93,7 +93,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationDate.
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// The date and time the image was created.
+        /// </para>
         /// </summary>
         public string CreationDate
         {

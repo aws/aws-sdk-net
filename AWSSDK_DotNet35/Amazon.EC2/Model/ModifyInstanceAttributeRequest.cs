@@ -36,7 +36,8 @@ namespace Amazon.EC2.Model
     /// <para>
     /// To modify some attributes, the instance must be stopped. For more information, see
     /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
-    /// Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide
+    /// for Linux</i>.
     /// </para>
     /// </summary>
     public partial class ModifyInstanceAttributeRequest : AmazonEC2Request
@@ -102,7 +103,7 @@ namespace Amazon.EC2.Model
         /// To add instance store volumes to an Amazon EBS-backed instance, you must add them
         /// when you launch the instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
         /// the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute
-        /// Cloud User Guide</i>.
+        /// Cloud User Guide for Linux</i>.
         /// </para>
         /// </summary>
         public List<InstanceBlockDeviceMappingSpecification> BlockDeviceMappings

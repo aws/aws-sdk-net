@@ -29,6 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -36,57 +38,49 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class TaskDefinitionUnmarshaller : IUnmarshaller<TaskDefinition, XmlUnmarshallerContext>, IUnmarshaller<TaskDefinition, JsonUnmarshallerContext>
     {
-        public TaskDefinition Unmarshall(XmlUnmarshallerContext context)
+        TaskDefinition IUnmarshaller<TaskDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            TaskDefinition unmarshalledObject = new TaskDefinition();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("containerDefinitions/member", targetDepth))
-                    {
-                        var unmarshaller = ContainerDefinitionUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.ContainerDefinitions.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("family", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Family = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("revision", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.Revision = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("taskDefinitionArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TaskDefinitionArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
-            }
-
-            return unmarshalledObject;
+            throw new NotImplementedException();
         }
 
         public TaskDefinition Unmarshall(JsonUnmarshallerContext context)
         {
-            return null;
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            TaskDefinition unmarshalledObject = new TaskDefinition();
+        
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("containerDefinitions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ContainerDefinition, ContainerDefinitionUnmarshaller>(ContainerDefinitionUnmarshaller.Instance);
+                    unmarshalledObject.ContainerDefinitions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("family", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Family = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("revision", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Revision = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("taskDefinitionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TaskDefinitionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
+          
+            return unmarshalledObject;
         }
 
 

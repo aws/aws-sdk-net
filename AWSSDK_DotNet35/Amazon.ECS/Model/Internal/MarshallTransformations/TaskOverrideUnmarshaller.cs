@@ -29,6 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -36,39 +38,31 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class TaskOverrideUnmarshaller : IUnmarshaller<TaskOverride, XmlUnmarshallerContext>, IUnmarshaller<TaskOverride, JsonUnmarshallerContext>
     {
-        public TaskOverride Unmarshall(XmlUnmarshallerContext context)
+        TaskOverride IUnmarshaller<TaskOverride, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            TaskOverride unmarshalledObject = new TaskOverride();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("containerOverrides/member", targetDepth))
-                    {
-                        var unmarshaller = ContainerOverrideUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.ContainerOverrides.Add(item);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
-            }
-
-            return unmarshalledObject;
+            throw new NotImplementedException();
         }
 
         public TaskOverride Unmarshall(JsonUnmarshallerContext context)
         {
-            return null;
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            TaskOverride unmarshalledObject = new TaskOverride();
+        
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("containerOverrides", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ContainerOverride, ContainerOverrideUnmarshaller>(ContainerOverrideUnmarshaller.Instance);
+                    unmarshalledObject.ContainerOverrides = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
+          
+            return unmarshalledObject;
         }
 
 

@@ -131,7 +131,7 @@ namespace Amazon.Runtime
             return response;
         }
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE 
+#if AWS_ASYNC_API 
 
         protected System.Threading.Tasks.Task<TResponse> InvokeAsync<TRequest, TResponse>(TRequest request, 
             IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller,
@@ -158,7 +158,7 @@ namespace Amazon.Runtime
             return this.RuntimePipeline.InvokeAsync<TResponse>(executionContext);
         }
 
-#elif BCL && !BCL45
+#elif AWS_APM_API
         protected IAsyncResult BeginInvoke<TRequest>(TRequest request,
             IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller,
             AsyncCallback callback, object state)
