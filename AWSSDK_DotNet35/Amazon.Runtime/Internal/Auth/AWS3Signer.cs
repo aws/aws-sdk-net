@@ -260,13 +260,13 @@ namespace Amazon.Runtime.Internal.Auth
 
             for (int i = 0; i < headersToSign.Count; i++)
             {
-                headersToSign[i] = headersToSign[i].ToLower(CultureInfo.InvariantCulture);
+                headersToSign[i] = headersToSign[i].ToLowerInvariant();
             }
 
             SortedDictionary<string,string> sortedHeaderMap = new SortedDictionary<string,string>();
             foreach (var entry in request.Headers)
             {
-                if (headersToSign.Contains(entry.Key.ToLower(CultureInfo.InvariantCulture)))
+                if (headersToSign.Contains(entry.Key.ToLowerInvariant()))
                 {
                     sortedHeaderMap[entry.Key] = entry.Value;
                 }
@@ -275,7 +275,7 @@ namespace Amazon.Runtime.Internal.Auth
             StringBuilder builder = new StringBuilder();
             foreach (var entry in sortedHeaderMap)
             {
-                builder.Append(entry.Key.ToLower(CultureInfo.InvariantCulture));
+                builder.Append(entry.Key.ToLowerInvariant());
                 builder.Append(":");
                 builder.Append(entry.Value);
                 builder.Append("\n");

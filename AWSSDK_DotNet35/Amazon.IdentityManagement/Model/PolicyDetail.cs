@@ -28,7 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
+    /// Contains information about an IAM policy, including the policy document.
     /// 
+    ///  
+    /// <para>
+    /// This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class PolicyDetail
     {
@@ -36,7 +42,15 @@ namespace Amazon.IdentityManagement.Model
         private string _policyName;
 
         /// <summary>
-        /// Gets and sets the property PolicyDocument.
+        /// Gets and sets the property PolicyDocument. 
+        /// <para>
+        /// The policy document.
+        /// </para>
+        ///  
+        /// <para>
+        /// The returned policy is URL-encoded according to <a href="http://www.faqs.org/rfcs/rfc3986.html">RFC
+        /// 3986</a>. 
+        /// </para>
         /// </summary>
         public string PolicyDocument
         {
@@ -51,7 +65,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PolicyName.
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// The name of the policy.
+        /// </para>
         /// </summary>
         public string PolicyName
         {

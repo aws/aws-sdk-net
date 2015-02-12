@@ -43,6 +43,7 @@ namespace Amazon.Route53Domains.Model
     public partial class UpdateDomainNameserversRequest : AmazonRoute53DomainsRequest
     {
         private string _domainName;
+        private string _fiAuthKey;
         private List<Nameserver> _nameservers = new List<Nameserver>();
 
         /// <summary>
@@ -78,6 +79,24 @@ namespace Amazon.Route53Domains.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FIAuthKey. 
+        /// <para>
+        /// The authorization key for .fi domains
+        /// </para>
+        /// </summary>
+        public string FIAuthKey
+        {
+            get { return this._fiAuthKey; }
+            set { this._fiAuthKey = value; }
+        }
+
+        // Check to see if FIAuthKey property is set
+        internal bool IsSetFIAuthKey()
+        {
+            return this._fiAuthKey != null;
         }
 
         /// <summary>

@@ -63,6 +63,12 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DomainName);
                 }
 
+                if(publicRequest.IsSetFIAuthKey())
+                {
+                    context.Writer.WritePropertyName("FIAuthKey");
+                    context.Writer.Write(publicRequest.FIAuthKey);
+                }
+
                 if(publicRequest.IsSetNameservers())
                 {
                     context.Writer.WritePropertyName("Nameservers");

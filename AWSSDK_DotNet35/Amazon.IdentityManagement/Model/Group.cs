@@ -34,8 +34,8 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     ///  This data type is used as a response element in the following actions:
     /// </para>
-    ///  <ul> <li><a>CreateGroup</a></li> <li><a>GetGroup</a></li> <li><a>ListGroups</a></li>
-    /// </ul>
+    ///  <ul> <li> <a>CreateGroup</a> </li> <li> <a>GetGroup</a> </li> <li> <a>ListGroups</a>
+    /// </li> </ul>
     /// </summary>
     public partial class Group
     {
@@ -54,10 +54,10 @@ namespace Amazon.IdentityManagement.Model
         /// Instantiates Group with the parameterized properties
         /// </summary>
         /// <param name="path">The path to the group. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </param>
-        /// <param name="groupName">The name that identifies the group.</param>
+        /// <param name="groupName">The friendly name that identifies the group.</param>
         /// <param name="groupId"> The stable and unique string identifying the group. For more information about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </param>
         /// <param name="arn"> The Amazon Resource Name (ARN) specifying the group. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </param>
-        /// <param name="createDate">The date when the group was created.</param>
+        /// <param name="createDate">The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the group was created.</param>
         public Group(string path, string groupName, string groupId, string arn, DateTime createDate)
         {
             _path = path;
@@ -90,7 +90,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property CreateDate. 
         /// <para>
-        /// The date when the group was created.
+        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the group was created.
         /// </para>
         /// </summary>
         public DateTime CreateDate
@@ -128,7 +129,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name that identifies the group.
+        /// The friendly name that identifies the group.
         /// </para>
         /// </summary>
         public string GroupName

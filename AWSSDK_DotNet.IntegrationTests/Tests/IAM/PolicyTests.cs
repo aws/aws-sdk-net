@@ -16,8 +16,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
     {
         public static string 
             TEST_ALLOW_POLICY = @"{""Statement"":[{""Effect"":""Allow"",""Action"":""*"",""Resource"":""*""}]}",
+            TEST_VERSIONED_POLICY =  @"{""Version"": ""2012-10-17"",""Statement"":[{""Effect"":""Allow"",""Action"":""*"",""Resource"":""*""}]}",
             TEST_DENY_POLICY  = @"{""Statement"":[{""Effect"":""Deny"",""Action"":""*"",""Resource"":""*""}]}";
 
+
+        
         public PolicyTests()
         {
         }
@@ -516,5 +519,56 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [TestMethod]
+        [TestCategory("IAM")]
+        public void TestCreateManagedPolicy()
+        {
+            string policyName = "test-policy-" + DateTime.Now.Ticks;
+            string arn = null;
+
+            Client.CreatePolicy(new CreatePolicyRequest { PolicyName = policyName, PolicyDocument = TEST_VERSIONED_POLICY });
+            try
+            {
+                var policies = Client.ListPolicies().Policies;
+
+                var found = false;
+                foreach (var policy in policies)
+                {
+                    if (policy.PolicyName.Equals(policyName))
+                    {
+                        found = true;
+                        arn = policy.Arn;
+                    }
+                }
+
+                Assert.IsTrue(found);
+                Assert.IsNotNull(arn);
+                
+            }
+            finally
+            {
+                Client.DeletePolicy(new DeletePolicyRequest { PolicyArn = arn });
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("IAM")]
+        public void TestAttachManagedPolicy()
+        {
+            string username = IAMUtil.CreateTestUser(Client);
+            string policyName = "sdk-policy-" + DateTime.Now.Ticks;
+
+            var policyArn = Client.CreatePolicy(new CreatePolicyRequest { PolicyName = policyName, PolicyDocument = TEST_VERSIONED_POLICY }).Policy.Arn;
+
+            try
+            {
+                Client.AttachUserPolicy(new AttachUserPolicyRequest { UserName = username, PolicyArn = policyArn });
+                Client.DetachUserPolicy(new DetachUserPolicyRequest { UserName = username, PolicyArn = policyArn });
+            }
+            finally
+            {
+                IAMUtil.DeleteTestUsers(Client, username);
+            }
+        }
     }
 }

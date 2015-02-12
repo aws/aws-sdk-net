@@ -40,6 +40,9 @@ namespace ServiceClientGenerator
             : base(model, data)
         {
             this._name = ServiceModel.CapitalizeFirstChar(name);
+            var nameOverride = this.model.Customizations.GetOverrideShapeName(this._name);
+            if (nameOverride != null)
+                this._name = nameOverride;
         }
 
         /// <summary>

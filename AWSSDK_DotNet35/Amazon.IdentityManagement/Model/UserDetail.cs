@@ -28,7 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
+    /// Contains information about an IAM user, including all the user's policies and all
+    /// the IAM groups the user is in.
     /// 
+    ///  
+    /// <para>
+    /// This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class UserDetail
     {
@@ -56,7 +63,11 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreateDate.
+        /// Gets and sets the property CreateDate. 
+        /// <para>
+        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the user was created.
+        /// </para>
         /// </summary>
         public DateTime CreateDate
         {
@@ -71,7 +82,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupList.
+        /// Gets and sets the property GroupList. 
+        /// <para>
+        /// A list of IAM groups that the user is in.
+        /// </para>
         /// </summary>
         public List<string> GroupList
         {
@@ -86,7 +100,11 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Path.
+        /// Gets and sets the property Path. 
+        /// <para>
+        /// The path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// Identifiers</a> in the <i>Using IAM</i> guide.
+        /// </para>
         /// </summary>
         public string Path
         {
@@ -101,7 +119,12 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserId.
+        /// Gets and sets the property UserId. 
+        /// <para>
+        /// The stable and unique string identifying the user. For more information about IDs,
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// Identifiers</a> in the <i>Using IAM</i> guide.
+        /// </para>
         /// </summary>
         public string UserId
         {
@@ -116,7 +139,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserName.
+        /// Gets and sets the property UserName. 
+        /// <para>
+        /// The friendly name identifying the user.
+        /// </para>
         /// </summary>
         public string UserName
         {
@@ -131,7 +157,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserPolicyList.
+        /// Gets and sets the property UserPolicyList. 
+        /// <para>
+        /// A list of the user's policies.
+        /// </para>
         /// </summary>
         public List<PolicyDetail> UserPolicyList
         {

@@ -1131,6 +1131,18 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly ExtraParamName DUNS_NUMBER = new ExtraParamName("DUNS_NUMBER");
         /// <summary>
+        /// Constant ES_IDENTIFICATION for ExtraParamName
+        /// </summary>
+        public static readonly ExtraParamName ES_IDENTIFICATION = new ExtraParamName("ES_IDENTIFICATION");
+        /// <summary>
+        /// Constant ES_IDENTIFICATION_TYPE for ExtraParamName
+        /// </summary>
+        public static readonly ExtraParamName ES_IDENTIFICATION_TYPE = new ExtraParamName("ES_IDENTIFICATION_TYPE");
+        /// <summary>
+        /// Constant ES_LEGAL_FORM for ExtraParamName
+        /// </summary>
+        public static readonly ExtraParamName ES_LEGAL_FORM = new ExtraParamName("ES_LEGAL_FORM");
+        /// <summary>
         /// Constant FI_BUSINESS_NUMBER for ExtraParamName
         /// </summary>
         public static readonly ExtraParamName FI_BUSINESS_NUMBER = new ExtraParamName("FI_BUSINESS_NUMBER");

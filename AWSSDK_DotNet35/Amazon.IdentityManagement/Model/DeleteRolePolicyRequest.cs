@@ -29,7 +29,15 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRolePolicy operation.
-    /// Deletes the specified policy associated with the specified role.
+    /// Deletes the specified inline policy that is embedded in the specified role.
+    /// 
+    ///  
+    /// <para>
+    /// A role can also have managed policies attached to it. To detach a managed policy from
+    /// a role, use <a>DetachRolePolicy</a>. For more information about policies, refer to
+    /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+    /// </para>
     /// </summary>
     public partial class DeleteRolePolicyRequest : AmazonIdentityManagementServiceRequest
     {
@@ -39,7 +47,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The name of the policy document to delete.
+        /// The name identifying the policy document to delete.
         /// </para>
         /// </summary>
         public string PolicyName
@@ -57,7 +65,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// The name of the role the associated with the policy.
+        /// The name (friendly name, not ARN) identifying the role that the policy is embedded
+        /// in.
         /// </para>
         /// </summary>
         public string RoleName

@@ -99,6 +99,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 return new NoSuchEntityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceFailure"))
+            {
+                return new ServiceFailureException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonIdentityManagementServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static DeleteSAMLProviderResponseUnmarshaller _instance = new DeleteSAMLProviderResponseUnmarshaller();        

@@ -1,23 +1,30 @@
 {
-  "noArgOverloads": [
-    "ListUsers",
-    "UpdateAccountPasswordPolicy",
-    "ListRoles",
-    "ListInstanceProfiles",
-    "ListAccessKeys",
-    "GetAccountPasswordPolicy",
-    "DeleteAccountPasswordPolicy",
-    "ListSAMLProviders",
-    "ListAccountAliases",
-    "ListGroups",
-    "ListMFADevices",
-    "ListSigningCertificates",
-    "ListVirtualMFADevices",
-    "GetAccountSummary",
-    "CreateAccessKey",
-    "GetUser",
-    "ListServerCertificates",
-    "GenerateCredentialReport",
-    "GetCredentialReport"
-  ]
+    "noArgOverloads": [
+        "ListUsers",
+        "UpdateAccountPasswordPolicy",
+        "ListRoles",
+        "ListInstanceProfiles",
+        "ListAccessKeys",
+        "GetAccountPasswordPolicy",
+        "DeleteAccountPasswordPolicy",
+        "ListSAMLProviders",
+        "ListAccountAliases",
+        "ListGroups",
+        "ListMFADevices",
+        "ListPolicies",
+        "ListSigningCertificates",
+        "ListVirtualMFADevices",
+        "GetAccountSummary",
+        "CreateAccessKey",
+        "GetUser",
+        "ListServerCertificates",
+        "GenerateCredentialReport",
+        "GetCredentialReport"
+    ],
+    "shapeSubstitutions": {
+        "Policy": { 
+            "renameShape": "ManagedPolicy"
+        }
+    }
+
 }

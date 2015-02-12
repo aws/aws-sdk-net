@@ -40,7 +40,7 @@ namespace Amazon.Glacier
         {
             List<byte[]> hashes = computePartHashs(stream);
             byte[] treeHash = computeTreehHash(hashes);
-            return BitConverter.ToString(treeHash).Replace("-", "").ToLower(CultureInfo.InvariantCulture);
+            return BitConverter.ToString(treeHash).Replace("-", "").ToLowerInvariant();
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Amazon.Glacier
             }
 
             byte[] treeHash = computeTreehHash(hashes);
-            return BitConverter.ToString(treeHash).Replace("-", "").ToLower(CultureInfo.InvariantCulture);
+            return BitConverter.ToString(treeHash).Replace("-", "").ToLowerInvariant();
         }
 
         static List<byte[]> computePartHashs(Stream stream)

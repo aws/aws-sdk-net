@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates CreateAccountAliasRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountAlias">The name of the account alias to create.</param>
+        /// <param name="accountAlias">The account alias to create.</param>
         public CreateAccountAliasRequest(string accountAlias)
         {
             _accountAlias = accountAlias;
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property AccountAlias. 
         /// <para>
-        /// The name of the account alias to create.
+        /// The account alias to create.
         /// </para>
         /// </summary>
         public string AccountAlias

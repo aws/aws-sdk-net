@@ -100,7 +100,7 @@ exports.handler = function (request, response) {
                 statement.Resources.Add(new Resource("*"));
 
 
-                var policy = new Policy();
+                var policy = new Amazon.Auth.AccessControlPolicy.Policy();
                 policy.Statements.Add(statement);
 
                 iamClient.PutRolePolicy(new PutRolePolicyRequest

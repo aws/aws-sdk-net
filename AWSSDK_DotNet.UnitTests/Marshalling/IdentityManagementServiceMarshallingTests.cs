@@ -101,6 +101,63 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void AttachGroupPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("AttachGroupPolicy");
+
+            var request = InstantiateClassGenerator.Execute<AttachGroupPolicyRequest>();
+            var marshaller = new AttachGroupPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void AttachRolePolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("AttachRolePolicy");
+
+            var request = InstantiateClassGenerator.Execute<AttachRolePolicyRequest>();
+            var marshaller = new AttachRolePolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void AttachUserPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("AttachUserPolicy");
+
+            var request = InstantiateClassGenerator.Execute<AttachUserPolicyRequest>();
+            var marshaller = new AttachUserPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void ChangePasswordMarshallTest()
         {
             var operation = service_model.FindOperation("ChangePassword");
@@ -250,6 +307,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = CreateOpenIDConnectProviderResponseUnmarshaller.Instance.Unmarshall(context)
                 as CreateOpenIDConnectProviderResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void CreatePolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreatePolicy");
+
+            var request = InstantiateClassGenerator.Execute<CreatePolicyRequest>();
+            var marshaller = new CreatePolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreatePolicyResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreatePolicyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void CreatePolicyVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreatePolicyVersion");
+
+            var request = InstantiateClassGenerator.Execute<CreatePolicyVersionRequest>();
+            var marshaller = new CreatePolicyVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreatePolicyVersionResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreatePolicyVersionResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -526,6 +631,44 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void DeletePolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeletePolicy");
+
+            var request = InstantiateClassGenerator.Execute<DeletePolicyRequest>();
+            var marshaller = new DeletePolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void DeletePolicyVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeletePolicyVersion");
+
+            var request = InstantiateClassGenerator.Execute<DeletePolicyVersionRequest>();
+            var marshaller = new DeletePolicyVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void DeleteRoleMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteRole");
@@ -665,6 +808,63 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var request = InstantiateClassGenerator.Execute<DeleteVirtualMFADeviceRequest>();
             var marshaller = new DeleteVirtualMFADeviceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void DetachGroupPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DetachGroupPolicy");
+
+            var request = InstantiateClassGenerator.Execute<DetachGroupPolicyRequest>();
+            var marshaller = new DetachGroupPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void DetachRolePolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DetachRolePolicy");
+
+            var request = InstantiateClassGenerator.Execute<DetachRolePolicyRequest>();
+            var marshaller = new DetachRolePolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void DetachUserPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DetachUserPolicy");
+
+            var request = InstantiateClassGenerator.Execute<DetachUserPolicyRequest>();
+            var marshaller = new DetachUserPolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();
@@ -937,6 +1137,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void GetPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetPolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetPolicyRequest>();
+            var marshaller = new GetPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetPolicyResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetPolicyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void GetPolicyVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetPolicyVersion");
+
+            var request = InstantiateClassGenerator.Execute<GetPolicyVersionRequest>();
+            var marshaller = new GetPolicyVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetPolicyVersionResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetPolicyVersionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void GetRoleMarshallTest()
         {
             var operation = service_model.FindOperation("GetRole");
@@ -1129,6 +1377,102 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void ListAttachedGroupPoliciesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAttachedGroupPolicies");
+
+            var request = InstantiateClassGenerator.Execute<ListAttachedGroupPoliciesRequest>();
+            var marshaller = new ListAttachedGroupPoliciesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListAttachedGroupPoliciesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListAttachedGroupPoliciesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void ListAttachedRolePoliciesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAttachedRolePolicies");
+
+            var request = InstantiateClassGenerator.Execute<ListAttachedRolePoliciesRequest>();
+            var marshaller = new ListAttachedRolePoliciesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListAttachedRolePoliciesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListAttachedRolePoliciesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void ListAttachedUserPoliciesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAttachedUserPolicies");
+
+            var request = InstantiateClassGenerator.Execute<ListAttachedUserPoliciesRequest>();
+            var marshaller = new ListAttachedUserPoliciesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListAttachedUserPoliciesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListAttachedUserPoliciesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void ListEntitiesForPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListEntitiesForPolicy");
+
+            var request = InstantiateClassGenerator.Execute<ListEntitiesForPolicyRequest>();
+            var marshaller = new ListEntitiesForPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListEntitiesForPolicyResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListEntitiesForPolicyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void ListGroupPoliciesMarshallTest()
         {
             var operation = service_model.FindOperation("ListGroupPolicies");
@@ -1288,6 +1632,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = ListOpenIDConnectProvidersResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListOpenIDConnectProvidersResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void ListPoliciesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListPolicies");
+
+            var request = InstantiateClassGenerator.Execute<ListPoliciesRequest>();
+            var marshaller = new ListPoliciesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListPoliciesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListPoliciesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void ListPolicyVersionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListPolicyVersions");
+
+            var request = InstantiateClassGenerator.Execute<ListPolicyVersionsRequest>();
+            var marshaller = new ListPolicyVersionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListPolicyVersionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListPolicyVersionsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -1622,6 +2014,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void SetDefaultPolicyVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("SetDefaultPolicyVersion");
+
+            var request = InstantiateClassGenerator.Execute<SetDefaultPolicyVersionRequest>();
+            var marshaller = new SetDefaultPolicyVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void UpdateAccessKeyMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateAccessKey");
@@ -1809,6 +2220,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void UploadPublicAccessKeyMarshallTest()
+        {
+            var operation = service_model.FindOperation("UploadPublicAccessKey");
+
+            var request = InstantiateClassGenerator.Execute<UploadPublicAccessKeyRequest>();
+            var marshaller = new UploadPublicAccessKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = UploadPublicAccessKeyResponseUnmarshaller.Instance.Unmarshall(context)
+                as UploadPublicAccessKeyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         

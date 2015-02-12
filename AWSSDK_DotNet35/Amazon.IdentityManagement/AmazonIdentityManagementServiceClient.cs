@@ -60,7 +60,7 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  
     /// <para>
-    /// <b>Signing Requests</b>
+    ///  <b>Signing Requests</b> 
     /// </para>
     ///  
     /// <para>
@@ -80,7 +80,7 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  
     /// <para>
-    /// <b>Recording API requests</b>
+    ///  <b>Recording API requests</b> 
     /// </para>
     ///  
     /// <para>
@@ -93,7 +93,7 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  
     /// <para>
-    /// <b>Additional Resources</b>
+    ///  <b>Additional Resources</b> 
     /// </para>
     ///  
     /// <para>
@@ -317,6 +317,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public AddClientIDToOpenIDConnectProviderResponse AddClientIDToOpenIDConnectProvider(AddClientIDToOpenIDConnectProviderRequest request)
         {
             var marshaller = new AddClientIDToOpenIDConnectProviderRequestMarshaller();
@@ -381,6 +384,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public AddRoleToInstanceProfileResponse AddRoleToInstanceProfile(AddRoleToInstanceProfileRequest request)
         {
             var marshaller = new AddRoleToInstanceProfileRequestMarshaller();
@@ -439,6 +445,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public AddUserToGroupResponse AddUserToGroup(AddUserToGroupRequest request)
         {
             var marshaller = new AddUserToGroupRequestMarshaller();
@@ -481,6 +490,237 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  AttachGroupPolicy
+
+        /// <summary>
+        /// Attaches the specified managed policy to the specified group.
+        /// 
+        ///  
+        /// <para>
+        /// You use this API to attach a managed policy to a group. To embed an inline policy
+        /// in a group, use <a>PutGroupPolicy</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachGroupPolicy service method.</param>
+        /// 
+        /// <returns>The response from the AttachGroupPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public AttachGroupPolicyResponse AttachGroupPolicy(AttachGroupPolicyRequest request)
+        {
+            var marshaller = new AttachGroupPolicyRequestMarshaller();
+            var unmarshaller = AttachGroupPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<AttachGroupPolicyRequest,AttachGroupPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachGroupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachGroupPolicy operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachGroupPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginAttachGroupPolicy(AttachGroupPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new AttachGroupPolicyRequestMarshaller();
+            var unmarshaller = AttachGroupPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AttachGroupPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AttachGroupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachGroupPolicy.</param>
+        /// 
+        /// <returns>Returns a  AttachGroupPolicyResult from IdentityManagementService.</returns>
+        public  AttachGroupPolicyResponse EndAttachGroupPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AttachGroupPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AttachRolePolicy
+
+        /// <summary>
+        /// Attaches the specified managed policy to the specified role.
+        /// 
+        ///  
+        /// <para>
+        /// When you attach a managed policy to a role, the managed policy is used as the role's
+        /// access (permissions) policy. You cannot use a managed policy as the role's trust policy.
+        /// The role's trust policy is created at the same time as the role, using <a>CreateRole</a>.
+        /// You can update a role's trust policy using <a>UpdateAssumeRolePolicy</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this API to attach a managed policy to a role. To embed an inline policy in a
+        /// role, use <a>PutRolePolicy</a>. For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachRolePolicy service method.</param>
+        /// 
+        /// <returns>The response from the AttachRolePolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public AttachRolePolicyResponse AttachRolePolicy(AttachRolePolicyRequest request)
+        {
+            var marshaller = new AttachRolePolicyRequestMarshaller();
+            var unmarshaller = AttachRolePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<AttachRolePolicyRequest,AttachRolePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachRolePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachRolePolicy operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachRolePolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginAttachRolePolicy(AttachRolePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new AttachRolePolicyRequestMarshaller();
+            var unmarshaller = AttachRolePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AttachRolePolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AttachRolePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachRolePolicy.</param>
+        /// 
+        /// <returns>Returns a  AttachRolePolicyResult from IdentityManagementService.</returns>
+        public  AttachRolePolicyResponse EndAttachRolePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AttachRolePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AttachUserPolicy
+
+        /// <summary>
+        /// Attaches the specified managed policy to the specified user.
+        /// 
+        ///  
+        /// <para>
+        /// You use this API to attach a managed policy to a user. To embed an inline policy in
+        /// a user, use <a>PutUserPolicy</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachUserPolicy service method.</param>
+        /// 
+        /// <returns>The response from the AttachUserPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public AttachUserPolicyResponse AttachUserPolicy(AttachUserPolicyRequest request)
+        {
+            var marshaller = new AttachUserPolicyRequestMarshaller();
+            var unmarshaller = AttachUserPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<AttachUserPolicyRequest,AttachUserPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachUserPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachUserPolicy operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachUserPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginAttachUserPolicy(AttachUserPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new AttachUserPolicyRequestMarshaller();
+            var unmarshaller = AttachUserPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AttachUserPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AttachUserPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachUserPolicy.</param>
+        /// 
+        /// <returns>Returns a  AttachUserPolicyResult from IdentityManagementService.</returns>
+        public  AttachUserPolicyResponse EndAttachUserPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AttachUserPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ChangePassword
 
         /// <summary>
@@ -517,6 +757,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.PasswordPolicyViolationException">
         /// The request was rejected because the provided password did not meet the requirements
         /// imposed by the account password policy.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public ChangePasswordResponse ChangePassword(ChangePasswordRequest request)
         {
@@ -593,6 +836,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public CreateAccessKeyResponse CreateAccessKey()
         {
             return CreateAccessKey(new CreateAccessKeyRequest());
@@ -629,6 +875,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public CreateAccessKeyResponse CreateAccessKey(CreateAccessKeyRequest request)
         {
@@ -688,6 +937,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public CreateAccountAliasResponse CreateAccountAlias(CreateAccountAliasRequest request)
         {
@@ -756,6 +1008,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
             var marshaller = new CreateGroupRequestMarshaller();
@@ -820,6 +1075,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public CreateInstanceProfileResponse CreateInstanceProfile(CreateInstanceProfileRequest request)
         {
@@ -888,6 +1146,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.PasswordPolicyViolationException">
         /// The request was rejected because the provided password did not meet the requirements
         /// imposed by the account password policy.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public CreateLoginProfileResponse CreateLoginProfile(CreateLoginProfileRequest request)
         {
@@ -969,6 +1230,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public CreateOpenIDConnectProviderResponse CreateOpenIDConnectProvider(CreateOpenIDConnectProviderRequest request)
         {
             var marshaller = new CreateOpenIDConnectProviderRequestMarshaller();
@@ -1011,6 +1275,171 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  CreatePolicy
+
+        /// <summary>
+        /// Creates a new managed policy for your AWS account. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation creates a policy version with a version identifier of <code>v1</code>
+        /// and sets v1 as the policy's default version. For more information about policy versions,
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+        /// for Managed Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about managed policies in general, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePolicy service method.</param>
+        /// 
+        /// <returns>The response from the CreatePolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
+        /// The request was rejected because it attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
+        /// The request was rejected because the policy document was malformed. The error message
+        /// describes the specific error.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public CreatePolicyResponse CreatePolicy(CreatePolicyRequest request)
+        {
+            var marshaller = new CreatePolicyRequestMarshaller();
+            var unmarshaller = CreatePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePolicyRequest,CreatePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePolicy operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginCreatePolicy(CreatePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreatePolicyRequestMarshaller();
+            var unmarshaller = CreatePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreatePolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePolicy.</param>
+        /// 
+        /// <returns>Returns a  CreatePolicyResult from IdentityManagementService.</returns>
+        public  CreatePolicyResponse EndCreatePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreatePolicyVersion
+
+        /// <summary>
+        /// Creates a new version of the specified managed policy. To update a managed policy,
+        /// you create a new policy version. A managed policy can have up to five versions. If
+        /// the policy has five versions, you must delete an existing version using <a>DeletePolicyVersion</a>
+        /// before you create a new version. 
+        /// 
+        ///  
+        /// <para>
+        /// Optionally, you can set the new version as the policy's default version. The default
+        /// version is the operative version; that is, the version that is in effect for the IAM
+        /// users, groups, and roles that the policy is attached to. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+        /// for Managed Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePolicyVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreatePolicyVersion service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
+        /// The request was rejected because the policy document was malformed. The error message
+        /// describes the specific error.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public CreatePolicyVersionResponse CreatePolicyVersion(CreatePolicyVersionRequest request)
+        {
+            var marshaller = new CreatePolicyVersionRequestMarshaller();
+            var unmarshaller = CreatePolicyVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePolicyVersionRequest,CreatePolicyVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePolicyVersion operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePolicyVersion
+        ///         operation.</returns>
+        public IAsyncResult BeginCreatePolicyVersion(CreatePolicyVersionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreatePolicyVersionRequestMarshaller();
+            var unmarshaller = CreatePolicyVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreatePolicyVersionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePolicyVersion.</param>
+        /// 
+        /// <returns>Returns a  CreatePolicyVersionResult from IdentityManagementService.</returns>
+        public  CreatePolicyVersionResponse EndCreatePolicyVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePolicyVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateRole
 
         /// <summary>
@@ -1041,6 +1470,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
         /// describes the specific error.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public CreateRoleResponse CreateRole(CreateRoleRequest request)
         {
@@ -1127,6 +1559,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public CreateSAMLProviderResponse CreateSAMLProvider(CreateSAMLProviderRequest request)
         {
             var marshaller = new CreateSAMLProviderRequestMarshaller();
@@ -1194,6 +1629,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public CreateUserResponse CreateUser(CreateUserRequest request)
         {
             var marshaller = new CreateUserRequestMarshaller();
@@ -1240,9 +1678,8 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Creates a new virtual MFA device for the AWS account. After creating the virtual
-        /// MFA, use <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html">EnableMFADevice</a>
-        /// to attach the MFA device to an IAM user. For more information about creating and working
-        /// with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
+        /// MFA, use <a>EnableMFADevice</a> to attach the MFA device to an IAM user. For more
+        /// information about creating and working with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
         /// a Virtual MFA Device</a> in the <i>Using IAM</i> guide. 
         /// 
         ///  
@@ -1265,6 +1702,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public CreateVirtualMFADeviceResponse CreateVirtualMFADevice(CreateVirtualMFADeviceRequest request)
         {
@@ -1338,6 +1778,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public DeactivateMFADeviceResponse DeactivateMFADevice(DeactivateMFADeviceRequest request)
         {
             var marshaller = new DeactivateMFADeviceRequestMarshaller();
@@ -1404,6 +1847,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public DeleteAccessKeyResponse DeleteAccessKey(DeleteAccessKeyRequest request)
         {
             var marshaller = new DeleteAccessKeyRequestMarshaller();
@@ -1464,6 +1910,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public DeleteAccountAliasResponse DeleteAccountAlias(DeleteAccountAliasRequest request)
         {
             var marshaller = new DeleteAccountAliasRequestMarshaller();
@@ -1521,6 +1970,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public DeleteAccountPasswordPolicyResponse DeleteAccountPasswordPolicy()
         {
             return DeleteAccountPasswordPolicy(new DeleteAccountPasswordPolicyRequest());
@@ -1539,6 +1991,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public DeleteAccountPasswordPolicyResponse DeleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest request)
         {
@@ -1603,6 +2058,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
             var marshaller = new DeleteGroupRequestMarshaller();
@@ -1648,7 +2106,15 @@ namespace Amazon.IdentityManagement
         #region  DeleteGroupPolicy
 
         /// <summary>
-        /// Deletes the specified policy that is associated with the specified group.
+        /// Deletes the specified inline policy that is embedded in the specified group.
+        /// 
+        ///  
+        /// <para>
+        /// A group can also have managed policies attached to it. To detach a managed policy
+        /// from a group, use <a>DetachGroupPolicy</a>. For more information about policies, refer
+        /// to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroupPolicy service method.</param>
         /// 
@@ -1660,6 +2126,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public DeleteGroupPolicyResponse DeleteGroupPolicy(DeleteGroupPolicyRequest request)
         {
@@ -1733,6 +2202,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public DeleteInstanceProfileResponse DeleteInstanceProfile(DeleteInstanceProfileRequest request)
         {
             var marshaller = new DeleteInstanceProfileRequestMarshaller();
@@ -1804,6 +2276,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public DeleteLoginProfileResponse DeleteLoginProfile(DeleteLoginProfileRequest request)
         {
             var marshaller = new DeleteLoginProfileRequestMarshaller();
@@ -1874,6 +2349,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public DeleteOpenIDConnectProviderResponse DeleteOpenIDConnectProvider(DeleteOpenIDConnectProviderRequest request)
         {
             var marshaller = new DeleteOpenIDConnectProviderRequestMarshaller();
@@ -1916,6 +2394,176 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DeletePolicy
+
+        /// <summary>
+        /// Deletes the specified managed policy.
+        /// 
+        ///  
+        /// <para>
+        /// Before you can delete a managed policy, you must detach the policy from all users,
+        /// groups, and roles that it is attached to, and you must delete all of the policy's
+        /// versions. The following steps describe the process for deleting a managed policy:
+        /// <ol> <li>Detach the policy from all users, groups, and roles that the policy is attached
+        /// to, using the <a>DetachUserPolicy</a>, <a>DetachGroupPolicy</a>, or <a>DetachRolePolicy</a>
+        /// APIs. To list all the users, groups, and roles that a policy is attached to, use <a>ListEntitiesForPolicy</a>.
+        /// </li> <li>Delete all versions of the policy using <a>DeletePolicyVersion</a>. To list
+        /// the policy's versions, use <a>ListPolicyVersions</a>. You cannot use <a>DeletePolicyVersion</a>
+        /// to delete the version that is marked as the default version. You delete the policy's
+        /// default version in the next step of the process. </li> <li>Delete the policy (this
+        /// automatically deletes the policy's default version) using this API. </li> </ol> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeletePolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.DeleteConflictException">
+        /// The request was rejected because it attempted to delete a resource that has attached
+        /// subordinate entities. The error message describes these entities.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
+        {
+            var marshaller = new DeletePolicyRequestMarshaller();
+            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePolicyRequest,DeletePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicy operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginDeletePolicy(DeletePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeletePolicyRequestMarshaller();
+            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeletePolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePolicy.</param>
+        /// 
+        /// <returns>Returns a  DeletePolicyResult from IdentityManagementService.</returns>
+        public  DeletePolicyResponse EndDeletePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeletePolicyVersion
+
+        /// <summary>
+        /// Deletes the specified version of the specified managed policy.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete the default version of a policy using this API. To delete the default
+        /// version of a policy, use <a>DeletePolicy</a>. To find out which version of a policy
+        /// is marked as the default version, use <a>ListPolicyVersions</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about versions for managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+        /// for Managed Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicyVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeletePolicyVersion service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.DeleteConflictException">
+        /// The request was rejected because it attempted to delete a resource that has attached
+        /// subordinate entities. The error message describes these entities.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public DeletePolicyVersionResponse DeletePolicyVersion(DeletePolicyVersionRequest request)
+        {
+            var marshaller = new DeletePolicyVersionRequestMarshaller();
+            var unmarshaller = DeletePolicyVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePolicyVersionRequest,DeletePolicyVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicyVersion operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePolicyVersion
+        ///         operation.</returns>
+        public IAsyncResult BeginDeletePolicyVersion(DeletePolicyVersionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeletePolicyVersionRequestMarshaller();
+            var unmarshaller = DeletePolicyVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeletePolicyVersionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePolicyVersion.</param>
+        /// 
+        /// <returns>Returns a  DeletePolicyVersionResult from IdentityManagementService.</returns>
+        public  DeletePolicyVersionResponse EndDeletePolicyVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePolicyVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteRole
 
         /// <summary>
@@ -1941,6 +2589,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public DeleteRoleResponse DeleteRole(DeleteRoleRequest request)
         {
@@ -1987,7 +2638,15 @@ namespace Amazon.IdentityManagement
         #region  DeleteRolePolicy
 
         /// <summary>
-        /// Deletes the specified policy associated with the specified role.
+        /// Deletes the specified inline policy that is embedded in the specified role.
+        /// 
+        ///  
+        /// <para>
+        /// A role can also have managed policies attached to it. To detach a managed policy from
+        /// a role, use <a>DetachRolePolicy</a>. For more information about policies, refer to
+        /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRolePolicy service method.</param>
         /// 
@@ -1999,6 +2658,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public DeleteRolePolicyResponse DeleteRolePolicy(DeleteRolePolicyRequest request)
         {
@@ -2071,6 +2733,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public DeleteSAMLProviderResponse DeleteSAMLProvider(DeleteSAMLProviderRequest request)
         {
             var marshaller = new DeleteSAMLProviderRequestMarshaller();
@@ -2123,9 +2788,8 @@ namespace Amazon.IdentityManagement
         /// doesn't detect the deletion of bound certificates, it may continue to use the certificates.
         /// This could cause Elastic Load Balancing to stop accepting traffic. We recommend that
         /// you remove the reference to the certificate from Elastic Load Balancing before using
-        /// this command to delete the certificate. For more information, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DeleteLoadBalancerListeners.html"
-        /// target="blank">DeleteLoadBalancerListeners</a> in the <i>Elastic Load Balancing API
-        /// Reference</i>. </important>
+        /// this command to delete the certificate. For more information, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DeleteLoadBalancerListeners.html">DeleteLoadBalancerListeners</a>
+        /// in the <i>Elastic Load Balancing API Reference</i>. </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteServerCertificate service method.</param>
         /// 
@@ -2141,6 +2805,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public DeleteServerCertificateResponse DeleteServerCertificate(DeleteServerCertificateRequest request)
         {
@@ -2208,6 +2875,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public DeleteSigningCertificateResponse DeleteSigningCertificate(DeleteSigningCertificateRequest request)
         {
             var marshaller = new DeleteSigningCertificateRequestMarshaller();
@@ -2271,6 +2941,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
             var marshaller = new DeleteUserRequestMarshaller();
@@ -2316,7 +2989,15 @@ namespace Amazon.IdentityManagement
         #region  DeleteUserPolicy
 
         /// <summary>
-        /// Deletes the specified policy associated with the specified user.
+        /// Deletes the specified inline policy that is embedded in the specified user.
+        /// 
+        ///  
+        /// <para>
+        /// A user can also have managed policies attached to it. To detach a managed policy from
+        /// a user, use <a>DetachUserPolicy</a>. For more information about policies, refer to
+        /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUserPolicy service method.</param>
         /// 
@@ -2328,6 +3009,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public DeleteUserPolicyResponse DeleteUserPolicy(DeleteUserPolicyRequest request)
         {
@@ -2377,8 +3061,7 @@ namespace Amazon.IdentityManagement
         /// Deletes a virtual MFA device.
         /// 
         ///  <note> You must deactivate a user's virtual MFA device before you can delete it.
-        /// For information about deactivating MFA devices, see <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html">DeactivateMFADevice</a>.
-        /// </note>
+        /// For information about deactivating MFA devices, see <a>DeactivateMFADevice</a>. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualMFADevice service method.</param>
         /// 
@@ -2394,6 +3077,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public DeleteVirtualMFADeviceResponse DeleteVirtualMFADevice(DeleteVirtualMFADeviceRequest request)
         {
@@ -2437,6 +3123,223 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DetachGroupPolicy
+
+        /// <summary>
+        /// Removes the specified managed policy from the specified group. 
+        /// 
+        ///  
+        /// <para>
+        /// A group can also have inline policies embedded with it. To delete an inline policy,
+        /// use the <a>DeleteGroupPolicy</a> API. For information about policies, refer to <a
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachGroupPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DetachGroupPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public DetachGroupPolicyResponse DetachGroupPolicy(DetachGroupPolicyRequest request)
+        {
+            var marshaller = new DetachGroupPolicyRequestMarshaller();
+            var unmarshaller = DetachGroupPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DetachGroupPolicyRequest,DetachGroupPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachGroupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachGroupPolicy operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachGroupPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginDetachGroupPolicy(DetachGroupPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DetachGroupPolicyRequestMarshaller();
+            var unmarshaller = DetachGroupPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DetachGroupPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetachGroupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachGroupPolicy.</param>
+        /// 
+        /// <returns>Returns a  DetachGroupPolicyResult from IdentityManagementService.</returns>
+        public  DetachGroupPolicyResponse EndDetachGroupPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DetachGroupPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DetachRolePolicy
+
+        /// <summary>
+        /// Removes the specified managed policy from the specified role. 
+        /// 
+        ///  
+        /// <para>
+        /// A role can also have inline policies embedded with it. To delete an inline policy,
+        /// use the <a>DeleteRolePolicy</a> API. For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachRolePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DetachRolePolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public DetachRolePolicyResponse DetachRolePolicy(DetachRolePolicyRequest request)
+        {
+            var marshaller = new DetachRolePolicyRequestMarshaller();
+            var unmarshaller = DetachRolePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DetachRolePolicyRequest,DetachRolePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachRolePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachRolePolicy operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachRolePolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginDetachRolePolicy(DetachRolePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DetachRolePolicyRequestMarshaller();
+            var unmarshaller = DetachRolePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DetachRolePolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetachRolePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachRolePolicy.</param>
+        /// 
+        /// <returns>Returns a  DetachRolePolicyResult from IdentityManagementService.</returns>
+        public  DetachRolePolicyResponse EndDetachRolePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DetachRolePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DetachUserPolicy
+
+        /// <summary>
+        /// Removes the specified managed policy from the specified user. 
+        /// 
+        ///  
+        /// <para>
+        /// A user can also have inline policies embedded with it. To delete an inline policy,
+        /// use the <a>DeleteUserPolicy</a> API. For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachUserPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DetachUserPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public DetachUserPolicyResponse DetachUserPolicy(DetachUserPolicyRequest request)
+        {
+            var marshaller = new DetachUserPolicyRequestMarshaller();
+            var unmarshaller = DetachUserPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DetachUserPolicyRequest,DetachUserPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachUserPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachUserPolicy operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachUserPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginDetachUserPolicy(DetachUserPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DetachUserPolicyRequestMarshaller();
+            var unmarshaller = DetachUserPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DetachUserPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetachUserPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachUserPolicy.</param>
+        /// 
+        /// <returns>Returns a  DetachUserPolicyResult from IdentityManagementService.</returns>
+        public  DetachUserPolicyResponse EndDetachUserPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DetachUserPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  EnableMFADevice
 
         /// <summary>
@@ -2467,6 +3370,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public EnableMFADeviceResponse EnableMFADevice(EnableMFADeviceRequest request)
         {
@@ -2523,6 +3429,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public GenerateCredentialReportResponse GenerateCredentialReport()
         {
             return GenerateCredentialReport(new GenerateCredentialReportRequest());
@@ -2539,6 +3448,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public GenerateCredentialReportResponse GenerateCredentialReport(GenerateCredentialReportRequest request)
         {
@@ -2585,11 +3497,23 @@ namespace Amazon.IdentityManagement
         #region  GetAccountAuthorizationDetails
 
         /// <summary>
+        /// Retrieves information about all IAM users, groups, and roles in your account, including
+        /// their relationships to one another and their policies. Use this API to obtain a snapshot
+        /// of the configuration of IAM permissions (users, groups, roles, and their policies)
+        /// in your account.
         /// 
+        ///  
+        /// <para>
+        /// You can optionally filter the results using the <code>Filter</code> parameter. You
+        /// can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountAuthorizationDetails service method.</param>
         /// 
         /// <returns>The response from the GetAccountAuthorizationDetails service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public GetAccountAuthorizationDetailsResponse GetAccountAuthorizationDetails(GetAccountAuthorizationDetailsRequest request)
         {
             var marshaller = new GetAccountAuthorizationDetailsRequestMarshaller();
@@ -2645,6 +3569,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public GetAccountPasswordPolicyResponse GetAccountPasswordPolicy()
         {
             return GetAccountPasswordPolicy(new GetAccountPasswordPolicyRequest());
@@ -2661,6 +3588,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public GetAccountPasswordPolicyResponse GetAccountPasswordPolicy(GetAccountPasswordPolicyRequest request)
         {
@@ -2707,7 +3637,7 @@ namespace Amazon.IdentityManagement
         #region  GetAccountSummary
 
         /// <summary>
-        /// Retrieves account level information about account entity usage and IAM quotas.
+        /// Retrieves information about IAM entity usage and IAM quotas in the AWS account.
         /// 
         ///  
         /// <para>
@@ -2717,13 +3647,16 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the GetAccountSummary service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public GetAccountSummaryResponse GetAccountSummary()
         {
             return GetAccountSummary(new GetAccountSummaryRequest());
         }
 
         /// <summary>
-        /// Retrieves account level information about account entity usage and IAM quotas.
+        /// Retrieves information about IAM entity usage and IAM quotas in the AWS account.
         /// 
         ///  
         /// <para>
@@ -2734,6 +3667,9 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the GetAccountSummary service method.</param>
         /// 
         /// <returns>The response from the GetAccountSummary service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public GetAccountSummaryResponse GetAccountSummary(GetAccountSummaryRequest request)
         {
             var marshaller = new GetAccountSummaryRequestMarshaller();
@@ -2798,6 +3734,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotReadyException">
         /// The request was rejected because the credential report is still being generated.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public GetCredentialReportResponse GetCredentialReport()
         {
             return GetCredentialReport(new GetCredentialReportRequest());
@@ -2823,6 +3762,9 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotReadyException">
         /// The request was rejected because the credential report is still being generated.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public GetCredentialReportResponse GetCredentialReport(GetCredentialReportRequest request)
         {
@@ -2879,6 +3821,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public GetGroupResponse GetGroup(GetGroupRequest request)
         {
             var marshaller = new GetGroupRequestMarshaller();
@@ -2924,9 +3869,21 @@ namespace Amazon.IdentityManagement
         #region  GetGroupPolicy
 
         /// <summary>
-        /// Retrieves the specified policy document for the specified group. The returned policy
-        /// is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a
-        /// href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+        /// Retrieves the specified inline policy document that is embedded in the specified group.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// A group can also have managed policies attached to it. To retrieve a managed policy
+        /// document that is attached to a group, use <a>GetPolicy</a> to determine the policy's
+        /// default version, then use <a>GetPolicyVersion</a> to retrieve the policy document.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGroupPolicy service method.</param>
         /// 
@@ -2934,6 +3891,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public GetGroupPolicyResponse GetGroupPolicy(GetGroupPolicyRequest request)
         {
@@ -2992,6 +3952,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public GetInstanceProfileResponse GetInstanceProfile(GetInstanceProfileRequest request)
         {
             var marshaller = new GetInstanceProfileRequestMarshaller();
@@ -3047,6 +4010,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public GetLoginProfileResponse GetLoginProfile(GetLoginProfileRequest request)
         {
@@ -3106,6 +4072,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public GetOpenIDConnectProviderResponse GetOpenIDConnectProvider(GetOpenIDConnectProviderRequest request)
         {
             var marshaller = new GetOpenIDConnectProviderRequestMarshaller();
@@ -3148,6 +4117,162 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  GetPolicy
+
+        /// <summary>
+        /// Retrieves information about the specified managed policy, including the policy's default
+        /// version and the total number of users, groups, and roles that the policy is attached
+        /// to. For a list of the specific users, groups, and roles that the policy is attached
+        /// to, use the <a>ListEntitiesForPolicy</a> API. This API returns metadata about the
+        /// policy. To retrieve the policy document for a specific version of the policy, use
+        /// <a>GetPolicyVersion</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// This API retrieves information about managed policies. To retrieve information about
+        /// an inline policy that is embedded with a user, group, or role, use the <a>GetUserPolicy</a>,
+        /// <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public GetPolicyResponse GetPolicy(GetPolicyRequest request)
+        {
+            var marshaller = new GetPolicyRequestMarshaller();
+            var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetPolicyRequest,GetPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetPolicyRequestMarshaller();
+            var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetPolicyResult from IdentityManagementService.</returns>
+        public  GetPolicyResponse EndGetPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPolicyVersion
+
+        /// <summary>
+        /// Retrieves information about the specified version of the specified managed policy,
+        /// including the policy document. 
+        /// 
+        ///  
+        /// <para>
+        /// To list the available versions for a policy, use <a>ListPolicyVersions</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This API retrieves information about managed policies. To retrieve information about
+        /// an inline policy that is embedded in a user, group, or role, use the <a>GetUserPolicy</a>,
+        /// <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the types of policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicyVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetPolicyVersion service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public GetPolicyVersionResponse GetPolicyVersion(GetPolicyVersionRequest request)
+        {
+            var marshaller = new GetPolicyVersionRequestMarshaller();
+            var unmarshaller = GetPolicyVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetPolicyVersionRequest,GetPolicyVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicyVersion operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPolicyVersion
+        ///         operation.</returns>
+        public IAsyncResult BeginGetPolicyVersion(GetPolicyVersionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetPolicyVersionRequestMarshaller();
+            var unmarshaller = GetPolicyVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetPolicyVersionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPolicyVersion.</param>
+        /// 
+        /// <returns>Returns a  GetPolicyVersionResult from IdentityManagementService.</returns>
+        public  GetPolicyVersionResponse EndGetPolicyVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPolicyVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetRole
 
         /// <summary>
@@ -3170,6 +4295,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public GetRoleResponse GetRole(GetRoleRequest request)
         {
@@ -3216,15 +4344,25 @@ namespace Amazon.IdentityManagement
         #region  GetRolePolicy
 
         /// <summary>
-        /// Retrieves the specified policy document for the specified role. For more information
-        /// about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with Roles</a>. 
+        /// Retrieves the specified inline policy document that is embedded with the specified
+        /// role. 
         /// 
         ///  
         /// <para>
-        ///  The returned policy is URL-encoded according to RFC 3986. For more information about
-        /// RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+        /// A role can also have managed policies attached to it. To retrieve a managed policy
+        /// document that is attached to a role, use <a>GetPolicy</a> to determine the policy's
+        /// default version, then use <a>GetPolicyVersion</a> to retrieve the policy document.
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
+        /// Roles to Delegate Permissions and Federate Identities</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRolePolicy service method.</param>
@@ -3233,6 +4371,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public GetRolePolicyResponse GetRolePolicy(GetRolePolicyRequest request)
         {
@@ -3296,6 +4437,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public GetSAMLProviderResponse GetSAMLProvider(GetSAMLProviderRequest request)
         {
             var marshaller = new GetSAMLProviderRequestMarshaller();
@@ -3349,6 +4493,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public GetServerCertificateResponse GetServerCertificate(GetServerCertificateRequest request)
         {
@@ -3410,6 +4557,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public GetUserResponse GetUser()
         {
             return GetUser(new GetUserRequest());
@@ -3431,6 +4581,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public GetUserResponse GetUser(GetUserRequest request)
         {
@@ -3477,9 +4630,21 @@ namespace Amazon.IdentityManagement
         #region  GetUserPolicy
 
         /// <summary>
-        /// Retrieves the specified policy document for the specified user. The returned policy
-        /// is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a
-        /// href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+        /// Retrieves the specified inline policy document that is embedded in the specified user.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// A user can also have managed policies attached to it. To retrieve a managed policy
+        /// document that is attached to a user, use <a>GetPolicy</a> to determine the policy's
+        /// default version, then use <a>GetPolicyVersion</a> to retrieve the policy document.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUserPolicy service method.</param>
         /// 
@@ -3487,6 +4652,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public GetUserPolicyResponse GetUserPolicy(GetUserPolicyRequest request)
         {
@@ -3557,6 +4725,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListAccessKeysResponse ListAccessKeys()
         {
             return ListAccessKeys(new ListAccessKeysRequest());
@@ -3587,6 +4758,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public ListAccessKeysResponse ListAccessKeys(ListAccessKeysRequest request)
         {
@@ -3645,6 +4819,9 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the ListAccountAliases service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListAccountAliasesResponse ListAccountAliases()
         {
             return ListAccountAliases(new ListAccountAliasesRequest());
@@ -3664,6 +4841,9 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAliases service method.</param>
         /// 
         /// <returns>The response from the ListAccountAliases service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListAccountAliasesResponse ListAccountAliases(ListAccountAliasesRequest request)
         {
             var marshaller = new ListAccountAliasesRequestMarshaller();
@@ -3706,16 +4886,329 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
-        #region  ListGroupPolicies
+        #region  ListAttachedGroupPolicies
 
         /// <summary>
-        /// Lists the names of the policies associated with the specified group. If there are
-        /// none, the action returns an empty list. 
+        /// Lists all managed policies that are attached to the specified group.
         /// 
         ///  
         /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// A group can also have inline policies embedded with it. To list the inline policies
+        /// for a group, use the <a>ListGroupPolicies</a> API. For information about policies,
+        /// refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. You can use the <code>PathPrefix</code> parameter to limit the list of
+        /// policies to only those matching the specified path prefix. If there are no policies
+        /// attached to the specified group (or none that match the specified path prefix), the
+        /// action returns an empty list. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachedGroupPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListAttachedGroupPolicies service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public ListAttachedGroupPoliciesResponse ListAttachedGroupPolicies(ListAttachedGroupPoliciesRequest request)
+        {
+            var marshaller = new ListAttachedGroupPoliciesRequestMarshaller();
+            var unmarshaller = ListAttachedGroupPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAttachedGroupPoliciesRequest,ListAttachedGroupPoliciesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAttachedGroupPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachedGroupPolicies operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAttachedGroupPolicies
+        ///         operation.</returns>
+        public IAsyncResult BeginListAttachedGroupPolicies(ListAttachedGroupPoliciesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListAttachedGroupPoliciesRequestMarshaller();
+            var unmarshaller = ListAttachedGroupPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListAttachedGroupPoliciesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAttachedGroupPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAttachedGroupPolicies.</param>
+        /// 
+        /// <returns>Returns a  ListAttachedGroupPoliciesResult from IdentityManagementService.</returns>
+        public  ListAttachedGroupPoliciesResponse EndListAttachedGroupPolicies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAttachedGroupPoliciesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAttachedRolePolicies
+
+        /// <summary>
+        /// Lists all managed policies that are attached to the specified role. 
+        /// 
+        ///  
+        /// <para>
+        /// A role can also have inline policies embedded with it. To list the inline policies
+        /// for a role, use the <a>ListRolePolicies</a> API. For information about policies, refer
+        /// to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. You can use the <code>PathPrefix</code> parameter to limit the list of
+        /// policies to only those matching the specified path prefix. If there are no policies
+        /// attached to the specified role (or none that match the specified path prefix), the
+        /// action returns an empty list. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachedRolePolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListAttachedRolePolicies service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public ListAttachedRolePoliciesResponse ListAttachedRolePolicies(ListAttachedRolePoliciesRequest request)
+        {
+            var marshaller = new ListAttachedRolePoliciesRequestMarshaller();
+            var unmarshaller = ListAttachedRolePoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAttachedRolePoliciesRequest,ListAttachedRolePoliciesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAttachedRolePolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachedRolePolicies operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAttachedRolePolicies
+        ///         operation.</returns>
+        public IAsyncResult BeginListAttachedRolePolicies(ListAttachedRolePoliciesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListAttachedRolePoliciesRequestMarshaller();
+            var unmarshaller = ListAttachedRolePoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListAttachedRolePoliciesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAttachedRolePolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAttachedRolePolicies.</param>
+        /// 
+        /// <returns>Returns a  ListAttachedRolePoliciesResult from IdentityManagementService.</returns>
+        public  ListAttachedRolePoliciesResponse EndListAttachedRolePolicies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAttachedRolePoliciesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAttachedUserPolicies
+
+        /// <summary>
+        /// Lists all managed policies that are attached to the specified user. 
+        /// 
+        ///  
+        /// <para>
+        /// A user can also have inline policies embedded with it. To list the inline policies
+        /// for a user, use the <a>ListUserPolicies</a> API. For information about policies, refer
+        /// to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. You can use the <code>PathPrefix</code> parameter to limit the list of
+        /// policies to only those matching the specified path prefix. If there are no policies
+        /// attached to the specified group (or none that match the specified path prefix), the
+        /// action returns an empty list. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachedUserPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListAttachedUserPolicies service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public ListAttachedUserPoliciesResponse ListAttachedUserPolicies(ListAttachedUserPoliciesRequest request)
+        {
+            var marshaller = new ListAttachedUserPoliciesRequestMarshaller();
+            var unmarshaller = ListAttachedUserPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAttachedUserPoliciesRequest,ListAttachedUserPoliciesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAttachedUserPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachedUserPolicies operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAttachedUserPolicies
+        ///         operation.</returns>
+        public IAsyncResult BeginListAttachedUserPolicies(ListAttachedUserPoliciesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListAttachedUserPoliciesRequestMarshaller();
+            var unmarshaller = ListAttachedUserPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListAttachedUserPoliciesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAttachedUserPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAttachedUserPolicies.</param>
+        /// 
+        /// <returns>Returns a  ListAttachedUserPoliciesResult from IdentityManagementService.</returns>
+        public  ListAttachedUserPoliciesResponse EndListAttachedUserPolicies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAttachedUserPoliciesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListEntitiesForPolicy
+
+        /// <summary>
+        /// Lists all users, groups, and roles that the specified managed policy is attached to.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// You can use the optional <code>EntityFilter</code> parameter to limit the results
+        /// to a particular type of entity (users, groups, or roles). For example, to list only
+        /// the roles that are attached to the specified policy, set <code>EntityFilter</code>
+        /// to <code>Role</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntitiesForPolicy service method.</param>
+        /// 
+        /// <returns>The response from the ListEntitiesForPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public ListEntitiesForPolicyResponse ListEntitiesForPolicy(ListEntitiesForPolicyRequest request)
+        {
+            var marshaller = new ListEntitiesForPolicyRequestMarshaller();
+            var unmarshaller = ListEntitiesForPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<ListEntitiesForPolicyRequest,ListEntitiesForPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEntitiesForPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEntitiesForPolicy operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEntitiesForPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginListEntitiesForPolicy(ListEntitiesForPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListEntitiesForPolicyRequestMarshaller();
+            var unmarshaller = ListEntitiesForPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListEntitiesForPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEntitiesForPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEntitiesForPolicy.</param>
+        /// 
+        /// <returns>Returns a  ListEntitiesForPolicyResult from IdentityManagementService.</returns>
+        public  ListEntitiesForPolicyResponse EndListEntitiesForPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListEntitiesForPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListGroupPolicies
+
+        /// <summary>
+        /// Lists the names of the inline policies that are embedded in the specified group. 
+        /// 
+        ///  
+        /// <para>
+        /// A group can also have managed policies attached to it. To list the managed policies
+        /// that are attached to a group, use <a>ListAttachedGroupPolicies</a>. For more information
+        /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. If there are no inline policies embedded with the specified group, the
+        /// action returns an empty list. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupPolicies service method.</param>
@@ -3724,6 +5217,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public ListGroupPoliciesResponse ListGroupPolicies(ListGroupPoliciesRequest request)
         {
@@ -3780,6 +5276,9 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the ListGroups service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListGroupsResponse ListGroups()
         {
             return ListGroups(new ListGroupsRequest());
@@ -3797,6 +5296,9 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
         /// 
         /// <returns>The response from the ListGroups service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
             var marshaller = new ListGroupsRequestMarshaller();
@@ -3857,6 +5359,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListGroupsForUserResponse ListGroupsForUser(ListGroupsForUserRequest request)
         {
             var marshaller = new ListGroupsForUserRequestMarshaller();
@@ -3915,6 +5420,9 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the ListInstanceProfiles service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListInstanceProfilesResponse ListInstanceProfiles()
         {
             return ListInstanceProfiles(new ListInstanceProfilesRequest());
@@ -3935,6 +5443,9 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListInstanceProfiles service method.</param>
         /// 
         /// <returns>The response from the ListInstanceProfiles service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListInstanceProfilesResponse ListInstanceProfiles(ListInstanceProfilesRequest request)
         {
             var marshaller = new ListInstanceProfilesRequestMarshaller();
@@ -3998,6 +5509,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListInstanceProfilesForRoleResponse ListInstanceProfilesForRole(ListInstanceProfilesForRoleRequest request)
         {
             var marshaller = new ListInstanceProfilesForRoleRequestMarshaller();
@@ -4060,6 +5574,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListMFADevicesResponse ListMFADevices()
         {
             return ListMFADevices(new ListMFADevicesRequest());
@@ -4083,6 +5600,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public ListMFADevicesResponse ListMFADevices(ListMFADevicesRequest request)
         {
@@ -4134,6 +5654,9 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListOpenIDConnectProviders service method.</param>
         /// 
         /// <returns>The response from the ListOpenIDConnectProviders service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListOpenIDConnectProvidersResponse ListOpenIDConnectProviders(ListOpenIDConnectProvidersRequest request)
         {
             var marshaller = new ListOpenIDConnectProvidersRequestMarshaller();
@@ -4176,16 +5699,195 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
-        #region  ListRolePolicies
+        #region  ListPolicies
 
         /// <summary>
-        /// Lists the names of the policies associated with the specified role. If there are
-        /// none, the action returns an empty list. 
+        /// Lists all the managed policies that are available to your account, including your
+        /// own customer managed policies and all AWS managed policies. 
         /// 
         ///  
         /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// You can filter the list of policies that is returned using the optional <code>OnlyAttached</code>,
+        /// <code>Scope</code>, and <code>PathPrefix</code> parameters. For example, to list only
+        /// the customer managed policies in your AWS account, set <code>Scope</code> to <code>Local</code>.
+        /// To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListPolicies service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public ListPoliciesResponse ListPolicies()
+        {
+            return ListPolicies(new ListPoliciesRequest());
+        }
+
+        /// <summary>
+        /// Lists all the managed policies that are available to your account, including your
+        /// own customer managed policies and all AWS managed policies. 
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the list of policies that is returned using the optional <code>OnlyAttached</code>,
+        /// <code>Scope</code>, and <code>PathPrefix</code> parameters. For example, to list only
+        /// the customer managed policies in your AWS account, set <code>Scope</code> to <code>Local</code>.
+        /// To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListPolicies service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public ListPoliciesResponse ListPolicies(ListPoliciesRequest request)
+        {
+            var marshaller = new ListPoliciesRequestMarshaller();
+            var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPoliciesRequest,ListPoliciesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicies operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicies
+        ///         operation.</returns>
+        public IAsyncResult BeginListPolicies(ListPoliciesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListPoliciesRequestMarshaller();
+            var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListPoliciesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPolicies.</param>
+        /// 
+        /// <returns>Returns a  ListPoliciesResult from IdentityManagementService.</returns>
+        public  ListPoliciesResponse EndListPolicies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPoliciesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListPolicyVersions
+
+        /// <summary>
+        /// Lists information about the versions of the specified managed policy, including the
+        /// version that is set as the policy's default version. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListPolicyVersions service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public ListPolicyVersionsResponse ListPolicyVersions(ListPolicyVersionsRequest request)
+        {
+            var marshaller = new ListPolicyVersionsRequestMarshaller();
+            var unmarshaller = ListPolicyVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPolicyVersionsRequest,ListPolicyVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPolicyVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyVersions operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicyVersions
+        ///         operation.</returns>
+        public IAsyncResult BeginListPolicyVersions(ListPolicyVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListPolicyVersionsRequestMarshaller();
+            var unmarshaller = ListPolicyVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListPolicyVersionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPolicyVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPolicyVersions.</param>
+        /// 
+        /// <returns>Returns a  ListPolicyVersionsResult from IdentityManagementService.</returns>
+        public  ListPolicyVersionsResponse EndListPolicyVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPolicyVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListRolePolicies
+
+        /// <summary>
+        /// Lists the names of the inline policies that are embedded in the specified role. 
+        /// 
+        ///  
+        /// <para>
+        /// A role can also have managed policies attached to it. To list the managed policies
+        /// that are attached to a role, use <a>ListAttachedRolePolicies</a>. For more information
+        /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. If there are no inline policies embedded with the specified role, the
+        /// action returns an empty list. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRolePolicies service method.</param>
@@ -4194,6 +5896,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public ListRolePoliciesResponse ListRolePolicies(ListRolePoliciesRequest request)
         {
@@ -4258,6 +5963,9 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the ListRoles service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListRolesResponse ListRoles()
         {
             return ListRoles(new ListRolesRequest());
@@ -4283,6 +5991,9 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListRoles service method.</param>
         /// 
         /// <returns>The response from the ListRoles service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListRolesResponse ListRoles(ListRolesRequest request)
         {
             var marshaller = new ListRolesRequestMarshaller();
@@ -4335,6 +6046,9 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the ListSAMLProviders service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListSAMLProvidersResponse ListSAMLProviders()
         {
             return ListSAMLProviders(new ListSAMLProvidersRequest());
@@ -4349,6 +6063,9 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListSAMLProviders service method.</param>
         /// 
         /// <returns>The response from the ListSAMLProviders service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListSAMLProvidersResponse ListSAMLProviders(ListSAMLProvidersRequest request)
         {
             var marshaller = new ListSAMLProvidersRequestMarshaller();
@@ -4405,6 +6122,9 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the ListServerCertificates service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListServerCertificatesResponse ListServerCertificates()
         {
             return ListServerCertificates(new ListServerCertificatesRequest());
@@ -4423,6 +6143,9 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListServerCertificates service method.</param>
         /// 
         /// <returns>The response from the ListServerCertificates service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListServerCertificatesResponse ListServerCertificates(ListServerCertificatesRequest request)
         {
             var marshaller = new ListServerCertificatesRequestMarshaller();
@@ -4491,6 +6214,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListSigningCertificatesResponse ListSigningCertificates()
         {
             return ListSigningCertificates(new ListSigningCertificatesRequest());
@@ -4520,6 +6246,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public ListSigningCertificatesResponse ListSigningCertificates(ListSigningCertificatesRequest request)
         {
@@ -4566,13 +6295,20 @@ namespace Amazon.IdentityManagement
         #region  ListUserPolicies
 
         /// <summary>
-        /// Lists the names of the policies associated with the specified user. If there are
-        /// none, the action returns an empty list. 
+        /// Lists the names of the inline policies embedded in the specified user. 
         /// 
         ///  
         /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. 
+        /// A user can also have managed policies attached to it. To list the managed policies
+        /// that are attached to a user, use <a>ListAttachedUserPolicies</a>. For more information
+        /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. If there are no inline policies embedded with the specified user, the
+        /// action returns an empty list. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUserPolicies service method.</param>
@@ -4581,6 +6317,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public ListUserPoliciesResponse ListUserPolicies(ListUserPoliciesRequest request)
         {
@@ -4639,6 +6378,9 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the ListUsers service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListUsersResponse ListUsers()
         {
             return ListUsers(new ListUsersRequest());
@@ -4658,6 +6400,9 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListUsers service method.</param>
         /// 
         /// <returns>The response from the ListUsers service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ListUsersResponse ListUsers(ListUsersRequest request)
         {
             var marshaller = new ListUsersRequestMarshaller();
@@ -4781,21 +6526,25 @@ namespace Amazon.IdentityManagement
         #region  PutGroupPolicy
 
         /// <summary>
-        /// Adds (or updates) a policy document associated with the specified group. For information
-        /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-        /// of Policies</a> in the <i>Using IAM</i> guide. 
+        /// Adds (or updates) an inline policy document that is embedded in the specified group.
+        /// 
         /// 
         ///  
         /// <para>
-        ///  For information about limits on the number of policies you can associate with a group,
-        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// A user can also have managed policies attached to it. To attach a managed policy to
+        /// a group, use <a>AttachGroupPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>.
+        /// For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about limits on the number of inline policies that you can embed in
+        /// a group, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
         /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
-        ///  <note> Because policy documents can be large, you should use POST rather than GET
-        /// when calling <code>PutGroupPolicy</code>. For information about setting up signatures
-        /// and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
-        /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
-        /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        ///  <note>Because policy documents can be large, you should use POST rather than GET
+        /// when calling <code>PutGroupPolicy</code>. For general information about using the
+        /// Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
         /// Query Requests</a> in the <i>Using IAM</i> guide. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutGroupPolicy service method.</param>
@@ -4812,6 +6561,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public PutGroupPolicyResponse PutGroupPolicy(PutGroupPolicyRequest request)
         {
@@ -4858,21 +6610,33 @@ namespace Amazon.IdentityManagement
         #region  PutRolePolicy
 
         /// <summary>
-        /// Adds (or updates) a policy document associated with the specified role. For information
-        /// about policies, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-        /// of Policies</a> in the <i>Using IAM</i> guide. 
+        /// Adds (or updates) an inline policy document that is embedded in the specified role.
+        /// 
         /// 
         ///  
         /// <para>
-        ///  For information about limits on the policies you can associate with a role, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// When you embed an inline policy in a role, the inline policy is used as the role's
+        /// access (permissions) policy. The role's trust policy is created at the same time as
+        /// the role, using <a>CreateRole</a>. You can update a role's trust policy using <a>UpdateAssumeRolePolicy</a>.
+        /// For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
+        /// Roles to Delegate Permissions and Federate Identities</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// A role can also have a managed policy attached to it. To attach a managed policy to
+        /// a role, use <a>AttachRolePolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>.
+        /// For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about limits on the number of inline policies that you can embed with
+        /// a role, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
         /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
-        ///  <note> Because policy documents can be large, you should use POST rather than GET
-        /// when calling <code>PutRolePolicy</code>. For information about setting up signatures
-        /// and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
-        /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
-        /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        ///  <note>Because policy documents can be large, you should use POST rather than GET
+        /// when calling <code>PutRolePolicy</code>. For general information about using the Query
+        /// API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
         /// Query Requests</a> in the <i>Using IAM</i> guide. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRolePolicy service method.</param>
@@ -4889,6 +6653,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public PutRolePolicyResponse PutRolePolicy(PutRolePolicyRequest request)
         {
@@ -4935,21 +6702,25 @@ namespace Amazon.IdentityManagement
         #region  PutUserPolicy
 
         /// <summary>
-        /// Adds (or updates) a policy document associated with the specified user. For information
-        /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-        /// of Policies</a> in the <i>Using IAM</i> guide. 
+        /// Adds (or updates) an inline policy document that is embedded in the specified user.
+        /// 
         /// 
         ///  
         /// <para>
-        ///  For information about limits on the number of policies you can associate with a user,
-        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// A user can also have a managed policy attached to it. To attach a managed policy to
+        /// a user, use <a>AttachUserPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>.
+        /// For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about limits on the number of inline policies that you can embed in
+        /// a user, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
         /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
-        ///  <note> Because policy documents can be large, you should use POST rather than GET
-        /// when calling <code>PutUserPolicy</code>. For information about setting up signatures
-        /// and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
-        /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
-        /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        ///  <note>Because policy documents can be large, you should use POST rather than GET
+        /// when calling <code>PutUserPolicy</code>. For general information about using the Query
+        /// API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
         /// Query Requests</a> in the <i>Using IAM</i> guide. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutUserPolicy service method.</param>
@@ -4966,6 +6737,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public PutUserPolicyResponse PutUserPolicy(PutUserPolicyRequest request)
         {
@@ -5031,6 +6805,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public RemoveClientIDFromOpenIDConnectProviderResponse RemoveClientIDFromOpenIDConnectProvider(RemoveClientIDFromOpenIDConnectProviderRequest request)
         {
@@ -5100,6 +6877,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public RemoveRoleFromInstanceProfileResponse RemoveRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest request)
         {
             var marshaller = new RemoveRoleFromInstanceProfileRequestMarshaller();
@@ -5157,6 +6937,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public RemoveUserFromGroupResponse RemoveUserFromGroup(RemoveUserFromGroupRequest request)
         {
@@ -5227,6 +7010,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public ResyncMFADeviceResponse ResyncMFADevice(ResyncMFADeviceRequest request)
         {
             var marshaller = new ResyncMFADeviceRequestMarshaller();
@@ -5269,6 +7055,84 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  SetDefaultPolicyVersion
+
+        /// <summary>
+        /// Sets the specified version of the specified policy as the policy's default (operative)
+        /// version. 
+        /// 
+        ///  
+        /// <para>
+        /// This action affects all users, groups, and roles that the policy is attached to. To
+        /// list the users, groups, and roles that the policy is attached to, use the <a>ListEntitiesForPolicy</a>
+        /// API. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetDefaultPolicyVersion service method.</param>
+        /// 
+        /// <returns>The response from the SetDefaultPolicyVersion service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public SetDefaultPolicyVersionResponse SetDefaultPolicyVersion(SetDefaultPolicyVersionRequest request)
+        {
+            var marshaller = new SetDefaultPolicyVersionRequestMarshaller();
+            var unmarshaller = SetDefaultPolicyVersionResponseUnmarshaller.Instance;
+
+            return Invoke<SetDefaultPolicyVersionRequest,SetDefaultPolicyVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetDefaultPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetDefaultPolicyVersion operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetDefaultPolicyVersion
+        ///         operation.</returns>
+        public IAsyncResult BeginSetDefaultPolicyVersion(SetDefaultPolicyVersionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new SetDefaultPolicyVersionRequestMarshaller();
+            var unmarshaller = SetDefaultPolicyVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SetDefaultPolicyVersionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetDefaultPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetDefaultPolicyVersion.</param>
+        /// 
+        /// <returns>Returns a  SetDefaultPolicyVersionResult from IdentityManagementService.</returns>
+        public  SetDefaultPolicyVersionResponse EndSetDefaultPolicyVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SetDefaultPolicyVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateAccessKey
 
         /// <summary>
@@ -5299,6 +7163,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public UpdateAccessKeyResponse UpdateAccessKey(UpdateAccessKeyRequest request)
         {
@@ -5373,6 +7240,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public UpdateAccountPasswordPolicyResponse UpdateAccountPasswordPolicy()
         {
             return UpdateAccountPasswordPolicy(new UpdateAccountPasswordPolicyRequest());
@@ -5407,6 +7277,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public UpdateAccountPasswordPolicyResponse UpdateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest request)
         {
@@ -5454,8 +7327,8 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Updates the policy that grants an entity permission to assume a role. For more information
-        /// about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with Roles</a>.
+        /// about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
+        /// Roles to Delegate Permissions and Federate Identities</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssumeRolePolicy service method.</param>
         /// 
@@ -5471,6 +7344,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public UpdateAssumeRolePolicyResponse UpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest request)
         {
@@ -5541,6 +7417,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
         {
@@ -5617,6 +7496,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because the provided password did not meet the requirements
         /// imposed by the account password policy.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public UpdateLoginProfileResponse UpdateLoginProfile(UpdateLoginProfileRequest request)
         {
             var marshaller = new UpdateLoginProfileRequestMarshaller();
@@ -5673,8 +7555,8 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// Typically, you need to update a thumbprint only when the identity provider's certificate
         /// changes, which occurs rarely. However, if the provider's certificate <i>does</i> change,
-        /// any attempt to assume an IAM role that specifies the IAM provider as a principal will
-        /// fail until the certificate thumbprint is updated.
+        /// any attempt to assume an IAM role that specifies the OIDC provider as a principal
+        /// will fail until the certificate thumbprint is updated.
         /// </para>
         ///  <note>Because trust for the OpenID Connect provider is ultimately derived from the
         /// provider's certificate and is validated by the thumbprint, it is a best practice to
@@ -5691,6 +7573,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public UpdateOpenIDConnectProviderThumbprintResponse UpdateOpenIDConnectProviderThumbprint(UpdateOpenIDConnectProviderThumbprintRequest request)
         {
@@ -5756,6 +7641,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public UpdateSAMLProviderResponse UpdateSAMLProvider(UpdateSAMLProviderRequest request)
         {
@@ -5827,6 +7715,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public UpdateServerCertificateResponse UpdateServerCertificate(UpdateServerCertificateRequest request)
         {
@@ -5900,6 +7791,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public UpdateSigningCertificateResponse UpdateSigningCertificate(UpdateSigningCertificateRequest request)
         {
@@ -5977,6 +7871,9 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
         public UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
             var marshaller = new UpdateUserRequestMarshaller();
@@ -6019,6 +7916,67 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  UploadPublicAccessKey
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UploadPublicAccessKey service method.</param>
+        /// 
+        /// <returns>The response from the UploadPublicAccessKey service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public UploadPublicAccessKeyResponse UploadPublicAccessKey(UploadPublicAccessKeyRequest request)
+        {
+            var marshaller = new UploadPublicAccessKeyRequestMarshaller();
+            var unmarshaller = UploadPublicAccessKeyResponseUnmarshaller.Instance;
+
+            return Invoke<UploadPublicAccessKeyRequest,UploadPublicAccessKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UploadPublicAccessKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UploadPublicAccessKey operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadPublicAccessKey
+        ///         operation.</returns>
+        public IAsyncResult BeginUploadPublicAccessKey(UploadPublicAccessKeyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UploadPublicAccessKeyRequestMarshaller();
+            var unmarshaller = UploadPublicAccessKeyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UploadPublicAccessKeyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UploadPublicAccessKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadPublicAccessKey.</param>
+        /// 
+        /// <returns>Returns a  UploadPublicAccessKeyResult from IdentityManagementService.</returns>
+        public  UploadPublicAccessKeyResponse EndUploadPublicAccessKey(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UploadPublicAccessKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UploadServerCertificate
 
         /// <summary>
@@ -6056,6 +8014,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedCertificateException">
         /// The request was rejected because the certificate was malformed or expired. The error
         /// message describes the specific error.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public UploadServerCertificateResponse UploadServerCertificate(UploadServerCertificateRequest request)
         {
@@ -6145,6 +8106,9 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         public UploadSigningCertificateResponse UploadSigningCertificate(UploadSigningCertificateRequest request)
         {

@@ -403,6 +403,7 @@ namespace ServiceClientGenerator
         public const string GlobalShapeKey = "*";
         public const string ShapeSubstitutionsKey = "shapeSubstitutions";
         public const string EmitAsShapeKey = "emitAsShape";
+        public const string RenameShapeKey = "renameShape";
         public const string EmitFromMemberKey = "emitFromMember";
         public const string ListMemberSuffixExclusionsKey = "listMemberSuffixExclusions";
         public const string DataTypeSwapKey = "dataTypeSwap";
@@ -691,6 +692,19 @@ namespace ServiceClientGenerator
             return false;
         }
 
+        public string GetOverrideShapeName(string originalShapeName)
+        {
+            var substitutionsData = _documentRoot[ShapeSubstitutionsKey];
+            if (substitutionsData == null)
+                return null;
+
+            var shapeRemapData = substitutionsData[originalShapeName] as JsonData;
+            if (null == shapeRemapData || null == shapeRemapData[RenameShapeKey])
+                return null;
+
+            return (string)shapeRemapData[RenameShapeKey];
+        }
+
         /// <summary>
         /// Returns the name of the shape that should be used instead of the supplied shape
         /// </summary>
@@ -703,7 +717,7 @@ namespace ServiceClientGenerator
                 return null;
 
             var shapeRemapData = substitutionsData[originalShapeName] as JsonData;
-            if (shapeRemapData == null)
+            if (null == shapeRemapData || null == shapeRemapData[EmitAsShapeKey])
                 return null;
 
             return (string)shapeRemapData[EmitAsShapeKey];

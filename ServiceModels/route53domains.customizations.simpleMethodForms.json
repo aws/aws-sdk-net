@@ -1,0 +1,30 @@
+
+{
+    "simpleMethods" : {
+        "operations" : {
+            "ListTagsForDomain" : {
+                "methodForms" : [
+                    [
+                        "DomainName"
+                    ]
+                ]
+            },
+            "UpdateTagsForDomain" : {
+                "methodForms" : [
+                    [
+                        "DomainName",
+                        "TagsToUpdate"
+                    ]
+                ]
+            },
+            "DeleteTagsForDomain" : {
+                "methodForms" : [
+                    [
+                        "DomainName",
+                        "TagsToDelete"
+                    ]
+                ]
+            }
+       }
+    }
+}

@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// 
+    /// Contains the result of a successful invocation of the <a>GetAccountAuthorizationDetails</a>
+    /// action.
     /// </summary>
     public partial class GetAccountAuthorizationDetailsResult : AmazonWebServiceResponse
     {
@@ -39,7 +40,10 @@ namespace Amazon.IdentityManagement.Model
         private List<UserDetail> _userDetailList = new List<UserDetail>();
 
         /// <summary>
-        /// Gets and sets the property GroupDetailList.
+        /// Gets and sets the property GroupDetailList. 
+        /// <para>
+        /// A list containing information about IAM groups.
+        /// </para>
         /// </summary>
         public List<GroupDetail> GroupDetailList
         {
@@ -54,7 +58,12 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsTruncated.
+        /// Gets and sets the property IsTruncated. 
+        /// <para>
+        /// A flag that indicates whether there are more items to return. If your results were
+        /// truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items.
+        /// </para>
         /// </summary>
         public bool IsTruncated
         {
@@ -69,7 +78,12 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Marker.
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
+        /// the value to use for the <code>Marker</code> parameter in a subsequent pagination
+        /// request.
+        /// </para>
         /// </summary>
         public string Marker
         {
@@ -84,7 +98,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleDetailList.
+        /// Gets and sets the property RoleDetailList. 
+        /// <para>
+        /// A list containing information about IAM roles.
+        /// </para>
         /// </summary>
         public List<RoleDetail> RoleDetailList
         {
@@ -99,7 +116,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserDetailList.
+        /// Gets and sets the property UserDetailList. 
+        /// <para>
+        /// A list containing information about IAM users.
+        /// </para>
         /// </summary>
         public List<UserDetail> UserDetailList
         {

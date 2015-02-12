@@ -51,7 +51,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="megabytes">The requested heap size of the daemon.</param>
         public void AddHeapSize(Daemon daemon, int megabytes)
         {
-            args.Add("--" + daemon.ToString().ToLower(CultureInfo.InvariantCulture) + "-heap-size=" + megabytes);
+            args.Add("--" + daemon.ToString().ToLowerInvariant() + "-heap-size=" + megabytes);
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="opts">Additional Java command line arguments.</param>
         public void AddOpts(Daemon daemon, String opts)
         {
-            args.Add("--" + daemon.ToString().ToLower(CultureInfo.InvariantCulture) + "-opts=\"" + opts + "\"");
+            args.Add("--" + daemon.ToString().ToLowerInvariant() + "-opts=\"" + opts + "\"");
         }
 
         /// <summary>

@@ -354,6 +354,10 @@ namespace Amazon.Route53
         /// Constant Healthcheck for TagResourceType
         /// </summary>
         public static readonly TagResourceType Healthcheck = new TagResourceType("healthcheck");
+        /// <summary>
+        /// Constant Hostedzone for TagResourceType
+        /// </summary>
+        public static readonly TagResourceType Hostedzone = new TagResourceType("hostedzone");
 
         /// <summary>
         /// Default Constructor

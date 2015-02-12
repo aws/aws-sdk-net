@@ -181,6 +181,9 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// The health check you are trying to get or delete does not exist.
         /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
         /// The request was rejected because Route 53 was still processing a prior request.
         /// </exception>
@@ -1194,6 +1197,9 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// The health check you are trying to get or delete does not exist.
         /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
         /// The request was rejected because Route 53 was still processing a prior request.
         /// </exception>
@@ -1228,6 +1234,9 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// The health check you are trying to get or delete does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
         /// The request was rejected because Route 53 was still processing a prior request.

@@ -34,19 +34,19 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     ///  This data type is used as a response element in the following actions:
     /// </para>
-    ///  <ul> <li>
+    ///  <ul> <li> 
     /// <para>
-    /// <a>CreateRole</a>
+    ///  <a>CreateRole</a> 
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
-    /// <a>GetRole</a>
+    ///  <a>GetRole</a> 
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
-    /// <a>ListRoles</a>
+    ///  <a>ListRoles</a> 
     /// </para>
-    /// </li> </ul>
+    ///  </li> </ul>
     /// </summary>
     public partial class Role
     {
@@ -84,9 +84,8 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  The returned policy is URL-encoded according to RFC 3986. For more information about
-        /// RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
-        /// 
+        ///  The returned policy is URL-encoded according to <a href="http://www.faqs.org/rfcs/rfc3986.html">RFC
+        /// 3986</a>. 
         /// </para>
         /// </summary>
         public string AssumeRolePolicyDocument
@@ -104,7 +103,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property CreateDate. 
         /// <para>
-        /// The date when the role was created.
+        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the role was created.
         /// </para>
         /// </summary>
         public DateTime CreateDate
@@ -161,7 +161,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// The name that identifies the role.
+        /// The friendly name that identifies the role.
         /// </para>
         /// </summary>
         public string RoleName

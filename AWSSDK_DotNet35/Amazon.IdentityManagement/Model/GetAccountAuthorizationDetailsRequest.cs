@@ -29,7 +29,16 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccountAuthorizationDetails operation.
+    /// Retrieves information about all IAM users, groups, and roles in your account, including
+    /// their relationships to one another and their policies. Use this API to obtain a snapshot
+    /// of the configuration of IAM permissions (users, groups, roles, and their policies)
+    /// in your account.
     /// 
+    ///  
+    /// <para>
+    /// You can optionally filter the results using the <code>Filter</code> parameter. You
+    /// can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+    /// </para>
     /// </summary>
     public partial class GetAccountAuthorizationDetailsRequest : AmazonIdentityManagementServiceRequest
     {
@@ -38,7 +47,10 @@ namespace Amazon.IdentityManagement.Model
         private int? _maxItems;
 
         /// <summary>
-        /// Gets and sets the property Filter.
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// A list of entity types (user, group, or role) for filtering the results.
+        /// </para>
         /// </summary>
         public List<string> Filter
         {
@@ -53,7 +65,12 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Marker.
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// Use this only when paginating results, and only in a subsequent request after you've
+        /// received a response where the results are truncated. Set it to the value of the <code>Marker</code>
+        /// element in the response you just received.
+        /// </para>
         /// </summary>
         public string Marker
         {
@@ -68,7 +85,13 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxItems.
+        /// Gets and sets the property MaxItems. 
+        /// <para>
+        /// Use this only when paginating results to indicate the maximum number of items you
+        /// want in the response. If there are additional items beyond the maximum you specify,
+        /// the <code>IsTruncated</code> response element is <code>true</code>. This parameter
+        /// is optional. If you do not include it, it defaults to 100.
+        /// </para>
         /// </summary>
         public int MaxItems
         {

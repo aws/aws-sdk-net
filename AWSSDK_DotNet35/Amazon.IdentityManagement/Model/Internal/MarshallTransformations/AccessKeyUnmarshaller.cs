@@ -55,6 +55,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.AccessKeyId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AccessKeySelector", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AccessKeySelector = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CreateDate", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

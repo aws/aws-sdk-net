@@ -40,8 +40,8 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// Typically, you need to update a thumbprint only when the identity provider's certificate
     /// changes, which occurs rarely. However, if the provider's certificate <i>does</i> change,
-    /// any attempt to assume an IAM role that specifies the IAM provider as a principal will
-    /// fail until the certificate thumbprint is updated.
+    /// any attempt to assume an IAM role that specifies the OIDC provider as a principal
+    /// will fail until the certificate thumbprint is updated.
     /// </para>
     ///  <note>Because trust for the OpenID Connect provider is ultimately derived from the
     /// provider's certificate and is validated by the thumbprint, it is a best practice to

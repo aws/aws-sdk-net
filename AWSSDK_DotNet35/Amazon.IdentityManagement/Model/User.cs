@@ -34,19 +34,19 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     ///  This data type is used as a response element in the following actions:
     /// </para>
-    ///  <ul> <li>
+    ///  <ul> <li> 
     /// <para>
-    /// <a>CreateUser</a>
+    ///  <a>CreateUser</a> 
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
-    /// <a>GetUser</a>
+    ///  <a>GetUser</a> 
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
-    /// <a>ListUsers</a>
+    ///  <a>ListUsers</a> 
     /// </para>
-    /// </li> </ul>
+    ///  </li> </ul>
     /// </summary>
     public partial class User
     {

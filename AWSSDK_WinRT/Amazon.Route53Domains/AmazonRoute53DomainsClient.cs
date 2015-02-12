@@ -194,6 +194,36 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  DeleteTagsForDomain
+
+        internal DeleteTagsForDomainResponse DeleteTagsForDomain(DeleteTagsForDomainRequest request)
+        {
+            var marshaller = new DeleteTagsForDomainRequestMarshaller();
+            var unmarshaller = DeleteTagsForDomainResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTagsForDomainRequest,DeleteTagsForDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTagsForDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTagsForDomain operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteTagsForDomainResponse> DeleteTagsForDomainAsync(DeleteTagsForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteTagsForDomainRequestMarshaller();
+            var unmarshaller = DeleteTagsForDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTagsForDomainRequest,DeleteTagsForDomainResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisableDomainAutoRenew
 
         internal DisableDomainAutoRenewResponse DisableDomainAutoRenew(DisableDomainAutoRenewRequest request)
@@ -442,6 +472,36 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  ListTagsForDomain
+
+        internal ListTagsForDomainResponse ListTagsForDomain(ListTagsForDomainRequest request)
+        {
+            var marshaller = new ListTagsForDomainRequestMarshaller();
+            var unmarshaller = ListTagsForDomainResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForDomainRequest,ListTagsForDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForDomain operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListTagsForDomainResponse> ListTagsForDomainAsync(ListTagsForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTagsForDomainRequestMarshaller();
+            var unmarshaller = ListTagsForDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForDomainRequest,ListTagsForDomainResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RegisterDomain
 
         internal RegisterDomainResponse RegisterDomain(RegisterDomainRequest request)
@@ -617,6 +677,36 @@ namespace Amazon.Route53Domains
             var unmarshaller = UpdateDomainNameserversResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDomainNameserversRequest,UpdateDomainNameserversResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTagsForDomain
+
+        internal UpdateTagsForDomainResponse UpdateTagsForDomain(UpdateTagsForDomainRequest request)
+        {
+            var marshaller = new UpdateTagsForDomainRequestMarshaller();
+            var unmarshaller = UpdateTagsForDomainResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTagsForDomainRequest,UpdateTagsForDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTagsForDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTagsForDomain operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateTagsForDomainResponse> UpdateTagsForDomainAsync(UpdateTagsForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateTagsForDomainRequestMarshaller();
+            var unmarshaller = UpdateTagsForDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateTagsForDomainRequest,UpdateTagsForDomainResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

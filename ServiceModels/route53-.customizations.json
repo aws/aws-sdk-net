@@ -9,7 +9,8 @@
 		"ListHealthChecks",
 		"ListHostedZones",
         "ListReusableDelegationSets",
-        "ListGeoLocations"
+        "ListGeoLocations",
+        "GetHostedZoneCount"
 	],
 	"retainOriginalMemberOrdering" : true
 }

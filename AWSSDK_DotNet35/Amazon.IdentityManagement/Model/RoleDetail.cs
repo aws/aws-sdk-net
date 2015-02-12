@@ -28,7 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
+    /// Contains information about an IAM role, including all of the role's policies.
     /// 
+    ///  
+    /// <para>
+    /// This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class RoleDetail
     {
@@ -57,7 +63,15 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AssumeRolePolicyDocument.
+        /// Gets and sets the property AssumeRolePolicyDocument. 
+        /// <para>
+        /// The trust policy that grants permission to assume the role.
+        /// </para>
+        ///  
+        /// <para>
+        ///  The returned policy is URL-encoded according to <a href="http://www.faqs.org/rfcs/rfc3986.html">RFC
+        /// 3986</a>. 
+        /// </para>
         /// </summary>
         public string AssumeRolePolicyDocument
         {
@@ -72,7 +86,11 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreateDate.
+        /// Gets and sets the property CreateDate. 
+        /// <para>
+        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the role was created.
+        /// </para>
         /// </summary>
         public DateTime CreateDate
         {
@@ -102,7 +120,11 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Path.
+        /// Gets and sets the property Path. 
+        /// <para>
+        /// The path to the role. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// Identifiers</a> in the <i>Using IAM</i> guide.
+        /// </para>
         /// </summary>
         public string Path
         {
@@ -117,7 +139,12 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleId.
+        /// Gets and sets the property RoleId. 
+        /// <para>
+        /// The stable and unique string identifying the role. For more information about IDs,
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// Identifiers</a> in the <i>Using IAM</i> guide.
+        /// </para>
         /// </summary>
         public string RoleId
         {
@@ -132,7 +159,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleName.
+        /// Gets and sets the property RoleName. 
+        /// <para>
+        /// The friendly name that identifies the role.
+        /// </para>
         /// </summary>
         public string RoleName
         {
@@ -147,7 +177,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RolePolicyList.
+        /// Gets and sets the property RolePolicyList. 
+        /// <para>
+        /// A list of the role's access (permissions) policies. 
+        /// </para>
         /// </summary>
         public List<PolicyDetail> RolePolicyList
         {

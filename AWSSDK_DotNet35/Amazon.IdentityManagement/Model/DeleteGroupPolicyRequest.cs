@@ -29,7 +29,15 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGroupPolicy operation.
-    /// Deletes the specified policy that is associated with the specified group.
+    /// Deletes the specified inline policy that is embedded in the specified group.
+    /// 
+    ///  
+    /// <para>
+    /// A group can also have managed policies attached to it. To detach a managed policy
+    /// from a group, use <a>DetachGroupPolicy</a>. For more information about policies, refer
+    /// to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+    /// </para>
     /// </summary>
     public partial class DeleteGroupPolicyRequest : AmazonIdentityManagementServiceRequest
     {
@@ -44,8 +52,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates DeleteGroupPolicyRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">The name of the group the policy is associated with.</param>
-        /// <param name="policyName">The name of the policy document to delete.</param>
+        /// <param name="groupName">The name (friendly name, not ARN) identifying the group that the policy is embedded in.</param>
+        /// <param name="policyName">The name identifying the policy document to delete.</param>
         public DeleteGroupPolicyRequest(string groupName, string policyName)
         {
             _groupName = groupName;
@@ -55,7 +63,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of the group the policy is associated with.
+        /// The name (friendly name, not ARN) identifying the group that the policy is embedded
+        /// in.
         /// </para>
         /// </summary>
         public string GroupName
@@ -73,7 +82,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The name of the policy document to delete.
+        /// The name identifying the policy document to delete.
         /// </para>
         /// </summary>
         public string PolicyName

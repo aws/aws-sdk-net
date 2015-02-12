@@ -50,6 +50,21 @@ namespace Amazon.Route53Domains
 
         #endregion
                 
+        #region  DeleteTagsForDomain
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTagsForDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTagsForDomain operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteTagsForDomainResponse> DeleteTagsForDomainAsync(DeleteTagsForDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisableDomainAutoRenew
 
         /// <summary>
@@ -170,6 +185,21 @@ namespace Amazon.Route53Domains
 
         #endregion
                 
+        #region  ListTagsForDomain
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForDomain operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListTagsForDomainResponse> ListTagsForDomainAsync(ListTagsForDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RegisterDomain
 
         /// <summary>
@@ -257,6 +287,21 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<UpdateDomainNameserversResponse> UpdateDomainNameserversAsync(UpdateDomainNameserversRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateTagsForDomain
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTagsForDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTagsForDomain operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateTagsForDomainResponse> UpdateTagsForDomainAsync(UpdateTagsForDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

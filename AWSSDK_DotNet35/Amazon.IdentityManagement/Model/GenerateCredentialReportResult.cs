@@ -57,7 +57,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Information about the state of a credential report.
+        /// Information about the state of the credential report.
         /// </para>
         /// </summary>
         public ReportStateType State

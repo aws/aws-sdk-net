@@ -128,7 +128,7 @@ namespace Amazon.Runtime.Internal.Auth
             var sb = new StringBuilder(256);
             foreach (var key in headers.Keys.OrderBy(x => x, StringComparer.OrdinalIgnoreCase))
             {
-                var lowerKey = key.ToLower(CultureInfo.InvariantCulture);
+                var lowerKey = key.ToLowerInvariant();
                 if (!lowerKey.StartsWith("x-amz-", StringComparison.Ordinal))
                     continue;
 

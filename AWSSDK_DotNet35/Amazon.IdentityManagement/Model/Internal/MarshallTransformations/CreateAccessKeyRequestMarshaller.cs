@@ -48,6 +48,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAccessKeySelector())
+                {
+                    request.Parameters.Add("AccessKeySelector", StringUtils.FromString(publicRequest.AccessKeySelector));
+                }
                 if(publicRequest.IsSetUserName())
                 {
                     request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));

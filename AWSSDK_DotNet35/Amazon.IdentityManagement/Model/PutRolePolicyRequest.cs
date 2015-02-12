@@ -29,21 +29,33 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the PutRolePolicy operation.
-    /// Adds (or updates) a policy document associated with the specified role. For information
-    /// about policies, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-    /// of Policies</a> in the <i>Using IAM</i> guide. 
+    /// Adds (or updates) an inline policy document that is embedded in the specified role.
+    /// 
     /// 
     ///  
     /// <para>
-    ///  For information about limits on the policies you can associate with a role, see <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+    /// When you embed an inline policy in a role, the inline policy is used as the role's
+    /// access (permissions) policy. The role's trust policy is created at the same time as
+    /// the role, using <a>CreateRole</a>. You can update a role's trust policy using <a>UpdateAssumeRolePolicy</a>.
+    /// For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
+    /// Roles to Delegate Permissions and Federate Identities</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// A role can also have a managed policy attached to it. To attach a managed policy to
+    /// a role, use <a>AttachRolePolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>.
+    /// For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For information about limits on the number of inline policies that you can embed with
+    /// a role, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
     /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
     /// </para>
-    ///  <note> Because policy documents can be large, you should use POST rather than GET
-    /// when calling <code>PutRolePolicy</code>. For information about setting up signatures
-    /// and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
-    /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
-    /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+    ///  <note>Because policy documents can be large, you should use POST rather than GET
+    /// when calling <code>PutRolePolicy</code>. For general information about using the Query
+    /// API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
     /// Query Requests</a> in the <i>Using IAM</i> guide. </note>
     /// </summary>
     public partial class PutRolePolicyRequest : AmazonIdentityManagementServiceRequest

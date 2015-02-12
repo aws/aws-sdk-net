@@ -46,14 +46,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
-        
         // Runs through a number of the APIs in the Route 53 client to make sure we can
         // correct send requests and unmarshall responses.
         [TestMethod]
         [TestCategory("Route53")]
         public void TestRoute53()
         {
-            var geoLocations = Client.ListGeoLocations(new ListGeoLocationsRequest()).GeoLocationDetailsList;
+            var geoLocations = Client.ListGeoLocations().GeoLocationDetailsList;
             Assert.IsNotNull(geoLocations);
             Assert.AreNotEqual(0, geoLocations.Count);
 
@@ -64,23 +63,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 HostedZoneConfig = new HostedZoneConfig { Comment = COMMENT }
             };
             // Create Hosted Zone
-            var response = Client.CreateHostedZone(createRequest);
+            var createResponse = Client.CreateHostedZone(createRequest);
 
-            createdZoneId = response.HostedZone.Id;
-            createdZoneChangeId = response.ChangeInfo.Id;
+            createdZoneId = createResponse.HostedZone.Id;
+            createdZoneChangeId = createResponse.ChangeInfo.Id;
 
-            assertValidCreatedHostedZone(response.HostedZone);
-            assertValidDelegationSet(response.DelegationSet);
-            assertValidChangeInfo(response.ChangeInfo);
-            Assert.IsNotNull(response.Location);
-
+            assertValidCreatedHostedZone(createResponse.HostedZone);
+            assertValidDelegationSet(createResponse.DelegationSet);
+            assertValidChangeInfo(createResponse.ChangeInfo);
+            Assert.IsNotNull(createResponse.Location);
 
             // Get Hosted Zone
             GetHostedZoneRequest getRequest = new GetHostedZoneRequest { Id = createdZoneId };
             var getHostedZoneResponse = Client.GetHostedZone(getRequest);
             assertValidDelegationSet(getHostedZoneResponse.DelegationSet);
             assertValidCreatedHostedZone(getHostedZoneResponse.HostedZone);
-
 
             // List Hosted Zones
             List<HostedZone> hostedZones = Client.ListHostedZones().HostedZones;
@@ -91,7 +88,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.IsNotNull(hostedZone.Id);
                 Assert.IsNotNull(hostedZone.Name);
             }
-
 
             // List Resource Record Sets
             ListResourceRecordSetsRequest listRequest = new ListResourceRecordSetsRequest { HostedZoneId = createdZoneId, MaxItems = "10" };

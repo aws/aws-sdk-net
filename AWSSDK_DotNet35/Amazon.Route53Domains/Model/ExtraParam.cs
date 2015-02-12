@@ -53,7 +53,8 @@ namespace Amazon.Route53Domains.Model
         /// Valid values: <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> | <code>BIRTH_DEPARTMENT</code>
         /// | <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code>
         /// | <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code>
-        /// | <code>CA_LEGAL_TYPE</code> | <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code>
+        /// | <code>CA_LEGAL_TYPE</code> | <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code>
+        /// | <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code>
         /// | <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code>
         /// | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
         /// </para>

@@ -116,6 +116,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 return new CredentialReportNotReadyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceFailure"))
+            {
+                return new ServiceFailureException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonIdentityManagementServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static GetCredentialReportResponseUnmarshaller _instance = new GetCredentialReportResponseUnmarshaller();        

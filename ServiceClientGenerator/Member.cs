@@ -391,6 +391,7 @@ namespace ServiceClientGenerator
             JsonData memberShape = null;
             // if this shape is a collection, has the collected type been remapped?
             var emitAsShapeName = this.model.Customizations.GetSubstituteShapeName(extendsNode.ToString());
+            var renameShape = this.model.Customizations.GetOverrideShapeName(extendsNode.ToString());
             if (emitAsShapeName == null)
             {
                 memberShape = this.model.DocumentRoot[ServiceModel.ShapesKey][extendsNode.ToString()];
@@ -431,7 +432,7 @@ namespace ServiceClientGenerator
                 case "timestamp":
                     return "DateTime";
                 case "structure":
-                    return emitAsShapeName ?? extendsNode.ToString();
+                    return emitAsShapeName ?? renameShape ?? extendsNode.ToString();
                 case "map":
                     var keyType = DetermineType(memberShape["key"], true);
                     var valueType = DetermineType(memberShape["value"], true);
@@ -549,6 +550,7 @@ namespace ServiceClientGenerator
 
             JsonData memberShape = null;
             var substituteType = this.model.Customizations.GetSubstituteShapeName(extendsNode.ToString());
+            var renameShape = this.model.Customizations.GetOverrideShapeName(extendsNode.ToString());
             memberShape = substituteType != null
                 ? this.model.DocumentRoot[ServiceModel.ShapesKey][substituteType]
                 : this.model.DocumentRoot[ServiceModel.ShapesKey][extendsNode.ToString()];
@@ -576,7 +578,7 @@ namespace ServiceClientGenerator
                 case "timestamp":
                     return "DateTimeUnmarshaller.Instance";
                 case "structure":
-                    return extendsNode + "Unmarshaller.Instance";
+                    return (renameShape ?? extendsNode) + "Unmarshaller.Instance";
                 case "map":
                     var keyType = DetermineType(memberShape[Shape.KeyKey], true);
                     var keyTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.KeyKey]);

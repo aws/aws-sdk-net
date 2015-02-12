@@ -28,7 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
+    /// Contains information about an IAM group, including all of the group's policies. 
     /// 
+    ///  
+    /// <para>
+    /// This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class GroupDetail
     {
@@ -55,7 +61,11 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreateDate.
+        /// Gets and sets the property CreateDate. 
+        /// <para>
+        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the group was created.
+        /// </para>
         /// </summary>
         public DateTime CreateDate
         {
@@ -70,7 +80,12 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupId.
+        /// Gets and sets the property GroupId. 
+        /// <para>
+        /// The stable and unique string identifying the group. For more information about IDs,
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// Identifiers</a> in the <i>Using IAM</i> guide.
+        /// </para>
         /// </summary>
         public string GroupId
         {
@@ -85,7 +100,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupName.
+        /// Gets and sets the property GroupName. 
+        /// <para>
+        /// The friendly name that identifies the group.
+        /// </para>
         /// </summary>
         public string GroupName
         {
@@ -100,7 +118,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupPolicyList.
+        /// Gets and sets the property GroupPolicyList. 
+        /// <para>
+        /// A list of the group's policies.
+        /// </para>
         /// </summary>
         public List<PolicyDetail> GroupPolicyList
         {
@@ -115,7 +136,11 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Path.
+        /// Gets and sets the property Path. 
+        /// <para>
+        /// The path to the group. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// Identifiers</a> in the <i>Using IAM</i> guide.
+        /// </para>
         /// </summary>
         public string Path
         {

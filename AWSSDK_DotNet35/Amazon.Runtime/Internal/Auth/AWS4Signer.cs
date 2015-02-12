@@ -459,13 +459,13 @@ namespace Amazon.Runtime.Internal.Auth
                 authenticationRegion = request.AuthenticationRegion;
 
             if (!string.IsNullOrEmpty(authenticationRegion))
-                return authenticationRegion.ToLower(CultureInfo.InvariantCulture);
+                return authenticationRegion.ToLowerInvariant();
 
             if (!string.IsNullOrEmpty(clientConfig.ServiceURL))
             {
                 var parsedRegion = AWSSDKUtils.DetermineRegion(clientConfig.ServiceURL);
                 if (!string.IsNullOrEmpty(parsedRegion))
-                    return parsedRegion.ToLower(CultureInfo.InvariantCulture);
+                    return parsedRegion.ToLowerInvariant();
             }
 
             var endpoint = alternateEndpoint ?? clientConfig.RegionEndpoint;
@@ -586,7 +586,7 @@ namespace Amazon.Runtime.Internal.Auth
             var builder = new StringBuilder();
             foreach (var entry in sortedHeaders)
             {
-                builder.Append(entry.Key.ToLower(CultureInfo.InvariantCulture));
+                builder.Append(entry.Key.ToLowerInvariant());
                 builder.Append(":");
                 builder.Append(CompressSpaces(entry.Value));
                 builder.Append("\n");
@@ -607,7 +607,7 @@ namespace Amazon.Runtime.Internal.Auth
             {
                 if (builder.Length > 0)
                     builder.Append(";");
-                builder.Append(header.Key.ToLower(CultureInfo.InvariantCulture));
+                builder.Append(header.Key.ToLowerInvariant());
             }
             return builder.ToString();
         }

@@ -29,13 +29,20 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUserPolicies operation.
-    /// Lists the names of the policies associated with the specified user. If there are
-    /// none, the action returns an empty list. 
+    /// Lists the names of the inline policies embedded in the specified user. 
     /// 
     ///  
     /// <para>
-    ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-    /// parameters. 
+    /// A user can also have managed policies attached to it. To list the managed policies
+    /// that are attached to a user, use <a>ListAttachedUserPolicies</a>. For more information
+    /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+    /// parameters. If there are no inline policies embedded with the specified user, the
+    /// action returns an empty list. 
     /// </para>
     /// </summary>
     public partial class ListUserPoliciesRequest : AmazonIdentityManagementServiceRequest

@@ -63,7 +63,7 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  
     /// <para>
-    /// <b>Signing Requests</b>
+    ///  <b>Signing Requests</b> 
     /// </para>
     ///  
     /// <para>
@@ -83,7 +83,7 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  
     /// <para>
-    /// <b>Recording API requests</b>
+    ///  <b>Recording API requests</b> 
     /// </para>
     ///  
     /// <para>
@@ -96,7 +96,7 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  
     /// <para>
-    /// <b>Additional Resources</b>
+    ///  <b>Additional Resources</b> 
     /// </para>
     ///  
     /// <para>
@@ -328,6 +328,96 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  AttachGroupPolicy
+
+        internal AttachGroupPolicyResponse AttachGroupPolicy(AttachGroupPolicyRequest request)
+        {
+            var marshaller = new AttachGroupPolicyRequestMarshaller();
+            var unmarshaller = AttachGroupPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<AttachGroupPolicyRequest,AttachGroupPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachGroupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachGroupPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AttachGroupPolicyResponse> AttachGroupPolicyAsync(AttachGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AttachGroupPolicyRequestMarshaller();
+            var unmarshaller = AttachGroupPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AttachGroupPolicyRequest,AttachGroupPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AttachRolePolicy
+
+        internal AttachRolePolicyResponse AttachRolePolicy(AttachRolePolicyRequest request)
+        {
+            var marshaller = new AttachRolePolicyRequestMarshaller();
+            var unmarshaller = AttachRolePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<AttachRolePolicyRequest,AttachRolePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachRolePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachRolePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AttachRolePolicyResponse> AttachRolePolicyAsync(AttachRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AttachRolePolicyRequestMarshaller();
+            var unmarshaller = AttachRolePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AttachRolePolicyRequest,AttachRolePolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AttachUserPolicy
+
+        internal AttachUserPolicyResponse AttachUserPolicy(AttachUserPolicyRequest request)
+        {
+            var marshaller = new AttachUserPolicyRequestMarshaller();
+            var unmarshaller = AttachUserPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<AttachUserPolicyRequest,AttachUserPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachUserPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachUserPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AttachUserPolicyResponse> AttachUserPolicyAsync(AttachUserPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AttachUserPolicyRequestMarshaller();
+            var unmarshaller = AttachUserPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AttachUserPolicyRequest,AttachUserPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ChangePassword
 
         internal ChangePasswordResponse ChangePassword(ChangePasswordRequest request)
@@ -537,6 +627,66 @@ namespace Amazon.IdentityManagement
             var unmarshaller = CreateOpenIDConnectProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateOpenIDConnectProviderRequest,CreateOpenIDConnectProviderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreatePolicy
+
+        internal CreatePolicyResponse CreatePolicy(CreatePolicyRequest request)
+        {
+            var marshaller = new CreatePolicyRequestMarshaller();
+            var unmarshaller = CreatePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePolicyRequest,CreatePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreatePolicyResponse> CreatePolicyAsync(CreatePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreatePolicyRequestMarshaller();
+            var unmarshaller = CreatePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePolicyRequest,CreatePolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreatePolicyVersion
+
+        internal CreatePolicyVersionResponse CreatePolicyVersion(CreatePolicyVersionRequest request)
+        {
+            var marshaller = new CreatePolicyVersionRequestMarshaller();
+            var unmarshaller = CreatePolicyVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePolicyVersionRequest,CreatePolicyVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePolicyVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreatePolicyVersionResponse> CreatePolicyVersionAsync(CreatePolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreatePolicyVersionRequestMarshaller();
+            var unmarshaller = CreatePolicyVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePolicyVersionRequest,CreatePolicyVersionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -936,6 +1086,66 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DeletePolicy
+
+        internal DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
+        {
+            var marshaller = new DeletePolicyRequestMarshaller();
+            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePolicyRequest,DeletePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeletePolicyRequestMarshaller();
+            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePolicyRequest,DeletePolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePolicyVersion
+
+        internal DeletePolicyVersionResponse DeletePolicyVersion(DeletePolicyVersionRequest request)
+        {
+            var marshaller = new DeletePolicyVersionRequestMarshaller();
+            var unmarshaller = DeletePolicyVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePolicyVersionRequest,DeletePolicyVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicyVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeletePolicyVersionResponse> DeletePolicyVersionAsync(DeletePolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeletePolicyVersionRequestMarshaller();
+            var unmarshaller = DeletePolicyVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePolicyVersionRequest,DeletePolicyVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteRole
 
         internal DeleteRoleResponse DeleteRole(DeleteRoleRequest request)
@@ -1171,6 +1381,96 @@ namespace Amazon.IdentityManagement
             var unmarshaller = DeleteVirtualMFADeviceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteVirtualMFADeviceRequest,DeleteVirtualMFADeviceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetachGroupPolicy
+
+        internal DetachGroupPolicyResponse DetachGroupPolicy(DetachGroupPolicyRequest request)
+        {
+            var marshaller = new DetachGroupPolicyRequestMarshaller();
+            var unmarshaller = DetachGroupPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DetachGroupPolicyRequest,DetachGroupPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachGroupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachGroupPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DetachGroupPolicyResponse> DetachGroupPolicyAsync(DetachGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DetachGroupPolicyRequestMarshaller();
+            var unmarshaller = DetachGroupPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetachGroupPolicyRequest,DetachGroupPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetachRolePolicy
+
+        internal DetachRolePolicyResponse DetachRolePolicy(DetachRolePolicyRequest request)
+        {
+            var marshaller = new DetachRolePolicyRequestMarshaller();
+            var unmarshaller = DetachRolePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DetachRolePolicyRequest,DetachRolePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachRolePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachRolePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DetachRolePolicyResponse> DetachRolePolicyAsync(DetachRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DetachRolePolicyRequestMarshaller();
+            var unmarshaller = DetachRolePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetachRolePolicyRequest,DetachRolePolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetachUserPolicy
+
+        internal DetachUserPolicyResponse DetachUserPolicy(DetachUserPolicyRequest request)
+        {
+            var marshaller = new DetachUserPolicyRequestMarshaller();
+            var unmarshaller = DetachUserPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DetachUserPolicyRequest,DetachUserPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachUserPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachUserPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DetachUserPolicyResponse> DetachUserPolicyAsync(DetachUserPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DetachUserPolicyRequestMarshaller();
+            var unmarshaller = DetachUserPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetachUserPolicyRequest,DetachUserPolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1522,6 +1822,66 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  GetPolicy
+
+        internal GetPolicyResponse GetPolicy(GetPolicyRequest request)
+        {
+            var marshaller = new GetPolicyRequestMarshaller();
+            var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetPolicyRequest,GetPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetPolicyRequestMarshaller();
+            var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPolicyRequest,GetPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPolicyVersion
+
+        internal GetPolicyVersionResponse GetPolicyVersion(GetPolicyVersionRequest request)
+        {
+            var marshaller = new GetPolicyVersionRequestMarshaller();
+            var unmarshaller = GetPolicyVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetPolicyVersionRequest,GetPolicyVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicyVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetPolicyVersionResponse> GetPolicyVersionAsync(GetPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetPolicyVersionRequestMarshaller();
+            var unmarshaller = GetPolicyVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPolicyVersionRequest,GetPolicyVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetRole
 
         internal GetRoleResponse GetRole(GetRoleRequest request)
@@ -1774,6 +2134,126 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ListAttachedGroupPolicies
+
+        internal ListAttachedGroupPoliciesResponse ListAttachedGroupPolicies(ListAttachedGroupPoliciesRequest request)
+        {
+            var marshaller = new ListAttachedGroupPoliciesRequestMarshaller();
+            var unmarshaller = ListAttachedGroupPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAttachedGroupPoliciesRequest,ListAttachedGroupPoliciesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAttachedGroupPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachedGroupPolicies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListAttachedGroupPoliciesResponse> ListAttachedGroupPoliciesAsync(ListAttachedGroupPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListAttachedGroupPoliciesRequestMarshaller();
+            var unmarshaller = ListAttachedGroupPoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAttachedGroupPoliciesRequest,ListAttachedGroupPoliciesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAttachedRolePolicies
+
+        internal ListAttachedRolePoliciesResponse ListAttachedRolePolicies(ListAttachedRolePoliciesRequest request)
+        {
+            var marshaller = new ListAttachedRolePoliciesRequestMarshaller();
+            var unmarshaller = ListAttachedRolePoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAttachedRolePoliciesRequest,ListAttachedRolePoliciesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAttachedRolePolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachedRolePolicies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListAttachedRolePoliciesResponse> ListAttachedRolePoliciesAsync(ListAttachedRolePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListAttachedRolePoliciesRequestMarshaller();
+            var unmarshaller = ListAttachedRolePoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAttachedRolePoliciesRequest,ListAttachedRolePoliciesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAttachedUserPolicies
+
+        internal ListAttachedUserPoliciesResponse ListAttachedUserPolicies(ListAttachedUserPoliciesRequest request)
+        {
+            var marshaller = new ListAttachedUserPoliciesRequestMarshaller();
+            var unmarshaller = ListAttachedUserPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAttachedUserPoliciesRequest,ListAttachedUserPoliciesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAttachedUserPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachedUserPolicies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListAttachedUserPoliciesResponse> ListAttachedUserPoliciesAsync(ListAttachedUserPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListAttachedUserPoliciesRequestMarshaller();
+            var unmarshaller = ListAttachedUserPoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAttachedUserPoliciesRequest,ListAttachedUserPoliciesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListEntitiesForPolicy
+
+        internal ListEntitiesForPolicyResponse ListEntitiesForPolicy(ListEntitiesForPolicyRequest request)
+        {
+            var marshaller = new ListEntitiesForPolicyRequestMarshaller();
+            var unmarshaller = ListEntitiesForPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<ListEntitiesForPolicyRequest,ListEntitiesForPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEntitiesForPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEntitiesForPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListEntitiesForPolicyResponse> ListEntitiesForPolicyAsync(ListEntitiesForPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListEntitiesForPolicyRequestMarshaller();
+            var unmarshaller = ListEntitiesForPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEntitiesForPolicyRequest,ListEntitiesForPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListGroupPolicies
 
         internal ListGroupPoliciesResponse ListGroupPolicies(ListGroupPoliciesRequest request)
@@ -1991,6 +2471,70 @@ namespace Amazon.IdentityManagement
             var unmarshaller = ListOpenIDConnectProvidersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListOpenIDConnectProvidersRequest,ListOpenIDConnectProvidersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPolicies
+
+        internal ListPoliciesResponse ListPolicies()
+        {
+            return ListPolicies(new ListPoliciesRequest());
+        }
+        internal ListPoliciesResponse ListPolicies(ListPoliciesRequest request)
+        {
+            var marshaller = new ListPoliciesRequestMarshaller();
+            var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPoliciesRequest,ListPoliciesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListPoliciesRequestMarshaller();
+            var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPoliciesRequest,ListPoliciesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPolicyVersions
+
+        internal ListPolicyVersionsResponse ListPolicyVersions(ListPolicyVersionsRequest request)
+        {
+            var marshaller = new ListPolicyVersionsRequestMarshaller();
+            var unmarshaller = ListPolicyVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPolicyVersionsRequest,ListPolicyVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPolicyVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListPolicyVersionsResponse> ListPolicyVersionsAsync(ListPolicyVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListPolicyVersionsRequestMarshaller();
+            var unmarshaller = ListPolicyVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPolicyVersionsRequest,ListPolicyVersionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2470,6 +3014,36 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  SetDefaultPolicyVersion
+
+        internal SetDefaultPolicyVersionResponse SetDefaultPolicyVersion(SetDefaultPolicyVersionRequest request)
+        {
+            var marshaller = new SetDefaultPolicyVersionRequestMarshaller();
+            var unmarshaller = SetDefaultPolicyVersionResponseUnmarshaller.Instance;
+
+            return Invoke<SetDefaultPolicyVersionRequest,SetDefaultPolicyVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetDefaultPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetDefaultPolicyVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SetDefaultPolicyVersionResponse> SetDefaultPolicyVersionAsync(SetDefaultPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetDefaultPolicyVersionRequestMarshaller();
+            var unmarshaller = SetDefaultPolicyVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetDefaultPolicyVersionRequest,SetDefaultPolicyVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateAccessKey
 
         internal UpdateAccessKeyResponse UpdateAccessKey(UpdateAccessKeyRequest request)
@@ -2769,6 +3343,36 @@ namespace Amazon.IdentityManagement
             var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateUserRequest,UpdateUserResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UploadPublicAccessKey
+
+        internal UploadPublicAccessKeyResponse UploadPublicAccessKey(UploadPublicAccessKeyRequest request)
+        {
+            var marshaller = new UploadPublicAccessKeyRequestMarshaller();
+            var unmarshaller = UploadPublicAccessKeyResponseUnmarshaller.Instance;
+
+            return Invoke<UploadPublicAccessKeyRequest,UploadPublicAccessKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UploadPublicAccessKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UploadPublicAccessKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UploadPublicAccessKeyResponse> UploadPublicAccessKeyAsync(UploadPublicAccessKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UploadPublicAccessKeyRequestMarshaller();
+            var unmarshaller = UploadPublicAccessKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UploadPublicAccessKeyRequest,UploadPublicAccessKeyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

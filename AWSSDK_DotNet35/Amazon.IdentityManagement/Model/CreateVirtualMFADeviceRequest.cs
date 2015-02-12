@@ -30,9 +30,8 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the CreateVirtualMFADevice operation.
     /// Creates a new virtual MFA device for the AWS account. After creating the virtual
-    /// MFA, use <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html">EnableMFADevice</a>
-    /// to attach the MFA device to an IAM user. For more information about creating and working
-    /// with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
+    /// MFA, use <a>EnableMFADevice</a> to attach the MFA device to an IAM user. For more
+    /// information about creating and working with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
     /// a Virtual MFA Device</a> in the <i>Using IAM</i> guide. 
     /// 
     ///  

@@ -32,8 +32,7 @@ namespace Amazon.IdentityManagement.Model
     /// Deletes a virtual MFA device.
     /// 
     ///  <note> You must deactivate a user's virtual MFA device before you can delete it.
-    /// For information about deactivating MFA devices, see <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html">DeactivateMFADevice</a>.
-    /// </note>
+    /// For information about deactivating MFA devices, see <a>DeactivateMFADevice</a>. </note>
     /// </summary>
     public partial class DeleteVirtualMFADeviceRequest : AmazonIdentityManagementServiceRequest
     {

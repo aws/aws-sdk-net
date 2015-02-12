@@ -29,7 +29,15 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUserPolicy operation.
-    /// Deletes the specified policy associated with the specified user.
+    /// Deletes the specified inline policy that is embedded in the specified user.
+    /// 
+    ///  
+    /// <para>
+    /// A user can also have managed policies attached to it. To detach a managed policy from
+    /// a user, use <a>DetachUserPolicy</a>. For more information about policies, refer to
+    /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+    /// </para>
     /// </summary>
     public partial class DeleteUserPolicyRequest : AmazonIdentityManagementServiceRequest
     {
@@ -44,8 +52,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates DeleteUserPolicyRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">The name of the user the policy is associated with.</param>
-        /// <param name="policyName">The name of the policy document to delete.</param>
+        /// <param name="userName">The name (friendly name, not ARN) identifying the user that the policy is embedded in.</param>
+        /// <param name="policyName">The name identifying the policy document to delete.</param>
         public DeleteUserPolicyRequest(string userName, string policyName)
         {
             _userName = userName;
@@ -55,7 +63,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The name of the policy document to delete.
+        /// The name identifying the policy document to delete.
         /// </para>
         /// </summary>
         public string PolicyName
@@ -73,7 +81,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name of the user the policy is associated with.
+        /// The name (friendly name, not ARN) identifying the user that the policy is embedded
+        /// in.
         /// </para>
         /// </summary>
         public string UserName

@@ -29,13 +29,20 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRolePolicies operation.
-    /// Lists the names of the policies associated with the specified role. If there are
-    /// none, the action returns an empty list. 
+    /// Lists the names of the inline policies that are embedded in the specified role. 
     /// 
     ///  
     /// <para>
-    ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-    /// parameters. 
+    /// A role can also have managed policies attached to it. To list the managed policies
+    /// that are attached to a role, use <a>ListAttachedRolePolicies</a>. For more information
+    /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+    /// parameters. If there are no inline policies embedded with the specified role, the
+    /// action returns an empty list. 
     /// </para>
     /// </summary>
     public partial class ListRolePoliciesRequest : AmazonIdentityManagementServiceRequest

@@ -34,23 +34,23 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// This data type is used as a response element in the following actions:
     /// </para>
-    ///  <ul> <li>
+    ///  <ul> <li> 
     /// <para>
-    /// <a>CreateInstanceProfile</a>
+    ///  <a>CreateInstanceProfile</a> 
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
-    /// <a>GetInstanceProfile</a>
+    ///  <a>GetInstanceProfile</a> 
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
-    /// <a>ListInstanceProfiles</a>
+    ///  <a>ListInstanceProfiles</a> 
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
-    /// <a>ListInstanceProfilesForRole</a>
+    ///  <a>ListInstanceProfilesForRole</a> 
     /// </para>
-    /// </li> </ul>
+    ///  </li> </ul>
     /// </summary>
     public partial class InstanceProfile
     {

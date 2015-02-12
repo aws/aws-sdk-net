@@ -29,9 +29,21 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetUserPolicy operation.
-    /// Retrieves the specified policy document for the specified user. The returned policy
-    /// is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a
-    /// href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+    /// Retrieves the specified inline policy document that is embedded in the specified user.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// A user can also have managed policies attached to it. To retrieve a managed policy
+    /// document that is attached to a user, use <a>GetPolicy</a> to determine the policy's
+    /// default version, then use <a>GetPolicyVersion</a> to retrieve the policy document.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+    /// </para>
     /// </summary>
     public partial class GetUserPolicyRequest : AmazonIdentityManagementServiceRequest
     {

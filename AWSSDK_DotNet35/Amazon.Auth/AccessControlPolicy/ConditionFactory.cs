@@ -228,7 +228,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <param name="value">The boolean to compare against.</param>
         public static Condition NewCondition(string key, bool value)
         {
-            return new Condition("Bool", key, value.ToString().ToLower(CultureInfo.InvariantCulture));
+            return new Condition("Bool", key, value.ToString().ToLowerInvariant());
         }
 
         /// <summary>

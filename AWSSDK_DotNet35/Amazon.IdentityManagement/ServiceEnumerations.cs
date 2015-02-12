@@ -25,6 +25,66 @@ namespace Amazon.IdentityManagement
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessKeySelectorType.
+    /// </summary>
+    public class AccessKeySelectorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EC_P_256 for AccessKeySelectorType
+        /// </summary>
+        public static readonly AccessKeySelectorType EC_P_256 = new AccessKeySelectorType("EC_P_256");
+        /// <summary>
+        /// Constant EC_P_384 for AccessKeySelectorType
+        /// </summary>
+        public static readonly AccessKeySelectorType EC_P_384 = new AccessKeySelectorType("EC_P_384");
+        /// <summary>
+        /// Constant EC_P_521 for AccessKeySelectorType
+        /// </summary>
+        public static readonly AccessKeySelectorType EC_P_521 = new AccessKeySelectorType("EC_P_521");
+        /// <summary>
+        /// Constant HMAC for AccessKeySelectorType
+        /// </summary>
+        public static readonly AccessKeySelectorType HMAC = new AccessKeySelectorType("HMAC");
+        /// <summary>
+        /// Constant RSA_1024 for AccessKeySelectorType
+        /// </summary>
+        public static readonly AccessKeySelectorType RSA_1024 = new AccessKeySelectorType("RSA_1024");
+        /// <summary>
+        /// Constant RSA_2048 for AccessKeySelectorType
+        /// </summary>
+        public static readonly AccessKeySelectorType RSA_2048 = new AccessKeySelectorType("RSA_2048");
+        /// <summary>
+        /// Constant RSA_4096 for AccessKeySelectorType
+        /// </summary>
+        public static readonly AccessKeySelectorType RSA_4096 = new AccessKeySelectorType("RSA_4096");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public AccessKeySelectorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessKeySelectorType FindValue(string value)
+        {
+            return FindValue<AccessKeySelectorType>(value);
+        }
+
+        public static implicit operator AccessKeySelectorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssignmentStatusType.
     /// </summary>
     public class AssignmentStatusType : ConstantClass
@@ -106,6 +166,50 @@ namespace Amazon.IdentityManagement
         }
 
         public static implicit operator EntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PolicyScopeType.
+    /// </summary>
+    public class PolicyScopeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant All for PolicyScopeType
+        /// </summary>
+        public static readonly PolicyScopeType All = new PolicyScopeType("All");
+        /// <summary>
+        /// Constant AWS for PolicyScopeType
+        /// </summary>
+        public static readonly PolicyScopeType AWS = new PolicyScopeType("AWS");
+        /// <summary>
+        /// Constant Local for PolicyScopeType
+        /// </summary>
+        public static readonly PolicyScopeType Local = new PolicyScopeType("Local");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public PolicyScopeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyScopeType FindValue(string value)
+        {
+            return FindValue<PolicyScopeType>(value);
+        }
+
+        public static implicit operator PolicyScopeType(string value)
         {
             return FindValue(value);
         }
@@ -243,9 +347,29 @@ namespace Amazon.IdentityManagement
         /// </summary>
         public static readonly SummaryKeyType AccessKeysPerUserQuota = new SummaryKeyType("AccessKeysPerUserQuota");
         /// <summary>
+        /// Constant AccountAccessKeysPresent for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType AccountAccessKeysPresent = new SummaryKeyType("AccountAccessKeysPresent");
+        /// <summary>
         /// Constant AccountMFAEnabled for SummaryKeyType
         /// </summary>
         public static readonly SummaryKeyType AccountMFAEnabled = new SummaryKeyType("AccountMFAEnabled");
+        /// <summary>
+        /// Constant AccountSigningCertificatesPresent for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType AccountSigningCertificatesPresent = new SummaryKeyType("AccountSigningCertificatesPresent");
+        /// <summary>
+        /// Constant AttachedPoliciesPerGroupQuota for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType AttachedPoliciesPerGroupQuota = new SummaryKeyType("AttachedPoliciesPerGroupQuota");
+        /// <summary>
+        /// Constant AttachedPoliciesPerRoleQuota for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType AttachedPoliciesPerRoleQuota = new SummaryKeyType("AttachedPoliciesPerRoleQuota");
+        /// <summary>
+        /// Constant AttachedPoliciesPerUserQuota for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType AttachedPoliciesPerUserQuota = new SummaryKeyType("AttachedPoliciesPerUserQuota");
         /// <summary>
         /// Constant GroupPolicySizeQuota for SummaryKeyType
         /// </summary>
@@ -271,6 +395,26 @@ namespace Amazon.IdentityManagement
         /// </summary>
         public static readonly SummaryKeyType MFADevicesInUse = new SummaryKeyType("MFADevicesInUse");
         /// <summary>
+        /// Constant Policies for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType Policies = new SummaryKeyType("Policies");
+        /// <summary>
+        /// Constant PoliciesQuota for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType PoliciesQuota = new SummaryKeyType("PoliciesQuota");
+        /// <summary>
+        /// Constant PolicySizeQuota for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType PolicySizeQuota = new SummaryKeyType("PolicySizeQuota");
+        /// <summary>
+        /// Constant PolicyVersionsInUse for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType PolicyVersionsInUse = new SummaryKeyType("PolicyVersionsInUse");
+        /// <summary>
+        /// Constant PolicyVersionsInUseQuota for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType PolicyVersionsInUseQuota = new SummaryKeyType("PolicyVersionsInUseQuota");
+        /// <summary>
         /// Constant ServerCertificates for SummaryKeyType
         /// </summary>
         public static readonly SummaryKeyType ServerCertificates = new SummaryKeyType("ServerCertificates");
@@ -294,6 +438,10 @@ namespace Amazon.IdentityManagement
         /// Constant UsersQuota for SummaryKeyType
         /// </summary>
         public static readonly SummaryKeyType UsersQuota = new SummaryKeyType("UsersQuota");
+        /// <summary>
+        /// Constant VersionsPerPolicyQuota for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType VersionsPerPolicyQuota = new SummaryKeyType("VersionsPerPolicyQuota");
 
         /// <summary>
         /// Default Constructor

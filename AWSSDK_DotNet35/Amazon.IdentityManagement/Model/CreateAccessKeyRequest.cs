@@ -51,12 +51,28 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class CreateAccessKeyRequest : AmazonIdentityManagementServiceRequest
     {
+        private AccessKeySelectorType _accessKeySelector;
         private string _userName;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
         public CreateAccessKeyRequest() { }
+
+        /// <summary>
+        /// Gets and sets the property AccessKeySelector.
+        /// </summary>
+        public AccessKeySelectorType AccessKeySelector
+        {
+            get { return this._accessKeySelector; }
+            set { this._accessKeySelector = value; }
+        }
+
+        // Check to see if AccessKeySelector property is set
+        internal bool IsSetAccessKeySelector()
+        {
+            return this._accessKeySelector != null;
+        }
 
         /// <summary>
         /// Gets and sets the property UserName. 
