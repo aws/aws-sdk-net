@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCacheSubnetGroup operation.
-    /// The <i>CreateCacheSubnetGroup</i> operation creates a new cache subnet group.
+    /// The <i>CreateCacheSubnetGroup</i> action creates a new cache subnet group.
     /// 
     ///  
     /// <para>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -39,7 +39,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SubnetAvailabilityZone. 
         /// <para>
-        /// The Availability Zone associated with the subnet
+        /// The Availability Zone associated with the subnet.
         /// </para>
         /// </summary>
         public AvailabilityZone SubnetAvailabilityZone
@@ -57,7 +57,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SubnetIdentifier. 
         /// <para>
-        /// The unique identifier for the subnet
+        /// The unique identifier for the subnet.
         /// </para>
         /// </summary>
         public string SubnetIdentifier

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -39,8 +39,14 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutomaticFailoverStatus. 
         /// <para>
-        /// Indicates the status of automatic failover for this replication group.
+        /// Indicates the status of Multi-AZ for this replication group.
         /// </para>
+        ///  <note>
+        /// <para>
+        /// ElastiCache Multi-AZ replication groups are not supported on:
+        /// </para>
+        ///  <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li>
+        /// </ul> </note>
         /// </summary>
         public PendingAutomaticFailoverStatus AutomaticFailoverStatus
         {

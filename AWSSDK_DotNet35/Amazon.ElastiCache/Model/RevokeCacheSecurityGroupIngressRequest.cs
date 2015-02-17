@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,9 +29,9 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the RevokeCacheSecurityGroupIngress operation.
-    /// The <i>RevokeCacheSecurityGroupIngress</i> operation revokes ingress from a cache
-    /// security group. Use this operation to disallow access from an Amazon EC2 security
-    /// group that had been previously authorized.
+    /// The <i>RevokeCacheSecurityGroupIngress</i> action revokes ingress from a cache security
+    /// group. Use this action to disallow access from an Amazon EC2 security group that had
+    /// been previously authorized.
     /// </summary>
     public partial class RevokeCacheSecurityGroupIngressRequest : AmazonElastiCacheRequest
     {

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateReplicationGroup operation.
-    /// The <i>CreateReplicationGroup</i> operation creates a replication group. A replication
+    /// The <i>CreateReplicationGroup</i> action creates a replication group. A replication
     /// group is a collection of cache clusters, where one of the cache clusters is a read/write
     /// primary and the others are read-only replicas. Writes to the primary are automatically
     /// propagated to the replicas.
@@ -68,6 +68,7 @@ namespace Amazon.ElastiCache.Model
         private string _snapshotName;
         private int? _snapshotRetentionLimit;
         private string _snapshotWindow;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AutomaticFailoverEnabled. 
@@ -77,13 +78,19 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>true</code>, automatic failover is enabled for this replication group. If
-        /// <code>false</code>, automatic failover is disabled for this replication group.
+        /// If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>,
+        /// Multi-AZ is disabled for this replication group.
         /// </para>
         ///  
         /// <para>
         /// Default: false
         /// </para>
+        ///  <note>
+        /// <para>
+        /// ElastiCache Multi-AZ replication groups is not supported on:
+        /// </para>
+        ///  <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li>
+        /// </ul> </note>
         /// </summary>
         public bool AutomaticFailoverEnabled
         {
@@ -100,13 +107,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// Determines whether minor engine upgrades will be applied automatically to the node
-        /// group during the maintenance window. A value of <code>true</code> allows these upgrades
-        /// to occur; <code>false</code> disables automatic upgrades.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>true</code>
+        /// This parameter is currently disabled.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -249,7 +250,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The version number of the cach engine to be used for the cache clusters in this replication
         /// group. To view the supported cache engine versions, use the <i>DescribeCacheEngineVersions</i>
-        /// operation.
+        /// action.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -270,6 +271,7 @@ namespace Amazon.ElastiCache.Model
         /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic
         /// to which notifications will be sent.
         /// </para>
+        ///  <note>The Amazon SNS topic owner must be the same as the cache cluster owner.</note>
         /// </summary>
         public string NotificationTopicArn
         {
@@ -290,8 +292,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// If <i>AutomaticFailover</i> is <code>enabled</code>, the value of this parameter must
-        /// be at least 2.
+        /// If <i>Multi-AZ</i> is <code>enabled</code>, the value of this parameter must be at
+        /// least 2.
         /// </para>
         ///  
         /// <para>
@@ -336,14 +338,20 @@ namespace Amazon.ElastiCache.Model
         /// A list of EC2 availability zones in which the replication group's cache clusters will
         /// be created. The order of the availability zones in the list is not important.
         /// </para>
-        ///  
+        ///  <note>If you are creating your replication group in an Amazon VPC (recommended),
+        /// you can only locate cache clusters in availability zones associated with the subnets
+        /// in the selected subnet group. 
+        /// <para>
+        /// The number of availability zones listed must equal the value of <i>NumCacheClusters</i>.
+        /// </para>
+        /// </note> 
         /// <para>
         /// Default: system chosen availability zones.
         /// </para>
         ///  
         /// <para>
-        /// Example: One Redis cache cluster in each of three availability zones. PreferredAvailabilityZones.member.1=us-east-1a
-        /// PreferredAvailabilityZones.member.2=us-east-1c PreferredAvailabilityZones.member.3=us-east-1d
+        /// Example: One Redis cache cluster in each of three availability zones. PreferredAvailabilityZones.member.1=us-west-2a
+        /// PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c
         /// </para>
         /// </summary>
         public List<string> PreferredCacheClusterAZs
@@ -361,9 +369,14 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        /// The weekly time range (in UTC) during which system maintenance can occur.
+        /// Specifies the weekly time range during which maintenance on the cache cluster is performed.
+        /// It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC).
+        /// The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code>
+        /// are:
         /// </para>
-        ///  
+        ///  <ul> <li><code>sun</code></li> <li><code>mon</code></li> <li><code>tue</code></li>
+        /// <li><code>wed</code></li> <li><code>thu</code></li> <li><code>fri</code></li> <li><code>sat</code></li>
+        /// </ul> 
         /// <para>
         /// Example: <code>sun:05:00-sun:09:00</code>
         /// </para>
@@ -583,6 +596,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetSnapshotWindow()
         {
             return this._snapshotWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of cost allocation tags to be added to this resource. A tag is a key-value
+        /// pair. A tag key must be accompanied by a tag value.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

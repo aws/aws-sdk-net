@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,9 +29,9 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCacheCluster operation.
-    /// The <i>CreateCacheCluster</i> operation creates a cache cluster. All nodes in the
-    /// cache cluster run the same protocol-compliant cache engine software, either Memcached
-    /// or Redis.
+    /// The <i>CreateCacheCluster</i> action creates a cache cluster. All nodes in the cache
+    /// cluster run the same protocol-compliant cache engine software, either Memcached or
+    /// Redis.
     /// </summary>
     public partial class CreateCacheClusterRequest : AmazonElastiCacheRequest
     {
@@ -56,6 +56,7 @@ namespace Amazon.ElastiCache.Model
         private string _snapshotName;
         private int? _snapshotRetentionLimit;
         private string _snapshotWindow;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -66,7 +67,7 @@ namespace Amazon.ElastiCache.Model
         /// Instantiates CreateCacheClusterRequest with the parameterized properties
         /// </summary>
         /// <param name="cacheClusterId">The node group identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li>A name must contain from 1 to 20 alphanumeric characters or hyphens.</li> <li>The first character must be a letter.</li> <li>A name cannot end with a hyphen or contain two consecutive hyphens.</li> </ul></param>
-        /// <param name="numCacheNodes">The initial number of cache nodes that the cache cluster will have. For Memcached, valid values are between 1 and 20. If you need to exceed this limit, please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>. For Redis, only single-node cache cluster are supported at this time, so the value for this parameter must be 1.</param>
+        /// <param name="numCacheNodes">The initial number of cache nodes that the cache cluster will have. For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 20. If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</param>
         /// <param name="cacheNodeType">The compute and memory capacity of the nodes in the node group. Valid node types are as follows: <ul> <li>General purpose: <ul> <li>Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li> <li>Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li> </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li> <li>Memory optimized <ul> <li>Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li> <li>Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <b>Notes:</b> <ul> <li>All t2 instances are created in an Amazon Virtual Private Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2 instances.</li> <li>Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.</li> </ul> For a complete listing of cache node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a>. </param>
         /// <param name="engine">The name of the cache engine to be used for this cache cluster. Valid values for this parameter are: <code>memcached</code> | <code>redis</code></param>
         /// <param name="cacheSecurityGroupNames">A list of security group names to associate with this cache cluster. Use this parameter only when you are creating a cache cluster outside of an Amazon Virtual Private Cloud (VPC).</param>
@@ -82,13 +83,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// Determines whether minor engine upgrades will be applied automatically to the node
-        /// group during the maintenance window. A value of <code>true</code> allows these upgrades
-        /// to occur; <code>false</code> disables automatic upgrades.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>true</code>
+        /// This parameter is currently disabled.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -295,7 +290,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The version number of the cache engine to be used for this cache cluster. To view
-        /// the supported cache engine versions, use the <i>DescribeCacheEngineVersions</i> operation.
+        /// the supported cache engine versions, use the <i>DescribeCacheEngineVersions</i> action.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -316,6 +311,7 @@ namespace Amazon.ElastiCache.Model
         /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic
         /// to which notifications will be sent.
         /// </para>
+        ///  <note>The Amazon SNS topic owner must be the same as the cache cluster owner.</note>
         /// </summary>
         public string NotificationTopicArn
         {
@@ -336,13 +332,13 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// For Memcached, valid values are between 1 and 20. If you need to exceed this limit,
-        /// please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
+        /// For clusters running Redis, this value must be 1. For clusters running Memcached,
+        /// this value must be between 1 and 20.
         /// </para>
         ///  
         /// <para>
-        /// For Redis, only single-node cache cluster are supported at this time, so the value
-        /// for this parameter must be 1.
+        /// If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache
+        /// Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
         /// </para>
         /// </summary>
         public int NumCacheNodes
@@ -412,7 +408,17 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// This option is only supported on Memcached.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you are creating your cache cluster in an Amazon VPC (recommended) you can only
+        /// locate nodes in Availability Zones that are associated with the subnets in the selected
+        /// subnet group.
+        /// </para>
         ///  
+        /// <para>
+        /// The number of Availability Zones listed must equal the value of <code>NumCacheNodes</code>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If you want all the nodes in the same Availability Zone, use <code>PreferredAvailabilityZone</code>
         /// instead, or repeat the Availability Zone multiple times in the list.
@@ -423,11 +429,11 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: One Memcached node in each of three different Availability Zones: <code>PreferredAvailabilityZones.member.1=us-east-1a&amp;PreferredAvailabilityZones.member.2=us-east-1b&amp;PreferredAvailabilityZones.member.3=us-east-1d</code>
+        /// Example: One Memcached node in each of three different Availability Zones: <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c</code>
         /// </para>
         ///  
         /// <para>
-        /// Example: All three Memcached nodes in one Availability Zone: <code>PreferredAvailabilityZones.member.1=us-east-1a&amp;PreferredAvailabilityZones.member.2=us-east-1a&amp;PreferredAvailabilityZones.member.3=us-east-1a</code>
+        /// Example: All three Memcached nodes in one Availability Zone: <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a</code>
         /// </para>
         /// </summary>
         public List<string> PreferredAvailabilityZones
@@ -445,9 +451,14 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        /// The weekly time range (in UTC) during which system maintenance can occur.
+        /// Specifies the weekly time range during which maintenance on the cache cluster is performed.
+        /// It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC).
+        /// The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code>
+        /// are:
         /// </para>
-        ///  
+        ///  <ul> <li><code>sun</code></li> <li><code>mon</code></li> <li><code>tue</code></li>
+        /// <li><code>wed</code></li> <li><code>thu</code></li> <li><code>fri</code></li> <li><code>sat</code></li>
+        /// </ul> 
         /// <para>
         /// Example: <code>sun:05:00-sun:09:00</code>
         /// </para>
@@ -474,9 +485,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// If the specified replication group is Automatic Failover enabled and the availability
-        /// zone is not specified, the cache cluster will be created in availability zones that
-        /// provide the best spread of read replicas across availability zones.
+        /// If the specified replication group is Multi-AZ enabled and the availability zone is
+        /// not specified, the cache cluster will be created in availability zones that provide
+        /// the best spread of read replicas across availability zones.
         /// </para>
         ///  
         /// <para>
@@ -633,6 +644,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetSnapshotWindow()
         {
             return this._snapshotWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of cost allocation tags to be added to this resource. A tag is a key-value
+        /// pair. A tag key must be accompanied by a tag value.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

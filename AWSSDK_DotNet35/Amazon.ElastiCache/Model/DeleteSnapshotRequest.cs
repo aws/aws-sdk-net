@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,9 +29,9 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSnapshot operation.
-    /// The <i>DeleteSnapshot</i> operation deletes an existing snapshot. When you receive
-    /// a successful response from this operation, ElastiCache immediately begins deleting
-    /// the snapshot; you cannot cancel or revert this operation.
+    /// The <i>DeleteSnapshot</i> action deletes an existing snapshot. When you receive a
+    /// successful response from this action, ElastiCache immediately begins deleting the
+    /// snapshot; you cannot cancel or revert this action.
     /// </summary>
     public partial class DeleteSnapshotRequest : AmazonElastiCacheRequest
     {

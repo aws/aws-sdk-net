@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -58,8 +58,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// If <code>true</code>, then minor version patches are applied automatically; if <code>false</code>,
-        /// then automatic minor version patches are disabled.
+        /// This parameter is currently disabled.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -153,6 +152,32 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property CacheNodeType. 
         /// <para>
         /// The name of the compute and memory capacity node type for the cache cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid node types are as follows:
+        /// </para>
+        ///  <ul> <li>General purpose: <ul> <li>Current generation: <code>cache.t2.micro</code>,
+        /// <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>,
+        /// <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
+        /// <li>Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
+        /// <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+        /// </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li> <li>Memory optimized
+        /// <ul> <li>Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+        /// <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
+        /// <li>Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+        /// <code>cache.m2.4xlarge</code></li> </ul></li> </ul> 
+        /// <para>
+        /// <b>Notes:</b>
+        /// </para>
+        ///  <ul> <li>All t2 instances are created in an Amazon Virtual Private Cloud (VPC).</li>
+        /// <li>Redis backup/restore is not supported for t2 instances.</li> <li>Redis Append-only
+        /// files (AOF) functionality is not supported for t1 or t2 instances.</li> </ul> 
+        /// <para>
+        /// For a complete listing of cache node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+        /// ElastiCache Product Features and Details</a> and <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
+        /// Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+        /// Node Type-Specific Parameters for Redis</a>. 
         /// </para>
         /// </summary>
         public string CacheNodeType
@@ -308,6 +333,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The number of cache nodes in the cache cluster.
         /// </para>
+        ///  
+        /// <para>
+        /// For clusters running Redis, this value must be 1. For clusters running Memcached,
+        /// this value must be between 1 and 20.
+        /// </para>
         /// </summary>
         public int NumCacheNodes
         {
@@ -339,8 +369,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PreferredAvailabilityZone. 
         /// <para>
-        /// The name of the Availability Zone in which the cache cluster is located or "Multiple"
-        /// if the cache nodes are located in different Availability Zones.
+        /// The name of the Availability Zone in which the cache cluster is located or "Multiple"if
+        /// the cache nodes are located in different Availability Zones.
         /// </para>
         /// </summary>
         public string PreferredAvailabilityZone
@@ -358,7 +388,16 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        /// The time range (in UTC) during which weekly system maintenance can occur.
+        /// Specifies the weekly time range during which maintenance on the cache cluster is performed.
+        /// It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC).
+        /// The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code>
+        /// are:
+        /// </para>
+        ///  <ul> <li><code>sun</code></li> <li><code>mon</code></li> <li><code>tue</code></li>
+        /// <li><code>wed</code></li> <li><code>thu</code></li> <li><code>fri</code></li> <li><code>sat</code></li>
+        /// </ul> 
+        /// <para>
+        /// Example: <code>sun:05:00-sun:09:00</code>
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow

@@ -622,6 +622,15 @@
     <Compile Include="Amazon.SimpleWorkflow\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.SimpleSystemsManagement\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.SimpleSystemsManagement\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.SimpleSystemsManagement\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.SimpleWorkflow\Model\*.cs">
       <SubType>Code</SubType>
     </Compile>

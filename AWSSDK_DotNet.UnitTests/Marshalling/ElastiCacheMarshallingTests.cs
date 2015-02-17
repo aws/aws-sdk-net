@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 
 
@@ -37,7 +37,31 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class ElastiCacheMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("elasticache-2014-09-30.normal.json", "elasticache.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("elasticache-2015-02-02.normal.json", "elasticache.customizations.json");
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
+        public void AddTagsToResourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddTagsToResource");
+
+            var request = InstantiateClassGenerator.Execute<AddTagsToResourceRequest>();
+            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = AddTagsToResourceResponseUnmarshaller.Instance.Unmarshall(context)
+                as AddTagsToResourceResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
         
 
         [TestMethod]
@@ -653,6 +677,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElastiCache")]
+        public void ListTagsForResourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListTagsForResourceResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListTagsForResourceResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
         public void ModifyCacheClusterMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyCacheCluster");
@@ -788,6 +836,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = RebootCacheClusterResponseUnmarshaller.Instance.Unmarshall(context)
                 as RebootCacheClusterResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
+        public void RemoveTagsFromResourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveTagsFromResource");
+
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromResourceRequest>();
+            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = RemoveTagsFromResourceResponseUnmarshaller.Instance.Unmarshall(context)
+                as RemoveTagsFromResourceResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

@@ -435,6 +435,16 @@
         {
             "active": true,
 
+            "model": "ssm",
+			"base-name" : "SimpleSystemsManagement",
+			"region-lookup-name" : "ssm",
+			"authentication-service-name" : "ssm",
+			"service-url":"https://ssm.us-east-1.amazonaws.com",
+            "mobile-platforms" : []
+		},
+		{
+			"active" : true,
+			
             "model": "storagegateway",
             "base-name": "StorageGateway",
             "region-lookup-name": "storagegateway",

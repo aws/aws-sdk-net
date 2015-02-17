@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the RebootCacheCluster operation.
-    /// The <i>RebootCacheCluster</i> operation reboots some, or all, of the cache nodes within
+    /// The <i>RebootCacheCluster</i> action reboots some, or all, of the cache nodes within
     /// a provisioned cache cluster. This API will apply any modified cache parameter groups
     /// to the cache cluster. The reboot action takes place as soon as possible, and results
     /// in a momentary outage to the cache cluster. During the reboot, the cache cluster status

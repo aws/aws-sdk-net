@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2014-10-21.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2014-11-06.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,6 +36,7 @@ namespace Amazon.CloudFront.Model
         private CustomOriginConfig _customOriginConfig;
         private string _domainName;
         private string _id;
+        private string _originPath;
         private S3OriginConfig _s3OriginConfig;
 
         /// <summary>
@@ -89,6 +90,21 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginPath.
+        /// </summary>
+        public string OriginPath
+        {
+            get { return this._originPath; }
+            set { this._originPath = value; }
+        }
+
+        // Check to see if OriginPath property is set
+        internal bool IsSetOriginPath()
+        {
+            return this._originPath != null;
         }
 
         /// <summary>

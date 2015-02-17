@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCacheParameters operation.
-    /// The <i>DescribeCacheParameters</i> operation returns the detailed parameter list for
+    /// The <i>DescribeCacheParameters</i> action returns the detailed parameter list for
     /// a particular cache parameter group.
     /// </summary>
     public partial class DescribeCacheParametersRequest : AmazonElastiCacheRequest
@@ -75,8 +75,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional marker returned from a prior request. Use this marker for pagination of
-        /// results from this operation. If this parameter is specified, the response includes
-        /// only records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// results from this action. If this parameter is specified, the response includes only
+        /// records beyond the marker, up to the value specified by <i>MaxRecords</i>.
         /// </para>
         /// </summary>
         public string Marker

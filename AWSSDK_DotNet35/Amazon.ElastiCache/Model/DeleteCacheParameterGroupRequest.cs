@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCacheParameterGroup operation.
-    /// The <i>DeleteCacheParameterGroup</i> operation deletes the specified cache parameter
+    /// The <i>DeleteCacheParameterGroup</i> action deletes the specified cache parameter
     /// group. You cannot delete a cache parameter group if it is associated with any cache
     /// clusters.
     /// </summary>
@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Instantiates DeleteCacheParameterGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="cacheParameterGroupName">The name of the cache parameter group to delete.</param>
+        /// <param name="cacheParameterGroupName">The name of the cache parameter group to delete. <note>The specified cache security group must not be associated with any cache clusters.</note></param>
         public DeleteCacheParameterGroupRequest(string cacheParameterGroupName)
         {
             _cacheParameterGroupName = cacheParameterGroupName;
@@ -56,6 +56,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The name of the cache parameter group to delete.
         /// </para>
+        ///  <note>The specified cache security group must not be associated with any cache clusters.</note>
         /// </summary>
         public string CacheParameterGroupName
         {

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -83,6 +83,11 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NumCacheNodes. 
         /// <para>
         /// The new number of cache nodes for the cache cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For clusters running Redis, this value must be 1. For clusters running Memcached,
+        /// this value must be between 1 and 20.
         /// </para>
         /// </summary>
         public int NumCacheNodes

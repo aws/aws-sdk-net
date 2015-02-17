@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,8 +29,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCacheSecurityGroup operation.
-    /// The <i>CreateCacheSecurityGroup</i> operation creates a new cache security group.
-    /// Use a cache security group to control access to one or more cache clusters.
+    /// The <i>CreateCacheSecurityGroup</i> action creates a new cache security group. Use
+    /// a cache security group to control access to one or more cache clusters.
     /// 
     ///  
     /// <para>

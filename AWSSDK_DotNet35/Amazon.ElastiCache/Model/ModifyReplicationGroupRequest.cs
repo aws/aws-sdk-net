@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,8 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyReplicationGroup operation.
-    /// The <i>ModifyReplicationGroup</i> operation modifies the settings for a replication
-    /// group.
+    /// The <i>ModifyReplicationGroup</i> action modifies the settings for a replication group.
     /// </summary>
     public partial class ModifyReplicationGroupRequest : AmazonElastiCacheRequest
     {
@@ -94,6 +93,12 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Valid values: <code>true</code> | <code>false</code>
         /// </para>
+        ///  <note>
+        /// <para>
+        /// ElastiCache Multi-AZ replication groups are not supported on:
+        /// </para>
+        ///  <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li>
+        /// </ul> </note>
         /// </summary>
         public bool AutomaticFailoverEnabled
         {
@@ -110,9 +115,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// Determines whether minor engine upgrades will be applied automatically to all of the
-        /// clusters in the replication group during the maintenance window. A value of <code>true</code>
-        /// allows these upgrades to occur; <code>false</code> disables automatic upgrades.
+        /// This parameter is currently disabled.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -200,6 +203,7 @@ namespace Amazon.ElastiCache.Model
         /// The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will
         /// be sent.
         /// </para>
+        ///  <note>The Amazon SNS topic owner must be same as the replication group owner. </note>
         /// </summary>
         public string NotificationTopicArn
         {
@@ -239,11 +243,16 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        /// The weekly time range (in UTC) during which replication group system maintenance can
-        /// occur. Note that system maintenance may result in an outage. This change is made immediately.
-        /// If you are moving this window to the current time, there must be at least 120 minutes
-        /// between the current time and end of the window to ensure that pending changes are
-        /// applied.
+        /// Specifies the weekly time range during which maintenance on the cache cluster is performed.
+        /// It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC).
+        /// The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code>
+        /// are:
+        /// </para>
+        ///  <ul> <li><code>sun</code></li> <li><code>mon</code></li> <li><code>tue</code></li>
+        /// <li><code>wed</code></li> <li><code>thu</code></li> <li><code>fri</code></li> <li><code>sat</code></li>
+        /// </ul> 
+        /// <para>
+        /// Example: <code>sun:05:00-sun:09:00</code>
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow

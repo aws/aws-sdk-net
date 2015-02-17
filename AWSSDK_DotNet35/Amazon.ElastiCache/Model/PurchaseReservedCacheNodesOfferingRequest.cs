@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the PurchaseReservedCacheNodesOffering operation.
-    /// The <i>PurchaseReservedCacheNodesOffering</i> operation allows you to purchase a reserved
+    /// The <i>PurchaseReservedCacheNodesOffering</i> action allows you to purchase a reserved
     /// cache node offering.
     /// </summary>
     public partial class PurchaseReservedCacheNodesOfferingRequest : AmazonElastiCacheRequest

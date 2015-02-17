@@ -1,0 +1,76 @@
+{
+    "simpleConstructors": {
+        "constructors": {
+            "AssociationFilter": {
+                "constructorForms": [
+                    [ "Key", "Value" ]
+                ]
+            },
+            "CreateAssociationRequest": {
+                "constructorForms": [
+                    [ "InstanceId", "Name" ]
+                ]
+            },
+            "CreateAssociationBatchRequest": {
+                "constructorForms": [
+                    [ "Entries" ]
+                ]
+            },
+            "CreateDocumentRequest": {
+                "constructorForms": [
+                    [ "Name", "Content" ]
+                ]
+            },
+            "DeleteAssociationRequest": {
+                "constructorForms": [
+                    [ "InstanceId", "Name" ]
+                ]
+            },
+            "DeleteDocumentRequest": {
+                "constructorForms": [
+                    [ "Name" ]
+                ]
+            },
+            "DescribeAssociationRequest": {
+                "constructorForms": [
+                    [ "InstanceId", "Name" ]
+                ]
+            },
+            "DescribeDocumentRequest": {
+                "constructorForms": [
+                    [ "Name" ]
+                ]
+            },
+            "DocumentFilter": {
+                "constructorForms": [
+                    [ "Key", "Value" ]
+                ]
+            },
+            "DocumentIdentifier": {
+                "constructorForms": [
+                    [ "Name" ]
+                ]
+            },
+            "GetDocumentRequest": {
+                "constructorForms": [
+                    [ "Name" ]
+                ]
+            },
+            "ListAssociationsRequest": {
+                "constructorForms": [
+                    [ "AssociationFilterList" ]
+                ]
+            },
+            "ListDocumentsRequest": {
+                "constructorForms": [
+                    [ "DocumentFilterList" ]
+                ]
+            },
+            "UpdateAssociationStatusRequest": {
+                "constructorForms": [
+                    [ "AssociationStatus", "InstanceId", "Name" ]
+                ]
+            }
+        }
+    }
+}

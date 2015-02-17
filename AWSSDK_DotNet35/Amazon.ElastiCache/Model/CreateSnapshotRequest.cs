@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,8 +29,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSnapshot operation.
-    /// The <i>CreateSnapshot</i> operation creates a copy of an entire cache cluster at a
-    /// specific moment in time.
+    /// The <i>CreateSnapshot</i> action creates a copy of an entire cache cluster at a specific
+    /// moment in time.
     /// </summary>
     public partial class CreateSnapshotRequest : AmazonElastiCacheRequest
     {

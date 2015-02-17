@@ -1,0 +1,68 @@
+{
+    "simpleMethods": {
+        "operations": {
+            "CreateAssociation": {
+                "methodForms": [
+                    [
+                        "InstanceId",
+                        "Name"
+                    ]
+                ]
+            },
+            "CreateDocument": {
+                "methodForms": [
+                    [
+                        "Content",
+                        "Name"
+                    ]
+                ]
+            },
+            "DeleteAssociation": {
+                "methodForms": [
+                    [
+                        "InstanceId",
+                        "Name"
+                    ]
+                ]
+            },
+            "DeleteDocument": {
+                "methodForms": [
+                    [
+                        "Name"
+                    ]
+                ]
+            },
+            "DescribeAssociation": {
+                "methodForms": [
+                    [
+                        "InstanceId",
+                        "Name"
+                    ]
+                ]
+            },
+            "DescribeDocument": {
+                "methodForms": [
+                    [
+                        "Name"
+                    ]
+                ]
+            },
+            "GetDocument": {
+                "methodForms": [
+                    [
+                        "Name"
+                    ]
+                ]
+            },
+            "UpdateAssociation": {
+                "methodForms": [
+                    [
+                        "AssociationStatus",
+                        "InstanceId",
+                        "Name"
+                    ]
+                ]
+            }
+        }
+    }
+}

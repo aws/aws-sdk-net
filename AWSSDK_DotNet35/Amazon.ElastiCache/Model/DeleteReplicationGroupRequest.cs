@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,15 +29,15 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteReplicationGroup operation.
-    /// The <i>DeleteReplicationGroup</i> operation deletes an existing cluster. By default,
-    /// this operation deletes the entire cluster, including the primary node group and all
-    /// of the read replicas. You can optionally delete only the read replicas, while retaining
-    /// the primary node group.
+    /// The <i>DeleteReplicationGroup</i> action deletes an existing replication group. By
+    /// default, this action deletes the entire replication group, including the primary cluster
+    /// and all of the read replicas. You can optionally delete only the read replicas, while
+    /// retaining the primary cluster.
     /// 
     ///  
     /// <para>
-    /// When you receive a successful response from this operation, Amazon ElastiCache immediately
-    /// begins deleting the selected resources; you cannot cancel or revert this operation.
+    /// When you receive a successful response from this action, Amazon ElastiCache immediately
+    /// begins deleting the selected resources; you cannot cancel or revert this action.
     /// </para>
     /// </summary>
     public partial class DeleteReplicationGroupRequest : AmazonElastiCacheRequest

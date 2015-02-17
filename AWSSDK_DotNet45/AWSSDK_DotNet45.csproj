@@ -258,6 +258,8 @@
     <Compile Include="Amazon.SimpleEmail\IAmazonSimpleEmailService.cs" />
     <Compile Include="Amazon.SimpleNotificationService\AmazonSimpleNotificationServiceClient.cs" />
     <Compile Include="Amazon.SimpleNotificationService\IAmazonSimpleNotificationService.cs" />
+    <Compile Include="Amazon.SimpleSystemsManagement\AmazonSimpleSystemsManagementClient.cs" />
+    <Compile Include="Amazon.SimpleSystemsManagement\IAmazonSimpleSystemsManagement.cs" />
     <Compile Include="Amazon.SimpleWorkflow\AmazonSimpleWorkflowClient.cs" />
     <Compile Include="Amazon.SimpleWorkflow\IAmazonSimpleWorkflow.cs" />
     <Compile Include="Amazon.SQS\AmazonSQSClient.cs" />
@@ -860,6 +862,17 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.SimpleNotificationService\Util\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.SimpleSystemsManagement\*" Exclude="..\AWSSDK_DotNet35\Amazon.SimpleSystemsManagement\IAmazonSimpleSystemsManagement.cs;..\AWSSDK_DotNet35\Amazon.SimpleSystemsManagement\AmazonSimpleSystemsManagementClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.SimpleSystemsManagement\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.SimpleSystemsManagement\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>

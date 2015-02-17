@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,9 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCacheSubnetGroup operation.
-    /// The <i>DeleteCacheSubnetGroup</i> operation deletes a cache subnet group.
+    /// The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.
+    /// 
+    ///  <note>You cannot delete a cache subnet group if it is associated with any cache clusters.</note>
     /// </summary>
     public partial class DeleteCacheSubnetGroupRequest : AmazonElastiCacheRequest
     {

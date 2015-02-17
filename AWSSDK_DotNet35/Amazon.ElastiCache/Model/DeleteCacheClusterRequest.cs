@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,16 +29,16 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCacheCluster operation.
-    /// The <i>DeleteCacheCluster</i> operation deletes a previously provisioned cache cluster.
+    /// The <i>DeleteCacheCluster</i> action deletes a previously provisioned cache cluster.
     /// <i>DeleteCacheCluster</i> deletes all associated cache nodes, node endpoints and the
-    /// cache cluster itself. When you receive a successful response from this operation,
-    /// Amazon ElastiCache immediately begins deleting the cache cluster; you cannot cancel
-    /// or revert this operation.
+    /// cache cluster itself. When you receive a successful response from this action, Amazon
+    /// ElastiCache immediately begins deleting the cache cluster; you cannot cancel or revert
+    /// this action.
     /// 
     ///  
     /// <para>
     /// This API cannot be used to delete a cache cluster that is the last read replica of
-    /// a replication group that has automatic failover mode enabled.
+    /// a replication group that has Multi-AZ mode enabled.
     /// </para>
     /// </summary>
     public partial class DeleteCacheClusterRequest : AmazonElastiCacheRequest

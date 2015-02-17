@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,9 +29,9 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCacheSubnetGroups operation.
-    /// The <i>DescribeCacheSubnetGroups</i> operation returns a list of cache subnet group
-    /// descriptions. If a subnet group name is specified, the list will contain only the
-    /// description of that group.
+    /// The <i>DescribeCacheSubnetGroups</i> action returns a list of cache subnet group descriptions.
+    /// If a subnet group name is specified, the list will contain only the description of
+    /// that group.
     /// </summary>
     public partial class DescribeCacheSubnetGroupsRequest : AmazonElastiCacheRequest
     {
@@ -61,8 +61,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional marker returned from a prior request. Use this marker for pagination of
-        /// results from this operation. If this parameter is specified, the response includes
-        /// only records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// results from this action. If this parameter is specified, the response includes only
+        /// records beyond the marker, up to the value specified by <i>MaxRecords</i>.
         /// </para>
         /// </summary>
         public string Marker

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetCacheParameterGroup operation.
-    /// The <i>ResetCacheParameterGroup</i> operation modifies the parameters of a cache parameter
+    /// The <i>ResetCacheParameterGroup</i> action modifies the parameters of a cache parameter
     /// group to the engine or system default value. You can reset specific parameters by
     /// submitting a list of parameter names. To reset the entire cache parameter group, specify
     /// the <i>ResetAllParameters</i> and <i>CacheParameterGroupName</i> parameters.

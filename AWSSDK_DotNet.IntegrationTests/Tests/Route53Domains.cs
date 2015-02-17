@@ -51,7 +51,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var existingTags = client.ListTagsForDomain(domain).TagList;
 
             client.UpdateTagsForDomain(domain,
-            new List<Tag>            {                new Tag { Key = "tag1", Value = "42" },                new Tag { Key = "tag2", Value = "ALL" }            });
+            new List<Tag>
+            {
+                new Tag { Key = "tag1", Value = "42" },
+                new Tag { Key = "tag2", Value = "ALL" }
+            });
 
             var tags = client.ListTagsForDomain(domain).TagList;
             var count = tags.Count;

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,9 +29,9 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCacheParameterGroup operation.
-    /// The <i>CreateCacheParameterGroup</i> operation creates a new cache parameter group.
-    /// A cache parameter group is a collection of parameters that you apply to all of the
-    /// nodes in a cache cluster.
+    /// The <i>CreateCacheParameterGroup</i> action creates a new cache parameter group. A
+    /// cache parameter group is a collection of parameters that you apply to all of the nodes
+    /// in a cache cluster.
     /// </summary>
     public partial class CreateCacheParameterGroupRequest : AmazonElastiCacheRequest
     {

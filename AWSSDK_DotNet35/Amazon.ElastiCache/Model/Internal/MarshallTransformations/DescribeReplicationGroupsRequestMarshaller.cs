@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -44,7 +44,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "DescribeReplicationGroups");
-            request.Parameters.Add("Version", "2014-09-30");
+            request.Parameters.Add("Version", "2015-02-02");
 
             if(publicRequest != null)
             {

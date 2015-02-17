@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSnapshots operation.
-    /// The <i>DescribeSnapshots</i> operation returns information about cache cluster snapshots.
+    /// The <i>DescribeSnapshots</i> action returns information about cache cluster snapshots.
     /// By default, <i>DescribeSnapshots</i> lists all of your snapshots; it can optionally
     /// describe a single snapshot, or just the snapshots associated with a particular cache
     /// cluster.
@@ -65,8 +65,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional marker returned from a prior request. Use this marker for pagination of
-        /// results from this operation. If this parameter is specified, the response includes
-        /// only records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// results from this action. If this parameter is specified, the response includes only
+        /// records beyond the marker, up to the value specified by <i>MaxRecords</i>.
         /// </para>
         /// </summary>
         public string Marker

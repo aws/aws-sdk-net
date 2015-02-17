@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,9 +29,9 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyCacheParameterGroup operation.
-    /// The <i>ModifyCacheParameterGroup</i> operation modifies the parameters of a cache
-    /// parameter group. You can modify up to 20 parameters in a single request by submitting
-    /// a list parameter name and value pairs.
+    /// The <i>ModifyCacheParameterGroup</i> action modifies the parameters of a cache parameter
+    /// group. You can modify up to 20 parameters in a single request by submitting a list
+    /// parameter name and value pairs.
     /// </summary>
     public partial class ModifyCacheParameterGroupRequest : AmazonElastiCacheRequest
     {

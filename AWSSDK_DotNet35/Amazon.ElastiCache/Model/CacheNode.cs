@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -124,7 +124,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        /// The hostname and IP address for connecting to this cache node.
+        /// The hostname for connecting to this cache node.
         /// </para>
         /// </summary>
         public Endpoint Endpoint

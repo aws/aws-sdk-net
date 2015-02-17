@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,10 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCacheSecurityGroup operation.
-    /// The <i>DeleteCacheSecurityGroup</i> operation deletes a cache security group.
+    /// The <i>DeleteCacheSecurityGroup</i> action deletes a cache security group.
+    /// 
+    ///  <note>You cannot delete a cache security group if it is associated with any cache
+    /// clusters.</note>
     /// </summary>
     public partial class DeleteCacheSecurityGroupRequest : AmazonElastiCacheRequest
     {
@@ -43,7 +46,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Instantiates DeleteCacheSecurityGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="cacheSecurityGroupName">The name of the cache security group to delete.</param>
+        /// <param name="cacheSecurityGroupName">The name of the cache security group to delete. <note>You cannot delete the default security group.</note></param>
         public DeleteCacheSecurityGroupRequest(string cacheSecurityGroupName)
         {
             _cacheSecurityGroupName = cacheSecurityGroupName;
@@ -54,6 +57,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The name of the cache security group to delete.
         /// </para>
+        ///  <note>You cannot delete the default security group.</note>
         /// </summary>
         public string CacheSecurityGroupName
         {

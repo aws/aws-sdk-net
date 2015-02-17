@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,9 +29,12 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeCacheSecurityGroupIngress operation.
-    /// The <i>AuthorizeCacheSecurityGroupIngress</i> operation allows network ingress to
-    /// a cache security group. Applications using ElastiCache must be running on Amazon EC2,
-    /// and Amazon EC2 security groups are used as the authorization mechanism.
+    /// The <i>AuthorizeCacheSecurityGroupIngress</i> action allows network ingress to a cache
+    /// security group. Applications using ElastiCache must be running on Amazon EC2, and
+    /// Amazon EC2 security groups are used as the authorization mechanism.
+    /// 
+    ///  <note>You cannot authorize ingress from an Amazon EC2 security group in one region
+    /// to an ElastiCache cluster in another region. </note>
     /// </summary>
     public partial class AuthorizeCacheSecurityGroupIngressRequest : AmazonElastiCacheRequest
     {

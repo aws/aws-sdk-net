@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the elasticache-2014-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,9 +29,9 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyCacheCluster operation.
-    /// The <i>ModifyCacheCluster</i> operation modifies the settings for a cache cluster.
-    /// You can use this operation to change one or more cluster configuration parameters
-    /// by specifying the parameters and the new values.
+    /// The <i>ModifyCacheCluster</i> action modifies the settings for a cache cluster. You
+    /// can use this action to change one or more cluster configuration parameters by specifying
+    /// the parameters and the new values.
     /// </summary>
     public partial class ModifyCacheClusterRequest : AmazonElastiCacheRequest
     {
@@ -104,16 +104,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// If <code>true</code>, then minor engine upgrades will be applied automatically to
-        /// the cache cluster during the maintenance window.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>true</code> | <code>false</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>true</code>
+        /// This parameter is currently disabled.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -142,6 +133,20 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// This option is only supported for Memcached cache clusters.
         /// </para>
+        ///  <note>
+        /// <para>
+        /// You cannot specify <code>single-az</code> if the Memcached cache cluster already has
+        /// cache nodes in different Availability Zones. If <code>cross-az</code> is specified,
+        /// existing Memcached nodes remain in their current Availability Zone.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only newly created nodes will be located in different Availability Zones. For instructions
+        /// on how to move existing Memcached nodes to different Availability Zones, see the <b>Availability
+        /// Zone Considerations</b> section of <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+        /// Node Considerations for Memcached</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public AZMode AZMode
         {
@@ -177,10 +182,11 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property CacheNodeIdsToRemove. 
         /// <para>
         /// A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002,
-        /// etc.). This parameter is only valid when NumCacheNodes is less than the existing number
-        /// of cache nodes. The number of cache node IDs supplied in this parameter must match
-        /// the difference between the existing number of cache nodes in the cluster or pending
-        /// cache nodes, whichever is greater, and the value of <i>NumCacheNodes</i> in the request.
+        /// etc.). This parameter is only valid when <i>NumCacheNodes</i> is less than the existing
+        /// number of cache nodes. The number of cache node IDs supplied in this parameter must
+        /// match the difference between the existing number of cache nodes in the cluster or
+        /// pending cache nodes, whichever is greater, and the value of <i>NumCacheNodes</i> in
+        /// the request.
         /// </para>
         ///  
         /// <para>
@@ -274,8 +280,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is only valid when <code>NumCacheNodes</code> in the request is greater
-        /// than the sum of the number of active cache nodes and the number of cache nodes pending
+        /// This parameter is only valid when <i>NumCacheNodes</i> in the request is greater than
+        /// the sum of the number of active cache nodes and the number of cache nodes pending
         /// creation (which may be zero). The number of Availability Zones supplied in this list
         /// must match the cache nodes being added in this request.
         /// </para>
@@ -312,7 +318,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// <b>Impact of new add/remove requests upon pending requests</b>
         /// </para>
-        ///  <table> <tr> <th>Scenarios</th> <th>Pending Operation</th> <th>New Request</th> <th>Results</th>
+        ///  <table> <tr> <th>Scenarios</th> <th>Pending action</th> <th>New Request</th> <th>Results</th>
         /// </tr> <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new delete,
         /// pending or immediate, replaces the pending delete.</td> </tr> <tr> <td>Scenario-2</td>
         /// <td>Delete</td> <td>Create</td> <td>The new create, pending or immediate, replaces
@@ -323,7 +329,7 @@ namespace Amazon.ElastiCache.Model
         /// Immediately - Yes</b>, all creates are performed immediately. If the new create request
         /// is <b>Apply Immediately - No</b>, all creates are pending.</td> </tr> </table> 
         /// <para>
-        /// Example: <code>NewAvailabilityZones.member.1=us-east-1a&amp;NewAvailabilityZones.member.2=us-east-1b&amp;NewAvailabilityZones.member.3=us-east-1d</code>
+        /// Example: <code>NewAvailabilityZones.member.1=us-west-2a&amp;NewAvailabilityZones.member.2=us-west-2b&amp;NewAvailabilityZones.member.3=us-west-2c</code>
         /// </para>
         /// </summary>
         public List<string> NewAvailabilityZones
@@ -344,6 +350,7 @@ namespace Amazon.ElastiCache.Model
         /// The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will
         /// be sent.
         /// </para>
+        ///  <note>The Amazon SNS topic owner must be same as the cache cluster owner. </note>
         /// </summary>
         public string NotificationTopicArn
         {
@@ -397,7 +404,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// For cache clusters running Redis, the value of <code>NumCacheNodes</code>must be 1.
+        /// For clusters running Redis, this value must be 1. For clusters running Memcached,
+        /// this value must be between 1 and 20.
         /// </para>
         ///  
         /// <para>
@@ -415,8 +423,7 @@ namespace Amazon.ElastiCache.Model
         /// modify the previous pending action to add more nodes or explicitly cancel the pending
         /// request and retry the new request. To cancel pending actions to modify the number
         /// of cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request and set
-        /// <code>NumCacheNodes</code> equal to the number of cache nodes currently in the cache
-        /// cluster.
+        /// <i>NumCacheNodes</i> equal to the number of cache nodes currently in the cache cluster.
         /// </para>
         /// </summary>
         public int NumCacheNodes
@@ -434,10 +441,16 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        /// The weekly time range (in UTC) during which system maintenance can occur. Note that
-        /// system maintenance may result in an outage. This change is made immediately. If you
-        /// are moving this window to the current time, there must be at least 120 minutes between
-        /// the current time and end of the window to ensure that pending changes are applied.
+        /// Specifies the weekly time range during which maintenance on the cache cluster is performed.
+        /// It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC).
+        /// The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code>
+        /// are:
+        /// </para>
+        ///  <ul> <li><code>sun</code></li> <li><code>mon</code></li> <li><code>tue</code></li>
+        /// <li><code>wed</code></li> <li><code>thu</code></li> <li><code>fri</code></li> <li><code>sat</code></li>
+        /// </ul> 
+        /// <para>
+        /// Example: <code>sun:05:00-sun:09:00</code>
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow
