@@ -103,6 +103,10 @@ namespace Amazon.SessionProvider
     ///         <term>CreateIfNotExist</term>
     ///         <description>Optional boolean attribute. CreateIfNotExist controls whether the table will be auto created if it doesn't exist. Default is true.</description>
     ///     </item>
+    ///     <item>
+    ///         <term>StrictDisableSession</term>
+    ///         <description>Optional boolean attribute. If EnabledSessionState is False globally or on an individual page/view/controller, ASP.NET will still send a keepalive request to dynamo. Setting this to true disables keepalive requests when EnableSessionState is False. Default is false.</description>
+    ///     </item>
     /// </list>
     /// </para>
     /// </summary>
@@ -136,6 +140,7 @@ namespace Amazon.SessionProvider
         public const string CONFIG_INITIAL_READ_UNITS = "ReadCapacityUnits";
         public const string CONFIG_INITIAL_WRITE_UNITS = "WriteCapacityUnits";
         public const string CONFIG_CREATE_TABLE_IF_NOT_EXIST = "CreateIfNotExist";
+        public const string CONFIG_STRICT_DISABLE_SESSION = "StrictDisableSession";
 
         // This is not const because we will use whatever is the hash key defined for 
         // the table as long as it is a string.
@@ -165,6 +170,7 @@ namespace Amazon.SessionProvider
         int _initialReadUnits = 10;
         int _initialWriteUnits = 5;
         bool _createIfNotExist = true;
+        bool _strictDisableSession = false;
 
         IAmazonDynamoDB _ddbClient;
         Table _table;
@@ -310,6 +316,11 @@ namespace Amazon.SessionProvider
             if (!string.IsNullOrEmpty(config[CONFIG_INITIAL_WRITE_UNITS]))
             {
                 this._initialWriteUnits = int.Parse(config[CONFIG_INITIAL_WRITE_UNITS]);
+            }
+
+            if (!string.IsNullOrEmpty(config[CONFIG_STRICT_DISABLE_SESSION]))
+            {
+                this._strictDisableSession = bool.Parse(config[CONFIG_STRICT_DISABLE_SESSION]);
             }
 
 
@@ -645,6 +656,10 @@ namespace Amazon.SessionProvider
         /// <param name="sessionId"></param>
         public override void ResetItemTimeout(HttpContext context, string sessionId)
         {
+            var suppressKeepalive = _strictDisableSession && context.Session == null;
+            if (suppressKeepalive)
+                return;
+
             Document doc = new Document();
             doc[ATTRIBUTE_SESSION_ID] = GetHashKey(sessionId);
             doc[ATTRIBUTE_LOCKED] = false;
