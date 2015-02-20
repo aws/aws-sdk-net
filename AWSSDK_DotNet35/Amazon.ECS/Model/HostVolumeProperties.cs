@@ -28,33 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeTaskDefinition operation.
-    /// Describes a task definition. You can specify a <code>family</code> and <code>revision</code>
-    /// to find information on a specific task definition, or you can simply specify the family
-    /// to find the latest revision in that family.
+    /// 
     /// </summary>
-    public partial class DescribeTaskDefinitionRequest : AmazonECSRequest
+    public partial class HostVolumeProperties
     {
-        private string _taskDefinition;
+        private string _sourcePath;
 
         /// <summary>
-        /// Gets and sets the property TaskDefinition. 
+        /// Gets and sets the property SourcePath. 
         /// <para>
-        /// The <code>family</code> for the latest revision, <code>family</code> and <code>revision</code>
-        /// (<code>family:revision</code>) for a specific revision in the family, or full Amazon
-        /// Resource Name (ARN) of the task definition that you want to describe.
+        /// The path on the host container instance that is presented to the container. If this
+        /// parameter is empty, then the Docker daemon has assigned a host path for you.
         /// </para>
         /// </summary>
-        public string TaskDefinition
+        public string SourcePath
         {
-            get { return this._taskDefinition; }
-            set { this._taskDefinition = value; }
+            get { return this._sourcePath; }
+            set { this._sourcePath = value; }
         }
 
-        // Check to see if TaskDefinition property is set
-        internal bool IsSetTaskDefinition()
+        // Check to see if SourcePath property is set
+        internal bool IsSetSourcePath()
         {
-            return this._taskDefinition != null;
+            return this._sourcePath != null;
         }
 
     }

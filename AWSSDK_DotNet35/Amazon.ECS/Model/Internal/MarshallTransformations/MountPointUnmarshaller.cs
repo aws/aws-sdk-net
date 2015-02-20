@@ -34,54 +34,42 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TaskDefinition Object
+    /// Response Unmarshaller for MountPoint Object
     /// </summary>  
-    public class TaskDefinitionUnmarshaller : IUnmarshaller<TaskDefinition, XmlUnmarshallerContext>, IUnmarshaller<TaskDefinition, JsonUnmarshallerContext>
+    public class MountPointUnmarshaller : IUnmarshaller<MountPoint, XmlUnmarshallerContext>, IUnmarshaller<MountPoint, JsonUnmarshallerContext>
     {
-        TaskDefinition IUnmarshaller<TaskDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MountPoint IUnmarshaller<MountPoint, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
-        public TaskDefinition Unmarshall(JsonUnmarshallerContext context)
+        public MountPoint Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TaskDefinition unmarshalledObject = new TaskDefinition();
+            MountPoint unmarshalledObject = new MountPoint();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("containerDefinitions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ContainerDefinition, ContainerDefinitionUnmarshaller>(ContainerDefinitionUnmarshaller.Instance);
-                    unmarshalledObject.ContainerDefinitions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("family", targetDepth))
+                if (context.TestExpression("containerPath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Family = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContainerPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("revision", targetDepth))
+                if (context.TestExpression("readOnly", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Revision = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ReadOnly = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("taskDefinitionArn", targetDepth))
+                if (context.TestExpression("sourceVolume", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskDefinitionArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("volumes", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Volume, VolumeUnmarshaller>(VolumeUnmarshaller.Instance);
-                    unmarshalledObject.Volumes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceVolume = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -90,9 +78,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static TaskDefinitionUnmarshaller _instance = new TaskDefinitionUnmarshaller();        
+        private static MountPointUnmarshaller _instance = new MountPointUnmarshaller();        
 
-        public static TaskDefinitionUnmarshaller Instance
+        public static MountPointUnmarshaller Instance
         {
             get
             {

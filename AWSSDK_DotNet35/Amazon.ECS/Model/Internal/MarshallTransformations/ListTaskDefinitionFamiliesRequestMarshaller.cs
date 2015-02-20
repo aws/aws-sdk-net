@@ -33,19 +33,19 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RegisterTaskDefinition Request Marshaller
+    /// ListTaskDefinitionFamilies Request Marshaller
     /// </summary>       
-    public class RegisterTaskDefinitionRequestMarshaller : IMarshaller<IRequest, RegisterTaskDefinitionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListTaskDefinitionFamiliesRequestMarshaller : IMarshaller<IRequest, ListTaskDefinitionFamiliesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((RegisterTaskDefinitionRequest)input);
+            return this.Marshall((ListTaskDefinitionFamiliesRequest)input);
         }
 
-        public IRequest Marshall(RegisterTaskDefinitionRequest publicRequest)
+        public IRequest Marshall(ListTaskDefinitionFamiliesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECS");
-            string target = "AmazonEC2ContainerServiceV20141113.RegisterTaskDefinition";
+            string target = "AmazonEC2ContainerServiceV20141113.ListTaskDefinitionFamilies";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -57,42 +57,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContainerDefinitions())
+                if(publicRequest.IsSetFamilyPrefix())
                 {
-                    context.Writer.WritePropertyName("containerDefinitions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestContainerDefinitionsListValue in publicRequest.ContainerDefinitions)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ContainerDefinitionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestContainerDefinitionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("familyPrefix");
+                    context.Writer.Write(publicRequest.FamilyPrefix);
                 }
 
-                if(publicRequest.IsSetFamily())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("family");
-                    context.Writer.Write(publicRequest.Family);
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetVolumes())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("volumes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVolumesListValue in publicRequest.Volumes)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = VolumeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestVolumesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
         

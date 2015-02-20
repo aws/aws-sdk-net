@@ -30,13 +30,14 @@ namespace Amazon.ECS
     /// <summary>
     /// Interface for accessing ECS
     ///
+    /// <para>
     /// Amazon EC2 Container Service (Amazon ECS) is a highly scalable, fast, container management
     /// service that makes it easy to run, stop, and manage Docker containers on a cluster
     /// of Amazon EC2 instances. Amazon ECS lets you launch and stop container-enabled applications
     /// with simple API calls, allows you to get the state of your cluster from a centralized
     /// service, and gives you access to many familiar Amazon EC2 features like security groups,
     /// Amazon EBS volumes, and IAM roles.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// You can use Amazon ECS to schedule the placement of containers across your cluster
@@ -195,6 +196,21 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ListContainerInstancesResponse> ListContainerInstancesAsync(ListContainerInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTaskDefinitionFamilies
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTaskDefinitionFamilies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTaskDefinitionFamilies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListTaskDefinitionFamiliesResponse> ListTaskDefinitionFamiliesAsync(ListTaskDefinitionFamiliesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

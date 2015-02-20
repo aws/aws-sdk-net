@@ -28,13 +28,14 @@ namespace Amazon.ECS
     /// <summary>
     /// Interface for accessing ECS
     ///
+    /// <para>
     /// Amazon EC2 Container Service (Amazon ECS) is a highly scalable, fast, container management
     /// service that makes it easy to run, stop, and manage Docker containers on a cluster
     /// of Amazon EC2 instances. Amazon ECS lets you launch and stop container-enabled applications
     /// with simple API calls, allows you to get the state of your cluster from a centralized
     /// service, and gives you access to many familiar Amazon EC2 features like security groups,
     /// Amazon EBS volumes, and IAM roles.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// You can use Amazon ECS to schedule the placement of containers across your cluster
@@ -332,7 +333,9 @@ namespace Amazon.ECS
         #region  DescribeTaskDefinition
 
         /// <summary>
-        /// Describes a task definition.
+        /// Describes a task definition. You can specify a <code>family</code> and <code>revision</code>
+        /// to find information on a specific task definition, or you can simply specify the family
+        /// to find the latest revision in that family.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTaskDefinition service method.</param>
         /// 
@@ -505,6 +508,51 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  ListTaskDefinitionFamilies
+
+        /// <summary>
+        /// Returns a list of task definition families that are registered to your account. You
+        /// can filter the results with the <code>familyPrefix</code> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTaskDefinitionFamilies service method.</param>
+        /// 
+        /// <returns>The response from the ListTaskDefinitionFamilies service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by something the client did, such as use an action
+        /// or resource on behalf of a user that doesn't have permission to use the action or
+        /// resource, or specify an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        ListTaskDefinitionFamiliesResponse ListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTaskDefinitionFamilies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTaskDefinitionFamilies operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTaskDefinitionFamilies
+        ///         operation.</returns>
+        IAsyncResult BeginListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTaskDefinitionFamilies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTaskDefinitionFamilies.</param>
+        /// 
+        /// <returns>Returns a  ListTaskDefinitionFamiliesResult from ECS.</returns>
+        ListTaskDefinitionFamiliesResponse EndListTaskDefinitionFamilies(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTaskDefinitions
 
         /// <summary>
@@ -600,6 +648,10 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Registers a new task definition from the supplied <code>family</code> and <code>containerDefinitions</code>.
+        /// Optionally, you can add data volumes to your containers with the <code>volumes</code>
+        /// parameter. For more information on task definition parameters and defaults, see <a
+        /// href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
+        /// ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterTaskDefinition service method.</param>
         /// 

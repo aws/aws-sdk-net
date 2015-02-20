@@ -30,11 +30,16 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Container for the parameters to the RegisterTaskDefinition operation.
     /// Registers a new task definition from the supplied <code>family</code> and <code>containerDefinitions</code>.
+    /// Optionally, you can add data volumes to your containers with the <code>volumes</code>
+    /// parameter. For more information on task definition parameters and defaults, see <a
+    /// href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
+    /// ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
     /// </summary>
     public partial class RegisterTaskDefinitionRequest : AmazonECSRequest
     {
         private List<ContainerDefinition> _containerDefinitions = new List<ContainerDefinition>();
         private string _family;
+        private List<Volume> _volumes = new List<Volume>();
 
         /// <summary>
         /// Gets and sets the property ContainerDefinitions. 
@@ -58,8 +63,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Family. 
         /// <para>
-        /// You can specify a <code>family</code> for a task definition, which allows you to track
-        /// multiple versions of the same task definition. You can think of the <code>family</code>
+        /// You must specify a <code>family</code> for a task definition, which allows you to
+        /// track multiple versions of the same task definition. You can think of the <code>family</code>
         /// as a name for your task definition.
         /// </para>
         /// </summary>
@@ -73,6 +78,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetFamily()
         {
             return this._family != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Volumes. 
+        /// <para>
+        /// A list of volume definitions in JSON format that containers in your task may use.
+        /// </para>
+        /// </summary>
+        public List<Volume> Volumes
+        {
+            get { return this._volumes; }
+            set { this._volumes = value; }
+        }
+
+        // Check to see if Volumes property is set
+        internal bool IsSetVolumes()
+        {
+            return this._volumes != null && this._volumes.Count > 0; 
         }
 
     }

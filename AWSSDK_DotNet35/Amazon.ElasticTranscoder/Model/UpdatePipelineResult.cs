@@ -34,6 +34,7 @@ namespace Amazon.ElasticTranscoder.Model
     public partial class UpdatePipelineResult : AmazonWebServiceResponse
     {
         private Pipeline _pipeline;
+        private List<Warning> _warnings = new List<Warning>();
 
         /// <summary>
         /// Gets and sets the property Pipeline.
@@ -48,6 +49,30 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetPipeline()
         {
             return this._pipeline != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Warnings. 
+        /// <para>
+        /// Elastic Transcoder returns a warning if the resources used by your pipeline are not
+        /// in the same region as the pipeline.
+        /// </para>
+        ///  
+        /// <para>
+        /// Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification
+        /// topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.
+        /// </para>
+        /// </summary>
+        public List<Warning> Warnings
+        {
+            get { return this._warnings; }
+            set { this._warnings = value; }
+        }
+
+        // Check to see if Warnings property is set
+        internal bool IsSetWarnings()
+        {
+            return this._warnings != null && this._warnings.Count > 0; 
         }
 
     }

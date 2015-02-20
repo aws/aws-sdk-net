@@ -52,6 +52,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     response.Pipeline = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Warnings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Warning, WarningUnmarshaller>(WarningUnmarshaller.Instance);
+                    response.Warnings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

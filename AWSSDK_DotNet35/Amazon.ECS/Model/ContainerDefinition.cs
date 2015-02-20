@@ -41,8 +41,10 @@ namespace Amazon.ECS.Model
         private string _image;
         private List<string> _links = new List<string>();
         private int? _memory;
+        private List<MountPoint> _mountPoints = new List<MountPoint>();
         private string _name;
         private List<PortMapping> _portMappings = new List<PortMapping>();
+        private List<VolumeFrom> _volumesFrom = new List<VolumeFrom>();
 
         /// <summary>
         /// Gets and sets the property Command. 
@@ -83,7 +85,13 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EntryPoint. 
+        /// Gets and sets the property EntryPoint. <important> 
+        /// <para>
+        /// Early versions of the Amazon ECS container agent do not properly handle <code>entryPoint</code>
+        /// parameters. If you have problems using <code>entryPoint</code>, update your container
+        /// agent or enter your commands and arguments as <code>command</code> array items instead.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// The <code>ENTRYPOINT</code> that is passed to the container. For more information
         /// on the Docker <code>ENTRYPOINT</code> parameter, see <a href="https://docs.docker.com/reference/builder/#entrypoint">https://docs.docker.com/reference/builder/#entrypoint</a>.
@@ -200,6 +208,24 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MountPoints. 
+        /// <para>
+        /// The mount points for data volumes in your container.
+        /// </para>
+        /// </summary>
+        public List<MountPoint> MountPoints
+        {
+            get { return this._mountPoints; }
+            set { this._mountPoints = value; }
+        }
+
+        // Check to see if MountPoints property is set
+        internal bool IsSetMountPoints()
+        {
+            return this._mountPoints != null && this._mountPoints.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of a container. If you are linking multiple containers together in a task
@@ -235,6 +261,21 @@ namespace Amazon.ECS.Model
         internal bool IsSetPortMappings()
         {
             return this._portMappings != null && this._portMappings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumesFrom.
+        /// </summary>
+        public List<VolumeFrom> VolumesFrom
+        {
+            get { return this._volumesFrom; }
+            set { this._volumesFrom = value; }
+        }
+
+        // Check to see if VolumesFrom property is set
+        internal bool IsSetVolumesFrom()
+        {
+            return this._volumesFrom != null && this._volumesFrom.Count > 0; 
         }
 
     }

@@ -28,11 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTaskDefinitions operation.
-    /// Returns a list of task definitions that are registered to your account. You can filter
-    /// the results by family name with the <code>familyPrefix</code> parameter.
+    /// Container for the parameters to the ListTaskDefinitionFamilies operation.
+    /// Returns a list of task definition families that are registered to your account. You
+    /// can filter the results with the <code>familyPrefix</code> parameter.
     /// </summary>
-    public partial class ListTaskDefinitionsRequest : AmazonECSRequest
+    public partial class ListTaskDefinitionFamiliesRequest : AmazonECSRequest
     {
         private string _familyPrefix;
         private int? _maxResults;
@@ -41,9 +41,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property FamilyPrefix. 
         /// <para>
-        /// The full family name that you want to filter the <code>ListTaskDefinitions</code>
-        /// results with. Specifying a <code>familyPrefix</code> will limit the listed task definitions
-        /// to task definition revisions that belong to that family.
+        /// The <code>familyPrefix</code> is a string that is used to filter the results of <code>ListTaskDefinitionFamilies</code>.
+        /// If you specify a <code>familyPrefix</code>, only task definition family names that
+        /// begin with the <code>familyPrefix</code> string are returned.
         /// </para>
         /// </summary>
         public string FamilyPrefix
@@ -61,12 +61,12 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of task definition results returned by <code>ListTaskDefinitions</code>
+        /// The maximum number of task definition family results returned by <code>ListTaskDefinitionFamilies</code>
         /// in paginated output. When this parameter is used, <code>ListTaskDefinitions</code>
         /// only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListTaskDefinitions</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then <code>ListTaskDefinitions</code>
+        /// another <code>ListTaskDefinitionFamilies</code> request with the returned <code>nextToken</code>
+        /// value. This value can be between 1 and 100. If this parameter is not used, then <code>ListTaskDefinitionFamilies</code>
         /// returns up to 100 results and a <code>nextToken</code> value if applicable.
         /// </para>
         /// </summary>
@@ -85,7 +85,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated <code>ListTaskDefinitions</code>
+        /// The <code>nextToken</code> value returned from a previous paginated <code>ListTaskDefinitionFamilies</code>
         /// request where <code>maxResults</code> was used and the results exceeded the value
         /// of that parameter. Pagination continues from the end of the previous results that
         /// returned the <code>nextToken</code> value. This value is <code>null</code> when there

@@ -112,6 +112,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Memory);
             }
 
+            if(requestObject.IsSetMountPoints())
+            {
+                context.Writer.WritePropertyName("mountPoints");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectMountPointsListValue in requestObject.MountPoints)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MountPointMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMountPointsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
@@ -128,6 +144,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
                     var marshaller = PortMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectPortMappingsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetVolumesFrom())
+            {
+                context.Writer.WritePropertyName("volumesFrom");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectVolumesFromListValue in requestObject.VolumesFrom)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VolumeFromMarshaller.Instance;
+                    marshaller.Marshall(requestObjectVolumesFromListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }

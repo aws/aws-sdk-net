@@ -102,6 +102,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Memory = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mountPoints", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MountPoint, MountPointUnmarshaller>(MountPointUnmarshaller.Instance);
+                    unmarshalledObject.MountPoints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -112,6 +118,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<PortMapping, PortMappingUnmarshaller>(PortMappingUnmarshaller.Instance);
                     unmarshalledObject.PortMappings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("volumesFrom", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<VolumeFrom, VolumeFromUnmarshaller>(VolumeFromUnmarshaller.Instance);
+                    unmarshalledObject.VolumesFrom = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

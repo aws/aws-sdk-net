@@ -203,9 +203,25 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Misc
 
         /// <summary>
+        /// If enable is set to true the object will have its permission set to PublicRead otherwise the permissions will be set to Private.
+        /// </summary>
+        /// <param name="enable">If true the object will have its permission set to PublicRead otherwise the permissions will be set to Private.</param>
+        public void MakeS3ObjectPublic(bool enable) 
+        {
+            var request = new PutACLRequest
+            {
+                BucketName = this.linker.s3.bucket,
+                Key = this.linker.s3.key,
+                CannedACL = enable ? S3CannedACL.PublicRead : S3CannedACL.Private
+            };
+            this.s3ClientCache.GetClient(this.RegionAsEndpoint).PutACL(request);
+        }
+
+        /// <summary>
         /// Sets the S3 Object's ACL
         /// </summary>
         /// <param name="cannedACL">CannedACL assigned to object</param>
+        [Obsolete("This method is obsolete and will be removed in a future update. Please use either the MakeS3ObjectPublic method or use S3 directly to configure the ACL on the object. http://blogs.aws.amazon.com/net/post/Tx2JT7AYCL2F6CB/")]
         public void SetACL(S3CannedACL cannedACL)
         {
             var request = new PutACLRequest
@@ -221,6 +237,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Sets the S3 Objects's ACL
         /// </summary>
         /// <param name="acl">ACL assigned to the S3 object</param>
+        [Obsolete("This method is obsolete and will be removed in a future update. Please use either the MakeS3ObjectPublic method or use S3 directly to configure the ACL on the object. http://blogs.aws.amazon.com/net/post/Tx2JT7AYCL2F6CB/")]
         public void SetACL(S3AccessControlList acl)
         {
             var request = new PutACLRequest
