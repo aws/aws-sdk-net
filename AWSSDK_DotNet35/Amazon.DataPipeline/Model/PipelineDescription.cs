@@ -36,6 +36,7 @@ namespace Amazon.DataPipeline.Model
         private List<Field> _fields = new List<Field>();
         private string _name;
         private string _pipelineId;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -109,6 +110,26 @@ namespace Amazon.DataPipeline.Model
         internal bool IsSetPipelineId()
         {
             return this._pipelineId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags to associated with a pipeline. Tags let you control access to pipelines.
+        /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
+        /// User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -1,6 +1,8 @@
-﻿using Amazon.Runtime;
+﻿using Amazon;
+using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using AWSSDK_DotNet.IntegrationTests.Tests;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,12 +16,96 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
     {
         // Flag to force failing of a first request, but passing of retry requests
         public static bool FailOriginalRequests = false;
+        public static bool TestClockSkewCorrection = false;
+        public static bool SetIncorrectClockOffsetFuture = false;
 
         public static void ConfigureClient(AmazonServiceClient client)
         {
             if (FailOriginalRequests)
                 ForceConfigureClient(client);
+
+            // Attach events to client
+
+            client.BeforeRequestEvent += (s, e) =>
+            {
+                if (TestClockSkewCorrection)
+                {
+                    // set clockskew correction to wrong value
+                    SetIncorrectOffset();
+                }
+            };
+            client.AfterResponseEvent += (s, e) =>
+            {
+            };
+            client.ExceptionEvent += (s, e) =>
+            {
+            };
         }
+
+        #region Clock Skew testing
+
+        /// <summary>
+        /// Disables clock skew correction until result is disposed
+        /// </summary>
+        /// <returns></returns>
+        public static IDisposable DisableClockSkewCorrection()
+        {
+            return ClockSkewTemporarySwitch.Disable();
+        }
+
+        /// <summary>
+        /// Enables clock skew correction until result is disposed
+        /// </summary>
+        /// <returns></returns>
+        public static IDisposable EnableClockSkewCorrection()
+        {
+            return ClockSkewTemporarySwitch.Enable();
+        }
+
+        /// <summary>
+        /// Class that switches clock skew correction on or off at creation,
+        /// then returns to the previous setting when disposed
+        /// </summary>
+        private class ClockSkewTemporarySwitch : IDisposable
+        {
+            public bool OldValue { get; private set; }
+
+            public ClockSkewTemporarySwitch(bool temporarilyCorrectClockSkew)
+            {
+                OldValue = AWSConfigs.CorrectForClockSkew;
+
+                AWSConfigs.CorrectForClockSkew = temporarilyCorrectClockSkew;
+            }
+
+            public static ClockSkewTemporarySwitch Enable()
+            {
+                return new ClockSkewTemporarySwitch(temporarilyCorrectClockSkew: true);
+            }
+            public static ClockSkewTemporarySwitch Disable()
+            {
+                return new ClockSkewTemporarySwitch(temporarilyCorrectClockSkew: false);
+            }
+
+            public void Dispose()
+            {
+                AWSConfigs.CorrectForClockSkew = OldValue;
+            }
+        }
+
+        private static void SetIncorrectOffset()
+        {
+            TimeSpan offset;
+            if (SetIncorrectClockOffsetFuture)
+                offset = General.IncorrectPositiveClockSkewOffset;
+            else
+                offset = General.IncorrectNegativeClockSkewOffset;
+            General.SetClockSkewCorrection(offset);
+        }
+
+        #endregion
+
+        #region Retry testing
+
         public static void ForceConfigureClient(AmazonServiceClient client)
         {
             RetryHttpRequestFactory.AddToClient(client);
@@ -97,5 +183,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 IsRewindable = requestContext.Request.IsRequestStreamRewindable();
             }
         }
+
+        #endregion
     }
 }

@@ -1013,7 +1013,6 @@
     <Compile Include="Amazon.S3\Encryption\EncryptionInstructions.cs" />
     <Compile Include="Amazon.S3\Encryption\EncryptionUtils.cs" />
     <Compile Include="Amazon.S3\Util\IAsyncCancelableResult.cs" />
-    <Compile Include="Amazon.Runtime\AbstractWebServiceClient.cs" />
     <Compile Include="Amazon.Runtime\AmazonClientException.cs" />
     <Compile Include="Amazon.Runtime\AmazonServiceException.cs" />
     <Compile Include="Amazon.Runtime\AmazonUnmarshallingException.cs" />

@@ -41,7 +41,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "2.3.22.0";
+        internal const string SDKVersionNumber = "2.3.23.0";
 
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
@@ -653,7 +653,7 @@ namespace Amazon.Util
         {
             get
             {
-                DateTime dateTime = DateTime.UtcNow;
+                DateTime dateTime = AWSSDKUtils.CorrectedUtcNow;
                 DateTime formatted = new DateTime(
                     dateTime.Year,
                     dateTime.Month,
@@ -694,7 +694,7 @@ namespace Amazon.Util
         /// <returns>The ISO8601 formatted future timestamp.</returns>
         public static string GetFormattedTimestampISO8601(int minutesFromNow)
         {
-            DateTime dateTime = DateTime.UtcNow.AddMinutes(minutesFromNow);
+            DateTime dateTime = AWSSDKUtils.CorrectedUtcNow.AddMinutes(minutesFromNow);
             DateTime formatted = new DateTime(
                 dateTime.Year,
                 dateTime.Month,
@@ -734,7 +734,7 @@ namespace Amazon.Util
         /// <returns>The ISO8601 formatted future timestamp.</returns>
         public static string GetFormattedTimestampRFC822(int minutesFromNow)
         {
-            DateTime dateTime = DateTime.UtcNow.AddMinutes(minutesFromNow);
+            DateTime dateTime = AWSSDKUtils.CorrectedUtcNow.AddMinutes(minutesFromNow);
             DateTime formatted = new DateTime(
                 dateTime.Year,
                 dateTime.Month,
@@ -838,6 +838,23 @@ namespace Amazon.Util
             }
 
             return buffer;
+        }
+
+        /// <summary>
+        /// Returns DateTime.UtcNow + ClockOffset when
+        /// <seealso cref="AWSConfigs.CorrectForClockSkew"/> is true.
+        /// This value should be used when constructing requests, as it
+        /// will represent accurate time w.r.t. AWS servers.
+        /// </summary>
+        public static DateTime CorrectedUtcNow
+        {
+            get
+            {
+                var now = DateTime.UtcNow;
+                if (AWSConfigs.CorrectForClockSkew)
+                    now += AWSConfigs.ClockOffset;
+                return now;
+            }
         }
 
         #endregion

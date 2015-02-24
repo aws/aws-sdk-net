@@ -31,6 +31,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         {
             return ((a - b).GetAbsolute() < timeSpanEpsilon);
         }
+
+        public static TimeSpan Scale(this TimeSpan self, double scale)
+        {
+            return new TimeSpan((long)(self.Ticks * scale));
+        }
+        public static TimeSpan Scale(this TimeSpan self, long scale)
+        {
+            return new TimeSpan(self.Ticks * scale);
+        }
     }
 
     public static class DateTimeExtensions

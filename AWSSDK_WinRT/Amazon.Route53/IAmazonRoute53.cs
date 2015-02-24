@@ -305,6 +305,21 @@ namespace Amazon.Route53
 
         #endregion
                 
+        #region  GetHostedZoneCount
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHostedZoneCount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHostedZoneCount operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetHostedZoneCountResponse> GetHostedZoneCountAsync(GetHostedZoneCountRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetReusableDelegationSet
 
         /// <summary>
@@ -362,6 +377,21 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ListHostedZonesResponse> ListHostedZonesAsync(ListHostedZonesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListHostedZonesByName
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListHostedZonesByName operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListHostedZonesByName operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListHostedZonesByNameResponse> ListHostedZonesByNameAsync(ListHostedZonesByNameRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

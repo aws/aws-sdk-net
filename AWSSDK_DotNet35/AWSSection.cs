@@ -51,6 +51,7 @@ namespace Amazon
         private const string proxy = "proxy";
         private const string profileNameKey = "profileName";
         private const string profilesLocationKey = "profilesLocation";
+        private const string correctForClockSkewKey = "correctForClockSkew";
 
         [ConfigurationProperty(loggingKey)]
         public LoggingSection Logging
@@ -106,6 +107,13 @@ namespace Amazon
         {
             get { return (string)this[profilesLocationKey]; }
             set { this[profilesLocationKey] = value; }
+        }
+
+        [ConfigurationProperty(correctForClockSkewKey)]
+        public bool CorrectForClockSkew
+        {
+            get { return (bool)this[correctForClockSkewKey]; }
+            set { this[correctForClockSkewKey] = value; }
         }
 
         /// <summary>

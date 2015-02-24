@@ -109,6 +109,9 @@ namespace Amazon.Runtime.Internal.Auth
             request.Headers[HeaderKeys.DateHeader] = date;
             request.Headers[HeaderKeys.XAmzDateHeader] = date;
 
+            // Clear out existing auth header (can be there if retry)
+            request.Headers.Remove(HeaderKeys.XAmzAuthorizationHeader);
+
             // AWS3 HTTP requires that we sign the Host header
             // so we have to have it in the request by the time we sign.
             string hostHeader = request.Endpoint.Host;
@@ -219,8 +222,7 @@ namespace Amazon.Runtime.Internal.Auth
             if (request.Content == null)
                 return string.Empty;
 
-            Encoding encoding = Encoding.GetEncoding(DEFAULT_ENCODING);
-            return encoding.GetString(request.Content, 0, request.Content.Length);
+            return Encoding.UTF8.GetString(request.Content, 0, request.Content.Length);
         }
 
         private static string GetSignedHeadersComponent(IRequest request)

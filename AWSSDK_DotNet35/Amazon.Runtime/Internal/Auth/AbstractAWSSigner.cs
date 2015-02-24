@@ -44,9 +44,6 @@ namespace Amazon.Runtime.Internal.Auth
             }
         }
 
-
-        protected const string DEFAULT_ENCODING = "UTF-8";
-
         /// <summary>
         /// Computes RFC 2104-compliant HMAC signature.
         /// </summary>

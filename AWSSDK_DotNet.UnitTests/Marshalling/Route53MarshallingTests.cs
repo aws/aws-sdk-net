@@ -604,6 +604,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("Route53")]
+        public void GetHostedZoneCountMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetHostedZoneCount");
+
+            var request = InstantiateClassGenerator.Execute<GetHostedZoneCountRequest>();
+            var marshaller = new GetHostedZoneCountRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetHostedZoneCount", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetHostedZoneCountResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetHostedZoneCountResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
         public void GetReusableDelegationSetMarshallTest()
         {
             var operation = service_model.FindOperation("GetReusableDelegationSet");
@@ -720,6 +751,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListHostedZonesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListHostedZonesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void ListHostedZonesByNameMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListHostedZonesByName");
+
+            var request = InstantiateClassGenerator.Execute<ListHostedZonesByNameRequest>();
+            var marshaller = new ListHostedZonesByNameRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("ListHostedZonesByName", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListHostedZonesByNameResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListHostedZonesByNameResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

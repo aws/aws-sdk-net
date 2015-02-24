@@ -14,6 +14,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
     /// </summary>
     public class ConsoleTraceListener : TraceListener
     {
+        private static string TimeStamp
+        {
+            get
+            {
+                var now = DateTime.Now;
+                return now.ToString("HH:mm:ss:fffffff");
+            }
+        }
+
         public override void Write(string message)
         {
             Console.Write(message);
@@ -21,7 +30,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 
         public override void WriteLine(string message)
         {
-            Console.WriteLine(message);
+            Console.WriteLine(TimeStamp + " >>> " + message);
         }
     }
 }

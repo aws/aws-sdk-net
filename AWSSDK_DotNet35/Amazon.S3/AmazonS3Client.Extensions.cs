@@ -177,7 +177,7 @@ namespace Amazon.S3
                 uriResourcePath.Append(S3Transforms.ToStringValue(getPreSignedUrlRequest.Key));
             }
 
-            var baselineTime = aws4Signing ? DateTime.UtcNow : new DateTime(1970, 1, 1);
+            var baselineTime = aws4Signing ? AWSSDKUtils.CorrectedUtcNow : new DateTime(1970, 1, 1);
             var expires = Convert.ToInt64((getPreSignedUrlRequest.Expires.ToUniversalTime() - baselineTime).TotalSeconds);
 
             if (aws4Signing && expires > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry)

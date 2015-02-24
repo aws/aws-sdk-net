@@ -44,12 +44,12 @@ namespace Amazon.DataPipeline
     ///  
     /// <para>
     ///  The second set of actions are used by a task runner application that calls the AWS
-    /// Data Pipeline API to receive the next task ready for processing. The logic for performing
-    /// the task, such as querying the data, running data analysis, or converting the data
-    /// from one format to another, is contained within the task runner. The task runner performs
-    /// the task assigned to it by the web service, reporting progress to the web service
-    /// as it does so. When the task is done, the task runner reports the final success or
-    /// failure of the task to the web service. 
+    /// Data Pipeline service to receive the next task ready for processing. The logic for
+    /// performing the task, such as querying the data, running data analysis, or converting
+    /// the data from one format to another, is contained within the task runner. The task
+    /// runner performs the task assigned to it by the web service, reporting progress to
+    /// the web service as it does so. When the task is done, the task runner reports the
+    /// final success or failure of the task to the web service. 
     /// </para>
     ///  
     /// <para>
@@ -109,6 +109,68 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ActivatePipelineResponse> ActivatePipelineAsync(ActivatePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AddTags
+
+        /// <summary>
+        /// Add or modify tags in an existing pipeline.
+        /// </summary>
+        /// <param name="pipelineId">The identifier of the pipeline to which you want to add the tags.</param>
+        /// <param name="tags">The tags as key/value pairs to add to the pipeline.</param>
+        /// 
+        /// <returns>The response from the AddTags service method, as returned by DataPipeline.</returns>
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
+        /// The request was not valid. Verify that your request was properly formatted, that the
+        /// signature was generated with the correct credentials, and that you haven't exceeded
+        /// any of the service limits for your account.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
+        /// The specified pipeline has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was not found. Verify that you used the correct user and account
+        /// identifiers.
+        /// </exception>
+        AddTagsResponse AddTags(string pipelineId, List<Tag> tags);
+
+        /// <summary>
+        /// Add or modify tags in an existing pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
+        /// 
+        /// <returns>The response from the AddTags service method, as returned by DataPipeline.</returns>
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
+        /// The request was not valid. Verify that your request was properly formatted, that the
+        /// signature was generated with the correct credentials, and that you haven't exceeded
+        /// any of the service limits for your account.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
+        /// The specified pipeline has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was not found. Verify that you used the correct user and account
+        /// identifiers.
+        /// </exception>
+        AddTagsResponse AddTags(AddTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -230,6 +292,40 @@ namespace Amazon.DataPipeline
         #endregion
         
         #region  DescribePipelines
+
+        /// <summary>
+        /// Retrieve metadata about one or more pipelines. The information retrieved includes
+        /// the name of the pipeline, the pipeline identifier, its current state, and the user
+        /// account that owns the pipeline. Using account credentials, you can retrieve metadata
+        /// about pipelines that you or your IAM users have created. If you are using an IAM user
+        /// account, you can retrieve metadata about only those pipelines you have read permission
+        /// for. 
+        /// 
+        ///  
+        /// <para>
+        ///  To retrieve the full pipeline definition instead of metadata about the pipeline,
+        /// call the <a>GetPipelineDefinition</a> action. 
+        /// </para>
+        /// </summary>
+        /// <param name="pipelineIds">Identifiers of the pipelines to describe. You can pass as many as 25 identifiers in a single call to <a>DescribePipelines</a>. You can obtain pipeline identifiers by calling <a>ListPipelines</a>.</param>
+        /// 
+        /// <returns>The response from the DescribePipelines service method, as returned by DataPipeline.</returns>
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
+        /// The request was not valid. Verify that your request was properly formatted, that the
+        /// signature was generated with the correct credentials, and that you haven't exceeded
+        /// any of the service limits for your account.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
+        /// The specified pipeline has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was not found. Verify that you used the correct user and account
+        /// identifiers.
+        /// </exception>
+        DescribePipelinesResponse DescribePipelines(List<string> pipelineIds);
 
         /// <summary>
         /// Retrieve metadata about one or more pipelines. The information retrieved includes
@@ -555,6 +651,68 @@ namespace Amazon.DataPipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<QueryObjectsResponse> QueryObjectsAsync(QueryObjectsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RemoveTags
+
+        /// <summary>
+        /// Remove existing tags from a pipeline.
+        /// </summary>
+        /// <param name="pipelineId">The pipeline from which you want to remove tags.</param>
+        /// <param name="tagKeys">The keys of the tags you wish to remove.</param>
+        /// 
+        /// <returns>The response from the RemoveTags service method, as returned by DataPipeline.</returns>
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
+        /// The request was not valid. Verify that your request was properly formatted, that the
+        /// signature was generated with the correct credentials, and that you haven't exceeded
+        /// any of the service limits for your account.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
+        /// The specified pipeline has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was not found. Verify that you used the correct user and account
+        /// identifiers.
+        /// </exception>
+        RemoveTagsResponse RemoveTags(string pipelineId, List<string> tagKeys);
+
+        /// <summary>
+        /// Remove existing tags from a pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTags service method.</param>
+        /// 
+        /// <returns>The response from the RemoveTags service method, as returned by DataPipeline.</returns>
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
+        /// The request was not valid. Verify that your request was properly formatted, that the
+        /// signature was generated with the correct credentials, and that you haven't exceeded
+        /// any of the service limits for your account.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
+        /// The specified pipeline has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was not found. Verify that you used the correct user and account
+        /// identifiers.
+        /// </exception>
+        RemoveTagsResponse RemoveTags(RemoveTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

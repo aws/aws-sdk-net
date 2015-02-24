@@ -69,7 +69,6 @@
     <Compile Include="Runtime\ErrorHandlerTests.cs" />
     <Compile Include="Runtime\HttpHandlerTests.cs" />
     <Compile Include="Runtime\HttpHandlerWithHttpClientTests.cs" />
-    <Compile Include="Runtime\HttpRequestMessageFactoryTests.cs" />
     <Compile Include="Runtime\HttpWebRequestFactoryTests.cs" />
     <Compile Include="Runtime\RedirectHandlerTests.cs" />
     <Compile Include="Runtime\RetryAndErrorHandlerTests.cs" />

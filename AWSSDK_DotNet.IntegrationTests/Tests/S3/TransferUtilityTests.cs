@@ -74,17 +74,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void MultipartUploadProgressTest()
         {
-            var fileName = UtilityMethods.GenerateName(@"MultipartUploadTest\File");
-            var progressValidator = new TransferProgressValidator<UploadProgressArgs>
+            // disable clock skew testing, this is a multithreaded test
+            using (RetryUtilities.DisableClockSkewCorrection())
             {
-                ValidateProgressInterval = false,
-                Validate = (p) =>
+                var fileName = UtilityMethods.GenerateName(@"MultipartUploadTest\File");
+                var progressValidator = new TransferProgressValidator<UploadProgressArgs>
                 {
-                    Assert.AreEqual(p.FilePath, Path.Combine(basePath, fileName));
-                }
-            };
-            Upload(fileName, 20 * MEG_SIZE, progressValidator);
-            progressValidator.AssertOnCompletion();
+                    ValidateProgressInterval = false,
+                    Validate = (p) =>
+                    {
+                        Assert.AreEqual(p.FilePath, Path.Combine(basePath, fileName));
+                    }
+                };
+                Upload(fileName, 20 * MEG_SIZE, progressValidator);
+                progressValidator.AssertOnCompletion();
+            }
         }
 
         void Upload(string fileName, long size, 
@@ -197,12 +201,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void DownloadDirectoryProgressTest()
         {
-            var directoryName = UtilityMethods.GenerateName(@"DownloadDirectoryTest");
-            var progressValidator = new DirectoryProgressValidator<DownloadDirectoryProgressArgs>();
-            ConfigureProgressValidator(progressValidator);
+            // disable clock skew testing, this is a multithreaded test
+            using (RetryUtilities.DisableClockSkewCorrection())
+            {
+                var directoryName = UtilityMethods.GenerateName(@"DownloadDirectoryTest");
+                var progressValidator = new DirectoryProgressValidator<DownloadDirectoryProgressArgs>();
+                ConfigureProgressValidator(progressValidator);
 
-            DownloadDirectory(directoryName, progressValidator);
-            progressValidator.AssertOnCompletion();
+                DownloadDirectory(directoryName, progressValidator);
+                progressValidator.AssertOnCompletion();
+            }
         }
 
         void DownloadDirectory(string directoryName, 
@@ -367,6 +375,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             progressValidator.Validate = (progress, lastProgress) =>
             {
+                // Skip validation if testing clock skew correction
+                if (RetryUtilities.TestClockSkewCorrection)
+                    return;
+
                 Assert.IsFalse(string.IsNullOrEmpty(progress.CurrentFile));
                 Assert.IsTrue(progress.TotalNumberOfBytesForCurrentFile > 0);
                 Assert.IsTrue(progress.TransferredBytesForCurrentFile > 0);
@@ -451,6 +463,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             public void AssertOnCompletion()
             {
+                // Skip validation if testing clock skew correction
+                if (RetryUtilities.TestClockSkewCorrection)
+                    return;
+
                 if (this.ProgressEventException != null)
                     throw this.ProgressEventException;
 

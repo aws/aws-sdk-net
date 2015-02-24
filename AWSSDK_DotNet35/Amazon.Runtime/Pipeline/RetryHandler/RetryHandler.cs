@@ -173,6 +173,9 @@ namespace Amazon.Runtime.Internal
 
                     PrepareForRetry(requestContext);
 
+                    // Clear out current exception
+                    responseContext.AsyncResult.Exception = null;
+
                     using (requestContext.Metrics.StartEvent(Metric.RetryPauseTime))
                         this.RetryPolicy.WaitBeforeRetry(syncExecutionContext);
 

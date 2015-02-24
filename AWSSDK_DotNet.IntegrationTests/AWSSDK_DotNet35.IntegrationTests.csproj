@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Web" />
     <Reference Include="System.XML" />
   </ItemGroup>
@@ -66,16 +67,16 @@
     <Compile Include=".\Utils\*.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AWSSDK_DotNet35\AWSSDK_DotNet35.csproj">
-      <Project>{40e91e2d-70f3-463d-9e3e-408ae2a70ba8}</Project>
-      <Name>AWSSDK_DotNet35</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Config\App.35.config">
       <SubType>Designer</SubType>
     </None>
     <EmbeddedResource Include="Tests\CloudTrailBucketPolicy.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AWSSDK_DotNet35\AWSSDK_DotNet35.csproj">
+      <Project>{40e91e2d-70f3-463d-9e3e-408ae2a70ba8}</Project>
+      <Name>AWSSDK_DotNet35</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

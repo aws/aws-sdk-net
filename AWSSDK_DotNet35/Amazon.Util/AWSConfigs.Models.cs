@@ -56,6 +56,7 @@ namespace Amazon.Util
                     Region = value.SystemName;
             }
         }
+        public bool CorrectForClockSkew { get; set; }
 
         private const string _rootAwsSectionName = "aws";
         internal RootConfig()
@@ -70,6 +71,7 @@ namespace Amazon.Util
             Region = AWSConfigs._awsRegion;
             ProfileName = AWSConfigs._awsProfileName;
             ProfilesLocation = AWSConfigs._awsAccountsLocation;
+            CorrectForClockSkew = true;
 
 #if !WIN_RT && !WINDOWS_PHONE
             var root = AWSConfigs.GetSection<AWSSection>(_rootAwsSectionName);
@@ -84,6 +86,7 @@ namespace Amazon.Util
             Region = Choose(Region, root.Region);
             ProfileName = Choose(ProfileName, root.ProfileName);
             ProfilesLocation = Choose(ProfilesLocation, root.ProfilesLocation);
+            CorrectForClockSkew = root.CorrectForClockSkew;
 #endif
         }
 

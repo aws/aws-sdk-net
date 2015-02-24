@@ -92,17 +92,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 ValidateObjectMetadataAndHeaders(key);
 
                 // Test large TransferUtility upload
-                key = "transferUtilityLarge" + random.Next();
-                UtilityMethods.GenerateFile(tempFile, largeFileSize);
-                var largeRequest = new TransferUtilityUploadRequest
+                // disable clock skew testing, this is a multithreaded operation
+                using (RetryUtilities.DisableClockSkewCorrection())
                 {
-                    BucketName = bucketName,
-                    Key = key,
-                    FilePath = tempFile
-                };
-                SetMetadataAndHeaders(largeRequest);
-                tu.Upload(largeRequest);
-                ValidateObjectMetadataAndHeaders(key);
+                    key = "transferUtilityLarge" + random.Next();
+                    UtilityMethods.GenerateFile(tempFile, largeFileSize);
+                    var largeRequest = new TransferUtilityUploadRequest
+                    {
+                        BucketName = bucketName,
+                        Key = key,
+                        FilePath = tempFile
+                    };
+                    SetMetadataAndHeaders(largeRequest);
+                    tu.Upload(largeRequest);
+                    ValidateObjectMetadataAndHeaders(key);
+                }
             }
         }
 

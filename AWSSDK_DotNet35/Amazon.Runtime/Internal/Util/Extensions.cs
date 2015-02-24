@@ -1,4 +1,5 @@
-﻿/*
+﻿using Amazon.Util;
+/*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,6 +15,7 @@
  */
 using System;
 using System.Diagnostics;
+using System.Text;
 
 #if WIN_RT
 using Amazon.MissingTypes;
@@ -30,6 +32,26 @@ namespace Amazon.Runtime.Internal.Util
             double stopwatchTicks = self.ElapsedTicks;
             long ticks = (long)(stopwatchTicks * tickFrequency);
             return ticks;
+        }
+
+        /// <summary>
+        /// Returns true if the Content is set or there are
+        /// query parameters.
+        /// </summary>
+        /// <param name="request">This request</param>
+        /// <returns>True if data is present; false otherwise.</returns>
+        public static bool HasRequestData(this IRequest request)
+        {
+            if (request == null)
+                return false;
+
+            if (request.ContentStream != null || request.Content != null)
+                return true;
+
+            if (request.Parameters.Count > 0)
+                return true;
+
+            return false;
         }
     }
 }

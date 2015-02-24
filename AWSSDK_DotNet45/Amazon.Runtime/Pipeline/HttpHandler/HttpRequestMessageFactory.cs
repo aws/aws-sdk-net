@@ -142,6 +142,11 @@ namespace Amazon.Runtime
         /// <param name="requestContext">The request context.</param>
         public void ConfigureRequest(IRequestContext requestContext)
         {
+            // Configure the Expect 100-continue header
+            if (requestContext != null && requestContext.OriginalRequest != null)
+            {
+                _httpClient.DefaultRequestHeaders.ExpectContinue = requestContext.OriginalRequest.Expect100Continue;
+            }
         }
 
         /// <summary>
@@ -337,8 +342,6 @@ namespace Amazon.Runtime
                 // Use default value (100 seconds) for other services.
                 httpClient.Timeout = _clientConfig.Timeout.Value;
             }
-            // Disable the Expect 100-continue header
-            httpClient.DefaultRequestHeaders.ExpectContinue = false;
 
             return httpClient;
         }

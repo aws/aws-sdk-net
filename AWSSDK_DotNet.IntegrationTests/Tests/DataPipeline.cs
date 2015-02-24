@@ -30,7 +30,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         [TestCategory("DataPipeline")]
         public void TestPipelineOperations()
         {
@@ -68,11 +68,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     });
                 Assert.IsFalse(putPipelineDefinitionResult.Errored);
 
-                var activatePipelineResult
-                    = Client.ActivatePipeline(new ActivatePipelineRequest
-                    {
-                        PipelineId = createdPipelineId
-                    });
+                var tags = new List<Tag>
+                {
+                    new Tag { Key = "tag1", Value = "42" },
+                    new Tag { Key = "tag2", Value = DateTime.Now.ToString() }
+                };
+                Client.AddTags(createdPipelineId, tags);
+
+                var describeResult = Client.DescribePipelines(new List<string> { createdPipelineId }).PipelineDescriptionList;
+                Assert.AreEqual(1, describeResult.Count);
+                Assert.AreEqual(tags.Count, describeResult.First().Tags.Count);
+
+                Client.RemoveTags(createdPipelineId, new List<string> { "tag1" });
+
+                describeResult = Client.DescribePipelines(new List<string> { createdPipelineId }).PipelineDescriptionList;
+                Assert.AreEqual(1, describeResult.Count);
+                Assert.AreEqual(1, describeResult.First().Tags.Count);
+
+                var activatePipelineResult = Client.ActivatePipeline(new ActivatePipelineRequest
+                {
+                    PipelineId = createdPipelineId
+                });
                 Assert.IsNotNull(activatePipelineResult);
 
                 

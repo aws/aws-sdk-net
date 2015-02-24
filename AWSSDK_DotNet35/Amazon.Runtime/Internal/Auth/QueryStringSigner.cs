@@ -55,6 +55,8 @@ namespace Amazon.Runtime.Internal.Auth
             request.Parameters["SignatureVersion"] = clientConfig.SignatureVersion;
             request.Parameters["SignatureMethod"] = clientConfig.SignatureMethod.ToString();
             request.Parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
+            // remove Signature parameter, in case this is a retry
+            request.Parameters.Remove("Signature");
 
             string toSign = AWSSDKUtils.CalculateStringToSignV2(request.Parameters, request.Endpoint.AbsoluteUri);
             metrics.AddProperty(Metric.StringToSign, toSign);

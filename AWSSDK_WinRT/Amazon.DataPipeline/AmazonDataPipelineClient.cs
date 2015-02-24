@@ -50,12 +50,12 @@ namespace Amazon.DataPipeline
     ///  
     /// <para>
     ///  The second set of actions are used by a task runner application that calls the AWS
-    /// Data Pipeline API to receive the next task ready for processing. The logic for performing
-    /// the task, such as querying the data, running data analysis, or converting the data
-    /// from one format to another, is contained within the task runner. The task runner performs
-    /// the task assigned to it by the web service, reporting progress to the web service
-    /// as it does so. When the task is done, the task runner reports the final success or
-    /// failure of the task to the web service. 
+    /// Data Pipeline service to receive the next task ready for processing. The logic for
+    /// performing the task, such as querying the data, running data analysis, or converting
+    /// the data from one format to another, is contained within the task runner. The task
+    /// runner performs the task assigned to it by the web service, reporting progress to
+    /// the web service as it does so. When the task is done, the task runner reports the
+    /// final success or failure of the task to the web service. 
     /// </para>
     ///  
     /// <para>
@@ -218,6 +218,36 @@ namespace Amazon.DataPipeline
             var unmarshaller = ActivatePipelineResponseUnmarshaller.Instance;
 
             return InvokeAsync<ActivatePipelineRequest,ActivatePipelineResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AddTags
+
+        internal AddTagsResponse AddTags(AddTagsRequest request)
+        {
+            var marshaller = new AddTagsRequestMarshaller();
+            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+
+            return Invoke<AddTagsRequest,AddTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AddTagsRequestMarshaller();
+            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddTagsRequest,AddTagsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -522,6 +552,36 @@ namespace Amazon.DataPipeline
             var unmarshaller = QueryObjectsResponseUnmarshaller.Instance;
 
             return InvokeAsync<QueryObjectsRequest,QueryObjectsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveTags
+
+        internal RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
+        {
+            var marshaller = new RemoveTagsRequestMarshaller();
+            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveTagsRequest,RemoveTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveTagsRequestMarshaller();
+            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveTagsRequest,RemoveTagsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

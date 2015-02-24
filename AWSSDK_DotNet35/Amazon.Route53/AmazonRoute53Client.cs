@@ -1499,6 +1499,74 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  GetHostedZoneCount
+
+        /// <summary>
+        /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to
+        /// the <code>2013-04-01/hostedzonecount</code> resource.
+        /// </summary>
+        /// 
+        /// <returns>The response from the GetHostedZoneCount service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        public GetHostedZoneCountResponse GetHostedZoneCount()
+        {
+            return GetHostedZoneCount(new GetHostedZoneCountRequest());
+        }
+
+        /// <summary>
+        /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to
+        /// the <code>2013-04-01/hostedzonecount</code> resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHostedZoneCount service method.</param>
+        /// 
+        /// <returns>The response from the GetHostedZoneCount service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        public GetHostedZoneCountResponse GetHostedZoneCount(GetHostedZoneCountRequest request)
+        {
+            var marshaller = new GetHostedZoneCountRequestMarshaller();
+            var unmarshaller = GetHostedZoneCountResponseUnmarshaller.Instance;
+
+            return Invoke<GetHostedZoneCountRequest,GetHostedZoneCountResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHostedZoneCount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHostedZoneCount operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHostedZoneCount
+        ///         operation.</returns>
+        public IAsyncResult BeginGetHostedZoneCount(GetHostedZoneCountRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetHostedZoneCountRequestMarshaller();
+            var unmarshaller = GetHostedZoneCountResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetHostedZoneCountRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetHostedZoneCount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHostedZoneCount.</param>
+        /// 
+        /// <returns>Returns a  GetHostedZoneCountResult from Route53.</returns>
+        public  GetHostedZoneCountResponse EndGetHostedZoneCount(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetHostedZoneCountResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetReusableDelegationSet
 
         /// <summary>
@@ -1839,6 +1907,72 @@ namespace Amazon.Route53
         public  ListHostedZonesResponse EndListHostedZones(IAsyncResult asyncResult)
         {
             return EndInvoke<ListHostedZonesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListHostedZonesByName
+
+        /// <summary>
+        /// To retrieve a list of your hosted zones in lexicographic order, send a <code>GET</code>
+        /// request to the <code>2013-04-01/hostedzonesbyname</code> resource. The response to
+        /// this request includes a <code>HostedZones</code> element with zero or more <code>HostedZone</code>
+        /// child elements lexicographically ordered by DNS name. By default, the list of hosted
+        /// zones is displayed on a single page. You can control the length of the page that is
+        /// displayed by using the <code>MaxItems</code> parameter. You can use the <code>DNSName</code>
+        /// and <code>HostedZoneId</code> parameters to control the hosted zone that the list
+        /// begins with.
+        /// 
+        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
+        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHostedZonesByName service method.</param>
+        /// 
+        /// <returns>The response from the ListHostedZonesByName service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidDomainNameException">
+        /// This error indicates that the specified domain name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        public ListHostedZonesByNameResponse ListHostedZonesByName(ListHostedZonesByNameRequest request)
+        {
+            var marshaller = new ListHostedZonesByNameRequestMarshaller();
+            var unmarshaller = ListHostedZonesByNameResponseUnmarshaller.Instance;
+
+            return Invoke<ListHostedZonesByNameRequest,ListHostedZonesByNameResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListHostedZonesByName operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListHostedZonesByName operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHostedZonesByName
+        ///         operation.</returns>
+        public IAsyncResult BeginListHostedZonesByName(ListHostedZonesByNameRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListHostedZonesByNameRequestMarshaller();
+            var unmarshaller = ListHostedZonesByNameResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListHostedZonesByNameRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListHostedZonesByName operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHostedZonesByName.</param>
+        /// 
+        /// <returns>Returns a  ListHostedZonesByNameResult from Route53.</returns>
+        public  ListHostedZonesByNameResponse EndListHostedZonesByName(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListHostedZonesByNameResponse>(asyncResult);
         }
 
         #endregion

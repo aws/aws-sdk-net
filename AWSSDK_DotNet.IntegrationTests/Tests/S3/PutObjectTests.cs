@@ -15,6 +15,8 @@ using Amazon.S3.Util;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
+using System.Diagnostics;
+using Amazon.Util;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -28,6 +30,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private Random random = new Random();
         private static string bucketName;
+        private const string testContent = "This is the content body!";
 
         [ClassInitialize()]
         public static void Initialize(TestContext a)
@@ -37,7 +40,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             writer.Close();
 
             bucketName = S3TestUtils.CreateBucket(Client);
-            //Client.PutBucket(new PutBucketRequest() { BucketName = bucketName });
         }
 
 
@@ -73,8 +75,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-
  #if ASYNC_AWAIT
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async System.Threading.Tasks.Task PutObjectAsync()
+        {
+            PutObjectRequest request = new PutObjectRequest()
+            {
+                BucketName = bucketName,
+                Key = "contentBodyPut" + random.Next(),
+                ContentBody = testContent,
+                CannedACL = S3CannedACL.AuthenticatedRead
+            };
+            PutObjectResponse response = await Client.PutObjectAsync(request);
+
+            Console.WriteLine("S3 generated ETag: {0}", response.ETag);
+            Assert.IsTrue(response.ETag.Length > 0);
+        }
+
         [TestMethod]
         [TestCategory("S3")]
         public async System.Threading.Tasks.Task PutObjectCancellationTest()
@@ -111,7 +130,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
             Assert.Fail("An OperationCanceledException was not thrown");
         }
-#endif       
+#endif
         [TestMethod]
         [TestCategory("S3")]
         public void PutObjectWithExternalEndpoint()
@@ -177,7 +196,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 BucketName = bucketName,
                 Key = "contentBodyPut" + random.Next(),
-                ContentBody = "This is the content body!",
+                ContentBody = testContent,
                 CannedACL = S3CannedACL.AuthenticatedRead
             };
             request.Metadata.Add("Subject", "Content-As-Object");
@@ -185,7 +204,43 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             Console.WriteLine("S3 generated ETag: {0}", response.ETag);
             Assert.IsTrue(response.ETag.Length > 0);
+
+            VerifyPut(testContent, request);
         }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void PutObject_SigV4()
+        {
+            var oldS3SigV4 = AWSConfigs.S3Config.UseSignatureVersion4;
+            AWSConfigs.S3Config.UseSignatureVersion4 = true;
+
+            try
+            {
+                using (var client = new AmazonS3Client())
+                {
+                    RetryUtilities.ConfigureClient(client);
+
+                    PutObjectRequest request = new PutObjectRequest()
+                    {
+                        BucketName = bucketName,
+                        Key = "contentBodyPut" + random.Next(),
+                        ContentBody = "This is the content body!",
+                        CannedACL = S3CannedACL.AuthenticatedRead
+                    };
+                    request.Metadata.Add("Subject", "Content-As-Object");
+                    PutObjectResponse response = client.PutObject(request);
+
+                    Console.WriteLine("S3 generated ETag: {0}", response.ETag);
+                    Assert.IsTrue(response.ETag.Length > 0);
+                }
+            }
+            finally
+            {
+                AWSConfigs.S3Config.UseSignatureVersion4 = oldS3SigV4;
+            }
+        }
+
 
         [TestMethod]
         [TestCategory("S3")]
@@ -772,31 +827,36 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Key = sourceKey,
                 ContentBody = contents
             });
-            string url = Client.GetPreSignedURL(new GetPreSignedUrlRequest
-            {
-                BucketName = bucketName,
-                Key = sourceKey,
-                Expires = DateTime.Now + TimeSpan.FromHours(2)
-            });
 
-            HttpWebRequest httpRequest = HttpWebRequest.Create(url) as HttpWebRequest;
-            using (HttpWebResponse httpResponse = httpRequest.GetResponse() as HttpWebResponse)
-            using (Stream stream = httpResponse.GetResponseStream())
+            // Disable clock skew testing when generating a presigned url
+            using (RetryUtilities.DisableClockSkewCorrection())
             {
-                PutStream(destKey, length, stream);
-            }
-            string finalContents = GetContents(destKey);
-            Assert.AreEqual(contents, finalContents);
+                string url = Client.GetPreSignedURL(new GetPreSignedUrlRequest
+                {
+                    BucketName = bucketName,
+                    Key = sourceKey,
+                    Expires = DateTime.Now + TimeSpan.FromHours(2)
+                });
 
-            length -= 2;
-            httpRequest = HttpWebRequest.Create(url) as HttpWebRequest;
-            using (HttpWebResponse httpResponse = httpRequest.GetResponse() as HttpWebResponse)
-            using (Stream stream = httpResponse.GetResponseStream())
-            {
-                PutStream(destKey, length, stream);
+                HttpWebRequest httpRequest = HttpWebRequest.Create(url) as HttpWebRequest;
+                using (HttpWebResponse httpResponse = httpRequest.GetResponse() as HttpWebResponse)
+                using (Stream stream = httpResponse.GetResponseStream())
+                {
+                    PutStream(destKey, length, stream);
+                }
+                string finalContents = GetContents(destKey);
+                Assert.AreEqual(contents, finalContents);
+
+                length -= 2;
+                httpRequest = HttpWebRequest.Create(url) as HttpWebRequest;
+                using (HttpWebResponse httpResponse = httpRequest.GetResponse() as HttpWebResponse)
+                using (Stream stream = httpResponse.GetResponseStream())
+                {
+                    PutStream(destKey, length, stream);
+                }
+                finalContents = GetContents(destKey);
+                Assert.AreEqual(contents.Substring(0, length), finalContents);
             }
-            finalContents = GetContents(destKey);
-            Assert.AreEqual(contents.Substring(0, length), finalContents);
         }
 
         private void PutStream(string destKey, int length, Stream stream)
@@ -808,7 +868,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 InputStream = stream,
             };
             request.Headers.ContentLength = length;
-            Client.PutObject(request);
+            using (RetryUtilities.DisableClockSkewCorrection())
+            {
+                Client.PutObject(request);
+            }
         }
 
         private string GetContents(string key)
@@ -830,104 +893,125 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
-        public void TestStreamRetry1()
+        public void TestStreamRetry()
         {
-            string data = "sample data";
-            byte[] bytes = Encoding.UTF8.GetBytes(data);
+            var s3ClientBufferSize = new AmazonS3Config().BufferSize;
+            var chunkedWrapperBufferSize = ChunkedUploadWrapperStream.DefaultChunkSize;
+
+            var sizeForFailWithoutWriting = 0;
+            var sizeForFailWithSomeWriting = chunkedWrapperBufferSize * 2;
+            var arbitrarySizeForSuccess = s3ClientBufferSize * 2;
+            var runs = 3;
+
+            var exceptions = new List<Exception>();
+            for (int i = 0; i < runs; i++)
+            {
+                exceptions.Add(TryTest(sizeForFailWithoutWriting, failRequest: true));
+                exceptions.Add(TryTest(sizeForFailWithSomeWriting, failRequest: true));
+                exceptions.Add(TryTest(arbitrarySizeForSuccess, failRequest: false));
+            }
+
+            exceptions = exceptions.Where(e => e != null).ToList();
+            if (exceptions.Count > 0)
+#if ASYNC_AWAIT
+                throw new AggregateException(exceptions);
+#else
+                throw exceptions.First();
+#endif
+        }
+
+        private static Exception TryTest(int errorSize, bool failRequest)
+        {
+            try
+            {
+                Test(errorSize, failRequest);
+                return null;
+            }
+            catch(Exception e)
+            {
+                return e;
+            }
+        }
+        private static void Test(int errorSize, bool failRequest)
+        {
+            var actualSize = errorSize + 128;
+            //var data = new string('@', actualSize + bufferSize);
+            //byte[] bytes = Encoding.UTF8.GetBytes(data);
+            var bytes = CreateData(actualSize);
+
             // must precompute this and set in headers to avoid hash computation on ErrorStream
             // affecting the test
             var payloadhash = UtilityMethods.ToHex(UtilityMethods.ComputeSHA256(bytes), true);
+
             ErrorStream es = ErrorStream.Create(bytes);
-            es.MaxReadBytes = 3;
-            int requestCount = 0;
-            es.OnRead += (s, e) =>
-            {
-                if (++requestCount == 2)
-                    throw new IOException("Fake Exception");
-            };
+            if (failRequest)
+                es.MaxReadBytes = errorSize;
+            // 1 rewind for S3 pre-marshallers which reset position to 0
+            // 1 rewind for exception at error size
+            es.MinRewinds = 2;
+
             var putRequest = new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = "foo1",
-                InputStream = es,
                 AutoCloseStream = false
             };
-
             putRequest.Headers["x-amz-content-sha256"] = payloadhash;
-            Client.PutObject(putRequest);
+            putRequest.InputStream = es;
 
-            string responseData;
-            using (var responseStream = Client.GetObject(new GetObjectRequest
+            CallWithTimeout(() => Client.PutObject(putRequest), TimeSpan.FromSeconds(10));
+        }
+        static void CallWithTimeout(Action action, TimeSpan timeout)
+        {
+            if (System.Diagnostics.Debugger.IsAttached)
             {
-                BucketName = bucketName,
-                Key = putRequest.Key
-            }).ResponseStream)
-            using (StreamReader reader = new StreamReader(responseStream))
-            {
-                responseData = reader.ReadToEnd();
+                action();
+                return;
             }
 
-            Assert.AreEqual(data, responseData);
+            Thread threadToKill = null;
+            Action wrappedAction = () =>
+            {
+                threadToKill = Thread.CurrentThread;
+                action();
+            };
 
-            requestCount = 0;
-            putRequest.InputStream = es;
-            Client.PutObject(putRequest);
-
-            TestStreamRetry2();
+            IAsyncResult result = wrappedAction.BeginInvoke(null, null);
+            if (result.AsyncWaitHandle.WaitOne(timeout))
+            {
+                wrappedAction.EndInvoke(result);
+            }
+            else
+            {
+                threadToKill.Abort();
+                throw new TimeoutException();
+            }
+        }
+        private static byte[] CreateData(int size)
+        {
+            var data = new byte[size];
+            for(int i=0;i<size;i++)
+            {
+                var c = (i % 26) + 'a';
+                data[i] = (byte)c;
+            }
+            return data;
         }
 
-        [TestMethod]
-        [TestCategory("S3")]
-        public void TestStreamRetry2()
+        private static void VerifyPut(string data, PutObjectRequest putRequest)
         {
-            string data = "sample data";
-            byte[] bytes = Encoding.UTF8.GetBytes(data);
-
-            // must precompute this and set in headers to avoid hash computation on ErrorStream
-            // affecting the test
-            var payloadhash = UtilityMethods.ToHex(UtilityMethods.ComputeSHA256(bytes), true);
-            ErrorStream es = ErrorStream.Create(bytes, readOnly: true);
-            es.MaxReadBytes = 3;
-            int requestCount = 0;
-            es.OnRead += (s, e) =>
-            {
-                if (++requestCount == 2)
-                    throw new WebException("Fake WebException", WebExceptionStatus.KeepAliveFailure);
-            };
-            var putRequest = new PutObjectRequest
-            {
-                BucketName = bucketName,
-                Key = "foo",
-                InputStream = es,
-                Headers = { ContentLength = data.Length },
-            };
-            putRequest.Headers["x-amz-content-sha256"] = payloadhash;
-
-            var exception = AssertExtensions.ExpectException<AmazonServiceException>(() => Client.PutObject(putRequest));
-
-            es = ErrorStream.Create(bytes, readOnly: true);
-            es.MaxReadBytes = 3;
-            putRequest = new PutObjectRequest
-            {
-                BucketName = bucketName,
-                Key = "foo",
-                InputStream = es,
-                Headers = { ContentLength = data.Length },
-            };
-            putRequest.Headers["X-Amz-Content-SHA256"] = payloadhash;
-            Client.PutObject(putRequest);
-
-            string responseData;
-            using (var responseStream = Client.GetObject(new GetObjectRequest
+            var getRequest = new GetObjectRequest
             {
                 BucketName = bucketName,
                 Key = putRequest.Key
-            }).ResponseStream)
+            };
+            string responseData;
+            using (var response = Client.GetObject(getRequest))
+            using (var responseStream = response.ResponseStream)
             using (StreamReader reader = new StreamReader(responseStream))
             {
                 responseData = reader.ReadToEnd();
             }
-
             Assert.AreEqual(data, responseData);
         }
 
@@ -991,12 +1075,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private class ErrorStream : WrapperStream
         {
-            public ErrorStream(Stream stream)
+            private ErrorStream(Stream stream)
                 : base(stream)
             {
+                MaxReadBytes = -1;
+                MinRewinds = -1;
             }
-
-            public long DerivedLength { get; set; }
 
             public static ErrorStream Create(byte[] bytes, bool readOnly = false)
             {
@@ -1012,10 +1096,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     stream = new MemoryStream(bytes);
                 }
-                return new ErrorStream(stream)
-                {
-                    DerivedLength = length
-                };
+                return new ErrorStream(stream);
             }
 
             private static byte[] Compress(byte[] bytes)
@@ -1031,15 +1112,45 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
 
             public int MaxReadBytes { get; set; }
-
+            public int MinRewinds { get; set; }
             public event EventHandler OnRead;
+            public int TotalReadBytes { get; private set; }
+            public int Rewinds { get; private set; }
 
             public override int Read(byte[] buffer, int offset, int count)
             {
                 if (OnRead != null)
                     OnRead(this, null);
-                int newCount = Math.Min(MaxReadBytes, count);
-                return base.Read(buffer, offset, newCount);
+
+                var readCount = base.Read(buffer, offset, count);
+                TotalReadBytes += readCount;
+
+                bool throwBasedOnReadBytes = MaxReadBytes >= 0 && TotalReadBytes >= MaxReadBytes;
+                bool suppressThrowBasedOnRewinds = MinRewinds >= 0 && Rewinds >= MinRewinds;
+
+                if (throwBasedOnReadBytes && !suppressThrowBasedOnRewinds)
+                    throw new IOException("Fake Exception");
+
+                return readCount;
+            }
+
+            public override long Seek(long offset, SeekOrigin origin)
+            {
+                var value = base.Seek(offset, origin);
+                TotalReadBytes = 0;
+                Rewinds++;
+                return value;
+            }
+            public override long Position
+            {
+                get
+                {
+                    return base.Position;
+                }
+                set
+                {
+                    this.Seek(value, SeekOrigin.Begin);
+                }
             }
         }
     }

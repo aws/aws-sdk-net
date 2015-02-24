@@ -700,7 +700,7 @@ namespace Amazon.EC2.Import
                 {
                     BucketName = BucketName,
                     Key = manifestFileKey,
-                    Expires = DateTime.UtcNow.AddDays(UrlExpiryPeriod),
+                    Expires = AWSSDKUtils.CorrectedUtcNow.AddDays(UrlExpiryPeriod),
                     Verb = HttpVerb.GET
                 });
 
@@ -1031,7 +1031,7 @@ namespace Amazon.EC2.Import
         {
             try
             {
-                var urlExpiration = DateTime.UtcNow.AddDays(UrlExpiryPeriod);
+                var urlExpiration = AWSSDKUtils.CorrectedUtcNow.AddDays(UrlExpiryPeriod);
                 ConstructManifestArtifactKey(ImageFilePath);
 
                 var format = fileFormat;

@@ -83,7 +83,7 @@ namespace Amazon.DataPipeline.Model
         /// <para>
         /// Specifies the status to be set on all the objects in <code>objectIds</code>. For components,
         /// this can be either <code>PAUSE</code> or <code>RESUME</code>. For instances, this
-        /// can be either <code>CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.
+        /// can be either <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.
         /// </para>
         /// </summary>
         public string Status

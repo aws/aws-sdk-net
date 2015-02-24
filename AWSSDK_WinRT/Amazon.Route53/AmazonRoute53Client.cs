@@ -709,6 +709,40 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  GetHostedZoneCount
+
+        internal GetHostedZoneCountResponse GetHostedZoneCount()
+        {
+            return GetHostedZoneCount(new GetHostedZoneCountRequest());
+        }
+        internal GetHostedZoneCountResponse GetHostedZoneCount(GetHostedZoneCountRequest request)
+        {
+            var marshaller = new GetHostedZoneCountRequestMarshaller();
+            var unmarshaller = GetHostedZoneCountResponseUnmarshaller.Instance;
+
+            return Invoke<GetHostedZoneCountRequest,GetHostedZoneCountResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHostedZoneCount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHostedZoneCount operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetHostedZoneCountResponse> GetHostedZoneCountAsync(GetHostedZoneCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetHostedZoneCountRequestMarshaller();
+            var unmarshaller = GetHostedZoneCountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetHostedZoneCountRequest,GetHostedZoneCountResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetReusableDelegationSet
 
         internal GetReusableDelegationSetResponse GetReusableDelegationSet(GetReusableDelegationSetRequest request)
@@ -836,6 +870,36 @@ namespace Amazon.Route53
             var unmarshaller = ListHostedZonesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListHostedZonesRequest,ListHostedZonesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListHostedZonesByName
+
+        internal ListHostedZonesByNameResponse ListHostedZonesByName(ListHostedZonesByNameRequest request)
+        {
+            var marshaller = new ListHostedZonesByNameRequestMarshaller();
+            var unmarshaller = ListHostedZonesByNameResponseUnmarshaller.Instance;
+
+            return Invoke<ListHostedZonesByNameRequest,ListHostedZonesByNameResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListHostedZonesByName operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListHostedZonesByName operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListHostedZonesByNameResponse> ListHostedZonesByNameAsync(ListHostedZonesByNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListHostedZonesByNameRequestMarshaller();
+            var unmarshaller = ListHostedZonesByNameResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListHostedZonesByNameRequest,ListHostedZonesByNameResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

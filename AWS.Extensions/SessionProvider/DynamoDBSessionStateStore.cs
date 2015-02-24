@@ -323,7 +323,6 @@ namespace Amazon.SessionProvider
                 this._strictDisableSession = bool.Parse(config[CONFIG_STRICT_DISABLE_SESSION]);
             }
 
-
             string applicationName = System.Web.Hosting.HostingEnvironment.ApplicationVirtualPath;
             if (applicationName != null)
             {

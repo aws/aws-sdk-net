@@ -69,8 +69,16 @@ namespace Amazon.Runtime.Internal
                     // Send request body if present.
                     if (wrappedRequest.HasRequestBody())
                     {
-                        var requestContent = httpRequest.GetRequestContent();
-                        WriteContentToRequestBody(requestContent, httpRequest, executionContext.RequestContext);
+                        try
+                        {
+                            var requestContent = httpRequest.GetRequestContent();
+                            WriteContentToRequestBody(requestContent, httpRequest, executionContext.RequestContext);
+                        }
+                        catch
+                        {
+                            CompleteFailedRequest(httpRequest);
+                            throw;
+                        }
                     }
 
                     executionContext.ResponseContext.HttpResponse = httpRequest.GetResponse();
@@ -83,6 +91,28 @@ namespace Amazon.Runtime.Internal
             }
         }
 
+        private static void CompleteFailedRequest(IHttpRequest<TRequestContent> httpRequest)
+        {
+            try
+            {
+                // In some cases where writing the request body fails, HttpWebRequest.Abort
+                // may not dispose of the underlying Socket, so we need to retrieve and dispose
+                // the web response to close the socket
+                IWebResponseData response = null;
+                try
+                {
+                    response = httpRequest.GetResponse();
+                }
+                catch { }
+                finally
+                {
+                    if (response != null && response.ResponseBody != null)
+                        response.ResponseBody.Dispose();
+                }
+            }
+            catch { }
+        }
+		
 #if AWS_ASYNC_API 
 
         /// <summary>
@@ -107,8 +137,23 @@ namespace Amazon.Runtime.Internal
                     // Send request body if present.
                     if (wrappedRequest.HasRequestBody())
                     {
-                        var requestContent = await httpRequest.GetRequestContentAsync().ConfigureAwait(false);
-                        WriteContentToRequestBody(requestContent, httpRequest, executionContext.RequestContext);
+                        System.Runtime.ExceptionServices.ExceptionDispatchInfo edi = null;
+                        try
+                        {
+                            var requestContent = await httpRequest.GetRequestContentAsync().ConfigureAwait(false);
+                            WriteContentToRequestBody(requestContent, httpRequest, executionContext.RequestContext);
+                        }
+                        catch(Exception e)
+                        {
+                            edi = System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(e);
+                        }
+
+                        if (edi != null)
+                        {
+                            await CompleteFailedRequest(executionContext, httpRequest);
+
+                            edi.Throw();
+                        }
                     }
                 
                     var response = await httpRequest.GetResponseAsync(executionContext.RequestContext.CancellationToken).
@@ -122,6 +167,24 @@ namespace Amazon.Runtime.Internal
             {
                 if (httpRequest != null)
                     httpRequest.Dispose();
+            }
+        }
+
+        private static async System.Threading.Tasks.Task CompleteFailedRequest(IExecutionContext executionContext, IHttpRequest<TRequestContent> httpRequest)
+        {
+            // In some cases where writing the request body fails, HttpWebRequest.Abort
+            // may not dispose of the underlying Socket, so we need to retrieve and dispose
+            // the web response to close the socket
+            IWebResponseData iwrd = null;
+            try
+            {
+                iwrd = await httpRequest.GetResponseAsync(executionContext.RequestContext.CancellationToken).ConfigureAwait(false);
+            }
+            catch { }
+            finally
+            {
+                if (iwrd != null && iwrd.ResponseBody != null)
+                    iwrd.ResponseBody.Dispose();
             }
         }
 
@@ -304,20 +367,23 @@ namespace Amazon.Runtime.Internal
             Uri url = AmazonServiceClient.ComposeUrl(request);
             var httpRequest = _requestFactory.CreateHttpRequest(url);
             httpRequest.ConfigureRequest(requestContext);
-            
+
             httpRequest.Method = request.HttpMethod;
             if (request.MayContainRequestBody())
             {
-                if (request.Content == null && (request.ContentStream == null))
+                var content = request.Content;
+                if (request.SetContentFromParameters || (content == null && request.ContentStream == null))
                 {
                     string queryString = AWSSDKUtils.GetParametersAsString(request.Parameters);
-                    request.Content = Encoding.UTF8.GetBytes(queryString);
+                    content = Encoding.UTF8.GetBytes(queryString);
+                    request.Content = content;
+                    request.SetContentFromParameters = true;
                 }
-                
-                if (request.Content!=null)
+
+                if (content != null)
                 {
-                    request.Headers[HeaderKeys.ContentLengthHeader] = 
-                        request.Content.Length.ToString(CultureInfo.InvariantCulture);
+                    request.Headers[HeaderKeys.ContentLengthHeader] =
+                        content.Length.ToString(CultureInfo.InvariantCulture);
                 }
                 else if (request.ContentStream != null && !request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
                 {
@@ -337,7 +403,7 @@ namespace Amazon.Runtime.Internal
                 // Currently the signature seems to be valid without including this header in the calculation.
                 request.Headers["Accept"] = "application/json";
             }
-            
+
             return httpRequest;
         }
 

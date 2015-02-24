@@ -1,0 +1,30 @@
+
+{
+    "simpleMethods" : {
+        "operations" : {
+            "AddTags" : {
+                "methodForms" : [
+                    [
+                        "PipelineId",
+                        "Tags"
+                    ]
+                ]
+            },
+            "DescribePipelines" : {
+                "methodForms" : [
+                    [
+                        "PipelineIds"
+                    ]
+                ]
+            },
+            "RemoveTags" : {
+                "methodForms" : [
+                    [
+                        "PipelineId",
+                        "TagKeys"
+                    ]
+                ]
+            }
+        }
+    }
+}

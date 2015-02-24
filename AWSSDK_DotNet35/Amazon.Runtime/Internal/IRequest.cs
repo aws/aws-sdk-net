@@ -125,6 +125,12 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// Flag that signals that Content was and should be set
+        /// from the Parameters collection.
+        /// </summary>
+        bool SetContentFromParameters { get; set; }
+
+        /// <summary>
         /// Gets and sets the content stream.
         /// </summary>
         Stream ContentStream

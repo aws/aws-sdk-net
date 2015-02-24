@@ -164,7 +164,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns>Date and time used for x-amz-date, in UTC</returns>
         public static DateTime InitializeHeaders(IDictionary<string, string> headers, Uri requestEndpoint)
         {
-            return InitializeHeaders(headers, requestEndpoint, DateTime.UtcNow);
+            return InitializeHeaders(headers, requestEndpoint, AWSSDKUtils.CorrectedUtcNow);
         }
 
         /// <summary>
@@ -178,7 +178,7 @@ namespace Amazon.Runtime.Internal.Auth
         public static DateTime InitializeHeaders(IDictionary<string, string> headers, Uri requestEndpoint, DateTime requestDateTime)
         {
             // clean up any prior signature in the headers if resigning
-            headers.Remove(HeaderKeys.AuthorizationHeader);
+            CleanHeaders(headers);
 
             if (!headers.ContainsKey(HeaderKeys.HostHeader))
             {
@@ -192,6 +192,19 @@ namespace Amazon.Runtime.Internal.Auth
             headers[HeaderKeys.XAmzDateHeader] = dt.ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat, CultureInfo.InvariantCulture);
 
             return dt;
+        }
+
+        private static void CleanHeaders(IDictionary<string, string> headers)
+        {
+            headers.Remove(HeaderKeys.AuthorizationHeader);
+            headers.Remove(HeaderKeys.XAmzContentSha256Header);
+
+            if (headers.ContainsKey(HeaderKeys.XAmzDecodedContentLengthHeader))
+            {
+                headers[HeaderKeys.ContentLengthHeader] =
+                    headers[HeaderKeys.XAmzDecodedContentLengthHeader];
+                headers.Remove(HeaderKeys.XAmzDecodedContentLengthHeader);
+            }
         }
 
         /// <summary>
@@ -244,25 +257,26 @@ namespace Amazon.Runtime.Internal.Auth
             var dateStamp = FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat);
             var scope = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}", dateStamp, region, service, Terminator);
 
-            var stringToSign = new StringBuilder();
-            stringToSign.AppendFormat(CultureInfo.InvariantCulture, "{0}-{1}\n{2}\n{3}\n",
+            var stringToSignBuilder = new StringBuilder();
+            stringToSignBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0}-{1}\n{2}\n{3}\n",
                                       Scheme,
                                       Algorithm,
                                       FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat),
                                       scope);
 
             var canonicalRequestHashBytes = ComputeHash(canonicalRequest);
-            stringToSign.Append(AWSSDKUtils.ToHex(canonicalRequestHashBytes, true));
+            stringToSignBuilder.Append(AWSSDKUtils.ToHex(canonicalRequestHashBytes, true));
 
             if (metrics != null)
-                metrics.AddProperty(Metric.StringToSign, stringToSign);
+                metrics.AddProperty(Metric.StringToSign, stringToSignBuilder);
 
             var key = ComposeSigningKey(awsSecretAccessKey,
                                         region,
                                         dateStamp,
                                         service);
 
-            var signature = ComputeKeyedHash(SignerAlgorithm, key, stringToSign.ToString());
+            var stringToSign = stringToSignBuilder.ToString();
+            var signature = ComputeKeyedHash(SignerAlgorithm, key, stringToSign);
             return new AWS4SigningResult(awsAccessKey, signedAt, signedHeaders, scope, key, signature);
         }
 
@@ -356,14 +370,8 @@ namespace Amazon.Runtime.Internal.Auth
                     computedContentHash = request.ComputeContentStreamHash();
                 else
                 {
-                    byte[] payloadHashBytes;
-                    if (request.Content != null)
-                        payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(request.Content);
-                    else
-                    {
-                        var payload = request.UseQueryString ? "" : GetRequestPayload(request);
-                        payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(Encoding.UTF8.GetBytes(payload));
-                    }
+                    byte[] payloadBytes = GetRequestPayloadBytes(request);
+                    byte[] payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(payloadBytes);
                     computedContentHash = AWSSDKUtils.ToHex(payloadHashBytes, true);
                 }
             }
@@ -751,15 +759,14 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         /// <param name="request">The request instance</param>
         /// <returns>Request parameters in query string format</returns>
-        static string GetRequestPayload(IRequest request)
+        static byte[] GetRequestPayloadBytes(IRequest request)
         {
-            if (request.Content == null)
-                return AWSSDKUtils.GetParametersAsString(request.Parameters);
+            if (request.Content != null)
+                return request.Content;
 
-            var encoding = Encoding.GetEncoding(DEFAULT_ENCODING);
-            return encoding.GetString(request.Content, 0, request.Content.Length);
+            var content = request.UseQueryString ? string.Empty : AWSSDKUtils.GetParametersAsString(request.Parameters);
+            return Encoding.UTF8.GetBytes(content);
         }
-
         #endregion
     }
 
@@ -905,7 +912,7 @@ namespace Amazon.Runtime.Internal.Auth
                 request.Headers.Add(HeaderKeys.HostHeader, hostHeader);
             }
 
-            var signedAt = DateTime.UtcNow;
+            var signedAt = AWSSDKUtils.CorrectedUtcNow;
             var region = overrideSigningRegion ?? DetermineSigningRegion(clientConfig, service, request.AlternateEndpoint, request);
 
             // AWS4 presigned urls got S3 are expected to contain a 'UNSIGNED-PAYLOAD' magic string

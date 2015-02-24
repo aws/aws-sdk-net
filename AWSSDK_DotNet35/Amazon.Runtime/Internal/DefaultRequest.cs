@@ -238,6 +238,12 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// Flag that signals that Content was and should be set
+        /// from the Parameters collection.
+        /// </summary>
+        public bool SetContentFromParameters { get; set; }
+
+        /// <summary>
         /// Gets and sets the content stream.
         /// </summary>
         public Stream ContentStream
@@ -404,10 +410,9 @@ namespace Amazon.Runtime.Internal
         /// <returns>Returns true if the request has a body, else false.</returns>
         public bool HasRequestBody()
         {
-            return (this.HttpMethod == "POST" ||
-                    this.HttpMethod == "PUT") &&
-                ((this.Content != null) ||
-                        this.ContentStream != null);
+            var isPutPost = (this.HttpMethod == "POST" || this.HttpMethod == "PUT");
+            var hasContent = this.HasRequestData();
+            return (isPutPost && hasContent);
         }
     }
 }

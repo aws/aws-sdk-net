@@ -223,7 +223,6 @@ namespace Amazon.Runtime.Internal
         /// <returns></returns>
         public virtual async System.Threading.Tasks.Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken)
         {
-            cancellationToken.ThrowIfCancellationRequested();
             try
             {
                 using(cancellationToken.Register(()=> this.Abort(), useSynchronizationContext: false))
