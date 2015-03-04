@@ -30,6 +30,12 @@ namespace Amazon.CognitoSync.Model
     /// <summary>
     /// Container for the parameters to the DescribeIdentityUsage operation.
     /// Gets usage information for an identity, including number of datasets and data usage.
+    /// 
+    ///  
+    /// <para>
+    /// <code>DescribeIdentityUsage</code> can be called with temporary user credentials provided
+    /// by Cognito Identity or with developer credentials.
+    /// </para>
     /// </summary>
     public partial class DescribeIdentityUsageRequest : AmazonCognitoSyncRequest
     {

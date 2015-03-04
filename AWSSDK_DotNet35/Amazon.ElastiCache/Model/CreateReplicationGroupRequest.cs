@@ -248,7 +248,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version number of the cach engine to be used for the cache clusters in this replication
+        /// The version number of the cache engine to be used for the cache clusters in this replication
         /// group. To view the supported cache engine versions, use the <i>DescribeCacheEngineVersions</i>
         /// action.
         /// </para>
@@ -299,7 +299,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The maximum permitted value for <i>NumCacheClusters</i> is 6 (primary plus 5 replicas).
         /// If you need to exceed this limit, please fill out the ElastiCache Limit Increase Request
-        /// forrm at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
+        /// form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
         /// </para>
         /// </summary>
         public int NumCacheClusters

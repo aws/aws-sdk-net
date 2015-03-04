@@ -41,7 +41,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ResourceName. 
         /// <para>
         /// The name of the ElastiCache resource from which you want the listed tags removed,
-        /// for example <code>myCluster01</code>.
+        /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
         /// </para>
         /// </summary>
         public string ResourceName

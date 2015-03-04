@@ -29,7 +29,7 @@ namespace Amazon.CognitoSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UnsubscribeFromDataset operation.
-    /// Unsubscribe from receiving notifications when a dataset is modified by another device.
+    /// Unsubscribes from receiving notifications when a dataset is modified by another device.
     /// </summary>
     public partial class UnsubscribeFromDatasetRequest : AmazonCognitoSyncRequest
     {

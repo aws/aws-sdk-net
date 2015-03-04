@@ -8,6 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon.IdentityManagement;
 using Amazon.IdentityManagement.Model;
+using System.Threading;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 {
@@ -527,6 +528,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             string arn = null;
 
             Client.CreatePolicy(new CreatePolicyRequest { PolicyName = policyName, PolicyDocument = TEST_VERSIONED_POLICY });
+            Thread.Sleep(TimeSpan.FromSeconds(5));
             try
             {
                 var policies = Client.ListPolicies().Policies;
@@ -543,11 +545,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
                 Assert.IsTrue(found);
                 Assert.IsNotNull(arn);
-                
+
             }
             finally
             {
-                Client.DeletePolicy(new DeletePolicyRequest { PolicyArn = arn });
+                if (arn != null)
+                    Client.DeletePolicy(new DeletePolicyRequest { PolicyArn = arn });
             }
         }
 

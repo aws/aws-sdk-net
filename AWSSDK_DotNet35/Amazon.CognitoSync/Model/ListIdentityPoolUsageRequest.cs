@@ -30,6 +30,13 @@ namespace Amazon.CognitoSync.Model
     /// <summary>
     /// Container for the parameters to the ListIdentityPoolUsage operation.
     /// Gets a list of identity pools registered with Cognito.
+    /// 
+    ///  
+    /// <para>
+    /// <code>ListIdentityPoolUsage</code> can only be called with developer credentials.
+    /// You cannot make this API call with the temporary user credentials provided by Cognito
+    /// Identity.
+    /// </para>
     /// </summary>
     public partial class ListIdentityPoolUsageRequest : AmazonCognitoSyncRequest
     {

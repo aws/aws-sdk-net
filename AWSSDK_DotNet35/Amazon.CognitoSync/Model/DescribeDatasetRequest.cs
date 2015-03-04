@@ -29,10 +29,16 @@ namespace Amazon.CognitoSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDataset operation.
-    /// Gets metadata about a dataset by identity and dataset name. The credentials used to
-    /// make this API call need to have access to the identity data. With Amazon Cognito Sync,
-    /// each identity has access only to its own data. You should use Amazon Cognito Identity
-    /// service to retrieve the credentials necessary to make this API call.
+    /// Gets meta data about a dataset by identity and dataset name. With Amazon Cognito Sync,
+    /// each identity has access only to its own data. Thus, the credentials used to make
+    /// this API call need to have access to the identity data.
+    /// 
+    ///  
+    /// <para>
+    /// <code>DescribeDataset</code> can be called with temporary user credentials provided
+    /// by Cognito Identity or with developer credentials. You should use Cognito Identity
+    /// credentials to make this API call.
+    /// </para>
     /// </summary>
     public partial class DescribeDatasetRequest : AmazonCognitoSyncRequest
     {

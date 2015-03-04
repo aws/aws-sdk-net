@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents a single cache security group and its status..
+    /// Represents a single cache security group and its status.
     /// </summary>
     public partial class SecurityGroupMembership
     {

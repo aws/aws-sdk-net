@@ -54,6 +54,13 @@ namespace Amazon.CognitoSync
     /// need to make API calls using credentials retrieved with <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/Welcome.html">Amazon
     /// Cognito Identity service</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// If you want to use Cognito Sync in an Android or iOS application, you will probably
+    /// want to make API calls via the AWS Mobile SDK. To learn more, see the <a href="http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-sync.html">Developer
+    /// Guide for Android</a> and the <a href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-sync.html">Developer
+    /// Guide for iOS</a>.
+    /// </para>
     /// </summary>
     public partial class AmazonCognitoSyncClient : AmazonServiceClient, IAmazonCognitoSync
     {
@@ -186,6 +193,36 @@ namespace Amazon.CognitoSync
         #endregion
 
         
+        #region  BulkPublish
+
+        internal BulkPublishResponse BulkPublish(BulkPublishRequest request)
+        {
+            var marshaller = new BulkPublishRequestMarshaller();
+            var unmarshaller = BulkPublishResponseUnmarshaller.Instance;
+
+            return Invoke<BulkPublishRequest,BulkPublishResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BulkPublish operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BulkPublish operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<BulkPublishResponse> BulkPublishAsync(BulkPublishRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new BulkPublishRequestMarshaller();
+            var unmarshaller = BulkPublishResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BulkPublishRequest,BulkPublishResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDataset
 
         internal DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
@@ -301,6 +338,36 @@ namespace Amazon.CognitoSync
             var unmarshaller = DescribeIdentityUsageResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeIdentityUsageRequest,DescribeIdentityUsageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetBulkPublishDetails
+
+        internal GetBulkPublishDetailsResponse GetBulkPublishDetails(GetBulkPublishDetailsRequest request)
+        {
+            var marshaller = new GetBulkPublishDetailsRequestMarshaller();
+            var unmarshaller = GetBulkPublishDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetBulkPublishDetailsRequest,GetBulkPublishDetailsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBulkPublishDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBulkPublishDetails operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetBulkPublishDetailsResponse> GetBulkPublishDetailsAsync(GetBulkPublishDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetBulkPublishDetailsRequestMarshaller();
+            var unmarshaller = GetBulkPublishDetailsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBulkPublishDetailsRequest,GetBulkPublishDetailsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

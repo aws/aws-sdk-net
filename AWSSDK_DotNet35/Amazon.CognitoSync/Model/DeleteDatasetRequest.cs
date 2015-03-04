@@ -31,7 +31,13 @@ namespace Amazon.CognitoSync.Model
     /// Container for the parameters to the DeleteDataset operation.
     /// Deletes the specific dataset. The dataset will be deleted permanently, and the action
     /// can't be undone. Datasets that this dataset was merged with will no longer report
-    /// the merge. Any consequent operation on this dataset will result in a ResourceNotFoundException.
+    /// the merge. Any subsequent operation on this dataset will result in a <code>ResourceNotFoundException</code>.
+    /// 
+    ///  
+    /// <para>
+    /// <code>DeleteDataset</code> can be called with temporary user credentials provided
+    /// by Cognito Identity or with developer credentials.
+    /// </para>
     /// </summary>
     public partial class DeleteDatasetRequest : AmazonCognitoSyncRequest
     {

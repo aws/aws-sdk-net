@@ -48,17 +48,76 @@ namespace Amazon.CognitoSync
     /// need to make API calls using credentials retrieved with <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/Welcome.html">Amazon
     /// Cognito Identity service</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// If you want to use Cognito Sync in an Android or iOS application, you will probably
+    /// want to make API calls via the AWS Mobile SDK. To learn more, see the <a href="http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-sync.html">Developer
+    /// Guide for Android</a> and the <a href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-sync.html">Developer
+    /// Guide for iOS</a>.
+    /// </para>
     /// </summary>
     public partial interface IAmazonCognitoSync : IDisposable
     {
 
+        
+        #region  BulkPublish
+
+        /// <summary>
+        /// Initiates a bulk publish of all existing datasets for an Identity Pool to the configured
+        /// stream. Customers are limited to one successful bulk publish per 24 hours. Bulk publish
+        /// is an asynchronous request, customers can see the status of the request via the GetBulkPublishDetails
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BulkPublish service method.</param>
+        /// 
+        /// <returns>The response from the BulkPublish service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.AlreadyStreamedException">
+        /// An exception thrown when a bulk publish operation is requested less than 24 hours
+        /// after a previous bulk publish operation completed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.DuplicateRequestException">
+        /// An exception thrown when there is an <code>IN_PROGRESS</code> bulk publish operation
+        /// for the given identity pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        BulkPublishResponse BulkPublish(BulkPublishRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BulkPublish operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BulkPublish operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<BulkPublishResponse> BulkPublishAsync(BulkPublishRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
         
         #region  DeleteDataset
 
         /// <summary>
         /// Deletes the specific dataset. The dataset will be deleted permanently, and the action
         /// can't be undone. Datasets that this dataset was merged with will no longer report
-        /// the merge. Any consequent operation on this dataset will result in a ResourceNotFoundException.
+        /// the merge. Any subsequent operation on this dataset will result in a <code>ResourceNotFoundException</code>.
+        /// 
+        ///  
+        /// <para>
+        /// <code>DeleteDataset</code> can be called with temporary user credentials provided
+        /// by Cognito Identity or with developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
         /// 
@@ -74,6 +133,9 @@ namespace Amazon.CognitoSync
         /// </exception>
         /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
         /// </exception>
         DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request);
 
@@ -93,10 +155,16 @@ namespace Amazon.CognitoSync
         #region  DescribeDataset
 
         /// <summary>
-        /// Gets metadata about a dataset by identity and dataset name. The credentials used to
-        /// make this API call need to have access to the identity data. With Amazon Cognito Sync,
-        /// each identity has access only to its own data. You should use Amazon Cognito Identity
-        /// service to retrieve the credentials necessary to make this API call.
+        /// Gets meta data about a dataset by identity and dataset name. With Amazon Cognito Sync,
+        /// each identity has access only to its own data. Thus, the credentials used to make
+        /// this API call need to have access to the identity data.
+        /// 
+        ///  
+        /// <para>
+        /// <code>DescribeDataset</code> can be called with temporary user credentials provided
+        /// by Cognito Identity or with developer credentials. You should use Cognito Identity
+        /// credentials to make this API call.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
         /// 
@@ -112,6 +180,9 @@ namespace Amazon.CognitoSync
         /// </exception>
         /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
         /// </exception>
         DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request);
 
@@ -132,6 +203,13 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Gets usage details (for example, data storage) about a particular identity pool.
+        /// 
+        ///  
+        /// <para>
+        /// <code>DescribeIdentityPoolUsage</code> can only be called with developer credentials.
+        /// You cannot make this API call with the temporary user credentials provided by Cognito
+        /// Identity.
+        /// </para>
         /// </summary>
         /// <param name="identityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
         /// 
@@ -148,10 +226,20 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
         DescribeIdentityPoolUsageResponse DescribeIdentityPoolUsage(string identityPoolId);
 
         /// <summary>
         /// Gets usage details (for example, data storage) about a particular identity pool.
+        /// 
+        ///  
+        /// <para>
+        /// <code>DescribeIdentityPoolUsage</code> can only be called with developer credentials.
+        /// You cannot make this API call with the temporary user credentials provided by Cognito
+        /// Identity.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityPoolUsage service method.</param>
         /// 
@@ -167,6 +255,9 @@ namespace Amazon.CognitoSync
         /// </exception>
         /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
         /// </exception>
         DescribeIdentityPoolUsageResponse DescribeIdentityPoolUsage(DescribeIdentityPoolUsageRequest request);
 
@@ -187,6 +278,12 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Gets usage information for an identity, including number of datasets and data usage.
+        /// 
+        ///  
+        /// <para>
+        /// <code>DescribeIdentityUsage</code> can be called with temporary user credentials provided
+        /// by Cognito Identity or with developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityUsage service method.</param>
         /// 
@@ -203,6 +300,9 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
         DescribeIdentityUsageResponse DescribeIdentityUsage(DescribeIdentityUsageRequest request);
 
         /// <summary>
@@ -215,6 +315,41 @@ namespace Amazon.CognitoSync
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeIdentityUsageResponse> DescribeIdentityUsageAsync(DescribeIdentityUsageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetBulkPublishDetails
+
+        /// <summary>
+        /// Get the status of the last BulkPublish operation for an identity pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBulkPublishDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetBulkPublishDetails service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        GetBulkPublishDetailsResponse GetBulkPublishDetails(GetBulkPublishDetailsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBulkPublishDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBulkPublishDetails operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetBulkPublishDetailsResponse> GetBulkPublishDetailsAsync(GetBulkPublishDetailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -238,6 +373,9 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
         GetIdentityPoolConfigurationResponse GetIdentityPoolConfiguration(string identityPoolId);
 
         /// <summary>
@@ -258,6 +396,9 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
         GetIdentityPoolConfigurationResponse GetIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest request);
 
         /// <summary>
@@ -276,10 +417,16 @@ namespace Amazon.CognitoSync
         #region  ListDatasets
 
         /// <summary>
-        /// Lists datasets for an identity. The credentials used to make this API call need to
-        /// have access to the identity data. With Amazon Cognito Sync, each identity has access
-        /// only to its own data. You should use Amazon Cognito Identity service to retrieve the
-        /// credentials necessary to make this API call.
+        /// Lists datasets for an identity. With Amazon Cognito Sync, each identity has access
+        /// only to its own data. Thus, the credentials used to make this API call need to have
+        /// access to the identity data.
+        /// 
+        ///  
+        /// <para>
+        /// <code>ListDatasets</code> can be called with temporary user credentials provided by
+        /// Cognito Identity or with developer credentials. You should use the Cognito Identity
+        /// credentials to make this API call.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
         /// 
@@ -292,6 +439,9 @@ namespace Amazon.CognitoSync
         /// </exception>
         /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
         /// </exception>
         ListDatasetsResponse ListDatasets(ListDatasetsRequest request);
 
@@ -312,6 +462,13 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Gets a list of identity pools registered with Cognito.
+        /// 
+        ///  
+        /// <para>
+        /// <code>ListIdentityPoolUsage</code> can only be called with developer credentials.
+        /// You cannot make this API call with the temporary user credentials provided by Cognito
+        /// Identity.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityPoolUsage service method.</param>
         /// 
@@ -324,6 +481,9 @@ namespace Amazon.CognitoSync
         /// </exception>
         /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
         /// </exception>
         ListIdentityPoolUsageResponse ListIdentityPoolUsage(ListIdentityPoolUsageRequest request);
 
@@ -344,10 +504,16 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Gets paginated records, optionally changed after a particular sync count for a dataset
-        /// and identity. The credentials used to make this API call need to have access to the
-        /// identity data. With Amazon Cognito Sync, each identity has access only to its own
-        /// data. You should use Amazon Cognito Identity service to retrieve the credentials necessary
+        /// and identity. With Amazon Cognito Sync, each identity has access only to its own data.
+        /// Thus, the credentials used to make this API call need to have access to the identity
+        /// data.
+        /// 
+        ///  
+        /// <para>
+        /// <code>ListRecords</code> can be called with temporary user credentials provided by
+        /// Cognito Identity or with developer credentials. You should use Cognito Identity credentials
         /// to make this API call.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecords service method.</param>
         /// 
@@ -402,6 +568,9 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
         RegisterDeviceResponse RegisterDevice(RegisterDeviceRequest request);
 
         /// <summary>
@@ -436,6 +605,9 @@ namespace Amazon.CognitoSync
         /// </exception>
         /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
         /// </exception>
         SetIdentityPoolConfigurationResponse SetIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest request);
 
@@ -475,6 +647,9 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
         SubscribeToDatasetResponse SubscribeToDataset(SubscribeToDatasetRequest request);
 
         /// <summary>
@@ -493,7 +668,7 @@ namespace Amazon.CognitoSync
         #region  UnsubscribeFromDataset
 
         /// <summary>
-        /// Unsubscribe from receiving notifications when a dataset is modified by another device.
+        /// Unsubscribes from receiving notifications when a dataset is modified by another device.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnsubscribeFromDataset service method.</param>
         /// 
@@ -513,6 +688,9 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
         UnsubscribeFromDatasetResponse UnsubscribeFromDataset(UnsubscribeFromDatasetRequest request);
 
         /// <summary>
@@ -531,10 +709,13 @@ namespace Amazon.CognitoSync
         #region  UpdateRecords
 
         /// <summary>
-        /// Posts updates to records and add and delete records for a dataset and user. The credentials
-        /// used to make this API call need to have access to the identity data. With Amazon Cognito
-        /// Sync, each identity has access only to its own data. You should use Amazon Cognito
-        /// Identity service to retrieve the credentials necessary to make this API call.
+        /// Posts updates to records and adds and deletes records for a dataset and user.
+        /// 
+        ///  
+        /// <para>
+        /// <code>UpdateRecords</code> can only be called with temporary user credentials provided
+        /// by Cognito Identity. You cannot make this API call with developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecords service method.</param>
         /// 

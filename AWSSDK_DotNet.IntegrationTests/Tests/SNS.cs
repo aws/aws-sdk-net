@@ -353,6 +353,44 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         [TestMethod]
         [TestCategory("SNS")]
+        public void TestMultipleQueueSubscription()
+        {
+            var topicArns = new List<string>();
+
+            var topicName1 = "dotnetsdkTopic" + DateTime.Now.Ticks;
+            topicArns.Add(Client.CreateTopic(topicName1).TopicArn);
+
+            var topicName2 = "dotnetsdkTopic" + DateTime.Now.Ticks;
+            topicArns.Add(Client.CreateTopic(topicName2).TopicArn);
+
+            var queueName = "dotnetsdkQueue-" + DateTime.Now.Ticks;
+            var queueUrl = sqsClient.CreateQueue(queueName).QueueUrl;
+
+            try
+            {
+                var subscriptionArns = Client.SubscribeQueueToTopics(topicArns, sqsClient, queueUrl).Values;
+
+                Assert.AreEqual(2, subscriptionArns.Count);
+
+                Thread.Sleep(TimeSpan.FromSeconds(5));
+
+                var attributes = sqsClient.GetQueueAttributes(queueUrl, new List<string> { "All" }).Attributes;
+                var policy = Policy.FromJson(attributes["Policy"]);
+
+                Assert.AreEqual(2, policy.Statements.Count);
+            }
+            finally
+            {
+                foreach (var topicArn in topicArns)
+                {
+                    Client.DeleteTopic(new DeleteTopicRequest { TopicArn = topicArn });
+                }
+                sqsClient.DeleteQueue(new DeleteQueueRequest { QueueUrl = queueUrl });
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("SNS")]
         public void FindTopic()
         {
             // create new topic

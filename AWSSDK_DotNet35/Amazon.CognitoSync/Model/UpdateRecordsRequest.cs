@@ -29,10 +29,13 @@ namespace Amazon.CognitoSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRecords operation.
-    /// Posts updates to records and add and delete records for a dataset and user. The credentials
-    /// used to make this API call need to have access to the identity data. With Amazon Cognito
-    /// Sync, each identity has access only to its own data. You should use Amazon Cognito
-    /// Identity service to retrieve the credentials necessary to make this API call.
+    /// Posts updates to records and adds and deletes records for a dataset and user.
+    /// 
+    ///  
+    /// <para>
+    /// <code>UpdateRecords</code> can only be called with temporary user credentials provided
+    /// by Cognito Identity. You cannot make this API call with developer credentials.
+    /// </para>
     /// </summary>
     public partial class UpdateRecordsRequest : AmazonCognitoSyncRequest
     {

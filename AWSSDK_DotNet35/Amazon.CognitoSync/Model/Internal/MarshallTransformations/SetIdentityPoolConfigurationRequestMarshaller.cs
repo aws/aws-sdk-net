@@ -56,6 +56,17 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCognitoStreams())
+                {
+                    context.Writer.WritePropertyName("CognitoStreams");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CognitoStreamsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CognitoStreams, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPushSync())
                 {
                     context.Writer.WritePropertyName("PushSync");

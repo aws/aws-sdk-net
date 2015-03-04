@@ -390,6 +390,22 @@ namespace Amazon.CloudSearch
         /// Constant SearchM2Xlarge for PartitionInstanceType
         /// </summary>
         public static readonly PartitionInstanceType SearchM2Xlarge = new PartitionInstanceType("search.m2.xlarge");
+        /// <summary>
+        /// Constant SearchM32xlarge for PartitionInstanceType
+        /// </summary>
+        public static readonly PartitionInstanceType SearchM32xlarge = new PartitionInstanceType("search.m3.2xlarge");
+        /// <summary>
+        /// Constant SearchM3Large for PartitionInstanceType
+        /// </summary>
+        public static readonly PartitionInstanceType SearchM3Large = new PartitionInstanceType("search.m3.large");
+        /// <summary>
+        /// Constant SearchM3Medium for PartitionInstanceType
+        /// </summary>
+        public static readonly PartitionInstanceType SearchM3Medium = new PartitionInstanceType("search.m3.medium");
+        /// <summary>
+        /// Constant SearchM3Xlarge for PartitionInstanceType
+        /// </summary>
+        public static readonly PartitionInstanceType SearchM3Xlarge = new PartitionInstanceType("search.m3.xlarge");
 
         /// <summary>
         /// Default Constructor

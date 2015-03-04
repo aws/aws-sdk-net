@@ -369,8 +369,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PreferredAvailabilityZone. 
         /// <para>
-        /// The name of the Availability Zone in which the cache cluster is located or "Multiple"if
-        /// the cache nodes are located in different Availability Zones.
+        /// The name of the Availability Zone in which the cache cluster is located or "Multiple"
+        /// if the cache nodes are located in different Availability Zones.
         /// </para>
         /// </summary>
         public string PreferredAvailabilityZone

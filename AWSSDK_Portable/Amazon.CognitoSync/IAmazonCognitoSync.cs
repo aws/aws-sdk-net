@@ -48,9 +48,31 @@ namespace Amazon.CognitoSync
     /// need to make API calls using credentials retrieved with <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/Welcome.html">Amazon
     /// Cognito Identity service</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// If you want to use Cognito Sync in an Android or iOS application, you will probably
+    /// want to make API calls via the AWS Mobile SDK. To learn more, see the <a href="http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-sync.html">Developer
+    /// Guide for Android</a> and the <a href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-sync.html">Developer
+    /// Guide for iOS</a>.
+    /// </para>
     /// </summary>
     public partial interface IAmazonCognitoSync : IDisposable
     {
+                
+        #region  BulkPublish
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BulkPublish operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BulkPublish operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<BulkPublishResponse> BulkPublishAsync(BulkPublishRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
                 
         #region  DeleteDataset
 
@@ -109,6 +131,21 @@ namespace Amazon.CognitoSync
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeIdentityUsageResponse> DescribeIdentityUsageAsync(DescribeIdentityUsageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetBulkPublishDetails
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBulkPublishDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBulkPublishDetails operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetBulkPublishDetailsResponse> GetBulkPublishDetailsAsync(GetBulkPublishDetailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

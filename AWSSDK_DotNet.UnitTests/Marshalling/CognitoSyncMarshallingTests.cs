@@ -43,6 +43,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("CognitoSync")]
+        public void BulkPublishMarshallTest()
+        {
+            var operation = service_model.FindOperation("BulkPublish");
+
+            var request = InstantiateClassGenerator.Execute<BulkPublishRequest>();
+            var marshaller = new BulkPublishRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("BulkPublish", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = BulkPublishResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as BulkPublishResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CognitoSync")]
         public void DeleteDatasetMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteDataset");
@@ -163,6 +195,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = DescribeIdentityUsageResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as DescribeIdentityUsageResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CognitoSync")]
+        public void GetBulkPublishDetailsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetBulkPublishDetails");
+
+            var request = InstantiateClassGenerator.Execute<GetBulkPublishDetailsRequest>();
+            var marshaller = new GetBulkPublishDetailsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetBulkPublishDetails", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetBulkPublishDetailsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetBulkPublishDetailsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

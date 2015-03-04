@@ -25,6 +25,54 @@ namespace Amazon.CognitoSync
 {
 
     /// <summary>
+    /// Constants used for properties of type BulkPublishStatus.
+    /// </summary>
+    public class BulkPublishStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for BulkPublishStatus
+        /// </summary>
+        public static readonly BulkPublishStatus FAILED = new BulkPublishStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for BulkPublishStatus
+        /// </summary>
+        public static readonly BulkPublishStatus IN_PROGRESS = new BulkPublishStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_STARTED for BulkPublishStatus
+        /// </summary>
+        public static readonly BulkPublishStatus NOT_STARTED = new BulkPublishStatus("NOT_STARTED");
+        /// <summary>
+        /// Constant SUCCEEDED for BulkPublishStatus
+        /// </summary>
+        public static readonly BulkPublishStatus SUCCEEDED = new BulkPublishStatus("SUCCEEDED");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public BulkPublishStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BulkPublishStatus FindValue(string value)
+        {
+            return FindValue<BulkPublishStatus>(value);
+        }
+
+        public static implicit operator BulkPublishStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Operation.
     /// </summary>
     public class Operation : ConstantClass
@@ -106,6 +154,46 @@ namespace Amazon.CognitoSync
         }
 
         public static implicit operator Platform(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StreamingStatus.
+    /// </summary>
+    public class StreamingStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for StreamingStatus
+        /// </summary>
+        public static readonly StreamingStatus DISABLED = new StreamingStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for StreamingStatus
+        /// </summary>
+        public static readonly StreamingStatus ENABLED = new StreamingStatus("ENABLED");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public StreamingStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamingStatus FindValue(string value)
+        {
+            return FindValue<StreamingStatus>(value);
+        }
+
+        public static implicit operator StreamingStatus(string value)
         {
             return FindValue(value);
         }

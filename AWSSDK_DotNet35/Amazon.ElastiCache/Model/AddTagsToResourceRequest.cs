@@ -52,7 +52,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// The name of the resource to which the tags are to be added, for example <code>myCluster01</code>.
+        /// The name of the resource to which the tags are to be added, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
         /// </para>
         /// </summary>
         public string ResourceName

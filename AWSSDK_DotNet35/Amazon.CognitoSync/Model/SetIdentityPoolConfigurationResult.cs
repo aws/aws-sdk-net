@@ -28,12 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoSync.Model
 {
     /// <summary>
-    /// Response to a <code>SetIdentityPoolConfiguration</code> request.
+    /// The output for the <code>SetIdentityPoolConfiguration</code> operation
     /// </summary>
     public partial class SetIdentityPoolConfigurationResult : AmazonWebServiceResponse
     {
+        private CognitoStreams _cognitoStreams;
         private string _identityPoolId;
         private PushSync _pushSync;
+
+        /// <summary>
+        /// Gets and sets the property CognitoStreams. Options to apply to this identity pool
+        /// for Amazon Cognito streams.
+        /// </summary>
+        public CognitoStreams CognitoStreams
+        {
+            get { return this._cognitoStreams; }
+            set { this._cognitoStreams = value; }
+        }
+
+        // Check to see if CognitoStreams property is set
+        internal bool IsSetCognitoStreams()
+        {
+            return this._cognitoStreams != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IdentityPoolId. 
@@ -57,7 +74,7 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property PushSync. 
         /// <para>
-        /// Configuration options applied to the identity pool.
+        /// Options to apply to this identity pool for push synchronization.
         /// </para>
         /// </summary>
         public PushSync PushSync

@@ -41,7 +41,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "2.3.23.0";
+        internal const string SDKVersionNumber = "2.3.24.0";
 
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
@@ -535,18 +535,30 @@ namespace Amazon.Util
         {
             if (handler == null) return;
 
+
             var list = handler.GetInvocationList();
             foreach (var call in list)
             {
                 var eventHandler = ((EventHandler<T>)call);
                 if (eventHandler != null)
                 {
-                    dispatcher.Dispatch(() => eventHandler(sender, args));
+                    Dispatcher.Dispatch(() => eventHandler(sender, args));
                 }
             }
         }
 
-        private static BackgroundInvoker dispatcher = new BackgroundInvoker();
+        private static BackgroundInvoker _dispatcher;
+
+        private static BackgroundInvoker Dispatcher
+        {
+            get
+            {
+                if (_dispatcher == null)
+                    _dispatcher = new BackgroundInvoker();
+
+                return _dispatcher;
+            }
+        }
 
         /// <summary>
         /// Parses a query string of a URL and returns the parameters as a string-to-string dictionary.

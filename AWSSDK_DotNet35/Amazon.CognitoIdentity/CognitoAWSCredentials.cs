@@ -142,30 +142,43 @@ namespace Amazon.CognitoIdentity
         {
             if (!IsIdentitySet)
             {
+                var getIdRequest = new GetIdRequest
+                {
+                    AccountId = AccountId,
+                    IdentityPoolId = IdentityPoolId,
+                    Logins = Logins
+                };
+#if BCL
+                var response = cib.GetId(getIdRequest);
+#else
+                var response = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<GetIdResponse>(() => cib.GetIdAsync(getIdRequest));
+#endif
+
+                UpdateIdentity(response.IdentityId, true);
+            }
+
+            return identityId;
+        }
+
+        /// Checks to see if there is a cached identity id first and falls back to getting a fresh identity id by calling
+        /// GetIdentityId()
+        private GetIdentityIdStatus GetIdentityIdWithCaching()
+        {
+            if (!IsIdentitySet)
+            {
                 var cachedIdentityId = this.GetCachedIdentityId();
                 if (string.IsNullOrEmpty(cachedIdentityId))
                 {
-                    var getIdRequest = new GetIdRequest
-                    {
-                        AccountId = AccountId,
-                        IdentityPoolId = IdentityPoolId,
-                        Logins = Logins
-                    };
-#if BCL
-                    var response = cib.GetId(getIdRequest);
-#else
-                    var response = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<GetIdResponse>(() => cib.GetIdAsync(getIdRequest));
-#endif
-
-                    UpdateIdentity(response.IdentityId, true);
+                    var newIdentityId = GetIdentityId();
+                    return new GetIdentityIdStatus(newIdentityId, fromCache: false);
                 }
                 else
                 {
                     UpdateIdentity(cachedIdentityId, false);
+                    return new GetIdentityIdStatus(cachedIdentityId, fromCache: true);
                 }
             }
-
-            return identityId;
+            return new GetIdentityIdStatus(identityId, fromCache: false);
         }
 
 #if AWS_ASYNC_API
@@ -178,29 +191,85 @@ namespace Amazon.CognitoIdentity
         {
             if (!IsIdentitySet)
             {
-                var cachedIdentityId = this.GetCachedIdentityId();
-                if (string.IsNullOrEmpty(cachedIdentityId))
+                var getIdRequest = new GetIdRequest
                 {
-                    var getIdRequest = new GetIdRequest
-                    {
-                        AccountId = AccountId,
-                        IdentityPoolId = IdentityPoolId,
-                        Logins = Logins
-                    };
+                    AccountId = AccountId,
+                    IdentityPoolId = IdentityPoolId,
+                    Logins = Logins
+                };
 
-                    var getIdResult = await cib.GetIdAsync(getIdRequest);
+                var getIdResult = await cib.GetIdAsync(getIdRequest);
 
-                    UpdateIdentity(getIdResult.IdentityId, true);
-                }
-                else
-                {
-                    UpdateIdentity(cachedIdentityId, false);
-                }
+                UpdateIdentity(getIdResult.IdentityId, true);
             }
 
             return identityId;
         }
+
+        /// <summary>
+        /// Checks to see if there is a cached identity id first and falls back to getting a fresh identity id by calling
+        /// GetIdentityIdAsync()
+        /// </summary>
+        /// <returns></returns>
+        private async System.Threading.Tasks.Task<GetIdentityIdStatus> GetIdentityIdWithCachingAsync()
+        {
+            if (!IsIdentitySet)
+            {
+                var cachedIdentityId = this.GetCachedIdentityId();
+                if (string.IsNullOrEmpty(cachedIdentityId))
+                {
+                    var newIdentityId = await GetIdentityIdAsync();
+                    return new GetIdentityIdStatus(newIdentityId, fromCache: false);
+                }
+                else
+                {
+                    UpdateIdentity(cachedIdentityId, false);
+                    return new GetIdentityIdStatus(cachedIdentityId, fromCache: true);
+                }
+            }
+            return new GetIdentityIdStatus(identityId, fromCache: false);
+        }
+
 #endif
+
+        /// <summary>
+        /// Simple class for returning back and identity id and whether the id returned was from a cache.
+        /// </summary>
+        class GetIdentityIdStatus
+        {
+            public GetIdentityIdStatus(string identityid, bool fromCache)
+            {
+                this.IdentityId = identityid;
+                this.FromCache = fromCache;
+            }
+
+            public string IdentityId { get; set; }
+            public bool FromCache { get; set; }
+        }
+
+        /// <summary>
+        /// Checks the exception from a call that used an identity id and determines if the 
+        /// failure was caused by a cached identity id. If it was determined then the cache
+        /// is cleared and true is return.
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        private bool ShouldRetry(AmazonCognitoIdentityException e, GetIdentityIdStatus status)
+        {
+            if (status.FromCache &&
+                    ((e is NotAuthorizedException && e.Message.StartsWith("Access to Identity", StringComparison.OrdinalIgnoreCase)) ||
+                      e is ResourceNotFoundException)
+               )
+            {
+                this.identityId = null;
+                this.ClearIdentityCache();
+
+                return true;
+            }
+
+            return false;
+        }
 
         /// <summary>
         /// Event for identity change notifications.
@@ -305,12 +374,31 @@ namespace Amazon.CognitoIdentity
             CredentialsRefreshState credentialsState;
             // Retrieve Open Id Token
             // (Reuses existing IdentityId or creates a new one)
-            var identityId = await GetIdentityIdAsync().ConfigureAwait(false);
-            var getTokenRequest = new GetOpenIdTokenRequest { IdentityId = identityId };
+            var identity = await GetIdentityIdWithCachingAsync().ConfigureAwait(false);
+            var getTokenRequest = new GetOpenIdTokenRequest { IdentityId = identity.IdentityId };
             // If logins are set, pass them to the GetOpenId call
             if (Logins.Count > 0)
                 getTokenRequest.Logins = Logins;
-            var getTokenResult = await cib.GetOpenIdTokenAsync(getTokenRequest).ConfigureAwait(false);
+
+            bool retry = false;
+            GetOpenIdTokenResponse getTokenResult = null;
+            try
+            {
+                getTokenResult = await cib.GetOpenIdTokenAsync(getTokenRequest).ConfigureAwait(false);
+            }
+            catch(AmazonCognitoIdentityException e)
+            {
+                if (ShouldRetry(e, identity))
+                    retry = true;
+                else
+                    throw;
+            }
+
+            if(retry)
+            {
+                return await GetCredentialsForRoleAsync(roleArn);
+            }
+
             string token = getTokenResult.Token;
 
             // IdentityId may have changed, save the new value
@@ -335,14 +423,32 @@ namespace Amazon.CognitoIdentity
         private async System.Threading.Tasks.Task<CredentialsRefreshState> GetPoolCredentialsAsync()
         {
             CredentialsRefreshState credentialsState;
-            var identityId = await GetIdentityIdAsync().ConfigureAwait(false);
-            var getCredentialsRequest = new GetCredentialsForIdentityRequest { IdentityId = identityId };
+            var identity = await GetIdentityIdWithCachingAsync().ConfigureAwait(false);
+            var getCredentialsRequest = new GetCredentialsForIdentityRequest { IdentityId = identity.IdentityId };
             if (Logins.Count > 0)
                 getCredentialsRequest.Logins = Logins;
-            var response = (await cib.GetCredentialsForIdentityAsync(getCredentialsRequest).ConfigureAwait(false));
 
-            // IdentityId may have changed, save the new value
-            UpdateIdentity(response.IdentityId, true);
+            bool retry = false;
+            GetCredentialsForIdentityResponse response = null;
+            try
+            {
+                response = (await cib.GetCredentialsForIdentityAsync(getCredentialsRequest).ConfigureAwait(false));
+                // IdentityId may have changed, save the new value
+                UpdateIdentity(response.IdentityId, true);
+            }
+            catch (AmazonCognitoIdentityException e)
+            {
+                if (ShouldRetry(e, identity))
+                    retry = true;
+                else
+                    throw;
+            }
+
+            if (retry)
+            {
+                return await GetPoolCredentialsAsync();
+            }
+
 
             var credentials = response.Credentials;
             credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration);
@@ -376,10 +482,29 @@ namespace Amazon.CognitoIdentity
         private CredentialsRefreshState GetPoolCredentials()
         {
             CredentialsRefreshState credentialsState;
-            var getCredentialsRequest = new GetCredentialsForIdentityRequest { IdentityId = GetIdentityId() };
+            var identity = this.GetIdentityIdWithCaching();
+            var getCredentialsRequest = new GetCredentialsForIdentityRequest { IdentityId = identity.IdentityId };
             if (Logins.Count > 0)
                 getCredentialsRequest.Logins = Logins;
-            var response = GetCredentialsForIdentity(getCredentialsRequest);
+
+            bool retry = false;
+            GetCredentialsForIdentityResponse response = null;
+            try
+            {
+                response = GetCredentialsForIdentity(getCredentialsRequest);
+            }
+            catch (AmazonCognitoIdentityException e)
+            {
+                if (ShouldRetry(e, identity))
+                    retry = true;
+                else
+                    throw;
+            }
+
+            if (retry)
+            {
+                return GetPoolCredentials();
+            }
 
             // IdentityId may have changed, save the new value
             UpdateIdentity(response.IdentityId, true);
@@ -395,11 +520,31 @@ namespace Amazon.CognitoIdentity
             CredentialsRefreshState credentialsState;
             // Retrieve Open Id Token
             // (Reuses existing IdentityId or creates a new one)
-            var getTokenRequest = new GetOpenIdTokenRequest { IdentityId = GetIdentityId() };
+            var identity = this.GetIdentityIdWithCaching();
+            var getTokenRequest = new GetOpenIdTokenRequest { IdentityId = identity.IdentityId };
             // If logins are set, pass them to the GetOpenId call
             if (Logins.Count > 0)
                 getTokenRequest.Logins = Logins;
-            var getTokenResult = GetOpenId(getTokenRequest);
+
+            bool retry = false;
+            GetOpenIdTokenResponse getTokenResult = null;
+            try 
+            {
+                getTokenResult = GetOpenId(getTokenRequest);
+            }
+            catch (AmazonCognitoIdentityException e)
+            {
+                if (ShouldRetry(e, identity))
+                    retry = true;
+                else
+                    throw;
+            }
+
+            if (retry)
+            {
+                return GetCredentialsForRole(roleArn);
+            }
+
             string token = getTokenResult.Token;
 
             // IdentityId may have changed, save the new value
