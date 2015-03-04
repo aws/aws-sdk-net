@@ -561,9 +561,20 @@ namespace Amazon.SessionProvider
                 // app pool reset mode.
                 try
                 {
-                    this._table.UpdateItem(newValues, new UpdateItemOperationConfig() { Expected = expected });
+                    this._table.UpdateItem(newValues, new UpdateItemOperationConfig() {Expected = expected});
                 }
-                catch (ConditionalCheckFailedException) { }
+                catch (ConditionalCheckFailedException)
+                {
+                }
+                catch (AmazonDynamoDBException e)
+                {
+                    // If the update fails because the session item was too big, this will lock the session until the lock expires. 
+                    // Release the lock before re-throwing.
+                    if (e.Message == "Item size to update has exceeded the maximum allowed size")
+                        ReleaseItemExclusive(context, sessionId, lockId);
+
+                    throw;
+                }
             }
         }
 
