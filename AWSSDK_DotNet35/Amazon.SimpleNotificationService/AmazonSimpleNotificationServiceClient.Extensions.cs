@@ -297,20 +297,25 @@ namespace Amazon.SimpleNotificationService
 
             var sourceArn = string.Format(CultureInfo.InvariantCulture, "arn:aws:s3:*:*:{0}", bucket);
 
-            Statement statement = new Statement(Statement.StatementEffect.Allow);
-            statement.Actions.Add(SNSActionIdentifiers.Publish);
-            statement.Resources.Add(new Resource(topicArn));
-            statement.Conditions.Add(ConditionFactory.NewSourceArnCondition(sourceArn));
-            statement.Principals.Add(new Principal("*"));
-            policy.Statements.Add(statement);
 
-            var policyString = policy.ToJson();
-            this.SetTopicAttributes(new SetTopicAttributesRequest
+            Statement newStatement = new Statement(Statement.StatementEffect.Allow);
+            newStatement.Actions.Add(SNSActionIdentifiers.Publish);
+            newStatement.Resources.Add(new Resource(topicArn));
+            newStatement.Conditions.Add(ConditionFactory.NewSourceArnCondition(sourceArn));
+            newStatement.Principals.Add(new Principal("*"));
+
+            if (!policy.CheckIfStatementExists(newStatement))
             {
-                TopicArn = topicArn,
-                AttributeName = "Policy",
-                AttributeValue = policyString
-            });
+                policy.Statements.Add(newStatement);
+
+                var policyString = policy.ToJson();
+                this.SetTopicAttributes(new SetTopicAttributesRequest
+                {
+                    TopicArn = topicArn,
+                    AttributeName = "Policy",
+                    AttributeValue = policyString
+                });
+            }
         }
 #endif
     }

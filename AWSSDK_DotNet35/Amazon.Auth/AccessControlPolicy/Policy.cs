@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 
@@ -180,6 +181,87 @@ namespace Amazon.Auth.AccessControlPolicy
             {
                 this.statements = value;
             }
+        }
+
+        /// <summary>
+        /// Checks to see if the permissions set in the statement are already set by another
+        /// statement in the policy.
+        /// </summary>
+        /// <param name="statement">The statement to verify</param>
+        /// <returns>True if the statement's permissions are already allowed by the statement</returns>
+        public bool CheckIfStatementExists(Statement statement)
+        {
+            if (this.Statements == null)
+                return false;
+
+            
+            foreach (var existingStatement in this.Statements)
+            {
+                if (existingStatement.Effect != statement.Effect)
+                    continue;
+                if(!StatementContainsResources(existingStatement, statement.Resources))
+                    continue;
+                if (!StatementContainsActions(existingStatement, statement.Actions))
+                    continue;
+                if (!StatementContainsConditions(existingStatement, statement.Conditions))
+                    continue;
+                if (!StatementContainsPrincipals(existingStatement, statement.Principals))
+                    continue;
+
+                return true;
+            }
+
+
+            return false;
+        }
+
+        private static bool StatementContainsResources(Statement statement, IList<Resource> resources)
+        {
+            foreach(var resource in resources)
+            {
+                if(statement.Resources.FirstOrDefault(x => string.Equals(x.Id, resource.Id)) == null)
+                    return false;
+            }
+
+            return true;
+        }
+
+        private static bool StatementContainsActions(Statement statement, IList<ActionIdentifier> actions)
+        {
+            foreach (var action in actions)
+            {
+                if (statement.Actions.FirstOrDefault(x => string.Equals(x.ActionName, action.ActionName)) == null)
+                    return false;
+            }
+
+            return true;
+        }
+
+        private static bool StatementContainsConditions(Statement statement, IList<Condition> conditions)
+        {
+            foreach (var condition in conditions)
+            {
+                if (statement.Conditions.FirstOrDefault(x => 
+                    string.Equals(x.Type, condition.Type) && 
+                    string.Equals(x.ConditionKey, condition.ConditionKey) &&
+                    x.Values.Intersect(condition.Values).Count() == condition.Values.Count()) == null)
+                    return false;
+            }
+
+            return true;
+        }
+
+        private static bool StatementContainsPrincipals(Statement statement, IList<Principal> principals)
+        {
+            foreach (var principal in principals)
+            {
+                if (statement.Principals.FirstOrDefault(x =>
+                    string.Equals(x.Id, principal.Id) &&
+                    string.Equals(x.Provider, principal.Provider)) == null)
+                    return false;
+            }
+
+            return true;
         }
 
         /// <summary>
