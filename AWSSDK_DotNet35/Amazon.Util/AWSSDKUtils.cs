@@ -41,7 +41,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "2.3.24.0";
+        internal const string SDKVersionNumber = "2.3.24.1";
 
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
@@ -542,7 +542,8 @@ namespace Amazon.Util
                 var eventHandler = ((EventHandler<T>)call);
                 if (eventHandler != null)
                 {
-                    Dispatcher.Dispatch(() => eventHandler(sender, args));
+                    if (Dispatcher.IsRunning)
+                        Dispatcher.Dispatch(() => eventHandler(sender, args));
                 }
             }
         }
@@ -554,7 +555,9 @@ namespace Amazon.Util
             get
             {
                 if (_dispatcher == null)
+                {
                     _dispatcher = new BackgroundInvoker();
+                }
 
                 return _dispatcher;
             }
