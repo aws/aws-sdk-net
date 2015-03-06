@@ -528,30 +528,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             string arn = null;
 
             Client.CreatePolicy(new CreatePolicyRequest { PolicyName = policyName, PolicyDocument = TEST_VERSIONED_POLICY });
-            Thread.Sleep(TimeSpan.FromSeconds(5));
             try
             {
-                var policies = Client.ListPolicies().Policies;
-
-                var found = false;
-                foreach (var policy in policies)
-                {
-                    if (policy.PolicyName.Equals(policyName))
-                    {
-                        found = true;
-                        arn = policy.Arn;
-                    }
-                }
-
-                Assert.IsTrue(found);
-                Assert.IsNotNull(arn);
-
+                arn = UtilityMethods.WaitUntilSuccess(() => FindPolicy(policyName));
             }
             finally
             {
                 if (arn != null)
                     Client.DeletePolicy(new DeletePolicyRequest { PolicyArn = arn });
             }
+        }
+
+        private static string FindPolicy(string policyName)
+        {
+            string arn = null;
+            var policies = ListAllPolicies().ToList();
+            var found = false;
+            foreach (var policy in policies)
+            {
+                if (policy.PolicyName.Equals(policyName))
+                {
+                    found = true;
+                    arn = policy.Arn;
+                }
+            }
+
+            Assert.IsTrue(found);
+            Assert.IsNotNull(arn);
+            return arn;
+        }
+
+        private static IEnumerable<ManagedPolicy> ListAllPolicies()
+        {
+            var request = new ListPoliciesRequest();
+            ListPoliciesResponse response;
+            do
+            {
+                response = Client.ListPolicies(request);
+                foreach (var p in response.Policies)
+                    yield return p;
+
+                request.Marker = response.Marker;
+            } while (response.IsTruncated);
         }
 
         [TestMethod]
