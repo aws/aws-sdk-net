@@ -300,8 +300,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Conditions that the results should meet.
         /// </param>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig = null)
+        /// <returns>IAsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        public IAsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig = null)
         {
             var scan = ConvertScan<T>(conditions, operationConfig);
             return FromSearchAsync<T>(scan);
@@ -314,8 +314,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="scanConfig">Scan request object.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig = null)
+        /// <returns>IAsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        public IAsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig = null)
         {
             if (scanConfig == null) throw new ArgumentNullException("scanConfig");
 
@@ -334,8 +334,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKeyValue">Hash key of the items to query.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig = null)
+        /// <returns>IAsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig = null)
         {
             var query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
             return FromSearchAsync<T>(query);
@@ -354,8 +354,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// For QueryOperator.Betwee, values should be two values.
         /// </param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig = null)
+        /// <returns>IAsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig = null)
         {
             if (values == null)
                 throw new ArgumentNullException("values");
@@ -371,8 +371,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="queryConfig">Query request object.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig = null)
+        /// <returns>IAsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        public IAsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig = null)
         {
             if (queryConfig == null) throw new ArgumentNullException("queryConfig");
 

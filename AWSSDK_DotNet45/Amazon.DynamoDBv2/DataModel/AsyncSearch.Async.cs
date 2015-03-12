@@ -29,7 +29,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// from DynamoDB.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public partial class AsyncSearch<T>
+    public partial class AsyncSearch<T> : IAsyncSearch<T>
     {
         #region Async public
 
