@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Amazon.DynamoDBv2\DataModel\IAsyncSearch.Async.cs" />
     <Compile Include="Amazon.DynamoDBv2\DataModel\S3Link.Async.bcl45.cs" />
     <None Include="AWSClientFactory.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
