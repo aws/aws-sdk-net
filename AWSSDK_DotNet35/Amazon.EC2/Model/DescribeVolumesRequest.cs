@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information about Amazon EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
-    /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+    /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeVolumesRequest : AmazonEC2Request
@@ -174,7 +174,8 @@ namespace Amazon.EC2.Model
         /// request with the returned <code>NextToken</code> value. This value can be between
         /// 5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000
         /// results are returned. If this parameter is not used, then <code>DescribeVolumes</code>
-        /// returns all results.
+        /// returns all results. You cannot specify this parameter and the volume IDs parameter
+        /// in the same request.
         /// </para>
         /// </summary>
         public int MaxResults

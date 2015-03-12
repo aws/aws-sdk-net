@@ -33,6 +33,7 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class PutLogEventsResult : AmazonWebServiceResponse
     {
         private string _nextSequenceToken;
+        private RejectedLogEventsInfo _rejectedLogEventsInfo;
 
         /// <summary>
         /// Gets and sets the property NextSequenceToken.
@@ -47,6 +48,21 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetNextSequenceToken()
         {
             return this._nextSequenceToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RejectedLogEventsInfo.
+        /// </summary>
+        public RejectedLogEventsInfo RejectedLogEventsInfo
+        {
+            get { return this._rejectedLogEventsInfo; }
+            set { this._rejectedLogEventsInfo = value; }
+        }
+
+        // Check to see if RejectedLogEventsInfo property is set
+        internal bool IsSetRejectedLogEventsInfo()
+        {
+            return this._rejectedLogEventsInfo != null;
         }
 
     }

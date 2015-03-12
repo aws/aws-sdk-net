@@ -34,9 +34,9 @@ namespace Amazon.EC2.Model
     /// number of secondary IP addresses to be automatically assigned within the subnet's
     /// CIDR block range. The number of secondary IP addresses that you can assign to an instance
     /// varies by instance type. For information about instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-    /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>. For more
-    /// information about Elastic IP addresses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-    /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+    /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information
+    /// about Elastic IP addresses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+    /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// 
     ///  
     /// <para>

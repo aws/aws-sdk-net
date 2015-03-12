@@ -52,6 +52,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     response.NextSequenceToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rejectedLogEventsInfo", targetDepth))
+                {
+                    var unmarshaller = RejectedLogEventsInfoUnmarshaller.Instance;
+                    response.RejectedLogEventsInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

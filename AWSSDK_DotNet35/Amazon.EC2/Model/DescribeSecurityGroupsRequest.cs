@@ -35,8 +35,8 @@ namespace Amazon.EC2.Model
     /// <para>
     /// A security group is for use with instances either in the EC2-Classic platform or in
     /// a specific VPC. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-    /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>
-    /// and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+    /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
+    /// <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
     /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>group-id</code> - The ID of the security group.
+        /// <code>group-id</code> - The ID of the security group. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -130,7 +130,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupIds. 
         /// <para>
-        /// One or more security group IDs. Required for nondefault VPCs.
+        /// One or more security group IDs. Required for security groups in a nondefault VPC.
         /// </para>
         ///  
         /// <para>
@@ -152,8 +152,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupNames. 
         /// <para>
-        /// [EC2-Classic, default VPC] One or more security group names. You can specify either
-        /// the security group name or the security group ID.
+        /// [EC2-Classic and default VPC only] One or more security group names. You can specify
+        /// either the security group name or the security group ID. For security groups in a
+        /// nondefault VPC, use the <code>group-name</code> filter to describe security groups
+        /// by name.
         /// </para>
         ///  
         /// <para>

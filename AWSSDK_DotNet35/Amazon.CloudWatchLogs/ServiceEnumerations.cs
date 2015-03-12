@@ -23,4 +23,44 @@ using Amazon.Runtime;
 
 namespace Amazon.CloudWatchLogs
 {
+
+    /// <summary>
+    /// Constants used for properties of type OrderBy.
+    /// </summary>
+    public class OrderBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LastEventTime for OrderBy
+        /// </summary>
+        public static readonly OrderBy LastEventTime = new OrderBy("LastEventTime");
+        /// <summary>
+        /// Constant LogStreamName for OrderBy
+        /// </summary>
+        public static readonly OrderBy LogStreamName = new OrderBy("LogStreamName");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public OrderBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrderBy FindValue(string value)
+        {
+            return FindValue<OrderBy>(value);
+        }
+
+        public static implicit operator OrderBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

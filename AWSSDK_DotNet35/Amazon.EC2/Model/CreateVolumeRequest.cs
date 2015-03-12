@@ -45,13 +45,13 @@ namespace Amazon.EC2.Model
     /// volumes may only be attached to instances that support Amazon EBS encryption. Volumes
     /// that are created from encrypted snapshots are also automatically encrypted. For more
     /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-    /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+    /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
     /// or Restoring an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
-    /// Guide for Linux</i>.
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateVolumeRequest : AmazonEC2Request
@@ -119,8 +119,7 @@ namespace Amazon.EC2.Model
         /// an encrypted volume from an unencrypted snapshot or vice versa. If your AMI uses encrypted
         /// volumes, you can only launch it on supported instance types. For more information,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
-        /// 
+        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
         /// </para>
         /// </summary>
         public bool Encrypted

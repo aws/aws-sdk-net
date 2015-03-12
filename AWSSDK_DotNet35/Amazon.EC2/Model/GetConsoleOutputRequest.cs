@@ -46,15 +46,15 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For Linux/Unix instances, the instance console output displays the exact console output
-    /// that would normally be displayed on a physical monitor attached to a machine. This
+    /// For Linux instances, the instance console output displays the exact console output
+    /// that would normally be displayed on a physical monitor attached to a computer. This
     /// output is buffered because the instance produces it and then posts it to a store where
     /// the instance's owner can retrieve it.
     /// </para>
     ///  
     /// <para>
-    /// For Windows instances, the instance console output displays the last three system
-    /// event log errors.
+    /// For Windows instances, the instance console output includes output from the EC2Config
+    /// service.
     /// </para>
     /// </summary>
     public partial class GetConsoleOutputRequest : AmazonEC2Request

@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// current Spot Price. Amazon EC2 periodically sets the Spot Price based on available
     /// Spot Instance capacity and current Spot Instance requests. For more information, see
     /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-    /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+    /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -195,7 +195,7 @@ namespace Amazon.EC2.Model
         /// | <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot bid status
         /// information can help you track your Amazon EC2 Spot Instance requests. For more information,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-        /// Bid Status</a> in the Amazon Elastic Compute Cloud User Guide for Linux.
+        /// Bid Status</a> in the Amazon Elastic Compute Cloud User Guide.
         /// </para>
         ///  </li> <li> 
         /// <para>

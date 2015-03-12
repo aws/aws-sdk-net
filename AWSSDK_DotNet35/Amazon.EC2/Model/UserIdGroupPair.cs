@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a security group and AWS account ID pair for EC2-Classic.
+    /// Describes a security group and AWS account ID pair.
     /// </summary>
     public partial class UserIdGroupPair
     {
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// The name of the security group in the specified AWS account.
+        /// The ID of the security group.
         /// </para>
         /// </summary>
         public string GroupId
@@ -57,7 +57,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The ID of the security group owned by the specified AWS account.
+        /// The name of the security group. In a request, use this parameter for a security group
+        /// in EC2-Classic or a default VPC only. For a security group in a nondefault VPC, use
+        /// <code>GroupId</code>.
         /// </para>
         /// </summary>
         public string GroupName
@@ -75,7 +77,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The ID of an AWS account.
+        /// The ID of an AWS account. EC2-Classic only.
         /// </para>
         /// </summary>
         public string UserId

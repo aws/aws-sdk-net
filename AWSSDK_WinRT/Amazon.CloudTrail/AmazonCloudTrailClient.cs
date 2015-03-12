@@ -310,6 +310,36 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  LookupEvents
+
+        internal LookupEventsResponse LookupEvents(LookupEventsRequest request)
+        {
+            var marshaller = new LookupEventsRequestMarshaller();
+            var unmarshaller = LookupEventsResponseUnmarshaller.Instance;
+
+            return Invoke<LookupEventsRequest,LookupEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the LookupEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the LookupEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<LookupEventsResponse> LookupEventsAsync(LookupEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new LookupEventsRequestMarshaller();
+            var unmarshaller = LookupEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<LookupEventsRequest,LookupEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartLogging
 
         internal StartLoggingResponse StartLogging(StartLoggingRequest request)

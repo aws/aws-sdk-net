@@ -113,7 +113,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         ///  The maximum number of items to return for this request. The request returns a token
-        /// that you can specify in a subsequent call to get the next set of results.
+        /// that you can specify in a subsequent call to get the next set of results. You cannot
+        /// specify this parameter and the instance IDs parameter in the same request.
         /// </para>
         ///  
         /// <para>

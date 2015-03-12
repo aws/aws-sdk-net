@@ -101,10 +101,9 @@ namespace Amazon.EC2.Model
     /// <para>
     /// For more information about failed status checks, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
     /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
-    /// Guide for Linux</i>. For more information about working with scheduled events, see
-    /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions">Working
+    /// Guide</i>. For more information about working with scheduled events, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions">Working
     /// with an Instance That Has a Scheduled Event</a> in the <i>Amazon Elastic Compute Cloud
-    /// User Guide for Linux</i>.
+    /// User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeInstanceStatusRequest : AmazonEC2Request
@@ -250,7 +249,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The maximum number of paginated instance items per response. The call also returns
         /// a token that you can specify in a subsequent call to get the next set of results.
-        /// If the value is greater than 1000, we return only 1000 items.
+        /// If the value is greater than 1000, we return only 1000 items. You cannot specify this
+        /// parameter and the instance IDs parameter in the same request.
         /// </para>
         ///  
         /// <para>

@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// Registers an AMI. When you're creating an AMI, this is the final step you must complete
     /// before you can launch an instance from the AMI. For more information about creating
     /// AMIs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
-    /// Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+    /// Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// 
     ///  <note>
     /// <para>
@@ -43,8 +43,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// You can also use <code>RegisterImage</code> to create an Amazon EBS-backed AMI from
     /// a snapshot of a root device volume. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html">Launching
-    /// an Instance from a Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide
-    /// for Linux</i>.
+    /// an Instance from a Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>
