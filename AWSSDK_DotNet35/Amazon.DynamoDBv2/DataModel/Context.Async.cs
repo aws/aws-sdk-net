@@ -373,8 +373,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="conditions">
         /// Conditions that the results should meet.
         /// </param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> ScanAsync<T>(params ScanCondition[] conditions)
+        /// <returns>IAsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        public IAsyncSearch<T> ScanAsync<T>(params ScanCondition[] conditions)
         {
             if (conditions == null)
                 throw new ArgumentNullException("conditions");
@@ -391,8 +391,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Conditions that the results should meet.
         /// </param>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
+        /// <returns>IAsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        public IAsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
         {
             if (conditions == null)
                 throw new ArgumentNullException("conditions");
@@ -407,8 +407,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="scanConfig">Scan request object.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig)
+        /// <returns>IAsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        public IAsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig)
         {
             return FromScanAsync<T>(scanConfig, null);
         }
@@ -420,8 +420,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="scanConfig">Scan request object.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig)
+        /// <returns>IAsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        public IAsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig)
         {
             if (scanConfig == null) throw new ArgumentNullException("scanConfig");
 
@@ -439,8 +439,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKeyValue">Hash key of the items to query.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue)
+        /// <returns>IAsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue)
         {
             var query = ConvertQueryByValue<T>(hashKeyValue, null, null);
             return FromSearchAsync<T>(query);
@@ -453,8 +453,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKeyValue">Hash key of the items to query.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig)
+        /// <returns>IAsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig)
         {
             ContextSearch query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
             return FromSearchAsync<T>(query);
@@ -472,8 +472,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// For all operations except QueryOperator.Between, values should be one value.
         /// For QueryOperator.Between, values should be two values.
         /// </param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, params object[] values)
+        /// <returns>IAsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, params object[] values)
         {
             if (values == null || values.Length == 0)
                 throw new ArgumentOutOfRangeException("values");
@@ -494,8 +494,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// For QueryOperator.Between, values should be two values.
         /// </param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
+        /// <returns>IAsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
         {
             if (values == null)
                 throw new ArgumentNullException("values");
@@ -510,8 +510,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="queryConfig">Query request object.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig)
+        /// <returns>IAsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        public IAsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig)
         {
             return FromQueryAsync<T>(queryConfig, null);
         }
@@ -523,8 +523,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="queryConfig">Query request object.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig)
+        /// <returns>IAsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        public IAsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig)
         {
             if (queryConfig == null) throw new ArgumentNullException("queryConfig");
 

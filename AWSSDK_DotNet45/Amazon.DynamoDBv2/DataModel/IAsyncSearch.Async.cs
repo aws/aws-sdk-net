@@ -25,7 +25,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// from DynamoDB.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface IAsyncSearch<T>
+    public partial interface IAsyncSearch<T>
     {
         /// <summary>
         /// Initiates the asynchronous execution to get the next set of results from DynamoDB.
@@ -46,10 +46,5 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Results will include the remaining result items from DynamoDB.
         /// </returns>
         Task<List<T>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken));
-
-        /// <summary>
-        /// Flag that, if true, indicates that the search is done
-        /// </summary>
-        bool IsDone { get; }
     }
 }
