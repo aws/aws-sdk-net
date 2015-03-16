@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information about network interfaces, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
-    /// Network Interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+    /// Network Interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateNetworkInterfaceRequest : AmazonEC2Request
@@ -134,7 +134,7 @@ namespace Amazon.EC2.Model
         /// The number of IP addresses you can assign to a network interface varies by instance
         /// type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">Private
         /// IP Addresses Per ENI Per Instance Type</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide for Linux</i>.
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public int SecondaryPrivateIpAddressCount

@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information about key pairs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-    /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+    /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ImportKeyPairRequest : AmazonEC2Request

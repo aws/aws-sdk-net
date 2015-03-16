@@ -40,12 +40,12 @@ namespace Amazon.CloudWatchLogs.Model
     ///  
     /// <para>
     ///  The batch of events must satisfy the following constraints: <ul> <li>The maximum
-    /// batch size is 32,768 bytes, and this size is calculated as the sum of all event messages
-    /// in UTF-8, plus 26 bytes for each log event.</li> <li>None of the log events in the
-    /// batch can be more than 2 hours in the future.</li> <li>None of the log events in the
-    /// batch can be older than 14 days or the retention period of the log group.</li> <li>The
-    /// log events in the batch must be in chronological ordered by their <code class="code">timestamp</code>.</li>
-    /// <li>The maximum number of log events in a batch is 1,000.</li> </ul> 
+    /// batch size is 1,048,576 bytes, and this size is calculated as the sum of all event
+    /// messages in UTF-8, plus 26 bytes for each log event.</li> <li>None of the log events
+    /// in the batch can be more than 2 hours in the future.</li> <li>None of the log events
+    /// in the batch can be older than 14 days or the retention period of the log group.</li>
+    /// <li>The log events in the batch must be in chronological ordered by their <code class="code">timestamp</code>.</li>
+    /// <li>The maximum number of log events in a batch is 10,000.</li> </ul> 
     /// </para>
     /// </summary>
     public partial class PutLogEventsRequest : AmazonCloudWatchLogsRequest

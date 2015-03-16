@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// Encrypted Amazon EBS volumes may only be attached to instances that support Amazon
     /// EBS encryption. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-    /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+    /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
     /// an Amazon EBS Volume to an Instance</a>. Any device names that aren't reserved for
     /// instance store volumes can be used for Amazon EBS volumes. For more information, see
     /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
-    /// EC2 Instance Store</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+    /// EC2 Instance Store</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information about Amazon EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
-    /// Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+    /// Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AttachVolumeRequest : AmazonEC2Request

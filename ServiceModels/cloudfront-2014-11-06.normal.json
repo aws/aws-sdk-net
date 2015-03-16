@@ -2903,7 +2903,10 @@
           "shape":"string",
           "documentation":"Amazon S3 origins: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for this origin, for example, myawsbucket.s3.amazonaws.com. Custom origins: The DNS domain name for the HTTP server from which you want CloudFront to get objects for this origin, for example, www.example.com."
         },
-        "OriginPath":{"shape":"string"},
+        "OriginPath":{
+          "shape":"string",
+          "documentation":"An optional element that causes CloudFront to request your content from a directory in your Amazon S3 bucket or your custom origin. When you include the OriginPath element, specify the directory name, beginning with a /. CloudFront appends the directory name to the value of DomainName."
+        },
         "S3OriginConfig":{
           "shape":"S3OriginConfig",
           "documentation":"A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use the CustomOriginConfig element instead."

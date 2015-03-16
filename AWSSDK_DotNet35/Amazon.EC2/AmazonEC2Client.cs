@@ -289,7 +289,7 @@ namespace Amazon.EC2
         /// <para>
         /// An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. For
         /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -306,7 +306,7 @@ namespace Amazon.EC2
         /// <para>
         /// An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. For
         /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateAddress service method.</param>
@@ -362,9 +362,9 @@ namespace Amazon.EC2
         /// number of secondary IP addresses to be automatically assigned within the subnet's
         /// CIDR block range. The number of secondary IP addresses that you can assign to an instance
         /// varies by instance type. For information about instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>. For more
-        /// information about Elastic IP addresses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information
+        /// about Elastic IP addresses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -425,7 +425,7 @@ namespace Amazon.EC2
         /// <para>
         /// An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For
         /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -794,7 +794,7 @@ namespace Amazon.EC2
         /// <para>
         /// Encrypted Amazon EBS volumes may only be attached to instances that support Amazon
         /// EBS encryption. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -802,7 +802,7 @@ namespace Amazon.EC2
         /// an Amazon EBS Volume to an Instance</a>. Any device names that aren't reserved for
         /// instance store volumes can be used for Amazon EBS volumes. For more information, see
         /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
-        /// EC2 Instance Store</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// EC2 Instance Store</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -820,7 +820,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about Amazon EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
-        /// Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachVolume service method.</param>
@@ -1202,7 +1202,7 @@ namespace Amazon.EC2
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
         /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide for Linux</i>.
+        /// Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelConversionTask service method.</param>
@@ -1310,7 +1310,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelReservedInstancesListing service method.</param>
@@ -1365,7 +1365,7 @@ namespace Amazon.EC2
         /// EC2 starts on your behalf when the bid price that you specify exceeds the current
         /// Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance
         /// capacity and current Spot Instance requests. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  <important> 
         /// <para>
@@ -1481,7 +1481,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
-        /// AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyImage service method.</param>
@@ -1550,7 +1550,7 @@ namespace Amazon.EC2
         ///  </note> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
-        /// an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopySnapshot service method.</param>
@@ -1769,8 +1769,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
-        /// Amazon EBS-Backed Linux AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide
-        /// for Linux</i>.
+        /// Amazon EBS-Backed Linux AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImage service method.</param>
@@ -1827,7 +1826,7 @@ namespace Amazon.EC2
         /// <para>
         /// For information about the supported operating systems, image formats, and known limitations
         /// for the types of instances you can export, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html">Exporting
-        /// EC2 Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// EC2 Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInstanceExportTask service method.</param>
@@ -1969,7 +1968,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about key pairs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKeyPair service method.</param>
@@ -2155,7 +2154,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about network interfaces, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
-        /// Network Interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Network Interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInterface service method.</param>
@@ -2212,7 +2211,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about placement groups and cluster instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePlacementGroup service method.</param>
@@ -2286,7 +2285,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReservedInstancesListing service method.</param>
@@ -2481,8 +2480,8 @@ namespace Amazon.EC2
         /// <para>
         /// A security group is for use with instances either in the EC2-Classic platform or in
         /// a specific VPC. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-        /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>
-        /// and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+        /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
+        /// <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
         /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         ///  <important> 
@@ -2598,7 +2597,7 @@ namespace Amazon.EC2
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
         /// Elastic Block Store</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
@@ -2651,7 +2650,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
         /// You can create one data feed per AWS account. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSpotDatafeedSubscription service method.</param>
         /// 
@@ -2792,7 +2791,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-        /// Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTags service method.</param>
@@ -2859,13 +2858,13 @@ namespace Amazon.EC2
         /// volumes may only be attached to instances that support Amazon EBS encryption. Volumes
         /// that are created from encrypted snapshots are also automatically encrypted. For more
         /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
         /// or Restoring an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide for Linux</i>.
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVolume service method.</param>
@@ -3596,7 +3595,7 @@ namespace Amazon.EC2
         /// Deletes the specified placement group. You must terminate all instances in the placement
         /// group before you can delete the placement group. For more information about placement
         /// groups and cluster instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlacementGroup service method.</param>
         /// 
@@ -3822,7 +3821,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Deleting
-        /// an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshot service method.</param>
@@ -3874,7 +3873,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Deletes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// 
         /// <returns>The response from the DeleteSpotDatafeedSubscription service method, as returned by EC2.</returns>
@@ -3885,7 +3884,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Deletes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSpotDatafeedSubscription service method.</param>
         /// 
@@ -3992,7 +3991,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-        /// Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
@@ -4053,7 +4052,7 @@ namespace Amazon.EC2
         ///  </note> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
-        /// an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVolume service method.</param>
@@ -4563,7 +4562,7 @@ namespace Amazon.EC2
         /// <para>
         /// An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For
         /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -4580,7 +4579,7 @@ namespace Amazon.EC2
         /// <para>
         /// An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For
         /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAddresses service method.</param>
@@ -4639,7 +4638,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
-        /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -4658,7 +4657,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
-        /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityZones service method.</param>
@@ -4841,7 +4840,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes one or more of your conversion tasks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
         /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide for Linux</i>.
+        /// Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeConversionTasks service method, as returned by EC2.</returns>
@@ -4853,7 +4852,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes one or more of your conversion tasks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
         /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide for Linux</i>.
+        /// Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConversionTasks service method.</param>
         /// 
@@ -5453,10 +5452,9 @@ namespace Amazon.EC2
         /// <para>
         /// For more information about failed status checks, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide for Linux</i>. For more information about working with scheduled events, see
-        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions">Working
+        /// Guide</i>. For more information about working with scheduled events, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions">Working
         /// with an Instance That Has a Scheduled Event</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide for Linux</i>.
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -5539,10 +5537,9 @@ namespace Amazon.EC2
         /// <para>
         /// For more information about failed status checks, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide for Linux</i>. For more information about working with scheduled events, see
-        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions">Working
+        /// Guide</i>. For more information about working with scheduled events, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions">Working
         /// with an Instance That Has a Scheduled Event</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide for Linux</i>.
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceStatus service method.</param>
@@ -5658,7 +5655,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about key pairs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -5674,7 +5671,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about key pairs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeKeyPairs service method.</param>
@@ -5909,7 +5906,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes one or more of your placement groups. For more information about placement
         /// groups and cluster instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// 
         /// <returns>The response from the DescribePlacementGroups service method, as returned by EC2.</returns>
@@ -5921,7 +5918,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes one or more of your placement groups. For more information about placement
         /// groups and cluster instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePlacementGroups service method.</param>
         /// 
@@ -6048,7 +6045,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about Reserved Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -6064,7 +6061,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about Reserved Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstances service method.</param>
@@ -6141,7 +6138,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -6178,7 +6175,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesListings service method.</param>
@@ -6237,7 +6234,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-        /// Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide for Linux.
+        /// Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.
         /// </para>
         /// </summary>
         /// 
@@ -6256,7 +6253,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-        /// Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide for Linux.
+        /// Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesModifications service method.</param>
@@ -6315,7 +6312,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -6334,7 +6331,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesOfferings service method.</param>
@@ -6463,8 +6460,8 @@ namespace Amazon.EC2
         /// <para>
         /// A security group is for use with instances either in the EC2-Classic platform or in
         /// a specific VPC. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-        /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>
-        /// and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+        /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
+        /// <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
         /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -6482,8 +6479,8 @@ namespace Amazon.EC2
         /// <para>
         /// A security group is for use with instances either in the EC2-Classic platform or in
         /// a specific VPC. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-        /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>
-        /// and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+        /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
+        /// <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
         /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -6541,7 +6538,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about Amazon EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
-        /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotAttribute service method.</param>
@@ -6635,8 +6632,17 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// If you are describing a long list of snapshots, you can paginate the output to make
+        /// the list more manageable. The <code>MaxResults</code> parameter sets the maximum number
+        /// of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
+        /// value, then that number of results is returned along with a <code>NextToken</code>
+        /// value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
+        /// retrieve the remaining results.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about Amazon EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
-        /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -6690,8 +6696,17 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// If you are describing a long list of snapshots, you can paginate the output to make
+        /// the list more manageable. The <code>MaxResults</code> parameter sets the maximum number
+        /// of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
+        /// value, then that number of results is returned along with a <code>NextToken</code>
+        /// value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
+        /// retrieve the remaining results.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about Amazon EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
-        /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshots service method.</param>
@@ -6743,7 +6758,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSpotDatafeedSubscription service method, as returned by EC2.</returns>
@@ -6754,7 +6769,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotDatafeedSubscription service method.</param>
         /// 
@@ -6809,7 +6824,7 @@ namespace Amazon.EC2
         /// current Spot Price. Amazon EC2 periodically sets the Spot Price based on available
         /// Spot Instance capacity and current Spot Instance requests. For more information, see
         /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -6833,7 +6848,7 @@ namespace Amazon.EC2
         /// current Spot Price. Amazon EC2 periodically sets the Spot Price based on available
         /// Spot Instance capacity and current Spot Instance requests. For more information, see
         /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -6895,8 +6910,7 @@ namespace Amazon.EC2
         /// Describes the Spot Price history. The prices returned are listed in chronological
         /// order, from the oldest to the most recent, for up to the past 90 days. For more information,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-        /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-        /// Linux</i>.
+        /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -6917,8 +6931,7 @@ namespace Amazon.EC2
         /// Describes the Spot Price history. The prices returned are listed in chronological
         /// order, from the oldest to the most recent, for up to the past 90 days. For more information,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-        /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-        /// Linux</i>.
+        /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -7053,7 +7066,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-        /// Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -7069,7 +7082,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-        /// Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
@@ -7126,7 +7139,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about Amazon EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
-        /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumeAttribute service method.</param>
@@ -7191,7 +7204,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about Amazon EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
-        /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -7216,7 +7229,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about Amazon EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
-        /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumes service method.</param>
@@ -7956,7 +7969,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detaching
-        /// an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachVolume service method.</param>
@@ -8175,7 +8188,7 @@ namespace Amazon.EC2
         /// <para>
         /// An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For
         /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -8397,7 +8410,7 @@ namespace Amazon.EC2
         /// within the <code>10.0.0.0/8</code> IP address range, excluding local routes for VPCs
         /// in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges. For
         /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the Amazon Elastic Compute Cloud User Guide for Linux.
+        /// in the Amazon Elastic Compute Cloud User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLink service method.</param>
         /// 
@@ -8464,15 +8477,15 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For Linux/Unix instances, the instance console output displays the exact console output
-        /// that would normally be displayed on a physical monitor attached to a machine. This
+        /// For Linux instances, the instance console output displays the exact console output
+        /// that would normally be displayed on a physical monitor attached to a computer. This
         /// output is buffered because the instance produces it and then posts it to a store where
         /// the instance's owner can retrieve it.
         /// </para>
         ///  
         /// <para>
-        /// For Windows instances, the instance console output displays the last three system
-        /// event log errors.
+        /// For Windows instances, the instance console output includes output from the EC2Config
+        /// service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConsoleOutput service method.</param>
@@ -8597,7 +8610,7 @@ namespace Amazon.EC2
         /// importing the image, you then upload it using the ec2-import-volume command in the
         /// EC2 command line tools. For more information, see <ulink url="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
         /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</ulink> in the
-        /// <emphasis>Amazon Elastic Compute Cloud User Guide for Linux</emphasis>.
+        /// <emphasis>Amazon Elastic Compute Cloud User Guide</emphasis>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportInstance service method.</param>
         /// 
@@ -8656,7 +8669,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about key pairs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportKeyPair service method.</param>
@@ -8711,7 +8724,7 @@ namespace Amazon.EC2
         /// importing the image, you then upload it using the ec2-import-volume command in the
         /// Amazon EC2 command-line interface (CLI) tools. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
         /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide for Linux</i>.
+        /// Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportVolume service method.</param>
         /// 
@@ -8826,8 +8839,7 @@ namespace Amazon.EC2
         /// <para>
         /// To modify some attributes, the instance must be stopped. For more information, see
         /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
-        /// Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide
-        /// for Linux</i>.
+        /// Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceAttribute service method.</param>
@@ -8937,7 +8949,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-        /// Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide for Linux.
+        /// Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReservedInstances service method.</param>
@@ -8996,7 +9008,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information on modifying snapshot permissions, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-        /// Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -9217,8 +9229,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Enables monitoring for a running instance. For more information about monitoring instances,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-        /// Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-        /// Linux</i>.
+        /// Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MonitorInstances service method.</param>
         /// 
@@ -9283,7 +9294,7 @@ namespace Amazon.EC2
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
         /// Instances</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedInstancesOffering service method.</param>
@@ -9348,7 +9359,7 @@ namespace Amazon.EC2
         /// <para>
         /// For more information about troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
         /// Console Output and Rebooting Instances</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide for Linux</i>.
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebootInstances service method.</param>
@@ -9402,7 +9413,7 @@ namespace Amazon.EC2
         /// Registers an AMI. When you're creating an AMI, this is the final step you must complete
         /// before you can launch an instance from the AMI. For more information about creating
         /// AMIs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
-        /// Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  <note>
         /// <para>
@@ -9413,8 +9424,7 @@ namespace Amazon.EC2
         /// <para>
         /// You can also use <code>RegisterImage</code> to create an Amazon EBS-backed AMI from
         /// a snapshot of a root device volume. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html">Launching
-        /// an Instance from a Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide
-        /// for Linux</i>.
+        /// an Instance from a Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -9887,7 +9897,7 @@ namespace Amazon.EC2
         /// when the bid price that you specify exceeds the current Spot Price. Amazon EC2 periodically
         /// sets the Spot Price based on available Spot Instance capacity and current Spot Instance
         /// requests. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method.</param>
         /// 
@@ -10109,7 +10119,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information on modifying snapshot permissions, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-        /// Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetSnapshotAttribute service method.</param>
@@ -10300,20 +10310,20 @@ namespace Amazon.EC2
         /// <para>
         /// If you don't specify a security group when launching an instance, Amazon EC2 uses
         /// the default security group. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
-        /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// Linux instances have access to the public key of the key pair at boot. You can use
         /// this key to provide secure access to the instance. Amazon EC2 public images use this
         /// feature to provide secure access without passwords. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// You can provide optional user data when launching an instance. For more information,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance
-        /// Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -10329,8 +10339,7 @@ namespace Amazon.EC2
         /// <para>
         /// For more information about troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
         /// To Do If An Instance Immediately Terminates</a>, and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
-        /// Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide
-        /// for Linux</i>.
+        /// Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunInstances service method.</param>
@@ -10406,7 +10415,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartInstances service method.</param>
@@ -10492,12 +10501,12 @@ namespace Amazon.EC2
         /// and any other devices attached during the instance launch are automatically deleted.
         /// For more information about the differences between stopping and terminating instances,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-        /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
-        /// Stopping Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Stopping Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopInstances service method.</param>
@@ -10569,13 +10578,12 @@ namespace Amazon.EC2
         /// and any other devices attached during the instance launch are automatically deleted.
         /// For more information about the differences between stopping and terminating instances,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-        /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
-        /// Terminating Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-        /// Linux</i>.
+        /// Terminating Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateInstances service method.</param>
@@ -10678,8 +10686,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Disables monitoring for a running instance. For more information about monitoring
         /// instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-        /// Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-        /// Linux</i>.
+        /// Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnmonitorInstances service method.</param>
         /// 

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// For information about the supported operating systems, image formats, and known limitations
     /// for the types of instances you can export, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html">Exporting
-    /// EC2 Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+    /// EC2 Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateInstanceExportTaskRequest : AmazonEC2Request

@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// importing the image, you then upload it using the ec2-import-volume command in the
     /// Amazon EC2 command-line interface (CLI) tools. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
     /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-    /// Elastic Compute Cloud User Guide for Linux</i>.
+    /// Elastic Compute Cloud User Guide</i>.
     /// </summary>
     public partial class ImportVolumeRequest : AmazonEC2Request
     {

@@ -93,7 +93,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OriginPath.
+        /// Gets and sets the property OriginPath. An optional element that causes CloudFront
+        /// to request your content from a directory in your Amazon S3 bucket or your custom origin.
+        /// When you include the OriginPath element, specify the directory name, beginning with
+        /// a /. CloudFront appends the directory name to the value of DomainName.
         /// </summary>
         public string OriginPath
         {

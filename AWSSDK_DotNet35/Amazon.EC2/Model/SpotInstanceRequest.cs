@@ -236,7 +236,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The state of the Spot Instance request. Spot bid status information can help you track
         /// your Spot Instance requests. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-        /// Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+        /// Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public SpotInstanceState State

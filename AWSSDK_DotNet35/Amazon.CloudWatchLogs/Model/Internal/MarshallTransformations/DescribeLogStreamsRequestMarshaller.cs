@@ -57,6 +57,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDescending())
+                {
+                    context.Writer.WritePropertyName("descending");
+                    context.Writer.Write(publicRequest.Descending);
+                }
+
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("limit");
@@ -79,6 +85,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("nextToken");
                     context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetOrderBy())
+                {
+                    context.Writer.WritePropertyName("orderBy");
+                    context.Writer.Write(publicRequest.OrderBy);
                 }
 
         

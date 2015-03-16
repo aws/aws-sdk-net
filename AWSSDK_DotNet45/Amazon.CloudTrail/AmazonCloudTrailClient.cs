@@ -451,6 +451,68 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  LookupEvents
+
+        /// <summary>
+        /// Looks up API activity events captured by CloudTrail that create, update, or delete
+        /// resources in your account. Events for a region can be looked up for the times in which
+        /// you had CloudTrail turned on in that region during the last seven days. Lookup supports
+        /// five different attributes: time range (defined by a start time and end time), user
+        /// name, event name, resource type, and resource name. All attributes are optional. The
+        /// maximum number of attributes that can be specified in any one lookup request are time
+        /// range and one other attribute. The default number of results returned is 10, with
+        /// a maximum of 50 possible. The response includes a token that you can use to get the
+        /// next page of results. The rate of lookup requests is limited to one per second per
+        /// account.
+        /// 
+        ///  <important>Events that occurred during the selected time range will not be available
+        /// for lookup if CloudTrail logging was not enabled when the events occurred.</important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the LookupEvents service method.</param>
+        /// 
+        /// <returns>The response from the LookupEvents service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidLookupAttributesException">
+        /// Occurs when an invalid lookup attribute is specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidMaxResultsException">
+        /// This exception is thrown if the limit specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidNextTokenException">
+        /// Invalid token or token that was previously used in a request with different parameters.
+        /// This exception is thrown if the token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTimeRangeException">
+        /// Occurs if the timestamp values are invalid. Either the start time occurs after the
+        /// end time or the time range is outside the range of possible values.
+        /// </exception>
+        public LookupEventsResponse LookupEvents(LookupEventsRequest request)
+        {
+            var marshaller = new LookupEventsRequestMarshaller();
+            var unmarshaller = LookupEventsResponseUnmarshaller.Instance;
+
+            return Invoke<LookupEventsRequest,LookupEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the LookupEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the LookupEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<LookupEventsResponse> LookupEventsAsync(LookupEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new LookupEventsRequestMarshaller();
+            var unmarshaller = LookupEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<LookupEventsRequest,LookupEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartLogging
 
         /// <summary>

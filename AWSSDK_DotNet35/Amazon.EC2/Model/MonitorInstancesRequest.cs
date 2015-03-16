@@ -31,8 +31,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the MonitorInstances operation.
     /// Enables monitoring for a running instance. For more information about monitoring instances,
     /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-    /// Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-    /// Linux</i>.
+    /// Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </summary>
     public partial class MonitorInstancesRequest : AmazonEC2Request
     {

@@ -37,15 +37,19 @@ namespace Amazon.CloudWatchLogs.Model
     ///  By default, this operation returns up to 50 log streams. If there are more log streams
     /// to list, the response would contain a <code class="code">nextToken</code> value in
     /// the response body. You can also limit the number of log streams returned in the response
-    /// by specifying the <code class="code">limit</code> parameter in the request. 
+    /// by specifying the <code class="code">limit</code> parameter in the request. This operation
+    /// has a limit of five transactions per second, after which transactions are throttled.
+    /// 
     /// </para>
     /// </summary>
     public partial class DescribeLogStreamsRequest : AmazonCloudWatchLogsRequest
     {
+        private bool? _descending;
         private int? _limit;
         private string _logGroupName;
         private string _logStreamNamePrefix;
         private string _nextToken;
+        private OrderBy _orderBy;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -59,6 +63,25 @@ namespace Amazon.CloudWatchLogs.Model
         public DescribeLogStreamsRequest(string logGroupName)
         {
             _logGroupName = logGroupName;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Descending. 
+        /// <para>
+        ///  If set to true, results are returned in descending order. If you don't specify a
+        /// value or set it to false, results are returned in ascending order. 
+        /// </para>
+        /// </summary>
+        public bool Descending
+        {
+            get { return this._descending.GetValueOrDefault(); }
+            set { this._descending = value; }
+        }
+
+        // Check to see if Descending property is set
+        internal bool IsSetDescending()
+        {
+            return this._descending.HasValue; 
         }
 
         /// <summary>
@@ -96,7 +119,11 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogStreamNamePrefix.
+        /// Gets and sets the property LogStreamNamePrefix. 
+        /// <para>
+        ///  Will only return log streams that match the provided logStreamNamePrefix. If you
+        /// don't specify a value, no prefix filter is applied. 
+        /// </para>
         /// </summary>
         public string LogStreamNamePrefix
         {
@@ -128,6 +155,27 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrderBy. 
+        /// <para>
+        ///  Specifies what to order the returned log streams by. Valid arguments are 'LogStreamName'
+        /// or 'LastEventTime'. If you don't specify a value, results are ordered by LogStreamName.
+        /// If 'LastEventTime' is chosen, the request cannot also contain a logStreamNamePrefix.
+        /// 
+        /// </para>
+        /// </summary>
+        public OrderBy OrderBy
+        {
+            get { return this._orderBy; }
+            set { this._orderBy = value; }
+        }
+
+        // Check to see if OrderBy property is set
+        internal bool IsSetOrderBy()
+        {
+            return this._orderBy != null;
         }
 
     }

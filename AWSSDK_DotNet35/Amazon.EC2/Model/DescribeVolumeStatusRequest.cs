@@ -159,7 +159,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of paginated volume items per response.
+        /// The maximum number of paginated volume items per response. You cannot specify this
+        /// parameter and the volume IDs parameter in the same request.
         /// </para>
         /// </summary>
         public int MaxResults

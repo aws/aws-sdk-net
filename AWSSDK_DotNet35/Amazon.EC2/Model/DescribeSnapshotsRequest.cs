@@ -72,13 +72,24 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
+    /// If you are describing a long list of snapshots, you can paginate the output to make
+    /// the list more manageable. The <code>MaxResults</code> parameter sets the maximum number
+    /// of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
+    /// value, then that number of results is returned along with a <code>NextToken</code>
+    /// value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
+    /// retrieve the remaining results.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information about Amazon EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
-    /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i>.
+    /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeSnapshotsRequest : AmazonEC2Request
     {
         private List<Filter> _filters = new List<Filter>();
+        private int? _maxResults;
+        private string _nextToken;
         private List<string> _ownerIds = new List<string>();
         private List<string> _restorableByUserIds = new List<string>();
         private List<string> _snapshotIds = new List<string>();
@@ -158,6 +169,54 @@ namespace Amazon.EC2.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of snapshot results returned by <code>DescribeSnapshots</code>
+        /// in paginated output. When this parameter is used, <code>DescribeSnapshots</code> only
+        /// returns <code>MaxResults</code> results in a single page along with a <code>NextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
+        /// value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a
+        /// value larger than 1000, only 1000 results are returned. If this parameter is not used,
+        /// then <code>DescribeSnapshots</code> returns all results. You cannot specify this parameter
+        /// and the snapshot IDs parameter in the same request.
+        /// </para>
+        /// </summary>
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The <code>NextToken</code> value returned from a previous paginated <code>DescribeSnapshots</code>
+        /// request where <code>MaxResults</code> was used and the results exceeded the value
+        /// of that parameter. Pagination continues from the end of the previous results that
+        /// returned the <code>NextToken</code> value. This value is <code>null</code> when there
+        /// are no more results to return.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>

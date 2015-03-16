@@ -32,7 +32,29 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeSnapshotsResult : AmazonWebServiceResponse
     {
+        private string _nextToken;
         private List<Snapshot> _snapshots = new List<Snapshot>();
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code>
+        /// request. When the results of a <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>,
+        /// this value can be used to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Snapshots.

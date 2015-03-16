@@ -30,14 +30,14 @@ namespace Amazon.CloudWatchLogs
     /// <summary>
     /// Interface for accessing CloudWatchLogs
     ///
-    /// Amazon CloudWatch Logs Service API Reference 
+    /// Amazon CloudWatch Logs API Reference 
     /// <para>
-    /// This is the <i>Amazon CloudWatch Logs API Reference</i>. Amazon CloudWatch Logs is
-    /// a managed service for real time monitoring and archival of application logs. This
-    /// guide provides detailed information about Amazon CloudWatch Logs actions, data types,
-    /// parameters, and errors. For detailed information about Amazon CloudWatch Logs features
-    /// and their associated API calls, go to the <a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/DeveloperGuide">Amazon
-    /// CloudWatch Logs Developer Guide</a>. 
+    /// This is the <i>Amazon CloudWatch Logs API Reference</i>. Amazon CloudWatch Logs enables
+    /// you to monitor, store, and access your system, application, and custom log files.
+    /// This guide provides detailed information about Amazon CloudWatch Logs actions, data
+    /// types, parameters, and errors. For detailed information about Amazon CloudWatch Logs
+    /// features and their associated API calls, go to the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide">Amazon
+    /// CloudWatch Developer Guide</a>. 
     /// </para>
     ///  
     /// <para>
@@ -380,7 +380,9 @@ namespace Amazon.CloudWatchLogs
         ///  By default, this operation returns up to 50 log streams. If there are more log streams
         /// to list, the response would contain a <code class="code">nextToken</code> value in
         /// the response body. You can also limit the number of log streams returned in the response
-        /// by specifying the <code class="code">limit</code> parameter in the request. 
+        /// by specifying the <code class="code">limit</code> parameter in the request. This operation
+        /// has a limit of five transactions per second, after which transactions are throttled.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLogStreams service method.</param>
@@ -510,12 +512,12 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         ///  The batch of events must satisfy the following constraints: <ul> <li>The maximum
-        /// batch size is 32,768 bytes, and this size is calculated as the sum of all event messages
-        /// in UTF-8, plus 26 bytes for each log event.</li> <li>None of the log events in the
-        /// batch can be more than 2 hours in the future.</li> <li>None of the log events in the
-        /// batch can be older than 14 days or the retention period of the log group.</li> <li>The
-        /// log events in the batch must be in chronological ordered by their <code class="code">timestamp</code>.</li>
-        /// <li>The maximum number of log events in a batch is 1,000.</li> </ul> 
+        /// batch size is 1,048,576 bytes, and this size is calculated as the sum of all event
+        /// messages in UTF-8, plus 26 bytes for each log event.</li> <li>None of the log events
+        /// in the batch can be more than 2 hours in the future.</li> <li>None of the log events
+        /// in the batch can be older than 14 days or the retention period of the log group.</li>
+        /// <li>The log events in the batch must be in chronological ordered by their <code class="code">timestamp</code>.</li>
+        /// <li>The maximum number of log events in a batch is 10,000.</li> </ul> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLogEvents service method.</param>

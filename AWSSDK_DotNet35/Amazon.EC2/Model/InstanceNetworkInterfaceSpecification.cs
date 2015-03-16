@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
         /// Indicates whether to assign a public IP address to an instance you launch in a VPC.
         /// The public IP address can only be assigned to a network interface for eth0, and can
         /// only be assigned to a new network interface, not an existing one. You cannot specify
-        /// more than one network interface in the request. If luanching into a default subnet,
+        /// more than one network interface in the request. If launching into a default subnet,
         /// the default value is <code>true</code>.
         /// </para>
         /// </summary>
