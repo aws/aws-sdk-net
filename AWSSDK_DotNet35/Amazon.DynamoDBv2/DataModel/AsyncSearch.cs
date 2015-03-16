@@ -22,7 +22,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// A strongly-typed object for retrieving search results (Query or Scan)
     /// from DynamoDB.
     /// </summary>
-    public partial class AsyncSearch<T>
+    public partial class AsyncSearch<T> : IAsyncSearch
     {
         #region Constructor
 
