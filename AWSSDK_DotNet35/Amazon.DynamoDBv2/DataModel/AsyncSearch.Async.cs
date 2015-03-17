@@ -38,7 +38,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNextSet
         ///         operation.</returns>
-        public IAsyncResult BeginGetNextSet(AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetNextSet(AsyncCallback callback, object state)
         {
             return DynamoDBAsyncExecutor.BeginOperation(() =>
             {
@@ -52,7 +52,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Finishes the asynchronous execution of the BeginGetNextSet operation.
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNextSet.</param>
-        public List<T> EndGetNextSet(IAsyncResult asyncResult)
+        public virtual List<T> EndGetNextSet(IAsyncResult asyncResult)
         {
             return DynamoDBAsyncExecutor.EndOperation<List<T>>(asyncResult) as List<T>;
         }
@@ -66,7 +66,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRemaining
         ///         operation.</returns>
-        public IAsyncResult BeginGetRemaining(AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginGetRemaining(AsyncCallback callback, object state)
         {
             return DynamoDBAsyncExecutor.BeginOperation(() =>
             {
@@ -80,7 +80,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Finishes the asynchronous execution of the BeginGetRemaining operation.
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNextSet.</param>
-        public List<T> EndGetRemaining(IAsyncResult asyncResult)
+        public virtual List<T> EndGetRemaining(IAsyncResult asyncResult)
         {
             return DynamoDBAsyncExecutor.EndOperation<List<T>>(asyncResult);
         }

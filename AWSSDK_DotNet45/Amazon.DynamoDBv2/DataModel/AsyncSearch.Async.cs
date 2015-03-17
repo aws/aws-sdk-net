@@ -41,7 +41,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// A Task that can be used to poll or wait for results, or both.
         /// Results will include the next set of result items from DynamoDB.
         /// </returns>
-        public Task<List<T>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<List<T>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return AsyncRunner.Run(() =>
             {
@@ -59,7 +59,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// A Task that can be used to poll or wait for results, or both.
         /// Results will include the remaining result items from DynamoDB.
         /// </returns>
-        public Task<List<T>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<List<T>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return AsyncRunner.Run(() =>
             {

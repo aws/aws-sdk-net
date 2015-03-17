@@ -33,6 +33,11 @@ namespace Amazon.DynamoDBv2.DataModel
             Config = contextSearch.FlatConfig;
         }
 
+        /// <summary>
+        /// Default constructor to support mocks in unit testing
+        /// </summary>
+        public AsyncSearch() { }
+
         #endregion
 
         #region Private members
@@ -48,7 +53,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Flag that, if true, indicates that the search is done
         /// </summary>
-        public bool IsDone
+        public virtual bool IsDone
         {
             get
             {
