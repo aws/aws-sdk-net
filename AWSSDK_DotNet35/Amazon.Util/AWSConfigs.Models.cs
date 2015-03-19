@@ -86,7 +86,8 @@ namespace Amazon.Util
             Region = Choose(Region, root.Region);
             ProfileName = Choose(ProfileName, root.ProfileName);
             ProfilesLocation = Choose(ProfilesLocation, root.ProfilesLocation);
-            CorrectForClockSkew = root.CorrectForClockSkew;
+            if (root.CorrectForClockSkew.HasValue)
+                CorrectForClockSkew = root.CorrectForClockSkew.Value;
 #endif
         }
 

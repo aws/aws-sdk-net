@@ -371,13 +371,17 @@ namespace Amazon.Runtime.Internal.Util
             foreach (var kvp in this.Properties)
             {
                 jw.WritePropertyName(kvp.Key.ToString());
-                if (kvp.Value.Count > 1)
+                var properties = kvp.Value;
+                if (properties.Count > 1)
                     jw.WriteArrayStart();
-                foreach (var obj in kvp.Value)
+                foreach (var obj in properties)
                 {
-                    jw.Write(obj.ToString());
+                    if (obj == null)
+                        jw.Write(null);
+                    else
+                        jw.Write(obj.ToString());
                 }
-                if (kvp.Value.Count > 1)
+                if (properties.Count > 1)
                     jw.WriteArrayEnd();
             }
             jw.WriteObjectEnd();
@@ -386,7 +390,7 @@ namespace Amazon.Runtime.Internal.Util
             foreach (var kvp in this.Timings)
             {
                 jw.WritePropertyName(kvp.Key.ToString());
-                List<Amazon.Runtime.IMetricsTiming> timings = kvp.Value;
+                var timings = kvp.Value;
                 if (timings.Count > 1)
                     jw.WriteArrayStart();
                 foreach (var timing in kvp.Value)

@@ -107,6 +107,7 @@ namespace Amazon.TraceListener
         private const int bufferSize = 0x1000; // 4 KB
         private static bool canWriteToEventLog;
         private static string eventLogSource = typeof(DynamoDBTraceListener).Name;
+        private static DynamoDBEntryConversion conversionSchema = DynamoDBEntryConversion.V1;
 
         private string _currentLogFile = null;
         private string CurrentLogFile
@@ -429,7 +430,7 @@ namespace Amazon.TraceListener
                 return null;
             }
 
-            Table table = Table.LoadTable(Client, Configuration.TableName);
+            Table table = Table.LoadTable(Client, Configuration.TableName, conversionSchema);
             return table;
         }
 
@@ -472,6 +473,8 @@ namespace Amazon.TraceListener
                 string message = ComposeMessage(data);
                 doc[ATTRIBUTE_MESSAGE] = LimitLength(message);
             }
+
+            doc = doc.ForceConversion(conversionSchema);
 
             // Set hash/range keys, possibly from event data
             doc[ATTRIBUTE_ORIGIN] = ExpandVariables(Configuration.HashKeyFormat, doc);

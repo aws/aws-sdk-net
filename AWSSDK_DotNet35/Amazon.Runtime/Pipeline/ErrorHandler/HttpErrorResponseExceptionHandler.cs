@@ -15,6 +15,7 @@
 
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 using System;
 using System.Diagnostics;
 using System.Net;
@@ -65,17 +66,33 @@ namespace Amazon.Runtime.Internal
                 using (httpErrorResponse.ResponseBody)
                 {
                     var unmarshaller = requestContext.Unmarshaller;
-                    var readEntireResponse = requestContext.ClientConfig.LogResponse ||
-                        requestContext.ClientConfig.ReadEntireResponse ||
-                        AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never;
+                    var readEntireResponse = true;
 
                     var errorContext = unmarshaller.CreateContext(httpErrorResponse,
                         readEntireResponse,
                         httpErrorResponse.ResponseBody.OpenResponse(),
                         requestContext.Metrics);
 
-                    errorResponseException = unmarshaller.UnmarshallException(errorContext,
-                        exception, httpErrorResponse.StatusCode);
+                    try
+                    {
+                        errorResponseException = unmarshaller.UnmarshallException(errorContext,
+                            exception, httpErrorResponse.StatusCode);
+                    }
+                    catch (Exception e)
+                    {
+                        // Rethrow Amazon service or client exceptions 
+                        if (e is AmazonServiceException ||
+                            e is AmazonClientException)
+                        {
+                            throw;
+                        }
+
+                        // Else, there was an issue with the response body, throw AmazonUnmarshallingException
+                        var requestId = httpErrorResponse.GetHeaderValue(HeaderKeys.RequestIdHeader);
+                        var body = errorContext.ResponseBody;
+                        throw new AmazonUnmarshallingException(requestId, lastKnownLocation: null, responseBody: body, innerException: e);
+                    }
+
                     Debug.Assert(errorResponseException != null);
 
                     requestContext.Metrics.AddProperty(Metric.AWSRequestID, errorResponseException.RequestId);

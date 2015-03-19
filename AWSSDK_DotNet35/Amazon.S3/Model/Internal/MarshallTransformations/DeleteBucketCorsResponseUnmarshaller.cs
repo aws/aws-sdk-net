@@ -25,7 +25,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for DeleteCORSConfiguration operation
     /// </summary>
-    internal class DeleteCORSConfigurationResponseUnmarshaller : XmlResponseUnmarshaller
+    internal class DeleteCORSConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
 
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
@@ -34,14 +34,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
 
             return response;
-        }
-        
-        
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
-
-            return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
 
         private static DeleteCORSConfigurationResponseUnmarshaller _instance;

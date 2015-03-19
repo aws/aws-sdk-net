@@ -59,5 +59,24 @@ namespace Amazon.S3
         /// </summary>
         public string AmazonId2 { get; protected set; }
 
+        /// <summary>
+        /// The entire response body for this exception, if available.
+        /// </summary>
+        public string ResponseBody { get; internal set; }
+
+        #region Overrides
+
+        public override string Message
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(ResponseBody))
+                    return base.Message;
+                else
+                    return base.Message + " " + "Response Body: " + ResponseBody;
+            }
+        }
+
+        #endregion
     }
 }

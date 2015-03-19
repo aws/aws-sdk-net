@@ -125,8 +125,10 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Codec. 
         /// <para>
-        /// The video codec for the output file. Valid values include <code>H.264</code> and <code>vp8</code>.
-        /// You can only specify <code>vp8</code> when the container type is <code>webm</code>.
+        /// The video codec for the output file. Valid values include <code>gif</code>, <code>H.264</code>,
+        /// <code>mpeg2</code>, and <code>vp8</code>. You can only specify <code>vp8</code> when
+        /// the container type is <code>webm</code>, <code>gif</code> when the container type
+        /// is <code>gif</code>, and <code>mpeg2</code> when the container type is <code>mpg</code>.
         /// </para>
         /// </summary>
         public string Codec
@@ -144,7 +146,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property CodecOptions. 
         /// <para>
-        ///  <b>Profile</b> 
+        ///  <b>Profile (H.264/VP8 Only)</b> 
         /// </para>
         ///  
         /// <para>
@@ -197,7 +199,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li> <li>4.1 - 32768</li>
         /// </ul> 
         /// <para>
-        ///  <b>MaxBitRate</b> 
+        ///  <b>MaxBitRate (Optional, H.264/MPEG2/VP8 only)</b> 
         /// </para>
         ///  
         /// <para>
@@ -208,7 +210,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>BufferSize</b> 
+        ///  <b>BufferSize (Optional, H.264/MPEG2/VP8 only)</b> 
         /// </para>
         ///  
         /// <para>
@@ -217,6 +219,96 @@ namespace Amazon.ElasticTranscoder.Model
         /// container type of the output video. Specify an integer greater than 0. If you specify
         /// <code>MaxBitRate</code> and omit <code>BufferSize</code>, Elastic Transcoder sets
         /// <code>BufferSize</code> to 10 times the value of <code>MaxBitRate</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>InterlacedMode (Optional, H.264/MPEG2 Only)</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The interlace mode for the output video.
+        /// </para>
+        ///  
+        /// <para>
+        /// Interlaced video is used to double the perceived frame rate for a video by interlacing
+        /// two fields (one field on every other line, the other field on the other lines) so
+        /// that the human eye registers multiple pictures per frame. Interlacing reduces the
+        /// bandwidth required for transmitting a video, but can result in blurred images and
+        /// flickering.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values include <code>Progressive</code> (no interlacing, top to bottom), <code>TopFirst</code>
+        /// (top field first), <code>BottomFirst</code> (bottom field first), and <code>Auto</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>InterlaceMode</code> is not specified, Elastic Transcoder uses <code>Progressive</code>
+        /// for the output. If <code>Auto</code> is specified, Elastic Transcoder interlaces the
+        /// output.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>ColorSpaceConversionMode (Optional, H.264/MPEG2 Only)</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The color space conversion Elastic Transcoder applies to the output video. Color spaces
+        /// are the algorithms used by the computer to store information about how to render color.
+        /// <code>Bt.601</code> is the standard for standard definition video, while <code>Bt.709</code>
+        /// is the standard for high definition video.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values include <code>None</code>, <code>Bt709toBt601</code>, <code>Bt601toBt709</code>,
+        /// and <code>Auto</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you chose <code>Auto</code> for <code>ColorSpaceConversionMode</code> and your
+        /// output is interlaced, your frame rate is one of <code>23.97</code>, <code>24</code>,
+        /// <code>25</code>, <code>29.97</code>, <code>50</code>, or <code>60</code>, your <code>SegmentDuration</code>
+        /// is null, and you are using one of the resolution changes from the list below, Elastic
+        /// Transcoder applies the following color space conversions:
+        /// </para>
+        ///  <ul> <li> <i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies
+        /// <code>Bt601ToBt709</code> </li> <li> <i>Standard to HD, 720x576 to 1920x1080</i> -
+        /// Elastic Transcoder applies <code>Bt601ToBt709</code> </li> <li> <i>HD to Standard,
+        /// 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </li>
+        /// <li> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code>
+        /// </li> </ul> <note>Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code>
+        /// <code>Auto</code> mode in the future. All outputs in a playlist must use the same
+        /// <code>ColorSpaceConversionMode</code>.</note> 
+        /// <para>
+        /// If you do not specify a <code>ColorSpaceConversionMode</code>, Elastic Transcoder
+        /// does not change the color space of a file. If you are unsure what <code>ColorSpaceConversionMode</code>
+        /// was applied to your output file, you can check the <code>AppliedColorSpaceConversion</code>
+        /// parameter included in your job response. If your job does not have an <code>AppliedColorSpaceConversion</code>
+        /// in its response, no <code>ColorSpaceConversionMode</code> was applied.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>ChromaSubsampling</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The sampling pattern for the chroma (color) channels of the output video. Valid values
+        /// include <code>yuv420p</code> and <code>yuv422p</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// <code>yuv420p</code> samples the chroma information of every other horizontal and
+        /// every other vertical line, <code>yuv422p</code> samples the color information of every
+        /// horizontal line and every other vertical line.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>LoopCount (Gif Only)</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The number of times you want the output gif to loop. Valid values include <code>Infinite</code>
+        /// and integers between <code>0</code> and <code>100</code>, inclusive.
         /// </para>
         /// </summary>
         public Dictionary<string, string> CodecOptions
@@ -251,6 +343,11 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// Gets and sets the property FixedGOP. 
+        /// <para>
+        /// Applicable only when the value of Video:Codec is one of <code>H.264</code>, <code>MPEG2</code>,
+        /// or <code>VP8</code>.
+        /// </para>
+        ///  
         /// <para>
         /// Whether to use a fixed value for <code>FixedGOP</code>. Valid values are <code>true</code>
         /// and <code>false</code>:
@@ -328,6 +425,11 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// Gets and sets the property KeyframesMaxDist. 
+        /// <para>
+        /// Applicable only when the value of Video:Codec is one of <code>H.264</code>, <code>MPEG2</code>,
+        /// or <code>VP8</code>.
+        /// </para>
+        ///  
         /// <para>
         /// The maximum number of frames between key frames. Key frames are fully encoded frames;
         /// the frames between key frames are encoded based, in part, on the content of the key

@@ -73,12 +73,14 @@
     <Compile Include="Runtime\RedirectHandlerTests.cs" />
     <Compile Include="Runtime\AmazonServiceClientTests.cs" />
     <Compile Include="Runtime\UnmarshallerTests.cs" />
+    <Compile Include="Runtime\UnparseableResponsesTests.cs" />
     <Compile Include="S3EventNotificationTests.cs" />
     <Compile Include="TestTools\Comparer.cs" />
     <Compile Include="TestTools\AWSQueryValidator.cs" />
     <Compile Include="TestTools\ComparerTests.cs" />
     <Compile Include="TestTools\Constants.cs" />
     <Compile Include="TestTools\CustomizationsTests.cs" />
+    <Compile Include="TestTools\DisposableSwitch.cs" />
     <Compile Include="TestTools\InstantiateClassGenerator.cs" />
     <Compile Include="TestTools\InstantiateClassGeneratorTests.cs" />
     <Compile Include="TestTools\JsonSampleGenerator.cs" />

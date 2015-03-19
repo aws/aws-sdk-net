@@ -58,6 +58,13 @@ namespace Amazon
             return section as T;
         }
 
+        internal static bool XmlSectionExists(string sectionName)
+        {
+            var section = ConfigurationManager.GetSection(sectionName);
+            var element = section as System.Xml.XmlElement;
+            return (element != null);
+        }
+
         private static Dictionary<string, List<TraceListener>> _traceListeners
             = new Dictionary<string, List<TraceListener>>(StringComparer.OrdinalIgnoreCase);
 

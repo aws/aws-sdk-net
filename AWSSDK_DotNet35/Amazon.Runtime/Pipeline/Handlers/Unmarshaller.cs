@@ -13,8 +13,9 @@
  * permissions and limitations under the License.
  */
 
+using System;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 
 namespace Amazon.Runtime.Internal
 {
@@ -121,17 +122,32 @@ namespace Amazon.Runtime.Internal
                 var unmarshaller = requestContext.Unmarshaller;
                 try
                 {
-                    var readEntireResponse = _supportsResponseLogging &&
-                        (requestContext.ClientConfig.LogResponse || requestContext.ClientConfig.ReadEntireResponse
-                        || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never);
+                    var readEntireResponse = _supportsResponseLogging;
 
                     var context = unmarshaller.CreateContext(responseContext.HttpResponse,
                         readEntireResponse,
                         responseContext.HttpResponse.ResponseBody.OpenResponse(),
                         requestContext.Metrics);
 
-                    var response = UnmarshallResponse(context, requestContext);
-                    responseContext.Response = response;                    
+                    try
+                    {
+                        var response = UnmarshallResponse(context, requestContext);
+                        responseContext.Response = response;
+                    }
+                    catch(Exception e)
+                    {
+                        // Rethrow Amazon service or client exceptions
+                        if (e is AmazonServiceException ||
+                            e is AmazonClientException)
+                        {
+                            throw;
+                        }
+
+                        // Else, there was an issue with the response body, throw AmazonUnmarshallingException
+                        var requestId = responseContext.HttpResponse.GetHeaderValue(HeaderKeys.RequestIdHeader);
+                        var body = context.ResponseBody;
+                        throw new AmazonUnmarshallingException(requestId, lastKnownLocation: null, responseBody: body, innerException: e);
+                    }
                 }
                 finally
                 {

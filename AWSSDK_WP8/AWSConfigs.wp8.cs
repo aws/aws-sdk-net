@@ -36,5 +36,10 @@ namespace Amazon
         {
             return null;
         }
+
+        internal static bool XmlSectionExists(string sectionName)
+        {
+            return false;
+        }
     }
 }

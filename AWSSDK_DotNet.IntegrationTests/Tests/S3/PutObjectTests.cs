@@ -69,7 +69,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Console.WriteLine(exception.ErrorCode);
                 Console.WriteLine(exception.StatusCode);
 
-                Assert.AreEqual("The specified bucket does not exist", exception.Message);
+                Assert.IsTrue(exception.Message.Contains("The specified bucket does not exist"));
                 Assert.AreEqual("NoSuchBucket", exception.ErrorCode);
                 Assert.AreEqual(HttpStatusCode.NotFound, exception.StatusCode);
             }

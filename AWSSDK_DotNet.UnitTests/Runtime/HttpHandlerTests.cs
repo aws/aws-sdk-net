@@ -215,12 +215,13 @@ namespace AWSSDK.UnitTests
         public class MockHttpRequestFactory : IHttpRequestFactory<Stream>
         {            
             public Action GetResponseAction { get; set; }
+            public Func<MockHttpRequest, HttpWebResponse> ResponseCreator { get; set; }
 
             public MockHttpRequest LastCreatedRequest { get; private set; }
 
             public IHttpRequest<Stream> CreateHttpRequest(Uri requestUri)
             {
-                this.LastCreatedRequest = new MockHttpRequest(requestUri, this.GetResponseAction);
+                this.LastCreatedRequest = new MockHttpRequest(requestUri, this.GetResponseAction, this.ResponseCreator);
                 return this.LastCreatedRequest;
             }
 
@@ -248,11 +249,21 @@ namespace AWSSDK.UnitTests
             public Uri RequestUri { get; set; }
 
             public Action GetResponseAction { get; set; }
+            public Func<MockHttpRequest, HttpWebResponse> ResponseCreator { get; set; }
 
-            public MockHttpRequest(Uri requestUri, Action action)
+            public MockHttpRequest(Uri requestUri, Action action, Func<MockHttpRequest, HttpWebResponse> responseCreator = null)
             {
                 this.RequestUri = requestUri;
                 this.GetResponseAction = action;
+                this.ResponseCreator = responseCreator ?? CreateResponse;
+            }
+
+            private HttpWebResponse CreateResponse(MockHttpRequest request)
+            {
+                // Extract the last segment of the URI, this is the custom URI 
+                // sent by the unit tests.
+                var resourceName = request.RequestUri.Host.Split('.').Last();
+                return MockWebResponse.CreateFromResource(resourceName);
             }
             
             public void ConfigureRequest(IRequestContext requestContext)
@@ -277,13 +288,8 @@ namespace AWSSDK.UnitTests
                 if (this.GetResponseAction!=null)                
                     this.GetResponseAction();
 
-                // Extract the last segment of the URI, this is the custom URI 
-                // sent by the unit tests.
-                var resourceName = this.RequestUri.Host.Split('.').Last();
-
-                return new HttpWebRequestResponseData(
-                    MockWebResponse.CreateFromResource(resourceName)
-                    as HttpWebResponse);
+                var response = ResponseCreator(this);
+                return new HttpWebRequestResponseData(response);
             }
 
             public void WriteToRequestBody(Stream requestContent, Stream contentStream, 

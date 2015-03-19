@@ -63,7 +63,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
-                    if (context.TestExpression("MFADelete", targetDepth))
+                    if (context.TestExpression("MfaDelete", targetDepth))
                     {
                         response.VersioningConfig.EnableMfaDelete = string.Equals(StringUnmarshaller.GetInstance().Unmarshall(context), "Enabled");
                             
@@ -79,13 +79,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return;
-        }
-        
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
-
-            return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
 
         private static GetBucketVersioningResponseUnmarshaller _instance;

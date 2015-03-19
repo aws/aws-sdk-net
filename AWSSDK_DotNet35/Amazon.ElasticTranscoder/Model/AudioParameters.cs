@@ -87,8 +87,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Codec. 
         /// <para>
-        /// The audio codec for the output file. Valid values include <code>aac</code>, <code>mp3</code>,
-        /// and <code>vorbis</code>.
+        /// The audio codec for the output file. Valid values include <code>aac</code>, <code>mp2</code>,
+        /// <code>mp3</code>, and <code>vorbis</code>.
         /// </para>
         /// </summary>
         public string Codec

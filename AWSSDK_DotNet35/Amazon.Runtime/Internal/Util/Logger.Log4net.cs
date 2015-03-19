@@ -115,8 +115,12 @@ namespace Amazon.Runtime.Internal.Util
                         return;
                     }
 
-                    // If log4net logging is enabled, we attempt to activate log4net by calling XmlConfigurator.Configure()
-                    if ((AWSConfigs.LoggingConfig.LogTo & LoggingOptions.Log4Net) == LoggingOptions.Log4Net)
+                    var log4netSectionPresent = AWSConfigs.XmlSectionExists("log4net");
+
+                    // If log4net section exists and log4net logging is enabled, we attempt to activate
+                    // log4net by calling XmlConfigurator.Configure()
+                    if (log4netSectionPresent &&
+                        (AWSConfigs.LoggingConfig.LogTo & LoggingOptions.Log4Net) == LoggingOptions.Log4Net)
                     {
                         ITypeInfo xmlConfiguratorType = TypeFactory.GetTypeInfo(Type.GetType("log4net.Config.XmlConfigurator, log4net"));
                         if (xmlConfiguratorType != null)

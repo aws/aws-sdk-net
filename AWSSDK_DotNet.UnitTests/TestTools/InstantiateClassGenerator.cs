@@ -19,15 +19,22 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
     /// </summary>
     public class InstantiateClassGenerator
     {
-        
-        public static T Execute<T>() where T : new()
+        public static T Execute<T>()
+            where T : new()
         {
-            var rootObject = new T();
+            var type = typeof(T);
+            var result = Execute(type);
+            var rootObject = (T)result;
+            return rootObject;
+        }
+
+        public static object Execute(Type type)
+        {
+            var rootObject = Activator.CreateInstance(type);
             TypeCircularReference<Type> tcr = new TypeCircularReference<Type>();
             InstantiateProperties(tcr, rootObject);
             return rootObject;
         }
-
 
         private static void InstantiateProperties(TypeCircularReference<Type> tcr, object owningObject)
         {
@@ -82,6 +89,10 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 {
                     return new MemoryStream(Constants.DEFAULT_BLOB);
                 }
+                //else if (type == typeof(Amazon.S3.S3Region))
+                //{
+                //    return Amazon.S3.S3Region.USW2; // S3 bucket region
+                //}
                 else if (type.BaseType.FullName == "Amazon.Runtime.ConstantClass")
                 {
                     var value = type.GetFields()[0].GetValue(null);
@@ -95,6 +106,22 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 {
                     return null; // Event Handlers
                 }
+                //else if (type.IsAssignableFrom(typeof(TimeSpan?)))
+                //{
+                //    return TimeSpan.FromHours(1); // S3 request timeout
+                //}
+                //else if (type == typeof(Amazon.S3.Model.ByteRange))
+                //{
+                //    return null; // s3 byte range
+                //}
+                //else if (type == typeof(Amazon.S3.Model.HeadersCollection))
+                //{
+                //    return null;
+                //}
+                //else if (type == typeof(Amazon.S3.Model.MetadataCollection))
+                //{
+                //    return null;
+                //}
                 else
                 {
                     var value = Activator.CreateInstance(type);

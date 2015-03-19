@@ -25,33 +25,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for PutBucket operation
     /// </summary>
-    internal class PutBucketResponseUnmarshaller : XmlResponseUnmarshaller
+    internal class PutBucketResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
             PutBucketResponse response = new PutBucketResponse();
             
-            UnmarshallResult(context,response);                        
-                 
-                        
+            UnmarshallResult(context,response);
+
             return response;
         }
         
         private static void UnmarshallResult(XmlUnmarshallerContext context,PutBucketResponse response)
         {
-            
-
-  
-
-
             return;
-        }
-        
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
-
-            return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
         }
 
         private static PutBucketResponseUnmarshaller _instance;

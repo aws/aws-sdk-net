@@ -191,6 +191,23 @@ namespace Amazon.Runtime.Internal.Transform
         {
             return new S3UnmarshallerContext(responseStream, maintainResponseBody, response);
         }
+
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            var errorResponse = Amazon.S3.Model.Internal.MarshallTransformations.S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
+            var s3Exception = new Amazon.S3.AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
+
+            if (errorResponse.ParsingException != null)
+            {
+                var body = context.ResponseBody;
+                if (!string.IsNullOrEmpty(body))
+                {
+                    s3Exception.ResponseBody = body;
+                }
+            }
+
+            return s3Exception;
+        }
     }
 
     /// <summary>
@@ -205,17 +222,10 @@ namespace Amazon.Runtime.Internal.Transform
                 throw new InvalidOperationException("Unsupported UnmarshallerContext");
 
             string requestId = context.ResponseData.GetHeaderValue(HeaderKeys.RequestIdHeader);
-            try
-            {
-                var response = this.Unmarshall(context);
-                response.ResponseMetadata = new ResponseMetadata();
-                response.ResponseMetadata.RequestId = requestId;
-                return response;
-            }
-            catch (Exception e)
-            {
-                throw new AmazonUnmarshallingException(requestId, context.CurrentPath, e);
-            }
+            var response = this.Unmarshall(context);
+            response.ResponseMetadata = new ResponseMetadata();
+            response.ResponseMetadata.RequestId = requestId;
+            return response;
         }
         public override AmazonServiceException UnmarshallException(UnmarshallerContext input, Exception innerException, HttpStatusCode statusCode)
         {

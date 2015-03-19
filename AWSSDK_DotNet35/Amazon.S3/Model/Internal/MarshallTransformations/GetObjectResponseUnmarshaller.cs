@@ -104,14 +104,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
            get { return true;}
         }
-        
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
-            
-            return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
-        }
-        
+
         private static GetObjectResponseUnmarshaller _instance;
 
         public static GetObjectResponseUnmarshaller Instance

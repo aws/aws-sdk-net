@@ -12,7 +12,7 @@ namespace AWSSDK.UnitTests
 {
     public class MockWebResponse
     {
-        public static WebResponse CreateFromResource(string resourceName)
+        public static HttpWebResponse CreateFromResource(string resourceName)
         {
             var rawResponse = Utils.GetResourceText(resourceName);
 
@@ -22,7 +22,7 @@ namespace AWSSDK.UnitTests
             return Create(statusCode, response.Headers, response.Body);
         }
 
-        public static WebResponse Create(HttpStatusCode statusCode,
+        public static HttpWebResponse Create(HttpStatusCode statusCode,
             IDictionary<string,string> headers, string body = null)
         {
             var type = typeof(HttpWebResponse);
@@ -30,9 +30,12 @@ namespace AWSSDK.UnitTests
             var obj = assembly.CreateInstance("System.Net.HttpWebResponse");
 
             var webHeaders = new WebHeaderCollection();
-            foreach (var header in headers)
+            if (headers != null)
             {
-                webHeaders.Add(header.Key,header.Value);
+                foreach (var header in headers)
+                {
+                    webHeaders.Add(header.Key, header.Value);
+                }
             }
 
             Stream responseBodyStream = null;

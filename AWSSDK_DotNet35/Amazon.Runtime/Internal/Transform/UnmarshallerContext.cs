@@ -266,6 +266,13 @@ namespace Amazon.Runtime.Internal.Transform
 #else
         private static readonly XmlReaderSettings READER_SETTINGS = new XmlReaderSettings() { DtdProcessing = DtdProcessing.Ignore, IgnoreWhitespace = true };
 #endif
+        private static HashSet<XmlNodeType> nodesToSkip = new HashSet<XmlNodeType>
+        {
+            XmlNodeType.None,
+            XmlNodeType.XmlDeclaration,
+            XmlNodeType.Comment,
+            XmlNodeType.DocumentType
+        };
 
         private StreamReader streamReader;
         private XmlReader _xmlReader;
@@ -356,7 +363,8 @@ namespace Amazon.Runtime.Internal.Transform
             }
             else
             {
-                if (XmlReader.NodeType == XmlNodeType.None || XmlReader.NodeType == XmlNodeType.XmlDeclaration || XmlReader.NodeType == XmlNodeType.Comment)
+                // Skip some nodes
+                if (nodesToSkip.Contains(XmlReader.NodeType))
                     XmlReader.Read();
 
                 while (XmlReader.IsEmptyElement)

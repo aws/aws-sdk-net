@@ -36,6 +36,7 @@ namespace Amazon.ElasticTranscoder.Model
     public partial class JobOutput
     {
         private JobAlbumArt _albumArt;
+        private string _appliedColorSpaceConversion;
         private Captions _captions;
         private List<Clip> _composition = new List<Clip>();
         private long? _duration;
@@ -69,6 +70,27 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetAlbumArt()
         {
             return this._albumArt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppliedColorSpaceConversion. 
+        /// <para>
+        /// If Elastic Transcoder used a preset with a <code>ColorSpaceConversionMode</code> to
+        /// transcode the output file, the <code>AppliedColorSpaceConversion</code> parameter
+        /// shows the conversion used. If no <code>ColorSpaceConversionMode</code> was defined
+        /// in the preset, this parameter will not be included in the job response.
+        /// </para>
+        /// </summary>
+        public string AppliedColorSpaceConversion
+        {
+            get { return this._appliedColorSpaceConversion; }
+            set { this._appliedColorSpaceConversion = value; }
+        }
+
+        // Check to see if AppliedColorSpaceConversion property is set
+        internal bool IsSetAppliedColorSpaceConversion()
+        {
+            return this._appliedColorSpaceConversion != null;
         }
 
         /// <summary>

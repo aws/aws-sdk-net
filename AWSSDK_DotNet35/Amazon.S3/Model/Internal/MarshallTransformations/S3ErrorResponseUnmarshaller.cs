@@ -19,6 +19,7 @@ using Amazon.Util;
 using Amazon.S3.Util;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime;
+using System;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -37,15 +38,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             S3ErrorResponse response = new S3ErrorResponse();
 
-            response.Code = context.ResponseData.StatusCode.ToString();
+            var statusCode = context.ResponseData.StatusCode;
+            response.Code = statusCode.ToString();
             if (context.ResponseData.IsHeaderPresent(HeaderKeys.XAmzRequestIdHeader))
                 response.RequestId = context.ResponseData.GetHeaderValue(HeaderKeys.XAmzRequestIdHeader);
             if (context.ResponseData.IsHeaderPresent(HeaderKeys.XAmzId2Header))
                 response.Id2 = context.ResponseData.GetHeaderValue(HeaderKeys.XAmzId2Header);
 
-            if ((int)context.ResponseData.StatusCode >= 500)
+            if ((int)statusCode >= 500)
                 response.Type = ErrorType.Receiver;
-            else if ((int)context.ResponseData.StatusCode >= 400)
+            else if ((int)statusCode >= 400)
                 response.Type = ErrorType.Sender;
             else
                 response.Type = ErrorType.Unknown;
@@ -107,9 +109,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         }
                     }
                 }
-                catch
+                catch (Exception e)
                 {
                     // Error response was not XML
+                    response.ParsingException = e;
                 }
             }
 
@@ -134,19 +137,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
     public class S3ErrorResponse : ErrorResponse
     {
-        private string resource;
-        private string id2;
+        public string Resource { get; set; }
 
-        public string Resource
-        {
-            get { return resource; }
-            set { resource = value; }
-        }
+        public string Id2 { get; set; }
 
-        public string Id2
-        {
-            get { return id2; }
-            set { id2 = value; }
-        }
+        public Exception ParsingException { get; set; }
     }
 }

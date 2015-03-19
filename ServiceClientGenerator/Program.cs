@@ -12,7 +12,7 @@ using ServiceClientGenerator.Generators;
 
 namespace ServiceClientGenerator
 {
-    class Program
+    public class Program
     {
         static int Main(string[] args)
         {
@@ -96,7 +96,7 @@ namespace ServiceClientGenerator
         /// <param name="manifestPath">Path to the manifest file to pull basic info from</param>
         /// <param name="modelsFolder">Path to the service models to be parsed</param>
         /// <returns></returns>
-        static IEnumerable<GeneratorConfig> LoadGeneratorConfigs(string manifestPath, string modelsFolder)
+        public static IEnumerable<GeneratorConfig> LoadGeneratorConfigs(string manifestPath, string modelsFolder)
         {
             JsonData document;
             using (StreamReader reader = new StreamReader(manifestPath))

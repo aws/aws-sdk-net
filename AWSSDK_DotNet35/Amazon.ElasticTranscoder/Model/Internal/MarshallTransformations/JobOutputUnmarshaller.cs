@@ -60,6 +60,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     unmarshalledObject.AlbumArt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AppliedColorSpaceConversion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AppliedColorSpaceConversion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Captions", targetDepth))
                 {
                     var unmarshaller = CaptionsUnmarshaller.Instance;

@@ -110,9 +110,9 @@ namespace Amazon
         }
 
         [ConfigurationProperty(correctForClockSkewKey)]
-        public bool CorrectForClockSkew
+        public bool? CorrectForClockSkew
         {
-            get { return (bool)this[correctForClockSkewKey]; }
+            get { return (bool?)this[correctForClockSkewKey]; }
             set { this[correctForClockSkewKey] = value; }
         }
 
