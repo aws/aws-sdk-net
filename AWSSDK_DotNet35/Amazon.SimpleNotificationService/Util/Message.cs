@@ -425,11 +425,12 @@ namespace Amazon.SimpleNotificationService.Util
                     HttpWebRequest request = HttpWebRequest.Create(url) as HttpWebRequest;
                     var response = request.GetResponse() as HttpWebResponse;
                     response.Close();
+                    return;
                 }
                 catch (Exception e)
                 {
                     if (retries == MAX_RETRIES)
-                        throw new Exception(string.Format("Unable to {0} after {0} retries", action, MAX_RETRIES), e);
+                        throw new Exception(string.Format("Unable to {0} after {1} retries", action, MAX_RETRIES), e);
                     else
                         AWSSDKUtils.Sleep((int)(Math.Pow(4, retries) * 100));
                 }
