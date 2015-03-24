@@ -30,10 +30,10 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ImportInstance operation.
     /// Creates an import instance task using metadata from the specified disk image. After
-    /// importing the image, you then upload it using the ec2-import-volume command in the
-    /// EC2 command line tools. For more information, see <ulink url="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-    /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</ulink> in the
-    /// <emphasis>Amazon Elastic Compute Cloud User Guide</emphasis>.
+    /// importing the image, you then upload it using the <code>ec2-import-volume</code> command
+    /// in the EC2 command line tools. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
+    /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
+    /// Elastic Compute Cloud User Guide</i>.
     /// </summary>
     public partial class ImportInstanceRequest : AmazonEC2Request
     {

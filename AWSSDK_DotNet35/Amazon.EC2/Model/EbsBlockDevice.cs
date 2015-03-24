@@ -89,7 +89,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraint: Range is 100 to 4000 for Provisioned IOPS (SSD) volumes and 3 to 3072
+        /// Constraint: Range is 100 to 20000 for Provisioned IOPS (SSD) volumes and 3 to 10000
         /// for General Purpose (SSD) volumes.
         /// </para>
         ///  
@@ -135,8 +135,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: If the volume type is <code>io1</code>, the minimum size of the volume
-        /// is 4 GiB; otherwise, the minimum size is 1 GiB. The maximum volume size is 1024 GiB.
+        /// Constraints: <code>1-1024</code> for <code>standard</code> volumes, <code>1-16384</code>
+        /// for <code>gp2</code> volumes, and <code>4-16384</code> for <code>io1</code> volumes.
         /// If you specify a snapshot, the volume size must be equal to or larger than the snapshot
         /// size.
         /// </para>

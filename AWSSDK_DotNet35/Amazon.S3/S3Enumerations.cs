@@ -671,6 +671,90 @@ namespace Amazon.S3
 
     }
 
+    /// <summary>
+    /// The status of the replication job associated with this source object.
+    /// </summary>
+    public sealed class ReplicationStatus : ConstantClass
+    {
+        /// <summary>
+        ///  The object is pending replication.
+        /// </summary>
+        public static readonly ReplicationStatus Pending = new ReplicationStatus("PENDING");
+
+        /// <summary>
+        /// The object has been replicated.
+        /// </summary>
+        public static readonly ReplicationStatus Completed = new ReplicationStatus("COMPLETED");
+
+        /// <summary>
+        /// The object was created as a result of replication.
+        /// </summary>
+        public static readonly ReplicationStatus Replica = new ReplicationStatus("REPLICA");
+
+        /// <summary>
+        ///  The object replication has failed due to a customer-attributable reason, and the replication will not be attempted again.
+        /// </summary>
+        public static readonly ReplicationStatus Failed = new ReplicationStatus("FAILED");
+
+        public ReplicationStatus(string value) 
+            : base(value) 
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The string representation of the ReplicationStatus.</param>
+        /// <returns>The ReplicationStatus object for that string.</returns>
+        public static ReplicationStatus FindValue(string value)
+        {
+            return FindValue<ReplicationStatus>(value);
+        }
+
+        public static implicit operator ReplicationStatus(string value)
+        {
+            return FindValue<ReplicationStatus>(value);
+        }
+
+    }
+
+    /// <summary>
+    /// Whether a replication rule is applied or ignored.
+    /// </summary>
+    public sealed class ReplicationRuleStatus : ConstantClass
+    {
+        /// <summary>
+        /// The rule will be applied.
+        /// </summary>
+        public static readonly ReplicationRuleStatus Enabled = new ReplicationRuleStatus("Enabled");
+
+        /// <summary>
+        /// The rule will be ignored.
+        /// </summary>
+        public static readonly ReplicationRuleStatus Disabled = new ReplicationRuleStatus("Disabled");
+        
+        public ReplicationRuleStatus(string value) 
+            : base(value) 
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The string representation of the ReplicationRuleStatus.</param>
+        /// <returns>The ReplicationRuleStatus object for that string.</returns>
+        public static ReplicationRuleStatus FindValue(string value)
+        {
+            return FindValue<ReplicationRuleStatus>(value);
+        }
+
+        public static implicit operator ReplicationRuleStatus(string value)
+        {
+            return FindValue<ReplicationRuleStatus>(value);
+        }
+
+    }
+
 
     internal enum S3QueryParameter
     {

@@ -763,6 +763,8 @@ namespace Amazon.TraceListener
             {
                 CONFIG_ACCESSKEY,
                 CONFIG_SECRETKEY,
+                CONFIG_PROFILENAME,
+                CONFIG_PROFILESLOCATION,
                 CONFIG_REGION,
                 CONFIG_SERVICE_URL,
                 CONFIG_TABLE,

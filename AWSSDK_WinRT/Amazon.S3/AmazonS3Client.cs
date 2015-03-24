@@ -354,6 +354,36 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  DeleteBucketReplication
+
+        internal DeleteBucketReplicationResponse DeleteBucketReplication(DeleteBucketReplicationRequest request)
+        {
+            var marshaller = new DeleteBucketReplicationRequestMarshaller();
+            var unmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBucketReplicationRequest,DeleteBucketReplicationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteBucketReplicationResponse> DeleteBucketReplicationAsync(DeleteBucketReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteBucketReplicationRequestMarshaller();
+            var unmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBucketReplicationRequest,DeleteBucketReplicationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteBucketTagging
 
         internal DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request)
@@ -679,6 +709,36 @@ namespace Amazon.S3
             var unmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketPolicyRequest,GetBucketPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetBucketReplication
+
+        internal GetBucketReplicationResponse GetBucketReplication(GetBucketReplicationRequest request)
+        {
+            var marshaller = new GetBucketReplicationRequestMarshaller();
+            var unmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketReplicationRequest,GetBucketReplicationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketReplication operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetBucketReplicationResponse> GetBucketReplicationAsync(GetBucketReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetBucketReplicationRequestMarshaller();
+            var unmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBucketReplicationRequest,GetBucketReplicationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1313,6 +1373,36 @@ namespace Amazon.S3
             var unmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBucketPolicyRequest,PutBucketPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutBucketReplication
+
+        internal PutBucketReplicationResponse PutBucketReplication(PutBucketReplicationRequest request)
+        {
+            var marshaller = new PutBucketReplicationRequestMarshaller();
+            var unmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketReplicationRequest,PutBucketReplicationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketReplication operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutBucketReplicationResponse> PutBucketReplicationAsync(PutBucketReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutBucketReplicationRequestMarshaller();
+            var unmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutBucketReplicationRequest,PutBucketReplicationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

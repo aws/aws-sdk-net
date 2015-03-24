@@ -124,7 +124,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchPermission. 
         /// <para>
-        /// 
+        /// A launch permission modification.
         /// </para>
         /// </summary>
         public LaunchPermissionModifications LaunchPermission

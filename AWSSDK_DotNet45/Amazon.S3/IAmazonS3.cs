@@ -262,6 +262,29 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  DeleteBucketReplication
+
+        /// <summary>
+        /// Deletes the replication configuration for the given Amazon S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketReplication service method, as returned by S3.</returns>
+        DeleteBucketReplicationResponse DeleteBucketReplication(DeleteBucketReplicationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteBucketReplicationResponse> DeleteBucketReplicationAsync(DeleteBucketReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteBucketTagging
 
         /// <summary>
@@ -612,6 +635,29 @@ namespace Amazon.S3
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetBucketPolicyResponse> GetBucketPolicyAsync(GetBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetBucketReplication
+
+        /// <summary>
+        /// Retrieves the replication configuration for the given Amazon S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketReplication service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketReplication service method, as returned by S3.</returns>
+        GetBucketReplicationResponse GetBucketReplication(GetBucketReplicationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketReplication operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetBucketReplicationResponse> GetBucketReplicationAsync(GetBucketReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1296,13 +1342,36 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  PutBucketReplication
+
+        /// <summary>
+        /// Sets a replication configuration for the Amazon S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketReplication service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketReplication service method, as returned by S3.</returns>
+        PutBucketReplicationResponse PutBucketReplication(PutBucketReplicationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketReplication operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutBucketReplicationResponse> PutBucketReplicationAsync(PutBucketReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutBucketRequestPayment
 
         /// <summary>
         /// Sets the request payment configuration for a bucket. By default, the bucket owner
         /// pays for downloads from the bucket. This configuration parameter enables the bucket
         /// owner (only) to specify that the person requesting the download will be charged for
-        /// the download.
+        /// the download. Documentation on requester pays buckets can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
         /// </summary>
         /// <param name="bucketName">A property of PutBucketRequestPaymentRequest used to execute the PutBucketRequestPayment service method.</param>
         /// <param name="requestPaymentConfiguration">A property of PutBucketRequestPaymentRequest used to execute the PutBucketRequestPayment service method.</param>
@@ -1314,7 +1383,7 @@ namespace Amazon.S3
         /// Sets the request payment configuration for a bucket. By default, the bucket owner
         /// pays for downloads from the bucket. This configuration parameter enables the bucket
         /// owner (only) to specify that the person requesting the download will be charged for
-        /// the download.
+        /// the download. Documentation on requester pays buckets can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment service method.</param>
         /// 

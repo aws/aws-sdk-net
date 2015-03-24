@@ -247,14 +247,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of paginated instance items per response. The call also returns
-        /// a token that you can specify in a subsequent call to get the next set of results.
-        /// If the value is greater than 1000, we return only 1000 items. You cannot specify this
-        /// parameter and the instance IDs parameter in the same request.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: 1000
+        /// The maximum number of results to return for the request in a single page. The remaining
+        /// results of the initial request can be seen by sending another request with the returned
+        /// <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code>
+        /// is given a value larger than 1000, only 1000 results are returned. You cannot specify
+        /// this parameter and the instance IDs parameter in the same request.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -272,8 +269,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The next paginated set of results to return. (You received this token from a prior
-        /// call.)
+        /// The token to retrieve the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

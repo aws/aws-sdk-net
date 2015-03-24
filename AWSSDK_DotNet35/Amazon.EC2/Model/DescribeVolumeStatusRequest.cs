@@ -159,8 +159,15 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of paginated volume items per response. You cannot specify this
-        /// parameter and the volume IDs parameter in the same request.
+        /// The maximum number of volume results returned by <code>DescribeVolumeStatus</code>
+        /// in paginated output. When this parameter is used, the request only returns <code>MaxResults</code>
+        /// results in a single page along with a <code>NextToken</code> response element. The
+        /// remaining results of the initial request can be seen by sending another request with
+        /// the returned <code>NextToken</code> value. This value can be between 5 and 1000; if
+        /// <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
+        /// If this parameter is not used, then <code>DescribeVolumeStatus</code> returns all
+        /// results. You cannot specify this parameter and the volume IDs parameter in the same
+        /// request.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -178,8 +185,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The next paginated set of results to return using the pagination token returned by
-        /// a previous call.
+        /// The <code>NextToken</code> value to include in a future <code>DescribeVolumeStatus</code>
+        /// request. When the results of the request exceed <code>MaxResults</code>, this value
+        /// can be used to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return.
         /// </para>
         /// </summary>
         public string NextToken

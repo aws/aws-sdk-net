@@ -79,9 +79,18 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DestinationRegion. 
         /// <para>
-        /// The destination region of the snapshot copy operation. This parameter is required
-        /// in the <code>PresignedUrl</code>.
+        /// The destination region to use in the <code>PresignedUrl</code> parameter of a snapshot
+        /// copy operation. This parameter is only valid for specifying the destination region
+        /// in a <code>PresignedUrl</code> parameter, where it is required.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// <code>CopySnapshot</code> sends the snapshot copy to the regional endpoint that you
+        /// send the HTTP request to, such as <code>ec2.us-east-1.amazonaws.com</code> (in the
+        /// AWS CLI, this is specified with the <code>--region</code> parameter or the default
+        /// region in your AWS configuration file).
+        /// </para>
+        ///  </note>
         /// </summary>
         public string DestinationRegion
         {

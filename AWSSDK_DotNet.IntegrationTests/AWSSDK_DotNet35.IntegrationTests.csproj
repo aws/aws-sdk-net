@@ -65,6 +65,7 @@
     <Compile Include=".\Tests\IAM\*.cs" />
     <Compile Include=".\Tests\RDS\*.cs" />
     <Compile Include=".\Utils\*.cs" />
+    <Compile Include="Tests\S3\Replicationtests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Config\App.35.config">

@@ -127,7 +127,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraint: Range is 100 to 4000 for Provisioned IOPS (SSD) volumes and 3 to 3072
+        /// Constraint: Range is 100 to 20000 for Provisioned IOPS (SSD) volumes and 3 to 10000
         /// for General Purpose (SSD) volumes.
         /// </para>
         ///  

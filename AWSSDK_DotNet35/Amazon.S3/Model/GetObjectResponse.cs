@@ -46,6 +46,7 @@ namespace Amazon.S3.Model
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
+        private ReplicationStatus replicationStatus;
 
         private string bucketName;
         private string key;
@@ -294,6 +295,24 @@ namespace Amazon.S3.Model
         internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
         {
             return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
+        }
+
+        /// <summary>
+        /// The status of the replication job associated with this source object.
+        /// </summary>
+        public ReplicationStatus ReplicationStatus
+        {
+            get { return this.replicationStatus; }
+            set { this.replicationStatus = value; }
+        }
+
+        /// <summary>
+        /// Checks if ReplicationStatus property is set.
+        /// </summary>
+        /// <returns>true if ReplicationStatus property is set.</returns>
+        internal bool IsSetReplicationStatus()
+        {
+            return ReplicationStatus != null;
         }
 
 #if BCL

@@ -242,7 +242,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of offerings to return. The maximum is 100.
+        /// The maximum number of results to return for the request in a single page. The remaining
+        /// results of the initial request can be seen by sending another request with the returned
+        /// <code>NextToken</code> value. The maximum is 100.
         /// </para>
         ///  
         /// <para>
@@ -286,7 +288,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use when requesting the next paginated set of offerings.
+        /// The token to retrieve the next page of results. 
         /// </para>
         /// </summary>
         public string NextToken

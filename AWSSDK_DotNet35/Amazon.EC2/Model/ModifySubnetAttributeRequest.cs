@@ -37,7 +37,11 @@ namespace Amazon.EC2.Model
         private string _subnetId;
 
         /// <summary>
-        /// Gets and sets the property MapPublicIpOnLaunch.
+        /// Gets and sets the property MapPublicIpOnLaunch. 
+        /// <para>
+        /// Specify <code>true</code> to indicate that instances launched into the specified subnet
+        /// should be assigned public IP address.
+        /// </para>
         /// </summary>
         public bool MapPublicIpOnLaunch
         {

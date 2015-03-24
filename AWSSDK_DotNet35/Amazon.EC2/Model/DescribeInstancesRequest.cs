@@ -351,9 +351,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.source-destination-check</code> - Whether the network interface
-        /// performs source/destination checking. A value of <code>true</code> means checking
-        /// is enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code>
+        /// <code>network-interface.source-dest-check</code> - Whether the network interface performs
+        /// source/destination checking. A value of <code>true</code> means checking is enabled,
+        /// and <code>false</code> means checking is disabled. The value must be <code>false</code>
         /// for the network interface to perform network address translation (NAT) in your VPC.
         /// </para>
         ///  </li> <li> 
@@ -480,10 +480,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items to return for this call. The call also returns a token
-        /// that you can specify in a subsequent call to get the next set of results. If the value
-        /// is greater than 1000, we return only 1000 items. You cannot specify this parameter
-        /// and the instance IDs parameter in the same request.
+        /// The maximum number of results to return for the request in a single page. The remaining
+        /// results of the initial request can be seen by sending another request with the returned
+        /// <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code>
+        /// is given a value larger than 1000, only 1000 results are returned. You cannot specify
+        /// this parameter and the instance IDs parameter in the same request.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -501,8 +502,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of items to return. (You received this token from a prior
-        /// call.)
+        /// The token to request the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

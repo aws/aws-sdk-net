@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         /// Instantiates CreateVolumeRequest with the parameterized properties
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone in which to create the volume. Use <a>DescribeAvailabilityZones</a> to list the Availability Zones that are currently available to you.</param>
-        /// <param name="size">The size of the volume, in GiBs. Constraints: If the volume type is <code>io1</code>, the minimum size of the volume is 4 GiB; otherwise, the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you specify a snapshot, the volume size must be equal to or larger than the snapshot size. Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.</param>
+        /// <param name="size">The size of the volume, in GiBs. Constraints: <code>1-1024</code> for <code>standard</code> volumes, <code>1-16384</code> for <code>gp2</code> volumes, and <code>4-16384</code> for <code>io1</code> volumes. If you specify a snapshot, the volume size must be equal to or larger than the snapshot size. Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.</param>
         public CreateVolumeRequest(string availabilityZone, int size)
         {
             _availabilityZone = availabilityZone;
@@ -138,7 +138,11 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Iops. 
         /// <para>
         /// Only valid for Provisioned IOPS (SSD) volumes. The number of I/O operations per second
-        /// (IOPS) to provision for the volume.
+        /// (IOPS) to provision for the volume, with a maximum ratio of 30 IOPS/GiB.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraint: Range is 100 to 20000 for Provisioned IOPS (SSD) volumes 
         /// </para>
         /// </summary>
         public int Iops
@@ -183,8 +187,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: If the volume type is <code>io1</code>, the minimum size of the volume
-        /// is 4 GiB; otherwise, the minimum size is 1 GiB. The maximum volume size is 1024 GiB.
+        /// Constraints: <code>1-1024</code> for <code>standard</code> volumes, <code>1-16384</code>
+        /// for <code>gp2</code> volumes, and <code>4-16384</code> for <code>io1</code> volumes.
         /// If you specify a snapshot, the volume size must be equal to or larger than the snapshot
         /// size.
         /// </para>

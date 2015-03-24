@@ -46,7 +46,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The idempotency token you provided when you created the listing.
+        /// A unique, case-sensitive key supplied by the client to ensure that the request is
+        /// idempotent. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// Idempotency</a>.
         /// </para>
         /// </summary>
         public string ClientToken
