@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package> 
+  <metadata> 
+    <id>AWSSDK.CloudWatch</id>
+    <title>The Amazon Web Services SDK for .NET - Amazon CloudWatch</title>
+    <version>3.0.0.0</version> 
+    <authors>Amazon Web Services</authors>
+    <description>Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms.</description> 
+    <language>en-US</language>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
+    <projectUrl>http://aws.amazon.com/sdkfornet/</projectUrl>
+    <tags>AWS Amazon cloud</tags>
+    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+    <dependencies>
+      <group targetFramework="windowsphone8">
+        <dependency id="Microsoft.Net.Http" version="2.1.10" />
+      </group>
+      <group>
+      <dependency id="AWSSDK.Core" version="3.0.0.0" />
+      </group>
+    </dependencies>
+  </metadata> 
+  <files>
+    <file src=".\bin\Release\net35\AWSSDK.CloudWatch.dll" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.CloudWatch.pdb" target="lib\net35" />
+
+    <file src=".\bin\Release\net45\AWSSDK.CloudWatch.dll" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.CloudWatch.pdb" target="lib\net45" />
+    
+    <file src=".\bin\Release\portable\AWSSDK.CloudWatch.dll" target="lib\portable-wpa+netcore45" />
+
+    <file src=".\bin\Release\winrt\AWSSDK.CloudWatch.dll" target="lib\windows8" />
+
+    <file src=".\bin\Release\wp8\AWSSDK.CloudWatch.dll" target="lib\windowsphone8" />
+  </files>
+</package>

@@ -1,6 +1,6 @@
-# AWS SDK for .NET [![Build Status](https://travis-ci.org/aws/aws-sdk-net.png?branch=master)](https://travis-ci.org/aws/aws-sdk-net)
+# AWS SDK for .NET (Modularization)
 
-The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web Services][aws] and build scalable solutions with Amazon S3, Amazon DynamoDB, Amazon Glacier, and more. You can get started in minutes using [NuGet][nuget-info] or by getting the [source code][sdk-source].
+The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web Services][aws] and build scalable solutions with Amazon S3, Amazon DynamoDB, Amazon Glacier, and more.
 
 * [API Docs][docs-api]
 * [AWS .NET Developer Blog][dotnet-blog]
@@ -8,33 +8,11 @@ The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web
 * [Forum][sdk-forum]
 * [GitHub Issues][sdk-issues]
 
-## Features
+## Modularization
 
-* Provides easy-to-use HTTP clients for all supported AWS services, regions, and authentication protocols.
-* Amazon DynamoDB Object Persistence Framework - Uses Plain Old C# Objects (POCOs) to store and retrieve Amazon DynamoDB data.
-* Amazon S3 Transfer Utility - With a simple API, achieves enhanced throughput, performance, and reliability by using multi-threaded Amazon S3 multi-part calls.
-* Amazon Glacier ArchiveTransferManager - Eases transferring data to and from Amazon Glacier by automatically dividing large files into parts and by computing check sums.
-* Automatically uses [IAM Instance Profile Credentials][aws-iam-credentials] on configured Amazon EC2 instances.
-* Support for Windows Store and Windows Phone apps.
-* And more!
+This branch is a preview of our work to modularize the SDK. Separate projects are created for each service as well as a core project. To use this branch compile the solution in the **sdk** folder that matches the desired platform and then include the assemblies for the services needed as well as the core assembly.
 
-## Getting Started
-
-1. **Sign up for AWS** - Before you begin, you need an AWS account. Please see the [AWS Account and Credentials][docs-signup] section of the developer guide for information about how to create an AWS account and retrieve your AWS credentials.
-1. **Minimum requirements** - To run the SDK you need the **Microsoft .NET Framework 3.5 or later**. For more information about the requirements and optimum settings for the SDK, please see the [.NET Development Environment][docs-signup] section of the developer guide.
-1. **Install the SDK** - Using [NuGet][nuget-info] is the easiest way to add the AWS SDK for .NET to a Visual Studio project.  Simply type the following in the Package Manager Console: 
-`` 'Install-Package AWSSDK'``
-1. **Using the SDK** - The best way to become familiar with how to use the SDK is to read the [Developer Guide][docs-guide].
-
-## Source Layout
-
-### Solutions
-
-There are 2 main solutions used for the development of the SDK. **AWSSDK_DotNet.Core.sln** is used to develop the .NET 3.5 and .NET 4.5 
-version of the SDK. The **AWSSDK_DotNet.Mobile.sln** is used for windows store and windows phone versions of the SDK. 
-Windows 8.1 or Windows Server 2012 R2 is required to build this solution.
-
-### Tests
+## Tests
 
 **Important:** Do not run the integration tests on a production account.
 
@@ -49,9 +27,8 @@ Unit tests can be found in the **AWSSDK_DotNet.UnitTests** project.
 
 ### Code Generator
 
-All low-level service clients are created using the code generator found in the **ServiceClientGenerator** folder. The code generator 
-uses the service models defined in the **ServiceModels** folder. The easiest way to run the code generator is to set the ServiceClientGenerator as
-the startup project in the **AWSSDK_DotNet.Core.sln** solution.
+All low-level service clients are created using the code generator found in the **generator** folder. The code generator 
+uses the service models defined in the **generator\ServiceModels** folder.
 
 
 [nuget-info]: https://nuget.org/

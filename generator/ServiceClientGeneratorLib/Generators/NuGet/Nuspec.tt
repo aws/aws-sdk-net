@@ -1,0 +1,48 @@
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<?xml version="1.0" encoding="utf-8"?>
+<package> 
+  <metadata> 
+    <id><#=this.Session["AssemblyName"]#></id>
+    <title><#=this.Session["AssemblyTitle"]#></title>
+    <version>3.0.0.0</version> 
+    <authors>Amazon Web Services</authors>
+    <description><#=this.Session["AssemblyDescription"]#></description> 
+    <language>en-US</language>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
+    <projectUrl>http://aws.amazon.com/sdkfornet/</projectUrl>
+    <tags>AWS Amazon cloud</tags>
+    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+    <dependencies>
+      <group targetFramework="windowsphone8">
+        <dependency id="Microsoft.Net.Http" version="2.1.10" />
+      </group>
+      <group>
+<#
+    foreach(string awsDependency in ((IList<string>)this.Session["AWSDependencies"]))
+    {
+#>
+      <dependency id="<#=awsDependency#>" version="3.0.0.0" />
+<#
+    }
+#>
+      </group>
+    </dependencies>
+  </metadata> 
+  <files>
+    <file src=".\bin\Release\net35\\<#=this.Session["AssemblyName"]#>.dll" target="lib\net35" />
+    <file src=".\bin\Release\net35\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\net35" />
+
+    <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.dll" target="lib\net45" />
+    <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\net45" />
+	
+	<file src=".\bin\Release\portable\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-wpa+netcore45" />
+
+    <file src=".\bin\Release\winrt\\<#=this.Session["AssemblyName"]#>.dll" target="lib\windows8" />
+
+    <file src=".\bin\Release\wp8\\<#=this.Session["AssemblyName"]#>.dll" target="lib\windowsphone8" />
+  </files>
+</package>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package> 
+  <metadata> 
+    <id>AWSSDK.CodeDeploy</id>
+    <title>The Amazon Web Services SDK for .NET - AWS CodeDeploy</title>
+    <version>3.0.0.0</version> 
+    <authors>Amazon Web Services</authors>
+    <description>AWS CodeDeploy is a service that automates code deployments to Amazon EC2 instances. AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during deployment, and handles the complexity of updating your applications.</description> 
+    <language>en-US</language>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
+    <projectUrl>http://aws.amazon.com/sdkfornet/</projectUrl>
+    <tags>AWS Amazon cloud</tags>
+    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+    <dependencies>
+      <group targetFramework="windowsphone8">
+        <dependency id="Microsoft.Net.Http" version="2.1.10" />
+      </group>
+      <group>
+      <dependency id="AWSSDK.Core" version="3.0.0.0" />
+      </group>
+    </dependencies>
+  </metadata> 
+  <files>
+    <file src=".\bin\Release\net35\AWSSDK.CodeDeploy.dll" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.CodeDeploy.pdb" target="lib\net35" />
+
+    <file src=".\bin\Release\net45\AWSSDK.CodeDeploy.dll" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.CodeDeploy.pdb" target="lib\net45" />
+    
+    <file src=".\bin\Release\portable\AWSSDK.CodeDeploy.dll" target="lib\portable-wpa+netcore45" />
+
+    <file src=".\bin\Release\winrt\AWSSDK.CodeDeploy.dll" target="lib\windows8" />
+
+    <file src=".\bin\Release\wp8\AWSSDK.CodeDeploy.dll" target="lib\windowsphone8" />
+  </files>
+</package>

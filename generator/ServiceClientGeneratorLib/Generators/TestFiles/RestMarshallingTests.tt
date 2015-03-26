@@ -1,0 +1,106 @@
+﻿<#@ template language="C#" inherits="Generators.BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	AddLicenseHeader();
+#>
+
+
+using System;
+using System.IO;
+using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using <#=this.Config.Namespace#>;
+using <#=this.Config.Namespace#>.Model;
+using <#=this.Config.Namespace#>.Model.Internal.MarshallTransformations;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Util;
+using ServiceClientGenerator;
+
+using AWSSDK_DotNet35.UnitTests.TestTools;
+
+namespace AWSSDK_DotNet35.UnitTests.Marshalling
+{
+    [TestClass]
+    public partial class <#=this.Config.BaseName#>MarshallingTests
+    {
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("<#= Path.GetFileName(this.Config.ModelPath)#>", "<#=this.Config.CustomizationsPath == null ? "" : Path.GetFileName(this.Config.CustomizationsPath) #>");
+		<#
+		foreach(var operation in this.Config.ServiceModel.Operations)
+		{
+		#>
+
+        [TestMethod]
+		[TestCategory("UnitTest")]
+		[TestCategory("<#=this.Config.ServiceModel.Type#>")]
+		[TestCategory("<#=this.Config.BaseName#>")]
+        public void <#=operation.Name#>MarshallTest()
+        {
+			var operation = service_model.FindOperation("<#=operation.Name#>");
+
+            var request = InstantiateClassGenerator.Execute<<#=operation.Name#>Request>();
+            var marshaller = new <#=operation.Name#>RequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("<#=operation.Name#>", request, internalRequest, service_model);			
+
+<#
+            if(operation.ResponseStructure != null)
+            {
+#>
+			var webResponse = new WebResponseData
+			{
+				Headers = {
+<#
+if( operation.ResponseHeaderMembers.Count() > 0 )
+		{
+			foreach (var member in operation.ResponseHeaderMembers)
+			{
+#>
+					{"<#=member.MarshallLocationName#>","<#=member.MarshallLocationName#>_Value"},
+<#	
+			}
+		}				
+#>					{"x-amzn-RequestId", Guid.NewGuid().ToString()},
+					{"x-amz-crc32","0"}
+				}
+			};
+<#
+				if(this.Config.ServiceModel.Type == ServiceType.Rest_Xml)
+				{
+#>
+			
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();			
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+			ResponseUnmarshaller unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+				as <#=operation.Name#>Response;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+<#
+				}
+				else
+				{
+#>
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+			webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+			ResponseUnmarshaller unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+				as <#=operation.Name#>Response;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);   			
+<#				
+				}
+            }
+#>
+        }
+
+		<#
+		}
+		#>
+    }
+}

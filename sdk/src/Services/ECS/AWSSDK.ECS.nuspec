@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package> 
+  <metadata> 
+    <id>AWSSDK.ECS</id>
+    <title>The Amazon Web Services SDK for .NET - Amazon EC2 Container Service</title>
+    <version>3.0.0.0</version> 
+    <authors>Amazon Web Services</authors>
+    <description>Amazon EC2 Container Service is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run distributed applications on a managed cluster of Amazon EC2 instances.</description> 
+    <language>en-US</language>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
+    <projectUrl>http://aws.amazon.com/sdkfornet/</projectUrl>
+    <tags>AWS Amazon cloud</tags>
+    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+    <dependencies>
+      <group targetFramework="windowsphone8">
+        <dependency id="Microsoft.Net.Http" version="2.1.10" />
+      </group>
+      <group>
+      <dependency id="AWSSDK.Core" version="3.0.0.0" />
+      </group>
+    </dependencies>
+  </metadata> 
+  <files>
+    <file src=".\bin\Release\net35\AWSSDK.ECS.dll" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.ECS.pdb" target="lib\net35" />
+
+    <file src=".\bin\Release\net45\AWSSDK.ECS.dll" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.ECS.pdb" target="lib\net45" />
+    
+    <file src=".\bin\Release\portable\AWSSDK.ECS.dll" target="lib\portable-wpa+netcore45" />
+
+    <file src=".\bin\Release\winrt\AWSSDK.ECS.dll" target="lib\windows8" />
+
+    <file src=".\bin\Release\wp8\AWSSDK.ECS.dll" target="lib\windowsphone8" />
+  </files>
+</package>

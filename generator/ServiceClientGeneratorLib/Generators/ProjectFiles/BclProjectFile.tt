@@ -1,0 +1,125 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="ServiceClientGenerator" #>
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid><#=this.Session["ProjectGuid"]#></ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace><#=this.Session["RootNamespace"]#></RootNamespace>
+    <AssemblyName><#=this.Session["AssemblyName"]#></AssemblyName>
+    <TargetFrameworkVersion><#=this.Session["TargetFrameworkVersion"]#></TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseIntermediateOutputPath>obj\\<#=this.Session["BinSubfolder"]#></BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\\<#=this.Session["BinSubfolder"]#></OutputPath>
+    <DefineConstants>DEBUG;TRACE;<#=this.Session["DefineConstants"]#></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\\<#=this.Session["BinSubfolder"]#></OutputPath>
+    <DefineConstants>TRACE;<#=this.Session["DefineConstants"]#></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+<#
+    object systemReferences;
+    if(this.Session.TryGetValue("SystemReferences", out systemReferences) && systemReferences is IList<string>)
+    {
+        foreach(var reference in (IList<string>)systemReferences)
+        {
+#>
+    <Reference Include="<#=reference#>" />
+<#
+        }
+    }
+#>
+  </ItemGroup>
+  <ItemGroup>
+<#
+    foreach(string subDirectory in ((IList<string>)this.Session["SourceDirectories"]))
+    {
+#>
+    <Compile Include="<#=subDirectory#>\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+<#
+    }
+#>
+  </ItemGroup>
+  <ItemGroup>
+<#
+    if(this.Session.ContainsKey("IndividualFileIncludes"))
+    {
+        foreach(string file in ((IList<string>)this.Session["IndividualFileIncludes"]))
+        {
+            if(file.EndsWith(".cs"))
+            {
+#>
+    <Compile Include="<#=file#>">
+      <SubType>Code</SubType>
+    </Compile>
+<#
+            }
+            else
+            {
+#>
+    <EmbeddedResource Include="<#=file#>">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+<#
+            }
+        }
+    }
+#>
+  </ItemGroup>
+<#
+    if(this.Session.ContainsKey("ProjectReferences"))
+    {
+        foreach(var projectReferences in (List<ProjectFileCreator.ProjectReference>)this.Session["ProjectReferences"])
+        {
+#>
+  <ItemGroup>
+    <ProjectReference Include="<#=projectReferences.IncludePath#>">
+        <Project><#=projectReferences.ProjectGuid#></Project>
+        <Name><#=projectReferences.Name#></Name>
+    </ProjectReference>
+  </ItemGroup>
+<#
+        }
+    }
+#>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,54 @@
+﻿<#@ template language="C#" inherits="Generators.BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	AddLicenseHeader();
+#>
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using <#=this.Config.Namespace#>.Model;
+using <#=this.Config.Namespace#>;
+
+namespace AWSSDK_DotNet35.UnitTests.TestTools
+{
+    [TestClass]
+    public class <#=this.Config.BaseName#>MethodCustomizationsTests
+    {
+        [TestMethod]
+		[TestCategory("UnitTest")]
+        [TestCategory("SimpleMethods"), TestCategory("<#=this.Config.BaseName#>")]
+        public void <#=this.Config.BaseName#>SimpleMethodTests()
+        {
+<#
+        foreach(var operation in this.Config.ServiceModel.Operations)
+        {
+            if (this.Config.ServiceModel.Customizations.SimpleMethodsModel.CreateSimpleMethods(operation.Name))
+            {
+                var forms = this.Config.ServiceModel.Customizations.SimpleMethodsModel.SimpleMethods[operation.Name].Forms;
+                var members = this.Config.ServiceModel.FindShape(operation.RequestStructure.Name).Members;
+
+                foreach (var form in forms)
+                {
+                    var docMembers = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetFormMembers(form, members);
+#>
+            EnsureSimpleMethodExists(typeof(<#=this.Config.Namespace#>.Amazon<#=this.Config.BaseName#>Client), "<#=operation.Name#>", new Type[] { <#foreach (var member in docMembers) { #>typeof(<#=member.DetermineType()#>), <# }#>});
+<#
+                }
+            }
+        }
+#>
+        }
+        
+        void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)
+        {
+            Assert.IsNotNull(type.GetMethod(methodName, simpleParams), "Failed to find simple method " + methodName);
+        }
+    }
+}

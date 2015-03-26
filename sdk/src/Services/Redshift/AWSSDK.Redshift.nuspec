@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package> 
+  <metadata> 
+    <id>AWSSDK.Redshift</id>
+    <title>The Amazon Web Services SDK for .NET - Amazon Redshift</title>
+    <version>3.0.0.0</version> 
+    <authors>Amazon Web Services</authors>
+    <description>Amazon Redshift is a fast, fully managed, petabyte-scale data warehouse solution that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools.</description> 
+    <language>en-US</language>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
+    <projectUrl>http://aws.amazon.com/sdkfornet/</projectUrl>
+    <tags>AWS Amazon cloud</tags>
+    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+    <dependencies>
+      <group targetFramework="windowsphone8">
+        <dependency id="Microsoft.Net.Http" version="2.1.10" />
+      </group>
+      <group>
+      <dependency id="AWSSDK.Core" version="3.0.0.0" />
+      </group>
+    </dependencies>
+  </metadata> 
+  <files>
+    <file src=".\bin\Release\net35\AWSSDK.Redshift.dll" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.Redshift.pdb" target="lib\net35" />
+
+    <file src=".\bin\Release\net45\AWSSDK.Redshift.dll" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.Redshift.pdb" target="lib\net45" />
+    
+    <file src=".\bin\Release\portable\AWSSDK.Redshift.dll" target="lib\portable-wpa+netcore45" />
+
+    <file src=".\bin\Release\winrt\AWSSDK.Redshift.dll" target="lib\windows8" />
+
+    <file src=".\bin\Release\wp8\AWSSDK.Redshift.dll" target="lib\windowsphone8" />
+  </files>
+</package>

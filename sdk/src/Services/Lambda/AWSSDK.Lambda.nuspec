@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package> 
+  <metadata> 
+    <id>AWSSDK.Lambda</id>
+    <title>The Amazon Web Services SDK for .NET - AWS Lambda</title>
+    <version>3.0.0.0</version> 
+    <authors>Amazon Web Services</authors>
+    <description>AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information.</description> 
+    <language>en-US</language>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
+    <projectUrl>http://aws.amazon.com/sdkfornet/</projectUrl>
+    <tags>AWS Amazon cloud</tags>
+    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+    <dependencies>
+      <group targetFramework="windowsphone8">
+        <dependency id="Microsoft.Net.Http" version="2.1.10" />
+      </group>
+      <group>
+      <dependency id="AWSSDK.Core" version="3.0.0.0" />
+      </group>
+    </dependencies>
+  </metadata> 
+  <files>
+    <file src=".\bin\Release\net35\AWSSDK.Lambda.dll" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.Lambda.pdb" target="lib\net35" />
+
+    <file src=".\bin\Release\net45\AWSSDK.Lambda.dll" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.Lambda.pdb" target="lib\net45" />
+    
+    <file src=".\bin\Release\portable\AWSSDK.Lambda.dll" target="lib\portable-wpa+netcore45" />
+
+    <file src=".\bin\Release\winrt\AWSSDK.Lambda.dll" target="lib\windows8" />
+
+    <file src=".\bin\Release\wp8\AWSSDK.Lambda.dll" target="lib\windowsphone8" />
+  </files>
+</package>

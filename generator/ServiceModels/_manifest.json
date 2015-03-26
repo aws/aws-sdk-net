@@ -1,0 +1,504 @@
+{
+    "projects": [
+        {
+            "name": "Net35",
+            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
+            "targetFramework": "v3.5",
+            "defineConstants": ";BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE",
+            "binSubFolder": "net35",
+            "template": "BclProjectFile",
+            "platformCodeFolders": [ "_bcl", "_bcl35" ]
+        },
+        {
+            "name": "Net45",
+            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
+            "targetFramework": "v4.5",
+            "defineConstants": ";BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE",
+            "binSubFolder": "net45",
+            "template": "BclProjectFile",
+            "platformCodeFolders": [ "_bcl", "_bcl45" ]
+        },
+        {
+            "name": "WinRT",
+            "configurations": [ "Debug|Any CPU", "Debug|ARM", "Debug|x64", "Debug|x86", "Release|Any CPU", "Release|ARM", "Release|x64", "Release|x86" ],
+            "targetFramework": "v4.5",
+            "defineConstants": ";NETFX_CORE;WIN_RT;AWS_ASYNC_API;STORAGE_FILE",
+            "binSubFolder": "winrt",
+            "template": "RtProjectFile",
+            "platformCodeFolders": [ "_mobile" ]
+        },
+        {
+            "name": "WP8",
+            "configurations": [ "Debug|Any CPU", "Debug|ARM", "Debug|x64", "Debug|x86", "Release|Any CPU", "Release|ARM", "Release|x64", "Release|x86" ],
+            "targetFramework": "v4.5",
+            "defineConstants": ";SILVERLIGHT;WINDOWS_PHONE;AWS_ASYNC_API;STORAGE_FILE",
+            "binSubFolder": "wp8",
+            "template": "PhoneProjectFile",
+            "platformCodeFolders": [ "_mobile" ]
+        },
+        {
+            "name": "Portable",
+            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
+            "targetFramework": "v4.5",
+            "defineConstants": ";WIN_RT;WINDOWS_PHONE;AWS_ASYNC_API;STORAGE_FILE",
+            "binSubFolder": "portable",
+            "template": "PortableProjectFile",
+            "platformCodeFolders": [ "_mobile" ]
+        }
+    ],
+    "models": [
+        {
+            "active": true,
+
+            "model": "cloudhsm",
+            "base-name": "CloudHSM",
+            "region-lookup-name": "cloudhsm",
+            "authentication-service-name": "cloudhsm",
+            "synopsis": "The AWS CloudHSM service helps you meet corporate, contractual and regulatory compliance requirements for data security by using dedicated Hardware Security Module (HSM) appliances within the AWS cloud. With CloudHSM, you control the encryption keys and cryptographic operations performed by the HSM."
+        },
+        {
+            "active": true,
+
+            "model": "autoscaling",
+            "base-name": "AutoScaling",
+            "region-lookup-name": "autoscaling",
+            "authentication-service-name": "autoscaling",
+            "service-url": "https://autoscaling.us-east-1.amazonaws.com",
+            "synopsis": "Auto Scaling helps you maintain application availability and allows you to scale your Amazon EC2 capacity up or down automatically according to conditions you define."
+        },
+        {
+            "active": true,
+
+            "model": "support",
+            "base-name": "AWSSupport",
+            "region-lookup-name": "support",
+            "authentication-service-name": "support",
+            "service-url": "https://support.us-east-1.amazonaws.com",
+            "synopsis": "The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center."
+        },
+        {
+            "active": true,
+            "comment": "Turn off till we move to the latest version of the model.",
+
+            "model": "cloudformation",
+            "base-name": "CloudFormation",
+            "region-lookup-name": "cloudformation",
+            "authentication-service-name": "cloudformation",
+            "service-url": "https://cloudformation.us-east-1.amazonaws.com",
+            "synopsis": "AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion."
+        },
+        {
+            "active": true,
+
+            "model": "cloudfront",
+            "base-name": "CloudFront",
+            "region-lookup-name": "cloudfront",
+            "authentication-service-name": "cloudfront",
+            "service-url": "https://cloudfront.amazonaws.com",
+            "synopsis": "Amazon CloudFront is a content delivery web service. It integrates with other Amazon Web Services products to give developers and businesses an easy way to distribute content to end users with low latency, high data transfer speeds, and no minimum usage commitments."
+        },
+        {
+            "active": true,
+
+            "model": "cloudsearch-2011-02-01",
+            "locked-api-version": "2011-02-01",
+            "customization-file": "cloudsearch-2011-02-01-customizations.json",
+            "namespace": "Amazon.CloudSearch_2011_02_01",
+            "base-name": "CloudSearch",
+            "region-lookup-name": "cloudsearch",
+            "authentication-service-name": "cloudsearch",
+            "service-url": "https://cloudsearch.us-east-1.amazonaws.com/",
+            "synopsis": "Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application."
+        },
+        {
+            "active": true,
+
+            "comment": "This has the extra hyphen in the prefix to make sure we don't pick up cloudsearchdomain model",
+            "model": "cloudsearch-",
+
+            "base-name": "CloudSearch",
+            "region-lookup-name": "cloudsearch",
+            "authentication-service-name": "cloudsearch",
+            "service-url": "https://cloudsearch.us-east-1.amazonaws.com/",
+            "synopsis": "Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application."
+        },
+        {
+            "active": true,
+
+            "model": "cloudsearchdomain",
+            "base-name": "CloudSearchDomain",
+            "region-lookup-name": "cloudsearchdomain",
+            "authentication-service-name": "cloudsearch",
+            "generate-client-constructors": false,
+            "synopsis": "Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application."
+        },
+        {
+            "active": true,
+
+            "model": "cloudtrail",
+            "base-name": "CloudTrail",
+            "region-lookup-name": "cloudtrail",
+            "authentication-service-name": "cloudtrail",
+            "service-url": "https://cloudtrail.us-east-1.amazonaws.com",
+            "synopsis": "AWS CloudTrail is a web service that records AWS API calls for your account and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements returned by the AWS service."
+        },
+        {
+            "active": true,
+
+            "model": "config",
+            "base-name": "ConfigService",
+            "region-lookup-name": "config",
+            "authentication-service-name": "config",
+            "service-url": "https://config.us-east-1.amazonaws.com",
+            "synopsis": "AWS Config is a fully managed service that provides you with an AWS resource inventory, configuration history, and configuration change notifications to enable security and governance."
+        },
+        {
+            "active": true,
+
+            "model": "monitoring",
+            "base-name": "CloudWatch",
+            "region-lookup-name": "monitoring",
+            "authentication-service-name": "monitoring",
+            "service-url": "https://monitoring.us-east-1.amazonaws.com",
+            "synopsis": "Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms."
+        },
+        {
+            "active": true,
+
+            "model": "logs",
+            "base-name": "CloudWatchLogs",
+            "region-lookup-name": "logs",
+            "authentication-service-name": "logs",
+            "service-url": "https://logs.us-east-1.amazonaws.com",
+            "synopsis": "Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms."
+        },
+        {
+            "active": true,
+
+            "model": "codedeploy",
+            "base-name": "CodeDeploy",
+            "region-lookup-name": "codedeploy",
+            "authentication-service-name": "codedeploy",
+            "service-url": "http://codedeploy.us-east-1.amazonaws.com",
+            "synopsis": "AWS CodeDeploy is a service that automates code deployments to Amazon EC2 instances. AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during deployment, and handles the complexity of updating your applications."
+        },
+        {
+            "active": true,
+
+            "model": "cognito-identity",
+            "base-name": "CognitoIdentity",
+            "region-lookup-name": "cognito-identity",
+            "authentication-service-name": "cognito-identity",
+            "service-url": "http://cognito-identity.us-east-1.amazonaws.com",
+            "synopsis": "Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.",
+            "dependencies": [ "SecurityToken" ]
+        },
+        {
+            "active": true,
+
+            "model": "cognito-sync",
+            "base-name": "CognitoSync",
+            "region-lookup-name": "cognito-sync",
+            "authentication-service-name": "cognito-sync",
+            "service-url": "http://cognito-sync.us-east-1.amazonaws.com",
+            "synopsis": "Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.",
+            "dependencies": [ "CognitoIdentity" ]
+        },
+        {
+            "active": true,
+
+            "model": "datapipeline",
+            "base-name": "DataPipeline",
+            "region-lookup-name": "datapipeline",
+            "authentication-service-name": "datapipeline",
+            "service-url": "https://datapipeline.us-east-1.amazonaws.com",
+            "synopsis": "AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services such as Amazon S3, Amazon RDS, Amazon DynamoDB and Amazon Redshift."
+        },
+        {
+            "active": true,
+
+            "model": "directconnect",
+            "base-name": "DirectConnect",
+            "region-lookup-name": "directconnect",
+            "authentication-service-name": "directconnect",
+            "service-url": "https://directconnect.us-east-1.amazonaws.com",
+            "synopsis": "AWS Direct Connect makes it easy to establish a dedicated network connection from your premises to AWS. Using AWS Direct Connect, you can establish private connectivity between AWS and your datacenter, office, or colocation environment, which in many cases can reduce your network costs, increase bandwidth throughput, and provide a more consistent network experience than Internet-based connections."
+        },
+        {
+            "active": true,
+
+            "model": "dynamodb",
+            "namespace": "Amazon.DynamoDBv2",
+            "base-name": "DynamoDB",
+            "region-lookup-name": "dynamodb",
+            "authentication-service-name": "dynamodb",
+            "service-url": "https://dynamodb.us-east-1.amazonaws.com/",
+            "max-retries": 10,
+            "synopsis": "Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale."
+        },
+        {
+            "active": true,
+
+            "model": "ec2",
+            "base-name": "EC2",
+            "region-lookup-name": "ec2",
+            "authentication-service-name": "ec2",
+            "service-url": "https://ec2.us-east-1.amazonaws.com",
+            "synopsis": "Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers."
+        },
+        {
+            "active": true,
+
+            "model": "ecs",
+            "base-name": "ECS",
+            "region-lookup-name": "ecs",
+            "authentication-service-name": "ecs",
+            "service-url": "https://ecs.us-east-1.amazonaws.com",
+            "synopsis": "Amazon EC2 Container Service is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run distributed applications on a managed cluster of Amazon EC2 instances."
+        },
+        {
+            "active": true,
+
+            "model": "elasticache",
+            "base-name": "ElastiCache",
+            "region-lookup-name": "elasticache",
+            "authentication-service-name": "elasticache",
+            "service-url": "https://elasticache.us-east-1.amazonaws.com",
+            "synopsis": "ElastiCache is a web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud. The service improves the performance of web applications by allowing you to retrieve information from fast, managed, in-memory caches, instead of relying entirely on slower disk-based databases."
+        },
+        {
+            "active": true,
+
+            "model": "elasticbeanstalk",
+            "base-name": "ElasticBeanstalk",
+            "region-lookup-name": "elasticbeanstalk",
+            "authentication-service-name": "elasticbeanstalk",
+            "service-url": "https://elasticbeanstalk.us-east-1.amazonaws.com",
+            "synopsis": "AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS."
+        },
+        {
+            "active": true,
+
+            "model": "elasticloadbalancing",
+            "base-name": "ElasticLoadBalancing",
+            "region-lookup-name": "elasticloadbalancing",
+            "authentication-service-name": "elasticloadbalancing",
+            "service-url": "https://elasticloadbalancing.us-east-1.amazonaws.com",
+            "synopsis": "Elastic Load Balancing automatically distributes incoming application traffic across multiple Amazon EC2 instances in the cloud."
+        },
+        {
+            "active": true,
+
+            "model": "elasticmapreduce",
+            "base-name": "ElasticMapReduce",
+            "region-lookup-name": "elasticmapreduce",
+            "authentication-service-name": "elasticmapreduce",
+            "service-url": "https://elasticmapreduce.amazonaws.com",
+            "synopsis": "Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to quickly and cost-effectively process vast amounts of data."
+        },
+        {
+            "active": true,
+
+            "model": "elastictranscoder",
+            "base-name": "ElasticTranscoder",
+            "region-lookup-name": "elastictranscoder",
+            "authentication-service-name": "elastictranscoder",
+            "service-url": "https://elastictranscoder.us-east-1.amazonaws.com",
+            "synopsis": "Amazon Elastic Transcoder is media transcoding in the cloud. It is designed to be a highly scalable, easy to use and a cost effective way for developers and businesses to convert (or “transcode”) media files from their source format into versions that will playback on devices like smartphones, tablets and PCs."
+        },
+        {
+            "active": true,
+
+            "model": "glacier",
+            "base-name": "Glacier",
+            "region-lookup-name": "glacier",
+            "authentication-service-name": "glacier",
+            "service-url": "https://glacier.us-east-1.amazonaws.com",
+            "synopsis": "Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.",
+            "dependencies": [ "SQS", "SimpleNotificationService" ]
+        },
+        {
+            "active": true,
+
+            "model": "iam",
+            "base-name": "IdentityManagement",
+            "namespace": "Amazon.IdentityManagement",
+            "region-lookup-name": "iam",
+            "service-url": "https://iam.amazonaws.com",
+            "append-service": true,
+            "authentication-service-name": "iam",
+            "default-region": "USEast1",
+            "synopsis": "AWS Identity and Access Management (IAM) enables you to securely control access to AWS services and resources for your users. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources."
+        },
+        {
+            "active": true,
+
+            "model": "importexport",
+            "base-name": "ImportExport",
+            "region-lookup-name": "importexport",
+            "service-url": "https://importexport.amazonaws.com/",
+            "synopsis": ""
+        },
+        {
+            "active": true,
+
+            "model": "kinesis",
+            "base-name": "Kinesis",
+            "region-lookup-name": "kinesis",
+            "authentication-service-name": "kinesis",
+            "service-url": "https://kinesis.us-east-1.amazonaws.com/",
+            "synopsis": "Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams."
+        },
+        {
+            "active": true,
+
+            "model": "lambda",
+            "base-name": "Lambda",
+            "region-lookup-name": "lambda",
+            "authentication-service-name": "lambda",
+            "synopsis": "AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information."
+        },
+        {
+            "active": true,
+
+            "model": "kms",
+            "base-name": "KeyManagementService",
+            "region-lookup-name": "kms",
+            "authentication-service-name": "kms",
+            "synopsis": "AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys."
+        },
+        {
+            "active": true,
+
+            "model": "opsworks",
+            "base-name": "OpsWorks",
+            "region-lookup-name": "opsworks",
+            "authentication-service-name": "opsworks",
+            "service-url": "https://opsworks.us-east-1.amazonaws.com/",
+            "synopsis": "AWS OpsWorks is an application management service that makes it easy to deploy and operate applications of all shapes and sizes. You can define the application’s architecture and the specification of each component including package installation, software configuration and resources such as storage."
+        },
+        {
+            "active": true,
+
+            "model": "rds",
+            "base-name": "RDS",
+            "region-lookup-name": "rds",
+            "authentication-service-name": "rds",
+            "service-url": "https://rds.us-east-1.amazonaws.com/",
+            "synopsis": "Amazon Relational Database Service (Amazon RDS) is a web service that makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while managing time-consuming database management tasks, freeing you up to focus on your applications and business."
+        },
+        {
+            "active": true,
+
+            "model": "redshift",
+            "base-name": "Redshift",
+            "region-lookup-name": "redshift",
+            "authentication-service-name": "redshift",
+            "service-url": "https://redshift.us-east-1.amazonaws.com/",
+            "synopsis": "Amazon Redshift is a fast, fully managed, petabyte-scale data warehouse solution that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools."
+        },
+        {
+            "active": true,
+
+            "model": "route53-",
+            "base-name": "Route53",
+            "region-lookup-name": "route53",
+            "service-url": "https://route53.amazonaws.com",
+            "synopsis": "Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service."
+        },
+        {
+            "active": true,
+
+            "model": "route53domains",
+            "base-name": "Route53Domains",
+            "region-lookup-name": "route53domains",
+            "authentication-service-name": "route53domains",
+            "synopsis": "Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service."
+        },
+        {
+            "active": true,
+
+            "model": "s3",
+            "base-name": "S3",
+            "region-lookup-name": "s3",
+            "service-url": "https://s3.amazonaws.com/",
+            "synopsis": "Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage."
+        },
+        {
+            "active": true,
+
+            "model": "sts",
+            "namespace": "Amazon.SecurityToken",
+            "base-name": "SecurityTokenService",
+            "region-lookup-name": "sts",
+            "service-url": "https://sts.amazonaws.com",
+            "authentication-service-name": "sts",
+            "default-region": "USEast1",
+            "synopsis": "The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources."
+        },
+        {
+            "active": true,
+
+            "model": "sdb",
+            "base-name": "SimpleDB",
+            "region-lookup-name": "sdb",
+            "service-url": "https://sdb.amazonaws.com/",
+            "synopsis": "Amazon SimpleDB is a highly available, scalable, and flexible non-relational data store that enables you to store and query data items using web services requests."
+        },
+        {
+            "active": true,
+
+            "model": "email",
+            "namespace": "Amazon.SimpleEmail",
+            "base-name": "SimpleEmailService",
+            "region-lookup-name": "email",
+            "service-url": "https://email.us-east-1.amazonaws.com/",
+            "synopsis": "Amazon SES is an outbound-only email-sending service that provides an easy, cost-effective way for you to send email."
+        },
+        {
+            "active": true,
+
+            "model": "sns",
+            "base-name": "SimpleNotificationService",
+            "region-lookup-name": "sns",
+            "authentication-service-name": "sns",
+            "synopsis": "Amazon Simple Notification Service (Amazon SNS) is a fast, flexible, fully managed push messaging service. Amazon SNS makes it simple and cost-effective to push notifications to Apple, Google, Fire OS, and Windows devices, as well as Android devices in China with Baidu Cloud Push.  You can also use SNS to push notifications to internet connected smart devices, as well as other distributed services."
+        },
+        {
+            "active": true,
+
+            "model": "swf",
+            "base-name": "SimpleWorkflow",
+            "region-lookup-name": "swf",
+            "synopsis": "Amazon SWF helps developers build, run, and scale background jobs that have parallel or sequential steps. You can think of Amazon SWF as a fully-managed state tracker and task coordinator in the Cloud."
+        },
+        {
+            "active": true,
+
+            "model": "sqs",
+            "base-name": "SQS",
+            "region-lookup-name": "sqs",
+            "authentication-service-name": "sqs",
+            "synopsis": "Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service. SQS makes it simple and cost-effective to decouple the components of a cloud application."
+        },
+        {
+            "active": true,
+
+            "model": "ssm",
+            "base-name": "SimpleSystemsManagement",
+            "region-lookup-name": "ssm",
+            "authentication-service-name": "ssm",
+            "service-url": "https://ssm.us-east-1.amazonaws.com",
+            "synopsis": "Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances."
+        },
+        {
+            "active": true,
+
+            "model": "storagegateway",
+            "base-name": "StorageGateway",
+            "region-lookup-name": "storagegateway",
+            "service-url": "https://storagegateway.us-east-1.amazonaws.com",
+            "synopsis": "he AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization’s on-premises IT environment and AWS’s storage infrastructure."
+        }
+    ]
+}
