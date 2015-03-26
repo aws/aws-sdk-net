@@ -78,6 +78,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BlockDeviceMappings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BlockDeviceMapping, BlockDeviceMappingUnmarshaller>(BlockDeviceMappingUnmarshaller.Instance);
+                    unmarshalledObject.BlockDeviceMappings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -184,6 +190,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegisteredBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReportedAgentVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReportedAgentVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReportedOs", targetDepth))

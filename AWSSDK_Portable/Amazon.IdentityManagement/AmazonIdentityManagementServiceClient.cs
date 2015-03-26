@@ -3348,36 +3348,6 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
-        #region  UploadPublicAccessKey
-
-        internal UploadPublicAccessKeyResponse UploadPublicAccessKey(UploadPublicAccessKeyRequest request)
-        {
-            var marshaller = new UploadPublicAccessKeyRequestMarshaller();
-            var unmarshaller = UploadPublicAccessKeyResponseUnmarshaller.Instance;
-
-            return Invoke<UploadPublicAccessKeyRequest,UploadPublicAccessKeyResponse>(request, marshaller, unmarshaller);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UploadPublicAccessKey operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UploadPublicAccessKey operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UploadPublicAccessKeyResponse> UploadPublicAccessKeyAsync(UploadPublicAccessKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new UploadPublicAccessKeyRequestMarshaller();
-            var unmarshaller = UploadPublicAccessKeyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UploadPublicAccessKeyRequest,UploadPublicAccessKeyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
         #region  UploadServerCertificate
 
         internal UploadServerCertificateResponse UploadServerCertificate(UploadServerCertificateRequest request)

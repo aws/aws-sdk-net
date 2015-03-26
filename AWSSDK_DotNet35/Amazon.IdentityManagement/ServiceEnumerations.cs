@@ -25,66 +25,6 @@ namespace Amazon.IdentityManagement
 {
 
     /// <summary>
-    /// Constants used for properties of type AccessKeySelectorType.
-    /// </summary>
-    public class AccessKeySelectorType : ConstantClass
-    {
-
-        /// <summary>
-        /// Constant EC_P_256 for AccessKeySelectorType
-        /// </summary>
-        public static readonly AccessKeySelectorType EC_P_256 = new AccessKeySelectorType("EC_P_256");
-        /// <summary>
-        /// Constant EC_P_384 for AccessKeySelectorType
-        /// </summary>
-        public static readonly AccessKeySelectorType EC_P_384 = new AccessKeySelectorType("EC_P_384");
-        /// <summary>
-        /// Constant EC_P_521 for AccessKeySelectorType
-        /// </summary>
-        public static readonly AccessKeySelectorType EC_P_521 = new AccessKeySelectorType("EC_P_521");
-        /// <summary>
-        /// Constant HMAC for AccessKeySelectorType
-        /// </summary>
-        public static readonly AccessKeySelectorType HMAC = new AccessKeySelectorType("HMAC");
-        /// <summary>
-        /// Constant RSA_1024 for AccessKeySelectorType
-        /// </summary>
-        public static readonly AccessKeySelectorType RSA_1024 = new AccessKeySelectorType("RSA_1024");
-        /// <summary>
-        /// Constant RSA_2048 for AccessKeySelectorType
-        /// </summary>
-        public static readonly AccessKeySelectorType RSA_2048 = new AccessKeySelectorType("RSA_2048");
-        /// <summary>
-        /// Constant RSA_4096 for AccessKeySelectorType
-        /// </summary>
-        public static readonly AccessKeySelectorType RSA_4096 = new AccessKeySelectorType("RSA_4096");
-
-        /// <summary>
-        /// Default Constructor
-        /// </summary>
-        public AccessKeySelectorType(string value)
-            : base(value)
-        {
-        }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static AccessKeySelectorType FindValue(string value)
-        {
-            return FindValue<AccessKeySelectorType>(value);
-        }
-
-        public static implicit operator AccessKeySelectorType(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-
-    /// <summary>
     /// Constants used for properties of type AssignmentStatusType.
     /// </summary>
     public class AssignmentStatusType : ConstantClass
@@ -135,9 +75,17 @@ namespace Amazon.IdentityManagement
     {
 
         /// <summary>
+        /// Constant AWSManagedPolicy for EntityType
+        /// </summary>
+        public static readonly EntityType AWSManagedPolicy = new EntityType("AWSManagedPolicy");
+        /// <summary>
         /// Constant Group for EntityType
         /// </summary>
         public static readonly EntityType Group = new EntityType("Group");
+        /// <summary>
+        /// Constant LocalManagedPolicy for EntityType
+        /// </summary>
+        public static readonly EntityType LocalManagedPolicy = new EntityType("LocalManagedPolicy");
         /// <summary>
         /// Constant Role for EntityType
         /// </summary>

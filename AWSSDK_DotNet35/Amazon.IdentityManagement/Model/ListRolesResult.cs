@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>ListRoles</a> action.
+    /// Contains the response to a successful <a>ListRoles</a> request.
     /// </summary>
     public partial class ListRolesResult : AmazonWebServiceResponse
     {

@@ -36,6 +36,7 @@ namespace Amazon.OpsWorks.Model
         private Architecture _architecture;
         private AutoScalingType _autoScalingType;
         private string _availabilityZone;
+        private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
         private string _createdAt;
         private bool? _ebsOptimized;
         private string _ec2InstanceId;
@@ -54,6 +55,7 @@ namespace Amazon.OpsWorks.Model
         private string _publicDns;
         private string _publicIp;
         private string _registeredBy;
+        private string _reportedAgentVersion;
         private ReportedOs _reportedOs;
         private RootDeviceType _rootDeviceType;
         private string _rootDeviceVolumeId;
@@ -139,6 +141,25 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BlockDeviceMappings. 
+        /// <para>
+        /// An array of <code>BlockDeviceMapping</code> objects that specify the instance's block
+        /// device mappings.
+        /// </para>
+        /// </summary>
+        public List<BlockDeviceMapping> BlockDeviceMappings
+        {
+            get { return this._blockDeviceMappings; }
+            set { this._blockDeviceMappings = value; }
+        }
+
+        // Check to see if BlockDeviceMappings property is set
+        internal bool IsSetBlockDeviceMappings()
+        {
+            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
         }
 
         /// <summary>
@@ -482,6 +503,24 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReportedAgentVersion. 
+        /// <para>
+        /// The instance's reported AWS OpsWorks agent version.
+        /// </para>
+        /// </summary>
+        public string ReportedAgentVersion
+        {
+            get { return this._reportedAgentVersion; }
+            set { this._reportedAgentVersion = value; }
+        }
+
+        // Check to see if ReportedAgentVersion property is set
+        internal bool IsSetReportedAgentVersion()
+        {
+            return this._reportedAgentVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ReportedOs. 
         /// <para>
         /// For registered instances, the reported operating system.
@@ -502,7 +541,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property RootDeviceType. 
         /// <para>
-        /// The instance root device type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+        /// The instance's root device type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
         /// for the Root Device</a>.
         /// </para>
         /// </summary>

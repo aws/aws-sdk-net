@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>CreateInstanceProfile</a>action.
+    /// Contains the response to a successful <a>CreateInstanceProfile</a> request.
     /// </summary>
     public partial class CreateInstanceProfileResult : AmazonWebServiceResponse
     {

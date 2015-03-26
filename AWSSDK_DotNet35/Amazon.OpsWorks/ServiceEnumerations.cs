@@ -639,4 +639,48 @@ namespace Amazon.OpsWorks
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type VolumeType.
+    /// </summary>
+    public class VolumeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Gp2 for VolumeType
+        /// </summary>
+        public static readonly VolumeType Gp2 = new VolumeType("gp2");
+        /// <summary>
+        /// Constant Io1 for VolumeType
+        /// </summary>
+        public static readonly VolumeType Io1 = new VolumeType("io1");
+        /// <summary>
+        /// Constant Standard for VolumeType
+        /// </summary>
+        public static readonly VolumeType Standard = new VolumeType("standard");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public VolumeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VolumeType FindValue(string value)
+        {
+            return FindValue<VolumeType>(value);
+        }
+
+        public static implicit operator VolumeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

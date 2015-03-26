@@ -2706,8 +2706,8 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Retrieves information about all IAM users, groups, and roles in your account, including
         /// their relationships to one another and their policies. Use this API to obtain a snapshot
-        /// of the configuration of IAM permissions (users, groups, roles, and their policies)
-        /// in your account.
+        /// of the configuration of IAM permissions (users, groups, roles, and policies) in your
+        /// account.
         /// 
         ///  
         /// <para>
@@ -6257,53 +6257,6 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>Returns a  UpdateUserResult from IdentityManagementService.</returns>
         UpdateUserResponse EndUpdateUser(IAsyncResult asyncResult);
-
-        #endregion
-        
-        #region  UploadPublicAccessKey
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UploadPublicAccessKey service method.</param>
-        /// 
-        /// <returns>The response from the UploadPublicAccessKey service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
-        /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
-        /// </exception>
-        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
-        /// </exception>
-        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
-        /// The request processing has failed because of an unknown error, exception or failure.
-        /// </exception>
-        UploadPublicAccessKeyResponse UploadPublicAccessKey(UploadPublicAccessKeyRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UploadPublicAccessKey operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UploadPublicAccessKey operation on AmazonIdentityManagementServiceClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadPublicAccessKey
-        ///         operation.</returns>
-        IAsyncResult BeginUploadPublicAccessKey(UploadPublicAccessKeyRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  UploadPublicAccessKey operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadPublicAccessKey.</param>
-        /// 
-        /// <returns>Returns a  UploadPublicAccessKeyResult from IdentityManagementService.</returns>
-        UploadPublicAccessKeyResponse EndUploadPublicAccessKey(IAsyncResult asyncResult);
 
         #endregion
         

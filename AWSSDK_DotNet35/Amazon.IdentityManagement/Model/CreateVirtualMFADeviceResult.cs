@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>CreateVirtualMFADevice</a>
-    /// action.
+    /// Contains the response to a successful <a>CreateVirtualMFADevice</a> request.
     /// </summary>
     public partial class CreateVirtualMFADeviceResult : AmazonWebServiceResponse
     {

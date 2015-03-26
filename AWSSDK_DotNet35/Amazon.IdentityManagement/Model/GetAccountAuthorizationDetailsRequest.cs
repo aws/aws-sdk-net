@@ -31,8 +31,8 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the GetAccountAuthorizationDetails operation.
     /// Retrieves information about all IAM users, groups, and roles in your account, including
     /// their relationships to one another and their policies. Use this API to obtain a snapshot
-    /// of the configuration of IAM permissions (users, groups, roles, and their policies)
-    /// in your account.
+    /// of the configuration of IAM permissions (users, groups, roles, and policies) in your
+    /// account.
     /// 
     ///  
     /// <para>
@@ -49,7 +49,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// A list of entity types (user, group, or role) for filtering the results.
+        /// A list of entity types (user, group, role, local managed policy, or AWS managed policy)
+        /// for filtering the results.
         /// </para>
         /// </summary>
         public List<string> Filter

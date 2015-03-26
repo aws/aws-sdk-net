@@ -28,14 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>GetAccountAuthorizationDetails</a>
-    /// action.
+    /// Contains the response to a successful <a>GetAccountAuthorizationDetails</a> request.
     /// </summary>
     public partial class GetAccountAuthorizationDetailsResult : AmazonWebServiceResponse
     {
         private List<GroupDetail> _groupDetailList = new List<GroupDetail>();
         private bool? _isTruncated;
         private string _marker;
+        private List<ManagedPolicyDetail> _policies = new List<ManagedPolicyDetail>();
         private List<RoleDetail> _roleDetailList = new List<RoleDetail>();
         private List<UserDetail> _userDetailList = new List<UserDetail>();
 
@@ -95,6 +95,24 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetMarker()
         {
             return this._marker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Policies. 
+        /// <para>
+        /// A list containing information about managed policies.
+        /// </para>
+        /// </summary>
+        public List<ManagedPolicyDetail> Policies
+        {
+            get { return this._policies; }
+            set { this._policies = value; }
+        }
+
+        // Check to see if Policies property is set
+        internal bool IsSetPolicies()
+        {
+            return this._policies != null && this._policies.Count > 0; 
         }
 
         /// <summary>

@@ -24,7 +24,10 @@
     "shapeSubstitutions": {
         "Policy": { 
             "renameShape": "ManagedPolicy"
-        }
+        },
+		"AttachedPolicy": {
+			"renameShape": "AttachedPolicyType"
+		}
     }
 
 }

@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>ListServerCertificates</a>
-    /// action.
+    /// Contains the response to a successful <a>ListServerCertificates</a> request.
     /// </summary>
     public partial class ListServerCertificatesResult : AmazonWebServiceResponse
     {

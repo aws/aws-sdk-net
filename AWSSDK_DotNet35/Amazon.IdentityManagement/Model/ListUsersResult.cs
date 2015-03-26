@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>ListUsers</a> action.
+    /// Contains the response to a successful <a>ListUsers</a> request.
     /// </summary>
     public partial class ListUsersResult : AmazonWebServiceResponse
     {

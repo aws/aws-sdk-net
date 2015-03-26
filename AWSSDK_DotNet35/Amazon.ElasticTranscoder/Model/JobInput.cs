@@ -34,6 +34,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         private string _aspectRatio;
         private string _container;
+        private DetectedProperties _detectedProperties;
         private Encryption _encryption;
         private string _frameRate;
         private string _interlaced;
@@ -96,6 +97,24 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetContainer()
         {
             return this._container != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DetectedProperties. 
+        /// <para>
+        /// The detected properties of the input file.
+        /// </para>
+        /// </summary>
+        public DetectedProperties DetectedProperties
+        {
+            get { return this._detectedProperties; }
+            set { this._detectedProperties = value; }
+        }
+
+        // Check to see if DetectedProperties property is set
+        internal bool IsSetDetectedProperties()
+        {
+            return this._detectedProperties != null;
         }
 
         /// <summary>
