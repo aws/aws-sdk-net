@@ -8,6 +8,7 @@ using Amazon.Route53;
 using Amazon.Route53.Model;
 using System.Threading;
 using Amazon;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
@@ -63,7 +64,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 HostedZoneConfig = new HostedZoneConfig { Comment = COMMENT }
             };
             // Create Hosted Zone
-            var createResponse = Client.CreateHostedZone(createRequest);
+
+            var createResponse = UtilityMethods.WaitUntilSuccess<CreateHostedZoneResponse>(
+                () => Client.CreateHostedZone(createRequest)
+            );
 
             createdZoneId = createResponse.HostedZone.Id;
             createdZoneChangeId = createResponse.ChangeInfo.Id;
@@ -270,7 +274,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 HostedZoneConfig = new HostedZoneConfig { Comment = COMMENT },
                 DelegationSetId = delegationSet.Id
             };
-            createdZoneId = Client.CreateHostedZone(createRequest).HostedZone.Id;
+            createdZoneId = UtilityMethods.WaitUntilSuccess<string>(() => 
+                Client.CreateHostedZone(createRequest).HostedZone.Id
+            );
 
             var hostedZoneInfo = Client.GetHostedZone(new GetHostedZoneRequest
             {
@@ -343,7 +349,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     HostedZoneConfig = new HostedZoneConfig { Comment = COMMENT },
                     VPC = vpc1
                 };
-                createdZoneId = Client.CreateHostedZone(createRequest).HostedZone.Id;
+                createdZoneId = UtilityMethods.WaitUntilSuccess<string>(() => 
+                    Client.CreateHostedZone(createRequest).HostedZone.Id
+                );
 
                 var hostedZoneInfo = Client.GetHostedZone(new GetHostedZoneRequest
                 {

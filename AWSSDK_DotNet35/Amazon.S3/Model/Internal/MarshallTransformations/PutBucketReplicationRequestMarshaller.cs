@@ -69,6 +69,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteElementString("Prefix", "", S3Transforms.ToXmlStringValue(rule.Prefix));
                         }
+                        else // Write an empty Prefix tag
+                        {
+                            xmlWriter.WriteElementString("Prefix", "", S3Transforms.ToXmlStringValue(""));
+                        }
+
                         if (rule.IsSetStatus())
                         {
                             xmlWriter.WriteElementString("Status", "", S3Transforms.ToXmlStringValue(rule.Status.ToString()));
