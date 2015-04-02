@@ -73,6 +73,17 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetPlayReadyDrm())
+            {
+                context.Writer.WritePropertyName("PlayReadyDrm");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PlayReadyDrmMarshaller.Instance;
+                marshaller.Marshall(requestObject.PlayReadyDrm, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         public readonly static CreateJobPlaylistMarshaller Instance = new CreateJobPlaylistMarshaller();

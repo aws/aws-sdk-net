@@ -102,6 +102,22 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetOnPremisesInstanceTagFilters())
+                {
+                    context.Writer.WritePropertyName("onPremisesInstanceTagFilters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestOnPremisesInstanceTagFiltersListValue in publicRequest.OnPremisesInstanceTagFilters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestOnPremisesInstanceTagFiltersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetServiceRoleArn())
                 {
                     context.Writer.WritePropertyName("serviceRoleArn");

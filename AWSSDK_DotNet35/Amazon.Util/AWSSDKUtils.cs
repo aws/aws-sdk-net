@@ -41,7 +41,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "2.3.28.1";
+        internal const string SDKVersionNumber = "2.3.29.0";
 
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
@@ -146,6 +146,8 @@ namespace Amazon.Util
 
         static string _versionNumber;
         static string _sdkUserAgent;
+        static string _customData;
+        
         /// <summary>
         /// The AWS SDK User Agent
         /// </summary>        
@@ -164,11 +166,18 @@ namespace Amazon.Util
 
         public static void SetUserAgent(string productName, string versionNumber)
         {
-            _userAgentBaseName = productName;
-            _versionNumber = versionNumber;
-            BuildUserAgentString();
+            SetUserAgent(productName, versionNumber, null);
         }
 
+        public static void SetUserAgent(string productName, string versionNumber, string customData)
+        {
+            _userAgentBaseName = productName;
+            _versionNumber = versionNumber;
+            _customData = customData;
+            
+            BuildUserAgentString();
+        }
+        
         static void BuildUserAgentString()
         {
             if (_versionNumber == null)
@@ -176,12 +185,13 @@ namespace Amazon.Util
                 _versionNumber = SDKVersionNumber;
             }
 
-            _sdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} .NET Runtime/{2} .NET Framework/{3} OS/{4}",
+            _sdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} .NET Runtime/{2} .NET Framework/{3} OS/{4} {5}",
                 _userAgentBaseName,
                 _versionNumber,
                 DetermineRuntime(),
                 DetermineFramework(),
-                DetermineOSVersion());
+                DetermineOSVersion(),
+                _customData).Trim();
         }
 
 

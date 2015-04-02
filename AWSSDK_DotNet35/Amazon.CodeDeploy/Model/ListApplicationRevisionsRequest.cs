@@ -44,7 +44,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of an existing AWS CodeDeploy application within the AWS user account.
+        /// The name of an existing AWS CodeDeploy application associated with the applicable
+        /// IAM user or AWS account.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -171,8 +172,8 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The order to sort the list results by:
         /// </para>
-        ///  <ul> <li>ascending: Sort the list results in ascending order.</li> <li>descending:
-        /// Sort the list results in descending order.</li> </ul> 
+        ///  <ul> <li>ascending: Sort the list of results in ascending order.</li> <li>descending:
+        /// Sort the list of results in descending order.</li> </ul> 
         /// <para>
         /// If not specified, the results will be sorted in ascending order.
         /// </para>

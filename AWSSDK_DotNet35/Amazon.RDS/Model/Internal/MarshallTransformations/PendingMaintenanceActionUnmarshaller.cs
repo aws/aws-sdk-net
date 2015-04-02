@@ -67,6 +67,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.CurrentApplyDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Description", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ForcedApplyDate", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

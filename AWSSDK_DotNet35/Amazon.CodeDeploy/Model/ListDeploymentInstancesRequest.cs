@@ -29,7 +29,8 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDeploymentInstances operation.
-    /// Lists the Amazon EC2 instances for a deployment within the AWS user account.
+    /// Lists the instances for a deployment associated with the applicable IAM user or AWS
+    /// account.
     /// </summary>
     public partial class ListDeploymentInstancesRequest : AmazonCodeDeployRequest
     {

@@ -34,9 +34,9 @@ namespace Amazon.RDS.Model
     /// <para>
     /// This data type is used as a response element in the following actions:
     /// </para>
-    ///  <ul> <li><a>CreateDBInstance</a></li> <li><a>CreateDBInstanceReadReplica</a></li>
-    /// <li><a>DeleteDBInstance</a></li> <li><a>ModifyDBInstance</a></li> <li><a>RebootDBInstance</a></li>
-    /// <li><a>RestoreDBInstanceFromDBSnapshot</a></li> </ul>
+    ///  <ul> <li> <a>CreateDBInstance</a> </li> <li> <a>CreateDBInstanceReadReplica</a> </li>
+    /// <li> <a>DeleteDBInstance</a> </li> <li> <a>ModifyDBInstance</a> </li> <li> <a>RebootDBInstance</a>
+    /// </li> <li> <a>RestoreDBInstanceFromDBSnapshot</a> </li> </ul>
     /// </summary>
     public partial class DBParameterGroupStatus
     {

@@ -29,7 +29,7 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDeployment operation.
-    /// Deploys an application revision to the specified deployment group.
+    /// Deploys an application revision through the specified deployment group.
     /// </summary>
     public partial class CreateDeploymentRequest : AmazonCodeDeployRequest
     {
@@ -43,7 +43,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of an existing AWS CodeDeploy application within the AWS user account.
+        /// The name of an existing AWS CodeDeploy application associated with the applicable
+        /// IAM user or AWS account.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -61,7 +62,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentConfigName. 
         /// <para>
-        /// The name of an existing deployment configuration within the AWS user account.
+        /// The name of an existing deployment configuration associated with the applicable IAM
+        /// user or AWS account.
         /// </para>
         ///  
         /// <para>

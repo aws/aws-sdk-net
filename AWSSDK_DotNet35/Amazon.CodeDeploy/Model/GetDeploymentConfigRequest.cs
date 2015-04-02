@@ -38,7 +38,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentConfigName. 
         /// <para>
-        /// The name of an existing deployment configuration within the AWS user account.
+        /// The name of an existing deployment configuration associated with the applicable IAM
+        /// user or AWS account.
         /// </para>
         /// </summary>
         public string DeploymentConfigName

@@ -38,6 +38,7 @@ namespace Amazon.CodeDeploy.Model
         private string _deploymentGroupId;
         private string _deploymentGroupName;
         private List<EC2TagFilter> _ec2TagFilters = new List<EC2TagFilter>();
+        private List<TagFilter> _onPremisesInstanceTagFilters = new List<TagFilter>();
         private string _serviceRoleArn;
         private RevisionLocation _targetRevision;
 
@@ -147,6 +148,24 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetEc2TagFilters()
         {
             return this._ec2TagFilters != null && this._ec2TagFilters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnPremisesInstanceTagFilters. 
+        /// <para>
+        /// The on-premises instance tags to filter on.
+        /// </para>
+        /// </summary>
+        public List<TagFilter> OnPremisesInstanceTagFilters
+        {
+            get { return this._onPremisesInstanceTagFilters; }
+            set { this._onPremisesInstanceTagFilters = value; }
+        }
+
+        // Check to see if OnPremisesInstanceTagFilters property is set
+        internal bool IsSetOnPremisesInstanceTagFilters()
+        {
+            return this._onPremisesInstanceTagFilters != null && this._onPremisesInstanceTagFilters.Count > 0; 
         }
 
         /// <summary>

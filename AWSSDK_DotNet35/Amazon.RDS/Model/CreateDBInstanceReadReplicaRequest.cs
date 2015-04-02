@@ -108,7 +108,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Example: <code>us-east-1d</code> 
+        ///  Example: <code>us-east-1d</code>
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -133,7 +133,7 @@ namespace Amazon.RDS.Model
         ///  Valid Values: <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge
         /// |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge
         /// | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro
-        /// | db.t2.small | db.t2.medium</code> 
+        /// | db.t2.small | db.t2.medium</code>
         /// </para>
         ///  
         /// <para>
@@ -338,7 +338,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>standard | gp2 | io1</code> 
+        ///  Valid values: <code>standard | gp2 | io1</code>
         /// </para>
         ///  
         /// <para>
@@ -348,7 +348,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
-        /// <code>standard</code> 
+        /// <code>standard</code>
         /// </para>
         /// </summary>
         public string StorageType

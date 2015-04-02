@@ -38,7 +38,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// An existing deployment ID within the AWS user account.
+        /// An existing deployment ID associated with the applicable IAM user or AWS account.
         /// </para>
         /// </summary>
         public string DeploymentId

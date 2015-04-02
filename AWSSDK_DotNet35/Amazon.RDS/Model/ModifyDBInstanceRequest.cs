@@ -39,6 +39,7 @@ namespace Amazon.RDS.Model
         private bool? _applyImmediately;
         private bool? _autoMinorVersionUpgrade;
         private int? _backupRetentionPeriod;
+        private string _caCertificateIdentifier;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _dbParameterGroupName;
@@ -79,7 +80,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>MySQL</b>
+        ///  <b>MySQL</b> 
         /// </para>
         ///  
         /// <para>
@@ -101,7 +102,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>PostgreSQL</b>
+        ///  <b>PostgreSQL</b> 
         /// </para>
         ///  
         /// <para>
@@ -123,7 +124,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Oracle</b>
+        ///  <b>Oracle</b> 
         /// </para>
         ///  
         /// <para>
@@ -141,7 +142,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>SQL Server</b>
+        ///  <b>SQL Server</b> 
         /// </para>
         ///  
         /// <para>
@@ -293,6 +294,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetBackupRetentionPeriod()
         {
             return this._backupRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CACertificateIdentifier. 
+        /// <para>
+        ///  Indicates the certificate which needs to be associated with the instance. 
+        /// </para>
+        /// </summary>
+        public string CACertificateIdentifier
+        {
+            get { return this._caCertificateIdentifier; }
+            set { this._caCertificateIdentifier = value; }
+        }
+
+        // Check to see if CACertificateIdentifier property is set
+        internal bool IsSetCACertificateIdentifier()
+        {
+            return this._caCertificateIdentifier != null;
         }
 
         /// <summary>
@@ -469,7 +488,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>SQL Server</b>
+        ///  <b>SQL Server</b> 
         /// </para>
         ///  
         /// <para>
@@ -529,7 +548,7 @@ namespace Amazon.RDS.Model
         /// characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
         /// </para>
         ///  <note> Amazon RDS API actions never return the password, so this action provides
-        /// a way to regain access to a master instance user if the password is lost. This includes
+        /// a way to regain access to a primary instance user if the password is lost. This includes
         /// restoring privileges that may have been accidentally revoked. </note>
         /// </summary>
         public string MasterUserPassword
@@ -704,7 +723,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>standard | gp2 | io1</code> 
+        ///  Valid values: <code>standard | gp2 | io1</code>
         /// </para>
         ///  
         /// <para>
@@ -714,7 +733,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
-        /// <code>standard</code> 
+        /// <code>standard</code>
         /// </para>
         /// </summary>
         public string StorageType

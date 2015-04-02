@@ -287,6 +287,10 @@ namespace Amazon.CodeDeploy
         /// </summary>
         public static readonly ErrorCode INTERNAL_ERROR = new ErrorCode("INTERNAL_ERROR");
         /// <summary>
+        /// Constant NO_EC2_SUBSCRIPTION for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode NO_EC2_SUBSCRIPTION = new ErrorCode("NO_EC2_SUBSCRIPTION");
+        /// <summary>
         /// Constant NO_INSTANCES for ErrorCode
         /// </summary>
         public static readonly ErrorCode NO_INSTANCES = new ErrorCode("NO_INSTANCES");
@@ -298,6 +302,10 @@ namespace Amazon.CodeDeploy
         /// Constant REVISION_MISSING for ErrorCode
         /// </summary>
         public static readonly ErrorCode REVISION_MISSING = new ErrorCode("REVISION_MISSING");
+        /// <summary>
+        /// Constant THROTTLED for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode THROTTLED = new ErrorCode("THROTTLED");
         /// <summary>
         /// Constant TIMEOUT for ErrorCode
         /// </summary>
@@ -581,6 +589,46 @@ namespace Amazon.CodeDeploy
 
 
     /// <summary>
+    /// Constants used for properties of type RegistrationStatus.
+    /// </summary>
+    public class RegistrationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Deregistered for RegistrationStatus
+        /// </summary>
+        public static readonly RegistrationStatus Deregistered = new RegistrationStatus("Deregistered");
+        /// <summary>
+        /// Constant Registered for RegistrationStatus
+        /// </summary>
+        public static readonly RegistrationStatus Registered = new RegistrationStatus("Registered");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public RegistrationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegistrationStatus FindValue(string value)
+        {
+            return FindValue<RegistrationStatus>(value);
+        }
+
+        public static implicit operator RegistrationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RevisionLocationType.
     /// </summary>
     public class RevisionLocationType : ConstantClass
@@ -694,6 +742,50 @@ namespace Amazon.CodeDeploy
         }
 
         public static implicit operator StopStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TagFilterType.
+    /// </summary>
+    public class TagFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KEY_AND_VALUE for TagFilterType
+        /// </summary>
+        public static readonly TagFilterType KEY_AND_VALUE = new TagFilterType("KEY_AND_VALUE");
+        /// <summary>
+        /// Constant KEY_ONLY for TagFilterType
+        /// </summary>
+        public static readonly TagFilterType KEY_ONLY = new TagFilterType("KEY_ONLY");
+        /// <summary>
+        /// Constant VALUE_ONLY for TagFilterType
+        /// </summary>
+        public static readonly TagFilterType VALUE_ONLY = new TagFilterType("VALUE_ONLY");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public TagFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TagFilterType FindValue(string value)
+        {
+            return FindValue<TagFilterType>(value);
+        }
+
+        public static implicit operator TagFilterType(string value)
         {
             return FindValue(value);
         }

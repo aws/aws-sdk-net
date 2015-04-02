@@ -269,7 +269,7 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  Valid Values: <code>MySQL</code> | <code>oracle-se1</code> | <code>oracle-se</code>
         /// | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-        /// <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> 
+        /// <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>
         /// </para>
         /// </summary>
         public string Engine
@@ -299,7 +299,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>SQL Server</b>
+        ///  <b>SQL Server</b> 
         /// </para>
         ///  
         /// <para>
@@ -330,7 +330,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  Valid values: <code>license-included</code> | <code>bring-your-own-license</code>
-        /// | <code>general-public-license</code> 
+        /// | <code>general-public-license</code>
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -458,7 +458,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>standard | gp2 | io1</code> 
+        ///  Valid values: <code>standard | gp2 | io1</code>
         /// </para>
         ///  
         /// <para>
@@ -468,7 +468,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
-        /// <code>standard</code> 
+        /// <code>standard</code>
         /// </para>
         /// </summary>
         public string StorageType

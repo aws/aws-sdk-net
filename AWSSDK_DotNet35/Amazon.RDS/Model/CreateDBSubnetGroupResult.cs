@@ -30,8 +30,9 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Contains the result of a successful invocation of the following actions: 
     /// 
-    ///  <ul> <li><a>CreateDBSubnetGroup</a></li> <li><a>ModifyDBSubnetGroup</a></li> <li><a>DescribeDBSubnetGroups</a></li>
-    /// <li><a>DeleteDBSubnetGroup</a></li> </ul> 
+    ///  <ul> <li> <a>CreateDBSubnetGroup</a> </li> <li> <a>ModifyDBSubnetGroup</a> </li>
+    /// <li> <a>DescribeDBSubnetGroups</a> </li> <li> <a>DeleteDBSubnetGroup</a> </li> </ul>
+    /// 
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBSubnetGroups</a>
     /// action.

@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ApplyPendingMaintenanceAction operation.
-    /// Applies a pending maintenance action to a resource.
+    /// Applies a pending maintenance action to a resource (for example, a DB instance).
     /// </summary>
     public partial class ApplyPendingMaintenanceActionRequest : AmazonRDSRequest
     {
@@ -58,8 +58,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptInType. 
         /// <para>
-        /// Specify an opt-in request, or undo an opt-in request. An opt-in request of type <code>immediate</code>
-        /// cannot be undone.
+        /// A value that specifies the type of opt-in request, or undoes an opt-in request. An
+        /// opt-in request of type <code>immediate</code> cannot be undone.
         /// </para>
         ///  
         /// <para>
@@ -85,8 +85,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        /// The ARN of the resource (for example, a DB Instance) that the pending maintenance
-        /// action applies to.
+        /// The ARN of the resource that the pending maintenance action applies to.
         /// </para>
         /// </summary>
         public string ResourceIdentifier

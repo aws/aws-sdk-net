@@ -30,8 +30,8 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Contains the result of a successful invocation of the following actions: 
     /// 
-    ///  <ul> <li><a>CreateDBInstance</a></li> <li><a>DeleteDBInstance</a></li> <li><a>ModifyDBInstance</a></li>
-    /// </ul> 
+    ///  <ul> <li> <a>CreateDBInstance</a> </li> <li> <a>DeleteDBInstance</a> </li> <li> <a>ModifyDBInstance</a>
+    /// </li> </ul> 
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBInstances</a> action.
     /// </para>

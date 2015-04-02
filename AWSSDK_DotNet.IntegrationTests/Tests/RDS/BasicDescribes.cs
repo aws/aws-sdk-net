@@ -526,6 +526,51 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
         }
 
         [TestMethod]
+        [TestCategory("RDS")]
+        public void TestDescribeAccountAttributes()
+        {
+            var result = Client.DescribeAccountAttributes();
+            var quotas = result.AccountQuotas;
+            Assert.IsNotNull(quotas);
+            Assert.AreNotEqual(0, quotas.Count);
+            bool anyInUse = false;
+            foreach(var quota in quotas)
+            {
+                Assert.IsFalse(string.IsNullOrEmpty(quota.AccountQuotaName));
+                Assert.AreNotEqual(0, quota.Max);
+                if (quota.Used > 0)
+                    anyInUse = true;
+            }
+            Assert.IsTrue(anyInUse);
+        }
+        [TestMethod]
+        [TestCategory("RDS")]
+        public void TestDescribeCertificates()
+        {
+            var request = new DescribeCertificatesRequest();
+
+            do
+            {
+                var response = Client.DescribeCertificates(request);
+                var certificates = response.Certificates;
+                Assert.IsNotNull(certificates);
+                Assert.AreNotEqual(0, certificates.Count);
+
+                foreach(var cert in certificates)
+                {
+                    Assert.IsNotNull(cert);
+                    Assert.IsFalse(string.IsNullOrEmpty(cert.CertificateIdentifier));
+                    Assert.IsFalse(string.IsNullOrEmpty(cert.CertificateType));
+                    Assert.IsFalse(string.IsNullOrEmpty(cert.Thumbprint));
+                    Assert.IsTrue(cert.ValidFrom > DateTime.MinValue);
+                    Assert.IsTrue(cert.ValidFrom < cert.ValidTill);
+                }
+
+                request.Marker = response.Marker;
+            } while (!string.IsNullOrEmpty(request.Marker));
+        }
+
+        [TestMethod]
         public void TestDescribeDBInstanceException()
         {
             try

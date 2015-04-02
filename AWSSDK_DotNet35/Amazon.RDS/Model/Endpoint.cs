@@ -30,8 +30,8 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// This data type is used as a response element in the following actions: 
     /// 
-    ///  <ul> <li><a>CreateDBInstance</a></li> <li><a>DescribeDBInstances</a></li> <li><a>DeleteDBInstance</a></li>
-    /// </ul>
+    ///  <ul> <li> <a>CreateDBInstance</a> </li> <li> <a>DescribeDBInstances</a> </li> <li>
+    /// <a>DeleteDBInstance</a> </li> </ul>
     /// </summary>
     public partial class Endpoint
     {
