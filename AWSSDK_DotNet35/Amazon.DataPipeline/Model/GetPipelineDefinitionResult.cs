@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Contains the output from the <a>GetPipelineDefinition</a> action.
+    /// Contains the output of GetPipelineDefinition.
     /// </summary>
     public partial class GetPipelineDefinitionResult : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property ParameterObjects. 
         /// <para>
-        /// Returns a list of parameter objects used in the pipeline definition.
+        /// The parameter objects used in the pipeline definition.
         /// </para>
         /// </summary>
         public List<ParameterObject> ParameterObjects
@@ -57,7 +57,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property ParameterValues. 
         /// <para>
-        /// Returns a list of parameter values used in the pipeline definition.
+        /// The parameter values used in the pipeline definition.
         /// </para>
         /// </summary>
         public List<ParameterValue> ParameterValues
@@ -75,7 +75,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineObjects. 
         /// <para>
-        /// An array of objects defined in the pipeline.
+        /// The objects defined in the pipeline.
         /// </para>
         /// </summary>
         public List<PipelineObject> PipelineObjects

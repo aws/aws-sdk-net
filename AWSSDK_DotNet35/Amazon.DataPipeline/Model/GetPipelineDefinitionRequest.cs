@@ -29,8 +29,8 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPipelineDefinition operation.
-    /// Returns the definition of the specified pipeline. You can call <a>GetPipelineDefinition</a>
-    /// to retrieve the pipeline definition you provided using <a>PutPipelineDefinition</a>.
+    /// Gets the definition of the specified pipeline. You can call <code>GetPipelineDefinition</code>
+    /// to retrieve the pipeline definition that you provided using <a>PutPipelineDefinition</a>.
     /// </summary>
     public partial class GetPipelineDefinitionRequest : AmazonDataPipelineRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
-        /// The identifier of the pipeline.
+        /// The ID of the pipeline.
         /// </para>
         /// </summary>
         public string PipelineId
@@ -58,10 +58,9 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the pipeline definition to retrieve. This parameter accepts the values
-        /// <code>latest</code> (default) and <code>active</code>. Where <code>latest</code> indicates
-        /// the last definition saved to the pipeline and <code>active</code> indicates the last
-        /// definition of the pipeline that was activated.
+        /// The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code>
+        /// (default) to use the last definition saved to the pipeline or <code>active</code>
+        /// to use the last definition that was activated.
         /// </para>
         /// </summary>
         public string Version

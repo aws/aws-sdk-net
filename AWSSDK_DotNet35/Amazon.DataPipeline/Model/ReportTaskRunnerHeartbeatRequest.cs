@@ -29,8 +29,8 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the ReportTaskRunnerHeartbeat operation.
-    /// Task runners call <a>ReportTaskRunnerHeartbeat</a> every 15 minutes to indicate that
-    /// they are operational. In the case of AWS Data Pipeline Task Runner launched on a resource
+    /// Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate
+    /// that they are operational. If the AWS Data Pipeline Task Runner is launched on a resource
     /// managed by AWS Data Pipeline, the web service can use this call to detect when the
     /// task runner application has failed and restart a new instance.
     /// </summary>
@@ -43,7 +43,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Hostname. 
         /// <para>
-        /// The public DNS name of the calling task runner.
+        /// The public DNS name of the task runner.
         /// </para>
         /// </summary>
         public string Hostname
@@ -61,9 +61,9 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property TaskrunnerId. 
         /// <para>
-        /// The identifier of the task runner. This value should be unique across your AWS account.
-        /// In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS
-        /// Data Pipeline, the web service provides a unique identifier when it launches the application.
+        /// The ID of the task runner. This value should be unique across your AWS account. In
+        /// the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data
+        /// Pipeline, the web service provides a unique identifier when it launches the application.
         /// If you have written a custom task runner, you should assign a unique identifier for
         /// the task runner.
         /// </para>
@@ -83,11 +83,10 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property WorkerGroup. 
         /// <para>
-        /// Indicates the type of task the task runner is configured to accept and process. The
-        /// worker group is set as a field on objects in the pipeline when they are created. You
-        /// can only specify a single value for <code>workerGroup</code> in the call to <a>ReportTaskRunnerHeartbeat</a>.
-        /// There are no wildcard values permitted in <code>workerGroup</code>, the string must
-        /// be an exact, case-sensitive, match.
+        /// The type of task the task runner is configured to accept and process. The worker group
+        /// is set as a field on objects in the pipeline when they are created. You can only specify
+        /// a single value for <code>workerGroup</code>. There are no wildcard values permitted
+        /// in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.
         /// </para>
         /// </summary>
         public string WorkerGroup

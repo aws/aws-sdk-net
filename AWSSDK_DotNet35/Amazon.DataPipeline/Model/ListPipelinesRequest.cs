@@ -29,8 +29,8 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPipelines operation.
-    /// Returns a list of pipeline identifiers for all active pipelines. Identifiers are returned
-    /// only for pipelines you have permission to access.
+    /// Lists the pipeline identifiers for all active pipelines that you have permission to
+    /// access.
     /// </summary>
     public partial class ListPipelinesRequest : AmazonDataPipelineRequest
     {
@@ -39,10 +39,9 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The starting point for the results to be returned. The first time you call <a>ListPipelines</a>,
-        /// this value should be empty. As long as the action returns <code>HasMoreResults</code>
-        /// as <code>True</code>, you can call <a>ListPipelines</a> again and pass the marker
-        /// value from the response to retrieve the next set of results.
+        /// The starting point for the results to be returned. For the first call, this value
+        /// should be empty. As long as there are more results, continue to call <code>ListPipelines</code>
+        /// with the marker value from the previous call to retrieve the next set of results.
         /// </para>
         /// </summary>
         public string Marker

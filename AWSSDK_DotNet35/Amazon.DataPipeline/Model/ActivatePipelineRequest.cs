@@ -29,26 +29,30 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the ActivatePipeline operation.
-    /// Validates a pipeline and initiates processing. If the pipeline does not pass validation,
-    /// activation fails. You cannot perform this operation on FINISHED pipelines and attempting
-    /// to do so will return an InvalidRequestException. 
+    /// Validates the specified pipeline and starts processing pipeline tasks. If the pipeline
+    /// does not pass validation, activation fails.
     /// 
     ///  
     /// <para>
-    ///  Call this action to start processing pipeline tasks of a pipeline you've created
-    /// using the <a>CreatePipeline</a> and <a>PutPipelineDefinition</a> actions. A pipeline
-    /// cannot be modified after it has been successfully activated. 
+    /// If you need to pause the pipeline to investigate an issue with a component, such as
+    /// a data source or script, call <a>DeactivatePipeline</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To activate a finished pipeline, modify the end date for the pipeline and then activate
+    /// it.
     /// </para>
     /// </summary>
     public partial class ActivatePipelineRequest : AmazonDataPipelineRequest
     {
         private List<ParameterValue> _parameterValues = new List<ParameterValue>();
         private string _pipelineId;
+        private DateTime? _startTimestamp;
 
         /// <summary>
         /// Gets and sets the property ParameterValues. 
         /// <para>
-        /// Returns a list of parameter values to pass to the pipeline at activation.
+        /// A list of parameter values to pass to the pipeline at activation.
         /// </para>
         /// </summary>
         public List<ParameterValue> ParameterValues
@@ -66,7 +70,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
-        /// The identifier of the pipeline to activate. 
+        /// The ID of the pipeline.
         /// </para>
         /// </summary>
         public string PipelineId
@@ -79,6 +83,25 @@ namespace Amazon.DataPipeline.Model
         internal bool IsSetPipelineId()
         {
             return this._pipelineId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTimestamp. 
+        /// <para>
+        /// The date and time to resume the pipeline. By default, the pipeline resumes from the
+        /// last completed execution.
+        /// </para>
+        /// </summary>
+        public DateTime StartTimestamp
+        {
+            get { return this._startTimestamp.GetValueOrDefault(); }
+            set { this._startTimestamp = value; }
+        }
+
+        // Check to see if StartTimestamp property is set
+        internal bool IsSetStartTimestamp()
+        {
+            return this._startTimestamp.HasValue; 
         }
 
     }

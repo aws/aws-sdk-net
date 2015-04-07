@@ -53,6 +53,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _environmentName;
         private List<ConfigurationOptionSetting> _optionSettings = new List<ConfigurationOptionSetting>();
         private List<OptionSpecification> _optionsToRemove = new List<OptionSpecification>();
+        private string _solutionStackName;
         private string _templateName;
         private EnvironmentTier _tier;
         private string _versionLabel;
@@ -172,6 +173,25 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetOptionsToRemove()
         {
             return this._optionsToRemove != null && this._optionsToRemove.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SolutionStackName. 
+        /// <para>
+        ///  This specifies the platform version that the environment will run after the environment
+        /// is updated. 
+        /// </para>
+        /// </summary>
+        public string SolutionStackName
+        {
+            get { return this._solutionStackName; }
+            set { this._solutionStackName = value; }
+        }
+
+        // Check to see if SolutionStackName property is set
+        internal bool IsSetSolutionStackName()
+        {
+            return this._solutionStackName != null;
         }
 
         /// <summary>

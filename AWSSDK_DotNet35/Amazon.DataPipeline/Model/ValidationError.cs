@@ -28,9 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Defines a validation error returned by <a>PutPipelineDefinition</a> or <a>ValidatePipelineDefinition</a>.
-    /// Validation errors prevent pipeline activation. The set of validation errors that can
-    /// be returned are defined by AWS Data Pipeline.
+    /// Defines a validation error. Validation errors prevent pipeline activation. The set
+    /// of validation errors that can be returned are defined by AWS Data Pipeline.
     /// </summary>
     public partial class ValidationError
     {

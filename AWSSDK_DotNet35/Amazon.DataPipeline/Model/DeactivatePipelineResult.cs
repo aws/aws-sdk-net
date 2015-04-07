@@ -28,29 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Contains the output of EvaluateExpression.
+    /// Contains the output of DeactivatePipeline.
     /// </summary>
-    public partial class EvaluateExpressionResult : AmazonWebServiceResponse
+    public partial class DeactivatePipelineResult : AmazonWebServiceResponse
     {
-        private string _evaluatedExpression;
-
-        /// <summary>
-        /// Gets and sets the property EvaluatedExpression. 
-        /// <para>
-        /// The evaluated expression.
-        /// </para>
-        /// </summary>
-        public string EvaluatedExpression
-        {
-            get { return this._evaluatedExpression; }
-            set { this._evaluatedExpression = value; }
-        }
-
-        // Check to see if EvaluatedExpression property is set
-        internal bool IsSetEvaluatedExpression()
-        {
-            return this._evaluatedExpression != null;
-        }
 
     }
 }

@@ -30,6 +30,9 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
     /// Returns list of event descriptions matching criteria up to the last 6 weeks.
+    /// 
+    ///  <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
+    /// </note>
     /// </summary>
     public partial class DescribeEventsRequest : AmazonElasticBeanstalkRequest
     {

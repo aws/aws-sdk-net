@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// The result of the RemoveTags action.
+    /// Contains the output of RemoveTags.
     /// </summary>
     public partial class RemoveTagsResult : AmazonWebServiceResponse
     {

@@ -16,41 +16,27 @@
 /*
  * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
 
-using Amazon.Runtime;
-using Amazon.Runtime.Internal;
+using System;
 
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Contains the output of EvaluateExpression.
+    /// Configuration for accessing Amazon DeactivatePipeline service
     /// </summary>
-    public partial class EvaluateExpressionResult : AmazonWebServiceResponse
+    public partial class DeactivatePipelineResponse : DeactivatePipelineResult
     {
-        private string _evaluatedExpression;
-
         /// <summary>
-        /// Gets and sets the property EvaluatedExpression. 
-        /// <para>
-        /// The evaluated expression.
-        /// </para>
+        /// Gets and sets the DeactivatePipelineResult property.
+        /// Represents the output of a DeactivatePipeline operation.
         /// </summary>
-        public string EvaluatedExpression
+        [Obsolete(@"This property has been deprecated. All properties of the DeactivatePipelineResult class are now available on the DeactivatePipelineResponse class. You should use the properties on DeactivatePipelineResponse instead of accessing them through DeactivatePipelineResult.")]
+        public DeactivatePipelineResult DeactivatePipelineResult
         {
-            get { return this._evaluatedExpression; }
-            set { this._evaluatedExpression = value; }
+            get
+            {
+                return this;
+            }
         }
-
-        // Check to see if EvaluatedExpression property is set
-        internal bool IsSetEvaluatedExpression()
-        {
-            return this._evaluatedExpression != null;
-        }
-
     }
 }

@@ -29,7 +29,10 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplicationVersion operation.
-    /// Deletes the specified version from the specified application.
+    /// Deletes the specified version from the specified application. 
+    /// 
+    ///  <note>You cannot delete an application version that is associated with a running
+    /// environment.</note>
     /// </summary>
     public partial class DeleteApplicationVersionRequest : AmazonElasticBeanstalkRequest
     {

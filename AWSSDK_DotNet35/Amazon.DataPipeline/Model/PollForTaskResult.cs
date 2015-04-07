@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Contains the output from the PollForTask action.
+    /// Contains the output of PollForTask.
     /// </summary>
     public partial class PollForTaskResult : AmazonWebServiceResponse
     {
@@ -37,11 +37,10 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property TaskObject. 
         /// <para>
-        /// An instance of <a>TaskObject</a>. The returned object contains all the information
-        /// needed to complete the task that is being assigned to the task runner. One of the
-        /// fields returned in this object is taskId, which contains an identifier for the task
-        /// being assigned. The calling task runner uses taskId in subsequent calls to <a>ReportTaskProgress</a>
-        /// and <a>SetTaskStatus</a>.
+        /// The information needed to complete the task that is being assigned to the task runner.
+        /// One of the fields returned in this object is <code>taskId</code>, which contains an
+        /// identifier for the task being assigned. The calling task runner uses <code>taskId</code>
+        /// in subsequent calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
         /// </para>
         /// </summary>
         public TaskObject TaskObject

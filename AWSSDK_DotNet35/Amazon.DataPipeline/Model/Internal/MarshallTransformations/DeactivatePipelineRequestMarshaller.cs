@@ -33,19 +33,19 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ActivatePipeline Request Marshaller
+    /// DeactivatePipeline Request Marshaller
     /// </summary>       
-    public class ActivatePipelineRequestMarshaller : IMarshaller<IRequest, ActivatePipelineRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeactivatePipelineRequestMarshaller : IMarshaller<IRequest, DeactivatePipelineRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ActivatePipelineRequest)input);
+            return this.Marshall((DeactivatePipelineRequest)input);
         }
 
-        public IRequest Marshall(ActivatePipelineRequest publicRequest)
+        public IRequest Marshall(DeactivatePipelineRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DataPipeline");
-            string target = "DataPipeline.ActivatePipeline";
+            string target = "DataPipeline.DeactivatePipeline";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -57,32 +57,16 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetParameterValues())
+                if(publicRequest.IsSetCancelActive())
                 {
-                    context.Writer.WritePropertyName("parameterValues");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestParameterValuesListValue in publicRequest.ParameterValues)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ParameterValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestParameterValuesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("cancelActive");
+                    context.Writer.Write(publicRequest.CancelActive);
                 }
 
                 if(publicRequest.IsSetPipelineId())
                 {
                     context.Writer.WritePropertyName("pipelineId");
                     context.Writer.Write(publicRequest.PipelineId);
-                }
-
-                if(publicRequest.IsSetStartTimestamp())
-                {
-                    context.Writer.WritePropertyName("startTimestamp");
-                    context.Writer.Write(publicRequest.StartTimestamp);
                 }
 
         

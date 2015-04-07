@@ -29,7 +29,10 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApplicationVersion operation.
-    /// Updates the specified application version to have the specified properties.
+    /// Updates the specified application version to have the specified properties. 
+    /// 
+    ///  <note> If a property (for example, <code>description</code>) is not provided, the
+    /// value remains unchanged. To clear properties, specify an empty string. </note>
     /// </summary>
     public partial class UpdateApplicationVersionRequest : AmazonElasticBeanstalkRequest
     {

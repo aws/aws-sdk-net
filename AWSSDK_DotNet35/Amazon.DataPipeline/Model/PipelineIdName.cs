@@ -38,8 +38,8 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Identifier of the pipeline that was assigned by AWS Data Pipeline. This is a string
-        /// of the form <code>df-297EG78HU43EEXAMPLE</code>.
+        /// The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of
+        /// the form <code>df-297EG78HU43EEXAMPLE</code>.
         /// </para>
         /// </summary>
         public string Id
@@ -57,7 +57,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the pipeline.
+        /// The name of the pipeline.
         /// </para>
         /// </summary>
         public string Name

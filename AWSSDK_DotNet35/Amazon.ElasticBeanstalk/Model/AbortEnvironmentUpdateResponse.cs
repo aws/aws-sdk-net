@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,12 +25,9 @@ using System.IO;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
-namespace Amazon.DataPipeline.Model
+namespace Amazon.ElasticBeanstalk.Model
 {
-    /// <summary>
-    /// Contains the output of AddTags.
-    /// </summary>
-    public partial class AddTagsResult : AmazonWebServiceResponse
+    public partial class AbortEnvironmentUpdateResponse : AmazonWebServiceResponse
     {
 
     }

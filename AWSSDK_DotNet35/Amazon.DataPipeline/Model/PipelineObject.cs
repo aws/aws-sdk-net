@@ -59,7 +59,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Identifier of the object.
+        /// The ID of the object.
         /// </para>
         /// </summary>
         public string Id
@@ -77,7 +77,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the object.
+        /// The name of the object.
         /// </para>
         /// </summary>
         public string Name

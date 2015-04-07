@@ -28,22 +28,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeletePipeline operation.
-    /// Deletes a pipeline, its pipeline definition, and its run history. AWS Data Pipeline
-    /// attempts to cancel instances associated with the pipeline that are currently being
-    /// processed by task runners.
+    /// Container for the parameters to the DeactivatePipeline operation.
+    /// Deactivates the specified running pipeline. The pipeline is set to the <code>DEACTIVATING</code>
+    /// state until the deactivation process completes.
     /// 
     ///  
     /// <para>
-    /// Deleting a pipeline cannot be undone. You cannot query or restore a deleted pipeline.
-    /// To temporarily pause a pipeline instead of deleting it, call <a>SetStatus</a> with
-    /// the status set to <code>PAUSE</code> on individual components. Components that are
-    /// paused by <a>SetStatus</a> can be resumed.
+    /// To resume a deactivated pipeline, use <a>ActivatePipeline</a>. By default, the pipeline
+    /// resumes from the last completed execution. Optionally, you can specify the date and
+    /// time to resume the pipeline.
     /// </para>
     /// </summary>
-    public partial class DeletePipelineRequest : AmazonDataPipelineRequest
+    public partial class DeactivatePipelineRequest : AmazonDataPipelineRequest
     {
+        private bool? _cancelActive;
         private string _pipelineId;
+
+        /// <summary>
+        /// Gets and sets the property CancelActive. 
+        /// <para>
+        /// Indicates whether to cancel any running objects. The default is true, which sets the
+        /// state of any running objects to <code>CANCELED</code>. If this value is false, the
+        /// pipeline is deactivated after all running objects finish.
+        /// </para>
+        /// </summary>
+        public bool CancelActive
+        {
+            get { return this._cancelActive.GetValueOrDefault(); }
+            set { this._cancelActive = value; }
+        }
+
+        // Check to see if CancelActive property is set
+        internal bool IsSetCancelActive()
+        {
+            return this._cancelActive.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property PipelineId. 

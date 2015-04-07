@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Contains the output from the <a>ReportTaskRunnerHeartbeat</a> action.
+    /// Contains the output of ReportTaskRunnerHeartbeat.
     /// </summary>
     public partial class ReportTaskRunnerHeartbeatResult : AmazonWebServiceResponse
     {
@@ -37,8 +37,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Terminate. 
         /// <para>
-        /// Indicates whether the calling task runner should terminate. If <code>True</code>,
-        /// the task runner that called <a>ReportTaskRunnerHeartbeat</a> should terminate. 
+        /// Indicates whether the calling task runner should terminate.
         /// </para>
         /// </summary>
         public bool Terminate

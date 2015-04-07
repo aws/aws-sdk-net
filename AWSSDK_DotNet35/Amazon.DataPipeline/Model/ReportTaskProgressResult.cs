@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Contains the output from the ReportTaskProgress action.
+    /// Contains the output of ReportTaskProgress.
     /// </summary>
     public partial class ReportTaskProgressResult : AmazonWebServiceResponse
     {
@@ -37,8 +37,8 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Canceled. 
         /// <para>
-        /// If <code>True</code>, the calling task runner should cancel processing of the task.
-        /// The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.
+        /// If true, the calling task runner should cancel processing of the task. The task runner
+        /// does not need to call <a>SetTaskStatus</a> for canceled tasks.
         /// </para>
         /// </summary>
         public bool Canceled
