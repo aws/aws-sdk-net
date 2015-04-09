@@ -66,6 +66,7 @@
     <Compile Include="Marshalling\*.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Runtime\AmazonServiceClientTests.cs" />
+    <Compile Include="Runtime\CustomResponses.cs" />
     <Compile Include="Runtime\ErrorHandlerTests.cs" />
     <Compile Include="Runtime\HttpHandlerTests.cs" />
     <Compile Include="Runtime\HttpHandlerWithHttpClientTests.cs" />

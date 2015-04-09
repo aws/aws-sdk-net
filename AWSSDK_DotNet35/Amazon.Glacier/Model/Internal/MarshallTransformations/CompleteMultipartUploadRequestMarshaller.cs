@@ -52,13 +52,13 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
             uriResourcePath = uriResourcePath.Replace("{uploadId}", publicRequest.IsSetUploadId() ? StringUtils.FromString(publicRequest.UploadId) : string.Empty);
             uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
+            request.ResourcePath = uriResourcePath;
         
             if(publicRequest.IsSetArchiveSize())
                 request.Headers["x-amz-archive-size"] = publicRequest.ArchiveSize;
         
             if(publicRequest.IsSetChecksum())
                 request.Headers["x-amz-sha256-tree-hash"] = publicRequest.Checksum;
-            request.ResourcePath = uriResourcePath;
 
             return request;
         }

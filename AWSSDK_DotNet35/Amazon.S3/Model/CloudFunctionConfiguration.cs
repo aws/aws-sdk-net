@@ -79,7 +79,7 @@ namespace Amazon.S3.Model
         // Check to see if Queue property is set
         internal bool IsSetInvocationRole()
         {
-            return this.CloudFunction != null;
+            return this.InvocationRole != null;
         }
     }
 }

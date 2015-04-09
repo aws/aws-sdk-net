@@ -38,6 +38,7 @@ namespace Amazon.ECS.Model
         private string _desiredStatus;
         private string _lastStatus;
         private TaskOverride _overrides;
+        private string _startedBy;
         private string _taskArn;
         private string _taskDefinitionArn;
 
@@ -147,6 +148,21 @@ namespace Amazon.ECS.Model
         internal bool IsSetOverrides()
         {
             return this._overrides != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartedBy.
+        /// </summary>
+        public string StartedBy
+        {
+            get { return this._startedBy; }
+            set { this._startedBy = value; }
+        }
+
+        // Check to see if StartedBy property is set
+        internal bool IsSetStartedBy()
+        {
+            return this._startedBy != null;
         }
 
         /// <summary>

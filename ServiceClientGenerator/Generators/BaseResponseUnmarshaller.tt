@@ -124,19 +124,20 @@ using Amazon.Runtime.Internal.Util;
 		if( this.Operation.ResponseStatusCodeMember != null)
 		{
 #>
-			response.Status = (int)context.ResponseData.StatusCode;
+			response.<#=this.Operation.ResponseStatusCodeMember.PropertyName#> = (int)context.ResponseData.StatusCode;
 <#+						
 		}
 	}
-
+/*
     // Generates code to set the response body to the response stream if the operation has a response stream member
-	protected void ProcessResponseStream()
+	protected void ProcessResponseStream_()
 	{
 		if( this.Operation.ResponseStreamingMember != null)
 		{
 #>
-			response.Body = context.Stream;
+			response.<#=this.Operation.ResponseStreamingMember.PropertyName#> = context.Stream;
 <#+						
 		}
 	}
+*/
 #>

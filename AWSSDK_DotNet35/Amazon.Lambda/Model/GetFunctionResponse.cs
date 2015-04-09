@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2014-11-11.normal.json service model.
+ * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 
 using System;

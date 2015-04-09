@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// 
+    /// The name of a container in a task definition and the command it should run instead
+    /// of its default.
     /// </summary>
     public partial class ContainerOverride
     {
@@ -38,7 +39,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Command. 
         /// <para>
-        /// The command to send to the container that receives the override.
+        /// The command to send to the container that overrides the default command from the Docker
+        /// image or the task definition.
         /// </para>
         /// </summary>
         public List<string> Command

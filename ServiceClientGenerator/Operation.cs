@@ -108,8 +108,7 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// If the operation uses a payload member, return that member so that it can be generated for the operation as well.
-        /// Payloads are place holders in the json models. They are represented as another shape and contain the actual necessary attributes.
+        /// The request payload member, null if one does not exist.
         /// </summary>
         public Member RequestPayloadMember
         {
@@ -117,10 +116,30 @@ namespace ServiceClientGenerator
             {
                 if (this.RequestStructure != null)
                 {
-                    var payload = this.RequestStructure.Payload;
-                    if (!string.IsNullOrWhiteSpace(this.RequestStructure.Payload))
+                    var payload = this.RequestStructure.PayloadMemberName;
+                    if (!string.IsNullOrWhiteSpace(payload))
                     {
-                        return this.RequestStructure.Members.Single(m => m.ToString().Equals(payload, StringComparison.InvariantCultureIgnoreCase));
+                        return this.RequestStructure.Members.Single(m => m.MarshallName.Equals(payload, StringComparison.InvariantCultureIgnoreCase));
+                    }
+                }
+
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// The response payload member, null if one does not exist.
+        /// </summary>
+        public Member ResponsePayloadMember
+        {
+            get
+            {
+                if (this.ResponseStructure != null)
+                {
+                    var payload = this.ResponseStructure.PayloadMemberName;
+                    if (!string.IsNullOrWhiteSpace(payload))
+                    {
+                        return this.ResponseStructure.Members.Single(m => m.MarshallName.Equals(payload, StringComparison.InvariantCultureIgnoreCase));
                     }
                 }
 
@@ -186,19 +205,6 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// A member in the response that is sent as a stream, null if none
-        /// </summary>
-        public Member ResponseStreamingMember
-        {
-            get
-            {
-                return this.ResponseStructure == null ?
-                    null :
-                    this.ResponseStructure.Members.SingleOrDefault(m => m.IsStreaming);
-            }
-        }
-
-        /// <summary>
         /// Members that are part of the URI for the request, empty if none
         /// </summary>
         public IList<Member> RequestUriMembers
@@ -227,29 +233,20 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// A member in the request that is sent as a stream, null if none
-        /// </summary>
-        public Member RequestStreamingMember
-        {
-            get
-            {
-                return this.RequestStructure == null ?
-                    null :
-                    this.RequestStructure.Members.SingleOrDefault(m => m.IsStreaming);
-            }
-        }
-
-        /// <summary>
         /// Members who are part of the request's body
         /// </summary>
         public IList<Member> RequestBodyMembers
         {
             get
             {
-                return this.RequestStructure == null ?
-                    new List<Member>() :
-                    this.RequestStructure.Members.Where(
-                        m => m.MarshallLocation == MarshallLocation.Body && !m.IsStreaming).ToList();
+                if (this.RequestStructure == null)
+                    return new List<Member>();
+
+                var payloadName = this.RequestStructure.PayloadMemberName;
+                return this.RequestStructure.Members.Where(
+                    m =>
+                        m.MarshallLocation == MarshallLocation.Body &&
+                        !string.Equals(m.MarshallName, payloadName, StringComparison.Ordinal)).ToList();
             }
         }
 
@@ -261,10 +258,14 @@ namespace ServiceClientGenerator
         {
             get
             {
-                return this.ResponseStructure == null ?
-                    new List<Member>() :
-                    this.ResponseStructure.Members.Where(
-                        m => m.MarshallLocation == MarshallLocation.Body && !m.IsStreaming).ToList();
+                if (this.ResponseStructure == null)
+                    return new List<Member>();
+
+                var payloadName = this.ResponseStructure.PayloadMemberName;
+                return this.ResponseStructure.Members.Where(
+                    m =>
+                        m.MarshallLocation == MarshallLocation.Body &&
+                        !string.Equals(m.MarshallName, payloadName, StringComparison.Ordinal)).ToList();
             }
         }
 
@@ -276,9 +277,7 @@ namespace ServiceClientGenerator
             get
             {
                 // Has any members which are marshalled as part of the request body
-                return this.RequestStructure != null &&
-                    this.RequestStructure.Members.Any(m => m.MarshallLocation == MarshallLocation.Body
-                    && !m.IsStreaming);
+                return (this.RequestBodyMembers.Count > 0);
             }
         }
 
@@ -289,10 +288,8 @@ namespace ServiceClientGenerator
         {
             get
             {
-                // Has any members which are marshalled as part of the request body
-                return this.ResponseStructure != null &&
-                    this.ResponseStructure.Members.Any(m => m.MarshallLocation == MarshallLocation.Body
-                    && !m.IsStreaming);
+                // Has any members which are marshalled as part of the response body
+                return (this.ResponseBodyMembers.Count > 0);
             }
         }
 

@@ -66,6 +66,24 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClusterName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pendingTasksCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PendingTasksCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("registeredContainerInstancesCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RegisteredContainerInstancesCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("runningTasksCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RunningTasksCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

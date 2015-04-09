@@ -57,6 +57,8 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 writer.Write(long.MaxValue);
             else if (shape.IsDouble)
                 writer.Write(double.MaxValue);
+            else if (shape.IsFloat)
+                writer.Write(float.MaxValue);
             else if (shape.IsDateTime)
                 writer.Write(Constants.DEFAULT_DATE);
             else if (shape.IsBoolean)
@@ -74,7 +76,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             if (!pushed)
                 return;
 
-            if (structure.Payload != null)
+            if (structure.PayloadMemberName != null)
             {
                 this.WriteStructure(writer, structure.Members[0].Shape);
                 return;

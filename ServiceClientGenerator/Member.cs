@@ -494,6 +494,8 @@ namespace ServiceClientGenerator
                     return "BoolUnmarshaller";
                 case "double":
                     return "DoubleUnmarshaller";
+                case "float":
+                    return "FloatUnmarshaller";
                 case "integer":
                     return "IntUnmarshaller";
                 case "long":

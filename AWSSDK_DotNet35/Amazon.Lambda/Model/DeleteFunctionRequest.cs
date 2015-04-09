@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2014-11-11.normal.json service model.
+ * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,6 +33,11 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
+    /// When you delete a function the associated access policy is also deleted. You will
+    /// need to delete the event source mappings explicitly.
+    /// </para>
+    ///  
+    /// <para>
     /// This operation requires permission for the <code>lambda:DeleteFunction</code> action.
     /// </para>
     /// </summary>
@@ -44,6 +49,14 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property FunctionName. 
         /// <para>
         /// The Lambda function to delete.
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can specify an unqualified function name (for example, "Thumbnail") or you can
+        /// specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail").
+        /// AWS Lambda also allows you to specify only the account ID qualifier (for example,
+        /// "account-id:Thumbnail"). Note that the length constraint applies only to the ARN.
+        /// If you specify only the function name, it is limited to 64 character in length. 
         /// </para>
         /// </summary>
         public string FunctionName

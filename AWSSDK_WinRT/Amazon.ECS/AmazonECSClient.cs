@@ -208,6 +208,36 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  CreateService
+
+        internal CreateServiceResponse CreateService(CreateServiceRequest request)
+        {
+            var marshaller = new CreateServiceRequestMarshaller();
+            var unmarshaller = CreateServiceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateServiceRequest,CreateServiceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateService operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateService operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateServiceResponse> CreateServiceAsync(CreateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateServiceRequestMarshaller();
+            var unmarshaller = CreateServiceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateServiceRequest,CreateServiceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCluster
 
         internal DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
@@ -233,6 +263,36 @@ namespace Amazon.ECS
             var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteClusterRequest,DeleteClusterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteService
+
+        internal DeleteServiceResponse DeleteService(DeleteServiceRequest request)
+        {
+            var marshaller = new DeleteServiceRequestMarshaller();
+            var unmarshaller = DeleteServiceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteServiceRequest,DeleteServiceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteService operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteService operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteServiceResponse> DeleteServiceAsync(DeleteServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteServiceRequestMarshaller();
+            var unmarshaller = DeleteServiceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteServiceRequest,DeleteServiceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -358,6 +418,36 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  DescribeServices
+
+        internal DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
+        {
+            var marshaller = new DescribeServicesRequestMarshaller();
+            var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServicesRequest,DescribeServicesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeServices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServices operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeServicesResponse> DescribeServicesAsync(DescribeServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeServicesRequestMarshaller();
+            var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeServicesRequest,DescribeServicesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTaskDefinition
 
         internal DescribeTaskDefinitionResponse DescribeTaskDefinition(DescribeTaskDefinitionRequest request)
@@ -473,6 +563,36 @@ namespace Amazon.ECS
             var unmarshaller = ListContainerInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListContainerInstancesRequest,ListContainerInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListServices
+
+        internal ListServicesResponse ListServices(ListServicesRequest request)
+        {
+            var marshaller = new ListServicesRequestMarshaller();
+            var unmarshaller = ListServicesResponseUnmarshaller.Instance;
+
+            return Invoke<ListServicesRequest,ListServicesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServices operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListServicesResponse> ListServicesAsync(ListServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListServicesRequestMarshaller();
+            var unmarshaller = ListServicesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListServicesRequest,ListServicesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -683,6 +803,36 @@ namespace Amazon.ECS
             var unmarshaller = StopTaskResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopTaskRequest,StopTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateService
+
+        internal UpdateServiceResponse UpdateService(UpdateServiceRequest request)
+        {
+            var marshaller = new UpdateServiceRequestMarshaller();
+            var unmarshaller = UpdateServiceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServiceRequest,UpdateServiceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateService operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateService operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateServiceResponse> UpdateServiceAsync(UpdateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateServiceRequestMarshaller();
+            var unmarshaller = UpdateServiceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateServiceRequest,UpdateServiceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

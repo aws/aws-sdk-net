@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2014-11-11.normal.json service model.
+ * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 
 
@@ -30,33 +30,78 @@ namespace Amazon.Lambda
     /// <summary>
     /// Interface for accessing Lambda
     ///
-    /// AWS Lambda 
+    /// AWS LambdaS 
     /// <para>
     /// <b>Overview</b>
     /// </para>
     ///  
     /// <para>
-    /// This is the AWS Lambda API Reference. The AWS Lambda Developer Guide provides additional
-    /// information. For the service overview, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
+    /// This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides
+    /// additional information. For the service overview, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
     /// is AWS Lambda</a>, and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-    /// LambdaL How it Works</a> in the AWS Lambda Developer Guide.
+    /// LambdaL How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial interface IAmazonLambda : IDisposable
     {
                 
-        #region  AddEventSource
+        #region  AddPermission
 
         /// <summary>
-        /// Initiates the asynchronous execution of the AddEventSource operation.
+        /// Initiates the asynchronous execution of the AddPermission operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the AddEventSource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AddPermission operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AddEventSourceResponse> AddEventSourceAsync(AddEventSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateEventSourceMapping
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEventSourceMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventSourceMapping operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateEventSourceMappingResponse> CreateEventSourceMappingAsync(CreateEventSourceMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateFunction
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFunction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateFunctionResponse> CreateFunctionAsync(CreateFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteEventSourceMapping
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEventSourceMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventSourceMapping operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteEventSourceMappingResponse> DeleteEventSourceMappingAsync(DeleteEventSourceMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -75,18 +120,18 @@ namespace Amazon.Lambda
 
         #endregion
                 
-        #region  GetEventSource
+        #region  GetEventSourceMapping
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetEventSource operation.
+        /// Initiates the asynchronous execution of the GetEventSourceMapping operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetEventSource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventSourceMapping operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetEventSourceResponse> GetEventSourceAsync(GetEventSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetEventSourceMappingResponse> GetEventSourceMappingAsync(GetEventSourceMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -120,6 +165,36 @@ namespace Amazon.Lambda
 
         #endregion
                 
+        #region  GetPolicy
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  Invoke
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Invoke operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the Invoke operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<InvokeResponse> InvokeAsync(InvokeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  InvokeAsync
 
         /// <summary>
@@ -135,18 +210,18 @@ namespace Amazon.Lambda
 
         #endregion
                 
-        #region  ListEventSources
+        #region  ListEventSourceMappings
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ListEventSources operation.
+        /// Initiates the asynchronous execution of the ListEventSourceMappings operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListEventSources operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventSourceMappings operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListEventSourcesResponse> ListEventSourcesAsync(ListEventSourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListEventSourceMappingsResponse> ListEventSourceMappingsAsync(ListEventSourceMappingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -165,18 +240,48 @@ namespace Amazon.Lambda
 
         #endregion
                 
-        #region  RemoveEventSource
+        #region  RemovePermission
 
         /// <summary>
-        /// Initiates the asynchronous execution of the RemoveEventSource operation.
+        /// Initiates the asynchronous execution of the RemovePermission operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the RemoveEventSource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RemovePermission operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<RemoveEventSourceResponse> RemoveEventSourceAsync(RemoveEventSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateEventSourceMapping
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEventSourceMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventSourceMapping operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateEventSourceMappingResponse> UpdateEventSourceMappingAsync(UpdateEventSourceMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateFunctionCode
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFunctionCode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionCode operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateFunctionCodeResponse> UpdateFunctionCodeAsync(UpdateFunctionCodeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -192,21 +297,6 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<UpdateFunctionConfigurationResponse> UpdateFunctionConfigurationAsync(UpdateFunctionConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
-        #region  UploadFunction
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UploadFunction operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UploadFunction operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UploadFunctionResponse> UploadFunctionAsync(UploadFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

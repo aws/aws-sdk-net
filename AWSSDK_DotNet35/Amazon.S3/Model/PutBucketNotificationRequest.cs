@@ -70,6 +70,18 @@ namespace Amazon.S3.Model
         {
             return this.CloudFunctionConfigurations != null && CloudFunctionConfigurations.Count > 0;
         }
+
+
+        /// <summary>
+        /// Gets and sets the LambdaFunctionConfigurations property. LambdaFunctionConfigurations are configuration for 
+        /// Amazon S3 events to be sent to an Amazon Lambda cloud function.
+        /// </summary>
+        public List<LambdaFunctionConfiguration> LambdaFunctionConfigurations { get; set; }
+
+        internal bool IsSetLambdaFunctionConfigurations()
+        {
+            return this.LambdaFunctionConfigurations != null && LambdaFunctionConfigurations.Count > 0;
+        }
     }
 }
     

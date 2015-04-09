@@ -40,6 +40,8 @@ namespace Amazon.ECS.Model
         private string _family;
         private int? _maxResults;
         private string _nextToken;
+        private string _serviceName;
+        private string _startedBy;
 
         /// <summary>
         /// Gets and sets the property Cluster. 
@@ -144,6 +146,41 @@ namespace Amazon.ECS.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceName. 
+        /// <para>
+        /// The name of the service that you want to filter the <code>ListTasks</code> results
+        /// with. Specifying a <code>serviceName</code> will limit the results to tasks that belong
+        /// to that service.
+        /// </para>
+        /// </summary>
+        public string ServiceName
+        {
+            get { return this._serviceName; }
+            set { this._serviceName = value; }
+        }
+
+        // Check to see if ServiceName property is set
+        internal bool IsSetServiceName()
+        {
+            return this._serviceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartedBy.
+        /// </summary>
+        public string StartedBy
+        {
+            get { return this._startedBy; }
+            set { this._startedBy = value; }
+        }
+
+        // Check to see if StartedBy property is set
+        internal bool IsSetStartedBy()
+        {
+            return this._startedBy != null;
         }
 
     }

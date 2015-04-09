@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2014-11-11.normal.json service model.
+ * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -30,7 +30,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Container for the parameters to the GetFunction operation.
     /// Returns the configuration information of the Lambda function and a presigned URL link
-    /// to the .zip file you uploaded with <a>UploadFunction</a> so you can download the .zip
+    /// to the .zip file you uploaded with <a>CreateFunction</a> so you can download the .zip
     /// file. Note that the URL is valid for up to 10 minutes. The configuration information
     /// is the same information you provided as parameters when uploading the function.
     /// 
@@ -46,7 +46,15 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The Lambda function name.
+        /// The Lambda function name. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can specify an unqualified function name (for example, "Thumbnail") or you can
+        /// specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail").
+        /// AWS Lambda also allows you to specify only the account ID qualifier (for example,
+        /// "account-id:Thumbnail"). Note that the length constraint applies only to the ARN.
+        /// If you specify only the function name, it is limited to 64 character in length. 
         /// </para>
         /// </summary>
         public string FunctionName

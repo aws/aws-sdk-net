@@ -134,6 +134,32 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                 }
 
+                if (putBucketNotificationRequest.IsSetLambdaFunctionConfigurations())
+                {
+                    foreach (var lambdaFunctionConfiguartion in putBucketNotificationRequest.LambdaFunctionConfigurations)
+                    {
+                        if (lambdaFunctionConfiguartion != null)
+                        {
+                            xmlWriter.WriteStartElement("CloudFunctionConfiguration", "");
+                            if (lambdaFunctionConfiguartion.IsSetId())
+                            {
+                                xmlWriter.WriteElementString("Id", "", S3Transforms.ToXmlStringValue(lambdaFunctionConfiguartion.Id));
+                            }
+                            if (lambdaFunctionConfiguartion.IsSetEvents())
+                            {
+                                foreach (var evnt in lambdaFunctionConfiguartion.Events)
+                                {
+                                    xmlWriter.WriteElementString("Event", "", S3Transforms.ToXmlStringValue(evnt));
+                                }
+                            }
+                            if (lambdaFunctionConfiguartion.IsSetFunctionArn())
+                            {
+                                xmlWriter.WriteElementString("CloudFunction", "", S3Transforms.ToXmlStringValue(lambdaFunctionConfiguartion.FunctionArn));
+                            }
+                            xmlWriter.WriteEndElement();
+                        }
+                    }
+                }
 
                 xmlWriter.WriteEndElement();
             }

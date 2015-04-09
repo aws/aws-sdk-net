@@ -17,6 +17,7 @@ using AWSSDK_DotNet.IntegrationTests.Tests.S3;
 
 #if BCL45
 using System.IO.Compression;
+using System.Text;
 #endif
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
@@ -62,12 +63,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public void LambdaFunctionTest()
         {
             const string HELLO_SCRIPT = 
-@"console.log('Loading http')
- 
-exports.handler = function (request, response) {
-    response.write(""Hello, world!"");
-    response.end();
-    console.log(""Request completed"");
+@"console.log('Loading event');
+exports.handler = function(event, context) {
+  console.log(""value = "" + event.Key);
+  context.done(null, ""Hello World:"" + event.Key + "", "" + context.System);  // SUCCESS with message
 }";
             MemoryStream stream = new MemoryStream();
             using (ZipArchive archive = new ZipArchive(stream, ZipArchiveMode.Create, true))
@@ -113,20 +112,23 @@ exports.handler = function (request, response) {
                 // Wait for the role and policy to propagate
                 Thread.Sleep(5000);
 
-                var uploadRequest = new UploadFunctionRequest
+                var uploadRequest = new CreateFunctionRequest
                 {
                     FunctionName = functionName,
-                    FunctionZip = stream,
+                    Code = new FunctionCode 
+                    {
+                        ZipFile = stream
+                    },
                     Handler = "helloworld.handler",
-                    Mode = Mode.Event,
+                    //Mode = Mode.Event,
                     Runtime = Runtime.Nodejs,
                     Role = iamCreateResponse.Role.Arn
                 };
 
-                var uploadResponse = lambdaClient.UploadFunction(uploadRequest);
+                var uploadResponse = lambdaClient.CreateFunction(uploadRequest);
                 uploaded = true;
                 Assert.IsTrue(uploadResponse.CodeSize > 0);
-                Assert.IsNotNull(uploadResponse.ConfigurationId);
+                Assert.IsNotNull(uploadResponse.FunctionArn);
 
                 // List all the functions and make sure the newly uploaded function is in the collection
                 var listResponse = lambdaClient.ListFunctions();
@@ -145,9 +147,59 @@ exports.handler = function (request, response) {
                 Assert.AreEqual("helloworld.handler", getFunctionConfiguration.Handler);
 
                 // Call the function
-                var invokeResponse = lambdaClient.InvokeAsync(functionName);
-                Assert.AreEqual(invokeResponse.Status, 202); // Status Code Accepted
+                var invokeAsyncResponse = lambdaClient.InvokeAsync(functionName);
+                Assert.AreEqual(invokeAsyncResponse.Status, 202); // Status Code Accepted
 
+                var clientContext = @"{""System"": ""Windows""}";
+                var clientContextBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(clientContext));
+                var request = new InvokeRequest
+                {
+                    FunctionName = functionName,
+                    InvocationType = InvocationType.RequestResponse,
+                    LogType = LogType.None,
+                    ClientContext = clientContext,
+                    Payload = @"{""Key"": ""testing""}"
+                };
+                Assert.AreEqual(clientContext, request.ClientContext);
+                Assert.AreEqual(clientContextBase64, request.ClientContextBase64);
+
+                // Call the function sync
+                var invokeSyncResponse = lambdaClient.Invoke(request);
+                Assert.IsNull(invokeSyncResponse.FunctionError);
+                Assert.IsNull(invokeSyncResponse.LogResult);
+                Assert.IsNotNull(invokeSyncResponse.Payload);
+                Assert.AreNotEqual(0, invokeSyncResponse.Payload.Length);
+                Assert.AreNotEqual(0, invokeSyncResponse.StatusCode);
+
+                // Call the function sync, dry run, no payload
+                invokeSyncResponse = lambdaClient.Invoke(new InvokeRequest
+                {
+                    FunctionName = functionName,
+                    InvocationType = InvocationType.DryRun,
+                    LogType = LogType.None,
+                    ClientContext = clientContext,
+                    Payload = @"{""Key"": ""testing""}"
+                });
+                Assert.IsNull(invokeSyncResponse.FunctionError);
+                Assert.IsNull(invokeSyncResponse.LogResult);
+                Assert.IsNotNull(invokeSyncResponse.Payload);
+                Assert.AreEqual(0, invokeSyncResponse.Payload.Length);
+                Assert.AreNotEqual(0, invokeSyncResponse.StatusCode);
+
+                // Call the function sync, pass non-JSON payload
+                invokeSyncResponse = lambdaClient.Invoke(new InvokeRequest
+                {
+                    FunctionName = functionName,
+                    InvocationType = InvocationType.RequestResponse,
+                    LogType = LogType.None,
+                    ClientContext = clientContext,
+                    Payload = @"""Key"": ""testing"""
+                });
+                Assert.IsNotNull(invokeSyncResponse.FunctionError);
+                Assert.IsNull(invokeSyncResponse.LogResult);
+                Assert.IsNotNull(invokeSyncResponse.Payload);
+                Assert.AreNotEqual(0, invokeSyncResponse.Payload.Length);
+                Assert.AreNotEqual(0, invokeSyncResponse.StatusCode);
             }
             finally
             {

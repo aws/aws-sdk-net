@@ -223,6 +223,8 @@
     <Compile Include="Amazon.Kinesis\IAmazonKinesis.cs" />
     <Compile Include="Amazon.Lambda\AmazonLambdaClient.cs" />
     <Compile Include="Amazon.Lambda\IAmazonLambda.cs" />
+    <Compile Include="Amazon.MachineLearning\AmazonMachineLearningClient.cs" />
+    <Compile Include="Amazon.MachineLearning\IAmazonMachineLearning.cs" />
     <Compile Include="Amazon.OpsWorks\AmazonOpsWorksClient.cs" />
     <Compile Include="Amazon.OpsWorks\IAmazonOpsWorks.cs" />
     <Compile Include="Amazon.RDS\AmazonRDSClient.cs" />
@@ -266,6 +268,8 @@
     <Compile Include="Amazon.SQS\IAmazonSQS.cs" />
     <Compile Include="Amazon.StorageGateway\AmazonStorageGatewayClient.cs" />
     <Compile Include="Amazon.StorageGateway\IAmazonStorageGateway.cs" />
+    <Compile Include="Amazon.WorkSpaces\AmazonWorkSpacesClient.cs" />
+    <Compile Include="Amazon.WorkSpaces\IAmazonWorkSpaces.cs" />
     <Compile Include="AWSClientFactory.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -729,6 +733,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.MachineLearning\*" Exclude="..\AWSSDK_DotNet35\Amazon.MachineLearning\IAmazonMachineLearning.cs;..\AWSSDK_DotNet35\Amazon.MachineLearning\AmazonMachineLearningClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.MachineLearning\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.MachineLearning\Internal\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.MachineLearning\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.OpsWorks\*" Exclude="..\AWSSDK_DotNet35\Amazon.OpsWorks\IAmazonOpsWorks.cs;..\AWSSDK_DotNet35\Amazon.OpsWorks\AmazonOpsWorksClient.cs">
       <Visible>false</Visible>
     </Compile>
@@ -915,6 +933,17 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.StorageGateway\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.WorkSpaces\*" Exclude="..\AWSSDK_DotNet35\Amazon.WorkSpaces\IAmazonWorkSpaces.cs;..\AWSSDK_DotNet35\Amazon.WorkSpaces\AmazonWorkSpacesClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.WorkSpaces\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.WorkSpaces\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>

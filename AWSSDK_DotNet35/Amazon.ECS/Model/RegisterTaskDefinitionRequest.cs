@@ -65,7 +65,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// You must specify a <code>family</code> for a task definition, which allows you to
         /// track multiple versions of the same task definition. You can think of the <code>family</code>
-        /// as a name for your task definition.
+        /// as a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers,
+        /// hyphens, and underscores are allowed.
         /// </para>
         /// </summary>
         public string Family

@@ -41,7 +41,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "2.3.30.0";
+        internal const string SDKVersionNumber = "2.3.31.0";
 
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
@@ -654,7 +654,7 @@ namespace Amazon.Util
             return false;
         }
 
-        internal static Stream GenerateStreamFromString(string s)
+        internal static MemoryStream GenerateMemoryStreamFromString(string s)
         {
             MemoryStream stream = new MemoryStream();
             StreamWriter writer = new StreamWriter(stream);
@@ -662,6 +662,23 @@ namespace Amazon.Util
             writer.Flush();
             stream.Position = 0;
             return stream;
+        }
+
+        internal static void CopyStream(Stream source, Stream destination, int bufferSize = 8192)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+            if (destination == null)
+                throw new ArgumentNullException("destination");
+            if (bufferSize <= 0)
+                throw new ArgumentOutOfRangeException("bufferSize");
+
+            byte[] array = new byte[bufferSize];
+            int count;
+            while ((count = source.Read(array, 0, array.Length)) != 0)
+            {
+                destination.Write(array, 0, count);
+            }
         }
 
         #endregion

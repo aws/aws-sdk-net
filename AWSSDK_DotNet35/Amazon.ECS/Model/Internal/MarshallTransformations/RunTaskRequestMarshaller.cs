@@ -80,6 +80,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetStartedBy())
+                {
+                    context.Writer.WritePropertyName("startedBy");
+                    context.Writer.Write(publicRequest.StartedBy);
+                }
+
                 if(publicRequest.IsSetTaskDefinition())
                 {
                     context.Writer.WritePropertyName("taskDefinition");

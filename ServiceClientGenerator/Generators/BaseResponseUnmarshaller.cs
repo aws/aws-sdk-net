@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+    #line 1 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class BaseResponseUnmarshaller : BaseGenerator
     {
@@ -32,7 +32,7 @@ namespace ServiceClientGenerator.Generators
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 7 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 7 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 
     protected void AddCommonUsingStatements()
     {
@@ -41,7 +41,7 @@ namespace ServiceClientGenerator.Generators
         #line default
         #line hidden
         
-        #line 10 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 10 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Globalization;\r\nus" +
         "ing System.IO;\r\nusing System.Net;\r\nusing System.Text;\r\nusing System.Xml.Serializ" +
         "ation;\r\n\r\nusing ");
@@ -50,14 +50,14 @@ this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.G
         #line default
         #line hidden
         
-        #line 19 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 19 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
 
         
         #line default
         #line hidden
         
-        #line 19 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 19 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write(".Model;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r\nusing Amazon.Runt" +
         "ime.Internal.Transform;\r\nusing Amazon.Runtime.Internal.Util;\r\n");
 
@@ -65,7 +65,7 @@ this.Write(".Model;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r
         #line default
         #line hidden
         
-        #line 24 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 24 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 
     }
 
@@ -120,49 +120,49 @@ this.Write(".Model;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r
         #line default
         #line hidden
         
-        #line 73 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 73 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write("        private static ");
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 74 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 74 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write("ResponseUnmarshaller _instance = new ");
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 74 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 74 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write("ResponseUnmarshaller();        \r\n\r\n\t\tinternal static ");
 
         
         #line default
         #line hidden
         
-        #line 76 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 76 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
 
         
         #line default
         #line hidden
         
-        #line 76 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 76 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write("ResponseUnmarshaller GetInstance()\r\n\t\t{\r\n\t\t\treturn _instance;\r\n\t\t}\r\n\t\tpublic stat" +
         "ic ");
 
@@ -170,14 +170,14 @@ this.Write("ResponseUnmarshaller GetInstance()\r\n\t\t{\r\n\t\t\treturn _instanc
         #line default
         #line hidden
         
-        #line 80 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 80 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
 
         
         #line default
         #line hidden
         
-        #line 80 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 80 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write("ResponseUnmarshaller Instance\r\n\t\t{\r\n\t\t\tget\r\n\t\t\t{\r\n\t\t\t\treturn _instance;\r\n\t\t\t}\r\n\t\t" +
         "}\r\n\r\n");
 
@@ -185,7 +185,7 @@ this.Write("ResponseUnmarshaller Instance\r\n\t\t{\r\n\t\t\tget\r\n\t\t\t{\r\n\t
         #line default
         #line hidden
         
-        #line 88 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 88 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 
     }
 
@@ -196,56 +196,56 @@ this.Write("ResponseUnmarshaller Instance\r\n\t\t{\r\n\t\t\tget\r\n\t\t\t{\r\n\t
         #line default
         #line hidden
         
-        #line 93 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 93 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write("        private static ");
 
         
         #line default
         #line hidden
         
-        #line 94 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 94 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
 
         
         #line default
         #line hidden
         
-        #line 94 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 94 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write("Unmarshaller _instance = new ");
 
         
         #line default
         #line hidden
         
-        #line 94 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 94 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
 
         
         #line default
         #line hidden
         
-        #line 94 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 94 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write("Unmarshaller();        \r\n\r\n\t\tpublic static ");
 
         
         #line default
         #line hidden
         
-        #line 96 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 96 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
 
         
         #line default
         #line hidden
         
-        #line 96 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 96 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write("Unmarshaller Instance\r\n\t\t{\r\n\t\t\tget\r\n\t\t\t{\r\n\t\t\t\treturn _instance;\r\n\t\t\t}\r\n\t\t}\r\n");
 
         
         #line default
         #line hidden
         
-        #line 103 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 103 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 
 	}
 
@@ -261,56 +261,56 @@ this.Write("Unmarshaller Instance\r\n\t\t{\r\n\t\t\tget\r\n\t\t\t{\r\n\t\t\t\tre
         #line default
         #line hidden
         
-        #line 113 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 113 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write("\t\t\tif (context.ResponseData.IsHeaderPresent(\"");
 
         
         #line default
         #line hidden
         
-        #line 114 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 114 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 114 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 114 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write("\"))\r\n\t\t\t\tresponse.");
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 115 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 115 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write(" = context.ResponseData.GetHeaderValue(\"");
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 115 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 115 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 116 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 116 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 			
 			}
 		}
@@ -326,20 +326,34 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 126 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
-this.Write("\t\t\tresponse.Status = (int)context.ResponseData.StatusCode;\r\n");
+        #line 126 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+this.Write("\t\t\tresponse.");
 
         
         #line default
         #line hidden
         
-        #line 128 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 127 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.ResponseStatusCodeMember.PropertyName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 127 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+this.Write(" = (int)context.ResponseData.StatusCode;\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 128 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 						
 		}
 	}
-
+/*
     // Generates code to set the response body to the response stream if the operation has a response stream member
-	protected void ProcessResponseStream()
+	protected void ProcessResponseStream_()
 	{
 		if( this.Operation.ResponseStreamingMember != null)
 		{
@@ -348,17 +362,32 @@ this.Write("\t\t\tresponse.Status = (int)context.ResponseData.StatusCode;\r\n");
         #line default
         #line hidden
         
-        #line 137 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
-this.Write("\t\t\tresponse.Body = context.Stream;\r\n");
+        #line 137 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+this.Write("\t\t\tresponse.");
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+        #line 138 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.ResponseStreamingMember.PropertyName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 138 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
+this.Write(" = context.Stream;\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 139 "C:\code\dotnet\lambda-1047\sdk\src\ServiceClientGenerator\Generators\BaseResponseUnmarshaller.tt"
 						
 		}
 	}
+*/
 
         
         #line default

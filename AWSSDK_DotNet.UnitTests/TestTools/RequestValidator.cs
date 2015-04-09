@@ -65,7 +65,9 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         protected virtual void ValidateBody()
         {
-            if (this.Operation.RequestHasBodyMembers)
+            var payload = this.Operation.RequestPayloadMember;
+            var payloadMarshalled = payload != null && payload.IsStructure;
+            if (this.Operation.RequestHasBodyMembers || payloadMarshalled)
             {
                 Assert.IsTrue(this.MarshalledRequest.Content.Count() > 0);
                 T marshalledData = GetMarshalledData(this.MarshalledRequest.Content);
@@ -220,13 +222,14 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         private void ValidateStreamingContent()
         {
-            if (this.Operation.RequestStreamingMember != null)
+            var payload = this.Operation.RequestPayloadMember;
+            if (payload != null && !payload.IsStructure)
             {
                 Assert.IsTrue(this.MarshalledRequest.Headers.ContainsKey("Content-Type"));
-                if (!this.Operation.RequestHeaderMembers.Any(h=>h.MarshallLocationName.ToLower()=="content-type"))
+                if (!this.Operation.RequestHeaderMembers.Any(h => h.MarshallLocationName.ToLower() == "content-type"))
                 {
-                Assert.AreEqual("binary/octet-stream", this.MarshalledRequest.Headers["Content-Type"]);
-                }                
+                    Assert.AreEqual("binary/octet-stream", this.MarshalledRequest.Headers["Content-Type"]);
+                }
                 Assert.IsNotNull(this.MarshalledRequest.ContentStream);
             }
             else

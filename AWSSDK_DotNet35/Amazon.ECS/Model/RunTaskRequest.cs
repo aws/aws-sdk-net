@@ -32,12 +32,19 @@ namespace Amazon.ECS.Model
     /// Start a task using random placement and the default Amazon ECS scheduler. If you want
     /// to use your own scheduler or place a task on a specific container instance, use <code>StartTask</code>
     /// instead.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// The <code>count</code> parameter is limited to 10 tasks per call.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class RunTaskRequest : AmazonECSRequest
     {
         private string _cluster;
         private int? _count;
         private TaskOverride _overrides;
+        private string _startedBy;
         private string _taskDefinition;
 
         /// <summary>
@@ -62,9 +69,14 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The number of instances of the specified task that you would like to place on your
-        /// cluster.
+        /// The number of instantiations of the specified task that you would like to place on
+        /// your cluster.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The <code>count</code> parameter is limited to 10 tasks per call.
+        /// </para>
+        ///  </important>
         /// </summary>
         public int Count
         {
@@ -79,7 +91,13 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Overrides.
+        /// Gets and sets the property Overrides. 
+        /// <para>
+        /// A list of container overrides in JSON format that specify the name of a container
+        /// in the specified task definition and the command it should run instead of its default.
+        /// A total of 8192 characters are allowed for overrides. This limit includes the JSON
+        /// formatting characters of the override structure.
+        /// </para>
         /// </summary>
         public TaskOverride Overrides
         {
@@ -91,6 +109,21 @@ namespace Amazon.ECS.Model
         internal bool IsSetOverrides()
         {
             return this._overrides != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartedBy.
+        /// </summary>
+        public string StartedBy
+        {
+            get { return this._startedBy; }
+            set { this._startedBy = value; }
+        }
+
+        // Check to see if StartedBy property is set
+        internal bool IsSetStartedBy()
+        {
+            return this._startedBy != null;
         }
 
         /// <summary>

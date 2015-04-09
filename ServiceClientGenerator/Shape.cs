@@ -221,9 +221,9 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// A shape that allows for modular definitions in the model, the payload contains members and these map as direct members of the shape
+        /// The name of the member that should be the payload of a request or is the payload of a response.
         /// </summary>
-        public string Payload
+        public string PayloadMemberName
         {
             get
             {

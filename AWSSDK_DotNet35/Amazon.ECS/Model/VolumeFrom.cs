@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Data volumes to mount another container.
+    /// 
     /// </summary>
     public partial class VolumeFrom
     {

@@ -469,6 +469,18 @@
     <Compile Include="Amazon.Lambda\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.MachineLearning\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.MachineLearning\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.MachineLearning\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.MachineLearning\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.OpsWorks\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -511,6 +523,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Route53Domains\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Workspaces\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Workspaces\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Workspaces\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\AmazonServiceClient.cs" />
@@ -558,44 +579,36 @@
     <Compile Include="Amazon.Runtime\Pipeline\PipelineHandler.cs" />
     <Compile Include="Amazon.Runtime\Pipeline\RuntimePipeline.cs" />
     <Compile Include="Amazon.Runtime\RequestMetrics.cs" />
-    <Compile Include="Amazon.S3\Encryption\Internal\SetupDecryptionHandler.cs" />
-    <Compile Include="Amazon.S3\Encryption\Internal\SetupEncryptionHandler.cs" />
-    <Compile Include="Amazon.S3\Encryption\Internal\UserAgentHandler.cs" />
-    <Compile Include="Amazon.S3\Internal\AmazonS3ExceptionHandler.cs" />
-    <Compile Include="Amazon.S3\Internal\AmazonS3KmsHandler.cs" />
-    <Compile Include="Amazon.S3\Internal\AmazonS3PostMarshallHandler.cs" />
-    <Compile Include="Amazon.S3\Internal\AmazonS3PreMarshallHandler.cs" />
-    <Compile Include="Amazon.S3\Internal\AmazonS3RedirectHandler.cs" />
-    <Compile Include="Amazon.S3\Internal\AmazonS3ResponseHandler.cs" />
-    <Compile Include="Amazon.S3\Internal\AmazonS3RetryPolicy.cs" />
-    <Compile Include="Amazon.S3\Model\CloudFunctionConfiguration.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteBucketReplicationRequest.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteBucketReplicationResponse.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketReplicationRequest.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketReplicationResponse.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\CloudFunctionConfigurationUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteBucketReplicationRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteBucketReplicationResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketReplicationRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketReplicationResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\LifecycleRuleNoncurrentVersionExpirationUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\LifecycleRuleNoncurrentVersionTransitionUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketReplicationRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketReplicationResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\QueueConfigurationUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\ReplicationDestinationUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\ReplicationRuleUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\LifecycleRuleNoncurrentVersionExpiration.cs" />
-    <Compile Include="Amazon.S3\Model\LifecycleRuleNoncurrentVersionTransition.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketReplicationRequest.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketReplicationResponse.cs" />
-    <Compile Include="Amazon.S3\Model\QueueConfiguration.cs" />
-    <Compile Include="Amazon.S3\Model\ReplicationConfiguration.cs" />
-    <Compile Include="Amazon.S3\Model\ReplicationDestination.cs" />
-    <Compile Include="Amazon.S3\Model\ReplicationRule.cs" />
-    <Compile Include="Amazon.S3\Model\StreamSizeMismatchException.cs" />
-    <Compile Include="Amazon.S3\Util\AmazonS3Uri.cs" />
-    <Compile Include="Amazon.S3\Util\S3EventNotification.cs" />
+    <Compile Include="Amazon.S3\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.S3\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.S3\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.S3\Encryption\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.S3\Encryption\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.S3\Util\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.S3\IO\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.S3\Transfer\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.S3\Transfer\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.SecurityToken\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -694,342 +707,6 @@
     <Compile Include="Amazon.StorageGateway\Util\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.S3\AmazonS3Client.cs" />
-    <Compile Include="Amazon.S3\AmazonS3Client.Extensions.cs" />
-    <Compile Include="Amazon.S3\AmazonS3Config.cs" />
-    <Compile Include="Amazon.S3\AmazonS3Exception.cs" />
-    <Compile Include="Amazon.S3\Model\ByteRange.cs" />
-    <Compile Include="Amazon.S3\Model\CORSRule.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteObjectsException.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteObjectsRequest.Extensions.cs" />
-    <Compile Include="Amazon.S3\Model\Expiration.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketPolicyResponse.cs" />
-    <Compile Include="Amazon.S3\Model\GetACLResponse.cs" />
-    <Compile Include="Amazon.S3\Model\GetPreSignedUrlRequest.cs" />
-    <Compile Include="Amazon.S3\IAmazonS3.cs" />
-    <Compile Include="Amazon.S3\IO\S3DirectoryInfo.cs" />
-    <Compile Include="Amazon.S3\IO\S3FileInfo.cs" />
-    <Compile Include="Amazon.S3\IO\S3FileStream.cs" />
-    <Compile Include="Amazon.S3\IO\S3FileSystemInfo.cs" />
-    <Compile Include="Amazon.S3\IO\S3Helper.cs" />
-    <Compile Include="Amazon.S3\Model\AbortMultipartUploadRequest.cs" />
-    <Compile Include="Amazon.S3\Model\AbortMultipartUploadResponse.cs" />
-    <Compile Include="Amazon.S3\Model\PutObjectRequest.bcl.cs" />
-    <Compile Include="Amazon.S3\Model\S3Bucket.cs" />
-    <Compile Include="Amazon.S3\Model\CompleteMultipartUploadRequest.cs" />
-    <Compile Include="Amazon.S3\Model\CompleteMultipartUploadResponse.cs" />
-    <Compile Include="Amazon.S3\Model\MultipartUpload.cs" />
-    <Compile Include="Amazon.S3\Model\PartDetail.cs" />
-    <Compile Include="Amazon.S3\Model\PartEtag.cs" />
-    <Compile Include="Amazon.S3\Model\RoutingRuleCondition.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\CORSRuleUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\MfaCodes.cs" />
-    <Compile Include="Amazon.S3\Model\S3AccessControlList.cs" />
-    <Compile Include="Amazon.S3\Model\S3BucketVersioningConfig.cs" />
-    <Compile Include="Amazon.S3\Model\S3Grant.cs" />
-    <Compile Include="Amazon.S3\Model\S3Grantee.cs" />
-    <Compile Include="Amazon.S3\Model\S3Object.cs" />
-    <Compile Include="Amazon.S3\Model\CopyObjectRequest.cs" />
-    <Compile Include="Amazon.S3\Model\CopyObjectResponse.cs" />
-    <Compile Include="Amazon.S3\Model\CORSConfiguration.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketRequest.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketResponse.cs" />
-    <Compile Include="Amazon.S3\Model\InitiateMultipartUploadRequest.cs" />
-    <Compile Include="Amazon.S3\Model\InitiateMultipartUploadResponse.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteCORSConfigurationRequest.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteCORSConfigurationResponse.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteLifecycleConfigurationRequest.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteLifecycleConfigurationResponse.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteBucketPolicyRequest.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteBucketPolicyResponse.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteBucketRequest.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteBucketResponse.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteBucketTaggingRequest.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteBucketTaggingResponse.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteBucketWebsiteRequest.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteBucketWebsiteResponse.cs" />
-    <Compile Include="Amazon.S3\Model\DeletedObject.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteObjectRequest.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteObjectResponse.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteObjectsRequest.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteObjectsResponse.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteError.cs" />
-    <Compile Include="Amazon.S3\Model\LifecycleRuleExpiration.cs" />
-    <Compile Include="Amazon.S3\Model\GetCORSConfigurationRequest.cs" />
-    <Compile Include="Amazon.S3\Model\GetCORSConfigurationResponse.cs" />
-    <Compile Include="Amazon.S3\Model\GetLifecycleConfigurationRequest.cs" />
-    <Compile Include="Amazon.S3\Model\GetLifecycleConfigurationResponse.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketLocationRequest.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketLocationResponse.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketLoggingRequest.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketLoggingResponse.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketNotificationRequest.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketPolicyRequest.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketRequestPaymentRequest.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketRequestPaymentResponse.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketTaggingRequest.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketTaggingResponse.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketVersioningRequest.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketVersioningResponse.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketWebsiteRequest.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketWebsiteResponse.cs" />
-    <Compile Include="Amazon.S3\Model\GetACLRequest.cs" />
-    <Compile Include="Amazon.S3\Model\GetObjectRequest.cs" />
-    <Compile Include="Amazon.S3\Model\GetObjectResponse.cs" />
-    <Compile Include="Amazon.S3\Model\GetObjectTorrentRequest.cs" />
-    <Compile Include="Amazon.S3\Model\GetObjectTorrentResponse.cs" />
-    <Compile Include="Amazon.S3\Model\HeadBucketRequest.cs" />
-    <Compile Include="Amazon.S3\Model\HeadBucketResponse.cs" />
-    <Compile Include="Amazon.S3\Model\HeadersCollection.cs" />
-    <Compile Include="Amazon.S3\Model\GetObjectMetadataRequest.cs" />
-    <Compile Include="Amazon.S3\Model\GetObjectMetadataResponse.cs" />
-    <Compile Include="Amazon.S3\Model\Initiator.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\AbortMultipartUploadRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\AbortMultipartUploadResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\HeaderACLRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\BucketUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\CommonPrefixesItemUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\CompleteMultipartUploadRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\CompleteMultipartUploadResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\RoutingRuleConditionUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\ContentsItemUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\CopyObjectRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\CopyObjectResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\InitiateMultipartUploadRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\InitiateMultipartUploadResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteCORSConfigurationRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteBucketCorsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteLifecycleConfigurationRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteLifecycleConfigurationResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteBucketPolicyRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteBucketPolicyResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteBucketRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteBucketResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteBucketTaggingRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteBucketTaggingResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteBucketWebsiteRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteBucketWebsiteResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeletedItemUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteObjectRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteObjectResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteObjectsRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\DeleteObjectsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\ErrorsItemUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\ExpirationUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetCORSConfigurationRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetCORSConfigurationResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetLifecycleConfigurationRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetLifecycleConfigurationResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketLocationRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketLocationResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketLoggingRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketLoggingResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketNotificationRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketNotificationResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketPolicyRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketPolicyResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketRequestPaymentRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketRequestPaymentResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketTaggingRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketTaggingResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketVersioningRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketVersioningResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketWebsiteRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetBucketWebsiteResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetACLRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetACLResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetObjectRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetObjectResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetObjectTorrentRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetObjectTorrentResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GranteeUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GrantUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\HeadBucketRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\HeadBucketResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetObjectMetadataRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\GetObjectMetadataResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\InitiatorUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\ListBucketsRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\ListBucketsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\ListMultipartUploadsRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\ListMultipartUploadsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\ListObjectsRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\ListObjectsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\ListVersionsRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\ListVersionsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\ListPartsRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\ListPartsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\OwnerUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PartDetailUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutCORSConfigurationRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutCORSConfigurationResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutLifecycleConfigurationRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutLifecycleConfigurationResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketLoggingRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketLoggingResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketNotificationRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketNotificationResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketPolicyRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketPolicyResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketRequestPaymentRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketRequestPaymentResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketTaggingRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketTaggingResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketVersioningRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketVersioningResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketWebsiteRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutBucketWebsiteResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutACLRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutACLResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutObjectRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\PutObjectResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\RoutingRuleRedirectUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\RestoreObjectRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\RestoreObjectResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\RoutingRuleUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\RulesItemUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\TagUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\TopicConfigurationUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\TransitionUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\CopyPartRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\CopyPartResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\UploadPartRequestMarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\UploadPartResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\MultipartUploadUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\VersionsItemUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\LifecycleConfiguration.cs" />
-    <Compile Include="Amazon.S3\Model\ListBucketsRequest.cs" />
-    <Compile Include="Amazon.S3\Model\ListBucketsResponse.cs" />
-    <Compile Include="Amazon.S3\Model\ListMultipartUploadsRequest.cs" />
-    <Compile Include="Amazon.S3\Model\ListMultipartUploadsResponse.cs" />
-    <Compile Include="Amazon.S3\Model\ListObjectsRequest.cs" />
-    <Compile Include="Amazon.S3\Model\ListObjectsResponse.cs" />
-    <Compile Include="Amazon.S3\Model\ListVersionsRequest.cs" />
-    <Compile Include="Amazon.S3\Model\ListVersionsResponse.cs" />
-    <Compile Include="Amazon.S3\Model\ListPartsRequest.cs" />
-    <Compile Include="Amazon.S3\Model\ListPartsResponse.cs" />
-    <Compile Include="Amazon.S3\Model\S3BucketLoggingConfig.cs" />
-    <Compile Include="Amazon.S3\Model\MetadataCollection.cs" />
-    <Compile Include="Amazon.S3\Model\KeyVersion.cs" />
-    <Compile Include="Amazon.S3\Model\Owner.cs" />
-    <Compile Include="Amazon.S3\Model\PutCORSConfigurationRequest.cs" />
-    <Compile Include="Amazon.S3\Model\PutCORSConfigurationResponse.cs" />
-    <Compile Include="Amazon.S3\Model\PutLifecycleConfigurationRequest.cs" />
-    <Compile Include="Amazon.S3\Model\PutLifecycleConfigurationResponse.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketLoggingRequest.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketLoggingResponse.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketNotificationRequest.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketNotificationResponse.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketPolicyRequest.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketPolicyResponse.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketRequestPaymentRequest.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketRequestPaymentResponse.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketTaggingRequest.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketTaggingResponse.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketVersioningRequest.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketVersioningResponse.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketWebsiteRequest.cs" />
-    <Compile Include="Amazon.S3\Model\PutBucketWebsiteResponse.cs" />
-    <Compile Include="Amazon.S3\Model\PutACLRequest.cs" />
-    <Compile Include="Amazon.S3\Model\PutACLResponse.cs" />
-    <Compile Include="Amazon.S3\Model\PutObjectRequest.cs" />
-    <Compile Include="Amazon.S3\Model\PutObjectResponse.cs" />
-    <Compile Include="Amazon.S3\Model\PutWithACLRequest.cs" />
-    <Compile Include="Amazon.S3\Model\RoutingRuleRedirect.cs" />
-    <Compile Include="Amazon.S3\Model\RequestPaymentConfiguration.cs" />
-    <Compile Include="Amazon.S3\Model\ResponseHeaderOverrides.cs" />
-    <Compile Include="Amazon.S3\Model\RestoreObjectRequest.cs" />
-    <Compile Include="Amazon.S3\Model\RestoreObjectResponse.cs" />
-    <Compile Include="Amazon.S3\Model\RoutingRule.cs" />
-    <Compile Include="Amazon.S3\Model\LifecycleRule.cs" />
-    <Compile Include="Amazon.S3\Model\StreamResponse.cs" />
-    <Compile Include="Amazon.S3\Model\Tag.cs" />
-    <Compile Include="Amazon.S3\Model\TopicConfiguration.cs" />
-    <Compile Include="Amazon.S3\Model\LifecycleTransition.cs" />
-    <Compile Include="Amazon.S3\Model\CopyPartRequest.cs" />
-    <Compile Include="Amazon.S3\Model\CopyPartResponse.cs" />
-    <Compile Include="Amazon.S3\Model\UploadPartRequest.bcl.cs" />
-    <Compile Include="Amazon.S3\Model\UploadPartRequest.cs" />
-    <Compile Include="Amazon.S3\Model\UploadPartResponse.cs" />
-    <Compile Include="Amazon.S3\Model\S3ObjectVersion.cs" />
-    <Compile Include="Amazon.S3\Model\WebsiteConfiguration.cs" />
-    <Compile Include="Amazon.S3\Util\S3DeleteBucketWithObjectsOptions.cs" />
-    <Compile Include="Amazon.S3\Util\S3DeleteBucketWithObjectsRequest.cs" />
-    <Compile Include="Amazon.S3\Util\S3DeleteBucketWithObjectsUpdate.cs" />
-    <Compile Include="Amazon.S3\Util\S3PostUploadException.cs" />
-    <Compile Include="Amazon.S3\Util\S3PostUploadRequest.cs" />
-    <Compile Include="Amazon.S3\Util\S3Constants.cs" />
-    <Compile Include="Amazon.S3\Encryption\CryptoConfiguration.cs" />
-    <Compile Include="Amazon.S3\Encryption\CryptoStorageMode.cs" />
-    <Compile Include="Amazon.S3\Encryption\EncryptionMaterials.cs" />
-    <Compile Include="Amazon.S3\Encryption\UploadPartContextForEncryption.cs" />
-    <Compile Include="Amazon.S3\IAmazonS3.Extensions.cs" />
-    <Compile Include="Amazon.S3\Model\CopyPartRequest.bcl.cs" />
-    <Compile Include="Amazon.S3\Model\CopyObjectRequest.bcl.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketNotificationResponse.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\LoggingEnabledUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\S3ErrorResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\S3Transforms.cs" />
-    <Compile Include="Amazon.S3\Util\S3PostUploadResponse.cs" />
-    <Compile Include="Amazon.S3\Util\S3PostUploadSignedPolicy.cs" />
-    <Compile Include="Amazon.S3\Util\TransferProgressArgs.cs" />
-    <Compile Include="Amazon.S3\S3Enumerations.cs" />
-    <Compile Include="Amazon.S3\Transfer\BaseDownloadRequest.cs" />
-    <Compile Include="Amazon.S3\Transfer\BaseUploadRequest.cs" />
-    <Compile Include="Amazon.S3\Transfer\Internal\AbortMultipartUploadsCommand.bcl35.cs">
-      <DependentUpon>AbortMultipartUploadsCommand.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\Internal\AbortMultipartUploadsCommand.cs" />
-    <Compile Include="Amazon.S3\Transfer\Internal\BaseCommand.cs" />
-    <Compile Include="Amazon.S3\Transfer\Internal\DownloadCommand.bcl35.cs">
-      <DependentUpon>DownloadCommand.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\Internal\DownloadCommand.cs" />
-    <Compile Include="Amazon.S3\Transfer\Internal\DownloadDirectoryCommand.bcl.cs" />
-    <Compile Include="Amazon.S3\Transfer\Internal\DownloadDirectoryCommand.bcl35.cs">
-      <DependentUpon>DownloadDirectoryCommand.bcl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\Internal\MultipartUploadCommand.bcl35.cs">
-      <DependentUpon>MultipartUploadCommand.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\Internal\MultipartUploadCommand.cs" />
-    <Compile Include="Amazon.S3\Transfer\Internal\OpenStreamCommand.bcl35.cs">
-      <DependentUpon>OpenStreamCommand.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\Internal\OpenStreamCommand.cs" />
-    <Compile Include="Amazon.S3\Transfer\Internal\SimpleUploadCommand.bcl35.cs">
-      <DependentUpon>SimpleUploadCommand.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\Internal\SimpleUploadCommand.cs" />
-    <Compile Include="Amazon.S3\Transfer\Internal\UploadDirectoryCommand.bcl.cs" />
-    <Compile Include="Amazon.S3\Transfer\Internal\UploadDirectoryCommand.bcl35.cs">
-      <DependentUpon>UploadDirectoryCommand.bcl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\TransferUtility.bcl.cs">
-      <DependentUpon>TransferUtility.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\TransferUtility.cs" />
-    <Compile Include="Amazon.S3\Transfer\TransferUtility.bcl35.cs">
-      <DependentUpon>TransferUtility.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\TransferUtilityConfig.bcl35.cs">
-      <DependentUpon>TransferUtilityConfig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\TransferUtilityConfig.cs" />
-    <Compile Include="Amazon.S3\Transfer\TransferUtilityDownloadDirectoryRequest.cs" />
-    <Compile Include="Amazon.S3\Transfer\TransferUtilityDownloadRequest.cs" />
-    <Compile Include="Amazon.S3\Transfer\TransferUtilityOpenStreamRequest.cs" />
-    <Compile Include="Amazon.S3\Transfer\TransferUtilityUploadDirectoryRequest.cs" />
-    <Compile Include="Amazon.S3\Transfer\TransferUtilityUploadRequest.cs" />
-    <Compile Include="Amazon.S3\Encryption\AmazonS3EncryptionClient.cs" />
-    <Compile Include="Amazon.S3\Util\AmazonS3Util.cs" />
-    <Compile Include="Amazon.S3\Util\AmazonS3Util.Operations.cs" />
-    <Compile Include="Amazon.S3\Util\AsyncCancelableResult.cs" />
-    <Compile Include="Amazon.S3\Encryption\EncryptionInstructions.cs" />
-    <Compile Include="Amazon.S3\Encryption\EncryptionUtils.cs" />
-    <Compile Include="Amazon.S3\Util\IAsyncCancelableResult.cs" />
     <Compile Include="Amazon.Runtime\AmazonClientException.cs" />
     <Compile Include="Amazon.Runtime\AmazonServiceException.cs" />
     <Compile Include="Amazon.Runtime\AmazonUnmarshallingException.cs" />

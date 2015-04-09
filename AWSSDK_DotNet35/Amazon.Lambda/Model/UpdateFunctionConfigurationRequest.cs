@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2014-11-11.normal.json service model.
+ * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -52,7 +52,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A short user-defined function description. Lambda does not use this value. Assign
+        /// A short user-defined function description. AWS Lambda does not use this value. Assign
         /// a meaningful description as you see fit.
         /// </para>
         /// </summary>
@@ -72,6 +72,14 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property FunctionName. 
         /// <para>
         /// The name of the Lambda function.
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can specify an unqualified function name (for example, "Thumbnail") or you can
+        /// specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail").
+        /// AWS Lambda also allows you to specify only the account ID qualifier (for example,
+        /// "account-id:Thumbnail"). Note that the length constraint applies only to the ARN.
+        /// If you specify only the function name, it is limited to 64 character in length. 
         /// </para>
         /// </summary>
         public string FunctionName
@@ -108,7 +116,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MemorySize. 
         /// <para>
-        /// The amount of memory, in MB, your Lambda function is given. Lambda uses this memory
+        /// The amount of memory, in MB, your Lambda function is given. AWS Lambda uses this memory
         /// size to infer the amount of CPU allocated to your function. Your function use-case
         /// determines your CPU and memory requirements. For example, a database operation might
         /// need less memory compared to an image processing function. The default value is 128
@@ -149,7 +157,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
-        /// The function execution time at which Lambda should terminate the function. Because
+        /// The function execution time at which AWS Lambda should terminate the function. Because
         /// the execution time has cost implications, we recommend you set this value based on
         /// your expected execution time. The default is 3 seconds. 
         /// </para>

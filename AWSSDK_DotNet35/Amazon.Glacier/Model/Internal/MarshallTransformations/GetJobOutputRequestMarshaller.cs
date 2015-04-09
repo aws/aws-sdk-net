@@ -51,10 +51,10 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
             uriResourcePath = uriResourcePath.Replace("{jobId}", publicRequest.IsSetJobId() ? StringUtils.FromString(publicRequest.JobId) : string.Empty);
             uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
+            request.ResourcePath = uriResourcePath;
         
             if(publicRequest.IsSetRange())
                 request.Headers["Range"] = publicRequest.Range;
-            request.ResourcePath = uriResourcePath;
 
             return request;
         }

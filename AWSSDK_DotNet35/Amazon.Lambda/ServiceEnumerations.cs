@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2014-11-11.normal.json service model.
+ * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 
 using System;
@@ -25,20 +25,24 @@ namespace Amazon.Lambda
 {
 
     /// <summary>
-    /// Constants used for properties of type Mode.
+    /// Constants used for properties of type EventSourcePosition.
     /// </summary>
-    public class Mode : ConstantClass
+    public class EventSourcePosition : ConstantClass
     {
 
         /// <summary>
-        /// Constant Event for Mode
+        /// Constant LATEST for EventSourcePosition
         /// </summary>
-        public static readonly Mode Event = new Mode("event");
+        public static readonly EventSourcePosition LATEST = new EventSourcePosition("LATEST");
+        /// <summary>
+        /// Constant TRIM_HORIZON for EventSourcePosition
+        /// </summary>
+        public static readonly EventSourcePosition TRIM_HORIZON = new EventSourcePosition("TRIM_HORIZON");
 
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public Mode(string value)
+        public EventSourcePosition(string value)
             : base(value)
         {
         }
@@ -48,12 +52,96 @@ namespace Amazon.Lambda
         /// </summary>
         /// <param name="value">The unique value for the constant</param>
         /// <returns>The constant for the unique value</returns>
-        public static Mode FindValue(string value)
+        public static EventSourcePosition FindValue(string value)
         {
-            return FindValue<Mode>(value);
+            return FindValue<EventSourcePosition>(value);
         }
 
-        public static implicit operator Mode(string value)
+        public static implicit operator EventSourcePosition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InvocationType.
+    /// </summary>
+    public class InvocationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DryRun for InvocationType
+        /// </summary>
+        public static readonly InvocationType DryRun = new InvocationType("DryRun");
+        /// <summary>
+        /// Constant Event for InvocationType
+        /// </summary>
+        public static readonly InvocationType Event = new InvocationType("Event");
+        /// <summary>
+        /// Constant RequestResponse for InvocationType
+        /// </summary>
+        public static readonly InvocationType RequestResponse = new InvocationType("RequestResponse");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public InvocationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InvocationType FindValue(string value)
+        {
+            return FindValue<InvocationType>(value);
+        }
+
+        public static implicit operator InvocationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LogType.
+    /// </summary>
+    public class LogType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant None for LogType
+        /// </summary>
+        public static readonly LogType None = new LogType("None");
+        /// <summary>
+        /// Constant Tail for LogType
+        /// </summary>
+        public static readonly LogType Tail = new LogType("Tail");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public LogType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogType FindValue(string value)
+        {
+            return FindValue<LogType>(value);
+        }
+
+        public static implicit operator LogType(string value)
         {
             return FindValue(value);
         }
@@ -67,9 +155,17 @@ namespace Amazon.Lambda
     {
 
         /// <summary>
+        /// Constant Jvm for Runtime
+        /// </summary>
+        public static readonly Runtime Jvm = new Runtime("jvm");
+        /// <summary>
         /// Constant Nodejs for Runtime
         /// </summary>
         public static readonly Runtime Nodejs = new Runtime("nodejs");
+        /// <summary>
+        /// Constant Python for Runtime
+        /// </summary>
+        public static readonly Runtime Python = new Runtime("python");
 
         /// <summary>
         /// Default Constructor

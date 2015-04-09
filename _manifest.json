@@ -309,6 +309,15 @@
             "authentication-service-name": "lambda",
             "mobile-platforms": [ "WinRT", "PCL", "WP8" ]
         },
+		{
+            "active": true,
+
+            "model": "machinelearning",
+			"base-name" : "MachineLearning",
+			"region-lookup-name" : "machinelearning",
+			"authentication-service-name" : "machinelearning",
+            "mobile-platforms" : []
+		},
         {
             "active": true,
 
@@ -450,6 +459,15 @@
             "region-lookup-name": "storagegateway",
             "service-url": "https://storagegateway.us-east-1.amazonaws.com",
             "mobile-platforms": [ "WinRT" ]
+        },
+		{
+			"active" : true,
+			
+            "model": "workspaces",
+            "base-name": "WorkSpaces",
+            "region-lookup-name": "workspaces",
+            "service-url": "https://workspaces.us-east-1.amazonaws.com",
+            "mobile-platforms": [ ]
         }
     ]
 }

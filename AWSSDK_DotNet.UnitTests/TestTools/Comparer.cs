@@ -174,6 +174,11 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                         reader.Read();
                         childObj = ParseConstant(reader, propInfo.PropertyType);
                     }
+                    else if (propInfo.PropertyType == typeof(float))
+                    {
+                        childObj = Unmarshall(reader, propInfo.PropertyType);
+                        childObj = (float)(double)childObj;
+                    }
                     else
                     {
                         childObj = Unmarshall(reader, propInfo.PropertyType);

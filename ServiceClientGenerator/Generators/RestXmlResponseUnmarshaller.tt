@@ -20,7 +20,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         {
             <#=this.UnmarshallerBaseName #>Response response = new <#=this.Operation.Name #>Response();
 <#
-    if( this.Operation.ResponseHasBodyMembers )
+    var payload= this.Operation.ResponsePayloadMember;
+    var shouldMarshallPayload = (payload != null && payload.IsStructure);
+    if( this.Operation.ResponseHasBodyMembers || shouldMarshallPayload)
     {
 #>
             UnmarshallResult(context,response);
@@ -28,35 +30,34 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	}
 	UnmarshallHeaders();
 	ProcessStatusCode();
-	ProcessResponseStream();
 #>            
             return response;
 		}		
 <#
-    if( this.Operation.ResponseHasBodyMembers )
+    if( this.Operation.ResponseHasBodyMembers || shouldMarshallPayload)
     {
 #>
 
 <#
-	if (this.Operation.ResponseBodyMembers.Count == 0)
-	{
+    	if (this.Operation.ResponseBodyMembers.Count == 0 && !shouldMarshallPayload)
+	    {
 #>
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
 <#
-	}
+	    }
 #>
 		private static void UnmarshallResult(XmlUnmarshallerContext context, <#=this.Operation.Name #>Response response)
         {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
 <#
-	if (this.Operation.ResponseStructure.Payload == null)
-	{
+        if (payload == null)
+	    {
 #>
 			if (context.IsStartOfDocument) 
 				   targetDepth += 1;
 <#
-	}
+	    }
 #>
 
             while (context.Read())
@@ -89,6 +90,17 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 					}
 <#
 			}
+        }
+        if (shouldMarshallPayload)
+        {
+#>
+					if (context.TestExpression("<#=payload.MarshallName#>", targetDepth))
+					{
+						var unmarshaller = <#= payload.DetermineTypeUnmarshallerInstantiate() #>;
+						response.<#=payload.PropertyName#> = unmarshaller.Unmarshall(context);
+						continue;
+					}
+<#
         }
 #>
 				}

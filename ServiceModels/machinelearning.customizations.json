@@ -1,0 +1,132 @@
+{ 
+	"runtimePipelineOverride":{
+		"overrides":[
+			{"operation":"addAfter", "newType":"Amazon.MachineLearning.Internal.ProcessRequestHandler", "targetType":"Amazon.Runtime.Internal.Marshaller"},
+			{"operation":"addBefore", "newType":"Amazon.MachineLearning.Internal.IdempotencyHandler", "targetType":"Amazon.Runtime.Internal.Marshaller"}
+		]
+	},
+	"simpleMethods" : {
+        "operations" : {
+            "CreateRealtimeEndpoint" : {
+                "methodForms" : [
+                    [
+                        "MLModelId"
+                    ]
+                ]
+            },
+			"DeleteBatchPrediction" : {
+                "methodForms" : [
+                    [
+                        "BatchPredictionId"
+                    ]
+                ]
+            },
+			"DeleteDataSource" : {
+                "methodForms" : [
+                    [
+                        "DataSourceId"
+                    ]
+                ]
+            },
+			"DeleteEvaluation" : {
+                "methodForms" : [
+                    [
+                        "EvaluationId"
+                    ]
+                ]
+            },
+			"DeleteMLModel" : {
+                "methodForms" : [
+                    [
+                        "MLModelId"
+                    ]
+                ]
+            },
+			"DeleteRealtimeEndpoint" : {
+                "methodForms" : [
+                    [
+                        "MLModelId"
+                    ]
+                ]
+            },
+			"GetBatchPrediction" : {
+                "methodForms" : [
+                    [
+                        "BatchPredictionId"
+                    ]
+                ]
+            },
+			"GetDataSource" : {
+                "methodForms" : [
+                    [
+                        "DataSourceId"
+                    ],
+					[
+						"DataSourceId",
+						"Verbose"
+					]
+                ]
+            },
+			"GetEvaluation" : {
+                "methodForms" : [
+                    [
+                        "EvaluationId"
+                    ]
+                ]
+            },
+			"GetMLModel" : {
+                "methodForms" : [
+                    [
+                        "MLModelId"
+                    ],
+					[
+						"MLModelId",
+						"Verbose"
+					]
+                ]
+            },
+			"Predict" : {
+                "methodForms" : [
+                    [
+                        "MLModelId",
+						"PredictEndpoint",
+						"Record"
+                    ]
+                ]
+            },
+			"UpdateBatchPrediction" : {
+                "methodForms" : [
+                    [
+                        "BatchPredictionId",
+						"BatchPredictionName"
+                    ]
+                ]
+            },
+			"UpdateDataSource" : {
+                "methodForms" : [
+                    [
+                        "DataSourceId",
+						"DataSourceName"
+                    ]
+                ]
+            },
+			"UpdateEvaluation" : {
+                "methodForms" : [
+                    [
+                        "EvaluationId",
+						"EvaluationName"
+                    ]
+                ]
+            },
+			"UpdateMLModel" : {
+                "methodForms" : [
+                    [
+                        "MLModelId",
+						"MLModelName",
+						"ScoreThreshold"
+                    ]
+                ]
+            }
+		}
+	}
+}

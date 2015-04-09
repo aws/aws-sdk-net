@@ -134,7 +134,7 @@ namespace AWSSDK.UnitTests
 
                 using(client)
                 {
-                    SetResponse(client, Create(content, requestId, isOK));
+                    CustomResponses.SetResponse(client, content, requestId, isOK);
 
                     foreach (var requestMethod in requestMethods)
                     {
@@ -150,7 +150,7 @@ namespace AWSSDK.UnitTests
 
             using (client)
             {
-                SetResponse(client, Create(content, requestId, isOK));
+                CustomResponses.SetResponse(client, content, requestId, isOK);
 
                 var requestMethods = GetValidRequestMethods(clientType);
                 var requestMethod = requestMethods.First(m => m.Name.Equals(methodName, StringComparison.Ordinal));
@@ -266,40 +266,5 @@ namespace AWSSDK.UnitTests
 	</div>
 </body>
 </html>";
-
-        private static Func<HttpHandlerTests.MockHttpRequest, HttpWebResponse> Create(
-            string content, string requestId, bool isOK)
-        {
-            var status = isOK ? HttpStatusCode.OK : HttpStatusCode.NotFound;
-
-            return (request) =>
-            {
-                Dictionary<string,string> headers = new Dictionary<string, string>(StringComparer.Ordinal);
-                if (!string.IsNullOrEmpty(requestId))
-                    headers.Add(HeaderKeys.RequestIdHeader, requestId);
-
-                var response = MockWebResponse.Create(status, headers, content);
-                if (isOK)
-                    return response;
-
-                throw new HttpErrorResponseException(new HttpWebRequestResponseData(response));
-            };
-        }
-
-        public static void SetResponse(
-            AmazonServiceClient client,
-            Func<HttpHandlerTests.MockHttpRequest, HttpWebResponse> responseCreator)
-        {
-            var pipeline = client
-                .GetType()
-                .GetProperty("RuntimePipeline", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)
-                .GetValue(client, null)
-                as RuntimePipeline;
-
-            var requestFactory = new HttpHandlerTests.MockHttpRequestFactory();
-            requestFactory.ResponseCreator = responseCreator;
-            var httpHandler = new HttpHandler<Stream>(requestFactory, client);
-            pipeline.ReplaceHandler<HttpHandler<Stream>>(httpHandler);
-        }
     }
 }

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2014-11-11.normal.json service model.
+ * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -50,11 +50,11 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/2014-11-13/functions/{FunctionName}/invoke-async/";
             uriResourcePath = uriResourcePath.Replace("{FunctionName}", publicRequest.IsSetFunctionName() ? StringUtils.FromString(publicRequest.FunctionName) : string.Empty);
+            request.ResourcePath = uriResourcePath;
             request.ContentStream =  publicRequest.InvokeArgsStream ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
-            request.ResourcePath = uriResourcePath;
 
             return request;
         }

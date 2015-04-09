@@ -264,7 +264,10 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumesFrom.
+        /// Gets and sets the property VolumesFrom. 
+        /// <para>
+        /// Data volumes to mount from another container.
+        /// </para>
         /// </summary>
         public List<VolumeFrom> VolumesFrom
         {

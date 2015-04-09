@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// 
+    /// A list of container overrides in JSON format that specify the name of a container
+    /// in a task definition and the command it should run instead of its default.
     /// </summary>
     public partial class TaskOverride
     {
@@ -37,7 +38,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerOverrides. 
         /// <para>
-        /// One or more container overrides to send when running a task.
+        /// One or more container overrides sent to a task.
         /// </para>
         /// </summary>
         public List<ContainerOverride> ContainerOverrides

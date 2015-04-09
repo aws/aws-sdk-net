@@ -56,12 +56,6 @@ namespace Amazon.ECS
         /// Creates a new Amazon ECS cluster. By default, your account will receive a <code>default</code>
         /// cluster when you launch your first container instance. However, you can create your
         /// own cluster with a unique name with the <code>CreateCluster</code> action.
-        /// 
-        ///  <important> 
-        /// <para>
-        /// During the preview, each account is limited to two clusters.
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
         /// 
@@ -86,6 +80,39 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateService
+
+        /// <summary>
+        /// Runs and maintains a desired number of tasks from a specified task definition. If
+        /// the number of tasks running in a service drops below <code>desiredCount</code>, Amazon
+        /// ECS will spawn another instantiation of the task in the specified cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateService service method.</param>
+        /// 
+        /// <returns>The response from the CreateService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by something the client did, such as use an action
+        /// or resource on behalf of a user that doesn't have permission to use the action or
+        /// resource, or specify an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        CreateServiceResponse CreateService(CreateServiceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateService operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateService operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateServiceResponse> CreateServiceAsync(CreateServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -119,6 +146,37 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteService
+
+        /// <summary>
+        /// Deletes a specified service within a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteService service method.</param>
+        /// 
+        /// <returns>The response from the DeleteService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by something the client did, such as use an action
+        /// or resource on behalf of a user that doesn't have permission to use the action or
+        /// resource, or specify an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        DeleteServiceResponse DeleteService(DeleteServiceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteService operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteService operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteServiceResponse> DeleteServiceAsync(DeleteServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -254,6 +312,37 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  DescribeServices
+
+        /// <summary>
+        /// Describes the specified services running in your cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServices service method.</param>
+        /// 
+        /// <returns>The response from the DescribeServices service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by something the client did, such as use an action
+        /// or resource on behalf of a user that doesn't have permission to use the action or
+        /// resource, or specify an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        DescribeServicesResponse DescribeServices(DescribeServicesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeServices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServices operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeServicesResponse> DescribeServicesAsync(DescribeServicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeTaskDefinition
 
         /// <summary>
@@ -377,6 +466,37 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ListContainerInstancesResponse> ListContainerInstancesAsync(ListContainerInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListServices
+
+        /// <summary>
+        /// Lists the services that are running in a specified cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServices service method.</param>
+        /// 
+        /// <returns>The response from the ListServices service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by something the client did, such as use an action
+        /// or resource on behalf of a user that doesn't have permission to use the action or
+        /// resource, or specify an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        ListServicesResponse ListServices(ListServicesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServices operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListServicesResponse> ListServicesAsync(ListServicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -518,6 +638,12 @@ namespace Amazon.ECS
         /// Start a task using random placement and the default Amazon ECS scheduler. If you want
         /// to use your own scheduler or place a task on a specific container instance, use <code>StartTask</code>
         /// instead.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The <code>count</code> parameter is limited to 10 tasks per call.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunTask service method.</param>
         /// 
@@ -551,6 +677,12 @@ namespace Amazon.ECS
         /// Starts a new task from the specified task definition on the specified container instance
         /// or instances. If you want to use the default Amazon ECS scheduler to place your task,
         /// use <code>RunTask</code> instead.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The list of container instances to start tasks on is limited to 10.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTask service method.</param>
         /// 
@@ -606,6 +738,56 @@ namespace Amazon.ECS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<StopTaskResponse> StopTaskAsync(StopTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateService
+
+        /// <summary>
+        /// Modify the desired count or task definition used in a service.
+        /// 
+        ///  
+        /// <para>
+        /// You can add to or subtract from the number of instantiations of a task definition
+        /// in a service by specifying the cluster that the service is running in and a new <code>desiredCount</code>
+        /// parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use <code>UpdateService</code> to modify your task definition and deploy a
+        /// new version of your service, one task at a time. If you modify the task definition
+        /// with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of
+        /// the task definition and then stops an old task after the new version is running. Because
+        /// <code>UpdateService</code> starts a new version of the task before stopping an old
+        /// version, your cluster must have capacity to support one more instantiation of the
+        /// task when <code>UpdateService</code> is run. If your cluster cannot support another
+        /// instantiation of the task used in your service, you can reduce the desired count of
+        /// your service by one before modifying the task definition.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateService service method.</param>
+        /// 
+        /// <returns>The response from the UpdateService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by something the client did, such as use an action
+        /// or resource on behalf of a user that doesn't have permission to use the action or
+        /// resource, or specify an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        UpdateServiceResponse UpdateService(UpdateServiceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateService operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateService operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateServiceResponse> UpdateServiceAsync(UpdateServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

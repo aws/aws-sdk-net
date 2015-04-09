@@ -52,9 +52,6 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             uriResourcePath = uriResourcePath.Replace("{DatasetName}", publicRequest.IsSetDatasetName() ? StringUtils.FromString(publicRequest.DatasetName) : string.Empty);
             uriResourcePath = uriResourcePath.Replace("{IdentityId}", publicRequest.IsSetIdentityId() ? StringUtils.FromString(publicRequest.IdentityId) : string.Empty);
             uriResourcePath = uriResourcePath.Replace("{IdentityPoolId}", publicRequest.IsSetIdentityPoolId() ? StringUtils.FromString(publicRequest.IdentityPoolId) : string.Empty);
-        
-            if(publicRequest.IsSetClientContext())
-                request.Headers["x-amz-Client-Context"] = publicRequest.ClientContext;
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -95,6 +92,9 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+        
+            if(publicRequest.IsSetClientContext())
+                request.Headers["x-amz-Client-Context"] = publicRequest.ClientContext;
 
             return request;
         }
