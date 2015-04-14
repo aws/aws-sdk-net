@@ -146,6 +146,33 @@ namespace Amazon.S3.Util
         }
 
         /// <summary>
+        /// Checks whether the given URI is a Amazon S3 URI.
+        /// </summary>
+        /// <param name="uri">The S3 URI to be checked.</param>
+        /// <returns>true if the URI is a Amazon S3 URI, false; otherwise.</returns>
+        public static bool IsAmazonS3Endpoint(string uri)
+        {
+            if (uri == null)
+                throw new ArgumentNullException("uri");
+
+            return IsAmazonS3Endpoint(new Uri(uri));
+        }
+        
+        /// <summary>
+        /// Checks whether the given URI is a Amazon S3 URI.
+        /// </summary>
+        /// <param name="uri">The S3 URI to be checked.</param>
+        /// <returns>true if the URI is a Amazon S3 URI, false; otherwise.</returns>
+        public static bool IsAmazonS3Endpoint(Uri uri)
+        {
+            if (uri == null)
+                throw new ArgumentNullException("uri");
+
+            var match = new Regex(EndpointPattern).Match(uri.Host);
+            return match.Success;
+        }
+
+        /// <summary>
         /// Percent-decodes the given string, with a fast path for strings that are not
         /// percent-encoded.
         /// </summary>
