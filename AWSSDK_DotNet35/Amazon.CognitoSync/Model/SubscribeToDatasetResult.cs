@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoSync.Model
 {
     /// <summary>
-    /// Response to a <code>SubscribeToDataset</code> request.
+    /// Response to a SubscribeToDataset request.
     /// </summary>
     public partial class SubscribeToDatasetResult : AmazonWebServiceResponse
     {

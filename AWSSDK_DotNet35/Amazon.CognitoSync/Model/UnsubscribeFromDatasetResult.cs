@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoSync.Model
 {
     /// <summary>
-    /// Response to an <code>UnsubscribeFromDataset</code> request.
+    /// Response to an UnsubscribeFromDataset request.
     /// </summary>
     public partial class UnsubscribeFromDatasetResult : AmazonWebServiceResponse
     {

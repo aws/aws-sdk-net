@@ -157,7 +157,7 @@ namespace Amazon.S3.Util
 
             return IsAmazonS3Endpoint(new Uri(uri));
         }
-        
+
         /// <summary>
         /// Checks whether the given URI is a Amazon S3 URI.
         /// </summary>

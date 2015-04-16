@@ -23,7 +23,7 @@ using System.Text;
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
     [TestClass]
-    public class LambdaTests
+    public class LambdaTests : TestBase<AmazonLambdaClient>
 	{
         static readonly string LAMBDA_ASSUME_ROLE_POLICY =
 @"
@@ -42,112 +42,77 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 }
 ".Trim();
 
-        static IAmazonIdentityManagementService iamClient;
-        static IAmazonLambda lambdaClient;
-        [ClassInitialize]
-        public static void ClassInitialize(TestContext testContext)
-        {
-            lambdaClient = new AmazonLambdaClient();
+        static IAmazonIdentityManagementService iamClient = new AmazonIdentityManagementServiceClient();
+        static List<string> createdFunctionNames = new List<string>();
+        static List<string> createdRoleNames = new List<string>();
 
-            iamClient = new AmazonIdentityManagementServiceClient();
+        [ClassCleanup]
+        public static void Cleanup()
+        {
+            BaseClean();
+        }
+
+        [TestCleanup]
+        public void TestCleanup()
+        {
+            DeleteCreatedFunctions(Client);
+        }
+
+        public static void DeleteCreatedFunctions(IAmazonLambda lambdaClient)
+        {
+            var deletedFunctions = new List<string>();
+            foreach(var function in createdFunctionNames)
+            {
+                try
+                {
+                    lambdaClient.DeleteFunction(function);
+                    deletedFunctions.Add(function);
+                }
+                catch { }
+            }
+
+            foreach (var df in deletedFunctions)
+                createdFunctionNames.Remove(df);
         }
 
         [TestMethod]
         public void ListFunctionsTest()
         {
-            lambdaClient.ListFunctions();
+            Client.ListFunctions();
         }
 
+// This test depends on functionality that is only in 4.5
 #if BCL45
         [TestMethod]
         public void LambdaFunctionTest()
         {
-            const string HELLO_SCRIPT = 
-@"console.log('Loading event');
-exports.handler = function(event, context) {
-  console.log(""value = "" + event.Key);
-  context.done(null, ""Hello World:"" + event.Key + "", "" + context.System);  // SUCCESS with message
-}";
-            MemoryStream stream = new MemoryStream();
-            using (ZipArchive archive = new ZipArchive(stream, ZipArchiveMode.Create, true))
-            {
-                var entry = archive.CreateEntry("helloworld.js");
-                using (var entryStream = entry.Open())
-                using (var writer = new StreamWriter(entryStream))
-                {
-                    writer.Write(HELLO_SCRIPT);
-                }
-            }
-            stream.Position = 0;
-
-            var functionName = "HelloWorld";
-            bool uploaded = false;
-
-            var iamRoleName = "Lambda-" + DateTime.Now.Ticks;
+            string functionName;
+            string iamRoleName = null;
             bool iamRoleCreated = false;
             try
             {
-                var iamCreateResponse = iamClient.CreateRole(new CreateRoleRequest
-                    {
-                        RoleName = iamRoleName,
-                        AssumeRolePolicyDocument = LAMBDA_ASSUME_ROLE_POLICY
-                    });
-
-                var statement = new Statement(Statement.StatementEffect.Allow);
-                statement.Actions.Add(S3ActionIdentifiers.PutObject);
-                statement.Actions.Add(S3ActionIdentifiers.GetObject);
-                statement.Resources.Add(new Resource("*"));
-
-
-                var policy = new Amazon.Auth.AccessControlPolicy.Policy();
-                policy.Statements.Add(statement);
-
-                iamClient.PutRolePolicy(new PutRolePolicyRequest
-                    {
-                        RoleName = iamRoleName,
-                        PolicyName = "admin",
-                        PolicyDocument = policy.ToJson()
-                    });
-
-                // Wait for the role and policy to propagate
-                Thread.Sleep(5000);
-
-                var uploadRequest = new CreateFunctionRequest
-                {
-                    FunctionName = functionName,
-                    Code = new FunctionCode 
-                    {
-                        ZipFile = stream
-                    },
-                    Handler = "helloworld.handler",
-                    //Mode = Mode.Event,
-                    Runtime = Runtime.Nodejs,
-                    Role = iamCreateResponse.Role.Arn
-                };
-
-                var uploadResponse = lambdaClient.CreateFunction(uploadRequest);
-                uploaded = true;
-                Assert.IsTrue(uploadResponse.CodeSize > 0);
-                Assert.IsNotNull(uploadResponse.FunctionArn);
+                string iamRoleArn;
+                string functionArn;
+                CreateLambdaFunction(out functionName, out functionArn, out iamRoleName, out iamRoleArn);
 
                 // List all the functions and make sure the newly uploaded function is in the collection
-                var listResponse = lambdaClient.ListFunctions();
+                var listResponse = Client.ListFunctions();
                 var function = listResponse.Functions.FirstOrDefault(x => x.FunctionName == functionName);
                 Assert.IsNotNull(function);
                 Assert.AreEqual("helloworld.handler", function.Handler);
-                Assert.AreEqual(iamCreateResponse.Role.Arn, function.Role);
+                Assert.AreEqual(iamRoleArn, function.Role);
 
                 // Get the function with a presigned URL to the uploaded code
-                var getFunctionResponse = lambdaClient.GetFunction(functionName);
+                var getFunctionResponse = Client.GetFunction(functionName);
                 Assert.AreEqual("helloworld.handler", getFunctionResponse.Configuration.Handler);
                 Assert.IsNotNull(getFunctionResponse.Code.Location);
 
                 // Get the function's configuration only
-                var getFunctionConfiguration = lambdaClient.GetFunctionConfiguration(functionName);
+                var getFunctionConfiguration = Client.GetFunctionConfiguration(functionName);
                 Assert.AreEqual("helloworld.handler", getFunctionConfiguration.Handler);
 
                 // Call the function
-                var invokeAsyncResponse = lambdaClient.InvokeAsync(functionName);
+                var invokeAsyncResponse = Client.InvokeAsync(functionName);
                 Assert.AreEqual(invokeAsyncResponse.Status, 202); // Status Code Accepted
 
                 var clientContext = @"{""System"": ""Windows""}";
@@ -164,7 +129,7 @@ exports.handler = function(event, context) {
                 Assert.AreEqual(clientContextBase64, request.ClientContextBase64);
 
                 // Call the function sync
-                var invokeSyncResponse = lambdaClient.Invoke(request);
+                var invokeSyncResponse = Client.Invoke(request);
                 Assert.IsNull(invokeSyncResponse.FunctionError);
                 Assert.IsNull(invokeSyncResponse.LogResult);
                 Assert.IsNotNull(invokeSyncResponse.Payload);
@@ -172,7 +137,7 @@ exports.handler = function(event, context) {
                 Assert.AreNotEqual(0, invokeSyncResponse.StatusCode);
 
                 // Call the function sync, dry run, no payload
-                invokeSyncResponse = lambdaClient.Invoke(new InvokeRequest
+                invokeSyncResponse = Client.Invoke(new InvokeRequest
                 {
                     FunctionName = functionName,
                     InvocationType = InvocationType.DryRun,
@@ -187,7 +152,7 @@ exports.handler = function(event, context) {
                 Assert.AreNotEqual(0, invokeSyncResponse.StatusCode);
 
                 // Call the function sync, pass non-JSON payload
-                invokeSyncResponse = lambdaClient.Invoke(new InvokeRequest
+                invokeSyncResponse = Client.Invoke(new InvokeRequest
                 {
                     FunctionName = functionName,
                     InvocationType = InvocationType.RequestResponse,
@@ -203,12 +168,90 @@ exports.handler = function(event, context) {
             }
             finally
             {
-                if(uploaded)
-                    lambdaClient.DeleteFunction(functionName);
-
                 if (iamRoleCreated)
                     iamClient.DeleteRole(new DeleteRoleRequest { RoleName = iamRoleName });
             }
+        }
+
+        public static void CreateLambdaFunction(out string functionName, out string functionArn, out string iamRoleName, out string iamRoleArn)
+        {
+            functionName = "HelloWorld-" + DateTime.Now.Ticks;
+            iamRoleName = "Lambda-" + DateTime.Now.Ticks;
+
+            CreateLambdaFunction(functionName, iamRoleName, out iamRoleArn, out functionArn);
+        }
+
+        public static void CreateLambdaFunction(string functionName, string iamRoleName, out string iamRoleArn, out string functionArn)
+        {
+            var iamCreateResponse = iamClient.CreateRole(new CreateRoleRequest
+            {
+                RoleName = iamRoleName,
+                AssumeRolePolicyDocument = LAMBDA_ASSUME_ROLE_POLICY
+            });
+            iamRoleArn = iamCreateResponse.Role.Arn;
+            
+            var statement = new Statement(Statement.StatementEffect.Allow);
+            statement.Actions.Add(S3ActionIdentifiers.PutObject);
+            statement.Actions.Add(S3ActionIdentifiers.GetObject);
+            statement.Resources.Add(new Resource("*"));
+
+
+            var policy = new Amazon.Auth.AccessControlPolicy.Policy();
+            policy.Statements.Add(statement);
+
+            iamClient.PutRolePolicy(new PutRolePolicyRequest
+            {
+                RoleName = iamRoleName,
+                PolicyName = "admin",
+                PolicyDocument = policy.ToJson()
+            });
+
+            // Wait for the role and policy to propagate
+            Thread.Sleep(5000);
+
+            MemoryStream stream = CreateScriptStream();
+            var uploadRequest = new CreateFunctionRequest
+            {
+                FunctionName = functionName,
+                Code = new FunctionCode
+                {
+                    ZipFile = stream
+                },
+                Handler = "helloworld.handler",
+                //Mode = Mode.Event,
+                Runtime = Runtime.Nodejs,
+                Role = iamCreateResponse.Role.Arn
+            };
+
+            var uploadResponse = Client.CreateFunction(uploadRequest);
+            createdFunctionNames.Add(functionName);
+
+            Assert.IsTrue(uploadResponse.CodeSize > 0);
+            Assert.IsNotNull(uploadResponse.FunctionArn);
+
+            functionArn = uploadResponse.FunctionArn;
+        }
+
+        private static MemoryStream CreateScriptStream()
+        {
+            const string HELLO_SCRIPT =
+@"console.log('Loading event');
+exports.handler = function(event, context) {
+  console.log(""value = "" + event.Key);
+  context.done(null, ""Hello World:"" + event.Key + "", "" + context.System);  // SUCCESS with message
+}";
+            MemoryStream stream = new MemoryStream();
+            using (ZipArchive archive = new ZipArchive(stream, ZipArchiveMode.Create, true))
+            {
+                var entry = archive.CreateEntry("helloworld.js");
+                using (var entryStream = entry.Open())
+                using (var writer = new StreamWriter(entryStream))
+                {
+                    writer.Write(HELLO_SCRIPT);
+                }
+            }
+            stream.Position = 0;
+            return stream;
         }
 #endif
     }

@@ -33,9 +33,8 @@ namespace Amazon.CognitoSync.Model
     /// 
     ///  
     /// <para>
-    /// <code>ListIdentityPoolUsage</code> can only be called with developer credentials.
-    /// You cannot make this API call with the temporary user credentials provided by Cognito
-    /// Identity.
+    /// ListIdentityPoolUsage can only be called with developer credentials. You cannot make
+    /// this API call with the temporary user credentials provided by Cognito Identity.
     /// </para>
     /// </summary>
     public partial class ListIdentityPoolUsageRequest : AmazonCognitoSyncRequest

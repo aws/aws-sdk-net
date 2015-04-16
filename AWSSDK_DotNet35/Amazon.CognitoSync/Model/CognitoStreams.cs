@@ -39,7 +39,7 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property RoleArn. The ARN of the role Amazon Cognito can assume
         /// in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync)
-        /// to invoke <code>PutRecord</code> on your Cognito stream.
+        /// to invoke PutRecord on your Cognito stream.
         /// </summary>
         public string RoleArn
         {
@@ -57,12 +57,12 @@ namespace Amazon.CognitoSync.Model
         /// Gets and sets the property StreamingStatus. Status of the Cognito streams. Valid values
         /// are: 
         /// <para>
-        /// <code>ENABLED</code> - Streaming of updates to identity pool is enabled.
+        /// ENABLED - Streaming of updates to identity pool is enabled.
         /// </para>
         ///  
         /// <para>
-        /// <code>DISABLED</code>Streaming of updates to identity pool is disabled. Bulk publish
-        /// will also fail if <code>StreamingStatus</code> is <code>DISABLED</code>.
+        /// DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also
+        /// fail if StreamingStatus is DISABLED.
         /// </para>
         /// </summary>
         public StreamingStatus StreamingStatus

@@ -36,9 +36,9 @@ namespace Amazon.CognitoSync.Model
     /// 
     ///  
     /// <para>
-    /// <code>ListRecords</code> can be called with temporary user credentials provided by
-    /// Cognito Identity or with developer credentials. You should use Cognito Identity credentials
-    /// to make this API call.
+    /// ListRecords can be called with temporary user credentials provided by Cognito Identity
+    /// or with developer credentials. You should use Cognito Identity credentials to make
+    /// this API call.
     /// </para>
     /// </summary>
     public partial class ListRecordsRequest : AmazonCognitoSyncRequest

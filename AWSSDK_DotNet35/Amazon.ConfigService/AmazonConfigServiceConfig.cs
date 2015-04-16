@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the config-2014-10-17.normal.json service model.
+ * Do not modify this file. This file is generated from the config-2014-11-12.normal.json service model.
  */
 
 
@@ -56,7 +56,7 @@ namespace Amazon.ConfigService
         {
             get
             {
-                return "2014-10-17";
+                return "2014-11-12";
             }
         }
     }

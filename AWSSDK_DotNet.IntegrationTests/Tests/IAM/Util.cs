@@ -83,17 +83,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
         public static void DeleteTestUsers(AmazonIdentityManagementServiceClient client, params string[] usernames)
         {
-            foreach (string s in usernames)
-            {
-                DeleteAccessKeysForUser(client, s);
-                DeleteUserPoliciesForUser(client, s);
-                DeleteCertificatesForUser(client, s);
-                try 
+            UtilityMethods.WaitUntilSuccess(() => {
+                foreach (string s in usernames)
                 {
-                    client.DeleteLoginProfile(new DeleteLoginProfileRequest() { UserName = s }); 
-                } catch { /* Nobody cares */ }
-                client.DeleteUser(new DeleteUserRequest() { UserName = s });
-            }
+                    DeleteAccessKeysForUser(client, s);
+                    DeleteUserPoliciesForUser(client, s);
+                    DeleteCertificatesForUser(client, s);
+                    try 
+                    {
+                        client.DeleteLoginProfile(new DeleteLoginProfileRequest() { UserName = s }); 
+                    } catch { }
+                
+                   client.DeleteUser(new DeleteUserRequest() { UserName = s });
+                }
+            });
         }
     }
 }

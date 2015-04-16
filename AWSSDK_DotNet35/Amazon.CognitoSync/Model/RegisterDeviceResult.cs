@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoSync.Model
 {
     /// <summary>
-    /// Response to a <code>RegisterDevice</code> request.
+    /// Response to a RegisterDevice request.
     /// </summary>
     public partial class RegisterDeviceResult : AmazonWebServiceResponse
     {

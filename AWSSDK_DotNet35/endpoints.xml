@@ -1974,6 +1974,12 @@
         <Https>true</Https>
         <Hostname>glacier.cn-north-1.amazonaws.com.cn</Hostname>
       </Endpoint>
+      <Endpoint>
+        <ServiceName>directconnect</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>directconnect.cn-north-1.amazonaws.com.cn</Hostname>
+      </Endpoint>
     </Region>
     <Region>
       <Name>us-gov-west-1</Name>
@@ -2521,6 +2527,7 @@
       <RegionName>sa-east-1</RegionName>
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
+      <RegionName>cn-north-1</RegionName>
     </Service>
     <Service>
       <Name>datapipeline</Name>
