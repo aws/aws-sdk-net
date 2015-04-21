@@ -29,22 +29,21 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the PutPipelineDefinition operation.
-    /// Adds tasks, schedules, and preconditions that control the behavior of the pipeline.
-    /// You can use PutPipelineDefinition to populate a new pipeline. 
+    /// Adds tasks, schedules, and preconditions to the specified pipeline. You can use <code>PutPipelineDefinition</code>
+    /// to populate a new pipeline.
     /// 
     ///  
     /// <para>
-    ///  <a>PutPipelineDefinition</a> also validates the configuration as it adds it to the
-    /// pipeline. Changes to the pipeline are saved unless one of the following three validation
-    /// errors exists in the pipeline. <ol> <li>An object is missing a name or identifier
-    /// field.</li> <li>A string or reference field is empty.</li> <li>The number of objects
-    /// in the pipeline exceeds the maximum allowed objects.</li> <li>The pipeline is in a
-    /// FINISHED state.</li> </ol> 
+    ///  <code>PutPipelineDefinition</code> also validates the configuration as it adds it
+    /// to the pipeline. Changes to the pipeline are saved unless one of the following three
+    /// validation errors exists in the pipeline. 
     /// </para>
-    ///  
+    ///  <ol> <li>An object is missing a name or identifier field.</li> <li>A string or reference
+    /// field is empty.</li> <li>The number of objects in the pipeline exceeds the maximum
+    /// allowed objects.</li> <li>The pipeline is in a FINISHED state.</li> </ol> 
     /// <para>
-    ///  Pipeline object definitions are passed to the <a>PutPipelineDefinition</a> action
-    /// and returned by the <a>GetPipelineDefinition</a> action. 
+    ///  Pipeline object definitions are passed to the <code>PutPipelineDefinition</code>
+    /// action and returned by the <a>GetPipelineDefinition</a> action. 
     /// </para>
     /// </summary>
     public partial class PutPipelineDefinitionRequest : AmazonDataPipelineRequest
@@ -57,7 +56,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property ParameterObjects. 
         /// <para>
-        /// A list of parameter objects used with the pipeline.
+        /// The parameter objects used with the pipeline.
         /// </para>
         /// </summary>
         public List<ParameterObject> ParameterObjects
@@ -75,7 +74,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property ParameterValues. 
         /// <para>
-        /// A list of parameter values used with the pipeline.
+        /// The parameter values used with the pipeline.
         /// </para>
         /// </summary>
         public List<ParameterValue> ParameterValues
@@ -93,7 +92,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
-        /// The identifier of the pipeline to be configured.
+        /// The ID of the pipeline.
         /// </para>
         /// </summary>
         public string PipelineId
@@ -111,7 +110,8 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineObjects. 
         /// <para>
-        /// The objects that define the pipeline. These will overwrite the existing pipeline definition.
+        /// The objects that define the pipeline. These objects overwrite the existing pipeline
+        /// definition.
         /// </para>
         /// </summary>
         public List<PipelineObject> PipelineObjects

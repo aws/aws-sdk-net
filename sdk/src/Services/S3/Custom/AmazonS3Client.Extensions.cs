@@ -88,7 +88,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("To use AWS4 signing, a region must be specified in the client configuration using the AuthenticationRegion or Region properties, or be determinable from the service URL.");
 
             RegionEndpoint endpoint = RegionEndpoint.GetBySystemName(region);
-            if (endpoint.GetEndpointForService("s3").SignatureVersionOverride == "4")
+            if (endpoint.GetEndpointForService("s3").SignatureVersionOverride == "4" || endpoint.GetEndpointForService("s3").SignatureVersionOverride == null)
                 aws4Signing = true;
 
             var immutableCredentials = Credentials.GetCredentials();

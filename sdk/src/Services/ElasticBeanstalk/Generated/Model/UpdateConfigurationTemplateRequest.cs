@@ -32,7 +32,9 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Updates the specified configuration template to have the specified properties or
     /// configuration option values. 
     /// 
-    ///  
+    ///  <note> If a property (for example, <code>ApplicationName</code>) is not provided,
+    /// its value remains unchanged. To clear such properties, specify an empty string. </note>
+    /// 
     /// <para>
     /// Related Topics
     /// </para>

@@ -48,81 +48,65 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// <i>Applications</i>, which are unique identifiers that AWS CodeDeploy uses to ensure
-    /// that the correct combinations of revisions, deployment configurations, and deployment
-    /// groups are being referenced during deployments.
+    /// Applications are unique identifiers that AWS CodeDeploy uses to ensure that the correct
+    /// combinations of revisions, deployment configurations, and deployment groups are being
+    /// referenced during deployments.
     /// </para>
     ///  
     /// <para>
-    /// You can work with applications by calling <a>CreateApplication</a>, <a>DeleteApplication</a>,
-    /// <a>GetApplication</a>, <a>ListApplications</a>, <a>BatchGetApplications</a>, and <a>UpdateApplication</a>
-    /// to create, delete, and get information about applications, and to change information
-    /// about an application, respectively.
+    /// You can use the AWS CodeDeploy APIs to create, delete, get, list, and update applications.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <i>Deployment configurations</i>, which are sets of deployment rules and deployment
-    /// success and failure conditions that AWS CodeDeploy uses during deployments.
+    /// Deployment configurations are sets of deployment rules and deployment success and
+    /// failure conditions that AWS CodeDeploy uses during deployments.
     /// </para>
     ///  
     /// <para>
-    /// You can work with deployment configurations by calling <a>CreateDeploymentConfig</a>,
-    /// <a>DeleteDeploymentConfig</a>, <a>GetDeploymentConfig</a>, and <a>ListDeploymentConfigs</a>
-    /// to create, delete, and get information about deployment configurations, respectively.
+    /// You can use the AWS CodeDeploy APIs to create, delete, get, and list deployment configurations.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <i>Deployment groups</i>, which represent groups of Amazon EC2 instances to which
-    /// application revisions can be deployed.
+    /// Deployment groups are groups of instances to which application revisions can be deployed.
     /// </para>
     ///  
     /// <para>
-    /// You can work with deployment groups by calling <a>CreateDeploymentGroup</a>, <a>DeleteDeploymentGroup</a>,
-    /// <a>GetDeploymentGroup</a>, <a>ListDeploymentGroups</a>, and <a>UpdateDeploymentGroup</a>
-    /// to create, delete, and get information about single and multiple deployment groups,
-    /// and to change information about a deployment group, respectively.
+    /// You can use the AWS CodeDeploy APIs to create, delete, get, list, and update deployment
+    /// groups.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <i>Deployment instances</i> (also known simply as <i>instances</i>), which represent
-    /// Amazon EC2 instances to which application revisions are deployed. Deployment instances
-    /// are identified by their Amazon EC2 tags or Auto Scaling group names. Deployment instances
+    /// Instances represent Amazon EC2 instances to which application revisions are deployed.
+    /// Instances are identified by their Amazon EC2 tags or Auto Scaling group names. Instances
     /// belong to deployment groups.
     /// </para>
     ///  
     /// <para>
-    /// You can work with deployment instances by calling <a>GetDeploymentInstance</a> and
-    /// <a>ListDeploymentInstances</a> to get information about single and multiple deployment
-    /// instances, respectively.
+    /// You can use the AWS CodeDeploy APIs to get and list instances.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <i>Deployments</i>, which represent the process of deploying revisions to deployment
-    /// groups.
+    /// Deployments represent the process of deploying revisions to instances.
     /// </para>
     ///  
     /// <para>
-    /// You can work with deployments by calling <a>CreateDeployment</a>, <a>GetDeployment</a>,
-    /// <a>ListDeployments</a>, <a>BatchGetDeployments</a>, and <a>StopDeployment</a> to create
-    /// and get information about deployments, and to stop a deployment, respectively.
+    /// You can use the AWS CodeDeploy APIs to create, get, list, and stop deployments.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <i>Application revisions</i> (also known simply as <i>revisions</i>), which are archive
-    /// files that are stored in Amazon S3 buckets or GitHub repositories. These revisions
-    /// contain source content (such as source code, web pages, executable files, any deployment
-    /// scripts, and similar) along with an Application Specification file (AppSpec file).
-    /// (The AppSpec file is unique to AWS CodeDeploy; it defines a series of deployment actions
-    /// that you want AWS CodeDeploy to execute.) An application revision is uniquely identified
-    /// by its Amazon S3 object key and its ETag, version, or both. Application revisions
-    /// are deployed to deployment groups.
+    /// Application revisions are archive files that are stored in Amazon S3 buckets or GitHub
+    /// repositories. These revisions contain source content (such as source code, web pages,
+    /// executable files, any deployment scripts, and similar) along with an Application Specification
+    /// file (AppSpec file). (The AppSpec file is unique to AWS CodeDeploy; it defines a series
+    /// of deployment actions that you want AWS CodeDeploy to execute.) An application revision
+    /// is uniquely identified by its Amazon S3 object key and its ETag, version, or both
+    /// (for application revisions that are stored in Amazon S3 buckets) or by its repository
+    /// name and commit ID (for applications revisions that are stored in GitHub repositories).
+    /// Application revisions are deployed through deployment groups.
     /// </para>
     ///  
     /// <para>
-    /// You can work with application revisions by calling <a>GetApplicationRevision</a>,
-    /// <a>ListApplicationRevisions</a>, and <a>RegisterApplicationRevision</a> to get information
-    /// about application revisions and to inform AWS CodeDeploy about an application revision,
-    /// respectively.
+    /// You can use the AWS CodeDeploy APIs to get, list, and register application revisions.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -252,6 +236,36 @@ namespace Amazon.CodeDeploy
         #endregion
 
         
+        #region  AddTagsToOnPremisesInstances
+
+        internal AddTagsToOnPremisesInstancesResponse AddTagsToOnPremisesInstances(AddTagsToOnPremisesInstancesRequest request)
+        {
+            var marshaller = new AddTagsToOnPremisesInstancesRequestMarshaller();
+            var unmarshaller = AddTagsToOnPremisesInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<AddTagsToOnPremisesInstancesRequest,AddTagsToOnPremisesInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTagsToOnPremisesInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToOnPremisesInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AddTagsToOnPremisesInstancesResponse> AddTagsToOnPremisesInstancesAsync(AddTagsToOnPremisesInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AddTagsToOnPremisesInstancesRequestMarshaller();
+            var unmarshaller = AddTagsToOnPremisesInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddTagsToOnPremisesInstancesRequest,AddTagsToOnPremisesInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetApplications
 
         internal BatchGetApplicationsResponse BatchGetApplications(BatchGetApplicationsRequest request)
@@ -307,6 +321,36 @@ namespace Amazon.CodeDeploy
             var unmarshaller = BatchGetDeploymentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetDeploymentsRequest,BatchGetDeploymentsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetOnPremisesInstances
+
+        internal BatchGetOnPremisesInstancesResponse BatchGetOnPremisesInstances(BatchGetOnPremisesInstancesRequest request)
+        {
+            var marshaller = new BatchGetOnPremisesInstancesRequestMarshaller();
+            var unmarshaller = BatchGetOnPremisesInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetOnPremisesInstancesRequest,BatchGetOnPremisesInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetOnPremisesInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetOnPremisesInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<BatchGetOnPremisesInstancesResponse> BatchGetOnPremisesInstancesAsync(BatchGetOnPremisesInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new BatchGetOnPremisesInstancesRequestMarshaller();
+            var unmarshaller = BatchGetOnPremisesInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetOnPremisesInstancesRequest,BatchGetOnPremisesInstancesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -522,6 +566,36 @@ namespace Amazon.CodeDeploy
 
         #endregion
         
+        #region  DeregisterOnPremisesInstance
+
+        internal DeregisterOnPremisesInstanceResponse DeregisterOnPremisesInstance(DeregisterOnPremisesInstanceRequest request)
+        {
+            var marshaller = new DeregisterOnPremisesInstanceRequestMarshaller();
+            var unmarshaller = DeregisterOnPremisesInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterOnPremisesInstanceRequest,DeregisterOnPremisesInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterOnPremisesInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterOnPremisesInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeregisterOnPremisesInstanceResponse> DeregisterOnPremisesInstanceAsync(DeregisterOnPremisesInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeregisterOnPremisesInstanceRequestMarshaller();
+            var unmarshaller = DeregisterOnPremisesInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterOnPremisesInstanceRequest,DeregisterOnPremisesInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetApplication
 
         internal GetApplicationResponse GetApplication(GetApplicationRequest request)
@@ -697,6 +771,36 @@ namespace Amazon.CodeDeploy
             var unmarshaller = GetDeploymentInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDeploymentInstanceRequest,GetDeploymentInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetOnPremisesInstance
+
+        internal GetOnPremisesInstanceResponse GetOnPremisesInstance(GetOnPremisesInstanceRequest request)
+        {
+            var marshaller = new GetOnPremisesInstanceRequestMarshaller();
+            var unmarshaller = GetOnPremisesInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<GetOnPremisesInstanceRequest,GetOnPremisesInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOnPremisesInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOnPremisesInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetOnPremisesInstanceResponse> GetOnPremisesInstanceAsync(GetOnPremisesInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetOnPremisesInstanceRequestMarshaller();
+            var unmarshaller = GetOnPremisesInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetOnPremisesInstanceRequest,GetOnPremisesInstanceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -890,6 +994,36 @@ namespace Amazon.CodeDeploy
 
         #endregion
         
+        #region  ListOnPremisesInstances
+
+        internal ListOnPremisesInstancesResponse ListOnPremisesInstances(ListOnPremisesInstancesRequest request)
+        {
+            var marshaller = new ListOnPremisesInstancesRequestMarshaller();
+            var unmarshaller = ListOnPremisesInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<ListOnPremisesInstancesRequest,ListOnPremisesInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOnPremisesInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOnPremisesInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListOnPremisesInstancesResponse> ListOnPremisesInstancesAsync(ListOnPremisesInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListOnPremisesInstancesRequestMarshaller();
+            var unmarshaller = ListOnPremisesInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOnPremisesInstancesRequest,ListOnPremisesInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RegisterApplicationRevision
 
         internal RegisterApplicationRevisionResponse RegisterApplicationRevision(RegisterApplicationRevisionRequest request)
@@ -915,6 +1049,66 @@ namespace Amazon.CodeDeploy
             var unmarshaller = RegisterApplicationRevisionResponseUnmarshaller.Instance;
 
             return InvokeAsync<RegisterApplicationRevisionRequest,RegisterApplicationRevisionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterOnPremisesInstance
+
+        internal RegisterOnPremisesInstanceResponse RegisterOnPremisesInstance(RegisterOnPremisesInstanceRequest request)
+        {
+            var marshaller = new RegisterOnPremisesInstanceRequestMarshaller();
+            var unmarshaller = RegisterOnPremisesInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterOnPremisesInstanceRequest,RegisterOnPremisesInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterOnPremisesInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterOnPremisesInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RegisterOnPremisesInstanceResponse> RegisterOnPremisesInstanceAsync(RegisterOnPremisesInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RegisterOnPremisesInstanceRequestMarshaller();
+            var unmarshaller = RegisterOnPremisesInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterOnPremisesInstanceRequest,RegisterOnPremisesInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveTagsFromOnPremisesInstances
+
+        internal RemoveTagsFromOnPremisesInstancesResponse RemoveTagsFromOnPremisesInstances(RemoveTagsFromOnPremisesInstancesRequest request)
+        {
+            var marshaller = new RemoveTagsFromOnPremisesInstancesRequestMarshaller();
+            var unmarshaller = RemoveTagsFromOnPremisesInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveTagsFromOnPremisesInstancesRequest,RemoveTagsFromOnPremisesInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTagsFromOnPremisesInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromOnPremisesInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RemoveTagsFromOnPremisesInstancesResponse> RemoveTagsFromOnPremisesInstancesAsync(RemoveTagsFromOnPremisesInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveTagsFromOnPremisesInstancesRequestMarshaller();
+            var unmarshaller = RemoveTagsFromOnPremisesInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveTagsFromOnPremisesInstancesRequest,RemoveTagsFromOnPremisesInstancesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

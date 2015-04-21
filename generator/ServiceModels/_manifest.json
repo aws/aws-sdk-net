@@ -367,6 +367,15 @@
             "authentication-service-name": "kms",
             "synopsis": "AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys."
         },
+		{
+            "active": true,
+
+            "model": "machinelearning",
+			"base-name" : "MachineLearning",
+			"region-lookup-name" : "machinelearning",
+			"authentication-service-name" : "machinelearning",
+            "synopsis": "Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology."
+		},
         {
             "active": true,
 
@@ -498,7 +507,16 @@
             "base-name": "StorageGateway",
             "region-lookup-name": "storagegateway",
             "service-url": "https://storagegateway.us-east-1.amazonaws.com",
-            "synopsis": "he AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization’s on-premises IT environment and AWS’s storage infrastructure."
+            "synopsis": "The AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization’s on-premises IT environment and AWS’s storage infrastructure."
+        },
+		{
+			"active" : true,
+			
+            "model": "workspaces",
+            "base-name": "WorkSpaces",
+            "region-lookup-name": "workspaces",
+            "service-url": "https://workspaces.us-east-1.amazonaws.com",
+            "synopsis": "Amazon WorkSpaces is a managed desktop computing service in the cloud."
         }
     ]
 }

@@ -1,0 +1,353 @@
+﻿<docs>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient"/>
+      <member name="T:Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
+      <member name="T:Amazon.SimpleEmail.Model.Destination"/>
+      <member name="P:Amazon.SimpleEmail.Model.Destination.ToAddresses"/>
+      <member name="T:Amazon.SimpleEmail.Model.Content"/>
+      <member name="T:Amazon.SimpleEmail.Model.Body"/>
+      <member name="T:Amazon.SimpleEmail.Model.Message"/>
+      <member name="T:Amazon.SimpleEmail.Model.SendEmailRequest"/>
+      <member name="P:Amazon.SimpleEmail.Model.SendEmailRequest.Destination"/>
+      <member name="P:Amazon.SimpleEmail.Model.SendEmailRequest.Message"/>
+      <member name="P:Amazon.SimpleEmail.Model.SendEmailRequest.Source"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.SendEmail(Amazon.SimpleEmail.Model.SendEmailRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.SendEmail(Amazon.SimpleEmail.Model.SendEmailRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to send an email.</para>
+        <code title="Send email example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESSendEmail"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.Model.RawMessage"/>
+      <member name="P:Amazon.SimpleEmail.Model.RawMessage.Data"/>
+      <member name="T:Amazon.SimpleEmail.Model.SendRawEmailRequest"/>
+      <member name="P:Amazon.SimpleEmail.Model.SendRawEmailRequest.Destinations"/>
+      <member name="P:Amazon.SimpleEmail.Model.SendRawEmailRequest.RawMessage"/>
+      <member name="P:Amazon.SimpleEmail.Model.SendRawEmailRequest.Source"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.SendRawEmail(Amazon.SimpleEmail.Model.SendRawEmailRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.SendRawEmail(Amazon.SimpleEmail.Model.SendRawEmailRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to send a raw email.</para>
+        <code title="Send raw email example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESSendRawEmail"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.Model.GetSendQuotaResponse"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.GetSendQuota(Amazon.SimpleEmail.Model.GetSendQuotaRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.GetSendQuota(Amazon.SimpleEmail.Model.GetSendQuotaRequest)"/>
+      <member name="P:Amazon.SimpleEmail.Model.GetSendQuotaResult.Max24HourSend"/>
+      <member name="P:Amazon.SimpleEmail.Model.GetSendQuotaResult.MaxSendRate"/>
+      <member name="P:Amazon.SimpleEmail.Model.GetSendQuotaResult.SentLast24Hours"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to get information about a user's current sending limits.</para>
+        <code title="Get sending limits example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESGetSendQuota"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.Model.SetIdentityFeedbackForwardingEnabledRequest"/>
+      <member name="P:Amazon.SimpleEmail.Model.SetIdentityFeedbackForwardingEnabledRequest.ForwardingEnabled"/>
+      <member name="P:Amazon.SimpleEmail.Model.SetIdentityFeedbackForwardingEnabledRequest.Identity"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.SetIdentityFeedbackForwardingEnabled(Amazon.SimpleEmail.Model.SetIdentityFeedbackForwardingEnabledRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.SetIdentityFeedbackForwardingEnabled(Amazon.SimpleEmail.Model.SetIdentityFeedbackForwardingEnabledRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to set whether forwarding and bounce notifications are forwarded as email.</para>
+        <code title="Set notification forwarding example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESSetIdentityFeedbackForwardingEnabled"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.Model.ListIdentitiesResponse"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.ListIdentities(Amazon.SimpleEmail.Model.ListIdentitiesRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.ListIdentities(Amazon.SimpleEmail.Model.ListIdentitiesRequest)"/>
+      <member name="P:Amazon.SimpleEmail.Model.ListIdentitiesResult.Identities"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to list all identities (email addresses and domains) under an account.</para>
+        <code title="List identities example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESListIdentities"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.Model.ListVerifiedEmailAddressesResponse"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.ListVerifiedEmailAddresses(Amazon.SimpleEmail.Model.ListVerifiedEmailAddressesRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.ListVerifiedEmailAddresses(Amazon.SimpleEmail.Model.ListVerifiedEmailAddressesRequest)"/>
+      <member name="P:Amazon.SimpleEmail.Model.ListVerifiedEmailAddressesResult.VerifiedEmailAddresses"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to list all verified email addresses under an account.</para>
+        <code title="List verified email addresses example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESListVerifiedEmailAddresses"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.Model.GetSendStatisticsResponse"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.GetSendStatistics(Amazon.SimpleEmail.Model.GetSendStatisticsRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.GetSendStatistics(Amazon.SimpleEmail.Model.GetSendStatisticsRequest)"/>
+      <member name="P:Amazon.Runtime.ResponseMetadata.RequestId"/>
+      <member name="P:Amazon.SimpleEmail.Model.GetSendStatisticsResult.SendDataPoints"/>
+      <member name="T:Amazon.SimpleEmail.Model.SendDataPoint"/>
+      <member name="P:Amazon.SimpleEmail.Model.SendDataPoint.Timestamp"/>
+      <member name="P:Amazon.SimpleEmail.Model.SendDataPoint.Bounces"/>
+      <member name="P:Amazon.SimpleEmail.Model.SendDataPoint.Complaints"/>
+      <member name="P:Amazon.SimpleEmail.Model.SendDataPoint.DeliveryAttempts"/>
+      <member name="P:Amazon.SimpleEmail.Model.SendDataPoint.Rejects"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to get email send statistics for the last two weeks of activity.</para>
+        <code title="Get send statistics example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESGetSendStatistics"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.Model.GetIdentityNotificationAttributesRequest"/>
+      <member name="P:Amazon.SimpleEmail.Model.GetIdentityNotificationAttributesRequest.Identities"/>
+      <member name="T:Amazon.SimpleEmail.Model.GetIdentityNotificationAttributesResponse"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.GetIdentityNotificationAttributes(Amazon.SimpleEmail.Model.GetIdentityNotificationAttributesRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.GetIdentityNotificationAttributes(Amazon.SimpleEmail.Model.GetIdentityNotificationAttributesRequest)"/>
+      <member name="P:Amazon.SimpleEmail.Model.GetIdentityNotificationAttributesResult.NotificationAttributes"/>
+      <member name="P:Amazon.SimpleEmail.Model.IdentityNotificationAttributes.BounceTopic"/>
+      <member name="P:Amazon.SimpleEmail.Model.IdentityNotificationAttributes.ComplaintTopic"/>
+      <member name="P:Amazon.SimpleEmail.Model.IdentityNotificationAttributes.ForwardingEnabled"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to get information about notification attributes for identities (email addresses and domains).</para>
+        <code title="Get notification attributes example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESGetIdentityNotificationAttributes"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.Model.SetIdentityDkimEnabledRequest"/>
+      <member name="P:Amazon.SimpleEmail.Model.SetIdentityDkimEnabledRequest.DkimEnabled"/>
+      <member name="P:Amazon.SimpleEmail.Model.SetIdentityDkimEnabledRequest.Identity"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.SetIdentityDkimEnabled(Amazon.SimpleEmail.Model.SetIdentityDkimEnabledRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.SetIdentityDkimEnabled(Amazon.SimpleEmail.Model.SetIdentityDkimEnabledRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to specify whether Easy DKIM signing of email sent from an identity is enabled.</para>
+        <code title="Set DKIM identity example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESSetIdentityDkimEnabled"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.Model.GetIdentityVerificationAttributesRequest"/>
+      <member name="P:Amazon.SimpleEmail.Model.GetIdentityVerificationAttributesRequest.Identities"/>
+      <member name="T:Amazon.SimpleEmail.Model.GetIdentityVerificationAttributesResponse"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.GetIdentityVerificationAttributes(Amazon.SimpleEmail.Model.GetIdentityVerificationAttributesRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.GetIdentityVerificationAttributes(Amazon.SimpleEmail.Model.GetIdentityVerificationAttributesRequest)"/>
+      <member name="P:Amazon.SimpleEmail.Model.GetIdentityVerificationAttributesResult.VerificationAttributes"/>
+      <member name="P:Amazon.SimpleEmail.Model.IdentityVerificationAttributes.VerificationStatus"/>
+      <member name="P:Amazon.SimpleEmail.Model.IdentityVerificationAttributes.VerificationToken"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to get information about verification attributes for identities (email addresses and domains).</para>
+        <code title="Get verification attributes example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESGetIdentityVerificationAttributes"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.Model.VerifyEmailAddressRequest"/>
+      <member name="P:Amazon.SimpleEmail.Model.VerifyEmailAddressRequest.EmailAddress"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.VerifyEmailAddress(Amazon.SimpleEmail.Model.VerifyEmailAddressRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.VerifyEmailAddress(Amazon.SimpleEmail.Model.VerifyEmailAddressRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to verify an email address.</para>
+        <code title="Verify email address example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESVerifyEmailAddress"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.Model.VerifyEmailIdentityRequest"/>
+      <member name="P:Amazon.SimpleEmail.Model.VerifyEmailIdentityRequest.EmailAddress"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.VerifyEmailIdentity(Amazon.SimpleEmail.Model.VerifyEmailIdentityRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.VerifyEmailIdentity(Amazon.SimpleEmail.Model.VerifyEmailIdentityRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to verify an email identity.</para>
+        <code title="Verify email identity example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESVerifyEmailIdentity"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.Model.GetIdentityDkimAttributesRequest"/>
+      <member name="P:Amazon.SimpleEmail.Model.GetIdentityDkimAttributesRequest.Identities"/>
+      <member name="T:Amazon.SimpleEmail.Model.GetIdentityDkimAttributesResponse"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.GetIdentityDkimAttributes(Amazon.SimpleEmail.Model.GetIdentityDkimAttributesRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.GetIdentityDkimAttributes(Amazon.SimpleEmail.Model.GetIdentityDkimAttributesRequest)"/>
+      <member name="P:Amazon.SimpleEmail.Model.GetIdentityDkimAttributesResult.DkimAttributes"/>
+      <member name="P:Amazon.SimpleEmail.Model.IdentityDkimAttributes.DkimEnabled"/>
+      <member name="P:Amazon.SimpleEmail.Model.IdentityDkimAttributes.DkimVerificationStatus"/>
+      <member name="P:Amazon.SimpleEmail.Model.IdentityDkimAttributes.DkimTokens"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to get information about Easy DKIM attributes for identities (email addresses and domains).</para>
+        <code title="Get DKIM attributes example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESGetIdentityDkimAttributes"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.Model.SetIdentityNotificationTopicRequest"/>
+      <member name="P:Amazon.SimpleEmail.Model.SetIdentityNotificationTopicRequest.Identity"/>
+      <member name="P:Amazon.SimpleEmail.Model.SetIdentityNotificationTopicRequest.NotificationType"/>
+      <member name="T:Amazon.SimpleEmail.NotificationType"/>
+      <member name="P:Amazon.SimpleEmail.Model.SetIdentityNotificationTopicRequest.SnsTopic"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.SetIdentityNotificationTopic(Amazon.SimpleEmail.Model.SetIdentityNotificationTopicRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.SetIdentityNotificationTopic(Amazon.SimpleEmail.Model.SetIdentityNotificationTopicRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to set notification topics for an identity (email address or domain).</para>
+        <code title="Set notification topics example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESSetIdentityNotificationTopic"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.Model.DeleteVerifiedEmailAddressRequest"/>
+      <member name="P:Amazon.SimpleEmail.Model.DeleteVerifiedEmailAddressRequest.EmailAddress"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.DeleteVerifiedEmailAddress(Amazon.SimpleEmail.Model.DeleteVerifiedEmailAddressRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.DeleteVerifiedEmailAddress(Amazon.SimpleEmail.Model.DeleteVerifiedEmailAddressRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to delete a verified email address.</para>
+        <code title="Delete verified email address example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESDeleteVerifiedEmailAddress"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.Model.VerifyDomainIdentityRequest"/>
+      <member name="P:Amazon.SimpleEmail.Model.VerifyDomainIdentityRequest.Domain"/>
+      <member name="T:Amazon.SimpleEmail.Model.VerifyDomainIdentityResponse"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.VerifyDomainIdentity(Amazon.SimpleEmail.Model.VerifyDomainIdentityRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.VerifyDomainIdentity(Amazon.SimpleEmail.Model.VerifyDomainIdentityRequest)"/>
+      <member name="P:Amazon.SimpleEmail.Model.VerifyDomainIdentityResult.VerificationToken"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to verify a domain.</para>
+        <code title="Verify domain example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESVerifyDomainIdentity"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.Model.VerifyDomainDkimRequest"/>
+      <member name="P:Amazon.SimpleEmail.Model.VerifyDomainDkimRequest.Domain"/>
+      <member name="T:Amazon.SimpleEmail.Model.VerifyDomainDkimResponse"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.VerifyDomainDkim(Amazon.SimpleEmail.Model.VerifyDomainDkimRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.VerifyDomainDkim(Amazon.SimpleEmail.Model.VerifyDomainDkimRequest)"/>
+      <member name="P:Amazon.SimpleEmail.Model.VerifyDomainDkimResult.DkimTokens"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to get a set of DKIM tokens for a domain.</para>
+        <code title="Get domain DKIM tokens example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESVerifyDomainDkim"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleEmail.Model.DeleteIdentityRequest"/>
+      <member name="P:Amazon.SimpleEmail.Model.DeleteIdentityRequest.Identity"/>
+      <member name="M:Amazon.SimpleEmail.AmazonSimpleEmailServiceClient.DeleteIdentity(Amazon.SimpleEmail.Model.DeleteIdentityRequest)"/>
+      <member name="M:Amazon.SimpleEmail.IAmazonSimpleEmailService.DeleteIdentity(Amazon.SimpleEmail.Model.DeleteIdentityRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to delete an identity (email address or domain).</para>
+        <code title="Delete identity example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SES\SESSamples.cs"
+              region="SESDeleteIdentity"/>
+      </example>
+    </value>
+  </doc>
+</docs>

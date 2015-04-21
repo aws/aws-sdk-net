@@ -34,7 +34,7 @@ namespace ServiceClientGenerator
         /// <para>
         /// The collection of options parsed from the command line.
         /// These arguments exist on the command line as individual entries
-        /// prefixed with '--'. Options can be set in a response file
+        /// prefixed with '-' or '/'. Options can be set in a response file
         /// and indicated with a '@' prefix, in which case the contents
         /// of the file will be read and inserted into the same relative
         /// location in the arguments to parse (allowing for later

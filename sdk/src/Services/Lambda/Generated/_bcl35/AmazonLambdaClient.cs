@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2014-11-11.normal.json service model.
+ * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 
 
@@ -33,16 +33,16 @@ namespace Amazon.Lambda
     /// <summary>
     /// Implementation for accessing Lambda
     ///
-    /// AWS Lambda 
+    /// AWS LambdaS 
     /// <para>
     /// <b>Overview</b>
     /// </para>
     ///  
     /// <para>
-    /// This is the AWS Lambda API Reference. The AWS Lambda Developer Guide provides additional
-    /// information. For the service overview, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
+    /// This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides
+    /// additional information. For the service overview, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
     /// is AWS Lambda</a>, and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-    /// LambdaL How it Works</a> in the AWS Lambda Developer Guide.
+    /// LambdaL How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class AmazonLambdaClient : AmazonServiceClient, IAmazonLambda
@@ -226,88 +226,323 @@ namespace Amazon.Lambda
         #endregion
 
         
-        #region  AddEventSource
+        #region  AddPermission
 
         /// <summary>
-        /// Identifies a stream as an event source for an AWS Lambda function. It can be either
-        /// an Amazon Kinesis stream or a Amazon DynamoDB stream. AWS Lambda invokes the specified
+        /// Adds a permission to the access policy associated with the specified AWS Lambda function.
+        /// In a "push event" model, the access policy attached to the Lambda function grants
+        /// Amazon S3 or a user application permission for the Lambda <code>lambda:Invoke</code>
+        /// action. For information about the push model, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+        /// Lambda: How it Works</a>. Each Lambda function has one access policy associated with
+        /// it. You can use the <code>AddPermission</code> API to add a permission to the policy.
+        /// You have one access policy but it can have multiple permission statements.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permission for the <code>lambda:AddPermission</code> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddPermission service method.</param>
+        /// 
+        /// <returns>The response from the AddPermission service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PolicyLengthExceededException">
+        /// Lambda function access policy is limited to 20 KB.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public AddPermissionResponse AddPermission(AddPermissionRequest request)
+        {
+            var marshaller = new AddPermissionRequestMarshaller();
+            var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
+
+            return Invoke<AddPermissionRequest,AddPermissionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddPermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddPermission operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddPermission
+        ///         operation.</returns>
+        public IAsyncResult BeginAddPermission(AddPermissionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new AddPermissionRequestMarshaller();
+            var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddPermissionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddPermission operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddPermission.</param>
+        /// 
+        /// <returns>Returns a  AddPermissionResult from Lambda.</returns>
+        public  AddPermissionResponse EndAddPermission(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AddPermissionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateEventSourceMapping
+
+        /// <summary>
+        /// Identifies a stream as an event source for a Lambda function. It can be either an
+        /// Amazon Kinesis stream or an Amazon DynamoDB stream. AWS Lambda invokes the specified
         /// function when records are posted to the stream.
         /// 
         ///  
         /// <para>
         /// This is the pull model, where AWS Lambda invokes the function. For more information,
         /// go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-        /// Lambda: How it Works</a> in the AWS Lambda Developer Guide.
+        /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// This association between an Amazon Kinesis stream and an AWS Lambda function is called
+        /// This association between an Amazon Kinesis stream and a Lambda function is called
         /// the event source mapping. You provide the configuration information (for example,
-        /// which stream to read from and which AWS Lambda function to invoke) for the event source
+        /// which stream to read from and which Lambda function to invoke) for the event source
         /// mapping in the request body.
         /// </para>
         ///  
         /// <para>
-        ///  Each event source, such as a Kinesis stream, can only be associated with one AWS
-        /// Lambda function. If you call <a>AddEventSource</a> for an event source that is already
-        /// mapped to another AWS Lambda function, the existing mapping is updated to call the
-        /// new function instead of the old one. 
+        ///  Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated
+        /// with multiple AWS Lambda function. A given Lambda function can be associated with
+        /// multiple AWS event sources. 
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permission for the <code>iam:PassRole</code> action for the
-        /// IAM role. It also requires permission for the <code>lambda:AddEventSource</code> action.
+        /// This operation requires permission for the <code>lambda:CreateEventSourceMapping</code>
+        /// action.
         /// </para>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the AddEventSource service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventSourceMapping service method.</param>
         /// 
-        /// <returns>The response from the AddEventSource service method, as returned by Lambda.</returns>
+        /// <returns>The response from the CreateEventSourceMapping service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
-        /// role for AWS Lambda to assume in the <code>UploadFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
-        public AddEventSourceResponse AddEventSource(AddEventSourceRequest request)
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public CreateEventSourceMappingResponse CreateEventSourceMapping(CreateEventSourceMappingRequest request)
         {
-            var marshaller = new AddEventSourceRequestMarshaller();
-            var unmarshaller = AddEventSourceResponseUnmarshaller.Instance;
+            var marshaller = new CreateEventSourceMappingRequestMarshaller();
+            var unmarshaller = CreateEventSourceMappingResponseUnmarshaller.Instance;
 
-            return Invoke<AddEventSourceRequest,AddEventSourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateEventSourceMappingRequest,CreateEventSourceMappingResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the AddEventSource operation.
+        /// Initiates the asynchronous execution of the CreateEventSourceMapping operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the AddEventSource operation on AmazonLambdaClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventSourceMapping operation on AmazonLambdaClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddEventSource
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEventSourceMapping
         ///         operation.</returns>
-        public IAsyncResult BeginAddEventSource(AddEventSourceRequest request, AsyncCallback callback, object state)
+        public IAsyncResult BeginCreateEventSourceMapping(CreateEventSourceMappingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AddEventSourceRequestMarshaller();
-            var unmarshaller = AddEventSourceResponseUnmarshaller.Instance;
+            var marshaller = new CreateEventSourceMappingRequestMarshaller();
+            var unmarshaller = CreateEventSourceMappingResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AddEventSourceRequest>(request, marshaller, unmarshaller,
+            return BeginInvoke<CreateEventSourceMappingRequest>(request, marshaller, unmarshaller,
                 callback, state);
         }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  AddEventSource operation.
+        /// Finishes the asynchronous execution of the  CreateEventSourceMapping operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddEventSource.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEventSourceMapping.</param>
         /// 
-        /// <returns>Returns a  AddEventSourceResult from Lambda.</returns>
-        public  AddEventSourceResponse EndAddEventSource(IAsyncResult asyncResult)
+        /// <returns>Returns a  CreateEventSourceMappingResult from Lambda.</returns>
+        public  CreateEventSourceMappingResponse EndCreateEventSourceMapping(IAsyncResult asyncResult)
         {
-            return EndInvoke<AddEventSourceResponse>(asyncResult);
+            return EndInvoke<CreateEventSourceMappingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateFunction
+
+        /// <summary>
+        /// Creates a new Lambda function. The function metadata is created from the request parameters,
+        /// and the code for the function is provided by a .zip file in the request body. If the
+        /// function name already exists, the operation will fail. Note that the function name
+        /// is case-sensitive. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permission for the <code>lambda:CreateFunction</code> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFunction service method.</param>
+        /// 
+        /// <returns>The response from the CreateFunction service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public CreateFunctionResponse CreateFunction(CreateFunctionRequest request)
+        {
+            var marshaller = new CreateFunctionRequestMarshaller();
+            var unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFunctionRequest,CreateFunctionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFunction operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFunction
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateFunction(CreateFunctionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateFunctionRequestMarshaller();
+            var unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateFunctionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFunction.</param>
+        /// 
+        /// <returns>Returns a  CreateFunctionResult from Lambda.</returns>
+        public  CreateFunctionResponse EndCreateFunction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateFunctionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteEventSourceMapping
+
+        /// <summary>
+        /// Removes an event source mapping. This means AWS Lambda will no longer invoke the function
+        /// for events in the associated source.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permission for the <code>lambda:DeleteEventSourceMapping</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventSourceMapping service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEventSourceMapping service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public DeleteEventSourceMappingResponse DeleteEventSourceMapping(DeleteEventSourceMappingRequest request)
+        {
+            var marshaller = new DeleteEventSourceMappingRequestMarshaller();
+            var unmarshaller = DeleteEventSourceMappingResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventSourceMappingRequest,DeleteEventSourceMappingResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEventSourceMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventSourceMapping operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEventSourceMapping
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteEventSourceMapping(DeleteEventSourceMappingRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteEventSourceMappingRequestMarshaller();
+            var unmarshaller = DeleteEventSourceMappingResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteEventSourceMappingRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEventSourceMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEventSourceMapping.</param>
+        /// 
+        /// <returns>Returns a  DeleteEventSourceMappingResult from Lambda.</returns>
+        public  DeleteEventSourceMappingResponse EndDeleteEventSourceMapping(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEventSourceMappingResponse>(asyncResult);
         }
 
         #endregion
@@ -319,17 +554,26 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
+        /// When you delete a function the associated access policy is also deleted. You will
+        /// need to delete the event source mappings explicitly.
+        /// </para>
+        ///  
+        /// <para>
         /// This operation requires permission for the <code>lambda:DeleteFunction</code> action.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The Lambda function to delete.</param>
+        /// <param name="functionName">The Lambda function to delete.  You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
         /// 
         /// <returns>The response from the DeleteFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The function or the event source specified in the request does not exist.
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
         /// </exception>
         public DeleteFunctionResponse DeleteFunction(string functionName)
         {
@@ -343,6 +587,11 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
+        /// When you delete a function the associated access policy is also deleted. You will
+        /// need to delete the event source mappings explicitly.
+        /// </para>
+        ///  
+        /// <para>
         /// This operation requires permission for the <code>lambda:DeleteFunction</code> action.
         /// </para>
         /// </summary>
@@ -350,10 +599,14 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the DeleteFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The function or the event source specified in the request does not exist.
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
         /// </exception>
         public DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request)
         {
@@ -397,97 +650,73 @@ namespace Amazon.Lambda
 
         #endregion
         
-        #region  GetEventSource
+        #region  GetEventSourceMapping
 
         /// <summary>
-        /// Returns configuration information for the specified event source mapping (see <a>AddEventSource</a>).
+        /// Returns configuration information for the specified event source mapping (see <a>CreateEventSourceMapping</a>).
         /// 
         ///  
         /// <para>
-        /// This operation requires permission for the <code>lambda:GetEventSource</code> action.
+        /// This operation requires permission for the <code>lambda:GetEventSourceMapping</code>
+        /// action.
         /// </para>
         /// </summary>
-        /// <param name="uuid">The AWS Lambda assigned ID of the event source mapping.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventSourceMapping service method.</param>
         /// 
-        /// <returns>The response from the GetEventSource service method, as returned by Lambda.</returns>
+        /// <returns>The response from the GetEventSourceMapping service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
-        /// role for AWS Lambda to assume in the <code>UploadFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The function or the event source specified in the request does not exist.
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
-        public GetEventSourceResponse GetEventSource(string uuid)
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public GetEventSourceMappingResponse GetEventSourceMapping(GetEventSourceMappingRequest request)
         {
-            var request = new GetEventSourceRequest();
-            request.UUID = uuid;
-            return GetEventSource(request);
+            var marshaller = new GetEventSourceMappingRequestMarshaller();
+            var unmarshaller = GetEventSourceMappingResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventSourceMappingRequest,GetEventSourceMappingResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Returns configuration information for the specified event source mapping (see <a>AddEventSource</a>).
-        /// 
-        ///  
-        /// <para>
-        /// This operation requires permission for the <code>lambda:GetEventSource</code> action.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetEventSource service method.</param>
-        /// 
-        /// <returns>The response from the GetEventSource service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid. For example, if you provided an IAM
-        /// role for AWS Lambda to assume in the <code>UploadFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The function or the event source specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The AWS Lambda service encountered an internal error.
-        /// </exception>
-        public GetEventSourceResponse GetEventSource(GetEventSourceRequest request)
-        {
-            var marshaller = new GetEventSourceRequestMarshaller();
-            var unmarshaller = GetEventSourceResponseUnmarshaller.Instance;
-
-            return Invoke<GetEventSourceRequest,GetEventSourceResponse>(request, marshaller, unmarshaller);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetEventSource operation.
+        /// Initiates the asynchronous execution of the GetEventSourceMapping operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetEventSource operation on AmazonLambdaClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventSourceMapping operation on AmazonLambdaClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEventSource
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEventSourceMapping
         ///         operation.</returns>
-        public IAsyncResult BeginGetEventSource(GetEventSourceRequest request, AsyncCallback callback, object state)
+        public IAsyncResult BeginGetEventSourceMapping(GetEventSourceMappingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetEventSourceRequestMarshaller();
-            var unmarshaller = GetEventSourceResponseUnmarshaller.Instance;
+            var marshaller = new GetEventSourceMappingRequestMarshaller();
+            var unmarshaller = GetEventSourceMappingResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetEventSourceRequest>(request, marshaller, unmarshaller,
+            return BeginInvoke<GetEventSourceMappingRequest>(request, marshaller, unmarshaller,
                 callback, state);
         }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  GetEventSource operation.
+        /// Finishes the asynchronous execution of the  GetEventSourceMapping operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEventSource.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEventSourceMapping.</param>
         /// 
-        /// <returns>Returns a  GetEventSourceResult from Lambda.</returns>
-        public  GetEventSourceResponse EndGetEventSource(IAsyncResult asyncResult)
+        /// <returns>Returns a  GetEventSourceMappingResult from Lambda.</returns>
+        public  GetEventSourceMappingResponse EndGetEventSourceMapping(IAsyncResult asyncResult)
         {
-            return EndInvoke<GetEventSourceResponse>(asyncResult);
+            return EndInvoke<GetEventSourceMappingResponse>(asyncResult);
         }
 
         #endregion
@@ -496,7 +725,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Returns the configuration information of the Lambda function and a presigned URL link
-        /// to the .zip file you uploaded with <a>UploadFunction</a> so you can download the .zip
+        /// to the .zip file you uploaded with <a>CreateFunction</a> so you can download the .zip
         /// file. Note that the URL is valid for up to 10 minutes. The configuration information
         /// is the same information you provided as parameters when uploading the function.
         /// 
@@ -505,14 +734,18 @@ namespace Amazon.Lambda
         /// This operation requires permission for the <code>lambda:GetFunction</code> action.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The Lambda function name.</param>
+        /// <param name="functionName">The Lambda function name.   You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
         /// 
         /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The function or the event source specified in the request does not exist.
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
         /// </exception>
         public GetFunctionResponse GetFunction(string functionName)
         {
@@ -523,7 +756,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Returns the configuration information of the Lambda function and a presigned URL link
-        /// to the .zip file you uploaded with <a>UploadFunction</a> so you can download the .zip
+        /// to the .zip file you uploaded with <a>CreateFunction</a> so you can download the .zip
         /// file. Note that the URL is valid for up to 10 minutes. The configuration information
         /// is the same information you provided as parameters when uploading the function.
         /// 
@@ -536,10 +769,14 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The function or the event source specified in the request does not exist.
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
         /// </exception>
         public GetFunctionResponse GetFunction(GetFunctionRequest request)
         {
@@ -587,7 +824,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Returns the configuration information of the Lambda function. This the same information
-        /// you provided as parameters when uploading the function by using <a>UploadFunction</a>.
+        /// you provided as parameters when uploading the function by using <a>CreateFunction</a>.
         /// 
         ///  
         /// <para>
@@ -595,14 +832,18 @@ namespace Amazon.Lambda
         /// operation.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the Lambda function for which you want to retrieve the configuration information.</param>
+        /// <param name="functionName">The name of the Lambda function for which you want to retrieve the configuration information.  You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
         /// 
         /// <returns>The response from the GetFunctionConfiguration service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The function or the event source specified in the request does not exist.
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
         /// </exception>
         public GetFunctionConfigurationResponse GetFunctionConfiguration(string functionName)
         {
@@ -613,7 +854,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Returns the configuration information of the Lambda function. This the same information
-        /// you provided as parameters when uploading the function by using <a>UploadFunction</a>.
+        /// you provided as parameters when uploading the function by using <a>CreateFunction</a>.
         /// 
         ///  
         /// <para>
@@ -625,10 +866,14 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetFunctionConfiguration service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The function or the event source specified in the request does not exist.
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
         /// </exception>
         public GetFunctionConfigurationResponse GetFunctionConfiguration(GetFunctionConfigurationRequest request)
         {
@@ -672,17 +917,150 @@ namespace Amazon.Lambda
 
         #endregion
         
-        #region  InvokeAsync
+        #region  GetPolicy
 
         /// <summary>
-        /// Submits an invocation request to AWS Lambda. Upon receiving the request, Lambda executes
-        /// the specified function asynchronously. To see the logs generated by the Lambda function
-        /// execution, see the CloudWatch logs console.
+        /// Returns the access policy, containing a list of permissions granted via the <code>AddPermission</code>
+        /// API, associated with the specified bucket.
         /// 
         ///  
         /// <para>
-        /// This operation requires permission for the <code>lambda:InvokeAsync</code> action.
+        /// You need permission for the <code>lambda:GetPolicy action.</code>
         /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetPolicy service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public GetPolicyResponse GetPolicy(GetPolicyRequest request)
+        {
+            var marshaller = new GetPolicyRequestMarshaller();
+            var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetPolicyRequest,GetPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetPolicyRequestMarshaller();
+            var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetPolicyResult from Lambda.</returns>
+        public  GetPolicyResponse EndGetPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  Invoke
+
+        /// <summary>
+        /// Invokes a specified Lambda function. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permission for the <code>lambda:Invoke</code> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Invoke service method.</param>
+        /// 
+        /// <returns>The response from the Invoke service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidRequestContentException">
+        /// The request body could not be parsed as JSON.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.UnsupportedMediaTypeException">
+        /// 
+        /// </exception>
+        public InvokeResponse Invoke(InvokeRequest request)
+        {
+            var marshaller = new InvokeRequestMarshaller();
+            var unmarshaller = InvokeResponseUnmarshaller.Instance;
+
+            return Invoke<InvokeRequest,InvokeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Invoke operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the Invoke operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInvoke
+        ///         operation.</returns>
+        public IAsyncResult BeginInvoke(InvokeRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new InvokeRequestMarshaller();
+            var unmarshaller = InvokeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<InvokeRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  Invoke operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInvoke.</param>
+        /// 
+        /// <returns>Returns a  InvokeResult from Lambda.</returns>
+        public  InvokeResponse EndInvoke(IAsyncResult asyncResult)
+        {
+            return EndInvoke<InvokeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  InvokeAsync
+
+        /// <summary>
+        /// 
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeAsync service method.</param>
         /// 
@@ -691,7 +1069,8 @@ namespace Amazon.Lambda
         /// The request body could not be parsed as JSON.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The function or the event source specified in the request does not exist.
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
@@ -738,12 +1117,12 @@ namespace Amazon.Lambda
 
         #endregion
         
-        #region  ListEventSources
+        #region  ListEventSourceMappings
 
         /// <summary>
-        /// Returns a list of event source mappings you created using the <code>AddEventSource</code>
-        /// (see <a>AddEventSource</a>), where you identify a stream as event source. This list
-        /// does not include Amazon S3 event sources. 
+        /// Returns a list of event source mappings you created using the <code>CreateEventSourceMapping</code>
+        /// (see <a>CreateEventSourceMapping</a>), where you identify a stream as an event source.
+        /// This list does not include Amazon S3 event sources. 
         /// 
         ///  
         /// <para>
@@ -752,61 +1131,66 @@ namespace Amazon.Lambda
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permission for the <code>lambda:ListEventSources</code> action.
+        /// This operation requires permission for the <code>lambda:ListEventSourceMappings</code>
+        /// action.
         /// </para>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListEventSources service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventSourceMappings service method.</param>
         /// 
-        /// <returns>The response from the ListEventSources service method, as returned by Lambda.</returns>
+        /// <returns>The response from the ListEventSourceMappings service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
-        /// role for AWS Lambda to assume in the <code>UploadFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The function or the event source specified in the request does not exist.
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
-        public ListEventSourcesResponse ListEventSources(ListEventSourcesRequest request)
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public ListEventSourceMappingsResponse ListEventSourceMappings(ListEventSourceMappingsRequest request)
         {
-            var marshaller = new ListEventSourcesRequestMarshaller();
-            var unmarshaller = ListEventSourcesResponseUnmarshaller.Instance;
+            var marshaller = new ListEventSourceMappingsRequestMarshaller();
+            var unmarshaller = ListEventSourceMappingsResponseUnmarshaller.Instance;
 
-            return Invoke<ListEventSourcesRequest,ListEventSourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListEventSourceMappingsRequest,ListEventSourceMappingsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ListEventSources operation.
+        /// Initiates the asynchronous execution of the ListEventSourceMappings operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListEventSources operation on AmazonLambdaClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventSourceMappings operation on AmazonLambdaClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEventSources
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEventSourceMappings
         ///         operation.</returns>
-        public IAsyncResult BeginListEventSources(ListEventSourcesRequest request, AsyncCallback callback, object state)
+        public IAsyncResult BeginListEventSourceMappings(ListEventSourceMappingsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListEventSourcesRequestMarshaller();
-            var unmarshaller = ListEventSourcesResponseUnmarshaller.Instance;
+            var marshaller = new ListEventSourceMappingsRequestMarshaller();
+            var unmarshaller = ListEventSourceMappingsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListEventSourcesRequest>(request, marshaller, unmarshaller,
+            return BeginInvoke<ListEventSourceMappingsRequest>(request, marshaller, unmarshaller,
                 callback, state);
         }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  ListEventSources operation.
+        /// Finishes the asynchronous execution of the  ListEventSourceMappings operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEventSources.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEventSourceMappings.</param>
         /// 
-        /// <returns>Returns a  ListEventSourcesResult from Lambda.</returns>
-        public  ListEventSourcesResponse EndListEventSources(IAsyncResult asyncResult)
+        /// <returns>Returns a  ListEventSourceMappingsResult from Lambda.</returns>
+        public  ListEventSourceMappingsResponse EndListEventSourceMappings(IAsyncResult asyncResult)
         {
-            return EndInvoke<ListEventSourcesResponse>(asyncResult);
+            return EndInvoke<ListEventSourceMappingsResponse>(asyncResult);
         }
 
         #endregion
@@ -827,6 +1211,9 @@ namespace Amazon.Lambda
         /// <returns>The response from the ListFunctions service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
         /// </exception>
         public ListFunctionsResponse ListFunctions()
         {
@@ -849,6 +1236,9 @@ namespace Amazon.Lambda
         /// <returns>The response from the ListFunctions service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
         /// </exception>
         public ListFunctionsResponse ListFunctions(ListFunctionsRequest request)
         {
@@ -892,99 +1282,219 @@ namespace Amazon.Lambda
 
         #endregion
         
-        #region  RemoveEventSource
+        #region  RemovePermission
 
         /// <summary>
-        /// Removes an event source mapping. This means AWS Lambda will no longer invoke the function
-        /// for events in the associated source.
+        /// You can remove individual permissions from an access policy associated with a Lambda
+        /// function by providing a Statement ID. 
         /// 
         ///  
         /// <para>
-        /// This operation requires permission for the <code>lambda:RemoveEventSource</code> action.
+        /// Note that removal of a permission will cause an active event source to lose permission
+        /// to the function. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You need permission for the <code>lambda:RemovePermission</code> action.
         /// </para>
         /// </summary>
-        /// <param name="uuid">The event source mapping ID.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RemovePermission service method.</param>
         /// 
-        /// <returns>The response from the RemoveEventSource service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid. For example, if you provided an IAM
-        /// role for AWS Lambda to assume in the <code>UploadFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception.
-        /// </exception>
+        /// <returns>The response from the RemovePermission service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The function or the event source specified in the request does not exist.
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
-        public RemoveEventSourceResponse RemoveEventSource(string uuid)
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
-            var request = new RemoveEventSourceRequest();
-            request.UUID = uuid;
-            return RemoveEventSource(request);
+            var marshaller = new RemovePermissionRequestMarshaller();
+            var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
+
+            return Invoke<RemovePermissionRequest,RemovePermissionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Removes an event source mapping. This means AWS Lambda will no longer invoke the function
-        /// for events in the associated source.
-        /// 
-        ///  
-        /// <para>
-        /// This operation requires permission for the <code>lambda:RemoveEventSource</code> action.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the RemoveEventSource service method.</param>
-        /// 
-        /// <returns>The response from the RemoveEventSource service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid. For example, if you provided an IAM
-        /// role for AWS Lambda to assume in the <code>UploadFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The function or the event source specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The AWS Lambda service encountered an internal error.
-        /// </exception>
-        public RemoveEventSourceResponse RemoveEventSource(RemoveEventSourceRequest request)
-        {
-            var marshaller = new RemoveEventSourceRequestMarshaller();
-            var unmarshaller = RemoveEventSourceResponseUnmarshaller.Instance;
-
-            return Invoke<RemoveEventSourceRequest,RemoveEventSourceResponse>(request, marshaller, unmarshaller);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the RemoveEventSource operation.
+        /// Initiates the asynchronous execution of the RemovePermission operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the RemoveEventSource operation on AmazonLambdaClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RemovePermission operation on AmazonLambdaClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveEventSource
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemovePermission
         ///         operation.</returns>
-        public IAsyncResult BeginRemoveEventSource(RemoveEventSourceRequest request, AsyncCallback callback, object state)
+        public IAsyncResult BeginRemovePermission(RemovePermissionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RemoveEventSourceRequestMarshaller();
-            var unmarshaller = RemoveEventSourceResponseUnmarshaller.Instance;
+            var marshaller = new RemovePermissionRequestMarshaller();
+            var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RemoveEventSourceRequest>(request, marshaller, unmarshaller,
+            return BeginInvoke<RemovePermissionRequest>(request, marshaller, unmarshaller,
                 callback, state);
         }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  RemoveEventSource operation.
+        /// Finishes the asynchronous execution of the  RemovePermission operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveEventSource.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemovePermission.</param>
         /// 
-        /// <returns>Returns a  RemoveEventSourceResult from Lambda.</returns>
-        public  RemoveEventSourceResponse EndRemoveEventSource(IAsyncResult asyncResult)
+        /// <returns>Returns a  RemovePermissionResult from Lambda.</returns>
+        public  RemovePermissionResponse EndRemovePermission(IAsyncResult asyncResult)
         {
-            return EndInvoke<RemoveEventSourceResponse>(asyncResult);
+            return EndInvoke<RemovePermissionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateEventSourceMapping
+
+        /// <summary>
+        /// You can update an event source mapping. This is useful if you want to change the parameters
+        /// of the existing mapping without losing your position in the stream. You can change
+        /// which function will receive the stream records, but to change the stream itself, you
+        /// must create a new mapping. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permission for the <code>lambda:UpdateEventSourceMapping</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventSourceMapping service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEventSourceMapping service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public UpdateEventSourceMappingResponse UpdateEventSourceMapping(UpdateEventSourceMappingRequest request)
+        {
+            var marshaller = new UpdateEventSourceMappingRequestMarshaller();
+            var unmarshaller = UpdateEventSourceMappingResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEventSourceMappingRequest,UpdateEventSourceMappingResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEventSourceMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventSourceMapping operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEventSourceMapping
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateEventSourceMapping(UpdateEventSourceMappingRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateEventSourceMappingRequestMarshaller();
+            var unmarshaller = UpdateEventSourceMappingResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateEventSourceMappingRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEventSourceMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEventSourceMapping.</param>
+        /// 
+        /// <returns>Returns a  UpdateEventSourceMappingResult from Lambda.</returns>
+        public  UpdateEventSourceMappingResponse EndUpdateEventSourceMapping(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateEventSourceMappingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateFunctionCode
+
+        /// <summary>
+        /// Updates the code for the specified Lambda function. This operation must only be used
+        /// on an existing Lambda function and cannot be used to update the function configuration.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permision for the <code>lambda:UpdateFunctionCode</code> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionCode service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFunctionCode service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public UpdateFunctionCodeResponse UpdateFunctionCode(UpdateFunctionCodeRequest request)
+        {
+            var marshaller = new UpdateFunctionCodeRequestMarshaller();
+            var unmarshaller = UpdateFunctionCodeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFunctionCodeRequest,UpdateFunctionCodeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFunctionCode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionCode operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFunctionCode
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateFunctionCode(UpdateFunctionCodeRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateFunctionCodeRequestMarshaller();
+            var unmarshaller = UpdateFunctionCodeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateFunctionCodeRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFunctionCode operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFunctionCode.</param>
+        /// 
+        /// <returns>Returns a  UpdateFunctionCodeResult from Lambda.</returns>
+        public  UpdateFunctionCodeResponse EndUpdateFunctionCode(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateFunctionCodeResponse>(asyncResult);
         }
 
         #endregion
@@ -1008,14 +1518,18 @@ namespace Amazon.Lambda
         /// <returns>The response from the UpdateFunctionConfiguration service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
-        /// role for AWS Lambda to assume in the <code>UploadFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The function or the event source specified in the request does not exist.
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
         /// </exception>
         public UpdateFunctionConfigurationResponse UpdateFunctionConfiguration(UpdateFunctionConfigurationRequest request)
         {
@@ -1055,75 +1569,6 @@ namespace Amazon.Lambda
         public  UpdateFunctionConfigurationResponse EndUpdateFunctionConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateFunctionConfigurationResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  UploadFunction
-
-        /// <summary>
-        /// Creates a new Lambda function or updates an existing function. The function metadata
-        /// is created from the request parameters, and the code for the function is provided
-        /// by a .zip file in the request body. If the function name already exists, the existing
-        /// Lambda function is updated with the new code and metadata. 
-        /// 
-        ///  
-        /// <para>
-        /// This operation requires permission for the <code>lambda:UploadFunction</code> action.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UploadFunction service method.</param>
-        /// 
-        /// <returns>The response from the UploadFunction service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid. For example, if you provided an IAM
-        /// role for AWS Lambda to assume in the <code>UploadFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The function or the event source specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The AWS Lambda service encountered an internal error.
-        /// </exception>
-        public UploadFunctionResponse UploadFunction(UploadFunctionRequest request)
-        {
-            var marshaller = new UploadFunctionRequestMarshaller();
-            var unmarshaller = UploadFunctionResponseUnmarshaller.Instance;
-
-            return Invoke<UploadFunctionRequest,UploadFunctionResponse>(request, marshaller, unmarshaller);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UploadFunction operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UploadFunction operation on AmazonLambdaClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadFunction
-        ///         operation.</returns>
-        public IAsyncResult BeginUploadFunction(UploadFunctionRequest request, AsyncCallback callback, object state)
-        {
-            var marshaller = new UploadFunctionRequestMarshaller();
-            var unmarshaller = UploadFunctionResponseUnmarshaller.Instance;
-
-            return BeginInvoke<UploadFunctionRequest>(request, marshaller, unmarshaller,
-                callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  UploadFunction operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadFunction.</param>
-        /// 
-        /// <returns>Returns a  UploadFunctionResult from Lambda.</returns>
-        public  UploadFunctionResponse EndUploadFunction(IAsyncResult asyncResult)
-        {
-            return EndInvoke<UploadFunctionResponse>(asyncResult);
         }
 
         #endregion

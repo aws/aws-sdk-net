@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DE05FC58-5CFB-47FE-9085-24B755C4958C}</ProjectGuid>
+    <ProjectGuid>{297FC084-5027-44B3-BE25-2E16D16E85D2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Route53</RootNamespace>
@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE;;BCL;BCL45;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\net45\AWSSDK.Route53.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE;;BCL;BCL45;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\net45\AWSSDK.Route53.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -68,7 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AWSSDK.Core.Net45.csproj">
-      <Project>{29D39F98-9D7C-42EB-A807-67201324D0F6}</Project>
+      <Project>{25ED6BD4-A32A-4EAA-ACBF-AB4FCD343E8E}</Project>
       <Name>AWSSDK.Core.Net45</Name>
     </ProjectReference>
   </ItemGroup>

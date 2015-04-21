@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Contains the output from the <a>ListPipelines</a> action.
+    /// Contains the output of ListPipelines.
     /// </summary>
     public partial class ListPipelinesResponse : AmazonWebServiceResponse
     {
@@ -39,8 +39,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property HasMoreResults. 
         /// <para>
-        /// If <code>True</code>, there are more results that can be obtained by a subsequent
-        /// call to <a>ListPipelines</a>.
+        /// Indicates whether there are more results that can be obtained by a subsequent call.
         /// </para>
         /// </summary>
         public bool HasMoreResults
@@ -58,9 +57,9 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// If not null, indicates the starting point for the set of pipeline identifiers that
-        /// the next call to <a>ListPipelines</a> will retrieve. If null, there are no more pipeline
-        /// identifiers.
+        /// The starting point for the next page of results. To view the next page of results,
+        /// call <code>ListPipelinesOutput</code> again with this marker value. If the value is
+        /// null, there are no more results.
         /// </para>
         /// </summary>
         public string Marker
@@ -78,9 +77,8 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineIdList. 
         /// <para>
-        ///  A list of all the pipeline identifiers that your account has permission to access.
-        /// If you require additional information about the pipelines, you can use these identifiers
-        /// to call <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>. 
+        /// The pipeline identifiers. If you require additional information about the pipelines,
+        /// you can use these identifiers to call <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
         /// </para>
         /// </summary>
         public List<PipelineIdName> PipelineIdList

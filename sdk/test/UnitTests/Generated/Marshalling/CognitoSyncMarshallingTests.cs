@@ -235,6 +235,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("CognitoSync")]
+        public void GetCognitoEventsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetCognitoEvents");
+
+            var request = InstantiateClassGenerator.Execute<GetCognitoEventsRequest>();
+            var marshaller = new GetCognitoEventsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetCognitoEvents", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetCognitoEventsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetCognitoEventsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CognitoSync")]
         public void GetIdentityPoolConfigurationMarshallTest()
         {
             var operation = service_model.FindOperation("GetIdentityPoolConfiguration");
@@ -388,6 +420,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = unmarshaller.Unmarshall(context)
                 as RegisterDeviceResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CognitoSync")]
+        public void SetCognitoEventsMarshallTest()
+        {
+            var operation = service_model.FindOperation("SetCognitoEvents");
+
+            var request = InstantiateClassGenerator.Execute<SetCognitoEventsRequest>();
+            var marshaller = new SetCognitoEventsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("SetCognitoEvents", request, internalRequest, service_model);            
+
         }
 
         

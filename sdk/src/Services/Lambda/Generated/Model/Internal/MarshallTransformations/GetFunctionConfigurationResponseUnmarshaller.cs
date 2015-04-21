@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2014-11-11.normal.json service model.
+ * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -52,22 +52,16 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.CodeSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ConfigurationId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConfigurationId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("FunctionARN", targetDepth))
+                if (context.TestExpression("FunctionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FunctionARN = unmarshaller.Unmarshall(context);
+                    response.FunctionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FunctionName", targetDepth))
@@ -92,12 +86,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     response.MemorySize = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Mode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Mode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Role", targetDepth))
@@ -133,6 +121,10 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceException"))
             {
                 return new ServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
+            {
+                return new TooManyRequestsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonLambdaException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }

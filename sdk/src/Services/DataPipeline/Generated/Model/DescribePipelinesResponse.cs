@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Contains the output from the <a>DescribePipelines</a> action.
+    /// Contains the output of DescribePipelines.
     /// </summary>
     public partial class DescribePipelinesResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineDescriptionList. 
         /// <para>
-        /// An array of descriptions returned for the specified pipelines.
+        /// An array of descriptions for the specified pipelines.
         /// </para>
         /// </summary>
         public List<PipelineDescription> PipelineDescriptionList

@@ -34,6 +34,7 @@ namespace Amazon.RDS.Model
     {
         private int? _allocatedStorage;
         private int? _backupRetentionPeriod;
+        private string _caCertificateIdentifier;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _engineVersion;
@@ -83,6 +84,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetBackupRetentionPeriod()
         {
             return this._backupRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CACertificateIdentifier. 
+        /// <para>
+        /// Specifies the identifier of the CA certificate for the DB instance.
+        /// </para>
+        /// </summary>
+        public string CACertificateIdentifier
+        {
+            get { return this._caCertificateIdentifier; }
+            set { this._caCertificateIdentifier = value; }
+        }
+
+        // Check to see if CACertificateIdentifier property is set
+        internal bool IsSetCACertificateIdentifier()
+        {
+            return this._caCertificateIdentifier != null;
         }
 
         /// <summary>

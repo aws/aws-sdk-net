@@ -1,0 +1,34 @@
+﻿<docs>  
+  <doc>
+    <members>
+      <member name="T:Amazon.Route53.AmazonRoute53Client"/>
+      <member name="T:Amazon.Route53.IAmazonRoute53"/>
+      <member name="M:Amazon.Route53.AmazonRoute53Client.CreateHostedZone(Amazon.Route53.Model.CreateHostedZoneRequest)"/>
+      <member name="M:Amazon.Route53.AmazonRoute53Client.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)"/>
+      <member name="M:Amazon.Route53.AmazonRoute53Client.GetChange(Amazon.Route53.Model.GetChangeRequest)"/>
+      <member name="T:Amazon.Route53.IAmazonRoute53"/>
+      <member name="M:Amazon.Route53.IAmazonRoute53.CreateHostedZone(Amazon.Route53.Model.CreateHostedZoneRequest)"/>
+      <member name="M:Amazon.Route53.IAmazonRoute53.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)"/>
+      <member name="M:Amazon.Route53.IAmazonRoute53.GetChange(Amazon.Route53.Model.GetChangeRequest)"/>
+      <member name="T:Amazon.Route53.Model.CreateHostedZoneRequest"/>
+      <member name="T:Amazon.Route53.Model.CreateHostedZoneResponse"/>
+      <member name="T:Amazon.Route53.Model.ResourceRecordSet"/>
+      <member name="T:Amazon.Route53.Model.ResourceRecord"/>
+      <member name="T:Amazon.Route53.Model.Change"/>
+      <member name="T:Amazon.Route53.Model.ChangeBatch"/>
+      <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsRequest"/>
+      <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsResponse"/>
+      <member name="T:Amazon.Route53.Model.GetChangeRequest"/>
+      <member name="T:Amazon.Route53.Model.GetChangeResponse"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to create an Amazon Route 53 hosted zone and add a resource record set to the zone.</para>
+        <code title="Create a hosted zone and add a resource record set"
+              lang="cs"
+              source=".\AWSSDKDocSamples\Route53\recordset.cs"
+              region="Route53CreateAdd"/>
+      </example>
+    </value>
+  </doc>
+</docs>

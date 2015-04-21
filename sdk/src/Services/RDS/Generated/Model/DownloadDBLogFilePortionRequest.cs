@@ -133,7 +133,7 @@ namespace Amazon.RDS.Model
         /// as the Marker value for the next request, continuing until the AdditionalDataPending
         /// response element returns false.
         /// </para>
-        /// </li> </ul> 
+        /// </li> </ul>
         /// </para>
         /// </summary>
         public int NumberOfLines

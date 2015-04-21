@@ -1,0 +1,80 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en-GB">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="./resources/tocstyle.css" media="screen">   
+    <title>API Reference - Table of Contents | AWS SDK for .NET Version 3</title>
+</head>
+<body>
+    <a href="http://docs.aws.amazon.com/" title="AWS Documentation Home" target="_top">
+        <img id="awslogo" src="./resources/blank.gif" title="AWS Documentation Home" alt="AWS Documentation Home" />
+    </a>
+    <div id="toc">{TOC}</div>
+
+    <script type="text/javascript" src="./resources/jquery.min.js"></script>
+    <script type="text/javascript">jQuery.noConflict();</script>
+    <script type="text/javascript" src="./resources/parseuri.js"></script>
+    <script type="text/javascript" src="./resources/tocscript.js"></script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            AWSTOCObj.init("div#toc");
+
+            var params = parseUri($(window.parent.location).attr('href')).queryKey;
+            if (params && params.page) {
+                AWSTOCObj.setContentPane("./items/" + params.page);
+            }
+            else {
+                AWSTOCObj.setContentPane("./items/sdk-api-home.html");
+            }
+
+            if (params && params.tocid) {
+                var li = jQuery("li#" + params.tocid);
+                var tocItem = li.children("a.nav");
+
+                // If the page is not a namespace page then we need to expand the namespace node
+                if (params.page[0] != 'N') {
+                    var pos = params.tocid.lastIndexOf('_');
+                    if (pos > 0) {
+
+                        var nid = params.tocid.substr(0, pos);
+
+                        var nli = jQuery("li#" + nid);
+                        AWSTOCObj.expandTOCGroup(nli);
+                    }
+                }
+
+                AWSTOCObj.setActiveTopic(tocItem);
+                AWSTOCObj.toggleTOCGroup(li);
+            }
+
+
+            $("li.nav").click(function (event) {
+                event.stopPropagation();
+                AWSTOCObj.clearActiveTopic();
+
+                var tocLink = $(this).children("a.nav");
+                if ($(this).hasClass("leaf")) {
+                    AWSTOCObj.setActiveTopic(tocLink);
+                } else {
+                    var prevExpanded = $(this).siblings("li.expanded");
+                    if (prevExpanded.length > 0)
+                        AWSTOCObj.toggleTOCGroup(prevExpanded);
+                    AWSTOCObj.setActiveTopic(tocLink);
+                    AWSTOCObj.toggleTOCGroup(this);
+                }
+            });
+        });
+
+        function updateContentPane(basePageName) {
+            if (parent.contentpane.location && parent.contentpane.location.href) {
+
+                var frameworkPos = parent.contentpane.location.href.indexOf('NET3_5.html');
+                if (frameworkPos != -1) {
+                    basePageName = basePageName.replace('NET4_5.html', 'NET3_5.html');
+                }
+            }
+            parent.contentpane.location.href = basePageName;
+        }
+    </script>
+</body>
+</html>

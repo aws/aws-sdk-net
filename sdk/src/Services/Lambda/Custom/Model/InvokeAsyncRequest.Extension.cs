@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model
                 if (value == null)
                     this.InvokeArgsStream = null;
                 else
-                    this.InvokeArgsStream = AWSSDKUtils.GenerateStreamFromString(value);
+                    this.InvokeArgsStream = AWSSDKUtils.GenerateMemoryStreamFromString(value);
             }
         }
     }

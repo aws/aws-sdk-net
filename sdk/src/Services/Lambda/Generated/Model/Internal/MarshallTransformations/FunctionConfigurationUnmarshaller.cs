@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2014-11-11.normal.json service model.
+ * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -60,22 +60,16 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     unmarshalledObject.CodeSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ConfigurationId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("FunctionARN", targetDepth))
+                if (context.TestExpression("FunctionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FunctionARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FunctionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FunctionName", targetDepth))
@@ -100,12 +94,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.MemorySize = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Mode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Role", targetDepth))

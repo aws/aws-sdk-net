@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the config-2014-10-17.normal.json service model.
+ * Do not modify this file. This file is generated from the config-2014-11-12.normal.json service model.
  */
 
 using System;
@@ -122,6 +122,10 @@ namespace Amazon.ConfigService
         /// Constant Failure for DeliveryStatus
         /// </summary>
         public static readonly DeliveryStatus Failure = new DeliveryStatus("Failure");
+        /// <summary>
+        /// Constant Not_Applicable for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus Not_Applicable = new DeliveryStatus("Not_Applicable");
         /// <summary>
         /// Constant Success for DeliveryStatus
         /// </summary>

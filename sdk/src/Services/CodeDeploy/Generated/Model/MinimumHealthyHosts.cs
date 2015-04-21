@@ -44,16 +44,16 @@ namespace Amazon.CodeDeploy.Model
         /// <li>FLEET_PERCENT: The minimum number of healthy instances, as a percentage of the
         /// total number of instances in the deployment.</li> </ul> 
         /// <para>
-        /// For example, for 9 Amazon EC2 instances, if a HOST_COUNT of 6 is specified, deploy
-        /// to up to 3 instances at a time. The deployment succeeds if 6 or more instances are
-        /// successfully deployed to; otherwise, the deployment fails. If a FLEET_PERCENT of 40
-        /// is specified, deploy to up to 5 instances at a time. The deployment succeeds if 4
-        /// or more instances are successfully deployed to; otherwise, the deployment fails.
+        /// For example, for 9 instances, if a HOST_COUNT of 6 is specified, deploy to up to 3
+        /// instances at a time. The deployment succeeds if 6 or more instances are successfully
+        /// deployed to; otherwise, the deployment fails. If a FLEET_PERCENT of 40 is specified,
+        /// deploy to up to 5 instances at a time. The deployment succeeds if 4 or more instances
+        /// are successfully deployed to; otherwise, the deployment fails.
         /// </para>
         ///  <note>In a call to the get deployment configuration operation, CodeDeployDefault.OneAtATime
         /// will return a minimum healthy instances type of MOST_CONCURRENCY and a value of 1.
-        /// This means a deployment to only one Amazon EC2 instance at a time. (You cannot set
-        /// the type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.)</note>
+        /// This means a deployment to only one instances at a time. (You cannot set the type
+        /// to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.)</note>
         /// </summary>
         public MinimumHealthyHostsType Type
         {

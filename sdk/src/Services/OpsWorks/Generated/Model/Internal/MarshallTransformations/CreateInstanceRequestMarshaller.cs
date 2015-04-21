@@ -81,6 +81,22 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AvailabilityZone);
                 }
 
+                if(publicRequest.IsSetBlockDeviceMappings())
+                {
+                    context.Writer.WritePropertyName("BlockDeviceMappings");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestBlockDeviceMappingsListValue in publicRequest.BlockDeviceMappings)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = BlockDeviceMappingMarshaller.Instance;
+                        marshaller.Marshall(publicRequestBlockDeviceMappingsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetEbsOptimized())
                 {
                     context.Writer.WritePropertyName("EbsOptimized");

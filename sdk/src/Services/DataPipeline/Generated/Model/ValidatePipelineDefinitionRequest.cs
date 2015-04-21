@@ -29,8 +29,8 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the ValidatePipelineDefinition operation.
-    /// Tests the pipeline definition with a set of validation checks to ensure that it is
-    /// well formed and can run without error.
+    /// Validates the specified pipeline definition to ensure that it is well formed and can
+    /// be run without error.
     /// </summary>
     public partial class ValidatePipelineDefinitionRequest : AmazonDataPipelineRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property ParameterObjects. 
         /// <para>
-        /// A list of parameter objects used with the pipeline.
+        /// The parameter objects used with the pipeline.
         /// </para>
         /// </summary>
         public List<ParameterObject> ParameterObjects
@@ -60,7 +60,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property ParameterValues. 
         /// <para>
-        /// A list of parameter values used with the pipeline.
+        /// The parameter values used with the pipeline.
         /// </para>
         /// </summary>
         public List<ParameterValue> ParameterValues
@@ -78,7 +78,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
-        /// Identifies the pipeline whose definition is to be validated.
+        /// The ID of the pipeline.
         /// </para>
         /// </summary>
         public string PipelineId
@@ -96,7 +96,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineObjects. 
         /// <para>
-        /// A list of objects that define the pipeline changes to validate against the pipeline.
+        /// The objects that define the pipeline changes to validate against the pipeline.
         /// </para>
         /// </summary>
         public List<PipelineObject> PipelineObjects

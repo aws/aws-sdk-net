@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{94FDDDFD-CB2A-4061-9D7A-1FE7082BBDB8}</ProjectGuid>
+    <ProjectGuid>{BB266953-D765-4BC6-9315-D206548CB8A6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.SecurityToken</RootNamespace>
@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE;;BCL;BCL45;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\net45\AWSSDK.SecurityToken.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE;;BCL;BCL45;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\net45\AWSSDK.SecurityToken.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -71,7 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AWSSDK.Core.Net45.csproj">
-      <Project>{29D39F98-9D7C-42EB-A807-67201324D0F6}</Project>
+      <Project>{25ED6BD4-A32A-4EAA-ACBF-AB4FCD343E8E}</Project>
       <Name>AWSSDK.Core.Net45</Name>
     </ProjectReference>
   </ItemGroup>

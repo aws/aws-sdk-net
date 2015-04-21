@@ -55,6 +55,13 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AttachedManagedPolicies/member", targetDepth))
+                    {
+                        var unmarshaller = AttachedPolicyTypeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AttachedManagedPolicies.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("CreateDate", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

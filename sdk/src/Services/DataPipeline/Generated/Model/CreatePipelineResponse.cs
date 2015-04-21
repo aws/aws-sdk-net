@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Contains the output from the <a>CreatePipeline</a> action.
+    /// Contains the output of CreatePipeline.
     /// </summary>
     public partial class CreatePipelineResponse : AmazonWebServiceResponse
     {
@@ -37,8 +37,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
-        /// The ID that AWS Data Pipeline assigns the newly created pipeline. The ID is a string
-        /// of the form: df-06372391ZG65EXAMPLE.
+        /// The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.
         /// </para>
         /// </summary>
         public string PipelineId

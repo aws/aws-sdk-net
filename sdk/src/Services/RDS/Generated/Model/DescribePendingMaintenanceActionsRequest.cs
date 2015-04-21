@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePendingMaintenanceActions operation.
-    /// Returns a list of resources (for example, DB Instances) that have at least one pending
+    /// Returns a list of resources (for example, DB instances) that have at least one pending
     /// maintenance action.
     /// </summary>
     public partial class DescribePendingMaintenanceActionsRequest : AmazonRDSRequest
@@ -42,10 +42,16 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
+        /// A filter that specifies one or more resources to return pending maintenance actions
+        /// for.
+        /// </para>
+        ///  
+        /// <para>
         /// Supported filters:
         /// </para>
-        ///  <ul><li> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-        /// ARNs. The result list will only include maintenance actions for the specified DB Instances.</li></ul>
+        ///  <ul> <li> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
+        /// Amazon Resource Names (ARNs). The results list will only include pending maintenance
+        /// actions for the DB instances identified by these ARNs.</li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
@@ -64,7 +70,7 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code>
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to a number of records specified by <code>MaxRecords</code> . 
+        /// the marker, up to a number of records specified by <code>MaxRecords</code>. 
         /// </para>
         /// </summary>
         public string Marker
@@ -110,7 +116,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        /// The ARN of the resource to return pending maintenance actions for.
+        /// The ARN of a resource to return pending maintenance actions for.
         /// </para>
         /// </summary>
         public string ResourceIdentifier

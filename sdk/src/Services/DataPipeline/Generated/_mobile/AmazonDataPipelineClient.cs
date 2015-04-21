@@ -36,35 +36,29 @@ namespace Amazon.DataPipeline
     /// <summary>
     /// Implementation for accessing DataPipeline
     ///
-    /// AWS Data Pipeline is a web service that configures and manages a data-driven workflow
-    /// called a pipeline. AWS Data Pipeline handles the details of scheduling and ensuring
-    /// that data dependencies are met so your application can focus on processing the data.
+    /// AWS Data Pipeline configures and manages a data-driven workflow called a pipeline.
+    /// AWS Data Pipeline handles the details of scheduling and ensuring that data dependencies
+    /// are met so that your application can focus on processing the data.
     /// 
     ///  
     /// <para>
-    ///  The AWS Data Pipeline SDKs and CLI implements two main sets of functionality. The
-    /// first set of actions configure the pipeline in the web service. You perform these
-    /// actions to create a pipeline and define data sources, schedules, dependencies, and
-    /// the transforms to be performed on the data. 
+    /// AWS Data Pipeline provides a JAR implementation of a task runner called AWS Data Pipeline
+    /// Task Runner. AWS Data Pipeline Task Runner provides logic for common data management
+    /// scenarios, such as performing database queries and running data analysis using Amazon
+    /// Elastic MapReduce (Amazon EMR). You can use AWS Data Pipeline Task Runner as your
+    /// task runner, or you can write your own task runner to provide custom data management.
     /// </para>
     ///  
     /// <para>
-    ///  The second set of actions are used by a task runner application that calls the AWS
-    /// Data Pipeline service to receive the next task ready for processing. The logic for
-    /// performing the task, such as querying the data, running data analysis, or converting
-    /// the data from one format to another, is contained within the task runner. The task
-    /// runner performs the task assigned to it by the web service, reporting progress to
-    /// the web service as it does so. When the task is done, the task runner reports the
-    /// final success or failure of the task to the web service. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  AWS Data Pipeline provides a JAR implementation of a task runner called AWS Data
-    /// Pipeline Task Runner. AWS Data Pipeline Task Runner provides logic for common data
-    /// management scenarios, such as performing database queries and running data analysis
-    /// using Amazon Elastic MapReduce (Amazon EMR). You can use AWS Data Pipeline Task Runner
-    /// as your task runner, or you can write your own task runner to provide custom data
-    /// management. 
+    /// AWS Data Pipeline implements two main sets of functionality. Use the first set to
+    /// create a pipeline and define data sources, schedules, dependencies, and the transforms
+    /// to be performed on the data. Use the second set in your task runner application to
+    /// receive the next task ready for processing. The logic for performing the task, such
+    /// as querying the data, running data analysis, or converting the data from one format
+    /// to another, is contained within the task runner. The task runner performs the task
+    /// assigned to it by the web service, reporting progress to the web service as it does
+    /// so. When the task is done, the task runner reports the final success or failure of
+    /// the task to the web service.
     /// </para>
     /// </summary>
     public partial class AmazonDataPipelineClient : AmazonServiceClient, IAmazonDataPipeline
@@ -278,6 +272,36 @@ namespace Amazon.DataPipeline
             var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreatePipelineRequest,CreatePipelineResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeactivatePipeline
+
+        internal DeactivatePipelineResponse DeactivatePipeline(DeactivatePipelineRequest request)
+        {
+            var marshaller = new DeactivatePipelineRequestMarshaller();
+            var unmarshaller = DeactivatePipelineResponseUnmarshaller.Instance;
+
+            return Invoke<DeactivatePipelineRequest,DeactivatePipelineResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeactivatePipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeactivatePipeline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeactivatePipelineResponse> DeactivatePipelineAsync(DeactivatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeactivatePipelineRequestMarshaller();
+            var unmarshaller = DeactivatePipelineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeactivatePipelineRequest,DeactivatePipelineResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

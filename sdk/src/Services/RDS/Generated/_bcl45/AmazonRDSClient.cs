@@ -47,13 +47,13 @@ namespace Amazon.RDS
     ///  
     /// <para>
     ///  Amazon RDS gives you access to the capabilities of a MySQL, PostgreSQL, Microsoft
-    /// SQL Server, or Oracle database server. This means the code, applications, and tools
-    /// you already use today with your existing databases work with Amazon RDS without modification.
-    /// Amazon RDS automatically backs up your database and maintains the database software
-    /// that powers your DB instance. Amazon RDS is flexible: you can scale your database
-    /// instance's compute resources and storage capacity to meet your application's demand.
-    /// As with all Amazon Web Services, there are no up-front investments, and you pay only
-    /// for the resources you use. 
+    /// SQL Server, Oracle, or Aurora database server. This means the code, applications,
+    /// and tools you already use today with your existing databases work with Amazon RDS
+    /// without modification. Amazon RDS automatically backs up your database and maintains
+    /// the database software that powers your DB instance. Amazon RDS is flexible: you can
+    /// scale your database instance's compute resources and storage capacity to meet your
+    /// application's demand. As with all Amazon Web Services, there are no up-front investments,
+    /// and you pay only for the resources you use. 
     /// </para>
     ///  
     /// <para>
@@ -343,13 +343,13 @@ namespace Amazon.RDS
         #region  ApplyPendingMaintenanceAction
 
         /// <summary>
-        /// Applies a pending maintenance action to a resource.
+        /// Applies a pending maintenance action to a resource (for example, a DB instance).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ApplyPendingMaintenanceAction service method.</param>
         /// 
         /// <returns>The response from the ApplyPendingMaintenanceAction service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
-        /// The specified Resource ID was not found.
+        /// The specified resource ID was not found.
         /// </exception>
         public ApplyPendingMaintenanceActionResponse ApplyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest request)
         {
@@ -1179,10 +1179,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted cannot be
-        /// associated with any DB instances. 
-        /// 
-        ///  <note> The specified DB parameter group cannot be associated with any DB instances.
-        /// </note>
+        /// associated with any DB instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBParameterGroup service method.</param>
         /// 
@@ -1437,6 +1434,107 @@ namespace Amazon.RDS
             var unmarshaller = DeleteOptionGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteOptionGroupRequest,DeleteOptionGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAccountAttributes
+
+        /// <summary>
+        /// Lists all of the attributes for a customer account. The attributes include Amazon
+        /// RDS quotas for the account, such as the number of DB instances allowed. The description
+        /// for a quota includes the quota name, current usage toward that quota, and the quota's
+        /// maximum value. 
+        /// 
+        ///  
+        /// <para>
+        /// This command does not take any parameters.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeAccountAttributes service method, as returned by RDS.</returns>
+        public DescribeAccountAttributesResponse DescribeAccountAttributes()
+        {
+            return DescribeAccountAttributes(new DescribeAccountAttributesRequest());
+        }
+
+        /// <summary>
+        /// Lists all of the attributes for a customer account. The attributes include Amazon
+        /// RDS quotas for the account, such as the number of DB instances allowed. The description
+        /// for a quota includes the quota name, current usage toward that quota, and the quota's
+        /// maximum value. 
+        /// 
+        ///  
+        /// <para>
+        /// This command does not take any parameters.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountAttributes service method, as returned by RDS.</returns>
+        public DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
+        {
+            var marshaller = new DescribeAccountAttributesRequestMarshaller();
+            var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAccountAttributesRequest,DescribeAccountAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccountAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeAccountAttributesRequestMarshaller();
+            var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAccountAttributesRequest,DescribeAccountAttributesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCertificates
+
+        /// <summary>
+        /// Lists the set of CA certificates provided by Amazon RDS for this AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCertificates service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
+        /// <i>CertificateIdentifier</i> does not refer to an existing certificate.
+        /// </exception>
+        public DescribeCertificatesResponse DescribeCertificates(DescribeCertificatesRequest request)
+        {
+            var marshaller = new DescribeCertificatesRequestMarshaller();
+            var unmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCertificatesRequest,DescribeCertificatesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeCertificatesResponse> DescribeCertificatesAsync(DescribeCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeCertificatesRequestMarshaller();
+            var unmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCertificatesRequest,DescribeCertificatesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2182,14 +2280,14 @@ namespace Amazon.RDS
         #region  DescribePendingMaintenanceActions
 
         /// <summary>
-        /// Returns a list of resources (for example, DB Instances) that have at least one pending
+        /// Returns a list of resources (for example, DB instances) that have at least one pending
         /// maintenance action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePendingMaintenanceActions service method.</param>
         /// 
         /// <returns>The response from the DescribePendingMaintenanceActions service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
-        /// The specified Resource ID was not found.
+        /// The specified resource ID was not found.
         /// </exception>
         public DescribePendingMaintenanceActionsResponse DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request)
         {
@@ -2429,6 +2527,9 @@ namespace Amazon.RDS
         /// <para>
         /// RDS may not also be authorized via IAM to perform necessary actions on your behalf.
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
+        /// <i>CertificateIdentifier</i> does not refer to an existing certificate.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// User already has a DB instance with the given identifier.
@@ -2730,14 +2831,14 @@ namespace Amazon.RDS
         /// <summary>
         /// Promotes a Read Replica DB instance to a standalone DB instance. 
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// We recommend that you enable automated backups on your Read Replica before promoting
         /// the Read Replica. This ensures that no backup is taken during the promotion process.
         /// Once the instance is promoted to a primary instance, backups are taken based on your
         /// backup settings.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PromoteReadReplica service method.</param>
         /// 

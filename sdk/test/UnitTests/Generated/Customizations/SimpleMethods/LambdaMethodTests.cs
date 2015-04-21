@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2014-11-11.normal.json service model.
+ * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -37,11 +37,9 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         public void LambdaSimpleMethodTests()
         {
             EnsureSimpleMethodExists(typeof(Amazon.Lambda.AmazonLambdaClient), "DeleteFunction", new Type[] { typeof(string), });
-            EnsureSimpleMethodExists(typeof(Amazon.Lambda.AmazonLambdaClient), "GetEventSource", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.Lambda.AmazonLambdaClient), "GetFunction", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.Lambda.AmazonLambdaClient), "GetFunctionConfiguration", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.Lambda.AmazonLambdaClient), "ListFunctions", new Type[] { });
-            EnsureSimpleMethodExists(typeof(Amazon.Lambda.AmazonLambdaClient), "RemoveEventSource", new Type[] { typeof(string), });
         }
         
         void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)

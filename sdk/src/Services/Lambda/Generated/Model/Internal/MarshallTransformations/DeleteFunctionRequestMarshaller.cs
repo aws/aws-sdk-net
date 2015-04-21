@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2014-11-11.normal.json service model.
+ * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -47,7 +47,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lambda");
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/2014-11-13/functions/{FunctionName}";
+            string uriResourcePath = "/2015-03-31/functions/{FunctionName}";
             uriResourcePath = uriResourcePath.Replace("{FunctionName}", publicRequest.IsSetFunctionName() ? StringUtils.FromString(publicRequest.FunctionName) : string.Empty);
             request.ResourcePath = uriResourcePath;
 

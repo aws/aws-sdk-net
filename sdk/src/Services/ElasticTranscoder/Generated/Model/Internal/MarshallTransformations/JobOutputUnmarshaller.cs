@@ -84,10 +84,28 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DurationMillis", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.DurationMillis = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Encryption", targetDepth))
                 {
                     var unmarshaller = EncryptionUnmarshaller.Instance;
                     unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FileSize", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.FileSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FrameRate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FrameRate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Height", targetDepth))

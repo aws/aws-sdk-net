@@ -38,12 +38,14 @@ namespace Amazon.CodeDeploy.Model
         private string _deploymentConfigName;
         private string _deploymentGroupName;
         private List<EC2TagFilter> _ec2TagFilters = new List<EC2TagFilter>();
+        private List<TagFilter> _onPremisesInstanceTagFilters = new List<TagFilter>();
         private string _serviceRoleArn;
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of an existing AWS CodeDeploy application within the AWS user account.
+        /// The name of an existing AWS CodeDeploy application associated with the applicable
+        /// IAM user or AWS account.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -83,27 +85,27 @@ namespace Amazon.CodeDeploy.Model
         /// or it can be a custom deployment configuration:
         /// </para>
         ///  <ul> <li>CodeDeployDefault.AllAtOnce deploys an application revision to up to all
-        /// of the Amazon EC2 instances at once. The overall deployment succeeds if the application
-        /// revision deploys to at least one of the instances. The overall deployment fails after
-        /// the application revision fails to deploy to all of the instances. For example, for
-        /// 9 instances, deploy to up to all 9 instances at once. The overall deployment succeeds
-        /// if any of the 9 instances is successfully deployed to, and it fails if all 9 instances
-        /// fail to be deployed to.</li> <li>CodeDeployDefault.HalfAtATime deploys to up to half
-        /// of the instances at a time (with fractions rounded down). The overall deployment succeeds
-        /// if the application revision deploys to at least half of the instances (with fractions
-        /// rounded up); otherwise, the deployment fails. For example, for 9 instances, deploy
-        /// to up to 4 instances at a time. The overall deployment succeeds if 5 or more instances
-        /// are successfully deployed to; otherwise, the deployment fails. Note that the deployment
-        /// may successfully deploy to some instances, even if the overall deployment fails.</li>
-        /// <li>CodeDeployDefault.OneAtATime deploys the application revision to only one of the
-        /// instances at a time. The overall deployment succeeds if the application revision deploys
-        /// to all of the instances. The overall deployment fails after the application revision
-        /// first fails to deploy to any one instance. For example, for 9 instances, deploy to
-        /// one instance at a time. The overall deployment succeeds if all 9 instances are successfully
-        /// deployed to, and it fails if any of one of the 9 instances fail to be deployed to.
-        /// Note that the deployment may successfully deploy to some instances, even if the overall
-        /// deployment fails. This is the default deployment configuration if a configuration
-        /// isn't specified for either the deployment or the deployment group.</li> </ul> 
+        /// of the instances at once. The overall deployment succeeds if the application revision
+        /// deploys to at least one of the instances. The overall deployment fails after the application
+        /// revision fails to deploy to all of the instances. For example, for 9 instances, deploy
+        /// to up to all 9 instances at once. The overall deployment succeeds if any of the 9
+        /// instances is successfully deployed to, and it fails if all 9 instances fail to be
+        /// deployed to.</li> <li>CodeDeployDefault.HalfAtATime deploys to up to half of the instances
+        /// at a time (with fractions rounded down). The overall deployment succeeds if the application
+        /// revision deploys to at least half of the instances (with fractions rounded up); otherwise,
+        /// the deployment fails. For example, for 9 instances, deploy to up to 4 instances at
+        /// a time. The overall deployment succeeds if 5 or more instances are successfully deployed
+        /// to; otherwise, the deployment fails. Note that the deployment may successfully deploy
+        /// to some instances, even if the overall deployment fails.</li> <li>CodeDeployDefault.OneAtATime
+        /// deploys the application revision to only one of the instances at a time. The overall
+        /// deployment succeeds if the application revision deploys to all of the instances. The
+        /// overall deployment fails after the application revision first fails to deploy to any
+        /// one instances. For example, for 9 instances, deploy to one instance at a time. The
+        /// overall deployment succeeds if all 9 instances are successfully deployed to, and it
+        /// fails if any of one of the 9 instances fail to be deployed to. Note that the deployment
+        /// may successfully deploy to some instances, even if the overall deployment fails. This
+        /// is the default deployment configuration if a configuration isn't specified for either
+        /// the deployment or the deployment group.</li> </ul> 
         /// <para>
         /// To create a custom deployment configuration, call the create deployment configuration
         /// operation.
@@ -155,6 +157,24 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetEc2TagFilters()
         {
             return this._ec2TagFilters != null && this._ec2TagFilters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnPremisesInstanceTagFilters. 
+        /// <para>
+        /// The on-premises instance tags to filter on.
+        /// </para>
+        /// </summary>
+        public List<TagFilter> OnPremisesInstanceTagFilters
+        {
+            get { return this._onPremisesInstanceTagFilters; }
+            set { this._onPremisesInstanceTagFilters = value; }
+        }
+
+        // Check to see if OnPremisesInstanceTagFilters property is set
+        internal bool IsSetOnPremisesInstanceTagFilters()
+        {
+            return this._onPremisesInstanceTagFilters != null && this._onPremisesInstanceTagFilters.Count > 0; 
         }
 
         /// <summary>

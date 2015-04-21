@@ -174,15 +174,7 @@ namespace Amazon.Runtime
         internal static string GetUrl(RegionEndpoint regionEndpoint, string regionEndpointServiceName, bool useHttp)
         {
             var endpoint = regionEndpoint.GetEndpointForService(regionEndpointServiceName);
-            bool shouldUseHttp;
-            if (endpoint.HTTP && endpoint.HTTPS)    // if both are supported, go with user preference
-                shouldUseHttp = useHttp;
-            else if (endpoint.HTTPS)                // if HTTPS is supported, go with HTTPS
-                shouldUseHttp = false;
-            else                                    // if HTTP is supported, go with HTTP
-                shouldUseHttp = true;
-
-            string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", shouldUseHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
+            string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", useHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
             return url;
         }
 

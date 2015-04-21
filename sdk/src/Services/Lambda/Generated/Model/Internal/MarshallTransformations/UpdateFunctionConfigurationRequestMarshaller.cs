@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2014-11-11.normal.json service model.
+ * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -48,25 +48,50 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/2014-11-13/functions/{FunctionName}/configuration";
+            string uriResourcePath = "/2015-03-31/functions/{FunctionName}/versions/HEAD/configuration";
             uriResourcePath = uriResourcePath.Replace("{FunctionName}", publicRequest.IsSetFunctionName() ? StringUtils.FromString(publicRequest.FunctionName) : string.Empty);
-            
-            if (publicRequest.IsSetDescription())
-                request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
-            
-            if (publicRequest.IsSetHandler())
-                request.Parameters.Add("Handler", StringUtils.FromString(publicRequest.Handler));
-            
-            if (publicRequest.IsSetMemorySize())
-                request.Parameters.Add("MemorySize", StringUtils.FromInt(publicRequest.MemorySize));
-            
-            if (publicRequest.IsSetRole())
-                request.Parameters.Add("Role", StringUtils.FromString(publicRequest.Role));
-            
-            if (publicRequest.IsSetTimeout())
-                request.Parameters.Add("Timeout", StringUtils.FromInt(publicRequest.Timeout));
             request.ResourcePath = uriResourcePath;
-            request.UseQueryString = true;
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetHandler())
+                {
+                    context.Writer.WritePropertyName("Handler");
+                    context.Writer.Write(publicRequest.Handler);
+                }
+
+                if(publicRequest.IsSetMemorySize())
+                {
+                    context.Writer.WritePropertyName("MemorySize");
+                    context.Writer.Write(publicRequest.MemorySize);
+                }
+
+                if(publicRequest.IsSetRole())
+                {
+                    context.Writer.WritePropertyName("Role");
+                    context.Writer.Write(publicRequest.Role);
+                }
+
+                if(publicRequest.IsSetTimeout())
+                {
+                    context.Writer.WritePropertyName("Timeout");
+                    context.Writer.Write(publicRequest.Timeout);
+                }
+
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
 
             return request;
         }

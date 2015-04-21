@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// The output from the <a>SetTaskStatus</a> action.
+    /// Contains the output of SetTaskStatus.
     /// </summary>
     public partial class SetTaskStatusResponse : AmazonWebServiceResponse
     {

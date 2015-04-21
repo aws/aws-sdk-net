@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Contains the output from the <a>EvaluateExpression</a> action.
+    /// Contains the output of EvaluateExpression.
     /// </summary>
     public partial class EvaluateExpressionResponse : AmazonWebServiceResponse
     {

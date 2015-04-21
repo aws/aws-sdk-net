@@ -40,8 +40,8 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property AttemptId. 
         /// <para>
-        /// Identifier of the pipeline task attempt object. AWS Data Pipeline uses this value
-        /// to track how many times a task is attempted.
+        /// The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track
+        /// how many times a task is attempted.
         /// </para>
         /// </summary>
         public string AttemptId
@@ -78,7 +78,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
-        /// Identifier of the pipeline that provided the task.
+        /// The ID of the pipeline that provided the task.
         /// </para>
         /// </summary>
         public string PipelineId

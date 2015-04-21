@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// 
+    /// Contains the response to a successful <a>CreatePolicy</a> request.
     /// </summary>
     public partial class CreatePolicyResponse : AmazonWebServiceResponse
     {

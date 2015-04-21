@@ -31,14 +31,14 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the PromoteReadReplica operation.
     /// Promotes a Read Replica DB instance to a standalone DB instance. 
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// We recommend that you enable automated backups on your Read Replica before promoting
     /// the Read Replica. This ensures that no backup is taken during the promotion process.
     /// Once the instance is promoted to a primary instance, backups are taken based on your
     /// backup settings.
     /// </para>
-    /// </note>
+    ///  </note>
     /// </summary>
     public partial class PromoteReadReplicaRequest : AmazonRDSRequest
     {

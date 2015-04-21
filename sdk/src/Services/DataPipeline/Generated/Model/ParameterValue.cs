@@ -38,7 +38,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Identifier of the parameter value.
+        /// The ID of the parameter value.
         /// </para>
         /// </summary>
         public string Id

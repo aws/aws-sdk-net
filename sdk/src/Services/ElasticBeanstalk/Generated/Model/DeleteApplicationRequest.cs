@@ -30,7 +30,9 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// Container for the parameters to the DeleteApplication operation.
     /// Deletes the specified application along with all associated versions and configurations.
-    /// The application versions will not be deleted from your Amazon S3 bucket.
+    /// The application versions will not be deleted from your Amazon S3 bucket. 
+    /// 
+    ///  <note>You cannot delete an application that has a running environment. </note>
     /// </summary>
     public partial class DeleteApplicationRequest : AmazonElasticBeanstalkRequest
     {

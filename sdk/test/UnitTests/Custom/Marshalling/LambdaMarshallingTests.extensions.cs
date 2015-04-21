@@ -26,6 +26,8 @@ using Amazon.Util;
 using ServiceClientGenerator;
 
 using AWSSDK_DotNet35.UnitTests.TestTools;
+using Amazon;
+using AWSSDK.UnitTests;
 
 namespace AWSSDK_DotNet35.UnitTests.Marshalling
 {    
@@ -35,41 +37,21 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Lambda")]
-        public void AddEventSourceMarshallTestForDataTypeCustomization()
+        public void TestInvokeResponseBody()
         {
-            var operation = service_model.FindOperation("AddEventSource");
+            var responseBody = "Process exited before completing request:TypeError: Object #<LambdaEventResponse> has no method 'write': at exports.handler (/var/task/helloworld.js:4:14)";
+            var requestId = "fakerequ-esti-dfak-ereq-uestidfakere";
 
-            var request = InstantiateClassGenerator.Execute<AddEventSourceRequest>();
-            var marshaller = new AddEventSourceRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("AddEventSource", request, internalRequest, service_model);
-
-            var webResponse = new WebResponseData
+            using(var client = new Amazon.Lambda.AmazonLambdaClient(new Amazon.Runtime.AnonymousAWSCredentials(), RegionEndpoint.USEast1))
             {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
+                CustomResponses.SetResponse(client, responseBody, requestId, isOK: true);
 
-            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
-
-            // The service returns IsActive as a string and it's unmarshalled as a bool to set the 
-            // AddEventSourceResponse.IsActive bool property.
-            if (payloadResponse.Contains("\"IsActive\"     : true"))
-                payloadResponse = payloadResponse.Replace("\"IsActive\"     : true", "\"IsActive\"     : \"true\"");
-            else
-                throw new InvalidOperationException("Could not replace json in sample response");
-
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = AddEventSourceResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as AddEventSourceResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+                var response = client.Invoke(new InvokeRequest
+                {
+                });
+                Assert.AreEqual(requestId, response.ResponseMetadata.RequestId);
+                Assert.AreEqual(responseBody, Encoding.UTF8.GetString(response.Payload.ToArray()));
+            }
         }
-
-
     }
 }

@@ -49,6 +49,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AbortableOperationInProgress", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.AbortableOperationInProgress = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ApplicationName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -1,0 +1,8 @@
+<docs>
+  <ref src="S3.extra.xml" />
+  <ref src="DynamoDBv2.extra.xml" />
+  <ref src="SNS.extra.xml" />
+  <ref src="SES.extra.xml" />
+  <ref src="CloudWatch.extra.xml" />
+  <ref src="SQS.extra.xml" />
+</docs>

@@ -38,7 +38,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of the application. This name must be unique within the AWS user account.
+        /// The name of the application. This name must be unique with the applicable IAM user
+        /// or AWS account.
         /// </para>
         /// </summary>
         public string ApplicationName

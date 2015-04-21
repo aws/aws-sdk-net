@@ -52,6 +52,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
             uriResourcePath = uriResourcePath.Replace("{uploadId}", publicRequest.IsSetUploadId() ? StringUtils.FromString(publicRequest.UploadId) : string.Empty);
             uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
+            request.ResourcePath = uriResourcePath;
             request.ContentStream =  publicRequest.Body ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
@@ -62,7 +63,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         
             if(publicRequest.IsSetRange())
                 request.Headers["Content-Range"] = publicRequest.Range;
-            request.ResourcePath = uriResourcePath;
 
             return request;
         }

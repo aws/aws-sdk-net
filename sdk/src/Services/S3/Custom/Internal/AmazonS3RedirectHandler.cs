@@ -49,7 +49,8 @@ namespace Amazon.S3.Internal
             var redirect = new AmazonS3Uri(redirectedLocation);
             if (AWSConfigsS3.UseSignatureVersion4 ||
                 request.UseSigV4 ||
-                redirect.Region.GetEndpointForService("s3").SignatureVersionOverride == "4")
+                redirect.Region.GetEndpointForService("s3").SignatureVersionOverride == "4" ||
+                redirect.Region.GetEndpointForService("s3").SignatureVersionOverride == null)
             {
                 // Resign if sigV4 is enabled, the request explicitly requires SigV4 or if the redirected region mandates sigV4.
                 // resign appropriately for the redirected region, re-instating the user's client 

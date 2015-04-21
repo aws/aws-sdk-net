@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Contains the output from the <a>ValidatePipelineDefinition</a> action.
+    /// Contains the output of ValidatePipelineDefinition.
     /// </summary>
     public partial class ValidatePipelineDefinitionResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Errored. 
         /// <para>
-        /// If <code>True</code>, there were validation errors.
+        /// Indicates whether there were validation errors.
         /// </para>
         /// </summary>
         public bool Errored
@@ -57,7 +57,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property ValidationErrors. 
         /// <para>
-        /// Lists the validation errors that were found by <a>ValidatePipelineDefinition</a>.
+        /// Any validation errors that were found.
         /// </para>
         /// </summary>
         public List<ValidationError> ValidationErrors
@@ -75,7 +75,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property ValidationWarnings. 
         /// <para>
-        /// Lists the validation warnings that were found by <a>ValidatePipelineDefinition</a>.
+        /// Any validation warnings that were found.
         /// </para>
         /// </summary>
         public List<ValidationWarning> ValidationWarnings

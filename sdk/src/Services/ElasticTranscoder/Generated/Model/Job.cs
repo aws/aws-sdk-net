@@ -41,6 +41,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string _pipelineId;
         private List<Playlist> _playlists = new List<Playlist>();
         private string _status;
+        private Timing _timing;
         private Dictionary<string, string> _userMetadata = new Dictionary<string, string>();
 
         /// <summary>
@@ -234,6 +235,24 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timing. 
+        /// <para>
+        /// Details about the timing of a job.
+        /// </para>
+        /// </summary>
+        public Timing Timing
+        {
+            get { return this._timing; }
+            set { this._timing = value; }
+        }
+
+        // Check to see if Timing property is set
+        internal bool IsSetTiming()
+        {
+            return this._timing != null;
         }
 
         /// <summary>

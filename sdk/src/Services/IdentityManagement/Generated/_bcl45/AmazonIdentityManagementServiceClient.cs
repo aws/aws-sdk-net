@@ -2900,8 +2900,8 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Retrieves information about all IAM users, groups, and roles in your account, including
         /// their relationships to one another and their policies. Use this API to obtain a snapshot
-        /// of the configuration of IAM permissions (users, groups, roles, and their policies)
-        /// in your account.
+        /// of the configuration of IAM permissions (users, groups, roles, and policies) in your
+        /// account.
         /// 
         ///  
         /// <para>
@@ -6500,53 +6500,6 @@ namespace Amazon.IdentityManagement
             var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateUserRequest,UpdateUserResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  UploadPublicAccessKey
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UploadPublicAccessKey service method.</param>
-        /// 
-        /// <returns>The response from the UploadPublicAccessKey service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
-        /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error message describes the limit exceeded.
-        /// </exception>
-        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
-        /// </exception>
-        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
-        /// The request processing has failed because of an unknown error, exception or failure.
-        /// </exception>
-        public UploadPublicAccessKeyResponse UploadPublicAccessKey(UploadPublicAccessKeyRequest request)
-        {
-            var marshaller = new UploadPublicAccessKeyRequestMarshaller();
-            var unmarshaller = UploadPublicAccessKeyResponseUnmarshaller.Instance;
-
-            return Invoke<UploadPublicAccessKeyRequest,UploadPublicAccessKeyResponse>(request, marshaller, unmarshaller);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UploadPublicAccessKey operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UploadPublicAccessKey operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UploadPublicAccessKeyResponse> UploadPublicAccessKeyAsync(UploadPublicAccessKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new UploadPublicAccessKeyRequestMarshaller();
-            var unmarshaller = UploadPublicAccessKeyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UploadPublicAccessKeyRequest,UploadPublicAccessKeyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

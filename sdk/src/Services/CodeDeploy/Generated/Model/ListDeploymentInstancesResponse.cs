@@ -38,7 +38,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property InstancesList. 
         /// <para>
-        /// A list of instance IDs.
+        /// A list of instances IDs.
         /// </para>
         /// </summary>
         public List<string> InstancesList

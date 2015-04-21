@@ -44,6 +44,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElasticBeanstalk")]
+        public void AbortEnvironmentUpdateMarshallTest()
+        {
+            var operation = service_model.FindOperation("AbortEnvironmentUpdate");
+
+            var request = InstantiateClassGenerator.Execute<AbortEnvironmentUpdateRequest>();
+            var marshaller = new AbortEnvironmentUpdateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
         public void CheckDNSAvailabilityMarshallTest()
         {
             var operation = service_model.FindOperation("CheckDNSAvailability");

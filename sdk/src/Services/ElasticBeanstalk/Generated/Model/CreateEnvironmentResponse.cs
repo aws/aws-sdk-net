@@ -32,6 +32,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class CreateEnvironmentResponse : AmazonWebServiceResponse
     {
+        private bool? _abortableOperationInProgress;
         private string _applicationName;
         private string _cname;
         private DateTime? _dateCreated;
@@ -47,6 +48,25 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _templateName;
         private EnvironmentTier _tier;
         private string _versionLabel;
+
+        /// <summary>
+        /// Gets and sets the property AbortableOperationInProgress. 
+        /// <para>
+        /// Lists in-progress environment updates and application version deployments that you
+        /// can cancel.
+        /// </para>
+        /// </summary>
+        public bool AbortableOperationInProgress
+        {
+            get { return this._abortableOperationInProgress.GetValueOrDefault(); }
+            set { this._abortableOperationInProgress = value; }
+        }
+
+        // Check to see if AbortableOperationInProgress property is set
+        internal bool IsSetAbortableOperationInProgress()
+        {
+            return this._abortableOperationInProgress.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 

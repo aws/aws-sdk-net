@@ -90,6 +90,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.Ec2TagFilters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("onPremisesInstanceTagFilters", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TagFilter, TagFilterUnmarshaller>(TagFilterUnmarshaller.Instance);
+                    unmarshalledObject.OnPremisesInstanceTagFilters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serviceRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

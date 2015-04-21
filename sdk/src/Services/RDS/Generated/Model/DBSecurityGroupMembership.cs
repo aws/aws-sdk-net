@@ -30,8 +30,8 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// This data type is used as a response element in the following actions: 
     /// 
-    ///  <ul> <li><a>ModifyDBInstance</a></li> <li><a>RebootDBInstance</a></li> <li><a>RestoreDBInstanceFromDBSnapshot</a></li>
-    /// <li><a>RestoreDBInstanceToPointInTime</a></li> </ul>
+    ///  <ul> <li> <a>ModifyDBInstance</a> </li> <li> <a>RebootDBInstance</a> </li> <li> <a>RestoreDBInstanceFromDBSnapshot</a>
+    /// </li> <li> <a>RestoreDBInstanceToPointInTime</a> </li> </ul>
     /// </summary>
     public partial class DBSecurityGroupMembership
     {

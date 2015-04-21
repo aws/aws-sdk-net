@@ -78,7 +78,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the pipeline.
+        /// The name of the pipeline.
         /// </para>
         /// </summary>
         public string Name

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2014-11-11.normal.json service model.
+ * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 
 
@@ -36,16 +36,16 @@ namespace Amazon.Lambda
     /// <summary>
     /// Implementation for accessing Lambda
     ///
-    /// AWS Lambda 
+    /// AWS LambdaS 
     /// <para>
     /// <b>Overview</b>
     /// </para>
     ///  
     /// <para>
-    /// This is the AWS Lambda API Reference. The AWS Lambda Developer Guide provides additional
-    /// information. For the service overview, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
+    /// This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides
+    /// additional information. For the service overview, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
     /// is AWS Lambda</a>, and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-    /// LambdaL How it Works</a> in the AWS Lambda Developer Guide.
+    /// LambdaL How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class AmazonLambdaClient : AmazonServiceClient, IAmazonLambda
@@ -174,31 +174,121 @@ namespace Amazon.Lambda
         #endregion
 
         
-        #region  AddEventSource
+        #region  AddPermission
 
-        internal AddEventSourceResponse AddEventSource(AddEventSourceRequest request)
+        internal AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
-            var marshaller = new AddEventSourceRequestMarshaller();
-            var unmarshaller = AddEventSourceResponseUnmarshaller.Instance;
+            var marshaller = new AddPermissionRequestMarshaller();
+            var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
 
-            return Invoke<AddEventSourceRequest,AddEventSourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddPermissionRequest,AddPermissionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the AddEventSource operation.
+        /// Initiates the asynchronous execution of the AddPermission operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the AddEventSource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AddPermission operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<AddEventSourceResponse> AddEventSourceAsync(AddEventSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddEventSourceRequestMarshaller();
-            var unmarshaller = AddEventSourceResponseUnmarshaller.Instance;
+            var marshaller = new AddPermissionRequestMarshaller();
+            var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AddEventSourceRequest,AddEventSourceResponse>(request, marshaller, 
+            return InvokeAsync<AddPermissionRequest,AddPermissionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateEventSourceMapping
+
+        internal CreateEventSourceMappingResponse CreateEventSourceMapping(CreateEventSourceMappingRequest request)
+        {
+            var marshaller = new CreateEventSourceMappingRequestMarshaller();
+            var unmarshaller = CreateEventSourceMappingResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEventSourceMappingRequest,CreateEventSourceMappingResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEventSourceMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventSourceMapping operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateEventSourceMappingResponse> CreateEventSourceMappingAsync(CreateEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateEventSourceMappingRequestMarshaller();
+            var unmarshaller = CreateEventSourceMappingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateEventSourceMappingRequest,CreateEventSourceMappingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateFunction
+
+        internal CreateFunctionResponse CreateFunction(CreateFunctionRequest request)
+        {
+            var marshaller = new CreateFunctionRequestMarshaller();
+            var unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFunctionRequest,CreateFunctionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFunction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateFunctionResponse> CreateFunctionAsync(CreateFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateFunctionRequestMarshaller();
+            var unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFunctionRequest,CreateFunctionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteEventSourceMapping
+
+        internal DeleteEventSourceMappingResponse DeleteEventSourceMapping(DeleteEventSourceMappingRequest request)
+        {
+            var marshaller = new DeleteEventSourceMappingRequestMarshaller();
+            var unmarshaller = DeleteEventSourceMappingResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventSourceMappingRequest,DeleteEventSourceMappingResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEventSourceMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventSourceMapping operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteEventSourceMappingResponse> DeleteEventSourceMappingAsync(DeleteEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteEventSourceMappingRequestMarshaller();
+            var unmarshaller = DeleteEventSourceMappingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEventSourceMappingRequest,DeleteEventSourceMappingResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -234,31 +324,31 @@ namespace Amazon.Lambda
 
         #endregion
         
-        #region  GetEventSource
+        #region  GetEventSourceMapping
 
-        internal GetEventSourceResponse GetEventSource(GetEventSourceRequest request)
+        internal GetEventSourceMappingResponse GetEventSourceMapping(GetEventSourceMappingRequest request)
         {
-            var marshaller = new GetEventSourceRequestMarshaller();
-            var unmarshaller = GetEventSourceResponseUnmarshaller.Instance;
+            var marshaller = new GetEventSourceMappingRequestMarshaller();
+            var unmarshaller = GetEventSourceMappingResponseUnmarshaller.Instance;
 
-            return Invoke<GetEventSourceRequest,GetEventSourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetEventSourceMappingRequest,GetEventSourceMappingResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetEventSource operation.
+        /// Initiates the asynchronous execution of the GetEventSourceMapping operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetEventSource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventSourceMapping operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetEventSourceResponse> GetEventSourceAsync(GetEventSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetEventSourceMappingResponse> GetEventSourceMappingAsync(GetEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetEventSourceRequestMarshaller();
-            var unmarshaller = GetEventSourceResponseUnmarshaller.Instance;
+            var marshaller = new GetEventSourceMappingRequestMarshaller();
+            var unmarshaller = GetEventSourceMappingResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetEventSourceRequest,GetEventSourceResponse>(request, marshaller, 
+            return InvokeAsync<GetEventSourceMappingRequest,GetEventSourceMappingResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -324,6 +414,66 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  GetPolicy
+
+        internal GetPolicyResponse GetPolicy(GetPolicyRequest request)
+        {
+            var marshaller = new GetPolicyRequestMarshaller();
+            var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetPolicyRequest,GetPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetPolicyRequestMarshaller();
+            var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPolicyRequest,GetPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  Invoke
+
+        internal InvokeResponse Invoke(InvokeRequest request)
+        {
+            var marshaller = new InvokeRequestMarshaller();
+            var unmarshaller = InvokeResponseUnmarshaller.Instance;
+
+            return Invoke<InvokeRequest,InvokeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Invoke operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the Invoke operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<InvokeResponse> InvokeAsync(InvokeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new InvokeRequestMarshaller();
+            var unmarshaller = InvokeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<InvokeRequest,InvokeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  InvokeAsync
 
         internal InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest request)
@@ -354,31 +504,31 @@ namespace Amazon.Lambda
 
         #endregion
         
-        #region  ListEventSources
+        #region  ListEventSourceMappings
 
-        internal ListEventSourcesResponse ListEventSources(ListEventSourcesRequest request)
+        internal ListEventSourceMappingsResponse ListEventSourceMappings(ListEventSourceMappingsRequest request)
         {
-            var marshaller = new ListEventSourcesRequestMarshaller();
-            var unmarshaller = ListEventSourcesResponseUnmarshaller.Instance;
+            var marshaller = new ListEventSourceMappingsRequestMarshaller();
+            var unmarshaller = ListEventSourceMappingsResponseUnmarshaller.Instance;
 
-            return Invoke<ListEventSourcesRequest,ListEventSourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListEventSourceMappingsRequest,ListEventSourceMappingsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ListEventSources operation.
+        /// Initiates the asynchronous execution of the ListEventSourceMappings operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListEventSources operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventSourceMappings operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListEventSourcesResponse> ListEventSourcesAsync(ListEventSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListEventSourceMappingsResponse> ListEventSourceMappingsAsync(ListEventSourceMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListEventSourcesRequestMarshaller();
-            var unmarshaller = ListEventSourcesResponseUnmarshaller.Instance;
+            var marshaller = new ListEventSourceMappingsRequestMarshaller();
+            var unmarshaller = ListEventSourceMappingsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListEventSourcesRequest,ListEventSourcesResponse>(request, marshaller, 
+            return InvokeAsync<ListEventSourceMappingsRequest,ListEventSourceMappingsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -414,31 +564,91 @@ namespace Amazon.Lambda
 
         #endregion
         
-        #region  RemoveEventSource
+        #region  RemovePermission
 
-        internal RemoveEventSourceResponse RemoveEventSource(RemoveEventSourceRequest request)
+        internal RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
-            var marshaller = new RemoveEventSourceRequestMarshaller();
-            var unmarshaller = RemoveEventSourceResponseUnmarshaller.Instance;
+            var marshaller = new RemovePermissionRequestMarshaller();
+            var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
-            return Invoke<RemoveEventSourceRequest,RemoveEventSourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemovePermissionRequest,RemovePermissionResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the RemoveEventSource operation.
+        /// Initiates the asynchronous execution of the RemovePermission operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the RemoveEventSource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RemovePermission operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<RemoveEventSourceResponse> RemoveEventSourceAsync(RemoveEventSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RemoveEventSourceRequestMarshaller();
-            var unmarshaller = RemoveEventSourceResponseUnmarshaller.Instance;
+            var marshaller = new RemovePermissionRequestMarshaller();
+            var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RemoveEventSourceRequest,RemoveEventSourceResponse>(request, marshaller, 
+            return InvokeAsync<RemovePermissionRequest,RemovePermissionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateEventSourceMapping
+
+        internal UpdateEventSourceMappingResponse UpdateEventSourceMapping(UpdateEventSourceMappingRequest request)
+        {
+            var marshaller = new UpdateEventSourceMappingRequestMarshaller();
+            var unmarshaller = UpdateEventSourceMappingResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEventSourceMappingRequest,UpdateEventSourceMappingResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEventSourceMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventSourceMapping operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateEventSourceMappingResponse> UpdateEventSourceMappingAsync(UpdateEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateEventSourceMappingRequestMarshaller();
+            var unmarshaller = UpdateEventSourceMappingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateEventSourceMappingRequest,UpdateEventSourceMappingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateFunctionCode
+
+        internal UpdateFunctionCodeResponse UpdateFunctionCode(UpdateFunctionCodeRequest request)
+        {
+            var marshaller = new UpdateFunctionCodeRequestMarshaller();
+            var unmarshaller = UpdateFunctionCodeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFunctionCodeRequest,UpdateFunctionCodeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFunctionCode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionCode operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateFunctionCodeResponse> UpdateFunctionCodeAsync(UpdateFunctionCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateFunctionCodeRequestMarshaller();
+            var unmarshaller = UpdateFunctionCodeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateFunctionCodeRequest,UpdateFunctionCodeResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -469,36 +679,6 @@ namespace Amazon.Lambda
             var unmarshaller = UpdateFunctionConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateFunctionConfigurationRequest,UpdateFunctionConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  UploadFunction
-
-        internal UploadFunctionResponse UploadFunction(UploadFunctionRequest request)
-        {
-            var marshaller = new UploadFunctionRequestMarshaller();
-            var unmarshaller = UploadFunctionResponseUnmarshaller.Instance;
-
-            return Invoke<UploadFunctionRequest,UploadFunctionResponse>(request, marshaller, unmarshaller);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UploadFunction operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UploadFunction operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UploadFunctionResponse> UploadFunctionAsync(UploadFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new UploadFunctionRequestMarshaller();
-            var unmarshaller = UploadFunctionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UploadFunctionRequest,UploadFunctionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

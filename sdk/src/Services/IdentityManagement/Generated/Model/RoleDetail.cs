@@ -40,6 +40,7 @@ namespace Amazon.IdentityManagement.Model
     {
         private string _arn;
         private string _assumeRolePolicyDocument;
+        private List<AttachedPolicyType> _attachedManagedPolicies = new List<AttachedPolicyType>();
         private DateTime? _createDate;
         private List<InstanceProfile> _instanceProfileList = new List<InstanceProfile>();
         private string _path;
@@ -83,6 +84,25 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetAssumeRolePolicyDocument()
         {
             return this._assumeRolePolicyDocument != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttachedManagedPolicies. 
+        /// <para>
+        /// A list of managed policies attached to the role. These policies are the role's access
+        /// (permissions) policies.
+        /// </para>
+        /// </summary>
+        public List<AttachedPolicyType> AttachedManagedPolicies
+        {
+            get { return this._attachedManagedPolicies; }
+            set { this._attachedManagedPolicies = value; }
+        }
+
+        // Check to see if AttachedManagedPolicies property is set
+        internal bool IsSetAttachedManagedPolicies()
+        {
+            return this._attachedManagedPolicies != null && this._attachedManagedPolicies.Count > 0; 
         }
 
         /// <summary>
@@ -179,7 +199,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property RolePolicyList. 
         /// <para>
-        /// A list of the role's access (permissions) policies. 
+        /// A list of inline policies embedded in the role. These policies are the role's access
+        /// (permissions) policies.
         /// </para>
         /// </summary>
         public List<PolicyDetail> RolePolicyList

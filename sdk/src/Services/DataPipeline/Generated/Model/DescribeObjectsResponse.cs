@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// If <code>True</code>, there are more results that can be returned in another call
-    /// to <a>DescribeObjects</a>.
+    /// Contains the output of DescribeObjects.
     /// </summary>
     public partial class DescribeObjectsResponse : AmazonWebServiceResponse
     {
@@ -40,7 +39,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property HasMoreResults. 
         /// <para>
-        /// If <code>True</code>, there are more pages of results to return.
+        /// Indicates whether there are more results to return.
         /// </para>
         /// </summary>
         public bool HasMoreResults
@@ -58,8 +57,9 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  The starting point for the next page of results. To view the next page of results,
-        /// call <a>DescribeObjects</a> again with this marker value. 
+        /// The starting point for the next page of results. To view the next page of results,
+        /// call <code>DescribeObjects</code> again with this marker value. If the value is null,
+        /// there are no more results.
         /// </para>
         /// </summary>
         public string Marker
@@ -77,7 +77,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineObjects. 
         /// <para>
-        /// An array of object definitions that are returned by the call to <a>DescribeObjects</a>.
+        /// An array of object definitions.
         /// </para>
         /// </summary>
         public List<PipelineObject> PipelineObjects

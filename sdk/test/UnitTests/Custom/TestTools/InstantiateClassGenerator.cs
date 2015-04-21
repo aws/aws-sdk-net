@@ -180,9 +180,11 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 var propertyValue = info.GetMethod.Invoke(owningObject, new object[] { });
 
                 if (owningObject.GetType() == typeof(Amazon.Glacier.Model.GetJobOutputResponse) ||
-                    owningObject.GetType() == typeof(Amazon.Lambda.Model.InvokeAsyncResponse)) 
+                    owningObject.GetType() == typeof(Amazon.Lambda.Model.InvokeAsyncResponse) ||
+                    owningObject.GetType() == typeof(Amazon.Lambda.Model.InvokeResponse)) 
                 {
-                    if (info.Name == "Status")
+                    if (info.Name == "Status" ||
+                        info.Name == "StatusCode")
                     {
 						// Special case for GetJobOutputResponse.Status property which is unmarshalled from 
 						// HttpResponse's Status code.

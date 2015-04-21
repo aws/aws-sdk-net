@@ -17,6 +17,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void TestReplicationConfiguration()
         {
+            TestReplicationConfigurationForPrefix("foo-");
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestReplicationConfigurationNoPrefix()
+        {
+            TestReplicationConfigurationForPrefix(null);
+        }
+
+
+        private void TestReplicationConfigurationForPrefix(string prefix)
+        {
             var bucketName = UtilityMethods.GenerateName();
             var euBucketName = "eu" + UtilityMethods.GenerateName();
             var euS3 = new AmazonS3Client(Amazon.RegionEndpoint.EUWest1);
@@ -56,7 +69,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                             new ReplicationRule 
                             {
                                 Id = UtilityMethods.GenerateName(),
-                                Prefix = "foo-",
+                                Prefix = prefix,
                                 Status = ReplicationRuleStatus.Enabled,
                                 Destination = new ReplicationDestination
                                 {
@@ -84,7 +97,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Assert.IsNotNull(rule);
                 Assert.IsNotNull(rule.Id);
                 Assert.IsNotNull(rule.Prefix);
-                Assert.AreEqual("foo-", rule.Prefix);
+                if (string.IsNullOrEmpty(prefix))
+                    Assert.AreEqual(string.Empty, rule.Prefix);
+                else
+                    Assert.AreEqual(prefix, rule.Prefix);
                 Assert.AreEqual(destinationBucketArn, rule.Destination.BucketArn);
 
                 Client.PutObject(new PutObjectRequest { 

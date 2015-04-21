@@ -32,12 +32,19 @@ namespace Amazon.ECS.Model
     /// Starts a new task from the specified task definition on the specified container instance
     /// or instances. If you want to use the default Amazon ECS scheduler to place your task,
     /// use <code>RunTask</code> instead.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// The list of container instances to start tasks on is limited to 10.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class StartTaskRequest : AmazonECSRequest
     {
         private string _cluster;
         private List<string> _containerInstances = new List<string>();
         private TaskOverride _overrides;
+        private string _startedBy;
         private string _taskDefinition;
 
         /// <summary>
@@ -65,6 +72,11 @@ namespace Amazon.ECS.Model
         /// The container instance UUIDs or full Amazon Resource Name (ARN) entries for the container
         /// instances on which you would like to place your task.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The list of container instances to start tasks on is limited to 10.
+        /// </para>
+        ///  </important>
         /// </summary>
         public List<string> ContainerInstances
         {
@@ -79,7 +91,13 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Overrides.
+        /// Gets and sets the property Overrides. 
+        /// <para>
+        /// A list of container overrides in JSON format that specify the name of a container
+        /// in the specified task definition and the command it should run instead of its default.
+        /// A total of 8192 characters are allowed for overrides. This limit includes the JSON
+        /// formatting characters of the override structure.
+        /// </para>
         /// </summary>
         public TaskOverride Overrides
         {
@@ -91,6 +109,21 @@ namespace Amazon.ECS.Model
         internal bool IsSetOverrides()
         {
             return this._overrides != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartedBy.
+        /// </summary>
+        public string StartedBy
+        {
+            get { return this._startedBy; }
+            set { this._startedBy = value; }
+        }
+
+        // Check to see if StartedBy property is set
+        internal bool IsSetStartedBy()
+        {
+            return this._startedBy != null;
         }
 
         /// <summary>

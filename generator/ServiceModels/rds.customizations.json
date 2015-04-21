@@ -11,6 +11,7 @@
     "DescribeEvents",
     "DescribeOptionGroups",
     "DescribeReservedDBInstances",
-    "DescribeReservedDBInstancesOfferings"
+    "DescribeReservedDBInstancesOfferings",
+    "DescribeAccountAttributes"
   ]
 }

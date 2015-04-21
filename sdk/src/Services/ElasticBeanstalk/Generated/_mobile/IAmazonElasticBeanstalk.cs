@@ -62,6 +62,21 @@ namespace Amazon.ElasticBeanstalk
     public partial interface IAmazonElasticBeanstalk : IDisposable
     {
                 
+        #region  AbortEnvironmentUpdate
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AbortEnvironmentUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AbortEnvironmentUpdate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AbortEnvironmentUpdateResponse> AbortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CheckDNSAvailability
 
         /// <summary>

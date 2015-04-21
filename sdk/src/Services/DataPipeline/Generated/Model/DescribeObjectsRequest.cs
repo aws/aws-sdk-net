@@ -29,9 +29,8 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeObjects operation.
-    /// Returns the object definitions for a set of objects associated with the pipeline.
-    /// Object definitions are composed of a set of fields that define the properties of the
-    /// object.
+    /// Gets the object definitions for a set of objects associated with the pipeline. Object
+    /// definitions are composed of a set of fields that define the properties of the object.
     /// </summary>
     public partial class DescribeObjectsRequest : AmazonDataPipelineRequest
     {
@@ -62,10 +61,9 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The starting point for the results to be returned. The first time you call <a>DescribeObjects</a>,
-        /// this value should be empty. As long as the action returns <code>HasMoreResults</code>
-        /// as <code>True</code>, you can call <a>DescribeObjects</a> again and pass the marker
-        /// value from the response to retrieve the next set of results.
+        /// The starting point for the results to be returned. For the first call, this value
+        /// should be empty. As long as there are more results, continue to call <code>DescribeObjects</code>
+        /// with the marker value from the previous call to retrieve the next set of results.
         /// </para>
         /// </summary>
         public string Marker
@@ -83,8 +81,8 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property ObjectIds. 
         /// <para>
-        /// Identifiers of the pipeline objects that contain the definitions to be described.
-        /// You can pass as many as 25 identifiers in a single call to DescribeObjects.
+        /// The IDs of the pipeline objects that contain the definitions to be described. You
+        /// can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.
         /// </para>
         /// </summary>
         public List<string> ObjectIds
@@ -102,7 +100,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
-        /// Identifier of the pipeline that contains the object definitions.
+        /// The ID of the pipeline that contains the object definitions.
         /// </para>
         /// </summary>
         public string PipelineId

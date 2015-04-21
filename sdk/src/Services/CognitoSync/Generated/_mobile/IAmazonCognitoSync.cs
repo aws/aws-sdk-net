@@ -149,6 +149,21 @@ namespace Amazon.CognitoSync
 
         #endregion
                 
+        #region  GetCognitoEvents
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCognitoEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCognitoEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetCognitoEventsResponse> GetCognitoEventsAsync(GetCognitoEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetIdentityPoolConfiguration
 
         /// <summary>
@@ -221,6 +236,21 @@ namespace Amazon.CognitoSync
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<RegisterDeviceResponse> RegisterDeviceAsync(RegisterDeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SetCognitoEvents
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetCognitoEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetCognitoEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<SetCognitoEventsResponse> SetCognitoEventsAsync(SetCognitoEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

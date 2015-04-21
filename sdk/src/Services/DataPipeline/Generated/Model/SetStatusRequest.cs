@@ -29,11 +29,11 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the SetStatus operation.
-    /// Requests that the status of an array of physical or logical pipeline objects be updated
-    /// in the pipeline. This update may not occur immediately, but is eventually consistent.
-    /// The status that can be set depends on the type of object, e.g. DataNode or Activity.
-    /// You cannot perform this operation on FINISHED pipelines and attempting to do so will
-    /// return an InvalidRequestException.
+    /// Requests that the status of the specified physical or logical pipeline objects be
+    /// updated in the specified pipeline. This update might not occur immediately, but is
+    /// eventually consistent. The status that can be set depends on the type of object (for
+    /// example, DataNode or Activity). You cannot perform this operation on <code>FINISHED</code>
+    /// pipelines and attempting to do so returns <code>InvalidRequestException</code>.
     /// </summary>
     public partial class SetStatusRequest : AmazonDataPipelineRequest
     {
@@ -44,8 +44,8 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property ObjectIds. 
         /// <para>
-        /// Identifies an array of objects. The corresponding objects can be either physical or
-        /// components, but not a mix of both types.
+        /// The IDs of the objects. The corresponding objects can be either physical or components,
+        /// but not a mix of both types.
         /// </para>
         /// </summary>
         public List<string> ObjectIds
@@ -63,7 +63,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
-        /// Identifies the pipeline that contains the objects.
+        /// The ID of the pipeline that contains the objects.
         /// </para>
         /// </summary>
         public string PipelineId
@@ -81,9 +81,9 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Specifies the status to be set on all the objects in <code>objectIds</code>. For components,
-        /// this can be either <code>PAUSE</code> or <code>RESUME</code>. For instances, this
-        /// can be either <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.
+        /// The status to be set on all the objects specified in <code>objectIds</code>. For components,
+        /// use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>,
+        /// <code>RERUN</code>, or <code>MARK_FINISHED</code>.
         /// </para>
         /// </summary>
         public string Status

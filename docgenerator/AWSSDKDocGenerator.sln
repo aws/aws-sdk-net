@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDocGenerator", "SDKDocGenerator\SDKDocGenerator.csproj", "{5BFBCE41-80EA-4A59-8E04-57AC2AE8CA2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDocGeneratorLib", "SDKDocGeneratorLib\SDKDocGeneratorLib.csproj", "{700454B0-EA6F-498D-B01B-5F49B2E720AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BFBCE41-80EA-4A59-8E04-57AC2AE8CA2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BFBCE41-80EA-4A59-8E04-57AC2AE8CA2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BFBCE41-80EA-4A59-8E04-57AC2AE8CA2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BFBCE41-80EA-4A59-8E04-57AC2AE8CA2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{700454B0-EA6F-498D-B01B-5F49B2E720AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{700454B0-EA6F-498D-B01B-5F49B2E720AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{700454B0-EA6F-498D-B01B-5F49B2E720AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{700454B0-EA6F-498D-B01B-5F49B2E720AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

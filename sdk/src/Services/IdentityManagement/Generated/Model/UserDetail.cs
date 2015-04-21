@@ -40,6 +40,7 @@ namespace Amazon.IdentityManagement.Model
     public partial class UserDetail
     {
         private string _arn;
+        private List<AttachedPolicyType> _attachedManagedPolicies = new List<AttachedPolicyType>();
         private DateTime? _createDate;
         private List<string> _groupList = new List<string>();
         private string _path;
@@ -60,6 +61,24 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttachedManagedPolicies. 
+        /// <para>
+        /// A list of the managed policies attached to the user.
+        /// </para>
+        /// </summary>
+        public List<AttachedPolicyType> AttachedManagedPolicies
+        {
+            get { return this._attachedManagedPolicies; }
+            set { this._attachedManagedPolicies = value; }
+        }
+
+        // Check to see if AttachedManagedPolicies property is set
+        internal bool IsSetAttachedManagedPolicies()
+        {
+            return this._attachedManagedPolicies != null && this._attachedManagedPolicies.Count > 0; 
         }
 
         /// <summary>
@@ -159,7 +178,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserPolicyList. 
         /// <para>
-        /// A list of the user's policies.
+        /// A list of the inline policies embedded in the user.
         /// </para>
         /// </summary>
         public List<PolicyDetail> UserPolicyList

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B5730BFF-AA99-4294-A16F-6C8B457E56B1}</ProjectGuid>
+    <ProjectGuid>{75252F5A-D3F2-4A4E-ADDC-560E1E3C2066}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.CognitoSync</RootNamespace>
@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE;;BCL;BCL45;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\net45\AWSSDK.CognitoSync.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE;;BCL;BCL45;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\net45\AWSSDK.CognitoSync.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -68,13 +70,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AWSSDK.Core.Net45.csproj">
-      <Project>{29D39F98-9D7C-42EB-A807-67201324D0F6}</Project>
+      <Project>{25ED6BD4-A32A-4EAA-ACBF-AB4FCD343E8E}</Project>
       <Name>AWSSDK.Core.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CognitoIdentity\AWSSDK.CognitoIdentity.Net45.csproj">
-      <Project>{02F0E9A3-7FB0-4C79-A86C-4F9746DD7EE4}</Project>
+      <Project>{C58BC670-0ACB-42BF-B141-4A949EF71099}</Project>
       <Name>AWSSDK.CognitoIdentity.Net45</Name>
     </ProjectReference>
   </ItemGroup>

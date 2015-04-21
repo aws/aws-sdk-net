@@ -29,16 +29,16 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePipeline operation.
-    /// Permanently deletes a pipeline, its pipeline definition and its run history. You
-    /// cannot query or restore a deleted pipeline. AWS Data Pipeline will attempt to cancel
-    /// instances associated with the pipeline that are currently being processed by task
-    /// runners. Deleting a pipeline cannot be undone. 
+    /// Deletes a pipeline, its pipeline definition, and its run history. AWS Data Pipeline
+    /// attempts to cancel instances associated with the pipeline that are currently being
+    /// processed by task runners.
     /// 
     ///  
     /// <para>
-    ///  To temporarily pause a pipeline instead of deleting it, call <a>SetStatus</a> with
-    /// the status set to Pause on individual components. Components that are paused by <a>SetStatus</a>
-    /// can be resumed. 
+    /// Deleting a pipeline cannot be undone. You cannot query or restore a deleted pipeline.
+    /// To temporarily pause a pipeline instead of deleting it, call <a>SetStatus</a> with
+    /// the status set to <code>PAUSE</code> on individual components. Components that are
+    /// paused by <a>SetStatus</a> can be resumed.
     /// </para>
     /// </summary>
     public partial class DeletePipelineRequest : AmazonDataPipelineRequest
@@ -48,7 +48,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
-        /// The identifier of the pipeline to be deleted.
+        /// The ID of the pipeline.
         /// </para>
         /// </summary>
         public string PipelineId

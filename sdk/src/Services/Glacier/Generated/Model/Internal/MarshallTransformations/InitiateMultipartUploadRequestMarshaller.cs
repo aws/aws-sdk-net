@@ -51,13 +51,13 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads";
             uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
             uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
+            request.ResourcePath = uriResourcePath;
         
             if(publicRequest.IsSetArchiveDescription())
                 request.Headers["x-amz-archive-description"] = publicRequest.ArchiveDescription;
         
             if(publicRequest.IsSetPartSize())
                 request.Headers["x-amz-part-size"] = Amazon.Runtime.Internal.Util.StringUtils.FromLong(publicRequest.PartSize);
-            request.ResourcePath = uriResourcePath;
 
             return request;
         }

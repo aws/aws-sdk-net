@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about an Amazon EC2 tag filter.
+    /// Information about a tag filter.
     /// </summary>
     public partial class EC2TagFilter
     {
@@ -39,7 +39,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The Amazon EC2 tag filter key.
+        /// The tag filter key.
         /// </para>
         /// </summary>
         public string Key
@@ -57,7 +57,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The Amazon EC2 tag filter type:
+        /// The tag filter type:
         /// </para>
         ///  <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE:
         /// Key and value.</li> </ul>
@@ -77,7 +77,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The Amazon EC2 tag filter value.
+        /// The tag filter value.
         /// </para>
         /// </summary>
         public string Value

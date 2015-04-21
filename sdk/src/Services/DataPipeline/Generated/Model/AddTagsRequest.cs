@@ -29,7 +29,7 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the AddTags operation.
-    /// Add or modify tags in an existing pipeline.
+    /// Adds or modifies tags for the specified pipeline.
     /// </summary>
     public partial class AddTagsRequest : AmazonDataPipelineRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
-        /// The identifier of the pipeline to which you want to add the tags.
+        /// The ID of the pipeline.
         /// </para>
         /// </summary>
         public string PipelineId
@@ -57,7 +57,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags as key/value pairs to add to the pipeline.
+        /// The tags to add, as key/value pairs.
         /// </para>
         /// </summary>
         public List<Tag> Tags

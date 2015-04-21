@@ -29,10 +29,11 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the SetTaskStatus operation.
-    /// Notifies AWS Data Pipeline that a task is completed and provides information about
-    /// the final status. The task runner calls this action regardless of whether the task
-    /// was sucessful. The task runner does not need to call <a>SetTaskStatus</a> for tasks
-    /// that are canceled by the web service during a call to <a>ReportTaskProgress</a>.
+    /// Task runners call <code>SetTaskStatus</code> to notify AWS Data Pipeline that a task
+    /// is completed and provide information about the final status. A task runner makes this
+    /// call regardless of whether the task was sucessful. A task runner does not need to
+    /// call <code>SetTaskStatus</code> for tasks that are canceled by the web service during
+    /// a call to <a>ReportTaskProgress</a>.
     /// </summary>
     public partial class SetTaskStatusRequest : AmazonDataPipelineRequest
     {
@@ -45,10 +46,9 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property ErrorId. 
         /// <para>
-        /// If an error occurred during the task, this value specifies an id value that represents
-        /// the error. This value is set on the physical attempt object. It is used to display
-        /// error information to the user. It should not start with string "Service_" which is
-        /// reserved by the system.
+        /// If an error occurred during the task, this value specifies the error code. This value
+        /// is set on the physical attempt object. It is used to display error information to
+        /// the user. It should not start with string "Service_" which is reserved by the system.
         /// </para>
         /// </summary>
         public string ErrorId
@@ -106,8 +106,8 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property TaskId. 
         /// <para>
-        /// Identifies the task assigned to the task runner. This value is set in the <a>TaskObject</a>
-        /// that is returned by the <a>PollForTask</a> action.
+        /// The ID of the task assigned to the task runner. This value is provided in the response
+        /// for <a>PollForTask</a>.
         /// </para>
         /// </summary>
         public string TaskId
@@ -125,8 +125,8 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property TaskStatus. 
         /// <para>
-        /// If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>
-        /// the task ended unsuccessfully. The <code>FALSE</code> value is used by preconditions.
+        /// If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>,
+        /// the task ended unsuccessfully. Preconditions use false.
         /// </para>
         /// </summary>
         public TaskStatus TaskStatus

@@ -33,8 +33,8 @@ namespace Amazon.CognitoSync.Model
     /// 
     ///  
     /// <para>
-    /// <code>UpdateRecords</code> can only be called with temporary user credentials provided
-    /// by Cognito Identity. You cannot make this API call with developer credentials.
+    /// UpdateRecords can only be called with temporary user credentials provided by Cognito
+    /// Identity. You cannot make this API call with developer credentials.
     /// </para>
     /// </summary>
     public partial class UpdateRecordsRequest : AmazonCognitoSyncRequest
@@ -49,8 +49,8 @@ namespace Amazon.CognitoSync.Model
 
         /// <summary>
         /// Gets and sets the property ClientContext. Intended to supply a device ID that will
-        /// populate the <code>lastModifiedBy</code> field referenced in other methods. The <code>ClientContext</code>
-        /// field is not yet implemented.
+        /// populate the lastModifiedBy field referenced in other methods. The ClientContext field
+        /// is not yet implemented.
         /// </summary>
         public string ClientContext
         {

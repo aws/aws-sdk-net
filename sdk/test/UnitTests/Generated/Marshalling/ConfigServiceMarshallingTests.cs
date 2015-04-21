@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the config-2014-10-17.normal.json service model.
+ * Do not modify this file. This file is generated from the config-2014-11-12.normal.json service model.
  */
 
 
@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class ConfigServiceMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("config-2014-10-17.normal.json", "config.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("config-2014-11-12.normal.json", "config.customizations.json");
         
         [TestMethod]
         [TestCategory("UnitTest")]

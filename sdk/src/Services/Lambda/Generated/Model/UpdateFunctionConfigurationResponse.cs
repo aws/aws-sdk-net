@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2014-11-11.normal.json service model.
+ * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,14 +33,12 @@ namespace Amazon.Lambda.Model
     public partial class UpdateFunctionConfigurationResponse : AmazonWebServiceResponse
     {
         private long? _codeSize;
-        private string _configurationId;
         private string _description;
-        private string _functionARN;
+        private string _functionArn;
         private string _functionName;
         private string _handler;
         private string _lastModified;
         private int? _memorySize;
-        private Mode _mode;
         private string _role;
         private Runtime _runtime;
         private int? _timeout;
@@ -64,24 +62,6 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConfigurationId. 
-        /// <para>
-        /// A Lambda-assigned unique identifier for the current function code and related configuration.
-        /// </para>
-        /// </summary>
-        public string ConfigurationId
-        {
-            get { return this._configurationId; }
-            set { this._configurationId = value; }
-        }
-
-        // Check to see if ConfigurationId property is set
-        internal bool IsSetConfigurationId()
-        {
-            return this._configurationId != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The user-provided description.
@@ -100,21 +80,21 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FunctionARN. 
+        /// Gets and sets the property FunctionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) assigned to the function.
         /// </para>
         /// </summary>
-        public string FunctionARN
+        public string FunctionArn
         {
-            get { return this._functionARN; }
-            set { this._functionARN = value; }
+            get { return this._functionArn; }
+            set { this._functionArn = value; }
         }
 
-        // Check to see if FunctionARN property is set
-        internal bool IsSetFunctionARN()
+        // Check to see if FunctionArn property is set
+        internal bool IsSetFunctionArn()
         {
-            return this._functionARN != null;
+            return this._functionArn != null;
         }
 
         /// <summary>
@@ -191,28 +171,10 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Mode. 
-        /// <para>
-        /// The type of the Lambda function you uploaded. 
-        /// </para>
-        /// </summary>
-        public Mode Mode
-        {
-            get { return this._mode; }
-            set { this._mode = value; }
-        }
-
-        // Check to see if Mode property is set
-        internal bool IsSetMode()
-        {
-            return this._mode != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes
-        /// your function to access any other Amazon Web Services (AWS) resources.
+        /// your function to access any other Amazon Web Services (AWS) resources. 
         /// </para>
         /// </summary>
         public string Role

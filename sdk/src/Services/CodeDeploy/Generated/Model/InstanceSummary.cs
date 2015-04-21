@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about an Amazon EC2 instance in a deployment.
+    /// Information about an instance in a deployment.
     /// </summary>
     public partial class InstanceSummary
     {

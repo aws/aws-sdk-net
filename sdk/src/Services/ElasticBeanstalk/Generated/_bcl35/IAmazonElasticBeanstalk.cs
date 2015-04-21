@@ -61,6 +61,46 @@ namespace Amazon.ElasticBeanstalk
     {
 
         
+        #region  AbortEnvironmentUpdate
+
+        /// <summary>
+        /// Cancels in-progress environment configuration update or application version deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AbortEnvironmentUpdate service method.</param>
+        /// 
+        /// <returns>The response from the AbortEnvironmentUpdate service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// Unable to perform the specified operation because the user does not have enough privileges
+        /// for one of more downstream aws services
+        /// </exception>
+        AbortEnvironmentUpdateResponse AbortEnvironmentUpdate(AbortEnvironmentUpdateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AbortEnvironmentUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AbortEnvironmentUpdate operation on AmazonElasticBeanstalkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAbortEnvironmentUpdate
+        ///         operation.</returns>
+        IAsyncResult BeginAbortEnvironmentUpdate(AbortEnvironmentUpdateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AbortEnvironmentUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAbortEnvironmentUpdate.</param>
+        /// 
+        /// <returns>Returns a  AbortEnvironmentUpdateResult from ElasticBeanstalk.</returns>
+        AbortEnvironmentUpdateResponse EndAbortEnvironmentUpdate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CheckDNSAvailability
 
         /// <summary>
@@ -142,6 +182,11 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Creates an application version for the specified application.
+        /// 
+        ///  <note>Once you create an application version with a specified Amazon S3 bucket and
+        /// key location, you cannot change that Amazon S3 location. If you change the Amazon
+        /// S3 location, you receive an exception when you attempt to launch an environment from
+        /// the application version. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplicationVersion service method.</param>
         /// 
@@ -364,7 +409,9 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Deletes the specified application along with all associated versions and configurations.
-        /// The application versions will not be deleted from your Amazon S3 bucket.
+        /// The application versions will not be deleted from your Amazon S3 bucket. 
+        /// 
+        ///  <note>You cannot delete an application that has a running environment. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
         /// 
@@ -404,7 +451,10 @@ namespace Amazon.ElasticBeanstalk
         #region  DeleteApplicationVersion
 
         /// <summary>
-        /// Deletes the specified version from the specified application.
+        /// Deletes the specified version from the specified application. 
+        /// 
+        ///  <note>You cannot delete an application version that is associated with a running
+        /// environment.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationVersion service method.</param>
         /// 
@@ -456,6 +506,10 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Deletes the specified configuration template.
+        /// 
+        ///  <note>When you launch an environment using a configuration template, the environment
+        /// gets a copy of the template. You can delete or modify the environment's copy of the
+        /// template without affecting the running environment.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationTemplate service method.</param>
         /// 
@@ -811,6 +865,9 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
+        /// 
+        ///  <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
+        /// </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by ElasticBeanstalk.</returns>
@@ -818,6 +875,9 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
+        /// 
+        ///  <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
+        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
         /// 
@@ -1152,7 +1212,10 @@ namespace Amazon.ElasticBeanstalk
         #region  UpdateApplication
 
         /// <summary>
-        /// Updates the specified application to have the specified properties.
+        /// Updates the specified application to have the specified properties. 
+        /// 
+        ///  <note> If a property (for example, <code>description</code>) is not provided, the
+        /// value remains unchanged. To clear these properties, specify an empty string. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
         /// 
@@ -1188,7 +1251,10 @@ namespace Amazon.ElasticBeanstalk
         #region  UpdateApplicationVersion
 
         /// <summary>
-        /// Updates the specified application version to have the specified properties.
+        /// Updates the specified application version to have the specified properties. 
+        /// 
+        ///  <note> If a property (for example, <code>description</code>) is not provided, the
+        /// value remains unchanged. To clear properties, specify an empty string. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationVersion service method.</param>
         /// 
@@ -1227,7 +1293,9 @@ namespace Amazon.ElasticBeanstalk
         /// Updates the specified configuration template to have the specified properties or
         /// configuration option values. 
         /// 
-        ///  
+        ///  <note> If a property (for example, <code>ApplicationName</code>) is not provided,
+        /// its value remains unchanged. To clear such properties, specify an empty string. </note>
+        /// 
         /// <para>
         /// Related Topics
         /// </para>

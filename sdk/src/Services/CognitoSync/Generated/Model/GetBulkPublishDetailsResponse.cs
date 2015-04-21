@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoSync.Model
 {
     /// <summary>
-    /// The output for the <code>GetBulkPublishDetails</code> operation.
+    /// The output for the GetBulkPublishDetails operation.
     /// </summary>
     public partial class GetBulkPublishDetailsResponse : AmazonWebServiceResponse
     {
@@ -39,8 +39,8 @@ namespace Amazon.CognitoSync.Model
         private string _identityPoolId;
 
         /// <summary>
-        /// Gets and sets the property BulkPublishCompleteTime. If <code>BulkPublishStatus</code>
-        /// is SUCCEEDED, the time the last bulk publish operation completed.
+        /// Gets and sets the property BulkPublishCompleteTime. If BulkPublishStatus is SUCCEEDED,
+        /// the time the last bulk publish operation completed.
         /// </summary>
         public DateTime BulkPublishCompleteTime
         {
@@ -74,21 +74,20 @@ namespace Amazon.CognitoSync.Model
         /// Gets and sets the property BulkPublishStatus. Status of the last bulk publish operation,
         /// valid values are: 
         /// <para>
-        /// <code>NOT_STARTED</code> - No bulk publish has been requested for this identity pool
+        /// NOT_STARTED - No bulk publish has been requested for this identity pool
         /// </para>
         ///  
         /// <para>
-        /// <code>IN_PROGRESS</code> - Data is being published to the configured stream
+        /// IN_PROGRESS - Data is being published to the configured stream
         /// </para>
         ///  
         /// <para>
-        /// <code>SUCCEEDED</code> - All data for the identity pool has been published to the
-        /// configured stream
+        /// SUCCEEDED - All data for the identity pool has been published to the configured stream
         /// </para>
         ///  
         /// <para>
-        /// <code>FAILED</code> - Some portion of the data has failed to publish, check <code>FailureMessage</code>
-        /// for the cause.
+        /// FAILED - Some portion of the data has failed to publish, check FailureMessage for
+        /// the cause.
         /// </para>
         /// </summary>
         public BulkPublishStatus BulkPublishStatus

@@ -1,0 +1,370 @@
+﻿<docs>
+  <doc>
+    <members>
+      <member name="T:Amazon.SQS.AmazonSQSClient"/>
+      <member name="T:Amazon.SQS.IAmazonSQS"/>
+      <member name="T:Amazon.SQS.Model.ReceiveMessageRequest"/>
+      <member name="P:Amazon.SQS.Model.ReceiveMessageRequest.AttributeNames"/>
+      <member name="P:Amazon.SQS.Model.ReceiveMessageRequest.MaxNumberOfMessages"/>
+      <member name="P:Amazon.SQS.Model.ReceiveMessageRequest.QueueUrl"/>
+      <member name="P:Amazon.SQS.Model.ReceiveMessageRequest.VisibilityTimeout"/>
+      <member name="P:Amazon.SQS.Model.ReceiveMessageRequest.WaitTimeSeconds"/>
+      <member name="T:Amazon.SQS.Model.ReceiveMessageResult"/>
+      <member name="M:Amazon.SQS.AmazonSQSClient.ReceiveMessage(Amazon.SQS.Model.ReceiveMessageRequest)"/>
+      <member name="M:Amazon.SQS.IAmazonSQS.ReceiveMessage(Amazon.SQS.Model.ReceiveMessageRequest)"/>
+      <member name="P:Amazon.SQS.Model.ReceiveMessageResult.Messages"/>
+      <member name="T:Amazon.SQS.Model.Message"/>
+      <member name="P:Amazon.SQS.Model.Message.MessageId"/>
+      <member name="P:Amazon.SQS.Model.Message.Body"/>
+      <member name="P:Amazon.SQS.Model.Message.ReceiptHandle"/>
+      <member name="P:Amazon.SQS.Model.Message.MD5OfBody"/>
+      <member name="P:Amazon.SQS.Model.Message.MD5OfMessageAttributes"/>
+      <member name="P:Amazon.SQS.Model.Message.Attributes"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to receive a message.</para>
+        <code title="Receive message example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SQS\SQSSamples.cs"
+              region="SQSReceiveMessage"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SQS.Model.SendMessageRequest"/>
+      <member name="P:Amazon.SQS.Model.SendMessageRequest.DelaySeconds"/>
+      <member name="P:Amazon.SQS.Model.SendMessageRequest.MessageAttributes"/>
+      <member name="T:Amazon.SQS.Model.MessageAttributeValue"/>
+      <member name="P:Amazon.SQS.Model.MessageAttributeValue.DataType"/>
+      <member name="P:Amazon.SQS.Model.MessageAttributeValue.StringValue"/>
+      <member name="P:Amazon.SQS.Model.SendMessageRequest.MessageBody"/>
+      <member name="P:Amazon.SQS.Model.SendMessageRequest.QueueUrl"/>
+      <member name="M:Amazon.SQS.AmazonSQSClient.SendMessage(Amazon.SQS.Model.SendMessageRequest)"/>
+      <member name="M:Amazon.SQS.IAmazonSQS.SendMessage(Amazon.SQS.Model.SendMessageRequest)"/>
+      <member name="T:Amazon.SQS.Model.SendMessageResult"/>
+      <member name="P:Amazon.SQS.Model.SendMessageResult.MessageId"/>
+      <member name="P:Amazon.SQS.Model.SendMessageResult.MD5OfMessageAttributes"/>
+      <member name="P:Amazon.SQS.Model.SendMessageResult.MD5OfMessageBody"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to send a message.</para>
+        <code title="Send message example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SQS\SQSSamples.cs"
+              region="SQSSendMessage"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SQS.Model.DeleteMessageRequest"/>
+      <member name="P:Amazon.SQS.Model.DeleteMessageRequest.QueueUrl"/>
+      <member name="P:Amazon.SQS.Model.DeleteMessageRequest.ReceiptHandle"/>
+      <member name="M:Amazon.SQS.AmazonSQSClient.DeleteMessage(Amazon.SQS.Model.DeleteMessageRequest)"/>
+      <member name="M:Amazon.SQS.IAmazonSQS.DeleteMessage(Amazon.SQS.Model.DeleteMessageRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to delete a message.</para>
+        <code title="Delete message example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SQS\SQSSamples.cs"
+              region="SQSDeleteMessage"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SQS.Model.DeleteMessageBatchRequestEntry"/>
+      <member name="P:Amazon.SQS.Model.DeleteMessageBatchRequestEntry.Id"/>
+      <member name="P:Amazon.SQS.Model.DeleteMessageBatchRequestEntry.ReceiptHandle"/>
+      <member name="T:Amazon.SQS.Model.DeleteMessageBatchRequest"/>
+      <member name="P:Amazon.SQS.Model.DeleteMessageBatchRequest.Entries"/>
+      <member name="P:Amazon.SQS.Model.DeleteMessageBatchRequest.QueueUrl"/>
+      <member name="M:Amazon.SQS.AmazonSQSClient.DeleteMessageBatch(Amazon.SQS.Model.DeleteMessageBatchRequest)"/>
+      <member name="M:Amazon.SQS.IAmazonSQS.DeleteMessageBatch(Amazon.SQS.Model.DeleteMessageBatchRequest)"/>
+      <member name="T:Amazon.SQS.Model.DeleteMessageBatchResult"/>
+      <member name="P:Amazon.SQS.Model.DeleteMessageBatchResult.Failed"/>
+      <member name="T:Amazon.SQS.Model.BatchResultErrorEntry"/>
+      <member name="P:Amazon.SQS.Model.BatchResultErrorEntry.Id"/>
+      <member name="P:Amazon.SQS.Model.BatchResultErrorEntry.Code"/>
+      <member name="P:Amazon.SQS.Model.BatchResultErrorEntry.Message"/>
+      <member name="P:Amazon.SQS.Model.BatchResultErrorEntry.SenderFault"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to delete messages in batch.</para>
+        <code title="Batch delete messages example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SQS\SQSSamples.cs"
+              region="SQSDeleteMessageBatch"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SQS.Model.CreateQueueRequest"/>
+      <member name="P:Amazon.SQS.Model.CreateQueueRequest.Attributes"/>
+      <member name="P:Amazon.SQS.Model.CreateQueueRequest.QueueName"/>
+      <member name="M:Amazon.SQS.AmazonSQSClient.CreateQueue(Amazon.SQS.Model.CreateQueueRequest)"/>
+      <member name="M:Amazon.SQS.IAmazonSQS.CreateQueue(Amazon.SQS.Model.CreateQueueRequest)"/>
+      <member name="T:Amazon.SQS.Model.CreateQueueResult"/>
+      <member name="P:Amazon.SQS.Model.CreateQueueResult.QueueUrl"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to create a queue.</para>
+        <code title="Create queue example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SQS\SQSSamples.cs"
+              region="SQSCreateQueue"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SQS.Model.GetQueueUrlRequest"/>
+      <member name="P:Amazon.SQS.Model.GetQueueUrlRequest.QueueName"/>
+      <member name="P:Amazon.SQS.Model.GetQueueUrlRequest.QueueOwnerAWSAccountId"/>
+      <member name="M:Amazon.SQS.AmazonSQSClient.GetQueueUrl(Amazon.SQS.Model.GetQueueUrlRequest)"/>
+      <member name="M:Amazon.SQS.IAmazonSQS.GetQueueUrl(Amazon.SQS.Model.GetQueueUrlRequest)"/>
+      <member name="T:Amazon.SQS.Model.GetQueueUrlResult"/>
+      <member name="P:Amazon.SQS.Model.GetQueueUrlResult.QueueUrl"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to get a queue URL.</para>
+        <code title="Get queue URL example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SQS\SQSSamples.cs"
+              region="SQSGetQueueUrl"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SQS.Model.ListQueuesRequest"/>
+      <member name="P:Amazon.SQS.Model.ListQueuesRequest.QueueNamePrefix"/>
+      <member name="M:Amazon.SQS.AmazonSQSClient.ListQueues(Amazon.SQS.Model.ListQueuesRequest)"/>
+      <member name="M:Amazon.SQS.IAmazonSQS.ListQueues(Amazon.SQS.Model.ListQueuesRequest)"/>
+      <member name="T:Amazon.SQS.Model.ListQueuesResult"/>
+      <member name="P:Amazon.SQS.Model.ListQueuesResult.QueueUrls"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to list queues.</para>
+        <code title="List queues example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SQS\SQSSamples.cs"
+              region="SQSListQueues"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SQS.Model.SendMessageBatchRequestEntry"/>
+      <member name="P:Amazon.SQS.Model.SendMessageBatchRequestEntry.DelaySeconds"/>
+      <member name="P:Amazon.SQS.Model.SendMessageBatchRequestEntry.Id"/>
+      <member name="P:Amazon.SQS.Model.SendMessageBatchRequestEntry.MessageBody"/>
+      <member name="T:Amazon.SQS.Model.SendMessageBatchRequest"/>
+      <member name="P:Amazon.SQS.Model.SendMessageBatchRequest.Entries"/>
+      <member name="P:Amazon.SQS.Model.SendMessageBatchRequest.QueueUrl"/>
+      <member name="M:Amazon.SQS.AmazonSQSClient.SendMessageBatch(Amazon.SQS.Model.SendMessageBatchRequest)"/>
+      <member name="M:Amazon.SQS.IAmazonSQS.SendMessageBatch(Amazon.SQS.Model.SendMessageBatchRequest)"/>
+      <member name="T:Amazon.SQS.Model.SendMessageBatchResult"/>
+      <member name="P:Amazon.SQS.Model.SendMessageBatchResult.Successful"/>
+      <member name="P:Amazon.SQS.Model.SendMessageBatchResultEntry.Id"/>
+      <member name="T:Amazon.SQS.Model.SendMessageBatchResultEntry"/>
+      <member name="P:Amazon.SQS.Model.SendMessageBatchResultEntry.MessageId"/>
+      <member name="P:Amazon.SQS.Model.SendMessageBatchResultEntry.MD5OfMessageAttributes"/>
+      <member name="P:Amazon.SQS.Model.SendMessageBatchResultEntry.MD5OfMessageBody"/>
+      <member name="P:Amazon.SQS.Model.SendMessageBatchResult.Failed"/>
+      <member name="P:Amazon.SQS.Model.BatchResultErrorEntry.Id"/>
+      <member name="T:Amazon.SQS.Model.BatchResultErrorEntry"/>
+      <member name="P:Amazon.SQS.Model.BatchResultErrorEntry.Code"/>
+      <member name="P:Amazon.SQS.Model.BatchResultErrorEntry.Message"/>
+      <member name="P:Amazon.SQS.Model.BatchResultErrorEntry.SenderFault"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to send messages in batch.</para>
+        <code title="Batch send messages example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SQS\SQSSamples.cs"
+              region="SQSSendMessageBatch"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SQS.Model.GetQueueAttributesRequest"/>
+      <member name="P:Amazon.SQS.Model.GetQueueAttributesRequest.QueueUrl"/>
+      <member name="P:Amazon.SQS.Model.GetQueueAttributesRequest.AttributeNames"/>
+      <member name="M:Amazon.SQS.AmazonSQSClient.GetQueueAttributes(Amazon.SQS.Model.GetQueueAttributesRequest)"/>
+      <member name="M:Amazon.SQS.IAmazonSQS.GetQueueAttributes(Amazon.SQS.Model.GetQueueAttributesRequest)"/>
+      <member name="T:Amazon.SQS.Model.GetQueueAttributesResult"/>
+      <member name="P:Amazon.SQS.Model.GetQueueAttributesResult.QueueARN"/>
+      <member name="P:Amazon.SQS.Model.GetQueueAttributesResult.ApproximateNumberOfMessages"/>
+      <member name="P:Amazon.SQS.Model.GetQueueAttributesResult.ApproximateNumberOfMessagesDelayed"/>
+      <member name="P:Amazon.SQS.Model.GetQueueAttributesResult.ApproximateNumberOfMessagesNotVisible"/>
+      <member name="P:Amazon.SQS.Model.GetQueueAttributesResult.CreatedTimestamp"/>
+      <member name="P:Amazon.SQS.Model.GetQueueAttributesResult.DelaySeconds"/>
+      <member name="P:Amazon.SQS.Model.GetQueueAttributesResult.LastModifiedTimestamp"/>
+      <member name="P:Amazon.SQS.Model.GetQueueAttributesResult.MaximumMessageSize"/>
+      <member name="P:Amazon.SQS.Model.GetQueueAttributesResult.MessageRetentionPeriod"/>
+      <member name="P:Amazon.SQS.Model.GetQueueAttributesResult.VisibilityTimeout"/>
+      <member name="P:Amazon.SQS.Model.GetQueueAttributesResult.Policy"/>
+      <member name="P:Amazon.SQS.Model.GetQueueAttributesResult.Attributes"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to get queue attributes.</para>
+        <code title="Get queue attributes example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SQS\SQSSamples.cs"
+              region="SQSGetQueueAttributes"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SQS.Model.ChangeMessageVisibilityRequest"/>
+      <member name="P:Amazon.SQS.Model.ChangeMessageVisibilityRequest.QueueUrl"/>
+      <member name="P:Amazon.SQS.Model.ChangeMessageVisibilityRequest.ReceiptHandle"/>
+      <member name="P:Amazon.SQS.Model.ChangeMessageVisibilityRequest.VisibilityTimeout"/>
+      <member name="M:Amazon.SQS.AmazonSQSClient.ChangeMessageVisibility(Amazon.SQS.Model.ChangeMessageVisibilityRequest)"/>
+      <member name="M:Amazon.SQS.IAmazonSQS.ChangeMessageVisibility(Amazon.SQS.Model.ChangeMessageVisibilityRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to change message visibility.</para>
+        <code title="Change message visibility example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SQS\SQSSamples.cs"
+              region="SQSChangeMessageVisibility"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SQS.Model.SetQueueAttributesRequest"/>
+      <member name="P:Amazon.SQS.Model.SetQueueAttributesRequest.Attributes"/>
+      <member name="P:Amazon.SQS.Model.SetQueueAttributesRequest.QueueUrl"/>
+      <member name="M:Amazon.SQS.AmazonSQSClient.SetQueueAttributes(Amazon.SQS.Model.SetQueueAttributesRequest)"/>
+      <member name="M:Amazon.SQS.IAmazonSQS.SetQueueAttributes(Amazon.SQS.Model.SetQueueAttributesRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to set queue attributes.</para>
+        <code title="Set queue attributes example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SQS\SQSSamples.cs"
+              region="SQSSetQueueAttributes"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SQS.Model.ChangeMessageVisibilityBatchRequestEntry"/>
+      <member name="P:Amazon.SQS.Model.ChangeMessageVisibilityBatchRequestEntry.Id"/>
+      <member name="P:Amazon.SQS.Model.ChangeMessageVisibilityBatchRequestEntry.ReceiptHandle"/>
+      <member name="P:Amazon.SQS.Model.ChangeMessageVisibilityBatchRequestEntry.VisibilityTimeout"/>
+      <member name="T:Amazon.SQS.Model.ChangeMessageVisibilityBatchRequest"/>
+      <member name="P:Amazon.SQS.Model.ChangeMessageVisibilityBatchRequest.Entries"/>
+      <member name="P:Amazon.SQS.Model.ChangeMessageVisibilityBatchRequest.QueueUrl"/>
+      <member name="M:Amazon.SQS.AmazonSQSClient.ChangeMessageVisibilityBatch(Amazon.SQS.Model.ChangeMessageVisibilityBatchRequest)"/>
+      <member name="M:Amazon.SQS.IAmazonSQS.ChangeMessageVisibilityBatch(Amazon.SQS.Model.ChangeMessageVisibilityBatchRequest)"/>
+      <member name="T:Amazon.SQS.Model.ChangeMessageVisibilityBatchResult"/>
+      <member name="P:Amazon.SQS.Model.ChangeMessageVisibilityBatchResult.Successful"/>
+      <member name="P:Amazon.SQS.Model.ChangeMessageVisibilityBatchResult.Failed"/>
+      <member name="T:Amazon.SQS.Model.ChangeMessageVisibilityBatchResultEntry"/>
+      <member name="P:Amazon.SQS.Model.ChangeMessageVisibilityBatchResultEntry.Id"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to change message visibility in batch.</para>
+        <code title="Batch change message visibility example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SQS\SQSSamples.cs"
+              region="SQSChangeMessageVisibilityBatch"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SQS.Model.DeleteQueueRequest"/>
+      <member name="P:Amazon.SQS.Model.DeleteQueueRequest.QueueUrl"/>
+      <member name="M:Amazon.SQS.AmazonSQSClient.DeleteQueue(Amazon.SQS.Model.DeleteQueueRequest)"/>
+      <member name="M:Amazon.SQS.IAmazonSQS.DeleteQueue(Amazon.SQS.Model.DeleteQueueRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to delete a queue.</para>
+        <code title="Delete queue example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SQS\SQSSamples.cs"
+              region="SQSDeleteQueue"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SQS.Model.AddPermissionRequest"/>
+      <member name="P:Amazon.SQS.Model.AddPermissionRequest.Actions"/>
+      <member name="P:Amazon.SQS.Model.AddPermissionRequest.AWSAccountIds"/>
+      <member name="P:Amazon.SQS.Model.AddPermissionRequest.Label"/>
+      <member name="P:Amazon.SQS.Model.AddPermissionRequest.QueueUrl"/>
+      <member name="M:Amazon.SQS.AmazonSQSClient.AddPermission(Amazon.SQS.Model.AddPermissionRequest)"/>
+      <member name="M:Amazon.SQS.IAmazonSQS.AddPermission(Amazon.SQS.Model.AddPermissionRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to add a permission.</para>
+        <code title="Add permission example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SQS\SQSSamples.cs"
+              region="SQSAddPermission"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SQS.Model.ListDeadLetterSourceQueuesRequest"/>
+      <member name="P:Amazon.SQS.Model.ListDeadLetterSourceQueuesRequest.QueueUrl"/>
+      <member name="T:Amazon.SQS.Model.ListDeadLetterSourceQueuesResult"/>
+      <member name="M:Amazon.SQS.AmazonSQSClient.ListDeadLetterSourceQueues(Amazon.SQS.Model.ListDeadLetterSourceQueuesRequest)"/>
+      <member name="M:Amazon.SQS.IAmazonSQS.ListDeadLetterSourceQueues(Amazon.SQS.Model.ListDeadLetterSourceQueuesRequest)"/>
+      <member name="P:Amazon.SQS.Model.ListDeadLetterSourceQueuesResult.QueueUrls"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to list dead letter source queues.</para>
+        <code title="List dead letter source queues example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SQS\SQSSamples.cs"
+              region="SQSListDeadLetterSourceQueues"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SQS.Model.RemovePermissionRequest"/>
+      <member name="P:Amazon.SQS.Model.RemovePermissionRequest.Label"/>
+      <member name="P:Amazon.SQS.Model.RemovePermissionRequest.QueueUrl"/>
+      <member name="M:Amazon.SQS.AmazonSQSClient.RemovePermission(Amazon.SQS.Model.RemovePermissionRequest)"/>
+      <member name="M:Amazon.SQS.IAmazonSQS.RemovePermission(Amazon.SQS.Model.RemovePermissionRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to remove a permission.</para>
+        <code title="Remove permission example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SQS\SQSSamples.cs"
+              region="SQSRemovePermission"/>
+      </example>
+    </value>
+  </doc>
+</docs>

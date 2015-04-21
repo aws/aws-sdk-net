@@ -95,6 +95,13 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         response.Marker = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Policies/member", targetDepth))
+                    {
+                        var unmarshaller = ManagedPolicyDetailUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Policies.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("RoleDetailList/member", targetDepth))
                     {
                         var unmarshaller = RoleDetailUnmarshaller.Instance;

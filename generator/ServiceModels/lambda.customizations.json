@@ -6,6 +6,16 @@
                     "InvokeArgs": { "emitPropertyName": "InvokeArgsStream" }
                 }
             ]
+        },
+        "InvocationRequest": {
+            "modify": [
+                {
+                    "Payload": { "emitPropertyName": "PayloadStream" }
+                },
+                {
+                    "ClientContext": { "emitPropertyName": "ClientContextBase64" }
+                }
+            ]
         }
     },
     "simpleMethods": {

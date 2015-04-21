@@ -27,7 +27,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             using (var writer = XmlTextWriter.Create(content))
             {
                 if (_model.Type == ServiceType.Rest_Xml &&
-                    _operation.ResponseStructure.Payload == null)
+                    _operation.ResponseStructure.PayloadMemberName == null)
                 {
                     writer.WriteStartElement(this._operation.Name + "Response");
                 }
@@ -59,7 +59,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 }
 
                 if (_model.Type == ServiceType.Rest_Xml && 
-                    _operation.ResponseStructure.Payload == null)
+                    _operation.ResponseStructure.PayloadMemberName == null)
                 {
                     writer.WriteEndElement();
                 }

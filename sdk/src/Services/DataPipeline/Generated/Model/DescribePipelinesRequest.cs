@@ -29,17 +29,17 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePipelines operation.
-    /// Retrieve metadata about one or more pipelines. The information retrieved includes
+    /// Retrieves metadata about one or more pipelines. The information retrieved includes
     /// the name of the pipeline, the pipeline identifier, its current state, and the user
     /// account that owns the pipeline. Using account credentials, you can retrieve metadata
     /// about pipelines that you or your IAM users have created. If you are using an IAM user
-    /// account, you can retrieve metadata about only those pipelines you have read permission
-    /// for. 
+    /// account, you can retrieve metadata about only those pipelines for which you have read
+    /// permissions.
     /// 
     ///  
     /// <para>
-    ///  To retrieve the full pipeline definition instead of metadata about the pipeline,
-    /// call the <a>GetPipelineDefinition</a> action. 
+    /// To retrieve the full pipeline definition instead of metadata about the pipeline, call
+    /// <a>GetPipelineDefinition</a>.
     /// </para>
     /// </summary>
     public partial class DescribePipelinesRequest : AmazonDataPipelineRequest
@@ -49,9 +49,8 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineIds. 
         /// <para>
-        /// Identifiers of the pipelines to describe. You can pass as many as 25 identifiers in
-        /// a single call to <a>DescribePipelines</a>. You can obtain pipeline identifiers by
-        /// calling <a>ListPipelines</a>.
+        /// The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a
+        /// single call. To obtain pipeline IDs, call <a>ListPipelines</a>.
         /// </para>
         /// </summary>
         public List<string> PipelineIds

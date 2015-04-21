@@ -674,7 +674,8 @@ namespace Amazon.EC2.Import
         {
             get
             {
-                if (Region != null && Region.GetEndpointForService("s3").SignatureVersionOverride == "4"
+                if (Region != null && 
+                        (Region.GetEndpointForService("s3").SignatureVersionOverride == null || Region.GetEndpointForService("s3").SignatureVersionOverride == "4")
                             && UrlExpirationInDays > 7)
                     return 7;
 

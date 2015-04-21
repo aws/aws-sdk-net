@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F6369502-A2DA-436D-8190-0257B0EA80A4}</ProjectGuid>
+    <ProjectGuid>{8138E863-CAA5-4BFF-8122-0B997588FF40}</ProjectGuid>
     <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -33,6 +33,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>419,1591,1573</NoWarn>
+    <DocumentationFile>bin\Debug\wp8\AWSSDK.Lambda.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -44,50 +45,55 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>419,1591,1573</NoWarn>
+    <DocumentationFile>bin\Release\wp8\AWSSDK.Lambda.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>Bin\x86\Debug\wp8</OutputPath>
+    <OutputPath>bin\x86\Debug\wp8</OutputPath>
     <DefineConstants>TRACE;;SILVERLIGHT;WINDOWS_PHONE;AWS_ASYNC_API;STORAGE_FILE</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>419,1591</NoWarn>
+    <DocumentationFile>bin\x86\Debug\wp8\AWSSDK.Lambda.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>Bin\x86\Release\wp8</OutputPath>
+    <OutputPath>bin\x86\Release\wp8</OutputPath>
     <DefineConstants>TRACE;;SILVERLIGHT;WINDOWS_PHONE;AWS_ASYNC_API;STORAGE_FILE</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>419,1591</NoWarn>
+    <DocumentationFile>bin\x86\Release\wp8\AWSSDK.Lambda.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>Bin\ARM\Debug\wp8</OutputPath>
+    <OutputPath>bin\ARM\Debug\wp8</OutputPath>
     <DefineConstants>TRACE;;SILVERLIGHT;WINDOWS_PHONE;AWS_ASYNC_API;STORAGE_FILE</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\ARM\Debug\wp8\AWSSDK.Lambda.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>Bin\ARM\Release\wp8</OutputPath>
+    <OutputPath>bin\ARM\Release\wp8</OutputPath>
     <DefineConstants>TRACE;;SILVERLIGHT;WINDOWS_PHONE;AWS_ASYNC_API;STORAGE_FILE</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\ARM\Release\wp8\AWSSDK.Lambda.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Custom\*.cs">
@@ -116,7 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AWSSDK.Core.WP8.csproj">
-        <Project>{972BAAD1-8940-4AB1-A80F-2145AD19A41A}</Project>
+        <Project>{654E578E-9927-4A28-A51E-2679D2503F74}</Project>
         <Name>AWSSDK.Core.WP8</Name>
     </ProjectReference>
   </ItemGroup>

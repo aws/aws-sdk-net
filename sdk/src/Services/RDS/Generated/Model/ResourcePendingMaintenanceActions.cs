@@ -38,7 +38,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PendingMaintenanceActionDetails. 
         /// <para>
-        /// Provides details about the pending maintenance actions for the resource.
+        /// A list that provides details about the pending maintenance actions for the resource.
         /// </para>
         /// </summary>
         public List<PendingMaintenanceAction> PendingMaintenanceActionDetails
@@ -56,7 +56,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        /// The ARN of this resource that has pending maintenance actions.
+        /// The ARN of the resource that has pending maintenance actions.
         /// </para>
         /// </summary>
         public string ResourceIdentifier

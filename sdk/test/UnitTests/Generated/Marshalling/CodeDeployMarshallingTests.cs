@@ -43,6 +43,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CodeDeploy")]
+        public void AddTagsToOnPremisesInstancesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<AddTagsToOnPremisesInstancesRequest>();
+            var marshaller = new AddTagsToOnPremisesInstancesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<AddTagsToOnPremisesInstancesRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeDeploy")]
         public void BatchGetApplicationsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<BatchGetApplicationsRequest>();
@@ -93,6 +109,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = BatchGetDeploymentsResponseUnmarshaller.Instance.Unmarshall(context)
                 as BatchGetDeploymentsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeDeploy")]
+        public void BatchGetOnPremisesInstancesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<BatchGetOnPremisesInstancesRequest>();
+            var marshaller = new BatchGetOnPremisesInstancesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<BatchGetOnPremisesInstancesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("BatchGetOnPremisesInstances").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = BatchGetOnPremisesInstancesResponseUnmarshaller.Instance.Unmarshall(context)
+                as BatchGetOnPremisesInstancesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -278,6 +323,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CodeDeploy")]
+        public void DeregisterOnPremisesInstanceMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeregisterOnPremisesInstanceRequest>();
+            var marshaller = new DeregisterOnPremisesInstanceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeregisterOnPremisesInstanceRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeDeploy")]
         public void GetApplicationMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<GetApplicationRequest>();
@@ -444,6 +505,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetDeploymentInstanceResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetDeploymentInstanceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeDeploy")]
+        public void GetOnPremisesInstanceMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetOnPremisesInstanceRequest>();
+            var marshaller = new GetOnPremisesInstanceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetOnPremisesInstanceRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetOnPremisesInstance").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetOnPremisesInstanceResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetOnPremisesInstanceResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -626,6 +716,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CodeDeploy")]
+        public void ListOnPremisesInstancesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListOnPremisesInstancesRequest>();
+            var marshaller = new ListOnPremisesInstancesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListOnPremisesInstancesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListOnPremisesInstances").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListOnPremisesInstancesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListOnPremisesInstancesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeDeploy")]
         public void RegisterApplicationRevisionMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<RegisterApplicationRevisionRequest>();
@@ -634,6 +753,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
             Comparer.CompareObjectToJson<RegisterApplicationRevisionRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeDeploy")]
+        public void RegisterOnPremisesInstanceMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<RegisterOnPremisesInstanceRequest>();
+            var marshaller = new RegisterOnPremisesInstanceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<RegisterOnPremisesInstanceRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeDeploy")]
+        public void RemoveTagsFromOnPremisesInstancesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromOnPremisesInstancesRequest>();
+            var marshaller = new RemoveTagsFromOnPremisesInstancesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<RemoveTagsFromOnPremisesInstancesRequest>(request,jsonRequest);
 
         }
 

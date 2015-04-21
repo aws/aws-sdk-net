@@ -36,6 +36,7 @@ namespace Amazon.ElasticTranscoder.Model
         private HlsContentProtection _hlsContentProtection;
         private string _name;
         private List<string> _outputKeys = new List<string>();
+        private PlayReadyDrm _playReadyDrm;
 
         /// <summary>
         /// Gets and sets the property Format. 
@@ -178,6 +179,25 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetOutputKeys()
         {
             return this._outputKeys != null && this._outputKeys.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlayReadyDrm. 
+        /// <para>
+        /// The DRM settings, if any, that you want Elastic Transcoder to apply to the output
+        /// files associated with this playlist.
+        /// </para>
+        /// </summary>
+        public PlayReadyDrm PlayReadyDrm
+        {
+            get { return this._playReadyDrm; }
+            set { this._playReadyDrm = value; }
+        }
+
+        // Check to see if PlayReadyDrm property is set
+        internal bool IsSetPlayReadyDrm()
+        {
+            return this._playReadyDrm != null;
         }
 
     }

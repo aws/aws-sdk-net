@@ -92,7 +92,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>MySQL</b>
+        ///  <b>MySQL</b> 
         /// </para>
         ///  
         /// <para>
@@ -106,7 +106,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Oracle</b>
+        ///  <b>Oracle</b> 
         /// </para>
         ///  
         /// <para>

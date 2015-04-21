@@ -66,6 +66,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Container = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DetectedProperties", targetDepth))
+                {
+                    var unmarshaller = DetectedPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.DetectedProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Encryption", targetDepth))
                 {
                     var unmarshaller = EncryptionUnmarshaller.Instance;

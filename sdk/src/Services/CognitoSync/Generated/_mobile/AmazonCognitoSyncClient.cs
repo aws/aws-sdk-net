@@ -373,6 +373,36 @@ namespace Amazon.CognitoSync
 
         #endregion
         
+        #region  GetCognitoEvents
+
+        internal GetCognitoEventsResponse GetCognitoEvents(GetCognitoEventsRequest request)
+        {
+            var marshaller = new GetCognitoEventsRequestMarshaller();
+            var unmarshaller = GetCognitoEventsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCognitoEventsRequest,GetCognitoEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCognitoEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCognitoEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetCognitoEventsResponse> GetCognitoEventsAsync(GetCognitoEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetCognitoEventsRequestMarshaller();
+            var unmarshaller = GetCognitoEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCognitoEventsRequest,GetCognitoEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetIdentityPoolConfiguration
 
         internal GetIdentityPoolConfigurationResponse GetIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest request)
@@ -518,6 +548,36 @@ namespace Amazon.CognitoSync
             var unmarshaller = RegisterDeviceResponseUnmarshaller.Instance;
 
             return InvokeAsync<RegisterDeviceRequest,RegisterDeviceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetCognitoEvents
+
+        internal SetCognitoEventsResponse SetCognitoEvents(SetCognitoEventsRequest request)
+        {
+            var marshaller = new SetCognitoEventsRequestMarshaller();
+            var unmarshaller = SetCognitoEventsResponseUnmarshaller.Instance;
+
+            return Invoke<SetCognitoEventsRequest,SetCognitoEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetCognitoEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetCognitoEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SetCognitoEventsResponse> SetCognitoEventsAsync(SetCognitoEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetCognitoEventsRequestMarshaller();
+            var unmarshaller = SetCognitoEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetCognitoEventsRequest,SetCognitoEventsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

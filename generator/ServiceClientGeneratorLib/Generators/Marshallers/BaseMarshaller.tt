@@ -100,18 +100,4 @@ using Amazon.Runtime.Internal.Util;
 			}
 		}
 	}
-
-    // Generates code to add a stream member to the request if it exists
-	protected void ProcessStreamingMember(string variableName, Member streamingMember)
-	{		
-		if(streamingMember!=null)		
-		{
-#>
-			request.ContentStream =  <#=variableName#>.<#=streamingMember.PropertyName#> ?? new MemoryStream();
-			request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
-				request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
-			request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
-<#+
-		}				 
-	}	
 #>

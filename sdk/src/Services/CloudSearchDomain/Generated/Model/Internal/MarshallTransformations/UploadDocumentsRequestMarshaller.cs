@@ -50,6 +50,7 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/2013-01-01/documents/batch";
             request.AddSubResource("format", "sdk");
+            request.ResourcePath = uriResourcePath;
             request.ContentStream =  publicRequest.Documents ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
@@ -57,7 +58,6 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
         
             if(publicRequest.IsSetContentType())
                 request.Headers["Content-Type"] = publicRequest.ContentType;
-            request.ResourcePath = uriResourcePath;
 
             return request;
         }

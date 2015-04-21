@@ -1,0 +1,274 @@
+﻿<docs>
+  <doc>
+    <members>
+      <member name="T:Amazon.CloudWatch.AmazonCloudWatchClient"/>
+      <member name="T:Amazon.CloudWatch.IAmazonCloudWatch"/>
+      <member name="T:Amazon.CloudWatch.Model.Dimension"/>
+      <member name="P:Amazon.CloudWatch.Model.Dimension.Name"/>
+      <member name="P:Amazon.CloudWatch.Model.Dimension.Value"/>
+      <member name="T:Amazon.CloudWatch.Model.GetMetricStatisticsRequest"/>
+      <member name="P:Amazon.CloudWatch.Model.GetMetricStatisticsRequest.Dimensions"/>
+      <member name="P:Amazon.CloudWatch.Model.GetMetricStatisticsRequest.EndTime"/>
+      <member name="P:Amazon.CloudWatch.Model.GetMetricStatisticsRequest.MetricName"/>
+      <member name="P:Amazon.CloudWatch.Model.GetMetricStatisticsRequest.Namespace"/>
+      <member name="P:Amazon.CloudWatch.Model.GetMetricStatisticsRequest.Period"/>
+      <member name="P:Amazon.CloudWatch.Model.GetMetricStatisticsRequest.StartTime"/>
+      <member name="P:Amazon.CloudWatch.Model.GetMetricStatisticsRequest.Statistics"/>
+      <member name="P:Amazon.CloudWatch.Model.GetMetricStatisticsRequest.Unit"/>
+      <member name="T:Amazon.CloudWatch.Model.GetMetricStatisticsResponse"/>
+      <member name="M:Amazon.CloudWatch.AmazonCloudWatchClient.GetMetricStatistics(Amazon.CloudWatch.Model.GetMetricStatisticsRequest)"/>
+      <member name="M:Amazon.CloudWatch.IAmazonCloudWatch.GetMetricStatistics(Amazon.CloudWatch.Model.GetMetricStatisticsRequest)"/>
+      <member name="P:Amazon.CloudWatch.Model.GetMetricStatisticsResult.Datapoints"/>
+      <member name="T:Amazon.CloudWatch.Model.Datapoint"/>
+      <member name="P:Amazon.CloudWatch.Model.Datapoint.Timestamp"/>
+      <member name="P:Amazon.CloudWatch.Model.Datapoint.Minimum"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to get statistics for a metric.</para>
+        <code title="Get metric statistics example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\CloudWatch\CloudWatchSamples.cs"
+              region="CWGetMetricStatistics"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.CloudWatch.Model.MetricDatum"/>
+      <member name="P:Amazon.CloudWatch.Model.MetricDatum.Dimensions"/>
+      <member name="P:Amazon.CloudWatch.Model.MetricDatum.MetricName"/>
+      <member name="P:Amazon.CloudWatch.Model.MetricDatum.StatisticValues"/>
+      <member name="P:Amazon.CloudWatch.Model.MetricDatum.Timestamp"/>
+      <member name="P:Amazon.CloudWatch.Model.MetricDatum.Unit"/>
+      <member name="P:Amazon.CloudWatch.Model.MetricDatum.Value"/>
+      <member name="T:Amazon.CloudWatch.Model.PutMetricDataRequest"/>
+      <member name="P:Amazon.CloudWatch.Model.PutMetricDataRequest.MetricData"/>
+      <member name="P:Amazon.CloudWatch.Model.PutMetricDataRequest.Namespace"/>
+      <member name="M:Amazon.CloudWatch.AmazonCloudWatchClient.PutMetricData(Amazon.CloudWatch.Model.PutMetricDataRequest)"/>
+      <member name="M:Amazon.CloudWatch.IAmazonCloudWatch.PutMetricData(Amazon.CloudWatch.Model.PutMetricDataRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to publish a set of metric data points.</para>
+        <code title="Publish metric data points example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\CloudWatch\CloudWatchSamples.cs"
+              region="CWPutMetricData"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.CloudWatch.Model.DimensionFilter"/>
+      <member name="P:Amazon.CloudWatch.Model.DimensionFilter.Name"/>
+      <member name="P:Amazon.CloudWatch.Model.DimensionFilter.Value"/>
+      <member name="T:Amazon.CloudWatch.Model.ListMetricsRequest"/>
+      <member name="P:Amazon.CloudWatch.Model.ListMetricsRequest.Dimensions"/>
+      <member name="P:Amazon.CloudWatch.Model.ListMetricsRequest.MetricName"/>
+      <member name="P:Amazon.CloudWatch.Model.ListMetricsRequest.Namespace"/>
+      <member name="T:Amazon.CloudWatch.Model.ListMetricsResponse"/>
+      <member name="M:Amazon.CloudWatch.AmazonCloudWatchClient.ListMetrics(Amazon.CloudWatch.Model.ListMetricsRequest)"/>
+      <member name="M:Amazon.CloudWatch.IAmazonCloudWatch.ListMetrics(Amazon.CloudWatch.Model.ListMetricsRequest)"/>
+      <member name="P:Amazon.CloudWatch.Model.ListMetricsResult.Metrics"/>
+      <member name="T:Amazon.CloudWatch.Model.Metric"/>
+      <member name="P:Amazon.CloudWatch.Model.Metric.MetricName"/>
+      <member name="P:Amazon.CloudWatch.Model.Metric.Namespace"/>
+      <member name="P:Amazon.CloudWatch.Model.Metric.Dimensions"/>
+      <member name="P:Amazon.CloudWatch.Model.ListMetricsRequest.NextToken"/>
+      <member name="P:Amazon.CloudWatch.Model.ListMetricsResult.NextToken"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to list a set of metrics.</para>
+        <code title="List metrics example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\CloudWatch\CloudWatchSamples.cs"
+              region="CWListMetrics"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.CloudWatch.Model.DescribeAlarmsRequest"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmsRequest.AlarmNames"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmsRequest.MaxRecords"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmsRequest.StateValue"/>
+      <member name="T:Amazon.CloudWatch.StateValue"/>
+      <member name="T:Amazon.CloudWatch.Model.DescribeAlarmsResponse"/>
+      <member name="M:Amazon.CloudWatch.AmazonCloudWatchClient.DescribeAlarms(Amazon.CloudWatch.Model.DescribeAlarmsRequest)"/>
+      <member name="M:Amazon.CloudWatch.IAmazonCloudWatch.DescribeAlarms(Amazon.CloudWatch.Model.DescribeAlarmsRequest)"/>
+      <member name="T:Amazon.CloudWatch.Model.MetricAlarm"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmsResult.MetricAlarms"/>
+      <member name="P:Amazon.CloudWatch.Model.MetricAlarm.AlarmName"/>
+      <member name="P:Amazon.CloudWatch.Model.MetricAlarm.AlarmDescription"/>
+      <member name="P:Amazon.CloudWatch.Model.MetricAlarm.MetricName"/>
+      <member name="P:Amazon.CloudWatch.Model.MetricAlarm.ComparisonOperator"/>
+      <member name="P:Amazon.CloudWatch.Model.MetricAlarm.Threshold"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmsRequest.NextToken"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmsResult.NextToken"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to get information about an alarm.</para>
+        <code title="Get alarm information example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\CloudWatch\CloudWatchSamples.cs"
+              region="CWDescribeAlarms"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.CloudWatch.Model.DescribeAlarmHistoryRequest"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmHistoryRequest.AlarmName"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmHistoryRequest.EndDate"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmHistoryRequest.HistoryItemType"/>
+      <member name="T:Amazon.CloudWatch.HistoryItemType"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmHistoryRequest.MaxRecords"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmHistoryRequest.StartDate"/>
+      <member name="T:Amazon.CloudWatch.Model.DescribeAlarmHistoryResponse"/>
+      <member name="M:Amazon.CloudWatch.AmazonCloudWatchClient.DescribeAlarmHistory(Amazon.CloudWatch.Model.DescribeAlarmHistoryRequest)"/>
+      <member name="M:Amazon.CloudWatch.IAmazonCloudWatch.DescribeAlarmHistory(Amazon.CloudWatch.Model.DescribeAlarmHistoryRequest)"/>
+      <member name="T:Amazon.CloudWatch.Model.AlarmHistoryItem"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmHistoryResult.AlarmHistoryItems"/>
+      <member name="P:Amazon.CloudWatch.Model.AlarmHistoryItem.AlarmName"/>
+      <member name="P:Amazon.CloudWatch.Model.AlarmHistoryItem.HistorySummary"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmHistoryRequest.NextToken"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmHistoryResult.NextToken"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to get history for an alarm.</para>
+        <code title="Get alarm history example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\CloudWatch\CloudWatchSamples.cs"
+              region="CWDescribeAlarmHistory"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.CloudWatch.Model.PutMetricAlarmRequest"/>
+      <member name="P:Amazon.CloudWatch.Model.PutMetricAlarmRequest.ActionsEnabled"/>
+      <member name="P:Amazon.CloudWatch.Model.PutMetricAlarmRequest.AlarmActions"/>
+      <member name="P:Amazon.CloudWatch.Model.PutMetricAlarmRequest.AlarmDescription"/>
+      <member name="P:Amazon.CloudWatch.Model.PutMetricAlarmRequest.AlarmName"/>
+      <member name="P:Amazon.CloudWatch.Model.PutMetricAlarmRequest.ComparisonOperator"/>
+      <member name="T:Amazon.CloudWatch.ComparisonOperator"/>
+      <member name="P:Amazon.CloudWatch.Model.PutMetricAlarmRequest.Dimensions"/>
+      <member name="P:Amazon.CloudWatch.Model.PutMetricAlarmRequest.EvaluationPeriods"/>
+      <member name="P:Amazon.CloudWatch.Model.PutMetricAlarmRequest.MetricName"/>
+      <member name="P:Amazon.CloudWatch.Model.PutMetricAlarmRequest.Namespace"/>
+      <member name="P:Amazon.CloudWatch.Model.PutMetricAlarmRequest.Period"/>
+      <member name="P:Amazon.CloudWatch.Model.PutMetricAlarmRequest.Statistic"/>
+      <member name="T:Amazon.CloudWatch.Statistic"/>
+      <member name="P:Amazon.CloudWatch.Model.PutMetricAlarmRequest.Threshold"/>
+      <member name="P:Amazon.CloudWatch.Model.PutMetricAlarmRequest.Unit"/>
+      <member name="T:Amazon.CloudWatch.StandardUnit"/>
+      <member name="M:Amazon.CloudWatch.AmazonCloudWatchClient.PutMetricAlarm(Amazon.CloudWatch.Model.PutMetricAlarmRequest)"/>
+      <member name="M:Amazon.CloudWatch.IAmazonCloudWatch.PutMetricAlarm(Amazon.CloudWatch.Model.PutMetricAlarmRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to create an alarm for a metric.</para>
+        <code title="Create metric alarm example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\CloudWatch\CloudWatchSamples.cs"
+              region="CWPutMetricAlarm"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.CloudWatch.Model.DescribeAlarmsForMetricRequest"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmsForMetricRequest.Dimensions"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmsForMetricRequest.MetricName"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmsForMetricRequest.Namespace"/>
+      <member name="M:Amazon.CloudWatch.AmazonCloudWatchClient.DescribeAlarmsForMetric(Amazon.CloudWatch.Model.DescribeAlarmsForMetricRequest)"/>
+      <member name="M:Amazon.CloudWatch.IAmazonCloudWatch.DescribeAlarmsForMetric(Amazon.CloudWatch.Model.DescribeAlarmsForMetricRequest)"/>
+      <member name="T:Amazon.CloudWatch.Model.DescribeAlarmsForMetricResponse"/>
+      <member name="P:Amazon.CloudWatch.Model.DescribeAlarmsForMetricResult.MetricAlarms"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to get information about all alarms for a metric.</para>
+        <code title="Get metric alarms example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\CloudWatch\CloudWatchSamples.cs"
+              region="CWDescribeAlarmsForMetric"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.CloudWatch.Model.DeleteAlarmsRequest"/>
+      <member name="P:Amazon.CloudWatch.Model.DeleteAlarmsRequest.AlarmNames"/>
+      <member name="M:Amazon.CloudWatch.AmazonCloudWatchClient.DeleteAlarms(Amazon.CloudWatch.Model.DeleteAlarmsRequest)"/>
+      <member name="M:Amazon.CloudWatch.IAmazonCloudWatch.DeleteAlarms(Amazon.CloudWatch.Model.DeleteAlarmsRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to delete an alarm.</para>
+        <code title="Delete alarm example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\CloudWatch\CloudWatchSamples.cs"
+              region="CWDeleteAlarms"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.CloudWatch.Model.SetAlarmStateRequest"/>
+      <member name="P:Amazon.CloudWatch.Model.SetAlarmStateRequest.AlarmName"/>
+      <member name="P:Amazon.CloudWatch.Model.SetAlarmStateRequest.StateReason"/>
+      <member name="P:Amazon.CloudWatch.Model.SetAlarmStateRequest.StateValue"/>
+      <member name="T:Amazon.CloudWatch.StateValue"/>
+      <member name="M:Amazon.CloudWatch.AmazonCloudWatchClient.SetAlarmState(Amazon.CloudWatch.Model.SetAlarmStateRequest)"/>
+      <member name="M:Amazon.CloudWatch.IAmazonCloudWatch.SetAlarmState(Amazon.CloudWatch.Model.SetAlarmStateRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to temporarily set an alarm's state.</para>
+        <code title="Set alarm state example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\CloudWatch\CloudWatchSamples.cs"
+              region="CWSetAlarmState"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.CloudWatch.Model.EnableAlarmActionsRequest"/>
+      <member name="P:Amazon.CloudWatch.Model.EnableAlarmActionsRequest.AlarmNames"/>
+      <member name="M:Amazon.CloudWatch.AmazonCloudWatchClient.EnableAlarmActions(Amazon.CloudWatch.Model.EnableAlarmActionsRequest)"/>
+      <member name="M:Amazon.CloudWatch.IAmazonCloudWatch.EnableAlarmActions(Amazon.CloudWatch.Model.EnableAlarmActionsRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to enable actions for an alarm.</para>
+        <code title="Enable alarm actions example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\CloudWatch\CloudWatchSamples.cs"
+              region="CWEnableAlarmActions"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.CloudWatch.Model.DisableAlarmActionsRequest"/>
+      <member name="P:Amazon.CloudWatch.Model.DisableAlarmActionsRequest.AlarmNames"/>
+      <member name="M:Amazon.CloudWatch.AmazonCloudWatchClient.DisableAlarmActions(Amazon.CloudWatch.Model.DisableAlarmActionsRequest)"/>
+      <member name="M:Amazon.CloudWatch.IAmazonCloudWatch.DisableAlarmActions(Amazon.CloudWatch.Model.DisableAlarmActionsRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to disable actions for an alarm.</para>
+        <code title="Disable alarm actions example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\CloudWatch\CloudWatchSamples.cs"
+              region="CWDisableAlarmActions"/>
+      </example>
+    </value>
+  </doc>
+</docs>

@@ -1,0 +1,367 @@
+﻿<docs>
+  <!-- DynamoDBv2 data-plane operations -->
+  <doc>
+    <members>
+      <member name="M:Amazon.DynamoDBv2.IAmazonDynamoDB.CreateTable(Amazon.DynamoDBv2.Model.CreateTableRequest)" />
+      <member name="M:Amazon.DynamoDBv2.AmazonDynamoDBClient.CreateTable(Amazon.DynamoDBv2.Model.CreateTableRequest)" />
+      <member name="T:Amazon.DynamoDBv2.Model.CreateTableRequest" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to create a new table with a single hash-key component.
+        </para>
+        <code
+					title="CreateTable sample" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="CreateTable Sample" />
+        <para>
+          This example shows how to create a table similar to the previous sample, but with Local Secondary Indexes configured.
+          <br />
+          The new table will have two indexes: YearsIndex and SettingsIndex.
+        </para>
+        <code
+          title="CreateTable Local Secondary Index sample" lang="cs"
+          source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+          region="CreateTable LSI Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DynamoDBv2.IAmazonDynamoDB.DescribeTable(Amazon.DynamoDBv2.Model.DescribeTableRequest)" />
+      <member name="M:Amazon.DynamoDBv2.AmazonDynamoDBClient.DescribeTable(Amazon.DynamoDBv2.Model.DescribeTableRequest)" />
+      <member name="T:Amazon.DynamoDBv2.Model.DescribeTableRequest" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to get a description for an existing table.
+        </para>
+        <code
+					title="DescribeTable sample" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="DescribeTable Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DynamoDBv2.IAmazonDynamoDB.ListTables" />
+      <member name="M:Amazon.DynamoDBv2.AmazonDynamoDBClient.ListTables" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to get a list of all tables.
+          <br />
+          <b>Note</b>: if not all table names were retrieved, the
+          <i>LastEvaluatedTableName</i> property on the result
+          object will be set . Refer to the paging
+          sample to see how paging should be handled.
+          <br />
+        </para>
+        <code
+					title="ListTables non-paging sample" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="ListTables NonPaging Sample" />
+        <code
+					title="ListTables paging sample" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="ListTables Paging Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DynamoDBv2.IAmazonDynamoDB.ListTables(Amazon.DynamoDBv2.Model.ListTablesRequest)" />
+      <member name="M:Amazon.DynamoDBv2.AmazonDynamoDBClient.ListTables(Amazon.DynamoDBv2.Model.ListTablesRequest)" />
+      <member name="T:Amazon.DynamoDBv2.Model.ListTablesRequest" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to get a list of all tables.
+        </para>
+        <code
+					title="ListTables sample" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="ListTables Paging Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DynamoDBv2.IAmazonDynamoDB.UpdateTable(Amazon.DynamoDBv2.Model.UpdateTableRequest)" />
+      <member name="M:Amazon.DynamoDBv2.AmazonDynamoDBClient.UpdateTable(Amazon.DynamoDBv2.Model.UpdateTableRequest)" />
+      <member name="T:Amazon.DynamoDBv2.Model.UpdateTableRequest" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to update the throughput settings of a table.
+          New throughput will be 40 ReadCapacityUnits and 50 WriteCapacityUnits.
+        </para>
+        <code
+					title="UpdateTable sample" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="UpdateTable Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DynamoDBv2.IAmazonDynamoDB.DeleteTable(Amazon.DynamoDBv2.Model.DeleteTableRequest)" />
+      <member name="M:Amazon.DynamoDBv2.AmazonDynamoDBClient.DeleteTable(Amazon.DynamoDBv2.Model.DeleteTableRequest)" />
+      <member name="T:Amazon.DynamoDBv2.Model.DeleteTableRequest" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to delete a table.
+        </para>
+        <code
+					title="DeleteTable sample" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="DeleteTable Sample" />
+      </example>
+    </value>
+  </doc>
+
+  <!-- DynamoDBv2 CRUD operations -->
+  <doc>
+    <members>
+      <member name="M:Amazon.DynamoDBv2.IAmazonDynamoDB.PutItem(Amazon.DynamoDBv2.Model.PutItemRequest)" />
+      <member name="M:Amazon.DynamoDBv2.AmazonDynamoDBClient.PutItem(Amazon.DynamoDBv2.Model.PutItemRequest)" />
+      <member name="T:Amazon.DynamoDBv2.Model.PutItemRequest" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to put an item in a table.
+        </para>
+        <code
+					title="PutItem sample" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="PutItem Sample 1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DynamoDBv2.IAmazonDynamoDB.GetItem(Amazon.DynamoDBv2.Model.GetItemRequest)" />
+      <member name="M:Amazon.DynamoDBv2.AmazonDynamoDBClient.GetItem(Amazon.DynamoDBv2.Model.GetItemRequest)" />
+      <member name="T:Amazon.DynamoDBv2.Model.GetItemRequest" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to get an item in a table.
+        </para>
+        <code
+					title="GetItem sample" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="GetItem Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DynamoDBv2.IAmazonDynamoDB.UpdateItem(Amazon.DynamoDBv2.Model.UpdateItemRequest)" />
+      <member name="M:Amazon.DynamoDBv2.AmazonDynamoDBClient.UpdateItem(Amazon.DynamoDBv2.Model.UpdateItemRequest)" />
+      <member name="T:Amazon.DynamoDBv2.Model.UpdateItemRequest" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to update an item in a table.
+        </para>
+        <code
+					title="UpdateItem sample" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="UpdateItem Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DynamoDBv2.IAmazonDynamoDB.DeleteItem(Amazon.DynamoDBv2.Model.DeleteItemRequest)" />
+      <member name="M:Amazon.DynamoDBv2.AmazonDynamoDBClient.DeleteItem(Amazon.DynamoDBv2.Model.DeleteItemRequest)" />
+      <member name="T:Amazon.DynamoDBv2.Model.DeleteItemRequest" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to delete an item in a table.
+        </para>
+        <code
+					title="DeleteItem sample" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="DeleteItem Sample" />
+      </example>
+    </value>
+  </doc>
+
+  <!-- DynamoDBv2 search operations -->
+  <doc>
+    <members>
+      <member name="M:Amazon.DynamoDBv2.IAmazonDynamoDB.Query(Amazon.DynamoDBv2.Model.QueryRequest)" />
+      <member name="M:Amazon.DynamoDBv2.AmazonDynamoDBClient.Query(Amazon.DynamoDBv2.Model.QueryRequest)" />
+      <member name="T:Amazon.DynamoDBv2.Model.QueryRequest" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example shows how to query items in a table.
+          <br />
+          <b>Note:</b> the Query operation retrieves items that have the same
+          hash-key. This means that the Query operation is only supported on tables
+          with both a hash- and a range-key.
+          <br />
+          <b>Note:</b> the RangeKeyCondition for Query is limited to indexable comparisons.
+          These are EQ, LE, LT, GE, GT, BETWEEN, and BEGINS_WITH.
+          <br />
+          We will now retrieve all items where the hash-key is "Mark Twain" and
+          the range-key begins with the string "The Adventures".
+        </para>
+        <code
+					title="Query sample" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="Query Sample" />
+        <para>
+          The following example shows how to query items in a local secondary index.
+          <br />
+          Like a standard Query, we must pass in a hash-key value. But since we are querying
+          against a specific index, we must remember to refer to the correct index attribute.
+          <br />
+          In the below example that means that we reference the attribute "Years", and since the
+          attribute is numerical we must pass in a numerical AttributeValue.
+        </para>
+        <code
+          titel="Query Local Secondary Index sample" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+          region="Query Local Secondary Index Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DynamoDBv2.IAmazonDynamoDB.Scan(Amazon.DynamoDBv2.Model.ScanRequest)" />
+      <member name="M:Amazon.DynamoDBv2.AmazonDynamoDBClient.Scan(Amazon.DynamoDBv2.Model.ScanRequest)" />
+      <member name="T:Amazon.DynamoDBv2.Model.ScanRequest" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example shows how to scan items in a table.
+          <br />
+          <b>Note:</b> the Scan operation goes through every item in the table
+          to check if the item matches all the scan conditions. This makes
+          the Scan operation particularly slow and expensive (in terms of provisioned throughput).
+          <br />
+          We will now retrieve all items where the Pages attribute is greater
+          than the numerical value "200" and where the Title attribute contains
+          the string "Adventures".
+        </para>
+        <code
+					title="Scan sample" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="Scan Sample" />
+        <para>
+          The following example shows how we can utilize parallel scan to partition a table into
+          10 segments and scan each segment in a separate thread.
+          <br />
+          To avoid resource contention between threads, the results will be written into 10 separate
+          files. Each segment will have a file of its own.
+          <code
+            title="Parallel scan sample" lang="cs"
+            source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+            region="Parallel Scan Sample" />
+        </para>
+      </example>
+    </value>
+  </doc>
+  Parallel Scan Sample
+  <!-- DynamoDBv2 batch operations -->
+  <doc>
+    <members>
+      <member name="M:Amazon.DynamoDBv2.IAmazonDynamoDB.BatchWriteItem(Amazon.DynamoDBv2.Model.BatchWriteItemRequest)" />
+      <member name="M:Amazon.DynamoDBv2.AmazonDynamoDBClient.BatchWriteItem(Amazon.DynamoDBv2.Model.BatchWriteItemRequest)" />
+      <member name="T:Amazon.DynamoDBv2.Model.BatchWriteItemRequest" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following examples show how to batch items into two tables.
+        </para>
+        <para>
+          This example will construct a batch-write collection
+          for the first table in the request. The request will include two
+          Put operations and one Delete operation.
+        </para>
+        <code
+					title="BatchWrite sample - First table" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="BatchWrite Sample 1" />
+        <para>
+          This example will construct a batch-write collection
+          for the second table in the request. The request will include
+          one Delete operation.
+        </para>
+        <code
+					title="BatchWrite sample - Second table" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="BatchWrite Sample 2" />
+        <para>
+          This example will construct the BatchWrite request from the
+          two earlier-created collections, will issue the call and in case
+          some items are not processed, will attempt to write the remaining items.
+        </para>
+        <code
+					title="BatchWrite sample - Service calls" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="BatchWrite Sample 3" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DynamoDBv2.IAmazonDynamoDB.BatchGetItem(Amazon.DynamoDBv2.Model.BatchGetItemRequest)" />
+      <member name="M:Amazon.DynamoDBv2.AmazonDynamoDBClient.BatchGetItem(Amazon.DynamoDBv2.Model.BatchGetItemRequest)" />
+      <member name="T:Amazon.DynamoDBv2.Model.BatchGetItemRequest" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following examples show how to batch get item from two tables.
+        </para>
+        <para>
+          This example will construct the collection of keys for the
+          items to retrieve from the first table.
+        </para>
+        <code
+					title="BatchGet sample - First table" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="BatchGet Sample 1" />
+        <para>
+          This example will construct the collection of keys for the
+          items to retrieve from the second table.
+        </para>
+        <code
+					title="BatchGet sample - Second table" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="BatchGet Sample 2" />
+        <para>
+          This example will construct the BatchGet request from the
+          two earlier-created collections, will issue the call and in case
+          some items are not processed, will attempt to retrieve the remaining items.
+        </para>
+        <code
+					title="BatchGet sample - Service calls" lang="cs"
+					source=".\AWSSDKDocSamples\DynamoDBv2\LowLevelSamples.cs"
+					region="BatchGet Sample 3" />
+      </example>
+    </value>
+  </doc>
+
+</docs>

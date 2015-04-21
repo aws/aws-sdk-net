@@ -1,0 +1,212 @@
+.languageTabLabel {
+    color: #5d5d5d;
+    font-weight:bold;
+}
+
+pre.syntax {
+    font-family: Consolas,"Lucida Console",Courier,monospace;
+}
+
+.frameworkVersions div {
+    float: left;
+}
+
+/* 
+ *  'Other Versions' popup panel
+*/
+#vsLink {
+    margin-left: 4px;
+    margin-right: 4px;
+    cursor:pointer;
+    position:relative;
+    color:#1364c4;
+}
+
+.vsLinkArrowContainer {
+    width:auto;
+    height:auto;
+    margin:0;
+    padding:0;
+    position:relative;
+    cursor:pointer;
+}
+
+#vsPanel {
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    border: #bdbdbd 1px solid;
+    padding-bottom: 10px;
+    background-color: #fff;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: none;
+    padding-top: 10px;
+    list-style-type: none;
+    z-index: 2;
+    width:160px;
+}
+
+#vsPanel a:visited {
+    color: #960bb4;
+}
+
+#vsPanel li {
+    margin-bottom: 2px;
+    font-size: 1em;
+}
+
+/*
+ * Code Snippets
+ */
+.codeSnippetContainer {
+    min-width: 260px;
+    clear:both;
+}
+
+.codeSnippetContainerTabs {
+    vertical-align: middle;
+    height: 23px;
+    position: relative;
+    z-index: 1;
+}
+
+.codeSnippetContainerTabs > div:first-child {
+    border-top-left-radius:4px;    
+}
+
+.codeSnippetContainerTabs > div:last-child {
+    border-top-right-radius:4px;    
+}
+
+.codeSnippetContainerTabActive {
+    font-family: 'Segoe UI','Lucida Grande',Verdana,Arial,Helvetica,sans-serif!important;
+    font-size: 1em;
+    font-style: normal!important;
+    font-weight: bold;
+    height: 22px;
+    float: left;
+    width: auto;
+    padding: 0 15px;
+    vertical-align: baseline;
+    color: #000000;	
+    background: #ffffff;
+    border-top: solid 1px #939393;
+    border-left: solid 1px #939393;
+    border-right: solid 1px #939393;
+}
+
+.codeSnippetContainerCodeContainer {
+    border-left: solid 1px #939393;
+    border-bottom: solid 1px #939393;
+    border-right: solid 1px #939393;
+    border-top: solid 1px #939393;
+    padding-right: 21px;
+    padding-left: 21px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    clear: both;
+    margin-bottom: 12px;
+    position: relative;
+    top: -1px;
+}
+
+/* 
+ * Misc stuff
+ */
+#inheritanceblock {
+    padding-left: 15px;
+    display: block;
+    padding-bottom: 10px;
+}
+
+#namespaceblock {
+    padding-left: 0;
+    display: block;
+    padding-top: 10px;
+}
+
+/*
+ * Member type sprites
+ */
+.static {
+    background: transparent url(imagesprite.png) -160px 0 no-repeat;
+    width:16px;
+    height:16px;
+}
+
+.publicMethod {
+    background: transparent url(imagesprite.png) -160px -16px no-repeat;
+    width:16px;
+    height:16px;
+}
+
+.publicProperty {
+    background: transparent url(imagesprite.png) -160px -32px no-repeat;
+    width:16px;
+    height:16px;
+}
+
+span.parameter {
+    margin-left: 16px;    
+}
+
+.returnType {
+    margin-bottom: 8px;
+}
+
+.returnTypeName {
+    margin-left: 16px;    
+}
+
+.returnTypeDoc {
+    margin-left: 16px;    
+}
+
+.vsLinkArrow {
+    background: transparent url(imagesprite.png) -160px -48px no-repeat;
+    width:10px;
+}
+
+.enum {
+    background: transparent url(imagesprite.png) -176px 0 no-repeat;
+    width:16px;
+    height:16px;
+}
+
+.struct {
+    background: transparent url(imagesprite.png) -176px -16px no-repeat;
+    width:16px;
+    height:16px;
+}
+
+.event {
+    background: transparent url(imagesprite.png) -176px -32px no-repeat;
+    width:16px;
+    height:16px;
+}
+
+.collapsed {
+    background: transparent url(imagesprite.png) -176px -32px no-repeat;
+    width:16px;
+}
+
+.field {
+    background: transparent url(imagesprite.png) -192px 0 no-repeat;
+    width:16px;
+    height:16px;
+}
+
+.class {
+    background: transparent url(imagesprite.png) -192px -16px no-repeat;
+    width:16px;
+    height:16px;
+}
+
+.interface {
+    background: transparent url(imagesprite.png) -192px -32px no-repeat;
+    width:16px;
+    height:16px;
+}
+

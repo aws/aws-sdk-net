@@ -39,6 +39,7 @@ namespace Amazon.IdentityManagement.Model
     public partial class GroupDetail
     {
         private string _arn;
+        private List<AttachedPolicyType> _attachedManagedPolicies = new List<AttachedPolicyType>();
         private DateTime? _createDate;
         private string _groupId;
         private string _groupName;
@@ -58,6 +59,24 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttachedManagedPolicies. 
+        /// <para>
+        /// A list of the managed policies attached to the group.
+        /// </para>
+        /// </summary>
+        public List<AttachedPolicyType> AttachedManagedPolicies
+        {
+            get { return this._attachedManagedPolicies; }
+            set { this._attachedManagedPolicies = value; }
+        }
+
+        // Check to see if AttachedManagedPolicies property is set
+        internal bool IsSetAttachedManagedPolicies()
+        {
+            return this._attachedManagedPolicies != null && this._attachedManagedPolicies.Count > 0; 
         }
 
         /// <summary>
@@ -120,7 +139,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property GroupPolicyList. 
         /// <para>
-        /// A list of the group's policies.
+        /// A list of the inline policies embedded in the group.
         /// </para>
         /// </summary>
         public List<PolicyDetail> GroupPolicyList

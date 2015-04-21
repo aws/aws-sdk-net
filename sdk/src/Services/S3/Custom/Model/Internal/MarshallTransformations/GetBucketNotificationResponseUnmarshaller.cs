@@ -69,7 +69,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CloudFunctionConfiguration", targetDepth))
                     {
-                        response.CloudFunctionConfigurations.Add(CloudFunctionConfigurationUnmarshaller.Instance.Unmarshall(context));
+                        var cfc = CloudFunctionConfigurationUnmarshaller.Instance.Unmarshall(context);
+                        if (cfc == null || cfc.IsSetInvocationRole())
+                        {
+                            response.CloudFunctionConfigurations.Add(cfc);
+                        }
+                        else
+                        {
+                            var lfc = new LambdaFunctionConfiguration
+                            {
+                                FunctionArn = cfc.CloudFunction,
+                                Events = cfc.Events,
+                                Id = cfc.Id
+                            };
+                            response.LambdaFunctionConfigurations.Add(lfc);
+                        }
                         continue;
                     }
                 }

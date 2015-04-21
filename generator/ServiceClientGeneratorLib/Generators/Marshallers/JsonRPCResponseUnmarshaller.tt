@@ -22,13 +22,34 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             <#=this.UnmarshallerBaseName #>Response response = new <#=this.Operation.Name #>Response();
 
 <#
-    if( this.Operation.ResponseHasBodyMembers )
+    var payload = this.Operation.ResponsePayloadMember;
+    var unmarshallPayload = payload != null && payload.IsStructure;
+    var payloadIsStream= payload != null && !unmarshallPayload;
+    if( this.Operation.ResponseHasBodyMembers || payload != null )
     {
-        if (this.Operation.ResponseStructure.Payload != null)
+        if (payloadIsStream)
+        {
+            if (payload.IsStreaming)
+            {
+#>
+            response.<#=payload.PropertyName#> = context.Stream;
+<#
+            }
+            else
+            {
+#>
+            var ms = new MemoryStream();
+            Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
+            ms.Seek(0, SeekOrigin.Begin);
+            response.<#=payload.PropertyName#> = ms;
+<#
+            }
+        }
+        else if (unmarshallPayload)
         {
 #>
-            var unmarshaller = <#= this.Operation.ResponseBodyMembers[0].DetermineTypeUnmarshallerInstantiate() #>;
-            response.<#=this.Operation.ResponseBodyMembers[0].PropertyName#> = unmarshaller.Unmarshall(context);
+            var unmarshaller = <#= payload.DetermineTypeUnmarshallerInstantiate() #>;
+            response.<#=payload.PropertyName#> = unmarshaller.Unmarshall(context);
 <#
         }
 		else if(this.IsWrapped)
@@ -64,7 +85,6 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     }
 	UnmarshallHeaders();
 	ProcessStatusCode();
-	ProcessResponseStream();
 #>
 
             return response;
@@ -87,7 +107,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             return new Amazon<#=this.Config.BaseName#>Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-<#	if(this.Operation.ResponseStreamingMember != null) {#>
+<#
+    if (payload != null && payload.IsStreaming)
+    {
+#>
         public override bool HasStreamingProperty
         {
             get

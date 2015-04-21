@@ -146,6 +146,8 @@ namespace Amazon.Util
 
         static string _versionNumber;
         static string _sdkUserAgent;
+        static string _customData;
+        
         /// <summary>
         /// The AWS SDK User Agent
         /// </summary>        
@@ -164,11 +166,18 @@ namespace Amazon.Util
 
         public static void SetUserAgent(string productName, string versionNumber)
         {
-            _userAgentBaseName = productName;
-            _versionNumber = versionNumber;
-            BuildUserAgentString();
+            SetUserAgent(productName, versionNumber, null);
         }
 
+        public static void SetUserAgent(string productName, string versionNumber, string customData)
+        {
+            _userAgentBaseName = productName;
+            _versionNumber = versionNumber;
+            _customData = customData;
+            
+            BuildUserAgentString();
+        }
+        
         static void BuildUserAgentString()
         {
             if (_versionNumber == null)
@@ -176,12 +185,13 @@ namespace Amazon.Util
                 _versionNumber = SDKVersionNumber;
             }
 
-            _sdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} .NET Runtime/{2} .NET Framework/{3} OS/{4}",
+            _sdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} .NET Runtime/{2} .NET Framework/{3} OS/{4} {5}",
                 _userAgentBaseName,
                 _versionNumber,
                 DetermineRuntime(),
                 DetermineFramework(),
-                DetermineOSVersion());
+                DetermineOSVersion(),
+                _customData).Trim();
         }
 
 
@@ -515,17 +525,6 @@ namespace Amazon.Util
             return parameters;
         }
 
-
-        public static Stream GenerateStreamFromString(string s)
-        {
-            MemoryStream stream = new MemoryStream();
-            StreamWriter writer = new StreamWriter(stream);
-            writer.Write(s);
-            writer.Flush();
-            stream.Position = 0;
-            return stream;
-        }
-
         internal static bool AreEqual(object[] itemsA, object[] itemsB)
         {
             if (itemsA == null || itemsB == null)
@@ -545,6 +544,7 @@ namespace Amazon.Util
 
             return true;
         }
+
         internal static bool AreEqual(object a, object b)
         {
             if (a == null || b == null)
@@ -556,7 +556,44 @@ namespace Amazon.Util
             return (a.Equals(b));
         }
 
-        #endregion
+        /// <summary>
+        /// Utility method for converting a string to a MemoryStream.
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static MemoryStream GenerateMemoryStreamFromString(string s)
+        {
+            MemoryStream stream = new MemoryStream();
+            StreamWriter writer = new StreamWriter(stream);
+            writer.Write(s);
+            writer.Flush();
+            stream.Position = 0;
+            return stream;
+        }
+
+        /// <summary>
+        /// Utility method for copy the contents of the source stream to the destination stream.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="destination"></param>
+        /// <param name="bufferSize"></param>
+        public static void CopyStream(Stream source, Stream destination, int bufferSize = 8192)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+            if (destination == null)
+                throw new ArgumentNullException("destination");
+            if (bufferSize <= 0)
+                throw new ArgumentOutOfRangeException("bufferSize");
+
+            byte[] array = new byte[bufferSize];
+            int count;
+            while ((count = source.Read(array, 0, array.Length)) != 0)
+            {
+                destination.Write(array, 0, count);
+            }
+        }        
+	#endregion
 
         #region Public Methods and Properties
 

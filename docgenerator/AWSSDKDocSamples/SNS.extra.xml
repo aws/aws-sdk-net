@@ -1,0 +1,331 @@
+﻿<docs>  
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient"/>
+      <member name="T:Amazon.SimpleNotificationService.Model.CreateTopicRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.CreateTopicRequest.Name"/>
+      <member name="T:Amazon.SimpleNotificationService.Model.CreateTopicResponse"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.CreateTopic(Amazon.SimpleNotificationService.Model.CreateTopicRequest)"/>      
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.CreateTopic(Amazon.SimpleNotificationService.Model.CreateTopicRequest)"/>      
+      <member name="T:Amazon.SimpleNotificationService.Model.SetTopicAttributesRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.SetTopicAttributesRequest.TopicArn"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.SetTopicAttributesRequest.AttributeName"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.SetTopicAttributesRequest.AttributeValue"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.SetTopicAttributes(Amazon.SimpleNotificationService.Model.SetTopicAttributesRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.Subscribe(Amazon.SimpleNotificationService.Model.SubscribeRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.SetTopicAttributes(Amazon.SimpleNotificationService.Model.SetTopicAttributesRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.Subscribe(Amazon.SimpleNotificationService.Model.SubscribeRequest)"/>      
+      <member name="T:Amazon.SimpleNotificationService.Model.SubscribeRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.SubscribeRequest.Endpoint"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.SubscribeRequest.Protocol"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.SubscribeRequest.TopicArn"/>
+      <member name="T:Amazon.SimpleNotificationService.Model.ListSubscriptionsByTopicRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.ListSubscriptionsByTopicRequest.TopicArn"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.ListSubscriptionsByTopic(Amazon.SimpleNotificationService.Model.ListSubscriptionsByTopicRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.Publish(Amazon.SimpleNotificationService.Model.PublishRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.ListSubscriptionsByTopic(Amazon.SimpleNotificationService.Model.ListSubscriptionsByTopicRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.Publish(Amazon.SimpleNotificationService.Model.PublishRequest)"/>      
+      <member name="T:Amazon.SimpleNotificationService.Model.PublishRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.PublishRequest.Subject"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.PublishRequest.Message"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.PublishRequest.TopicArn"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to create, subscribe to, and publish a topic.</para>
+        <code title="Create, subscribe to, and publish topic example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SNS\SNSSamples.cs"
+              region="SNSCreateSubscribePublish"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleNotificationService.Model.ListTopicsRequest"/>
+      <member name="T:Amazon.SimpleNotificationService.Model.ListTopicsResponse"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.ListTopics(Amazon.SimpleNotificationService.Model.ListTopicsRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.ListTopics(Amazon.SimpleNotificationService.Model.ListTopicsRequest)"/>      
+      <member name="T:Amazon.SimpleNotificationService.Model.Topic"/>      
+      <member name="P:Amazon.SimpleNotificationService.Model.ListTopicsResult.Topics"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.Topic.TopicArn"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.GetTopicAttributes(Amazon.SimpleNotificationService.Model.GetTopicAttributesRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.GetTopicAttributes(Amazon.SimpleNotificationService.Model.GetTopicAttributesRequest)"/>
+      <member name="T:Amazon.SimpleNotificationService.Model.GetTopicAttributesRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.GetTopicAttributesRequest.TopicArn"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.GetTopicAttributesResult.Attributes"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.ListTopicsRequest.NextToken"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.ListTopicsResult.NextToken"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to list topics and their attributes.</para>
+        <code title="List topics example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SNS\SNSSamples.cs"
+              region="SNSListTopics"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleNotificationService.Model.ListSubscriptionsByTopicRequest"/>
+      <member name="T:Amazon.SimpleNotificationService.Model.ListSubscriptionsByTopicResponse"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.ListSubscriptionsByTopicRequest.TopicArn"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.ListSubscriptionsByTopic(Amazon.SimpleNotificationService.Model.ListSubscriptionsByTopicRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.ListSubscriptionsByTopic(Amazon.SimpleNotificationService.Model.ListSubscriptionsByTopicRequest)"/>      
+      <member name="T:Amazon.SimpleNotificationService.Model.Subscription"/>      
+      <member name="P:Amazon.SimpleNotificationService.Model.ListSubscriptionsByTopicResult.Subscriptions"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.Subscription.SubscriptionArn"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.GetSubscriptionAttributes(Amazon.SimpleNotificationService.Model.GetSubscriptionAttributesRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.GetSubscriptionAttributes(Amazon.SimpleNotificationService.Model.GetSubscriptionAttributesRequest)"/>
+      <member name="T:Amazon.SimpleNotificationService.Model.GetSubscriptionAttributesRequest"/>      
+      <member name="P:Amazon.SimpleNotificationService.Model.GetSubscriptionAttributesRequest.SubscriptionArn"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.GetSubscriptionAttributesResult.Attributes"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.ListSubscriptionsByTopicRequest.NextToken"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.ListSubscriptionsByTopicResult.NextToken"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to list subscriptions by topic.</para>
+        <code title="List subscriptions by topic example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SNS\SNSSamples.cs"
+              region="SNSListSubscriptionsByTopic"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleNotificationService.Model.ListSubscriptionsRequest"/>
+      <member name="T:Amazon.SimpleNotificationService.Model.ListSubscriptionsResponse"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.ListSubscriptions(Amazon.SimpleNotificationService.Model.ListSubscriptionsRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.ListSubscriptions(Amazon.SimpleNotificationService.Model.ListSubscriptionsRequest)"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.ListSubscriptionsResult.Subscriptions"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.ListSubscriptionsRequest.NextToken"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.ListSubscriptionsResult.NextToken"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to list all topic subscriptions.</para>
+        <code title="List all topic subscriptions example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SNS\SNSSamples.cs"
+              region="SNSListSubscriptions"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleNotificationService.Model.UnsubscribeRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.UnsubscribeRequest.SubscriptionArn"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.Unsubscribe(Amazon.SimpleNotificationService.Model.UnsubscribeRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.Unsubscribe(Amazon.SimpleNotificationService.Model.UnsubscribeRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to unsubscribe from a topic.</para>        
+        <code title="Unsubscribe topic example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SNS\SNSSamples.cs"
+              region="SNSUnsubscribe"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleNotificationService.Model.AddPermissionRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.AddPermissionRequest.TopicArn"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.AddPermissionRequest.ActionName"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.AddPermissionRequest.AWSAccountId"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.AddPermissionRequest.Label"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.AddPermission(Amazon.SimpleNotificationService.Model.AddPermissionRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.AddPermission(Amazon.SimpleNotificationService.Model.AddPermissionRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to add a permission to a topic.</para>
+        <code title="Add topic permission example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SNS\SNSSamples.cs"
+              region="SNSAddPermission"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleNotificationService.Model.DeleteTopicRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.DeleteTopicRequest.TopicArn"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.DeleteTopic(Amazon.SimpleNotificationService.Model.DeleteTopicRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.DeleteTopic(Amazon.SimpleNotificationService.Model.DeleteTopicRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to delete a topic.</para>
+        <code title="Delete topic example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SNS\SNSSamples.cs"
+              region="SNSDeleteTopic"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleNotificationService.Model.ConfirmSubscriptionRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.ConfirmSubscriptionRequest.TopicArn"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.ConfirmSubscriptionRequest.Token"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.ConfirmSubscription(Amazon.SimpleNotificationService.Model.ConfirmSubscriptionRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.ConfirmSubscription(Amazon.SimpleNotificationService.Model.ConfirmSubscriptionRequest)"/>    
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to confirm a topic subscription.</para>
+        <code title="Confirm topic subscription example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SNS\SNSSamples.cs"
+              region="SNSConfirmSubscription"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleNotificationService.Model.CreatePlatformApplicationRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.CreatePlatformApplicationRequest.Attributes"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.CreatePlatformApplicationRequest.Name"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.CreatePlatformApplicationRequest.Platform"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.CreatePlatformApplication(Amazon.SimpleNotificationService.Model.CreatePlatformApplicationRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.CreatePlatformApplication(Amazon.SimpleNotificationService.Model.CreatePlatformApplicationRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to create a mobile push application.</para>
+        <code title="Create mobile push application example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SNS\SNSSamples.cs"
+              region="SNSMobilePushAPIsCreatePlatformApplication"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleNotificationService.Model.SetPlatformApplicationAttributesRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.SetPlatformApplicationAttributesRequest.Attributes"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.SetPlatformApplicationAttributesRequest.PlatformApplicationArn"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.SetPlatformApplicationAttributes(Amazon.SimpleNotificationService.Model.SetPlatformApplicationAttributesRequest)"/>      
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.SetPlatformApplicationAttributes(Amazon.SimpleNotificationService.Model.SetPlatformApplicationAttributesRequest)"/>      
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to set mobile push application attributes.</para>        
+        <code title="Set mobile push application attributes example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SNS\SNSSamples.cs"
+              region="SNSMobilePushAPIsSetPlatformApplicationAttributes"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleNotificationService.Model.CreatePlatformEndpointRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.CreatePlatformEndpointRequest.CustomUserData"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.CreatePlatformEndpointRequest.PlatformApplicationArn"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.CreatePlatformEndpointRequest.Token"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.CreatePlatformEndpoint(Amazon.SimpleNotificationService.Model.CreatePlatformEndpointRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.CreatePlatformEndpoint(Amazon.SimpleNotificationService.Model.CreatePlatformEndpointRequest)"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to create a mobile push application endpoint.</para> 
+        <code title="Create mobile push application endpoint example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SNS\SNSSamples.cs"
+              region="SNSMobilePushAPIsCreatePlatformEndpoint"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleNotificationService.Model.SetEndpointAttributesRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.SetEndpointAttributesRequest.EndpointArn"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.SetEndpointAttributesRequest.Attributes"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.SetEndpointAttributes(Amazon.SimpleNotificationService.Model.SetEndpointAttributesRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.SetEndpointAttributes(Amazon.SimpleNotificationService.Model.SetEndpointAttributesRequest)"/> 
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to set mobile push application endpoint attributes.</para>
+        <code title="Set mobile push application endpoint attributes example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SNS\SNSSamples.cs"
+              region="SNSMobilePushAPIsSetEndpointAttributes"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleNotificationService.Model.ListPlatformApplicationsResponse"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.ListPlatformApplications"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.ListPlatformApplications"/>
+      <member name="T:Amazon.SimpleNotificationService.Model.PlatformApplication"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.ListPlatformApplicationsResult.PlatformApplications"/>
+      <member name="T:Amazon.SimpleNotificationService.Model.GetPlatformApplicationAttributesRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.GetPlatformApplicationAttributesRequest.PlatformApplicationArn"/>
+      <member name="T:Amazon.SimpleNotificationService.Model.GetPlatformApplicationAttributesResponse"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.GetPlatformApplicationAttributes(Amazon.SimpleNotificationService.Model.GetPlatformApplicationAttributesRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.GetPlatformApplicationAttributes(Amazon.SimpleNotificationService.Model.GetPlatformApplicationAttributesRequest)"/>
+      <member name="T:Amazon.SimpleNotificationService.Model.ListEndpointsByPlatformApplicationRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.ListEndpointsByPlatformApplicationRequest.PlatformApplicationArn"/>
+      <member name="T:Amazon.SimpleNotificationService.Model.ListEndpointsByPlatformApplicationResponse"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.ListEndpointsByPlatformApplication(Amazon.SimpleNotificationService.Model.ListEndpointsByPlatformApplicationRequest)"/>
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.ListEndpointsByPlatformApplication(Amazon.SimpleNotificationService.Model.ListEndpointsByPlatformApplicationRequest)"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.GetPlatformApplicationAttributesResult.Attributes"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.ListEndpointsByPlatformApplicationResult.Endpoints"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.Endpoint.EndpointArn"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.Endpoint.Attributes"/>
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to list all mobile push applications and their attributes. For each mobile push application, this 
+          example also lists its endpoints and their attributes.</para>        
+        <code title="List mobile push applications and endpoints example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SNS\SNSSamples.cs"
+              region="SNSMobilePushAPIsListApplicationsEndpoints"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleNotificationService.Model.DeleteEndpointRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.DeleteEndpointRequest.EndpointArn"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.DeleteEndpoint(Amazon.SimpleNotificationService.Model.DeleteEndpointRequest)"/>      
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.DeleteEndpoint(Amazon.SimpleNotificationService.Model.DeleteEndpointRequest)"/>      
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to delete a mobile push application endpoint.</para>
+        <code title="Delete mobile push application endpoint example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SNS\SNSSamples.cs"
+              region="SNSMobilePushAPIsDeletePlatformEndpoint"/>
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="T:Amazon.SimpleNotificationService.Model.DeletePlatformApplicationRequest"/>
+      <member name="P:Amazon.SimpleNotificationService.Model.DeletePlatformApplicationRequest.PlatformApplicationArn"/>
+      <member name="M:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.DeletePlatformApplication(Amazon.SimpleNotificationService.Model.DeletePlatformApplicationRequest)"/>      
+      <member name="M:Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.DeletePlatformApplication(Amazon.SimpleNotificationService.Model.DeletePlatformApplicationRequest)"/>      
+    </members>
+    <value>
+      <example>
+        <para>This example shows how to delete a mobile push application.</para>        
+        <code title="Delete mobile push application example"
+              lang="cs"
+              source=".\AWSSDKDocSamples\SNS\SNSSamples.cs"
+              region="SNSMobilePushAPIsDeletePlatformApplication"/>
+      </example>
+    </value>
+  </doc>
+</docs>

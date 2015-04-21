@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// 
+    /// Contains the response to a successful <a>GetPolicyVersion</a> request.
     /// </summary>
     public partial class GetPolicyVersionResponse : AmazonWebServiceResponse
     {

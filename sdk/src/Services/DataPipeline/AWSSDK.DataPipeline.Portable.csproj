@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AE82EAF0-6266-4116-8A53-BB5DE8F5D58E}</ProjectGuid>
+    <ProjectGuid>{7675F4E3-BC72-49B8-9EE4-C3E9166C15A4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.DataPipeline</RootNamespace>
@@ -28,6 +28,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>419,1591,1573</NoWarn>
+    <DocumentationFile>bin\Debug\portable\AWSSDK.DataPipeline.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,6 +38,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>419,1591,1573</NoWarn>
+    <DocumentationFile>bin\Release\portable\AWSSDK.DataPipeline.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
@@ -65,7 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AWSSDK.Core.Portable.csproj">
-        <Project>{B88C3675-CDA3-4A9E-8D61-E88D21B51A6A}</Project>
+        <Project>{A73B63F9-3B77-496E-84BF-8EDE50C0F89A}</Project>
         <Name>AWSSDK.Core.Portable</Name>
     </ProjectReference>
   </ItemGroup>

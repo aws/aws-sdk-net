@@ -29,16 +29,8 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the QueryObjects operation.
-    /// Queries a pipeline for the names of objects that match a specified set of conditions.
-    /// 
-    ///  
-    /// <para>
-    /// The objects returned by <a>QueryObjects</a> are paginated and then filtered by the
-    /// value you set for query. This means the action may return an empty result set with
-    /// a value set for marker. If <code>HasMoreResults</code> is set to <code>True</code>,
-    /// you should continue to call <a>QueryObjects</a>, passing in the returned value for
-    /// marker, until <code>HasMoreResults</code> returns <code>False</code>.
-    /// </para>
+    /// Queries the specified pipeline for the names of objects that match the specified set
+    /// of conditions.
     /// </summary>
     public partial class QueryObjectsRequest : AmazonDataPipelineRequest
     {
@@ -51,8 +43,8 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Specifies the maximum number of object names that <a>QueryObjects</a> will return
-        /// in a single call. The default value is 100. 
+        /// The maximum number of object names that <code>QueryObjects</code> will return in a
+        /// single call. The default value is 100. 
         /// </para>
         /// </summary>
         public int Limit
@@ -70,10 +62,9 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  The starting point for the results to be returned. The first time you call <a>QueryObjects</a>,
-        /// this value should be empty. As long as the action returns <code>HasMoreResults</code>
-        /// as <code>True</code>, you can call <a>QueryObjects</a> again and pass the marker value
-        /// from the response to retrieve the next set of results. 
+        /// The starting point for the results to be returned. For the first call, this value
+        /// should be empty. As long as there are more results, continue to call <code>QueryObjects</code>
+        /// with the marker value from the previous call to retrieve the next set of results.
         /// </para>
         /// </summary>
         public string Marker
@@ -91,7 +82,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
-        /// Identifier of the pipeline to be queried for object names.
+        /// The ID of the pipeline.
         /// </para>
         /// </summary>
         public string PipelineId
@@ -109,10 +100,10 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Query. 
         /// <para>
-        ///  Query that defines the objects to be returned. The <a>Query</a> object can contain
-        /// a maximum of ten selectors. The conditions in the query are limited to top-level String
-        /// fields in the object. These filters can be applied to components, instances, and attempts.
-        /// 
+        /// The query that defines the objects to be returned. The <code>Query</code> object can
+        /// contain a maximum of ten selectors. The conditions in the query are limited to top-level
+        /// String fields in the object. These filters can be applied to components, instances,
+        /// and attempts.
         /// </para>
         /// </summary>
         public Query Query
@@ -130,8 +121,8 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Sphere. 
         /// <para>
-        ///  Specifies whether the query applies to components or instances. Allowable values:
-        /// <code>COMPONENT</code>, <code>INSTANCE</code>, <code>ATTEMPT</code>. 
+        /// Indicates whether the query applies to components or instances. The possible values
+        /// are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.
         /// </para>
         /// </summary>
         public string Sphere

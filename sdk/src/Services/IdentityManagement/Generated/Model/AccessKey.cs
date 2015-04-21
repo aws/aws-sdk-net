@@ -43,7 +43,6 @@ namespace Amazon.IdentityManagement.Model
     public partial class AccessKey
     {
         private string _accessKeyId;
-        private AccessKeySelectorType _accessKeySelector;
         private DateTime? _createDate;
         private string _secretAccessKey;
         private StatusType _status;
@@ -85,21 +84,6 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetAccessKeyId()
         {
             return this._accessKeyId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property AccessKeySelector.
-        /// </summary>
-        public AccessKeySelectorType AccessKeySelector
-        {
-            get { return this._accessKeySelector; }
-            set { this._accessKeySelector = value; }
-        }
-
-        // Check to see if AccessKeySelector property is set
-        internal bool IsSetAccessKeySelector()
-        {
-            return this._accessKeySelector != null;
         }
 
         /// <summary>

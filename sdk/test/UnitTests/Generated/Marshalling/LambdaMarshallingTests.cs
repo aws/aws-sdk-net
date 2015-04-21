@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2014-11-11.normal.json service model.
+ * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 
 
@@ -37,21 +37,21 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class LambdaMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("lambda-2014-11-11.normal.json", "lambda.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("lambda-2015-03-31.normal.json", "lambda.customizations.json");
         
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Lambda")]
-        public void AddEventSourceMarshallTest()
+        public void AddPermissionMarshallTest()
         {
-            var operation = service_model.FindOperation("AddEventSource");
+            var operation = service_model.FindOperation("AddPermission");
 
-            var request = InstantiateClassGenerator.Execute<AddEventSourceRequest>();
-            var marshaller = new AddEventSourceRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<AddPermissionRequest>();
+            var marshaller = new AddPermissionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("AddEventSource", request, internalRequest, service_model);            
+            RequestValidator.Validate("AddPermission", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -64,9 +64,105 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = AddEventSourceResponseUnmarshaller.Instance;
+            ResponseUnmarshaller unmarshaller = AddPermissionResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
-                as AddEventSourceResponse;   
+                as AddPermissionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void CreateEventSourceMappingMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateEventSourceMapping");
+
+            var request = InstantiateClassGenerator.Execute<CreateEventSourceMappingRequest>();
+            var marshaller = new CreateEventSourceMappingRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("CreateEventSourceMapping", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateEventSourceMappingResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateEventSourceMappingResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void CreateFunctionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateFunction");
+
+            var request = InstantiateClassGenerator.Execute<CreateFunctionRequest>();
+            var marshaller = new CreateFunctionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("CreateFunction", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateFunctionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void DeleteEventSourceMappingMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteEventSourceMapping");
+
+            var request = InstantiateClassGenerator.Execute<DeleteEventSourceMappingRequest>();
+            var marshaller = new DeleteEventSourceMappingRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("DeleteEventSourceMapping", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteEventSourceMappingResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeleteEventSourceMappingResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -92,15 +188,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Lambda")]
-        public void GetEventSourceMarshallTest()
+        public void GetEventSourceMappingMarshallTest()
         {
-            var operation = service_model.FindOperation("GetEventSource");
+            var operation = service_model.FindOperation("GetEventSourceMapping");
 
-            var request = InstantiateClassGenerator.Execute<GetEventSourceRequest>();
-            var marshaller = new GetEventSourceRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetEventSourceMappingRequest>();
+            var marshaller = new GetEventSourceMappingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetEventSource", request, internalRequest, service_model);            
+            RequestValidator.Validate("GetEventSourceMapping", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -113,9 +209,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = GetEventSourceResponseUnmarshaller.Instance;
+            ResponseUnmarshaller unmarshaller = GetEventSourceMappingResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
-                as GetEventSourceResponse;   
+                as GetEventSourceMappingResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -188,6 +284,72 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Lambda")]
+        public void GetPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetPolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetPolicyRequest>();
+            var marshaller = new GetPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetPolicy", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetPolicyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetPolicyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeMarshallTest()
+        {
+            var operation = service_model.FindOperation("Invoke");
+
+            var request = InstantiateClassGenerator.Execute<InvokeRequest>();
+            var marshaller = new InvokeRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("Invoke", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Function-Error","X-Amz-Function-Error_Value"},
+                    {"X-Amz-Log-Result","X-Amz-Log-Result_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = InvokeResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as InvokeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
         public void InvokeAsyncMarshallTest()
         {
             var operation = service_model.FindOperation("InvokeAsync");
@@ -220,15 +382,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Lambda")]
-        public void ListEventSourcesMarshallTest()
+        public void ListEventSourceMappingsMarshallTest()
         {
-            var operation = service_model.FindOperation("ListEventSources");
+            var operation = service_model.FindOperation("ListEventSourceMappings");
 
-            var request = InstantiateClassGenerator.Execute<ListEventSourcesRequest>();
-            var marshaller = new ListEventSourcesRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<ListEventSourceMappingsRequest>();
+            var marshaller = new ListEventSourceMappingsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListEventSources", request, internalRequest, service_model);            
+            RequestValidator.Validate("ListEventSourceMappings", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -241,9 +403,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = ListEventSourcesResponseUnmarshaller.Instance;
+            ResponseUnmarshaller unmarshaller = ListEventSourceMappingsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
-                as ListEventSourcesResponse;   
+                as ListEventSourceMappingsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -284,16 +446,80 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Lambda")]
-        public void RemoveEventSourceMarshallTest()
+        public void RemovePermissionMarshallTest()
         {
-            var operation = service_model.FindOperation("RemoveEventSource");
+            var operation = service_model.FindOperation("RemovePermission");
 
-            var request = InstantiateClassGenerator.Execute<RemoveEventSourceRequest>();
-            var marshaller = new RemoveEventSourceRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<RemovePermissionRequest>();
+            var marshaller = new RemovePermissionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("RemoveEventSource", request, internalRequest, service_model);            
+            RequestValidator.Validate("RemovePermission", request, internalRequest, service_model);            
 
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void UpdateEventSourceMappingMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateEventSourceMapping");
+
+            var request = InstantiateClassGenerator.Execute<UpdateEventSourceMappingRequest>();
+            var marshaller = new UpdateEventSourceMappingRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("UpdateEventSourceMapping", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateEventSourceMappingResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateEventSourceMappingResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void UpdateFunctionCodeMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateFunctionCode");
+
+            var request = InstantiateClassGenerator.Execute<UpdateFunctionCodeRequest>();
+            var marshaller = new UpdateFunctionCodeRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("UpdateFunctionCode", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateFunctionCodeResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateFunctionCodeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
         
@@ -325,38 +551,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = UpdateFunctionConfigurationResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as UpdateFunctionConfigurationResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("Lambda")]
-        public void UploadFunctionMarshallTest()
-        {
-            var operation = service_model.FindOperation("UploadFunction");
-
-            var request = InstantiateClassGenerator.Execute<UploadFunctionRequest>();
-            var marshaller = new UploadFunctionRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UploadFunction", request, internalRequest, service_model);            
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = UploadFunctionResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as UploadFunctionResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

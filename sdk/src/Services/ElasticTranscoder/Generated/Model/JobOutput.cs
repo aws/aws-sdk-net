@@ -40,7 +40,10 @@ namespace Amazon.ElasticTranscoder.Model
         private Captions _captions;
         private List<Clip> _composition = new List<Clip>();
         private long? _duration;
+        private long? _durationMillis;
         private Encryption _encryption;
+        private long? _fileSize;
+        private string _frameRate;
         private int? _height;
         private string _id;
         private string _key;
@@ -217,6 +220,24 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DurationMillis. 
+        /// <para>
+        /// Duration of the output file, in milliseconds.
+        /// </para>
+        /// </summary>
+        public long DurationMillis
+        {
+            get { return this._durationMillis.GetValueOrDefault(); }
+            set { this._durationMillis = value; }
+        }
+
+        // Check to see if DurationMillis property is set
+        internal bool IsSetDurationMillis()
+        {
+            return this._durationMillis.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Encryption. 
         /// <para>
         /// The encryption settings, if any, that you want Elastic Transcoder to apply to your
@@ -235,6 +256,42 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetEncryption()
         {
             return this._encryption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileSize. 
+        /// <para>
+        /// File size of the output file, in bytes.
+        /// </para>
+        /// </summary>
+        public long FileSize
+        {
+            get { return this._fileSize.GetValueOrDefault(); }
+            set { this._fileSize = value; }
+        }
+
+        // Check to see if FileSize property is set
+        internal bool IsSetFileSize()
+        {
+            return this._fileSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FrameRate. 
+        /// <para>
+        /// Frame rate of the output file, in frames per second.
+        /// </para>
+        /// </summary>
+        public string FrameRate
+        {
+            get { return this._frameRate; }
+            set { this._frameRate = value; }
+        }
+
+        // Check to see if FrameRate property is set
+        internal bool IsSetFrameRate()
+        {
+            return this._frameRate != null;
         }
 
         /// <summary>

@@ -1,0 +1,480 @@
+﻿<docs>
+
+  <!-- S3 Bucket operations -->
+  <doc>
+    <members>
+      <member name="M:Amazon.S3.IAmazonS3.GetBucketPolicy(Amazon.S3.Model.GetBucketPolicyRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.GetBucketPolicy(Amazon.S3.Model.GetBucketPolicyRequest)" />
+      <member name="M:Amazon.S3.IAmazonS3.PutBucketPolicy(Amazon.S3.Model.PutBucketPolicyRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.PutBucketPolicy(Amazon.S3.Model.PutBucketPolicyRequest)" />
+      <member name="M:Amazon.S3.IAmazonS3.DeleteBucketPolicy(Amazon.S3.Model.DeleteBucketPolicyRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.DeleteBucketPolicy(Amazon.S3.Model.DeleteBucketPolicyRequest)" />
+      <member name="T:Amazon.S3.Model.GetBucketPolicyRequest" />
+      <member name="T:Amazon.S3.Model.GetBucketPolicyResponse" />
+      <member name="T:Amazon.S3.Model.PutBucketPolicyRequest" />
+      <member name="T:Amazon.S3.Model.PutBucketPolicyResponse" />
+      <member name="T:Amazon.S3.Model.DeleteBucketPolicyRequest" />
+      <member name="T:Amazon.S3.Model.DeleteBucketPolicyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to Get, Put and Delete bucket policies.
+        </para>
+        <code
+          title="BucketPolicy samples" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="BucketPolicy Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.S3.IAmazonS3.ListBuckets" />
+      <member name="M:Amazon.S3.AmazonS3Client.ListBuckets" />
+      <member name="M:Amazon.S3.IAmazonS3.ListBuckets(Amazon.S3.Model.ListBucketsRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.ListBuckets(Amazon.S3.Model.ListBucketsRequest)" />
+      <member name="T:Amazon.S3.Model.ListBucketsRequest" />
+      <member name="T:Amazon.S3.Model.ListBucketsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to list all buckets.
+        </para>
+        <code
+          title="ListBuckets sample" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="ListBuckets Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.S3.IAmazonS3.GetBucketLocation(Amazon.S3.Model.GetBucketLocationRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.GetBucketLocation(Amazon.S3.Model.GetBucketLocationRequest)" />
+      <member name="T:Amazon.S3.Model.GetBucketLocationRequest" />
+      <member name="T:Amazon.S3.Model.GetBucketLocationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to retrieve the location of a bucket.
+        </para>
+        <code
+          title="GetBucketLocation sample" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="GetBucketLocation Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.S3.IAmazonS3.PutBucket(Amazon.S3.Model.PutBucketRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.PutBucket(Amazon.S3.Model.PutBucketRequest)" />
+      <member name="T:Amazon.S3.Model.PutBucketRequest" />
+      <member name="T:Amazon.S3.Model.PutBucketResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to create a bucket in a specific region and with
+          a canned ACL configuring the bucket to be public readable.
+        </para>
+        <code
+          title="PutBucket sample" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="PutBucket Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.S3.IAmazonS3.DeleteBucket(Amazon.S3.Model.DeleteBucketRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.DeleteBucket(Amazon.S3.Model.DeleteBucketRequest)" />
+      <member name="T:Amazon.S3.Model.DeleteBucketRequest" />
+      <member name="T:Amazon.S3.Model.DeleteBucketResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to delete an bucket.
+        </para>
+        <code
+          title="DeleteBucket sample" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="DeleteBucket Sample 1" />
+        <para>
+          This example shows how to delete all items in a bucket,
+          and then delete the actual bucket.
+        </para>
+        <code
+          title="DeleteBucket sample" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="DeleteBucket Sample 2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.S3.IAmazonS3.GetLifecycleConfiguration(Amazon.S3.Model.GetLifecycleConfigurationRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.GetLifecycleConfiguration(Amazon.S3.Model.GetLifecycleConfigurationRequest)" />
+      <member name="M:Amazon.S3.IAmazonS3.PutLifecycleConfiguration(Amazon.S3.Model.PutLifecycleConfigurationRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.PutLifecycleConfiguration(Amazon.S3.Model.PutLifecycleConfigurationRequest)" />
+      <member name="M:Amazon.S3.IAmazonS3.DeleteLifecycleConfiguration(Amazon.S3.Model.DeleteLifecycleConfigurationRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.DeleteLifecycleConfiguration(Amazon.S3.Model.DeleteLifecycleConfigurationRequest)" />
+      <member name="T:Amazon.S3.Model.GetLifecycleConfigurationRequest" />
+      <member name="T:Amazon.S3.Model.GetLifecycleConfigurationResponse" />
+      <member name="T:Amazon.S3.Model.PutLifecycleConfigurationRequest" />
+      <member name="T:Amazon.S3.Model.PutLifecycleConfigurationResponse" />
+      <member name="T:Amazon.S3.Model.DeleteLifecycleConfigurationRequest" />
+      <member name="T:Amazon.S3.Model.DeleteLifecycleConfigurationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to Get, Put and Delete bucket Lifecycle Configurations. <br />
+          A Lifecycle Configuration allows an owner to configure when specific objects
+          should be deleted. Objects to be deleted are specified with a prefix. <br />
+          The configuration being used has rules that delete objects with a specific
+          prefix and objects in a specific subdirectory.
+        </para>
+        <code
+          title="LifecycleConfiguration samples" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="LifecycleConfiguration Sample" />
+      </example>
+    </value>
+  </doc>
+  
+  <!-- S3 Object operations-->
+  <doc>
+    <members>
+      <member name="M:Amazon.S3.IAmazonS3.ListObjects(Amazon.S3.Model.ListObjectsRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.ListObjects(Amazon.S3.Model.ListObjectsRequest)" />
+      <member name="T:Amazon.S3.Model.ListObjectsRequest" />
+      <member name="T:Amazon.S3.Model.ListObjectsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to list all objects in a bucket.
+        </para>
+        <code
+          title="ListObjects sample" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="ListObjects Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.S3.IAmazonS3.GetObject(Amazon.S3.Model.GetObjectRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.GetObject(Amazon.S3.Model.GetObjectRequest)" />
+      <member name="T:Amazon.S3.Model.GetObjectRequest" />
+      <member name="T:Amazon.S3.Model.GetObjectResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to get an object.
+        </para>
+        <code
+          title="GetObject sample" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="GetObject Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.S3.IAmazonS3.PutObject(Amazon.S3.Model.PutObjectRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.PutObject(Amazon.S3.Model.PutObjectRequest)" />
+      <member name="T:Amazon.S3.Model.PutObjectRequest" />
+      <member name="T:Amazon.S3.Model.PutObjectResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This following examples show multiple ways of creating an
+          object.
+        </para>
+        <para>
+          This example shows how to put an object, with its content being
+          passed along as a string.
+        </para>
+        <code
+          title="PutObject sample 1" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="PutObject Sample 1" />
+        <para>
+          This example shows how to put an object, setting its
+          content to be a file.
+        </para>
+        <code
+          title="PutObject sample 2" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="PutObject Sample 2" />
+        <para>
+          This example shows how to put an object using a stream.
+        </para>
+        <code
+          title="PutObject sample 3" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="PutObject Sample 3" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.S3.IAmazonS3.DeleteObject(Amazon.S3.Model.DeleteObjectRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.DeleteObject(Amazon.S3.Model.DeleteObjectRequest)" />
+      <member name="T:Amazon.S3.Model.DeleteObjectRequest" />
+      <member name="T:Amazon.S3.Model.DeleteObjectResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to delete an object.
+        </para>
+        <code
+          title="DeleteObject sample" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="DeleteObject Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.S3.IAmazonS3.DeleteObjects(Amazon.S3.Model.DeleteObjectsRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.DeleteObjects(Amazon.S3.Model.DeleteObjectsRequest)" />
+      <member name="T:Amazon.S3.Model.DeleteObjectsRequest" />
+      <member name="T:Amazon.S3.Model.DeleteObjectsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to delete multiple objects in a single request. <br />
+          Note that the call may not delete all objects. In that case, an exception
+          will be thrown. This exception will contain the list of encountered
+          delete errors.
+        </para>
+        <code
+          title="DeleteObjects sample" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="DeleteObjects Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.S3.IAmazonS3.CopyObject(Amazon.S3.Model.CopyObjectRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.CopyObject(Amazon.S3.Model.CopyObjectRequest)" />
+      <member name="T:Amazon.S3.Model.CopyObjectRequest" />
+      <member name="T:Amazon.S3.Model.CopyObjectResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to copy an object from
+          one bucket/key to a different bucket/key.
+        </para>
+        <code
+          title="CopyObject sample" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="CopyObject Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.S3.IAmazonS3.GetPreSignedURL(Amazon.S3.Model.GetPreSignedUrlRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.GetPreSignedURL(Amazon.S3.Model.GetPreSignedUrlRequest)" />
+      <member name="T:Amazon.S3.Model.GetPreSignedUrlRequest" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following examples show how to create various different pre-signed URLs.
+        </para>
+        <para>
+          The code sample shows a GetContents function. This will be referred to in
+          subsequent samples to test out the generated URL.
+        </para>
+        <code
+          title="GetContents function" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="GetContents function" />
+        <para>
+          The first example creates a URL that will allow a third party to retrieve
+          an object from S3 for a period of 5 minutes.
+        </para>
+        <code
+          title="GetPreSignedURL sample 1" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="GetPreSignedURL Sample 1" />
+        <para>
+          The following example creates a URL that will allow a third party to retrieve
+          an object from S3 for a period of 5 minutes, and it also sets the headers
+          to specific content, caching and encoding values.
+        </para>
+        <code
+          title="GetPreSignedURL sample 2" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="GetPreSignedURL Sample 2" />
+        <para>
+          This example creates a URL that will allow a third party to list
+          all objects in a specific bucket. This URL will also expire in 5 minutes.<br />
+          The URL response will be the XML response for a ListBucket request.
+        </para>
+        <code
+          title="GetPreSignedURL sample 3" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="GetPreSignedURL Sample 3" />
+        <para>
+          This example creates a URL that will allow a third party to list
+          all of the owner's buckets. This URL will also expire in 5 minutes.<br />
+          The URL response will be the XML response for a ListBuckets request.
+        </para>
+        <code
+          title="GetPreSignedURL sample 4" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="GetPreSignedURL Sample 4" />
+        <para>
+          This final example creates a URL that allows a third party to put
+          an object, then uses it to upload sample content.
+          The URL is set to expire in 10 days.
+        </para>
+        <code
+          title="GetPreSignedURL sample 5" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="GetPreSignedURL Sample 5" />
+
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.S3.IAmazonS3.PutACL(Amazon.S3.Model.PutACLRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.PutACL(Amazon.S3.Model.PutACLRequest)" />
+      <member name="T:Amazon.S3.Model.PutACLRequest" />
+      <member name="T:Amazon.S3.Model.PutACLResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to set a canned ACL on an object, first to
+          PublicRead, then back to Private.
+        </para>
+        <code
+          title="PutACL sample 1" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="PutACL Sample 1" />
+        <para>
+          This example shows how to get and set ACLs on an object.
+        </para>
+        <code
+          title="GetACL\PutACL samples" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="GetACL\PutACL Samples" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.S3.IAmazonS3.InitiateMultipartUpload(Amazon.S3.Model.InitiateMultipartUploadRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.InitiateMultipartUpload(Amazon.S3.Model.InitiateMultipartUploadRequest)" />
+      <member name="T:Amazon.S3.Model.InitiateMultipartUploadRequest" />
+      <member name="T:Amazon.S3.Model.InitiateMultipartUploadResponse" />
+
+      <member name="M:Amazon.S3.IAmazonS3.UploadPart(Amazon.S3.Model.UploadPartRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.UploadPart(Amazon.S3.Model.UploadPartRequest)" />
+      <member name="T:Amazon.S3.Model.UploadPartRequest" />
+      <member name="T:Amazon.S3.Model.UploadPartResponse" />
+
+      <member name="M:Amazon.S3.IAmazonS3.ListParts(Amazon.S3.Model.ListPartsRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.ListParts(Amazon.S3.Model.ListPartsRequest)" />
+      <member name="T:Amazon.S3.Model.ListPartsRequest" />
+      <member name="T:Amazon.S3.Model.ListPartsResponse" />
+
+      <member name="M:Amazon.S3.IAmazonS3.CompleteMultipartUpload(Amazon.S3.Model.CompleteMultipartUploadRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.CompleteMultipartUpload(Amazon.S3.Model.CompleteMultipartUploadRequest)" />
+      <member name="T:Amazon.S3.Model.CompleteMultipartUploadRequest" />
+      <member name="T:Amazon.S3.Model.CompleteMultipartUploadResponse" />
+
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to upload 13MB of data using mutlipart upload. <br />
+          The data is contained in a stream and the upload is done in 3 parts:
+          5MB, 5MB, then the remainder.
+        </para>
+        <code
+          title="Multipart Upload Sample" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="Multipart Upload Sample" />
+      </example>
+    </value>
+  </doc>
+
+  <!--
+  
+  COMPLETED
+  GetBucketPolicy
+  PutBucketPolicy
+  DeleteBucketPolicy
+  ListBuckets
+  GetBucketLocation
+  PutBucket
+  DeleteBucket
+  PutLifecycleConfiguration
+  GetLifecycleConfiguration
+  DeleteLifecycleConfiguration
+  ListObjects
+
+  GetObject
+  GetObjectMetadata
+  PutObject
+  DeleteObject
+  DeleteObjects
+  CopyObject
+  GetPreSignedURL
+
+  GetACL
+  PutACL
+  ListVersions
+
+  UploadPart
+  ListParts
+  InitiateMultipartUpload
+  CompleteMultipartUpload
+
+
+  TODO
+  GetBucketLogging
+  EnableBucketLogging
+  DisableBucketLogging
+
+  GetBucketVersioning
+  SetBucketVersioning
+  
+  SetNotificationConfiguration
+  GetNotificationConfiguration
+  
+  PutBucketWebsite
+  GetBucketWebsite
+  DeleteBucketWebsite
+  
+    PutBucketTagging
+    GetBucketTagging
+    DeleteBucketTagging
+
+  CopyPart
+
+  AbortMultipartUpload
+  ListMultipartUploads
+  
+  -->
+
+</docs>

@@ -87,6 +87,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetServiceName())
+                {
+                    context.Writer.WritePropertyName("serviceName");
+                    context.Writer.Write(publicRequest.ServiceName);
+                }
+
+                if(publicRequest.IsSetStartedBy())
+                {
+                    context.Writer.WritePropertyName("startedBy");
+                    context.Writer.Write(publicRequest.StartedBy);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

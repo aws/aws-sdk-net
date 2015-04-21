@@ -30,6 +30,11 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// Container for the parameters to the CreateApplicationVersion operation.
     /// Creates an application version for the specified application.
+    /// 
+    ///  <note>Once you create an application version with a specified Amazon S3 bucket and
+    /// key location, you cannot change that Amazon S3 location. If you change the Amazon
+    /// S3 location, you receive an exception when you attempt to launch an environment from
+    /// the application version. </note>
     /// </summary>
     public partial class CreateApplicationVersionRequest : AmazonElasticBeanstalkRequest
     {

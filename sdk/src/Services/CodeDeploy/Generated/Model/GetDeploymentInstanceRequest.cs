@@ -29,7 +29,7 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDeploymentInstance operation.
-    /// Gets information about an Amazon EC2 instance as part of a deployment.
+    /// Gets information about an instance as part of a deployment.
     /// </summary>
     public partial class GetDeploymentInstanceRequest : AmazonCodeDeployRequest
     {
@@ -57,7 +57,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The unique ID of an Amazon EC2 instance in the deployment's deployment group.
+        /// The unique ID of an instance in the deployment's deployment group.
         /// </para>
         /// </summary>
         public string InstanceId

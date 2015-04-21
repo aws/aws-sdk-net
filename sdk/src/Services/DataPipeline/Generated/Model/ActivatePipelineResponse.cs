@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Contains the output from the <a>ActivatePipeline</a> action.
+    /// Contains the output of ActivatePipeline.
     /// </summary>
     public partial class ActivatePipelineResponse : AmazonWebServiceResponse
     {

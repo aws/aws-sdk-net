@@ -82,6 +82,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             CognitoIdentity.BaseClean();
             BaseClean();
+            LambdaTests.DeleteCreatedFunctions(LambdaTests.Client);
         }
 
         [TestMethod]
@@ -103,6 +104,54 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
+
+// This test depends on functionality that is only in 4.5
+#if BCL45
+        [TestMethod]
+        public void EventsTest()
+        {
+            CognitoIdentity.CreateIdentityPool(out poolId, out poolName);
+
+            var events = Client.GetCognitoEvents(new GetCognitoEventsRequest
+            {
+                IdentityPoolId = poolId
+            }).Events;
+            Assert.AreEqual(0, events.Count);
+
+            string functionName, functionArn, roleName, roleArn;
+            LambdaTests.CreateLambdaFunction(out functionName, out functionArn, out roleName, out roleArn);
+
+            Client.SetCognitoEvents(new SetCognitoEventsRequest
+            {
+                IdentityPoolId = poolId,
+                Events = new Dictionary<string, string>
+                {
+                    { "SyncTrigger", functionArn }
+                }
+            });
+
+            events = Client.GetCognitoEvents(new GetCognitoEventsRequest
+            {
+                IdentityPoolId = poolId
+            }).Events;
+            Assert.AreEqual(1, events.Count);
+
+            Client.SetCognitoEvents(new SetCognitoEventsRequest
+            {
+                IdentityPoolId = poolId,
+                Events = new Dictionary<string, string>
+                {
+                    { "SyncTrigger", "" }
+                }
+            });
+
+            events = Client.GetCognitoEvents(new GetCognitoEventsRequest
+            {
+                IdentityPoolId = poolId
+            }).Events;
+            Assert.AreEqual(0, events.Count);
+        }
+#endif
 
         [TestMethod]
         [TestCategory("CognitoSync")]
@@ -128,8 +177,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreNotEqual(0, usages.Count);
             Assert.AreEqual(usagesCount, usages.Count);
 
-            TestAuthenticatedClient(usePoolRoles: true);
-            TestAuthenticatedClient(usePoolRoles: false);
+            // Eventual consistency for IAM role
+            UtilityMethods.WaitUntilSuccess(() => TestAuthenticatedClient(usePoolRoles: true));
+            UtilityMethods.WaitUntilSuccess(() => TestAuthenticatedClient(usePoolRoles: false));
         }
 
         private void TestAuthenticatedClient(bool usePoolRoles)

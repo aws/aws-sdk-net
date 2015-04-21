@@ -29,7 +29,7 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTags operation.
-    /// Remove existing tags from a pipeline.
+    /// Removes existing tags from the specified pipeline.
     /// </summary>
     public partial class RemoveTagsRequest : AmazonDataPipelineRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
-        /// The pipeline from which you want to remove tags.
+        /// The ID of the pipeline.
         /// </para>
         /// </summary>
         public string PipelineId
@@ -57,7 +57,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The keys of the tags you wish to remove.
+        /// The keys of the tags to remove.
         /// </para>
         /// </summary>
         public List<string> TagKeys

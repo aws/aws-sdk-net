@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Contains the output from the <a>QueryObjects</a> action.
+    /// Contains the output of QueryObjects.
     /// </summary>
     public partial class QueryObjectsResponse : AmazonWebServiceResponse
     {
@@ -39,8 +39,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property HasMoreResults. 
         /// <para>
-        /// If <code>True</code>, there are more results that can be obtained by a subsequent
-        /// call to <a>QueryObjects</a>.
+        /// Indicates whether there are more results that can be obtained by a subsequent call.
         /// </para>
         /// </summary>
         public bool HasMoreResults
@@ -58,7 +57,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Ids. 
         /// <para>
-        /// A list of identifiers that match the query selectors.
+        /// The identifiers that match the query selectors.
         /// </para>
         /// </summary>
         public List<string> Ids
@@ -76,10 +75,9 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  The starting point for the results to be returned. As long as the action returns
-        /// <code>HasMoreResults</code> as <code>True</code>, you can call <a>QueryObjects</a>
-        /// again and pass the marker value from the response to retrieve the next set of results.
-        /// 
+        /// The starting point for the next page of results. To view the next page of results,
+        /// call <code>QueryObjects</code> again with this marker value. If the value is null,
+        /// there are no more results.
         /// </para>
         /// </summary>
         public string Marker

@@ -78,6 +78,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     unmarshalledObject.OutputKeys = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PlayReadyDrm", targetDepth))
+                {
+                    var unmarshaller = PlayReadyDrmUnmarshaller.Instance;
+                    unmarshalledObject.PlayReadyDrm = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

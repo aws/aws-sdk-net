@@ -35,6 +35,7 @@ namespace Amazon.RDS.Model
         private string _action;
         private DateTime? _autoAppliedAfterDate;
         private DateTime? _currentApplyDate;
+        private string _description;
         private DateTime? _forcedApplyDate;
         private string _optInStatus;
 
@@ -81,10 +82,10 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property CurrentApplyDate. 
         /// <para>
         /// The effective date when the pending maintenance action will be applied to the resource.
-        /// This takes into account opt-in requests received from the <a>ApplyPendingMaintenanceAction</a>
+        /// This date takes into account opt-in requests received from the <a>ApplyPendingMaintenanceAction</a>
         /// API, the <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>.
-        /// This value is blank if an opt-in request has not been received and no value has been
-        /// specified for the <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.
+        /// This value is blank if an opt-in request has not been received and nothing has been
+        /// specified as <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.
         /// </para>
         /// </summary>
         public DateTime CurrentApplyDate
@@ -97,6 +98,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetCurrentApplyDate()
         {
             return this._currentApplyDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description providing more detail about the maintenance action.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>

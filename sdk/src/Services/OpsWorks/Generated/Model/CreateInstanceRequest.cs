@@ -46,6 +46,7 @@ namespace Amazon.OpsWorks.Model
         private Architecture _architecture;
         private AutoScalingType _autoScalingType;
         private string _availabilityZone;
+        private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
         private bool? _ebsOptimized;
         private string _hostname;
         private bool? _installUpdatesOnBoot;
@@ -135,6 +136,26 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BlockDeviceMappings. 
+        /// <para>
+        /// An array of <code>BlockDeviceMapping</code> objects that specify the instance's block
+        /// devices. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+        /// Device Mapping</a>.
+        /// </para>
+        /// </summary>
+        public List<BlockDeviceMapping> BlockDeviceMappings
+        {
+            get { return this._blockDeviceMappings; }
+            set { this._blockDeviceMappings = value; }
+        }
+
+        // Check to see if BlockDeviceMappings property is set
+        internal bool IsSetBlockDeviceMappings()
+        {
+            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
         }
 
         /// <summary>

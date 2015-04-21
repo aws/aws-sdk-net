@@ -42,6 +42,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         {
             GetJobOutputResponse response = new GetJobOutputResponse();
 
+            response.Body = context.Stream;
             if (context.ResponseData.IsHeaderPresent("Accept-Ranges"))
                 response.AcceptRanges = context.ResponseData.GetHeaderValue("Accept-Ranges");
             if (context.ResponseData.IsHeaderPresent("x-amz-archive-description"))
@@ -53,7 +54,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("Content-Type"))
                 response.ContentType = context.ResponseData.GetHeaderValue("Content-Type");
             response.Status = (int)context.ResponseData.StatusCode;
-            response.Body = context.Stream;
 
             return response;
         }

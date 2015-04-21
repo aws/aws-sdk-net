@@ -36,8 +36,10 @@ namespace Amazon.ECS.Model
         private bool? _agentConnected;
         private string _containerInstanceArn;
         private string _ec2InstanceId;
+        private int? _pendingTasksCount;
         private List<Resource> _registeredResources = new List<Resource>();
         private List<Resource> _remainingResources = new List<Resource>();
+        private int? _runningTasksCount;
         private string _status;
 
         /// <summary>
@@ -101,6 +103,25 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PendingTasksCount. 
+        /// <para>
+        /// The number of tasks on the container instance that are in the <code>PENDING</code>
+        /// status.
+        /// </para>
+        /// </summary>
+        public int PendingTasksCount
+        {
+            get { return this._pendingTasksCount.GetValueOrDefault(); }
+            set { this._pendingTasksCount = value; }
+        }
+
+        // Check to see if PendingTasksCount property is set
+        internal bool IsSetPendingTasksCount()
+        {
+            return this._pendingTasksCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RegisteredResources. 
         /// <para>
         /// The registered resources on the container instance that are in use by current tasks.
@@ -134,6 +155,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetRemainingResources()
         {
             return this._remainingResources != null && this._remainingResources.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunningTasksCount. 
+        /// <para>
+        /// The number of tasks on the container instance that are in the <code>RUNNING</code>
+        /// status.
+        /// </para>
+        /// </summary>
+        public int RunningTasksCount
+        {
+            get { return this._runningTasksCount.GetValueOrDefault(); }
+            set { this._runningTasksCount = value; }
+        }
+
+        // Check to see if RunningTasksCount property is set
+        internal bool IsSetRunningTasksCount()
+        {
+            return this._runningTasksCount.HasValue; 
         }
 
         /// <summary>

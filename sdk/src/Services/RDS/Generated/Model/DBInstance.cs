@@ -30,8 +30,8 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Contains the result of a successful invocation of the following actions: 
     /// 
-    ///  <ul> <li><a>CreateDBInstance</a></li> <li><a>DeleteDBInstance</a></li> <li><a>ModifyDBInstance</a></li>
-    /// </ul> 
+    ///  <ul> <li> <a>CreateDBInstance</a> </li> <li> <a>DeleteDBInstance</a> </li> <li> <a>ModifyDBInstance</a>
+    /// </li> </ul> 
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBInstances</a> action.
     /// </para>
@@ -42,6 +42,7 @@ namespace Amazon.RDS.Model
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
         private int? _backupRetentionPeriod;
+        private string _caCertificateIdentifier;
         private string _characterSetName;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
@@ -148,6 +149,24 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CACertificateIdentifier. 
+        /// <para>
+        /// The identifier of the CA certificate for this DB instance.
+        /// </para>
+        /// </summary>
+        public string CACertificateIdentifier
+        {
+            get { return this._caCertificateIdentifier; }
+            set { this._caCertificateIdentifier = value; }
+        }
+
+        // Check to see if CACertificateIdentifier property is set
+        internal bool IsSetCACertificateIdentifier()
+        {
+            return this._caCertificateIdentifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CharacterSetName. 
         /// <para>
         ///  If present, specifies the name of the character set that this instance is associated
@@ -251,7 +270,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>MySQL, SQL Server, PostgreSQL</b>
+        ///  <b>MySQL, SQL Server, PostgreSQL</b> 
         /// </para>
         ///  
         /// <para>
@@ -265,7 +284,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Oracle</b>
+        ///  <b>Oracle</b> 
         /// </para>
         ///  
         /// <para>

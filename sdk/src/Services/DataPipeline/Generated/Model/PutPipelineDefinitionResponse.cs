@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// Contains the output of the <a>PutPipelineDefinition</a> action.
+    /// Contains the output of PutPipelineDefinition.
     /// </summary>
     public partial class PutPipelineDefinitionResponse : AmazonWebServiceResponse
     {
@@ -39,9 +39,9 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Errored. 
         /// <para>
-        /// If <code>True</code>, there were validation errors. If errored is <code>True</code>,
-        /// the pipeline definition is stored but cannot be activated until you correct the pipeline
-        /// and call <a>PutPipelineDefinition</a> to commit the corrected pipeline.
+        /// Indicates whether there were validation errors, and the pipeline definition is stored
+        /// but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code>
+        /// to commit the corrected pipeline.
         /// </para>
         /// </summary>
         public bool Errored
@@ -59,7 +59,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property ValidationErrors. 
         /// <para>
-        /// A list of the validation errors that are associated with the objects defined in <code>pipelineObjects</code>.
+        /// The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.
         /// </para>
         /// </summary>
         public List<ValidationError> ValidationErrors
@@ -77,8 +77,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property ValidationWarnings. 
         /// <para>
-        /// A list of the validation warnings that are associated with the objects defined in
-        /// <code>pipelineObjects</code>.
+        /// The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.
         /// </para>
         /// </summary>
         public List<ValidationWarning> ValidationWarnings

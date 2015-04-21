@@ -1,0 +1,30 @@
+{
+	"shapeModifiers": {
+        "Compute": {
+            "modify": [
+                {
+                    "VALUE": { "emitPropertyName": "VALUE_TYPE" }
+                }
+            ]
+        },
+	},
+	"simpleMethods" : {
+        "operations" : {
+            "DescribeWorkspaces" : {
+                "methodForms" : [
+                    [ ]
+                ]
+            },
+			"DescribeWorkspaceBundles" : {
+                "methodForms" : [
+                    [ ]
+                ]
+            },
+			"DescribeWorkspaceDirectories" : {
+                "methodForms" : [
+                    [ ]
+                ]
+            }
+		}
+	}
+}

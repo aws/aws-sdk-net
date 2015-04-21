@@ -29,8 +29,9 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the EvaluateExpression operation.
-    /// Evaluates a string in the context of a specified object. A task runner can use this
-    /// action to evaluate SQL queries stored in Amazon S3.
+    /// Task runners call <code>EvaluateExpression</code> to evaluate a string in the context
+    /// of the specified object. For example, a task runner can evaluate SQL queries stored
+    /// in Amazon S3.
     /// </summary>
     public partial class EvaluateExpressionRequest : AmazonDataPipelineRequest
     {
@@ -59,7 +60,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property ObjectId. 
         /// <para>
-        /// The identifier of the object.
+        /// The ID of the object.
         /// </para>
         /// </summary>
         public string ObjectId
@@ -77,7 +78,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
-        /// The identifier of the pipeline.
+        /// The ID of the pipeline.
         /// </para>
         /// </summary>
         public string PipelineId

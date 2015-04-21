@@ -15,4 +15,8 @@
 **/NuGet.exe
 **/buildlogs/
 
-sdk/packages
+sdk/packages/**
+
+Deployment/**
+
+

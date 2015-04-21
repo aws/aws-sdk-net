@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4096822E-2709-4FA9-A351-99A161354CE7}</ProjectGuid>
+    <ProjectGuid>{CC49CFB0-F27C-4D16-AAF8-21097F468129}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Glacier</RootNamespace>
@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE;;BCL;BCL45;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\net45\AWSSDK.Glacier.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE;;BCL;BCL45;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\net45\AWSSDK.Glacier.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -77,19 +79,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AWSSDK.Core.Net45.csproj">
-      <Project>{29D39F98-9D7C-42EB-A807-67201324D0F6}</Project>
+      <Project>{25ED6BD4-A32A-4EAA-ACBF-AB4FCD343E8E}</Project>
       <Name>AWSSDK.Core.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SQS\AWSSDK.SQS.Net45.csproj">
-      <Project>{34200446-8F1B-408C-A1E6-9A2DA20271B9}</Project>
+      <Project>{3E6F35CA-693B-45D6-8AC0-BAE9BE94F2BB}</Project>
       <Name>AWSSDK.SQS.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SimpleNotificationService\AWSSDK.SimpleNotificationService.Net45.csproj">
-      <Project>{60CCB305-8AD6-4315-A620-F8FD154DD475}</Project>
+      <Project>{BE7CC84A-AC78-4A1C-9411-4A0349F22571}</Project>
       <Name>AWSSDK.SimpleNotificationService.Net45</Name>
     </ProjectReference>
   </ItemGroup>

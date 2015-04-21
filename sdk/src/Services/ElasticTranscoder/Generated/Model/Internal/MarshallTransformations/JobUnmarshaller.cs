@@ -108,6 +108,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Timing", targetDepth))
+                {
+                    var unmarshaller = TimingUnmarshaller.Instance;
+                    unmarshalledObject.Timing = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UserMetadata", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

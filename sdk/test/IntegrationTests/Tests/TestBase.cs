@@ -41,13 +41,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
-        public static void SetEndpoint(AmazonServiceClient client, string serviceUrl)
+        public static void SetEndpoint(AmazonServiceClient client, string serviceUrl, string region = null)
         {
             var clientConfig = client
                 .GetType()
                 .GetProperty("Config", BindingFlags.Instance | BindingFlags.NonPublic)
                 .GetValue(client, null) as ClientConfig;
             clientConfig.ServiceURL = serviceUrl;
+            if (region != null)
+                clientConfig.AuthenticationRegion = region;
         }
 
         public static ServiceResponseCounter CountServiceResponses()

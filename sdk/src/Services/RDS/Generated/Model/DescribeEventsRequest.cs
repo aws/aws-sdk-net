@@ -78,7 +78,7 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  The end of the time interval for which to retrieve events, specified in ISO 8601
         /// format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
-        /// Wikipedia page.</a> 
+        /// Wikipedia page.</a>
         /// </para>
         ///  
         /// <para>
@@ -236,7 +236,7 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  The beginning of the time interval to retrieve events for, specified in ISO 8601
         /// format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
-        /// Wikipedia page.</a> 
+        /// Wikipedia page.</a>
         /// </para>
         ///  
         /// <para>

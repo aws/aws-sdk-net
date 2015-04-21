@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoSync.Model
 {
     /// <summary>
-    /// The output for the <code>SetIdentityPoolConfiguration</code> operation
+    /// The output for the SetIdentityPoolConfiguration operation
     /// </summary>
     public partial class SetIdentityPoolConfigurationResponse : AmazonWebServiceResponse
     {

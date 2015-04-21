@@ -264,8 +264,8 @@ namespace Amazon.CognitoSync
         /// after a previous bulk publish operation completed successfully.
         /// </exception>
         /// <exception cref="Amazon.CognitoSync.Model.DuplicateRequestException">
-        /// An exception thrown when there is an <code>IN_PROGRESS</code> bulk publish operation
-        /// for the given identity pool.
+        /// An exception thrown when there is an IN_PROGRESS bulk publish operation for the given
+        /// identity pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -312,12 +312,12 @@ namespace Amazon.CognitoSync
         /// <summary>
         /// Deletes the specific dataset. The dataset will be deleted permanently, and the action
         /// can't be undone. Datasets that this dataset was merged with will no longer report
-        /// the merge. Any subsequent operation on this dataset will result in a <code>ResourceNotFoundException</code>.
+        /// the merge. Any subsequent operation on this dataset will result in a ResourceNotFoundException.
         /// 
         ///  
         /// <para>
-        /// <code>DeleteDataset</code> can be called with temporary user credentials provided
-        /// by Cognito Identity or with developer credentials.
+        /// DeleteDataset can be called with temporary user credentials provided by Cognito Identity
+        /// or with developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
@@ -331,6 +331,10 @@ namespace Amazon.CognitoSync
         /// </exception>
         /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceConflictException">
+        /// Thrown if an update can't be applied because the resource was changed by another call
+        /// and this would result in a conflict.
         /// </exception>
         /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
         /// Thrown if the resource doesn't exist.
@@ -375,9 +379,9 @@ namespace Amazon.CognitoSync
         /// 
         ///  
         /// <para>
-        /// <code>DescribeDataset</code> can be called with temporary user credentials provided
-        /// by Cognito Identity or with developer credentials. You should use Cognito Identity
-        /// credentials to make this API call.
+        /// DescribeDataset can be called with temporary user credentials provided by Cognito
+        /// Identity or with developer credentials. You should use Cognito Identity credentials
+        /// to make this API call.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
@@ -433,9 +437,8 @@ namespace Amazon.CognitoSync
         /// 
         ///  
         /// <para>
-        /// <code>DescribeIdentityPoolUsage</code> can only be called with developer credentials.
-        /// You cannot make this API call with the temporary user credentials provided by Cognito
-        /// Identity.
+        /// DescribeIdentityPoolUsage can only be called with developer credentials. You cannot
+        /// make this API call with the temporary user credentials provided by Cognito Identity.
         /// </para>
         /// </summary>
         /// <param name="identityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
@@ -468,9 +471,8 @@ namespace Amazon.CognitoSync
         /// 
         ///  
         /// <para>
-        /// <code>DescribeIdentityPoolUsage</code> can only be called with developer credentials.
-        /// You cannot make this API call with the temporary user credentials provided by Cognito
-        /// Identity.
+        /// DescribeIdentityPoolUsage can only be called with developer credentials. You cannot
+        /// make this API call with the temporary user credentials provided by Cognito Identity.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityPoolUsage service method.</param>
@@ -526,8 +528,8 @@ namespace Amazon.CognitoSync
         /// 
         ///  
         /// <para>
-        /// <code>DescribeIdentityUsage</code> can be called with temporary user credentials provided
-        /// by Cognito Identity or with developer credentials.
+        /// DescribeIdentityUsage can be called with temporary user credentials provided by Cognito
+        /// Identity or with developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityUsage service method.</param>
@@ -624,6 +626,58 @@ namespace Amazon.CognitoSync
 
         #endregion
         
+        #region  GetCognitoEvents
+
+        /// <summary>
+        /// Gets the events and the corresponding Lambda functions associated with an identity
+        /// pool
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCognitoEvents service method.</param>
+        /// 
+        /// <returns>The response from the GetCognitoEvents service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        public GetCognitoEventsResponse GetCognitoEvents(GetCognitoEventsRequest request)
+        {
+            var marshaller = new GetCognitoEventsRequestMarshaller();
+            var unmarshaller = GetCognitoEventsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCognitoEventsRequest,GetCognitoEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCognitoEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCognitoEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetCognitoEventsResponse> GetCognitoEventsAsync(GetCognitoEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetCognitoEventsRequestMarshaller();
+            var unmarshaller = GetCognitoEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCognitoEventsRequest,GetCognitoEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetIdentityPoolConfiguration
 
         /// <summary>
@@ -712,9 +766,9 @@ namespace Amazon.CognitoSync
         /// 
         ///  
         /// <para>
-        /// <code>ListDatasets</code> can be called with temporary user credentials provided by
-        /// Cognito Identity or with developer credentials. You should use the Cognito Identity
-        /// credentials to make this API call.
+        /// ListDatasets can be called with temporary user credentials provided by Cognito Identity
+        /// or with developer credentials. You should use the Cognito Identity credentials to
+        /// make this API call.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
@@ -767,9 +821,8 @@ namespace Amazon.CognitoSync
         /// 
         ///  
         /// <para>
-        /// <code>ListIdentityPoolUsage</code> can only be called with developer credentials.
-        /// You cannot make this API call with the temporary user credentials provided by Cognito
-        /// Identity.
+        /// ListIdentityPoolUsage can only be called with developer credentials. You cannot make
+        /// this API call with the temporary user credentials provided by Cognito Identity.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityPoolUsage service method.</param>
@@ -825,9 +878,9 @@ namespace Amazon.CognitoSync
         /// 
         ///  
         /// <para>
-        /// <code>ListRecords</code> can be called with temporary user credentials provided by
-        /// Cognito Identity or with developer credentials. You should use Cognito Identity credentials
-        /// to make this API call.
+        /// ListRecords can be called with temporary user credentials provided by Cognito Identity
+        /// or with developer credentials. You should use Cognito Identity credentials to make
+        /// this API call.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecords service method.</param>
@@ -922,6 +975,59 @@ namespace Amazon.CognitoSync
             var unmarshaller = RegisterDeviceResponseUnmarshaller.Instance;
 
             return InvokeAsync<RegisterDeviceRequest,RegisterDeviceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetCognitoEvents
+
+        /// <summary>
+        /// Sets the AWS Lambda function for a given event type for an identity pool. This request
+        /// only updates the key/value pair specified. Other key/values pairs are not updated.
+        /// To remove a key value pair, pass a empty value for the particular key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetCognitoEvents service method.</param>
+        /// 
+        /// <returns>The response from the SetCognitoEvents service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        public SetCognitoEventsResponse SetCognitoEvents(SetCognitoEventsRequest request)
+        {
+            var marshaller = new SetCognitoEventsRequestMarshaller();
+            var unmarshaller = SetCognitoEventsResponseUnmarshaller.Instance;
+
+            return Invoke<SetCognitoEventsRequest,SetCognitoEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetCognitoEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetCognitoEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SetCognitoEventsResponse> SetCognitoEventsAsync(SetCognitoEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetCognitoEventsRequestMarshaller();
+            var unmarshaller = SetCognitoEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetCognitoEventsRequest,SetCognitoEventsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1093,8 +1199,8 @@ namespace Amazon.CognitoSync
         /// 
         ///  
         /// <para>
-        /// <code>UpdateRecords</code> can only be called with temporary user credentials provided
-        /// by Cognito Identity. You cannot make this API call with developer credentials.
+        /// UpdateRecords can only be called with temporary user credentials provided by Cognito
+        /// Identity. You cannot make this API call with developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecords service method.</param>
@@ -1103,8 +1209,14 @@ namespace Amazon.CognitoSync
         /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidLambdaFunctionOutputException">
+        /// The AWS Lambda function returned invalid output or an exception.
+        /// </exception>
         /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
         /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.LambdaThrottledException">
+        /// AWS Lambda throttled your account, please contact AWS Support
         /// </exception>
         /// <exception cref="Amazon.CognitoSync.Model.LimitExceededException">
         /// Thrown when the limit on the number of objects or operations has been exceeded.

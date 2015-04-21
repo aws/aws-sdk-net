@@ -33,8 +33,8 @@ namespace Amazon.CognitoSync.Model
     /// 
     ///  
     /// <para>
-    /// <code>DescribeIdentityUsage</code> can be called with temporary user credentials provided
-    /// by Cognito Identity or with developer credentials.
+    /// DescribeIdentityUsage can be called with temporary user credentials provided by Cognito
+    /// Identity or with developer credentials.
     /// </para>
     /// </summary>
     public partial class DescribeIdentityUsageRequest : AmazonCognitoSyncRequest

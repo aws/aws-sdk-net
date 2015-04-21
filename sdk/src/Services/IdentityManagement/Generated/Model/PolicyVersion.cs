@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>,
-    /// and <a>ListPolicyVersions</a> actions. 
+    /// <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> actions. 
     /// </para>
     ///  
     /// <para>
@@ -75,7 +75,8 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// The policy document is returned in the response to the <a>GetPolicyVersion</a> operation.
-        /// It is not included in the response to the <a>ListPolicyVersions</a> operation. 
+        /// It is not included in the response to the <a>ListPolicyVersions</a> or <a>GetAccountAuthorizationDetails</a>
+        /// operations. 
         /// </para>
         /// </summary>
         public string Document

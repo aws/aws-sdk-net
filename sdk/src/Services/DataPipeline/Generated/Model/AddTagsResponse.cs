@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
-    /// The response from the AddTags action.
+    /// Contains the output of AddTags.
     /// </summary>
     public partial class AddTagsResponse : AmazonWebServiceResponse
     {

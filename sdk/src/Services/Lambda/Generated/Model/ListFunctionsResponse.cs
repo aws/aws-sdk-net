@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2014-11-11.normal.json service model.
+ * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Contains a list of AWS Lambda function configurations (see <a>API_FunctionConfiguration</a>.
+    /// Contains a list of AWS Lambda function configurations (see <a>FunctionConfiguration</a>.
     /// </summary>
     public partial class ListFunctionsResponse : AmazonWebServiceResponse
     {

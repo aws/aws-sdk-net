@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CAB961BC-4A6E-492B-8297-60B70769DCC5}</ProjectGuid>
+    <ProjectGuid>{E0C5CDAF-6D20-4832-8D24-2A7A50711F0D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.CognitoSync</RootNamespace>
@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE;;BCL;BCL35;AWS_APM_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\net35\AWSSDK.CognitoSync.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE;;BCL;BCL35;AWS_APM_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\net35\AWSSDK.CognitoSync.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -68,13 +70,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AWSSDK.Core.Net35.csproj">
-      <Project>{398B257E-EA20-468F-88CE-4D6A50BF06A7}</Project>
+      <Project>{FCDD969A-7DB7-4FFB-B3C1-F637F475C093}</Project>
       <Name>AWSSDK.Core.Net35</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CognitoIdentity\AWSSDK.CognitoIdentity.Net35.csproj">
-      <Project>{CAAE700B-EA27-4AB9-9260-0CC5D489EB2D}</Project>
+      <Project>{78446A6A-2F59-4B18-9CB0-14F7C18B8A0E}</Project>
       <Name>AWSSDK.CognitoIdentity.Net35</Name>
     </ProjectReference>
   </ItemGroup>
