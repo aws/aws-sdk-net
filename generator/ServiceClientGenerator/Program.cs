@@ -32,7 +32,7 @@ namespace ServiceClientGenerator
                 if (options.CompileCustomizations) // Compile all servicename.customizations*.json files into one json file in bin
                     CustomizationCompiler.CompileServiceCustomizations(options.ModelsFolder);
 
-                var generationManifest = GenerationManifest.Load(options.Manifest, options.ModelsFolder);
+                var generationManifest = GenerationManifest.Load(options.Manifest, options.Versions, options.ModelsFolder);
                 foreach (var serviceConfig in generationManifest.ServiceConfigurations)
                 {
                     if (modelsToProcess.Any() && !modelsToProcess.Contains(serviceConfig.ModelName))
@@ -42,11 +42,12 @@ namespace ServiceClientGenerator
                     }
 
                     Console.WriteLine("Processing model: {0} ({1})", serviceConfig.ModelName, serviceConfig.ModelPath);
-                    var driver = new GeneratorDriver(serviceConfig, generationManifest.ProjectFileConfigurations, options);
+                    var driver = new GeneratorDriver(serviceConfig, generationManifest, options);
                     driver.Execute();
                 }
 
                 GeneratorDriver.UpdateSolutionFiles(options);
+                GeneratorDriver.UpdateAssemblyVersionInfo(generationManifest, options);
             }
             catch (Exception e)
             {

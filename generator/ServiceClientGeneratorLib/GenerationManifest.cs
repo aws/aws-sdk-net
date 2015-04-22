@@ -53,11 +53,22 @@ namespace ServiceClientGenerator
         /// </summary>
         public IEnumerable<ServiceConfiguration> ServiceConfigurations { get; private set; }
 
+        //public IDictionary<string, string> ServiceVersions { get; private set; }
+
         /// <summary>
         /// The set of per-platform project metadata needed to generate a platform
         /// specific project file for a service.
         /// </summary>
         public IEnumerable<ProjectFileConfiguration> ProjectFileConfigurations { get; private set; }
+ 
+        public string CoreVersion
+        {
+            get
+            {
+                return Utils.GetVersion(CoreFileVersion);
+            }
+        }
+        public string CoreFileVersion { get; private set; }
  
         /// <summary>
         /// Processes the control manifest to yield the set of services available to
@@ -66,16 +77,18 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <param name="manifestPath">Path to the manifest file to pull basic info from</param>
         /// <param name="modelsFolder">Path to the service models to be parsed</param>
-        public static GenerationManifest Load(string manifestPath, string modelsFolder)
+        public static GenerationManifest Load(string manifestPath, string versionsPath, string modelsFolder)
         {
             var generationManifest = new GenerationManifest();
 
-            JsonData document;
-            using (var reader = new StreamReader(manifestPath))
-                document = JsonMapper.ToObject(reader);
+            var manifest = LoadJsonFromFile(manifestPath);
+            var versionsManifest = LoadJsonFromFile(versionsPath);
+            var coreVersionJson = versionsManifest["CoreVersion"];
+            generationManifest.CoreFileVersion = coreVersionJson.ToString();
+            var versions = versionsManifest["ServiceVersions"];
 
-            generationManifest.LoadServiceConfigurations(document, modelsFolder);
-            generationManifest.LoadProjectConfigurations(document);
+            generationManifest.LoadServiceConfigurations(manifest, versions, modelsFolder);
+            generationManifest.LoadProjectConfigurations(manifest);
 
             return generationManifest;
         }
@@ -88,11 +101,12 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <param name="document"></param>
         /// <param name="modelsFolder"></param>
-        void LoadServiceConfigurations(JsonData document, string modelsFolder)
+        void LoadServiceConfigurations(JsonData manifest, JsonData versions, string modelsFolder)
         {
             var serviceConfigurations = new List<ServiceConfiguration>();
+            //var serviceVersions = new Dictionary<string, string>();
 
-            var modelsNode = document[ModelsSectionKeys.ModelsKey];
+            var modelsNode = manifest[ModelsSectionKeys.ModelsKey];
             foreach (JsonData modelNode in modelsNode)
             {
                 var activeNode = modelNode[ModelsSectionKeys.ActiveKey];
@@ -129,19 +143,35 @@ namespace ServiceClientGenerator
                 if (modelNode[ModelsSectionKeys.SynopsisKey] != null)
                     config.Synopsis = (string)modelNode[ModelsSectionKeys.SynopsisKey];
 
+
+                config.ServiceDependencies = new Dictionary<string, string>(StringComparer.Ordinal);
                 if (modelNode[ModelsSectionKeys.DependenciesKey] != null && modelNode[ModelsSectionKeys.DependenciesKey].IsArray)
                 {
-                    config.ServiceDependencies = new List<string>();
                     foreach (var d in modelNode[ModelsSectionKeys.DependenciesKey])
                     {
-                        config.ServiceDependencies.Add(d.ToString());
+                        config.ServiceDependencies.Add(d.ToString(), null);
                     }
                 }
+
+                var serviceName = config.ServiceNameRoot;
+                var versionInfoJson = versions[serviceName];
+                var dependencies = versionInfoJson["Dependencies"];
+                foreach(var name in dependencies.PropertyNames)
+                {
+                    var version = dependencies[name].ToString();
+                    config.ServiceDependencies[name] = version;
+                }
+
+
+                var versionText = versionInfoJson["Version"].ToString();
+                config.ServiceFileVersion = versionText;
+                //serviceVersions.Add(serviceName, versionText);
 
                 serviceConfigurations.Add(config);
             }
 
             ServiceConfigurations = serviceConfigurations;
+            //ServiceVersions = serviceVersions;
         }
 
         /// <summary>
@@ -203,6 +233,19 @@ namespace ServiceClientGenerator
         {
             var files = Directory.GetFiles("customizations", model + "*.customizations.json").OrderByDescending(x => x);
             return !files.Any() ? null : files.Single();
+        }
+
+        /// <summary>
+        /// Loads a JsonData object for data in a given file.
+        /// </summary>
+        /// <param name="path">Path to the JSON file.</param>
+        /// <returns>JsonData corresponding to JSON in the file.</returns>
+        private static JsonData LoadJsonFromFile(string path)
+        {
+            JsonData data;
+            using (var reader = new StreamReader(path))
+                data = JsonMapper.ToObject(reader);
+            return data;
         }
 
         private GenerationManifest()

@@ -39,9 +39,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoreUpdater.cs" />
     <Compile Include="CustomizationCompiler.cs" />
     <Compile Include="Customizations.cs" />
     <Compile Include="GenerationManifest.cs" />
+    <Compile Include="Generators\NuGet\CoreNuspec.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreNuspec.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\SourceFiles\CoreAssemblyInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreAssemblyInfo.tt</DependentUpon>
+    </Compile>
     <Compile Include="ProjectFileConfiguration.cs" />
     <Compile Include="ProjectFileCreator.cs" />
     <Compile Include="ServiceConfiguration.cs" />
@@ -282,11 +293,20 @@
     <Compile Include="ThirdParty\Json\JsonWriter.cs" />
     <Compile Include="ThirdParty\Json\Lexer.cs" />
     <Compile Include="ThirdParty\Json\ParserToken.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Generators\NuGet\CoreNuspec.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CoreNuspec.cs</LastGenOutput>
+    </None>
     <None Include="Generators\SourceFiles\AssemblyInfo.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\SourceFiles\CoreAssemblyInfo.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CoreAssemblyInfo.cs</LastGenOutput>
     </None>
     <None Include="Generators\TestFiles\AWSQueryEC2MarshallingTests.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

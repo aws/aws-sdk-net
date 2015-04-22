@@ -15,6 +15,11 @@ namespace ServiceClientGenerator
     public class GeneratorDriver
     {
         /// <summary>
+        /// Generation manifest for the entire SDK.
+        /// </summary>
+        public GenerationManifest GenerationManifest { get; private set; }
+
+        /// <summary>
         /// The configuration for the service, as read from the service models 
         /// manifest file.
         /// </summary>
@@ -76,10 +81,11 @@ namespace ServiceClientGenerator
         private static readonly Dictionary<string, ProjectFileCreator.ProjectConfigurationData> NewlyCreatedProjectFiles 
             = new Dictionary<string, ProjectFileCreator.ProjectConfigurationData>();
 
-        public GeneratorDriver(ServiceConfiguration config, IEnumerable<ProjectFileConfiguration> projectFileConfigurations, GeneratorOptions options)
+        public GeneratorDriver(ServiceConfiguration config, GenerationManifest generationManifest, GeneratorOptions options)
         {
+            GenerationManifest = generationManifest;
             Configuration = config;
-            ProjectFileConfigurations = projectFileConfigurations;
+            ProjectFileConfigurations = GenerationManifest.ProjectFileConfigurations;
             Options = options;
 
             // Base name in the manifest is not a reliable source of info, as if append-service
@@ -530,6 +536,12 @@ namespace ServiceClientGenerator
             solutionFileCreator.Execute(NewlyCreatedProjectFiles);
         }
 
+        public static void UpdateAssemblyVersionInfo(GenerationManifest manifest, GeneratorOptions options)
+        {
+            var updater = new CoreAssemblyInfoUpdater(options, manifest);
+            updater.Execute();
+        }
+
         /// <summary>
         /// Provides a way to generate the neccesary attributes and marshallers/unmarshallers for nested structures to work
         /// </summary>
@@ -640,19 +652,25 @@ namespace ServiceClientGenerator
 
         void GenerateNuspec()
         {
+            var coreVersion = GenerationManifest.CoreVersion;
+
             // we're generating services only, so can automatically add the core runtime
             // as a dependency
-            var awsDependencies = new List<string>
-            {
-                "AWSSDK.Core"                
-            };
+            var awsDependencies = new Dictionary<string, string>(StringComparer.Ordinal);
 
             if (Configuration.ServiceDependencies != null)
             {
                 var dependencies = Configuration.ServiceDependencies;
-                awsDependencies.AddRange(dependencies.Select(dependency => string.Format("AWSSDK.{0}", dependency)));
+                foreach(var kvp in dependencies)
+                {
+                    var service = kvp.Key;
+                    var version = kvp.Value;
+
+                    awsDependencies.Add(string.Format("AWSSDK.{0}", service), version);
+                }
             }
 
+            var assemblyVersion = Configuration.ServiceFileVersion;
             var assemblyName = Configuration.Namespace.Replace("Amazon.", "AWSSDK.");
             var assemblyTitle = "The Amazon Web Services SDK for .NET - " + Configuration.ServiceModel.ServiceFullName;
             var session = new Dictionary<string, object>
@@ -660,6 +678,7 @@ namespace ServiceClientGenerator
                 { "AssemblyName", assemblyName },
                 { "AssemblyTitle",  assemblyTitle },
                 { "AssemblyDescription", Configuration.AssemblyDescription },
+                { "AssemblyVersion", assemblyVersion },
                 { "AWSDependencies", awsDependencies }
             };
 
@@ -667,6 +686,17 @@ namespace ServiceClientGenerator
             var text = nuspecGenerator.TransformText();
             var nuspecFilename = assemblyName + ".nuspec";
             WriteFile(ServiceFilesRoot, string.Empty, nuspecFilename, text);
+        }
+
+        Version GetMinVersion(Version version)
+        {
+            var minVersion = new Version(version.Major, version.Minor);
+            return minVersion;
+        }
+        Version GetMinVersion(string versionText)
+        {
+            var version = new Version(versionText);
+            return GetMinVersion(version);
         }
 
         /// <summary>

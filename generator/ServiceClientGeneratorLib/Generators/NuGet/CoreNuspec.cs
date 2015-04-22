@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\code\dotnet\v3\AWSDotNetPublicRepository\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+    #line 1 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class CoreNuspec : CoreNuspecBase
     {
@@ -32,7 +32,7 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "DK.Core</id>\r\n    <title>The Amazon Web Services SDK for .NET - Core Runtime</ti" +
                     "tle>\r\n    <version>");
             
-            #line 12 "C:\code\dotnet\v3\AWSDotNetPublicRepository\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 12 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["Version"]));
             
             #line default

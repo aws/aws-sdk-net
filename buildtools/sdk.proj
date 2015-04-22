@@ -15,7 +15,7 @@
 
 	<Target Name="restore-nuget" DependsOnTargets="run-generator">
 		<Message Text="Restore nuget packages"/>
-		<Exec Command="nuget.exe restore ..\sdk\AWSSDK.sln"/>
+		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.sln"/>
 	</Target>
 	
 	<Target Name="build-sdk" DependsOnTargets="restore-nuget;run-generator">

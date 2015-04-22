@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceManifest", "ServiceManifest", "{F8598E2F-5197-4AE8-90E0-1E18ED0A4400}"
 	ProjectSection(SolutionItems) = preProject
 		ServiceModels\_manifest.json = ServiceModels\_manifest.json
+		ServiceModels\_sdk-versions.json = ServiceModels\_sdk-versions.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceModels", "ServiceModels", "{5F17DF97-1091-405B-A60A-AB4186CE35A5}"

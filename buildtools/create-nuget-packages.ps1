@@ -18,7 +18,7 @@ foreach($nuspec in $nuspecs)
     Set-Location $nuspec.DirectoryName
     try
     {
-        $command = "$OriginalDirectory\NuGet.exe pack $nuspec -verbosity detailed -OutputDirectory $OutputDirectory -BasePath ."
+        $command = "$OriginalDirectory\sdk\.nuget\NuGet.exe pack $nuspec -verbosity detailed -OutputDirectory $OutputDirectory -BasePath ."
         Invoke-Expression $command
         if($LASTEXITCODE -ne 0)
         {
