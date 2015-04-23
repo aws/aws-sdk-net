@@ -12,6 +12,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
 using Amazon.Runtime;
+using ThirdParty.MD5;
 
 namespace AWSSDK_DotNet.IntegrationTests.Utils
 {
@@ -143,7 +144,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         private static byte[] computeHash(string file)
         {
             Stream fileStream = File.OpenRead(file);
-            byte[] fileMD5 = MD5.Create().ComputeHash(fileStream);
+            byte[] fileMD5 = new MD5Managed().ComputeHash(fileStream);
             fileStream.Close();
             return fileMD5;
         }

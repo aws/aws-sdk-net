@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
  */
 
 
@@ -292,6 +292,21 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<CancelExportTaskResponse> CancelExportTaskAsync(CancelExportTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CancelImportTask
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelImportTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CancelImportTaskResponse> CancelImportTaskAsync(CancelImportTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1225,6 +1240,36 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribeImportImageTasks
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImportImageTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImportImageTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeImportImageTasksResponse> DescribeImportImageTasksAsync(DescribeImportImageTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeImportSnapshotTasks
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImportSnapshotTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImportSnapshotTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeImportSnapshotTasksResponse> DescribeImportSnapshotTasksAsync(DescribeImportSnapshotTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeInstanceAttribute
 
         /// <summary>
@@ -1915,6 +1960,21 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  ImportImage
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportImage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ImportImageResponse> ImportImageAsync(ImportImageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ImportInstance
 
         /// <summary>
@@ -1942,6 +2002,21 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ImportKeyPairResponse> ImportKeyPairAsync(ImportKeyPairRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ImportSnapshot
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportSnapshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ImportSnapshotResponse> ImportSnapshotAsync(ImportSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

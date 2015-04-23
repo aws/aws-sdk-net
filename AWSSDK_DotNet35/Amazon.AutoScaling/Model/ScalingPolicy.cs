@@ -64,7 +64,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Alarms. 
         /// <para>
-        /// The CloudWatch Alarms related to the policy.
+        /// The CloudWatch alarms related to the policy.
         /// </para>
         /// </summary>
         public List<Alarm> Alarms

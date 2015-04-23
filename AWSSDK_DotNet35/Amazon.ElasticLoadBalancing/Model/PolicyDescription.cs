@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The <code>PolicyDescription</code> data type.
+    /// Information about a policy.
     /// </summary>
     public partial class PolicyDescription
     {
@@ -39,7 +39,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyAttributeDescriptions. 
         /// <para>
-        ///  A list of policy attribute description structures. 
+        /// The policy attributes.
         /// </para>
         /// </summary>
         public List<PolicyAttributeDescription> PolicyAttributeDescriptions
@@ -57,7 +57,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        ///  The name of the policy associated with the load balancer. 
+        /// The name of the policy.
         /// </para>
         /// </summary>
         public string PolicyName
@@ -75,7 +75,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyTypeName. 
         /// <para>
-        ///  The name of the policy type associated with the load balancer. 
+        /// The name of the policy type.
         /// </para>
         /// </summary>
         public string PolicyTypeName

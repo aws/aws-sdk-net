@@ -35,10 +35,10 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    ///  For information about the number of server certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+    /// For information about the number of server certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
     /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
     /// </para>
-    ///  <note> Because the body of the public key certificate, private key, and the certificate
+    ///  <note>Because the body of the public key certificate, private key, and the certificate
     /// chain can be large, you should use POST rather than GET when calling <code>UploadServerCertificate</code>.
     /// For information about setting up signatures and authorization through the API, go
     /// to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
@@ -93,7 +93,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property CertificateChain. 
         /// <para>
-        ///  The contents of the certificate chain. This is typically a concatenation of the PEM-encoded
+        /// The contents of the certificate chain. This is typically a concatenation of the PEM-encoded
         /// public key certificates of the chain. 
         /// </para>
         /// </summary>
@@ -112,7 +112,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        ///  The path for the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// The path for the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
         /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         ///  

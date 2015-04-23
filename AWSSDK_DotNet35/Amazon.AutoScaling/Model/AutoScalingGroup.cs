@@ -147,7 +147,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        /// The size of the group.
+        /// The desired size of the group.
         /// </para>
         /// </summary>
         public int DesiredCapacity
@@ -165,7 +165,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EnabledMetrics. 
         /// <para>
-        /// The metrics enabled for this Auto Scaling group.
+        /// The metrics enabled for the group.
         /// </para>
         /// </summary>
         public List<EnabledMetric> EnabledMetrics
@@ -331,8 +331,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current state of the Auto Scaling group when a <a>DeleteAutoScalingGroup</a> action
-        /// is in progress.
+        /// The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.
         /// </para>
         /// </summary>
         public string Status
@@ -368,7 +367,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags for the Auto Scaling group.
+        /// The tags for the group.
         /// </para>
         /// </summary>
         public List<TagDescription> Tags
@@ -386,7 +385,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TerminationPolicies. 
         /// <para>
-        /// The termination policies for this Auto Scaling group.
+        /// The termination policies for the group.
         /// </para>
         /// </summary>
         public List<string> TerminationPolicies

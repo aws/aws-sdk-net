@@ -29,23 +29,20 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoadBalancer operation.
-    /// Deletes the specified load balancer. 
+    /// Deletes the specified load balancer.
     /// 
     ///  
     /// <para>
-    ///  If attempting to recreate the load balancer, you must reconfigure all the settings.
-    /// The DNS name associated with a deleted load balancer will no longer be usable. Once
-    /// deleted, the name and associated DNS record of the load balancer no longer exist and
-    /// traffic sent to any of its IP addresses will no longer be delivered to back-end instances.
-    /// 
+    /// If you are attempting to recreate a load balancer, you must reconfigure all settings.
+    /// The DNS name associated with a deleted load balancer are no longer usable. The name
+    /// and associated DNS record of the deleted load balancer no longer exist and traffic
+    /// sent to any of its IP addresses is no longer delivered to back-end instances.
     /// </para>
     ///  
     /// <para>
-    ///  To successfully call this API, you must provide the same account credentials as were
-    /// used to create the load balancer. 
+    /// If the load balancer does not exist or has already been deleted, the call to <code>DeleteLoadBalancer</code>
+    /// still succeeds.
     /// </para>
-    ///  <note> By design, if the load balancer does not exist or has already been deleted,
-    /// a call to <code>DeleteLoadBalancer</code> action still succeeds. </note>
     /// </summary>
     public partial class DeleteLoadBalancerRequest : AmazonElasticLoadBalancingRequest
     {
@@ -59,7 +56,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates DeleteLoadBalancerRequest with the parameterized properties
         /// </summary>
-        /// <param name="loadBalancerName"> The name associated with the load balancer. </param>
+        /// <param name="loadBalancerName">The name of the load balancer.</param>
         public DeleteLoadBalancerRequest(string loadBalancerName)
         {
             _loadBalancerName = loadBalancerName;
@@ -68,7 +65,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  The name associated with the load balancer. 
+        /// The name of the load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName

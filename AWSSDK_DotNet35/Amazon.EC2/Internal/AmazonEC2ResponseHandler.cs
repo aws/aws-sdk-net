@@ -73,7 +73,7 @@ namespace Amazon.EC2.Internal
         }
 #endif
 
-        protected void PostInvoke(IExecutionContext executionContext)
+        protected virtual void PostInvoke(IExecutionContext executionContext)
         {
             var response = executionContext.ResponseContext.Response;
             var webResponseData = executionContext.ResponseContext.HttpResponse;

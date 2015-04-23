@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the <a>DescribeLoadBalancers</a>
-    /// action to describe the configuration of the back-end server.
+    /// Information about the configuration of a back-end server.
     /// </summary>
     public partial class BackendServerDescription
     {
@@ -39,7 +38,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property InstancePort. 
         /// <para>
-        ///  Provides the port on which the back-end server is listening. 
+        /// The port on which the back-end server is listening.
         /// </para>
         /// </summary>
         public int InstancePort
@@ -57,7 +56,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyNames. 
         /// <para>
-        ///  Provides a list of policy names enabled for the back-end server. 
+        /// The names of the policies enabled for the back-end server.
         /// </para>
         /// </summary>
         public List<string> PolicyNames

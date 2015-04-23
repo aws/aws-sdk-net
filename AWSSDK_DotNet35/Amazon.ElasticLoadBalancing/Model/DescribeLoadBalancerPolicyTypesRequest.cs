@@ -29,10 +29,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancerPolicyTypes operation.
-    /// Returns meta-information on the specified load balancer policies defined by the Elastic
-    /// Load Balancing service. The policy types that are returned from this action can be
-    /// used in a <a>CreateLoadBalancerPolicy</a> action to instantiate specific policy configurations
-    /// that will be applied to a load balancer.
+    /// Describes the specified load balancer policy types.
+    /// 
+    ///  
+    /// <para>
+    /// You can use these policy types with <a>CreateLoadBalancerPolicy</a> to create policy
+    /// configurations for a load balancer.
+    /// </para>
     /// </summary>
     public partial class DescribeLoadBalancerPolicyTypesRequest : AmazonElasticLoadBalancingRequest
     {
@@ -41,8 +44,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyTypeNames. 
         /// <para>
-        ///  Specifies the name of the policy types. If no names are specified, returns the description
-        /// of all the policy types defined by Elastic Load Balancing service. 
+        /// The names of the policy types. If no names are specified, describes all policy types
+        /// defined by Elastic Load Balancing.
         /// </para>
         /// </summary>
         public List<string> PolicyTypeNames

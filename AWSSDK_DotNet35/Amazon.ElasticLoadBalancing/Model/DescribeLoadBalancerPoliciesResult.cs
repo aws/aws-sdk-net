@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The output for the <a>DescribeLoadBalancerPolicies</a> action.
+    /// 
     /// </summary>
     public partial class DescribeLoadBalancerPoliciesResult : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyDescriptions. 
         /// <para>
-        ///  A list of policy description structures. 
+        /// Information about the policies.
         /// </para>
         /// </summary>
         public List<PolicyDescription> PolicyDescriptions

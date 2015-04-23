@@ -35,58 +35,19 @@ namespace Amazon.ElasticLoadBalancing
     ///
     /// Elastic Load Balancing 
     /// <para>
-    /// Elastic Load Balancing is a way to automatically distribute incoming web traffic across
-    /// applications that run on multiple Amazon Elastic Compute Cloud (Amazon EC2) instances.
-    /// 
+    /// Elastic Load Balancing automatically distributes incoming web traffic across multiple
+    /// Amazon EC2 instances.
     /// </para>
     ///  
     /// <para>
-    /// You can create, access, and manage Elastic Load Balancing using the AWS Management
-    /// Console, the AWS Command Line Interface (AWS CLI), the Query API, or the AWS SDKs.
-    /// For more information about Elastic Load Balancing interfaces, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/SvcIntro_Interfaces.html">Accessing
-    /// Elastic Load Balancing</a>.
+    /// All Elastic Load Balancing actions and commands are <i>idempotent</i>, which means
+    /// that they complete no more than one time. If you repeat a request or a command, the
+    /// action succeeds with a 200 OK response code.
     /// </para>
     ///  
     /// <para>
-    /// This reference guide contains documentation for the Query API and the AWS CLI commands,
-    /// to manage Elastic Load Balancing. 
-    /// </para>
-    ///  
-    /// <para>
-    /// For detailed information about Elastic Load Balancing features and their associated
-    /// actions or commands, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html">Managing
+    /// For detailed information about the features of Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html">Managing
     /// Load Balancers</a> in the <i>Elastic Load Balancing Developer Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// This reference guide is based on the current WSDL, which is available at: <a href="http://ec2-downloads.s3.amazonaws.com/ElasticLoadBalancing.wsdl"></a>.
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// <b>Endpoints</b>
-    /// </para>
-    ///  
-    /// <para>
-    /// The examples in this guide assume that your load balancers are created in the US East
-    /// (Northern Virginia) region and use us-east-1 as the endpoint.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can create your load balancers in other AWS regions. For information about regions
-    /// and endpoints supported by Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">Regions
-    /// and Endpoints</a> in the Amazon Web Services General Reference. 
-    /// </para>
-    ///  
-    /// <para>
-    /// <b>Idempotency</b>
-    /// </para>
-    ///  
-    /// <para>
-    /// All Elastic Load Balancing Query API actions and AWS CLI commands are designed to
-    /// be idempotent. An <i>idempotent</i> action or command completes no more than one time.
-    /// If you repeat a request or a command using the same values the action will succeed
-    /// with a 200 OK response code. 
     /// </para>
     /// </summary>
     public partial class AmazonElasticLoadBalancingClient : AmazonServiceClient, IAmazonElasticLoadBalancing
@@ -277,13 +238,13 @@ namespace Amazon.ElasticLoadBalancing
         #region  AddTags
 
         /// <summary>
-        /// Adds one or more tags for the specified load balancer. Each load balancer can have
-        /// a maximum of 10 tags. Each tag consists of a key and an optional value.
+        /// Adds the specified tags to the specified load balancer. Each load balancer can have
+        /// a maximum of 10 tags.
         /// 
         ///  
         /// <para>
-        /// Tag keys must be unique for each load balancer. If a tag with the same key is already
-        /// associated with the load balancer, this action will update the value of the key.
+        /// Each tag consists of a key and an optional value. If a tag with the same key is already
+        /// associated with the load balancer, <code>AddTags</code> updates its value.
         /// </para>
         ///  
         /// <para>
@@ -295,10 +256,10 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>The response from the AddTags service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.DuplicateTagKeysException">
-        /// The same tag key specified multiple times.
+        /// A tag key was specified more than once.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyTagsException">
         /// The quota for the number of tags that can be assigned to a load balancer has been
@@ -349,27 +310,27 @@ namespace Amazon.ElasticLoadBalancing
         #region  ApplySecurityGroupsToLoadBalancer
 
         /// <summary>
-        /// Associates one or more security groups with your load balancer in Amazon Virtual
-        /// Private Cloud (Amazon VPC). The provided security group IDs will override any currently
-        /// applied security groups. 
+        /// Associates one or more security groups with your load balancer in a virtual private
+        /// cloud (VPC). The specified security groups override the previously associated security
+        /// groups.
         /// 
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html">Manage
-        /// Security Groups in Amazon VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+        /// Security Groups for Amazon VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ApplySecurityGroupsToLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the ApplySecurityGroupsToLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
-        /// Requested configuration change is invalid.
+        /// The requested configuration change is not valid.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidSecurityGroupException">
-        /// One or more specified security groups do not exist.
+        /// One or more of the specified security groups do not exist.
         /// </exception>
         public ApplySecurityGroupsToLoadBalancerResponse ApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest request)
         {
@@ -416,31 +377,29 @@ namespace Amazon.ElasticLoadBalancing
         #region  AttachLoadBalancerToSubnets
 
         /// <summary>
-        /// Adds one or more subnets to the set of configured subnets in the Amazon Virtual Private
-        /// Cloud (Amazon VPC) for the load balancer. 
+        /// Adds one or more subnets to the set of configured subnets for the specified load balancer.
         /// 
         ///  
         /// <para>
-        ///  The load balancers evenly distribute requests across all of the registered subnets.
-        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">Deploy
-        /// Elastic Load Balancing in Amazon VPC</a> in the <i>Elastic Load Balancing Developer
-        /// Guide</i>. 
+        /// The load balancer evenly distributes requests across all registered subnets. For more
+        /// information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">Elastic
+        /// Load Balancing in Amazon VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancerToSubnets service method.</param>
         /// 
         /// <returns>The response from the AttachLoadBalancerToSubnets service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
-        /// Requested configuration change is invalid.
+        /// The requested configuration change is not valid.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidSubnetException">
-        /// The VPC has no Internet gateway.
+        /// The specified VPC has no associated Internet gateway.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.SubnetNotFoundException">
-        /// One or more subnets were not found.
+        /// One or more of the specified subnets do not exist.
         /// </exception>
         public AttachLoadBalancerToSubnetsResponse AttachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest request)
         {
@@ -487,20 +446,20 @@ namespace Amazon.ElasticLoadBalancing
         #region  ConfigureHealthCheck
 
         /// <summary>
-        /// Specifies the health check settings to use for evaluating the health state of your
-        /// back-end instances. 
+        /// Specifies the health check settings to use when evaluating the health state of your
+        /// back-end instances.
         /// 
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck">Health
-        /// Check</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+        /// Checks</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfigureHealthCheck service method.</param>
         /// 
         /// <returns>The response from the ConfigureHealthCheck service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         public ConfigureHealthCheckResponse ConfigureHealthCheck(ConfigureHealthCheckRequest request)
         {
@@ -550,43 +509,39 @@ namespace Amazon.ElasticLoadBalancing
         /// Generates a stickiness policy with sticky session lifetimes that follow that of an
         /// application-generated cookie. This policy can be associated only with HTTP/HTTPS listeners.
         /// 
-        /// 
         ///  
         /// <para>
-        ///  This policy is similar to the policy created by <a>CreateLBCookieStickinessPolicy</a>,
-        /// except that the lifetime of the special Elastic Load Balancing cookie follows the
-        /// lifetime of the application-generated cookie specified in the policy configuration.
+        /// This policy is similar to the policy created by <a>CreateLBCookieStickinessPolicy</a>,
+        /// except that the lifetime of the special Elastic Load Balancing cookie, <code>AWSELB</code>,
+        /// follows the lifetime of the application-generated cookie specified in the policy configuration.
         /// The load balancer only inserts a new stickiness cookie when the application response
-        /// includes a new application cookie. 
+        /// includes a new application cookie.
         /// </para>
         ///  
         /// <para>
-        ///  If the application cookie is explicitly removed or expires, the session stops being
-        /// sticky until a new application cookie is issued. 
+        /// If the application cookie is explicitly removed or expires, the session stops being
+        /// sticky until a new application cookie is issued.
         /// </para>
-        ///  <note> An application client must receive and send two cookies: the application-generated
-        /// cookie and the special Elastic Load Balancing cookie named <code>AWSELB</code>. This
-        /// is the default behavior for many common web browsers. </note> 
+        ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies">Enabling
-        /// Application-Controlled Session Stickiness</a> in the <i>Elastic Load Balancing Developer
-        /// Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies">Application-Controlled
+        /// Session Stickiness</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAppCookieStickinessPolicy service method.</param>
         /// 
         /// <returns>The response from the CreateAppCookieStickinessPolicy service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.DuplicatePolicyNameException">
-        /// Policy with the same name exists for this load balancer. Please choose another name.
+        /// A policy with the specified name already exists for this load balancer.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
-        /// Requested configuration change is invalid.
+        /// The requested configuration change is not valid.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException">
-        /// Quota for number of policies for this load balancer has already been reached.
+        /// The quota for the number of policies for this load balancer has been reached.
         /// </exception>
         public CreateAppCookieStickinessPolicyResponse CreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request)
         {
@@ -635,43 +590,43 @@ namespace Amazon.ElasticLoadBalancing
         /// <summary>
         /// Generates a stickiness policy with sticky session lifetimes controlled by the lifetime
         /// of the browser (user-agent) or a specified expiration period. This policy can be associated
-        /// only with HTTP/HTTPS listeners. 
+        /// only with HTTP/HTTPS listeners.
         /// 
         ///  
         /// <para>
-        ///  When a load balancer implements this policy, the load balancer uses a special cookie
-        /// to track the backend server instance for each request. When the load balancer receives
+        /// When a load balancer implements this policy, the load balancer uses a special cookie
+        /// to track the back-end server instance for each request. When the load balancer receives
         /// a request, it first checks to see if this cookie is present in the request. If so,
         /// the load balancer sends the request to the application server specified in the cookie.
         /// If not, the load balancer sends the request to a server that is chosen based on the
-        /// existing load balancing algorithm. 
+        /// existing load-balancing algorithm.
         /// </para>
         ///  
         /// <para>
-        ///  A cookie is inserted into the response for binding subsequent requests from the same
+        /// A cookie is inserted into the response for binding subsequent requests from the same
         /// user to that server. The validity of the cookie is based on the cookie expiration
-        /// time, which is specified in the policy configuration. 
+        /// time, which is specified in the policy configuration.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies">Enabling
-        /// Duration-Based Session Stickiness</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies">Duration-Based
+        /// Session Stickiness</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLBCookieStickinessPolicy service method.</param>
         /// 
         /// <returns>The response from the CreateLBCookieStickinessPolicy service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.DuplicatePolicyNameException">
-        /// Policy with the same name exists for this load balancer. Please choose another name.
+        /// A policy with the specified name already exists for this load balancer.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
-        /// Requested configuration change is invalid.
+        /// The requested configuration change is not valid.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException">
-        /// Quota for number of policies for this load balancer has already been reached.
+        /// The quota for the number of policies for this load balancer has been reached.
         /// </exception>
         public CreateLBCookieStickinessPolicyResponse CreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request)
         {
@@ -718,75 +673,68 @@ namespace Amazon.ElasticLoadBalancing
         #region  CreateLoadBalancer
 
         /// <summary>
-        /// Creates a new load balancer. 
+        /// Creates a load balancer.
         /// 
         ///  
         /// <para>
-        ///  After the call has completed successfully, a new load balancer is created with a
-        /// unique Domain Name Service (DNS) name. The DNS name includes the name of the AWS region
-        /// in which the load balance was created. For example, if your load balancer was created
-        /// in the United States, the DNS name might end with either of the following:
+        /// If the call completes successfully, a new load balancer is created with a unique Domain
+        /// Name Service (DNS) name. The DNS name includes the name of the AWS region in which
+        /// the load balancer was created. For example, the DNS name might end with either of
+        /// the following:
         /// </para>
-        ///  <ul> <li> <i>us-east-1.elb.amazonaws.com</i> (for the Northern Virginia region) </li>
-        /// <li> <i>us-west-1.elb.amazonaws.com</i> (for the Northern California region) </li>
-        /// </ul> 
+        ///  <ul> <li> <code>us-east-1.elb.amazonaws.com</code> </li> <li> <code>us-west-2.elb.amazonaws.com</code>
+        /// </li> </ul> 
         /// <para>
         /// For information about the AWS regions supported by Elastic Load Balancing, see <a
         /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Regions
-        /// and Endpoints</a>.
+        /// and Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         ///  
         /// <para>
-        /// You can create up to 20 load balancers per region per account.
+        /// You can create up to 20 load balancers per region per account. You can request an
+        /// increase for the number of load balancers for your account. For more information,
+        /// see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-limits.html">Elastic
+        /// Load Balancing Limits</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Elastic Load Balancing supports load balancing your Amazon EC2 instances launched
-        /// within any one of the following platforms:
+        /// Elastic Load Balancing supports load balancing your EC2 instances launched in either
+        /// the EC2-Classic or EC2-VPC platform. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html">Elastic
+        /// Load Balancing in EC2-Classic</a> or <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">Elastic
+        /// Load Balancing in a VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
-        ///  <ul> <li> <i>EC2-Classic</i> 
-        /// <para>
-        /// For information on creating and managing your load balancers in EC2-Classic, see <a
-        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html">Deploy
-        /// Elastic Load Balancing in Amazon EC2-Classic</a>.
-        /// </para>
-        ///  </li> <li> <i>EC2-VPC</i> 
-        /// <para>
-        /// For information on creating and managing your load balancers in EC2-VPC, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">Deploy
-        /// Elastic Load Balancing in Amazon VPC</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the CreateLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.CertificateNotFoundException">
-        /// The specified SSL ID does not refer to a valid SSL certificate in the AWS Identity
-        /// and Access Management Service.
+        /// The specified SSL ID does not refer to a valid SSL certificate in AWS Identity and
+        /// Access Management (IAM).
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.DuplicateAccessPointNameException">
-        /// The load balancer name already exists for this account. Please choose another name.
+        /// The specified load balancer name already exists for this account.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.DuplicateTagKeysException">
-        /// The same tag key specified multiple times.
+        /// A tag key was specified more than once.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
-        /// Requested configuration change is invalid.
+        /// The requested configuration change is not valid.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidSchemeException">
-        /// Invalid value for scheme. Scheme can only be specified for load balancers in VPC.
+        /// The specified value for the schema is not valid. You can only specify a scheme for
+        /// load balancers in a VPC.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidSecurityGroupException">
-        /// One or more specified security groups do not exist.
+        /// One or more of the specified security groups do not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidSubnetException">
-        /// The VPC has no Internet gateway.
+        /// The specified VPC has no associated Internet gateway.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.SubnetNotFoundException">
-        /// One or more subnets were not found.
+        /// One or more of the specified subnets do not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyAccessPointsException">
-        /// The quota for the number of load balancers has already been reached.
+        /// The quota for the number of load balancers has been reached.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyTagsException">
         /// The quota for the number of tags that can be assigned to a load balancer has been
@@ -837,9 +785,9 @@ namespace Amazon.ElasticLoadBalancing
         #region  CreateLoadBalancerListeners
 
         /// <summary>
-        /// Creates one or more listeners on a load balancer for the specified port. If a listener
-        /// with the given port does not already exist, it will be created; otherwise, the properties
-        /// of the new listener must match the properties of the existing listener. 
+        /// Creates one or more listeners for the specified load balancer. If a listener with
+        /// the specified port does not already exist, it is created; otherwise, the properties
+        /// of the new listener must match the properties of the existing listener.
         /// 
         ///  
         /// <para>
@@ -851,19 +799,18 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>The response from the CreateLoadBalancerListeners service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.CertificateNotFoundException">
-        /// The specified SSL ID does not refer to a valid SSL certificate in the AWS Identity
-        /// and Access Management Service.
+        /// The specified SSL ID does not refer to a valid SSL certificate in AWS Identity and
+        /// Access Management (IAM).
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.DuplicateListenerException">
-        /// A <code>Listener</code> already exists for the given <code>LoadBalancerName</code>
-        /// and <code>LoadBalancerPort</code>, but with a different <code>InstancePort</code>,
-        /// <code>Protocol</code>, or <code>SSLCertificateId</code>.
+        /// A listener already exists for the specified <code>LoadBalancerName</code> and <code>LoadBalancerPort</code>,
+        /// but with a different <code>InstancePort</code>, <code>Protocol</code>, or <code>SSLCertificateId</code>.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
-        /// Requested configuration change is invalid.
+        /// The requested configuration change is not valid.
         /// </exception>
         public CreateLoadBalancerListenersResponse CreateLoadBalancerListeners(CreateLoadBalancerListenersRequest request)
         {
@@ -910,28 +857,32 @@ namespace Amazon.ElasticLoadBalancing
         #region  CreateLoadBalancerPolicy
 
         /// <summary>
-        /// Creates a new policy that contains the necessary attributes depending on the policy
-        /// type. Policies are settings that are saved for your load balancer and that can be
-        /// applied to the front-end listener, or the back-end application server, depending on
-        /// your policy type.
+        /// Creates a policy with the specified attributes for the specified load balancer.
+        /// 
+        ///  
+        /// <para>
+        /// Policies are settings that are saved for your load balancer and that can be applied
+        /// to the front-end listener or the back-end application server, depending on the policy
+        /// type.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancerPolicy service method.</param>
         /// 
         /// <returns>The response from the CreateLoadBalancerPolicy service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.DuplicatePolicyNameException">
-        /// Policy with the same name exists for this load balancer. Please choose another name.
+        /// A policy with the specified name already exists for this load balancer.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
-        /// Requested configuration change is invalid.
+        /// The requested configuration change is not valid.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyTypeNotFoundException">
         /// One or more of the specified policy types do not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException">
-        /// Quota for number of policies for this load balancer has already been reached.
+        /// The quota for the number of policies for this load balancer has been reached.
         /// </exception>
         public CreateLoadBalancerPolicyResponse CreateLoadBalancerPolicy(CreateLoadBalancerPolicyRequest request)
         {
@@ -978,23 +929,20 @@ namespace Amazon.ElasticLoadBalancing
         #region  DeleteLoadBalancer
 
         /// <summary>
-        /// Deletes the specified load balancer. 
+        /// Deletes the specified load balancer.
         /// 
         ///  
         /// <para>
-        ///  If attempting to recreate the load balancer, you must reconfigure all the settings.
-        /// The DNS name associated with a deleted load balancer will no longer be usable. Once
-        /// deleted, the name and associated DNS record of the load balancer no longer exist and
-        /// traffic sent to any of its IP addresses will no longer be delivered to back-end instances.
-        /// 
+        /// If you are attempting to recreate a load balancer, you must reconfigure all settings.
+        /// The DNS name associated with a deleted load balancer are no longer usable. The name
+        /// and associated DNS record of the deleted load balancer no longer exist and traffic
+        /// sent to any of its IP addresses is no longer delivered to back-end instances.
         /// </para>
         ///  
         /// <para>
-        ///  To successfully call this API, you must provide the same account credentials as were
-        /// used to create the load balancer. 
+        /// If the load balancer does not exist or has already been deleted, the call to <code>DeleteLoadBalancer</code>
+        /// still succeeds.
         /// </para>
-        ///  <note> By design, if the load balancer does not exist or has already been deleted,
-        /// a call to <code>DeleteLoadBalancer</code> action still succeeds. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancer service method.</param>
         /// 
@@ -1044,13 +992,13 @@ namespace Amazon.ElasticLoadBalancing
         #region  DeleteLoadBalancerListeners
 
         /// <summary>
-        /// Deletes listeners from the load balancer for the specified port.
+        /// Deletes the specified listeners from the specified load balancer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancerListeners service method.</param>
         /// 
         /// <returns>The response from the DeleteLoadBalancerListeners service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         public DeleteLoadBalancerListenersResponse DeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest request)
         {
@@ -1097,17 +1045,17 @@ namespace Amazon.ElasticLoadBalancing
         #region  DeleteLoadBalancerPolicy
 
         /// <summary>
-        /// Deletes a policy from the load balancer. The specified policy must not be enabled
-        /// for any listeners.
+        /// Deletes the specified policy from the specified load balancer. This policy must not
+        /// be enabled for any listeners.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancerPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteLoadBalancerPolicy service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
-        /// Requested configuration change is invalid.
+        /// The requested configuration change is not valid.
         /// </exception>
         public DeleteLoadBalancerPolicyResponse DeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request)
         {
@@ -1154,33 +1102,28 @@ namespace Amazon.ElasticLoadBalancing
         #region  DeregisterInstancesFromLoadBalancer
 
         /// <summary>
-        /// Deregisters instances from the load balancer. Once the instance is deregistered,
-        /// it will stop receiving traffic from the load balancer. 
+        /// Deregisters the specified instances from the specified load balancer. After the instance
+        /// is deregistered, it no longer receives traffic from the load balancer.
         /// 
         ///  
         /// <para>
-        ///  In order to successfully call this API, the same account credentials as those used
-        /// to create the load balancer must be provided. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">De-register
-        /// and Register Amazon EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use <a>DescribeLoadBalancers</a> to verify if the instance is deregistered
+        /// You can use <a>DescribeLoadBalancers</a> to verify that the instance is deregistered
         /// from the load balancer.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">Deregister
+        /// and Register Amazon EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterInstancesFromLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the DeregisterInstancesFromLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidEndPointException">
-        /// The specified EndPoint is not valid.
+        /// The specified endpoint is not valid.
         /// </exception>
         public DeregisterInstancesFromLoadBalancerResponse DeregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest request)
         {
@@ -1227,21 +1170,18 @@ namespace Amazon.ElasticLoadBalancing
         #region  DescribeInstanceHealth
 
         /// <summary>
-        /// Returns the current state of the specified instances registered with the specified
-        /// load balancer. If no instances are specified, the state of all the instances registered
-        /// with the load balancer is returned. 
-        /// 
-        ///  <note> You must provide the same account credentials as those that were used to create
-        /// the load balancer. </note>
+        /// Describes the state of the specified instances registered with the specified load
+        /// balancer. If no instances are specified, the call describes the state of all instances
+        /// registered with the load balancer, not including any terminated instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceHealth service method.</param>
         /// 
         /// <returns>The response from the DescribeInstanceHealth service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidEndPointException">
-        /// The specified EndPoint is not valid.
+        /// The specified endpoint is not valid.
         /// </exception>
         public DescribeInstanceHealthResponse DescribeInstanceHealth(DescribeInstanceHealthRequest request)
         {
@@ -1288,17 +1228,16 @@ namespace Amazon.ElasticLoadBalancing
         #region  DescribeLoadBalancerAttributes
 
         /// <summary>
-        /// Returns detailed information about all of the attributes associated with the specified
-        /// load balancer.
+        /// Describes the attributes for the specified load balancer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerAttributes service method.</param>
         /// 
         /// <returns>The response from the DescribeLoadBalancerAttributes service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.LoadBalancerAttributeNotFoundException">
-        /// The specified load balancer attribute could not be found.
+        /// The specified load balancer attribute does not exist.
         /// </exception>
         public DescribeLoadBalancerAttributesResponse DescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request)
         {
@@ -1345,21 +1284,25 @@ namespace Amazon.ElasticLoadBalancing
         #region  DescribeLoadBalancerPolicies
 
         /// <summary>
-        /// Returns detailed descriptions of the policies. If you specify a load balancer name,
-        /// the action returns the descriptions of all the policies created for the load balancer.
-        /// If you specify a policy name associated with your load balancer, the action returns
-        /// the description of that policy. If you don't specify a load balancer name, the action
-        /// returns descriptions of the specified sample policies, or descriptions of all the
-        /// sample policies. The names of the sample policies have the <code>ELBSample-</code>
-        /// prefix.
+        /// Describes the specified policies.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a load balancer name, the action returns the descriptions of all policies
+        /// created for the load balancer. If you specify a policy name associated with your load
+        /// balancer, the action returns the description of that policy. If you don't specify
+        /// a load balancer name, the action returns descriptions of the specified sample policies,
+        /// or descriptions of all sample policies. The names of the sample policies have the
+        /// <code>ELBSample-</code> prefix.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLoadBalancerPolicies service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
-        /// One or more specified policies were not found.
+        /// One or more of the specified policies do not exist.
         /// </exception>
         public DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies()
         {
@@ -1367,22 +1310,26 @@ namespace Amazon.ElasticLoadBalancing
         }
 
         /// <summary>
-        /// Returns detailed descriptions of the policies. If you specify a load balancer name,
-        /// the action returns the descriptions of all the policies created for the load balancer.
-        /// If you specify a policy name associated with your load balancer, the action returns
-        /// the description of that policy. If you don't specify a load balancer name, the action
-        /// returns descriptions of the specified sample policies, or descriptions of all the
-        /// sample policies. The names of the sample policies have the <code>ELBSample-</code>
-        /// prefix.
+        /// Describes the specified policies.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a load balancer name, the action returns the descriptions of all policies
+        /// created for the load balancer. If you specify a policy name associated with your load
+        /// balancer, the action returns the description of that policy. If you don't specify
+        /// a load balancer name, the action returns descriptions of the specified sample policies,
+        /// or descriptions of all sample policies. The names of the sample policies have the
+        /// <code>ELBSample-</code> prefix.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerPolicies service method.</param>
         /// 
         /// <returns>The response from the DescribeLoadBalancerPolicies service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
-        /// One or more specified policies were not found.
+        /// One or more of the specified policies do not exist.
         /// </exception>
         public DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest request)
         {
@@ -1429,10 +1376,13 @@ namespace Amazon.ElasticLoadBalancing
         #region  DescribeLoadBalancerPolicyTypes
 
         /// <summary>
-        /// Returns meta-information on the specified load balancer policies defined by the Elastic
-        /// Load Balancing service. The policy types that are returned from this action can be
-        /// used in a <a>CreateLoadBalancerPolicy</a> action to instantiate specific policy configurations
-        /// that will be applied to a load balancer.
+        /// Describes the specified load balancer policy types.
+        /// 
+        ///  
+        /// <para>
+        /// You can use these policy types with <a>CreateLoadBalancerPolicy</a> to create policy
+        /// configurations for a load balancer.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLoadBalancerPolicyTypes service method, as returned by ElasticLoadBalancing.</returns>
@@ -1445,10 +1395,13 @@ namespace Amazon.ElasticLoadBalancing
         }
 
         /// <summary>
-        /// Returns meta-information on the specified load balancer policies defined by the Elastic
-        /// Load Balancing service. The policy types that are returned from this action can be
-        /// used in a <a>CreateLoadBalancerPolicy</a> action to instantiate specific policy configurations
-        /// that will be applied to a load balancer.
+        /// Describes the specified load balancer policy types.
+        /// 
+        ///  
+        /// <para>
+        /// You can use these policy types with <a>CreateLoadBalancerPolicy</a> to create policy
+        /// configurations for a load balancer.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerPolicyTypes service method.</param>
         /// 
@@ -1501,17 +1454,13 @@ namespace Amazon.ElasticLoadBalancing
         #region  DescribeLoadBalancers
 
         /// <summary>
-        /// Returns detailed configuration information for all the load balancers created for
-        /// the account. If you specify load balancer names, the action returns configuration
-        /// information of the specified load balancers. 
-        /// 
-        ///  <note> In order to retrieve this information, you must provide the same account credentials
-        /// that was used to create the load balancer.</note>
+        /// Describes the specified the load balancers. If no load balancers are specified, the
+        /// call describes all of your load balancers.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLoadBalancers service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         public DescribeLoadBalancersResponse DescribeLoadBalancers()
         {
@@ -1519,18 +1468,14 @@ namespace Amazon.ElasticLoadBalancing
         }
 
         /// <summary>
-        /// Returns detailed configuration information for all the load balancers created for
-        /// the account. If you specify load balancer names, the action returns configuration
-        /// information of the specified load balancers. 
-        /// 
-        ///  <note> In order to retrieve this information, you must provide the same account credentials
-        /// that was used to create the load balancer.</note>
+        /// Describes the specified the load balancers. If no load balancers are specified, the
+        /// call describes all of your load balancers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers service method.</param>
         /// 
         /// <returns>The response from the DescribeLoadBalancers service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         public DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request)
         {
@@ -1577,13 +1522,13 @@ namespace Amazon.ElasticLoadBalancing
         #region  DescribeTags
 
         /// <summary>
-        /// Describes the tags associated with one or more load balancers.
+        /// Describes the tags associated with the specified load balancers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
@@ -1630,25 +1575,23 @@ namespace Amazon.ElasticLoadBalancing
         #region  DetachLoadBalancerFromSubnets
 
         /// <summary>
-        /// Removes subnets from the set of configured subnets in the Amazon Virtual Private
-        /// Cloud (Amazon VPC) for the load balancer. 
+        /// Removes the specified subnets from the set of configured subnets for the load balancer.
         /// 
         ///  
         /// <para>
-        ///  After a subnet is removed all of the EC2 instances registered with the load balancer
-        /// that are in the removed subnet will go into the <i>OutOfService</i> state. When a
-        /// subnet is removed, the load balancer will balance the traffic among the remaining
-        /// routable subnets for the load balancer. 
+        /// After a subnet is removed, all EC2 instances registered with the load balancer in
+        /// the removed subnet go into the <code>OutOfService</code> state. Then, the load balancer
+        /// balances the traffic among the remaining routable subnets.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachLoadBalancerFromSubnets service method.</param>
         /// 
         /// <returns>The response from the DetachLoadBalancerFromSubnets service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
-        /// Requested configuration change is invalid.
+        /// The requested configuration change is not valid.
         /// </exception>
         public DetachLoadBalancerFromSubnetsResponse DetachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest request)
         {
@@ -1695,17 +1638,16 @@ namespace Amazon.ElasticLoadBalancing
         #region  DisableAvailabilityZonesForLoadBalancer
 
         /// <summary>
-        /// Removes the specified EC2 Availability Zones from the set of configured Availability
-        /// Zones for the load balancer. 
+        /// Removes the specified Availability Zones from the set of Availability Zones for the
+        /// specified load balancer.
         /// 
         ///  
         /// <para>
-        ///  There must be at least one Availability Zone registered with a load balancer at all
-        /// times. Once an Availability Zone is removed, all the instances registered with the
-        /// load balancer that are in the removed Availability Zone go into the <i>OutOfService</i>
-        /// state. Upon Availability Zone removal, the load balancer attempts to equally balance
-        /// the traffic among its remaining usable Availability Zones. Trying to remove an Availability
-        /// Zone that was not associated with the load balancer does nothing. 
+        /// There must be at least one Availability Zone registered with a load balancer at all
+        /// times. After an Availability Zone is removed, all instances registered with the load
+        /// balancer that are in the removed Availability Zone go into the <code>OutOfService</code>
+        /// state. Then, the load balancer attempts to equally balance the traffic among its remaining
+        /// Availability Zones.
         /// </para>
         ///  
         /// <para>
@@ -1718,10 +1660,10 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>The response from the DisableAvailabilityZonesForLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
-        /// Requested configuration change is invalid.
+        /// The requested configuration change is not valid.
         /// </exception>
         public DisableAvailabilityZonesForLoadBalancerResponse DisableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest request)
         {
@@ -1768,26 +1710,25 @@ namespace Amazon.ElasticLoadBalancing
         #region  EnableAvailabilityZonesForLoadBalancer
 
         /// <summary>
-        /// Adds one or more EC2 Availability Zones to the load balancer. 
+        /// Adds the specified Availability Zones to the set of Availability Zones for the specified
+        /// load balancer.
         /// 
         ///  
         /// <para>
-        ///  The load balancer evenly distributes requests across all its registered Availability
-        /// Zones that contain instances. 
+        /// The load balancer evenly distributes requests across all its registered Availability
+        /// Zones that contain instances.
         /// </para>
-        ///  <note> The new EC2 Availability Zones to be added must be in the same EC2 Region
-        /// as the Availability Zones for which the load balancer was created. </note> 
+        ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html">Expand
-        /// a Load Balanced Application to an Additional Availability Zone</a> in the <i>Elastic
-        /// Load Balancing Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html">Add
+        /// Availability Zone</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableAvailabilityZonesForLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the EnableAvailabilityZonesForLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         public EnableAvailabilityZonesForLoadBalancerResponse EnableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest request)
         {
@@ -1834,7 +1775,7 @@ namespace Amazon.ElasticLoadBalancing
         #region  ModifyLoadBalancerAttributes
 
         /// <summary>
-        /// Modifies the attributes of a specified load balancer.
+        /// Modifies the attributes of the specified load balancer.
         /// 
         ///  
         /// <para>
@@ -1845,7 +1786,8 @@ namespace Amazon.ElasticLoadBalancing
         /// </para>
         ///  
         /// <para>
-        /// For more information, see the following:
+        /// For more information, see the following in the <i>Elastic Load Balancing Developer
+        /// Guide</i>:
         /// </para>
         ///  <ul> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#request-routing">Cross-Zone
         /// Load Balancing</a></li> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection
@@ -1857,13 +1799,13 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>The response from the ModifyLoadBalancerAttributes service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
-        /// Requested configuration change is invalid.
+        /// The requested configuration change is not valid.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.LoadBalancerAttributeNotFoundException">
-        /// The specified load balancer attribute could not be found.
+        /// The specified load balancer attribute does not exist.
         /// </exception>
         public ModifyLoadBalancerAttributesResponse ModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request)
         {
@@ -1910,48 +1852,52 @@ namespace Amazon.ElasticLoadBalancing
         #region  RegisterInstancesWithLoadBalancer
 
         /// <summary>
-        /// Adds new instances to the load balancer. 
+        /// Adds the specified instances to the specified load balancer.
         /// 
         ///  
         /// <para>
-        ///  Once the instance is registered, it starts receiving traffic and requests from the
-        /// load balancer. Any instance that is not in any of the Availability Zones registered
-        /// for the load balancer will be moved to the <i>OutOfService</i> state. It will move
-        /// to the <i>InService</i> state when the Availability Zone is added to the load balancer.
-        /// 
+        /// The instance must be a running instance in the same network as the load balancer (EC2-Classic
+        /// or the same VPC). If you have EC2-Classic instances and a load balancer in a VPC with
+        /// ClassicLink enabled, you can link the EC2-Classic instances to that VPC and then register
+        /// the linked EC2-Classic instances with the load balancer in the VPC.
         /// </para>
         ///  
         /// <para>
-        /// When an instance registered with a load balancer is stopped and then restarted, the
-        /// IP addresses associated with the instance changes. Elastic Load Balancing cannot recognize
+        /// Note that <code>RegisterInstanceWithLoadBalancer</code> completes when the request
+        /// has been registered. Instance registration happens shortly afterwards. To check the
+        /// state of the registered instances, use <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// After the instance is registered, it starts receiving traffic and requests from the
+        /// load balancer. Any instance that is not in one of the Availability Zones registered
+        /// for the load balancer is moved to the <code>OutOfService</code> state. If an Availability
+        /// Zone is added to the load balancer later, any instances registered with the load balancer
+        /// move to the <code>InService</code> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you stop an instance registered with a load balancer and then start it, the IP
+        /// addresses associated with the instance changes. Elastic Load Balancing cannot recognize
         /// the new IP address, which prevents it from routing traffic to the instances. We recommend
-        /// that you de-register your Amazon EC2 instances from your load balancer after you stop
-        /// your instance, and then register the load balancer with your instance after you've
-        /// restarted. To de-register your instances from load balancer, use <a>DeregisterInstancesFromLoadBalancer</a>
-        /// action.
+        /// that you use the following sequence: stop the instance, deregister the instance, start
+        /// the instance, and then register the instance. To deregister instances from a load
+        /// balancer, use <a>DeregisterInstancesFromLoadBalancer</a>.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">De-register
-        /// and Register Amazon EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i>.
-        /// </para>
-        ///  <note> In order for this call to be successful, you must provide the same account
-        /// credentials as those that were used to create the load balancer. </note> <note> Completion
-        /// of this API does not guarantee that operation has completed. Rather, it means that
-        /// the request has been registered and the changes will happen shortly. </note> 
-        /// <para>
-        /// You can use <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a> action to
-        /// check the state of the newly registered instances.
+        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">Deregister
+        /// and Register EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterInstancesWithLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the RegisterInstancesWithLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidEndPointException">
-        /// The specified EndPoint is not valid.
+        /// The specified endpoint is not valid.
         /// </exception>
         public RegisterInstancesWithLoadBalancerResponse RegisterInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest request)
         {
@@ -2004,7 +1950,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>The response from the RemoveTags service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         public RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
@@ -2053,11 +1999,11 @@ namespace Amazon.ElasticLoadBalancing
         /// <summary>
         /// Sets the certificate that terminates the specified listener's SSL connections. The
         /// specified certificate replaces any prior certificate that was used on the same load
-        /// balancer and port. 
+        /// balancer and port.
         /// 
         ///  
         /// <para>
-        /// For more information on updating your SSL certificate, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html">Updating
+        /// For more information about updating your SSL certificate, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html">Updating
         /// an SSL Certificate for a Load Balancer</a> in the <i>Elastic Load Balancing Developer
         /// Guide</i>.
         /// </para>
@@ -2066,17 +2012,17 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>The response from the SetLoadBalancerListenerSSLCertificate service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.CertificateNotFoundException">
-        /// The specified SSL ID does not refer to a valid SSL certificate in the AWS Identity
-        /// and Access Management Service.
+        /// The specified SSL ID does not refer to a valid SSL certificate in AWS Identity and
+        /// Access Management (IAM).
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
-        /// Requested configuration change is invalid.
+        /// The requested configuration change is not valid.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.ListenerNotFoundException">
-        /// Load balancer does not have a listener configured at the given port.
+        /// The load balancer does not have a listener configured at the specified port.
         /// </exception>
         public SetLoadBalancerListenerSSLCertificateResponse SetLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest request)
         {
@@ -2123,36 +2069,34 @@ namespace Amazon.ElasticLoadBalancing
         #region  SetLoadBalancerPoliciesForBackendServer
 
         /// <summary>
-        /// Replaces the current set of policies associated with a port on which the back-end
-        /// server is listening with a new set of policies. After the policies have been created
-        /// using <a>CreateLoadBalancerPolicy</a>, they can be applied here as a list. At this
-        /// time, only the back-end server authentication policy type can be applied to the back-end
-        /// ports; this policy type is composed of multiple public key policies. 
+        /// Replaces the set of policies associated with the specified port on which the back-end
+        /// server is listening with a new set of policies. At this time, only the back-end server
+        /// authentication policy type can be applied to the back-end ports; this policy type
+        /// is composed of multiple public key policies.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// The <i>SetLoadBalancerPoliciesForBackendServer</i> replaces the current set of policies
-        /// associated with the specified instance port. Every time you use this action to enable
-        /// the policies, use the <code>PolicyNames</code> parameter to list all the policies
-        /// you want to enable.
+        /// Each time you use <code>SetLoadBalancerPoliciesForBackendServer</code> to enable the
+        /// policies, use the <code>PolicyNames</code> parameter to list the policies that you
+        /// want to enable.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
-        /// You can use <a>DescribeLoadBalancers</a> or <a>DescribeLoadBalancerPolicies</a> action
-        /// to verify that the policy has been associated with the back-end server.
+        /// You can use <a>DescribeLoadBalancers</a> or <a>DescribeLoadBalancerPolicies</a> to
+        /// verify that the policy is associated with the back-end server.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerPoliciesForBackendServer service method.</param>
         /// 
         /// <returns>The response from the SetLoadBalancerPoliciesForBackendServer service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
-        /// Requested configuration change is invalid.
+        /// The requested configuration change is not valid.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
-        /// One or more specified policies were not found.
+        /// One or more of the specified policies do not exist.
         /// </exception>
         public SetLoadBalancerPoliciesForBackendServerResponse SetLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest request)
         {
@@ -2199,23 +2143,23 @@ namespace Amazon.ElasticLoadBalancing
         #region  SetLoadBalancerPoliciesOfListener
 
         /// <summary>
-        /// Associates, updates, or disables a policy with a listener on the load balancer. You
-        /// can associate multiple policies with a listener.
+        /// Associates, updates, or disables a policy with a listener for the specified load balancer.
+        /// You can associate multiple policies with a listener.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerPoliciesOfListener service method.</param>
         /// 
         /// <returns>The response from the SetLoadBalancerPoliciesOfListener service method, as returned by ElasticLoadBalancing.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
-        /// The specified load balancer could not be found.
+        /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
-        /// Requested configuration change is invalid.
+        /// The requested configuration change is not valid.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.ListenerNotFoundException">
-        /// Load balancer does not have a listener configured at the given port.
+        /// The load balancer does not have a listener configured at the specified port.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
-        /// One or more specified policies were not found.
+        /// One or more of the specified policies do not exist.
         /// </exception>
         public SetLoadBalancerPoliciesOfListenerResponse SetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request)
         {

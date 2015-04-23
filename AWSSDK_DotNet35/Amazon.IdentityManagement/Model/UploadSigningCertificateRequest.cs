@@ -36,14 +36,14 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    ///  If the <code>UserName</code> field is not specified, the user name is determined
-    /// implicitly based on the AWS access key ID used to sign the request. Because this action
-    /// works for access keys under the AWS account, you can use this action to manage root
-    /// credentials even if the AWS account has no associated users. 
+    /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
+    /// based on the AWS access key ID used to sign the request. Because this action works
+    /// for access keys under the AWS account, you can use this action to manage root credentials
+    /// even if the AWS account has no associated users. 
     /// </para>
-    ///  <note> Because the body of a X.509 certificate can be large, you should use POST
-    /// rather than GET when calling <code>UploadSigningCertificate</code>. For information
-    /// about setting up signatures and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    ///  <note>Because the body of a X.509 certificate can be large, you should use POST rather
+    /// than GET when calling <code>UploadSigningCertificate</code>. For information about
+    /// setting up signatures and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
     /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
     /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
     /// Query Requests</a> in the <i>Using IAM</i>guide. </note>

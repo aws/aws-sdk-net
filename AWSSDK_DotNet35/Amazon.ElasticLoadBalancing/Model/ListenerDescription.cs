@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The ListenerDescription data type.
+    /// The policies enabled for a listener.
     /// </summary>
     public partial class ListenerDescription
     {
@@ -58,8 +58,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyNames. 
         /// <para>
-        ///  A list of policies enabled for this listener. An empty list indicates that no policies
-        /// are enabled. 
+        /// The policies. If there are no policies enabled, the list is empty.
         /// </para>
         /// </summary>
         public List<string> PolicyNames

@@ -75,7 +75,7 @@ namespace Amazon.CognitoSync.Internal
         }
 #endif
 
-        private void SetIdentity(IExecutionContext executionContext, string identityId, string identityPoolId)
+        private static void SetIdentity(IExecutionContext executionContext, string identityId, string identityPoolId)
         {
             var request = executionContext.RequestContext.OriginalRequest;
             var syncRequest = request as AmazonCognitoSyncRequest;

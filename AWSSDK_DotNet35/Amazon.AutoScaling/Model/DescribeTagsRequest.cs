@@ -53,10 +53,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The value of the filter type used to identify the tags to be returned. For example,
-        /// you can filter so that tags are returned according to Auto Scaling group, the key
-        /// and value, or whether the new tag will be applied to instances launched after the
-        /// tag is created (PropagateAtLaunch).
+        /// A filter used to scope the tags to return.
         /// </para>
         /// </summary>
         public List<Filter> Filters

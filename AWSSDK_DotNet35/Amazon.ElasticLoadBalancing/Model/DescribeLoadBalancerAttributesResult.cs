@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The following element is returned in a structure named <code>DescribeLoadBalancerAttributesResult</code>.
+    /// 
     /// </summary>
     public partial class DescribeLoadBalancerAttributesResult : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerAttributes. 
         /// <para>
-        /// The load balancer attributes structure.
+        /// Information about the load balancer attributes.
         /// </para>
         /// </summary>
         public LoadBalancerAttributes LoadBalancerAttributes

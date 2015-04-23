@@ -31,7 +31,7 @@ namespace Amazon.SimpleEmail.Model
     /// Container for the parameters to the VerifyDomainIdentity operation.
     /// Verifies a domain.
     /// 
-    ///         
+    ///  
     /// <para>
     /// This action is throttled at one request per second.
     /// </para>

@@ -69,7 +69,7 @@ namespace Amazon.EC2.Internal
             return base.InvokeAsync(executionContext);
         }
 #endif
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             var originalRequest = executionContext.RequestContext.OriginalRequest;
             var request = executionContext.RequestContext.Request;

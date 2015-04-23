@@ -29,7 +29,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTags operation.
-    /// Describes the tags associated with one or more load balancers.
+    /// Describes the tags associated with the specified load balancers.
     /// </summary>
     public partial class DescribeTagsRequest : AmazonElasticLoadBalancingRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerNames. 
         /// <para>
-        ///  The names of the load balancers. 
+        /// The names of the load balancers.
         /// </para>
         /// </summary>
         public List<string> LoadBalancerNames

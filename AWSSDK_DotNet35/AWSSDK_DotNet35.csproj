@@ -525,6 +525,7 @@
     <Compile Include="Amazon.Route53Domains\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Runtime\Internal\Util\HashingWrapperMD5.bcl.cs" />
     <Compile Include="Amazon.Workspaces\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -828,6 +829,8 @@
     <Compile Include="ThirdParty\Json\JsonWriter.cs" />
     <Compile Include="ThirdParty\Json\Lexer.cs" />
     <Compile Include="ThirdParty\Json\ParserToken.cs" />
+    <Compile Include="ThirdParty\MD5\MD5Core.cs" />
+    <Compile Include="ThirdParty\MD5\MD5Managed.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

@@ -58,7 +58,7 @@ namespace Amazon.CloudSearchDomain.Internal
 #endif
 
 #if BCL
-        protected void PostInvoke(IExecutionContext executionContext)
+        protected virtual void PostInvoke(IExecutionContext executionContext)
         {
             var uploadDocumentsRequest = executionContext.RequestContext.OriginalRequest as UploadDocumentsRequest;
 

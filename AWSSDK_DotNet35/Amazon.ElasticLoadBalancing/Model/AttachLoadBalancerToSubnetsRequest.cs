@@ -29,15 +29,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachLoadBalancerToSubnets operation.
-    /// Adds one or more subnets to the set of configured subnets in the Amazon Virtual Private
-    /// Cloud (Amazon VPC) for the load balancer. 
+    /// Adds one or more subnets to the set of configured subnets for the specified load balancer.
     /// 
     ///  
     /// <para>
-    ///  The load balancers evenly distribute requests across all of the registered subnets.
-    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">Deploy
-    /// Elastic Load Balancing in Amazon VPC</a> in the <i>Elastic Load Balancing Developer
-    /// Guide</i>. 
+    /// The load balancer evenly distributes requests across all registered subnets. For more
+    /// information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">Elastic
+    /// Load Balancing in Amazon VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class AttachLoadBalancerToSubnetsRequest : AmazonElasticLoadBalancingRequest
@@ -48,8 +46,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  The name associated with the load balancer. The name must be unique within the set
-        /// of load balancers associated with your AWS account. 
+        /// The name of the load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName
@@ -67,8 +64,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        ///  A list of subnet IDs to add for the load balancer. You can add only one subnet per
-        /// Availability Zone. 
+        /// The IDs of the subnets to add for the load balancer. You can add only one subnet per
+        /// Availability Zone.
         /// </para>
         /// </summary>
         public List<string> Subnets

@@ -29,13 +29,17 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancerPolicies operation.
-    /// Returns detailed descriptions of the policies. If you specify a load balancer name,
-    /// the action returns the descriptions of all the policies created for the load balancer.
-    /// If you specify a policy name associated with your load balancer, the action returns
-    /// the description of that policy. If you don't specify a load balancer name, the action
-    /// returns descriptions of the specified sample policies, or descriptions of all the
-    /// sample policies. The names of the sample policies have the <code>ELBSample-</code>
-    /// prefix.
+    /// Describes the specified policies.
+    /// 
+    ///  
+    /// <para>
+    /// If you specify a load balancer name, the action returns the descriptions of all policies
+    /// created for the load balancer. If you specify a policy name associated with your load
+    /// balancer, the action returns the description of that policy. If you don't specify
+    /// a load balancer name, the action returns descriptions of the specified sample policies,
+    /// or descriptions of all sample policies. The names of the sample policies have the
+    /// <code>ELBSample-</code> prefix.
+    /// </para>
     /// </summary>
     public partial class DescribeLoadBalancerPoliciesRequest : AmazonElasticLoadBalancingRequest
     {
@@ -45,9 +49,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  The mnemonic name associated with the load balancer. If no name is specified, the
-        /// operation returns the attributes of either all the sample policies pre-defined by
-        /// Elastic Load Balancing or the specified sample polices. 
+        /// The name of the load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName
@@ -65,8 +67,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyNames. 
         /// <para>
-        ///  The names of load balancer policies you've created or Elastic Load Balancing sample
-        /// policy names. 
+        /// The names of the policies.
         /// </para>
         /// </summary>
         public List<string> PolicyNames

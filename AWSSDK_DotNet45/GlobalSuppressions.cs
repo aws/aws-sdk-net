@@ -60,3 +60,5 @@ using System.Diagnostics.CodeAnalysis;
 // Suppression for methods on IHttpRequest
 [module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.IHttpRequest`1.#GetRequestContentAsync()")]
 
+// Suppression for methods on CognitoAWSCredentials
+[module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.CognitoIdentity.CognitoAWSCredentials.#GetIdentityIdAsync()")]

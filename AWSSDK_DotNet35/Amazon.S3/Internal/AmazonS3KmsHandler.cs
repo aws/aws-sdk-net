@@ -65,7 +65,7 @@ namespace Amazon.S3.Internal
         }
 #endif
 
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;
             EvaluateIfSigV4Required(request);

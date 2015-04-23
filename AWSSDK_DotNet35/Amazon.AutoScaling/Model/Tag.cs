@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes a tag applied to an Auto Scaling group.
+    /// Describes a tag for an Auto Scaling group.
     /// </summary>
     public partial class Tag
     {
@@ -59,9 +59,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PropagateAtLaunch. 
         /// <para>
-        /// Specifies whether the tag is applied to instances launched after the tag is created.
-        /// The same behavior applies to updates: If you change a tag, it is applied to all instances
-        /// launched after you made the change.
+        /// Determines whether the tag is added to new instances as they are launched in the group.
         /// </para>
         /// </summary>
         public bool PropagateAtLaunch
@@ -97,8 +95,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The kind of resource to which the tag is applied. Currently, Auto Scaling supports
-        /// the <code>auto-scaling-group</code> resource type.
+        /// The type of resource. The only supported value is <code>auto-scaling-group</code>.
         /// </para>
         /// </summary>
         public string ResourceType

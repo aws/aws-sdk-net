@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The <code>LoadBalancerAttributes</code> data type.
+    /// The attributes for a load balancer.
     /// </summary>
     public partial class LoadBalancerAttributes
     {
@@ -41,14 +41,13 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property AccessLog. 
         /// <para>
-        /// The name of the load balancer attribute. If enabled, the load balancer captures detailed
-        /// information of all the requests and delivers the information to the Amazon S3 bucket
-        /// that you specify.
+        /// If enabled, the load balancer captures detailed information of all requests and delivers
+        /// the information to the Amazon S3 bucket that you specify.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable
-        /// Access Logs</a>.
+        /// Access Logs</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
         public AccessLog AccessLog
@@ -66,7 +65,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property AdditionalAttributes. 
         /// <para>
-        /// This parameter is reserved for future use.
+        /// This parameter is reserved.
         /// </para>
         /// </summary>
         public List<AdditionalAttribute> AdditionalAttributes
@@ -84,14 +83,13 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property ConnectionDraining. 
         /// <para>
-        /// The name of the load balancer attribute. If enabled, the load balancer allows existing
-        /// requests to complete before the load balancer shifts traffic away from a deregistered
-        /// or unhealthy back-end instance. 
+        /// If enabled, the load balancer allows existing requests to complete before the load
+        /// balancer shifts traffic away from a deregistered or unhealthy back-end instance. 
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html">Enable
-        /// Connection Draining</a>.
+        /// Connection Draining</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
         public ConnectionDraining ConnectionDraining
@@ -109,19 +107,15 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property ConnectionSettings. 
         /// <para>
-        /// The name of the load balancer attribute. 
+        /// If enabled, the load balancer allows the connections to remain idle (no data is sent
+        /// over the connection) for the specified duration.
         /// </para>
         ///  
         /// <para>
         /// By default, Elastic Load Balancing maintains a 60-second idle connection timeout for
-        /// both front-end and back-end connections of your load balancer. If the <code>ConnectionSettings</code>
-        /// attribute is set, Elastic Load Balancing will allow the connections to remain idle
-        /// (no data is sent over the connection) for the specified duration.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html">Configure
-        /// Idle Connection Timeout</a>.
+        /// both front-end and back-end connections of your load balancer. For more information,
+        /// see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html">Configure
+        /// Idle Connection Timeout</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
         public ConnectionSettings ConnectionSettings
@@ -139,14 +133,13 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property CrossZoneLoadBalancing. 
         /// <para>
-        /// The name of the load balancer attribute. If enabled, the load balancer routes the
-        /// request traffic evenly across all back-end instances regardless of the Availability
-        /// Zones.
+        /// If enabled, the load balancer routes the request traffic evenly across all back-end
+        /// instances regardless of the Availability Zones.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html">Enable
-        /// Cross-Zone Load Balancing</a>.
+        /// Cross-Zone Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
         public CrossZoneLoadBalancing CrossZoneLoadBalancing

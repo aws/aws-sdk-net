@@ -30,13 +30,6 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the DescribePolicies operation.
     /// Describes the policies for the specified Auto Scaling group.
-    /// 
-    ///  
-    /// <para>
-    /// You can specify a maximum number of items to be returned with a single call. If there
-    /// are more items to return, the call returns a token. To get the next set of items,
-    /// repeat the call with the returned token in the <code>NextToken</code> parameter.
-    /// </para>
     /// </summary>
     public partial class DescribePoliciesRequest : AmazonAutoScalingRequest
     {

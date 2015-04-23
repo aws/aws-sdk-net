@@ -44,5 +44,18 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         #endregion
+
+        #region Dispose Pattern Implementation
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        #endregion
     }
 }

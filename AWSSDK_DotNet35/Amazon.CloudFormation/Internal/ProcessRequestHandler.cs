@@ -69,7 +69,7 @@ namespace Amazon.CloudFormation.Internal
         }
 #endif
 
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;
             var updateStackRequest = request.OriginalRequest as UpdateStackRequest;

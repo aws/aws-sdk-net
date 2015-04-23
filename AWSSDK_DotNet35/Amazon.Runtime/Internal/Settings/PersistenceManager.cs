@@ -24,6 +24,7 @@ using System.Text;
 using System.Threading;
 
 using ThirdParty.Json.LitJson;
+using System.Globalization;
 
 
 namespace Amazon.Runtime.Internal.Settings
@@ -133,7 +134,7 @@ namespace Amazon.Runtime.Internal.Settings
 
         #region Private methods
 
-        void saveSettingsType(string type, SettingsCollection settings)
+        private void saveSettingsType(string type, SettingsCollection settings)
         {
             this.disableWatcher(type);
             try
@@ -162,7 +163,7 @@ namespace Amazon.Runtime.Internal.Settings
                             break;
                         }
                     }
-                    catch (Exception)
+                    catch
                     {
                         if (retryAttempt < 5)
                         {
@@ -180,7 +181,7 @@ namespace Amazon.Runtime.Internal.Settings
             }
         }
 
-        SettingsCollection loadSettingsType(string type)
+        private SettingsCollection loadSettingsType(string type)
         {
             var filePath = getFileFromType(type);
             if(!File.Exists(filePath))
@@ -223,7 +224,7 @@ namespace Amazon.Runtime.Internal.Settings
             }
         }
 
-        void decryptAnyEncryptedValues(Dictionary<string, Dictionary<string, object>> settings)
+        private void decryptAnyEncryptedValues(Dictionary<string, Dictionary<string, object>> settings)
         {
             foreach (var kvp in settings)
             {
@@ -250,9 +251,10 @@ namespace Amazon.Runtime.Internal.Settings
             }
         }
 
-        string getFileFromType(string type)
+        private static string getFileFromType(string type)
         {
-            return string.Format(@"{0}\{1}.json", GetSettingsStoreFolder(), type);
+            return string.Format(CultureInfo.InvariantCulture,
+                @"{0}\{1}.json", GetSettingsStoreFolder(), type);
         }
 
         #endregion
@@ -322,10 +324,19 @@ namespace Amazon.Runtime.Internal.Settings
 
         public void Dispose()
         {
-            if (watcher != null)
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
             {
-                watchers.Remove(watcher);
-                watcher = null;
+                if (watcher != null)
+                {
+                    watchers.Remove(watcher);
+                    watcher = null;
+                }
             }
         }
 

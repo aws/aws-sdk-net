@@ -30,26 +30,25 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the VerifyDomainDkim operation.
     /// Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings
-    /// that            represent your domain's identity. Using these tokens, you will need
-    /// to create DNS CNAME            records that point to DKIM public keys hosted by Amazon
-    /// SES. Amazon Web Services will            eventually detect that you have updated your
-    /// DNS records; this detection process may            take up to 72 hours. Upon successful
-    /// detection, Amazon SES will be able to DKIM-sign            email originating from
-    /// that domain.
+    /// that represent your domain's identity. Using these tokens, you will need to create
+    /// DNS CNAME records that point to DKIM public keys hosted by Amazon SES. Amazon Web
+    /// Services will eventually detect that you have updated your DNS records; this detection
+    /// process may take up to 72 hours. Upon successful detection, Amazon SES will be able
+    /// to DKIM-sign email originating from that domain.
     /// 
-    ///         
+    ///  
     /// <para>
     /// This action is throttled at one request per second.
     /// </para>
-    ///         
+    ///  
     /// <para>
-    /// To enable or disable Easy DKIM signing for            a domain, use the <code>SetIdentityDkimEnabled</code>
+    /// To enable or disable Easy DKIM signing for a domain, use the <code>SetIdentityDkimEnabled</code>
     /// action.
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-    /// SES                Developer Guide</a>.
+    /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
     public partial class VerifyDomainDkimRequest : AmazonSimpleEmailServiceRequest

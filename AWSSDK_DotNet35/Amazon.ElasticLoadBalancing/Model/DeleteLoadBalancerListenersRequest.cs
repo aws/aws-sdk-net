@@ -29,7 +29,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoadBalancerListeners operation.
-    /// Deletes listeners from the load balancer for the specified port.
+    /// Deletes the specified listeners from the specified load balancer.
     /// </summary>
     public partial class DeleteLoadBalancerListenersRequest : AmazonElasticLoadBalancingRequest
     {
@@ -44,8 +44,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates DeleteLoadBalancerListenersRequest with the parameterized properties
         /// </summary>
-        /// <param name="loadBalancerName"> The mnemonic name associated with the load balancer. </param>
-        /// <param name="loadBalancerPorts"> The client port number(s) of the load balancer listener(s) to be removed. </param>
+        /// <param name="loadBalancerName">The name of the load balancer.</param>
+        /// <param name="loadBalancerPorts">The client port numbers of the listeners.</param>
         public DeleteLoadBalancerListenersRequest(string loadBalancerName, List<int> loadBalancerPorts)
         {
             _loadBalancerName = loadBalancerName;
@@ -55,7 +55,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  The mnemonic name associated with the load balancer. 
+        /// The name of the load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName
@@ -73,7 +73,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerPorts. 
         /// <para>
-        ///  The client port number(s) of the load balancer listener(s) to be removed. 
+        /// The client port numbers of the listeners.
         /// </para>
         /// </summary>
         public List<int> LoadBalancerPorts

@@ -51,7 +51,7 @@ namespace Amazon.Route53.Internal
             return base.InvokeAsync(executionContext);
         }
 #endif
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             ProcessRequestHandlers(executionContext);
         }

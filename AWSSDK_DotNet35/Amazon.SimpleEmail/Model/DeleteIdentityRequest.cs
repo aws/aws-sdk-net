@@ -32,7 +32,7 @@ namespace Amazon.SimpleEmail.Model
     /// Deletes the specified identity (email address or domain) from the list of verified
     /// identities.
     /// 
-    ///         
+    ///  
     /// <para>
     /// This action is throttled at one request per second.
     /// </para>

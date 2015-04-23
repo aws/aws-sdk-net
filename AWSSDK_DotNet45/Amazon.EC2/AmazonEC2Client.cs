@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
  */
 
 
@@ -1067,6 +1067,42 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CancelImportTask
+
+        /// <summary>
+        /// Cancels an in-process import virtual machine or import snapshot task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelImportTask service method.</param>
+        /// 
+        /// <returns>The response from the CancelImportTask service method, as returned by EC2.</returns>
+        public CancelImportTaskResponse CancelImportTask(CancelImportTaskRequest request)
+        {
+            var marshaller = new CancelImportTaskRequestMarshaller();
+            var unmarshaller = CancelImportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<CancelImportTaskRequest,CancelImportTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelImportTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CancelImportTaskResponse> CancelImportTaskAsync(CancelImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CancelImportTaskRequestMarshaller();
+            var unmarshaller = CancelImportTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelImportTaskRequest,CancelImportTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelReservedInstancesListing
 
         /// <summary>
@@ -1321,6 +1357,15 @@ namespace Amazon.EC2
         /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
         /// Cloud User Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You cannot create more than one customer gateway with the same VPN type, IP address,
+        /// and BGP ASN parameter values. If you run an identical request more than one time,
+        /// the first request creates the customer gateway, and subsequent requests return information
+        /// about the existing customer gateway. The subsequent requests do not create new customer
+        /// gateway resources. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomerGateway service method.</param>
         /// 
@@ -4131,6 +4176,79 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeImportImageTasks
+
+        /// <summary>
+        /// Displays details about an import virtual machine or import snapshot tasks that are
+        /// already created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImportImageTasks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImportImageTasks service method, as returned by EC2.</returns>
+        public DescribeImportImageTasksResponse DescribeImportImageTasks(DescribeImportImageTasksRequest request)
+        {
+            var marshaller = new DescribeImportImageTasksRequestMarshaller();
+            var unmarshaller = DescribeImportImageTasksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImportImageTasksRequest,DescribeImportImageTasksResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImportImageTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImportImageTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeImportImageTasksResponse> DescribeImportImageTasksAsync(DescribeImportImageTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeImportImageTasksRequestMarshaller();
+            var unmarshaller = DescribeImportImageTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeImportImageTasksRequest,DescribeImportImageTasksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeImportSnapshotTasks
+
+        /// <summary>
+        /// Displays details about an import snapshot tasks that is already created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImportSnapshotTasks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImportSnapshotTasks service method, as returned by EC2.</returns>
+        public DescribeImportSnapshotTasksResponse DescribeImportSnapshotTasks(DescribeImportSnapshotTasksRequest request)
+        {
+            var marshaller = new DescribeImportSnapshotTasksRequestMarshaller();
+            var unmarshaller = DescribeImportSnapshotTasksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImportSnapshotTasksRequest,DescribeImportSnapshotTasksResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImportSnapshotTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImportSnapshotTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeImportSnapshotTasksResponse> DescribeImportSnapshotTasksAsync(DescribeImportSnapshotTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeImportSnapshotTasksRequestMarshaller();
+            var unmarshaller = DescribeImportSnapshotTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeImportSnapshotTasksRequest,DescribeImportSnapshotTasksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeInstanceAttribute
 
         /// <summary>
@@ -6856,12 +6974,50 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ImportImage
+
+        /// <summary>
+        /// Import single or multi-volume disk images or Amazon EBS snapshots into an Amazon Machine
+        /// Image (AMI).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportImage service method.</param>
+        /// 
+        /// <returns>The response from the ImportImage service method, as returned by EC2.</returns>
+        public ImportImageResponse ImportImage(ImportImageRequest request)
+        {
+            var marshaller = new ImportImageRequestMarshaller();
+            var unmarshaller = ImportImageResponseUnmarshaller.Instance;
+
+            return Invoke<ImportImageRequest,ImportImageResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportImage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ImportImageResponse> ImportImageAsync(ImportImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ImportImageRequestMarshaller();
+            var unmarshaller = ImportImageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportImageRequest,ImportImageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ImportInstance
 
         /// <summary>
-        /// Creates an import instance task using metadata from the specified disk image. After
-        /// importing the image, you then upload it using the <code>ec2-import-volume</code> command
-        /// in the EC2 command line tools. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
+        /// Creates an import instance task using metadata from the specified disk image. ImportInstance
+        /// only supports single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a>.
+        /// After importing the image, you then upload it using the <code>ec2-import-volume</code>
+        /// command in the EC2 command line tools. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
         /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
         /// Elastic Compute Cloud User Guide</i>.
         /// </summary>
@@ -6937,6 +7093,42 @@ namespace Amazon.EC2
             var unmarshaller = ImportKeyPairResponseUnmarshaller.Instance;
 
             return InvokeAsync<ImportKeyPairRequest,ImportKeyPairResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportSnapshot
+
+        /// <summary>
+        /// Import a disk into an Amazon Elastic Block Store (Amazon EBS) snapshot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the ImportSnapshot service method, as returned by EC2.</returns>
+        public ImportSnapshotResponse ImportSnapshot(ImportSnapshotRequest request)
+        {
+            var marshaller = new ImportSnapshotRequestMarshaller();
+            var unmarshaller = ImportSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<ImportSnapshotRequest,ImportSnapshotResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportSnapshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ImportSnapshotResponse> ImportSnapshotAsync(ImportSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ImportSnapshotRequestMarshaller();
+            var unmarshaller = ImportSnapshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportSnapshotRequest,ImportSnapshotResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

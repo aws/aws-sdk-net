@@ -92,6 +92,19 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         #endregion
+
+        #region Dispose Pattern Implementation
+
+        /// <summary>
+        /// Implements the Dispose pattern
+        /// </summary>
+        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
+        /// or garbage collected.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            // CryptographicHash and HashAlgorithmProvider are not IDisposable
+        }
+        #endregion
     }
 
     public class HashingWrapperMD5 : HashingWrapper

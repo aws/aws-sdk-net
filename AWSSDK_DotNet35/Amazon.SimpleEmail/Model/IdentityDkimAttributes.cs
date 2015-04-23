@@ -58,17 +58,16 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property DkimTokens. 
         /// <para>
         /// A set of character strings that represent the domain's identity. Using these tokens,
-        /// you            will need to create DNS CNAME records that point to DKIM public keys
-        /// hosted by Amazon            SES. Amazon Web Services will eventually detect that you
-        /// have updated your DNS records;            this detection process may take up to 72
-        /// hours. Upon successful detection, Amazon SES            will be able to DKIM-sign
-        /// email originating from that domain. (This only applies to            domain identities,
-        /// not email address identities.)
+        /// you will need to create DNS CNAME records that point to DKIM public keys hosted by
+        /// Amazon SES. Amazon Web Services will eventually detect that you have updated your
+        /// DNS records; this detection process may take up to 72 hours. Upon successful detection,
+        /// Amazon SES will be able to DKIM-sign email originating from that domain. (This only
+        /// applies to domain identities, not email address identities.)
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-        /// SES                Developer Guide</a>.
+        /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
         public List<string> DkimTokens
@@ -86,9 +85,9 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property DkimVerificationStatus. 
         /// <para>
-        /// Describes whether Amazon SES has successfully verified the DKIM DNS records      
-        ///      (tokens) published in the domain name's DNS.  (This only applies to domain identities,
-        /// not email address identities.)
+        /// Describes whether Amazon SES has successfully verified the DKIM DNS records (tokens)
+        /// published in the domain name's DNS. (This only applies to domain identities, not email
+        /// address identities.)
         /// </para>
         /// </summary>
         public VerificationStatus DkimVerificationStatus

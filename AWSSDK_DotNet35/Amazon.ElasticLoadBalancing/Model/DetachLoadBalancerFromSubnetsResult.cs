@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The output for the <a>DetachLoadBalancerFromSubnets</a> action.
+    /// 
     /// </summary>
     public partial class DetachLoadBalancerFromSubnetsResult : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        ///  A list of subnet IDs the load balancer is now attached to. 
+        /// The IDs of the remaining subnets for the load balancer.
         /// </para>
         /// </summary>
         public List<string> Subnets

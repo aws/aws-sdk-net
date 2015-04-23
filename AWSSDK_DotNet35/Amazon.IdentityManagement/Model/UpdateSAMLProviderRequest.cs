@@ -31,7 +31,7 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the UpdateSAMLProvider operation.
     /// Updates the metadata document for an existing SAML provider.
     /// 
-    ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    ///  <note>This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4</a>. </note>
     /// </summary>
     public partial class UpdateSAMLProviderRequest : AmazonIdentityManagementServiceRequest

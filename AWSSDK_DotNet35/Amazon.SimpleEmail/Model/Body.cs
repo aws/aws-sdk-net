@@ -29,8 +29,7 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Represents the body of the message. You can specify text, HTML, or both. If you use
-    /// both, then            the message should display correctly in the widest variety of
-    /// email clients.
+    /// both, then the message should display correctly in the widest variety of email clients.
     /// </summary>
     public partial class Body
     {
@@ -45,7 +44,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Instantiates Body with the parameterized properties
         /// </summary>
-        /// <param name="text">The content of the message, in text format. Use this for text-based email clients, or clients on high-latency networks (such as mobile   devices).  </param>
+        /// <param name="text">The content of the message, in text format. Use this for text-based email clients, or clients on high-latency networks (such as mobile devices). </param>
         public Body(Content text)
         {
             _text = text;
@@ -55,8 +54,8 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property Html. 
         /// <para>
         /// The content of the message, in HTML format. Use this for email clients that can process
-        /// HTML. You can include clickable links, formatted            text, and much more in
-        /// an HTML message.        
+        /// HTML. You can include clickable links, formatted text, and much more in an HTML message.
+        /// 
         /// </para>
         /// </summary>
         public Content Html
@@ -75,7 +74,7 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property Text. 
         /// <para>
         /// The content of the message, in text format. Use this for text-based email clients,
-        /// or clients on high-latency networks (such as mobile            devices).        
+        /// or clients on high-latency networks (such as mobile devices). 
         /// </para>
         /// </summary>
         public Content Text

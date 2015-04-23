@@ -75,7 +75,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="executionContext">
         /// The execution context, it contains the request and response context.
         /// </param>
-        protected static void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             if (ShouldSign(executionContext.RequestContext))
             {

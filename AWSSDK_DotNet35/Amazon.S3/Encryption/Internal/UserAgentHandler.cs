@@ -57,7 +57,7 @@ namespace Amazon.S3.Encryption.Internal
         }
 #endif
 
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;
             string currentUserAgent = request.Headers[AWSSDKUtils.UserAgentHeader];

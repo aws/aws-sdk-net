@@ -30,18 +30,18 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the SetIdentityNotificationTopic operation.
     /// Given an identity (email address or domain), sets the Amazon Simple Notification Service
-    /// (Amazon SNS) topic to which Amazon SES will publish        bounce, complaint, and/or
-    /// delivery notifications for emails sent with that identity as the <code>Source</code>.
+    /// (Amazon SNS) topic to which Amazon SES will publish bounce, complaint, and/or delivery
+    /// notifications for emails sent with that identity as the <code>Source</code>.
     /// 
-    ///         <note>Unless feedback forwarding is enabled, you must specify Amazon SNS topics
-    /// for bounce and complaint notifications.            For more information, see <code>SetIdentityFeedbackForwardingEnabled</code>.
-    ///        </note>        
+    ///  <note>Unless feedback forwarding is enabled, you must specify Amazon SNS topics for
+    /// bounce and complaint notifications. For more information, see <code>SetIdentityFeedbackForwardingEnabled</code>.
+    /// </note> 
     /// <para>
     /// This action is throttled at one request per second.
     /// </para>
-    ///         
+    ///  
     /// <para>
-    /// For more information about feedback notification, see the            <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+    /// For more information about feedback notification, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -54,7 +54,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Identity. 
         /// <para>
-        /// The identity for which the Amazon SNS topic will be set.  Examples: <code>user@example.com</code>,
+        /// The identity for which the Amazon SNS topic will be set. Examples: <code>user@example.com</code>,
         /// <code>example.com</code>.
         /// </para>
         /// </summary>
@@ -91,9 +91,9 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property SnsTopic. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon SNS topic.        If the parameter is
-        /// omitted from the request or a null value is passed, <code>SnsTopic</code> is cleared
-        /// and publishing is disabled.
+        /// The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted
+        /// from the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing
+        /// is disabled.
         /// </para>
         /// </summary>
         public string SnsTopic

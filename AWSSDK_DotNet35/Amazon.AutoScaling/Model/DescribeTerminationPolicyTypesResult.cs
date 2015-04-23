@@ -37,9 +37,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TerminationPolicyTypes. 
         /// <para>
-        /// The Termination policies supported by Auto Scaling. They are: <code>OldestInstance</code>,
-        /// <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
-        /// and <code>Default</code>.
+        /// The termination policies supported by Auto Scaling (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
+        /// <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).
         /// </para>
         /// </summary>
         public List<string> TerminationPolicyTypes

@@ -38,7 +38,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Granularity. 
         /// <para>
-        /// The granularity of the metric.
+        /// The granularity of the metric. The only valid value is <code>1Minute</code>.
         /// </para>
         /// </summary>
         public string Granularity
@@ -58,6 +58,39 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The name of the metric.
         /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// <code>GroupMinSize</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>GroupMaxSize</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>GroupDesiredCapacity</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>GroupInServiceInstances</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>GroupPendingInstances</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>GroupStandbyInstances</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>GroupTerminatingInstances</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>GroupTotalInstances</code>
+        /// </para>
+        /// </li> </ul>
         /// </summary>
         public string Metric
         {

@@ -30,32 +30,30 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the SendEmail operation.
     /// Composes an email message based on input data, and then immediately queues the message
-    ///            for sending.        
+    /// for sending. 
     /// 
-    ///         <important>            You can only send email from verified email addresses
-    /// and domains.             If you have not requested production access to Amazon SES,
-    /// you must also             verify every recipient email address except for the recipients
-    /// provided             by the Amazon SES mailbox simulator. For more information, go
-    /// to the            <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-    /// SES                Developer Guide</a>.        </important>        
+    ///  <important> You can only send email from verified email addresses and domains. If
+    /// you have not requested production access to Amazon SES, you must also verify every
+    /// recipient email address except for the recipients provided by the Amazon SES mailbox
+    /// simulator. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+    /// SES Developer Guide</a>. </important> 
     /// <para>
     /// The total size of the message cannot exceed 10 MB.
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// Amazon SES has a limit on the total number of recipients per message: The combined
-    /// number            of To:, CC: and BCC: email addresses cannot exceed 50. If you need
-    /// to send an email            message to a larger audience, you can divide your recipient
-    /// list into groups of 50 or            fewer, and then call Amazon SES repeatedly to
-    /// send the message to each group.        
+    /// number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send
+    /// an email message to a larger audience, you can divide your recipient list into groups
+    /// of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.
+    /// 
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// For every message that you send, the total number of recipients (To:, CC: and BCC:)
-    /// is            counted against your            <i>sending quota</i>            - the
-    /// maximum number of emails you can send in            a 24-hour period. For information
-    /// about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-    /// SES                Developer Guide</a>.        
+    /// is counted against your <i>sending quota</i> - the maximum number of emails you can
+    /// send in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
+    /// SES Developer Guide</a>. 
     /// </para>
     /// </summary>
     public partial class SendEmailRequest : AmazonSimpleEmailServiceRequest
@@ -74,7 +72,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Instantiates SendEmailRequest with the parameterized properties
         /// </summary>
-        /// <param name="source">The identity's email address.     By default, the string must be 7-bit ASCII. If the text must contain any other characters,    then you must use MIME encoded-word syntax (RFC 2047) instead of a literal string.    MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.    For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.  </param>
+        /// <param name="source">The identity's email address.  By default, the string must be 7-bit ASCII. If the text must contain any other characters, then you must use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>. </param>
         /// <param name="destination">The destination for this email, composed of To:, CC:, and BCC: fields.</param>
         /// <param name="message">The message to be sent.</param>
         public SendEmailRequest(string source, Destination destination, Message message)
@@ -124,7 +122,7 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property ReplyToAddresses. 
         /// <para>
         /// The reply-to email address(es) for the message. If the recipient replies to the message,
-        /// each reply-to address            will receive the reply.        
+        /// each reply-to address will receive the reply. 
         /// </para>
         /// </summary>
         public List<string> ReplyToAddresses
@@ -143,10 +141,12 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property ReturnPath. 
         /// <para>
         /// The email address to which bounces and complaints are to be forwarded when feedback
-        /// forwarding is enabled. If the message cannot be delivered to the            recipient,
-        /// then an error message will be returned from the recipient's ISP; this message will
-        /// then be forwarded            to the email address specified by the            <code>ReturnPath</code>
-        ///            parameter.        
+        /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
+        /// error message will be returned from the recipient's ISP; this message will then be
+        /// forwarded to the email address specified by the <code>ReturnPath</code> parameter.
+        /// The <code>ReturnPath</code> parameter is never overwritten. This email address must
+        /// be either individually verified with Amazon SES, or from a domain that has been verified
+        /// with Amazon SES. 
         /// </para>
         /// </summary>
         public string ReturnPath
@@ -166,13 +166,13 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// The identity's email address.
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             By default, the string must be 7-bit ASCII. If the text must contain any
-        /// other characters,             then you must use MIME encoded-word syntax (RFC 2047)
-        /// instead of a literal string.             MIME encoded-word syntax uses the following
-        /// form: <code>=?charset?encoding?encoded-text?=</code>.             For more information,
-        /// see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.        
+        ///  By default, the string must be 7-bit ASCII. If the text must contain any other characters,
+        /// then you must use MIME encoded-word syntax (RFC 2047) instead of a literal string.
+        /// MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
+        /// For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
+        /// 
         /// </para>
         /// </summary>
         public string Source

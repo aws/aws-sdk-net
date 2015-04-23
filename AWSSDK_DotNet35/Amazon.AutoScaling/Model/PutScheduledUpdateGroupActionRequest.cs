@@ -38,12 +38,6 @@ namespace Amazon.AutoScaling.Model
     /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled
     /// Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// Auto Scaling supports the date and time expressed in "YYYY-MM-DDThh:mm:ssZ" format
-    /// in UTC/GMT only.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class PutScheduledUpdateGroupActionRequest : AmazonAutoScalingRequest
     {
@@ -78,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        ///  The number of Amazon EC2 instances that should be running in the group. 
+        ///  The number of EC2 instances that should be running in the group. 
         /// </para>
         /// </summary>
         public int DesiredCapacity
@@ -132,7 +126,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        ///  The minimum size for the new Auto Scaling group. 
+        ///  The minimum size for the Auto Scaling group. 
         /// </para>
         /// </summary>
         public int MinSize
@@ -150,9 +144,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Recurrence. 
         /// <para>
-        ///  The time when recurring future actions will start. Start time is specified by the
-        /// user following the Unix cron syntax format. For information about cron syntax, go
-        /// to <a href="http://en.wikipedia.org/wiki/Cron">Wikipedia, The Free Encyclopedia</a>.
+        /// The time when recurring future actions will start. Start time is specified by the
+        /// user following the Unix cron syntax format. For more information, see <a href="http://en.wikipedia.org/wiki/Cron">Cron</a>
+        /// in Wikipedia.
         /// </para>
         ///  
         /// <para>
@@ -175,7 +169,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScheduledActionName. 
         /// <para>
-        ///  The name of this scaling action. 
+        /// The name of this scaling action.
         /// </para>
         /// </summary>
         public string ScheduledActionName
@@ -193,7 +187,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time for this action to start, as in <code>--start-time 2010-06-01T00:00:00Z</code>.
+        /// The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only
+        /// (for example, <code>2014-06-01T00:00:00Z</code>).
         /// </para>
         ///  
         /// <para>
@@ -203,7 +198,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>,
-        /// they form the boundaries of when the recurring action will start and stop.
+        /// they form the boundaries of when the recurring action starts and stops.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -221,14 +216,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Time. 
         /// <para>
-        /// <code>Time</code> is deprecated.
+        /// <code>Time</code> is deprecated; use <code>StartTime</code> instead.
         /// </para>
         ///  
         /// <para>
-        /// The time for this action to start. <code>Time</code> is an alias for <code>StartTime</code>
-        /// and can be specified instead of <code>StartTime</code>, or vice versa. If both <code>Time</code>
-        /// and <code>StartTime</code> are specified, their values should be identical. Otherwise,
-        /// <code>PutScheduledUpdateGroupAction</code> will return an error.
+        /// The time for this action to start. If both <code>Time</code> and <code>StartTime</code>
+        /// are specified, their values must be identical.
         /// </para>
         /// </summary>
         public DateTime Time

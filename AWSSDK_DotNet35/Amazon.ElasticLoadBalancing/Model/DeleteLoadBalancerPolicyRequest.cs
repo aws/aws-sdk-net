@@ -29,8 +29,8 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoadBalancerPolicy operation.
-    /// Deletes a policy from the load balancer. The specified policy must not be enabled
-    /// for any listeners.
+    /// Deletes the specified policy from the specified load balancer. This policy must not
+    /// be enabled for any listeners.
     /// </summary>
     public partial class DeleteLoadBalancerPolicyRequest : AmazonElasticLoadBalancingRequest
     {
@@ -45,8 +45,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates DeleteLoadBalancerPolicyRequest with the parameterized properties
         /// </summary>
-        /// <param name="loadBalancerName"> The mnemonic name associated with the load balancer. </param>
-        /// <param name="policyName"> The mnemonic name for the policy being deleted. </param>
+        /// <param name="loadBalancerName">The name of the load balancer.</param>
+        /// <param name="policyName">The name of the policy.</param>
         public DeleteLoadBalancerPolicyRequest(string loadBalancerName, string policyName)
         {
             _loadBalancerName = loadBalancerName;
@@ -56,7 +56,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  The mnemonic name associated with the load balancer. 
+        /// The name of the load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName
@@ -74,7 +74,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        ///  The mnemonic name for the policy being deleted. 
+        /// The name of the policy.
         /// </para>
         /// </summary>
         public string PolicyName

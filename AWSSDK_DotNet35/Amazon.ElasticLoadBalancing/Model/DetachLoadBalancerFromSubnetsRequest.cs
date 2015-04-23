@@ -29,15 +29,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachLoadBalancerFromSubnets operation.
-    /// Removes subnets from the set of configured subnets in the Amazon Virtual Private
-    /// Cloud (Amazon VPC) for the load balancer. 
+    /// Removes the specified subnets from the set of configured subnets for the load balancer.
     /// 
     ///  
     /// <para>
-    ///  After a subnet is removed all of the EC2 instances registered with the load balancer
-    /// that are in the removed subnet will go into the <i>OutOfService</i> state. When a
-    /// subnet is removed, the load balancer will balance the traffic among the remaining
-    /// routable subnets for the load balancer. 
+    /// After a subnet is removed, all EC2 instances registered with the load balancer in
+    /// the removed subnet go into the <code>OutOfService</code> state. Then, the load balancer
+    /// balances the traffic among the remaining routable subnets.
     /// </para>
     /// </summary>
     public partial class DetachLoadBalancerFromSubnetsRequest : AmazonElasticLoadBalancingRequest
@@ -48,7 +46,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  The name associated with the load balancer to be detached. 
+        /// The name of the load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName
@@ -66,8 +64,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        ///  A list of subnet IDs to remove from the set of configured subnets for the load balancer.
-        /// 
+        /// The IDs of the subnets.
         /// </para>
         /// </summary>
         public List<string> Subnets

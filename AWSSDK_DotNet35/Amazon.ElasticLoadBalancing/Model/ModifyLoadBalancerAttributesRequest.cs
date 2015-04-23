@@ -29,7 +29,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyLoadBalancerAttributes operation.
-    /// Modifies the attributes of a specified load balancer.
+    /// Modifies the attributes of the specified load balancer.
     /// 
     ///  
     /// <para>
@@ -40,7 +40,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see the following:
+    /// For more information, see the following in the <i>Elastic Load Balancing Developer
+    /// Guide</i>:
     /// </para>
     ///  <ul> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#request-routing">Cross-Zone
     /// Load Balancing</a></li> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection
@@ -56,7 +57,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerAttributes. 
         /// <para>
-        /// Attributes of the load balancer.
+        /// The attributes of the load balancer.
         /// </para>
         /// </summary>
         public LoadBalancerAttributes LoadBalancerAttributes

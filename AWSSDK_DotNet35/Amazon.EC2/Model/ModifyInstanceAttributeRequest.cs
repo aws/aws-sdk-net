@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -163,11 +163,6 @@ namespace Amazon.EC2.Model
         /// [EC2-VPC] Changes the security groups of the instance. You must specify at least one
         /// security group, even if it's just the default security group for the VPC. You must
         /// specify the security group ID, not the security group name.
-        /// </para>
-        ///  
-        /// <para>
-        /// For example, if you want the instance to be in sg-1a1a1a1a and sg-9b9b9b9b, specify
-        /// <code>GroupId.1=sg-1a1a1a1a</code> and <code>GroupId.2=sg-9b9b9b9b</code>.
         /// </para>
         /// </summary>
         public List<string> Groups

@@ -36,15 +36,14 @@ namespace Amazon.SimpleEmail
     /// <summary>
     /// Implementation for accessing SimpleEmailService
     ///
-    /// Amazon Simple Email Service        
+    /// Amazon Simple Email Service 
     /// <para>
-    ///             This is the API Reference for Amazon Simple Email Service (Amazon SES).
-    /// This documentation is intended to be            used in conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
-    /// SES Developer Guide</a>.        
+    ///  This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation
+    /// is intended to be used in conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+    /// SES Developer Guide</a>. 
     /// </para>
-    ///         <note>For a list of Amazon SES endpoints to use in service requests, see <a
-    /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions and
-    /// Amazon SES</a>             in the Amazon SES Developer Guide.         </note>
+    ///  <note>For a list of Amazon SES endpoints to use in service requests, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
+    /// and Amazon SES</a> in the Amazon SES Developer Guide. </note>
     /// </summary>
     public partial class AmazonSimpleEmailServiceClient : AmazonServiceClient, IAmazonSimpleEmailService
     {

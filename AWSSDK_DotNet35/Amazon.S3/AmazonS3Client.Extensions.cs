@@ -86,8 +86,7 @@ namespace Amazon.S3
             irequest.Endpoint = EndpointResolver.DetermineEndpoint(this.Config, irequest);
 
             var context = new Amazon.Runtime.Internal.ExecutionContext(new Amazon.Runtime.Internal.RequestContext(true) { Request = irequest, ClientConfig = this.Config }, null);
-            AmazonS3PostMarshallHandler handler = new AmazonS3PostMarshallHandler();
-            handler.ProcessRequestHandlers(context);
+            AmazonS3PostMarshallHandler.ProcessRequestHandlers(context);
 
             var metrics = new RequestMetrics();
 

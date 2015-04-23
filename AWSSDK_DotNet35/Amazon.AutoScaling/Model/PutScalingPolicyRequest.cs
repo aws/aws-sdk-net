@@ -46,8 +46,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AdjustmentType. 
         /// <para>
-        /// Specifies whether the <code>ScalingAdjustment</code> is an absolute number or a percentage
-        /// of the current capacity. Valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>,
+        /// The adjustment type. Valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>,
         /// and <code>PercentChangeInCapacity</code>.
         /// </para>
         ///  
@@ -157,7 +156,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property ScalingAdjustment. 
         /// <para>
         /// The number of instances by which to scale. <code>AdjustmentType</code> determines
-        /// the interpretation of this number (e.g., as an absolute number or as a percentage
+        /// the interpretation of this number (for example, as an absolute number or as a percentage
         /// of the existing Auto Scaling group size). A positive increment adds to the current
         /// capacity and a negative value removes from the current capacity.
         /// </para>

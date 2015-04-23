@@ -66,6 +66,7 @@
     <Compile Include="Runtime\ErrorHandlerTests.cs" />
     <Compile Include="Runtime\HttpHandlerTests.cs" />
     <Compile Include="Runtime\HttpWebRequestFactoryTests.cs" />
+    <Compile Include="Runtime\MD5Tests.cs" />
     <Compile Include="Runtime\RetryAndErrorHandlerTests.cs" />
     <Compile Include="Runtime\RetryHandlerTests.cs" />
     <Compile Include="Runtime\RuntimePipelineTestBase.cs" />

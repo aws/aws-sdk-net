@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The output for the <a>RegisterInstancesWithLoadBalancer</a> action.
+    /// 
     /// </summary>
     public partial class RegisterInstancesWithLoadBalancerResult : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        ///  An updated list of instances for the load balancer. 
+        /// The updated list of instances for the load balancer.
         /// </para>
         /// </summary>
         public List<Instance> Instances

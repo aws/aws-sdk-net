@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The output for the <a>DescribeTags</a> action.
+    /// 
     /// </summary>
     public partial class DescribeTagsResult : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property TagDescriptions. 
         /// <para>
-        ///  A list of tag description structures. 
+        /// Information about the tags.
         /// </para>
         /// </summary>
         public List<TagDescription> TagDescriptions

@@ -73,7 +73,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="executionContext">The execution context, it contains the
         /// request and response context.</param>
-        protected static void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             var requestContext = executionContext.RequestContext;
             requestContext.Request = requestContext.Marshaller.Marshall(requestContext.OriginalRequest);

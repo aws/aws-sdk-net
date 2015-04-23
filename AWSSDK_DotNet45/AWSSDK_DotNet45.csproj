@@ -333,6 +333,9 @@
     <Compile Include="..\AWSSDK_DotNet35\ThirdParty\Json\*">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\ThirdParty\MD5\*">
+      <Visible>false</Visible>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Auth\AccessControlPolicy\*">

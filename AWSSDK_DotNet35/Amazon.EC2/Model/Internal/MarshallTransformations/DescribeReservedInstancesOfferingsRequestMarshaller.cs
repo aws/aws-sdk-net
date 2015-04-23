@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "DescribeReservedInstancesOfferings");
-            request.Parameters.Add("Version", "2014-10-01");
+            request.Parameters.Add("Version", "2015-03-01");
 
             if(publicRequest != null)
             {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The <code>AccessLog</code> data type.
+    /// Information about the <code>AccessLog</code> attribute.
     /// </summary>
     public partial class AccessLog
     {

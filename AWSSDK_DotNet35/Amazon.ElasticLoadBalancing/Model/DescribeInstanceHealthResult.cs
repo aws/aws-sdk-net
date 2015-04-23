@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The output for the <a>DescribeInstanceHealth</a> action.
+    /// 
     /// </summary>
     public partial class DescribeInstanceHealthResult : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property InstanceStates. 
         /// <para>
-        ///  A list containing health information for the specified instances. 
+        /// Information about the health of the instances.
         /// </para>
         /// </summary>
         public List<InstanceState> InstanceStates

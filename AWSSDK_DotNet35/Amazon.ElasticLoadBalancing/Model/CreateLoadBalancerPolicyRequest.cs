@@ -29,10 +29,14 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLoadBalancerPolicy operation.
-    /// Creates a new policy that contains the necessary attributes depending on the policy
-    /// type. Policies are settings that are saved for your load balancer and that can be
-    /// applied to the front-end listener, or the back-end application server, depending on
-    /// your policy type.
+    /// Creates a policy with the specified attributes for the specified load balancer.
+    /// 
+    ///  
+    /// <para>
+    /// Policies are settings that are saved for your load balancer and that can be applied
+    /// to the front-end listener or the back-end application server, depending on the policy
+    /// type.
+    /// </para>
     /// </summary>
     public partial class CreateLoadBalancerPolicyRequest : AmazonElasticLoadBalancingRequest
     {
@@ -44,8 +48,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  The name associated with the LoadBalancer for which the policy is being created.
-        /// 
+        /// The name of the load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName
@@ -63,7 +66,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyAttributes. 
         /// <para>
-        ///  A list of attributes associated with the policy being created. 
+        /// The attributes for the policy.
         /// </para>
         /// </summary>
         public List<PolicyAttribute> PolicyAttributes
@@ -81,8 +84,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        ///  The name of the load balancer policy being created. The name must be unique within
-        /// the set of policies for this load balancer. 
+        /// The name of the load balancer policy to be created. This name must be unique within
+        /// the set of policies for this load balancer.
         /// </para>
         /// </summary>
         public string PolicyName
@@ -100,8 +103,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyTypeName. 
         /// <para>
-        ///  The name of the base policy type being used to create this policy. To get the list
-        /// of policy types, use the <a>DescribeLoadBalancerPolicyTypes</a> action. 
+        /// The name of the base policy type. To get the list of policy types, use <a>DescribeLoadBalancerPolicyTypes</a>.
         /// </para>
         /// </summary>
         public string PolicyTypeName

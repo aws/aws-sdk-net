@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of <a>DescribeLoadBalancers</a>.
+    /// Information about a load balancer.
     /// </summary>
     public partial class LoadBalancerDescription
     {
@@ -57,7 +57,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        ///  Specifies a list of Availability Zones. 
+        /// The Availability Zones for the load balancer.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -75,7 +75,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property BackendServerDescriptions. 
         /// <para>
-        ///  Contains a list of back-end server descriptions. 
+        /// Information about the back-end servers.
         /// </para>
         /// </summary>
         public List<BackendServerDescription> BackendServerDescriptions
@@ -93,11 +93,13 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property CanonicalHostedZoneName. 
         /// <para>
-        ///  Provides the name of the Amazon Route 53 hosted zone that is associated with the
-        /// load balancer. For information on how to associate your load balancer with a hosted
-        /// zone, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+        /// The Amazon Route 53 hosted zone associated with the load balancer.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
         /// Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer
-        /// Guide</i>. 
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public string CanonicalHostedZoneName
@@ -115,11 +117,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property CanonicalHostedZoneNameID. 
         /// <para>
-        ///  Provides the ID of the Amazon Route 53 hosted zone name that is associated with the
-        /// load balancer. For information on how to associate or disassociate your load balancer
-        /// with a hosted zone, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
-        /// Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer
-        /// Guide</i>. 
+        /// The ID of the Amazon Route 53 hosted zone name associated with the load balancer.
         /// </para>
         /// </summary>
         public string CanonicalHostedZoneNameID
@@ -137,7 +135,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        ///  Provides the date and time the load balancer was created. 
+        /// The date and time the load balancer was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -155,7 +153,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property DNSName. 
         /// <para>
-        ///  Specifies the external DNS name associated with the load balancer. 
+        /// The external DNS name of the load balancer.
         /// </para>
         /// </summary>
         public string DNSName
@@ -173,8 +171,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property HealthCheck. 
         /// <para>
-        ///  Specifies information regarding the various health probes conducted on the load balancer.
-        /// 
+        /// Information about the health checks conducted on the load balancer.
         /// </para>
         /// </summary>
         public HealthCheck HealthCheck
@@ -192,7 +189,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        ///  Provides a list of EC2 instance IDs for the load balancer. 
+        /// The IDs of the instances for the load balancer.
         /// </para>
         /// </summary>
         public List<Instance> Instances
@@ -210,8 +207,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property ListenerDescriptions. 
         /// <para>
-        ///  LoadBalancerPort, InstancePort, Protocol, InstanceProtocol, and PolicyNames are returned
-        /// in a list of tuples in the ListenerDescriptions element. 
+        /// The listeners for the load balancer.
         /// </para>
         /// </summary>
         public List<ListenerDescription> ListenerDescriptions
@@ -229,7 +225,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  Specifies the name associated with the load balancer. 
+        /// The name of the load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName
@@ -247,7 +243,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Policies. 
         /// <para>
-        ///  Provides a list of policies defined for the load balancer. 
+        /// The policies defined for the load balancer.
         /// </para>
         /// </summary>
         public Policies Policies
@@ -265,21 +261,17 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Scheme. 
         /// <para>
-        /// Specifies the type of load balancer.
+        /// The type of load balancer. Valid only for load balancers in a VPC.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>Scheme</code> is <code>internet-facing</code>, the load balancer has
-        /// a publicly resolvable DNS name that resolves to public IP addresses.
+        /// If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public
+        /// DNS name that resolves to a public IP address.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>Scheme</code> is <code>internal</code>, the load balancer has a publicly
-        /// resolvable DNS name that resolves to private IP addresses.
-        /// </para>
-        ///  
-        /// <para>
-        ///  This option is only available for load balancers attached to an Amazon VPC. 
+        /// If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS
+        /// name that resolves to a private IP address.
         /// </para>
         /// </summary>
         public string Scheme
@@ -297,7 +289,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        ///  The security groups the load balancer is a member of (VPC only). 
+        /// The security groups for the load balancer. Valid only for load balancers in a VPC.
         /// </para>
         /// </summary>
         public List<string> SecurityGroups
@@ -315,10 +307,10 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property SourceSecurityGroup. 
         /// <para>
-        ///  The security group that you can use as part of your inbound rules for your load balancer's
-        /// back-end Amazon EC2 application instances. To only allow traffic from load balancers,
-        /// add a security group rule to your back end instance that specifies this source security
-        /// group as the inbound source. 
+        /// The security group that you can use as part of your inbound rules for your load balancer's
+        /// back-end application instances. To only allow traffic from load balancers, add a security
+        /// group rule to your back end instance that specifies this source security group as
+        /// the inbound source.
         /// </para>
         /// </summary>
         public SourceSecurityGroup SourceSecurityGroup
@@ -336,7 +328,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        ///  Provides a list of VPC subnet IDs for the load balancer. 
+        /// The IDs of the subnets for the load balancer.
         /// </para>
         /// </summary>
         public List<string> Subnets
@@ -354,7 +346,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property VPCId. 
         /// <para>
-        ///  Provides the ID of the VPC attached to the load balancer. 
+        /// The ID of the VPC for the load balancer.
         /// </para>
         /// </summary>
         public string VPCId

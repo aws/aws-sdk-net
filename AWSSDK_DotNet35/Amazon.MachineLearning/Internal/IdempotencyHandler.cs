@@ -68,7 +68,7 @@ namespace Amazon.MachineLearning.Internal
             return base.InvokeAsync(executionContext);
         }
 #endif
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             if (executionContext.RequestContext.OriginalRequest is CreateBatchPredictionRequest)
             {

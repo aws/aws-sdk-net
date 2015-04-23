@@ -53,7 +53,7 @@ namespace Amazon.SQS.Internal
             return base.InvokeAsync(executionContext);
         }
 #endif
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;
             if (request.Parameters.ContainsKey("QueueUrl"))

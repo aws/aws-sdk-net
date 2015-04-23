@@ -31,8 +31,10 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the TerminateInstanceInAutoScalingGroup operation.
     /// Terminates the specified instance and optionally adjusts the desired group size.
     /// 
-    ///  <note>This call simply makes a termination request. The instances is not terminated
-    /// immediately.</note>
+    ///  
+    /// <para>
+    /// This call simply makes a termination request. The instances is not terminated immediately.
+    /// </para>
     /// </summary>
     public partial class TerminateInstanceInAutoScalingGroupRequest : AmazonAutoScalingRequest
     {

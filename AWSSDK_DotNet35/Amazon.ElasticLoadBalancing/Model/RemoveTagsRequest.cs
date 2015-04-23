@@ -57,7 +57,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tag keys to remove.
+        /// The list of tag keys to remove.
         /// </para>
         /// </summary>
         public List<TagKeyOnly> Tags

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -78,7 +78,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// <code>block-device-mapping.device-name</code> - The device name for the Amazon EBS
-        /// volume (for example, <code>/dev/sdh</code>).
+        /// volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -145,7 +145,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance-type</code> - The type of instance (for example, <code>m1.small</code>).
+        /// <code>instance-type</code> - The type of instance (for example, <code>t2.micro</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -239,7 +239,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// <code>root-device-name</code> - The name of the root device for the instance (for
-        /// example, <code>/dev/sda1</code>).
+        /// example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

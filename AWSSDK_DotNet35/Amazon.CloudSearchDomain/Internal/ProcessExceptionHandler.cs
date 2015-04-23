@@ -53,7 +53,7 @@ namespace Amazon.CloudSearchDomain.Internal
 #endif
 
 #if BCL
-        protected void HandleException(IExecutionContext executionContext, Exception exception)
+        protected virtual void HandleException(IExecutionContext executionContext, Exception exception)
         {
             var uploadDocumentsRequest = executionContext.RequestContext.OriginalRequest as UploadDocumentsRequest;
 

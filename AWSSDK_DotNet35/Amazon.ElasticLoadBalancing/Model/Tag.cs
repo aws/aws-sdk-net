@@ -28,13 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Metadata assigned to a load balancer consisting of key-value pair.
-    /// 
-    ///  
-    /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a>
-    /// in the <i>Elastic Load Balancing Developer Guide</i>.
-    /// </para>
+    /// Information about a tag.
     /// </summary>
     public partial class Tag
     {

@@ -29,18 +29,17 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVirtualMFADevice operation.
-    /// Creates a new virtual MFA device for the AWS account. After creating the virtual
-    /// MFA, use <a>EnableMFADevice</a> to attach the MFA device to an IAM user. For more
-    /// information about creating and working with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
+    /// Creates a new virtual MFA device for the AWS account. After creating the virtual MFA,
+    /// use <a>EnableMFADevice</a> to attach the MFA device to an IAM user. For more information
+    /// about creating and working with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
     /// a Virtual MFA Device</a> in the <i>Using IAM</i> guide. 
     /// 
     ///  
     /// <para>
-    ///  For information about limits on the number of MFA devices you can create, see <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+    /// For information about limits on the number of MFA devices you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
     /// on Entities</a> in the <i>Using IAM</i> guide. 
     /// </para>
-    ///  <important> The seed information contained in the QR code and the Base32 string should
+    ///  <important>The seed information contained in the QR code and the Base32 string should
     /// be treated like any other secret access information, such as your AWS access keys
     /// or your passwords. After you provision your virtual device, you should ensure that
     /// the information is destroyed following secure procedures. </important>

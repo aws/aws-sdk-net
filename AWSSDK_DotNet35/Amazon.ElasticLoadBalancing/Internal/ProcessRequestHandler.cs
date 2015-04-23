@@ -68,7 +68,7 @@ namespace Amazon.ElasticLoadBalancing.Internal
         }
 #endif
 
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             var originalRequest = executionContext.RequestContext.OriginalRequest;
             bool shouldSetPolicyNames =

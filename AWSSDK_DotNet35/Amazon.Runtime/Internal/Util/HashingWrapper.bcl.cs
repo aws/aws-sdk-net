@@ -29,7 +29,7 @@ namespace Amazon.Runtime.Internal.Util
 {
     public partial class HashingWrapper : IHashingWrapper
     {
-        private HashAlgorithm _algorithm;
+        private HashAlgorithm _algorithm = null;
         private void Init(string algorithmName)
         {
             _algorithm = HashAlgorithm.Create(algorithmName);
@@ -64,14 +64,23 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         #endregion
-    }
 
-    public class HashingWrapperMD5 : HashingWrapper
-    {
-        private static string md5AlgorithmName = typeof(MD5).FullName;
+        #region Dispose Pattern Implementation
 
-        public HashingWrapperMD5()
-            : base(md5AlgorithmName)
-        { }
+        /// <summary>
+        /// Implements the Dispose pattern
+        /// </summary>
+        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
+        /// or garbage collected.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            var disposable = _algorithm as IDisposable;
+            if (disposing && disposable != null)
+            {
+                disposable.Dispose();
+                _algorithm = null;
+            }
+        }
+        #endregion
     }
 }

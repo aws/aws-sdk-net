@@ -37,9 +37,8 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// To remove all instances before calling <a>DeleteAutoScalingGroup</a>, you can call
-    /// <a>UpdateAutoScalingGroup</a> to set the minimum and maximum size of the AutoScalingGroup
-    /// to zero.
+    /// To remove all instances before calling <code>DeleteAutoScalingGroup</code>, call <a>UpdateAutoScalingGroup</a>
+    /// to set the minimum and maximum size of the Auto Scaling group to zero.
     /// </para>
     /// </summary>
     public partial class DeleteAutoScalingGroupRequest : AmazonAutoScalingRequest

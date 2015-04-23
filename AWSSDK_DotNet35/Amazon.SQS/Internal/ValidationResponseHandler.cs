@@ -56,7 +56,7 @@ namespace Amazon.SQS.Internal
             base.InvokeAsyncCallback(executionContext);
         }
 #endif
-        protected void PostInvoke(IExecutionContext executionContext)
+        protected virtual void PostInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;
             var response = executionContext.ResponseContext.Response;
@@ -234,7 +234,7 @@ namespace Amazon.SQS.Internal
                 ValidateMD5(message.MessageAttributes, message.MessageId, message.MD5OfMessageAttributes);
         }
 
-        public static void ValidateReceiveMessage(ReceiveMessageResponse response)
+        public static void ValidateReceiveMessage(ReceiveMessageResult response)
         {
             if (response != null && response.Messages != null && response.Messages.Count > 0)
             {
@@ -244,7 +244,7 @@ namespace Amazon.SQS.Internal
                 }
             }
         }
-        public static void ValidateSendMessage(SendMessageRequest request, SendMessageResponse response)
+        public static void ValidateSendMessage(SendMessageRequest request, SendMessageResult response)
         {
             if (request != null && response != null && request.MessageBody != null &&
                 !string.IsNullOrEmpty(request.MessageBody) &&
@@ -261,7 +261,7 @@ namespace Amazon.SQS.Internal
             }
 
         }
-        public static void ValidateSendMessageBatch(SendMessageBatchRequest request, SendMessageBatchResponse response)
+        public static void ValidateSendMessageBatch(SendMessageBatchRequest request, SendMessageBatchResult response)
         {
             if (response != null && response.Successful != null && response.Successful.Count > 0)
             {

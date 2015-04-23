@@ -74,12 +74,12 @@ namespace Amazon.S3.Internal
         }
 #endif
 
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             ProcessRequestHandlers(executionContext);
         }
 
-        public void ProcessRequestHandlers(IExecutionContext executionContext)
+        public static void ProcessRequestHandlers(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;
             var config = executionContext.RequestContext.ClientConfig;

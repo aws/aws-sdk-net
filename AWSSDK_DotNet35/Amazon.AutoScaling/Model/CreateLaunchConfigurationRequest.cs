@@ -65,18 +65,18 @@ namespace Amazon.AutoScaling.Model
         /// Used for groups that launch instances into a virtual private cloud (VPC). Specifies
         /// whether to assign a public IP address to each instance. For more information, see
         /// <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
-        /// Scaling and Amazon VPC</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// If you specify a value for this parameter, be sure to specify at least one subnet
         /// using the <i>VPCZoneIdentifier</i> parameter when you create your group. 
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// Default: If the instance is launched into a default subnet, the default is <code>true</code>.
         /// If the instance is launched into a nondefault subnet, the default is <code>false</code>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide//as-supported-platforms.html">Supported
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
         /// Platforms</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -185,10 +185,10 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Amazon EC2 instances launched with an IAM role will automatically have AWS security
-        /// credentials available. You can use IAM roles with Auto Scaling to automatically enable
-        /// applications running on your Amazon EC2 instances to securely access other AWS resources.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launch
+        /// EC2 instances launched with an IAM role will automatically have AWS security credentials
+        /// available. You can use IAM roles with Auto Scaling to automatically enable applications
+        /// running on your EC2 instances to securely access other AWS resources. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launch
         /// Auto Scaling Instances with an IAM Role</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -265,9 +265,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// When detailed monitoring is enabled, Amazon Cloudwatch generates metrics every minute
+        /// When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute
         /// and your account is charged a fee. When you disable detailed monitoring, by specifying
-        /// <code>False</code>, Cloudwatch generates metrics every 5 minutes. For more information,
+        /// <code>False</code>, CloudWatch generates metrics every 5 minutes. For more information,
         /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitor
         /// Your Auto Scaling Instances</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
@@ -287,8 +287,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        ///  The instance type of the Amazon EC2 instance. For information about available Amazon
-        /// EC2 instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
+        ///  The instance type of the EC2 instance. For information about available instance types,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
         /// Available Instance Types</a> in the <i>Amazon Elastic Cloud Compute User Guide.</i>
         /// 
         /// </para>
@@ -308,7 +308,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property KernelId. 
         /// <para>
-        ///  The ID of the kernel associated with the Amazon EC2 AMI. 
+        ///  The ID of the kernel associated with the AMI. 
         /// </para>
         /// </summary>
         public string KernelId
@@ -365,23 +365,24 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property PlacementTenancy. 
         /// <para>
         /// The tenancy of the instance. An instance with a tenancy of <code>dedicated</code>
-        /// runs on single-tenant hardware and can only be launched in a VPC.
+        /// runs on single-tenant hardware and can only be launched into a VPC.
         /// </para>
         ///  
         /// <para>
         /// You must set the value of this parameter to <code>dedicated</code> if want to launch
-        /// Dedicated Instances in a shared tenancy VPC (VPC with instance placement tenancy attribute
-        /// set to <code>default</code>).
+        /// Dedicated Instances into a shared tenancy VPC (VPC with instance placement tenancy
+        /// attribute set to <code>default</code>).
         /// </para>
         ///  
         /// <para>
-        /// If you specify a value for this parameter, be sure to specify at least one VPC subnet
-        /// using the <i>VPCZoneIdentifier</i> parameter when you create your group. 
+        /// If you specify a value for this parameter, be sure to specify at least one subnet
+        /// using the <i>VPCZoneIdentifier</i> parameter when you create your group.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
-        /// Scaling and Amazon VPC</a> in the <i>Auto Scaling Developer Guide</i>. 
+        /// Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -403,7 +404,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property RamdiskId. 
         /// <para>
-        ///  The ID of the RAM disk associated with the Amazon EC2 AMI. 
+        ///  The ID of the RAM disk associated with the AMI. 
         /// </para>
         /// </summary>
         public string RamdiskId
@@ -432,7 +433,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// If your instances are launched in a VPC, specify security group IDs. For more information,
+        /// If your instances are launched into a VPC, specify security group IDs. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
         /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
@@ -477,8 +478,10 @@ namespace Amazon.AutoScaling.Model
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
         /// Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
-        ///  <note>At this time, launch configurations don't support compressed (zipped) user
-        /// data files.</note>
+        ///  
+        /// <para>
+        /// At this time, launch configurations don't support compressed (zipped) user data files.
+        /// </para>
         /// </summary>
         public string UserData
         {

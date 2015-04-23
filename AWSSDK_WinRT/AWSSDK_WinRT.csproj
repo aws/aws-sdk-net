@@ -336,7 +336,7 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Transform\*" Exclude="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Transform\HttpWebRequestResponseData.cs">
       <Visible>false</Visible>
     </Compile>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\*" Exclude="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\Logger.Diagnostic.cs;..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\HashingWrapper.bcl.cs;..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\DecryptionWrapper.cs;..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\DecryptStream.cs;..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\EncryptionWrapper.cs;..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\EncryptStream.cs;..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\EncryptUploadPartStream.cs;..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\IDecryptionWrapper.cs;..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\IEncryptionWrapper.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\*" Exclude="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\Logger.Diagnostic.cs;..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\HashingWrapper.bcl.cs;..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\HashingWrapperMD5.bcl.cs;..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\DecryptionWrapper.cs;..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\DecryptStream.cs;..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\EncryptionWrapper.cs;..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\EncryptStream.cs;..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\EncryptUploadPartStream.cs;..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\IDecryptionWrapper.cs;..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Util\IEncryptionWrapper.cs">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>

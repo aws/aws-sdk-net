@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The output for the <a>DisableAvailabilityZonesForLoadBalancer</a> action.
+    /// 
     /// </summary>
     public partial class DisableAvailabilityZonesForLoadBalancerResult : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        ///  A list of updated Availability Zones for the load balancer. 
+        /// The remaining Availability Zones for the load balancer.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones

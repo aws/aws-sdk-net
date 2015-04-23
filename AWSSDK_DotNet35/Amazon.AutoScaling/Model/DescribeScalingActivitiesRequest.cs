@@ -33,13 +33,6 @@ namespace Amazon.AutoScaling.Model
     /// you omit the <code>ActivityIds</code>, the call returns all activities from the past
     /// six weeks. Activities are sorted by the start time. Activities still in progress appear
     /// first on the list.
-    /// 
-    ///  
-    /// <para>
-    /// You can specify a maximum number of items to be returned with a single call. If there
-    /// are more items to return, the call returns a token. To get the next set of items,
-    /// repeat the call with the returned token in the <code>NextToken</code> parameter.
-    /// </para>
     /// </summary>
     public partial class DescribeScalingActivitiesRequest : AmazonAutoScalingRequest
     {

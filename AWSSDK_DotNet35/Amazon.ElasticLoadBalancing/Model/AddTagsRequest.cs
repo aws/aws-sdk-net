@@ -29,13 +29,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the AddTags operation.
-    /// Adds one or more tags for the specified load balancer. Each load balancer can have
-    /// a maximum of 10 tags. Each tag consists of a key and an optional value.
+    /// Adds the specified tags to the specified load balancer. Each load balancer can have
+    /// a maximum of 10 tags.
     /// 
     ///  
     /// <para>
-    /// Tag keys must be unique for each load balancer. If a tag with the same key is already
-    /// associated with the load balancer, this action will update the value of the key.
+    /// Each tag consists of a key and an optional value. If a tag with the same key is already
+    /// associated with the load balancer, <code>AddTags</code> updates its value.
     /// </para>
     ///  
     /// <para>
@@ -51,8 +51,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerNames. 
         /// <para>
-        /// The name of the load balancer to tag. You can specify a maximum of one load balancer
-        /// name.
+        /// The name of the load balancer. You can specify one load balancer only.
         /// </para>
         /// </summary>
         public List<string> LoadBalancerNames
@@ -70,7 +69,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags for each load balancer.
+        /// The tags.
         /// </para>
         /// </summary>
         public List<Tag> Tags

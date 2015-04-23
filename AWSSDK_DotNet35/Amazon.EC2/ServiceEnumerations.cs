@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
  */
 
 using System;
@@ -834,6 +834,10 @@ namespace Amazon.EC2
         /// Constant Ramdisk for ImageAttributeName
         /// </summary>
         public static readonly ImageAttributeName Ramdisk = new ImageAttributeName("ramdisk");
+        /// <summary>
+        /// Constant SriovNetSupport for ImageAttributeName
+        /// </summary>
+        public static readonly ImageAttributeName SriovNetSupport = new ImageAttributeName("sriovNetSupport");
 
         /// <summary>
         /// Default Constructor
@@ -1446,6 +1450,10 @@ namespace Amazon.EC2
         /// Constant Disabled for MonitoringState
         /// </summary>
         public static readonly MonitoringState Disabled = new MonitoringState("disabled");
+        /// <summary>
+        /// Constant Disabling for MonitoringState
+        /// </summary>
+        public static readonly MonitoringState Disabling = new MonitoringState("disabling");
         /// <summary>
         /// Constant Enabled for MonitoringState
         /// </summary>
