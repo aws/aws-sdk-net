@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE;;BCL;BCL45;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <NoWarn>419,1570,1591</NoWarn>
     <DocumentationFile>bin\Debug\net45\AWSSDK.Core.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,6 +33,7 @@
     <DefineConstants>TRACE;;BCL;BCL45;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <NoWarn>419,1570,1591</NoWarn>
     <DocumentationFile>bin\Release\net45\AWSSDK.Core.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>

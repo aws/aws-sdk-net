@@ -27,6 +27,7 @@
     <DefineConstants>DEBUG;TRACE;<#=this.Session["DefineConstants"]#></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <NoWarn>419,1570,1591</NoWarn>
     <DocumentationFile>bin\Debug\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -36,6 +37,7 @@
     <DefineConstants>TRACE;<#=this.Session["DefineConstants"]#></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <NoWarn>419,1570,1591</NoWarn>
     <DocumentationFile>bin\Release\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
