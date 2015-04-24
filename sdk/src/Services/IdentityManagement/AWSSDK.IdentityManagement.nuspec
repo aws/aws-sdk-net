@@ -22,15 +22,18 @@
   </metadata> 
   <files>
     <file src=".\bin\Release\net35\AWSSDK.IdentityManagement.dll" target="lib\net35" />
-    <file src=".\bin\Release\net35\AWSSDK.IdentityManagement.pdb" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.IdentityManagement.xml" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.IdentityManagement.dll" target="lib\net45" />
-    <file src=".\bin\Release\net45\AWSSDK.IdentityManagement.pdb" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.IdentityManagement.xml" target="lib\net45" />
     
     <file src=".\bin\Release\portable\AWSSDK.IdentityManagement.dll" target="lib\portable-wpa+netcore45" />
+    <file src=".\bin\Release\portable\AWSSDK.IdentityManagement.xml" target="lib\portable-wpa+netcore45" />
 
     <file src=".\bin\Release\winrt\AWSSDK.IdentityManagement.dll" target="lib\windows8" />
+    <file src=".\bin\Release\winrt\AWSSDK.IdentityManagement.xml" target="lib\windows8" />
 
     <file src=".\bin\Release\wp8\AWSSDK.IdentityManagement.dll" target="lib\windowsphone8" />
+    <file src=".\bin\Release\wp8\AWSSDK.IdentityManagement.xml" target="lib\windowsphone8" />
   </files>
 </package>

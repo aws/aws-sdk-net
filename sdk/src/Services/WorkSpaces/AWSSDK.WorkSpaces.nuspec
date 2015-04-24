@@ -22,15 +22,18 @@
   </metadata> 
   <files>
     <file src=".\bin\Release\net35\AWSSDK.WorkSpaces.dll" target="lib\net35" />
-    <file src=".\bin\Release\net35\AWSSDK.WorkSpaces.pdb" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.WorkSpaces.xml" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.WorkSpaces.dll" target="lib\net45" />
-    <file src=".\bin\Release\net45\AWSSDK.WorkSpaces.pdb" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.WorkSpaces.xml" target="lib\net45" />
     
     <file src=".\bin\Release\portable\AWSSDK.WorkSpaces.dll" target="lib\portable-wpa+netcore45" />
+    <file src=".\bin\Release\portable\AWSSDK.WorkSpaces.xml" target="lib\portable-wpa+netcore45" />
 
     <file src=".\bin\Release\winrt\AWSSDK.WorkSpaces.dll" target="lib\windows8" />
+    <file src=".\bin\Release\winrt\AWSSDK.WorkSpaces.xml" target="lib\windows8" />
 
     <file src=".\bin\Release\wp8\AWSSDK.WorkSpaces.dll" target="lib\windowsphone8" />
+    <file src=".\bin\Release\wp8\AWSSDK.WorkSpaces.xml" target="lib\windowsphone8" />
   </files>
 </package>

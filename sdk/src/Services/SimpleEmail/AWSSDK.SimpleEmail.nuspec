@@ -22,15 +22,18 @@
   </metadata> 
   <files>
     <file src=".\bin\Release\net35\AWSSDK.SimpleEmail.dll" target="lib\net35" />
-    <file src=".\bin\Release\net35\AWSSDK.SimpleEmail.pdb" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.SimpleEmail.xml" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.SimpleEmail.dll" target="lib\net45" />
-    <file src=".\bin\Release\net45\AWSSDK.SimpleEmail.pdb" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.SimpleEmail.xml" target="lib\net45" />
     
     <file src=".\bin\Release\portable\AWSSDK.SimpleEmail.dll" target="lib\portable-wpa+netcore45" />
+    <file src=".\bin\Release\portable\AWSSDK.SimpleEmail.xml" target="lib\portable-wpa+netcore45" />
 
     <file src=".\bin\Release\winrt\AWSSDK.SimpleEmail.dll" target="lib\windows8" />
+    <file src=".\bin\Release\winrt\AWSSDK.SimpleEmail.xml" target="lib\windows8" />
 
     <file src=".\bin\Release\wp8\AWSSDK.SimpleEmail.dll" target="lib\windowsphone8" />
+    <file src=".\bin\Release\wp8\AWSSDK.SimpleEmail.xml" target="lib\windowsphone8" />
   </files>
 </package>

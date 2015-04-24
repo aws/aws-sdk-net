@@ -22,15 +22,18 @@
   </metadata> 
   <files>
     <file src=".\bin\Release\net35\AWSSDK.ElasticTranscoder.dll" target="lib\net35" />
-    <file src=".\bin\Release\net35\AWSSDK.ElasticTranscoder.pdb" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.ElasticTranscoder.xml" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.ElasticTranscoder.dll" target="lib\net45" />
-    <file src=".\bin\Release\net45\AWSSDK.ElasticTranscoder.pdb" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.ElasticTranscoder.xml" target="lib\net45" />
     
     <file src=".\bin\Release\portable\AWSSDK.ElasticTranscoder.dll" target="lib\portable-wpa+netcore45" />
+    <file src=".\bin\Release\portable\AWSSDK.ElasticTranscoder.xml" target="lib\portable-wpa+netcore45" />
 
     <file src=".\bin\Release\winrt\AWSSDK.ElasticTranscoder.dll" target="lib\windows8" />
+    <file src=".\bin\Release\winrt\AWSSDK.ElasticTranscoder.xml" target="lib\windows8" />
 
     <file src=".\bin\Release\wp8\AWSSDK.ElasticTranscoder.dll" target="lib\windowsphone8" />
+    <file src=".\bin\Release\wp8\AWSSDK.ElasticTranscoder.xml" target="lib\windowsphone8" />
   </files>
 </package>

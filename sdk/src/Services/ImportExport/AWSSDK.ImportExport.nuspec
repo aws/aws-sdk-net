@@ -22,15 +22,18 @@
   </metadata> 
   <files>
     <file src=".\bin\Release\net35\AWSSDK.ImportExport.dll" target="lib\net35" />
-    <file src=".\bin\Release\net35\AWSSDK.ImportExport.pdb" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.ImportExport.xml" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.ImportExport.dll" target="lib\net45" />
-    <file src=".\bin\Release\net45\AWSSDK.ImportExport.pdb" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.ImportExport.xml" target="lib\net45" />
     
     <file src=".\bin\Release\portable\AWSSDK.ImportExport.dll" target="lib\portable-wpa+netcore45" />
+    <file src=".\bin\Release\portable\AWSSDK.ImportExport.xml" target="lib\portable-wpa+netcore45" />
 
     <file src=".\bin\Release\winrt\AWSSDK.ImportExport.dll" target="lib\windows8" />
+    <file src=".\bin\Release\winrt\AWSSDK.ImportExport.xml" target="lib\windows8" />
 
     <file src=".\bin\Release\wp8\AWSSDK.ImportExport.dll" target="lib\windowsphone8" />
+    <file src=".\bin\Release\wp8\AWSSDK.ImportExport.xml" target="lib\windowsphone8" />
   </files>
 </package>

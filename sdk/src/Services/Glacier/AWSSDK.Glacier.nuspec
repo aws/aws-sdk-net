@@ -24,15 +24,18 @@
   </metadata> 
   <files>
     <file src=".\bin\Release\net35\AWSSDK.Glacier.dll" target="lib\net35" />
-    <file src=".\bin\Release\net35\AWSSDK.Glacier.pdb" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.Glacier.xml" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.Glacier.dll" target="lib\net45" />
-    <file src=".\bin\Release\net45\AWSSDK.Glacier.pdb" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.Glacier.xml" target="lib\net45" />
     
     <file src=".\bin\Release\portable\AWSSDK.Glacier.dll" target="lib\portable-wpa+netcore45" />
+    <file src=".\bin\Release\portable\AWSSDK.Glacier.xml" target="lib\portable-wpa+netcore45" />
 
     <file src=".\bin\Release\winrt\AWSSDK.Glacier.dll" target="lib\windows8" />
+    <file src=".\bin\Release\winrt\AWSSDK.Glacier.xml" target="lib\windows8" />
 
     <file src=".\bin\Release\wp8\AWSSDK.Glacier.dll" target="lib\windowsphone8" />
+    <file src=".\bin\Release\wp8\AWSSDK.Glacier.xml" target="lib\windowsphone8" />
   </files>
 </package>

@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+    #line 1 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class CoreNuspec : CoreNuspecBase
     {
@@ -32,7 +32,7 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "DK.Core</id>\r\n    <title>The Amazon Web Services SDK for .NET - Core Runtime</ti" +
                     "tle>\r\n    <version>");
             
-            #line 12 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 12 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["Version"]));
             
             #line default
@@ -55,16 +55,19 @@ namespace ServiceClientGenerator.Generators.NuGet
   </metadata> 
   <files>
     <file src="".\bin\Release\net35\AWSSDK.Core.dll"" target=""lib\net35"" />
-    <file src="".\bin\Release\net35\AWSSDK.Core.pdb"" target=""lib\net35"" />
+    <file src="".\bin\Release\net35\AWSSDK.Core.xml"" target=""lib\net35"" />
 
     <file src="".\bin\Release\net45\AWSSDK.Core.dll"" target=""lib\net45"" />
-    <file src="".\bin\Release\net45\AWSSDK.Core.pdb"" target=""lib\net45"" />
+    <file src="".\bin\Release\net45\AWSSDK.Core.xml"" target=""lib\net45"" />
 	
 	<file src="".\bin\Release\portable\AWSSDK.Core.dll"" target=""lib\portable-wpa+netcore45"" />
+	<file src="".\bin\Release\portable\AWSSDK.Core.xml"" target=""lib\portable-wpa+netcore45"" />
 
     <file src="".\bin\Release\winrt\AWSSDK.Core.dll"" target=""lib\windows8"" />
+    <file src="".\bin\Release\winrt\AWSSDK.Core.xml"" target=""lib\windows8"" />
 
     <file src="".\bin\Release\wp8\AWSSDK.Core.dll"" target=""lib\windowsphone8"" />
+    <file src="".\bin\Release\wp8\AWSSDK.Core.xml"" target=""lib\windowsphone8"" />
   </files>
 </package>");
             return this.GenerationEnvironment.ToString();

@@ -22,15 +22,18 @@
   </metadata> 
   <files>
     <file src=".\bin\Release\net35\AWSSDK.ECS.dll" target="lib\net35" />
-    <file src=".\bin\Release\net35\AWSSDK.ECS.pdb" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.ECS.xml" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.ECS.dll" target="lib\net45" />
-    <file src=".\bin\Release\net45\AWSSDK.ECS.pdb" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.ECS.xml" target="lib\net45" />
     
     <file src=".\bin\Release\portable\AWSSDK.ECS.dll" target="lib\portable-wpa+netcore45" />
+    <file src=".\bin\Release\portable\AWSSDK.ECS.xml" target="lib\portable-wpa+netcore45" />
 
     <file src=".\bin\Release\winrt\AWSSDK.ECS.dll" target="lib\windows8" />
+    <file src=".\bin\Release\winrt\AWSSDK.ECS.xml" target="lib\windows8" />
 
     <file src=".\bin\Release\wp8\AWSSDK.ECS.dll" target="lib\windowsphone8" />
+    <file src=".\bin\Release\wp8\AWSSDK.ECS.xml" target="lib\windowsphone8" />
   </files>
 </package>

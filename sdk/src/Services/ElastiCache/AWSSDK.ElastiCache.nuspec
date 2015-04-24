@@ -22,15 +22,18 @@
   </metadata> 
   <files>
     <file src=".\bin\Release\net35\AWSSDK.ElastiCache.dll" target="lib\net35" />
-    <file src=".\bin\Release\net35\AWSSDK.ElastiCache.pdb" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.ElastiCache.xml" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.ElastiCache.dll" target="lib\net45" />
-    <file src=".\bin\Release\net45\AWSSDK.ElastiCache.pdb" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.ElastiCache.xml" target="lib\net45" />
     
     <file src=".\bin\Release\portable\AWSSDK.ElastiCache.dll" target="lib\portable-wpa+netcore45" />
+    <file src=".\bin\Release\portable\AWSSDK.ElastiCache.xml" target="lib\portable-wpa+netcore45" />
 
     <file src=".\bin\Release\winrt\AWSSDK.ElastiCache.dll" target="lib\windows8" />
+    <file src=".\bin\Release\winrt\AWSSDK.ElastiCache.xml" target="lib\windows8" />
 
     <file src=".\bin\Release\wp8\AWSSDK.ElastiCache.dll" target="lib\windowsphone8" />
+    <file src=".\bin\Release\wp8\AWSSDK.ElastiCache.xml" target="lib\windowsphone8" />
   </files>
 </package>

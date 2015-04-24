@@ -22,15 +22,18 @@
   </metadata> 
   <files>
     <file src=".\bin\Release\net35\AWSSDK.Route53Domains.dll" target="lib\net35" />
-    <file src=".\bin\Release\net35\AWSSDK.Route53Domains.pdb" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.Route53Domains.xml" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.Route53Domains.dll" target="lib\net45" />
-    <file src=".\bin\Release\net45\AWSSDK.Route53Domains.pdb" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.Route53Domains.xml" target="lib\net45" />
     
     <file src=".\bin\Release\portable\AWSSDK.Route53Domains.dll" target="lib\portable-wpa+netcore45" />
+    <file src=".\bin\Release\portable\AWSSDK.Route53Domains.xml" target="lib\portable-wpa+netcore45" />
 
     <file src=".\bin\Release\winrt\AWSSDK.Route53Domains.dll" target="lib\windows8" />
+    <file src=".\bin\Release\winrt\AWSSDK.Route53Domains.xml" target="lib\windows8" />
 
     <file src=".\bin\Release\wp8\AWSSDK.Route53Domains.dll" target="lib\windowsphone8" />
+    <file src=".\bin\Release\wp8\AWSSDK.Route53Domains.xml" target="lib\windowsphone8" />
   </files>
 </package>

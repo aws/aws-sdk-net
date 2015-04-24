@@ -34,15 +34,18 @@
   </metadata> 
   <files>
     <file src=".\bin\Release\net35\\<#=this.Session["AssemblyName"]#>.dll" target="lib\net35" />
-    <file src=".\bin\Release\net35\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\net35" />
+    <file src=".\bin\Release\net35\\<#=this.Session["AssemblyName"]#>.xml" target="lib\net35" />
 
     <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.dll" target="lib\net45" />
-    <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\net45" />
+    <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.xml" target="lib\net45" />
 	
 	<file src=".\bin\Release\portable\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-wpa+netcore45" />
+	<file src=".\bin\Release\portable\\<#=this.Session["AssemblyName"]#>.xml" target="lib\portable-wpa+netcore45" />
 
     <file src=".\bin\Release\winrt\\<#=this.Session["AssemblyName"]#>.dll" target="lib\windows8" />
+    <file src=".\bin\Release\winrt\\<#=this.Session["AssemblyName"]#>.xml" target="lib\windows8" />
 
     <file src=".\bin\Release\wp8\\<#=this.Session["AssemblyName"]#>.dll" target="lib\windowsphone8" />
+    <file src=".\bin\Release\wp8\\<#=this.Session["AssemblyName"]#>.xml" target="lib\windowsphone8" />
   </files>
 </package>

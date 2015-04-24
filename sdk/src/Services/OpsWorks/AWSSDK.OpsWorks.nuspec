@@ -22,15 +22,18 @@
   </metadata> 
   <files>
     <file src=".\bin\Release\net35\AWSSDK.OpsWorks.dll" target="lib\net35" />
-    <file src=".\bin\Release\net35\AWSSDK.OpsWorks.pdb" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.OpsWorks.xml" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.OpsWorks.dll" target="lib\net45" />
-    <file src=".\bin\Release\net45\AWSSDK.OpsWorks.pdb" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.OpsWorks.xml" target="lib\net45" />
     
     <file src=".\bin\Release\portable\AWSSDK.OpsWorks.dll" target="lib\portable-wpa+netcore45" />
+    <file src=".\bin\Release\portable\AWSSDK.OpsWorks.xml" target="lib\portable-wpa+netcore45" />
 
     <file src=".\bin\Release\winrt\AWSSDK.OpsWorks.dll" target="lib\windows8" />
+    <file src=".\bin\Release\winrt\AWSSDK.OpsWorks.xml" target="lib\windows8" />
 
     <file src=".\bin\Release\wp8\AWSSDK.OpsWorks.dll" target="lib\windowsphone8" />
+    <file src=".\bin\Release\wp8\AWSSDK.OpsWorks.xml" target="lib\windowsphone8" />
   </files>
 </package>
