@@ -23,7 +23,6 @@
     <DefineConstants>DEBUG;TRACE;;BCL;BCL35;AWS_APM_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <NoWarn>419,1570,1591</NoWarn>
     <DocumentationFile>bin\Debug\net35\AWSSDK.Core.XML</DocumentationFile>
     <NoWarn>419,1570,1591</NoWarn>
   </PropertyGroup>
@@ -34,7 +33,6 @@
     <DefineConstants>TRACE;;BCL;BCL35;AWS_APM_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <NoWarn>419,1570,1591</NoWarn>
     <DocumentationFile>bin\Release\net35\AWSSDK.Core.XML</DocumentationFile>
     <NoWarn>419,1570,1591</NoWarn>
   </PropertyGroup>
