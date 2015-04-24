@@ -36,6 +36,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// </summary>  
     public class AutoScalingGroupUnmarshaller : IUnmarshaller<AutoScalingGroup, XmlUnmarshallerContext>, IUnmarshaller<AutoScalingGroup, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AutoScalingGroup Unmarshall(XmlUnmarshallerContext context)
         {
             AutoScalingGroup unmarshalledObject = new AutoScalingGroup();
@@ -65,6 +70,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AutoScalingGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -73,6 +83,9 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
         private static AutoScalingGroupUnmarshaller _instance = new AutoScalingGroupUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static AutoScalingGroupUnmarshaller Instance
         {
             get

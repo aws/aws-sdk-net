@@ -38,11 +38,21 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
     /// </summary>  
     public class MLModelUnmarshaller : IUnmarshaller<MLModel, XmlUnmarshallerContext>, IUnmarshaller<MLModel, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         MLModel IUnmarshaller<MLModel, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public MLModel Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -158,6 +168,9 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 
         private static MLModelUnmarshaller _instance = new MLModelUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static MLModelUnmarshaller Instance
         {
             get

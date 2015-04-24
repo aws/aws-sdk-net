@@ -37,11 +37,21 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
     /// </summary>       
     public class DescribeServicesRequestMarshaller : IMarshaller<IRequest, DescribeServicesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((DescribeServicesRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(DescribeServicesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECS");

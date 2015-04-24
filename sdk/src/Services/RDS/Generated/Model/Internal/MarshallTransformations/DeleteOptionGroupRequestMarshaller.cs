@@ -35,11 +35,21 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// </summary>       
     public class DeleteOptionGroupRequestMarshaller : IMarshaller<IRequest, DeleteOptionGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((DeleteOptionGroupRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(DeleteOptionGroupRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");

@@ -38,11 +38,21 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
     /// </summary>  
     public class RelationshipUnmarshaller : IUnmarshaller<Relationship, XmlUnmarshallerContext>, IUnmarshaller<Relationship, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         Relationship IUnmarshaller<Relationship, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Relationship Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -80,6 +90,9 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         private static RelationshipUnmarshaller _instance = new RelationshipUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static RelationshipUnmarshaller Instance
         {
             get

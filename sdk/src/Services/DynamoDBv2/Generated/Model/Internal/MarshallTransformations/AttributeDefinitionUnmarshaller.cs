@@ -38,11 +38,21 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class AttributeDefinitionUnmarshaller : IUnmarshaller<AttributeDefinition, XmlUnmarshallerContext>, IUnmarshaller<AttributeDefinition, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         AttributeDefinition IUnmarshaller<AttributeDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AttributeDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -74,6 +84,9 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         private static AttributeDefinitionUnmarshaller _instance = new AttributeDefinitionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static AttributeDefinitionUnmarshaller Instance
         {
             get

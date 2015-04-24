@@ -40,11 +40,28 @@ namespace Amazon.DynamoDBv2.DataModel
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, Inherited=true, AllowMultiple=false)]
     public sealed class DynamoDBTableAttribute : DynamoDBAttribute
     {
+        /// <summary>
+        /// Gets and sets the TableName property.
+        /// </summary>
         public string TableName { get; set; }
+
+        /// <summary>
+        /// Gets and sets the LowerCamelCaseProperties property.
+        /// </summary>
         public bool LowerCamelCaseProperties { get; set; }
 
+        /// <summary>
+        /// Construct an instance of DynamoDBTableAttribute
+        /// </summary>
+        /// <param name="tableName"></param>
         public DynamoDBTableAttribute(string tableName)
             : this(tableName, false) { }
+
+        /// <summary>
+        /// Construct an instance of DynamoDBTableAttribute
+        /// </summary>
+        /// <param name="tableName"></param>
+        /// <param name="lowerCamelCaseProperties"></param>
         public DynamoDBTableAttribute(string tableName, bool lowerCamelCaseProperties)
         {
             TableName = tableName;

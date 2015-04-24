@@ -38,11 +38,21 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// </summary>  
     public class StepStatusUnmarshaller : IUnmarshaller<StepStatus, XmlUnmarshallerContext>, IUnmarshaller<StepStatus, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         StepStatus IUnmarshaller<StepStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public StepStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -80,6 +90,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         private static StepStatusUnmarshaller _instance = new StepStatusUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static StepStatusUnmarshaller Instance
         {
             get

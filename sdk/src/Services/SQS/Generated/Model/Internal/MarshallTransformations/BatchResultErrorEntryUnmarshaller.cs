@@ -36,6 +36,11 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class BatchResultErrorEntryUnmarshaller : IUnmarshaller<BatchResultErrorEntry, XmlUnmarshallerContext>, IUnmarshaller<BatchResultErrorEntry, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public BatchResultErrorEntry Unmarshall(XmlUnmarshallerContext context)
         {
             BatchResultErrorEntry unmarshalledObject = new BatchResultErrorEntry();
@@ -83,6 +88,11 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public BatchResultErrorEntry Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -91,6 +101,9 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
 
         private static BatchResultErrorEntryUnmarshaller _instance = new BatchResultErrorEntryUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static BatchResultErrorEntryUnmarshaller Instance
         {
             get

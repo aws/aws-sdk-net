@@ -37,6 +37,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// </summary>       
     public class S3LocationMarshaller : IRequestMarshaller<S3Location, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(S3Location requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetBucket())
@@ -71,6 +77,9 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static S3LocationMarshaller Instance = new S3LocationMarshaller();
 
     }

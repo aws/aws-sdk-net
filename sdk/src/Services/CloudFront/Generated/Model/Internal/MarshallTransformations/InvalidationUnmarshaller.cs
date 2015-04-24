@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class InvalidationUnmarshaller : IUnmarshaller<Invalidation, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Invalidation Unmarshall(XmlUnmarshallerContext context)
         {
             Invalidation unmarshalledObject = new Invalidation();
@@ -85,6 +90,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static InvalidationUnmarshaller _instance = new InvalidationUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static InvalidationUnmarshaller Instance
         {
             get

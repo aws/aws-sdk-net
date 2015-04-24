@@ -28,6 +28,9 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class UpdateStackRequest : AmazonCloudFormationRequest
     {
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public UpdateStackRequest()
         {
             this._notificationARNs = new AutoConstructedList<string>();

@@ -38,11 +38,21 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class GlobalSecondaryIndexDescriptionUnmarshaller : IUnmarshaller<GlobalSecondaryIndexDescription, XmlUnmarshallerContext>, IUnmarshaller<GlobalSecondaryIndexDescription, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         GlobalSecondaryIndexDescription IUnmarshaller<GlobalSecondaryIndexDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public GlobalSecondaryIndexDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -110,6 +120,9 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         private static GlobalSecondaryIndexDescriptionUnmarshaller _instance = new GlobalSecondaryIndexDescriptionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static GlobalSecondaryIndexDescriptionUnmarshaller Instance
         {
             get

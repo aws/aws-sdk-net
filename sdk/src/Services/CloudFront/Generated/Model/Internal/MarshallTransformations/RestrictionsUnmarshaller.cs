@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class RestrictionsUnmarshaller : IUnmarshaller<Restrictions, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Restrictions Unmarshall(XmlUnmarshallerContext context)
         {
             Restrictions unmarshalledObject = new Restrictions();
@@ -67,6 +72,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static RestrictionsUnmarshaller _instance = new RestrictionsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static RestrictionsUnmarshaller Instance
         {
             get

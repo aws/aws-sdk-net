@@ -38,11 +38,21 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class TableDescriptionUnmarshaller : IUnmarshaller<TableDescription, XmlUnmarshallerContext>, IUnmarshaller<TableDescription, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         TableDescription IUnmarshaller<TableDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public TableDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -122,6 +132,9 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         private static TableDescriptionUnmarshaller _instance = new TableDescriptionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static TableDescriptionUnmarshaller Instance
         {
             get

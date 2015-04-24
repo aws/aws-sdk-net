@@ -38,11 +38,21 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// </summary>  
     public class StackUnmarshaller : IUnmarshaller<Stack, XmlUnmarshallerContext>, IUnmarshaller<Stack, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         Stack IUnmarshaller<Stack, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Stack Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -188,6 +198,9 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         private static StackUnmarshaller _instance = new StackUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static StackUnmarshaller Instance
         {
             get

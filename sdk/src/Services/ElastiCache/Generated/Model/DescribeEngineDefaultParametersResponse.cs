@@ -34,6 +34,9 @@ namespace Amazon.ElastiCache.Model
     {
         private EngineDefaults _response;
 
+        /// <summary>
+        /// Gets and sets the EngineDefaults property.
+        /// </summary>
         public EngineDefaults EngineDefaults
         {
             get { return this._response; }

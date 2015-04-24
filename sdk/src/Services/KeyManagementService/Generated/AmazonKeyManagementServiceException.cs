@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.KeyManagementService
 {
+    ///<summary>
+    /// Common exception for the KeyManagementService service.
+    /// </summary>
     public class AmazonKeyManagementServiceException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonKeyManagementServiceException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonKeyManagementServiceException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonKeyManagementServiceException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonKeyManagementServiceException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonKeyManagementServiceException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonKeyManagementServiceException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonKeyManagementServiceException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonKeyManagementServiceException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonKeyManagementServiceException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonKeyManagementServiceException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

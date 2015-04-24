@@ -34,6 +34,9 @@ namespace Amazon.RDS.Model
     {
         private ResourcePendingMaintenanceActions _response;
 
+        /// <summary>
+        /// Gets and sets the ResourcePendingMaintenanceActions property.
+        /// </summary>
         public ResourcePendingMaintenanceActions ResourcePendingMaintenanceActions
         {
             get { return this._response; }

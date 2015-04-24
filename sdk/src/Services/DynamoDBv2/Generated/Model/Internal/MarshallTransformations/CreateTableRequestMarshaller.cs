@@ -37,11 +37,21 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
     /// </summary>       
     public class CreateTableRequestMarshaller : IMarshaller<IRequest, CreateTableRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((CreateTableRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(CreateTableRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DynamoDBv2");

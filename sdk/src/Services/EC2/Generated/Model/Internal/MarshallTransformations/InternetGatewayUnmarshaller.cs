@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class InternetGatewayUnmarshaller : IUnmarshaller<InternetGateway, XmlUnmarshallerContext>, IUnmarshaller<InternetGateway, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public InternetGateway Unmarshall(XmlUnmarshallerContext context)
         {
             InternetGateway unmarshalledObject = new InternetGateway();
@@ -79,6 +84,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public InternetGateway Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -87,6 +97,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static InternetGatewayUnmarshaller _instance = new InternetGatewayUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static InternetGatewayUnmarshaller Instance
         {
             get

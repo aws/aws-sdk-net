@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ImageUnmarshaller : IUnmarshaller<Image, XmlUnmarshallerContext>, IUnmarshaller<Image, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Image Unmarshall(XmlUnmarshallerContext context)
         {
             Image unmarshalledObject = new Image();
@@ -200,6 +205,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Image Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -208,6 +218,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static ImageUnmarshaller _instance = new ImageUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ImageUnmarshaller Instance
         {
             get

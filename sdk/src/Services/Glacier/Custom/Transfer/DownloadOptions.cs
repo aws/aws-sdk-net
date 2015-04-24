@@ -26,6 +26,9 @@ namespace Amazon.Glacier.Transfer
         // Sleep time between job polling.
         const double DEFAULT_POLLING_INTERVAL = 1;
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public DownloadOptions()
         {
             PollingInterval = DEFAULT_POLLING_INTERVAL;

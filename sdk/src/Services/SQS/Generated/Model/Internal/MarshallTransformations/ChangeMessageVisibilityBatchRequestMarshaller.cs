@@ -35,11 +35,21 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
     /// </summary>       
     public class ChangeMessageVisibilityBatchRequestMarshaller : IMarshaller<IRequest, ChangeMessageVisibilityBatchRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((ChangeMessageVisibilityBatchRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(ChangeMessageVisibilityBatchRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");

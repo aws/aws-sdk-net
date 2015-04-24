@@ -56,6 +56,9 @@ namespace <#=this.Config.Namespace#>.Model
             if(this.IsWrapped)
             {
 #>
+        /// <summary>
+        /// Gets and sets the <#=this.Structure.Name#> property.
+        /// </summary>
         public <#=this.Structure.Name#> <#=this.Structure.Name#>
         {
             get { return this._response; }

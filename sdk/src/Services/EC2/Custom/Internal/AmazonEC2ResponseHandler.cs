@@ -27,6 +27,9 @@ using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Internal
 {
+    /// <summary>
+    /// Custom pipeline handler.
+    /// </summary>
     public class AmazonEC2ResponseHandler : PipelineHandler
     {
 
@@ -73,6 +76,10 @@ namespace Amazon.EC2.Internal
         }
 #endif
 
+        /// <summary>
+        /// Custom pipeline handler
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected void PostInvoke(IExecutionContext executionContext)
         {
             var response = executionContext.ResponseContext.Response;

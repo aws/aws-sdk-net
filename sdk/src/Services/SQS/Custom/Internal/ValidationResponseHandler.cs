@@ -12,6 +12,9 @@ using Amazon.Runtime.Internal;
 
 namespace Amazon.SQS.Internal
 {
+    /// <summary>
+    /// Custom pipeline handler
+    /// </summary>
     public class ValidationResponseHandler : PipelineHandler
     {
         /// <summary>
@@ -56,6 +59,10 @@ namespace Amazon.SQS.Internal
             base.InvokeAsyncCallback(executionContext);
         }
 #endif
+        /// <summary>
+        /// Custom pipeline handler
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected void PostInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;
@@ -140,6 +147,11 @@ namespace Amazon.SQS.Internal
             }
         }
 
+        /// <summary>
+        /// Calculate the MD5 of the message attributes
+        /// </summary>
+        /// <param name="attributes"></param>
+        /// <returns></returns>
         public static string CalculateMD5(Dictionary<string, MessageAttributeValue> attributes)
         {
             var sorted = attributes.OrderBy(kvp => kvp.Key, StringComparer.Ordinal);
@@ -186,47 +198,104 @@ namespace Amazon.SQS.Internal
             var bytes = ms.ToArray();
             return CalculateMD5(bytes);
         }
+
+        /// <summary>
+        /// Calculate the MD5
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
         public static string CalculateMD5(string message)
         {
             var messageBytes = System.Text.Encoding.UTF8.GetBytes(message);
             return CalculateMD5(messageBytes);
         }
+
+        /// <summary>
+        /// Calculate the MD5
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <returns></returns>
         public static string CalculateMD5(byte[] bytes)
         {
             var md5Hash = Amazon.Util.CryptoUtilFactory.CryptoInstance.ComputeMD5Hash(bytes);
             var calculatedMd5 = BitConverter.ToString(md5Hash).Replace("-", string.Empty).ToLowerInvariant();
             return calculatedMd5;
         }
+
+        /// <summary>
+        /// Compare the MD5
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="md5FromService"></param>
+        /// <returns></returns>
         public static bool CompareMD5(string message, string md5FromService)
         {
             var calculatedMd5 = CalculateMD5(message);
             return (string.Equals(calculatedMd5, md5FromService, StringComparison.OrdinalIgnoreCase));
         }
+
+        /// <summary>
+        /// Compare the MD5
+        /// </summary>
+        /// <param name="attributes"></param>
+        /// <param name="md5FromService"></param>
+        /// <returns></returns>
         public static bool CompareMD5(Dictionary<string, MessageAttributeValue> attributes, string md5FromService)
         {
             var calculatedMd5 = CalculateMD5(attributes);
             return (string.Equals(calculatedMd5, md5FromService, StringComparison.OrdinalIgnoreCase));
         }
+
+        /// <summary>
+        /// Validate the MD5
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="md5FromService"></param>
         public static void ValidateMD5(string message, string md5FromService)
         {
             if (!CompareMD5(message, md5FromService))
                 throw new AmazonSQSException("MD5 hash mismatch");
         }
+
+        /// <summary>
+        /// Validate the MD5
+        /// </summary>
+        /// <param name="attributes"></param>
+        /// <param name="md5FromService"></param>
         public static void ValidateMD5(Dictionary<string, MessageAttributeValue> attributes, string md5FromService)
         {
             if (!CompareMD5(attributes, md5FromService))
                 throw new AmazonSQSException("Attribute MD5 hash mismatch");
         }
+
+        /// <summary>
+        /// Validate the MD5
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="messageId"></param>
+        /// <param name="md5FromService"></param>
         public static void ValidateMD5(string message, string messageId, string md5FromService)
         {
             if (!CompareMD5(message, md5FromService))
                 throw new AmazonSQSException(string.Format(CultureInfo.InvariantCulture, "MD5 hash mismatch for message id {0}", messageId));
         }
+
+        /// <summary>
+        /// Validate the MD5
+        /// </summary>
+        /// <param name="attributes"></param>
+        /// <param name="messageId"></param>
+        /// <param name="md5FromService"></param>
         public static void ValidateMD5(Dictionary<string, MessageAttributeValue> attributes, string messageId, string md5FromService)
         {
             if (!CompareMD5(attributes, md5FromService))
                 throw new AmazonSQSException(string.Format(CultureInfo.InvariantCulture, "Attribute MD5 hash mismatch for message id {0}", messageId));
         }
+
+        /// <summary>
+        /// Validate the MD5
+        /// </summary>
+        /// <param name="message"></param>
         public static void ValidateMD5(Message message)
         {
             ValidateMD5(message.Body, message.MessageId, message.MD5OfBody);
@@ -234,6 +303,10 @@ namespace Amazon.SQS.Internal
                 ValidateMD5(message.MessageAttributes, message.MessageId, message.MD5OfMessageAttributes);
         }
 
+        /// <summary>
+        /// Validate the Message
+        /// </summary>
+        /// <param name="response"></param>
         public static void ValidateReceiveMessage(ReceiveMessageResponse response)
         {
             if (response != null && response.Messages != null && response.Messages.Count > 0)
@@ -244,6 +317,12 @@ namespace Amazon.SQS.Internal
                 }
             }
         }
+
+        /// <summary>
+        /// Validate the Message
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="response"></param>
         public static void ValidateSendMessage(SendMessageRequest request, SendMessageResponse response)
         {
             if (request != null && response != null && request.MessageBody != null &&
@@ -261,6 +340,12 @@ namespace Amazon.SQS.Internal
             }
 
         }
+
+        /// <summary>
+        /// Validate the Message
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="response"></param>
         public static void ValidateSendMessageBatch(SendMessageBatchRequest request, SendMessageBatchResponse response)
         {
             if (response != null && response.Successful != null && response.Successful.Count > 0)

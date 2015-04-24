@@ -38,11 +38,21 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
     /// </summary>  
     public class RealtimeEndpointInfoUnmarshaller : IUnmarshaller<RealtimeEndpointInfo, XmlUnmarshallerContext>, IUnmarshaller<RealtimeEndpointInfo, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         RealtimeEndpointInfo IUnmarshaller<RealtimeEndpointInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public RealtimeEndpointInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -86,6 +96,9 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 
         private static RealtimeEndpointInfoUnmarshaller _instance = new RealtimeEndpointInfoUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static RealtimeEndpointInfoUnmarshaller Instance
         {
             get

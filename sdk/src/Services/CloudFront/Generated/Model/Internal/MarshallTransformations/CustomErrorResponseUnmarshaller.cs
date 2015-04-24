@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class CustomErrorResponseUnmarshaller : IUnmarshaller<CustomErrorResponse, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public CustomErrorResponse Unmarshall(XmlUnmarshallerContext context)
         {
             CustomErrorResponse unmarshalledObject = new CustomErrorResponse();
@@ -85,6 +90,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static CustomErrorResponseUnmarshaller _instance = new CustomErrorResponseUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static CustomErrorResponseUnmarshaller Instance
         {
             get

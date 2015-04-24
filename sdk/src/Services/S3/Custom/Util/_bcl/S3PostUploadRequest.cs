@@ -53,6 +53,10 @@ namespace Amazon.S3.Util
             _isSetStorageClass = false,
             _isSetActionStatus = false;
 
+
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
         public S3PostUploadRequest()
         {
             this.Metadata = new Dictionary<string, string>();

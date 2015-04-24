@@ -36,6 +36,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class DBSubnetGroupUnmarshaller : IUnmarshaller<DBSubnetGroup, XmlUnmarshallerContext>, IUnmarshaller<DBSubnetGroup, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DBSubnetGroup Unmarshall(XmlUnmarshallerContext context)
         {
             DBSubnetGroup unmarshalledObject = new DBSubnetGroup();
@@ -90,6 +95,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DBSubnetGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -98,6 +108,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
         private static DBSubnetGroupUnmarshaller _instance = new DBSubnetGroupUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DBSubnetGroupUnmarshaller Instance
         {
             get

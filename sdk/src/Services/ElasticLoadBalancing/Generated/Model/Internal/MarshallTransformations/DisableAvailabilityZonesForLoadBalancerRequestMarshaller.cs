@@ -35,11 +35,21 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// </summary>       
     public class DisableAvailabilityZonesForLoadBalancerRequestMarshaller : IMarshaller<IRequest, DisableAvailabilityZonesForLoadBalancerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((DisableAvailabilityZonesForLoadBalancerRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(DisableAvailabilityZonesForLoadBalancerRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");

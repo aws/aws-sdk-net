@@ -21,6 +21,8 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime;
 using System;
 
+#pragma warning disable 1591
+
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>

@@ -36,6 +36,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// </summary>  
     public class HealthCheckUnmarshaller : IUnmarshaller<HealthCheck, XmlUnmarshallerContext>, IUnmarshaller<HealthCheck, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public HealthCheck Unmarshall(XmlUnmarshallerContext context)
         {
             HealthCheck unmarshalledObject = new HealthCheck();
@@ -89,6 +94,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public HealthCheck Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -97,6 +107,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
         private static HealthCheckUnmarshaller _instance = new HealthCheckUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static HealthCheckUnmarshaller Instance
         {
             get

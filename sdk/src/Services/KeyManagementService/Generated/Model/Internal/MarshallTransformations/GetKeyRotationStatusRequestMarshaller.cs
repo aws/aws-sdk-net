@@ -37,11 +37,21 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
     /// </summary>       
     public class GetKeyRotationStatusRequestMarshaller : IMarshaller<IRequest, GetKeyRotationStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((GetKeyRotationStatusRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(GetKeyRotationStatusRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KeyManagementService");

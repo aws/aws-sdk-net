@@ -38,11 +38,21 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
     /// </summary>  
     public class CaptionsUnmarshaller : IUnmarshaller<Captions, XmlUnmarshallerContext>, IUnmarshaller<Captions, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         Captions IUnmarshaller<Captions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Captions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -80,6 +90,9 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         private static CaptionsUnmarshaller _instance = new CaptionsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static CaptionsUnmarshaller Instance
         {
             get

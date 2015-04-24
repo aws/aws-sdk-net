@@ -38,11 +38,21 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
     /// </summary>  
     public class DocumentDescriptionUnmarshaller : IUnmarshaller<DocumentDescription, XmlUnmarshallerContext>, IUnmarshaller<DocumentDescription, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         DocumentDescription IUnmarshaller<DocumentDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DocumentDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -86,6 +96,9 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         private static DocumentDescriptionUnmarshaller _instance = new DocumentDescriptionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DocumentDescriptionUnmarshaller Instance
         {
             get

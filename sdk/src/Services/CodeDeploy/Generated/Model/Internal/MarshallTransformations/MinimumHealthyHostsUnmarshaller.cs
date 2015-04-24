@@ -38,11 +38,21 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// </summary>  
     public class MinimumHealthyHostsUnmarshaller : IUnmarshaller<MinimumHealthyHosts, XmlUnmarshallerContext>, IUnmarshaller<MinimumHealthyHosts, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         MinimumHealthyHosts IUnmarshaller<MinimumHealthyHosts, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public MinimumHealthyHosts Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -74,6 +84,9 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         private static MinimumHealthyHostsUnmarshaller _instance = new MinimumHealthyHostsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static MinimumHealthyHostsUnmarshaller Instance
         {
             get

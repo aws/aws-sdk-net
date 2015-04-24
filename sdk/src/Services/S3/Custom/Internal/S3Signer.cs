@@ -24,6 +24,8 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Auth;
 
+#pragma warning disable 1591
+
 namespace Amazon.S3.Internal
 {
     public class S3Signer : AbstractAWSSigner

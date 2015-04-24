@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class AliasesUnmarshaller : IUnmarshaller<Aliases, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Aliases Unmarshall(XmlUnmarshallerContext context)
         {
             Aliases unmarshalledObject = new Aliases();
@@ -73,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static AliasesUnmarshaller _instance = new AliasesUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static AliasesUnmarshaller Instance
         {
             get

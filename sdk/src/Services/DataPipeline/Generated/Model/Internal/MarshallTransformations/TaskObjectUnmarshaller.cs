@@ -38,11 +38,21 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
     /// </summary>  
     public class TaskObjectUnmarshaller : IUnmarshaller<TaskObject, XmlUnmarshallerContext>, IUnmarshaller<TaskObject, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         TaskObject IUnmarshaller<TaskObject, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public TaskObject Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -86,6 +96,9 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 
         private static TaskObjectUnmarshaller _instance = new TaskObjectUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static TaskObjectUnmarshaller Instance
         {
             get

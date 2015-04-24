@@ -37,6 +37,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// </summary>  
     public class DeleteHealthCheckResponseUnmarshaller : XmlResponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             DeleteHealthCheckResponse response = new DeleteHealthCheckResponse();
@@ -45,6 +50,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }        
   
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
+        /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
@@ -69,6 +81,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             return _instance;
         }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DeleteHealthCheckResponseUnmarshaller Instance
         {
             get

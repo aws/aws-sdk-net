@@ -35,11 +35,21 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// </summary>       
     public class DescribeInstanceHealthRequestMarshaller : IMarshaller<IRequest, DescribeInstanceHealthRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((DescribeInstanceHealthRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(DescribeInstanceHealthRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");

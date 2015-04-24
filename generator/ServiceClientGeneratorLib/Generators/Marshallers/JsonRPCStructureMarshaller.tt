@@ -17,6 +17,12 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 	/// </summary>       
 	public class <#=this.Structure.Name #>Marshaller : IRequestMarshaller<<#=this.Structure.Name #>, JsonMarshallerContext> 
 	{
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
 		public void Marshall(<#=this.Structure.Name #> requestObject, JsonMarshallerContext context)
 		{
 <#
@@ -24,6 +30,9 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 #>
 		}
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
 		public readonly static <#=this.Structure.Name #>Marshaller Instance = new <#=this.Structure.Name #>Marshaller();
 
 	}

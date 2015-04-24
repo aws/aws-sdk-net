@@ -34,7 +34,9 @@ namespace Amazon.SimpleWorkflow.Model
     {
         private History _history;
 
-        // Gets and sets the History member
+        /// <summary>
+        /// Gets and sets the History member
+        /// </summary>
         public History History
         {
             get { return this._history; }

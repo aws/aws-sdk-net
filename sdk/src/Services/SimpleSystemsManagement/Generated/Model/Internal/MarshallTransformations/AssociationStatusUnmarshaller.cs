@@ -38,11 +38,21 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
     /// </summary>  
     public class AssociationStatusUnmarshaller : IUnmarshaller<AssociationStatus, XmlUnmarshallerContext>, IUnmarshaller<AssociationStatus, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         AssociationStatus IUnmarshaller<AssociationStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AssociationStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -86,6 +96,9 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         private static AssociationStatusUnmarshaller _instance = new AssociationStatusUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static AssociationStatusUnmarshaller Instance
         {
             get

@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class AddressUnmarshaller : IUnmarshaller<Address, XmlUnmarshallerContext>, IUnmarshaller<Address, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Address Unmarshall(XmlUnmarshallerContext context)
         {
             Address unmarshalledObject = new Address();
@@ -107,6 +112,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Address Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -115,6 +125,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static AddressUnmarshaller _instance = new AddressUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static AddressUnmarshaller Instance
         {
             get

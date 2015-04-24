@@ -38,11 +38,21 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// </summary>  
     public class BootstrapActionDetailUnmarshaller : IUnmarshaller<BootstrapActionDetail, XmlUnmarshallerContext>, IUnmarshaller<BootstrapActionDetail, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         BootstrapActionDetail IUnmarshaller<BootstrapActionDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public BootstrapActionDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -68,6 +78,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         private static BootstrapActionDetailUnmarshaller _instance = new BootstrapActionDetailUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static BootstrapActionDetailUnmarshaller Instance
         {
             get

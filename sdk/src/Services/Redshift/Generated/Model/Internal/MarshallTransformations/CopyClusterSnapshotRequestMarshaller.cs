@@ -35,11 +35,21 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// </summary>       
     public class CopyClusterSnapshotRequestMarshaller : IMarshaller<IRequest, CopyClusterSnapshotRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((CopyClusterSnapshotRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(CopyClusterSnapshotRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");

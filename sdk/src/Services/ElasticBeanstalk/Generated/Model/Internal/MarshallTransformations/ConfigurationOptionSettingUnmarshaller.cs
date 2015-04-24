@@ -36,6 +36,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ConfigurationOptionSettingUnmarshaller : IUnmarshaller<ConfigurationOptionSetting, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationOptionSetting, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ConfigurationOptionSetting Unmarshall(XmlUnmarshallerContext context)
         {
             ConfigurationOptionSetting unmarshalledObject = new ConfigurationOptionSetting();
@@ -77,6 +82,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ConfigurationOptionSetting Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -85,6 +95,9 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
         private static ConfigurationOptionSettingUnmarshaller _instance = new ConfigurationOptionSettingUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ConfigurationOptionSettingUnmarshaller Instance
         {
             get

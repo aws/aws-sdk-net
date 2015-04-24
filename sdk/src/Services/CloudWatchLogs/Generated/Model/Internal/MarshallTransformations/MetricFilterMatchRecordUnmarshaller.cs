@@ -38,11 +38,21 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
     /// </summary>  
     public class MetricFilterMatchRecordUnmarshaller : IUnmarshaller<MetricFilterMatchRecord, XmlUnmarshallerContext>, IUnmarshaller<MetricFilterMatchRecord, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         MetricFilterMatchRecord IUnmarshaller<MetricFilterMatchRecord, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public MetricFilterMatchRecord Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -80,6 +90,9 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 
         private static MetricFilterMatchRecordUnmarshaller _instance = new MetricFilterMatchRecordUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static MetricFilterMatchRecordUnmarshaller Instance
         {
             get

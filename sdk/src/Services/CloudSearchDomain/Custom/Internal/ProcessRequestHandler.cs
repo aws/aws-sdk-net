@@ -8,6 +8,9 @@ using System.Text;
 
 namespace Amazon.CloudSearchDomain.Internal
 {
+    /// <summary>
+    /// Custom pipeline handler.
+    /// </summary>
     public class ProcessRequestHandler : PipelineHandler
     {
 #if BCL
@@ -57,6 +60,10 @@ namespace Amazon.CloudSearchDomain.Internal
 #endif
 
 #if BCL
+        /// <summary>
+        /// Custom pipeline handler.
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected void PreInvoke(IExecutionContext executionContext)
         {
             var uploadDocumentsRequest = executionContext.RequestContext.OriginalRequest as UploadDocumentsRequest;

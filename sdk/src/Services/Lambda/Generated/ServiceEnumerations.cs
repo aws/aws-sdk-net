@@ -57,6 +57,11 @@ namespace Amazon.Lambda
             return FindValue<EventSourcePosition>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator EventSourcePosition(string value)
         {
             return FindValue(value);
@@ -101,6 +106,11 @@ namespace Amazon.Lambda
             return FindValue<InvocationType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator InvocationType(string value)
         {
             return FindValue(value);
@@ -141,6 +151,11 @@ namespace Amazon.Lambda
             return FindValue<LogType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator LogType(string value)
         {
             return FindValue(value);
@@ -185,6 +200,11 @@ namespace Amazon.Lambda
             return FindValue<Runtime>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator Runtime(string value)
         {
             return FindValue(value);

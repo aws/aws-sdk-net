@@ -37,11 +37,21 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
     /// </summary>       
     public class DescribeObjectsRequestMarshaller : IMarshaller<IRequest, DescribeObjectsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((DescribeObjectsRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(DescribeObjectsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DataPipeline");

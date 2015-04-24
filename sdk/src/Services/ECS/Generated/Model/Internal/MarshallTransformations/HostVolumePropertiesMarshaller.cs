@@ -37,6 +37,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
     /// </summary>       
     public class HostVolumePropertiesMarshaller : IRequestMarshaller<HostVolumeProperties, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(HostVolumeProperties requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetSourcePath())
@@ -47,6 +53,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static HostVolumePropertiesMarshaller Instance = new HostVolumePropertiesMarshaller();
 
     }

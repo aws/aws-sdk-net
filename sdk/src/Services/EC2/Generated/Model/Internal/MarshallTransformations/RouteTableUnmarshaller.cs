@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class RouteTableUnmarshaller : IUnmarshaller<RouteTable, XmlUnmarshallerContext>, IUnmarshaller<RouteTable, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public RouteTable Unmarshall(XmlUnmarshallerContext context)
         {
             RouteTable unmarshalledObject = new RouteTable();
@@ -99,6 +104,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public RouteTable Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -107,6 +117,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static RouteTableUnmarshaller _instance = new RouteTableUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static RouteTableUnmarshaller Instance
         {
             get

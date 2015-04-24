@@ -36,6 +36,11 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// </summary>  
     public class TopicUnmarshaller : IUnmarshaller<Topic, XmlUnmarshallerContext>, IUnmarshaller<Topic, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Topic Unmarshall(XmlUnmarshallerContext context)
         {
             Topic unmarshalledObject = new Topic();
@@ -65,6 +70,11 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Topic Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -73,6 +83,9 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
 
         private static TopicUnmarshaller _instance = new TopicUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static TopicUnmarshaller Instance
         {
             get

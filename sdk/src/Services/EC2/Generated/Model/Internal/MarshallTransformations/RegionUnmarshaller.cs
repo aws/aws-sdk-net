@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class RegionUnmarshaller : IUnmarshaller<Region, XmlUnmarshallerContext>, IUnmarshaller<Region, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Region Unmarshall(XmlUnmarshallerContext context)
         {
             Region unmarshalledObject = new Region();
@@ -71,6 +76,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Region Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static RegionUnmarshaller _instance = new RegionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static RegionUnmarshaller Instance
         {
             get

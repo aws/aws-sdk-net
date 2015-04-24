@@ -38,11 +38,21 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
     /// </summary>  
     public class GrantConstraintsUnmarshaller : IUnmarshaller<GrantConstraints, XmlUnmarshallerContext>, IUnmarshaller<GrantConstraints, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         GrantConstraints IUnmarshaller<GrantConstraints, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public GrantConstraints Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -74,6 +84,9 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 
         private static GrantConstraintsUnmarshaller _instance = new GrantConstraintsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static GrantConstraintsUnmarshaller Instance
         {
             get

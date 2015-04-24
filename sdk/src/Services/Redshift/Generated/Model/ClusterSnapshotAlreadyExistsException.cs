@@ -37,17 +37,43 @@ namespace Amazon.Redshift.Model
         public ClusterSnapshotAlreadyExistsException(string message) 
             : base(message) {}
           
+        /// <summary>
+        /// Construct instance of ClusterSnapshotAlreadyExistsException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public ClusterSnapshotAlreadyExistsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
+        /// <summary>
+        /// Construct instance of ClusterSnapshotAlreadyExistsException
+        /// </summary>
+        /// <param name="innerException"></param>
         public ClusterSnapshotAlreadyExistsException(Exception innerException) 
             : base(innerException) {}
             
-        public ClusterSnapshotAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of ClusterSnapshotAlreadyExistsException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public ClusterSnapshotAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
-        public ClusterSnapshotAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of ClusterSnapshotAlreadyExistsException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public ClusterSnapshotAlreadyExistsException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
 
     }
 }

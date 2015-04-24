@@ -36,6 +36,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// </summary>  
     public class CacheNodeUnmarshaller : IUnmarshaller<CacheNode, XmlUnmarshallerContext>, IUnmarshaller<CacheNode, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public CacheNode Unmarshall(XmlUnmarshallerContext context)
         {
             CacheNode unmarshalledObject = new CacheNode();
@@ -101,6 +106,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public CacheNode Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -109,6 +119,9 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
         private static CacheNodeUnmarshaller _instance = new CacheNodeUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static CacheNodeUnmarshaller Instance
         {
             get

@@ -61,6 +61,11 @@ namespace Amazon.CloudFront
             return FindValue<GeoRestrictionType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator GeoRestrictionType(string value)
         {
             return FindValue(value);
@@ -105,6 +110,11 @@ namespace Amazon.CloudFront
             return FindValue<ItemSelection>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ItemSelection(string value)
         {
             return FindValue(value);
@@ -165,6 +175,11 @@ namespace Amazon.CloudFront
             return FindValue<Method>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator Method(string value)
         {
             return FindValue(value);
@@ -205,6 +220,11 @@ namespace Amazon.CloudFront
             return FindValue<MinimumProtocolVersion>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator MinimumProtocolVersion(string value)
         {
             return FindValue(value);
@@ -245,6 +265,11 @@ namespace Amazon.CloudFront
             return FindValue<OriginProtocolPolicy>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator OriginProtocolPolicy(string value)
         {
             return FindValue(value);
@@ -289,6 +314,11 @@ namespace Amazon.CloudFront
             return FindValue<PriceClass>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator PriceClass(string value)
         {
             return FindValue(value);
@@ -329,6 +359,11 @@ namespace Amazon.CloudFront
             return FindValue<SSLSupportMethod>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator SSLSupportMethod(string value)
         {
             return FindValue(value);
@@ -373,6 +408,11 @@ namespace Amazon.CloudFront
             return FindValue<ViewerProtocolPolicy>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ViewerProtocolPolicy(string value)
         {
             return FindValue(value);

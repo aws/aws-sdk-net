@@ -38,11 +38,21 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ConfigurationItemUnmarshaller : IUnmarshaller<ConfigurationItem, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationItem, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         ConfigurationItem IUnmarshaller<ConfigurationItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ConfigurationItem Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -152,6 +162,9 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         private static ConfigurationItemUnmarshaller _instance = new ConfigurationItemUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ConfigurationItemUnmarshaller Instance
         {
             get

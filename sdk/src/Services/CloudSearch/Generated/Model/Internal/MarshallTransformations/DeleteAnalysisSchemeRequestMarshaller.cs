@@ -35,11 +35,21 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// </summary>       
     public class DeleteAnalysisSchemeRequestMarshaller : IMarshaller<IRequest, DeleteAnalysisSchemeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((DeleteAnalysisSchemeRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(DeleteAnalysisSchemeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch");

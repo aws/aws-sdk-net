@@ -18,6 +18,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
+#pragma warning disable 1591
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>

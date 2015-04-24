@@ -38,11 +38,21 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// </summary>  
     public class SslConfigurationUnmarshaller : IUnmarshaller<SslConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SslConfiguration, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         SslConfiguration IUnmarshaller<SslConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SslConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -80,6 +90,9 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         private static SslConfigurationUnmarshaller _instance = new SslConfigurationUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static SslConfigurationUnmarshaller Instance
         {
             get

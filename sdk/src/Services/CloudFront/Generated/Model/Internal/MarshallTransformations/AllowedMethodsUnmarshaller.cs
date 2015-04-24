@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class AllowedMethodsUnmarshaller : IUnmarshaller<AllowedMethods, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AllowedMethods Unmarshall(XmlUnmarshallerContext context)
         {
             AllowedMethods unmarshalledObject = new AllowedMethods();
@@ -79,6 +84,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static AllowedMethodsUnmarshaller _instance = new AllowedMethodsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static AllowedMethodsUnmarshaller Instance
         {
             get

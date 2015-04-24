@@ -36,6 +36,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// </summary>  
     public class PasswordPolicyUnmarshaller : IUnmarshaller<PasswordPolicy, XmlUnmarshallerContext>, IUnmarshaller<PasswordPolicy, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public PasswordPolicy Unmarshall(XmlUnmarshallerContext context)
         {
             PasswordPolicy unmarshalledObject = new PasswordPolicy();
@@ -119,6 +124,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public PasswordPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -127,6 +137,9 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
         private static PasswordPolicyUnmarshaller _instance = new PasswordPolicyUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static PasswordPolicyUnmarshaller Instance
         {
             get

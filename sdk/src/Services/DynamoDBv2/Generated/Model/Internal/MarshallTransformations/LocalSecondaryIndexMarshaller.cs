@@ -37,6 +37,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
     /// </summary>       
     public class LocalSecondaryIndexMarshaller : IRequestMarshaller<LocalSecondaryIndex, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(LocalSecondaryIndex requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetIndexName())
@@ -74,6 +80,9 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static LocalSecondaryIndexMarshaller Instance = new LocalSecondaryIndexMarshaller();
 
     }

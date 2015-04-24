@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class IamInstanceProfileSpecificationUnmarshaller : IUnmarshaller<IamInstanceProfileSpecification, XmlUnmarshallerContext>, IUnmarshaller<IamInstanceProfileSpecification, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public IamInstanceProfileSpecification Unmarshall(XmlUnmarshallerContext context)
         {
             IamInstanceProfileSpecification unmarshalledObject = new IamInstanceProfileSpecification();
@@ -71,6 +76,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public IamInstanceProfileSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static IamInstanceProfileSpecificationUnmarshaller _instance = new IamInstanceProfileSpecificationUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static IamInstanceProfileSpecificationUnmarshaller Instance
         {
             get

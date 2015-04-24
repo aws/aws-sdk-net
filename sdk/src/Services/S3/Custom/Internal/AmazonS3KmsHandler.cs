@@ -20,6 +20,9 @@ using System;
 
 namespace Amazon.S3.Internal
 {
+    /// <summary>
+    /// Custom pipeline handler to enable sig V4 for Get requests.
+    /// </summary>
     public class AmazonS3KmsHandler : PipelineHandler
     {
         /// <summary>
@@ -64,7 +67,10 @@ namespace Amazon.S3.Internal
             return base.InvokeAsync(executionContext);
         }
 #endif
-
+        /// <summary>
+        /// Custom pipeline handler to enable sig V4 for Get requests.
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected void PreInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;

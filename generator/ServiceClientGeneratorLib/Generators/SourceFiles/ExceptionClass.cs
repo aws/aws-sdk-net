@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+    #line 1 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class ExceptionClass : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 6 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 
 	AddLicenseHeader();
 
@@ -38,35 +38,35 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("using System;\r\nusing System.Net;\r\nusing Amazon.Runtime;\r\n\r\nnamespace ");
             
-            #line 13 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 13 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model\r\n{\r\n    ///<summary>\r\n    /// ");
             
-            #line 16 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 16 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write(" exception\r\n    /// </summary>\r\n    public class ");
             
-            #line 18 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 18 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
             #line hidden
             this.Write(" : Amazon");
             
-            #line 18 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 18 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Exception \r\n    {\r\n        /// <summary>\r\n        /// Constructs a new ");
             
-            #line 21 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 21 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -75,48 +75,97 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "/// <param name=\"message\">\r\n        /// Describes the error encountered.\r\n      " +
                     "  /// </param>\r\n        public ");
             
-            #line 27 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 27 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
             #line hidden
-            this.Write("(string message) \r\n            : base(message) {}\r\n          \r\n        public ");
+            this.Write("(string message) \r\n            : base(message) {}\r\n          \r\n        /// <summa" +
+                    "ry>\r\n        /// Construct instance of ");
             
-            #line 30 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 31 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n        /// </summary>\r\n        /// <param name=\"message\"></param>\r\n        ///" +
+                    " <param name=\"innerException\"></param>\r\n        public ");
+            
+            #line 35 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
             #line hidden
             this.Write("(string message, Exception innerException) \r\n            : base(message, innerExc" +
-                    "eption) {}\r\n            \r\n        public ");
+                    "eption) {}\r\n            \r\n        /// <summary>\r\n        /// Construct instance " +
+                    "of ");
             
-            #line 33 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 39 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n        /// </summary>\r\n        /// <param name=\"innerException\"></param>\r\n    " +
+                    "    public ");
+            
+            #line 42 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
             #line hidden
             this.Write("(Exception innerException) \r\n            : base(innerException) {}\r\n            \r" +
-                    "\n        public ");
+                    "\n        /// <summary>\r\n        /// Construct instance of ");
             
-            #line 36 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 46 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
             #line hidden
-            this.Write("(string message, Exception innerException, ErrorType errorType, string errorCode," +
-                    " string RequestId, HttpStatusCode statusCode) \r\n            : base(message, inne" +
-                    "rException, errorType, errorCode, RequestId, statusCode) {}\r\n\r\n        public ");
+            this.Write(@"
+        /// </summary>
+        /// <param name=""message""></param>
+        /// <param name=""innerException""></param>
+        /// <param name=""errorType""></param>
+        /// <param name=""errorCode""></param>
+        /// <param name=""requestId""></param>
+        /// <param name=""statusCode""></param>
+        public ");
             
-            #line 39 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 54 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
             #line hidden
-            this.Write("(string message, ErrorType errorType, string errorCode, string RequestId, HttpSta" +
-                    "tusCode statusCode) \r\n            : base(message, errorType, errorCode, RequestI" +
+            this.Write(@"(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
+
+        /// <summary>
+        /// Construct instance of ");
+            
+            #line 58 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
+            
+            #line default
+            #line hidden
+            this.Write(@"
+        /// </summary>
+        /// <param name=""message""></param>
+        /// <param name=""errorType""></param>
+        /// <param name=""errorCode""></param>
+        /// <param name=""requestId""></param>
+        /// <param name=""statusCode""></param>
+        public ");
+            
+            #line 65 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
+            
+            #line default
+            #line hidden
+            this.Write("(string message, ErrorType errorType, string errorCode, string requestId, HttpSta" +
+                    "tusCode statusCode) \r\n            : base(message, errorType, errorCode, requestI" +
                     "d, statusCode) {}\r\n\r\n");
             
-            #line 42 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 68 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 		
 		if(this.GenerateComplexException)
 		{
@@ -127,23 +176,30 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line default
             #line hidden
-            this.Write("\t\tpublic ");
+            this.Write("        /// <summary>\r\n        /// Gets and sets the ");
             
-            #line 49 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 76 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+            
+            #line default
+            #line hidden
+            this.Write(" property.\r\n        /// </summary>\r\n\t\tpublic ");
+            
+            #line 78 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 49 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 78 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" { get; set; }\r\n\r\n");
             
-            #line 51 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 80 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 
 			}
 		}
@@ -155,7 +211,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 58 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+        #line 87 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 
     public ExceptionModel Exception { get; set; }
 

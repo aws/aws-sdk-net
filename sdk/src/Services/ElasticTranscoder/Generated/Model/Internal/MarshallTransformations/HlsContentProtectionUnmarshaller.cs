@@ -38,11 +38,21 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
     /// </summary>  
     public class HlsContentProtectionUnmarshaller : IUnmarshaller<HlsContentProtection, XmlUnmarshallerContext>, IUnmarshaller<HlsContentProtection, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         HlsContentProtection IUnmarshaller<HlsContentProtection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public HlsContentProtection Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -98,6 +108,9 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         private static HlsContentProtectionUnmarshaller _instance = new HlsContentProtectionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static HlsContentProtectionUnmarshaller Instance
         {
             get

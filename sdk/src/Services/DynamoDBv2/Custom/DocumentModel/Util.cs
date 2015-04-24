@@ -22,6 +22,8 @@ using Amazon.DynamoDBv2.Model;
 using Amazon.Util;
 using Amazon.Util.Internal;
 
+#pragma warning disable 1591
+
 namespace Amazon.DynamoDBv2.DocumentModel
 {
     /// <summary>
@@ -90,7 +92,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// </summary>
     public enum ConditionalOperatorValues
     {
+        /// <summary>
+        /// And condition
+        /// </summary>
         And,
+        /// <summary>
+        /// Or Condition
+        /// </summary>
         Or
     }
 

@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.IdentityManagement
 {
+    ///<summary>
+    /// Common exception for the IdentityManagementService service.
+    /// </summary>
     public class AmazonIdentityManagementServiceException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonIdentityManagementServiceException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonIdentityManagementServiceException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonIdentityManagementServiceException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonIdentityManagementServiceException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonIdentityManagementServiceException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonIdentityManagementServiceException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonIdentityManagementServiceException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonIdentityManagementServiceException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonIdentityManagementServiceException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonIdentityManagementServiceException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

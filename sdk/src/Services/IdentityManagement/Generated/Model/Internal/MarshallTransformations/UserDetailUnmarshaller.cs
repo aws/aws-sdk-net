@@ -36,6 +36,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// </summary>  
     public class UserDetailUnmarshaller : IUnmarshaller<UserDetail, XmlUnmarshallerContext>, IUnmarshaller<UserDetail, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public UserDetail Unmarshall(XmlUnmarshallerContext context)
         {
             UserDetail unmarshalledObject = new UserDetail();
@@ -110,6 +115,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public UserDetail Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -118,6 +128,9 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
         private static UserDetailUnmarshaller _instance = new UserDetailUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static UserDetailUnmarshaller Instance
         {
             get

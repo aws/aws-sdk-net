@@ -34,7 +34,9 @@ namespace Amazon.EC2.Model
     {
         private Volume _volume;
 
-        // Gets and sets the Volume member
+        /// <summary>
+        /// Gets and sets the Volume member
+        /// </summary>
         public Volume Volume
         {
             get { return this._volume; }

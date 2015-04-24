@@ -35,11 +35,21 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
     /// </summary>       
     public class DescribeDefaultSearchFieldRequestMarshaller : IMarshaller<IRequest, DescribeDefaultSearchFieldRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((DescribeDefaultSearchFieldRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(DescribeDefaultSearchFieldRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch_2011_02_01");

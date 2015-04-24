@@ -36,6 +36,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// </summary>  
     public class DatapointUnmarshaller : IUnmarshaller<Datapoint, XmlUnmarshallerContext>, IUnmarshaller<Datapoint, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Datapoint Unmarshall(XmlUnmarshallerContext context)
         {
             Datapoint unmarshalledObject = new Datapoint();
@@ -101,6 +106,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Datapoint Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -109,6 +119,9 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
         private static DatapointUnmarshaller _instance = new DatapointUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DatapointUnmarshaller Instance
         {
             get

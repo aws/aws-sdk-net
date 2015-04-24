@@ -38,11 +38,21 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
     /// </summary>  
     public class OutputLogEventUnmarshaller : IUnmarshaller<OutputLogEvent, XmlUnmarshallerContext>, IUnmarshaller<OutputLogEvent, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         OutputLogEvent IUnmarshaller<OutputLogEvent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public OutputLogEvent Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -80,6 +90,9 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 
         private static OutputLogEventUnmarshaller _instance = new OutputLogEventUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static OutputLogEventUnmarshaller Instance
         {
             get

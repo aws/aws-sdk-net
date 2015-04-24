@@ -37,6 +37,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// </summary>       
     public class RebootRequestMarshaller : IRequestMarshaller<RebootRequest, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(RebootRequest requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetWorkspaceId())
@@ -47,6 +53,9 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static RebootRequestMarshaller Instance = new RebootRequestMarshaller();
 
     }

@@ -36,6 +36,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ClusterVersionUnmarshaller : IUnmarshaller<ClusterVersion, XmlUnmarshallerContext>, IUnmarshaller<ClusterVersion, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ClusterVersion Unmarshall(XmlUnmarshallerContext context)
         {
             ClusterVersion unmarshalledObject = new ClusterVersion();
@@ -77,6 +82,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ClusterVersion Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -85,6 +95,9 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
         private static ClusterVersionUnmarshaller _instance = new ClusterVersionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ClusterVersionUnmarshaller Instance
         {
             get

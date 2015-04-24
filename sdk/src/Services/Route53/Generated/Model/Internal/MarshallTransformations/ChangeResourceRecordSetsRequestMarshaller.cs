@@ -37,11 +37,21 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// </summary>       
     public class ChangeResourceRecordSetsRequestMarshaller : IMarshaller<IRequest, ChangeResourceRecordSetsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((ChangeResourceRecordSetsRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(ChangeResourceRecordSetsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");

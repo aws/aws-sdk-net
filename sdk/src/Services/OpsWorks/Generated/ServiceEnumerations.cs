@@ -61,6 +61,11 @@ namespace Amazon.OpsWorks
             return FindValue<AppAttributesKeys>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator AppAttributesKeys(string value)
         {
             return FindValue(value);
@@ -117,6 +122,11 @@ namespace Amazon.OpsWorks
             return FindValue<AppType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator AppType(string value)
         {
             return FindValue(value);
@@ -157,6 +167,11 @@ namespace Amazon.OpsWorks
             return FindValue<Architecture>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator Architecture(string value)
         {
             return FindValue(value);
@@ -197,6 +212,11 @@ namespace Amazon.OpsWorks
             return FindValue<AutoScalingType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator AutoScalingType(string value)
         {
             return FindValue(value);
@@ -269,6 +289,11 @@ namespace Amazon.OpsWorks
             return FindValue<DeploymentCommandName>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator DeploymentCommandName(string value)
         {
             return FindValue(value);
@@ -397,6 +422,11 @@ namespace Amazon.OpsWorks
             return FindValue<LayerAttributesKeys>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator LayerAttributesKeys(string value)
         {
             return FindValue(value);
@@ -469,6 +499,11 @@ namespace Amazon.OpsWorks
             return FindValue<LayerType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator LayerType(string value)
         {
             return FindValue(value);
@@ -509,6 +544,11 @@ namespace Amazon.OpsWorks
             return FindValue<RootDeviceType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator RootDeviceType(string value)
         {
             return FindValue(value);
@@ -557,6 +597,11 @@ namespace Amazon.OpsWorks
             return FindValue<SourceType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator SourceType(string value)
         {
             return FindValue(value);
@@ -593,6 +638,11 @@ namespace Amazon.OpsWorks
             return FindValue<StackAttributesKeys>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator StackAttributesKeys(string value)
         {
             return FindValue(value);
@@ -633,6 +683,11 @@ namespace Amazon.OpsWorks
             return FindValue<VirtualizationType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator VirtualizationType(string value)
         {
             return FindValue(value);
@@ -677,6 +732,11 @@ namespace Amazon.OpsWorks
             return FindValue<VolumeType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator VolumeType(string value)
         {
             return FindValue(value);

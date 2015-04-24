@@ -38,11 +38,21 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ChildWorkflowExecutionCanceledEventAttributesUnmarshaller : IUnmarshaller<ChildWorkflowExecutionCanceledEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<ChildWorkflowExecutionCanceledEventAttributes, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         ChildWorkflowExecutionCanceledEventAttributes IUnmarshaller<ChildWorkflowExecutionCanceledEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ChildWorkflowExecutionCanceledEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -92,6 +102,9 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
         private static ChildWorkflowExecutionCanceledEventAttributesUnmarshaller _instance = new ChildWorkflowExecutionCanceledEventAttributesUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ChildWorkflowExecutionCanceledEventAttributesUnmarshaller Instance
         {
             get

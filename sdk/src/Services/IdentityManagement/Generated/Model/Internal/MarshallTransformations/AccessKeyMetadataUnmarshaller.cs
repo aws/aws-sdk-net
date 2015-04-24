@@ -36,6 +36,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// </summary>  
     public class AccessKeyMetadataUnmarshaller : IUnmarshaller<AccessKeyMetadata, XmlUnmarshallerContext>, IUnmarshaller<AccessKeyMetadata, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AccessKeyMetadata Unmarshall(XmlUnmarshallerContext context)
         {
             AccessKeyMetadata unmarshalledObject = new AccessKeyMetadata();
@@ -83,6 +88,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AccessKeyMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -91,6 +101,9 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
         private static AccessKeyMetadataUnmarshaller _instance = new AccessKeyMetadataUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static AccessKeyMetadataUnmarshaller Instance
         {
             get

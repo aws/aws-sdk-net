@@ -37,6 +37,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// </summary>  
     public class HostedZoneUnmarshaller : IUnmarshaller<HostedZone, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public HostedZone Unmarshall(XmlUnmarshallerContext context)
         {
             HostedZone unmarshalledObject = new HostedZone();
@@ -91,6 +96,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
         private static HostedZoneUnmarshaller _instance = new HostedZoneUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static HostedZoneUnmarshaller Instance
         {
             get

@@ -38,11 +38,21 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// </summary>  
     public class InstanceGroupUnmarshaller : IUnmarshaller<InstanceGroup, XmlUnmarshallerContext>, IUnmarshaller<InstanceGroup, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         InstanceGroup IUnmarshaller<InstanceGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public InstanceGroup Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -116,6 +126,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         private static InstanceGroupUnmarshaller _instance = new InstanceGroupUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static InstanceGroupUnmarshaller Instance
         {
             get

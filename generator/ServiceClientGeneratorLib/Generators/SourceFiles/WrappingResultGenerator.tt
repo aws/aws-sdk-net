@@ -24,7 +24,9 @@ namespace <#=this.Config.Namespace#>.Model
 	{
         private <#=this.Structure.Name#> <#=this.VariableName#>;
 
-		// Gets and sets the <#=this.PropertyName#> member
+        /// <summary>
+		/// Gets and sets the <#=this.PropertyName#> member
+        /// </summary>
         public <#=this.Structure.Name#> <#=this.PropertyName#>
         {
             get { return this.<#=this.VariableName#>; }

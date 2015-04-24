@@ -112,6 +112,9 @@ namespace Amazon.S3.Model
             }
         }
 
+        /// <summary>
+        /// Gets and sets the AcceptRanges.
+        /// </summary>
         public string AcceptRanges
         {
             get { return this.acceptRanges; }

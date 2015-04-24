@@ -42,6 +42,9 @@ namespace Amazon.RDS.Model
     {
         private DBSubnetGroup _response;
 
+        /// <summary>
+        /// Gets and sets the DBSubnetGroup property.
+        /// </summary>
         public DBSubnetGroup DBSubnetGroup
         {
             get { return this._response; }

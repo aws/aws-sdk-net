@@ -36,6 +36,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// </summary>  
     public class CacheSubnetGroupUnmarshaller : IUnmarshaller<CacheSubnetGroup, XmlUnmarshallerContext>, IUnmarshaller<CacheSubnetGroup, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public CacheSubnetGroup Unmarshall(XmlUnmarshallerContext context)
         {
             CacheSubnetGroup unmarshalledObject = new CacheSubnetGroup();
@@ -84,6 +89,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public CacheSubnetGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -92,6 +102,9 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
         private static CacheSubnetGroupUnmarshaller _instance = new CacheSubnetGroupUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static CacheSubnetGroupUnmarshaller Instance
         {
             get

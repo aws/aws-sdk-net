@@ -50,7 +50,10 @@ namespace Amazon.EC2.Model
             set { this.messageField = value; }
         }
 
-        // Checks if Message property is set
+        /// <summary>
+        /// Checks if Message property is set
+        /// </summary>
+        /// <returns></returns>
         public bool IsSetMessage()
         {
             return this.messageField != null;
@@ -66,7 +69,10 @@ namespace Amazon.EC2.Model
             set { this.errorField = value; }
         }
 
-        // Checks if Error property is set
+        /// <summary>
+        /// Checks if Error property is set
+        /// </summary>
+        /// <returns></returns>
         public bool IsSetError()
         {
             return this.errorField != null;

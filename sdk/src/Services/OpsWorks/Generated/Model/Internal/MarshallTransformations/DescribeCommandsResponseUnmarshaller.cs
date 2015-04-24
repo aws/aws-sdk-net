@@ -38,6 +38,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// </summary>  
     public class DescribeCommandsResponseUnmarshaller : JsonResponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeCommandsResponse response = new DescribeCommandsResponse();
@@ -57,6 +62,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             return response;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
+        /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
@@ -77,6 +89,10 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         {
             return _instance;
         }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DescribeCommandsResponseUnmarshaller Instance
         {
             get

@@ -57,6 +57,11 @@ namespace Amazon.CloudHSM
             return FindValue<ClientVersion>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ClientVersion(string value)
         {
             return FindValue(value);
@@ -101,6 +106,11 @@ namespace Amazon.CloudHSM
             return FindValue<CloudHsmObjectState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator CloudHsmObjectState(string value)
         {
             return FindValue(value);
@@ -161,6 +171,11 @@ namespace Amazon.CloudHSM
             return FindValue<HsmStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator HsmStatus(string value)
         {
             return FindValue(value);
@@ -197,6 +212,11 @@ namespace Amazon.CloudHSM
             return FindValue<SubscriptionType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator SubscriptionType(string value)
         {
             return FindValue(value);

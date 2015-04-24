@@ -34,7 +34,9 @@ namespace Amazon.EC2.Model
     {
         private Snapshot _snapshot;
 
-        // Gets and sets the Snapshot member
+        /// <summary>
+        /// Gets and sets the Snapshot member
+        /// </summary>
         public Snapshot Snapshot
         {
             get { return this._snapshot; }

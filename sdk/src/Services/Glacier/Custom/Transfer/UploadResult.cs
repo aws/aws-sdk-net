@@ -55,6 +55,9 @@ namespace Amazon.Glacier.Transfer
             }
         }
 
+        /// <summary>
+        /// Returns the check sum for the uploaded archive.
+        /// </summary>
         public string Checksum
         {
             get

@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.MachineLearning
 {
+    ///<summary>
+    /// Common exception for the MachineLearning service.
+    /// </summary>
     public class AmazonMachineLearningException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonMachineLearningException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonMachineLearningException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonMachineLearningException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonMachineLearningException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonMachineLearningException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonMachineLearningException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonMachineLearningException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonMachineLearningException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonMachineLearningException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonMachineLearningException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

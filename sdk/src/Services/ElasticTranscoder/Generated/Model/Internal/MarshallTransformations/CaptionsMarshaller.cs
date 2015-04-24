@@ -37,6 +37,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
     /// </summary>       
     public class CaptionsMarshaller : IRequestMarshaller<Captions, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(Captions requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetCaptionFormats())
@@ -79,6 +85,9 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static CaptionsMarshaller Instance = new CaptionsMarshaller();
 
     }

@@ -8,6 +8,9 @@ using System.Text;
 
 namespace Amazon.CloudSearchDomain.Internal
 {
+    /// <summary>
+    /// Custom pipeline handler to make sure streams.
+    /// </summary>
     public class ValidationResponseHandler : PipelineHandler
     {
 
@@ -58,6 +61,10 @@ namespace Amazon.CloudSearchDomain.Internal
 #endif
 
 #if BCL
+        /// <summary>
+        /// Custom pipeline handler to make sure streams.
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected void PostInvoke(IExecutionContext executionContext)
         {
             var uploadDocumentsRequest = executionContext.RequestContext.OriginalRequest as UploadDocumentsRequest;

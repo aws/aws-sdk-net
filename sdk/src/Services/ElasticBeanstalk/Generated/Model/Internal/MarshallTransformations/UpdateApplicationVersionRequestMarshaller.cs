@@ -35,11 +35,21 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// </summary>       
     public class UpdateApplicationVersionRequestMarshaller : IMarshaller<IRequest, UpdateApplicationVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((UpdateApplicationVersionRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(UpdateApplicationVersionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticBeanstalk");

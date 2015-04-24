@@ -34,6 +34,9 @@ namespace Amazon.ElastiCache.Model
     {
         private ReservedCacheNode _response;
 
+        /// <summary>
+        /// Gets and sets the ReservedCacheNode property.
+        /// </summary>
         public ReservedCacheNode ReservedCacheNode
         {
             get { return this._response; }

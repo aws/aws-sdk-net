@@ -37,17 +37,43 @@ namespace Amazon.RDS.Model
         public ReservedDBInstanceAlreadyExistsException(string message) 
             : base(message) {}
           
+        /// <summary>
+        /// Construct instance of ReservedDBInstanceAlreadyExistsException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public ReservedDBInstanceAlreadyExistsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
+        /// <summary>
+        /// Construct instance of ReservedDBInstanceAlreadyExistsException
+        /// </summary>
+        /// <param name="innerException"></param>
         public ReservedDBInstanceAlreadyExistsException(Exception innerException) 
             : base(innerException) {}
             
-        public ReservedDBInstanceAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of ReservedDBInstanceAlreadyExistsException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public ReservedDBInstanceAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
-        public ReservedDBInstanceAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of ReservedDBInstanceAlreadyExistsException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public ReservedDBInstanceAlreadyExistsException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
 
     }
 }

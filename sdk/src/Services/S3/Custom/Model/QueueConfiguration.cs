@@ -25,7 +25,7 @@ namespace Amazon.S3.Model
     /// and send the event to an Amazon SQS queue.
     /// <para>
     /// The queue's policy must allow S3 to send messages to it. The utility method 
-    /// <see cref="Amazon.SQS.AmazonSQSClient.AuthorizeS3ToSendMessage(string,string)"/>
+    /// Amazon.SQS.AmazonSQSClient.AuthorizeS3ToSendMessage(string,string)
     /// can be used to help setup the queue policy.
     /// </para>    
     /// </summary>
@@ -69,7 +69,7 @@ namespace Amazon.S3.Model
         /// to report the specified events for the bucket.
         /// <para>
         /// The queue's policy must allow S3 to send messages to it. The utility method 
-        /// <see cref="Amazon.SQS.AmazonSQSClient.AuthorizeS3ToSendMessage(string,string)"/>
+        /// Amazon.SQS.AmazonSQSClient.AuthorizeS3ToSendMessage(string,string)
         /// can be used to help setup the queue policy.
         /// </para>  
         /// </summary>

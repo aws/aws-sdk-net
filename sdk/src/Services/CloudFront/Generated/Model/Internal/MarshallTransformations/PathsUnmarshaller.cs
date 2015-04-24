@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class PathsUnmarshaller : IUnmarshaller<Paths, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Paths Unmarshall(XmlUnmarshallerContext context)
         {
             Paths unmarshalledObject = new Paths();
@@ -73,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static PathsUnmarshaller _instance = new PathsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static PathsUnmarshaller Instance
         {
             get

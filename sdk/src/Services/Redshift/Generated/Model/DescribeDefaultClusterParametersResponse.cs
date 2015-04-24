@@ -34,6 +34,9 @@ namespace Amazon.Redshift.Model
     {
         private DefaultClusterParameters _response;
 
+        /// <summary>
+        /// Gets and sets the DefaultClusterParameters property.
+        /// </summary>
         public DefaultClusterParameters DefaultClusterParameters
         {
             get { return this._response; }

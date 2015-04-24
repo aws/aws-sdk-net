@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.CloudWatch
 {
+    ///<summary>
+    /// Common exception for the CloudWatch service.
+    /// </summary>
     public class AmazonCloudWatchException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonCloudWatchException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonCloudWatchException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonCloudWatchException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonCloudWatchException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonCloudWatchException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonCloudWatchException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonCloudWatchException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonCloudWatchException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonCloudWatchException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonCloudWatchException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

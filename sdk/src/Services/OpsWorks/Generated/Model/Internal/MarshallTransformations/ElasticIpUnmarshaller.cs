@@ -38,11 +38,21 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ElasticIpUnmarshaller : IUnmarshaller<ElasticIp, XmlUnmarshallerContext>, IUnmarshaller<ElasticIp, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         ElasticIp IUnmarshaller<ElasticIp, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ElasticIp Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -92,6 +102,9 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         private static ElasticIpUnmarshaller _instance = new ElasticIpUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ElasticIpUnmarshaller Instance
         {
             get

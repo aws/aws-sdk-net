@@ -14,13 +14,23 @@ using Amazon.Util;
 
 namespace Amazon.S3.Encryption.Internal
 {
+    /// <summary>
+    /// Custom pipeline handler to encrypt the data as it is being uploaded to S3.
+    /// </summary>
     public class SetupEncryptionHandler : PipelineHandler
     {
+        /// <summary>
+        /// Construct an instance SetupEncryptionHandler.
+        /// </summary>
+        /// <param name="encryptionClient"></param>
         public SetupEncryptionHandler(AmazonS3EncryptionClient encryptionClient)
         {
             this.EncryptionClient = encryptionClient;
         }
 
+        /// <summary>
+        /// Gets the EncryptionClient property which is the AmazonS3EncryptionClient that is encrypting the object.
+        /// </summary>
         public AmazonS3EncryptionClient EncryptionClient
         {
             get;
@@ -69,6 +79,10 @@ namespace Amazon.S3.Encryption.Internal
             return base.InvokeAsync(executionContext);
         }
 #endif
+        /// <summary>
+        /// Encrypts the S3 object being uploaded.
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected void PreInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.OriginalRequest;

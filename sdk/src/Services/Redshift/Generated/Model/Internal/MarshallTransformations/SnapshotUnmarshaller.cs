@@ -36,6 +36,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// </summary>  
     public class SnapshotUnmarshaller : IUnmarshaller<Snapshot, XmlUnmarshallerContext>, IUnmarshaller<Snapshot, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Snapshot Unmarshall(XmlUnmarshallerContext context)
         {
             Snapshot unmarshalledObject = new Snapshot();
@@ -223,6 +228,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Snapshot Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -231,6 +241,9 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
         private static SnapshotUnmarshaller _instance = new SnapshotUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static SnapshotUnmarshaller Instance
         {
             get

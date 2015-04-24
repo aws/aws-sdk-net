@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.SimpleSystemsManagement
 {
+    ///<summary>
+    /// Common exception for the SimpleSystemsManagement service.
+    /// </summary>
     public class AmazonSimpleSystemsManagementException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonSimpleSystemsManagementException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonSimpleSystemsManagementException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonSimpleSystemsManagementException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonSimpleSystemsManagementException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonSimpleSystemsManagementException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonSimpleSystemsManagementException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonSimpleSystemsManagementException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonSimpleSystemsManagementException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonSimpleSystemsManagementException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonSimpleSystemsManagementException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

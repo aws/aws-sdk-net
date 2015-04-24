@@ -9,6 +9,9 @@ using Amazon.Runtime.Internal;
 
 namespace Amazon.SQS.Internal
 {
+    /// <summary>
+    /// Custom pipeline handler
+    /// </summary>
     public class ProcessRequestHandler : PipelineHandler
     {
         /// <summary>
@@ -53,6 +56,10 @@ namespace Amazon.SQS.Internal
             return base.InvokeAsync(executionContext);
         }
 #endif
+        /// <summary>
+        /// Customize the QueueUrl
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected void PreInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;

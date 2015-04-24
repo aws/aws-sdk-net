@@ -38,11 +38,21 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ValidationWarningUnmarshaller : IUnmarshaller<ValidationWarning, XmlUnmarshallerContext>, IUnmarshaller<ValidationWarning, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         ValidationWarning IUnmarshaller<ValidationWarning, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ValidationWarning Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -74,6 +84,9 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 
         private static ValidationWarningUnmarshaller _instance = new ValidationWarningUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ValidationWarningUnmarshaller Instance
         {
             get

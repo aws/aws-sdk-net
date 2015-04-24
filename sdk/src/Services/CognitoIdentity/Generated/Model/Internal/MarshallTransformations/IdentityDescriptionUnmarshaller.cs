@@ -38,11 +38,21 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
     /// </summary>  
     public class IdentityDescriptionUnmarshaller : IUnmarshaller<IdentityDescription, XmlUnmarshallerContext>, IUnmarshaller<IdentityDescription, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         IdentityDescription IUnmarshaller<IdentityDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public IdentityDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -86,6 +96,9 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
 
         private static IdentityDescriptionUnmarshaller _instance = new IdentityDescriptionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static IdentityDescriptionUnmarshaller Instance
         {
             get

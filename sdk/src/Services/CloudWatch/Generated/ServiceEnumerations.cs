@@ -65,6 +65,11 @@ namespace Amazon.CloudWatch
             return FindValue<ComparisonOperator>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ComparisonOperator(string value)
         {
             return FindValue(value);
@@ -109,6 +114,11 @@ namespace Amazon.CloudWatch
             return FindValue<HistoryItemType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator HistoryItemType(string value)
         {
             return FindValue(value);
@@ -249,6 +259,11 @@ namespace Amazon.CloudWatch
             return FindValue<StandardUnit>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator StandardUnit(string value)
         {
             return FindValue(value);
@@ -293,6 +308,11 @@ namespace Amazon.CloudWatch
             return FindValue<StateValue>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator StateValue(string value)
         {
             return FindValue(value);
@@ -345,6 +365,11 @@ namespace Amazon.CloudWatch
             return FindValue<Statistic>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator Statistic(string value)
         {
             return FindValue(value);

@@ -38,11 +38,21 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// </summary>  
     public class AppUnmarshaller : IUnmarshaller<App, XmlUnmarshallerContext>, IUnmarshaller<App, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         App IUnmarshaller<App, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public App Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -146,6 +156,9 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         private static AppUnmarshaller _instance = new AppUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static AppUnmarshaller Instance
         {
             get

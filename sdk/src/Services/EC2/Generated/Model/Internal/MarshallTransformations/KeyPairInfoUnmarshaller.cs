@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class KeyPairInfoUnmarshaller : IUnmarshaller<KeyPairInfo, XmlUnmarshallerContext>, IUnmarshaller<KeyPairInfo, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public KeyPairInfo Unmarshall(XmlUnmarshallerContext context)
         {
             KeyPairInfo unmarshalledObject = new KeyPairInfo();
@@ -71,6 +76,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public KeyPairInfo Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static KeyPairInfoUnmarshaller _instance = new KeyPairInfoUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static KeyPairInfoUnmarshaller Instance
         {
             get

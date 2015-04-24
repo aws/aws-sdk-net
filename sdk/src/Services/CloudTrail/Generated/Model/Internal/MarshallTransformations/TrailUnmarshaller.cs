@@ -38,11 +38,21 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
     /// </summary>  
     public class TrailUnmarshaller : IUnmarshaller<Trail, XmlUnmarshallerContext>, IUnmarshaller<Trail, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         Trail IUnmarshaller<Trail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Trail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -104,6 +114,9 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 
         private static TrailUnmarshaller _instance = new TrailUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static TrailUnmarshaller Instance
         {
             get

@@ -38,11 +38,21 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ParameterValueUnmarshaller : IUnmarshaller<ParameterValue, XmlUnmarshallerContext>, IUnmarshaller<ParameterValue, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         ParameterValue IUnmarshaller<ParameterValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ParameterValue Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -74,6 +84,9 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 
         private static ParameterValueUnmarshaller _instance = new ParameterValueUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ParameterValueUnmarshaller Instance
         {
             get

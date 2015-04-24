@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class VolumeStatusEventUnmarshaller : IUnmarshaller<VolumeStatusEvent, XmlUnmarshallerContext>, IUnmarshaller<VolumeStatusEvent, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public VolumeStatusEvent Unmarshall(XmlUnmarshallerContext context)
         {
             VolumeStatusEvent unmarshalledObject = new VolumeStatusEvent();
@@ -89,6 +94,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public VolumeStatusEvent Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -97,6 +107,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static VolumeStatusEventUnmarshaller _instance = new VolumeStatusEventUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static VolumeStatusEventUnmarshaller Instance
         {
             get

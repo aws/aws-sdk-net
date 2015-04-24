@@ -38,11 +38,21 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// </summary>  
     public class DomainSummaryUnmarshaller : IUnmarshaller<DomainSummary, XmlUnmarshallerContext>, IUnmarshaller<DomainSummary, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         DomainSummary IUnmarshaller<DomainSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DomainSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -86,6 +96,9 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
         private static DomainSummaryUnmarshaller _instance = new DomainSummaryUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DomainSummaryUnmarshaller Instance
         {
             get

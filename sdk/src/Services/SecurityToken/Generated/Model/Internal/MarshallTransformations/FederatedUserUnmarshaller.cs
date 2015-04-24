@@ -36,6 +36,11 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
     /// </summary>  
     public class FederatedUserUnmarshaller : IUnmarshaller<FederatedUser, XmlUnmarshallerContext>, IUnmarshaller<FederatedUser, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public FederatedUser Unmarshall(XmlUnmarshallerContext context)
         {
             FederatedUser unmarshalledObject = new FederatedUser();
@@ -71,6 +76,11 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public FederatedUser Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 
         private static FederatedUserUnmarshaller _instance = new FederatedUserUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static FederatedUserUnmarshaller Instance
         {
             get

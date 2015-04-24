@@ -37,11 +37,21 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
     /// </summary>       
     public class CreateBatchPredictionRequestMarshaller : IMarshaller<IRequest, CreateBatchPredictionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((CreateBatchPredictionRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(CreateBatchPredictionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MachineLearning");

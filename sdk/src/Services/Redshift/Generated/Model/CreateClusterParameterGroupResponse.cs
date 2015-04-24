@@ -34,6 +34,9 @@ namespace Amazon.Redshift.Model
     {
         private ClusterParameterGroup _response;
 
+        /// <summary>
+        /// Gets and sets the ClusterParameterGroup property.
+        /// </summary>
         public ClusterParameterGroup ClusterParameterGroup
         {
             get { return this._response; }

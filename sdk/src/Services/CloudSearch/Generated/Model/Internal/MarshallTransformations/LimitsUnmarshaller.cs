@@ -36,6 +36,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// </summary>  
     public class LimitsUnmarshaller : IUnmarshaller<Limits, XmlUnmarshallerContext>, IUnmarshaller<Limits, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Limits Unmarshall(XmlUnmarshallerContext context)
         {
             Limits unmarshalledObject = new Limits();
@@ -71,6 +76,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Limits Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
         private static LimitsUnmarshaller _instance = new LimitsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static LimitsUnmarshaller Instance
         {
             get

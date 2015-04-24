@@ -36,6 +36,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class AccountQuotaUnmarshaller : IUnmarshaller<AccountQuota, XmlUnmarshallerContext>, IUnmarshaller<AccountQuota, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AccountQuota Unmarshall(XmlUnmarshallerContext context)
         {
             AccountQuota unmarshalledObject = new AccountQuota();
@@ -77,6 +82,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AccountQuota Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -85,6 +95,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
         private static AccountQuotaUnmarshaller _instance = new AccountQuotaUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static AccountQuotaUnmarshaller Instance
         {
             get

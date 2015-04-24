@@ -37,6 +37,9 @@ namespace Amazon.ElastiCache.Model
     {
         private CacheSecurityGroup _response;
 
+        /// <summary>
+        /// Gets and sets the CacheSecurityGroup property.
+        /// </summary>
         public CacheSecurityGroup CacheSecurityGroup
         {
             get { return this._response; }

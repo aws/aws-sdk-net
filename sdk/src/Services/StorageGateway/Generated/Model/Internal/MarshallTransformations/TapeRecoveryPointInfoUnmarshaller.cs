@@ -38,11 +38,21 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
     /// </summary>  
     public class TapeRecoveryPointInfoUnmarshaller : IUnmarshaller<TapeRecoveryPointInfo, XmlUnmarshallerContext>, IUnmarshaller<TapeRecoveryPointInfo, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         TapeRecoveryPointInfo IUnmarshaller<TapeRecoveryPointInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public TapeRecoveryPointInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -86,6 +96,9 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
         private static TapeRecoveryPointInfoUnmarshaller _instance = new TapeRecoveryPointInfoUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static TapeRecoveryPointInfoUnmarshaller Instance
         {
             get

@@ -38,11 +38,21 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
     /// </summary>  
     public class UploadListElementUnmarshaller : IUnmarshaller<UploadListElement, XmlUnmarshallerContext>, IUnmarshaller<UploadListElement, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         UploadListElement IUnmarshaller<UploadListElement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public UploadListElement Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -92,6 +102,9 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
         private static UploadListElementUnmarshaller _instance = new UploadListElementUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static UploadListElementUnmarshaller Instance
         {
             get

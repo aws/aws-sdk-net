@@ -9,8 +9,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable 1591
+
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// Specialized S3 unmarshaller context.
+    /// </summary>
     public class S3UnmarshallerContext : XmlUnmarshallerContext
     {
         bool _checkedForErrorResponse;

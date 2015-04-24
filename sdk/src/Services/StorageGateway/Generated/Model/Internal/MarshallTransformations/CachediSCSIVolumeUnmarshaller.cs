@@ -38,11 +38,21 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
     /// </summary>  
     public class CachediSCSIVolumeUnmarshaller : IUnmarshaller<CachediSCSIVolume, XmlUnmarshallerContext>, IUnmarshaller<CachediSCSIVolume, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         CachediSCSIVolume IUnmarshaller<CachediSCSIVolume, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public CachediSCSIVolume Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -110,6 +120,9 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
         private static CachediSCSIVolumeUnmarshaller _instance = new CachediSCSIVolumeUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static CachediSCSIVolumeUnmarshaller Instance
         {
             get

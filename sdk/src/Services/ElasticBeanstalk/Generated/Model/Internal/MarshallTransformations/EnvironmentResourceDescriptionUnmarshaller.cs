@@ -36,6 +36,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// </summary>  
     public class EnvironmentResourceDescriptionUnmarshaller : IUnmarshaller<EnvironmentResourceDescription, XmlUnmarshallerContext>, IUnmarshaller<EnvironmentResourceDescription, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public EnvironmentResourceDescription Unmarshall(XmlUnmarshallerContext context)
         {
             EnvironmentResourceDescription unmarshalledObject = new EnvironmentResourceDescription();
@@ -107,6 +112,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public EnvironmentResourceDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -115,6 +125,9 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
         private static EnvironmentResourceDescriptionUnmarshaller _instance = new EnvironmentResourceDescriptionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static EnvironmentResourceDescriptionUnmarshaller Instance
         {
             get

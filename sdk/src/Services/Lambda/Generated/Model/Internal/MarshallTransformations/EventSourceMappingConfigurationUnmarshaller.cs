@@ -38,11 +38,21 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
     /// </summary>  
     public class EventSourceMappingConfigurationUnmarshaller : IUnmarshaller<EventSourceMappingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<EventSourceMappingConfiguration, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         EventSourceMappingConfiguration IUnmarshaller<EventSourceMappingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public EventSourceMappingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -110,6 +120,9 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
         private static EventSourceMappingConfigurationUnmarshaller _instance = new EventSourceMappingConfigurationUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static EventSourceMappingConfigurationUnmarshaller Instance
         {
             get

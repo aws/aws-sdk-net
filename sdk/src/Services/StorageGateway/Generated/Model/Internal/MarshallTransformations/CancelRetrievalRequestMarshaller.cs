@@ -37,11 +37,21 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
     /// </summary>       
     public class CancelRetrievalRequestMarshaller : IMarshaller<IRequest, CancelRetrievalRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((CancelRetrievalRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(CancelRetrievalRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");

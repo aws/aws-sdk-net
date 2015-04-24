@@ -23,6 +23,8 @@ using Amazon.S3.Util;
 
 using Amazon.Runtime.Internal;
 
+#pragma warning disable 1591
+
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     public static class S3Transforms

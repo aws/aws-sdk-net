@@ -36,6 +36,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// </summary>  
     public class PolicyVersionUnmarshaller : IUnmarshaller<PolicyVersion, XmlUnmarshallerContext>, IUnmarshaller<PolicyVersion, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public PolicyVersion Unmarshall(XmlUnmarshallerContext context)
         {
             PolicyVersion unmarshalledObject = new PolicyVersion();
@@ -83,6 +88,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public PolicyVersion Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -91,6 +101,9 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
         private static PolicyVersionUnmarshaller _instance = new PolicyVersionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static PolicyVersionUnmarshaller Instance
         {
             get

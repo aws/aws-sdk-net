@@ -34,6 +34,9 @@ namespace Amazon.Redshift.Model
     {
         private ReservedNode _response;
 
+        /// <summary>
+        /// Gets and sets the ReservedNode property.
+        /// </summary>
         public ReservedNode ReservedNode
         {
             get { return this._response; }

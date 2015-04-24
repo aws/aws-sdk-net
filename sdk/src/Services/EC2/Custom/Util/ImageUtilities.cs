@@ -29,6 +29,8 @@ using Amazon.Runtime.Internal.Util;
 
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable 1591
+
 namespace Amazon.EC2.Util
 {
     /// <summary>
@@ -420,6 +422,10 @@ namespace Amazon.EC2.Util
                 internal set;
             }
 
+            /// <summary>
+            /// Override to return back the NamePrefix
+            /// </summary>
+            /// <returns></returns>
             public override string ToString()
             {
                 return this.NamePrefix;

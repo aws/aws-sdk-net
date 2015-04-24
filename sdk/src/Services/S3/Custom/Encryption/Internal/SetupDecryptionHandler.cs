@@ -15,13 +15,23 @@ using Amazon.Util;
 
 namespace Amazon.S3.Encryption.Internal
 {
+    /// <summary>
+    /// Custom the pipeline handler to decrypt objects.
+    /// </summary>
     public class SetupDecryptionHandler : PipelineHandler
     {
+        /// <summary>
+        /// Construct instance of SetupDecryptionHandler.
+        /// </summary>
+        /// <param name="encryptionClient"></param>
         public SetupDecryptionHandler(AmazonS3EncryptionClient encryptionClient)
         {
             this.EncryptionClient = encryptionClient;
         }
 
+        /// <summary>
+        /// Gets the EncryptionClient property which is the AmazonS3EncryptionClient that is decrypting the object.
+        /// </summary>
         public AmazonS3EncryptionClient EncryptionClient
         {
             get;
@@ -70,7 +80,10 @@ namespace Amazon.S3.Encryption.Internal
             base.InvokeAsyncCallback(executionContext);
         }
 #endif
-
+        /// <summary>
+        /// Decrypt the object being downloaded.
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected void PostInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;

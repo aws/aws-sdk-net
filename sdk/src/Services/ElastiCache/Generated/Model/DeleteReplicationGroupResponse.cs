@@ -34,6 +34,9 @@ namespace Amazon.ElastiCache.Model
     {
         private ReplicationGroup _response;
 
+        /// <summary>
+        /// Gets and sets the ReplicationGroup property.
+        /// </summary>
         public ReplicationGroup ReplicationGroup
         {
             get { return this._response; }

@@ -26,12 +26,19 @@ namespace Amazon.S3.Encryption
     /// </summary>
     public class AmazonS3CryptoConfiguration: AmazonS3Config
     {
+        /// <summary>
+        /// Default Constructor.
+        /// </summary>
         public AmazonS3CryptoConfiguration()
         {
             // By default, store encryption info in metadata
             StorageMode = CryptoStorageMode.ObjectMetadata;
         }
 
+        /// <summary>
+        /// Gets and sets the StorageMode property. This determines if the crypto metadata is stored as metadata on the object or as a separate object in S3.
+        /// The default is ObjectMetadata.
+        /// </summary>
         public CryptoStorageMode StorageMode
         { get; set; }
     }

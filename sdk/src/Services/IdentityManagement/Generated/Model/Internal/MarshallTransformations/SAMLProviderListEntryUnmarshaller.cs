@@ -36,6 +36,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// </summary>  
     public class SAMLProviderListEntryUnmarshaller : IUnmarshaller<SAMLProviderListEntry, XmlUnmarshallerContext>, IUnmarshaller<SAMLProviderListEntry, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SAMLProviderListEntry Unmarshall(XmlUnmarshallerContext context)
         {
             SAMLProviderListEntry unmarshalledObject = new SAMLProviderListEntry();
@@ -77,6 +82,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SAMLProviderListEntry Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -85,6 +95,9 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
         private static SAMLProviderListEntryUnmarshaller _instance = new SAMLProviderListEntryUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static SAMLProviderListEntryUnmarshaller Instance
         {
             get

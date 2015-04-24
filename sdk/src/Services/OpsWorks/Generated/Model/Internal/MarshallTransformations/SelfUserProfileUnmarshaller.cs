@@ -38,11 +38,21 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// </summary>  
     public class SelfUserProfileUnmarshaller : IUnmarshaller<SelfUserProfile, XmlUnmarshallerContext>, IUnmarshaller<SelfUserProfile, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         SelfUserProfile IUnmarshaller<SelfUserProfile, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SelfUserProfile Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -86,6 +96,9 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         private static SelfUserProfileUnmarshaller _instance = new SelfUserProfileUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static SelfUserProfileUnmarshaller Instance
         {
             get

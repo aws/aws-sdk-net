@@ -10,9 +10,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Transform;
 
-using Amazon.S3.Model.Internal.MarshallTransformations;
+#pragma warning disable 1591
 
-namespace Amazon.S3.Model
+namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Class for unmarshalling S3 service responses

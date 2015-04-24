@@ -34,7 +34,9 @@ namespace Amazon.EC2.Model
     {
         private KeyPair _keyPair;
 
-        // Gets and sets the KeyPair member
+        /// <summary>
+        /// Gets and sets the KeyPair member
+        /// </summary>
         public KeyPair KeyPair
         {
             get { return this._keyPair; }

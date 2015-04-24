@@ -38,11 +38,21 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
     /// </summary>  
     public class VideoParametersUnmarshaller : IUnmarshaller<VideoParameters, XmlUnmarshallerContext>, IUnmarshaller<VideoParameters, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         VideoParameters IUnmarshaller<VideoParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public VideoParameters Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -152,6 +162,9 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         private static VideoParametersUnmarshaller _instance = new VideoParametersUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static VideoParametersUnmarshaller Instance
         {
             get

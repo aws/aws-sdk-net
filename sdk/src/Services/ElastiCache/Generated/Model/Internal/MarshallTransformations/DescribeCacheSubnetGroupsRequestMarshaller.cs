@@ -35,11 +35,21 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// </summary>       
     public class DescribeCacheSubnetGroupsRequestMarshaller : IMarshaller<IRequest, DescribeCacheSubnetGroupsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((DescribeCacheSubnetGroupsRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(DescribeCacheSubnetGroupsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");

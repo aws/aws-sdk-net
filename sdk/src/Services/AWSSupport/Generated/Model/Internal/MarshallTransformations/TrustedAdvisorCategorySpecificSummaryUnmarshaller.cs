@@ -38,11 +38,21 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
     /// </summary>  
     public class TrustedAdvisorCategorySpecificSummaryUnmarshaller : IUnmarshaller<TrustedAdvisorCategorySpecificSummary, XmlUnmarshallerContext>, IUnmarshaller<TrustedAdvisorCategorySpecificSummary, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         TrustedAdvisorCategorySpecificSummary IUnmarshaller<TrustedAdvisorCategorySpecificSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public TrustedAdvisorCategorySpecificSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -68,6 +78,9 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 
         private static TrustedAdvisorCategorySpecificSummaryUnmarshaller _instance = new TrustedAdvisorCategorySpecificSummaryUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static TrustedAdvisorCategorySpecificSummaryUnmarshaller Instance
         {
             get

@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.SimpleDB
 {
+    ///<summary>
+    /// Common exception for the SimpleDB service.
+    /// </summary>
     public class AmazonSimpleDBException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonSimpleDBException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonSimpleDBException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonSimpleDBException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonSimpleDBException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonSimpleDBException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonSimpleDBException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonSimpleDBException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonSimpleDBException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonSimpleDBException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonSimpleDBException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

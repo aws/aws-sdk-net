@@ -32,6 +32,9 @@ using System.Globalization;
 
 namespace Amazon.S3.Transfer
 {
+    /// <summary>
+    /// Request object for downloading a directory with the TransferUtility.
+    /// </summary>
     public class TransferUtilityDownloadDirectoryRequest
     {
         private string bucketName;

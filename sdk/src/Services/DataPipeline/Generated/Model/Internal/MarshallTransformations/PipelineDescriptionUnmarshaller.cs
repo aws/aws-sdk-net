@@ -38,11 +38,21 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
     /// </summary>  
     public class PipelineDescriptionUnmarshaller : IUnmarshaller<PipelineDescription, XmlUnmarshallerContext>, IUnmarshaller<PipelineDescription, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         PipelineDescription IUnmarshaller<PipelineDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public PipelineDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -92,6 +102,9 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 
         private static PipelineDescriptionUnmarshaller _instance = new PipelineDescriptionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static PipelineDescriptionUnmarshaller Instance
         {
             get

@@ -38,11 +38,21 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
     /// </summary>  
     public class CategoryUnmarshaller : IUnmarshaller<Category, XmlUnmarshallerContext>, IUnmarshaller<Category, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         Category IUnmarshaller<Category, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Category Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -74,6 +84,9 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 
         private static CategoryUnmarshaller _instance = new CategoryUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static CategoryUnmarshaller Instance
         {
             get

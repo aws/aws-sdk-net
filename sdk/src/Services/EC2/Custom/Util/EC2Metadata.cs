@@ -532,6 +532,10 @@ namespace Amazon.EC2.Util
 
         private NetworkInterface() { }
 
+        /// <summary>
+        /// Construct an instance of NetworkInterface
+        /// </summary>
+        /// <param name="macAddress"></param>
         public NetworkInterface(string macAddress)
         {
             _mac = macAddress;

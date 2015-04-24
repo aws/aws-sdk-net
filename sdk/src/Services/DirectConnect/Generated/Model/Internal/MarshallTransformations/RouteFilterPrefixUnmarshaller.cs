@@ -38,11 +38,21 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
     /// </summary>  
     public class RouteFilterPrefixUnmarshaller : IUnmarshaller<RouteFilterPrefix, XmlUnmarshallerContext>, IUnmarshaller<RouteFilterPrefix, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         RouteFilterPrefix IUnmarshaller<RouteFilterPrefix, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public RouteFilterPrefix Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -68,6 +78,9 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 
         private static RouteFilterPrefixUnmarshaller _instance = new RouteFilterPrefixUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static RouteFilterPrefixUnmarshaller Instance
         {
             get

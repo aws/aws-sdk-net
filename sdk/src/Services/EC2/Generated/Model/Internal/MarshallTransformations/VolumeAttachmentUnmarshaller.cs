@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class VolumeAttachmentUnmarshaller : IUnmarshaller<VolumeAttachment, XmlUnmarshallerContext>, IUnmarshaller<VolumeAttachment, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public VolumeAttachment Unmarshall(XmlUnmarshallerContext context)
         {
             VolumeAttachment unmarshalledObject = new VolumeAttachment();
@@ -95,6 +100,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public VolumeAttachment Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -103,6 +113,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static VolumeAttachmentUnmarshaller _instance = new VolumeAttachmentUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static VolumeAttachmentUnmarshaller Instance
         {
             get

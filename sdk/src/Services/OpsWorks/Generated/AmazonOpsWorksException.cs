@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.OpsWorks
 {
+    ///<summary>
+    /// Common exception for the OpsWorks service.
+    /// </summary>
     public class AmazonOpsWorksException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonOpsWorksException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonOpsWorksException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonOpsWorksException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonOpsWorksException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonOpsWorksException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonOpsWorksException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonOpsWorksException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonOpsWorksException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonOpsWorksException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonOpsWorksException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

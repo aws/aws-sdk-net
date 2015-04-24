@@ -35,11 +35,21 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// </summary>       
     public class CreateDBParameterGroupRequestMarshaller : IMarshaller<IRequest, CreateDBParameterGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((CreateDBParameterGroupRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(CreateDBParameterGroupRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");

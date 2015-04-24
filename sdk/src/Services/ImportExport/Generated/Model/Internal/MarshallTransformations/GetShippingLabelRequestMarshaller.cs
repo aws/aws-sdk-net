@@ -35,11 +35,21 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// </summary>       
     public class GetShippingLabelRequestMarshaller : IMarshaller<IRequest, GetShippingLabelRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((GetShippingLabelRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(GetShippingLabelRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ImportExport");

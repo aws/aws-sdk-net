@@ -40,6 +40,9 @@ namespace Amazon.RDS.Model
     {
         private DBInstance _response;
 
+        /// <summary>
+        /// Gets and sets the DBInstance property.
+        /// </summary>
         public DBInstance DBInstance
         {
             get { return this._response; }

@@ -34,7 +34,9 @@ namespace Amazon.EC2.Model
     {
         private VolumeAttachment _volumeAttachment;
 
-        // Gets and sets the Attachment member
+        /// <summary>
+        /// Gets and sets the Attachment member
+        /// </summary>
         public VolumeAttachment Attachment
         {
             get { return this._volumeAttachment; }

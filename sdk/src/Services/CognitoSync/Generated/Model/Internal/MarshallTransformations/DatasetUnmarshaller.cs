@@ -38,11 +38,21 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
     /// </summary>  
     public class DatasetUnmarshaller : IUnmarshaller<Dataset, XmlUnmarshallerContext>, IUnmarshaller<Dataset, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         Dataset IUnmarshaller<Dataset, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Dataset Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -104,6 +114,9 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 
         private static DatasetUnmarshaller _instance = new DatasetUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DatasetUnmarshaller Instance
         {
             get

@@ -181,6 +181,12 @@ namespace Amazon.DynamoDBv2
 
         #region Public methods
 
+        /// <summary>
+        /// Convert value to DynamoDBEntry
+        /// </summary>
+        /// <typeparam name="TInput"></typeparam>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public DynamoDBEntry ConvertToEntry<TInput>(TInput value)
         {
             DynamoDBEntry entry;
@@ -190,11 +196,26 @@ namespace Amazon.DynamoDBv2
             throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                 "Unable to convert [{0}] of type {1} to DynamoDBEntry", value, value.GetType().FullName));
         }
+
+        /// <summary>
+        /// Try to convert value to DynamoDBEntry. If it fails the method returns false.
+        /// </summary>
+        /// <typeparam name="TInput"></typeparam>
+        /// <param name="value"></param>
+        /// <param name="entry"></param>
+        /// <returns>True if successfully converted, otherwise false.</returns>
         public bool TryConvertToEntry<TInput>(TInput value, out DynamoDBEntry entry)
         {
             var inputType = typeof(TInput);
             return TryConvertToEntry(inputType, value, out entry);
         }
+
+        /// <summary>
+        /// Convert the DynamoDBEntry to the specified type.
+        /// </summary>
+        /// <typeparam name="TOutput"></typeparam>
+        /// <param name="entry"></param>
+        /// <returns></returns>
         public TOutput ConvertFromEntry<TOutput>(DynamoDBEntry entry)
         {
             TOutput output;
@@ -204,6 +225,14 @@ namespace Amazon.DynamoDBv2
             throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                 "Unable to convert [{0}] of type {1} to {2}", entry, entry.GetType().FullName, typeof(TOutput).FullName));
         }
+
+        /// <summary>
+        /// Try to convert the DynamoDBEntry to the specified type. If it fails the method returns false.
+        /// </summary>
+        /// <typeparam name="TOutput"></typeparam>
+        /// <param name="entry"></param>
+        /// <param name="output"></param>
+        /// <returns>True if successfully converted, otherwise false.</returns>
         public bool TryConvertFromEntry<TOutput>(DynamoDBEntry entry, out TOutput output)
         {
             output = default(TOutput);

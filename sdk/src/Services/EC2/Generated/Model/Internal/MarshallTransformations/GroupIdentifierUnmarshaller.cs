@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class GroupIdentifierUnmarshaller : IUnmarshaller<GroupIdentifier, XmlUnmarshallerContext>, IUnmarshaller<GroupIdentifier, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public GroupIdentifier Unmarshall(XmlUnmarshallerContext context)
         {
             GroupIdentifier unmarshalledObject = new GroupIdentifier();
@@ -71,6 +76,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public GroupIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static GroupIdentifierUnmarshaller _instance = new GroupIdentifierUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static GroupIdentifierUnmarshaller Instance
         {
             get

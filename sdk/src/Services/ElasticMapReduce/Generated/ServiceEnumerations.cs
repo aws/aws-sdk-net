@@ -65,6 +65,11 @@ namespace Amazon.ElasticMapReduce
             return FindValue<ActionOnFailure>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ActionOnFailure(string value)
         {
             return FindValue(value);
@@ -125,6 +130,11 @@ namespace Amazon.ElasticMapReduce
             return FindValue<ClusterState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ClusterState(string value)
         {
             return FindValue(value);
@@ -185,6 +195,11 @@ namespace Amazon.ElasticMapReduce
             return FindValue<ClusterStateChangeReasonCode>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ClusterStateChangeReasonCode(string value)
         {
             return FindValue(value);
@@ -257,6 +272,11 @@ namespace Amazon.ElasticMapReduce
             return FindValue<InstanceGroupState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator InstanceGroupState(string value)
         {
             return FindValue(value);
@@ -305,6 +325,11 @@ namespace Amazon.ElasticMapReduce
             return FindValue<InstanceGroupStateChangeReasonCode>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator InstanceGroupStateChangeReasonCode(string value)
         {
             return FindValue(value);
@@ -349,6 +374,11 @@ namespace Amazon.ElasticMapReduce
             return FindValue<InstanceGroupType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator InstanceGroupType(string value)
         {
             return FindValue(value);
@@ -393,6 +423,11 @@ namespace Amazon.ElasticMapReduce
             return FindValue<InstanceRoleType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator InstanceRoleType(string value)
         {
             return FindValue(value);
@@ -445,6 +480,11 @@ namespace Amazon.ElasticMapReduce
             return FindValue<InstanceState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator InstanceState(string value)
         {
             return FindValue(value);
@@ -497,6 +537,11 @@ namespace Amazon.ElasticMapReduce
             return FindValue<InstanceStateChangeReasonCode>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator InstanceStateChangeReasonCode(string value)
         {
             return FindValue(value);
@@ -561,6 +606,11 @@ namespace Amazon.ElasticMapReduce
             return FindValue<JobFlowExecutionState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator JobFlowExecutionState(string value)
         {
             return FindValue(value);
@@ -601,6 +651,11 @@ namespace Amazon.ElasticMapReduce
             return FindValue<MarketType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator MarketType(string value)
         {
             return FindValue(value);
@@ -661,6 +716,11 @@ namespace Amazon.ElasticMapReduce
             return FindValue<StepExecutionState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator StepExecutionState(string value)
         {
             return FindValue(value);
@@ -717,6 +777,11 @@ namespace Amazon.ElasticMapReduce
             return FindValue<StepState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator StepState(string value)
         {
             return FindValue(value);
@@ -753,6 +818,11 @@ namespace Amazon.ElasticMapReduce
             return FindValue<StepStateChangeReasonCode>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator StepStateChangeReasonCode(string value)
         {
             return FindValue(value);

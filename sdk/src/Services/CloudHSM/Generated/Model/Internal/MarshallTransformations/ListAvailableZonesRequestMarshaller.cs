@@ -37,11 +37,21 @@ namespace Amazon.CloudHSM.Model.Internal.MarshallTransformations
     /// </summary>       
     public class ListAvailableZonesRequestMarshaller : IMarshaller<IRequest, ListAvailableZonesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((ListAvailableZonesRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(ListAvailableZonesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudHSM");

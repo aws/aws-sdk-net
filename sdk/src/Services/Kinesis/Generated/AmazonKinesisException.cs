@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.Kinesis
 {
+    ///<summary>
+    /// Common exception for the Kinesis service.
+    /// </summary>
     public class AmazonKinesisException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonKinesisException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonKinesisException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonKinesisException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonKinesisException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonKinesisException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonKinesisException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonKinesisException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonKinesisException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonKinesisException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonKinesisException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

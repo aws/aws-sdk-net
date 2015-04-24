@@ -37,6 +37,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ResourceRecordUnmarshaller : IUnmarshaller<ResourceRecord, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ResourceRecord Unmarshall(XmlUnmarshallerContext context)
         {
             ResourceRecord unmarshalledObject = new ResourceRecord();
@@ -67,6 +72,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
         private static ResourceRecordUnmarshaller _instance = new ResourceRecordUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ResourceRecordUnmarshaller Instance
         {
             get

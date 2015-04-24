@@ -37,11 +37,21 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// </summary>       
     public class ListDeploymentGroupsRequestMarshaller : IMarshaller<IRequest, ListDeploymentGroupsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((ListDeploymentGroupsRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(ListDeploymentGroupsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeDeploy");

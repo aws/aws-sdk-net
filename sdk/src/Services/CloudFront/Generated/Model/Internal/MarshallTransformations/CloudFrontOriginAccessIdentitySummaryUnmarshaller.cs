@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class CloudFrontOriginAccessIdentitySummaryUnmarshaller : IUnmarshaller<CloudFrontOriginAccessIdentitySummary, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public CloudFrontOriginAccessIdentitySummary Unmarshall(XmlUnmarshallerContext context)
         {
             CloudFrontOriginAccessIdentitySummary unmarshalledObject = new CloudFrontOriginAccessIdentitySummary();
@@ -79,6 +84,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static CloudFrontOriginAccessIdentitySummaryUnmarshaller _instance = new CloudFrontOriginAccessIdentitySummaryUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static CloudFrontOriginAccessIdentitySummaryUnmarshaller Instance
         {
             get

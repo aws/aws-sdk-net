@@ -37,6 +37,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
     /// </summary>       
     public class ConditionMarshaller : IRequestMarshaller<Condition, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(Condition requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetAttributeValueList())
@@ -63,6 +69,9 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static ConditionMarshaller Instance = new ConditionMarshaller();
 
     }

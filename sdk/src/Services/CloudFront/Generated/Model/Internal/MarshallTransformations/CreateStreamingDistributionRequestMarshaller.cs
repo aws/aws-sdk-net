@@ -37,11 +37,21 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>       
     public class CreateStreamingDistributionRequestMarshaller : IMarshaller<IRequest, CreateStreamingDistributionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((CreateStreamingDistributionRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(CreateStreamingDistributionRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");

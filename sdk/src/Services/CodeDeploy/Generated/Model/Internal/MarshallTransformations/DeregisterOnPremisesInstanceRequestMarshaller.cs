@@ -37,11 +37,21 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// </summary>       
     public class DeregisterOnPremisesInstanceRequestMarshaller : IMarshaller<IRequest, DeregisterOnPremisesInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((DeregisterOnPremisesInstanceRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(DeregisterOnPremisesInstanceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeDeploy");

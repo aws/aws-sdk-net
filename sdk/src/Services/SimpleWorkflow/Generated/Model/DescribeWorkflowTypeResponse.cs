@@ -34,7 +34,9 @@ namespace Amazon.SimpleWorkflow.Model
     {
         private WorkflowTypeDetail _workflowTypeDetail;
 
-        // Gets and sets the WorkflowTypeDetail member
+        /// <summary>
+        /// Gets and sets the WorkflowTypeDetail member
+        /// </summary>
         public WorkflowTypeDetail WorkflowTypeDetail
         {
             get { return this._workflowTypeDetail; }

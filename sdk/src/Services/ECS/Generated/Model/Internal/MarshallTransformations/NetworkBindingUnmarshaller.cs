@@ -38,11 +38,21 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class NetworkBindingUnmarshaller : IUnmarshaller<NetworkBinding, XmlUnmarshallerContext>, IUnmarshaller<NetworkBinding, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         NetworkBinding IUnmarshaller<NetworkBinding, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public NetworkBinding Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -80,6 +90,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         private static NetworkBindingUnmarshaller _instance = new NetworkBindingUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static NetworkBindingUnmarshaller Instance
         {
             get

@@ -57,6 +57,11 @@ namespace Amazon.SimpleSystemsManagement
             return FindValue<AssociationFilterKey>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator AssociationFilterKey(string value)
         {
             return FindValue(value);
@@ -101,6 +106,11 @@ namespace Amazon.SimpleSystemsManagement
             return FindValue<AssociationStatusName>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator AssociationStatusName(string value)
         {
             return FindValue(value);
@@ -137,6 +147,11 @@ namespace Amazon.SimpleSystemsManagement
             return FindValue<DocumentFilterKey>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator DocumentFilterKey(string value)
         {
             return FindValue(value);
@@ -181,6 +196,11 @@ namespace Amazon.SimpleSystemsManagement
             return FindValue<DocumentStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator DocumentStatus(string value)
         {
             return FindValue(value);
@@ -225,6 +245,11 @@ namespace Amazon.SimpleSystemsManagement
             return FindValue<Fault>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator Fault(string value)
         {
             return FindValue(value);

@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.CloudTrail
 {
+    ///<summary>
+    /// Common exception for the CloudTrail service.
+    /// </summary>
     public class AmazonCloudTrailException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonCloudTrailException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonCloudTrailException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonCloudTrailException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonCloudTrailException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonCloudTrailException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonCloudTrailException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonCloudTrailException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonCloudTrailException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonCloudTrailException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonCloudTrailException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

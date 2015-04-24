@@ -36,6 +36,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ReservedNodeOfferingUnmarshaller : IUnmarshaller<ReservedNodeOffering, XmlUnmarshallerContext>, IUnmarshaller<ReservedNodeOffering, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ReservedNodeOffering Unmarshall(XmlUnmarshallerContext context)
         {
             ReservedNodeOffering unmarshalledObject = new ReservedNodeOffering();
@@ -108,6 +113,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ReservedNodeOffering Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -116,6 +126,9 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
         private static ReservedNodeOfferingUnmarshaller _instance = new ReservedNodeOfferingUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ReservedNodeOfferingUnmarshaller Instance
         {
             get

@@ -24,8 +24,13 @@ using Amazon.Util;
 
 using ThirdParty.BouncyCastle.OpenSsl;
 
+#pragma warning disable 1591
+
 namespace Amazon.CloudFront
 {
+    /// <summary>
+    /// Utility class for signing request to CloudFront.
+    /// </summary>
     public static class AmazonCloudFrontUrlSigner
     {
         public enum Protocol

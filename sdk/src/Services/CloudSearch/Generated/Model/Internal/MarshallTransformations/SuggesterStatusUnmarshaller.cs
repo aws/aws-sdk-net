@@ -36,6 +36,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// </summary>  
     public class SuggesterStatusUnmarshaller : IUnmarshaller<SuggesterStatus, XmlUnmarshallerContext>, IUnmarshaller<SuggesterStatus, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SuggesterStatus Unmarshall(XmlUnmarshallerContext context)
         {
             SuggesterStatus unmarshalledObject = new SuggesterStatus();
@@ -71,6 +76,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SuggesterStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
         private static SuggesterStatusUnmarshaller _instance = new SuggesterStatusUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static SuggesterStatusUnmarshaller Instance
         {
             get

@@ -37,6 +37,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// </summary>       
     public class InstanceGroupModifyConfigMarshaller : IRequestMarshaller<InstanceGroupModifyConfig, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(InstanceGroupModifyConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetEC2InstanceIdsToTerminate())
@@ -64,6 +70,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static InstanceGroupModifyConfigMarshaller Instance = new InstanceGroupModifyConfigMarshaller();
 
     }

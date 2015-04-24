@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.Glacier
 {
+    ///<summary>
+    /// Common exception for the Glacier service.
+    /// </summary>
     public class AmazonGlacierException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonGlacierException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonGlacierException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonGlacierException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonGlacierException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonGlacierException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonGlacierException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonGlacierException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonGlacierException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonGlacierException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonGlacierException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

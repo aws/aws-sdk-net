@@ -36,6 +36,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// </summary>  
     public class AnalysisOptionsUnmarshaller : IUnmarshaller<AnalysisOptions, XmlUnmarshallerContext>, IUnmarshaller<AnalysisOptions, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AnalysisOptions Unmarshall(XmlUnmarshallerContext context)
         {
             AnalysisOptions unmarshalledObject = new AnalysisOptions();
@@ -89,6 +94,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AnalysisOptions Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -97,6 +107,9 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
         private static AnalysisOptionsUnmarshaller _instance = new AnalysisOptionsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static AnalysisOptionsUnmarshaller Instance
         {
             get

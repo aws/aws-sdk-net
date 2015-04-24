@@ -38,11 +38,21 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
     /// </summary>  
     public class DocumentIdentifierUnmarshaller : IUnmarshaller<DocumentIdentifier, XmlUnmarshallerContext>, IUnmarshaller<DocumentIdentifier, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         DocumentIdentifier IUnmarshaller<DocumentIdentifier, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DocumentIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -68,6 +78,9 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         private static DocumentIdentifierUnmarshaller _instance = new DocumentIdentifierUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DocumentIdentifierUnmarshaller Instance
         {
             get

@@ -37,11 +37,21 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
     /// </summary>       
     public class UpdateFunctionCodeRequestMarshaller : IMarshaller<IRequest, UpdateFunctionCodeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((UpdateFunctionCodeRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(UpdateFunctionCodeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lambda");

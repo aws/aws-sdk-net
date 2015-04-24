@@ -37,6 +37,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ChangeInfoUnmarshaller : IUnmarshaller<ChangeInfo, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ChangeInfo Unmarshall(XmlUnmarshallerContext context)
         {
             ChangeInfo unmarshalledObject = new ChangeInfo();
@@ -85,6 +90,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
         private static ChangeInfoUnmarshaller _instance = new ChangeInfoUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ChangeInfoUnmarshaller Instance
         {
             get

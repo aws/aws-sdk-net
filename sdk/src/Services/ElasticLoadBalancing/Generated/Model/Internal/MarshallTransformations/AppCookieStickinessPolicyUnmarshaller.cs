@@ -36,6 +36,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// </summary>  
     public class AppCookieStickinessPolicyUnmarshaller : IUnmarshaller<AppCookieStickinessPolicy, XmlUnmarshallerContext>, IUnmarshaller<AppCookieStickinessPolicy, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AppCookieStickinessPolicy Unmarshall(XmlUnmarshallerContext context)
         {
             AppCookieStickinessPolicy unmarshalledObject = new AppCookieStickinessPolicy();
@@ -71,6 +76,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AppCookieStickinessPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
         private static AppCookieStickinessPolicyUnmarshaller _instance = new AppCookieStickinessPolicyUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static AppCookieStickinessPolicyUnmarshaller Instance
         {
             get

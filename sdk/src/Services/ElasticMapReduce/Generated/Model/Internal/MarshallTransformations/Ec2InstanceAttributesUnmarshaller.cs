@@ -38,11 +38,21 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// </summary>  
     public class Ec2InstanceAttributesUnmarshaller : IUnmarshaller<Ec2InstanceAttributes, XmlUnmarshallerContext>, IUnmarshaller<Ec2InstanceAttributes, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         Ec2InstanceAttributes IUnmarshaller<Ec2InstanceAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Ec2InstanceAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -110,6 +120,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         private static Ec2InstanceAttributesUnmarshaller _instance = new Ec2InstanceAttributesUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static Ec2InstanceAttributesUnmarshaller Instance
         {
             get

@@ -20,9 +20,18 @@ using System.Text;
 
 namespace Amazon.S3.Encryption
 {
+    /// <summary>
+    /// Mode for string the encryption information for an object.
+    /// </summary>
     public enum CryptoStorageMode
     {
+        /// <summary>
+        /// Store the information in a separate S3 Object.
+        /// </summary>
         InstructionFile,
+        /// <summary>
+        /// Store the information as metadata on the encrypted object.
+        /// </summary>
         ObjectMetadata
     }
 }

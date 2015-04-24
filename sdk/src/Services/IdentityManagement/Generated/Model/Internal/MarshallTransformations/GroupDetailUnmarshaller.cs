@@ -36,6 +36,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// </summary>  
     public class GroupDetailUnmarshaller : IUnmarshaller<GroupDetail, XmlUnmarshallerContext>, IUnmarshaller<GroupDetail, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public GroupDetail Unmarshall(XmlUnmarshallerContext context)
         {
             GroupDetail unmarshalledObject = new GroupDetail();
@@ -103,6 +108,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public GroupDetail Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -111,6 +121,9 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
         private static GroupDetailUnmarshaller _instance = new GroupDetailUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static GroupDetailUnmarshaller Instance
         {
             get

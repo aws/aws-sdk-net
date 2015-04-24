@@ -17,12 +17,13 @@ using System;
 using Amazon.S3;
 using Amazon.S3.Model;
 
+
 namespace Amazon.S3
 {
-    /// <summary>
-    /// Interface for Amazon S3 Clients.
-    /// For more information about Amazon S3, go to <see href="http://aws.amazon.com/s3"/>
-    /// </summary>
+#if STORAGE_FILE
+    [CLSCompliant(false)]
+#endif
+
     public partial interface IAmazonS3 : IDisposable, Amazon.Runtime.SharedInterfaces.ICoreAmazonS3
     {
         #region GetPreSignedURL

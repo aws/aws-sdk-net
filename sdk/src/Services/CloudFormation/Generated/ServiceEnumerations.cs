@@ -53,6 +53,11 @@ namespace Amazon.CloudFormation
             return FindValue<Capability>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator Capability(string value)
         {
             return FindValue(value);
@@ -97,6 +102,11 @@ namespace Amazon.CloudFormation
             return FindValue<OnFailure>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator OnFailure(string value)
         {
             return FindValue(value);
@@ -137,6 +147,11 @@ namespace Amazon.CloudFormation
             return FindValue<ResourceSignalStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ResourceSignalStatus(string value)
         {
             return FindValue(value);
@@ -209,6 +224,11 @@ namespace Amazon.CloudFormation
             return FindValue<ResourceStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ResourceStatus(string value)
         {
             return FindValue(value);
@@ -305,6 +325,11 @@ namespace Amazon.CloudFormation
             return FindValue<StackStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator StackStatus(string value)
         {
             return FindValue(value);

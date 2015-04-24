@@ -37,6 +37,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// </summary>  
     public class AliasTargetUnmarshaller : IUnmarshaller<AliasTarget, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AliasTarget Unmarshall(XmlUnmarshallerContext context)
         {
             AliasTarget unmarshalledObject = new AliasTarget();
@@ -79,6 +84,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
         private static AliasTargetUnmarshaller _instance = new AliasTargetUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static AliasTargetUnmarshaller Instance
         {
             get

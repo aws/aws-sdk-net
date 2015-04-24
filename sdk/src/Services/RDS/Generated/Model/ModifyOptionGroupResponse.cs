@@ -34,6 +34,9 @@ namespace Amazon.RDS.Model
     {
         private OptionGroup _response;
 
+        /// <summary>
+        /// Gets and sets the OptionGroup property.
+        /// </summary>
         public OptionGroup OptionGroup
         {
             get { return this._response; }

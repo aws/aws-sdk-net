@@ -24,6 +24,9 @@ namespace Amazon.Glacier
     /// </summary>
     public partial class AmazonGlacierConfig
     {
+        /// <summary>
+        /// Customize thie initialization of the config object.
+        /// </summary>
         protected override void Initialize()
         {
 

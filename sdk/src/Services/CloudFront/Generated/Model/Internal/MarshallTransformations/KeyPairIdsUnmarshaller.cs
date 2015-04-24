@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class KeyPairIdsUnmarshaller : IUnmarshaller<KeyPairIds, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public KeyPairIds Unmarshall(XmlUnmarshallerContext context)
         {
             KeyPairIds unmarshalledObject = new KeyPairIds();
@@ -73,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static KeyPairIdsUnmarshaller _instance = new KeyPairIdsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static KeyPairIdsUnmarshaller Instance
         {
             get

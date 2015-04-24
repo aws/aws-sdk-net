@@ -36,6 +36,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ClusterParameterGroupStatusUnmarshaller : IUnmarshaller<ClusterParameterGroupStatus, XmlUnmarshallerContext>, IUnmarshaller<ClusterParameterGroupStatus, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ClusterParameterGroupStatus Unmarshall(XmlUnmarshallerContext context)
         {
             ClusterParameterGroupStatus unmarshalledObject = new ClusterParameterGroupStatus();
@@ -71,6 +76,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ClusterParameterGroupStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
         private static ClusterParameterGroupStatusUnmarshaller _instance = new ClusterParameterGroupStatusUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ClusterParameterGroupStatusUnmarshaller Instance
         {
             get

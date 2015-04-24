@@ -38,11 +38,21 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// </summary>  
     public class TimeBasedAutoScalingConfigurationUnmarshaller : IUnmarshaller<TimeBasedAutoScalingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TimeBasedAutoScalingConfiguration, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         TimeBasedAutoScalingConfiguration IUnmarshaller<TimeBasedAutoScalingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public TimeBasedAutoScalingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -74,6 +84,9 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         private static TimeBasedAutoScalingConfigurationUnmarshaller _instance = new TimeBasedAutoScalingConfigurationUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static TimeBasedAutoScalingConfigurationUnmarshaller Instance
         {
             get

@@ -31,7 +31,13 @@ namespace Amazon.S3.IO
     /// </summary>
     public enum FileSystemType
     {
+        /// <summary>
+        /// Type is a directory.
+        /// </summary>
         Directory,
+        /// <summary>
+        /// Type is a file.
+        /// </summary>
         File
     };
 

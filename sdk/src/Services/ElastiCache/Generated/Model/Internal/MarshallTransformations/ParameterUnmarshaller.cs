@@ -36,6 +36,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ParameterUnmarshaller : IUnmarshaller<Parameter, XmlUnmarshallerContext>, IUnmarshaller<Parameter, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Parameter Unmarshall(XmlUnmarshallerContext context)
         {
             Parameter unmarshalledObject = new Parameter();
@@ -107,6 +112,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Parameter Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -115,6 +125,9 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
         private static ParameterUnmarshaller _instance = new ParameterUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ParameterUnmarshaller Instance
         {
             get

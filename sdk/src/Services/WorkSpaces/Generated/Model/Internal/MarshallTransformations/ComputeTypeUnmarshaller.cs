@@ -38,11 +38,21 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ComputeTypeUnmarshaller : IUnmarshaller<ComputeType, XmlUnmarshallerContext>, IUnmarshaller<ComputeType, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         ComputeType IUnmarshaller<ComputeType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ComputeType Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -68,6 +78,9 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         private static ComputeTypeUnmarshaller _instance = new ComputeTypeUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ComputeTypeUnmarshaller Instance
         {
             get

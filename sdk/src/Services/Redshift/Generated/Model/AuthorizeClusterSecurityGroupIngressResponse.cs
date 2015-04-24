@@ -34,6 +34,9 @@ namespace Amazon.Redshift.Model
     {
         private ClusterSecurityGroup _response;
 
+        /// <summary>
+        /// Gets and sets the ClusterSecurityGroup property.
+        /// </summary>
         public ClusterSecurityGroup ClusterSecurityGroup
         {
             get { return this._response; }

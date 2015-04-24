@@ -36,6 +36,11 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class SendMessageBatchResultEntryUnmarshaller : IUnmarshaller<SendMessageBatchResultEntry, XmlUnmarshallerContext>, IUnmarshaller<SendMessageBatchResultEntry, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SendMessageBatchResultEntry Unmarshall(XmlUnmarshallerContext context)
         {
             SendMessageBatchResultEntry unmarshalledObject = new SendMessageBatchResultEntry();
@@ -83,6 +88,11 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SendMessageBatchResultEntry Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -91,6 +101,9 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
 
         private static SendMessageBatchResultEntryUnmarshaller _instance = new SendMessageBatchResultEntryUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static SendMessageBatchResultEntryUnmarshaller Instance
         {
             get

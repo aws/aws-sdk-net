@@ -37,20 +37,52 @@ namespace Amazon.Glacier.Model
         public ServiceUnavailableException(string message) 
             : base(message) {}
           
+        /// <summary>
+        /// Construct instance of ServiceUnavailableException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public ServiceUnavailableException(string message, Exception innerException) 
             : base(message, innerException) {}
             
+        /// <summary>
+        /// Construct instance of ServiceUnavailableException
+        /// </summary>
+        /// <param name="innerException"></param>
         public ServiceUnavailableException(Exception innerException) 
             : base(innerException) {}
             
-        public ServiceUnavailableException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of ServiceUnavailableException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public ServiceUnavailableException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
-        public ServiceUnavailableException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of ServiceUnavailableException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public ServiceUnavailableException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
 
+        /// <summary>
+        /// Gets and sets the Code property.
+        /// </summary>
         public string Code { get; set; }
 
+        /// <summary>
+        /// Gets and sets the Type property.
+        /// </summary>
         public string Type { get; set; }
 
     }

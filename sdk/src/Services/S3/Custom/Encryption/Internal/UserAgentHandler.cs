@@ -57,6 +57,10 @@ namespace Amazon.S3.Encryption.Internal
         }
 #endif
 
+        /// <summary>
+        /// Customize the user agent.
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected void PreInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;

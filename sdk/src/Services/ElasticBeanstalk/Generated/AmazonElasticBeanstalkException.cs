@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.ElasticBeanstalk
 {
+    ///<summary>
+    /// Common exception for the ElasticBeanstalk service.
+    /// </summary>
     public class AmazonElasticBeanstalkException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonElasticBeanstalkException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonElasticBeanstalkException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonElasticBeanstalkException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonElasticBeanstalkException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonElasticBeanstalkException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonElasticBeanstalkException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonElasticBeanstalkException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonElasticBeanstalkException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonElasticBeanstalkException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonElasticBeanstalkException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

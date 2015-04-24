@@ -19,6 +19,9 @@ using System.Text;
 
 namespace Amazon.Glacier.Transfer
 {
+    /// <summary>
+    /// Options for initiating an archive retrieval.
+    /// </summary>
     public class InitiateArchiveRetrievalOptions : CommonOptions
     {
         /// <summary>

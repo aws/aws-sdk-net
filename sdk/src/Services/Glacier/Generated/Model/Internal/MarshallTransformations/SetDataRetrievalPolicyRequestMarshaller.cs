@@ -37,11 +37,21 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
     /// </summary>       
     public class SetDataRetrievalPolicyRequestMarshaller : IMarshaller<IRequest, SetDataRetrievalPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((SetDataRetrievalPolicyRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(SetDataRetrievalPolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");

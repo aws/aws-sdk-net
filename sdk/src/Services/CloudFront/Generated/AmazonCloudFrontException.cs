@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.CloudFront
 {
+    ///<summary>
+    /// Common exception for the CloudFront service.
+    /// </summary>
     public class AmazonCloudFrontException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonCloudFrontException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonCloudFrontException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonCloudFrontException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonCloudFrontException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonCloudFrontException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonCloudFrontException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonCloudFrontException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonCloudFrontException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonCloudFrontException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonCloudFrontException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

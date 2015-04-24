@@ -35,11 +35,21 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
     /// </summary>       
     public class DescribeStemmingOptionsRequestMarshaller : IMarshaller<IRequest, DescribeStemmingOptionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((DescribeStemmingOptionsRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(DescribeStemmingOptionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearch_2011_02_01");

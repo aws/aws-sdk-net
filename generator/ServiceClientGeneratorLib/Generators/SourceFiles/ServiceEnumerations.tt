@@ -54,6 +54,11 @@ foreach(var enumeration in this.Config.ServiceModel.Enumerations)
             return FindValue<<#=enumeration.Name#>>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator <#=enumeration.Name#>(string value)
         {
             return FindValue(value);

@@ -35,11 +35,21 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// </summary>       
     public class UpdateOpenIDConnectProviderThumbprintRequestMarshaller : IMarshaller<IRequest, UpdateOpenIDConnectProviderThumbprintRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((UpdateOpenIDConnectProviderThumbprintRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(UpdateOpenIDConnectProviderThumbprintRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");

@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2
 {
+    ///<summary>
+    /// Common exception for the EC2 service.
+    /// </summary>
     public class AmazonEC2Exception : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonEC2Exception
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonEC2Exception(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonEC2Exception
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonEC2Exception(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonEC2Exception
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonEC2Exception(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonEC2Exception
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonEC2Exception(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonEC2Exception
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonEC2Exception(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

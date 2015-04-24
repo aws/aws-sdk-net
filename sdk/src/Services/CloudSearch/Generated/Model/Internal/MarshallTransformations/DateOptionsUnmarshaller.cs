@@ -36,6 +36,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// </summary>  
     public class DateOptionsUnmarshaller : IUnmarshaller<DateOptions, XmlUnmarshallerContext>, IUnmarshaller<DateOptions, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DateOptions Unmarshall(XmlUnmarshallerContext context)
         {
             DateOptions unmarshalledObject = new DateOptions();
@@ -95,6 +100,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DateOptions Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -103,6 +113,9 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
         private static DateOptionsUnmarshaller _instance = new DateOptionsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DateOptionsUnmarshaller Instance
         {
             get

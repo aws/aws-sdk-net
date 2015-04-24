@@ -38,11 +38,21 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
     /// </summary>  
     public class PresetWatermarkUnmarshaller : IUnmarshaller<PresetWatermark, XmlUnmarshallerContext>, IUnmarshaller<PresetWatermark, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         PresetWatermark IUnmarshaller<PresetWatermark, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public PresetWatermark Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -122,6 +132,9 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         private static PresetWatermarkUnmarshaller _instance = new PresetWatermarkUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static PresetWatermarkUnmarshaller Instance
         {
             get

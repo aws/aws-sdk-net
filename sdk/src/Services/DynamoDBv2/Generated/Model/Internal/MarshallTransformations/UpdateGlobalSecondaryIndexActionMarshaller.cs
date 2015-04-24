@@ -37,6 +37,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
     /// </summary>       
     public class UpdateGlobalSecondaryIndexActionMarshaller : IRequestMarshaller<UpdateGlobalSecondaryIndexAction, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(UpdateGlobalSecondaryIndexAction requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetIndexName())
@@ -58,6 +64,9 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static UpdateGlobalSecondaryIndexActionMarshaller Instance = new UpdateGlobalSecondaryIndexActionMarshaller();
 
     }

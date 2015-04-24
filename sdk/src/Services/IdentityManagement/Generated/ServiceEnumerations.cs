@@ -61,6 +61,11 @@ namespace Amazon.IdentityManagement
             return FindValue<AssignmentStatusType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator AssignmentStatusType(string value)
         {
             return FindValue(value);
@@ -113,6 +118,11 @@ namespace Amazon.IdentityManagement
             return FindValue<EntityType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator EntityType(string value)
         {
             return FindValue(value);
@@ -157,6 +167,11 @@ namespace Amazon.IdentityManagement
             return FindValue<PolicyScopeType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator PolicyScopeType(string value)
         {
             return FindValue(value);
@@ -193,6 +208,11 @@ namespace Amazon.IdentityManagement
             return FindValue<ReportFormatType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ReportFormatType(string value)
         {
             return FindValue(value);
@@ -237,6 +257,11 @@ namespace Amazon.IdentityManagement
             return FindValue<ReportStateType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ReportStateType(string value)
         {
             return FindValue(value);
@@ -277,6 +302,11 @@ namespace Amazon.IdentityManagement
             return FindValue<StatusType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator StatusType(string value)
         {
             return FindValue(value);
@@ -409,6 +439,11 @@ namespace Amazon.IdentityManagement
             return FindValue<SummaryKeyType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator SummaryKeyType(string value)
         {
             return FindValue(value);

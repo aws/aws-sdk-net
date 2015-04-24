@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class GeoRestrictionUnmarshaller : IUnmarshaller<GeoRestriction, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public GeoRestriction Unmarshall(XmlUnmarshallerContext context)
         {
             GeoRestriction unmarshalledObject = new GeoRestriction();
@@ -79,6 +84,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static GeoRestrictionUnmarshaller _instance = new GeoRestrictionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static GeoRestrictionUnmarshaller Instance
         {
             get

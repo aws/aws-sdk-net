@@ -36,6 +36,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ReservedDBInstancesOfferingUnmarshaller : IUnmarshaller<ReservedDBInstancesOffering, XmlUnmarshallerContext>, IUnmarshaller<ReservedDBInstancesOffering, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ReservedDBInstancesOffering Unmarshall(XmlUnmarshallerContext context)
         {
             ReservedDBInstancesOffering unmarshalledObject = new ReservedDBInstancesOffering();
@@ -120,6 +125,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ReservedDBInstancesOffering Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -128,6 +138,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
         private static ReservedDBInstancesOfferingUnmarshaller _instance = new ReservedDBInstancesOfferingUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ReservedDBInstancesOfferingUnmarshaller Instance
         {
             get

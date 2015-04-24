@@ -57,6 +57,11 @@ namespace Amazon.RDS
             return FindValue<ApplyMethod>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ApplyMethod(string value)
         {
             return FindValue(value);
@@ -105,6 +110,11 @@ namespace Amazon.RDS
             return FindValue<SourceType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator SourceType(string value)
         {
             return FindValue(value);

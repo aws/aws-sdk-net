@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class VgwTelemetryUnmarshaller : IUnmarshaller<VgwTelemetry, XmlUnmarshallerContext>, IUnmarshaller<VgwTelemetry, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public VgwTelemetry Unmarshall(XmlUnmarshallerContext context)
         {
             VgwTelemetry unmarshalledObject = new VgwTelemetry();
@@ -89,6 +94,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public VgwTelemetry Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -97,6 +107,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static VgwTelemetryUnmarshaller _instance = new VgwTelemetryUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static VgwTelemetryUnmarshaller Instance
         {
             get

@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class BlockDeviceMappingUnmarshaller : IUnmarshaller<BlockDeviceMapping, XmlUnmarshallerContext>, IUnmarshaller<BlockDeviceMapping, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public BlockDeviceMapping Unmarshall(XmlUnmarshallerContext context)
         {
             BlockDeviceMapping unmarshalledObject = new BlockDeviceMapping();
@@ -83,6 +88,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public BlockDeviceMapping Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -91,6 +101,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static BlockDeviceMappingUnmarshaller _instance = new BlockDeviceMappingUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static BlockDeviceMappingUnmarshaller Instance
         {
             get

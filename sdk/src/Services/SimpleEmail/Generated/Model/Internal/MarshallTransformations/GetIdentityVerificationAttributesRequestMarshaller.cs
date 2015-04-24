@@ -35,11 +35,21 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// </summary>       
     public class GetIdentityVerificationAttributesRequestMarshaller : IMarshaller<IRequest, GetIdentityVerificationAttributesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((GetIdentityVerificationAttributesRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(GetIdentityVerificationAttributesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmail");

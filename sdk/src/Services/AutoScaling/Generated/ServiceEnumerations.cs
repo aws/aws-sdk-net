@@ -101,6 +101,11 @@ namespace Amazon.AutoScaling
             return FindValue<LifecycleState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator LifecycleState(string value)
         {
             return FindValue(value);
@@ -173,6 +178,11 @@ namespace Amazon.AutoScaling
             return FindValue<ScalingActivityStatusCode>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ScalingActivityStatusCode(string value)
         {
             return FindValue(value);

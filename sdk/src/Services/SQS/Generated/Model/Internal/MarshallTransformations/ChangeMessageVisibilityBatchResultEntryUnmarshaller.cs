@@ -36,6 +36,11 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ChangeMessageVisibilityBatchResultEntryUnmarshaller : IUnmarshaller<ChangeMessageVisibilityBatchResultEntry, XmlUnmarshallerContext>, IUnmarshaller<ChangeMessageVisibilityBatchResultEntry, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ChangeMessageVisibilityBatchResultEntry Unmarshall(XmlUnmarshallerContext context)
         {
             ChangeMessageVisibilityBatchResultEntry unmarshalledObject = new ChangeMessageVisibilityBatchResultEntry();
@@ -65,6 +70,11 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ChangeMessageVisibilityBatchResultEntry Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -73,6 +83,9 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
 
         private static ChangeMessageVisibilityBatchResultEntryUnmarshaller _instance = new ChangeMessageVisibilityBatchResultEntryUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ChangeMessageVisibilityBatchResultEntryUnmarshaller Instance
         {
             get

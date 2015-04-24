@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class CookiePreferenceUnmarshaller : IUnmarshaller<CookiePreference, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public CookiePreference Unmarshall(XmlUnmarshallerContext context)
         {
             CookiePreference unmarshalledObject = new CookiePreference();
@@ -73,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static CookiePreferenceUnmarshaller _instance = new CookiePreferenceUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static CookiePreferenceUnmarshaller Instance
         {
             get

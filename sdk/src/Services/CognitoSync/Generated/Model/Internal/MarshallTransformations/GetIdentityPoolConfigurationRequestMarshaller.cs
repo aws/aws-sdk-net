@@ -37,11 +37,21 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
     /// </summary>       
     public class GetIdentityPoolConfigurationRequestMarshaller : IMarshaller<IRequest, GetIdentityPoolConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((GetIdentityPoolConfigurationRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(GetIdentityPoolConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CognitoSync");

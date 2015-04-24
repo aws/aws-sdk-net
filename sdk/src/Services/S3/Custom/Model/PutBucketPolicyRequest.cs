@@ -66,6 +66,9 @@ namespace Amazon.S3.Model
             return this.Policy != null;
         }
         
+        /// <summary>
+        /// Overriden to turn off sending SHA256 header.
+        /// </summary>
         protected override bool IncludeSHA256Header
         {
             get

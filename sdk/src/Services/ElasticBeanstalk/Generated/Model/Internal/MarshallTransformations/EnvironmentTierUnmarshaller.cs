@@ -36,6 +36,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// </summary>  
     public class EnvironmentTierUnmarshaller : IUnmarshaller<EnvironmentTier, XmlUnmarshallerContext>, IUnmarshaller<EnvironmentTier, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public EnvironmentTier Unmarshall(XmlUnmarshallerContext context)
         {
             EnvironmentTier unmarshalledObject = new EnvironmentTier();
@@ -77,6 +82,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public EnvironmentTier Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -85,6 +95,9 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
         private static EnvironmentTierUnmarshaller _instance = new EnvironmentTierUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static EnvironmentTierUnmarshaller Instance
         {
             get

@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class LoggingConfigUnmarshaller : IUnmarshaller<LoggingConfig, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LoggingConfig Unmarshall(XmlUnmarshallerContext context)
         {
             LoggingConfig unmarshalledObject = new LoggingConfig();
@@ -85,6 +90,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static LoggingConfigUnmarshaller _instance = new LoggingConfigUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static LoggingConfigUnmarshaller Instance
         {
             get

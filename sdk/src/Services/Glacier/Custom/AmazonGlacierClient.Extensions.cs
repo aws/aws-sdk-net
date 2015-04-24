@@ -48,6 +48,9 @@ namespace Amazon.Glacier
     /// </summary>
     public partial class AmazonGlacierClient : AmazonServiceClient, IAmazonGlacier
     {
+        /// <summary>
+        /// Specialize the initialize of the client.
+        /// </summary>
         protected override void Initialize()
         {
             this.Config.SetUseNagleIfAvailable(true);

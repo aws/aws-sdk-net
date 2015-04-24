@@ -17,6 +17,8 @@ using System.Collections.Generic;
 using Amazon.S3.Model;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable 1591
+
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     public class CloudFunctionConfigurationUnmarshaller : IUnmarshaller<CloudFunctionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<CloudFunctionConfiguration, JsonUnmarshallerContext> 

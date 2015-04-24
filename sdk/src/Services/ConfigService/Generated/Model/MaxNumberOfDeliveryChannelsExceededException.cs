@@ -37,17 +37,43 @@ namespace Amazon.ConfigService.Model
         public MaxNumberOfDeliveryChannelsExceededException(string message) 
             : base(message) {}
           
+        /// <summary>
+        /// Construct instance of MaxNumberOfDeliveryChannelsExceededException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public MaxNumberOfDeliveryChannelsExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
             
+        /// <summary>
+        /// Construct instance of MaxNumberOfDeliveryChannelsExceededException
+        /// </summary>
+        /// <param name="innerException"></param>
         public MaxNumberOfDeliveryChannelsExceededException(Exception innerException) 
             : base(innerException) {}
             
-        public MaxNumberOfDeliveryChannelsExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of MaxNumberOfDeliveryChannelsExceededException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public MaxNumberOfDeliveryChannelsExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
-        public MaxNumberOfDeliveryChannelsExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of MaxNumberOfDeliveryChannelsExceededException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public MaxNumberOfDeliveryChannelsExceededException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
 
     }
 }

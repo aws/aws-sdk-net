@@ -35,6 +35,9 @@ namespace Amazon.RDS.Model
     {
         private ReservedDBInstance _response;
 
+        /// <summary>
+        /// Gets and sets the ReservedDBInstance property.
+        /// </summary>
         public ReservedDBInstance ReservedDBInstance
         {
             get { return this._response; }

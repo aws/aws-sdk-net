@@ -36,6 +36,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ValidationMessageUnmarshaller : IUnmarshaller<ValidationMessage, XmlUnmarshallerContext>, IUnmarshaller<ValidationMessage, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ValidationMessage Unmarshall(XmlUnmarshallerContext context)
         {
             ValidationMessage unmarshalledObject = new ValidationMessage();
@@ -83,6 +88,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ValidationMessage Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -91,6 +101,9 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
         private static ValidationMessageUnmarshaller _instance = new ValidationMessageUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ValidationMessageUnmarshaller Instance
         {
             get

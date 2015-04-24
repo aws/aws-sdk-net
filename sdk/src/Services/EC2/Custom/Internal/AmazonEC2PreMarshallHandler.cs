@@ -27,10 +27,17 @@ using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.EC2.Internal
 {
+    /// <summary>
+    /// Custom pipeline handler
+    /// </summary>
     public class AmazonEC2PreMarshallHandler : PipelineHandler
     {
         private readonly AWSCredentials _credentials;
 
+        /// <summary>
+        /// Construct instance of AmazonEC2PreMarshallHandler
+        /// </summary>
+        /// <param name="credentials"></param>
         public AmazonEC2PreMarshallHandler(AWSCredentials credentials)
         {
             this._credentials = credentials;
@@ -78,7 +85,10 @@ namespace Amazon.EC2.Internal
             return base.InvokeAsync(executionContext);
         }
 #endif
-
+        /// <summary>
+        /// Custom pipeline handler
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected void PreInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.OriginalRequest;

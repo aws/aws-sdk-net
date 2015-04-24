@@ -38,11 +38,21 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// </summary>  
     public class WorkspaceBundleUnmarshaller : IUnmarshaller<WorkspaceBundle, XmlUnmarshallerContext>, IUnmarshaller<WorkspaceBundle, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         WorkspaceBundle IUnmarshaller<WorkspaceBundle, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public WorkspaceBundle Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -98,6 +108,9 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         private static WorkspaceBundleUnmarshaller _instance = new WorkspaceBundleUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static WorkspaceBundleUnmarshaller Instance
         {
             get

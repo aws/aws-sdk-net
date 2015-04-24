@@ -37,6 +37,9 @@ namespace Amazon.ElastiCache.Model
     {
         private CacheSubnetGroup _response;
 
+        /// <summary>
+        /// Gets and sets the CacheSubnetGroup property.
+        /// </summary>
         public CacheSubnetGroup CacheSubnetGroup
         {
             get { return this._response; }

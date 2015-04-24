@@ -57,6 +57,11 @@ namespace Amazon.ConfigService
             return FindValue<ChronologicalOrder>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ChronologicalOrder(string value)
         {
             return FindValue(value);
@@ -105,6 +110,11 @@ namespace Amazon.ConfigService
             return FindValue<ConfigurationItemStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ConfigurationItemStatus(string value)
         {
             return FindValue(value);
@@ -149,6 +159,11 @@ namespace Amazon.ConfigService
             return FindValue<DeliveryStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator DeliveryStatus(string value)
         {
             return FindValue(value);
@@ -193,6 +208,11 @@ namespace Amazon.ConfigService
             return FindValue<RecorderStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator RecorderStatus(string value)
         {
             return FindValue(value);
@@ -281,6 +301,11 @@ namespace Amazon.ConfigService
             return FindValue<ResourceType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ResourceType(string value)
         {
             return FindValue(value);

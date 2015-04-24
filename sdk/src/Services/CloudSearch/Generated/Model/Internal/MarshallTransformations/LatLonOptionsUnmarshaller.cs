@@ -36,6 +36,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// </summary>  
     public class LatLonOptionsUnmarshaller : IUnmarshaller<LatLonOptions, XmlUnmarshallerContext>, IUnmarshaller<LatLonOptions, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LatLonOptions Unmarshall(XmlUnmarshallerContext context)
         {
             LatLonOptions unmarshalledObject = new LatLonOptions();
@@ -95,6 +100,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LatLonOptions Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -103,6 +113,9 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
         private static LatLonOptionsUnmarshaller _instance = new LatLonOptionsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static LatLonOptionsUnmarshaller Instance
         {
             get

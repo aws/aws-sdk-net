@@ -36,6 +36,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// </summary>  
     public class DefaultClusterParametersUnmarshaller : IUnmarshaller<DefaultClusterParameters, XmlUnmarshallerContext>, IUnmarshaller<DefaultClusterParameters, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DefaultClusterParameters Unmarshall(XmlUnmarshallerContext context)
         {
             DefaultClusterParameters unmarshalledObject = new DefaultClusterParameters();
@@ -78,6 +83,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DefaultClusterParameters Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -86,6 +96,9 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
         private static DefaultClusterParametersUnmarshaller _instance = new DefaultClusterParametersUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DefaultClusterParametersUnmarshaller Instance
         {
             get

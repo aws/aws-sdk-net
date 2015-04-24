@@ -36,6 +36,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ClusterNodeUnmarshaller : IUnmarshaller<ClusterNode, XmlUnmarshallerContext>, IUnmarshaller<ClusterNode, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ClusterNode Unmarshall(XmlUnmarshallerContext context)
         {
             ClusterNode unmarshalledObject = new ClusterNode();
@@ -77,6 +82,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ClusterNode Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -85,6 +95,9 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
         private static ClusterNodeUnmarshaller _instance = new ClusterNodeUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ClusterNodeUnmarshaller Instance
         {
             get

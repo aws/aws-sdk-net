@@ -35,11 +35,21 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
     /// </summary>       
     public class ListDeadLetterSourceQueuesRequestMarshaller : IMarshaller<IRequest, ListDeadLetterSourceQueuesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((ListDeadLetterSourceQueuesRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(ListDeadLetterSourceQueuesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");

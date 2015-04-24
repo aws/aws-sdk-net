@@ -34,7 +34,9 @@ namespace Amazon.EC2.Model
     {
         private ImageAttribute _imageAttribute;
 
-        // Gets and sets the ImageAttribute member
+        /// <summary>
+        /// Gets and sets the ImageAttribute member
+        /// </summary>
         public ImageAttribute ImageAttribute
         {
             get { return this._imageAttribute; }

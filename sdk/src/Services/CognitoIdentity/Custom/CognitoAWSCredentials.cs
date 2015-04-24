@@ -58,7 +58,14 @@ namespace Amazon.CognitoIdentity
         /// </summary>
         public class IdentityChangedArgs : EventArgs
         {
+            /// <summary>
+            /// Gets the OldIdentityId property.
+            /// </summary>
             public string OldIdentityId { get; private set; }
+
+            /// <summary>
+            /// Gets the NewIdentityId property.
+            /// </summary>
             public string NewIdentityId { get; private set; }
 
             internal IdentityChangedArgs(string oldIdentityId, string newIdentityId)
@@ -350,6 +357,10 @@ namespace Amazon.CognitoIdentity
 
 #if AWS_ASYNC_API
 
+        /// <summary>
+        /// Retrieves credentials from Cognito Identity and optionally STS
+        /// </summary>
+        /// <returns></returns>
         protected override async System.Threading.Tasks.Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
         {
             CredentialsRefreshState credentialsState;
@@ -457,7 +468,10 @@ namespace Amazon.CognitoIdentity
 
 #endif
 
-        // Retrieves credentials from Cognito Identity and optionally STS
+        /// <summary>
+        /// Retrieves credentials from Cognito Identity and optionally STS
+        /// </summary>
+        /// <returns></returns>
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
             CredentialsRefreshState credentialsState;

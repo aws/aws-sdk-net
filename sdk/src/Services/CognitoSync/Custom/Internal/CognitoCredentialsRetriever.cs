@@ -42,11 +42,19 @@ namespace Amazon.CognitoSync.Internal
     /// </summary>
     public class CognitoCredentialsRetriever : CredentialsRetriever
     {
+        /// <summary>
+        /// Construct an instance of CognitoCredentialsRetriever
+        /// </summary>
+        /// <param name="credentials"></param>
         public CognitoCredentialsRetriever(AWSCredentials credentials)
             : base(credentials)
         { }
 
 #if BCL
+        /// <summary>
+        /// Custom pipeline handler
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected override void PreInvoke(IExecutionContext executionContext)
         {
             base.PreInvoke(executionContext);

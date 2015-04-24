@@ -36,6 +36,11 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
     /// </summary>  
     public class UIntOptionsUnmarshaller : IUnmarshaller<UIntOptions, XmlUnmarshallerContext>, IUnmarshaller<UIntOptions, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public UIntOptions Unmarshall(XmlUnmarshallerContext context)
         {
             UIntOptions unmarshalledObject = new UIntOptions();
@@ -65,6 +70,11 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public UIntOptions Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -73,6 +83,9 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 
         private static UIntOptionsUnmarshaller _instance = new UIntOptionsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static UIntOptionsUnmarshaller Instance
         {
             get

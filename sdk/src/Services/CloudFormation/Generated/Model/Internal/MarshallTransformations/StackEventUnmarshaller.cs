@@ -36,6 +36,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// </summary>  
     public class StackEventUnmarshaller : IUnmarshaller<StackEvent, XmlUnmarshallerContext>, IUnmarshaller<StackEvent, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public StackEvent Unmarshall(XmlUnmarshallerContext context)
         {
             StackEvent unmarshalledObject = new StackEvent();
@@ -119,6 +124,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public StackEvent Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -127,6 +137,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
         private static StackEventUnmarshaller _instance = new StackEventUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static StackEventUnmarshaller Instance
         {
             get

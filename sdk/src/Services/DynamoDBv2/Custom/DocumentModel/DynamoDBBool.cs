@@ -29,14 +29,28 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// </summary>
     public class DynamoDBBool : DynamoDBEntry
     {
+        /// <summary>
+        /// Construct an instance of DynamnDBBool
+        /// </summary>
+        /// <param name="value"></param>
         public DynamoDBBool(bool value)
         {
             Value = value;
         }
 
+        /// <summary>
+        /// Gets and sets the Value property.
+        /// </summary>
         public bool Value { get; set; }
 
+        /// <summary>
+        /// Constant DynamoDBBool for the true value
+        /// </summary>
         public static readonly DynamoDBBool True = new DynamoDBBool(true);
+
+        /// <summary>
+        /// Constant DynamoDBBool for the false value
+        /// </summary>
         public static readonly DynamoDBBool False = new DynamoDBBool(false);
 
         #region Overrides
@@ -49,6 +63,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             };
         }
 
+        /// <summary>
+        /// Implement the Clone method
+        /// </summary>
+        /// <returns></returns>
         public override object Clone()
         {
             return new DynamoDBBool(Value);
@@ -85,6 +103,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Overrides
 
+        /// <summary>
+        /// Implement the Equals method
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             var otherBool = obj as DynamoDBBool;
@@ -94,6 +117,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return (this.Value == otherBool.Value);
         }
 
+        /// <summary>
+        /// Implement the GetHashCode method
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             return Value.GetHashCode();

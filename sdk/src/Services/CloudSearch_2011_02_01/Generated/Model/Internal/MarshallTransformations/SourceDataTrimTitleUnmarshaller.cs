@@ -36,6 +36,11 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
     /// </summary>  
     public class SourceDataTrimTitleUnmarshaller : IUnmarshaller<SourceDataTrimTitle, XmlUnmarshallerContext>, IUnmarshaller<SourceDataTrimTitle, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SourceDataTrimTitle Unmarshall(XmlUnmarshallerContext context)
         {
             SourceDataTrimTitle unmarshalledObject = new SourceDataTrimTitle();
@@ -83,6 +88,11 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SourceDataTrimTitle Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -91,6 +101,9 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 
         private static SourceDataTrimTitleUnmarshaller _instance = new SourceDataTrimTitleUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static SourceDataTrimTitleUnmarshaller Instance
         {
             get

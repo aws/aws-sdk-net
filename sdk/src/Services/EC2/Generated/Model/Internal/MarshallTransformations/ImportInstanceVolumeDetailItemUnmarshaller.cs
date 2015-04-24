@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ImportInstanceVolumeDetailItemUnmarshaller : IUnmarshaller<ImportInstanceVolumeDetailItem, XmlUnmarshallerContext>, IUnmarshaller<ImportInstanceVolumeDetailItem, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ImportInstanceVolumeDetailItem Unmarshall(XmlUnmarshallerContext context)
         {
             ImportInstanceVolumeDetailItem unmarshalledObject = new ImportInstanceVolumeDetailItem();
@@ -101,6 +106,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ImportInstanceVolumeDetailItem Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -109,6 +119,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static ImportInstanceVolumeDetailItemUnmarshaller _instance = new ImportInstanceVolumeDetailItemUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ImportInstanceVolumeDetailItemUnmarshaller Instance
         {
             get

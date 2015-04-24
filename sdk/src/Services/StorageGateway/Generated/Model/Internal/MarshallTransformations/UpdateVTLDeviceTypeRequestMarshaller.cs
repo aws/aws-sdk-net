@@ -37,11 +37,21 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
     /// </summary>       
     public class UpdateVTLDeviceTypeRequestMarshaller : IMarshaller<IRequest, UpdateVTLDeviceTypeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((UpdateVTLDeviceTypeRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(UpdateVTLDeviceTypeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");

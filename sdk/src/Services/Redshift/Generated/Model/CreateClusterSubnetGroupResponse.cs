@@ -34,6 +34,9 @@ namespace Amazon.Redshift.Model
     {
         private ClusterSubnetGroup _response;
 
+        /// <summary>
+        /// Gets and sets the ClusterSubnetGroup property.
+        /// </summary>
         public ClusterSubnetGroup ClusterSubnetGroup
         {
             get { return this._response; }

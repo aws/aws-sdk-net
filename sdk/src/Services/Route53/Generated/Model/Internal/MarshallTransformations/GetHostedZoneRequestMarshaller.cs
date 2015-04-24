@@ -37,11 +37,21 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// </summary>       
     public class GetHostedZoneRequestMarshaller : IMarshaller<IRequest, GetHostedZoneRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((GetHostedZoneRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(GetHostedZoneRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");

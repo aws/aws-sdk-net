@@ -1156,6 +1156,10 @@ namespace Amazon.S3.IO
             return this;
         }
 
+        /// <summary>
+        /// Implement the ToString method.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return FullName;

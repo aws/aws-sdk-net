@@ -37,17 +37,43 @@ namespace Amazon.ElasticBeanstalk.Model
         public TooManyEnvironmentsException(string message) 
             : base(message) {}
           
+        /// <summary>
+        /// Construct instance of TooManyEnvironmentsException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public TooManyEnvironmentsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
+        /// <summary>
+        /// Construct instance of TooManyEnvironmentsException
+        /// </summary>
+        /// <param name="innerException"></param>
         public TooManyEnvironmentsException(Exception innerException) 
             : base(innerException) {}
             
-        public TooManyEnvironmentsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of TooManyEnvironmentsException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public TooManyEnvironmentsException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
-        public TooManyEnvironmentsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of TooManyEnvironmentsException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public TooManyEnvironmentsException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
 
     }
 }

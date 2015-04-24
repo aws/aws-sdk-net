@@ -34,6 +34,9 @@ namespace Amazon.ElastiCache.Model
     {
         private CacheCluster _response;
 
+        /// <summary>
+        /// Gets and sets the CacheCluster property.
+        /// </summary>
         public CacheCluster CacheCluster
         {
             get { return this._response; }

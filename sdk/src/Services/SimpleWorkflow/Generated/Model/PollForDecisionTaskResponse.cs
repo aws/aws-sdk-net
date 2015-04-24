@@ -34,7 +34,9 @@ namespace Amazon.SimpleWorkflow.Model
     {
         private DecisionTask _decisionTask;
 
-        // Gets and sets the DecisionTask member
+        /// <summary>
+        /// Gets and sets the DecisionTask member
+        /// </summary>
         public DecisionTask DecisionTask
         {
             get { return this._decisionTask; }

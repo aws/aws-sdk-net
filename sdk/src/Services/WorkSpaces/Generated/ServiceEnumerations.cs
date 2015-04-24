@@ -61,6 +61,11 @@ namespace Amazon.WorkSpaces
             return FindValue<Compute>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator Compute(string value)
         {
             return FindValue(value);
@@ -113,6 +118,11 @@ namespace Amazon.WorkSpaces
             return FindValue<WorkspaceDirectoryState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator WorkspaceDirectoryState(string value)
         {
             return FindValue(value);
@@ -153,6 +163,11 @@ namespace Amazon.WorkSpaces
             return FindValue<WorkspaceDirectoryType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator WorkspaceDirectoryType(string value)
         {
             return FindValue(value);
@@ -225,6 +240,11 @@ namespace Amazon.WorkSpaces
             return FindValue<WorkspaceState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator WorkspaceState(string value)
         {
             return FindValue(value);

@@ -27,6 +27,9 @@ using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
+    /// <summary>
+    /// Empty class reserved for future use.
+    /// </summary>
     public partial class DeleteApplicationResponse : AmazonWebServiceResponse
     {
 

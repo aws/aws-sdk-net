@@ -29,6 +29,9 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class PutBucketNotificationRequest : AmazonWebServiceRequest
     {
+        /// <summary>
+        /// Gets and sets the BucketName property.
+        /// </summary>
         public string BucketName { get; set; }
 
         // Check to see if Bucket property is set

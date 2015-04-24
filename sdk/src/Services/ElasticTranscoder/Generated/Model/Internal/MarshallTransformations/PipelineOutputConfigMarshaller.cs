@@ -37,6 +37,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
     /// </summary>       
     public class PipelineOutputConfigMarshaller : IRequestMarshaller<PipelineOutputConfig, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(PipelineOutputConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetBucket())
@@ -69,6 +75,9 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static PipelineOutputConfigMarshaller Instance = new PipelineOutputConfigMarshaller();
 
     }

@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class BundleTaskUnmarshaller : IUnmarshaller<BundleTask, XmlUnmarshallerContext>, IUnmarshaller<BundleTask, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public BundleTask Unmarshall(XmlUnmarshallerContext context)
         {
             BundleTask unmarshalledObject = new BundleTask();
@@ -107,6 +112,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public BundleTask Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -115,6 +125,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static BundleTaskUnmarshaller _instance = new BundleTaskUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static BundleTaskUnmarshaller Instance
         {
             get

@@ -38,11 +38,21 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
     /// </summary>  
     public class VirtualInterfaceUnmarshaller : IUnmarshaller<VirtualInterface, XmlUnmarshallerContext>, IUnmarshaller<VirtualInterface, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         VirtualInterface IUnmarshaller<VirtualInterface, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public VirtualInterface Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -152,6 +162,9 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 
         private static VirtualInterfaceUnmarshaller _instance = new VirtualInterfaceUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static VirtualInterfaceUnmarshaller Instance
         {
             get

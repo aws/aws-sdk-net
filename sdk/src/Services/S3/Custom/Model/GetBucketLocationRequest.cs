@@ -29,6 +29,10 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class GetBucketLocationRequest : AmazonWebServiceRequest
     {
+
+        /// <summary>
+        /// Gets and sets the BucketName.
+        /// </summary>
         public string BucketName { get; set; }
 
         // Check to see if BucketName property is set

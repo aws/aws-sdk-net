@@ -37,6 +37,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
     /// </summary>       
     public class CreateAssociationBatchRequestEntryMarshaller : IRequestMarshaller<CreateAssociationBatchRequestEntry, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(CreateAssociationBatchRequestEntry requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetInstanceId())
@@ -53,6 +59,9 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static CreateAssociationBatchRequestEntryMarshaller Instance = new CreateAssociationBatchRequestEntryMarshaller();
 
     }

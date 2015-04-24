@@ -36,6 +36,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ScalingPolicyUnmarshaller : IUnmarshaller<ScalingPolicy, XmlUnmarshallerContext>, IUnmarshaller<ScalingPolicy, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ScalingPolicy Unmarshall(XmlUnmarshallerContext context)
         {
             ScalingPolicy unmarshalledObject = new ScalingPolicy();
@@ -108,6 +113,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ScalingPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -116,6 +126,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
         private static ScalingPolicyUnmarshaller _instance = new ScalingPolicyUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ScalingPolicyUnmarshaller Instance
         {
             get

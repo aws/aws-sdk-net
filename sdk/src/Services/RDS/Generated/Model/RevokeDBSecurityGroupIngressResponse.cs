@@ -42,6 +42,9 @@ namespace Amazon.RDS.Model
     {
         private DBSecurityGroup _response;
 
+        /// <summary>
+        /// Gets and sets the DBSecurityGroup property.
+        /// </summary>
         public DBSecurityGroup DBSecurityGroup
         {
             get { return this._response; }

@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ReservedInstancesUnmarshaller : IUnmarshaller<ReservedInstances, XmlUnmarshallerContext>, IUnmarshaller<ReservedInstances, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ReservedInstances Unmarshall(XmlUnmarshallerContext context)
         {
             ReservedInstances unmarshalledObject = new ReservedInstances();
@@ -157,6 +162,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ReservedInstances Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -165,6 +175,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static ReservedInstancesUnmarshaller _instance = new ReservedInstancesUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ReservedInstancesUnmarshaller Instance
         {
             get

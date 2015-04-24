@@ -38,11 +38,21 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ChildWorkflowExecutionTimedOutEventAttributesUnmarshaller : IUnmarshaller<ChildWorkflowExecutionTimedOutEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<ChildWorkflowExecutionTimedOutEventAttributes, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         ChildWorkflowExecutionTimedOutEventAttributes IUnmarshaller<ChildWorkflowExecutionTimedOutEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ChildWorkflowExecutionTimedOutEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -92,6 +102,9 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
         private static ChildWorkflowExecutionTimedOutEventAttributesUnmarshaller _instance = new ChildWorkflowExecutionTimedOutEventAttributesUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ChildWorkflowExecutionTimedOutEventAttributesUnmarshaller Instance
         {
             get

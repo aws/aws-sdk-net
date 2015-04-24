@@ -30,6 +30,10 @@ namespace Amazon.S3.Model
     public partial class GetBucketNotificationRequest : AmazonWebServiceRequest
     {
         private string bucket;
+
+        /// <summary>
+        /// Gets and sets the BucketName.
+        /// </summary>
         public string BucketName
         {
             get { return this.bucket; }

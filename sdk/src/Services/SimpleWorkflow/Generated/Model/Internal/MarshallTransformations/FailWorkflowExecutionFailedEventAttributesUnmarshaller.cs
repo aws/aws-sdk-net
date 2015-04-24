@@ -38,11 +38,21 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// </summary>  
     public class FailWorkflowExecutionFailedEventAttributesUnmarshaller : IUnmarshaller<FailWorkflowExecutionFailedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<FailWorkflowExecutionFailedEventAttributes, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         FailWorkflowExecutionFailedEventAttributes IUnmarshaller<FailWorkflowExecutionFailedEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public FailWorkflowExecutionFailedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -74,6 +84,9 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
         private static FailWorkflowExecutionFailedEventAttributesUnmarshaller _instance = new FailWorkflowExecutionFailedEventAttributesUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static FailWorkflowExecutionFailedEventAttributesUnmarshaller Instance
         {
             get

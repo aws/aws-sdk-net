@@ -24,6 +24,8 @@ using Amazon.S3.Util;
 using System.Globalization;
 using Amazon.Util;
 
+#pragma warning disable 1591
+
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>

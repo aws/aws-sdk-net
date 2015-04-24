@@ -36,6 +36,9 @@ namespace Amazon.Redshift.Model
     {
         private HsmClientCertificate _response;
 
+        /// <summary>
+        /// Gets and sets the HsmClientCertificate property.
+        /// </summary>
         public HsmClientCertificate HsmClientCertificate
         {
             get { return this._response; }

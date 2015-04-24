@@ -37,11 +37,21 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>       
     public class DeleteCloudFrontOriginAccessIdentityRequestMarshaller : IMarshaller<IRequest, DeleteCloudFrontOriginAccessIdentityRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((DeleteCloudFrontOriginAccessIdentityRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(DeleteCloudFrontOriginAccessIdentityRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");

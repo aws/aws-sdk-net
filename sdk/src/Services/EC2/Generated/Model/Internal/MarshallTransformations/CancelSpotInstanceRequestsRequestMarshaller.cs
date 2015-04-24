@@ -35,11 +35,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>       
     public class CancelSpotInstanceRequestsRequestMarshaller : IMarshaller<IRequest, CancelSpotInstanceRequestsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((CancelSpotInstanceRequestsRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(CancelSpotInstanceRequestsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");

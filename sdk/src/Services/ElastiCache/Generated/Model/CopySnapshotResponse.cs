@@ -35,6 +35,9 @@ namespace Amazon.ElastiCache.Model
     {
         private Snapshot _response;
 
+        /// <summary>
+        /// Gets and sets the Snapshot property.
+        /// </summary>
         public Snapshot Snapshot
         {
             get { return this._response; }

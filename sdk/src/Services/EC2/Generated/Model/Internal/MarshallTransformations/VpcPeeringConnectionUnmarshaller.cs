@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class VpcPeeringConnectionUnmarshaller : IUnmarshaller<VpcPeeringConnection, XmlUnmarshallerContext>, IUnmarshaller<VpcPeeringConnection, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public VpcPeeringConnection Unmarshall(XmlUnmarshallerContext context)
         {
             VpcPeeringConnection unmarshalledObject = new VpcPeeringConnection();
@@ -96,6 +101,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public VpcPeeringConnection Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -104,6 +114,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static VpcPeeringConnectionUnmarshaller _instance = new VpcPeeringConnectionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static VpcPeeringConnectionUnmarshaller Instance
         {
             get

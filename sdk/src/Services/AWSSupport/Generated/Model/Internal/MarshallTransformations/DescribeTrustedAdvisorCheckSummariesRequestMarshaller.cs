@@ -37,11 +37,21 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
     /// </summary>       
     public class DescribeTrustedAdvisorCheckSummariesRequestMarshaller : IMarshaller<IRequest, DescribeTrustedAdvisorCheckSummariesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((DescribeTrustedAdvisorCheckSummariesRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(DescribeTrustedAdvisorCheckSummariesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AWSSupport");

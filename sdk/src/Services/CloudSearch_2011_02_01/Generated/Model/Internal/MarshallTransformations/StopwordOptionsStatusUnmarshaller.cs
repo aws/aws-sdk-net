@@ -36,6 +36,11 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
     /// </summary>  
     public class StopwordOptionsStatusUnmarshaller : IUnmarshaller<StopwordOptionsStatus, XmlUnmarshallerContext>, IUnmarshaller<StopwordOptionsStatus, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public StopwordOptionsStatus Unmarshall(XmlUnmarshallerContext context)
         {
             StopwordOptionsStatus unmarshalledObject = new StopwordOptionsStatus();
@@ -71,6 +76,11 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public StopwordOptionsStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 
         private static StopwordOptionsStatusUnmarshaller _instance = new StopwordOptionsStatusUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static StopwordOptionsStatusUnmarshaller Instance
         {
             get

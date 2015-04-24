@@ -27,6 +27,9 @@ using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
+    /// <summary>
+    /// Empty class reserved for future use.
+    /// </summary>
     public partial class DeleteCacheParameterGroupResponse : AmazonWebServiceResponse
     {
 

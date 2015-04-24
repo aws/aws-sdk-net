@@ -35,11 +35,21 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// </summary>       
     public class GetTemplateSummaryRequestMarshaller : IMarshaller<IRequest, GetTemplateSummaryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((GetTemplateSummaryRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(GetTemplateSummaryRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudFormation");

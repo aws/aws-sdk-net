@@ -38,11 +38,21 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ConfigStreamDeliveryInfoUnmarshaller : IUnmarshaller<ConfigStreamDeliveryInfo, XmlUnmarshallerContext>, IUnmarshaller<ConfigStreamDeliveryInfo, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         ConfigStreamDeliveryInfo IUnmarshaller<ConfigStreamDeliveryInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ConfigStreamDeliveryInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -86,6 +96,9 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         private static ConfigStreamDeliveryInfoUnmarshaller _instance = new ConfigStreamDeliveryInfoUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ConfigStreamDeliveryInfoUnmarshaller Instance
         {
             get

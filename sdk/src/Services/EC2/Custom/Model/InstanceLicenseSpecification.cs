@@ -27,6 +27,9 @@ namespace Amazon.EC2.Model
         
         private string pool;
 
+        /// <summary>
+        /// Gets and sets the Pool property.
+        /// </summary>
         public string Pool
         {
             get { return this.pool; }

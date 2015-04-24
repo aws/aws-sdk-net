@@ -41,16 +41,34 @@ namespace Amazon.DynamoDBv2
     public class SetPropertyConverter<TCollection, TElement> : IPropertyConverter
         where TCollection : ICollection<TElement>, new()
     {
+        /// <summary>
+        /// Reference to the type object for the TCollection generic.
+        /// </summary>
         protected static readonly Type collectionType = typeof(TCollection);
+
+        /// <summary>
+        /// Reference to the type object for the TElement generic.
+        /// </summary>
         protected static readonly Type elementType = typeof(TElement);
 
+        /// <summary>
+        /// Gets and sets the Conversion property.
+        /// </summary>
         public DynamoDBEntryConversion Conversion { get; set; }
 
+        /// <summary>
+        /// Set the conversion to V1.
+        /// </summary>
         public SetPropertyConverter()
         {
             Conversion = DynamoDBEntryConversion.V1;
         }
 
+        /// <summary>
+        /// Convert object to DynamoDBEntry using the V1 converter rules.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public DynamoDBEntry ToEntry(object value)
         {
             if (value == null)
@@ -73,6 +91,11 @@ namespace Amazon.DynamoDBv2
             return entry;
         }
 
+        /// <summary>
+        /// Convert DyanmoDBEntry to object using the V1 converter rules.
+        /// </summary>
+        /// <param name="entry"></param>
+        /// <returns></returns>
         public object FromEntry(DynamoDBEntry entry)
         {
             IEnumerable<object> items = null;
@@ -129,11 +152,21 @@ namespace Amazon.DynamoDBv2
         private static BoolConverterV1 v1Converter = new BoolConverterV1();
         private static Type boolType = typeof(bool);
 
+        /// <summary>
+        /// Converts object to DynamoDBEntry
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public DynamoDBEntry ToEntry(object value)
         {
             return v1Converter.ToEntry(value);
         }
 
+        /// <summary>
+        /// Converts DynamoDBEntry to object
+        /// </summary>
+        /// <param name="entry"></param>
+        /// <returns></returns>
         public object FromEntry(DynamoDBEntry entry)
         {
             return v1Converter.FromEntry(entry, boolType);

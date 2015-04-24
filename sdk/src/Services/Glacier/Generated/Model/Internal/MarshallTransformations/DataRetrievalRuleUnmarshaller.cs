@@ -38,11 +38,21 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
     /// </summary>  
     public class DataRetrievalRuleUnmarshaller : IUnmarshaller<DataRetrievalRule, XmlUnmarshallerContext>, IUnmarshaller<DataRetrievalRule, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         DataRetrievalRule IUnmarshaller<DataRetrievalRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DataRetrievalRule Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -74,6 +84,9 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
         private static DataRetrievalRuleUnmarshaller _instance = new DataRetrievalRuleUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DataRetrievalRuleUnmarshaller Instance
         {
             get

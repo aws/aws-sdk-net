@@ -37,11 +37,21 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
     /// </summary>       
     public class StartLoggingRequestMarshaller : IMarshaller<IRequest, StartLoggingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((StartLoggingRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(StartLoggingRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudTrail");

@@ -38,11 +38,21 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
     /// </summary>  
     public class TrustedAdvisorCheckResultUnmarshaller : IUnmarshaller<TrustedAdvisorCheckResult, XmlUnmarshallerContext>, IUnmarshaller<TrustedAdvisorCheckResult, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         TrustedAdvisorCheckResult IUnmarshaller<TrustedAdvisorCheckResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public TrustedAdvisorCheckResult Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -98,6 +108,9 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 
         private static TrustedAdvisorCheckResultUnmarshaller _instance = new TrustedAdvisorCheckResultUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static TrustedAdvisorCheckResultUnmarshaller Instance
         {
             get

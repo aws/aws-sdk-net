@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class HeadersUnmarshaller : IUnmarshaller<Headers, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Headers Unmarshall(XmlUnmarshallerContext context)
         {
             Headers unmarshalledObject = new Headers();
@@ -73,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static HeadersUnmarshaller _instance = new HeadersUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static HeadersUnmarshaller Instance
         {
             get

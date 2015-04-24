@@ -34,7 +34,9 @@ namespace Amazon.SimpleWorkflow.Model
     {
         private Run _run;
 
-        // Gets and sets the Run member
+        /// <summary>
+        /// Gets and sets the Run member
+        /// </summary>
         public Run Run
         {
             get { return this._run; }

@@ -36,6 +36,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ServerCertificateMetadataUnmarshaller : IUnmarshaller<ServerCertificateMetadata, XmlUnmarshallerContext>, IUnmarshaller<ServerCertificateMetadata, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ServerCertificateMetadata Unmarshall(XmlUnmarshallerContext context)
         {
             ServerCertificateMetadata unmarshalledObject = new ServerCertificateMetadata();
@@ -95,6 +100,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ServerCertificateMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -103,6 +113,9 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
         private static ServerCertificateMetadataUnmarshaller _instance = new ServerCertificateMetadataUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ServerCertificateMetadataUnmarshaller Instance
         {
             get

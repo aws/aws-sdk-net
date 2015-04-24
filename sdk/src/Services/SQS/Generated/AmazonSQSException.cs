@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.SQS
 {
+    ///<summary>
+    /// Common exception for the SQS service.
+    /// </summary>
     public class AmazonSQSException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonSQSException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonSQSException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonSQSException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonSQSException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonSQSException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonSQSException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonSQSException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonSQSException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonSQSException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonSQSException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

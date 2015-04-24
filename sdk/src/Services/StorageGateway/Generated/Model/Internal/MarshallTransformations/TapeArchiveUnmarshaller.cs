@@ -38,11 +38,21 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
     /// </summary>  
     public class TapeArchiveUnmarshaller : IUnmarshaller<TapeArchive, XmlUnmarshallerContext>, IUnmarshaller<TapeArchive, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         TapeArchive IUnmarshaller<TapeArchive, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public TapeArchive Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -98,6 +108,9 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
         private static TapeArchiveUnmarshaller _instance = new TapeArchiveUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static TapeArchiveUnmarshaller Instance
         {
             get

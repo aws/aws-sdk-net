@@ -38,11 +38,21 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
     /// </summary>  
     public class IdentityPoolUsageUnmarshaller : IUnmarshaller<IdentityPoolUsage, XmlUnmarshallerContext>, IUnmarshaller<IdentityPoolUsage, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         IdentityPoolUsage IUnmarshaller<IdentityPoolUsage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public IdentityPoolUsage Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -86,6 +96,9 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 
         private static IdentityPoolUsageUnmarshaller _instance = new IdentityPoolUsageUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static IdentityPoolUsageUnmarshaller Instance
         {
             get

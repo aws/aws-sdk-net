@@ -35,11 +35,21 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// </summary>       
     public class ModifyEventSubscriptionRequestMarshaller : IMarshaller<IRequest, ModifyEventSubscriptionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((ModifyEventSubscriptionRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(ModifyEventSubscriptionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");

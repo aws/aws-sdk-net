@@ -34,7 +34,9 @@ namespace Amazon.SimpleWorkflow.Model
     {
         private ActivityTaskStatus _activityTaskStatus;
 
-        // Gets and sets the ActivityTaskStatus member
+        /// <summary>
+        /// Gets and sets the ActivityTaskStatus member
+        /// </summary>
         public ActivityTaskStatus ActivityTaskStatus
         {
             get { return this._activityTaskStatus; }

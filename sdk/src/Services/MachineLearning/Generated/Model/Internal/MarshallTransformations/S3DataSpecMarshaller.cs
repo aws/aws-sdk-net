@@ -37,6 +37,12 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
     /// </summary>       
     public class S3DataSpecMarshaller : IRequestMarshaller<S3DataSpec, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(S3DataSpec requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetDataLocationS3())
@@ -65,6 +71,9 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static S3DataSpecMarshaller Instance = new S3DataSpecMarshaller();
 
     }

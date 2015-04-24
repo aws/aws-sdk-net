@@ -37,6 +37,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// </summary>  
     public class GeoLocationDetailsUnmarshaller : IUnmarshaller<GeoLocationDetails, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public GeoLocationDetails Unmarshall(XmlUnmarshallerContext context)
         {
             GeoLocationDetails unmarshalledObject = new GeoLocationDetails();
@@ -97,6 +102,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
         private static GeoLocationDetailsUnmarshaller _instance = new GeoLocationDetailsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static GeoLocationDetailsUnmarshaller Instance
         {
             get

@@ -37,17 +37,43 @@ namespace Amazon.ElastiCache.Model
         public CacheParameterGroupQuotaExceededException(string message) 
             : base(message) {}
           
+        /// <summary>
+        /// Construct instance of CacheParameterGroupQuotaExceededException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public CacheParameterGroupQuotaExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
             
+        /// <summary>
+        /// Construct instance of CacheParameterGroupQuotaExceededException
+        /// </summary>
+        /// <param name="innerException"></param>
         public CacheParameterGroupQuotaExceededException(Exception innerException) 
             : base(innerException) {}
             
-        public CacheParameterGroupQuotaExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of CacheParameterGroupQuotaExceededException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public CacheParameterGroupQuotaExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
-        public CacheParameterGroupQuotaExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of CacheParameterGroupQuotaExceededException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public CacheParameterGroupQuotaExceededException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
 
     }
 }

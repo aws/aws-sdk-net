@@ -37,6 +37,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
     /// </summary>       
     public class DeliveryChannelMarshaller : IRequestMarshaller<DeliveryChannel, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(DeliveryChannel requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetName())
@@ -65,6 +71,9 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static DeliveryChannelMarshaller Instance = new DeliveryChannelMarshaller();
 
     }

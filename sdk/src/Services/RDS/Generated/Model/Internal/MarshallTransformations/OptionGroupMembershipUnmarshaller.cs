@@ -36,6 +36,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class OptionGroupMembershipUnmarshaller : IUnmarshaller<OptionGroupMembership, XmlUnmarshallerContext>, IUnmarshaller<OptionGroupMembership, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public OptionGroupMembership Unmarshall(XmlUnmarshallerContext context)
         {
             OptionGroupMembership unmarshalledObject = new OptionGroupMembership();
@@ -71,6 +76,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public OptionGroupMembership Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
         private static OptionGroupMembershipUnmarshaller _instance = new OptionGroupMembershipUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static OptionGroupMembershipUnmarshaller Instance
         {
             get

@@ -36,6 +36,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// </summary>  
     public class LifecycleHookUnmarshaller : IUnmarshaller<LifecycleHook, XmlUnmarshallerContext>, IUnmarshaller<LifecycleHook, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LifecycleHook Unmarshall(XmlUnmarshallerContext context)
         {
             LifecycleHook unmarshalledObject = new LifecycleHook();
@@ -113,6 +118,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LifecycleHook Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -121,6 +131,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
         private static LifecycleHookUnmarshaller _instance = new LifecycleHookUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static LifecycleHookUnmarshaller Instance
         {
             get

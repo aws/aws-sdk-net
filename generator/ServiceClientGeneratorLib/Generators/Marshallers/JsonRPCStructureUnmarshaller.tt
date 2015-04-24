@@ -17,11 +17,21 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     /// </summary>  
     public class <#=this.UnmarshallerBaseName #>Unmarshaller : IUnmarshaller<<#=this.UnmarshallerBaseName #>, XmlUnmarshallerContext>, IUnmarshaller<<#=this.UnmarshallerBaseName #>, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         <#=this.UnmarshallerBaseName #> IUnmarshaller<<#=this.UnmarshallerBaseName #>, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public <#=this.UnmarshallerBaseName #> Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();

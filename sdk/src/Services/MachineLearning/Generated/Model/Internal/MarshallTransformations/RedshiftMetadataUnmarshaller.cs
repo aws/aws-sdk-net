@@ -38,11 +38,21 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
     /// </summary>  
     public class RedshiftMetadataUnmarshaller : IUnmarshaller<RedshiftMetadata, XmlUnmarshallerContext>, IUnmarshaller<RedshiftMetadata, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         RedshiftMetadata IUnmarshaller<RedshiftMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public RedshiftMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -80,6 +90,9 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 
         private static RedshiftMetadataUnmarshaller _instance = new RedshiftMetadataUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static RedshiftMetadataUnmarshaller Instance
         {
             get

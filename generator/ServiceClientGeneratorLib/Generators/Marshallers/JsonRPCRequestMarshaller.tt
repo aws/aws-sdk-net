@@ -17,11 +17,21 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 	/// </summary>       
 	public class <#=this.Operation.Name #>RequestMarshaller : IMarshaller<IRequest, <#=this.Operation.Name #>Request> , IMarshaller<IRequest,AmazonWebServiceRequest>
 	{
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
 		public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((<#=this.Operation.Name#>Request)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
 		public IRequest Marshall(<#=        this.Operation.Name #>Request publicRequest)
 		{
 			IRequest request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace#>");

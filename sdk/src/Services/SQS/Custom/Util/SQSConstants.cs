@@ -25,6 +25,9 @@ using System.Text;
 
 namespace Amazon.SQS.Util
 {
+    /// <summary>
+    /// Common constants for SQS
+    /// </summary>
     public static class SQSConstants
     {
         /// <summary>

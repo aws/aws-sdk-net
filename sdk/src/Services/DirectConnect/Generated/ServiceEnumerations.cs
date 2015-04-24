@@ -81,6 +81,11 @@ namespace Amazon.DirectConnect
             return FindValue<ConnectionState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ConnectionState(string value)
         {
             return FindValue(value);
@@ -137,6 +142,11 @@ namespace Amazon.DirectConnect
             return FindValue<InterconnectState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator InterconnectState(string value)
         {
             return FindValue(value);
@@ -197,6 +207,11 @@ namespace Amazon.DirectConnect
             return FindValue<VirtualInterfaceState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator VirtualInterfaceState(string value)
         {
             return FindValue(value);

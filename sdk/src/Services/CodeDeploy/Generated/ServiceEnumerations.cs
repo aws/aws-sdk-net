@@ -61,6 +61,11 @@ namespace Amazon.CodeDeploy
             return FindValue<ApplicationRevisionSortBy>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ApplicationRevisionSortBy(string value)
         {
             return FindValue(value);
@@ -105,6 +110,11 @@ namespace Amazon.CodeDeploy
             return FindValue<BundleType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator BundleType(string value)
         {
             return FindValue(value);
@@ -145,6 +155,11 @@ namespace Amazon.CodeDeploy
             return FindValue<DeploymentCreator>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator DeploymentCreator(string value)
         {
             return FindValue(value);
@@ -201,6 +216,11 @@ namespace Amazon.CodeDeploy
             return FindValue<DeploymentStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator DeploymentStatus(string value)
         {
             return FindValue(value);
@@ -245,6 +265,11 @@ namespace Amazon.CodeDeploy
             return FindValue<EC2TagFilterType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator EC2TagFilterType(string value)
         {
             return FindValue(value);
@@ -329,6 +354,11 @@ namespace Amazon.CodeDeploy
             return FindValue<ErrorCode>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ErrorCode(string value)
         {
             return FindValue(value);
@@ -385,6 +415,11 @@ namespace Amazon.CodeDeploy
             return FindValue<InstanceStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator InstanceStatus(string value)
         {
             return FindValue(value);
@@ -441,6 +476,11 @@ namespace Amazon.CodeDeploy
             return FindValue<LifecycleErrorCode>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator LifecycleErrorCode(string value)
         {
             return FindValue(value);
@@ -497,6 +537,11 @@ namespace Amazon.CodeDeploy
             return FindValue<LifecycleEventStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator LifecycleEventStatus(string value)
         {
             return FindValue(value);
@@ -541,6 +586,11 @@ namespace Amazon.CodeDeploy
             return FindValue<ListStateFilterAction>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ListStateFilterAction(string value)
         {
             return FindValue(value);
@@ -581,6 +631,11 @@ namespace Amazon.CodeDeploy
             return FindValue<MinimumHealthyHostsType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator MinimumHealthyHostsType(string value)
         {
             return FindValue(value);
@@ -621,6 +676,11 @@ namespace Amazon.CodeDeploy
             return FindValue<RegistrationStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator RegistrationStatus(string value)
         {
             return FindValue(value);
@@ -661,6 +721,11 @@ namespace Amazon.CodeDeploy
             return FindValue<RevisionLocationType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator RevisionLocationType(string value)
         {
             return FindValue(value);
@@ -701,6 +766,11 @@ namespace Amazon.CodeDeploy
             return FindValue<SortOrder>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator SortOrder(string value)
         {
             return FindValue(value);
@@ -741,6 +811,11 @@ namespace Amazon.CodeDeploy
             return FindValue<StopStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator StopStatus(string value)
         {
             return FindValue(value);
@@ -785,6 +860,11 @@ namespace Amazon.CodeDeploy
             return FindValue<TagFilterType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator TagFilterType(string value)
         {
             return FindValue(value);

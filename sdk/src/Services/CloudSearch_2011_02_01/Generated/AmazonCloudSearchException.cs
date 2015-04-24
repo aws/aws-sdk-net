@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.CloudSearch_2011_02_01
 {
+    ///<summary>
+    /// Common exception for the CloudSearch service.
+    /// </summary>
     public class AmazonCloudSearchException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonCloudSearchException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonCloudSearchException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonCloudSearchException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonCloudSearchException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonCloudSearchException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonCloudSearchException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonCloudSearchException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonCloudSearchException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonCloudSearchException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonCloudSearchException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

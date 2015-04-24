@@ -30,10 +30,18 @@ namespace Amazon.DynamoDBv2.Internal
     /// </summary>
     public class DynamoDBRetryPolicy : DefaultRetryPolicy
     {
+        /// <summary>
+        /// Construct instance of DynamoDBRetryPolicy.
+        /// </summary>
+        /// <param name="maxRetries"></param>
         public DynamoDBRetryPolicy(int maxRetries)
             : base(maxRetries)
         { }
 
+        /// <summary>
+        /// Overriden to cause a pause between retries.
+        /// </summary>
+        /// <param name="executionContext"></param>
         public override void WaitBeforeRetry(IExecutionContext executionContext)
         {
             pauseExponentially(executionContext.RequestContext.Retries);

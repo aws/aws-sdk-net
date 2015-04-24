@@ -26,6 +26,9 @@ namespace Amazon.CloudSearchDomain
     /// </summary>
     public partial class AmazonCloudSearchDomainConfig : ClientConfig
     {
+        /// <summary>
+        /// Validate that the config object is properly configured.
+        /// </summary>
         public override void Validate()
         {
             if (RegionEndpoint != null)

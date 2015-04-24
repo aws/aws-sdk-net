@@ -38,11 +38,21 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
     /// </summary>  
     public class SequenceNumberRangeUnmarshaller : IUnmarshaller<SequenceNumberRange, XmlUnmarshallerContext>, IUnmarshaller<SequenceNumberRange, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         SequenceNumberRange IUnmarshaller<SequenceNumberRange, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SequenceNumberRange Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -74,6 +84,9 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 
         private static SequenceNumberRangeUnmarshaller _instance = new SequenceNumberRangeUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static SequenceNumberRangeUnmarshaller Instance
         {
             get

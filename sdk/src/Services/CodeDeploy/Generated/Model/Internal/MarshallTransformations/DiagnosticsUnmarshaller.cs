@@ -38,11 +38,21 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// </summary>  
     public class DiagnosticsUnmarshaller : IUnmarshaller<Diagnostics, XmlUnmarshallerContext>, IUnmarshaller<Diagnostics, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         Diagnostics IUnmarshaller<Diagnostics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Diagnostics Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -86,6 +96,9 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         private static DiagnosticsUnmarshaller _instance = new DiagnosticsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DiagnosticsUnmarshaller Instance
         {
             get

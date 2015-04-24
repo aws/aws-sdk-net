@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class LaunchSpecificationUnmarshaller : IUnmarshaller<LaunchSpecification, XmlUnmarshallerContext>, IUnmarshaller<LaunchSpecification, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LaunchSpecification Unmarshall(XmlUnmarshallerContext context)
         {
             LaunchSpecification unmarshalledObject = new LaunchSpecification();
@@ -159,6 +164,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LaunchSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -167,6 +177,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static LaunchSpecificationUnmarshaller _instance = new LaunchSpecificationUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static LaunchSpecificationUnmarshaller Instance
         {
             get

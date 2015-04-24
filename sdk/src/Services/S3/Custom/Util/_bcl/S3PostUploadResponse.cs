@@ -25,10 +25,24 @@ using Amazon.Util;
 
 namespace Amazon.S3.Util
 {
+    /// <summary>
+    /// Class holds Response data for a post upload.
+    /// </summary>
     public class S3PostUploadResponse
     {
+        /// <summary>
+        /// Gets and sets the StatusCode property.
+        /// </summary>
         public HttpStatusCode StatusCode { get; set; }
+
+        /// <summary>
+        /// Gets and sets the RequestId property.
+        /// </summary>
         public string RequestId { get; set; }
+
+        /// <summary>
+        /// Gets and sets the HostId property.
+        /// </summary>
         public string HostId { get; set; }
 
         internal static S3PostUploadResponse FromWebResponse(HttpWebResponse response)

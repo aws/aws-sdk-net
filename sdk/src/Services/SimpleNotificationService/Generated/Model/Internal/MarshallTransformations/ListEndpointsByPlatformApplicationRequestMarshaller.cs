@@ -35,11 +35,21 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// </summary>       
     public class ListEndpointsByPlatformApplicationRequestMarshaller : IMarshaller<IRequest, ListEndpointsByPlatformApplicationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((ListEndpointsByPlatformApplicationRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(ListEndpointsByPlatformApplicationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleNotificationService");

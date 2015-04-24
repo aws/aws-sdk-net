@@ -36,6 +36,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ClusterSubnetGroupUnmarshaller : IUnmarshaller<ClusterSubnetGroup, XmlUnmarshallerContext>, IUnmarshaller<ClusterSubnetGroup, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ClusterSubnetGroup Unmarshall(XmlUnmarshallerContext context)
         {
             ClusterSubnetGroup unmarshalledObject = new ClusterSubnetGroup();
@@ -97,6 +102,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ClusterSubnetGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -105,6 +115,9 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
         private static ClusterSubnetGroupUnmarshaller _instance = new ClusterSubnetGroupUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ClusterSubnetGroupUnmarshaller Instance
         {
             get

@@ -37,6 +37,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
     /// </summary>       
     public class JobInputMarshaller : IRequestMarshaller<JobInput, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(JobInput requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetAspectRatio())
@@ -99,6 +105,9 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static JobInputMarshaller Instance = new JobInputMarshaller();
 
     }

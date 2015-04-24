@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.SimpleEmail
 {
+    ///<summary>
+    /// Common exception for the SimpleEmailService service.
+    /// </summary>
     public class AmazonSimpleEmailServiceException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonSimpleEmailServiceException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonSimpleEmailServiceException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonSimpleEmailServiceException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonSimpleEmailServiceException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonSimpleEmailServiceException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonSimpleEmailServiceException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonSimpleEmailServiceException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonSimpleEmailServiceException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonSimpleEmailServiceException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonSimpleEmailServiceException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

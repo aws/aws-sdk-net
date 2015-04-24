@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class DefaultCacheBehaviorUnmarshaller : IUnmarshaller<DefaultCacheBehavior, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DefaultCacheBehavior Unmarshall(XmlUnmarshallerContext context)
         {
             DefaultCacheBehavior unmarshalledObject = new DefaultCacheBehavior();
@@ -103,6 +108,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static DefaultCacheBehaviorUnmarshaller _instance = new DefaultCacheBehaviorUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DefaultCacheBehaviorUnmarshaller Instance
         {
             get

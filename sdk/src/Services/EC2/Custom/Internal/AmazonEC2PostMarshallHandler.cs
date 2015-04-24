@@ -25,6 +25,9 @@ using System.Text.RegularExpressions;
 
 namespace Amazon.EC2.Internal
 {
+    /// <summary>
+    /// Custom pipeline handler
+    /// </summary>
     public class AmazonEC2PostMarshallHandler : PipelineHandler
     {
         /// <summary>
@@ -69,6 +72,10 @@ namespace Amazon.EC2.Internal
             return base.InvokeAsync(executionContext);
         }
 #endif
+        /// <summary>
+        /// Custom pipeline handler
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected void PreInvoke(IExecutionContext executionContext)
         {
             var originalRequest = executionContext.RequestContext.OriginalRequest;

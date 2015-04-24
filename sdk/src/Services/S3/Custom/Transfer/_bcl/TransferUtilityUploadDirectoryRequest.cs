@@ -492,6 +492,9 @@ namespace Amazon.S3.Transfer
             UploadRequest = request;
         }
 
+        /// <summary>
+        /// Gets and sets the UploadRequest property.
+        /// </summary>
         public TransferUtilityUploadRequest UploadRequest { get; set; }
     }
 }

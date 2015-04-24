@@ -69,6 +69,11 @@ namespace Amazon.CloudTrail
             return FindValue<LookupAttributeKey>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator LookupAttributeKey(string value)
         {
             return FindValue(value);

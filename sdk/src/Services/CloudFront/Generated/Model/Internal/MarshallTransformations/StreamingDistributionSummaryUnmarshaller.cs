@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class StreamingDistributionSummaryUnmarshaller : IUnmarshaller<StreamingDistributionSummary, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public StreamingDistributionSummary Unmarshall(XmlUnmarshallerContext context)
         {
             StreamingDistributionSummary unmarshalledObject = new StreamingDistributionSummary();
@@ -121,6 +126,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static StreamingDistributionSummaryUnmarshaller _instance = new StreamingDistributionSummaryUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static StreamingDistributionSummaryUnmarshaller Instance
         {
             get

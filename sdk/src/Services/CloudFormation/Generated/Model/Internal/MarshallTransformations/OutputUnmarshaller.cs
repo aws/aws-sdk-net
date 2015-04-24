@@ -36,6 +36,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// </summary>  
     public class OutputUnmarshaller : IUnmarshaller<Output, XmlUnmarshallerContext>, IUnmarshaller<Output, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Output Unmarshall(XmlUnmarshallerContext context)
         {
             Output unmarshalledObject = new Output();
@@ -77,6 +82,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Output Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -85,6 +95,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
         private static OutputUnmarshaller _instance = new OutputUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static OutputUnmarshaller Instance
         {
             get

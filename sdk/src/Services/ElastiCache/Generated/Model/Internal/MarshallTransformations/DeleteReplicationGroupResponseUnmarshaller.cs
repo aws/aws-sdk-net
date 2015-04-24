@@ -36,6 +36,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// </summary>  
     public class DeleteReplicationGroupResponseUnmarshaller : XmlResponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             DeleteReplicationGroupResponse response = new DeleteReplicationGroupResponse();
@@ -88,6 +93,13 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         }
 
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
+        /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
@@ -127,6 +139,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             return _instance;
         }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DeleteReplicationGroupResponseUnmarshaller Instance
         {
             get

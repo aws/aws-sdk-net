@@ -61,6 +61,11 @@ namespace Amazon.CloudSearch_2011_02_01
             return FindValue<IndexFieldType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator IndexFieldType(string value)
         {
             return FindValue(value);
@@ -105,6 +110,11 @@ namespace Amazon.CloudSearch_2011_02_01
             return FindValue<OptionState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator OptionState(string value)
         {
             return FindValue(value);
@@ -149,6 +159,11 @@ namespace Amazon.CloudSearch_2011_02_01
             return FindValue<SourceDataFunction>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator SourceDataFunction(string value)
         {
             return FindValue(value);

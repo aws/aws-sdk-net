@@ -38,11 +38,21 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
     /// </summary>  
     public class EvaluationUnmarshaller : IUnmarshaller<Evaluation, XmlUnmarshallerContext>, IUnmarshaller<Evaluation, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         Evaluation IUnmarshaller<Evaluation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Evaluation Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -128,6 +138,9 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 
         private static EvaluationUnmarshaller _instance = new EvaluationUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static EvaluationUnmarshaller Instance
         {
             get

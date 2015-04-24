@@ -38,11 +38,21 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
     /// </summary>  
     public class PartListElementUnmarshaller : IUnmarshaller<PartListElement, XmlUnmarshallerContext>, IUnmarshaller<PartListElement, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         PartListElement IUnmarshaller<PartListElement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public PartListElement Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -74,6 +84,9 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
         private static PartListElementUnmarshaller _instance = new PartListElementUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static PartListElementUnmarshaller Instance
         {
             get

@@ -29,26 +29,61 @@ namespace Amazon.DynamoDBv2.DocumentModel
     {
         #region Private members
 
+        /// <summary>
+        /// Filter conditions
+        /// </summary>
         protected class FilterCondition
         {
+            /// <summary>
+            /// Gets the AttributeValues property.
+            /// </summary>
             public List<AttributeValue> AttributeValues { get; private set; }
+
+            /// <summary>
+            /// Gets the DynamoDBEntries property.
+            /// </summary>
             public List<DynamoDBEntry> DynamoDBEntries { get; private set; }
+
+            /// <summary>
+            /// Gets the ComparisonOperator property.
+            /// </summary>
             public ComparisonOperator ComparisonOperator { get; private set; }
 
+            /// <summary>
+            /// Construct instance of FilterCondition
+            /// </summary>
+            /// <param name="comparisonOperator"></param>
+            /// <param name="attributeValues"></param>
             public FilterCondition(ComparisonOperator comparisonOperator, List<AttributeValue> attributeValues)
             {
                 ComparisonOperator = comparisonOperator;
                 AttributeValues = attributeValues;
             }
+
+            /// <summary>
+            /// Construct instance of FilterCondition
+            /// </summary>
+            /// <param name="comparisonOperator"></param>
+            /// <param name="dynamoDBEntries"></param>
             public FilterCondition(ComparisonOperator comparisonOperator, List<DynamoDBEntry> dynamoDBEntries)
             {
                 ComparisonOperator = comparisonOperator;
                 DynamoDBEntries = dynamoDBEntries;
             }
+
+            /// <summary>
+            /// Construct instance of FilterCondition
+            /// </summary>
+            /// <param name="condition"></param>
             public FilterCondition(Condition condition)
                 : this(condition.ComparisonOperator, condition.AttributeValueList)
             { }
 
+            /// <summary>
+            /// Converts the FilterCondition to the Amazon.DynamoDBv2.Model.Condition object.
+            /// </summary>
+            /// <param name="conversion"></param>
+            /// <returns></returns>
             public Condition ToCondition(DynamoDBEntryConversion conversion)
             {
                 var attributeValues = AttributeValues;
@@ -71,12 +106,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
+        /// <summary>
+        /// Gets the Conditions for the filter.
+        /// </summary>
         protected Dictionary<string, FilterCondition> Conditions { get; private set; }
 
         #endregion
 
         #region Constructor
 
+        /// <summary>
+        /// Default Constructor.
+        /// </summary>
         public Filter()
         {
             Conditions = new Dictionary<string, FilterCondition>(StringComparer.Ordinal);
@@ -133,7 +174,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-        // Creates a list of AttributeValues from a list of DynamoDBEntry items
+        /// <summary>
+        /// Creates a list of AttributeValues from a list of DynamoDBEntry items 
+        /// </summary>
+        /// <param name="conversion"></param>
+        /// <param name="values"></param>
+        /// <returns></returns>
         protected static List<AttributeValue> ConvertToAttributeValues(DynamoDBEntryConversion conversion, params DynamoDBEntry[] values)
         {
             List<AttributeValue> attributes = new List<AttributeValue>();
@@ -166,11 +212,22 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Conditions[attributeName] = new FilterCondition(condition);
         }
 
+        /// <summary>
+        /// Adds a condition 
+        /// </summary>
+        /// <param name="attributeName"></param>
+        /// <param name="comparisonOperator"></param>
+        /// <param name="values"></param>
         protected void AddCondition(string attributeName, ComparisonOperator comparisonOperator, List<DynamoDBEntry> values)
         {
             Conditions[attributeName] = new FilterCondition(comparisonOperator, values);
         }
 
+        /// <summary>
+        /// Adds a condition
+        /// </summary>
+        /// <param name="attributeName"></param>
+        /// <param name="filterCondition"></param>
         protected void AddCondition(string attributeName, FilterCondition filterCondition)
         {
             Conditions[attributeName] = filterCondition;
@@ -193,6 +250,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// </summary>
     public class ScanFilter : Filter
     {
+        /// <summary>
+        /// Default Constructor.
+        /// </summary>
         public ScanFilter()
             : base()
         { }

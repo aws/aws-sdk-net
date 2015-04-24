@@ -38,11 +38,21 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// </summary>  
     public class GitHubLocationUnmarshaller : IUnmarshaller<GitHubLocation, XmlUnmarshallerContext>, IUnmarshaller<GitHubLocation, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         GitHubLocation IUnmarshaller<GitHubLocation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public GitHubLocation Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -74,6 +84,9 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         private static GitHubLocationUnmarshaller _instance = new GitHubLocationUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static GitHubLocationUnmarshaller Instance
         {
             get

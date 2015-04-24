@@ -36,6 +36,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ScheduledUpdateGroupActionUnmarshaller : IUnmarshaller<ScheduledUpdateGroupAction, XmlUnmarshallerContext>, IUnmarshaller<ScheduledUpdateGroupAction, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ScheduledUpdateGroupAction Unmarshall(XmlUnmarshallerContext context)
         {
             ScheduledUpdateGroupAction unmarshalledObject = new ScheduledUpdateGroupAction();
@@ -119,6 +124,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ScheduledUpdateGroupAction Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -127,6 +137,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
         private static ScheduledUpdateGroupActionUnmarshaller _instance = new ScheduledUpdateGroupActionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ScheduledUpdateGroupActionUnmarshaller Instance
         {
             get

@@ -30,6 +30,13 @@ namespace Amazon.S3.Encryption
         internal byte[] InitializationVector { get; private set; }
         internal Dictionary<string, string> MaterialsDescription { get; private set; }
 
+        /// <summary>
+        /// Construct an instance EncryptionInstructions.
+        /// </summary>
+        /// <param name="materialsDescription"></param>
+        /// <param name="envelopeKey"></param>
+        /// <param name="encryptedKey"></param>
+        /// <param name="iv"></param>
         public EncryptionInstructions(Dictionary<string, string> materialsDescription, byte[] envelopeKey, byte[] encryptedKey, byte[] iv)
         {
             MaterialsDescription = materialsDescription;
@@ -38,6 +45,12 @@ namespace Amazon.S3.Encryption
             InitializationVector = iv;
         }
 
+        /// <summary>
+        /// Construct an instance EncryptionInstructions.
+        /// </summary>
+        /// <param name="materialsDescription"></param>
+        /// <param name="envelopeKey"></param>
+        /// <param name="iv"></param>
         public EncryptionInstructions(Dictionary<string, string> materialsDescription, byte[] envelopeKey, byte[] iv)
         {
             MaterialsDescription = materialsDescription;

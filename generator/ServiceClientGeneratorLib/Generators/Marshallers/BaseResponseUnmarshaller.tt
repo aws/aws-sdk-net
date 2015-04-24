@@ -77,6 +77,10 @@ using Amazon.Runtime.Internal.Util;
 		{
 			return _instance;
 		}
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
 		public static <#=this.UnmarshallerBaseName #>ResponseUnmarshaller Instance
 		{
 			get
@@ -93,6 +97,9 @@ using Amazon.Runtime.Internal.Util;
 #>
         private static <#=this.UnmarshallerBaseName #>Unmarshaller _instance = new <#=this.UnmarshallerBaseName #>Unmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
 		public static <#=this.UnmarshallerBaseName #>Unmarshaller Instance
 		{
 			get

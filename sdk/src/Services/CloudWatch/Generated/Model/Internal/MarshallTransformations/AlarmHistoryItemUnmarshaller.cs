@@ -36,6 +36,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// </summary>  
     public class AlarmHistoryItemUnmarshaller : IUnmarshaller<AlarmHistoryItem, XmlUnmarshallerContext>, IUnmarshaller<AlarmHistoryItem, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AlarmHistoryItem Unmarshall(XmlUnmarshallerContext context)
         {
             AlarmHistoryItem unmarshalledObject = new AlarmHistoryItem();
@@ -89,6 +94,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AlarmHistoryItem Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -97,6 +107,9 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
         private static AlarmHistoryItemUnmarshaller _instance = new AlarmHistoryItemUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static AlarmHistoryItemUnmarshaller Instance
         {
             get

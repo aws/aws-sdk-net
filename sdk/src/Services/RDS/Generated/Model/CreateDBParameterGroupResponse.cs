@@ -42,6 +42,9 @@ namespace Amazon.RDS.Model
     {
         private DBParameterGroup _response;
 
+        /// <summary>
+        /// Gets and sets the DBParameterGroup property.
+        /// </summary>
         public DBParameterGroup DBParameterGroup
         {
             get { return this._response; }

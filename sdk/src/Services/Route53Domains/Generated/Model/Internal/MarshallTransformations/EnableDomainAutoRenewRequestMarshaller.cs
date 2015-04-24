@@ -37,11 +37,21 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// </summary>       
     public class EnableDomainAutoRenewRequestMarshaller : IMarshaller<IRequest, EnableDomainAutoRenewRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((EnableDomainAutoRenewRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(EnableDomainAutoRenewRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Route53Domains");

@@ -57,6 +57,11 @@ namespace Amazon.EC2
             return FindValue<AccountAttributeName>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator AccountAttributeName(string value)
         {
             return FindValue(value);
@@ -97,6 +102,11 @@ namespace Amazon.EC2
             return FindValue<ArchitectureValues>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ArchitectureValues(string value)
         {
             return FindValue(value);
@@ -145,6 +155,11 @@ namespace Amazon.EC2
             return FindValue<AttachmentStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator AttachmentStatus(string value)
         {
             return FindValue(value);
@@ -181,6 +196,11 @@ namespace Amazon.EC2
             return FindValue<AvailabilityZoneState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator AvailabilityZoneState(string value)
         {
             return FindValue(value);
@@ -241,6 +261,11 @@ namespace Amazon.EC2
             return FindValue<BundleTaskState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator BundleTaskState(string value)
         {
             return FindValue(value);
@@ -293,6 +318,11 @@ namespace Amazon.EC2
             return FindValue<CancelSpotInstanceRequestState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator CancelSpotInstanceRequestState(string value)
         {
             return FindValue(value);
@@ -329,6 +359,11 @@ namespace Amazon.EC2
             return FindValue<ContainerFormat>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ContainerFormat(string value)
         {
             return FindValue(value);
@@ -377,6 +412,11 @@ namespace Amazon.EC2
             return FindValue<ConversionTaskState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ConversionTaskState(string value)
         {
             return FindValue(value);
@@ -413,6 +453,11 @@ namespace Amazon.EC2
             return FindValue<CurrencyCodeValues>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator CurrencyCodeValues(string value)
         {
             return FindValue(value);
@@ -453,6 +498,11 @@ namespace Amazon.EC2
             return FindValue<DatafeedSubscriptionState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator DatafeedSubscriptionState(string value)
         {
             return FindValue(value);
@@ -493,6 +543,11 @@ namespace Amazon.EC2
             return FindValue<DeviceType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator DeviceType(string value)
         {
             return FindValue(value);
@@ -537,6 +592,11 @@ namespace Amazon.EC2
             return FindValue<DiskImageFormat>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator DiskImageFormat(string value)
         {
             return FindValue(value);
@@ -577,6 +637,11 @@ namespace Amazon.EC2
             return FindValue<DomainType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator DomainType(string value)
         {
             return FindValue(value);
@@ -629,6 +694,11 @@ namespace Amazon.EC2
             return FindValue<EventCode>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator EventCode(string value)
         {
             return FindValue(value);
@@ -673,6 +743,11 @@ namespace Amazon.EC2
             return FindValue<ExportEnvironment>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ExportEnvironment(string value)
         {
             return FindValue(value);
@@ -721,6 +796,11 @@ namespace Amazon.EC2
             return FindValue<ExportTaskState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ExportTaskState(string value)
         {
             return FindValue(value);
@@ -757,6 +837,11 @@ namespace Amazon.EC2
             return FindValue<GatewayType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator GatewayType(string value)
         {
             return FindValue(value);
@@ -797,6 +882,11 @@ namespace Amazon.EC2
             return FindValue<HypervisorType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator HypervisorType(string value)
         {
             return FindValue(value);
@@ -853,6 +943,11 @@ namespace Amazon.EC2
             return FindValue<ImageAttributeName>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ImageAttributeName(string value)
         {
             return FindValue(value);
@@ -893,6 +988,11 @@ namespace Amazon.EC2
             return FindValue<ImageState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ImageState(string value)
         {
             return FindValue(value);
@@ -937,6 +1037,11 @@ namespace Amazon.EC2
             return FindValue<ImageTypeValues>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ImageTypeValues(string value)
         {
             return FindValue(value);
@@ -1021,6 +1126,11 @@ namespace Amazon.EC2
             return FindValue<InstanceAttributeName>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator InstanceAttributeName(string value)
         {
             return FindValue(value);
@@ -1057,6 +1167,11 @@ namespace Amazon.EC2
             return FindValue<InstanceLifecycleType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator InstanceLifecycleType(string value)
         {
             return FindValue(value);
@@ -1113,6 +1228,11 @@ namespace Amazon.EC2
             return FindValue<InstanceStateName>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator InstanceStateName(string value)
         {
             return FindValue(value);
@@ -1333,6 +1453,11 @@ namespace Amazon.EC2
             return FindValue<InstanceType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator InstanceType(string value)
         {
             return FindValue(value);
@@ -1381,6 +1506,11 @@ namespace Amazon.EC2
             return FindValue<ListingState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ListingState(string value)
         {
             return FindValue(value);
@@ -1429,6 +1559,11 @@ namespace Amazon.EC2
             return FindValue<ListingStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ListingStatus(string value)
         {
             return FindValue(value);
@@ -1473,6 +1608,11 @@ namespace Amazon.EC2
             return FindValue<MonitoringState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator MonitoringState(string value)
         {
             return FindValue(value);
@@ -1521,6 +1661,11 @@ namespace Amazon.EC2
             return FindValue<NetworkInterfaceAttribute>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator NetworkInterfaceAttribute(string value)
         {
             return FindValue(value);
@@ -1569,6 +1714,11 @@ namespace Amazon.EC2
             return FindValue<NetworkInterfaceStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator NetworkInterfaceStatus(string value)
         {
             return FindValue(value);
@@ -1625,6 +1775,11 @@ namespace Amazon.EC2
             return FindValue<OfferingTypeValues>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator OfferingTypeValues(string value)
         {
             return FindValue(value);
@@ -1661,6 +1816,11 @@ namespace Amazon.EC2
             return FindValue<PermissionGroup>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator PermissionGroup(string value)
         {
             return FindValue(value);
@@ -1709,6 +1869,11 @@ namespace Amazon.EC2
             return FindValue<PlacementGroupState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator PlacementGroupState(string value)
         {
             return FindValue(value);
@@ -1745,6 +1910,11 @@ namespace Amazon.EC2
             return FindValue<PlacementStrategy>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator PlacementStrategy(string value)
         {
             return FindValue(value);
@@ -1781,6 +1951,11 @@ namespace Amazon.EC2
             return FindValue<PlatformValues>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator PlatformValues(string value)
         {
             return FindValue(value);
@@ -1821,6 +1996,11 @@ namespace Amazon.EC2
             return FindValue<ProductCodeValues>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ProductCodeValues(string value)
         {
             return FindValue(value);
@@ -1857,6 +2037,11 @@ namespace Amazon.EC2
             return FindValue<RecurringChargeFrequency>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator RecurringChargeFrequency(string value)
         {
             return FindValue(value);
@@ -1925,6 +2110,11 @@ namespace Amazon.EC2
             return FindValue<ReportInstanceReasonCodes>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ReportInstanceReasonCodes(string value)
         {
             return FindValue(value);
@@ -1965,6 +2155,11 @@ namespace Amazon.EC2
             return FindValue<ReportStatusType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ReportStatusType(string value)
         {
             return FindValue(value);
@@ -2013,6 +2208,11 @@ namespace Amazon.EC2
             return FindValue<ReservedInstanceState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ReservedInstanceState(string value)
         {
             return FindValue(value);
@@ -2049,6 +2249,11 @@ namespace Amazon.EC2
             return FindValue<ResetImageAttributeName>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ResetImageAttributeName(string value)
         {
             return FindValue(value);
@@ -2149,6 +2354,11 @@ namespace Amazon.EC2
             return FindValue<ResourceType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ResourceType(string value)
         {
             return FindValue(value);
@@ -2197,6 +2407,11 @@ namespace Amazon.EC2
             return FindValue<RIProductDescription>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator RIProductDescription(string value)
         {
             return FindValue(value);
@@ -2241,6 +2456,11 @@ namespace Amazon.EC2
             return FindValue<RouteOrigin>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator RouteOrigin(string value)
         {
             return FindValue(value);
@@ -2281,6 +2501,11 @@ namespace Amazon.EC2
             return FindValue<RouteState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator RouteState(string value)
         {
             return FindValue(value);
@@ -2321,6 +2546,11 @@ namespace Amazon.EC2
             return FindValue<RuleAction>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator RuleAction(string value)
         {
             return FindValue(value);
@@ -2361,6 +2591,11 @@ namespace Amazon.EC2
             return FindValue<ShutdownBehavior>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ShutdownBehavior(string value)
         {
             return FindValue(value);
@@ -2401,6 +2636,11 @@ namespace Amazon.EC2
             return FindValue<SnapshotAttributeName>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator SnapshotAttributeName(string value)
         {
             return FindValue(value);
@@ -2445,6 +2685,11 @@ namespace Amazon.EC2
             return FindValue<SnapshotState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator SnapshotState(string value)
         {
             return FindValue(value);
@@ -2497,6 +2742,11 @@ namespace Amazon.EC2
             return FindValue<SpotInstanceState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator SpotInstanceState(string value)
         {
             return FindValue(value);
@@ -2537,6 +2787,11 @@ namespace Amazon.EC2
             return FindValue<SpotInstanceType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator SpotInstanceType(string value)
         {
             return FindValue(value);
@@ -2573,6 +2828,11 @@ namespace Amazon.EC2
             return FindValue<StatusName>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator StatusName(string value)
         {
             return FindValue(value);
@@ -2617,6 +2877,11 @@ namespace Amazon.EC2
             return FindValue<StatusType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator StatusType(string value)
         {
             return FindValue(value);
@@ -2657,6 +2922,11 @@ namespace Amazon.EC2
             return FindValue<SubnetState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator SubnetState(string value)
         {
             return FindValue(value);
@@ -2705,6 +2975,11 @@ namespace Amazon.EC2
             return FindValue<SummaryStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator SummaryStatus(string value)
         {
             return FindValue(value);
@@ -2745,6 +3020,11 @@ namespace Amazon.EC2
             return FindValue<TelemetryStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator TelemetryStatus(string value)
         {
             return FindValue(value);
@@ -2785,6 +3065,11 @@ namespace Amazon.EC2
             return FindValue<Tenancy>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator Tenancy(string value)
         {
             return FindValue(value);
@@ -2825,6 +3110,11 @@ namespace Amazon.EC2
             return FindValue<VirtualizationType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator VirtualizationType(string value)
         {
             return FindValue(value);
@@ -2873,6 +3163,11 @@ namespace Amazon.EC2
             return FindValue<VolumeAttachmentState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator VolumeAttachmentState(string value)
         {
             return FindValue(value);
@@ -2913,6 +3208,11 @@ namespace Amazon.EC2
             return FindValue<VolumeAttributeName>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator VolumeAttributeName(string value)
         {
             return FindValue(value);
@@ -2969,6 +3269,11 @@ namespace Amazon.EC2
             return FindValue<VolumeState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator VolumeState(string value)
         {
             return FindValue(value);
@@ -3013,6 +3318,11 @@ namespace Amazon.EC2
             return FindValue<VolumeStatusInfoStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator VolumeStatusInfoStatus(string value)
         {
             return FindValue(value);
@@ -3053,6 +3363,11 @@ namespace Amazon.EC2
             return FindValue<VolumeStatusName>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator VolumeStatusName(string value)
         {
             return FindValue(value);
@@ -3097,6 +3412,11 @@ namespace Amazon.EC2
             return FindValue<VolumeType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator VolumeType(string value)
         {
             return FindValue(value);
@@ -3137,6 +3457,11 @@ namespace Amazon.EC2
             return FindValue<VpcAttributeName>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator VpcAttributeName(string value)
         {
             return FindValue(value);
@@ -3177,6 +3502,11 @@ namespace Amazon.EC2
             return FindValue<VpcState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator VpcState(string value)
         {
             return FindValue(value);
@@ -3225,6 +3555,11 @@ namespace Amazon.EC2
             return FindValue<VpnState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator VpnState(string value)
         {
             return FindValue(value);
@@ -3261,6 +3596,11 @@ namespace Amazon.EC2
             return FindValue<VpnStaticRouteSource>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator VpnStaticRouteSource(string value)
         {
             return FindValue(value);

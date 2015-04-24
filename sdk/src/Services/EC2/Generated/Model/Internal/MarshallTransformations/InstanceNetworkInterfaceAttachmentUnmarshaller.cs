@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class InstanceNetworkInterfaceAttachmentUnmarshaller : IUnmarshaller<InstanceNetworkInterfaceAttachment, XmlUnmarshallerContext>, IUnmarshaller<InstanceNetworkInterfaceAttachment, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public InstanceNetworkInterfaceAttachment Unmarshall(XmlUnmarshallerContext context)
         {
             InstanceNetworkInterfaceAttachment unmarshalledObject = new InstanceNetworkInterfaceAttachment();
@@ -89,6 +94,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public InstanceNetworkInterfaceAttachment Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -97,6 +107,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static InstanceNetworkInterfaceAttachmentUnmarshaller _instance = new InstanceNetworkInterfaceAttachmentUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static InstanceNetworkInterfaceAttachmentUnmarshaller Instance
         {
             get

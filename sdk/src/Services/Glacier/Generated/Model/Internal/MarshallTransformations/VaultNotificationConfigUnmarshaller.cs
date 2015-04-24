@@ -38,11 +38,21 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
     /// </summary>  
     public class VaultNotificationConfigUnmarshaller : IUnmarshaller<VaultNotificationConfig, XmlUnmarshallerContext>, IUnmarshaller<VaultNotificationConfig, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         VaultNotificationConfig IUnmarshaller<VaultNotificationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public VaultNotificationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -74,6 +84,9 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
         private static VaultNotificationConfigUnmarshaller _instance = new VaultNotificationConfigUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static VaultNotificationConfigUnmarshaller Instance
         {
             get

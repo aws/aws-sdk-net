@@ -34,7 +34,9 @@ namespace Amazon.EC2.Model
     {
         private Reservation _reservation;
 
-        // Gets and sets the Reservation member
+        /// <summary>
+        /// Gets and sets the Reservation member
+        /// </summary>
         public Reservation Reservation
         {
             get { return this._reservation; }

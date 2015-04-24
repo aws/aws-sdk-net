@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class S3OriginUnmarshaller : IUnmarshaller<S3Origin, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public S3Origin Unmarshall(XmlUnmarshallerContext context)
         {
             S3Origin unmarshalledObject = new S3Origin();
@@ -73,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static S3OriginUnmarshaller _instance = new S3OriginUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static S3OriginUnmarshaller Instance
         {
             get

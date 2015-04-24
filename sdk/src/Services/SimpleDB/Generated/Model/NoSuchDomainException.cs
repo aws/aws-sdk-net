@@ -37,18 +37,47 @@ namespace Amazon.SimpleDB.Model
         public NoSuchDomainException(string message) 
             : base(message) {}
           
+        /// <summary>
+        /// Construct instance of NoSuchDomainException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public NoSuchDomainException(string message, Exception innerException) 
             : base(message, innerException) {}
             
+        /// <summary>
+        /// Construct instance of NoSuchDomainException
+        /// </summary>
+        /// <param name="innerException"></param>
         public NoSuchDomainException(Exception innerException) 
             : base(innerException) {}
             
-        public NoSuchDomainException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of NoSuchDomainException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public NoSuchDomainException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
-        public NoSuchDomainException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of NoSuchDomainException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public NoSuchDomainException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
 
+        /// <summary>
+        /// Gets and sets the BoxUsage property.
+        /// </summary>
         public float BoxUsage { get; set; }
 
     }

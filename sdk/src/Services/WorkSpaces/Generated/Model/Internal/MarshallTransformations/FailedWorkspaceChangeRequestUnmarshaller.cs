@@ -38,11 +38,21 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// </summary>  
     public class FailedWorkspaceChangeRequestUnmarshaller : IUnmarshaller<FailedWorkspaceChangeRequest, XmlUnmarshallerContext>, IUnmarshaller<FailedWorkspaceChangeRequest, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         FailedWorkspaceChangeRequest IUnmarshaller<FailedWorkspaceChangeRequest, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public FailedWorkspaceChangeRequest Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -80,6 +90,9 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         private static FailedWorkspaceChangeRequestUnmarshaller _instance = new FailedWorkspaceChangeRequestUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static FailedWorkspaceChangeRequestUnmarshaller Instance
         {
             get

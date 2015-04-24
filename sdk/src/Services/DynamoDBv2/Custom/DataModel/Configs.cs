@@ -53,6 +53,9 @@ namespace Amazon.DynamoDBv2.DataModel
     /// </summary>
     public class DynamoDBContextConfig
     {
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public DynamoDBContextConfig()
         {
             TableNamePrefix = AWSConfigsDynamoDB.Context.TableNamePrefix;
@@ -136,6 +139,9 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public List<ScanCondition> QueryFilter { get; set; }
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public DynamoDBOperationConfig()
         {
             QueryFilter = new List<ScanCondition>();

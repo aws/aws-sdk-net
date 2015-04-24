@@ -36,6 +36,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// </summary>  
     public class LoadBalancerAttributesUnmarshaller : IUnmarshaller<LoadBalancerAttributes, XmlUnmarshallerContext>, IUnmarshaller<LoadBalancerAttributes, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LoadBalancerAttributes Unmarshall(XmlUnmarshallerContext context)
         {
             LoadBalancerAttributes unmarshalledObject = new LoadBalancerAttributes();
@@ -90,6 +95,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LoadBalancerAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -98,6 +108,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
         private static LoadBalancerAttributesUnmarshaller _instance = new LoadBalancerAttributesUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static LoadBalancerAttributesUnmarshaller Instance
         {
             get

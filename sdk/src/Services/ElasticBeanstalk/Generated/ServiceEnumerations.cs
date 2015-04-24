@@ -61,6 +61,11 @@ namespace Amazon.ElasticBeanstalk
             return FindValue<ConfigurationDeploymentStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ConfigurationDeploymentStatus(string value)
         {
             return FindValue(value);
@@ -101,6 +106,11 @@ namespace Amazon.ElasticBeanstalk
             return FindValue<ConfigurationOptionValueType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ConfigurationOptionValueType(string value)
         {
             return FindValue(value);
@@ -149,6 +159,11 @@ namespace Amazon.ElasticBeanstalk
             return FindValue<EnvironmentHealth>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator EnvironmentHealth(string value)
         {
             return FindValue(value);
@@ -189,6 +204,11 @@ namespace Amazon.ElasticBeanstalk
             return FindValue<EnvironmentInfoType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator EnvironmentInfoType(string value)
         {
             return FindValue(value);
@@ -241,6 +261,11 @@ namespace Amazon.ElasticBeanstalk
             return FindValue<EnvironmentStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator EnvironmentStatus(string value)
         {
             return FindValue(value);
@@ -297,6 +322,11 @@ namespace Amazon.ElasticBeanstalk
             return FindValue<EventSeverity>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator EventSeverity(string value)
         {
             return FindValue(value);
@@ -337,6 +367,11 @@ namespace Amazon.ElasticBeanstalk
             return FindValue<ValidationSeverity>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ValidationSeverity(string value)
         {
             return FindValue(value);

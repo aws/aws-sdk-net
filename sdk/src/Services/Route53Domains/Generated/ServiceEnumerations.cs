@@ -69,6 +69,11 @@ namespace Amazon.Route53Domains
             return FindValue<ContactType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ContactType(string value)
         {
             return FindValue(value);
@@ -1017,6 +1022,11 @@ namespace Amazon.Route53Domains
             return FindValue<CountryCode>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator CountryCode(string value)
         {
             return FindValue(value);
@@ -1077,6 +1087,11 @@ namespace Amazon.Route53Domains
             return FindValue<DomainAvailability>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator DomainAvailability(string value)
         {
             return FindValue(value);
@@ -1189,6 +1204,11 @@ namespace Amazon.Route53Domains
             return FindValue<ExtraParamName>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ExtraParamName(string value)
         {
             return FindValue(value);
@@ -1241,6 +1261,11 @@ namespace Amazon.Route53Domains
             return FindValue<OperationStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator OperationStatus(string value)
         {
             return FindValue(value);
@@ -1301,6 +1326,11 @@ namespace Amazon.Route53Domains
             return FindValue<OperationType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator OperationType(string value)
         {
             return FindValue(value);

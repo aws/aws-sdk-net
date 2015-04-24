@@ -37,6 +37,12 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
     /// </summary>       
     public class PipelineObjectMarshaller : IRequestMarshaller<PipelineObject, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(PipelineObject requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetFields())
@@ -69,6 +75,9 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static PipelineObjectMarshaller Instance = new PipelineObjectMarshaller();
 
     }

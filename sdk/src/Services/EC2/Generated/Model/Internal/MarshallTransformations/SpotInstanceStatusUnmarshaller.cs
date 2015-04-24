@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class SpotInstanceStatusUnmarshaller : IUnmarshaller<SpotInstanceStatus, XmlUnmarshallerContext>, IUnmarshaller<SpotInstanceStatus, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SpotInstanceStatus Unmarshall(XmlUnmarshallerContext context)
         {
             SpotInstanceStatus unmarshalledObject = new SpotInstanceStatus();
@@ -77,6 +82,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SpotInstanceStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -85,6 +95,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static SpotInstanceStatusUnmarshaller _instance = new SpotInstanceStatusUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static SpotInstanceStatusUnmarshaller Instance
         {
             get

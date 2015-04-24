@@ -50,6 +50,9 @@ namespace Amazon.S3.Model
             return this.bucketName != null;
         }
 
+        /// <summary>
+        /// List of object keys to delete.
+        /// </summary>
         public List<KeyVersion> Objects
         {
             get 

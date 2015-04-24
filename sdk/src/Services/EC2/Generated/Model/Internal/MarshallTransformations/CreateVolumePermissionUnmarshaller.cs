@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class CreateVolumePermissionUnmarshaller : IUnmarshaller<CreateVolumePermission, XmlUnmarshallerContext>, IUnmarshaller<CreateVolumePermission, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public CreateVolumePermission Unmarshall(XmlUnmarshallerContext context)
         {
             CreateVolumePermission unmarshalledObject = new CreateVolumePermission();
@@ -71,6 +76,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public CreateVolumePermission Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static CreateVolumePermissionUnmarshaller _instance = new CreateVolumePermissionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static CreateVolumePermissionUnmarshaller Instance
         {
             get

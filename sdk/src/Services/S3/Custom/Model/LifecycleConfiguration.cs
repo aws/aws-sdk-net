@@ -26,6 +26,10 @@ namespace Amazon.S3.Model
     {
         
         private List<LifecycleRule> rules = new List<LifecycleRule>();
+
+        /// <summary>
+        /// Gets and sets the Rules property. These rules defined the lifecycle configuration.
+        /// </summary>
         public List<LifecycleRule> Rules
         {
             get { return this.rules; }

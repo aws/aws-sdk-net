@@ -57,6 +57,11 @@ namespace Amazon.Glacier
             return FindValue<ActionCode>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ActionCode(string value)
         {
             return FindValue(value);
@@ -101,6 +106,11 @@ namespace Amazon.Glacier
             return FindValue<StatusCode>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator StatusCode(string value)
         {
             return FindValue(value);

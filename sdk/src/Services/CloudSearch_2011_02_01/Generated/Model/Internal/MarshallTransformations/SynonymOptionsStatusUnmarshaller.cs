@@ -36,6 +36,11 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
     /// </summary>  
     public class SynonymOptionsStatusUnmarshaller : IUnmarshaller<SynonymOptionsStatus, XmlUnmarshallerContext>, IUnmarshaller<SynonymOptionsStatus, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SynonymOptionsStatus Unmarshall(XmlUnmarshallerContext context)
         {
             SynonymOptionsStatus unmarshalledObject = new SynonymOptionsStatus();
@@ -71,6 +76,11 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SynonymOptionsStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 
         private static SynonymOptionsStatusUnmarshaller _instance = new SynonymOptionsStatusUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static SynonymOptionsStatusUnmarshaller Instance
         {
             get

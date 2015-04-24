@@ -38,11 +38,21 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class HostVolumePropertiesUnmarshaller : IUnmarshaller<HostVolumeProperties, XmlUnmarshallerContext>, IUnmarshaller<HostVolumeProperties, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         HostVolumeProperties IUnmarshaller<HostVolumeProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public HostVolumeProperties Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -68,6 +78,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         private static HostVolumePropertiesUnmarshaller _instance = new HostVolumePropertiesUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static HostVolumePropertiesUnmarshaller Instance
         {
             get

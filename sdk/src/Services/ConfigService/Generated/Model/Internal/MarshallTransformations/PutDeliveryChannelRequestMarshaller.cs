@@ -37,11 +37,21 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
     /// </summary>       
     public class PutDeliveryChannelRequestMarshaller : IMarshaller<IRequest, PutDeliveryChannelRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((PutDeliveryChannelRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(PutDeliveryChannelRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ConfigService");

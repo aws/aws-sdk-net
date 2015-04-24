@@ -36,6 +36,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// </summary>  
     public class AccountWithRestoreAccessUnmarshaller : IUnmarshaller<AccountWithRestoreAccess, XmlUnmarshallerContext>, IUnmarshaller<AccountWithRestoreAccess, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AccountWithRestoreAccess Unmarshall(XmlUnmarshallerContext context)
         {
             AccountWithRestoreAccess unmarshalledObject = new AccountWithRestoreAccess();
@@ -65,6 +70,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AccountWithRestoreAccess Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -73,6 +83,9 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
         private static AccountWithRestoreAccessUnmarshaller _instance = new AccountWithRestoreAccessUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static AccountWithRestoreAccessUnmarshaller Instance
         {
             get

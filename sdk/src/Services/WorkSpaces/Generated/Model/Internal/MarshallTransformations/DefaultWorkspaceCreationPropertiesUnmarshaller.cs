@@ -38,11 +38,21 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// </summary>  
     public class DefaultWorkspaceCreationPropertiesUnmarshaller : IUnmarshaller<DefaultWorkspaceCreationProperties, XmlUnmarshallerContext>, IUnmarshaller<DefaultWorkspaceCreationProperties, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         DefaultWorkspaceCreationProperties IUnmarshaller<DefaultWorkspaceCreationProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DefaultWorkspaceCreationProperties Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -92,6 +102,9 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         private static DefaultWorkspaceCreationPropertiesUnmarshaller _instance = new DefaultWorkspaceCreationPropertiesUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DefaultWorkspaceCreationPropertiesUnmarshaller Instance
         {
             get

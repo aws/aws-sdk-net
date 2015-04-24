@@ -37,6 +37,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
     /// </summary>       
     public class VolumeFromMarshaller : IRequestMarshaller<VolumeFrom, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(VolumeFrom requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetReadOnly())
@@ -53,6 +59,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static VolumeFromMarshaller Instance = new VolumeFromMarshaller();
 
     }

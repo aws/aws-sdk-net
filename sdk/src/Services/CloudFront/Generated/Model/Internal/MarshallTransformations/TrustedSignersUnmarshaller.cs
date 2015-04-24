@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class TrustedSignersUnmarshaller : IUnmarshaller<TrustedSigners, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public TrustedSigners Unmarshall(XmlUnmarshallerContext context)
         {
             TrustedSigners unmarshalledObject = new TrustedSigners();
@@ -79,6 +84,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static TrustedSignersUnmarshaller _instance = new TrustedSignersUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static TrustedSignersUnmarshaller Instance
         {
             get

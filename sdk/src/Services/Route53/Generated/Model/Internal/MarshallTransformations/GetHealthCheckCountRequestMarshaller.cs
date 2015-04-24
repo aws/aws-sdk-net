@@ -37,11 +37,21 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// </summary>       
     public class GetHealthCheckCountRequestMarshaller : IMarshaller<IRequest, GetHealthCheckCountRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((GetHealthCheckCountRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(GetHealthCheckCountRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");

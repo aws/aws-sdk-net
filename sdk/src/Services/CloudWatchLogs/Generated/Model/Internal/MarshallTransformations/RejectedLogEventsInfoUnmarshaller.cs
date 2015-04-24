@@ -38,11 +38,21 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
     /// </summary>  
     public class RejectedLogEventsInfoUnmarshaller : IUnmarshaller<RejectedLogEventsInfo, XmlUnmarshallerContext>, IUnmarshaller<RejectedLogEventsInfo, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         RejectedLogEventsInfo IUnmarshaller<RejectedLogEventsInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public RejectedLogEventsInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -80,6 +90,9 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 
         private static RejectedLogEventsInfoUnmarshaller _instance = new RejectedLogEventsInfoUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static RejectedLogEventsInfoUnmarshaller Instance
         {
             get

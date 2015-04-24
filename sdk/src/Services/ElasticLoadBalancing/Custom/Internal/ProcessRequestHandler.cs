@@ -23,6 +23,9 @@ using System.Text;
 
 namespace Amazon.ElasticLoadBalancing.Internal
 {
+    /// <summary>
+    /// Custom pipeline handler to make sure an empty string for PolicyNames when the collection is null.
+    /// </summary>
     public class ProcessRequestHandler : PipelineHandler
     {
         /// <summary>
@@ -68,6 +71,10 @@ namespace Amazon.ElasticLoadBalancing.Internal
         }
 #endif
 
+        /// <summary>
+        /// Method to set the policy names before continuing on with the pipeline.
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected void PreInvoke(IExecutionContext executionContext)
         {
             var originalRequest = executionContext.RequestContext.OriginalRequest;

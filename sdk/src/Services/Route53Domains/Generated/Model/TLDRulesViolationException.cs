@@ -37,17 +37,43 @@ namespace Amazon.Route53Domains.Model
         public TLDRulesViolationException(string message) 
             : base(message) {}
           
+        /// <summary>
+        /// Construct instance of TLDRulesViolationException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public TLDRulesViolationException(string message, Exception innerException) 
             : base(message, innerException) {}
             
+        /// <summary>
+        /// Construct instance of TLDRulesViolationException
+        /// </summary>
+        /// <param name="innerException"></param>
         public TLDRulesViolationException(Exception innerException) 
             : base(innerException) {}
             
-        public TLDRulesViolationException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of TLDRulesViolationException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public TLDRulesViolationException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
-        public TLDRulesViolationException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of TLDRulesViolationException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public TLDRulesViolationException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
 
     }
 }

@@ -36,6 +36,11 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// </summary>  
     public class IdentityVerificationAttributesUnmarshaller : IUnmarshaller<IdentityVerificationAttributes, XmlUnmarshallerContext>, IUnmarshaller<IdentityVerificationAttributes, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public IdentityVerificationAttributes Unmarshall(XmlUnmarshallerContext context)
         {
             IdentityVerificationAttributes unmarshalledObject = new IdentityVerificationAttributes();
@@ -71,6 +76,11 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public IdentityVerificationAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
         private static IdentityVerificationAttributesUnmarshaller _instance = new IdentityVerificationAttributesUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static IdentityVerificationAttributesUnmarshaller Instance
         {
             get

@@ -37,6 +37,12 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
     /// </summary>       
     public class RecordPatchMarshaller : IRequestMarshaller<RecordPatch, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(RecordPatch requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetDeviceLastModifiedDate())
@@ -71,6 +77,9 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static RecordPatchMarshaller Instance = new RecordPatchMarshaller();
 
     }

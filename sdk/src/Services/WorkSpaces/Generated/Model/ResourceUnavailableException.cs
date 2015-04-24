@@ -37,17 +37,43 @@ namespace Amazon.WorkSpaces.Model
         public ResourceUnavailableException(string message) 
             : base(message) {}
           
+        /// <summary>
+        /// Construct instance of ResourceUnavailableException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public ResourceUnavailableException(string message, Exception innerException) 
             : base(message, innerException) {}
             
+        /// <summary>
+        /// Construct instance of ResourceUnavailableException
+        /// </summary>
+        /// <param name="innerException"></param>
         public ResourceUnavailableException(Exception innerException) 
             : base(innerException) {}
             
-        public ResourceUnavailableException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of ResourceUnavailableException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public ResourceUnavailableException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
-        public ResourceUnavailableException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of ResourceUnavailableException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public ResourceUnavailableException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
 
     }
 }

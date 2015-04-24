@@ -36,6 +36,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// </summary>  
     public class LiteralArrayOptionsUnmarshaller : IUnmarshaller<LiteralArrayOptions, XmlUnmarshallerContext>, IUnmarshaller<LiteralArrayOptions, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LiteralArrayOptions Unmarshall(XmlUnmarshallerContext context)
         {
             LiteralArrayOptions unmarshalledObject = new LiteralArrayOptions();
@@ -89,6 +94,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LiteralArrayOptions Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -97,6 +107,9 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
         private static LiteralArrayOptionsUnmarshaller _instance = new LiteralArrayOptionsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static LiteralArrayOptionsUnmarshaller Instance
         {
             get

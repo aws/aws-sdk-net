@@ -18,6 +18,8 @@ using Amazon.Runtime.Internal;
 using Amazon.S3.Util;
 using Amazon.Util;
 
+#pragma warning disable 1591
+
 namespace Amazon.S3.Internal
 {
     public class AmazonS3RedirectHandler : RedirectHandler

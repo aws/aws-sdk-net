@@ -48,6 +48,10 @@ namespace Amazon.S3.Model
         {
             return this.bucketName != null;
         }
+
+        /// <summary>
+        /// Gets and sets the Key property. This key indicates the S3 object to restore.
+        /// </summary>
         public string Key
         {
             get { return this.key; }

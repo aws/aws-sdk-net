@@ -37,6 +37,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
     /// </summary>       
     public class AttributeValueUpdateMarshaller : IRequestMarshaller<AttributeValueUpdate, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(AttributeValueUpdate requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetAction())
@@ -58,6 +64,9 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static AttributeValueUpdateMarshaller Instance = new AttributeValueUpdateMarshaller();
 
     }

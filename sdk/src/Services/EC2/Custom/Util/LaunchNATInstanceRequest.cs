@@ -25,6 +25,9 @@ using System.Text;
 
 namespace Amazon.EC2.Util
 {
+    /// <summary>
+    /// Request class to launch a NAT instance
+    /// </summary>
     public class LaunchNATInstanceRequest
     {
         string subnetId;

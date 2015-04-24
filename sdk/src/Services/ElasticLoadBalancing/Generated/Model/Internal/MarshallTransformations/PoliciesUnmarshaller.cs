@@ -36,6 +36,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// </summary>  
     public class PoliciesUnmarshaller : IUnmarshaller<Policies, XmlUnmarshallerContext>, IUnmarshaller<Policies, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Policies Unmarshall(XmlUnmarshallerContext context)
         {
             Policies unmarshalledObject = new Policies();
@@ -80,6 +85,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Policies Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -88,6 +98,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
         private static PoliciesUnmarshaller _instance = new PoliciesUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static PoliciesUnmarshaller Instance
         {
             get

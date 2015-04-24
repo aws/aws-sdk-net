@@ -117,8 +117,14 @@
     public void FormatClassDocumentation(Shape structure)
     {
         if(structure == null)
+		{
+#>
+    /// <summary>
+	/// Empty class reserved for future use.
+    /// </summary>
+<#+
             return;
-
+		}
         var documentation = CleanupDocumentation(structure.Documentation);
 #>
     /// <summary>

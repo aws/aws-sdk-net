@@ -37,6 +37,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// </summary>  
     public class VPCUnmarshaller : IUnmarshaller<VPC, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public VPC Unmarshall(XmlUnmarshallerContext context)
         {
             VPC unmarshalledObject = new VPC();
@@ -73,6 +78,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
         private static VPCUnmarshaller _instance = new VPCUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static VPCUnmarshaller Instance
         {
             get

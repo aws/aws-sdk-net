@@ -38,11 +38,21 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class VolumeFromUnmarshaller : IUnmarshaller<VolumeFrom, XmlUnmarshallerContext>, IUnmarshaller<VolumeFrom, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         VolumeFrom IUnmarshaller<VolumeFrom, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public VolumeFrom Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -74,6 +84,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         private static VolumeFromUnmarshaller _instance = new VolumeFromUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static VolumeFromUnmarshaller Instance
         {
             get

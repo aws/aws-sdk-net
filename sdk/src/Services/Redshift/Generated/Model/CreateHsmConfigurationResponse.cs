@@ -36,6 +36,9 @@ namespace Amazon.Redshift.Model
     {
         private HsmConfiguration _response;
 
+        /// <summary>
+        /// Gets and sets the HsmConfiguration property.
+        /// </summary>
         public HsmConfiguration HsmConfiguration
         {
             get { return this._response; }

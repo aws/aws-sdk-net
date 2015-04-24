@@ -38,11 +38,21 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ContainerInstanceUnmarshaller : IUnmarshaller<ContainerInstance, XmlUnmarshallerContext>, IUnmarshaller<ContainerInstance, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         ContainerInstance IUnmarshaller<ContainerInstance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ContainerInstance Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -110,6 +120,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         private static ContainerInstanceUnmarshaller _instance = new ContainerInstanceUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ContainerInstanceUnmarshaller Instance
         {
             get

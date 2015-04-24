@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class AvailabilityZoneMessageUnmarshaller : IUnmarshaller<AvailabilityZoneMessage, XmlUnmarshallerContext>, IUnmarshaller<AvailabilityZoneMessage, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AvailabilityZoneMessage Unmarshall(XmlUnmarshallerContext context)
         {
             AvailabilityZoneMessage unmarshalledObject = new AvailabilityZoneMessage();
@@ -65,6 +70,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AvailabilityZoneMessage Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -73,6 +83,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static AvailabilityZoneMessageUnmarshaller _instance = new AvailabilityZoneMessageUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static AvailabilityZoneMessageUnmarshaller Instance
         {
             get

@@ -69,6 +69,11 @@ namespace Amazon.DataPipeline
             return FindValue<OperatorType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator OperatorType(string value)
         {
             return FindValue(value);
@@ -113,6 +118,11 @@ namespace Amazon.DataPipeline
             return FindValue<TaskStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator TaskStatus(string value)
         {
             return FindValue(value);

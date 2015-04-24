@@ -35,11 +35,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>       
     public class ResetSnapshotAttributeRequestMarshaller : IMarshaller<IRequest, ResetSnapshotAttributeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((ResetSnapshotAttributeRequest)input);
         }
     
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(ResetSnapshotAttributeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");

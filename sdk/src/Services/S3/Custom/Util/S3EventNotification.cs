@@ -130,7 +130,9 @@ namespace Amazon.S3.Util
         /// </summary>
         public List<S3EventNotificationRecord> Records {get;set;}
 
-    
+        /// <summary>
+        /// The class holds the user identity properties.
+        /// </summary>
         public class UserIdentityEntity 
         {
             /// <summary>
@@ -212,6 +214,9 @@ namespace Amazon.S3.Util
             public string S3SchemaVersion { get; set; }
         }
 
+        /// <summary>
+        /// The class holds the request parameters
+        /// </summary>
         public class RequestParametersEntity 
         {
             /// <summary>
@@ -220,6 +225,9 @@ namespace Amazon.S3.Util
             public string SourceIPAddress {get;set;}
         }
     
+        /// <summary>
+        /// This class holds the response elements.
+        /// </summary>
         public class ResponseElementsEntity 
         {
             /// <summary>
@@ -233,6 +241,9 @@ namespace Amazon.S3.Util
             public string XAmzRequestId {get;set;}
         }
     
+        /// <summary>
+        /// The class holds the event notification.
+        /// </summary>
         public class S3EventNotificationRecord 
         {        
             /// <summary>

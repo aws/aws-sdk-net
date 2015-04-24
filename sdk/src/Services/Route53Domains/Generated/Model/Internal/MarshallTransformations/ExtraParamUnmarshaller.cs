@@ -38,11 +38,21 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ExtraParamUnmarshaller : IUnmarshaller<ExtraParam, XmlUnmarshallerContext>, IUnmarshaller<ExtraParam, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         ExtraParam IUnmarshaller<ExtraParam, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ExtraParam Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -74,6 +84,9 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
         private static ExtraParamUnmarshaller _instance = new ExtraParamUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ExtraParamUnmarshaller Instance
         {
             get

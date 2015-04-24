@@ -38,11 +38,21 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
     /// </summary>  
     public class HitUnmarshaller : IUnmarshaller<Hit, XmlUnmarshallerContext>, IUnmarshaller<Hit, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         Hit IUnmarshaller<Hit, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Hit Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -80,6 +90,9 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
 
         private static HitUnmarshaller _instance = new HitUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static HitUnmarshaller Instance
         {
             get

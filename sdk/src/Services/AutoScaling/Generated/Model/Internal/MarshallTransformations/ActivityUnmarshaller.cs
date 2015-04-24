@@ -36,6 +36,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ActivityUnmarshaller : IUnmarshaller<Activity, XmlUnmarshallerContext>, IUnmarshaller<Activity, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Activity Unmarshall(XmlUnmarshallerContext context)
         {
             Activity unmarshalledObject = new Activity();
@@ -119,6 +124,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Activity Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -127,6 +137,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
         private static ActivityUnmarshaller _instance = new ActivityUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ActivityUnmarshaller Instance
         {
             get

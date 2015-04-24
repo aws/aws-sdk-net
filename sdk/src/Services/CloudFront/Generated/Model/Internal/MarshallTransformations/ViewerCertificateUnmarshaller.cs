@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ViewerCertificateUnmarshaller : IUnmarshaller<ViewerCertificate, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ViewerCertificate Unmarshall(XmlUnmarshallerContext context)
         {
             ViewerCertificate unmarshalledObject = new ViewerCertificate();
@@ -85,6 +90,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static ViewerCertificateUnmarshaller _instance = new ViewerCertificateUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ViewerCertificateUnmarshaller Instance
         {
             get

@@ -34,7 +34,9 @@ namespace Amazon.SimpleWorkflow.Model
     {
         private WorkflowExecutionDetail _workflowExecutionDetail;
 
-        // Gets and sets the WorkflowExecutionDetail member
+        /// <summary>
+        /// Gets and sets the WorkflowExecutionDetail member
+        /// </summary>
         public WorkflowExecutionDetail WorkflowExecutionDetail
         {
             get { return this._workflowExecutionDetail; }

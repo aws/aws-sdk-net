@@ -36,6 +36,11 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
     /// </summary>  
     public class RankExpressionStatusUnmarshaller : IUnmarshaller<RankExpressionStatus, XmlUnmarshallerContext>, IUnmarshaller<RankExpressionStatus, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public RankExpressionStatus Unmarshall(XmlUnmarshallerContext context)
         {
             RankExpressionStatus unmarshalledObject = new RankExpressionStatus();
@@ -71,6 +76,11 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public RankExpressionStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.CloudSearch_2011_02_01.Model.Internal.MarshallTransformations
 
         private static RankExpressionStatusUnmarshaller _instance = new RankExpressionStatusUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static RankExpressionStatusUnmarshaller Instance
         {
             get

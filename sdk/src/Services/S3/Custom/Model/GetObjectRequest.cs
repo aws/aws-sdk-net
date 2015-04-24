@@ -124,6 +124,11 @@ namespace Amazon.S3.Model
         {
             return this.unmodifiedSinceDate.HasValue;
         }
+
+
+        /// <summary>
+        /// Gets and sets the Key property. This is the user defined key that identifies the object in the bucket.
+        /// </summary>
         public string Key
         {
             get { return this.key; }

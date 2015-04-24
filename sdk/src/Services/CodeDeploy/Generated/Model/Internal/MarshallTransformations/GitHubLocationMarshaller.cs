@@ -37,6 +37,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// </summary>       
     public class GitHubLocationMarshaller : IRequestMarshaller<GitHubLocation, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(GitHubLocation requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetCommitId())
@@ -53,6 +59,9 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static GitHubLocationMarshaller Instance = new GitHubLocationMarshaller();
 
     }

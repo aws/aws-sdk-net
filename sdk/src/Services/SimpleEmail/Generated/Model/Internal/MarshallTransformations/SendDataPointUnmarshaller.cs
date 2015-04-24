@@ -36,6 +36,11 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// </summary>  
     public class SendDataPointUnmarshaller : IUnmarshaller<SendDataPoint, XmlUnmarshallerContext>, IUnmarshaller<SendDataPoint, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SendDataPoint Unmarshall(XmlUnmarshallerContext context)
         {
             SendDataPoint unmarshalledObject = new SendDataPoint();
@@ -89,6 +94,11 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SendDataPoint Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -97,6 +107,9 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
         private static SendDataPointUnmarshaller _instance = new SendDataPointUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static SendDataPointUnmarshaller Instance
         {
             get

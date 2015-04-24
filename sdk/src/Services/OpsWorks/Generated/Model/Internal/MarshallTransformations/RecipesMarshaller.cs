@@ -37,6 +37,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// </summary>       
     public class RecipesMarshaller : IRequestMarshaller<Recipes, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(Recipes requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetConfigure())
@@ -96,6 +102,9 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static RecipesMarshaller Instance = new RecipesMarshaller();
 
     }

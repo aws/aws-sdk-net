@@ -1042,6 +1042,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Abstract methods
 
+        /// <summary>
+        /// Declare the Clone method must be implemented.
+        /// </summary>
+        /// <returns></returns>
         public abstract object Clone();
 
         #endregion
@@ -1057,6 +1061,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private object Value;
         private Type ValueType;
 
+        /// <summary>
+        /// Construct instance of UnconvertedDynamoDBEntry
+        /// </summary>
+        /// <param name="value"></param>
         public UnconvertedDynamoDBEntry(object value)
         {
             if (value == null)
@@ -1075,12 +1083,21 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
+        /// <summary>
+        /// Perform conversion with the given converter.
+        /// </summary>
+        /// <param name="conversion"></param>
+        /// <returns></returns>
         public DynamoDBEntry Convert(DynamoDBEntryConversion conversion)
         {
             var convertedEntry = conversion.ConvertToEntry(ValueType, Value);
             return convertedEntry;
         }
 
+        /// <summary>
+        /// Implememnt the Clone method.
+        /// </summary>
+        /// <returns></returns>
         public override object Clone()
         {
             return new UnconvertedDynamoDBEntry(Value);
@@ -1088,67 +1105,145 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Conversion overrides - Convert.ChangeType
 
+        /// <summary>
+        /// Return the value as a boolean.
+        /// </summary>
+        /// <returns></returns>
         public override bool AsBoolean()
         {
             return (bool)System.Convert.ChangeType(Value, typeof(bool), CultureInfo.InvariantCulture);
         }
+
+        /// <summary>
+        /// Return the value as a byte.
+        /// </summary>
+        /// <returns></returns>
         public override byte AsByte()
         {
             return (byte)System.Convert.ChangeType(Value, typeof(byte), CultureInfo.InvariantCulture);
         }
+
+        /// <summary>
+        /// Return the value as a string.
+        /// </summary>
+        /// <returns></returns>
         public override string AsString()
         {
             return System.Convert.ChangeType(Value, typeof(string), CultureInfo.InvariantCulture) as string;
         }
+
+        /// <summary>
+        /// Return the value as a char.
+        /// </summary>
+        /// <returns></returns>
         public override char AsChar()
         {
             return (char)System.Convert.ChangeType(Value, typeof(char), CultureInfo.InvariantCulture);
         }
+
+        /// <summary>
+        /// Return the value as a DateTime.
+        /// </summary>
+        /// <returns></returns>
         public override DateTime AsDateTime()
         {
             return (DateTime)System.Convert.ChangeType(Value, typeof(DateTime), CultureInfo.InvariantCulture);
         }
+
+        /// <summary>
+        /// Return the value as a Decimal.
+        /// </summary>
+        /// <returns></returns>
         public override decimal AsDecimal()
         {
             return (decimal)System.Convert.ChangeType(Value, typeof(decimal), CultureInfo.InvariantCulture);
         }
+
+        /// <summary>
+        /// Return the value as a double.
+        /// </summary>
+        /// <returns></returns>
         public override double AsDouble()
         {
             return (double)System.Convert.ChangeType(Value, typeof(double), CultureInfo.InvariantCulture);
         }
+
+        /// <summary>
+        /// Return the value as int.
+        /// </summary>
+        /// <returns></returns>
         public override int AsInt()
         {
             return (int)System.Convert.ChangeType(Value, typeof(int), CultureInfo.InvariantCulture);
         }
+
+        /// <summary>
+        /// Return the value as a long.
+        /// </summary>
+        /// <returns></returns>
         public override long AsLong()
         {
             return (long)System.Convert.ChangeType(Value, typeof(long), CultureInfo.InvariantCulture);
         }
+
+        /// <summary>
+        /// Return the value as a sbyte.
+        /// </summary>
+        /// <returns></returns>
         public override sbyte AsSByte()
         {
             return (sbyte)System.Convert.ChangeType(Value, typeof(sbyte), CultureInfo.InvariantCulture);
         }
+
+        /// <summary>
+        /// Return the value as a short.
+        /// </summary>
+        /// <returns></returns>
         public override short AsShort()
         {
             return (short)System.Convert.ChangeType(Value, typeof(short), CultureInfo.InvariantCulture);
         }
+
+        /// <summary>
+        /// Return the value as single.
+        /// </summary>
+        /// <returns></returns>
         public override float AsSingle()
         {
             return (float)System.Convert.ChangeType(Value, typeof(float), CultureInfo.InvariantCulture);
         }
+
+        /// <summary>
+        /// Return the value as uint.
+        /// </summary>
+        /// <returns></returns>
         public override uint AsUInt()
         {
             return (uint)System.Convert.ChangeType(Value, typeof(uint), CultureInfo.InvariantCulture);
         }
+
+        /// <summary>
+        /// Return the value as ulong.
+        /// </summary>
+        /// <returns></returns>
         public override ulong AsULong()
         {
             return (ulong)System.Convert.ChangeType(Value, typeof(ulong), CultureInfo.InvariantCulture);
         }
+
+        /// <summary>
+        /// Return the value as ushort.
+        /// </summary>
+        /// <returns></returns>
         public override ushort AsUShort()
         {
             return (ushort)System.Convert.ChangeType(Value, typeof(ushort), CultureInfo.InvariantCulture);
         }
 
+        /// <summary>
+        /// Return the value as array of strings.
+        /// </summary>
+        /// <returns></returns>
         public override string[] AsArrayOfString()
         {
             return base.AsArrayOfString();
@@ -1158,38 +1253,82 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Conversion overrides - Cast
 
+        /// <summary>
+        /// Return value as byte[].
+        /// </summary>
+        /// <returns></returns>
         public override byte[] AsByteArray()
         {
             return (byte[])Value;
         }
+
+        /// <summary>
+        /// Return value as Guid.
+        /// </summary>
+        /// <returns></returns>
         public override Guid AsGuid()
         {
             return (Guid)Value;
         }
+
+        /// <summary>
+        /// Return value as MemoryStream.
+        /// </summary>
+        /// <returns></returns>
         public override MemoryStream AsMemoryStream()
         {
             return (MemoryStream)Value;
         }
+
+        /// <summary>
+        /// Return value as List of strings.
+        /// </summary>
+        /// <returns></returns>
         public override List<string> AsListOfString()
         {
             return (List<string>)Value;
         }
+
+        /// <summary>
+        /// Return value as HashSet of byte[].
+        /// </summary>
+        /// <returns></returns>
         public override HashSet<byte[]> AsHashSetOfByteArray()
         {
             return (HashSet<byte[]>)Value;
         }
+
+        /// <summary>
+        /// Return value as HashSet of MemoryStream.
+        /// </summary>
+        /// <returns></returns>
         public override HashSet<MemoryStream> AsHashSetOfMemoryStream()
         {
             return (HashSet<MemoryStream>)Value;
         }
+
+        /// <summary>
+        /// Return value as HashSet of string.
+        /// </summary>
+        /// <returns></returns>
         public override HashSet<string> AsHashSetOfString()
         {
             return (HashSet<string>)Value;
         }
+
+        /// <summary>
+        /// Return value as List of byte[].
+        /// </summary>
+        /// <returns></returns>
         public override List<byte[]> AsListOfByteArray()
         {
             return (List<byte[]>)Value;
         }
+
+        /// <summary>
+        /// Return value as List of MemoryStream.
+        /// </summary>
+        /// <returns></returns>
         public override List<MemoryStream> AsListOfMemoryStream()
         {
             return (List<MemoryStream>)Value;

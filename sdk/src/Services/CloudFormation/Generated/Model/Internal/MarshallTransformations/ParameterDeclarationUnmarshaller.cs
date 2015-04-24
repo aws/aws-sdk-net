@@ -36,6 +36,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ParameterDeclarationUnmarshaller : IUnmarshaller<ParameterDeclaration, XmlUnmarshallerContext>, IUnmarshaller<ParameterDeclaration, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ParameterDeclaration Unmarshall(XmlUnmarshallerContext context)
         {
             ParameterDeclaration unmarshalledObject = new ParameterDeclaration();
@@ -89,6 +94,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ParameterDeclaration Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -97,6 +107,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
         private static ParameterDeclarationUnmarshaller _instance = new ParameterDeclarationUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ParameterDeclarationUnmarshaller Instance
         {
             get

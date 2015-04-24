@@ -36,6 +36,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// </summary>  
     public class NodeGroupMemberUnmarshaller : IUnmarshaller<NodeGroupMember, XmlUnmarshallerContext>, IUnmarshaller<NodeGroupMember, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public NodeGroupMember Unmarshall(XmlUnmarshallerContext context)
         {
             NodeGroupMember unmarshalledObject = new NodeGroupMember();
@@ -89,6 +94,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public NodeGroupMember Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -97,6 +107,9 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
         private static NodeGroupMemberUnmarshaller _instance = new NodeGroupMemberUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static NodeGroupMemberUnmarshaller Instance
         {
             get

@@ -37,17 +37,43 @@ namespace Amazon.IdentityManagement.Model
         public EntityTemporarilyUnmodifiableException(string message) 
             : base(message) {}
           
+        /// <summary>
+        /// Construct instance of EntityTemporarilyUnmodifiableException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public EntityTemporarilyUnmodifiableException(string message, Exception innerException) 
             : base(message, innerException) {}
             
+        /// <summary>
+        /// Construct instance of EntityTemporarilyUnmodifiableException
+        /// </summary>
+        /// <param name="innerException"></param>
         public EntityTemporarilyUnmodifiableException(Exception innerException) 
             : base(innerException) {}
             
-        public EntityTemporarilyUnmodifiableException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of EntityTemporarilyUnmodifiableException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public EntityTemporarilyUnmodifiableException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
-        public EntityTemporarilyUnmodifiableException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of EntityTemporarilyUnmodifiableException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public EntityTemporarilyUnmodifiableException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
 
     }
 }

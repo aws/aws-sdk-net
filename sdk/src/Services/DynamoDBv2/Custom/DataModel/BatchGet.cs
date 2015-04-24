@@ -30,6 +30,9 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         #region Internal/protected properties
 
+        /// <summary>
+        /// Gets and sets the UntypedResults property.
+        /// </summary>
         protected List<object> UntypedResults { get; set; }
         internal DynamoDBContext Context { get; set; }
         internal DynamoDBFlatConfig Config { get; set; }
@@ -168,12 +171,20 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Internal/protected/private members
 
+        /// <summary>
+        /// Executes the batch get
+        /// </summary>
+        /// <param name="isAsync"></param>
         protected override void ExecuteHelper(bool isAsync)
         {
             CreateDocumentBatch();
             DocumentBatch.ExecuteHelper(isAsync);
             PopulateResults(DocumentBatch.Results);
         }
+
+        /// <summary>
+        /// Gets and sets the TypedResults property.
+        /// </summary>
         protected List<T> TypedResults { get; set; }
         internal override void CreateDocumentBatch()
         {

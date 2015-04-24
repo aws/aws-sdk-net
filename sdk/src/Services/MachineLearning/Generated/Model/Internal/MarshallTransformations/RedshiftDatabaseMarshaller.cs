@@ -37,6 +37,12 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
     /// </summary>       
     public class RedshiftDatabaseMarshaller : IRequestMarshaller<RedshiftDatabase, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(RedshiftDatabase requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetClusterIdentifier())
@@ -53,6 +59,9 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static RedshiftDatabaseMarshaller Instance = new RedshiftDatabaseMarshaller();
 
     }

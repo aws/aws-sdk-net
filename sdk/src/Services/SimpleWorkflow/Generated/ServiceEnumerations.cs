@@ -65,6 +65,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<ActivityTaskTimeoutType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ActivityTaskTimeoutType(string value)
         {
             return FindValue(value);
@@ -105,6 +110,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<CancelTimerFailedCause>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator CancelTimerFailedCause(string value)
         {
             return FindValue(value);
@@ -145,6 +155,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<CancelWorkflowExecutionFailedCause>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator CancelWorkflowExecutionFailedCause(string value)
         {
             return FindValue(value);
@@ -189,6 +204,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<ChildPolicy>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ChildPolicy(string value)
         {
             return FindValue(value);
@@ -245,6 +265,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<CloseStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator CloseStatus(string value)
         {
             return FindValue(value);
@@ -285,6 +310,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<CompleteWorkflowExecutionFailedCause>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator CompleteWorkflowExecutionFailedCause(string value)
         {
             return FindValue(value);
@@ -353,6 +383,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<ContinueAsNewWorkflowExecutionFailedCause>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ContinueAsNewWorkflowExecutionFailedCause(string value)
         {
             return FindValue(value);
@@ -389,6 +424,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<DecisionTaskTimeoutType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator DecisionTaskTimeoutType(string value)
         {
             return FindValue(value);
@@ -469,6 +509,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<DecisionType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator DecisionType(string value)
         {
             return FindValue(value);
@@ -689,6 +734,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<EventType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator EventType(string value)
         {
             return FindValue(value);
@@ -729,6 +779,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<ExecutionStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ExecutionStatus(string value)
         {
             return FindValue(value);
@@ -769,6 +824,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<FailWorkflowExecutionFailedCause>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator FailWorkflowExecutionFailedCause(string value)
         {
             return FindValue(value);
@@ -805,6 +865,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<RecordMarkerFailedCause>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator RecordMarkerFailedCause(string value)
         {
             return FindValue(value);
@@ -845,6 +910,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<RegistrationStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator RegistrationStatus(string value)
         {
             return FindValue(value);
@@ -885,6 +955,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<RequestCancelActivityTaskFailedCause>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator RequestCancelActivityTaskFailedCause(string value)
         {
             return FindValue(value);
@@ -929,6 +1004,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<RequestCancelExternalWorkflowExecutionFailedCause>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator RequestCancelExternalWorkflowExecutionFailedCause(string value)
         {
             return FindValue(value);
@@ -1005,6 +1085,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<ScheduleActivityTaskFailedCause>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ScheduleActivityTaskFailedCause(string value)
         {
             return FindValue(value);
@@ -1049,6 +1134,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<SignalExternalWorkflowExecutionFailedCause>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator SignalExternalWorkflowExecutionFailedCause(string value)
         {
             return FindValue(value);
@@ -1125,6 +1215,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<StartChildWorkflowExecutionFailedCause>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator StartChildWorkflowExecutionFailedCause(string value)
         {
             return FindValue(value);
@@ -1173,6 +1268,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<StartTimerFailedCause>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator StartTimerFailedCause(string value)
         {
             return FindValue(value);
@@ -1209,6 +1309,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<WorkflowExecutionCancelRequestedCause>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator WorkflowExecutionCancelRequestedCause(string value)
         {
             return FindValue(value);
@@ -1253,6 +1358,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<WorkflowExecutionTerminatedCause>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator WorkflowExecutionTerminatedCause(string value)
         {
             return FindValue(value);
@@ -1289,6 +1399,11 @@ namespace Amazon.SimpleWorkflow
             return FindValue<WorkflowExecutionTimeoutType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator WorkflowExecutionTimeoutType(string value)
         {
             return FindValue(value);

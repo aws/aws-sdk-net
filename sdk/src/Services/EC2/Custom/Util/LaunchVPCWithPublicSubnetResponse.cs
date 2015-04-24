@@ -49,6 +49,9 @@ namespace Amazon.EC2.Util
             internal set;
         }
 
+        /// <summary>
+        /// Gets and sets the PublicSubnetRouteTable property
+        /// </summary>
         public RouteTable PublicSubnetRouteTable
         {
             get;

@@ -18,6 +18,9 @@ using Amazon.DynamoDBv2;
 
 namespace Amazon
 {
+    /// <summary>
+    /// Configurations for accessing DynamoDB
+    /// </summary>
     public static class AWSConfigsDynamoDB
     {
         private const string dynamoDBKey = "dynamoDB";

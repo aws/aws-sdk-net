@@ -37,20 +37,52 @@ namespace Amazon.Glacier.Model
         public RequestTimeoutException(string message) 
             : base(message) {}
           
+        /// <summary>
+        /// Construct instance of RequestTimeoutException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public RequestTimeoutException(string message, Exception innerException) 
             : base(message, innerException) {}
             
+        /// <summary>
+        /// Construct instance of RequestTimeoutException
+        /// </summary>
+        /// <param name="innerException"></param>
         public RequestTimeoutException(Exception innerException) 
             : base(innerException) {}
             
-        public RequestTimeoutException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of RequestTimeoutException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public RequestTimeoutException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
-        public RequestTimeoutException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of RequestTimeoutException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public RequestTimeoutException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
 
+        /// <summary>
+        /// Gets and sets the Code property.
+        /// </summary>
         public string Code { get; set; }
 
+        /// <summary>
+        /// Gets and sets the Type property.
+        /// </summary>
         public string Type { get; set; }
 
     }

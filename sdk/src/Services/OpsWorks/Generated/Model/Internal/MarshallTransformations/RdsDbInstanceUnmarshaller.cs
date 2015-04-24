@@ -38,11 +38,21 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
     /// </summary>  
     public class RdsDbInstanceUnmarshaller : IUnmarshaller<RdsDbInstance, XmlUnmarshallerContext>, IUnmarshaller<RdsDbInstance, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         RdsDbInstance IUnmarshaller<RdsDbInstance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public RdsDbInstance Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -116,6 +126,9 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         private static RdsDbInstanceUnmarshaller _instance = new RdsDbInstanceUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static RdsDbInstanceUnmarshaller Instance
         {
             get

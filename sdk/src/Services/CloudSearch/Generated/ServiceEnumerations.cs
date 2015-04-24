@@ -65,6 +65,11 @@ namespace Amazon.CloudSearch
             return FindValue<AlgorithmicStemming>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator AlgorithmicStemming(string value)
         {
             return FindValue(value);
@@ -237,6 +242,11 @@ namespace Amazon.CloudSearch
             return FindValue<AnalysisSchemeLanguage>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator AnalysisSchemeLanguage(string value)
         {
             return FindValue(value);
@@ -313,6 +323,11 @@ namespace Amazon.CloudSearch
             return FindValue<IndexFieldType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator IndexFieldType(string value)
         {
             return FindValue(value);
@@ -361,6 +376,11 @@ namespace Amazon.CloudSearch
             return FindValue<OptionState>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator OptionState(string value)
         {
             return FindValue(value);
@@ -425,6 +445,11 @@ namespace Amazon.CloudSearch
             return FindValue<PartitionInstanceType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator PartitionInstanceType(string value)
         {
             return FindValue(value);
@@ -469,6 +494,11 @@ namespace Amazon.CloudSearch
             return FindValue<SuggesterFuzzyMatching>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator SuggesterFuzzyMatching(string value)
         {
             return FindValue(value);

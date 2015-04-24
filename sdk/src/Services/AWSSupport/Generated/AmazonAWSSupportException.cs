@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.AWSSupport
 {
+    ///<summary>
+    /// Common exception for the AWSSupport service.
+    /// </summary>
     public class AmazonAWSSupportException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonAWSSupportException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonAWSSupportException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonAWSSupportException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonAWSSupportException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonAWSSupportException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonAWSSupportException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonAWSSupportException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonAWSSupportException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonAWSSupportException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonAWSSupportException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

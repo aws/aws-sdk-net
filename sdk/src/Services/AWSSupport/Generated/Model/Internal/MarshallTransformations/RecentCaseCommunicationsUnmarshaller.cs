@@ -38,11 +38,21 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
     /// </summary>  
     public class RecentCaseCommunicationsUnmarshaller : IUnmarshaller<RecentCaseCommunications, XmlUnmarshallerContext>, IUnmarshaller<RecentCaseCommunications, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         RecentCaseCommunications IUnmarshaller<RecentCaseCommunications, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public RecentCaseCommunications Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -74,6 +84,9 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 
         private static RecentCaseCommunicationsUnmarshaller _instance = new RecentCaseCommunicationsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static RecentCaseCommunicationsUnmarshaller Instance
         {
             get

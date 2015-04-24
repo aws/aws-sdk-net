@@ -34,7 +34,9 @@ namespace Amazon.SimpleWorkflow.Model
     {
         private ActivityTypeDetail _activityTypeDetail;
 
-        // Gets and sets the ActivityTypeDetail member
+        /// <summary>
+        /// Gets and sets the ActivityTypeDetail member
+        /// </summary>
         public ActivityTypeDetail ActivityTypeDetail
         {
             get { return this._activityTypeDetail; }

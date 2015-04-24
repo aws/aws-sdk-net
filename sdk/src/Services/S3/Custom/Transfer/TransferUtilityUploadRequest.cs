@@ -528,6 +528,9 @@ namespace Amazon.S3.Transfer
             this.CompensationForRetry = compensationForRetry;
         }
 
+        /// <summary>
+        /// Gets the FilePath.
+        /// </summary>
         public string FilePath { get; private set; }
 
         internal long CompensationForRetry { get; set; }

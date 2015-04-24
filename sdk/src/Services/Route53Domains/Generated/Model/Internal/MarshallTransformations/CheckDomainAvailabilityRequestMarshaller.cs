@@ -37,11 +37,21 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// </summary>       
     public class CheckDomainAvailabilityRequestMarshaller : IMarshaller<IRequest, CheckDomainAvailabilityRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((CheckDomainAvailabilityRequest)input);
         }
 
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(CheckDomainAvailabilityRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Route53Domains");

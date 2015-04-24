@@ -36,6 +36,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// </summary>  
     public class LoginProfileUnmarshaller : IUnmarshaller<LoginProfile, XmlUnmarshallerContext>, IUnmarshaller<LoginProfile, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LoginProfile Unmarshall(XmlUnmarshallerContext context)
         {
             LoginProfile unmarshalledObject = new LoginProfile();
@@ -77,6 +82,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LoginProfile Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -85,6 +95,9 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
         private static LoginProfileUnmarshaller _instance = new LoginProfileUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static LoginProfileUnmarshaller Instance
         {
             get

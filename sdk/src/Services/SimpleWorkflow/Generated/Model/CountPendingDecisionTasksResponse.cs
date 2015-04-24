@@ -34,7 +34,9 @@ namespace Amazon.SimpleWorkflow.Model
     {
         private PendingTaskCount _pendingTaskCount;
 
-        // Gets and sets the PendingTaskCount member
+        /// <summary>
+        /// Gets and sets the PendingTaskCount member
+        /// </summary>
         public PendingTaskCount PendingTaskCount
         {
             get { return this._pendingTaskCount; }

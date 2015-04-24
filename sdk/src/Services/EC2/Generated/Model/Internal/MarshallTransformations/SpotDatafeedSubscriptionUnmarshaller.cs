@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class SpotDatafeedSubscriptionUnmarshaller : IUnmarshaller<SpotDatafeedSubscription, XmlUnmarshallerContext>, IUnmarshaller<SpotDatafeedSubscription, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SpotDatafeedSubscription Unmarshall(XmlUnmarshallerContext context)
         {
             SpotDatafeedSubscription unmarshalledObject = new SpotDatafeedSubscription();
@@ -89,6 +94,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SpotDatafeedSubscription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -97,6 +107,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static SpotDatafeedSubscriptionUnmarshaller _instance = new SpotDatafeedSubscriptionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static SpotDatafeedSubscriptionUnmarshaller Instance
         {
             get

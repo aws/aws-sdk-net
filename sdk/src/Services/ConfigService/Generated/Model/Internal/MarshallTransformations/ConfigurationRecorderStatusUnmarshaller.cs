@@ -38,11 +38,21 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ConfigurationRecorderStatusUnmarshaller : IUnmarshaller<ConfigurationRecorderStatus, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationRecorderStatus, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         ConfigurationRecorderStatus IUnmarshaller<ConfigurationRecorderStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ConfigurationRecorderStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -110,6 +120,9 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         private static ConfigurationRecorderStatusUnmarshaller _instance = new ConfigurationRecorderStatusUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ConfigurationRecorderStatusUnmarshaller Instance
         {
             get

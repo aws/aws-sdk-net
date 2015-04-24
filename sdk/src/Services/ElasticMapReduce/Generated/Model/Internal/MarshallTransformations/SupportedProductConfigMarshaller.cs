@@ -37,6 +37,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// </summary>       
     public class SupportedProductConfigMarshaller : IRequestMarshaller<SupportedProductConfig, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(SupportedProductConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetArgs())
@@ -58,6 +64,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static SupportedProductConfigMarshaller Instance = new SupportedProductConfigMarshaller();
 
     }

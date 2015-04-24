@@ -23,10 +23,19 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.S3.Model;
 
+#pragma warning disable 1591
+
 namespace Amazon.S3.Internal
 {
+    /// <summary>
+    /// Custom pipeline handler to clean up streams in case of an exception.
+    /// </summary>
     public class AmazonS3ExceptionHandler : PipelineHandler
     {
+        /// <summary>
+        /// Catch exceptions and clean up any open streams.
+        /// </summary>
+        /// <param name="executionContext"></param>
         public override void InvokeSync(IExecutionContext executionContext)
         {
             try
@@ -54,6 +63,10 @@ namespace Amazon.S3.Internal
             }
         }
 #elif AWS_APM_API
+        /// <summary>
+        /// Catch exceptions and clean up any open streams.
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
         {
             var exception = executionContext.ResponseContext.AsyncResult.Exception;
@@ -65,7 +78,11 @@ namespace Amazon.S3.Internal
             base.InvokeAsyncCallback(executionContext);
         }
 #endif
-
+        /// <summary>
+        /// Catch exceptions and clean up any open streams.
+        /// </summary>
+        /// <param name="executionContext"></param>
+        /// <param name="exception"></param>
         protected void HandleException(IExecutionContext executionContext, Exception exception)
         {
 

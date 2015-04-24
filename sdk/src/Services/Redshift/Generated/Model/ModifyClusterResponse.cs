@@ -34,6 +34,9 @@ namespace Amazon.Redshift.Model
     {
         private Cluster _response;
 
+        /// <summary>
+        /// Gets and sets the Cluster property.
+        /// </summary>
         public Cluster Cluster
         {
             get { return this._response; }

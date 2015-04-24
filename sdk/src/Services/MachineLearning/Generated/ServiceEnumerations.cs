@@ -53,6 +53,11 @@ namespace Amazon.MachineLearning
             return FindValue<Algorithm>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator Algorithm(string value)
         {
             return FindValue(value);
@@ -117,6 +122,11 @@ namespace Amazon.MachineLearning
             return FindValue<BatchPredictionFilterVariable>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator BatchPredictionFilterVariable(string value)
         {
             return FindValue(value);
@@ -173,6 +183,11 @@ namespace Amazon.MachineLearning
             return FindValue<DataSourceFilterVariable>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator DataSourceFilterVariable(string value)
         {
             return FindValue(value);
@@ -213,6 +228,11 @@ namespace Amazon.MachineLearning
             return FindValue<DetailsAttributes>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator DetailsAttributes(string value)
         {
             return FindValue(value);
@@ -265,6 +285,11 @@ namespace Amazon.MachineLearning
             return FindValue<EntityStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator EntityStatus(string value)
         {
             return FindValue(value);
@@ -329,6 +354,11 @@ namespace Amazon.MachineLearning
             return FindValue<EvaluationFilterVariable>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator EvaluationFilterVariable(string value)
         {
             return FindValue(value);
@@ -401,6 +431,11 @@ namespace Amazon.MachineLearning
             return FindValue<MLModelFilterVariable>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator MLModelFilterVariable(string value)
         {
             return FindValue(value);
@@ -445,6 +480,11 @@ namespace Amazon.MachineLearning
             return FindValue<MLModelType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator MLModelType(string value)
         {
             return FindValue(value);
@@ -493,6 +533,11 @@ namespace Amazon.MachineLearning
             return FindValue<RealtimeEndpointStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator RealtimeEndpointStatus(string value)
         {
             return FindValue(value);
@@ -533,6 +578,11 @@ namespace Amazon.MachineLearning
             return FindValue<SortOrder>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator SortOrder(string value)
         {
             return FindValue(value);

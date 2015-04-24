@@ -36,6 +36,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ScalingParametersUnmarshaller : IUnmarshaller<ScalingParameters, XmlUnmarshallerContext>, IUnmarshaller<ScalingParameters, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ScalingParameters Unmarshall(XmlUnmarshallerContext context)
         {
             ScalingParameters unmarshalledObject = new ScalingParameters();
@@ -77,6 +82,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ScalingParameters Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -85,6 +95,9 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
         private static ScalingParametersUnmarshaller _instance = new ScalingParametersUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ScalingParametersUnmarshaller Instance
         {
             get

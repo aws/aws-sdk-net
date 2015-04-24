@@ -13,7 +13,6 @@ using Amazon.Runtime.Internal.Util;
 using System.Threading;
 using System.Net;
 using Amazon.S3;
-using Amazon.S3.Model;
 using Amazon;
 using Amazon.Util.Internal;
 

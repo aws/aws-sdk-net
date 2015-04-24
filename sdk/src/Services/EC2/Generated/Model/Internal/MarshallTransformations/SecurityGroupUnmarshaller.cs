@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class SecurityGroupUnmarshaller : IUnmarshaller<SecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<SecurityGroup, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SecurityGroup Unmarshall(XmlUnmarshallerContext context)
         {
             SecurityGroup unmarshalledObject = new SecurityGroup();
@@ -110,6 +115,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SecurityGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -118,6 +128,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static SecurityGroupUnmarshaller _instance = new SecurityGroupUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static SecurityGroupUnmarshaller Instance
         {
             get

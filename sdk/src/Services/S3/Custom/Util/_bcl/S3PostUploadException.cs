@@ -122,18 +122,33 @@ namespace Amazon.S3.Util
     [XmlRoot("Error")]
     public class S3PostUploadError
     {
+        /// <summary>
+        /// Gets and sets the ErrorCode property.
+        /// </summary>
         [XmlElement("Code")]
         public string ErrorCode { get; set; }
 
+        /// <summary>
+        /// Gets and sets the ErrorMessage property.
+        /// </summary>
         [XmlElement("Message")]
         public string ErrorMessage { get; set; }
 
+        /// <summary>
+        /// Gets and sets the RequestId property.
+        /// </summary>
         [XmlElement("RequestId")]
         public string RequestId { get; set; }
 
+        /// <summary>
+        /// Gets and sets the HostId property.
+        /// </summary>
         [XmlElement("HostId")]
         public string HostId { get; set; }
 
+        /// <summary>
+        /// Gets and sets the elements property.
+        /// </summary>
         [XmlAnyElement()]
         public XmlElement[] elements { get; set; }
     }

@@ -38,11 +38,21 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
     /// </summary>  
     public class FunctionConfigurationUnmarshaller : IUnmarshaller<FunctionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<FunctionConfiguration, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         FunctionConfiguration IUnmarshaller<FunctionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public FunctionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -122,6 +132,9 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
         private static FunctionConfigurationUnmarshaller _instance = new FunctionConfigurationUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static FunctionConfigurationUnmarshaller Instance
         {
             get

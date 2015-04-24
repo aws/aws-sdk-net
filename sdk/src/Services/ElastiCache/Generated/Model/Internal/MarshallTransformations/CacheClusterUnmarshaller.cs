@@ -36,6 +36,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// </summary>  
     public class CacheClusterUnmarshaller : IUnmarshaller<CacheCluster, XmlUnmarshallerContext>, IUnmarshaller<CacheCluster, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public CacheCluster Unmarshall(XmlUnmarshallerContext context)
         {
             CacheCluster unmarshalledObject = new CacheCluster();
@@ -194,6 +199,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public CacheCluster Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -202,6 +212,9 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
         private static CacheClusterUnmarshaller _instance = new CacheClusterUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static CacheClusterUnmarshaller Instance
         {
             get

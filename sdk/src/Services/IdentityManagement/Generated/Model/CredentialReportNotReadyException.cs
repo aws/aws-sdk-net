@@ -37,17 +37,43 @@ namespace Amazon.IdentityManagement.Model
         public CredentialReportNotReadyException(string message) 
             : base(message) {}
           
+        /// <summary>
+        /// Construct instance of CredentialReportNotReadyException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public CredentialReportNotReadyException(string message, Exception innerException) 
             : base(message, innerException) {}
             
+        /// <summary>
+        /// Construct instance of CredentialReportNotReadyException
+        /// </summary>
+        /// <param name="innerException"></param>
         public CredentialReportNotReadyException(Exception innerException) 
             : base(innerException) {}
             
-        public CredentialReportNotReadyException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of CredentialReportNotReadyException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public CredentialReportNotReadyException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
-        public CredentialReportNotReadyException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of CredentialReportNotReadyException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public CredentialReportNotReadyException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
 
     }
 }

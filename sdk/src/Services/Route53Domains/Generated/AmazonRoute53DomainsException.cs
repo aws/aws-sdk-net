@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.Route53Domains
 {
+    ///<summary>
+    /// Common exception for the Route53Domains service.
+    /// </summary>
     public class AmazonRoute53DomainsException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonRoute53DomainsException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonRoute53DomainsException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonRoute53DomainsException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonRoute53DomainsException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonRoute53DomainsException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonRoute53DomainsException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonRoute53DomainsException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonRoute53DomainsException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonRoute53DomainsException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonRoute53DomainsException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

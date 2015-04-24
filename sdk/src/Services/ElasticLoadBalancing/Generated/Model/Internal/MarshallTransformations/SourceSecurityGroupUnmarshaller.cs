@@ -36,6 +36,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// </summary>  
     public class SourceSecurityGroupUnmarshaller : IUnmarshaller<SourceSecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<SourceSecurityGroup, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SourceSecurityGroup Unmarshall(XmlUnmarshallerContext context)
         {
             SourceSecurityGroup unmarshalledObject = new SourceSecurityGroup();
@@ -71,6 +76,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SourceSecurityGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
         private static SourceSecurityGroupUnmarshaller _instance = new SourceSecurityGroupUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static SourceSecurityGroupUnmarshaller Instance
         {
             get

@@ -36,6 +36,11 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ArtifactUnmarshaller : IUnmarshaller<Artifact, XmlUnmarshallerContext>, IUnmarshaller<Artifact, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Artifact Unmarshall(XmlUnmarshallerContext context)
         {
             Artifact unmarshalledObject = new Artifact();
@@ -71,6 +76,11 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Artifact Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
 
         private static ArtifactUnmarshaller _instance = new ArtifactUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ArtifactUnmarshaller Instance
         {
             get

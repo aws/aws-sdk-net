@@ -38,11 +38,21 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// </summary>  
     public class EC2TagFilterUnmarshaller : IUnmarshaller<EC2TagFilter, XmlUnmarshallerContext>, IUnmarshaller<EC2TagFilter, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         EC2TagFilter IUnmarshaller<EC2TagFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public EC2TagFilter Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -80,6 +90,9 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         private static EC2TagFilterUnmarshaller _instance = new EC2TagFilterUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static EC2TagFilterUnmarshaller Instance
         {
             get

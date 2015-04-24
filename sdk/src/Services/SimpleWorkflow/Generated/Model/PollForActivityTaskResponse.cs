@@ -34,7 +34,9 @@ namespace Amazon.SimpleWorkflow.Model
     {
         private ActivityTask _activityTask;
 
-        // Gets and sets the ActivityTask member
+        /// <summary>
+        /// Gets and sets the ActivityTask member
+        /// </summary>
         public ActivityTask ActivityTask
         {
             get { return this._activityTask; }

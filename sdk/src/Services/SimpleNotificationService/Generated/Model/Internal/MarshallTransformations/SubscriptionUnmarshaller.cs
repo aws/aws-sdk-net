@@ -36,6 +36,11 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// </summary>  
     public class SubscriptionUnmarshaller : IUnmarshaller<Subscription, XmlUnmarshallerContext>, IUnmarshaller<Subscription, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Subscription Unmarshall(XmlUnmarshallerContext context)
         {
             Subscription unmarshalledObject = new Subscription();
@@ -89,6 +94,11 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Subscription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -97,6 +107,9 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
 
         private static SubscriptionUnmarshaller _instance = new SubscriptionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static SubscriptionUnmarshaller Instance
         {
             get

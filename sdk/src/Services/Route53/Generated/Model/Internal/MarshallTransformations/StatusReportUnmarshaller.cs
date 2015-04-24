@@ -37,6 +37,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// </summary>  
     public class StatusReportUnmarshaller : IUnmarshaller<StatusReport, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public StatusReport Unmarshall(XmlUnmarshallerContext context)
         {
             StatusReport unmarshalledObject = new StatusReport();
@@ -73,6 +78,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
         private static StatusReportUnmarshaller _instance = new StatusReportUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static StatusReportUnmarshaller Instance
         {
             get

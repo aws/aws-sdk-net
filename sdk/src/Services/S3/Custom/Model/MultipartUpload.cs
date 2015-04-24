@@ -80,6 +80,10 @@ namespace Amazon.S3.Model
         {
             return this.key != null;
         }
+
+        /// <summary>
+        /// Gets and sets the Owner property.
+        /// </summary>
         public Owner Owner
         {
             get { return this.owner; }

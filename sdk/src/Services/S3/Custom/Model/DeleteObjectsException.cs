@@ -43,6 +43,10 @@ namespace Amazon.S3
         }
 
 
+        /// <summary>
+        /// Constructs an instance of DeleteObjectsException
+        /// </summary>
+        /// <param name="response"></param>
         public DeleteObjectsException(DeleteObjectsResponse response)
             : base(CreateMessage(response))
         {

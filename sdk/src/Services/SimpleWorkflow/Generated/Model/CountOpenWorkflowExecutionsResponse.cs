@@ -34,7 +34,9 @@ namespace Amazon.SimpleWorkflow.Model
     {
         private WorkflowExecutionCount _workflowExecutionCount;
 
-        // Gets and sets the WorkflowExecutionCount member
+        /// <summary>
+        /// Gets and sets the WorkflowExecutionCount member
+        /// </summary>
         public WorkflowExecutionCount WorkflowExecutionCount
         {
             get { return this._workflowExecutionCount; }

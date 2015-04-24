@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class VpcAttachmentUnmarshaller : IUnmarshaller<VpcAttachment, XmlUnmarshallerContext>, IUnmarshaller<VpcAttachment, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public VpcAttachment Unmarshall(XmlUnmarshallerContext context)
         {
             VpcAttachment unmarshalledObject = new VpcAttachment();
@@ -71,6 +76,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public VpcAttachment Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -79,6 +89,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static VpcAttachmentUnmarshaller _instance = new VpcAttachmentUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static VpcAttachmentUnmarshaller Instance
         {
             get

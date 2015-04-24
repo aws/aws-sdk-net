@@ -65,6 +65,11 @@ namespace Amazon.ElastiCache
             return FindValue<AutomaticFailoverStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator AutomaticFailoverStatus(string value)
         {
             return FindValue(value);
@@ -105,6 +110,11 @@ namespace Amazon.ElastiCache
             return FindValue<AZMode>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator AZMode(string value)
         {
             return FindValue(value);
@@ -145,6 +155,11 @@ namespace Amazon.ElastiCache
             return FindValue<PendingAutomaticFailoverStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator PendingAutomaticFailoverStatus(string value)
         {
             return FindValue(value);
@@ -193,6 +208,11 @@ namespace Amazon.ElastiCache
             return FindValue<SourceType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator SourceType(string value)
         {
             return FindValue(value);

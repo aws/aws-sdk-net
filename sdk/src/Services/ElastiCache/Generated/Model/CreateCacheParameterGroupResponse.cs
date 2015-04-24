@@ -34,6 +34,9 @@ namespace Amazon.ElastiCache.Model
     {
         private CacheParameterGroup _response;
 
+        /// <summary>
+        /// Gets and sets the CacheParameterGroup property.
+        /// </summary>
         public CacheParameterGroup CacheParameterGroup
         {
             get { return this._response; }

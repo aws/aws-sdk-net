@@ -38,11 +38,21 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// </summary>  
     public class WorkflowExecutionStartedEventAttributesUnmarshaller : IUnmarshaller<WorkflowExecutionStartedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionStartedEventAttributes, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         WorkflowExecutionStartedEventAttributes IUnmarshaller<WorkflowExecutionStartedEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public WorkflowExecutionStartedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -128,6 +138,9 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
         private static WorkflowExecutionStartedEventAttributesUnmarshaller _instance = new WorkflowExecutionStartedEventAttributesUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static WorkflowExecutionStartedEventAttributesUnmarshaller Instance
         {
             get

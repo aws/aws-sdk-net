@@ -37,17 +37,43 @@ namespace Amazon.Redshift.Model
         public SubscriptionEventIdNotFoundException(string message) 
             : base(message) {}
           
+        /// <summary>
+        /// Construct instance of SubscriptionEventIdNotFoundException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public SubscriptionEventIdNotFoundException(string message, Exception innerException) 
             : base(message, innerException) {}
             
+        /// <summary>
+        /// Construct instance of SubscriptionEventIdNotFoundException
+        /// </summary>
+        /// <param name="innerException"></param>
         public SubscriptionEventIdNotFoundException(Exception innerException) 
             : base(innerException) {}
             
-        public SubscriptionEventIdNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of SubscriptionEventIdNotFoundException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public SubscriptionEventIdNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
-        public SubscriptionEventIdNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of SubscriptionEventIdNotFoundException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public SubscriptionEventIdNotFoundException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
 
     }
 }

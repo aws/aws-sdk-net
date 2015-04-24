@@ -16,6 +16,11 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     /// </summary>  
     public class <#=this.UnmarshallerBaseName #>Unmarshaller : IUnmarshaller<<#=this.UnmarshallerBaseName #>, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public <#=this.UnmarshallerBaseName #> Unmarshall(XmlUnmarshallerContext context)
         {
             <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>();

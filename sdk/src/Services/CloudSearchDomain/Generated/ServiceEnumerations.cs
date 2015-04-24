@@ -57,6 +57,11 @@ namespace Amazon.CloudSearchDomain
             return FindValue<ContentType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ContentType(string value)
         {
             return FindValue(value);
@@ -105,6 +110,11 @@ namespace Amazon.CloudSearchDomain
             return FindValue<QueryParser>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator QueryParser(string value)
         {
             return FindValue(value);

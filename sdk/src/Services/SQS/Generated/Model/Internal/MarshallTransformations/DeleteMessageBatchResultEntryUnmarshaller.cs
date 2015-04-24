@@ -36,6 +36,11 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class DeleteMessageBatchResultEntryUnmarshaller : IUnmarshaller<DeleteMessageBatchResultEntry, XmlUnmarshallerContext>, IUnmarshaller<DeleteMessageBatchResultEntry, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DeleteMessageBatchResultEntry Unmarshall(XmlUnmarshallerContext context)
         {
             DeleteMessageBatchResultEntry unmarshalledObject = new DeleteMessageBatchResultEntry();
@@ -65,6 +70,11 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DeleteMessageBatchResultEntry Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -73,6 +83,9 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
 
         private static DeleteMessageBatchResultEntryUnmarshaller _instance = new DeleteMessageBatchResultEntryUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DeleteMessageBatchResultEntryUnmarshaller Instance
         {
             get

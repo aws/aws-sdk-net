@@ -38,11 +38,21 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ContactDetailUnmarshaller : IUnmarshaller<ContactDetail, XmlUnmarshallerContext>, IUnmarshaller<ContactDetail, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         ContactDetail IUnmarshaller<ContactDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ContactDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -146,6 +156,9 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
         private static ContactDetailUnmarshaller _instance = new ContactDetailUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ContactDetailUnmarshaller Instance
         {
             get

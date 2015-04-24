@@ -37,6 +37,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// </summary>  
     public class HealthCheckConfigUnmarshaller : IUnmarshaller<HealthCheckConfig, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public HealthCheckConfig Unmarshall(XmlUnmarshallerContext context)
         {
             HealthCheckConfig unmarshalledObject = new HealthCheckConfig();
@@ -109,6 +114,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
         private static HealthCheckConfigUnmarshaller _instance = new HealthCheckConfigUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static HealthCheckConfigUnmarshaller Instance
         {
             get

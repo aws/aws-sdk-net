@@ -30,6 +30,10 @@ namespace Amazon.S3.Model
     public partial class GetCORSConfigurationRequest : AmazonWebServiceRequest
     {
         private string bucketName;
+
+        /// <summary>
+        /// Gets and sets the BucketName.
+        /// </summary>
         public string BucketName
         {
             get { return this.bucketName; }

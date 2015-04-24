@@ -37,6 +37,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// </summary>       
     public class ExecutionTimeFilterMarshaller : IRequestMarshaller<ExecutionTimeFilter, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(ExecutionTimeFilter requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetLatestDate())
@@ -53,6 +59,9 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static ExecutionTimeFilterMarshaller Instance = new ExecutionTimeFilterMarshaller();
 
     }

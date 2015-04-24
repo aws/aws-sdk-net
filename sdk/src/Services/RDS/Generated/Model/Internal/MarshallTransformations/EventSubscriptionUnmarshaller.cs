@@ -36,6 +36,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class EventSubscriptionUnmarshaller : IUnmarshaller<EventSubscription, XmlUnmarshallerContext>, IUnmarshaller<EventSubscription, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public EventSubscription Unmarshall(XmlUnmarshallerContext context)
         {
             EventSubscription unmarshalledObject = new EventSubscription();
@@ -115,6 +120,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public EventSubscription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -123,6 +133,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
         private static EventSubscriptionUnmarshaller _instance = new EventSubscriptionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static EventSubscriptionUnmarshaller Instance
         {
             get

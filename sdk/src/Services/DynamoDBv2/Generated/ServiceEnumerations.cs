@@ -61,6 +61,11 @@ namespace Amazon.DynamoDBv2
             return FindValue<AttributeAction>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator AttributeAction(string value)
         {
             return FindValue(value);
@@ -145,6 +150,11 @@ namespace Amazon.DynamoDBv2
             return FindValue<ComparisonOperator>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ComparisonOperator(string value)
         {
             return FindValue(value);
@@ -185,6 +195,11 @@ namespace Amazon.DynamoDBv2
             return FindValue<ConditionalOperator>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ConditionalOperator(string value)
         {
             return FindValue(value);
@@ -233,6 +248,11 @@ namespace Amazon.DynamoDBv2
             return FindValue<IndexStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator IndexStatus(string value)
         {
             return FindValue(value);
@@ -273,6 +293,11 @@ namespace Amazon.DynamoDBv2
             return FindValue<KeyType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator KeyType(string value)
         {
             return FindValue(value);
@@ -317,6 +342,11 @@ namespace Amazon.DynamoDBv2
             return FindValue<ProjectionType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ProjectionType(string value)
         {
             return FindValue(value);
@@ -361,6 +391,11 @@ namespace Amazon.DynamoDBv2
             return FindValue<ReturnConsumedCapacity>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ReturnConsumedCapacity(string value)
         {
             return FindValue(value);
@@ -401,6 +436,11 @@ namespace Amazon.DynamoDBv2
             return FindValue<ReturnItemCollectionMetrics>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ReturnItemCollectionMetrics(string value)
         {
             return FindValue(value);
@@ -453,6 +493,11 @@ namespace Amazon.DynamoDBv2
             return FindValue<ReturnValue>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ReturnValue(string value)
         {
             return FindValue(value);
@@ -497,6 +542,11 @@ namespace Amazon.DynamoDBv2
             return FindValue<ScalarAttributeType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ScalarAttributeType(string value)
         {
             return FindValue(value);
@@ -545,6 +595,11 @@ namespace Amazon.DynamoDBv2
             return FindValue<Select>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator Select(string value)
         {
             return FindValue(value);
@@ -593,6 +648,11 @@ namespace Amazon.DynamoDBv2
             return FindValue<TableStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator TableStatus(string value)
         {
             return FindValue(value);

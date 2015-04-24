@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ForwardedValuesUnmarshaller : IUnmarshaller<ForwardedValues, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ForwardedValues Unmarshall(XmlUnmarshallerContext context)
         {
             ForwardedValues unmarshalledObject = new ForwardedValues();
@@ -79,6 +84,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static ForwardedValuesUnmarshaller _instance = new ForwardedValuesUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ForwardedValuesUnmarshaller Instance
         {
             get

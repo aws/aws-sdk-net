@@ -24,6 +24,9 @@ using Amazon.Runtime.Internal;
 
 namespace Amazon.S3.Model
 {
+    /// <summary>
+    /// Request object for the DeleteBucketReplication operation.
+    /// </summary>
     public partial class DeleteBucketReplicationRequest : AmazonWebServiceRequest
     {
         private string bucketName;

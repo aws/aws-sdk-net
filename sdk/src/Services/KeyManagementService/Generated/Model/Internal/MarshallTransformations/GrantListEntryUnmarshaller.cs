@@ -38,11 +38,21 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
     /// </summary>  
     public class GrantListEntryUnmarshaller : IUnmarshaller<GrantListEntry, XmlUnmarshallerContext>, IUnmarshaller<GrantListEntry, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         GrantListEntry IUnmarshaller<GrantListEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public GrantListEntry Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -98,6 +108,9 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 
         private static GrantListEntryUnmarshaller _instance = new GrantListEntryUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static GrantListEntryUnmarshaller Instance
         {
             get

@@ -36,6 +36,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// </summary>  
     public class PendingModifiedValuesUnmarshaller : IUnmarshaller<PendingModifiedValues, XmlUnmarshallerContext>, IUnmarshaller<PendingModifiedValues, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public PendingModifiedValues Unmarshall(XmlUnmarshallerContext context)
         {
             PendingModifiedValues unmarshalledObject = new PendingModifiedValues();
@@ -125,6 +130,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public PendingModifiedValues Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -133,6 +143,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
         private static PendingModifiedValuesUnmarshaller _instance = new PendingModifiedValuesUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static PendingModifiedValuesUnmarshaller Instance
         {
             get

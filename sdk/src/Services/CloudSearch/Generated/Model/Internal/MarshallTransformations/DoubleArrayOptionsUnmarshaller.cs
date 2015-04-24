@@ -36,6 +36,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// </summary>  
     public class DoubleArrayOptionsUnmarshaller : IUnmarshaller<DoubleArrayOptions, XmlUnmarshallerContext>, IUnmarshaller<DoubleArrayOptions, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DoubleArrayOptions Unmarshall(XmlUnmarshallerContext context)
         {
             DoubleArrayOptions unmarshalledObject = new DoubleArrayOptions();
@@ -89,6 +94,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DoubleArrayOptions Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -97,6 +107,9 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
         private static DoubleArrayOptionsUnmarshaller _instance = new DoubleArrayOptionsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static DoubleArrayOptionsUnmarshaller Instance
         {
             get

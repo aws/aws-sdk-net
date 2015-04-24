@@ -37,6 +37,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// </summary>  
     public class ResourceTagSetUnmarshaller : IUnmarshaller<ResourceTagSet, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ResourceTagSet Unmarshall(XmlUnmarshallerContext context)
         {
             ResourceTagSet unmarshalledObject = new ResourceTagSet();
@@ -79,6 +84,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
         private static ResourceTagSetUnmarshaller _instance = new ResourceTagSetUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ResourceTagSetUnmarshaller Instance
         {
             get

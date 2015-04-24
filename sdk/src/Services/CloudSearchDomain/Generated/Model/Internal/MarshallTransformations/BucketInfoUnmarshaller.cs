@@ -38,11 +38,21 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
     /// </summary>  
     public class BucketInfoUnmarshaller : IUnmarshaller<BucketInfo, XmlUnmarshallerContext>, IUnmarshaller<BucketInfo, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         BucketInfo IUnmarshaller<BucketInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public BucketInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -68,6 +78,9 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
 
         private static BucketInfoUnmarshaller _instance = new BucketInfoUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static BucketInfoUnmarshaller Instance
         {
             get

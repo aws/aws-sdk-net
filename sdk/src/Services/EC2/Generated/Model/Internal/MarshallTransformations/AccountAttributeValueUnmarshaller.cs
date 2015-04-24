@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class AccountAttributeValueUnmarshaller : IUnmarshaller<AccountAttributeValue, XmlUnmarshallerContext>, IUnmarshaller<AccountAttributeValue, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AccountAttributeValue Unmarshall(XmlUnmarshallerContext context)
         {
             AccountAttributeValue unmarshalledObject = new AccountAttributeValue();
@@ -65,6 +70,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AccountAttributeValue Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -73,6 +83,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static AccountAttributeValueUnmarshaller _instance = new AccountAttributeValueUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static AccountAttributeValueUnmarshaller Instance
         {
             get

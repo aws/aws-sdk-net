@@ -61,6 +61,11 @@ namespace Amazon.Route53
             return FindValue<ChangeAction>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ChangeAction(string value)
         {
             return FindValue(value);
@@ -101,6 +106,11 @@ namespace Amazon.Route53
             return FindValue<ChangeStatus>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ChangeStatus(string value)
         {
             return FindValue(value);
@@ -153,6 +163,11 @@ namespace Amazon.Route53
             return FindValue<HealthCheckType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator HealthCheckType(string value)
         {
             return FindValue(value);
@@ -193,6 +208,11 @@ namespace Amazon.Route53
             return FindValue<ResourceRecordSetFailover>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ResourceRecordSetFailover(string value)
         {
             return FindValue(value);
@@ -265,6 +285,11 @@ namespace Amazon.Route53
             return FindValue<ResourceRecordSetRegion>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator ResourceRecordSetRegion(string value)
         {
             return FindValue(value);
@@ -337,6 +362,11 @@ namespace Amazon.Route53
             return FindValue<RRType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator RRType(string value)
         {
             return FindValue(value);
@@ -377,6 +407,11 @@ namespace Amazon.Route53
             return FindValue<TagResourceType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator TagResourceType(string value)
         {
             return FindValue(value);
@@ -449,6 +484,11 @@ namespace Amazon.Route53
             return FindValue<VPCRegion>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator VPCRegion(string value)
         {
             return FindValue(value);

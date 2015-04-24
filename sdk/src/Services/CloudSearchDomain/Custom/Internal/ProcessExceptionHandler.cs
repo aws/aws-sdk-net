@@ -8,9 +8,16 @@ using System.Text;
 
 namespace Amazon.CloudSearchDomain.Internal
 {
+    /// <summary>
+    /// Custom pipeline handler to make sure streams are closed in case of exceptions.
+    /// </summary>
     public class ProcessExceptionHandler : PipelineHandler
     {
 #if BCL
+        /// <summary>
+        /// Override to do extra exception handling if thrown in the pipeline.
+        /// </summary>
+        /// <param name="executionContext"></param>
         public override void InvokeSync(IExecutionContext executionContext)
         {
             try
@@ -26,6 +33,12 @@ namespace Amazon.CloudSearchDomain.Internal
 #endif
 
 #if BCL45
+        /// <summary>
+        /// Override to do extra exception handling if thrown in the pipeline.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="executionContext"></param>
+        /// <returns></returns>
         public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             try
@@ -40,6 +53,10 @@ namespace Amazon.CloudSearchDomain.Internal
         }
 #elif AWS_APM_API
 
+        /// <summary>
+        /// Override to do extra exception handling if thrown in the pipeline.
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
         {
             var exception = executionContext.ResponseContext.AsyncResult.Exception;
@@ -53,6 +70,12 @@ namespace Amazon.CloudSearchDomain.Internal
 #endif
 
 #if BCL
+
+        /// <summary>
+        /// Make sure stream is closed in case of exceptions in the pipeline.
+        /// </summary>
+        /// <param name="executionContext"></param>
+        /// <param name="exception"></param>
         protected void HandleException(IExecutionContext executionContext, Exception exception)
         {
             var uploadDocumentsRequest = executionContext.RequestContext.OriginalRequest as UploadDocumentsRequest;

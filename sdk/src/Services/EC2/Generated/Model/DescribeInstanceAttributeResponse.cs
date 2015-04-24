@@ -34,7 +34,9 @@ namespace Amazon.EC2.Model
     {
         private InstanceAttribute _instanceAttribute;
 
-        // Gets and sets the InstanceAttribute member
+        /// <summary>
+        /// Gets and sets the InstanceAttribute member
+        /// </summary>
         public InstanceAttribute InstanceAttribute
         {
             get { return this._instanceAttribute; }

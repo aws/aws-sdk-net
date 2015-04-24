@@ -37,17 +37,43 @@ namespace Amazon.RDS.Model
         public DBParameterGroupNotFoundException(string message) 
             : base(message) {}
           
+        /// <summary>
+        /// Construct instance of DBParameterGroupNotFoundException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public DBParameterGroupNotFoundException(string message, Exception innerException) 
             : base(message, innerException) {}
             
+        /// <summary>
+        /// Construct instance of DBParameterGroupNotFoundException
+        /// </summary>
+        /// <param name="innerException"></param>
         public DBParameterGroupNotFoundException(Exception innerException) 
             : base(innerException) {}
             
-        public DBParameterGroupNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of DBParameterGroupNotFoundException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public DBParameterGroupNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
-        public DBParameterGroupNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
-            : base(message, errorType, errorCode, RequestId, statusCode) {}
+        /// <summary>
+        /// Construct instance of DBParameterGroupNotFoundException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public DBParameterGroupNotFoundException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
 
     }
 }

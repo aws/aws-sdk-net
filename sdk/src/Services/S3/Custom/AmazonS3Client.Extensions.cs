@@ -612,8 +612,7 @@ namespace Amazon.S3
 #endif
 
 #if STORAGE_FILE
-
-        Task ICoreAmazonS3.UploadObjectFromStorageAsync(string bucketName, string objectKey, IStorageFile storageFile, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken = default(CancellationToken))
+        Task ICoreAmazonS3.UploadObjectFromStorageAsync(string bucketName, string objectKey, IStorageFile storageFile, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
         {
             var request = new Amazon.S3.Transfer.TransferUtilityUploadRequest();
             request.BucketName = bucketName;

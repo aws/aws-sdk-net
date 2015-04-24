@@ -576,26 +576,47 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region IDictionary<string,DynamoDBEntry> Members
 
+        /// <summary>
+        /// Add value to Doucment.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
         public void Add(string key, DynamoDBEntry value)
         {
             currentValues.Add(key, value);
         }
 
+        /// <summary>
+        /// Check to see if the value is set on the document.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public bool ContainsKey(string key)
         {
             return currentValues.ContainsKey(key);
         }
 
+        /// <summary>
+        /// This list of attribute keys for the document.
+        /// </summary>
         public ICollection<string> Keys
         {
             get { return currentValues.Keys; }
         }
 
+        /// <summary>
+        /// Remove the attribute from the Document.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public bool Remove(string key)
         {
             return currentValues.Remove(key);
         }
 
+        /// <summary>
+        /// Get a list of all the values in the Document.
+        /// </summary>
         public ICollection<DynamoDBEntry> Values
         {
             get { return currentValues.Values; }
@@ -605,16 +626,28 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region ICollection<KeyValuePair<string,DynamoDBEntry>> Members
 
+        /// <summary>
+        /// Add attributes to Document.
+        /// </summary>
+        /// <param name="item"></param>
         public void Add(KeyValuePair<string, DynamoDBEntry> item)
         {
             currentValues.Add(item.Key, item.Value);
         }
 
+        /// <summary>
+        /// Clear attributes from document.
+        /// </summary>
         public void Clear()
         {
             currentValues.Clear();
         }
 
+        /// <summary>
+        /// Check to see if the attributes are in the Document.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public bool Contains(KeyValuePair<string, DynamoDBEntry> item)
         {
             //DynamoDBEntry value;
@@ -625,22 +658,38 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return icollection.Contains(item);
         }
 
+        /// <summary>
+        /// Copies the attributes to the array.
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="arrayIndex"></param>
         public void CopyTo(KeyValuePair<string, DynamoDBEntry>[] array, int arrayIndex)
         {
             var icollection = (ICollection<KeyValuePair<string, DynamoDBEntry>>)currentValues;
             icollection.CopyTo(array, arrayIndex);
         }
 
+        /// <summary>
+        /// Gets the count of attributes.
+        /// </summary>
         public int Count
         {
             get { return currentValues.Count; }
         }
 
+        /// <summary>
+        /// Returns true if the document is read only.
+        /// </summary>
         public bool IsReadOnly
         {
             get { return false; }
         }
 
+        /// <summary>
+        /// Removes the attributes from the document.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public bool Remove(KeyValuePair<string, DynamoDBEntry> item)
         {
             var icollection = (ICollection<KeyValuePair<string, DynamoDBEntry>>)currentValues;
@@ -651,6 +700,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region IEnumerable<KeyValuePair<string,DynamoDBEntry>> Members
 
+        /// <summary>
+        /// Gets the enumerator for the attributes.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerator<KeyValuePair<string, DynamoDBEntry>> GetEnumerator()
         {
             return currentValues.GetEnumerator();
@@ -660,6 +713,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region IEnumerable Members
 
+        /// <summary>
+        /// Gets the enumerator for the attributes.
+        /// </summary>
+        /// <returns></returns>
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
             return currentValues.GetEnumerator();
@@ -695,6 +752,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return attributeValue;
         }
 
+        /// <summary>
+        /// Clones the Document
+        /// </summary>
+        /// <returns></returns>
         public override object Clone()
         {
             var doc = new Document(this);
@@ -705,6 +766,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Overrides
 
+        /// <summary>
+        /// Compare the document to see if it is equal.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             var otherDocument = obj as Document;
@@ -729,6 +795,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return true;
         }
 
+        /// <summary>
+        /// Implements the GetHashCode.
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             var hashCode = 0;

@@ -21,33 +21,76 @@ using Amazon.Runtime;
 
 namespace Amazon.S3
 {
+    /// <summary>
+    /// Base exception for S3 errors.
+    /// </summary>
     public class AmazonS3Exception : AmazonServiceException
     {
+        /// <summary>
+        /// Construct an instance of AmazonS3Exception
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonS3Exception(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct an instance of AmazonS3Exception
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonS3Exception(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct an instance of AmazonS3Exception
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonS3Exception(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct an instance of AmazonS3Exception
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonS3Exception(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct an instance of AmazonS3Exception
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonS3Exception(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct an instance of AmazonS3Exception
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        /// <param name="amazonId2"></param>
         public AmazonS3Exception(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode, string amazonId2)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
@@ -66,6 +109,9 @@ namespace Amazon.S3
 
         #region Overrides
 
+        /// <summary>
+        /// Gets the exception message.
+        /// </summary>
         public override string Message
         {
             get

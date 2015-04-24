@@ -7,6 +7,9 @@ using System.Text;
 
 namespace Amazon.Route53.Internal
 {
+    /// <summary>
+    /// Custom pipeline handler
+    /// </summary>
     public class AmazonRoute53PostMarshallHandler : PipelineHandler
     {
         /// <summary>
@@ -51,6 +54,10 @@ namespace Amazon.Route53.Internal
             return base.InvokeAsync(executionContext);
         }
 #endif
+        /// <summary>
+        /// Custom pipeline handler
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected void PreInvoke(IExecutionContext executionContext)
         {
             ProcessRequestHandlers(executionContext);

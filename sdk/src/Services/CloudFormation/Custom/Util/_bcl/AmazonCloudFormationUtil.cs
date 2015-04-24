@@ -24,6 +24,9 @@ using System.Globalization;
 
 namespace Amazon.CloudFormation.Util
 {
+    /// <summary>
+    /// Utility methods for CloudFormation.
+    /// </summary>
     public static class AmazonCloudFormationUtil
     {
         /// <summary>

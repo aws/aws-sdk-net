@@ -34,6 +34,9 @@ namespace Amazon.Redshift.Model
     {
         private EventSubscription _response;
 
+        /// <summary>
+        /// Gets and sets the EventSubscription property.
+        /// </summary>
         public EventSubscription EventSubscription
         {
             get { return this._response; }

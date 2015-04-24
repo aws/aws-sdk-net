@@ -38,6 +38,11 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
     /// </summary>  
     public class LookupEventsResponseUnmarshaller : JsonResponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             LookupEventsResponse response = new LookupEventsResponse();
@@ -63,6 +68,13 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             return response;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
+        /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
@@ -91,6 +103,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         {
             return _instance;
         }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static LookupEventsResponseUnmarshaller Instance
         {
             get

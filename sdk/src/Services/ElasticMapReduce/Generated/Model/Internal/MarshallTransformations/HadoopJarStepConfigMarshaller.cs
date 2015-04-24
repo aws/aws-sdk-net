@@ -37,6 +37,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// </summary>       
     public class HadoopJarStepConfigMarshaller : IRequestMarshaller<HadoopJarStepConfig, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(HadoopJarStepConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetArgs())
@@ -80,6 +86,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static HadoopJarStepConfigMarshaller Instance = new HadoopJarStepConfigMarshaller();
 
     }

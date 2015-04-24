@@ -40,6 +40,9 @@ namespace Amazon.RDS.Model
     {
         private DBSnapshot _response;
 
+        /// <summary>
+        /// Gets and sets the DBSnapshot property.
+        /// </summary>
         public DBSnapshot DBSnapshot
         {
             get { return this._response; }

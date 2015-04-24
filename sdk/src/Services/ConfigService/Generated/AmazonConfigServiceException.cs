@@ -25,28 +25,61 @@ using Amazon.Runtime;
 
 namespace Amazon.ConfigService
 {
+    ///<summary>
+    /// Common exception for the ConfigService service.
+    /// </summary>
     public class AmazonConfigServiceException : AmazonServiceException
     {
+        /// <summary>
+        /// Construct instance of AmazonConfigServiceException
+        /// </summary>
+        /// <param name="message"></param>
         public AmazonConfigServiceException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonConfigServiceException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
         public AmazonConfigServiceException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonConfigServiceException
+        /// </summary>
+        /// <param name="innerException"></param>
         public AmazonConfigServiceException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonConfigServiceException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonConfigServiceException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
+        /// <summary>
+        /// Construct instance of AmazonConfigServiceException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
         public AmazonConfigServiceException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {

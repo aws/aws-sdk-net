@@ -36,6 +36,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// </summary>  
     public class LaunchConfigurationUnmarshaller : IUnmarshaller<LaunchConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LaunchConfiguration, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LaunchConfiguration Unmarshall(XmlUnmarshallerContext context)
         {
             LaunchConfiguration unmarshalledObject = new LaunchConfiguration();
@@ -176,6 +181,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LaunchConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -184,6 +194,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
         private static LaunchConfigurationUnmarshaller _instance = new LaunchConfigurationUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static LaunchConfigurationUnmarshaller Instance
         {
             get

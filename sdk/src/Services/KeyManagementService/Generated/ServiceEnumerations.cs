@@ -57,6 +57,11 @@ namespace Amazon.KeyManagementService
             return FindValue<DataKeySpec>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator DataKeySpec(string value)
         {
             return FindValue(value);
@@ -121,6 +126,11 @@ namespace Amazon.KeyManagementService
             return FindValue<GrantOperation>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator GrantOperation(string value)
         {
             return FindValue(value);
@@ -157,6 +167,11 @@ namespace Amazon.KeyManagementService
             return FindValue<KeyUsageType>(value);
         }
 
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
         public static implicit operator KeyUsageType(string value)
         {
             return FindValue(value);

@@ -53,12 +53,22 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Entries = new List<DynamoDBEntry>();
         }
 
+        /// <summary>
+        /// Construct an instance DynamoDBList.
+        /// </summary>
+        /// <param name="entries"></param>
         public DynamoDBList(IEnumerable<DynamoDBEntry> entries)
             : this()
         {
             Entries.AddRange(entries);
         }
 
+        /// <summary>
+        /// Create a DynamODBList from an IEnumerable
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="items"></param>
+        /// <returns></returns>
         public static DynamoDBList Create<T>(IEnumerable<T> items)
         {
             var list = new DynamoDBList();
@@ -172,6 +182,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return attribute;
         }
 
+        /// <summary>
+        /// Implement the Clone method.s
+        /// </summary>
+        /// <returns></returns>
         public override object Clone()
         {
             DynamoDBList list = new DynamoDBList();
@@ -183,6 +197,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return list;
         }
 
+        /// <summary>
+        /// Implement the Equals method.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             var otherList = obj as DynamoDBList;
@@ -210,6 +229,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return true;
         }
 
+        /// <summary>
+        /// Implement the GetHashCode method.
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             var entriesHashCode = 0;

@@ -36,6 +36,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// </summary>  
     public class BackendServerDescriptionUnmarshaller : IUnmarshaller<BackendServerDescription, XmlUnmarshallerContext>, IUnmarshaller<BackendServerDescription, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public BackendServerDescription Unmarshall(XmlUnmarshallerContext context)
         {
             BackendServerDescription unmarshalledObject = new BackendServerDescription();
@@ -72,6 +77,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public BackendServerDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -80,6 +90,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
         private static BackendServerDescriptionUnmarshaller _instance = new BackendServerDescriptionUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static BackendServerDescriptionUnmarshaller Instance
         {
             get

@@ -24,6 +24,9 @@ using Amazon.CloudFormation.Model;
 
 namespace Amazon.CloudFormation.Internal
 {
+    /// <summary>
+    /// Custom pipeline handler to pass an empty string NotificationARNs request property with collection is empty.
+    /// </summary>
     public class ProcessRequestHandler : PipelineHandler
     {
         /// <summary>
@@ -69,6 +72,10 @@ namespace Amazon.CloudFormation.Internal
         }
 #endif
 
+        /// <summary>
+        /// Set NotificationARNs to empty if the collection is empty before continuing on in the pipeline.
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected void PreInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;

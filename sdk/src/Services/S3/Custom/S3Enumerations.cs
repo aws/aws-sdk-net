@@ -86,6 +86,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly S3CannedACL LogDeliveryWrite = new S3CannedACL("log-delivery-write");
 
+        /// <summary>
+        /// Construct instance of S3CannedACL. It is not intended for this constructor to be called. Instead users should call the FindValue.
+        /// </summary>
+        /// <param name="value"></param>
         public S3CannedACL(string value)
             : base(value)
         {
@@ -101,6 +105,12 @@ namespace Amazon.S3
             return FindValue<S3CannedACL>(value);
         }
 
+
+        /// <summary>
+        /// Converts the string to an S3CannedACL
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static implicit operator S3CannedACL(string value)
         {
             return FindValue(value);
@@ -158,6 +168,10 @@ namespace Amazon.S3
         [Obsolete("This constant is obsolete. Usags of this property should be migrated to the USW1 constant")]
         public static readonly S3Region SFO = new S3Region("us-west-1");
 
+        /// <summary>
+        /// Construct instance of S3Region. It is not intended for this constructor to be called. Instead users should call the FindValue.
+        /// </summary>
+        /// <param name="value"></param>
         public S3Region(string value)
             : base(value) { }
 
@@ -174,6 +188,11 @@ namespace Amazon.S3
             return FindValue<S3Region>(value);
         }
 
+        /// <summary>
+        /// Converts the string to the S3Region class
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static implicit operator S3Region(string value)
         {
             return FindValue(value);
@@ -226,16 +245,27 @@ namespace Amazon.S3
         /// </summary>
         public static readonly S3Permission RESTORE_OBJECT = new S3Permission("RESTORE", "x-amz-grant-restore-object");
 
+        /// <summary>
+        /// Construct S3Permission.
+        /// </summary>
+        /// <param name="value"></param>
         public S3Permission(string value)
             : this(value, null) { }
 
-
+        /// <summary>
+        /// Construct instance of S3Permission. It is not intended for this constructor to be called. Instead users should call the FindValue.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="headerName"></param>
         public S3Permission(string value, string headerName)
             : base(value)
         {
             this.HeaderName = headerName;
         }
 
+        /// <summary>
+        /// Gets and sets the HeaderName property.
+        /// </summary>
         public string HeaderName
         {
             get;
@@ -252,6 +282,11 @@ namespace Amazon.S3
             return FindValue<S3Permission>(value);
         }
 
+        /// <summary>
+        /// Converts the string to an S3Permission
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static implicit operator S3Permission(string value)
         {
             return FindValue(value);
@@ -346,6 +381,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly S3StorageClass Glacier = new S3StorageClass("GLACIER");
 
+        /// <summary>
+        /// Construct an instance of S3StorageClass.
+        /// </summary>
+        /// <param name="value"></param>
         public S3StorageClass(string value)
             : base(value)
         {
@@ -361,6 +400,11 @@ namespace Amazon.S3
             return FindValue<S3StorageClass>(value);
         }
 
+        /// <summary>
+        /// Convert string to S3StorageClass.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static implicit operator S3StorageClass(string value)
         {
             return FindValue(value);
@@ -399,6 +443,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly ServerSideEncryptionCustomerMethod AES256 = new ServerSideEncryptionCustomerMethod("AES256");
 
+        /// <summary>
+        /// Constructs an instance of ServerSideEncryptionCustomerMethod.
+        /// </summary>
+        /// <param name="value"></param>
         public ServerSideEncryptionCustomerMethod(string value)
             : base(value)
         {
@@ -414,6 +462,11 @@ namespace Amazon.S3
             return FindValue<ServerSideEncryptionCustomerMethod>(value);
         }
 
+        /// <summary>
+        /// Converts string to ServerSideEncryptionCustomerMethod.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static implicit operator ServerSideEncryptionCustomerMethod(string value)
         {
             return FindValue(value);
@@ -440,6 +493,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly ServerSideEncryptionMethod AWSKMS = new ServerSideEncryptionMethod("aws:kms");
 
+        /// <summary>
+        /// Construct instance of ServerSideEncryptionMethod.
+        /// </summary>
+        /// <param name="value"></param>
         public ServerSideEncryptionMethod(string value)
             : base(value)
         {
@@ -455,6 +512,11 @@ namespace Amazon.S3
             return FindValue<ServerSideEncryptionMethod>(value);
         }
 
+        /// <summary>
+        /// Convert string to ServerSideEncryptionCustomerMethod.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static implicit operator ServerSideEncryptionMethod(string value)
         {
             return FindValue(value);
@@ -481,7 +543,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly GranteeType CanonicalUser = new GranteeType("CanonicalUser");
 
-
+        /// <summary>
+        /// Construct an instance of GranteeType.
+        /// </summary>
+        /// <param name="value"></param>
         public GranteeType(string value)
             : base(value)
         {
@@ -497,6 +562,11 @@ namespace Amazon.S3
             return FindValue<GranteeType>(value);
         }
 
+        /// <summary>
+        /// Convert a string to GranteeType.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static implicit operator GranteeType(string value)
         {
             return FindValue(value);
@@ -519,6 +589,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly LifecycleRuleStatus Disabled = new LifecycleRuleStatus("Disabled");
 
+        /// <summary>
+        /// Constructs an instance LifecycleRuleStatus.
+        /// </summary>
+        /// <param name="value"></param>
         public LifecycleRuleStatus(string value)
             : base(value)
         {
@@ -534,6 +608,11 @@ namespace Amazon.S3
             return FindValue<LifecycleRuleStatus>(value);
         }
 
+        /// <summary>
+        /// Convert string to LifecycleRuleStatus.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static implicit operator LifecycleRuleStatus(string value)
         {
             return FindValue(value);
@@ -560,6 +639,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly VersionStatus Enabled = new VersionStatus("Enabled");
 
+        /// <summary>
+        /// Construct an instance of VersionStatus.
+        /// </summary>
+        /// <param name="value"></param>
         public VersionStatus(string value)
             : base(value)
         {
@@ -575,6 +658,11 @@ namespace Amazon.S3
             return FindValue<VersionStatus>(value);
         }
 
+        /// <summary>
+        /// Convert string to VersionStatus.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static implicit operator VersionStatus(string value)
         {
             return FindValue(value);
@@ -591,6 +679,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly EncodingType Url = new EncodingType("Url");
 
+        /// <summary>
+        /// Constructs intance of EncodingType
+        /// </summary>
+        /// <param name="value"></param>
         public EncodingType(string value)
             : base(value)
         {
@@ -606,6 +698,11 @@ namespace Amazon.S3
             return FindValue<EncodingType>(value);
         }
 
+        /// <summary>
+        /// Converts string to EncodingType
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static implicit operator EncodingType(string value)
         {
             return FindValue(value);
@@ -648,7 +745,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly EventType ReducedRedundancyLostObject = new EventType("s3:ReducedRedundancyLostObject");
 
-
+        /// <summary>
+        /// Constructs instance of EventType.
+        /// </summary>
+        /// <param name="value"></param>
         public EventType(string value)
             : base(value)
         {
@@ -664,6 +764,11 @@ namespace Amazon.S3
             return FindValue<EventType>(value);
         }
 
+        /// <summary>
+        /// Convert string to EventType.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static implicit operator EventType(string value)
         {
             return FindValue(value);
@@ -696,6 +801,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly ReplicationStatus Failed = new ReplicationStatus("FAILED");
 
+        /// <summary>
+        /// Construct instance of ReplicationStatus.
+        /// </summary>
+        /// <param name="value"></param>
         public ReplicationStatus(string value) 
             : base(value) 
         {
@@ -711,6 +820,11 @@ namespace Amazon.S3
             return FindValue<ReplicationStatus>(value);
         }
 
+        /// <summary>
+        /// Convert string to ReplicationStatus.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static implicit operator ReplicationStatus(string value)
         {
             return FindValue<ReplicationStatus>(value);
@@ -733,6 +847,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly ReplicationRuleStatus Disabled = new ReplicationRuleStatus("Disabled");
         
+        /// <summary>
+        /// Construct instance of ReplicationRuleStatus
+        /// </summary>
+        /// <param name="value"></param>
         public ReplicationRuleStatus(string value) 
             : base(value) 
         {
@@ -748,6 +866,11 @@ namespace Amazon.S3
             return FindValue<ReplicationRuleStatus>(value);
         }
 
+        /// <summary>
+        /// Convert string to ReplicationRuleStatus.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static implicit operator ReplicationRuleStatus(string value)
         {
             return FindValue<ReplicationRuleStatus>(value);

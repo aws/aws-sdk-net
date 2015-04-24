@@ -1150,18 +1150,33 @@ namespace Amazon.EC2.Import
     [XmlType("manifest")]
     public class ImportManifestRoot
     {
+        /// <summary>
+        /// Gets and sets the Version property.
+        /// </summary>
         [XmlElement("version")]
         public String Version { get; set; }
 
+        /// <summary>
+        /// Gets and sets the FileFormat property.
+        /// </summary>
         [XmlElement("file-format")]
         public string FileFormat { get; set; }
 
+        /// <summary>
+        /// Gets and sets the ImporterField property.
+        /// </summary>
         [XmlElement("importer")]
         public ImporterInfo ImporterField { get; set; }
 
+        /// <summary>
+        /// Gets and sets the SelfDestructUrl property.
+        /// </summary>
         [XmlElement("self-destruct-url")]
         public string SelfDestructUrl { get; set; }
 
+        /// <summary>
+        /// Gets and sets the ImportData property.
+        /// </summary>
         [XmlElement("import")]
         public Import ImportData { get; set; }
     }
@@ -1178,12 +1193,21 @@ namespace Amazon.EC2.Import
     [XmlType("importer")]
     public class ImporterInfo
     {
+        /// <summary>
+        /// Gets and sets the Name property.
+        /// </summary>
         [XmlElement("name")]
         public string Name { get; set; }
 
+        /// <summary>
+        /// Gets and sets the Version property.
+        /// </summary>
         [XmlElement("version")]
         public string Version { get; set; }
 
+        /// <summary>
+        /// Gets and sets the Release property.
+        /// </summary>
         [XmlElement("release")]
         public string Release { get; set; }
     }
@@ -1200,12 +1224,21 @@ namespace Amazon.EC2.Import
     /// </summary>
     public class Import
     {
+        /// <summary>
+        /// Disk image size
+        /// </summary>
         [XmlElement("size")]
         public long Size { get; set; }
 
+        /// <summary>
+        /// The EC2 volume size
+        /// </summary>
         [XmlElement("volume-size")]
         public long VolumeSize { get; set; }
 
+        /// <summary>
+        /// The list of parts.
+        /// </summary>
         [XmlElement("parts")]
         public ImageFileParts PartsList { get; set; }
     }
@@ -1345,12 +1378,21 @@ namespace Amazon.EC2.Import
         [XmlElement("key")]
         public string Key { get; set; }
 
+        /// <summary>
+        /// The Url for head requests.
+        /// </summary>
         [XmlElement("head-url")]
         public string HeadUrl { get; set; }
 
+        /// <summary>
+        /// The Url for get requests.
+        /// </summary>
         [XmlElement("get-url")]
         public string GetUrl { get; set; }
 
+        /// <summary>
+        /// The Url for delete requests.
+        /// </summary>
         [XmlElement("delete-url")]
         public string DeleteUrl { get; set; }
 
@@ -1412,6 +1454,9 @@ namespace Amazon.EC2.Import
         public AutoResetEvent PartProcessed { get; set; }
     }
 
+    /// <summary>
+    /// Error enum for disk import
+    /// </summary>
     public enum DiskImportErrorStage
     {
         /// <summary>

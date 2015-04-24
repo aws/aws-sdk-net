@@ -14,6 +14,9 @@ using Windows.Storage;
 
 namespace Amazon.Runtime.SharedInterfaces
 {
+#if STORAGE_FILE
+    [CLSCompliant(false)]
+#endif
     public interface ICoreAmazonS3
     {
         string GeneratePreSignedURL(string bucketName, string objectKey, DateTime expiration, IDictionary<string, object> additionalProperties);

@@ -36,6 +36,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// </summary>  
     public class MetricAlarmUnmarshaller : IUnmarshaller<MetricAlarm, XmlUnmarshallerContext>, IUnmarshaller<MetricAlarm, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public MetricAlarm Unmarshall(XmlUnmarshallerContext context)
         {
             MetricAlarm unmarshalledObject = new MetricAlarm();
@@ -189,6 +194,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public MetricAlarm Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -197,6 +207,9 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
         private static MetricAlarmUnmarshaller _instance = new MetricAlarmUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static MetricAlarmUnmarshaller Instance
         {
             get

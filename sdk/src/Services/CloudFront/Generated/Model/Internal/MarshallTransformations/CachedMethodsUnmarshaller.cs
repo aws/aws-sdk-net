@@ -37,6 +37,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// </summary>  
     public class CachedMethodsUnmarshaller : IUnmarshaller<CachedMethods, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public CachedMethods Unmarshall(XmlUnmarshallerContext context)
         {
             CachedMethods unmarshalledObject = new CachedMethods();
@@ -73,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
         private static CachedMethodsUnmarshaller _instance = new CachedMethodsUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static CachedMethodsUnmarshaller Instance
         {
             get

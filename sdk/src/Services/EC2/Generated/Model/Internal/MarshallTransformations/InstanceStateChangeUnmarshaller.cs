@@ -36,6 +36,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// </summary>  
     public class InstanceStateChangeUnmarshaller : IUnmarshaller<InstanceStateChange, XmlUnmarshallerContext>, IUnmarshaller<InstanceStateChange, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public InstanceStateChange Unmarshall(XmlUnmarshallerContext context)
         {
             InstanceStateChange unmarshalledObject = new InstanceStateChange();
@@ -77,6 +82,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public InstanceStateChange Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -85,6 +95,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
         private static InstanceStateChangeUnmarshaller _instance = new InstanceStateChangeUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static InstanceStateChangeUnmarshaller Instance
         {
             get

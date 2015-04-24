@@ -34,7 +34,9 @@ namespace Amazon.SimpleWorkflow.Model
     {
         private DomainDetail _domainDetail;
 
-        // Gets and sets the DomainDetail member
+        /// <summary>
+        /// Gets and sets the DomainDetail member
+        /// </summary>
         public DomainDetail DomainDetail
         {
             get { return this._domainDetail; }

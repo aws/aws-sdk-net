@@ -37,6 +37,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// </summary>       
     public class ContinueAsNewWorkflowExecutionDecisionAttributesMarshaller : IRequestMarshaller<ContinueAsNewWorkflowExecutionDecisionAttributes, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(ContinueAsNewWorkflowExecutionDecisionAttributes requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetChildPolicy())
@@ -99,6 +105,9 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static ContinueAsNewWorkflowExecutionDecisionAttributesMarshaller Instance = new ContinueAsNewWorkflowExecutionDecisionAttributesMarshaller();
 
     }

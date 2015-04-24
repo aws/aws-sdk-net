@@ -38,11 +38,21 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// </summary>  
     public class FailedCreateWorkspaceRequestUnmarshaller : IUnmarshaller<FailedCreateWorkspaceRequest, XmlUnmarshallerContext>, IUnmarshaller<FailedCreateWorkspaceRequest, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         FailedCreateWorkspaceRequest IUnmarshaller<FailedCreateWorkspaceRequest, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
         public FailedCreateWorkspaceRequest Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -80,6 +90,9 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         private static FailedCreateWorkspaceRequestUnmarshaller _instance = new FailedCreateWorkspaceRequestUnmarshaller();        
 
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static FailedCreateWorkspaceRequestUnmarshaller Instance
         {
             get

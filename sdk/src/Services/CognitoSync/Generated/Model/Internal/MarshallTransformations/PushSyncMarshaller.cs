@@ -37,6 +37,12 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
     /// </summary>       
     public class PushSyncMarshaller : IRequestMarshaller<PushSync, JsonMarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public void Marshall(PushSync requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetApplicationArns())
@@ -58,6 +64,9 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>  
         public readonly static PushSyncMarshaller Instance = new PushSyncMarshaller();
 
     }

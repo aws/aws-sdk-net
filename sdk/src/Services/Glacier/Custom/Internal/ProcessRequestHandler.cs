@@ -7,6 +7,9 @@ using System.Text;
 
 namespace Amazon.Glacier.Internal
 {
+    /// <summary>
+    /// Custom pipeline handler to add default account if not specified in the request object.
+    /// </summary>
     public class ProcessRequestHandler : PipelineHandler
     {
         /// <summary>
@@ -51,6 +54,10 @@ namespace Amazon.Glacier.Internal
             return base.InvokeAsync(executionContext);
         }
 #endif
+        /// <summary>
+        /// Custom pipeline handler
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected void PreInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;
