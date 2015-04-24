@@ -89,7 +89,7 @@ namespace Amazon.S3.Transfer.Internal
             var downloadRequest = new TransferUtilityDownloadRequest();
             downloadRequest.BucketName = this._request.BucketName;
             downloadRequest.Key = s3Object.Key;
-            var file = s3Object.Key.Substring(prefixLength).Replace('/','\\');
+            var file = s3Object.Key.Substring(prefixLength).Replace('/', Path.DirectorySeparatorChar);
             downloadRequest.FilePath = Path.Combine(this._request.LocalDirectory, file);
             downloadRequest.WriteObjectProgressEvent += downloadedProgressEventCallback;
 
