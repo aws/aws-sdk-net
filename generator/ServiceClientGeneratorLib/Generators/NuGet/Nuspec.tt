@@ -8,7 +8,7 @@
   <metadata> 
     <id><#=this.Session["AssemblyName"]#></id>
     <title><#=this.Session["AssemblyTitle"]#></title>
-    <version>3.0.0.0</version> 
+    <version><#=this.Session["AssemblyVersion"]#></version> 
     <authors>Amazon Web Services</authors>
     <description><#=this.Session["AssemblyDescription"]#></description> 
     <language>en-US</language>
@@ -22,10 +22,10 @@
       </group>
       <group>
 <#
-    foreach(string awsDependency in ((IList<string>)this.Session["AWSDependencies"]))
+    foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
     {
 #>
-      <dependency id="<#=awsDependency#>" version="3.0.0.0" />
+      <dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
 <#
     }
 #>

@@ -66,12 +66,13 @@ namespace AWSSDK.UnitTests
         private void LoadServices()
         {
             var manifestPath = @"..\..\..\_manifest.json";
+            var versionsPath = @"..\..\..\_sdk-versions.json";
             var modelsFolder = @"..\..\..\ServiceModels";
             var compileCustomizations = true;
 
             if (compileCustomizations) // Compile all servicename.customizations*.json files into one json file in bin
                 CustomizationCompiler.CompileServiceCustomizations(modelsFolder);
-            var configs = ServiceClientGenerator.GenerationManifest.Load(manifestPath, modelsFolder).ServiceConfigurations.ToList();
+            var configs = ServiceClientGenerator.GenerationManifest.Load(manifestPath, versionsPath, modelsFolder).ServiceConfigurations.ToList();
             var baseClientType = typeof(AmazonServiceClient);
 
             foreach(var config in configs)

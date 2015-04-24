@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Core</id>
     <title>The Amazon Web Services SDK for .NET - Core Runtime</title>
-    <version>3.0.0.0</version> 
+    <version>3.0</version> 
     <authors>Amazon Web Services</authors>
     <description>The Amazon Web Services SDK for .NET - Core Runtime</description> 
     <language>en-US</language>
@@ -25,8 +25,8 @@
 
     <file src=".\bin\Release\net45\AWSSDK.Core.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.Core.pdb" target="lib\net45" />
-	
-	<file src=".\bin\Release\portable\AWSSDK.Core.dll" target="lib\portable-wpa+netcore45" />
+    
+    <file src=".\bin\Release\portable\AWSSDK.Core.dll" target="lib\portable-wpa+netcore45" />
 
     <file src=".\bin\Release\winrt\AWSSDK.Core.dll" target="lib\windows8" />
 

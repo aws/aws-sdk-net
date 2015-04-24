@@ -16,9 +16,9 @@
         <dependency id="Microsoft.Net.Http" version="2.1.10" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="3.0.0.0" />
-      <dependency id="AWSSDK.SQS" version="3.0.0.0" />
-      <dependency id="AWSSDK.SimpleNotificationService" version="3.0.0.0" />
+      <dependency id="AWSSDK.SQS" version="3.0" />
+      <dependency id="AWSSDK.SimpleNotificationService" version="3.0" />
+      <dependency id="AWSSDK.Core" version="3.0" />
       </group>
     </dependencies>
   </metadata> 

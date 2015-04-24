@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 
@@ -9,6 +10,8 @@ namespace ServiceClientGenerator
     /// </summary>
     public class ServiceConfiguration
     {
+        private const string amazonDotPrefix = "Amazon.";
+
         string _modelPath;
 
         /// <summary>
@@ -72,7 +75,7 @@ namespace ServiceClientGenerator
             get
             {
                 if (string.IsNullOrEmpty(this._namespace))
-                    return "Amazon." + this.BaseName;
+                    return amazonDotPrefix + this.BaseName;
 
                 return this._namespace;
             }
@@ -83,7 +86,7 @@ namespace ServiceClientGenerator
         {
             get
             {
-                return this.Namespace.Replace("Amazon.", "AWSSDK.");
+                return this.Namespace.Replace(amazonDotPrefix, "AWSSDK.");
             }
         }
 
@@ -92,6 +95,21 @@ namespace ServiceClientGenerator
             get
             {
                 return !string.IsNullOrEmpty(Synopsis) ? Synopsis : ServiceModel.ServiceFullName;
+            }
+        }
+
+        // Base name in the manifest is not a reliable source of info, as if append-service
+        // is set 'Service' gets appended and in the case of IAM then sends us to the wrong folder.
+        // Instead we'll use the namespace and rip off any Amazon. prefix. This also helps us
+        // handle versioned namespaces too.
+        public string ServiceNameRoot
+        {
+            get
+            {
+                var serviceNameRoot = this.Namespace.StartsWith(amazonDotPrefix, StringComparison.Ordinal)
+                           ? this.Namespace.Substring(amazonDotPrefix.Length)
+                           : this.Namespace;
+                return serviceNameRoot;
             }
         }
 
@@ -104,7 +122,16 @@ namespace ServiceClientGenerator
 		public bool GenerateConstructors { get; set; }
         public string LockedApiVersion { get; set; }
         public string Synopsis { get; set; }
-        public List<string> ServiceDependencies { get; set; }
+        public Dictionary<string, string> ServiceDependencies { get; set; }
+        public string ServiceVersion
+        {
+            get
+            {
+                return Utils.GetVersion(ServiceFileVersion);
+            }
+        }
+
+        public string ServiceFileVersion { get; set; }
 
         public bool SkipV1 { get; set; }
     }

@@ -24,6 +24,13 @@
         public string Manifest { get; set; }
 
         /// <summary>
+        /// The name and location of the json versions file listing the versions of all supported
+        /// services for generation. By default this is located in the ServiceModels folder and is
+        /// named '_sdk-versions.json'.
+        /// </summary>
+        public string Versions { get; set; }
+
+        /// <summary>
         /// The location of the folder containing the service model files.
         /// </summary>
         public string ModelsFolder { get; set; }
@@ -65,6 +72,7 @@
             // default paths are relative to executing generator assembly
             // in bin/debug or bin/release
             Manifest = @"..\..\..\ServiceModels\_manifest.json";
+            Versions = @"..\..\..\ServiceModels\_sdk-versions.json";
             ModelsFolder = @"..\..\..\ServiceModels";
             SdkRootFolder = @"..\..\..\..\sdk";
 

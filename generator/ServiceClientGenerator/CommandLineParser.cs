@@ -172,6 +172,14 @@ namespace ServiceClientGenerator
             },    
             new ArgDeclaration
             {
+                OptionName = "versions", 
+                ShortName = "vs", 
+                HasValue = true,
+                Parse = (arguments, argValue) => arguments.ParsedOptions.Versions = argValue, 
+                HelpText = "The name and location of the manifest listing versions of all supported services."
+            },    
+            new ArgDeclaration
+            {
                 OptionName = "modelsfolder", 
                 ShortName = "mf", 
                 HasValue = true,
