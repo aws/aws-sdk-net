@@ -409,6 +409,42 @@ namespace Amazon.DynamoDBv2.DocumentModel
             string variableName = AwsVariablePrefix + attributeCount;
             return variableName;
         }
+
+        public static Dictionary<string, T> Combine<T>(
+            IDictionary<string, T> items1, IDictionary<string, T> items2,
+            IEqualityComparer<T> valueComparer)
+        {
+            if (valueComparer == null)
+                valueComparer = EqualityComparer<T>.Default;
+            var result = new Dictionary<string, T>(items1, StringComparer.Ordinal);
+
+            foreach (var kvp in items2)
+            {
+                var key = kvp.Key;
+                var value = kvp.Value;
+
+                // check if the key is already present
+                T existingValue;
+                if (result.TryGetValue(key, out existingValue))
+                {
+                    if (!valueComparer.Equals(value, existingValue))
+                    {
+                        // values are different, throw exception
+                        throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                            "Key [{0}] exists in both collections, but has different values: [{1}] != [{2}]",
+                            key, value, existingValue));
+                    }
+                    else
+                    {
+                        // key and identical value already present, no-op
+                    }
+                }
+                else
+                    result[key] = value;
+            }
+
+            return result;
+        }
     }
  
     internal enum SearchType

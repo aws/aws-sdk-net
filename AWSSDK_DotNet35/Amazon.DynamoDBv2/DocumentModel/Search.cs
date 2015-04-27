@@ -67,12 +67,20 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public int Limit { get; internal set; }
 
         /// <summary>
-        /// Gets and sets the FilterExpression property.
+        /// The key expression that is evaluated for each item of a query.
+        /// This applies only to Query operations.
+        /// </summary>
+        public Expression KeyExpression { get; set; }
+
+        /// <summary>
+        /// The filter expression that is evaluated for each item.
+        /// This applies to Query and Scan operations.
         /// </summary>
         public Expression FilterExpression { get; set; }
 
         /// <summary>
         /// Filter for the search operation
+        /// This applies to Query and Scan operations.
         /// </summary>
         public Filter Filter { get; internal set; }
 
@@ -241,10 +249,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             IndexName = IndexName,
                         };
 
-                        if (this.FilterExpression != null && this.FilterExpression.IsSet)
-                        {
-                            this.FilterExpression.ApplyExpression(queryReq, SourceTable.Conversion);
-                        }
+                        Expression.ApplyExpression(queryReq, SourceTable.Conversion, KeyExpression, FilterExpression);
 
                         Dictionary<string, Condition> keyConditions, filterConditions;
                         SplitQueryFilter(Filter, SourceTable, queryReq.IndexName, out keyConditions, out filterConditions);
@@ -407,11 +412,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                 IndexName = IndexName
                             };
 
-                            if (this.FilterExpression != null && this.FilterExpression.IsSet)
-                            {
-                                this.FilterExpression.ApplyExpression(queryReq, SourceTable.Conversion);
-                            }
-
+                            Expression.ApplyExpression(queryReq, SourceTable.Conversion, KeyExpression, FilterExpression);
                             Dictionary<string, Condition> keyConditions, filterConditions;
                             SplitQueryFilter(Filter, SourceTable, queryReq.IndexName, out keyConditions, out filterConditions);
                             queryReq.KeyConditions = keyConditions;

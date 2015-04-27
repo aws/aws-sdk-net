@@ -110,9 +110,10 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ConditionalOperator. <important> 
         /// <para>
-        /// There is a newer parameter available. Use <i>ConditionExpression</i> instead. Note
-        /// that if you use <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-        /// same time, DynamoDB will return a <i>ValidationException</i> exception.
+        /// This is a legacy parameter, for backward compatibility. New applications should use
+        /// <i>ConditionExpression</i> instead. Do not combine legacy parameters and expression
+        /// parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+        /// exception.
         /// </para>
         ///  </important> 
         /// <para>
@@ -183,9 +184,15 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on condition expressions, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+        /// For more information on condition expressions, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
         /// Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// <i>ConditionExpression</i> replaces the legacy <i>ConditionalOperator</i> and <i>Expected</i>
+        /// parameters.
+        /// </para>
+        /// </note>
         /// </summary>
         public string ConditionExpression
         {
@@ -202,9 +209,10 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Expected. <important> 
         /// <para>
-        /// There is a newer parameter available. Use <i>ConditionExpression</i> instead. Note
-        /// that if you use <i>Expected</i> and <i> ConditionExpression </i> at the same time,
-        /// DynamoDB will return a <i>ValidationException</i> exception.
+        /// This is a legacy parameter, for backward compatibility. New applications should use
+        /// <i>ConditionExpression</i> instead. Do not combine legacy parameters and expression
+        /// parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+        /// exception.
         /// </para>
         ///  </important> 
         /// <para>
@@ -541,7 +549,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </li></ul> 
         /// <para>
         /// The name of this attribute conflicts with a reserved word, so it cannot be used directly
-        /// in an expression. (For the complete list of reserved words, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+        /// in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
         /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you
         /// could specify the following for <i>ExpressionAttributeNames</i>:
         /// </para>
@@ -564,8 +572,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </note> 
         /// <para>
-        /// For more information on expression attribute names, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-        /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+        /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ExpressionAttributeNames
@@ -614,8 +623,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on expression attribute values, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-        /// Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// For more information on expression attribute values, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+        /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> ExpressionAttributeValues

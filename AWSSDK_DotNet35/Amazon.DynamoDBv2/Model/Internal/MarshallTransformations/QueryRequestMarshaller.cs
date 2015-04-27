@@ -144,6 +144,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IndexName);
                 }
 
+                if(publicRequest.IsSetKeyConditionExpression())
+                {
+                    context.Writer.WritePropertyName("KeyConditionExpression");
+                    context.Writer.Write(publicRequest.KeyConditionExpression);
+                }
+
                 if(publicRequest.IsSetKeyConditions())
                 {
                     context.Writer.WritePropertyName("KeyConditions");

@@ -29,12 +29,18 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the Query operation.
-    /// A <i>Query</i> operation directly accesses items from a table using the table primary
-    /// key, or from an index using the index key. You must provide a specific hash key value.
-    /// You can narrow the scope of the query by using comparison operators on the range key
-    /// value, or on the index key. You can use the <i>ScanIndexForward</i> parameter to get
-    /// results in forward or reverse order, by range key or by index key. 
+    /// A <i>Query</i> operation uses the primary key of a table or a secondary index to directly
+    /// access items from that table or index.
     /// 
+    ///  
+    /// <para>
+    /// Use the <i>KeyConditionExpression</i> parameter to provide a specific hash key value.
+    /// The <i>Query</i> operation will return all of the items from the table or index with
+    /// that hash key value. You can optionally narrow the scope of the <i>Query</i> by specifying
+    /// a range key value and a comparison operator in the <i>KeyConditionExpression</i>.
+    /// You can use the <i>ScanIndexForward</i> parameter to get results in forward or reverse
+    /// order, by range key or by index key. 
+    /// </para>
     ///  
     /// <para>
     /// Queries that do not return results consume the minimum number of read capacity units
@@ -68,6 +74,7 @@ namespace Amazon.DynamoDBv2.Model
         private Dictionary<string, AttributeValue> _expressionAttributeValues = new Dictionary<string, AttributeValue>();
         private string _filterExpression;
         private string _indexName;
+        private string _keyConditionExpression;
         private Dictionary<string, Condition> _keyConditions = new Dictionary<string, Condition>();
         private int? _limit;
         private string _projectionExpression;
@@ -94,9 +101,10 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property AttributesToGet. <important>
         /// <para>
-        /// There is a newer parameter available. Use <i>ProjectionExpression</i> instead. Note
-        /// that if you use <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-        /// time, DynamoDB will return a <i>ValidationException</i> exception.
+        /// This is a legacy parameter, for backward compatibility. New applications should use
+        /// <i>ProjectionExpression</i> instead. Do not combine legacy parameters and expression
+        /// parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+        /// exception.
         /// </para>
         ///  
         /// <para>
@@ -150,7 +158,14 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConditionalOperator. 
+        /// Gets and sets the property ConditionalOperator. <important> 
+        /// <para>
+        /// This is a legacy parameter, for backward compatibility. New applications should use
+        /// <i>FilterExpression</i> instead. Do not combine legacy parameters and expression parameters
+        /// in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+        /// exception.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// A logical operator to apply to the conditions in a <i>QueryFilter</i> map:
         /// </para>
@@ -270,7 +285,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </li></ul> 
         /// <para>
         /// The name of this attribute conflicts with a reserved word, so it cannot be used directly
-        /// in an expression. (For the complete list of reserved words, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+        /// in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
         /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you
         /// could specify the following for <i>ExpressionAttributeNames</i>:
         /// </para>
@@ -293,8 +308,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </note> 
         /// <para>
-        /// For more information on expression attribute names, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-        /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+        /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ExpressionAttributeNames
@@ -343,8 +359,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on expression attribute values, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-        /// Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// For more information on expression attribute values, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+        /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> ExpressionAttributeValues
@@ -366,16 +383,22 @@ namespace Amazon.DynamoDBv2.Model
         /// but before the data is returned to you. Items that do not satisfy the <i>FilterExpression</i>
         /// criteria are not returned.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// A <i>FilterExpression</i> is applied after the items have already been read; the process
         /// of filtering does not consume any additional read capacity units.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
-        /// For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+        /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
         /// Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
+        ///  <note>
+        /// <para>
+        /// <i>FilterExpression</i> replaces the legacy <i>QueryFilter</i> and <i>ConditionalOperator</i>
+        /// parameters.
+        /// </para>
+        /// </note>
         /// </summary>
         public string FilterExpression
         {
@@ -393,7 +416,8 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property IndexName. 
         /// <para>
         /// The name of an index to query. This index can be any local secondary index or global
-        /// secondary index on the table.
+        /// secondary index on the table. Note that if you use the <i>IndexName</i> parameter,
+        /// you must also provide <i>TableName.</i>
         /// </para>
         /// </summary>
         public string IndexName
@@ -409,24 +433,151 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KeyConditions. 
+        /// Gets and sets the property KeyConditionExpression. 
+        /// <para>
+        /// The condition that specifies the key value(s) for items to be retrieved by the <i>Query</i>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
+        /// The condition must perform an equality test on a single hash key value. The condition
+        /// can also test for one or more range key values. A <i>Query</i> can use <i>KeyConditionExpression</i>
+        /// to retrieve a single item with a given hash and range key value, or several items
+        /// that have the same hash key value but different range key values.
+        /// </para>
+        ///  
+        /// <para>
+        /// The hash key equality test is required, and must be specified in the following format:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>hashAttributeName</code> <i>=</i> <code>:hashval</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you also want to provide a range key condition, it must be combined using <i>AND</i>
+        /// with the hash key condition. Following is an example, using the <b>=</b> comparison
+        /// operator for the range key:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>hashAttributeName</code> <i>=</i> <code>:hashval</code> <i>AND</i> <code>rangeAttributeName</code>
+        /// <i>=</i> <code>:rangeval</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid comparisons for the range key condition are as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code> - true if the range
+        /// key is equal to <code>:rangeval</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>rangeAttributeName</code> <i>&#x3C;</i> <code>:rangeval</code> - true if the
+        /// range key is less than <code>:rangeval</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>rangeAttributeName</code> <i>&#x3C;=</i> <code>:rangeval</code> - true if the
+        /// range key is less than or equal to <code>:rangeval</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>rangeAttributeName</code> <i>&#x3E;</i> <code>:rangeval</code> - true if the
+        /// range key is greater than <code>:rangeval</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>rangeAttributeName</code> <i>&#x3E;= </i><code>:rangeval</code> - true if the
+        /// range key is greater than or equal to <code>:rangeval</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>rangeAttributeName</code> <i>BETWEEN</i> <code>:rangeval1</code> <i>AND</i>
+        /// <code>:rangeval2</code> - true if the range key is less than or greater than <code>:rangeval1</code>,
+        /// and less than or equal to <code>:rangeval2</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>begins_with (</i><code>rangeAttributeName</code>, <code>:rangeval</code><i>)</i>
+        /// - true if the range key begins with a particular operand. Note that the function name
+        /// <code>begins_with</code> is case-sensitive.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Use the <i>ExpressionAttributeValues</i> parameter to replace tokens such as <code>:hashval</code>
+        /// and <code>:rangeval</code> with actual values at runtime.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally use the <i>ExpressionAttributeNames</i> parameter to replace the
+        /// names of the hash and range attributes with placeholder tokens. This might be necessary
+        /// if an attribute name conflicts with a DynamoDB reserved word. For example, the following
+        /// <i>KeyConditionExpression</i> causes an error because <i>Size</i> is a reserved word:
+        /// </para>
+        ///  <ul> <li> <code>Size = :myval</code> </li> </ul> 
+        /// <para>
+        /// To work around this, define a placeholder (such a <code>#myval</code>) to represent
+        /// the attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is as follows:
+        /// </para>
+        ///  <ul> <li> <code>#S = :myval</code> </li> </ul> 
+        /// <para>
+        /// For a list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+        /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on <i>ExpressionAttributeNames</i> and <i>ExpressionAttributeValues</i>,
+        /// see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+        /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// <i>KeyConditionExpression</i> replaces the legacy <i>KeyConditions</i> parameter.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string KeyConditionExpression
+        {
+            get { return this._keyConditionExpression; }
+            set { this._keyConditionExpression = value; }
+        }
+
+        // Check to see if KeyConditionExpression property is set
+        internal bool IsSetKeyConditionExpression()
+        {
+            return this._keyConditionExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyConditions. <important> 
+        /// <para>
+        /// This is a legacy parameter, for backward compatibility. New applications should use
+        /// <i>KeyConditionExpression</i> instead. Do not combine legacy parameters and expression
+        /// parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+        /// exception.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// The selection criteria for the query. For a query on a table, you can have conditions
         /// only on the table primary key attributes. You must provide the hash key attribute
         /// name and value as an <code>EQ</code> condition. You can optionally provide a second
         /// condition, referring to the range key attribute.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
-        /// If you do not provide a range key condition, all of the items that match the hash
-        /// key will be retrieved. If a <i>FilterExpression</i> or <i>QueryFilter</i> is present,
+        /// If you don't provide a range key condition, all of the items that match the hash key
+        /// will be retrieved. If a <i>FilterExpression</i> or <i>QueryFilter</i> is present,
         /// it will be applied after the items are retrieved.
         /// </para>
         /// </note> 
         /// <para>
         /// For a query on an index, you can have conditions only on the index key attributes.
-        /// You must provide the index hash attribute name and value as an EQ condition. You can
-        /// optionally provide a second condition, referring to the index key range attribute.
+        /// You must provide the index hash attribute name and value as an <code>EQ</code> condition.
+        /// You can optionally provide a second condition, referring to the index key range attribute.
         /// </para>
         ///  
         /// <para>
@@ -619,9 +770,14 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
+        ///  <note>
+        /// <para>
+        /// <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i> parameter.
+        /// </para>
+        /// </note>
         /// </summary>
         public string ProjectionExpression
         {
@@ -638,9 +794,10 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property QueryFilter. <important> 
         /// <para>
-        /// There is a newer parameter available. Use <i>FilterExpression</i> instead. Note that
-        /// if you use <i>QueryFilter</i> and <i>FilterExpression</i> at the same time, DynamoDB
-        /// will return a <i>ValidationException</i> exception.
+        /// This is a legacy parameter, for backward compatibility. New applications should use
+        /// <i>FilterExpression</i> instead. Do not combine legacy parameters and expression parameters
+        /// in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+        /// exception.
         /// </para>
         ///  </important> 
         /// <para>
@@ -651,7 +808,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// This parameter does not support attributes of type List or Map.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// A <i>QueryFilter</i> is applied after the items have already been read; the process
         /// of filtering does not consume any additional read capacity units.
@@ -830,6 +987,13 @@ namespace Amazon.DynamoDBv2.Model
         /// (This usage is equivalent to specifying <i>AttributesToGet</i> without any value for
         /// <i>Select</i>.)
         /// </para>
+        ///  <note>
+        /// <para>
+        /// If you use the <i>ProjectionExpression</i> parameter, then the value for <i>Select</i>
+        /// can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i> will
+        /// return an error.
+        /// </para>
+        /// </note>
         /// </summary>
         public Select Select
         {

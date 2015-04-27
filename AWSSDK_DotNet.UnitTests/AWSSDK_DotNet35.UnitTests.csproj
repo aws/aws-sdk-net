@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Customizations\Constructors\*.cs" />
     <Compile Include="Customizations\SimpleMethods\*.cs" />
+    <Compile Include="DynamoDBEntryTests.cs" />
     <Compile Include="EC2\PasswordTest.cs" />
     <Compile Include="EC2\UnmarshallTests.cs" />
     <Compile Include="Marshalling\*.cs" />

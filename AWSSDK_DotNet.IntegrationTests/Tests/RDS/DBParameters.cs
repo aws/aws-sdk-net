@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Amazon.RDS;
 using Amazon.RDS.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
 {
@@ -115,17 +116,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
             {
                 if (parameterGroup != null)
                 {
-                    Client.DeleteDBParameterGroup(new DeleteDBParameterGroupRequest
-                    {
-                        DBParameterGroupName = parameterGroup.DBParameterGroupName
-                    });
+                    UtilityMethods.WaitUntilSuccess(() =>
+                        Client.DeleteDBParameterGroup(new DeleteDBParameterGroupRequest
+                        {
+                            DBParameterGroupName = parameterGroup.DBParameterGroupName
+                        }));
                 }
                 if (parameterGroup2 != null)
                 {
-                    Client.DeleteDBParameterGroup(new DeleteDBParameterGroupRequest
-                    {
-                        DBParameterGroupName = parameterGroup2.DBParameterGroupName
-                    });
+                    UtilityMethods.WaitUntilSuccess(() =>
+                        Client.DeleteDBParameterGroup(new DeleteDBParameterGroupRequest
+                        {
+                            DBParameterGroupName = parameterGroup2.DBParameterGroupName
+                        }));
                 }
             }
         }

@@ -341,6 +341,88 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             items = hashRangeTable.Query("Diane", new QueryFilter()).GetRemaining();
             Assert.AreEqual(2, items.Count);
 
+            var queryConfig = new QueryOperationConfig
+            {
+                KeyExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string>
+                    {
+                        { "#N", "Name" }
+                    },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry>
+                    {
+                        { ":v", "Diane" }
+                    },
+                    ExpressionStatement = "#N = :v"
+                }
+            };
+            items = hashRangeTable.Query(queryConfig).GetRemaining();
+            Assert.AreEqual(2, items.Count);
+
+            queryConfig = new QueryOperationConfig
+            {
+                KeyExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string>
+                    {
+                        { "#N", "Name" }
+                    },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry>
+                    {
+                        { ":v", "Diane" }
+                    },
+                    ExpressionStatement = "#N = :v"
+                },
+                FilterExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string>
+                    {
+                        { "#S", "Score" }
+                    },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry>
+                    {
+                        { ":v2", 120 }
+                    },
+                    ExpressionStatement = "#S > :v2"
+                }
+            };
+            items = hashRangeTable.Query(queryConfig).GetRemaining();
+            Assert.AreEqual(1, items.Count);
+
+            queryConfig = new QueryOperationConfig
+            {
+                KeyExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string>
+                    {
+                        { "#N", "Name" },
+                        { "#A", "Age" }
+                    },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry>
+                    {
+                        { ":v2", 120 }
+                    },
+                    ExpressionStatement = "#N = :v and #A < :v2"
+                },
+                FilterExpression = new Expression
+                {
+                    ExpressionAttributeNames = new Dictionary<string, string>
+                    {
+                        { "#S", "Score" },
+                        { "#A", "Age" }
+                    },
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry>
+                    {
+                        { ":v", "Diane" },
+                    },
+                    ExpressionStatement = "#S < :v2"
+                }
+            };
+            items = hashRangeTable.Query(queryConfig).GetRemaining();
+            Assert.AreEqual(1, items.Count);
+
+
+
             // Query local index
             items = hashRangeTable.Query(new QueryOperationConfig
             {
