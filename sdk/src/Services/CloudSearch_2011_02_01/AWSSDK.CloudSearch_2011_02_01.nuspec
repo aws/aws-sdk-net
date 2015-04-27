@@ -2,21 +2,21 @@
 <package> 
   <metadata> 
     <id>AWSSDK.CloudSearch_2011_02_01</id>
-    <title>The Amazon Web Services SDK for .NET - Amazon CloudSearch</title>
-    <version>3.0.0.0</version> 
+    <title>AWSSDK - Amazon CloudSearch</title>
+    <version>3.0.0.0-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application.</description> 
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
-    <projectUrl>http://aws.amazon.com/sdkfornet/</projectUrl>
-    <tags>AWS Amazon cloud</tags>
+    <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
+    <tags>AWS Amazon cloud CloudSearch</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="windowsphone8">
         <dependency id="Microsoft.Net.Http" version="2.1.10" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="3.0" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.0-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 

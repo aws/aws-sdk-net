@@ -666,20 +666,24 @@ namespace ServiceClientGenerator
                     var service = kvp.Key;
                     var version = kvp.Value;
 
-                    awsDependencies.Add(string.Format("AWSSDK.{0}", service), version);
+                    var verTokens = version.Split('.');
+                    var versionRange = string.Format("[{0}-preview, {1}.{2}-preview)", version, verTokens[0], int.Parse(verTokens[1]) + 1);
+
+                    awsDependencies.Add(string.Format("AWSSDK.{0}", service), versionRange);
                 }
             }
 
             var assemblyVersion = Configuration.ServiceFileVersion;
             var assemblyName = Configuration.Namespace.Replace("Amazon.", "AWSSDK.");
-            var assemblyTitle = "The Amazon Web Services SDK for .NET - " + Configuration.ServiceModel.ServiceFullName;
+            var assemblyTitle = "AWSSDK - " + Configuration.ServiceModel.ServiceFullName;
             var session = new Dictionary<string, object>
             {
                 { "AssemblyName", assemblyName },
                 { "AssemblyTitle",  assemblyTitle },
                 { "AssemblyDescription", Configuration.AssemblyDescription },
                 { "AssemblyVersion", assemblyVersion },
-                { "AWSDependencies", awsDependencies }
+                { "AWSDependencies", awsDependencies },
+                { "BaseName", this.Configuration.BaseName }
             };
 
             var nuspecGenerator = new Nuspec { Session = session };

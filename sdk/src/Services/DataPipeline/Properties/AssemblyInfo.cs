@@ -8,15 +8,15 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.DataPipeline")]
 #if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Data Pipeline. AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services such as Amazon S3, Amazon RDS, Amazon DynamoDB and Amazon Redshift.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Data Pipeline. AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services.")]
 #elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Data Pipeline. AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services such as Amazon S3, Amazon RDS, Amazon DynamoDB and Amazon Redshift.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Data Pipeline. AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services.")]
 #elif (WIN_RT && WINDOWS_PHONE)
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Portable)- AWS Data Pipeline. AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services such as Amazon S3, Amazon RDS, Amazon DynamoDB and Amazon Redshift.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Portable)- AWS Data Pipeline. AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services.")]
 #elif WIN_RT
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows RT) - AWS Data Pipeline. AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services such as Amazon S3, Amazon RDS, Amazon DynamoDB and Amazon Redshift.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows RT) - AWS Data Pipeline. AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services.")]
 #elif WINDOWS_PHONE
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows Phone 8)- AWS Data Pipeline. AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services such as Amazon S3, Amazon RDS, Amazon DynamoDB and Amazon Redshift.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows Phone 8)- AWS Data Pipeline. AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
@@ -48,5 +48,3 @@ using System.Runtime.CompilerServices;
 
 [assembly: System.CLSCompliant(true)]
 [assembly: System.Security.AllowPartiallyTrustedCallers]
-[assembly: InternalsVisibleTo("AWS.TraceListener,PublicKey=00240000048000009400000006020000002400005253413100040000010001006fe30670d8799591454f4143052b981d91d512647d0bff5a85c74bd9ce24413d9d91073cac76063f129c23c155e46433945d01a9d11d6d5207415b8a2a9cf2796507b677cceeca801c4824c3b27b2cfe9a6eaae4ea961013eb9a193159b9867fc9ecc03d650c07fd773e25c204b6c5aa546f736ccf391761c2a815ef175c3dc6")]
-[assembly: InternalsVisibleTo("AWS.SessionProvider,PublicKey=00240000048000009400000006020000002400005253413100040000010001006fe30670d8799591454f4143052b981d91d512647d0bff5a85c74bd9ce24413d9d91073cac76063f129c23c155e46433945d01a9d11d6d5207415b8a2a9cf2796507b677cceeca801c4824c3b27b2cfe9a6eaae4ea961013eb9a193159b9867fc9ecc03d650c07fd773e25c204b6c5aa546f736ccf391761c2a815ef175c3dc6")]

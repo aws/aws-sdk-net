@@ -8,13 +8,13 @@
   <metadata> 
     <id><#=this.Session["AssemblyName"]#></id>
     <title><#=this.Session["AssemblyTitle"]#></title>
-    <version><#=this.Session["AssemblyVersion"]#></version> 
+    <version><#=this.Session["AssemblyVersion"]#>-preview</version> 
     <authors>Amazon Web Services</authors>
     <description><#=this.Session["AssemblyDescription"]#></description> 
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
-    <projectUrl>http://aws.amazon.com/sdkfornet/</projectUrl>
-    <tags>AWS Amazon cloud</tags>
+    <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
+    <tags>AWS Amazon cloud <#=this.Session["BaseName"]#></tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="windowsphone8">

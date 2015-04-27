@@ -8,15 +8,15 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.AutoScaling")]
 #if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your Amazon EC2 capacity up or down automatically according to conditions you define.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
 #elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your Amazon EC2 capacity up or down automatically according to conditions you define.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
 #elif (WIN_RT && WINDOWS_PHONE)
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Portable)- Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your Amazon EC2 capacity up or down automatically according to conditions you define.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Portable)- Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
 #elif WIN_RT
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows RT) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your Amazon EC2 capacity up or down automatically according to conditions you define.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows RT) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
 #elif WINDOWS_PHONE
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows Phone 8)- Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your Amazon EC2 capacity up or down automatically according to conditions you define.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows Phone 8)- Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
@@ -48,5 +48,3 @@ using System.Runtime.CompilerServices;
 
 [assembly: System.CLSCompliant(true)]
 [assembly: System.Security.AllowPartiallyTrustedCallers]
-[assembly: InternalsVisibleTo("AWS.TraceListener,PublicKey=00240000048000009400000006020000002400005253413100040000010001006fe30670d8799591454f4143052b981d91d512647d0bff5a85c74bd9ce24413d9d91073cac76063f129c23c155e46433945d01a9d11d6d5207415b8a2a9cf2796507b677cceeca801c4824c3b27b2cfe9a6eaae4ea961013eb9a193159b9867fc9ecc03d650c07fd773e25c204b6c5aa546f736ccf391761c2a815ef175c3dc6")]
-[assembly: InternalsVisibleTo("AWS.SessionProvider,PublicKey=00240000048000009400000006020000002400005253413100040000010001006fe30670d8799591454f4143052b981d91d512647d0bff5a85c74bd9ce24413d9d91073cac76063f129c23c155e46433945d01a9d11d6d5207415b8a2a9cf2796507b677cceeca801c4824c3b27b2cfe9a6eaae4ea961013eb9a193159b9867fc9ecc03d650c07fd773e25c204b6c5aa546f736ccf391761c2a815ef175c3dc6")]

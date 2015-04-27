@@ -2,21 +2,21 @@
 <package> 
   <metadata> 
     <id>AWSSDK.CodeDeploy</id>
-    <title>The Amazon Web Services SDK for .NET - AWS CodeDeploy</title>
-    <version>3.0.0.0</version> 
+    <title>AWSSDK - AWS CodeDeploy</title>
+    <version>3.0.0.0-preview</version> 
     <authors>Amazon Web Services</authors>
-    <description>AWS CodeDeploy is a service that automates code deployments to Amazon EC2 instances. AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during deployment, and handles the complexity of updating your applications.</description> 
+    <description>AWS CodeDeploy is a service that automates code deployments. AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during deployment, and handles the complexity of updating your applications.</description> 
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
-    <projectUrl>http://aws.amazon.com/sdkfornet/</projectUrl>
-    <tags>AWS Amazon cloud</tags>
+    <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
+    <tags>AWS Amazon cloud CodeDeploy</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="windowsphone8">
         <dependency id="Microsoft.Net.Http" version="2.1.10" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="3.0" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.0-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 

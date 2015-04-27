@@ -2,21 +2,21 @@
 <package> 
   <metadata> 
     <id>AWSSDK.ElastiCache</id>
-    <title>The Amazon Web Services SDK for .NET - Amazon ElastiCache</title>
-    <version>3.0.0.0</version> 
+    <title>AWSSDK - Amazon ElastiCache</title>
+    <version>3.0.0.0-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>ElastiCache is a web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud. The service improves the performance of web applications by allowing you to retrieve information from fast, managed, in-memory caches, instead of relying entirely on slower disk-based databases.</description> 
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
-    <projectUrl>http://aws.amazon.com/sdkfornet/</projectUrl>
-    <tags>AWS Amazon cloud</tags>
+    <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
+    <tags>AWS Amazon cloud ElastiCache</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="windowsphone8">
         <dependency id="Microsoft.Net.Http" version="2.1.10" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="3.0" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.0-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 

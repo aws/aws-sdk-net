@@ -2,22 +2,22 @@
 <package> 
   <metadata> 
     <id>AWSSDK.CognitoSync</id>
-    <title>The Amazon Web Services SDK for .NET - Amazon Cognito Sync</title>
-    <version>3.0.0.0</version> 
+    <title>AWSSDK - Amazon Cognito Sync</title>
+    <version>3.0.0.0-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.</description> 
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
-    <projectUrl>http://aws.amazon.com/sdkfornet/</projectUrl>
-    <tags>AWS Amazon cloud</tags>
+    <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
+    <tags>AWS Amazon cloud CognitoSync</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="windowsphone8">
         <dependency id="Microsoft.Net.Http" version="2.1.10" />
       </group>
       <group>
-      <dependency id="AWSSDK.CognitoIdentity" version="3.0" />
-      <dependency id="AWSSDK.Core" version="3.0" />
+      <dependency id="AWSSDK.CognitoIdentity" version="[3.0.0.0-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.0-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 

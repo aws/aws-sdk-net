@@ -49,25 +49,27 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line default
             #line hidden
-            this.Write("</version> \r\n    <authors>Amazon Web Services</authors>\r\n    <description>");
+            this.Write("-preview</version> \r\n    <authors>Amazon Web Services</authors>\r\n    <description" +
+                    ">");
             
             #line 13 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyDescription"]));
             
             #line default
             #line hidden
-            this.Write(@"</description> 
-    <language>en-US</language>
-    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
-    <projectUrl>http://aws.amazon.com/sdkfornet/</projectUrl>
-    <tags>AWS Amazon cloud</tags>
-    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
-    <dependencies>
-      <group targetFramework=""windowsphone8"">
-        <dependency id=""Microsoft.Net.Http"" version=""2.1.10"" />
-      </group>
-      <group>
-");
+            this.Write("</description> \r\n    <language>en-US</language>\r\n    <licenseUrl>http://aws.amazo" +
+                    "n.com/apache2.0/</licenseUrl>    \r\n    <projectUrl>https://github.com/aws/aws-sd" +
+                    "k-net/tree/modularization/</projectUrl>\r\n    <tags>AWS Amazon cloud ");
+            
+            #line 17 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BaseName"]));
+            
+            #line default
+            #line hidden
+            this.Write("</tags>\r\n    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</ic" +
+                    "onUrl>\r\n    <dependencies>\r\n      <group targetFramework=\"windowsphone8\">\r\n     " +
+                    "   <dependency id=\"Microsoft.Net.Http\" version=\"2.1.10\" />\r\n      </group>\r\n    " +
+                    "  <group>\r\n");
             
             #line 24 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 

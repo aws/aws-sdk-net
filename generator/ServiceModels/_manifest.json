@@ -64,7 +64,7 @@
             "region-lookup-name": "autoscaling",
             "authentication-service-name": "autoscaling",
             "service-url": "https://autoscaling.us-east-1.amazonaws.com",
-            "synopsis": "Auto Scaling helps you maintain application availability and allows you to scale your Amazon EC2 capacity up or down automatically according to conditions you define."
+            "synopsis": "Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define."
         },
         {
             "active": true,
@@ -180,7 +180,7 @@
             "region-lookup-name": "codedeploy",
             "authentication-service-name": "codedeploy",
             "service-url": "http://codedeploy.us-east-1.amazonaws.com",
-            "synopsis": "AWS CodeDeploy is a service that automates code deployments to Amazon EC2 instances. AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during deployment, and handles the complexity of updating your applications."
+            "synopsis": "AWS CodeDeploy is a service that automates code deployments. AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during deployment, and handles the complexity of updating your applications."
         },
         {
             "active": true,
@@ -212,7 +212,7 @@
             "region-lookup-name": "datapipeline",
             "authentication-service-name": "datapipeline",
             "service-url": "https://datapipeline.us-east-1.amazonaws.com",
-            "synopsis": "AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services such as Amazon S3, Amazon RDS, Amazon DynamoDB and Amazon Redshift."
+            "synopsis": "AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services."
         },
         {
             "active": true,
@@ -284,7 +284,7 @@
             "region-lookup-name": "elasticloadbalancing",
             "authentication-service-name": "elasticloadbalancing",
             "service-url": "https://elasticloadbalancing.us-east-1.amazonaws.com",
-            "synopsis": "Elastic Load Balancing automatically distributes incoming application traffic across multiple Amazon EC2 instances in the cloud."
+            "synopsis": "Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud."
         },
         {
             "active": true,

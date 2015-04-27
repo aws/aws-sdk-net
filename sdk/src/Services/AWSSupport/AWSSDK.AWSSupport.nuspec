@@ -2,21 +2,21 @@
 <package> 
   <metadata> 
     <id>AWSSDK.AWSSupport</id>
-    <title>The Amazon Web Services SDK for .NET - AWS Support</title>
-    <version>3.0.0.0</version> 
+    <title>AWSSDK - AWS Support</title>
+    <version>3.0.0.0-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.</description> 
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
-    <projectUrl>http://aws.amazon.com/sdkfornet/</projectUrl>
-    <tags>AWS Amazon cloud</tags>
+    <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
+    <tags>AWS Amazon cloud AWSSupport</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="windowsphone8">
         <dependency id="Microsoft.Net.Http" version="2.1.10" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="3.0" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.0-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 

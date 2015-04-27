@@ -2,13 +2,13 @@
 <package> 
   <metadata> 
     <id>AWSSDK.Core</id>
-    <title>The Amazon Web Services SDK for .NET - Core Runtime</title>
-    <version>3.0</version> 
+    <title>AWSSDK - Core Runtime</title>
+    <version>3.0.0.0-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>The Amazon Web Services SDK for .NET - Core Runtime</description> 
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
-    <projectUrl>http://aws.amazon.com/sdkfornet/</projectUrl>
+    <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
     <tags>AWS Amazon cloud</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
@@ -21,18 +21,18 @@
   </metadata> 
   <files>
     <file src=".\bin\Release\net35\AWSSDK.Core.dll" target="lib\net35" />
-    <file src=".\bin\Release\net35\AWSSDK.Core.XML" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.Core.xml" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.Core.dll" target="lib\net45" />
-    <file src=".\bin\Release\net45\AWSSDK.Core.XML" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.Core.xml" target="lib\net45" />
     
     <file src=".\bin\Release\portable\AWSSDK.Core.dll" target="lib\portable-wpa+netcore45" />
-    <file src=".\bin\Release\portable\AWSSDK.Core.XML" target="lib\portable-wpa+netcore45" />
+    <file src=".\bin\Release\portable\AWSSDK.Core.xml" target="lib\portable-wpa+netcore45" />
 
     <file src=".\bin\Release\winrt\AWSSDK.Core.dll" target="lib\windows8" />
-    <file src=".\bin\Release\winrt\AWSSDK.Core.XML" target="lib\windows8" />
+    <file src=".\bin\Release\winrt\AWSSDK.Core.xml" target="lib\windows8" />
 
     <file src=".\bin\Release\wp8\AWSSDK.Core.dll" target="lib\windowsphone8" />
-    <file src=".\bin\Release\wp8\AWSSDK.Core.XML" target="lib\windowsphone8" />
+    <file src=".\bin\Release\wp8\AWSSDK.Core.xml" target="lib\windowsphone8" />
   </files>
 </package>
