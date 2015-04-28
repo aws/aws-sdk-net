@@ -81,15 +81,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SQS\AWSSDK.SQS.Portable.csproj">
-        <Project>{834BABCB-0C0A-449C-AFF8-E587E27BC476}</Project>
-        <Name>AWSSDK.SQS.Portable</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\SimpleNotificationService\AWSSDK.SimpleNotificationService.Portable.csproj">
         <Project>{8D142242-5162-4DE1-BBE6-7BB9D4567EE7}</Project>
         <Name>AWSSDK.SimpleNotificationService.Portable</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SQS\AWSSDK.SQS.Portable.csproj">
+        <Project>{834BABCB-0C0A-449C-AFF8-E587E27BC476}</Project>
+        <Name>AWSSDK.SQS.Portable</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -62,11 +62,7 @@ namespace ServiceClientGenerator
         /// </summary>
         public bool IsPlatformCodeFolder(string sourceFolder)
         {
-            var lastComponent = Path.GetFileName(sourceFolder);
-            if (lastComponent != null && lastComponent.StartsWith("_"))
-                return true;
-
-            return false;
+            return GetPlatformFolderName(sourceFolder) != null;
         }
 
         /// <summary>
@@ -77,17 +73,34 @@ namespace ServiceClientGenerator
         /// <returns></returns>
         public bool IsValidPlatformCodeFolderForProject(string sourceFolder)
         {
+            var platFormFolder = GetPlatformFolderName(sourceFolder);
+
             if (PlatformCodeFolders.Any())
             {
                 foreach (var pcf in PlatformCodeFolders)
                 {
-                    var pcfAsPath = @"\" + pcf;
-                    if (sourceFolder.EndsWith(pcfAsPath, StringComparison.OrdinalIgnoreCase))
+                    if (platFormFolder.Equals(pcf, StringComparison.OrdinalIgnoreCase))
                         return true;
                 }
             }
 
             return false;
+        }
+
+        private string GetPlatformFolderName(string folder)
+        {
+            var tokens = folder.Split('\\');
+            string platformFolder = null;
+            for (int i = tokens.Length - 1; i >= 0; i--)
+            {
+                if (tokens[i].StartsWith("_"))
+                {
+                    platformFolder = tokens[i];
+                    break;
+                }
+            }
+
+            return platformFolder;
         }
     }
 }

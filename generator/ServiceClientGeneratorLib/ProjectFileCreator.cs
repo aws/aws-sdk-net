@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Xml;
+using System.Xml.XPath;
 using ServiceClientGenerator.Generators.ProjectFiles;
 
 namespace ServiceClientGenerator
@@ -33,15 +35,28 @@ namespace ServiceClientGenerator
 
                 var assemblyName = "AWSSDK." + serviceConfiguration.Namespace.Split('.')[1];
                 var projectFilename = string.Concat(assemblyName, ".", projectType, ".csproj");
+                bool newProject = false;
+                string projectGuid;
                 if (File.Exists(Path.Combine(serviceFilesRoot, projectFilename)))
                 {
-                    Console.WriteLine("...project file {0} exists, skipping", projectFilename);
-                    continue;
+                    Console.WriteLine("...updating existing project file {0}", projectFilename);
+                    var xdoc = new XmlDocument();
+                    xdoc.Load(Path.Combine(serviceFilesRoot, projectFilename));
+                    var propertyGroups = xdoc.GetElementsByTagName("PropertyGroup");
+                    var element = ((XmlElement)propertyGroups[0]).GetElementsByTagName("ProjectGuid")[0];
+                    if(element == null)
+                    {
+                        throw new ApplicationException("Failed to find project guid for existing project: " + Path.Combine(serviceFilesRoot, projectFilename));
+                    }
+                    projectGuid = element.InnerText;
+                }
+                else
+                {
+                    newProject = true;
+                    projectGuid = NewProjectGuid;
+                    Console.WriteLine("...creating project file {0}", projectFilename);
                 }
 
-                Console.WriteLine("...creating project file {0}", projectFilename);
-
-                var projectGuid = NewProjectGuid;
 
                 var templateSession = new Dictionary<string, object>();
 
@@ -56,25 +71,29 @@ namespace ServiceClientGenerator
 
                 var projectConfigurationData = new ProjectConfigurationData { ProjectGuid = projectGuid };
                 var projectName = Path.GetFileNameWithoutExtension(projectFilename);
-                CreatedProjectFiles[projectName] = projectConfigurationData;
+
+                if(newProject)
+                    CreatedProjectFiles[projectName] = projectConfigurationData;
 
                 var coreRuntimeProject = string.Concat(@"..\..\Core\AWSSDK.Core.", projectType, ".csproj");
-                var projectReferences = new List<ProjectReference>
-                    {
-                        new ProjectReference
-                        {
-                            IncludePath = coreRuntimeProject,
-                            ProjectGuid = ProjectGuidFromFile(Path.Combine(serviceFilesRoot, coreRuntimeProject)),
-                            Name = "AWSSDK.Core." + projectType
-                        }
-                    };
+                var projectReferences = new List<ProjectReference>();
+
 
                 if (serviceConfiguration.ServiceDependencies != null)
                 {
                     foreach (var dependency in serviceConfiguration.ServiceDependencies)
                     {
-                        var dependencyProjectName = "AWSSDK." + dependency + "." + projectType;
-                        var dependencyProject = string.Concat(@"..\", dependency, "\\", dependencyProjectName, ".csproj");
+                        var dependencyProjectName = "AWSSDK." + dependency.Key + "." + projectType;
+                        string dependencyProject;
+                        if (string.Equals(dependency.Key, "Core", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            dependencyProject = string.Concat(@"..\..\", dependency.Key, "\\", dependencyProjectName, ".csproj");
+                        }
+                        else
+                        {
+                            dependencyProject = string.Concat(@"..\", dependency.Key, "\\", dependencyProjectName, ".csproj");
+                        }
+
                         projectReferences.Add(new ProjectReference
                         {
                             IncludePath = dependencyProject,
@@ -84,14 +103,15 @@ namespace ServiceClientGenerator
                     }
                 }
 
-                templateSession["ProjectReferences"] = projectReferences;
+
+                templateSession["ProjectReferences"] = projectReferences.OrderBy(x => x.Name).ToList();
 
                 if (serviceConfiguration.ModelName.Equals("s3", StringComparison.OrdinalIgnoreCase) && projectType == "Net45")
                 {
                     templateSession["SystemReferences"] = new List<string> { "System.Net.Http" };
                 }
 
-                GenerateProjectFile(projectFileConfiguration, templateSession, serviceFilesRoot, projectFilename);
+                GenerateProjectFile(projectFileConfiguration, projectConfigurationData, templateSession, serviceFilesRoot, projectFilename);
             }
         }
 
@@ -103,12 +123,12 @@ namespace ServiceClientGenerator
         /// <param name="serviceFilesRoot"></param>
         /// <param name="projectFilename"></param>
         private void GenerateProjectFile(ProjectFileConfiguration projectFileConfiguration, 
+                                         ProjectConfigurationData projectConfiguration,
                                          IDictionary<string, object> session, 
                                          string serviceFilesRoot, 
                                          string projectFilename)
         {
             var projectName = Path.GetFileNameWithoutExtension(projectFilename);
-            var projectConfiguration = CreatedProjectFiles[projectName];
 
             // have not found a reasonable way to be able to activate from a string typename and
             // cast back to actual generator type instance :-(. Was hoping to make this completely
@@ -173,7 +193,7 @@ namespace ServiceClientGenerator
             };
 
             var platformSubFolders = projectFileConfiguration.PlatformCodeFolders;
-            sourceCodeFolders.AddRange(platformSubFolders.Select(folder => Path.Combine(@"Generated\Model", folder)));
+            sourceCodeFolders.AddRange(platformSubFolders.Select(folder => Path.Combine(@"Generated", folder)));
 
             // Augment the returned folders with any custom subfolders already in existence. If the custom folder 
             // ends with a recognised platform, only add it to the set if it matches the platform being generated
@@ -186,8 +206,7 @@ namespace ServiceClientGenerator
                     {
                         var serviceRelativeFolder = folder.Substring(serviceRootFolder.Length);
 
-                        if (serviceRelativeFolder.StartsWith(@"\Generated", StringComparison.OrdinalIgnoreCase)
-                            || serviceRelativeFolder.StartsWith(@"\Properties", StringComparison.OrdinalIgnoreCase))
+                        if (!serviceRelativeFolder.StartsWith(@"\Custom", StringComparison.OrdinalIgnoreCase))
                             continue;
 
                         if (projectFileConfiguration.IsPlatformCodeFolder(serviceRelativeFolder))
@@ -201,9 +220,16 @@ namespace ServiceClientGenerator
                 }
             }
 
+            var foldersThatExist = new List<string>();
+            foreach (var folder in sourceCodeFolders)
+            {
+                if (Directory.Exists(Path.Combine(serviceRootFolder, folder)))
+                    foldersThatExist.Add(folder);
+            }
+
             // sort so we get a predictable layout
-            sourceCodeFolders.Sort(StringComparer.OrdinalIgnoreCase);
-            return sourceCodeFolders;
+            foldersThatExist.Sort(StringComparer.OrdinalIgnoreCase);
+            return foldersThatExist;
         }
 
         /// <summary>

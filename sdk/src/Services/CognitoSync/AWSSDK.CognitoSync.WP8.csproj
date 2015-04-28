@@ -121,15 +121,15 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\AWSSDK.Core.WP8.csproj">
-        <Project>{654E578E-9927-4A28-A51E-2679D2503F74}</Project>
-        <Name>AWSSDK.Core.WP8</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CognitoIdentity\AWSSDK.CognitoIdentity.WP8.csproj">
         <Project>{DCC2C358-CA3C-4B5E-AD98-CBD759CAA681}</Project>
         <Name>AWSSDK.CognitoIdentity.WP8</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\AWSSDK.Core.WP8.csproj">
+        <Project>{654E578E-9927-4A28-A51E-2679D2503F74}</Project>
+        <Name>AWSSDK.Core.WP8</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

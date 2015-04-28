@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -27,7 +27,7 @@
     <DefineConstants>DEBUG;TRACE;;WIN_RT;WINDOWS_PHONE;AWS_ASYNC_API;STORAGE_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <NoWarn>419,1591,1573,419</NoWarn>
+    <NoWarn>419,1591,1573</NoWarn>
     <DocumentationFile>bin\Debug\portable\AWSSDK.DynamoDBv2.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,7 +37,7 @@
     <DefineConstants>TRACE;;WIN_RT;WINDOWS_PHONE;AWS_ASYNC_API;STORAGE_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <NoWarn>419,1591,1573,419</NoWarn>
+    <NoWarn>419,1591,1573</NoWarn>
     <DocumentationFile>bin\Release\portable\AWSSDK.DynamoDBv2.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
@@ -91,8 +91,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AWSSDK.Core.Portable.csproj">
-      <Project>{A73B63F9-3B77-496E-84BF-8EDE50C0F89A}</Project>
-      <Name>AWSSDK.Core.Portable</Name>
+        <Project>{A73B63F9-3B77-496E-84BF-8EDE50C0F89A}</Project>
+        <Name>AWSSDK.Core.Portable</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

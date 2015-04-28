@@ -108,6 +108,9 @@
     <Compile Include="Generated\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Generated\_mobile\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

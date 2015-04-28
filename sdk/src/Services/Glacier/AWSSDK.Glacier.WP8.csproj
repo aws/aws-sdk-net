@@ -130,15 +130,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SQS\AWSSDK.SQS.WP8.csproj">
-        <Project>{CAC67313-DB2D-48B0-95D4-CBD2E5DCE6B1}</Project>
-        <Name>AWSSDK.SQS.WP8</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\SimpleNotificationService\AWSSDK.SimpleNotificationService.WP8.csproj">
         <Project>{169314BE-66F7-443D-98B6-BC9C3BB2EF7C}</Project>
         <Name>AWSSDK.SimpleNotificationService.WP8</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SQS\AWSSDK.SQS.WP8.csproj">
+        <Project>{CAC67313-DB2D-48B0-95D4-CBD2E5DCE6B1}</Project>
+        <Name>AWSSDK.SQS.WP8</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+    #line 1 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class RtProjectFile : RtProjectFileBase
     {
@@ -39,7 +39,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>");
             
-            #line 15 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 15 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ProjectGuid"]));
             
             #line default
@@ -47,14 +47,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("</ProjectGuid>\r\n    <OutputType>Library</OutputType>\r\n    <AppDesignerFolder>Prop" +
                     "erties</AppDesignerFolder>\r\n    <RootNamespace>");
             
-            #line 18 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 18 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["RootNamespace"]));
             
             #line default
             #line hidden
             this.Write("</RootNamespace>\r\n    <AssemblyName>");
             
-            #line 19 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 19 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -65,12 +65,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <BaseIntermediateOutputPath>obj\");
             
-            #line 23 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 23 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write(@"</BaseIntermediateOutputPath>
+    <SolutionDir Condition=""$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'"">..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition="" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' "">
     <DebugSymbols>true</DebugSymbols>
@@ -78,14 +80,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\");
             
-            #line 29 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 31 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 30 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 32 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -94,14 +96,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "arningLevel>\r\n    <NoWarn>419,1591,1573</NoWarn>\r\n    <DocumentationFile>bin\\Deb" +
                     "ug\\");
             
-            #line 34 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 36 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 34 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 36 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -110,14 +112,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "figuration)|$(Platform)\' == \'Release|AnyCPU\' \">\r\n    <DebugType>pdbonly</DebugTy" +
                     "pe>\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\Release\\");
             
-            #line 39 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 41 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>TRACE;");
             
-            #line 40 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 42 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -126,14 +128,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "arningLevel>\r\n    <NoWarn>419,1591,1573</NoWarn>\r\n    <DocumentationFile>bin\\Rel" +
                     "ease\\");
             
-            #line 44 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 46 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 44 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 46 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -142,14 +144,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "iguration)|$(Platform)\' == \'Debug|ARM\'\">\r\n    <DebugSymbols>true</DebugSymbols>\r" +
                     "\n    <OutputPath>bin\\ARM\\Debug\\");
             
-            #line 48 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 50 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 49 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 51 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -163,14 +165,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Prefer32Bit>true</Prefer32Bit>
     <DocumentationFile>bin\ARM\Debug\");
             
-            #line 56 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 58 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 56 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 58 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -178,14 +180,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write(".XML</DocumentationFile>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\"\'$(Conf" +
                     "iguration)|$(Platform)\' == \'Release|ARM\'\">\r\n    <OutputPath>bin\\ARM\\Release\\");
             
-            #line 59 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 61 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 60 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 62 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -200,14 +202,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Prefer32Bit>true</Prefer32Bit>
     <DocumentationFile>bin\ARM\Release\");
             
-            #line 68 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 70 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 68 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 70 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -216,14 +218,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "iguration)|$(Platform)\' == \'Debug|x64\'\">\r\n    <DebugSymbols>true</DebugSymbols>\r" +
                     "\n    <OutputPath>bin\\x64\\Debug\\");
             
-            #line 72 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 74 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 73 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 75 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -237,14 +239,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Prefer32Bit>true</Prefer32Bit>
     <DocumentationFile>bin\x64\Debug\");
             
-            #line 80 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 82 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 80 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 82 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -252,14 +254,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write(".XML</DocumentationFile>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\"\'$(Conf" +
                     "iguration)|$(Platform)\' == \'Release|x64\'\">\r\n    <OutputPath>bin\\x64\\Release\\");
             
-            #line 83 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 85 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 84 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 86 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -274,14 +276,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Prefer32Bit>true</Prefer32Bit>
     <DocumentationFile>bin\x64\Release\");
             
-            #line 92 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 94 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 92 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 94 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -290,14 +292,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "iguration)|$(Platform)\' == \'Debug|x86\'\">\r\n    <DebugSymbols>true</DebugSymbols>\r" +
                     "\n    <OutputPath>bin\\x86\\Debug\\");
             
-            #line 96 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 98 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 97 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 99 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -311,14 +313,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Prefer32Bit>true</Prefer32Bit>
     <DocumentationFile>bin\x86\Debug\");
             
-            #line 104 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 106 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 104 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 106 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -326,14 +328,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write(".XML</DocumentationFile>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\"\'$(Conf" +
                     "iguration)|$(Platform)\' == \'Release|x86\'\">\r\n    <OutputPath>bin\\x86\\Release\\");
             
-            #line 107 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 109 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 108 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 110 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -348,14 +350,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Prefer32Bit>true</Prefer32Bit>
     <DocumentationFile>bin\x86\Release\");
             
-            #line 116 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 118 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 116 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 118 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -372,7 +374,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
   <ItemGroup>
 ");
             
-            #line 126 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 128 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
 
     foreach(string subDirectory in ((IList<string>)this.Session["SourceDirectories"]))
     {
@@ -382,14 +384,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 130 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 132 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(subDirectory));
             
             #line default
             #line hidden
             this.Write("\\*.cs\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 133 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 135 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
 
     }
 
@@ -398,7 +400,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n  <ItemGroup>\r\n");
             
-            #line 138 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 140 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
 
     if(this.Session.ContainsKey("IndividualFileIncludes"))
     {
@@ -412,14 +414,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 146 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 148 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 149 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 151 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
 
             }
             else
@@ -430,14 +432,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <EmbeddedResource Include=\"");
             
-            #line 154 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 156 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Designer</SubType>\r\n    </EmbeddedResource>\r\n");
             
-            #line 157 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 159 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
 
             }
         }
@@ -448,7 +450,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n");
             
-            #line 163 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 165 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
 
     if(this.Session.ContainsKey("ProjectReferences"))
     {
@@ -460,28 +462,28 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n    <ProjectReference Include=\"");
             
-            #line 170 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 172 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.IncludePath));
             
             #line default
             #line hidden
             this.Write("\">\r\n        <Project>");
             
-            #line 171 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 173 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("</Project>\r\n        <Name>");
             
-            #line 172 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 174 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.Name));
             
             #line default
             #line hidden
             this.Write("</Name>\r\n    </ProjectReference>\r\n  </ItemGroup>\r\n");
             
-            #line 175 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 177 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
 
         }
     }
@@ -489,22 +491,26 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             
             #line default
             #line hidden
-            this.Write(@"  <ItemGroup>
-    <Compile Include=""Properties\AssemblyInfo.cs"" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include=""{508349B6-6B84-4DF5-91F0-309BEEBAD82D}"" />
-  </ItemGroup>
-  <Import Project=""$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets"" />
-  <Import Condition=""Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets')"" Project=""$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets"" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name=""BeforeBuild"">
-  </Target>
-  <Target Name=""AfterBuild"">
-  </Target>
-  -->
-</Project>");
+            this.Write("  <ItemGroup>\r\n    <Compile Include=\"Properties\\AssemblyInfo.cs\" />\r\n  </ItemGrou" +
+                    "p>\r\n  <ItemGroup>\r\n    <Service Include=\"{508349B6-6B84-4DF5-91F0-309BEEBAD82D}\"" +
+                    " />\r\n  </ItemGroup>\r\n  <Import Project=\"$(MSBuildExtensionsPath)\\Microsoft\\Windo" +
+                    "wsXaml\\v$(VisualStudioVersion)\\Microsoft.Windows.UI.Xaml.CSharp.targets\" />\r\n  <" +
+                    "Import Condition=\"Exists(\'$(MSBuildExtensionsPath)\\Microsoft\\VisualStudio\\TextTe" +
+                    "mplating\\v10.0\\Microsoft.TextTemplating.targets\')\" Project=\"$(MSBuildExtensionsP" +
+                    "ath)\\Microsoft\\VisualStudio\\TextTemplating\\v10.0\\Microsoft.TextTemplating.target" +
+                    "s\" />\r\n  <Import Project=\"$(SolutionDir)\\.nuget\\NuGet.targets\" Condition=\"Exists" +
+                    "(\'$(SolutionDir)\\.nuget\\NuGet.targets\')\" />\r\n  <Target Name=\"EnsureNuGetPackageB" +
+                    "uildImports\" BeforeTargets=\"PrepareForBuild\">\r\n    <PropertyGroup>\r\n      <Error" +
+                    "Text>This project references NuGet package(s) that are missing on this computer." +
+                    " Enable NuGet Package Restore to download them.  For more information, see http:" +
+                    "//go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>\r\n" +
+                    "    </PropertyGroup>\r\n    <Error Condition=\"!Exists(\'$(SolutionDir)\\.nuget\\NuGet" +
+                    ".targets\')\" Text=\"$([System.String]::Format(\'$(ErrorText)\', \'$(SolutionDir)\\.nug" +
+                    "et\\NuGet.targets\'))\" />\r\n  </Target>\r\n  <!-- To modify your build process, add y" +
+                    "our task inside one of the targets below and uncomment it. \r\n       Other simila" +
+                    "r extension points exist, see Microsoft.Common.targets.\r\n  <Target Name=\"BeforeB" +
+                    "uild\">\r\n  </Target>\r\n  <Target Name=\"AfterBuild\">\r\n  </Target>\r\n  -->\r\n</Project" +
+                    ">");
             return this.GenerationEnvironment.ToString();
         }
     }

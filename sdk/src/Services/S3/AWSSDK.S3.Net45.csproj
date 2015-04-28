@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -20,7 +20,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\net45</OutputPath>
-    <DefineConstants>DEBUG;TRACE;;BCL;BCL45;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;;BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\net45\AWSSDK.S3.XML</DocumentationFile>
@@ -29,7 +29,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\net45</OutputPath>
-    <DefineConstants>TRACE;;BCL;BCL45;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
+    <DefineConstants>TRACE;;BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\net45\AWSSDK.S3.XML</DocumentationFile>
@@ -48,16 +48,7 @@
     <Compile Include="Custom\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\Encryption\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Encryption\Internal\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Custom\Internal\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\IO\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\Model\*.cs">
@@ -105,6 +96,18 @@
     <Compile Include="Custom\Util\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl\Encryption\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl\Encryption\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl\IO\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Generated\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -116,8 +119,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AWSSDK.Core.Net45.csproj">
-      <Project>{25ED6BD4-A32A-4EAA-ACBF-AB4FCD343E8E}</Project>
-      <Name>AWSSDK.Core.Net45</Name>
+        <Project>{25ED6BD4-A32A-4EAA-ACBF-AB4FCD343E8E}</Project>
+        <Name>AWSSDK.Core.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

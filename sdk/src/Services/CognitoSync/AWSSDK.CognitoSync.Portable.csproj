@@ -72,15 +72,15 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\AWSSDK.Core.Portable.csproj">
-        <Project>{A73B63F9-3B77-496E-84BF-8EDE50C0F89A}</Project>
-        <Name>AWSSDK.Core.Portable</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CognitoIdentity\AWSSDK.CognitoIdentity.Portable.csproj">
         <Project>{E3A86A1F-0176-4282-A020-7405D7FFF1E1}</Project>
         <Name>AWSSDK.CognitoIdentity.Portable</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\AWSSDK.Core.Portable.csproj">
+        <Project>{A73B63F9-3B77-496E-84BF-8EDE50C0F89A}</Project>
+        <Name>AWSSDK.Core.Portable</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
