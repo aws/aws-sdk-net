@@ -102,38 +102,40 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line default
             #line hidden
-            this.Write("      </group>\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n    <file src=\".\\" +
-                    "bin\\Release\\net35\\");
-            
-            #line 36 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
-            
-            #line default
-            #line hidden
-            this.Write(".dll\" target=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\");
-            
-            #line 37 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
-            
-            #line default
-            #line hidden
-            this.Write(".xml\" target=\"lib\\net35\" />\r\n\r\n    <file src=\".\\bin\\Release\\net45\\");
-            
-            #line 39 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
-            
-            #line default
-            #line hidden
-            this.Write(".dll\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\");
+            this.Write("      </group>\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n\r\n    <file src=\"" +
+                    "..\\..\\..\\nuget-content\\install.ps1\" target=\"tools\\net35\" />\r\n    <file src=\"..\\." +
+                    ".\\..\\nuget-content\\install.ps1\" target=\"tools\\net45\" />\r\n\r\n    <file src=\".\\bin\\" +
+                    "Release\\net35\\");
             
             #line 40 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
+            this.Write(".dll\" target=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\");
+            
+            #line 41 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
+            
+            #line default
+            #line hidden
+            this.Write(".xml\" target=\"lib\\net35\" />\r\n\r\n    <file src=\".\\bin\\Release\\net45\\");
+            
+            #line 43 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
+            
+            #line default
+            #line hidden
+            this.Write(".dll\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\");
+            
+            #line 44 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
+            
+            #line default
+            #line hidden
             this.Write(".xml\" target=\"lib\\net45\" />\r\n\t\r\n\t<file src=\".\\bin\\Release\\portable\\");
             
-            #line 42 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 46 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -141,7 +143,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write(".dll\" target=\"lib\\portable-wpa+netcore45\" />\r\n\t<file src=\".\\bin\\Release\\portable\\" +
                     "");
             
-            #line 43 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 47 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -149,28 +151,28 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write(".xml\" target=\"lib\\portable-wpa+netcore45\" />\r\n\r\n    <file src=\".\\bin\\Release\\winr" +
                     "t\\");
             
-            #line 45 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 49 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".dll\" target=\"lib\\windows8\" />\r\n    <file src=\".\\bin\\Release\\winrt\\");
             
-            #line 46 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 50 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".xml\" target=\"lib\\windows8\" />\r\n\r\n    <file src=\".\\bin\\Release\\wp8\\");
             
-            #line 48 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 52 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".dll\" target=\"lib\\windowsphone8\" />\r\n    <file src=\".\\bin\\Release\\wp8\\");
             
-            #line 49 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 53 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default

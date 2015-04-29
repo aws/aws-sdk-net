@@ -21,6 +21,10 @@
     </dependencies>
   </metadata> 
   <files>
+
+    <file src="..\..\..\nuget-content\install.ps1" target="tools\net35" />
+    <file src="..\..\..\nuget-content\install.ps1" target="tools\net45" />
+
     <file src=".\bin\Release\net35\AWSSDK.CodeDeploy.dll" target="lib\net35" />
     <file src=".\bin\Release\net35\AWSSDK.CodeDeploy.xml" target="lib\net35" />
 
