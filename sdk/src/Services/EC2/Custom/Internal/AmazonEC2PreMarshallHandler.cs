@@ -93,7 +93,7 @@ namespace Amazon.EC2.Internal
         {
             var request = executionContext.RequestContext.OriginalRequest;
             var config = executionContext.RequestContext.ClientConfig;
-
+            
             var runInstancesRequest = request as RunInstancesRequest;
             if (runInstancesRequest != null)
             {
@@ -114,6 +114,23 @@ namespace Amazon.EC2.Internal
                 }
             }
 
+            // replace null Tag.Value with empty string
+            var createTagsRequest = request as CreateTagsRequest;
+            if (createTagsRequest != null)
+            {
+                if (createTagsRequest.IsSetTags())
+                {
+                    var tags = createTagsRequest.Tags;
+                    foreach (var tag in tags)
+                    {
+                        if (tag != null && tag.Value == null)
+                        {
+                            tag.Value = string.Empty;
+                        }
+                    }
+                }
+            }
+            
             var copySnapshotRequest = request as CopySnapshotRequest;
             if (copySnapshotRequest != null)
             {
