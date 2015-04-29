@@ -304,7 +304,7 @@
             "region-lookup-name": "elastictranscoder",
             "authentication-service-name": "elastictranscoder",
             "service-url": "https://elastictranscoder.us-east-1.amazonaws.com",
-            "synopsis": "Amazon Elastic Transcoder is media transcoding in the cloud. It is designed to be a highly scalable, easy to use and a cost effective way for developers and businesses to convert (or “transcode”) media files from their source format into versions that will playback on devices like smartphones, tablets and PCs."
+            "synopsis": "Amazon Elastic Transcoder is media transcoding in the cloud. It is designed to be a highly scalable, easy to use and a cost effective way for developers and businesses to convert (or \"transcode\") media files from their source format into versions that will playback on devices like smartphones, tablets and PCs."
         },
         {
             "active": true,
@@ -384,7 +384,7 @@
             "region-lookup-name": "opsworks",
             "authentication-service-name": "opsworks",
             "service-url": "https://opsworks.us-east-1.amazonaws.com/",
-            "synopsis": "AWS OpsWorks is an application management service that makes it easy to deploy and operate applications of all shapes and sizes. You can define the application’s architecture and the specification of each component including package installation, software configuration and resources such as storage."
+            "synopsis": "AWS OpsWorks is an application management service that makes it easy to deploy and operate applications of all shapes and sizes. You can define the application's architecture and the specification of each component including package installation, software configuration and resources such as storage."
         },
         {
             "active": true,
@@ -507,7 +507,7 @@
             "base-name": "StorageGateway",
             "region-lookup-name": "storagegateway",
             "service-url": "https://storagegateway.us-east-1.amazonaws.com",
-            "synopsis": "The AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization’s on-premises IT environment and AWS’s storage infrastructure."
+            "synopsis": "The AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure."
         },
 		{
 			"active" : true,
