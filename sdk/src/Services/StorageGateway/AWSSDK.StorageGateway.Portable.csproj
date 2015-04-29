@@ -40,6 +40,21 @@
     <NoWarn>419,1591,1573</NoWarn>
     <DocumentationFile>bin\Release\portable\AWSSDK.StorageGateway.XML</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <Choose>
+    <When Condition=" '$(AWSKeyFile)' == '' ">
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
     <TargetPlatform Include="Windows Phone, Version=8.1" />

@@ -1,4 +1,38 @@
-﻿Function Copy-SDKAssemblies
+﻿# Script parameters
+Param(
+    [string]
+    $PublicKeyTokenToCheck
+)
+
+# Functions
+
+Function Get-PublicKeyToken
+{
+    [CmdletBinding()]
+    Param(
+        # The assembly in question
+        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true, Position=0)]
+        [string]
+        $AssemblyPath
+    )
+    $token = $null
+    $token = [System.Reflection.Assembly]::LoadFrom($AssemblyPath).GetName().GetPublicKeyToken()
+    if ( $token )
+    {
+        $key = ""
+        foreach($b in $token)
+        {
+            $key += "{0:x2}" -f $b
+        }
+        return $key
+    }
+    else
+    {
+        Write-Error "NO TOKEN!!"
+    }
+}
+
+Function Copy-SDKAssemblies
 {
     [CmdletBinding()]
     Param
@@ -21,7 +55,12 @@
         # The platforms to copy. Defaults to all if not specified.
         [Parameter()]
         [string[]]
-        $Platforms = @("net35","net45","portable","winrt","wp8")
+        $Platforms = @("net35","net45","portable","winrt","wp8"),
+        
+        # The public key token that all assemblies should have. Optional.
+        [Parameter()]
+        [string]
+        $PublicKeyToken = ""
     )
 
     Process
@@ -45,11 +84,23 @@
             }
                         
             $filter = "bin\$BuildType\$p\AWSSDK.$servicename.*"
-            $assemblies = gci -Path $dir.FullName -Filter $filter
+            $files = gci -Path $dir.FullName -Filter $filter
 
-            foreach ($a in $assemblies)
+            foreach ($a in $files)
             {
                 $assemblyName = $a.Name
+                $assemblyExtension = [System.IO.Path]::GetExtension($assemblyName).ToLower()
+                if ($assemblyExtension -eq ".dll")
+                {
+                    $aToken = Get-PublicKeyToken -AssemblyPath $a.FullName
+                    Write-Debug "File $assemblyName has token = $aToken"
+                    if ($PublicKeyToken -ne $aToken)
+                    {
+                        $message = "File = {0}, Token = {1}, does not match Expected Token = {2}" -f $a.FullName, $aToken, $PublicKeyToken
+                        Write-Error $message
+                        return
+                    }
+                }
                 Write-Verbose "Copying $assemblyName..."
                 Copy-Item $a.FullName $platformDestination
             }
@@ -57,15 +108,15 @@
     }
 }
 
-Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\sdk\assemblies
+#Script code
+
+Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\sdk\assemblies -PublicKeyToken $PublicKeyTokenToCheck
 
 $services = gci ..\sdk\src\services
 foreach ($s in $services)
 {
-    Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\sdk\assemblies
+    Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\sdk\assemblies -PublicKeyToken $PublicKeyTokenToCheck
 }
 
 Write-Verbose "Copying assembly versions manifest..."
 Copy-Item ..\generator\ServiceModels\_sdk-versions.json ..\Deployment\sdk\assemblies\_sdk-versions.json
-
-

@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+    #line 1 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class PhoneProjectFile : PhoneProjectFileBase
     {
@@ -38,7 +38,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>");
             
-            #line 14 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 14 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ProjectGuid"]));
             
             #line default
@@ -48,14 +48,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "OutputType>\r\n    <AppDesignerFolder>Properties</AppDesignerFolder>\r\n    <RootNam" +
                     "espace>");
             
-            #line 18 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 18 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["RootNamespace"]));
             
             #line default
             #line hidden
             this.Write("</RootNamespace>\r\n    <AssemblyName>");
             
-            #line 19 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 19 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -72,7 +72,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <RestorePackages>true</RestorePackages>
     <BaseIntermediateOutputPath>obj\");
             
-            #line 29 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 29 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
@@ -85,14 +85,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\");
             
-            #line 35 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 35 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 36 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 36 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -101,14 +101,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n    " +
                     "<NoWarn>419,1591,1573</NoWarn>\r\n    <DocumentationFile>bin\\Debug\\");
             
-            #line 42 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 42 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 42 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 42 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -117,14 +117,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "figuration)|$(Platform)\' == \'Release|AnyCPU\' \">\r\n    <DebugType>pdbonly</DebugTy" +
                     "pe>\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\Release\\");
             
-            #line 47 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 47 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>TRACE;");
             
-            #line 48 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 48 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -133,14 +133,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n    " +
                     "<NoWarn>419,1591,1573</NoWarn>\r\n    <DocumentationFile>bin\\Release\\");
             
-            #line 54 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 54 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 54 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 54 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -153,14 +153,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Optimize>false</Optimize>
     <OutputPath>bin\x86\Debug\");
             
-            #line 60 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 60 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>TRACE;");
             
-            #line 61 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 61 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -169,14 +169,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n    " +
                     "<NoWarn>419,1591</NoWarn>\r\n    <DocumentationFile>bin\\x86\\Debug\\");
             
-            #line 67 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 67 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 67 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 67 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -185,14 +185,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "figuration)|$(Platform)\' == \'Release|x86\' \">\r\n    <DebugType>pdbonly</DebugType>" +
                     "\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\x86\\Release\\");
             
-            #line 72 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 72 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>TRACE;");
             
-            #line 73 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 73 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -201,14 +201,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n    " +
                     "<NoWarn>419,1591</NoWarn>\r\n    <DocumentationFile>bin\\x86\\Release\\");
             
-            #line 79 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 79 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 79 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 79 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -221,14 +221,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Optimize>false</Optimize>
     <OutputPath>bin\ARM\Debug\");
             
-            #line 85 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 85 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>TRACE;");
             
-            #line 86 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 86 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -237,14 +237,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n    " +
                     "<DocumentationFile>bin\\ARM\\Debug\\");
             
-            #line 91 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 91 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 91 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 91 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -253,14 +253,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "figuration)|$(Platform)\' == \'Release|ARM\' \">\r\n    <DebugType>pdbonly</DebugType>" +
                     "\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\ARM\\Release\\");
             
-            #line 96 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 96 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>TRACE;");
             
-            #line 97 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 97 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -269,21 +269,39 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n    " +
                     "<DocumentationFile>bin\\ARM\\Release\\");
             
-            #line 102 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 102 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 102 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 102 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".XML</DocumentationFile>\r\n  </PropertyGroup>\r\n  <ItemGroup>\r\n");
+            this.Write(@".XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="" '$(AWSKeyFile)' == '' "">
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+");
             
-            #line 105 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 120 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
 
     foreach(string subDirectory in ((IList<string>)this.Session["SourceDirectories"]))
     {
@@ -293,14 +311,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 109 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 124 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(subDirectory));
             
             #line default
             #line hidden
             this.Write("\\*.cs\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 112 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 127 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
 
     }
 
@@ -309,7 +327,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n  <ItemGroup>\r\n");
             
-            #line 117 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 132 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
 
     if(this.Session.ContainsKey("IndividualFileIncludes"))
     {
@@ -323,14 +341,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 125 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 140 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 128 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 143 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
 
             }
             else
@@ -341,14 +359,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <EmbeddedResource Include=\"");
             
-            #line 133 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 148 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Designer</SubType>\r\n    </EmbeddedResource>\r\n");
             
-            #line 136 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 151 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
 
             }
         }
@@ -359,7 +377,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n");
             
-            #line 142 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 157 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
 
     if(this.Session.ContainsKey("ProjectReferences"))
     {
@@ -371,28 +389,28 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n    <ProjectReference Include=\"");
             
-            #line 149 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 164 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.IncludePath));
             
             #line default
             #line hidden
             this.Write("\">\r\n        <Project>");
             
-            #line 150 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 165 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("</Project>\r\n        <Name>");
             
-            #line 151 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 166 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.Name));
             
             #line default
             #line hidden
             this.Write("</Name>\r\n    </ProjectReference>\r\n  </ItemGroup>\r\n");
             
-            #line 154 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 169 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
 
         }
     }
@@ -415,7 +433,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
       <SpecificVersion>False</SpecificVersion>
       <HintPath>");
             
-            #line 171 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 186 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -426,7 +444,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
       <SpecificVersion>False</SpecificVersion>
       <HintPath>");
             
-            #line 175 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 190 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -437,7 +455,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
       <SpecificVersion>False</SpecificVersion>
       <HintPath>");
             
-            #line 179 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 194 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -451,7 +469,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
   <Import Project=""$(SolutionDir)\.nuget\NuGet.targets"" Condition=""Exists('$(SolutionDir)\.nuget\NuGet.targets')"" />
   <Import Project=""");
             
-            #line 186 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 201 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -459,7 +477,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("Microsoft.Bcl.Build.1.0.10\\tools\\Microsoft.Bcl.Build.targets\" Condition=\"Exists(\'" +
                     "");
             
-            #line 186 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 201 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -468,7 +486,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "e=\"EnsureBclBuildImported\" BeforeTargets=\"BeforeBuild\" Condition=\"\'$(BclBuildImp" +
                     "orted)\' == \'\'\">\r\n    <Error Condition=\"!Exists(\'");
             
-            #line 188 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 203 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -476,7 +494,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write(@"Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')"" Text=""This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567."" HelpKeyword=""BCLBUILD2001"" />
     <Error Condition=""Exists('");
             
-            #line 189 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 204 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -485,7 +503,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
   </Target>
   <Import Project=""");
             
-            #line 191 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 206 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -493,7 +511,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("Microsoft.Bcl.Build.1.0.14\\tools\\Microsoft.Bcl.Build.targets\" Condition=\"Exists(\'" +
                     "");
             
-            #line 191 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 206 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -502,7 +520,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "e=\"EnsureBclBuildImported\" BeforeTargets=\"BeforeBuild\" Condition=\"\'$(BclBuildImp" +
                     "orted)\' == \'\'\">\r\n    <Error Condition=\"!Exists(\'");
             
-            #line 193 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 208 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -510,7 +528,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write(@"Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')"" Text=""This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567."" HelpKeyword=""BCLBUILD2001"" />
     <Error Condition=""Exists('");
             
-            #line 194 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
+            #line 209 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PhoneProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default

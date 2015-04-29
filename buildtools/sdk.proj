@@ -17,10 +17,12 @@
 		<Message Text="Restore nuget packages"/>
 		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.sln"/>
 	</Target>
-	
+
 	<Target Name="build-sdk" DependsOnTargets="restore-nuget;run-generator">
 		<Message Text="Compile the SDK"/>
+		<SetEnvironmentVariable VariableName="AWSKeyFile" VariableValue="$(CustomSnkFileLocation)" />
 		<Exec Command="$(devenv2013) /Rebuild Release ..\sdk\AWSSDK.sln"/>
+		<SetEnvironmentVariable VariableName="AWSKeyFile" VariableValue="" />
 		
 		<Copy
 			SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
@@ -52,8 +54,11 @@
 
 	<Target Name="copy-assemblies" DependsOnTargets="nuget-pack">
         <Message Text="Collating assemblies for downstream doc generation" />
+		<PropertyGroup>
+			<CustomSnkPublicKeyToken Condition="'$(CustomSnkPublicKeyToken)' == '' ">71c852f8be1c371d</CustomSnkPublicKeyToken>
+		</PropertyGroup>
 		<Exec ContinueOnError="ErrorAndStop" 
-              Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File copy-sdkassemblies.ps1" />		
+              Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File copy-sdkassemblies.ps1 -PublicKeyTokenToCheck $(CustomSnkPublicKeyToken)" />		
 	</Target>
 	
 	<!-- TEST TARGETS/TASKS -->
@@ -98,6 +103,21 @@
 					string content = File.ReadAllText(ResultFile);
 					content = content.Replace("<?xml version=\"1.0\" encoding=\"UTF-8\"?>","<?xml version=\"1.0\" encoding=\"UTF-8\"?><?xml-stylesheet type=\"text/xsl\" href=\"trx-transform.xsl\"?>");
 					File.WriteAllText(ResultFile + ".xml", content);
+				]]>
+			</Code>
+		</Task>
+	</UsingTask>
+	
+	<UsingTask TaskName="SetEnvironmentVariable" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+		<ParameterGroup>
+			<VariableName ParameterType="System.String" Required="true" />
+			<VariableValue ParameterType="System.String" Required="false" />
+		</ParameterGroup>
+		<Task>
+			<Code Type="Fragment" Language="cs">
+				<![CDATA[
+					Log.LogMessage("Setting variable {0} = {1}", VariableName, VariableValue);
+					System.Environment.SetEnvironmentVariable(VariableName, VariableValue);
 				]]>
 			</Code>
 		</Task>

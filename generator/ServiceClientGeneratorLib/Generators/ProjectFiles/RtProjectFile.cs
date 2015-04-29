@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+    #line 1 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class RtProjectFile : RtProjectFileBase
     {
@@ -39,7 +39,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>");
             
-            #line 15 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 15 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ProjectGuid"]));
             
             #line default
@@ -47,14 +47,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("</ProjectGuid>\r\n    <OutputType>Library</OutputType>\r\n    <AppDesignerFolder>Prop" +
                     "erties</AppDesignerFolder>\r\n    <RootNamespace>");
             
-            #line 18 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 18 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["RootNamespace"]));
             
             #line default
             #line hidden
             this.Write("</RootNamespace>\r\n    <AssemblyName>");
             
-            #line 19 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 19 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -65,7 +65,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <BaseIntermediateOutputPath>obj\");
             
-            #line 23 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 23 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
@@ -80,14 +80,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\");
             
-            #line 31 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 31 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 32 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 32 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -96,14 +96,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "arningLevel>\r\n    <NoWarn>419,1591,1573</NoWarn>\r\n    <DocumentationFile>bin\\Deb" +
                     "ug\\");
             
-            #line 36 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 36 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 36 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 36 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -112,14 +112,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "figuration)|$(Platform)\' == \'Release|AnyCPU\' \">\r\n    <DebugType>pdbonly</DebugTy" +
                     "pe>\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\Release\\");
             
-            #line 41 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 41 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>TRACE;");
             
-            #line 42 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 42 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -128,14 +128,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "arningLevel>\r\n    <NoWarn>419,1591,1573</NoWarn>\r\n    <DocumentationFile>bin\\Rel" +
                     "ease\\");
             
-            #line 46 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 46 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 46 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 46 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -144,14 +144,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "iguration)|$(Platform)\' == \'Debug|ARM\'\">\r\n    <DebugSymbols>true</DebugSymbols>\r" +
                     "\n    <OutputPath>bin\\ARM\\Debug\\");
             
-            #line 50 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 50 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 51 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 51 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -165,14 +165,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Prefer32Bit>true</Prefer32Bit>
     <DocumentationFile>bin\ARM\Debug\");
             
-            #line 58 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 58 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 58 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 58 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -180,14 +180,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write(".XML</DocumentationFile>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\"\'$(Conf" +
                     "iguration)|$(Platform)\' == \'Release|ARM\'\">\r\n    <OutputPath>bin\\ARM\\Release\\");
             
-            #line 61 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 61 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 62 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 62 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -202,14 +202,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Prefer32Bit>true</Prefer32Bit>
     <DocumentationFile>bin\ARM\Release\");
             
-            #line 70 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 70 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 70 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 70 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -218,14 +218,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "iguration)|$(Platform)\' == \'Debug|x64\'\">\r\n    <DebugSymbols>true</DebugSymbols>\r" +
                     "\n    <OutputPath>bin\\x64\\Debug\\");
             
-            #line 74 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 74 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 75 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 75 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -239,14 +239,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Prefer32Bit>true</Prefer32Bit>
     <DocumentationFile>bin\x64\Debug\");
             
-            #line 82 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 82 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 82 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 82 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -254,14 +254,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write(".XML</DocumentationFile>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\"\'$(Conf" +
                     "iguration)|$(Platform)\' == \'Release|x64\'\">\r\n    <OutputPath>bin\\x64\\Release\\");
             
-            #line 85 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 85 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 86 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 86 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -276,14 +276,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Prefer32Bit>true</Prefer32Bit>
     <DocumentationFile>bin\x64\Release\");
             
-            #line 94 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 94 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 94 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 94 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -292,14 +292,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "iguration)|$(Platform)\' == \'Debug|x86\'\">\r\n    <DebugSymbols>true</DebugSymbols>\r" +
                     "\n    <OutputPath>bin\\x86\\Debug\\");
             
-            #line 98 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 98 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 99 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 99 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -313,14 +313,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Prefer32Bit>true</Prefer32Bit>
     <DocumentationFile>bin\x86\Debug\");
             
-            #line 106 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 106 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 106 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 106 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -328,14 +328,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write(".XML</DocumentationFile>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\"\'$(Conf" +
                     "iguration)|$(Platform)\' == \'Release|x86\'\">\r\n    <OutputPath>bin\\x86\\Release\\");
             
-            #line 109 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 109 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 110 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 110 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -350,20 +350,35 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Prefer32Bit>true</Prefer32Bit>
     <DocumentationFile>bin\x86\Release\");
             
-            #line 118 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 118 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 118 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 118 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(@".XML</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="" '$(AWSKeyFile)' == '' "">
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
   <ItemGroup>
     <Reference Include=""System"" />
     <Reference Include=""System.Configuration"" />
@@ -374,7 +389,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
   <ItemGroup>
 ");
             
-            #line 128 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 143 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
 
     foreach(string subDirectory in ((IList<string>)this.Session["SourceDirectories"]))
     {
@@ -384,14 +399,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 132 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 147 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(subDirectory));
             
             #line default
             #line hidden
             this.Write("\\*.cs\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 135 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 150 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
 
     }
 
@@ -400,7 +415,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n  <ItemGroup>\r\n");
             
-            #line 140 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 155 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
 
     if(this.Session.ContainsKey("IndividualFileIncludes"))
     {
@@ -414,14 +429,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 148 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 163 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 151 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 166 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
 
             }
             else
@@ -432,14 +447,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <EmbeddedResource Include=\"");
             
-            #line 156 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 171 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Designer</SubType>\r\n    </EmbeddedResource>\r\n");
             
-            #line 159 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 174 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
 
             }
         }
@@ -450,7 +465,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n");
             
-            #line 165 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 180 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
 
     if(this.Session.ContainsKey("ProjectReferences"))
     {
@@ -462,28 +477,28 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n    <ProjectReference Include=\"");
             
-            #line 172 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 187 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.IncludePath));
             
             #line default
             #line hidden
             this.Write("\">\r\n        <Project>");
             
-            #line 173 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 188 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("</Project>\r\n        <Name>");
             
-            #line 174 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 189 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.Name));
             
             #line default
             #line hidden
             this.Write("</Name>\r\n    </ProjectReference>\r\n  </ItemGroup>\r\n");
             
-            #line 177 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
+            #line 192 "C:\code\dotnet\v3\snk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\RtProjectFile.tt"
 
         }
     }
