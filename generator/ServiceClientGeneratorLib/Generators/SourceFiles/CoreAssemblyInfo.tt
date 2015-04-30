@@ -52,8 +52,15 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("<#=this.Session["Version"]#>")]
 [assembly: AssemblyFileVersion("<#=this.Session["FileVersion"] #>")]
 
+#if WINDOWS_PHONE
+[assembly: System.CLSCompliant(false)]
+# else
 [assembly: System.CLSCompliant(true)]
+#endif
+
+#if BCL
 [assembly: System.Security.AllowPartiallyTrustedCallers]
+#endif
 
 #if BCL45
 // Setting SecurityRules to level 1 to match .NET 2.0 rules and allow the

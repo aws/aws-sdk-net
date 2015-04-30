@@ -52,5 +52,12 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("<#=this.Config.ServiceVersion #>")]
 [assembly: AssemblyFileVersion("<#=this.Config.ServiceFileVersion #>")]
 
+#if WINDOWS_PHONE
+[assembly: System.CLSCompliant(false)]
+# else
 [assembly: System.CLSCompliant(true)]
+#endif
+
+#if BCL
 [assembly: System.Security.AllowPartiallyTrustedCallers]
+#endif
