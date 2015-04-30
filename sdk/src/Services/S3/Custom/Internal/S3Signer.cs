@@ -63,7 +63,7 @@ namespace Amazon.S3.Internal
                 SignRequest(request, metrics, awsAccessKeyId, awsSecretAccessKey);
         }
 
-        internal void SignRequest(IRequest request, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
+        internal static void SignRequest(IRequest request, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
             request.Headers[HeaderKeys.XAmzDateHeader] = AWSSDKUtils.FormattedCurrentTimestampRFC822;
 

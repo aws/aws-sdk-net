@@ -58,7 +58,7 @@ namespace Amazon.Glacier.Internal
         /// Custom pipeline handler
         /// </summary>
         /// <param name="executionContext"></param>
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;
             if (request.ResourcePath != null)

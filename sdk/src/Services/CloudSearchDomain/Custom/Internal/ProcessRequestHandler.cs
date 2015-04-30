@@ -64,7 +64,7 @@ namespace Amazon.CloudSearchDomain.Internal
         /// Custom pipeline handler.
         /// </summary>
         /// <param name="executionContext"></param>
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             var uploadDocumentsRequest = executionContext.RequestContext.OriginalRequest as UploadDocumentsRequest;
             if (uploadDocumentsRequest != null)

@@ -19,13 +19,14 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Security.Cryptography;
 
 using Amazon.Runtime;
-using System.Globalization;
+using ThirdParty.MD5;
 
 namespace Amazon.Util
 {
@@ -77,13 +78,13 @@ namespace Amazon.Util
 
             public byte[] ComputeMD5Hash(byte[] data)
             {
-                byte[] hashed = MD5.Create().ComputeHash(data);
+                var hashed = new MD5Managed().ComputeHash(data);
                 return hashed;
             }
 
             public byte[] ComputeMD5Hash(Stream steam)
-            {                
-                byte[] hashed = MD5.Create().ComputeHash(steam);
+            {
+                var hashed = new MD5Managed().ComputeHash(steam);
                 return hashed;
             }
 

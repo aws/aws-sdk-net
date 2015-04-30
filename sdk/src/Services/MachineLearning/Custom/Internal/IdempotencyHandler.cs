@@ -75,7 +75,7 @@ namespace Amazon.MachineLearning.Internal
         /// Custom pipeline handler
         /// </summary>
         /// <param name="executionContext"></param>
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             if (executionContext.RequestContext.OriginalRequest is CreateBatchPredictionRequest)
             {

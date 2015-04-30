@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+
+using Amazon.Runtime;
 using Amazon.Util;
 
 using ThirdParty.Json.LitJson;
@@ -13,6 +16,7 @@ using ThirdParty.Json.LitJson;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using ThirdParty.BouncyCastle.OpenSsl;
+using Amazon.Runtime;
 #endif
 
 
@@ -236,7 +240,7 @@ namespace Amazon.SimpleNotificationService.Util
         private static string ValidateCertUrl(string certUrl)
         {
             var uri = new Uri(certUrl);
-            if (uri.Scheme == "https" && certUrl.EndsWith(".pem"))
+            if (uri.Scheme == "https" && certUrl.EndsWith(".pem", StringComparison.Ordinal))
             {
                 const string pattern = @"^sns\.[a-zA-Z0-9\-]{3,}\.amazonaws\.com(\.cn)?$";
                 var regex = new Regex(pattern);
@@ -244,7 +248,7 @@ namespace Amazon.SimpleNotificationService.Util
                     return certUrl;
             }
 
-            throw new Exception("Signing certificate url is not from a recognised source.");
+            throw new AmazonClientException("Signing certificate url is not from a recognised source.");
         }
 
 #if BCL
@@ -273,7 +277,7 @@ namespace Amazon.SimpleNotificationService.Util
             else if (this.IsSubscriptionType || this.IsUnsubscriptionType)
                 stringToSign = BuildSubscriptionStringToSign();
             else
-                throw new Exception("Unknown message type: " + this.Type);
+                throw new AmazonClientException("Unknown message type: " + this.Type);
 
             byte[] bytesToSign = UTF8Encoding.UTF8.GetBytes(stringToSign);
             return bytesToSign;
@@ -387,14 +391,16 @@ namespace Amazon.SimpleNotificationService.Util
                         catch(Exception e)
                         {
                             if (retries == MAX_RETRIES)
-                                throw new Exception(string.Format("Unable to download signing cert after {0} retries", MAX_RETRIES), e);
+                                throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture,
+                                    "Unable to download signing cert after {0} retries", MAX_RETRIES), e);
                             else
                                 AWSSDKUtils.Sleep((int)(Math.Pow(4, retries) * 100));
                         }
                     }
                 }
 
-                throw new Exception(string.Format("Unable to download signing cert after {0} retries", MAX_RETRIES));
+                throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture,
+                    "Unable to download signing cert after {0} retries", MAX_RETRIES));
             }
         }
         #endregion
@@ -405,7 +411,7 @@ namespace Amazon.SimpleNotificationService.Util
         /// </summary>
         public void SubscribeToTopic()
         {
-            this.MakeGetRequest(this.SubscribeURL, "subscribe");
+            MakeGetRequest(this.SubscribeURL, "subscribe");
         }
 
         /// <summary>
@@ -413,10 +419,10 @@ namespace Amazon.SimpleNotificationService.Util
         /// </summary>
         public void UnsubscribeFromTopic()
         {
-            this.MakeGetRequest(this.UnsubscribeURL, "unsubscribe");
+            MakeGetRequest(this.UnsubscribeURL, "unsubscribe");
         }
 
-        private void MakeGetRequest(string url, string action)
+        private static void MakeGetRequest(string url, string action)
         {
             for (int retries = 1; retries <= MAX_RETRIES; retries++)
             {
@@ -430,7 +436,8 @@ namespace Amazon.SimpleNotificationService.Util
                 catch (Exception e)
                 {
                     if (retries == MAX_RETRIES)
-                        throw new Exception(string.Format("Unable to {0} after {1} retries", action, MAX_RETRIES), e);
+                        throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture,
+                            "Unable to {0} after {1} retries", action, MAX_RETRIES), e);
                     else
                         AWSSDKUtils.Sleep((int)(Math.Pow(4, retries) * 100));
                 }

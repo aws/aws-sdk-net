@@ -58,7 +58,7 @@ namespace Amazon.Route53.Internal
         /// Custom pipeline handler
         /// </summary>
         /// <param name="executionContext"></param>
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             ProcessRequestHandlers(executionContext);
         }

@@ -80,7 +80,7 @@ namespace Amazon.EC2.Internal
         /// Custom pipeline handler
         /// </summary>
         /// <param name="executionContext"></param>
-        protected void PostInvoke(IExecutionContext executionContext)
+        protected virtual void PostInvoke(IExecutionContext executionContext)
         {
             var response = executionContext.ResponseContext.Response;
             var webResponseData = executionContext.ResponseContext.HttpResponse;

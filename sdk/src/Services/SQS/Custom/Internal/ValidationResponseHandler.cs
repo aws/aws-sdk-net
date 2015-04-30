@@ -63,7 +63,7 @@ namespace Amazon.SQS.Internal
         /// Custom pipeline handler
         /// </summary>
         /// <param name="executionContext"></param>
-        protected void PostInvoke(IExecutionContext executionContext)
+        protected virtual void PostInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;
             var response = executionContext.ResponseContext.Response;

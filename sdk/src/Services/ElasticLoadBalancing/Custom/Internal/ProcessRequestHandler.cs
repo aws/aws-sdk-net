@@ -75,7 +75,7 @@ namespace Amazon.ElasticLoadBalancing.Internal
         /// Method to set the policy names before continuing on with the pipeline.
         /// </summary>
         /// <param name="executionContext"></param>
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             var originalRequest = executionContext.RequestContext.OriginalRequest;
             bool shouldSetPolicyNames =

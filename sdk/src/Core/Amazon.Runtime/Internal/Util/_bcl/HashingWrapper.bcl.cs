@@ -24,16 +24,23 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using Amazon.Runtime;
+using ThirdParty.MD5;
 
 namespace Amazon.Runtime.Internal.Util
 {
     public partial class HashingWrapper : IHashingWrapper
     {
-        private HashAlgorithm _algorithm;
+        private static string MD5ManagedName = typeof(MD5Managed).FullName;
+
+        private HashAlgorithm _algorithm = null;
         private void Init(string algorithmName)
         {
-            _algorithm = HashAlgorithm.Create(algorithmName);
+            if (string.Equals(MD5ManagedName, algorithmName, StringComparison.Ordinal))
+                _algorithm = new MD5Managed();
+            else
+                throw new ArgumentOutOfRangeException(algorithmName, "Unsupported hashing algorithm");
         }
+
 
         #region IHashingWrapper Members
 
@@ -64,14 +71,31 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         #endregion
+
+        #region Dispose Pattern Implementation
+
+        /// <summary>
+        /// Implements the Dispose pattern
+        /// </summary>
+        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
+        /// or garbage collected.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            var disposable = _algorithm as IDisposable;
+            if (disposing && disposable != null)
+            {
+                disposable.Dispose();
+                _algorithm = null;
+            }
+        }
+
+        #endregion
     }
 
     public class HashingWrapperMD5 : HashingWrapper
     {
-        private static string md5AlgorithmName = typeof(MD5).FullName;
-
         public HashingWrapperMD5()
-            : base(md5AlgorithmName)
+            : base(typeof(MD5Managed).FullName)
         { }
     }
 }

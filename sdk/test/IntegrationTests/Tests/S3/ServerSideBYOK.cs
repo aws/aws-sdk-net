@@ -11,6 +11,7 @@ using Amazon.S3.Util;
 using Amazon.S3.Transfer;
 using System.Security.Cryptography;
 using System.Net;
+using ThirdParty.MD5;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -26,7 +27,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         //internal static string ComputeEncodedMD5FromEncodedString(string base64EncodedString)
-        private static MD5 md5 = MD5.Create();
+        private static MD5Managed md5 = new MD5Managed();
         private static string ComputeEncodedMD5FromEncodedString(string base64EncodedString)
         {
             var unencodedValue = Convert.FromBase64String(base64EncodedString);

@@ -76,7 +76,7 @@ namespace Amazon.CloudFormation.Internal
         /// Set NotificationARNs to empty if the collection is empty before continuing on in the pipeline.
         /// </summary>
         /// <param name="executionContext"></param>
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;
             var updateStackRequest = request.OriginalRequest as UpdateStackRequest;

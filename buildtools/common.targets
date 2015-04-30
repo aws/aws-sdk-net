@@ -7,19 +7,26 @@
 		<powershell>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</powershell>
 		<mstest2013>&quot;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\mstest.exe&quot;</mstest2013>
 		<vstest2013>&quot;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe&quot;</vstest2013>
+		<fxcopcmd>&quot;C:\Program Files (x86)\Microsoft Fxcop 10.0\FxCopCmd.exe&quot;</fxcopcmd>
 		<Deployment>..\Deployment</Deployment>
 	</PropertyGroup>
 
 	<!-- COMMON TARGETS -->
+
+	<Target Name="build-custom-tasks">
+		<Exec Command="$(devenv2013) /Rebuild Release ..\buildtools\CustomTasks\CustomTasks.sln"/>
+	</Target>
 	
-	<Target Name="prep">
+	<UsingTask TaskName="CustomTasks.UpdateFxCopProject" AssemblyFile="C:\code\dotnet\v3\AWSDotNetPublic\buildtools\CustomTasks\bin\Release\CustomTasks.dll"/>
+	
+	<Target Name="prep" DependsOnTargets="build-custom-tasks">
 		<RemoveDir Directories="TestResults" />
 		<RemoveDir Directories="..\TestResults" />
 
-		<RemoveDir Directories="$(Deployment)" />
-		<MakeDir Directories="$(Deployment)" />
+		<!-- <RemoveDir Directories="$(Deployment)" />
+		<MakeDir Directories="$(Deployment)" /> -->
 	</Target>
-
+	
 	<Target Name="consolidate-artifacts">
 		<ItemGroup>
 			<FilesToZip Include="$(Deployment)\**" />
@@ -56,7 +63,7 @@
 	<UsingTask
 		TaskName="WaitUntilAttached"
 		TaskFactory="CodeTaskFactory"
-		AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v12.0.dll" >
+		AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" >
 
 		<ParameterGroup />
 		<Task>

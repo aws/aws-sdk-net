@@ -17,7 +17,7 @@
 		<Message Text="Restore nuget packages"/>
 		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.sln"/>
 	</Target>
-
+	
 	<Target Name="build-sdk" DependsOnTargets="restore-nuget;run-generator">
 		<Message Text="Compile the SDK"/>
 		<SetEnvironmentVariable VariableName="AWSKeyFile" VariableValue="$(CustomSnkFileLocation)" />
@@ -62,7 +62,7 @@
 	</Target>
 	
 	<!-- TEST TARGETS/TASKS -->
-	
+
 	<Target Name="run-tests">
 		<Message Text="TestContainer = $(TestContainer)" Condition="$(TestContainer.Length) > 0"/>
 		<Message Text="TestCategory = $(TestCategory)" Condition="$(TestCategory.Length) > 0"/>

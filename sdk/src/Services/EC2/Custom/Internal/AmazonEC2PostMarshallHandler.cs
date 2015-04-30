@@ -76,7 +76,7 @@ namespace Amazon.EC2.Internal
         /// Custom pipeline handler
         /// </summary>
         /// <param name="executionContext"></param>
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             var originalRequest = executionContext.RequestContext.OriginalRequest;
             var request = executionContext.RequestContext.Request;

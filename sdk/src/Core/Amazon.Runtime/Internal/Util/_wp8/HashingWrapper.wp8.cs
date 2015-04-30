@@ -21,13 +21,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using Amazon.Runtime;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Security.Cryptography;
-using Windows.Storage.Streams;
 using ThirdParty.MD5;
-using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -35,13 +32,13 @@ namespace Amazon.Runtime.Internal.Util
     {
         protected static string MD5ManagedName = typeof(MD5Managed).FullName;
 
-        private HashAlgorithm _algorithm;
+        private HashAlgorithm _algorithm = null;
         private void Init(string algorithmName)
         {
             if (string.Equals(MD5ManagedName, algorithmName, StringComparison.Ordinal))
                 _algorithm = new MD5Managed();
             else
-                throw new ArgumentOutOfRangeException("Unsupported hashing algorithm");
+                throw new ArgumentOutOfRangeException(algorithmName, "Unsupported hashing algorithm");
         }
 
         #region IHashingWrapper Members
@@ -70,6 +67,26 @@ namespace Amazon.Runtime.Internal.Util
         {
             _algorithm.TransformFinalBlock(buffer, offset, count);
             return _algorithm.Hash;
+        }
+
+        #endregion
+
+        #region Dispose Pattern Implementation
+
+        /// <summary>
+        /// Implements the Dispose pattern
+        /// </summary>
+        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
+        /// or garbage collected.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            var disposable = _algorithm as IDisposable;
+
+            if (disposing && disposable != null)
+            {
+                disposable.Dispose();
+                _algorithm = null;
+            }
         }
 
         #endregion

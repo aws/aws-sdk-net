@@ -15,7 +15,7 @@ using System.Text;
 namespace ThirdParty.MD5
 {
     // Simple struct for the (a,b,c,d) which is used to compute the mesage digest.    
-    struct ABCDStruct
+    internal struct ABCDStruct
     {
         public uint A;
         public uint B;
@@ -23,7 +23,7 @@ namespace ThirdParty.MD5
         public uint D;
     }
 
-    public sealed class MD5Core
+    internal sealed class MD5Core
     {
         //Prevent CSC from adding a default public constructor
         private MD5Core() { }

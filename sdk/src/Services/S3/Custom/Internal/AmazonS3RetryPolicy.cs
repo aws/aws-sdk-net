@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using Amazon.S3.Util;
+using System.Globalization;
 
 #pragma warning disable 1591
 
@@ -96,7 +97,8 @@ namespace Amazon.S3.Internal
                         // since DNS resolved, yielding an auth error from the service,
                         // we're assuming we do not need to test (again) for dns compatibility 
                         // on the bucket name
-                        var tempEndpoint = string.Format("https://{0}.{1}", s3Uri.Bucket, S3Constants.S3AlternateDefaultEndpoint);
+                        var tempEndpoint = string.Format(CultureInfo.InvariantCulture,
+                            "https://{0}.{1}", s3Uri.Bucket, S3Constants.S3AlternateDefaultEndpoint);
                         r.Endpoint = new Uri(tempEndpoint);
 
                         if (serviceException.Message.Contains(AWS_KMS_Signature_Error))

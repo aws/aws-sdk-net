@@ -71,7 +71,7 @@ namespace Amazon.S3.Internal
         /// Custom pipeline handler to enable sig V4 for Get requests.
         /// </summary>
         /// <param name="executionContext"></param>
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;
             EvaluateIfSigV4Required(request);

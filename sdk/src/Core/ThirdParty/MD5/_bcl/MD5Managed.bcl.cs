@@ -1,6 +1,5 @@
 ﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
 using System;
-using System.Security.Cryptography;
 
 // **************************************************************
 // * Raw implementation of the MD5 hash algorithm
@@ -13,11 +12,7 @@ using System.Security.Cryptography;
 namespace ThirdParty.MD5
 {
 
-#if SILVERLIGHT
-    public class MD5Managed : HashAlgorithm
-#else
-public class MD5Managed : MD5
-#endif
+    public class MD5Managed : System.Security.Cryptography.HashAlgorithm
     {
         private byte[] _data;
         private ABCDStruct _abcd;

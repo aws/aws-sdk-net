@@ -75,7 +75,7 @@ namespace Amazon.S3.Internal
         }
 #endif
 
-        protected void PostInvoke(IExecutionContext executionContext)
+        protected virtual void PostInvoke(IExecutionContext executionContext)
         {
             ProcessResponseHandlers(executionContext);
         }

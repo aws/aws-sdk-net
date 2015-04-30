@@ -147,6 +147,7 @@ namespace Amazon.Runtime.Internal.Util
             return result;
         }
 
+#if !WIN_RT
         /// <summary>
         /// Closes the underlying stream and finishes calculating the hash.
         /// If an ExpectedHash is specified and is not equal to the calculated hash,
@@ -155,19 +156,30 @@ namespace Amazon.Runtime.Internal.Util
         /// <exception cref="Amazon.Runtime.AmazonClientException">
         /// If ExpectedHash is set and is different from CalculateHash that the stream calculates.
         /// </exception>
-#if !WIN_RT
         public override void Close()
         {
             CalculateHash();
             base.Close();
         }
-#else
+#endif
+
         protected override void Dispose(bool disposing)
         {
-            CalculateHash();
-            base.Dispose(disposing);
+            try
+            {
+                CalculateHash();
+
+                if (disposing && Algorithm != null)
+                {
+                    Algorithm.Dispose();
+                    Algorithm = null;
+                }
+            }
+            finally
+            {
+                base.Dispose(disposing);
+            }
         }
-#endif
 
         /// <summary>
         /// Gets a value indicating whether the current stream supports seeking.

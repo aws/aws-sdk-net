@@ -97,11 +97,6 @@ namespace Amazon.EC2.Import
         }
 
         /// <summary>
-        /// The set of file formats recognised by Amazon EC2 import/conversion
-        /// </summary>
-        public static readonly string[] ValidFileFormats = { "VMDK", "RAW", "VHD" };
-
-        /// <summary>
         /// The constructed manifest describing the import artifacts.
         /// </summary>
         public ImportManifestRoot ImportManifest { get; private set; }
@@ -149,7 +144,7 @@ namespace Amazon.EC2.Import
             set
             {
                 if (value < 1)
-                    throw new ArgumentOutOfRangeException("Expected a value of 1 or greater.");
+                    throw new ArgumentOutOfRangeException("value", "Expected a value of 1 or greater.");
                 _urlExpirationInDays = value;
             }
         }
@@ -911,7 +906,7 @@ namespace Amazon.EC2.Import
                 {
                     S3Client.Deletes(this.BucketName, batchOfKeys, null);
                 }
-                catch (Exception)
+                catch
                 {
                     allRemoved = false;
                 }
@@ -967,8 +962,8 @@ namespace Amazon.EC2.Import
                             }
 
                             if (!part.UploadCompleted)
-                                throw new Exception("Failed to upload part " + part.Index + " after " + maxRetries +
-                                                    " retries.");
+                                throw new DiskImageImporterException(DiskImportErrorStage.UploadingImageFile,
+                                    "Failed to upload part " + part.Index + " after " + maxRetries + " retries.");
                         }
                     }
                 }

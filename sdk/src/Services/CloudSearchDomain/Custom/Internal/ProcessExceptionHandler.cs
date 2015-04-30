@@ -76,7 +76,7 @@ namespace Amazon.CloudSearchDomain.Internal
         /// </summary>
         /// <param name="executionContext"></param>
         /// <param name="exception"></param>
-        protected void HandleException(IExecutionContext executionContext, Exception exception)
+        protected virtual void HandleException(IExecutionContext executionContext, Exception exception)
         {
             var uploadDocumentsRequest = executionContext.RequestContext.OriginalRequest as UploadDocumentsRequest;
 

@@ -65,7 +65,7 @@ namespace Amazon.CloudSearchDomain.Internal
         /// Custom pipeline handler to make sure streams.
         /// </summary>
         /// <param name="executionContext"></param>
-        protected void PostInvoke(IExecutionContext executionContext)
+        protected virtual void PostInvoke(IExecutionContext executionContext)
         {
             var uploadDocumentsRequest = executionContext.RequestContext.OriginalRequest as UploadDocumentsRequest;
 
