@@ -221,9 +221,6 @@
     <Compile Include="ThirdParty\Json\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\MD5\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="_winrt\*.cs">
       <SubType>Code</SubType>
     </Compile>

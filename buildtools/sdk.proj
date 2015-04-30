@@ -29,7 +29,7 @@
 			DestinationFolder="$(Deployment)" />
 	</Target>
  
-	<Target Name="test-sdk" DependsOnTargets="prep;build-sdk;run-unit-tests;run-integ-tests" />
+	<Target Name="test-sdk" DependsOnTargets="prep;build-sdk;fxcop;run-unit-tests;run-integ-tests" />
 	<Target Name="run-unit-tests" DependsOnTargets="prep;build-sdk">
 		<MSBuild
 			Projects="$(MSBuildProjectFile)"
@@ -63,6 +63,17 @@
 	
 	<!-- TEST TARGETS/TASKS -->
 
+	<Target Name="fxcop" DependsOnTargets="copy-assemblies">
+		<UpdateFxCopProject Assemblies="$(Deployment)\sdk\assemblies\net35" FxCopProject="..\SDK-3.5.FxCop" />
+		<UpdateFxCopProject Assemblies="$(Deployment)\sdk\assemblies\net45" FxCopProject="..\SDK-4.5.FxCop" />
+
+		<!-- Run FxCop -->
+		<Exec Command="$(fxcopcmd) /p:..\SDK-3.5.FxCop /o:..\fxcop-report-3.5.xml /s"/>
+		<Exec Command="$(fxcopcmd) /p:..\SDK-4.5.FxCop /o:..\fxcop-report-4.5.xml /s"/>
+
+		<Error Condition="Exists('..\fxcop-report-3.5.xml') or Exists('..\fxcop-report-4.5.xml')" Text="There are FxCop violations!" />
+	</Target>
+	
 	<Target Name="run-tests">
 		<Message Text="TestContainer = $(TestContainer)" Condition="$(TestContainer.Length) > 0"/>
 		<Message Text="TestCategory = $(TestCategory)" Condition="$(TestCategory.Length) > 0"/>

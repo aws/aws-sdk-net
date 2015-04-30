@@ -23,8 +23,8 @@
 		<RemoveDir Directories="TestResults" />
 		<RemoveDir Directories="..\TestResults" />
 
-		<!-- <RemoveDir Directories="$(Deployment)" />
-		<MakeDir Directories="$(Deployment)" /> -->
+		<RemoveDir Directories="$(Deployment)" />
+		<MakeDir Directories="$(Deployment)" />
 	</Target>
 	
 	<Target Name="consolidate-artifacts">

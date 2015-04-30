@@ -62,6 +62,9 @@
     <TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Custom\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Generated\*.cs">
       <SubType>Code</SubType>
     </Compile>

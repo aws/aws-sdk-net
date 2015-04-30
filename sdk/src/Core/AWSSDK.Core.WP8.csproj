@@ -198,9 +198,6 @@
     <Compile Include="ThirdParty\Json\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\MD5\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="ThirdParty\MD5\_wp8\*.cs">
       <SubType>Code</SubType>
     </Compile>

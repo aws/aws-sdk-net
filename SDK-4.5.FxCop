@@ -28,7 +28,6 @@
     <Target Name="C:\code\dotnet\v3\AWSDotNetPublic\Deployment\sdk\assemblies\net45\AWSSDK.CloudHSM.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="C:\code\dotnet\v3\AWSDotNetPublic\Deployment\sdk\assemblies\net45\AWSSDK.CloudSearch.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="C:\code\dotnet\v3\AWSDotNetPublic\Deployment\sdk\assemblies\net45\AWSSDK.CloudSearchDomain.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\AWSDotNetPublic\Deployment\sdk\assemblies\net45\AWSSDK.CloudSearch_2011_02_01.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="C:\code\dotnet\v3\AWSDotNetPublic\Deployment\sdk\assemblies\net45\AWSSDK.CloudTrail.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="C:\code\dotnet\v3\AWSDotNetPublic\Deployment\sdk\assemblies\net45\AWSSDK.CloudWatch.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="C:\code\dotnet\v3\AWSDotNetPublic\Deployment\sdk\assemblies\net45\AWSSDK.CloudWatchLogs.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -174,7 +173,21 @@
         <Rule Name="TypeNamesShouldNotMatchNamespaces" Enabled="True" />
       </RuleFile>
       <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
-      <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+      <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="False">
+        <Rule Name="AvoidExcessiveLocals" Enabled="True" />
+        <Rule Name="AvoidUnsealedAttributes" Enabled="True" />
+        <Rule Name="DoNotCastUnnecessarily" Enabled="True" />
+        <Rule Name="InitializeReferenceTypeStaticFieldsInline" Enabled="True" />
+        <Rule Name="MarkAssembliesWithNeutralResourcesLanguage" Enabled="True" />
+        <Rule Name="MarkMembersAsStatic" Enabled="True" />
+        <Rule Name="OverrideEqualsAndOperatorEqualsOnValueTypes" Enabled="True" />
+        <Rule Name="PreferJaggedArraysOverMultidimensional" Enabled="True" />
+        <Rule Name="PropertiesShouldNotReturnArrays" Enabled="True" />
+        <Rule Name="RemoveEmptyFinalizers" Enabled="True" />
+        <Rule Name="RemoveUnusedLocals" Enabled="True" />
+        <Rule Name="TestForEmptyStringsUsingStringLength" Enabled="True" />
+        <Rule Name="UseLiteralsWhereAppropriate" Enabled="True" />
+      </RuleFile>
       <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="False">
         <Rule Name="AptcaMethodsShouldOnlyCallAptcaMethods" Enabled="True" />
         <Rule Name="AptcaTypesShouldOnlyExtendAptcaBaseTypes" Enabled="True" />

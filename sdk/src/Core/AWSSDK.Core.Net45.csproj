@@ -169,7 +169,7 @@
     <Compile Include="ThirdParty\Json\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\MD5\*.cs">
+    <Compile Include="ThirdParty\MD5\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="_bcl\*.cs">
