@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The output for the <a>CreateLoadBalancer</a> action.
+    /// 
     /// </summary>
     public partial class CreateLoadBalancerResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property DNSName. 
         /// <para>
-        ///  The DNS name for the load balancer. 
+        /// The DNS name of the load balancer.
         /// </para>
         /// </summary>
         public string DNSName

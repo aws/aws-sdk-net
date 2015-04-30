@@ -79,9 +79,12 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Suppresses a device mapping.
         /// </para>
-        ///  <note>If <code>NoDevice</code> is set to <code>true</code> for the root device, the
-        /// instance might fail the EC2 health check. Auto Scaling launches a replacement instance
-        /// if the instance fails the health check.</note>
+        ///  
+        /// <para>
+        /// If <code>NoDevice</code> is set to <code>true</code> for the root device, the instance
+        /// might fail the EC2 health check. Auto Scaling launches a replacement instance if the
+        /// instance fails the health check.
+        /// </para>
         /// </summary>
         public bool NoDevice
         {

@@ -29,9 +29,9 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLoadBalancerListeners operation.
-    /// Creates one or more listeners on a load balancer for the specified port. If a listener
-    /// with the given port does not already exist, it will be created; otherwise, the properties
-    /// of the new listener must match the properties of the existing listener. 
+    /// Creates one or more listeners for the specified load balancer. If a listener with
+    /// the specified port does not already exist, it is created; otherwise, the properties
+    /// of the new listener must match the properties of the existing listener.
     /// 
     ///  
     /// <para>
@@ -52,8 +52,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates CreateLoadBalancerListenersRequest with the parameterized properties
         /// </summary>
-        /// <param name="loadBalancerName"> The name of the load balancer. </param>
-        /// <param name="listeners"> A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>, <code>Protocol</code>, <code>InstanceProtocol</code>, and <code>SSLCertificateId</code> items. </param>
+        /// <param name="loadBalancerName">The name of the load balancer.</param>
+        /// <param name="listeners">The listeners.</param>
         public CreateLoadBalancerListenersRequest(string loadBalancerName, List<Listener> listeners)
         {
             _loadBalancerName = loadBalancerName;
@@ -63,8 +63,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Listeners. 
         /// <para>
-        ///  A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>, <code>Protocol</code>,
-        /// <code>InstanceProtocol</code>, and <code>SSLCertificateId</code> items. 
+        /// The listeners.
         /// </para>
         /// </summary>
         public List<Listener> Listeners
@@ -82,7 +81,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  The name of the load balancer. 
+        /// The name of the load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName

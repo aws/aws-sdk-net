@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates UpdateUserRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName"> Name of the user to update. If you're changing the name of the user, this is the original user name. </param>
+        /// <param name="userName">Name of the user to update. If you're changing the name of the user, this is the original user name. </param>
         public UpdateUserRequest(string userName)
         {
             _userName = userName;
@@ -99,8 +99,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        ///  Name of the user to update. If you're changing the name of the user, this is the
-        /// original user name. 
+        /// Name of the user to update. If you're changing the name of the user, this is the original
+        /// user name. 
         /// </para>
         /// </summary>
         public string UserName

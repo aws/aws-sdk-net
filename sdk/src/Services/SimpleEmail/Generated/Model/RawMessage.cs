@@ -42,7 +42,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Instantiates RawMessage with the parameterized properties
         /// </summary>
-        /// <param name="data">The raw data of the message. The client must ensure that the message format complies with Internet email   standards regarding email header fields, MIME types, MIME encoding, and base64 encoding (if necessary).    The To:, CC:, and BCC: headers in the raw message can contain a group list.    For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.  </param>
+        /// <param name="data">The raw data of the message. The client must ensure that the message format complies with Internet email standards regarding email header fields, MIME types, MIME encoding, and base64 encoding (if necessary).  The To:, CC:, and BCC: headers in the raw message can contain a group list.  For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>. </param>
         public RawMessage(MemoryStream data)
         {
             _data = data;
@@ -52,18 +52,17 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property Data. 
         /// <para>
         /// The raw data of the message. The client must ensure that the message format complies
-        /// with Internet email            standards regarding email header fields, MIME types,
-        /// MIME encoding, and base64 encoding (if necessary).        
+        /// with Internet email standards regarding email header fields, MIME types, MIME encoding,
+        /// and base64 encoding (if necessary). 
         /// </para>
-        ///         
-        /// <para>
-        /// The To:, CC:, and BCC: headers in the raw message can contain a group list.      
         ///  
+        /// <para>
+        /// The To:, CC:, and BCC: headers in the raw message can contain a group list. 
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
-        /// SES Developer Guide</a>.        
+        /// SES Developer Guide</a>. 
         /// </para>
         /// </summary>
         public MemoryStream Data

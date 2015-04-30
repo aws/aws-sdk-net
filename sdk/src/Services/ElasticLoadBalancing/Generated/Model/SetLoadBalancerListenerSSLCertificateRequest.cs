@@ -31,11 +31,11 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// Container for the parameters to the SetLoadBalancerListenerSSLCertificate operation.
     /// Sets the certificate that terminates the specified listener's SSL connections. The
     /// specified certificate replaces any prior certificate that was used on the same load
-    /// balancer and port. 
+    /// balancer and port.
     /// 
     ///  
     /// <para>
-    /// For more information on updating your SSL certificate, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html">Updating
+    /// For more information about updating your SSL certificate, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html">Updating
     /// an SSL Certificate for a Load Balancer</a> in the <i>Elastic Load Balancing Developer
     /// Guide</i>.
     /// </para>
@@ -54,9 +54,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates SetLoadBalancerListenerSSLCertificateRequest with the parameterized properties
         /// </summary>
-        /// <param name="loadBalancerName"> The name of the load balancer. </param>
-        /// <param name="loadBalancerPort"> The port that uses the specified SSL certificate. </param>
-        /// <param name="sslCertificateId"> The Amazon Resource Number (ARN) of the SSL certificate chain to use. For more information on SSL certificates, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html"> Managing Server Certificates</a> in the <i>AWS Identity and Access Management User Guide</i>.</param>
+        /// <param name="loadBalancerName">The name of the load balancer.</param>
+        /// <param name="loadBalancerPort">The port that uses the specified SSL certificate.</param>
+        /// <param name="sslCertificateId">The Amazon Resource Name (ARN) of the SSL certificate.</param>
         public SetLoadBalancerListenerSSLCertificateRequest(string loadBalancerName, int loadBalancerPort, string sslCertificateId)
         {
             _loadBalancerName = loadBalancerName;
@@ -67,7 +67,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  The name of the load balancer. 
+        /// The name of the load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName
@@ -85,7 +85,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerPort. 
         /// <para>
-        ///  The port that uses the specified SSL certificate. 
+        /// The port that uses the specified SSL certificate.
         /// </para>
         /// </summary>
         public int LoadBalancerPort
@@ -103,10 +103,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property SSLCertificateId. 
         /// <para>
-        ///  The Amazon Resource Number (ARN) of the SSL certificate chain to use. For more information
-        /// on SSL certificates, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html">
-        /// Managing Server Certificates</a> in the <i>AWS Identity and Access Management User
-        /// Guide</i>.
+        /// The Amazon Resource Name (ARN) of the SSL certificate.
         /// </para>
         /// </summary>
         public string SSLCertificateId

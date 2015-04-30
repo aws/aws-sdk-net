@@ -29,14 +29,14 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the ApplySecurityGroupsToLoadBalancer operation.
-    /// Associates one or more security groups with your load balancer in Amazon Virtual
-    /// Private Cloud (Amazon VPC). The provided security group IDs will override any currently
-    /// applied security groups. 
+    /// Associates one or more security groups with your load balancer in a virtual private
+    /// cloud (VPC). The specified security groups override the previously associated security
+    /// groups.
     /// 
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html">Manage
-    /// Security Groups in Amazon VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// Security Groups for Amazon VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class ApplySecurityGroupsToLoadBalancerRequest : AmazonElasticLoadBalancingRequest
@@ -47,8 +47,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  The name associated with the load balancer. The name must be unique within the set
-        /// of load balancers associated with your AWS account. 
+        /// The name of the load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName
@@ -66,9 +65,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        ///  A list of security group IDs to associate with your load balancer in VPC. The security
-        /// group IDs must be provided as the ID and not the security group name (For example,
-        /// sg-1234). 
+        /// The IDs of the security groups to associate with the load balancer. Note that you
+        /// cannot specify the name of the security group.
         /// </para>
         /// </summary>
         public List<string> SecurityGroups

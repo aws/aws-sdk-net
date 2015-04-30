@@ -137,7 +137,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Recurrence. 
         /// <para>
-        /// The regular schedule that an action occurs.
+        /// The recurring schedule for the action.
         /// </para>
         /// </summary>
         public string Recurrence
@@ -215,12 +215,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Time. 
         /// <para>
-        /// <code>Time</code> is deprecated.
-        /// </para>
-        ///  
-        /// <para>
-        /// The time that the action is scheduled to begin. <code>Time</code> is an alias for
-        /// <code>StartTime</code>.
+        /// <code>Time</code> is deprecated; use <code>StartTime</code> instead.
         /// </para>
         /// </summary>
         public DateTime Time

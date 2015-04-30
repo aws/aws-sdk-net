@@ -33,9 +33,9 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  This action does not support partial updates. No parameters are required, but if
-    /// you do not specify a parameter, that parameter's value reverts to its default value.
-    /// See the <b>Request Parameters</b> section for each parameter's default value. 
+    /// This action does not support partial updates. No parameters are required, but if you
+    /// do not specify a parameter, that parameter's value reverts to its default value. See
+    /// the <b>Request Parameters</b> section for each parameter's default value. 
     /// </para>
     ///  </note> 
     /// <para>

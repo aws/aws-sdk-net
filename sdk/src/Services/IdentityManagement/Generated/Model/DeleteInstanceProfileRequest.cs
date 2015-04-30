@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
     /// with a running instance will break any applications running on the instance. </important>
     /// 
     /// <para>
-    ///  For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+    /// For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
     /// Instance Profiles</a>. 
     /// </para>
     /// </summary>

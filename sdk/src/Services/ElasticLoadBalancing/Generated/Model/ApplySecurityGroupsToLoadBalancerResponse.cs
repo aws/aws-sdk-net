@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The out for the <a>ApplySecurityGroupsToLoadBalancer</a> action.
+    /// 
     /// </summary>
     public partial class ApplySecurityGroupsToLoadBalancerResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        ///  A list of security group IDs associated with your load balancer. 
+        /// The IDs of the security groups associated with the load balancer.
         /// </para>
         /// </summary>
         public List<string> SecurityGroups

@@ -1,4 +1,5 @@
 {
+  "version":"2.0",
   "metadata":{
     "apiVersion":"2013-01-01",
     "endpointPrefix":"cloudsearchdomain",
@@ -153,6 +154,11 @@
       "member":{"shape":"DocumentServiceWarning"}
     },
     "Expr":{"type":"string"},
+    "Exprs":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"String"}
+    },
     "Facet":{"type":"string"},
     "Facets":{
       "type":"map",
@@ -185,6 +191,10 @@
         "fields":{
           "shape":"Fields",
           "documentation":"<p>The fields returned from a document that matches the search request.</p>"
+        },
+        "exprs":{
+          "shape":"Exprs",
+          "documentation":"<p>The expressions returned from a document that matches the search request.</p>"
         },
         "highlights":{
           "shape":"Highlights",

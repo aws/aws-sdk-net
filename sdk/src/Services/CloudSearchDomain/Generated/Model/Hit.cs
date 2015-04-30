@@ -32,9 +32,28 @@ namespace Amazon.CloudSearchDomain.Model
     /// </summary>
     public partial class Hit
     {
+        private Dictionary<string, string> _exprs = new Dictionary<string, string>();
         private Dictionary<string, List<string>> _fields = new Dictionary<string, List<string>>();
         private Dictionary<string, string> _highlights = new Dictionary<string, string>();
         private string _id;
+
+        /// <summary>
+        /// Gets and sets the property Exprs. 
+        /// <para>
+        /// The expressions returned from a document that matches the search request.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Exprs
+        {
+            get { return this._exprs; }
+            set { this._exprs = value; }
+        }
+
+        // Check to see if Exprs property is set
+        internal bool IsSetExprs()
+        {
+            return this._exprs != null && this._exprs.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Fields. 

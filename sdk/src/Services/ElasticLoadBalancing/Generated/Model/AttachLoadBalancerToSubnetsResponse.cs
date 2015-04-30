@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The output for the <a>AttachLoadBalancerToSubnets</a> action.
+    /// 
     /// </summary>
     public partial class AttachLoadBalancerToSubnetsResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        ///  A list of subnet IDs attached to the load balancer. 
+        /// The IDs of the subnets attached to the load balancer.
         /// </para>
         /// </summary>
         public List<string> Subnets

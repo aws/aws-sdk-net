@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The key of a tag to be removed.
+    /// The key of a tag.
     /// </summary>
     public partial class TagKeyOnly
     {

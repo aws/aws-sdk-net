@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The output for the <a>DescribeLoadBalancerPolicyTypes</a> action.
+    /// 
     /// </summary>
     public partial class DescribeLoadBalancerPolicyTypesResponse : AmazonWebServiceResponse
     {
@@ -37,9 +37,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyTypeDescriptions. 
         /// <para>
-        ///  List of policy type description structures of the specified policy type. If no policy
-        /// type names are specified, returns the description of all the policy types defined
-        /// by Elastic Load Balancing service. 
+        /// Information about the policy types.
         /// </para>
         /// </summary>
         public List<PolicyTypeDescription> PolicyTypeDescriptions

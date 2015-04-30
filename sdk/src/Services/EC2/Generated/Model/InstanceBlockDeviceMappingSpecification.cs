@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeviceName. 
         /// <para>
-        /// The device name exposed to the instance (for example, <filename>/dev/sdh</filename>).
+        /// The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
         /// </para>
         /// </summary>
         public string DeviceName

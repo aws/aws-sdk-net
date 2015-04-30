@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
  */
 
 
@@ -654,6 +654,29 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CancelImportTask
+
+        /// <summary>
+        /// Cancels an in-process import virtual machine or import snapshot task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelImportTask service method.</param>
+        /// 
+        /// <returns>The response from the CancelImportTask service method, as returned by EC2.</returns>
+        CancelImportTaskResponse CancelImportTask(CancelImportTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelImportTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CancelImportTaskResponse> CancelImportTaskAsync(CancelImportTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CancelReservedInstancesListing
 
         /// <summary>
@@ -843,6 +866,15 @@ namespace Amazon.EC2
         /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
         /// Cloud User Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You cannot create more than one customer gateway with the same VPN type, IP address,
+        /// and BGP ASN parameter values. If you run an identical request more than one time,
+        /// the first request creates the customer gateway, and subsequent requests return information
+        /// about the existing customer gateway. The subsequent requests do not create new customer
+        /// gateway resources. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomerGateway service method.</param>
         /// 
@@ -2876,6 +2908,53 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeImagesResponse> DescribeImagesAsync(DescribeImagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeImportImageTasks
+
+        /// <summary>
+        /// Displays details about an import virtual machine or import snapshot tasks that are
+        /// already created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImportImageTasks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImportImageTasks service method, as returned by EC2.</returns>
+        DescribeImportImageTasksResponse DescribeImportImageTasks(DescribeImportImageTasksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImportImageTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImportImageTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeImportImageTasksResponse> DescribeImportImageTasksAsync(DescribeImportImageTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeImportSnapshotTasks
+
+        /// <summary>
+        /// Displays details about an import snapshot tasks that is already created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImportSnapshotTasks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImportSnapshotTasks service method, as returned by EC2.</returns>
+        DescribeImportSnapshotTasksResponse DescribeImportSnapshotTasks(DescribeImportSnapshotTasksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImportSnapshotTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImportSnapshotTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeImportSnapshotTasksResponse> DescribeImportSnapshotTasksAsync(DescribeImportSnapshotTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4928,12 +5007,37 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ImportImage
+
+        /// <summary>
+        /// Import single or multi-volume disk images or Amazon EBS snapshots into an Amazon Machine
+        /// Image (AMI).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportImage service method.</param>
+        /// 
+        /// <returns>The response from the ImportImage service method, as returned by EC2.</returns>
+        ImportImageResponse ImportImage(ImportImageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportImage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ImportImageResponse> ImportImageAsync(ImportImageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ImportInstance
 
         /// <summary>
-        /// Creates an import instance task using metadata from the specified disk image. After
-        /// importing the image, you then upload it using the <code>ec2-import-volume</code> command
-        /// in the EC2 command line tools. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
+        /// Creates an import instance task using metadata from the specified disk image. ImportInstance
+        /// only supports single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a>.
+        /// After importing the image, you then upload it using the <code>ec2-import-volume</code>
+        /// command in the EC2 command line tools. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
         /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
         /// Elastic Compute Cloud User Guide</i>.
         /// </summary>
@@ -4985,6 +5089,29 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ImportKeyPairResponse> ImportKeyPairAsync(ImportKeyPairRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ImportSnapshot
+
+        /// <summary>
+        /// Import a disk into an Amazon Elastic Block Store (Amazon EBS) snapshot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the ImportSnapshot service method, as returned by EC2.</returns>
+        ImportSnapshotResponse ImportSnapshot(ImportSnapshotRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportSnapshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ImportSnapshotResponse> ImportSnapshotAsync(ImportSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

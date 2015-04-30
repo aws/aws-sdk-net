@@ -30,16 +30,15 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the GetIdentityNotificationAttributes operation.
     /// Given a list of verified identities (email addresses and/or domains), returns a structure
-    /// describing identity         notification attributes.
+    /// describing identity notification attributes.
     /// 
-    ///         
+    ///  
     /// <para>
     /// This action is throttled at one request per second.
     /// </para>
-    ///         
+    ///  
     /// <para>
-    /// For more information about using notifications with Amazon SES, see the          
-    ///  <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+    /// For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>

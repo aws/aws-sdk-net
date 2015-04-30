@@ -29,7 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the SetDesiredCapacity operation.
-    /// Sets the size of the specified <a>AutoScalingGroup</a>.
+    /// Sets the size of the specified Auto Scaling group.
     /// </summary>
     public partial class SetDesiredCapacityRequest : AmazonAutoScalingRequest
     {

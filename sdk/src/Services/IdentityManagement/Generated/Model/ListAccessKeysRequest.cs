@@ -29,22 +29,22 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccessKeys operation.
-    /// Returns information about the access key IDs associated with the specified user.
-    /// If there are none, the action returns an empty list. 
+    /// Returns information about the access key IDs associated with the specified user. If
+    /// there are none, the action returns an empty list. 
     /// 
     ///  
     /// <para>
-    ///  Although each user is limited to a small number of keys, you can still paginate the
+    /// Although each user is limited to a small number of keys, you can still paginate the
     /// results using the <code>MaxItems</code> and <code>Marker</code> parameters. 
     /// </para>
     ///  
     /// <para>
-    ///  If the <code>UserName</code> field is not specified, the UserName is determined implicitly
+    /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
     /// based on the AWS access key ID used to sign the request. Because this action works
     /// for access keys under the AWS account, you can use this action to manage root credentials
     /// even if the AWS account has no associated users. 
     /// </para>
-    ///  <note> To ensure the security of your AWS account, the secret access key is accessible
+    ///  <note>To ensure the security of your AWS account, the secret access key is accessible
     /// only during key and user creation. </note>
     /// </summary>
     public partial class ListAccessKeysRequest : AmazonIdentityManagementServiceRequest

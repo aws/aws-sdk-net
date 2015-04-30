@@ -28,9 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes a long-running process that represents a change to your Auto Scaling group,
-    /// such as changing its size. This can also be a process to replace an instance, or a
-    /// process to perform any other long-running operations.
+    /// Describes scaling activity, which is a long-running process that represents a change
+    /// to your Auto Scaling group, such as changing its size or replacing an instance.
     /// </summary>
     public partial class Activity
     {
@@ -84,7 +83,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Cause. 
         /// <para>
-        /// The reason the activity was begun.
+        /// The reason the activity began.
         /// </para>
         /// </summary>
         public string Cause
@@ -102,7 +101,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A friendly, more verbose description of the scaling activity.
+        /// A friendly, more verbose description of the activity.
         /// </para>
         /// </summary>
         public string Description
@@ -120,7 +119,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        /// The details about the scaling activity.
+        /// The details about the activity.
         /// </para>
         /// </summary>
         public string Details
@@ -138,7 +137,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end time of this activity.
+        /// The end time of the activity.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -174,7 +173,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start time of this activity.
+        /// The start time of the activity.
         /// </para>
         /// </summary>
         public DateTime StartTime

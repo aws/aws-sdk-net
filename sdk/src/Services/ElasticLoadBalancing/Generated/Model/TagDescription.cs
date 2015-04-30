@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The descriptions of all the tags associated with load balancer.
+    /// The tags associated with a load balancer.
     /// </summary>
     public partial class TagDescription
     {
@@ -56,7 +56,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// List of tags associated with the load balancer.
+        /// The tags.
         /// </para>
         /// </summary>
         public List<Tag> Tags

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The policies data type.
+    /// The policies for a load balancer.
     /// </summary>
     public partial class Policies
     {
@@ -44,8 +44,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property AppCookieStickinessPolicies. 
         /// <para>
-        ///  A list of the <a>AppCookieStickinessPolicy</a> objects created with <a>CreateAppCookieStickinessPolicy</a>.
-        /// 
+        /// The stickiness policies created using <a>CreateAppCookieStickinessPolicy</a>.
         /// </para>
         /// </summary>
         public List<AppCookieStickinessPolicy> AppCookieStickinessPolicies
@@ -63,8 +62,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LBCookieStickinessPolicies. 
         /// <para>
-        ///  A list of <a>LBCookieStickinessPolicy</a> objects created with <a>CreateAppCookieStickinessPolicy</a>.
-        /// 
+        /// The stickiness policies created using <a>CreateLBCookieStickinessPolicy</a>.
         /// </para>
         /// </summary>
         public List<LBCookieStickinessPolicy> LBCookieStickinessPolicies
@@ -82,7 +80,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property OtherPolicies. 
         /// <para>
-        ///  A list of policy names other than the stickiness policies. 
+        /// The policies other than the stickiness policies.
         /// </para>
         /// </summary>
         public List<string> OtherPolicies

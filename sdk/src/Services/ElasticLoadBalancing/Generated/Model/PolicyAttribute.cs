@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The <a>PolicyAttribute</a> data type. This data type contains a key/value pair that
-    /// defines properties of a specific policy.
+    /// Information about a policy attribute.
     /// </summary>
     public partial class PolicyAttribute
     {
@@ -44,8 +43,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates PolicyAttribute with the parameterized properties
         /// </summary>
-        /// <param name="attributeName"> The name of the attribute associated with the policy. </param>
-        /// <param name="attributeValue"> The value of the attribute associated with the policy. </param>
+        /// <param name="attributeName">The name of the attribute.</param>
+        /// <param name="attributeValue">The value of the attribute.</param>
         public PolicyAttribute(string attributeName, string attributeValue)
         {
             _attributeName = attributeName;
@@ -55,7 +54,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        ///  The name of the attribute associated with the policy. 
+        /// The name of the attribute.
         /// </para>
         /// </summary>
         public string AttributeName
@@ -73,7 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property AttributeValue. 
         /// <para>
-        ///  The value of the attribute associated with the policy. 
+        /// The value of the attribute.
         /// </para>
         /// </summary>
         public string AttributeValue

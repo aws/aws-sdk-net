@@ -59,6 +59,27 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The types of events for an action to start.
         /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// <code>autoscaling:EC2_INSTANCE_LAUNCH</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>autoscaling:EC2_INSTANCE_TERMINATE</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>autoscaling:TEST_NOTIFICATION</code>
+        /// </para>
+        /// </li> </ul>
         /// </summary>
         public string NotificationType
         {

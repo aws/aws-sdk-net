@@ -148,15 +148,14 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleTransition. 
         /// <para>
-        /// The Amazon EC2 instance state to which you want to attach the lifecycle hook. See
-        /// <a>DescribeLifecycleHookTypes</a> for a list of available lifecycle hook types.
+        /// The instance state to which you want to attach the lifecycle hook. For a list of lifecycle
+        /// hook types, see <a>DescribeLifecycleHookTypes</a>.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// This parameter is required for new lifecycle hooks, but optional when updating existing
         /// hooks.
         /// </para>
-        ///  </note>
         /// </summary>
         public string LifecycleTransition
         {
@@ -196,12 +195,12 @@ namespace Amazon.AutoScaling.Model
         /// instance is in the transition state for the lifecycle hook. This ARN target can be
         /// either an SQS queue or an SNS topic. 
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// This parameter is required for new lifecycle hooks, but optional when updating existing
         /// hooks.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// The notification message sent to the target will include:
         /// </para>
@@ -238,12 +237,11 @@ namespace Amazon.AutoScaling.Model
         /// The ARN of the IAM role that allows the Auto Scaling group to publish to the specified
         /// notification target.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// This parameter is required for new lifecycle hooks, but optional when updating existing
         /// hooks.
         /// </para>
-        ///  </note>
         /// </summary>
         public string RoleARN
         {

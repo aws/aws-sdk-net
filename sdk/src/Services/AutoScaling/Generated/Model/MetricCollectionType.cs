@@ -39,6 +39,39 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The metric.
         /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// <code>GroupMinSize</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>GroupMaxSize</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>GroupDesiredCapacity</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>GroupInServiceInstances</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>GroupPendingInstances</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>GroupStandbyInstances</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>GroupTerminatingInstances</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>GroupTotalInstances</code>
+        /// </para>
+        /// </li> </ul>
         /// </summary>
         public string Metric
         {

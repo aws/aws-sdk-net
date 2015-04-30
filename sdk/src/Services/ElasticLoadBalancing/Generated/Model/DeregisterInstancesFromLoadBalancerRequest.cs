@@ -29,23 +29,18 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterInstancesFromLoadBalancer operation.
-    /// Deregisters instances from the load balancer. Once the instance is deregistered,
-    /// it will stop receiving traffic from the load balancer. 
+    /// Deregisters the specified instances from the specified load balancer. After the instance
+    /// is deregistered, it no longer receives traffic from the load balancer.
     /// 
     ///  
     /// <para>
-    ///  In order to successfully call this API, the same account credentials as those used
-    /// to create the load balancer must be provided. 
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">De-register
-    /// and Register Amazon EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can use <a>DescribeLoadBalancers</a> to verify if the instance is deregistered
+    /// You can use <a>DescribeLoadBalancers</a> to verify that the instance is deregistered
     /// from the load balancer.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">Deregister
+    /// and Register Amazon EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class DeregisterInstancesFromLoadBalancerRequest : AmazonElasticLoadBalancingRequest
@@ -61,8 +56,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates DeregisterInstancesFromLoadBalancerRequest with the parameterized properties
         /// </summary>
-        /// <param name="loadBalancerName"> The name associated with the load balancer. </param>
-        /// <param name="instances"> A list of EC2 instance IDs consisting of all instances to be deregistered. </param>
+        /// <param name="loadBalancerName">The name of the load balancer.</param>
+        /// <param name="instances">The IDs of the instances.</param>
         public DeregisterInstancesFromLoadBalancerRequest(string loadBalancerName, List<Instance> instances)
         {
             _loadBalancerName = loadBalancerName;
@@ -72,7 +67,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        ///  A list of EC2 instance IDs consisting of all instances to be deregistered. 
+        /// The IDs of the instances.
         /// </para>
         /// </summary>
         public List<Instance> Instances
@@ -90,7 +85,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  The name associated with the load balancer. 
+        /// The name of the load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName

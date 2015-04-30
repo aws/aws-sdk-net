@@ -29,13 +29,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfigureHealthCheck operation.
-    /// Specifies the health check settings to use for evaluating the health state of your
-    /// back-end instances. 
+    /// Specifies the health check settings to use when evaluating the health state of your
+    /// back-end instances.
     /// 
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck">Health
-    /// Check</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// Checks</a> in the <i>Elastic Load Balancing Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class ConfigureHealthCheckRequest : AmazonElasticLoadBalancingRequest
@@ -51,8 +51,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates ConfigureHealthCheckRequest with the parameterized properties
         /// </summary>
-        /// <param name="loadBalancerName"> The mnemonic name associated with the load balancer. The name must be unique within the set of load balancers associated with your AWS account. </param>
-        /// <param name="healthCheck"> A structure containing the configuration information for the new healthcheck. </param>
+        /// <param name="loadBalancerName">The name of the load balancer.</param>
+        /// <param name="healthCheck">The configuration information for the new health check.</param>
         public ConfigureHealthCheckRequest(string loadBalancerName, HealthCheck healthCheck)
         {
             _loadBalancerName = loadBalancerName;
@@ -62,7 +62,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property HealthCheck. 
         /// <para>
-        ///  A structure containing the configuration information for the new healthcheck. 
+        /// The configuration information for the new health check.
         /// </para>
         /// </summary>
         public HealthCheck HealthCheck
@@ -80,8 +80,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  The mnemonic name associated with the load balancer. The name must be unique within
-        /// the set of load balancers associated with your AWS account. 
+        /// The name of the load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName

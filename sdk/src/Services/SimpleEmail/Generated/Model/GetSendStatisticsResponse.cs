@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Represents a list of            <code>SendDataPoint</code>            items returned
-    /// from a successful            <code>GetSendStatistics</code>            request. This
-    /// list contains aggregated data from the previous two weeks of sending activity.
+    /// Represents a list of <code>SendDataPoint</code> items returned from a successful <code>GetSendStatistics</code>
+    /// request. This list contains aggregated data from the previous two weeks of sending
+    /// activity.
     /// </summary>
     public partial class GetSendStatisticsResponse : AmazonWebServiceResponse
     {

@@ -63,9 +63,39 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// One or more of the following processes:
         /// </para>
-        ///  <ul> <li>Launch</li> <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
-        /// <li>AZRebalance</li> <li>AlarmNotification</li> <li>ScheduledActions</li> <li>AddToLoadBalancer</li>
-        /// </ul>
+        ///  <ul> <li>
+        /// <para>
+        /// <code>Launch</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>Terminate</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>HealthCheck</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>ReplaceUnhealthy</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>AZRebalance</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>AlarmNotification</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>ScheduledActions</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>AddToLoadBalancer</code>
+        /// </para>
+        /// </li> </ul>
         /// </summary>
         public List<string> ScalingProcesses
         {

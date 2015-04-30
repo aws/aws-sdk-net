@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The <code>ConnectionDraining</code> data type.
+    /// Information about the <code>ConnectionDraining</code> attribute.
     /// </summary>
     public partial class ConnectionDraining
     {
@@ -56,8 +56,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
-        /// Specifies the maximum time (in seconds) to keep the existing connections open before
-        /// deregistering the instances.
+        /// The maximum time, in seconds, to keep the existing connections open before deregistering
+        /// the instances.
         /// </para>
         /// </summary>
         public int Timeout

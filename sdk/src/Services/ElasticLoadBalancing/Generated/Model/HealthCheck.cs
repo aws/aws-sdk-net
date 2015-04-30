@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The HealthCheck data type.
+    /// Information about a health check.
     /// </summary>
     public partial class HealthCheck
     {
@@ -46,11 +46,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates HealthCheck with the parameterized properties
         /// </summary>
-        /// <param name="target"> Specifies the instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.  <note>  TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case a healthcheck simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.  SSL is also specified as SSL: port pair, for example, SSL:5000.  For HTTP or HTTPS protocol, the situation is different. You have to include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.   The total length of the HTTP ping target needs to be 1024 16-bit Unicode characters or less.  </note></param>
-        /// <param name="interval"> Specifies the approximate interval, in seconds, between health checks of an individual instance. </param>
-        /// <param name="timeout"> Specifies the amount of time, in seconds, during which no response means a failed health probe.  <note> This value must be less than the <i>Interval</i> value. </note></param>
-        /// <param name="unhealthyThreshold"> Specifies the number of consecutive health probe failures required before moving the instance to the <i>Unhealthy</i> state. </param>
-        /// <param name="healthyThreshold"> Specifies the number of consecutive health probe successes required before moving the instance to the <i>Healthy</i> state. </param>
+        /// <param name="target">The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535. TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy. SSL is also specified as SSL: port pair, for example, SSL:5000. For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy. The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</param>
+        /// <param name="interval">The approximate interval, in seconds, between health checks of an individual instance.</param>
+        /// <param name="timeout">The amount of time, in seconds, during which no response means a failed health check. This value must be less than the <code>Interval</code> value.</param>
+        /// <param name="unhealthyThreshold">The number of consecutive health check failures required before moving the instance to the <code>Unhealthy</code> state.</param>
+        /// <param name="healthyThreshold">The number of consecutive health checks successes required before moving the instance to the <code>Healthy</code> state.</param>
         public HealthCheck(string target, int interval, int timeout, int unhealthyThreshold, int healthyThreshold)
         {
             _target = target;
@@ -63,8 +63,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property HealthyThreshold. 
         /// <para>
-        ///  Specifies the number of consecutive health probe successes required before moving
-        /// the instance to the <i>Healthy</i> state. 
+        /// The number of consecutive health checks successes required before moving the instance
+        /// to the <code>Healthy</code> state.
         /// </para>
         /// </summary>
         public int HealthyThreshold
@@ -82,8 +82,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Interval. 
         /// <para>
-        ///  Specifies the approximate interval, in seconds, between health checks of an individual
-        /// instance. 
+        /// The approximate interval, in seconds, between health checks of an individual instance.
         /// </para>
         /// </summary>
         public int Interval
@@ -101,15 +100,14 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        ///  Specifies the instance being checked. The protocol is either TCP, HTTP, HTTPS, or
-        /// SSL. The range of valid ports is one (1) through 65535. 
+        /// The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range
+        /// of valid ports is one (1) through 65535.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        ///  TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this
-        /// case a healthcheck simply attempts to open a TCP connection to the instance on the
+        /// TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this
+        /// case, a health check simply attempts to open a TCP connection to the instance on the
         /// specified port. Failure to connect within the configured timeout is considered unhealthy.
-        /// 
         /// </para>
         ///  
         /// <para>
@@ -117,18 +115,16 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  
         /// <para>
-        ///  For HTTP or HTTPS protocol, the situation is different. You have to include a ping
-        /// path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example
-        /// "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the
-        /// instance on the given port and path. Any answer other than "200 OK" within the timeout
-        /// period is considered unhealthy. 
+        /// For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a
+        /// HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In
+        /// this case, a HTTP GET request is issued to the instance on the given port and path.
+        /// Any answer other than "200 OK" within the timeout period is considered unhealthy.
         /// </para>
         ///  
         /// <para>
-        ///  The total length of the HTTP ping target needs to be 1024 16-bit Unicode characters
-        /// or less. 
+        /// The total length of the HTTP ping target must be 1024 16-bit Unicode characters or
+        /// less.
         /// </para>
-        ///  </note>
         /// </summary>
         public string Target
         {
@@ -145,10 +141,12 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
-        ///  Specifies the amount of time, in seconds, during which no response means a failed
-        /// health probe. 
+        /// The amount of time, in seconds, during which no response means a failed health check.
         /// </para>
-        ///  <note> This value must be less than the <i>Interval</i> value. </note>
+        ///  
+        /// <para>
+        /// This value must be less than the <code>Interval</code> value.
+        /// </para>
         /// </summary>
         public int Timeout
         {
@@ -165,8 +163,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property UnhealthyThreshold. 
         /// <para>
-        ///  Specifies the number of consecutive health probe failures required before moving
-        /// the instance to the <i>Unhealthy</i> state. 
+        /// The number of consecutive health check failures required before moving the instance
+        /// to the <code>Unhealthy</code> state.
         /// </para>
         /// </summary>
         public int UnhealthyThreshold

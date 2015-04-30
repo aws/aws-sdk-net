@@ -31,13 +31,6 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the DescribeLaunchConfigurations operation.
     /// Describes one or more launch configurations. If you omit the list of names, then the
     /// call describes all launch configurations.
-    /// 
-    ///  
-    /// <para>
-    /// You can specify a maximum number of items to be returned with a single call. If there
-    /// are more items to return, the call returns a token. To get the next set of items,
-    /// repeat the call with the returned token in the <code>NextToken</code> parameter.
-    /// </para>
     /// </summary>
     public partial class DescribeLaunchConfigurationsRequest : AmazonAutoScalingRequest
     {

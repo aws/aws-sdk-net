@@ -30,14 +30,14 @@ namespace Amazon.IdentityManagement
     ///
     /// AWS Identity and Access Management 
     /// <para>
-    ///  AWS Identity and Access Management (IAM) is a web service that you can use to manage
+    /// AWS Identity and Access Management (IAM) is a web service that you can use to manage
     /// users and user permissions under your AWS account. This guide provides descriptions
     /// of IAM actions that you can call programmatically. For general information about IAM,
     /// see <a href="http://aws.amazon.com/iam/">AWS Identity and Access Management (IAM)</a>.
     /// For the user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using
     /// IAM</a>. 
     /// </para>
-    ///  <note> AWS provides SDKs that consist of libraries and sample code for various programming
+    ///  <note>AWS provides SDKs that consist of libraries and sample code for various programming
     /// languages and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a
     /// convenient way to create programmatic access to IAM and AWS. For example, the SDKs
     /// take care of tasks such as cryptographically signing requests (see below), managing
@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement
     /// how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools
     /// for Amazon Web Services</a> page. </note> 
     /// <para>
-    ///  We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However,
+    /// We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However,
     /// you can also use the IAM Query API to make direct calls to the IAM web service. To
     /// learn more about the IAM Query API, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
     /// Query Requests</a> in the <i>Using IAM</i> guide. IAM supports GET and POST requests
@@ -59,7 +59,7 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  
     /// <para>
-    ///  Requests must be signed using an access key ID and a secret access key. We strongly
+    /// Requests must be signed using an access key ID and a secret access key. We strongly
     /// recommend that you do not use your AWS account access key ID and secret access key
     /// for everyday work with IAM. You can use the access key ID and secret access key for
     /// an IAM user or you can use the AWS Security Token Service to generate temporary security
@@ -67,24 +67,11 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  
     /// <para>
-    ///  To sign requests, we recommend that you use <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// To sign requests, we recommend that you use <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4</a>. If you have an existing application that uses Signature Version 2,
     /// you do not have to update it to use Signature Version 4. However, some operations
     /// now require Signature Version 4. The documentation for operations that require version
     /// 4 indicate this requirement. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Recording API requests</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  IAM supports AWS CloudTrail, which is a service that records AWS calls for your AWS
-    /// account and delivers log files to an Amazon S3 bucket. By using information collected
-    /// by CloudTrail, you can determine what requests were successfully made to IAM, who
-    /// made the request, when it was made, and so on. To learn more about CloudTrail, including
-    /// how to turn it on and find your log files, see the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/whatisawscloudtrail.html">AWS
-    /// CloudTrail User Guide</a>. 
     /// </para>
     ///  
     /// <para>
@@ -1240,18 +1227,17 @@ namespace Amazon.IdentityManagement
         #region  CreateVirtualMFADevice
 
         /// <summary>
-        /// Creates a new virtual MFA device for the AWS account. After creating the virtual
-        /// MFA, use <a>EnableMFADevice</a> to attach the MFA device to an IAM user. For more
-        /// information about creating and working with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
+        /// Creates a new virtual MFA device for the AWS account. After creating the virtual MFA,
+        /// use <a>EnableMFADevice</a> to attach the MFA device to an IAM user. For more information
+        /// about creating and working with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
         /// a Virtual MFA Device</a> in the <i>Using IAM</i> guide. 
         /// 
         ///  
         /// <para>
-        ///  For information about limits on the number of MFA devices you can create, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// For information about limits on the number of MFA devices you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
         /// on Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
-        ///  <important> The seed information contained in the QR code and the Base32 string should
+        ///  <important>The seed information contained in the QR code and the Base32 string should
         /// be treated like any other secret access information, such as your AWS access keys
         /// or your passwords. After you provision your virtual device, you should ensure that
         /// the information is destroyed following secure procedures. </important>
@@ -1645,7 +1631,7 @@ namespace Amazon.IdentityManagement
         /// with a running instance will break any applications running on the instance. </important>
         /// 
         /// <para>
-        ///  For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+        /// For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
         /// Instance Profiles</a>. 
         /// </para>
         /// </summary>
@@ -1963,7 +1949,7 @@ namespace Amazon.IdentityManagement
         /// information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
         /// with Roles</a>. 
         /// 
-        ///  <important> Make sure you do not have any Amazon EC2 instances running with the role
+        ///  <important>Make sure you do not have any Amazon EC2 instances running with the role
         /// you are about to delete. Deleting a role or instance profile that is associated with
         /// a running instance will break any applications running on the instance. </important>
         /// </summary>
@@ -2194,10 +2180,10 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  If you do not specify a user name, IAM determines the user name implicitly based
-        /// on the AWS access key ID signing the request. Because this action works for access
-        /// keys under the AWS account, you can use this action to manage root credentials even
-        /// if the AWS account has no associated users. 
+        /// If you do not specify a user name, IAM determines the user name implicitly based on
+        /// the AWS access key ID signing the request. Because this action works for access keys
+        /// under the AWS account, you can use this action to manage root credentials even if
+        /// the AWS account has no associated users. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSigningCertificate service method.</param>
@@ -2698,6 +2684,48 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>Returns a  GenerateCredentialReportResult from IdentityManagementService.</returns>
         GenerateCredentialReportResponse EndGenerateCredentialReport(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAccessKeyLastUsed
+
+        /// <summary>
+        /// Retrieves information about when the specified access key was last used. The information
+        /// includes the date and time of last use, along with the AWS service and region that
+        /// were specified in the last request made with that key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessKeyLastUsed service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessKeyLastUsed service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        GetAccessKeyLastUsedResponse GetAccessKeyLastUsed(GetAccessKeyLastUsedRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessKeyLastUsed operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessKeyLastUsed operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessKeyLastUsed
+        ///         operation.</returns>
+        IAsyncResult BeginGetAccessKeyLastUsed(GetAccessKeyLastUsedRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessKeyLastUsed operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessKeyLastUsed.</param>
+        /// 
+        /// <returns>Returns a  GetAccessKeyLastUsedResult from IdentityManagementService.</returns>
+        GetAccessKeyLastUsedResponse EndGetAccessKeyLastUsed(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3320,15 +3348,15 @@ namespace Amazon.IdentityManagement
         #region  GetRole
 
         /// <summary>
-        /// Retrieves information about the specified role, including the role's path, GUID,
-        /// ARN, and the policy granting permission to assume the role. For more information about
+        /// Retrieves information about the specified role, including the role's path, GUID, ARN,
+        /// and the policy granting permission to assume the role. For more information about
         /// ARNs, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a>.
         /// For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
         /// with Roles</a>. 
         /// 
         ///  
         /// <para>
-        ///  The returned policy is URL-encoded according to RFC 3986. For more information about
+        /// The returned policy is URL-encoded according to RFC 3986. For more information about
         /// RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
         /// 
         /// </para>
@@ -3439,7 +3467,7 @@ namespace Amazon.IdentityManagement
         /// Returns the SAML provider metadocument that was uploaded when the provider was created
         /// or updated. 
         /// 
-        ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        ///  <note>This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
         /// Version 4</a>. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSAMLProvider service method.</param>
@@ -3658,22 +3686,22 @@ namespace Amazon.IdentityManagement
         #region  ListAccessKeys
 
         /// <summary>
-        /// Returns information about the access key IDs associated with the specified user.
-        /// If there are none, the action returns an empty list. 
+        /// Returns information about the access key IDs associated with the specified user. If
+        /// there are none, the action returns an empty list. 
         /// 
         ///  
         /// <para>
-        ///  Although each user is limited to a small number of keys, you can still paginate the
+        /// Although each user is limited to a small number of keys, you can still paginate the
         /// results using the <code>MaxItems</code> and <code>Marker</code> parameters. 
         /// </para>
         ///  
         /// <para>
-        ///  If the <code>UserName</code> field is not specified, the UserName is determined implicitly
+        /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
         /// based on the AWS access key ID used to sign the request. Because this action works
         /// for access keys under the AWS account, you can use this action to manage root credentials
         /// even if the AWS account has no associated users. 
         /// </para>
-        ///  <note> To ensure the security of your AWS account, the secret access key is accessible
+        ///  <note>To ensure the security of your AWS account, the secret access key is accessible
         /// only during key and user creation. </note>
         /// </summary>
         /// 
@@ -3688,22 +3716,22 @@ namespace Amazon.IdentityManagement
         ListAccessKeysResponse ListAccessKeys();
 
         /// <summary>
-        /// Returns information about the access key IDs associated with the specified user.
-        /// If there are none, the action returns an empty list. 
+        /// Returns information about the access key IDs associated with the specified user. If
+        /// there are none, the action returns an empty list. 
         /// 
         ///  
         /// <para>
-        ///  Although each user is limited to a small number of keys, you can still paginate the
+        /// Although each user is limited to a small number of keys, you can still paginate the
         /// results using the <code>MaxItems</code> and <code>Marker</code> parameters. 
         /// </para>
         ///  
         /// <para>
-        ///  If the <code>UserName</code> field is not specified, the UserName is determined implicitly
+        /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
         /// based on the AWS access key ID used to sign the request. Because this action works
         /// for access keys under the AWS account, you can use this action to manage root credentials
         /// even if the AWS account has no associated users. 
         /// </para>
-        ///  <note> To ensure the security of your AWS account, the secret access key is accessible
+        ///  <note>To ensure the security of your AWS account, the secret access key is accessible
         /// only during key and user creation. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessKeys service method.</param>
@@ -4184,7 +4212,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters. 
         /// </para>
         /// </summary>
@@ -4236,7 +4264,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters. 
         /// </para>
         /// </summary>
@@ -4255,7 +4283,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters. 
         /// </para>
         /// </summary>
@@ -4303,7 +4331,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters. 
         /// </para>
         /// </summary>
@@ -4355,7 +4383,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters. 
         /// </para>
         /// </summary>
@@ -4378,7 +4406,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters. 
         /// </para>
         /// </summary>
@@ -4666,12 +4694,12 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters. 
         /// </para>
         ///  
         /// <para>
-        ///  The returned policy is URL-encoded according to RFC 3986. For more information about
+        /// The returned policy is URL-encoded according to RFC 3986. For more information about
         /// RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
         /// 
         /// </para>
@@ -4690,12 +4718,12 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters. 
         /// </para>
         ///  
         /// <para>
-        ///  The returned policy is URL-encoded according to RFC 3986. For more information about
+        /// The returned policy is URL-encoded according to RFC 3986. For more information about
         /// RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
         /// 
         /// </para>
@@ -4855,21 +4883,21 @@ namespace Amazon.IdentityManagement
         #region  ListSigningCertificates
 
         /// <summary>
-        /// Returns information about the signing certificates associated with the specified
-        /// user. If there are none, the action returns an empty list. 
+        /// Returns information about the signing certificates associated with the specified user.
+        /// If there are none, the action returns an empty list. 
         /// 
         ///  
         /// <para>
-        ///  Although each user is limited to a small number of signing certificates, you can
-        /// still paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. 
+        /// Although each user is limited to a small number of signing certificates, you can still
+        /// paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        /// 
         /// </para>
         ///  
         /// <para>
-        ///  If the <code>UserName</code> field is not specified, the user name is determined
-        /// implicitly based on the AWS access key ID used to sign the request. Because this action
-        /// works for access keys under the AWS account, you can use this action to manage root
-        /// credentials even if the AWS account has no associated users. 
+        /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
+        /// based on the AWS access key ID used to sign the request. Because this action works
+        /// for access keys under the AWS account, you can use this action to manage root credentials
+        /// even if the AWS account has no associated users. 
         /// </para>
         /// </summary>
         /// 
@@ -4884,21 +4912,21 @@ namespace Amazon.IdentityManagement
         ListSigningCertificatesResponse ListSigningCertificates();
 
         /// <summary>
-        /// Returns information about the signing certificates associated with the specified
-        /// user. If there are none, the action returns an empty list. 
+        /// Returns information about the signing certificates associated with the specified user.
+        /// If there are none, the action returns an empty list. 
         /// 
         ///  
         /// <para>
-        ///  Although each user is limited to a small number of signing certificates, you can
-        /// still paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. 
+        /// Although each user is limited to a small number of signing certificates, you can still
+        /// paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        /// 
         /// </para>
         ///  
         /// <para>
-        ///  If the <code>UserName</code> field is not specified, the user name is determined
-        /// implicitly based on the AWS access key ID used to sign the request. Because this action
-        /// works for access keys under the AWS account, you can use this action to manage root
-        /// credentials even if the AWS account has no associated users. 
+        /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
+        /// based on the AWS access key ID used to sign the request. Because this action works
+        /// for access keys under the AWS account, you can use this action to manage root credentials
+        /// even if the AWS account has no associated users. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSigningCertificates service method.</param>
@@ -5064,14 +5092,14 @@ namespace Amazon.IdentityManagement
         #region  ListVirtualMFADevices
 
         /// <summary>
-        /// Lists the virtual MFA devices under the AWS account by assignment status. If you
-        /// do not specify an assignment status, the action returns a list of all virtual MFA
-        /// devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
-        /// or <code>Any</code>. 
+        /// Lists the virtual MFA devices under the AWS account by assignment status. If you do
+        /// not specify an assignment status, the action returns a list of all virtual MFA devices.
+        /// Assignment status can be <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>.
+        /// 
         /// 
         ///  
         /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters. 
         /// </para>
         /// </summary>
@@ -5080,14 +5108,14 @@ namespace Amazon.IdentityManagement
         ListVirtualMFADevicesResponse ListVirtualMFADevices();
 
         /// <summary>
-        /// Lists the virtual MFA devices under the AWS account by assignment status. If you
-        /// do not specify an assignment status, the action returns a list of all virtual MFA
-        /// devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
-        /// or <code>Any</code>. 
+        /// Lists the virtual MFA devices under the AWS account by assignment status. If you do
+        /// not specify an assignment status, the action returns a list of all virtual MFA devices.
+        /// Assignment status can be <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>.
+        /// 
         /// 
         ///  
         /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters. 
         /// </para>
         /// </summary>
@@ -5629,14 +5657,14 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  If the <code>UserName</code> field is not specified, the UserName is determined implicitly
+        /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
         /// based on the AWS access key ID used to sign the request. Because this action works
         /// for access keys under the AWS account, you can use this action to manage root credentials
         /// even if the AWS account has no associated users. 
         /// </para>
         ///  
         /// <para>
-        ///  For information about rotating keys, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
+        /// For information about rotating keys, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
         /// Keys and Certificates</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
@@ -5689,9 +5717,9 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <note> 
         /// <para>
-        ///  This action does not support partial updates. No parameters are required, but if
-        /// you do not specify a parameter, that parameter's value reverts to its default value.
-        /// See the <b>Request Parameters</b> section for each parameter's default value. 
+        /// This action does not support partial updates. No parameters are required, but if you
+        /// do not specify a parameter, that parameter's value reverts to its default value. See
+        /// the <b>Request Parameters</b> section for each parameter's default value. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -5723,9 +5751,9 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <note> 
         /// <para>
-        ///  This action does not support partial updates. No parameters are required, but if
-        /// you do not specify a parameter, that parameter's value reverts to its default value.
-        /// See the <b>Request Parameters</b> section for each parameter's default value. 
+        /// This action does not support partial updates. No parameters are required, but if you
+        /// do not specify a parameter, that parameter's value reverts to its default value. See
+        /// the <b>Request Parameters</b> section for each parameter's default value. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -5839,8 +5867,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <important> You should understand the implications of changing a group's path or
         /// name. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming
-        /// Users and Groups</a> in the <i>Using IAM</i> guide. </important> <note> To change
-        /// a group name the requester must have appropriate permissions on both the source object
+        /// Users and Groups</a> in the <i>Using IAM</i> guide. </important> <note>To change a
+        /// group name the requester must have appropriate permissions on both the source object
         /// and the target object. For example, to change Managers to MGRs, the entity making
         /// the request must have permission on Managers and MGRs, or must have permission on
         /// all (*). For more information about permissions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
@@ -6024,7 +6052,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Updates the metadata document for an existing SAML provider.
         /// 
-        ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        ///  <note>This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
         /// Version 4</a>. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSAMLProvider service method.</param>
@@ -6080,7 +6108,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <important> You should understand the implications of changing a server certificate's
         /// path or name. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html">Managing
-        /// Server Certificates</a> in the <i>Using IAM</i> guide. </important> <note> To change
+        /// Server Certificates</a> in the <i>Using IAM</i> guide. </important> <note>To change
         /// a server certificate name the requester must have appropriate permissions on both
         /// the source object and the target object. For example, to change the name from ProductionCert
         /// to ProdCert, the entity making the request must have permission on ProductionCert
@@ -6136,21 +6164,16 @@ namespace Amazon.IdentityManagement
         #region  UpdateSigningCertificate
 
         /// <summary>
-        /// Changes the status of the specified signing certificate from active to disabled,
-        /// or vice versa. This action can be used to disable a user's signing certificate as
-        /// part of a certificate rotation work flow. 
+        /// Changes the status of the specified signing certificate from active to disabled, or
+        /// vice versa. This action can be used to disable a user's signing certificate as part
+        /// of a certificate rotation work flow. 
         /// 
         ///  
         /// <para>
-        ///  If the <code>UserName</code> field is not specified, the UserName is determined implicitly
+        /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
         /// based on the AWS access key ID used to sign the request. Because this action works
         /// for access keys under the AWS account, you can use this action to manage root credentials
         /// even if the AWS account has no associated users. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  For information about rotating certificates, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
-        /// Keys and Certificates</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSigningCertificate service method.</param>
@@ -6269,10 +6292,10 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  For information about the number of server certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// For information about the number of server certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
         /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// </para>
-        ///  <note> Because the body of the public key certificate, private key, and the certificate
+        ///  <note>Because the body of the public key certificate, private key, and the certificate
         /// chain can be large, you should use POST rather than GET when calling <code>UploadServerCertificate</code>.
         /// For information about setting up signatures and authorization through the API, go
         /// to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
@@ -6339,14 +6362,14 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  If the <code>UserName</code> field is not specified, the user name is determined
-        /// implicitly based on the AWS access key ID used to sign the request. Because this action
-        /// works for access keys under the AWS account, you can use this action to manage root
-        /// credentials even if the AWS account has no associated users. 
+        /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
+        /// based on the AWS access key ID used to sign the request. Because this action works
+        /// for access keys under the AWS account, you can use this action to manage root credentials
+        /// even if the AWS account has no associated users. 
         /// </para>
-        ///  <note> Because the body of a X.509 certificate can be large, you should use POST
-        /// rather than GET when calling <code>UploadSigningCertificate</code>. For information
-        /// about setting up signatures and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+        ///  <note>Because the body of a X.509 certificate can be large, you should use POST rather
+        /// than GET when calling <code>UploadSigningCertificate</code>. For information about
+        /// setting up signatures and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
         /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
         /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
         /// Query Requests</a> in the <i>Using IAM</i>guide. </note>

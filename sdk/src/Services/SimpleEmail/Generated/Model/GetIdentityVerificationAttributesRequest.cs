@@ -30,9 +30,9 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the GetIdentityVerificationAttributes operation.
     /// Given a list of identities (email addresses and/or domains), returns the verification
-    ///        status and (for domain identities) the verification token for each identity.
+    /// status and (for domain identities) the verification token for each identity.
     /// 
-    ///         
+    ///  
     /// <para>
     /// This action is throttled at one request per second.
     /// </para>

@@ -38,7 +38,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Granularities. 
         /// <para>
-        /// The granularities for the listed metrics.
+        /// The granularities for the metrics.
         /// </para>
         /// </summary>
         public List<MetricGranularityType> Granularities
@@ -56,46 +56,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// One or more of the following metrics:
+        /// One or more metrics.
         /// </para>
-        ///  <ul> <li>
-        /// <para>
-        /// GroupMinSize
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// GroupMaxSize
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// GroupDesiredCapacity
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// GroupInServiceInstances
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// GroupPendingInstances
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// GroupStandbyInstances
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// GroupTerminatingInstances
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// GroupTotalInstances
-        /// </para>
-        /// </li> </ul> <note> 
-        /// <para>
-        /// The <code>GroupStandbyInstances</code> metric is not returned by default. You must
-        /// explicitly request it when calling <a>EnableMetricsCollection</a>.
-        /// </para>
-        ///  </note>
         /// </summary>
         public List<MetricCollectionType> Metrics
         {

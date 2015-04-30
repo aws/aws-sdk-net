@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The <code>ConnectionSettings</code> data type.
+    /// Information about the <code>ConnectionSettings</code> attribute.
     /// </summary>
     public partial class ConnectionSettings
     {
@@ -37,8 +37,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property IdleTimeout. 
         /// <para>
-        /// Specifies the time (in seconds) the connection is allowed to be idle (no data has
-        /// been sent over the connection) before it is closed by the load balancer.
+        /// The time, in seconds, that the connection is allowed to be idle (no data has been
+        /// sent over the connection) before it is closed by the load balancer.
         /// </para>
         /// </summary>
         public int IdleTimeout

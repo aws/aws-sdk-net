@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The <code>AdditionalAttribute</code> data type.
+    /// This data type is reserved.
     /// </summary>
     public partial class AdditionalAttribute
     {
@@ -38,7 +38,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Reserved for future use.
+        /// This parameter is reserved.
         /// </para>
         /// </summary>
         public string Key
@@ -56,7 +56,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Reserved for future use.
+        /// This parameter is reserved.
         /// </para>
         /// </summary>
         public string Value

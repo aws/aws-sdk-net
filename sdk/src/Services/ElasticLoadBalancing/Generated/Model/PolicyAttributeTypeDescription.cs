@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The <code>PolicyAttributeTypeDescription</code> data type. This data type is used
-    /// to describe values that are acceptable for the policy attribute.
+    /// Information about a policy attribute type.
     /// </summary>
     public partial class PolicyAttributeTypeDescription
     {
@@ -42,7 +41,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        ///  The name of the attribute associated with the policy type. 
+        /// The name of the attribute.
         /// </para>
         /// </summary>
         public string AttributeName
@@ -60,7 +59,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property AttributeType. 
         /// <para>
-        ///  The type of attribute. For example, Boolean, Integer, etc. 
+        /// The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.
         /// </para>
         /// </summary>
         public string AttributeType
@@ -78,11 +77,15 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Cardinality. 
         /// <para>
-        ///  The cardinality of the attribute. Valid Values: <ul> <li>ONE(1) : Single value required</li>
-        /// <li>ZERO_OR_ONE(0..1) : Up to one value can be supplied</li> <li>ZERO_OR_MORE(0..*)
-        /// : Optional. Multiple values are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple
-        /// values are allowed</li> </ul> 
+        /// The cardinality of the attribute.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li>ONE(1) : Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value
+        /// can be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li>
+        /// <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li> </ul>
         /// </summary>
         public string Cardinality
         {
@@ -99,7 +102,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property DefaultValue. 
         /// <para>
-        ///  The default value of the attribute, if applicable. 
+        /// The default value of the attribute, if applicable.
         /// </para>
         /// </summary>
         public string DefaultValue
@@ -117,7 +120,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  A human-readable description of the attribute. 
+        /// A description of the attribute.
         /// </para>
         /// </summary>
         public string Description

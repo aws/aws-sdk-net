@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Represents sending statistics data. Each            <code>SendDataPoint</code>   
-    ///         contains statistics for a 15-minute period of sending activity.
+    /// Represents sending statistics data. Each <code>SendDataPoint</code> contains statistics
+    /// for a 15-minute period of sending activity.
     /// </summary>
     public partial class SendDataPoint
     {

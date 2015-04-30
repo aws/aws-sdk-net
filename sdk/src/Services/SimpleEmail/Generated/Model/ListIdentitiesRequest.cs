@@ -30,9 +30,9 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the ListIdentities operation.
     /// Returns a list containing all of the identities (email addresses and domains) for
-    ///         a specific AWS Account, regardless of verification status.
+    /// a specific AWS Account, regardless of verification status.
     /// 
-    ///         
+    ///  
     /// <para>
     /// This action is throttled at one request per second.
     /// </para>
@@ -65,7 +65,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of identities per page. Possible values are 1-100 inclusive.
+        /// The maximum number of identities per page. Possible values are 1-1000 inclusive.
         /// </para>
         /// </summary>
         public int MaxItems

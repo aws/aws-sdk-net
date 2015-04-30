@@ -41,7 +41,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone associated with this instance.
+        /// The Availability Zone in which the instance is running.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -113,13 +113,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleState. 
         /// <para>
-        /// A description of the current lifecycle state.
+        /// A description of the current lifecycle state. Note that the <code>Quarantined</code>
+        /// state is not used.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The <code>Quarantined</code> lifecycle state is not used.
-        /// </para>
-        ///  </note>
         /// </summary>
         public LifecycleState LifecycleState
         {

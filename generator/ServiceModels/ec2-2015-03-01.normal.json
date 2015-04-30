@@ -1,12 +1,12 @@
 {
   "version":"2.0",
   "metadata":{
-    "apiVersion":"2014-10-01",
+    "apiVersion":"2015-03-01",
     "endpointPrefix":"ec2",
     "serviceAbbreviation":"Amazon EC2",
     "serviceFullName":"Amazon Elastic Compute Cloud",
     "signatureVersion":"v4",
-    "xmlNamespace":"http://ec2.amazonaws.com/doc/2014-10-01",
+    "xmlNamespace":"http://ec2.amazonaws.com/doc/2015-03-01",
     "protocol":"ec2"
   },
   "documentation":"<fullname>Amazon Elastic Compute Cloud</fullname> <p>Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in the Amazon Web Services (AWS) cloud. Using Amazon EC2 eliminates your need to invest in hardware up front, so you can develop and deploy applications faster.</p>",
@@ -177,6 +177,16 @@
       "input":{"shape":"CancelExportTaskRequest"},
       "documentation":"<p>Cancels an active export task. The request removes all artifacts of the export, including any partially-created Amazon S3 objects. If the export task is complete or is in the process of transferring the final disk image, the command fails and returns an error.</p>"
     },
+    "CancelImportTask":{
+      "name":"CancelImportTask",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CancelImportTaskRequest"},
+      "output":{"shape":"CancelImportTaskResult"},
+      "documentation":"<p>Cancels an in-process import virtual machine or import snapshot task.</p>"
+    },
     "CancelReservedInstancesListing":{
       "name":"CancelReservedInstancesListing",
       "http":{
@@ -235,7 +245,7 @@
       },
       "input":{"shape":"CreateCustomerGatewayRequest"},
       "output":{"shape":"CreateCustomerGatewayResult"},
-      "documentation":"<p>Provides information to AWS about your VPN customer gateway device. The customer gateway is the appliance at your end of the VPN connection. (The device on the AWS side of the VPN connection is the virtual private gateway.) You must provide the Internet-routable IP address of the customer gateway's external interface. The IP address must be static and can't be behind a device performing network address translation (NAT).</p> <p>For devices that use Border Gateway Protocol (BGP), you can also provide the device's BGP Autonomous System Number (ASN). You can use an existing ASN assigned to your network. If you don't have an ASN already, you can use a private ASN (in the 64512 - 65534 range).</p> <note> <p>Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534, with the exception of 7224, which is reserved in the <code>us-east-1</code> region, and 9059, which is reserved in the <code>eu-west-1</code> region.</p> </note> <p>For more information about VPN customer gateways, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html\">Adding a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>"
+      "documentation":"<p>Provides information to AWS about your VPN customer gateway device. The customer gateway is the appliance at your end of the VPN connection. (The device on the AWS side of the VPN connection is the virtual private gateway.) You must provide the Internet-routable IP address of the customer gateway's external interface. The IP address must be static and can't be behind a device performing network address translation (NAT).</p> <p>For devices that use Border Gateway Protocol (BGP), you can also provide the device's BGP Autonomous System Number (ASN). You can use an existing ASN assigned to your network. If you don't have an ASN already, you can use a private ASN (in the 64512 - 65534 range).</p> <note> <p>Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534, with the exception of 7224, which is reserved in the <code>us-east-1</code> region, and 9059, which is reserved in the <code>eu-west-1</code> region.</p> </note> <p>For more information about VPN customer gateways, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html\">Adding a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <important> <p>You cannot create more than one customer gateway with the same VPN type, IP address, and BGP ASN parameter values. If you run an identical request more than one time, the first request creates the customer gateway, and subsequent requests return information about the existing customer gateway. The subsequent requests do not create new customer gateway resources. </p> </important>"
     },
     "CreateDhcpOptions":{
       "name":"CreateDhcpOptions",
@@ -785,6 +795,26 @@
       "output":{"shape":"DescribeImagesResult"},
       "documentation":"<p>Describes one or more of the images (AMIs, AKIs, and ARIs) available to you. Images available to you include public images, private images that you own, and private images owned by other AWS accounts but for which you have explicit launch permissions.</p> <note><p>Deregistered images are included in the returned results for an unspecified interval after deregistration.</p></note>"
     },
+    "DescribeImportImageTasks":{
+      "name":"DescribeImportImageTasks",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeImportImageTasksRequest"},
+      "output":{"shape":"DescribeImportImageTasksResult"},
+      "documentation":"<p>Displays details about an import virtual machine or import snapshot tasks that are already created.</p>"
+    },
+    "DescribeImportSnapshotTasks":{
+      "name":"DescribeImportSnapshotTasks",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeImportSnapshotTasksRequest"},
+      "output":{"shape":"DescribeImportSnapshotTasksResult"},
+      "documentation":"<p>Displays details about an import snapshot tasks that is already created.</p>"
+    },
     "DescribeInstanceAttribute":{
       "name":"DescribeInstanceAttribute",
       "http":{
@@ -1240,6 +1270,16 @@
       "output":{"shape":"GetPasswordDataResult"},
       "documentation":"<p>Retrieves the encrypted administrator password for an instance running Windows.</p> <p>The Windows password is generated at boot if the <code>EC2Config</code> service plugin, <code>Ec2SetPassword</code>, is enabled. This usually only happens the first time an AMI is launched, and then <code>Ec2SetPassword</code> is automatically disabled. The password is not generated for rebundled AMIs unless <code>Ec2SetPassword</code> is enabled before bundling.</p> <p>The password is encrypted using the key pair that you specified when you launched the instance. You must provide the corresponding key pair file.</p> <p>Password generation and encryption takes a few moments. We recommend that you wait up to 15 minutes after launching an instance before trying to retrieve the generated password.</p>"
     },
+    "ImportImage":{
+      "name":"ImportImage",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ImportImageRequest"},
+      "output":{"shape":"ImportImageResult"},
+      "documentation":"<p>Import single or multi-volume disk images or Amazon EBS snapshots into an Amazon Machine Image (AMI).</p>"
+    },
     "ImportInstance":{
       "name":"ImportInstance",
       "http":{
@@ -1248,7 +1288,7 @@
       },
       "input":{"shape":"ImportInstanceRequest"},
       "output":{"shape":"ImportInstanceResult"},
-      "documentation":"<p>Creates an import instance task using metadata from the specified disk image. After importing the image, you then upload it using the <code>ec2-import-volume</code> command in the EC2 command line tools. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html\">Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"
+      "documentation":"<p>Creates an import instance task using metadata from the specified disk image. ImportInstance only supports single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a>. After importing the image, you then upload it using the <code>ec2-import-volume</code> command in the EC2 command line tools. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html\">Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"
     },
     "ImportKeyPair":{
       "name":"ImportKeyPair",
@@ -1259,6 +1299,16 @@
       "input":{"shape":"ImportKeyPairRequest"},
       "output":{"shape":"ImportKeyPairResult"},
       "documentation":"<p>Imports the public key from an RSA key pair that you created with a third-party tool. Compare this with <a>CreateKeyPair</a>, in which AWS creates the key pair and gives the keys to you (AWS keeps a copy of the public key). With ImportKeyPair, you create the key pair and give AWS just the public key. The private key is never transferred between you and AWS.</p> <p>For more information about key pairs, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html\">Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"
+    },
+    "ImportSnapshot":{
+      "name":"ImportSnapshot",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ImportSnapshotRequest"},
+      "output":{"shape":"ImportSnapshotResult"},
+      "documentation":"<p>Import a disk into an Amazon Elastic Block Store (Amazon EBS) snapshot.</p>"
     },
     "ImportVolume":{
       "name":"ImportVolume",
@@ -2231,7 +2281,7 @@
         },
         "DeviceName":{
           "shape":"String",
-          "documentation":"<p>The device name exposed to the instance (for example, <code>/dev/sdh</code>).</p>",
+          "documentation":"<p>The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>",
           "locationName":"deviceName"
         },
         "Ebs":{
@@ -2435,6 +2485,40 @@
         }
       }
     },
+    "CancelImportTaskRequest":{
+      "type":"structure",
+      "members":{
+        "DryRun":{"shape":"Boolean"},
+        "ImportTaskId":{
+          "shape":"String",
+          "documentation":"<p>The ID of the ImportImage or ImportSnapshot task to be cancelled.</p>"
+        },
+        "CancelReason":{
+          "shape":"String",
+          "documentation":"<p>The reason for canceling the task.</p>"
+        }
+      }
+    },
+    "CancelImportTaskResult":{
+      "type":"structure",
+      "members":{
+        "ImportTaskId":{
+          "shape":"String",
+          "documentation":"<p>The task ID of the ImportImage or ImportSnapshot task being canceled.</p>",
+          "locationName":"importTaskId"
+        },
+        "State":{
+          "shape":"String",
+          "documentation":"<p>The current state of the ImportImage or ImportSnapshot task being canceled.</p>",
+          "locationName":"state"
+        },
+        "PreviousState":{
+          "shape":"String",
+          "documentation":"<p>The current state of the ImportImage or ImportSnapshot task being canceled.</p>",
+          "locationName":"previousState"
+        }
+      }
+    },
     "CancelReservedInstancesListingRequest":{
       "type":"structure",
       "required":["ReservedInstancesListingId"],
@@ -2546,6 +2630,28 @@
         "shape":"ClassicLinkInstance",
         "locationName":"item"
       }
+    },
+    "ClientData":{
+      "type":"structure",
+      "members":{
+        "UploadStart":{
+          "shape":"DateTime",
+          "documentation":"<p>The time that the disk upload starts.</p>"
+        },
+        "UploadEnd":{
+          "shape":"DateTime",
+          "documentation":"<p>The time that the disk upload ends.</p>"
+        },
+        "UploadSize":{
+          "shape":"Double",
+          "documentation":"<p>The size of the uploaded disk image.</p>"
+        },
+        "Comment":{
+          "shape":"String",
+          "documentation":"<p>User-defined comment about the upload.</p>"
+        }
+      },
+      "documentation":"<p>Client-specific data.</p>"
     },
     "ConfirmProductInstanceRequest":{
       "type":"structure",
@@ -4285,6 +4391,82 @@
         }
       }
     },
+    "DescribeImportImageTasksRequest":{
+      "type":"structure",
+      "members":{
+        "DryRun":{"shape":"Boolean"},
+        "ImportTaskIds":{
+          "shape":"ImportTaskIdList",
+          "documentation":"<p>A list of ImportImage task IDs to describe.</p>",
+          "locationName":"ImportTaskId"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The token to get the next page of paginated describe requests.</p>"
+        },
+        "MaxResults":{
+          "shape":"Integer",
+          "documentation":"<p>The maximum number of results in a page.</p>"
+        },
+        "Filters":{
+          "shape":"FilterList",
+          "documentation":"<p>Filters to be applied on a describe request.</p>"
+        }
+      }
+    },
+    "DescribeImportImageTasksResult":{
+      "type":"structure",
+      "members":{
+        "ImportImageTasks":{
+          "shape":"ImportImageTaskList",
+          "documentation":"<p>A list of zero or more ImportImage tasks that are currently active or completed/cancelled in the previous 7 days.</p>",
+          "locationName":"importImageTaskSet"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The token to get the next page of paginated describe requests.</p>",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "DescribeImportSnapshotTasksRequest":{
+      "type":"structure",
+      "members":{
+        "DryRun":{"shape":"Boolean"},
+        "ImportTaskIds":{
+          "shape":"ImportTaskIdList",
+          "documentation":"<p>A list of IDs of the ImportSnapshot tasks to describe.</p>",
+          "locationName":"ImportTaskId"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The token to get to the next page of paginated describe requests.</p>"
+        },
+        "MaxResults":{
+          "shape":"Integer",
+          "documentation":"<p>The maximum number of results in a page.</p>"
+        },
+        "Filters":{
+          "shape":"FilterList",
+          "documentation":"<p>The filters to be applied on a describe request.</p>"
+        }
+      }
+    },
+    "DescribeImportSnapshotTasksResult":{
+      "type":"structure",
+      "members":{
+        "ImportSnapshotTasks":{
+          "shape":"ImportSnapshotTaskList",
+          "documentation":"<p>A list of zero or more ImportSnapshot tasks that are currently active or completed/cancelled in the previous 7 days.</p>",
+          "locationName":"importSnapshotTaskSet"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The token to get to the next page of paginated describe requests.</p>",
+          "locationName":"nextToken"
+        }
+      }
+    },
     "DescribeInstanceAttributeRequest":{
       "type":"structure",
       "required":[
@@ -4369,7 +4551,7 @@
         },
         "Filters":{
           "shape":"FilterList",
-          "documentation":"<p>One or more filters.</p> <ul> <li> <p><code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p><code>availability-zone</code> - The Availability Zone of the instance.</p> </li> <li> <p><code>block-device-mapping.attach-time</code> - The attach time for an Amazon EBS volume mapped to the instance, for example, <code>2010-09-15T17:15:20.000Z</code>.</p> </li> <li> <p><code>block-device-mapping.delete-on-termination</code> - A Boolean that indicates whether the Amazon EBS volume is deleted on instance termination.</p> </li> <li> <p><code>block-device-mapping.device-name</code> - The device name for the Amazon EBS volume (for example, <code>/dev/sdh</code>).</p> </li> <li> <p><code>block-device-mapping.status</code> - The status for the Amazon EBS volume (<code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p><code>block-device-mapping.volume-id</code> - The volume ID of the Amazon EBS volume.</p> </li> <li> <p><code>client-token</code> - The idempotency token you provided when you launched the instance.</p> </li> <li> <p><code>dns-name</code> - The public DNS name of the instance.</p> </li> <li> <p><code>group-id</code> - The ID of the security group for the instance. EC2-Classic only.</p> </li> <li> <p><code>group-name</code> - The name of the security group for the instance. EC2-Classic only.</p> </li> <li> <p><code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p><code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an ARN.</p> </li> <li> <p><code>image-id</code> - The ID of the image used to launch the instance.</p> </li> <li> <p><code>instance-id</code> - The ID of the instance.</p> </li> <li> <p><code>instance-lifecycle</code> - Indicates whether this is a Spot Instance (<code>spot</code>).</p> </li> <li> <p><code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte is an opaque internal value and should be ignored. The low byte is set based on the state represented. The valid values are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).</p> </li> <li> <p><code>instance-state-name</code> - The state of the instance (<code>pending</code> | <code>running</code> | <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code> | <code>stopped</code>).</p> </li> <li> <p><code>instance-type</code> - The type of instance (for example, <code>m1.small</code>).</p> </li> <li> <p><code>instance.group-id</code> - The ID of the security group for the instance. </p> </li> <li> <p><code>instance.group-name</code> - The name of the security group for the instance. </p> </li> <li> <p><code>ip-address</code> - The public IP address of the instance.</p> </li> <li> <p><code>kernel-id</code> - The kernel ID.</p> </li> <li> <p><code>key-name</code> - The name of the key pair used when the instance was launched.</p> </li> <li> <p><code>launch-index</code> - When launching multiple instances, this is the index for the instance in the launch group (for example, 0, 1, 2, and so on). </p> </li> <li> <p><code>launch-time</code> - The time when the instance was launched.</p> </li> <li> <p><code>monitoring-state</code> - Indicates whether monitoring is enabled for the instance (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p><code>owner-id</code> - The AWS account ID of the instance owner.</p> </li> <li> <p><code>placement-group-name</code> - The name of the placement group for the instance.</p> </li> <li> <p><code>platform</code> - The platform. Use <code>windows</code> if you have Windows instances; otherwise, leave blank.</p> </li> <li> <p><code>private-dns-name</code> - The private DNS name of the instance.</p> </li> <li> <p><code>private-ip-address</code> - The private IP address of the instance.</p> </li> <li> <p><code>product-code</code> - The product code associated with the AMI used to launch the instance.</p> </li> <li> <p><code>product-code.type</code> - The type of product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p><code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p><code>reason</code> - The reason for the current state of the instance (for example, shows \"User Initiated [date]\" when you stop or terminate the instance). Similar to the state-reason-code filter.</p> </li> <li> <p><code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, AWS Management Console, Auto Scaling, and so on).</p> </li> <li> <p><code>reservation-id</code> - The ID of the instance's reservation. A reservation ID is created any time you launch an instance. A reservation ID has a one-to-one relationship with an instance launch request, but can be associated with more than one instance if you launch multiple instances using the same launch request. For example, if you launch one instance, you'll get one reservation ID. If you launch ten instances using the same launch request, you'll also get one reservation ID.</p> </li> <li> <p><code>root-device-name</code> - The name of the root device for the instance (for example, <code>/dev/sda1</code>).</p> </li> <li> <p><code>root-device-type</code> - The type of root device that the instance uses (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p><code>source-dest-check</code> - Indicates whether the instance performs source/destination checking. A value of <code>true</code> means that checking is enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code> for the instance to perform network address translation (NAT) in your VPC. </p> </li> <li> <p><code>spot-instance-request-id</code> - The ID of the Spot Instance request.</p> </li> <li> <p><code>state-reason-code</code> - The reason code for the state change.</p> </li> <li> <p><code>state-reason-message</code> - A message that describes the state change.</p> </li> <li> <p><code>subnet-id</code> - The ID of the subnet for the instance.</p> </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource, where <code>tag</code>:<i>key</i> is the tag's key. </p> </li> <li> <p><code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the <code>tag-value</code> filter. For example, if you use both the filter \"tag-key=Purpose\" and the filter \"tag-value=X\", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.</p> </li> <li> <p><code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the <code>tag-key</code> filter.</p> </li> <li> <p><code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> | <code>default</code>).</p> </li> <li> <p><code>virtualization-type</code> - The virtualization type of the instance (<code>paravirtual</code> | <code>hvm</code>).</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC that the instance is running in.</p> </li> <li> <p><code>network-interface.description</code> - The description of the network interface.</p> </li> <li> <p><code>network-interface.subnet-id</code> - The ID of the subnet for the network interface.</p> </li> <li> <p><code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.</p> </li> <li> <p><code>network-interface.network-interface.id</code> - The ID of the network interface.</p> </li> <li> <p><code>network-interface.owner-id</code> - The ID of the owner of the network interface.</p> </li> <li> <p><code>network-interface.availability-zone</code> - The Availability Zone for the network interface.</p> </li> <li> <p><code>network-interface.requester-id</code> - The requester ID for the network interface.</p> </li> <li> <p><code>network-interface.requester-managed</code> - Indicates whether the network interface is being managed by AWS.</p> </li> <li> <p><code>network-interface.status</code> - The status of the network interface (<code>available</code>) | <code>in-use</code>).</p> </li> <li> <p><code>network-interface.mac-address</code> - The MAC address of the network interface.</p> </li> <li> <p><code>network-interface-private-dns-name</code> - The private DNS name of the network interface.</p> </li> <li> <p><code>network-interface.source-dest-check</code> - Whether the network interface performs source/destination checking. A value of <code>true</code> means checking is enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code> for the network interface to perform network address translation (NAT) in your VPC.</p> </li> <li> <p><code>network-interface.group-id</code> - The ID of a security group associated with the network interface.</p> </li> <li> <p><code>network-interface.group-name</code> - The name of a security group associated with the network interface.</p> </li> <li> <p><code>network-interface.attachment.attachment-id</code> - The ID of the interface attachment.</p> </li> <li> <p><code>network-interface.attachment.instance-id</code> - The ID of the instance to which the network interface is attached.</p> </li> <li> <p><code>network-interface.attachment.instance-owner-id</code> - The owner ID of the instance to which the network interface is attached.</p> </li> <li> <p><code>network-interface.addresses.private-ip-address</code> - The private IP address associated with the network interface.</p> </li> <li> <p><code>network-interface.attachment.device-index</code> - The device index to which the network interface is attached.</p> </li> <li> <p><code>network-interface.attachment.status</code> - The status of the attachment (<code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p><code>network-interface.attachment.attach-time</code> - The time that the network interface was attached to an instance.</p> </li> <li> <p><code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is deleted when an instance is terminated.</p> </li> <li> <p><code>network-interface.addresses.primary</code> - Specifies whether the IP address of the network interface is the primary private IP address.</p> </li> <li> <p><code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic IP address with a network interface.</p> </li> <li> <p><code>network-interface.addresses.association.ip-owner-id</code> - The owner ID of the private IP address associated with the network interface.</p> </li> <li> <p><code>association.public-ip</code> - The address of the Elastic IP address bound to the network interface.</p> </li> <li> <p><code>association.ip-owner-id</code> - The owner of the Elastic IP address associated with the network interface.</p> </li> <li> <p><code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP address for your network interface.</p> </li> <li> <p><code>association.association-id</code> - The association ID returned when the network interface was associated with an IP address.</p> </li> </ul>",
+          "documentation":"<p>One or more filters.</p> <ul> <li> <p><code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p><code>availability-zone</code> - The Availability Zone of the instance.</p> </li> <li> <p><code>block-device-mapping.attach-time</code> - The attach time for an Amazon EBS volume mapped to the instance, for example, <code>2010-09-15T17:15:20.000Z</code>.</p> </li> <li> <p><code>block-device-mapping.delete-on-termination</code> - A Boolean that indicates whether the Amazon EBS volume is deleted on instance termination.</p> </li> <li> <p><code>block-device-mapping.device-name</code> - The device name for the Amazon EBS volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p> </li> <li> <p><code>block-device-mapping.status</code> - The status for the Amazon EBS volume (<code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p><code>block-device-mapping.volume-id</code> - The volume ID of the Amazon EBS volume.</p> </li> <li> <p><code>client-token</code> - The idempotency token you provided when you launched the instance.</p> </li> <li> <p><code>dns-name</code> - The public DNS name of the instance.</p> </li> <li> <p><code>group-id</code> - The ID of the security group for the instance. EC2-Classic only.</p> </li> <li> <p><code>group-name</code> - The name of the security group for the instance. EC2-Classic only.</p> </li> <li> <p><code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p><code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an ARN.</p> </li> <li> <p><code>image-id</code> - The ID of the image used to launch the instance.</p> </li> <li> <p><code>instance-id</code> - The ID of the instance.</p> </li> <li> <p><code>instance-lifecycle</code> - Indicates whether this is a Spot Instance (<code>spot</code>).</p> </li> <li> <p><code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte is an opaque internal value and should be ignored. The low byte is set based on the state represented. The valid values are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).</p> </li> <li> <p><code>instance-state-name</code> - The state of the instance (<code>pending</code> | <code>running</code> | <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code> | <code>stopped</code>).</p> </li> <li> <p><code>instance-type</code> - The type of instance (for example, <code>t2.micro</code>).</p> </li> <li> <p><code>instance.group-id</code> - The ID of the security group for the instance. </p> </li> <li> <p><code>instance.group-name</code> - The name of the security group for the instance. </p> </li> <li> <p><code>ip-address</code> - The public IP address of the instance.</p> </li> <li> <p><code>kernel-id</code> - The kernel ID.</p> </li> <li> <p><code>key-name</code> - The name of the key pair used when the instance was launched.</p> </li> <li> <p><code>launch-index</code> - When launching multiple instances, this is the index for the instance in the launch group (for example, 0, 1, 2, and so on). </p> </li> <li> <p><code>launch-time</code> - The time when the instance was launched.</p> </li> <li> <p><code>monitoring-state</code> - Indicates whether monitoring is enabled for the instance (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p><code>owner-id</code> - The AWS account ID of the instance owner.</p> </li> <li> <p><code>placement-group-name</code> - The name of the placement group for the instance.</p> </li> <li> <p><code>platform</code> - The platform. Use <code>windows</code> if you have Windows instances; otherwise, leave blank.</p> </li> <li> <p><code>private-dns-name</code> - The private DNS name of the instance.</p> </li> <li> <p><code>private-ip-address</code> - The private IP address of the instance.</p> </li> <li> <p><code>product-code</code> - The product code associated with the AMI used to launch the instance.</p> </li> <li> <p><code>product-code.type</code> - The type of product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p><code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p><code>reason</code> - The reason for the current state of the instance (for example, shows \"User Initiated [date]\" when you stop or terminate the instance). Similar to the state-reason-code filter.</p> </li> <li> <p><code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, AWS Management Console, Auto Scaling, and so on).</p> </li> <li> <p><code>reservation-id</code> - The ID of the instance's reservation. A reservation ID is created any time you launch an instance. A reservation ID has a one-to-one relationship with an instance launch request, but can be associated with more than one instance if you launch multiple instances using the same launch request. For example, if you launch one instance, you'll get one reservation ID. If you launch ten instances using the same launch request, you'll also get one reservation ID.</p> </li> <li> <p><code>root-device-name</code> - The name of the root device for the instance (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p> </li> <li> <p><code>root-device-type</code> - The type of root device that the instance uses (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p><code>source-dest-check</code> - Indicates whether the instance performs source/destination checking. A value of <code>true</code> means that checking is enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code> for the instance to perform network address translation (NAT) in your VPC. </p> </li> <li> <p><code>spot-instance-request-id</code> - The ID of the Spot Instance request.</p> </li> <li> <p><code>state-reason-code</code> - The reason code for the state change.</p> </li> <li> <p><code>state-reason-message</code> - A message that describes the state change.</p> </li> <li> <p><code>subnet-id</code> - The ID of the subnet for the instance.</p> </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource, where <code>tag</code>:<i>key</i> is the tag's key. </p> </li> <li> <p><code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the <code>tag-value</code> filter. For example, if you use both the filter \"tag-key=Purpose\" and the filter \"tag-value=X\", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.</p> </li> <li> <p><code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the <code>tag-key</code> filter.</p> </li> <li> <p><code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> | <code>default</code>).</p> </li> <li> <p><code>virtualization-type</code> - The virtualization type of the instance (<code>paravirtual</code> | <code>hvm</code>).</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC that the instance is running in.</p> </li> <li> <p><code>network-interface.description</code> - The description of the network interface.</p> </li> <li> <p><code>network-interface.subnet-id</code> - The ID of the subnet for the network interface.</p> </li> <li> <p><code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.</p> </li> <li> <p><code>network-interface.network-interface.id</code> - The ID of the network interface.</p> </li> <li> <p><code>network-interface.owner-id</code> - The ID of the owner of the network interface.</p> </li> <li> <p><code>network-interface.availability-zone</code> - The Availability Zone for the network interface.</p> </li> <li> <p><code>network-interface.requester-id</code> - The requester ID for the network interface.</p> </li> <li> <p><code>network-interface.requester-managed</code> - Indicates whether the network interface is being managed by AWS.</p> </li> <li> <p><code>network-interface.status</code> - The status of the network interface (<code>available</code>) | <code>in-use</code>).</p> </li> <li> <p><code>network-interface.mac-address</code> - The MAC address of the network interface.</p> </li> <li> <p><code>network-interface-private-dns-name</code> - The private DNS name of the network interface.</p> </li> <li> <p><code>network-interface.source-dest-check</code> - Whether the network interface performs source/destination checking. A value of <code>true</code> means checking is enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code> for the network interface to perform network address translation (NAT) in your VPC.</p> </li> <li> <p><code>network-interface.group-id</code> - The ID of a security group associated with the network interface.</p> </li> <li> <p><code>network-interface.group-name</code> - The name of a security group associated with the network interface.</p> </li> <li> <p><code>network-interface.attachment.attachment-id</code> - The ID of the interface attachment.</p> </li> <li> <p><code>network-interface.attachment.instance-id</code> - The ID of the instance to which the network interface is attached.</p> </li> <li> <p><code>network-interface.attachment.instance-owner-id</code> - The owner ID of the instance to which the network interface is attached.</p> </li> <li> <p><code>network-interface.addresses.private-ip-address</code> - The private IP address associated with the network interface.</p> </li> <li> <p><code>network-interface.attachment.device-index</code> - The device index to which the network interface is attached.</p> </li> <li> <p><code>network-interface.attachment.status</code> - The status of the attachment (<code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p><code>network-interface.attachment.attach-time</code> - The time that the network interface was attached to an instance.</p> </li> <li> <p><code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is deleted when an instance is terminated.</p> </li> <li> <p><code>network-interface.addresses.primary</code> - Specifies whether the IP address of the network interface is the primary private IP address.</p> </li> <li> <p><code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic IP address with a network interface.</p> </li> <li> <p><code>network-interface.addresses.association.ip-owner-id</code> - The owner ID of the private IP address associated with the network interface.</p> </li> <li> <p><code>association.public-ip</code> - The address of the Elastic IP address bound to the network interface.</p> </li> <li> <p><code>association.ip-owner-id</code> - The owner of the Elastic IP address associated with the network interface.</p> </li> <li> <p><code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP address for your network interface.</p> </li> <li> <p><code>association.association-id</code> - The association ID returned when the network interface was associated with an IP address.</p> </li> </ul>",
           "locationName":"Filter"
         },
         "NextToken":{
@@ -6351,7 +6533,7 @@
         },
         "RootDeviceName":{
           "shape":"String",
-          "documentation":"<p>The device name of the root device (for example, <filename>/dev/sda1</filename> or <filename>xvda</filename>).</p>",
+          "documentation":"<p>The device name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p>",
           "locationName":"rootDeviceName"
         },
         "BlockDeviceMappings":{
@@ -6430,8 +6612,43 @@
         "ramdisk",
         "launchPermission",
         "productCodes",
-        "blockDeviceMapping"
+        "blockDeviceMapping",
+        "sriovNetSupport"
       ]
+    },
+    "ImageDiskContainer":{
+      "type":"structure",
+      "members":{
+        "Description":{
+          "shape":"String",
+          "documentation":"<p>The description of the disk image (optional).</p>"
+        },
+        "Format":{
+          "shape":"String",
+          "documentation":"<p>The format of the disk image being imported (optional).</p>"
+        },
+        "Url":{
+          "shape":"String",
+          "documentation":"<p>The URL to the Amazon S3-based disk image being imported. The URL can either be a https URL (https://..) or an Amazon S3 URL (s3://..)</p>"
+        },
+        "UserBucket":{"shape":"UserBucket"},
+        "DeviceName":{
+          "shape":"String",
+          "documentation":"<p>The Amazon EBS block device mapping for the disk (optional).</p>"
+        },
+        "SnapshotId":{
+          "shape":"String",
+          "documentation":"<p>The Amazon EBS snapshot ID to be used for importing the snapshot.</p>"
+        }
+      },
+      "documentation":"<p>The disk container object for an ImportImage task.</p>"
+    },
+    "ImageDiskContainerList":{
+      "type":"list",
+      "member":{
+        "shape":"ImageDiskContainer",
+        "locationName":"item"
+      }
     },
     "ImageIdStringList":{
       "type":"list",
@@ -6461,6 +6678,173 @@
         "kernel",
         "ramdisk"
       ]
+    },
+    "ImportImageRequest":{
+      "type":"structure",
+      "members":{
+        "DryRun":{"shape":"Boolean"},
+        "Description":{
+          "shape":"String",
+          "documentation":"<p>A description string for the import image task (optional).</p>"
+        },
+        "DiskContainers":{
+          "shape":"ImageDiskContainerList",
+          "locationName":"DiskContainer"
+        },
+        "LicenseType":{
+          "shape":"String",
+          "documentation":"<p>The license type to be used for the Amazon Machine Image (AMI) after importing (optional).</p> <p><b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a third party cloud like AWS. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html\">VM Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Valid Values: AWS | BYOL</p>"
+        },
+        "Hypervisor":{
+          "shape":"String",
+          "documentation":"<p>The target hypervisor platform to use (optional).</p>"
+        },
+        "Architecture":{
+          "shape":"String",
+          "documentation":"<p>The architecture of the virtual machine being imported (optional).</p>"
+        },
+        "Platform":{
+          "shape":"String",
+          "documentation":"<p>The operating system of the virtual machine being imported (optional).</p>"
+        },
+        "ClientData":{
+          "shape":"ClientData",
+          "documentation":"<p>Client-specific data.</p>"
+        },
+        "ClientToken":{
+          "shape":"String",
+          "documentation":"<p>The token to enable idempotency for VM import requests (optional).</p>"
+        },
+        "RoleName":{
+          "shape":"String",
+          "documentation":"<p>The name of the role to use when not using the default role name 'vmimport' (optional).</p>"
+        }
+      }
+    },
+    "ImportImageResult":{
+      "type":"structure",
+      "members":{
+        "ImportTaskId":{
+          "shape":"String",
+          "documentation":"<p>The task id of the ImportImage task.</p>",
+          "locationName":"importTaskId"
+        },
+        "Architecture":{
+          "shape":"String",
+          "documentation":"<p>Architecture of the virtual machine being imported.</p>",
+          "locationName":"architecture"
+        },
+        "LicenseType":{
+          "shape":"String",
+          "documentation":"<p>License type of the virtual machine being imported.</p>",
+          "locationName":"licenseType"
+        },
+        "Platform":{
+          "shape":"String",
+          "documentation":"<p>Operating system of the VM being imported.</p>",
+          "locationName":"platform"
+        },
+        "Hypervisor":{
+          "shape":"String",
+          "documentation":"<p>Target hypervisor of the import task.</p>",
+          "locationName":"hypervisor"
+        },
+        "Description":{
+          "shape":"String",
+          "documentation":"<p>A description of the import task.</p>",
+          "locationName":"description"
+        },
+        "SnapshotDetails":{
+          "shape":"SnapshotDetailList",
+          "locationName":"snapshotDetailSet"
+        },
+        "ImageId":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Machine Image (AMI) ID created by the import task.</p>",
+          "locationName":"imageId"
+        },
+        "Progress":{
+          "shape":"String",
+          "documentation":"<p>The task's progress.</p>",
+          "locationName":"progress"
+        },
+        "StatusMessage":{
+          "shape":"String",
+          "documentation":"<p>A detailed status message of the import task.</p>",
+          "locationName":"statusMessage"
+        },
+        "Status":{
+          "shape":"String",
+          "documentation":"<p>A brief status of the task.</p>",
+          "locationName":"status"
+        }
+      }
+    },
+    "ImportImageTask":{
+      "type":"structure",
+      "members":{
+        "ImportTaskId":{
+          "shape":"String",
+          "documentation":"<p>The ID of the import task.</p>",
+          "locationName":"importTaskId"
+        },
+        "Architecture":{
+          "shape":"String",
+          "documentation":"<p>Architecture of the VM being imported.</p>",
+          "locationName":"architecture"
+        },
+        "LicenseType":{
+          "shape":"String",
+          "documentation":"<p>License type of the VM being imported.</p>",
+          "locationName":"licenseType"
+        },
+        "Platform":{
+          "shape":"String",
+          "documentation":"<p>The description string for the import image task.</p>",
+          "locationName":"platform"
+        },
+        "Hypervisor":{
+          "shape":"String",
+          "documentation":"<p>Target hypervisor for the import task.</p>",
+          "locationName":"hypervisor"
+        },
+        "Description":{
+          "shape":"String",
+          "documentation":"<p>Description of the import task.</p>",
+          "locationName":"description"
+        },
+        "SnapshotDetails":{
+          "shape":"SnapshotDetailList",
+          "locationName":"snapshotDetailSet"
+        },
+        "ImageId":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Machine Image (AMI) ID of the imported virtual machine.</p>",
+          "locationName":"imageId"
+        },
+        "Progress":{
+          "shape":"String",
+          "documentation":"<p>The percentage of progress of the ImportImage task.</p>",
+          "locationName":"progress"
+        },
+        "StatusMessage":{
+          "shape":"String",
+          "documentation":"<p>A descriptive status message for the ImportImage task.</p>",
+          "locationName":"statusMessage"
+        },
+        "Status":{
+          "shape":"String",
+          "documentation":"<p>A brief status for the ImportImage task.</p>",
+          "locationName":"status"
+        }
+      }
+    },
+    "ImportImageTaskList":{
+      "type":"list",
+      "member":{
+        "shape":"ImportImageTask",
+        "locationName":"item"
+      }
     },
     "ImportInstanceLaunchSpecification":{
       "type":"structure",
@@ -6534,7 +6918,6 @@
         },
         "LaunchSpecification":{
           "shape":"ImportInstanceLaunchSpecification",
-          "documentation":"<p></p>",
           "locationName":"launchSpecification"
         },
         "DiskImages":{
@@ -6670,6 +7053,78 @@
           "documentation":"<p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>",
           "locationName":"keyFingerprint"
         }
+      }
+    },
+    "ImportSnapshotRequest":{
+      "type":"structure",
+      "members":{
+        "DryRun":{"shape":"Boolean"},
+        "Description":{
+          "shape":"String",
+          "documentation":"<p>The description string for the ImportSnapshot task.</p>"
+        },
+        "DiskContainer":{"shape":"SnapshotDiskContainer"},
+        "ClientData":{"shape":"ClientData"},
+        "ClientToken":{
+          "shape":"String",
+          "documentation":"<p>Token to enable idempotency for VM import requests (optional).</p>"
+        },
+        "RoleName":{
+          "shape":"String",
+          "documentation":"<p>The name of the role to use when not using the default role name 'vmimport' (optional).</p>"
+        }
+      }
+    },
+    "ImportSnapshotResult":{
+      "type":"structure",
+      "members":{
+        "ImportTaskId":{
+          "shape":"String",
+          "documentation":"<p>Task ID of the ImportSnapshot task.</p>",
+          "locationName":"importTaskId"
+        },
+        "SnapshotTaskDetail":{
+          "shape":"SnapshotTaskDetail",
+          "locationName":"snapshotTaskDetail"
+        },
+        "Description":{
+          "shape":"String",
+          "documentation":"<p>Description of the import snapshot task.</p>",
+          "locationName":"description"
+        }
+      }
+    },
+    "ImportSnapshotTask":{
+      "type":"structure",
+      "members":{
+        "ImportTaskId":{
+          "shape":"String",
+          "documentation":"<p>The task ID of the ImportSnapshot task.</p>",
+          "locationName":"importTaskId"
+        },
+        "SnapshotTaskDetail":{
+          "shape":"SnapshotTaskDetail",
+          "locationName":"snapshotTaskDetail"
+        },
+        "Description":{
+          "shape":"String",
+          "documentation":"<p>Description for the import snapshot task.</p>",
+          "locationName":"description"
+        }
+      }
+    },
+    "ImportSnapshotTaskList":{
+      "type":"list",
+      "member":{
+        "shape":"ImportSnapshotTask",
+        "locationName":"item"
+      }
+    },
+    "ImportTaskIdList":{
+      "type":"list",
+      "member":{
+        "shape":"String",
+        "locationName":"ImportTaskId"
       }
     },
     "ImportVolumeRequest":{
@@ -6870,7 +7325,7 @@
         },
         "RootDeviceName":{
           "shape":"String",
-          "documentation":"<p>The root device name (for example, <code>/dev/sda1</code>).</p>",
+          "documentation":"<p>The root device name (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p>",
           "locationName":"rootDeviceName"
         },
         "BlockDeviceMappings":{
@@ -6981,7 +7436,7 @@
         },
         "RootDeviceName":{
           "shape":"AttributeValue",
-          "documentation":"<p>The name of the root device (for example, <code>/dev/sda1</code>).</p>",
+          "documentation":"<p>The name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p>",
           "locationName":"rootDeviceName"
         },
         "BlockDeviceMappings":{
@@ -7039,7 +7494,7 @@
       "members":{
         "DeviceName":{
           "shape":"String",
-          "documentation":"<p>The device name exposed to the instance (for example, <filename>/dev/sdh</filename>).</p>",
+          "documentation":"<p>The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>",
           "locationName":"deviceName"
         },
         "Ebs":{
@@ -7062,7 +7517,7 @@
       "members":{
         "DeviceName":{
           "shape":"String",
-          "documentation":"<p>The device name exposed to the instance (for example, <filename>/dev/sdh</filename>).</p>",
+          "documentation":"<p>The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>",
           "locationName":"deviceName"
         },
         "Ebs":{
@@ -8041,7 +8496,7 @@
         },
         "Groups":{
           "shape":"GroupIdStringList",
-          "documentation":"<p>[EC2-VPC] Changes the security groups of the instance. You must specify at least one security group, even if it's just the default security group for the VPC. You must specify the security group ID, not the security group name.</p> <p>For example, if you want the instance to be in sg-1a1a1a1a and sg-9b9b9b9b, specify <code>GroupId.1=sg-1a1a1a1a</code> and <code>GroupId.2=sg-9b9b9b9b</code>.</p>",
+          "documentation":"<p>[EC2-VPC] Changes the security groups of the instance. You must specify at least one security group, even if it's just the default security group for the VPC. You must specify the security group ID, not the security group name.</p>",
           "locationName":"GroupId"
         },
         "EbsOptimized":{
@@ -8253,6 +8708,7 @@
       "type":"string",
       "enum":[
         "disabled",
+        "disabling",
         "enabled",
         "pending"
       ]
@@ -9077,7 +9533,7 @@
         },
         "RootDeviceName":{
           "shape":"String",
-          "documentation":"<p>The name of the root device (for example, <code>/dev/sda1</code>, or <code>xvda</code>).</p>",
+          "documentation":"<p>The name of the root device (for example, <code>/dev/sda1</code>, or <code>/dev/xvda</code>).</p>",
           "locationName":"rootDeviceName"
         },
         "BlockDeviceMappings":{
@@ -10549,6 +11005,87 @@
         "createVolumePermission"
       ]
     },
+    "SnapshotDetail":{
+      "type":"structure",
+      "members":{
+        "DiskImageSize":{
+          "shape":"Double",
+          "documentation":"<p>The size of the disk in the snapshot.</p>",
+          "locationName":"diskImageSize"
+        },
+        "Description":{
+          "shape":"String",
+          "documentation":"<p>Description for the snapshot.</p>",
+          "locationName":"description"
+        },
+        "Format":{
+          "shape":"String",
+          "documentation":"<p>The format of the disk image from which the snapshot is created.</p>",
+          "locationName":"format"
+        },
+        "Url":{
+          "shape":"String",
+          "documentation":"<p>The URL used to access the disk image.</p>",
+          "locationName":"url"
+        },
+        "UserBucket":{
+          "shape":"UserBucketDetails",
+          "locationName":"userBucket"
+        },
+        "DeviceName":{
+          "shape":"String",
+          "documentation":"<p>The Amazon EBS block device mapping for the snapshot.</p>",
+          "locationName":"deviceName"
+        },
+        "SnapshotId":{
+          "shape":"String",
+          "documentation":"<p>The snapshot ID of the disk being imported.</p>",
+          "locationName":"snapshotId"
+        },
+        "Progress":{
+          "shape":"String",
+          "documentation":"<p>The percentage of progress for the task.</p>",
+          "locationName":"progress"
+        },
+        "StatusMessage":{
+          "shape":"String",
+          "documentation":"<p>A detailed status message for the snapshot creation.</p>",
+          "locationName":"statusMessage"
+        },
+        "Status":{
+          "shape":"String",
+          "documentation":"<p>A brief status of the snapshot creation.</p>",
+          "locationName":"status"
+        }
+      },
+      "documentation":"<p>The details of the snapshot created from the imported disk.</p>"
+    },
+    "SnapshotDetailList":{
+      "type":"list",
+      "member":{
+        "shape":"SnapshotDetail",
+        "locationName":"item"
+      }
+    },
+    "SnapshotDiskContainer":{
+      "type":"structure",
+      "members":{
+        "Description":{
+          "shape":"String",
+          "documentation":"<p>The description of the disk image being imported.</p>"
+        },
+        "Format":{
+          "shape":"String",
+          "documentation":"<p>The format of the disk image being imported.</p>"
+        },
+        "Url":{
+          "shape":"String",
+          "documentation":"<p>The URL to the Amazon S3-based disk image being imported. It can either be a https URL (https://..) or an Amazon S3 URL (s3://..).</p>"
+        },
+        "UserBucket":{"shape":"UserBucket"}
+      },
+      "documentation":"<p>The disk container object for the ImportSnapshot request.</p>"
+    },
     "SnapshotIdStringList":{
       "type":"list",
       "member":{
@@ -10570,6 +11107,56 @@
         "completed",
         "error"
       ]
+    },
+    "SnapshotTaskDetail":{
+      "type":"structure",
+      "members":{
+        "DiskImageSize":{
+          "shape":"Double",
+          "documentation":"<p>The size of the disk in the snapshot.</p>",
+          "locationName":"diskImageSize"
+        },
+        "Description":{
+          "shape":"String",
+          "documentation":"<p>The description of the snapshot.</p>",
+          "locationName":"description"
+        },
+        "Format":{
+          "shape":"String",
+          "documentation":"<p>The format of the disk image from which the snapshot is created.</p>",
+          "locationName":"format"
+        },
+        "Url":{
+          "shape":"String",
+          "documentation":"<p>The URL of the disk image from which the snapshot is created.</p>",
+          "locationName":"url"
+        },
+        "UserBucket":{
+          "shape":"UserBucketDetails",
+          "locationName":"userBucket"
+        },
+        "SnapshotId":{
+          "shape":"String",
+          "documentation":"<p>The snapshot ID of the disk being imported.</p>",
+          "locationName":"snapshotId"
+        },
+        "Progress":{
+          "shape":"String",
+          "documentation":"<p>The percentage of completion for the ImportSnapshot task.</p>",
+          "locationName":"progress"
+        },
+        "StatusMessage":{
+          "shape":"String",
+          "documentation":"<p>A detailed status message for the ImportSnapshot task.</p>",
+          "locationName":"statusMessage"
+        },
+        "Status":{
+          "shape":"String",
+          "documentation":"<p>A brief status for the ImportSnapshot task.</p>",
+          "locationName":"status"
+        }
+      },
+      "documentation":"<p>Details about the import snapshot task.</p>"
     },
     "SpotDatafeedSubscription":{
       "type":"structure",
@@ -11128,6 +11715,36 @@
           "locationName":"instancesSet"
         }
       }
+    },
+    "UserBucket":{
+      "type":"structure",
+      "members":{
+        "S3Bucket":{
+          "shape":"String",
+          "documentation":"<p>The Amazon S3 bucket name where the disk image is located.</p>"
+        },
+        "S3Key":{
+          "shape":"String",
+          "documentation":"<p>The Amazon S3 Key for the disk image.</p>"
+        }
+      },
+      "documentation":"<p>User's Amazon S3 bucket details used to access the image.</p>"
+    },
+    "UserBucketDetails":{
+      "type":"structure",
+      "members":{
+        "S3Bucket":{
+          "shape":"String",
+          "documentation":"<p>The Amazon S3 bucket from which the disk image was created.</p>",
+          "locationName":"s3Bucket"
+        },
+        "S3Key":{
+          "shape":"String",
+          "documentation":"<p>The Amazon S3 key from which the disk image was created.</p>",
+          "locationName":"s3Key"
+        }
+      },
+      "documentation":"<p>User's Amazon S3 bucket details used to access the image.</p>"
     },
     "UserData":{
       "type":"structure",

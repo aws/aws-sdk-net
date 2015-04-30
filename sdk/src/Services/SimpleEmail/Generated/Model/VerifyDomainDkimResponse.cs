@@ -29,7 +29,7 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Represents the DNS records that must be published in the domain name's DNS to complete
-    ///        DKIM setup.
+    /// DKIM setup.
     /// </summary>
     public partial class VerifyDomainDkimResponse : AmazonWebServiceResponse
     {
@@ -39,20 +39,19 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property DkimTokens. 
         /// <para>
         /// A set of character strings that represent the domain's identity. If the identity is
-        /// an            email address, the tokens represent the domain of that address.
+        /// an email address, the tokens represent the domain of that address.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// Using these tokens, you will need to create DNS CNAME records that point to DKIM public
-        ///            keys hosted by Amazon SES. Amazon Web Services will eventually detect that
-        /// you have            updated your DNS records; this detection process may take up to
-        /// 72 hours. Upon            successful detection, Amazon SES will be able to DKIM-sign
-        /// emails originating from that            domain.
+        /// keys hosted by Amazon SES. Amazon Web Services will eventually detect that you have
+        /// updated your DNS records; this detection process may take up to 72 hours. Upon successful
+        /// detection, Amazon SES will be able to DKIM-sign emails originating from that domain.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-        /// SES                Developer Guide</a>.
+        /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
         public List<string> DkimTokens

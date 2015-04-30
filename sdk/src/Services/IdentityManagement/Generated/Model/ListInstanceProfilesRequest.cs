@@ -36,7 +36,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+    /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
     /// parameters. 
     /// </para>
     /// </summary>

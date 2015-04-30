@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The <code>PolicyAttributeDescription</code> data type. This data type is used to
-    /// describe the attributes and values associated with a policy.
+    /// Information about a policy attribute.
     /// </summary>
     public partial class PolicyAttributeDescription
     {
@@ -39,7 +38,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        ///  The name of the attribute associated with the policy. 
+        /// The name of the attribute.
         /// </para>
         /// </summary>
         public string AttributeName
@@ -57,7 +56,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property AttributeValue. 
         /// <para>
-        ///  The value of the attribute associated with the policy. 
+        /// The value of the attribute.
         /// </para>
         /// </summary>
         public string AttributeValue

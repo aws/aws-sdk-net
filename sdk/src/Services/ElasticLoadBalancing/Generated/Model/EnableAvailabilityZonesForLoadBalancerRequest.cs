@@ -29,19 +29,18 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableAvailabilityZonesForLoadBalancer operation.
-    /// Adds one or more EC2 Availability Zones to the load balancer. 
+    /// Adds the specified Availability Zones to the set of Availability Zones for the specified
+    /// load balancer.
     /// 
     ///  
     /// <para>
-    ///  The load balancer evenly distributes requests across all its registered Availability
-    /// Zones that contain instances. 
+    /// The load balancer evenly distributes requests across all its registered Availability
+    /// Zones that contain instances.
     /// </para>
-    ///  <note> The new EC2 Availability Zones to be added must be in the same EC2 Region
-    /// as the Availability Zones for which the load balancer was created. </note> 
+    ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html">Expand
-    /// a Load Balanced Application to an Additional Availability Zone</a> in the <i>Elastic
-    /// Load Balancing Developer Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html">Add
+    /// Availability Zone</a> in the <i>Elastic Load Balancing Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class EnableAvailabilityZonesForLoadBalancerRequest : AmazonElasticLoadBalancingRequest
@@ -57,8 +56,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates EnableAvailabilityZonesForLoadBalancerRequest with the parameterized properties
         /// </summary>
-        /// <param name="loadBalancerName"> The name associated with the load balancer. </param>
-        /// <param name="availabilityZones"> A list of new Availability Zones for the load balancer. Each Availability Zone must be in the same region as the load balancer. </param>
+        /// <param name="loadBalancerName">The name of the load balancer.</param>
+        /// <param name="availabilityZones">The Availability Zones. These must be in the same region as the load balancer.</param>
         public EnableAvailabilityZonesForLoadBalancerRequest(string loadBalancerName, List<string> availabilityZones)
         {
             _loadBalancerName = loadBalancerName;
@@ -68,8 +67,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        ///  A list of new Availability Zones for the load balancer. Each Availability Zone must
-        /// be in the same region as the load balancer. 
+        /// The Availability Zones. These must be in the same region as the load balancer.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -87,7 +85,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  The name associated with the load balancer. 
+        /// The name of the load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName

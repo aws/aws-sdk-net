@@ -57,44 +57,41 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// One or more of the following metrics:
+        /// One or more metrics. If you omit this parameter, all metrics are disabled.
         /// </para>
         ///  <ul> <li>
         /// <para>
-        /// GroupMinSize
+        /// <code>GroupMinSize</code>
         /// </para>
         /// </li> <li>
         /// <para>
-        /// GroupMaxSize
+        /// <code>GroupMaxSize</code>
         /// </para>
         /// </li> <li>
         /// <para>
-        /// GroupDesiredCapacity
+        /// <code>GroupDesiredCapacity</code>
         /// </para>
         /// </li> <li>
         /// <para>
-        /// GroupInServiceInstances
+        /// <code>GroupInServiceInstances</code>
         /// </para>
         /// </li> <li>
         /// <para>
-        /// GroupPendingInstances
+        /// <code>GroupPendingInstances</code>
         /// </para>
         /// </li> <li>
         /// <para>
-        /// GroupStandbyInstances
+        /// <code>GroupStandbyInstances</code>
         /// </para>
         /// </li> <li>
         /// <para>
-        /// GroupTerminatingInstances
+        /// <code>GroupTerminatingInstances</code>
         /// </para>
         /// </li> <li>
         /// <para>
-        /// GroupTotalInstances
+        /// <code>GroupTotalInstances</code>
         /// </para>
-        /// </li> </ul> 
-        /// <para>
-        /// If you omit this parameter, all metrics are disabled.
-        /// </para>
+        /// </li> </ul>
         /// </summary>
         public List<string> Metrics
         {

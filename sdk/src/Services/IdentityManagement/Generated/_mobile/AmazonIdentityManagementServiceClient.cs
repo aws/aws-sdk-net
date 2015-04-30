@@ -38,14 +38,14 @@ namespace Amazon.IdentityManagement
     ///
     /// AWS Identity and Access Management 
     /// <para>
-    ///  AWS Identity and Access Management (IAM) is a web service that you can use to manage
+    /// AWS Identity and Access Management (IAM) is a web service that you can use to manage
     /// users and user permissions under your AWS account. This guide provides descriptions
     /// of IAM actions that you can call programmatically. For general information about IAM,
     /// see <a href="http://aws.amazon.com/iam/">AWS Identity and Access Management (IAM)</a>.
     /// For the user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using
     /// IAM</a>. 
     /// </para>
-    ///  <note> AWS provides SDKs that consist of libraries and sample code for various programming
+    ///  <note>AWS provides SDKs that consist of libraries and sample code for various programming
     /// languages and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a
     /// convenient way to create programmatic access to IAM and AWS. For example, the SDKs
     /// take care of tasks such as cryptographically signing requests (see below), managing
@@ -53,7 +53,7 @@ namespace Amazon.IdentityManagement
     /// how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools
     /// for Amazon Web Services</a> page. </note> 
     /// <para>
-    ///  We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However,
+    /// We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However,
     /// you can also use the IAM Query API to make direct calls to the IAM web service. To
     /// learn more about the IAM Query API, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
     /// Query Requests</a> in the <i>Using IAM</i> guide. IAM supports GET and POST requests
@@ -67,7 +67,7 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  
     /// <para>
-    ///  Requests must be signed using an access key ID and a secret access key. We strongly
+    /// Requests must be signed using an access key ID and a secret access key. We strongly
     /// recommend that you do not use your AWS account access key ID and secret access key
     /// for everyday work with IAM. You can use the access key ID and secret access key for
     /// an IAM user or you can use the AWS Security Token Service to generate temporary security
@@ -75,24 +75,11 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  
     /// <para>
-    ///  To sign requests, we recommend that you use <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// To sign requests, we recommend that you use <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4</a>. If you have an existing application that uses Signature Version 2,
     /// you do not have to update it to use Signature Version 4. However, some operations
     /// now require Signature Version 4. The documentation for operations that require version
     /// 4 indicate this requirement. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Recording API requests</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  IAM supports AWS CloudTrail, which is a service that records AWS calls for your AWS
-    /// account and delivers log files to an Amazon S3 bucket. By using information collected
-    /// by CloudTrail, you can determine what requests were successfully made to IAM, who
-    /// made the request, when it was made, and so on. To learn more about CloudTrail, including
-    /// how to turn it on and find your log files, see the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/whatisawscloudtrail.html">AWS
-    /// CloudTrail User Guide</a>. 
     /// </para>
     ///  
     /// <para>
@@ -1535,6 +1522,36 @@ namespace Amazon.IdentityManagement
             var unmarshaller = GenerateCredentialReportResponseUnmarshaller.Instance;
 
             return InvokeAsync<GenerateCredentialReportRequest,GenerateCredentialReportResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAccessKeyLastUsed
+
+        internal GetAccessKeyLastUsedResponse GetAccessKeyLastUsed(GetAccessKeyLastUsedRequest request)
+        {
+            var marshaller = new GetAccessKeyLastUsedRequestMarshaller();
+            var unmarshaller = GetAccessKeyLastUsedResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccessKeyLastUsedRequest,GetAccessKeyLastUsedResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessKeyLastUsed operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessKeyLastUsed operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetAccessKeyLastUsedResponse> GetAccessKeyLastUsedAsync(GetAccessKeyLastUsedRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetAccessKeyLastUsedRequestMarshaller();
+            var unmarshaller = GetAccessKeyLastUsedResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAccessKeyLastUsedRequest,GetAccessKeyLastUsedResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

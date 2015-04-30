@@ -29,23 +29,21 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the SetLoadBalancerPoliciesForBackendServer operation.
-    /// Replaces the current set of policies associated with a port on which the back-end
-    /// server is listening with a new set of policies. After the policies have been created
-    /// using <a>CreateLoadBalancerPolicy</a>, they can be applied here as a list. At this
-    /// time, only the back-end server authentication policy type can be applied to the back-end
-    /// ports; this policy type is composed of multiple public key policies. 
+    /// Replaces the set of policies associated with the specified port on which the back-end
+    /// server is listening with a new set of policies. At this time, only the back-end server
+    /// authentication policy type can be applied to the back-end ports; this policy type
+    /// is composed of multiple public key policies.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    /// The <i>SetLoadBalancerPoliciesForBackendServer</i> replaces the current set of policies
-    /// associated with the specified instance port. Every time you use this action to enable
-    /// the policies, use the <code>PolicyNames</code> parameter to list all the policies
-    /// you want to enable.
+    /// Each time you use <code>SetLoadBalancerPoliciesForBackendServer</code> to enable the
+    /// policies, use the <code>PolicyNames</code> parameter to list the policies that you
+    /// want to enable.
     /// </para>
-    ///  </note> 
+    ///  
     /// <para>
-    /// You can use <a>DescribeLoadBalancers</a> or <a>DescribeLoadBalancerPolicies</a> action
-    /// to verify that the policy has been associated with the back-end server.
+    /// You can use <a>DescribeLoadBalancers</a> or <a>DescribeLoadBalancerPolicies</a> to
+    /// verify that the policy is associated with the back-end server.
     /// </para>
     /// </summary>
     public partial class SetLoadBalancerPoliciesForBackendServerRequest : AmazonElasticLoadBalancingRequest
@@ -57,7 +55,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property InstancePort. 
         /// <para>
-        ///  The port number associated with the back-end server. 
+        /// The port number associated with the back-end server.
         /// </para>
         /// </summary>
         public int InstancePort
@@ -75,8 +73,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  The mnemonic name associated with the load balancer. This name must be unique within
-        /// the set of your load balancers. 
+        /// The name of the load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName
@@ -94,8 +91,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyNames. 
         /// <para>
-        ///  List of policy names to be set. If the list is empty, then all current polices are
-        /// removed from the back-end server. 
+        /// The names of the policies. If the list is empty, then all current polices are removed
+        /// from the back-end server.
         /// </para>
         /// </summary>
         public List<string> PolicyNames

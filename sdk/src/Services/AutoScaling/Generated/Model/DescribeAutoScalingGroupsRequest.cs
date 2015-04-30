@@ -31,13 +31,6 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the DescribeAutoScalingGroups operation.
     /// Describes one or more Auto Scaling groups. If a list of names is not provided, the
     /// call describes all Auto Scaling groups.
-    /// 
-    ///  
-    /// <para>
-    /// You can specify a maximum number of items to be returned with a single call. If there
-    /// are more items to return, the call returns a token. To get the next set of items,
-    /// repeat the call with the returned token in the <code>NextToken</code> parameter.
-    /// </para>
     /// </summary>
     public partial class DescribeAutoScalingGroupsRequest : AmazonAutoScalingRequest
     {

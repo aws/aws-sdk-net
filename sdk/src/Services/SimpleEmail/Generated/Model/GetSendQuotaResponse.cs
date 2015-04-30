@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Represents the user's current activity limits returned from a successful         
-    ///   <code>GetSendQuota</code>            request.
+    /// Represents the user's current activity limits returned from a successful <code>GetSendQuota</code>
+    /// request.
     /// </summary>
     public partial class GetSendQuotaResponse : AmazonWebServiceResponse
     {
@@ -40,7 +40,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Max24HourSend. 
         /// <para>
-        /// The maximum number of emails the user is allowed to send in a 24-hour interval.
+        /// The maximum number of emails the user is allowed to send in a 24-hour interval. A
+        /// value of -1 signifies an unlimited quota.
         /// </para>
         /// </summary>
         public double Max24HourSend
@@ -58,8 +59,11 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property MaxSendRate. 
         /// <para>
-        /// The maximum number of emails the user is allowed to send per second.
+        /// The maximum number of emails that Amazon SES can accept from the user's account per
+        /// second.
         /// </para>
+        ///  <note>The rate at which Amazon SES accepts the user's messages might be less than
+        /// the maximum send rate.</note>
         /// </summary>
         public double MaxSendRate
         {

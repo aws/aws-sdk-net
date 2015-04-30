@@ -29,17 +29,16 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableAvailabilityZonesForLoadBalancer operation.
-    /// Removes the specified EC2 Availability Zones from the set of configured Availability
-    /// Zones for the load balancer. 
+    /// Removes the specified Availability Zones from the set of Availability Zones for the
+    /// specified load balancer.
     /// 
     ///  
     /// <para>
-    ///  There must be at least one Availability Zone registered with a load balancer at all
-    /// times. Once an Availability Zone is removed, all the instances registered with the
-    /// load balancer that are in the removed Availability Zone go into the <i>OutOfService</i>
-    /// state. Upon Availability Zone removal, the load balancer attempts to equally balance
-    /// the traffic among its remaining usable Availability Zones. Trying to remove an Availability
-    /// Zone that was not associated with the load balancer does nothing. 
+    /// There must be at least one Availability Zone registered with a load balancer at all
+    /// times. After an Availability Zone is removed, all instances registered with the load
+    /// balancer that are in the removed Availability Zone go into the <code>OutOfService</code>
+    /// state. Then, the load balancer attempts to equally balance the traffic among its remaining
+    /// Availability Zones.
     /// </para>
     ///  
     /// <para>
@@ -61,8 +60,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates DisableAvailabilityZonesForLoadBalancerRequest with the parameterized properties
         /// </summary>
-        /// <param name="loadBalancerName"> The name associated with the load balancer. </param>
-        /// <param name="availabilityZones"> A list of Availability Zones to be removed from the load balancer.  <note> There must be at least one Availability Zone registered with a load balancer at all times. Specified Availability Zones must be in the same region. </note></param>
+        /// <param name="loadBalancerName">The name of the load balancer.</param>
+        /// <param name="availabilityZones">The Availability Zones.</param>
         public DisableAvailabilityZonesForLoadBalancerRequest(string loadBalancerName, List<string> availabilityZones)
         {
             _loadBalancerName = loadBalancerName;
@@ -72,10 +71,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        ///  A list of Availability Zones to be removed from the load balancer. 
+        /// The Availability Zones.
         /// </para>
-        ///  <note> There must be at least one Availability Zone registered with a load balancer
-        /// at all times. Specified Availability Zones must be in the same region. </note>
         /// </summary>
         public List<string> AvailabilityZones
         {
@@ -92,7 +89,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  The name associated with the load balancer. 
+        /// The name of the load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName

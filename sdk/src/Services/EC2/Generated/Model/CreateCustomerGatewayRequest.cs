@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -54,6 +54,15 @@ namespace Amazon.EC2.Model
     /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
     /// Cloud User Guide</i>.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// You cannot create more than one customer gateway with the same VPN type, IP address,
+    /// and BGP ASN parameter values. If you run an identical request more than one time,
+    /// the first request creates the customer gateway, and subsequent requests return information
+    /// about the existing customer gateway. The subsequent requests do not create new customer
+    /// gateway resources. 
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateCustomerGatewayRequest : AmazonEC2Request
     {

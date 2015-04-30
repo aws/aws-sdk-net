@@ -55,7 +55,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AssociatePublicIpAddress. 
         /// <para>
-        /// Specifies whether the EC2 instances are associated with a public IP address (<code>true</code>)
+        /// Specifies whether the instances are associated with a public IP address (<code>true</code>)
         /// or not (<code>false</code>).
         /// </para>
         /// </summary>
@@ -74,8 +74,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
-        /// A block device mapping that specifies how block devices are exposed to the instance.
-        /// Each mapping is made up of a <code>virtualName</code> and a <code>deviceName</code>.
+        /// A block device mapping, which specifies the block devices for the instance.
         /// </para>
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -227,7 +226,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type for the EC2 instances.
+        /// The instance type for the instances.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -319,7 +318,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The tenancy of the instance, either <code>default</code> or <code>dedicated</code>.
         /// An instance with <code>dedicated</code> tenancy runs in an isolated, single-tenant
-        /// hardware and can only be launched in a VPC.
+        /// hardware and can only be launched into a VPC.
         /// </para>
         /// </summary>
         public string PlacementTenancy
@@ -355,7 +354,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// The security groups to associate with the EC2 instances.
+        /// The security groups to associate with the instances.
         /// </para>
         /// </summary>
         public List<string> SecurityGroups
@@ -391,7 +390,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// The user data available to the EC2 instances.
+        /// The user data available to the instances.
         /// </para>
         /// </summary>
         public string UserData

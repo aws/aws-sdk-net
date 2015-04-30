@@ -212,8 +212,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-asg-from-instance.html">Create
-        /// an Auto Scaling Group Using an EC2 Instance ID</a> in the <i>Auto Scaling Developer
-        /// Guide</i>.
+        /// an Auto Scaling Group from an EC2 Instance</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -311,7 +310,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The name of the placement group into which you'll launch your instances, if any. For
         /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// Groups</a>.
+        /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public string PlacementGroup
@@ -335,8 +334,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Add,
-        /// Modify, or Remove Auto Scaling Group Tags</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging
+        /// Auto Scaling Groups and Instances</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -389,7 +388,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
-        /// Scaling and Amazon VPC</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public string VPCZoneIdentifier

@@ -31,9 +31,9 @@ namespace Amazon.SimpleEmail.Model
     /// Container for the parameters to the DeleteVerifiedEmailAddress operation.
     /// Deletes the specified email address from the list of verified addresses.
     /// 
-    ///         <important>The DeleteVerifiedEmailAddress action is deprecated as of the May
-    /// 15, 2012 release        of Domain Verification. The DeleteIdentity action is now preferred.</important>
-    ///        
+    ///  <important>The DeleteVerifiedEmailAddress action is deprecated as of the May 15,
+    /// 2012 release of Domain Verification. The DeleteIdentity action is now preferred.</important>
+    /// 
     /// <para>
     /// This action is throttled at one request per second.
     /// </para>

@@ -35,14 +35,14 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    ///  If the <code>UserName</code> field is not specified, the UserName is determined implicitly
+    /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
     /// based on the AWS access key ID used to sign the request. Because this action works
     /// for access keys under the AWS account, you can use this action to manage root credentials
     /// even if the AWS account has no associated users. 
     /// </para>
     ///  
     /// <para>
-    ///  For information about rotating keys, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
+    /// For information about rotating keys, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
     /// Keys and Certificates</a> in the <i>Using IAM</i> guide. 
     /// </para>
     /// </summary>

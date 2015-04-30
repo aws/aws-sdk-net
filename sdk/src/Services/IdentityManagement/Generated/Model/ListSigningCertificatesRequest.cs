@@ -29,21 +29,21 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSigningCertificates operation.
-    /// Returns information about the signing certificates associated with the specified
-    /// user. If there are none, the action returns an empty list. 
+    /// Returns information about the signing certificates associated with the specified user.
+    /// If there are none, the action returns an empty list. 
     /// 
     ///  
     /// <para>
-    ///  Although each user is limited to a small number of signing certificates, you can
-    /// still paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-    /// parameters. 
+    /// Although each user is limited to a small number of signing certificates, you can still
+    /// paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+    /// 
     /// </para>
     ///  
     /// <para>
-    ///  If the <code>UserName</code> field is not specified, the user name is determined
-    /// implicitly based on the AWS access key ID used to sign the request. Because this action
-    /// works for access keys under the AWS account, you can use this action to manage root
-    /// credentials even if the AWS account has no associated users. 
+    /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
+    /// based on the AWS access key ID used to sign the request. Because this action works
+    /// for access keys under the AWS account, you can use this action to manage root credentials
+    /// even if the AWS account has no associated users. 
     /// </para>
     /// </summary>
     public partial class ListSigningCertificatesRequest : AmazonIdentityManagementServiceRequest
@@ -60,7 +60,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  Use this only when paginating results, and only in a subsequent request after you've
+        /// Use this only when paginating results, and only in a subsequent request after you've
         /// received a response where the results are truncated. Set it to the value of the <code>Marker</code>
         /// element in the response you just received. 
         /// </para>
@@ -80,7 +80,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        ///  Use this only when paginating results to indicate the maximum number of certificate
+        /// Use this only when paginating results to indicate the maximum number of certificate
         /// IDs you want in the response. If there are additional certificate IDs beyond the maximum
         /// you specify, the <code>IsTruncated</code> response element is <code>true</code>. This
         /// parameter is optional. If you do not include it, it defaults to 100. 

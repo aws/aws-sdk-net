@@ -29,9 +29,9 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Represents the notification attributes of an identity, including whether an identity
-    /// has Amazon Simple        Notification Service (Amazon SNS) topics set for bounce,
-    /// complaint, and/or delivery notifications,        and whether feedback forwarding is
-    /// enabled for bounce and complaint notifications.
+    /// has Amazon Simple Notification Service (Amazon SNS) topics set for bounce, complaint,
+    /// and/or delivery notifications, and whether feedback forwarding is enabled for bounce
+    /// and complaint notifications.
     /// </summary>
     public partial class IdentityNotificationAttributes
     {
@@ -43,8 +43,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property BounceTopic. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon SNS topic        where Amazon SES will
-        /// publish bounce notifications.
+        /// The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish
+        /// bounce notifications.
         /// </para>
         /// </summary>
         public string BounceTopic
@@ -62,8 +62,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property ComplaintTopic. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon SNS topic        where Amazon SES will
-        /// publish complaint notifications.
+        /// The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish
+        /// complaint notifications.
         /// </para>
         /// </summary>
         public string ComplaintTopic
@@ -81,8 +81,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property DeliveryTopic. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon SNS topic        where Amazon SES will
-        /// publish delivery notifications.
+        /// The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish
+        /// delivery notifications.
         /// </para>
         /// </summary>
         public string DeliveryTopic
@@ -101,10 +101,9 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property ForwardingEnabled. 
         /// <para>
         /// Describes whether Amazon SES will forward bounce and complaint notifications as email.
-        /// <code>true</code> indicates        that Amazon SES will forward bounce and complaint
-        /// notifications as email, while <code>false</code> indicates that        bounce and
-        /// complaint notifications will be published only to the specified bounce and complaint
-        /// Amazon SNS topics.
+        /// <code>true</code> indicates that Amazon SES will forward bounce and complaint notifications
+        /// as email, while <code>false</code> indicates that bounce and complaint notifications
+        /// will be published only to the specified bounce and complaint Amazon SNS topics.
         /// </para>
         /// </summary>
         public bool ForwardingEnabled

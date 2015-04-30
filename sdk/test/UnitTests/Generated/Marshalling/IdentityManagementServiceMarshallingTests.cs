@@ -921,6 +921,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void GetAccessKeyLastUsedMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAccessKeyLastUsed");
+
+            var request = InstantiateClassGenerator.Execute<GetAccessKeyLastUsedRequest>();
+            var marshaller = new GetAccessKeyLastUsedRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetAccessKeyLastUsedResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetAccessKeyLastUsedResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void GetAccountAuthorizationDetailsMarshallTest()
         {
             var operation = service_model.FindOperation("GetAccountAuthorizationDetails");

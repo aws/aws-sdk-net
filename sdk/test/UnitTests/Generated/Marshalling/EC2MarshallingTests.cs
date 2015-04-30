@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
  */
 
 
@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class EC2MarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("ec2-2014-10-01.normal.json", "ec2.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("ec2-2015-03-01.normal.json", "ec2.customizations.json");
         
 
         [TestMethod]
@@ -410,6 +410,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void CancelImportTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("CancelImportTask");
+
+            var request = InstantiateClassGenerator.Execute<CancelImportTaskRequest>();
+            var marshaller = new CancelImportTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CancelImportTaskResponseUnmarshaller.Instance.Unmarshall(context)
+                as CancelImportTaskResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -1776,6 +1800,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeImportImageTasksMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeImportImageTasks");
+
+            var request = InstantiateClassGenerator.Execute<DescribeImportImageTasksRequest>();
+            var marshaller = new DescribeImportImageTasksRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeImportImageTasksResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeImportImageTasksResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeImportSnapshotTasksMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeImportSnapshotTasks");
+
+            var request = InstantiateClassGenerator.Execute<DescribeImportSnapshotTasksRequest>();
+            var marshaller = new DescribeImportSnapshotTasksRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeImportSnapshotTasksResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeImportSnapshotTasksResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeInstanceAttributeMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeInstanceAttribute");
@@ -2840,6 +2912,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void ImportImageMarshallTest()
+        {
+            var operation = service_model.FindOperation("ImportImage");
+
+            var request = InstantiateClassGenerator.Execute<ImportImageRequest>();
+            var marshaller = new ImportImageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ImportImageResponseUnmarshaller.Instance.Unmarshall(context)
+                as ImportImageResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void ImportInstanceMarshallTest()
         {
             var operation = service_model.FindOperation("ImportInstance");
@@ -2879,6 +2975,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ImportKeyPairResponseUnmarshaller.Instance.Unmarshall(context)
                 as ImportKeyPairResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ImportSnapshotMarshallTest()
+        {
+            var operation = service_model.FindOperation("ImportSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<ImportSnapshotRequest>();
+            var marshaller = new ImportSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ImportSnapshotResponseUnmarshaller.Instance.Unmarshall(context)
+                as ImportSnapshotResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

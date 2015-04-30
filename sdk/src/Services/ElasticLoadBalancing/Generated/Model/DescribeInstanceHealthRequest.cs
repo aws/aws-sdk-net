@@ -29,12 +29,9 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceHealth operation.
-    /// Returns the current state of the specified instances registered with the specified
-    /// load balancer. If no instances are specified, the state of all the instances registered
-    /// with the load balancer is returned. 
-    /// 
-    ///  <note> You must provide the same account credentials as those that were used to create
-    /// the load balancer. </note>
+    /// Describes the state of the specified instances registered with the specified load
+    /// balancer. If no instances are specified, the call describes the state of all instances
+    /// registered with the load balancer, not including any terminated instances.
     /// </summary>
     public partial class DescribeInstanceHealthRequest : AmazonElasticLoadBalancingRequest
     {
@@ -49,7 +46,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates DescribeInstanceHealthRequest with the parameterized properties
         /// </summary>
-        /// <param name="loadBalancerName"> The name of the load balancer. </param>
+        /// <param name="loadBalancerName">The name of the load balancer.</param>
         public DescribeInstanceHealthRequest(string loadBalancerName)
         {
             _loadBalancerName = loadBalancerName;
@@ -58,7 +55,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        ///  A list of instance IDs whose states are being queried. 
+        /// The IDs of the instances.
         /// </para>
         /// </summary>
         public List<Instance> Instances
@@ -76,7 +73,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        ///  The name of the load balancer. 
+        /// The name of the load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName

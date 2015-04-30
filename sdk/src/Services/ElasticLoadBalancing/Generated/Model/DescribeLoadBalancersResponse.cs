@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The output for the <a>DescribeLoadBalancers</a> action.
+    /// 
     /// </summary>
     public partial class DescribeLoadBalancersResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerDescriptions. 
         /// <para>
-        ///  A list of load balancer description structures. 
+        /// Information about the load balancers.
         /// </para>
         /// </summary>
         public List<LoadBalancerDescription> LoadBalancerDescriptions
@@ -56,8 +56,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        ///  Specifies the value of next marker if the request returned more than one page of
-        /// results. 
+        /// The marker to use when requesting the next set of results. If there are no additional
+        /// results, the string is empty.
         /// </para>
         /// </summary>
         public string NextMarker

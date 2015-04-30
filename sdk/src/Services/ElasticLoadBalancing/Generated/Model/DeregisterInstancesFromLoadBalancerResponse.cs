@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The output for the <a>DeregisterInstancesFromLoadBalancer</a> action.
+    /// 
     /// </summary>
     public partial class DeregisterInstancesFromLoadBalancerResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        ///  An updated list of remaining instances registered with the load balancer. 
+        /// The remaining instances registered with the load balancer.
         /// </para>
         /// </summary>
         public List<Instance> Instances

@@ -31,25 +31,23 @@ namespace Amazon.SimpleEmail.Model
     /// Container for the parameters to the SetIdentityDkimEnabled operation.
     /// Enables or disables Easy DKIM signing of email sent from an identity:
     /// 
-    ///             <ul>                <li>If Easy DKIM            signing is enabled for
-    /// a domain name identity (e.g., <code>example.com</code>), then Amazon SES will DKIM-sign
-    ///            all email sent by addresses under that domain name (e.g.,             
-    ///       <code>user@example.com</code>).</li>                <li>If Easy DKIM signing
-    /// is enabled for an email address, then Amazon SES will DKIM-sign            all email
-    /// sent by that email address.</li>            </ul>        
+    ///  <ul> <li>If Easy DKIM signing is enabled for a domain name identity (e.g., <code>example.com</code>),
+    /// then Amazon SES will DKIM-sign all email sent by addresses under that domain name
+    /// (e.g., <code>user@example.com</code>).</li> <li>If Easy DKIM signing is enabled for
+    /// an email address, then Amazon SES will DKIM-sign all email sent by that email address.</li>
+    /// </ul> 
     /// <para>
     /// For email addresses (e.g., <code>user@example.com</code>), you can only enable Easy
-    /// DKIM signing  if the        corresponding domain (e.g., <code>example.com</code>)
-    /// has been set up for Easy DKIM using the AWS Console or             the <code>VerifyDomainDkim</code>
-    /// action.
+    /// DKIM signing if the corresponding domain (e.g., <code>example.com</code>) has been
+    /// set up for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code> action.
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// This action is throttled at one request per second.
     /// </para>
-    ///         
+    ///  
     /// <para>
-    /// For more information about Easy DKIM signing, go to the             <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+    /// For more information about Easy DKIM signing, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -61,9 +59,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property DkimEnabled. 
         /// <para>
-        /// Sets whether DKIM signing is enabled for an identity.  Set to <code>true</code> to
-        /// enable DKIM signing for this identity;             <code>false</code> to disable it.
-        /// 
+        /// Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to
+        /// enable DKIM signing for this identity; <code>false</code> to disable it. 
         /// </para>
         /// </summary>
         public bool DkimEnabled

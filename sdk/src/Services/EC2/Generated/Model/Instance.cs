@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2014-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -511,7 +511,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RootDeviceName. 
         /// <para>
-        /// The root device name (for example, <code>/dev/sda1</code>).
+        /// The root device name (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
         /// </para>
         /// </summary>
         public string RootDeviceName

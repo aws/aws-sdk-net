@@ -29,12 +29,8 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancers operation.
-    /// Returns detailed configuration information for all the load balancers created for
-    /// the account. If you specify load balancer names, the action returns configuration
-    /// information of the specified load balancers. 
-    /// 
-    ///  <note> In order to retrieve this information, you must provide the same account credentials
-    /// that was used to create the load balancer.</note>
+    /// Describes the specified the load balancers. If no load balancers are specified, the
+    /// call describes all of your load balancers.
     /// </summary>
     public partial class DescribeLoadBalancersRequest : AmazonElasticLoadBalancingRequest
     {
@@ -50,7 +46,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates DescribeLoadBalancersRequest with the parameterized properties
         /// </summary>
-        /// <param name="loadBalancerNames"> A list of load balancer names associated with the account. </param>
+        /// <param name="loadBalancerNames">The names of the load balancers.</param>
         public DescribeLoadBalancersRequest(List<string> loadBalancerNames)
         {
             _loadBalancerNames = loadBalancerNames;
@@ -59,7 +55,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerNames. 
         /// <para>
-        ///  A list of load balancer names associated with the account. 
+        /// The names of the load balancers.
         /// </para>
         /// </summary>
         public List<string> LoadBalancerNames
@@ -77,8 +73,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional parameter used for pagination of results from this call. If specified,
-        /// the response includes only records beyond the marker. 
+        /// The marker for the next set of results. (You received this marker from a previous
+        /// call.)
         /// </para>
         /// </summary>
         public string Marker
@@ -96,8 +92,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PageSize. 
         /// <para>
-        ///  The number of results returned in each page. The default is 400. You cannot specify
-        /// a page size greater than 400 or less than 1. 
+        /// The maximum number of results to return with this call (a number from 1 to 400). The
+        /// default is 400.
         /// </para>
         /// </summary>
         public int PageSize

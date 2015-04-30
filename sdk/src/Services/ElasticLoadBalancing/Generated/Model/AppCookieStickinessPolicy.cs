@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The AppCookieStickinessPolicy data type.
+    /// Information about a policy for application-controlled session stickiness.
     /// </summary>
     public partial class AppCookieStickinessPolicy
     {
@@ -43,8 +43,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates AppCookieStickinessPolicy with the parameterized properties
         /// </summary>
-        /// <param name="policyName">The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer. </param>
-        /// <param name="cookieName">The name of the application cookie used for stickiness. </param>
+        /// <param name="policyName">The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.</param>
+        /// <param name="cookieName">The name of the application cookie used for stickiness.</param>
         public AppCookieStickinessPolicy(string policyName, string cookieName)
         {
             _policyName = policyName;
@@ -54,7 +54,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property CookieName. 
         /// <para>
-        /// The name of the application cookie used for stickiness. 
+        /// The name of the application cookie used for stickiness.
         /// </para>
         /// </summary>
         public string CookieName
@@ -73,7 +73,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Gets and sets the property PolicyName. 
         /// <para>
         /// The mnemonic name for the policy being created. The name must be unique within a set
-        /// of policies for this load balancer. 
+        /// of policies for this load balancer.
         /// </para>
         /// </summary>
         public string PolicyName
