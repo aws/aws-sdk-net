@@ -12,8 +12,9 @@
     <tags>AWS Amazon cloud SecurityTokenService</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="windowsphone8">
-        <dependency id="Microsoft.Net.Http" version="2.1.10" />
+      <group targetFramework="portable-wpa+netcore45">
+        <dependency id="Microsoft.Net.Http" version="2.2.29" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.0-preview, 3.1-preview)" />
       </group>
       <group>
       <dependency id="AWSSDK.Core" version="[3.0.0.0-preview, 3.1-preview)" />
@@ -33,11 +34,5 @@
     
     <file src=".\bin\Release\portable\AWSSDK.SecurityToken.dll" target="lib\portable-wpa+netcore45" />
     <file src=".\bin\Release\portable\AWSSDK.SecurityToken.xml" target="lib\portable-wpa+netcore45" />
-
-    <file src=".\bin\Release\winrt\AWSSDK.SecurityToken.dll" target="lib\windows8" />
-    <file src=".\bin\Release\winrt\AWSSDK.SecurityToken.xml" target="lib\windows8" />
-
-    <file src=".\bin\Release\wp8\AWSSDK.SecurityToken.dll" target="lib\windowsphone8" />
-    <file src=".\bin\Release\wp8\AWSSDK.SecurityToken.xml" target="lib\windowsphone8" />
   </files>
 </package>

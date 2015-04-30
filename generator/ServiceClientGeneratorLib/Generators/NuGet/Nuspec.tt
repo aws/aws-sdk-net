@@ -17,8 +17,16 @@
     <tags>AWS Amazon cloud <#=this.Session["BaseName"]#></tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="windowsphone8">
-        <dependency id="Microsoft.Net.Http" version="2.1.10" />
+      <group targetFramework="portable-wpa+netcore45">
+        <dependency id="Microsoft.Net.Http" version="2.2.29" />
+<#
+    foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
+    {
+#>
+      <dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
+<#
+    }
+#>
       </group>
       <group>
 <#
@@ -45,11 +53,5 @@
 	
 	<file src=".\bin\Release\portable\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-wpa+netcore45" />
 	<file src=".\bin\Release\portable\\<#=this.Session["AssemblyName"]#>.xml" target="lib\portable-wpa+netcore45" />
-
-    <file src=".\bin\Release\winrt\\<#=this.Session["AssemblyName"]#>.dll" target="lib\windows8" />
-    <file src=".\bin\Release\winrt\\<#=this.Session["AssemblyName"]#>.xml" target="lib\windows8" />
-
-    <file src=".\bin\Release\wp8\\<#=this.Session["AssemblyName"]#>.dll" target="lib\windowsphone8" />
-    <file src=".\bin\Release\wp8\\<#=this.Session["AssemblyName"]#>.xml" target="lib\windowsphone8" />
   </files>
 </package>

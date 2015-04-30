@@ -36,26 +36,36 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line default
             #line hidden
-            this.Write("-preview</version> \r\n    <authors>Amazon Web Services</authors>\r\n    <description" +
-                    ">The Amazon Web Services SDK for .NET - Core Runtime</description> \r\n    <langua" +
-                    "ge>en-US</language>\r\n    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUr" +
-                    "l>    \r\n    <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/<" +
-                    "/projectUrl>\r\n    <tags>AWS Amazon cloud</tags>\r\n    <iconUrl>http://media.amazo" +
-                    "nwebservices.com/aws_singlebox_01.png</iconUrl>\r\n    <dependencies>\r\n      <grou" +
-                    "p targetFramework=\"windowsphone8\">\r\n        <dependency id=\"Microsoft.Net.Http\" " +
-                    "version=\"2.1.10\" />\r\n      </group>\r\n      <group>\r\n      </group>\r\n    </depend" +
-                    "encies>\r\n  </metadata> \r\n  <files>\r\n\r\n    <file src=\"..\\..\\nuget-content\\account" +
-                    "-management.ps1\" target=\"tools\" />\r\n\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK." +
-                    "Core.dll\" target=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core." +
-                    "xml\" target=\"lib\\net35\" />\r\n\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.dll" +
-                    "\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.xml\" tar" +
-                    "get=\"lib\\net45\" />\r\n\t\r\n\t<file src=\".\\bin\\Release\\portable\\AWSSDK.Core.dll\" targe" +
-                    "t=\"lib\\portable-wpa+netcore45\" />\r\n\t<file src=\".\\bin\\Release\\portable\\AWSSDK.Cor" +
-                    "e.xml\" target=\"lib\\portable-wpa+netcore45\" />\r\n\r\n    <file src=\".\\bin\\Release\\wi" +
-                    "nrt\\AWSSDK.Core.dll\" target=\"lib\\windows8\" />\r\n    <file src=\".\\bin\\Release\\winr" +
-                    "t\\AWSSDK.Core.xml\" target=\"lib\\windows8\" />\r\n\r\n    <file src=\".\\bin\\Release\\wp8\\" +
-                    "AWSSDK.Core.dll\" target=\"lib\\windowsphone8\" />\r\n    <file src=\".\\bin\\Release\\wp8" +
-                    "\\AWSSDK.Core.xml\" target=\"lib\\windowsphone8\" />\r\n  </files>\r\n</package>");
+            this.Write(@"-preview</version> 
+    <authors>Amazon Web Services</authors>
+    <description>The Amazon Web Services SDK for .NET - Core Runtime</description> 
+    <language>en-US</language>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
+    <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
+    <tags>AWS Amazon cloud</tags>
+    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+    <dependencies>
+      <group targetFramework=""portable-wpa+netcore45"">
+        <dependency id=""Microsoft.Net.Http"" version=""2.2.29"" />
+      </group>
+      <group>
+      </group>
+    </dependencies>
+  </metadata> 
+  <files>
+
+    <file src=""..\..\nuget-content\account-management.ps1"" target=""tools"" />
+
+    <file src="".\bin\Release\net35\AWSSDK.Core.dll"" target=""lib\net35"" />
+    <file src="".\bin\Release\net35\AWSSDK.Core.xml"" target=""lib\net35"" />
+
+    <file src="".\bin\Release\net45\AWSSDK.Core.dll"" target=""lib\net45"" />
+    <file src="".\bin\Release\net45\AWSSDK.Core.xml"" target=""lib\net45"" />
+	
+	<file src="".\bin\Release\portable\AWSSDK.Core.dll"" target=""lib\portable-wpa+netcore45"" />
+	<file src="".\bin\Release\portable\AWSSDK.Core.xml"" target=""lib\portable-wpa+netcore45"" />
+  </files>
+</package>");
             return this.GenerationEnvironment.ToString();
         }
     }

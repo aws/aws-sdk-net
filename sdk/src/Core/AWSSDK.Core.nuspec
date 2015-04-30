@@ -12,8 +12,8 @@
     <tags>AWS Amazon cloud</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="windowsphone8">
-        <dependency id="Microsoft.Net.Http" version="2.1.10" />
+      <group targetFramework="portable-wpa+netcore45">
+        <dependency id="Microsoft.Net.Http" version="2.2.29" />
       </group>
       <group>
       </group>
@@ -31,11 +31,5 @@
     
     <file src=".\bin\Release\portable\AWSSDK.Core.dll" target="lib\portable-wpa+netcore45" />
     <file src=".\bin\Release\portable\AWSSDK.Core.xml" target="lib\portable-wpa+netcore45" />
-
-    <file src=".\bin\Release\winrt\AWSSDK.Core.dll" target="lib\windows8" />
-    <file src=".\bin\Release\winrt\AWSSDK.Core.xml" target="lib\windows8" />
-
-    <file src=".\bin\Release\wp8\AWSSDK.Core.dll" target="lib\windowsphone8" />
-    <file src=".\bin\Release\wp8\AWSSDK.Core.xml" target="lib\windowsphone8" />
   </files>
 </package>

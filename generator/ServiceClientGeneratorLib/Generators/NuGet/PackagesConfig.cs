@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
+    #line 1 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class PackagesConfig : PackagesConfigBase
     {
@@ -32,7 +32,7 @@ namespace ServiceClientGenerator.Generators.NuGet
 <packages>
   <package id=""Microsoft.Bcl"" version=""1.1.9"" targetFramework=""wp80"" />
   <package id=""Microsoft.Bcl.Build"" version=""1.0.14"" targetFramework=""wp80"" />
-  <package id=""Microsoft.Net.Http"" version=""2.2.28"" targetFramework=""wp80"" />
+  <package id=""Microsoft.Net.Http"" version=""2.2.29"" targetFramework=""wp80"" />
 </packages>");
             return this.GenerationEnvironment.ToString();
         }
