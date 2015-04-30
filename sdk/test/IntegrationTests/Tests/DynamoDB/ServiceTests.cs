@@ -490,6 +490,40 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(0, items[0].Count);
             Assert.AreEqual(0, items[1].Count);
 
+            // Query table with hash-key condition expression
+            items = Client.Query(new QueryRequest
+            {
+                TableName = hashRangeTableName,
+                KeyConditionExpression = "#H = :val",
+                ExpressionAttributeNames = new Dictionary<string, string>
+                {
+                    { "#H", "Name"}
+                },
+                ExpressionAttributeValues = new Dictionary<string, AttributeValue>
+                {
+                    { ":val", new AttributeValue { S = "Diane" } }
+                }
+            }).Items;
+            Assert.AreEqual(2, items.Count);
+
+            // Query table with key condition expression
+            items = Client.Query(new QueryRequest
+            {
+                TableName = hashRangeTableName,
+                KeyConditionExpression = "#H = :name and #R > :age",
+                ExpressionAttributeNames = new Dictionary<string, string>
+                {
+                    { "#H", "Name" },
+                    { "#R", "Age" }
+                },
+                ExpressionAttributeValues = new Dictionary<string, AttributeValue>
+                {
+                    { ":name", new AttributeValue { S = "Diane" } },
+                    { ":age", new AttributeValue { N = "30" } }
+                }
+            }).Items;
+            Assert.AreEqual(1, items.Count);
+
             // Query global index
             items = Client.Query(new QueryRequest
             {

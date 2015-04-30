@@ -839,6 +839,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 TableName = TableName,
                 AttributesToGet = config.AttributesToGet,
                 Filter = config.Filter,
+                KeyExpression = config.KeyExpression,
                 FilterExpression = config.FilterExpression,
                 ConditionalOperator = config.ConditionalOperator,
                 Limit = config.Limit,

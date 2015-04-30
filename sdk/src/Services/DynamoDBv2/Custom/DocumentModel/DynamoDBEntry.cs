@@ -20,6 +20,7 @@ using System.Linq;
 using Amazon.DynamoDBv2.Model;
 using System.IO;
 using System.Globalization;
+using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
 #if (WIN_RT || WINDOWS_PHONE)
@@ -1333,6 +1334,24 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return (List<MemoryStream>)Value;
         } 
+
+        #endregion
+
+        #region Public overrides
+
+        public override int GetHashCode()
+        {
+            return Hashing.Hash(ValueType, Value);
+        }
+        public override bool Equals(object obj)
+        {
+            var uddbe = obj as UnconvertedDynamoDBEntry;
+            if (uddbe == null)
+                return false;
+
+            return (ValueType.Equals(uddbe.ValueType) &&
+                Value.Equals(uddbe.Value));
+        }
 
         #endregion
     }

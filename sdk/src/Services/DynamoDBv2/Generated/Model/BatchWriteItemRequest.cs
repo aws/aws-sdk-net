@@ -67,7 +67,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#BatchOperations">Batch
+    /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#BatchOperations">Batch
     /// Operations and Error Handling</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </para>
     ///  </important> 
@@ -84,7 +84,8 @@ namespace Amazon.DynamoDBv2.Model
     /// If you use a programming language that supports concurrency, such as Java, you can
     /// use threads to write items in parallel. Your application must include the necessary
     /// logic to manage the threads. With languages that don't support threading, such as
-    /// PHP, you must update provides an alternative where the API performs the specified
+    /// PHP, you must update or delete the specified items one at a time. In both situations,
+    /// <i>BatchWriteItem</i> provides an alternative where the API performs the specified
     /// put and delete operations in parallel, giving you the power of the thread pool approach
     /// without having to introduce complexity into your application.
     /// </para>

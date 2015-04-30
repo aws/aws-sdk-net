@@ -82,9 +82,10 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property AttributesToGet. <important>
         /// <para>
-        /// There is a newer parameter available. Use <i>ProjectionExpression</i> instead. Note
-        /// that if you use <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-        /// time, DynamoDB will return a <i>ValidationException</i> exception.
+        /// This is a legacy parameter, for backward compatibility. New applications should use
+        /// <i>ProjectionExpression</i> instead. Do not combine legacy parameters and expression
+        /// parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+        /// exception.
         /// </para>
         ///  
         /// <para>
@@ -166,7 +167,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </li></ul> 
         /// <para>
         /// The name of this attribute conflicts with a reserved word, so it cannot be used directly
-        /// in an expression. (For the complete list of reserved words, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+        /// in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
         /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you
         /// could specify the following for <i>ExpressionAttributeNames</i>:
         /// </para>
@@ -189,8 +190,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </note> 
         /// <para>
-        /// For more information on expression attribute names, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-        /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+        /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ExpressionAttributeNames
@@ -244,9 +246,14 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
+        ///  <note>
+        /// <para>
+        /// <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i> parameter.
+        /// </para>
+        /// </note>
         /// </summary>
         public string ProjectionExpression
         {
