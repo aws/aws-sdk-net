@@ -8,7 +8,7 @@
 		<Exec Command="$(devenv2013) /Rebuild Release ..\buildtools\CustomTasks\CustomTasks.sln"/>
 	</Target>
 	
-	<UsingTask TaskName="CustomTasks.UpdateFxCopProject" AssemblyFile="C:\code\dotnet\v3\AWSDotNetPublic\buildtools\CustomTasks\bin\Release\CustomTasks.dll"/>
+	<UsingTask TaskName="CustomTasks.UpdateFxCopProject" AssemblyFile="..\buildtools\CustomTasks\bin\Release\CustomTasks.dll"/>
 	
 	<Target Name="init" DependsOnTargets="prep;build-custom-tasks"/>
 	<Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;consolidate-artifacts"/>
