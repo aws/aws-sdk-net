@@ -3,7 +3,14 @@
 	xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	
 	<Import Project="common.targets" />
+
+	<Target Name="build-custom-tasks">
+		<Exec Command="$(devenv2013) /Rebuild Release ..\buildtools\CustomTasks\CustomTasks.sln"/>
+	</Target>
 	
+	<UsingTask TaskName="CustomTasks.UpdateFxCopProject" AssemblyFile="C:\code\dotnet\v3\AWSDotNetPublic\buildtools\CustomTasks\bin\Release\CustomTasks.dll"/>
+	
+	<Target Name="init" DependsOnTargets="prep;build-custom-tasks"/>
 	<Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;consolidate-artifacts"/>
 	
 	<Target Name="run-generator">
@@ -29,8 +36,8 @@
 			DestinationFolder="$(Deployment)" />
 	</Target>
  
-	<Target Name="test-sdk" DependsOnTargets="prep;build-sdk;fxcop;run-unit-tests;run-integ-tests" />
-	<Target Name="run-unit-tests" DependsOnTargets="prep;build-sdk">
+	<Target Name="test-sdk" DependsOnTargets="init;build-sdk;fxcop;run-unit-tests;run-integ-tests" />
+	<Target Name="run-unit-tests" DependsOnTargets="init;build-sdk">
 		<MSBuild
 			Projects="$(MSBuildProjectFile)"
 			Targets="run-tests"
@@ -40,7 +47,7 @@
 			Targets="run-tests"
 			Properties="TestContainer=..\sdk\test\UnitTests\bin\Release\net45\AWSSDK.UnitTests.Net45.dll" />
 	</Target>
-	<Target Name="run-integ-tests" DependsOnTargets="prep;build-sdk" Condition="'$(RunIntegTests)' != ''">
+	<Target Name="run-integ-tests" DependsOnTargets="init;build-sdk" Condition="'$(RunIntegTests)' != ''">
  		<MSBuild
 			Projects="$(MSBuildProjectFile)"
 			Targets="run-tests"
@@ -63,7 +70,7 @@
 	
 	<!-- TEST TARGETS/TASKS -->
 
-	<Target Name="fxcop" DependsOnTargets="copy-assemblies">
+	<Target Name="fxcop" DependsOnTargets="init;copy-assemblies">
 		<UpdateFxCopProject Assemblies="$(Deployment)\sdk\assemblies\net35" FxCopProject="..\SDK-3.5.FxCop" />
 		<UpdateFxCopProject Assemblies="$(Deployment)\sdk\assemblies\net45" FxCopProject="..\SDK-4.5.FxCop" />
 

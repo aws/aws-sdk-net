@@ -12,12 +12,6 @@
 	</PropertyGroup>
 
 	<!-- COMMON TARGETS -->
-
-	<Target Name="build-custom-tasks">
-		<Exec Command="$(devenv2013) /Rebuild Release ..\buildtools\CustomTasks\CustomTasks.sln"/>
-	</Target>
-	
-	<UsingTask TaskName="CustomTasks.UpdateFxCopProject" AssemblyFile="C:\code\dotnet\v3\AWSDotNetPublic\buildtools\CustomTasks\bin\Release\CustomTasks.dll"/>
 	
 	<Target Name="prep" DependsOnTargets="build-custom-tasks">
 		<RemoveDir Directories="TestResults" />

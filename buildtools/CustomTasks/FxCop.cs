@@ -24,10 +24,13 @@ namespace CustomTasks
 
             Assemblies = Path.GetFullPath(Assemblies);
             Log.LogMessage("Assemblies = " + Assemblies);
+
             FxCopProject = Path.GetFullPath(FxCopProject);
             Log.LogMessage("FxCopProject = " + FxCopProject);
-
+			
+            Log.LogMessage("Updating project...");
             FxCop.UpdateFxCopProject(Assemblies, FxCopProject);
+            Log.LogMessage("Project updated");
 
             return true;
         }
