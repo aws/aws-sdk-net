@@ -1,6 +1,0 @@
-{
-  "noArgOverloads": [
-    "DescribeDomains"
-  ],
-  "generateComplexException" : true
-}
