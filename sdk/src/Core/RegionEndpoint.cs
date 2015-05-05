@@ -209,6 +209,9 @@ namespace Amazon
         {
             lock (LOCK_OBJECT)
             {
+                if (RegionEndpoint.loaded)
+                    return;
+
                 _documentEndpoints = new Dictionary<string, JsonData>();
 
                 var endpointsPath = AWSConfigs.EndpointDefinition;
@@ -217,6 +220,7 @@ namespace Amazon
 #if BCL
                     if (TryLoadEndpointDefinitionsFromAssemblyDir())
                     {
+                        RegionEndpoint.loaded = true;
                         return;
                     }
 #endif
@@ -232,6 +236,7 @@ namespace Amazon
                     LoadEndpointDefinitionFromFilePath(endpointsPath);
                 }
 #endif
+                RegionEndpoint.loaded = true;
             }
         }
 

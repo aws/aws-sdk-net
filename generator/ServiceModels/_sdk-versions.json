@@ -1,6 +1,6 @@
 
 {
-    "CoreVersion" : "3.0.0.0",
+    "CoreVersion" : "3.0.0.1",
     "ServiceVersions" : {
         "CloudHSM" : {
             "Version" : "3.0.0.0",
