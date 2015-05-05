@@ -215,8 +215,7 @@ namespace Amazon.Runtime.Internal
                 requestContext.Metrics.AddProperty(Metric.AWSRequestID, response.ResponseMetadata.RequestId);
             }
 
-            var logResponseBody = _supportsResponseLogging && (requestContext.ClientConfig.LogResponse ||
-                AWSConfigs.LoggingConfig.LogResponses == ResponseLoggingOption.Always);
+            var logResponseBody = ShouldLogResponseBody(_supportsResponseLogging, requestContext);
 
             if (logResponseBody)
             {
@@ -225,6 +224,12 @@ namespace Amazon.Runtime.Internal
 
             context.ValidateCRC32IfAvailable();
             return response;
+        }
+
+        private static bool ShouldLogResponseBody(bool supportsResponseLogging, IRequestContext requestContext)
+        {
+            return supportsResponseLogging &&
+                (requestContext.ClientConfig.LogResponse || AWSConfigs.LoggingConfig.LogResponses == ResponseLoggingOption.Always);
         }
     }
 }

@@ -32,6 +32,10 @@ namespace Amazon.Runtime.Internal.Util
     /// </summary>
     public class CachingWrapperStream : WrapperStream
     {
+        private long _cacheLimit;
+
+        private long _cachedBytes = 0;
+
         /// <summary>
         /// All the bytes read by the stream.
         /// </summary>
@@ -40,9 +44,11 @@ namespace Amazon.Runtime.Internal.Util
         /// <summary>
         /// Initializes the CachingWrapperStream with a base stream.
         /// </summary>
-        /// <param name="baseStream"></param>
-        public CachingWrapperStream(Stream baseStream) : base(baseStream)
-        {            
+        /// <param name="baseStream">The stream to be wrapped.</param>
+        /// <param name="cacheLimit">Maximum number of bytes to be cached.</param>
+        public CachingWrapperStream(Stream baseStream, long cacheLimit) : base(baseStream)
+        {
+            _cacheLimit = cacheLimit;
             this.AllReadBytes = new List<byte>();
         }
 
@@ -71,9 +77,15 @@ namespace Amazon.Runtime.Internal.Util
         {
             var numberOfBytesRead = base.Read(buffer, offset, count);
 
-            var readBytes = new byte[numberOfBytesRead];
-            System.Array.Copy(buffer, offset, readBytes, 0, numberOfBytesRead);
-            AllReadBytes.AddRange(readBytes);
+            // Limit the cached bytes to _cacheLimit
+            if ((_cachedBytes + numberOfBytesRead) < _cacheLimit)
+            {
+                var readBytes = new byte[numberOfBytesRead];
+                System.Array.Copy(buffer, offset, readBytes, 0, numberOfBytesRead);
+                AllReadBytes.AddRange(readBytes);
+                _cachedBytes += numberOfBytesRead;
+            }
+
             return numberOfBytesRead;
         }
 

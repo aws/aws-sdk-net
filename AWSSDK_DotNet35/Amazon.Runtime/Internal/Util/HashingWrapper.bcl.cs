@@ -24,15 +24,21 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using Amazon.Runtime;
+using ThirdParty.MD5;
 
 namespace Amazon.Runtime.Internal.Util
 {
     public partial class HashingWrapper : IHashingWrapper
     {
+        private static string MD5ManagedName = typeof(MD5Managed).FullName;
+
         private HashAlgorithm _algorithm = null;
         private void Init(string algorithmName)
         {
-            _algorithm = HashAlgorithm.Create(algorithmName);
+            if (string.Equals(MD5ManagedName, algorithmName, StringComparison.Ordinal))
+                _algorithm = new MD5Managed();
+            else
+                throw new ArgumentOutOfRangeException(algorithmName, "Unsupported hashing algorithm");
         }
 
         #region IHashingWrapper Members

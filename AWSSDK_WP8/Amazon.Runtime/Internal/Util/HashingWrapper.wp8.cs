@@ -33,7 +33,7 @@ namespace Amazon.Runtime.Internal.Util
 {
     public partial class HashingWrapper : IHashingWrapper
     {
-        protected static string MD5ManagedName = typeof(MD5Managed).FullName;
+        private static string MD5ManagedName = typeof(MD5Managed).FullName;
 
         private HashAlgorithm _algorithm;
         private void Init(string algorithmName)
@@ -41,7 +41,7 @@ namespace Amazon.Runtime.Internal.Util
             if (string.Equals(MD5ManagedName, algorithmName, StringComparison.Ordinal))
                 _algorithm = new MD5Managed();
             else
-                throw new ArgumentOutOfRangeException("Unsupported hashing algorithm");
+                throw new ArgumentOutOfRangeException(algorithmName, "Unsupported hashing algorithm");
         }
 
         #region IHashingWrapper Members

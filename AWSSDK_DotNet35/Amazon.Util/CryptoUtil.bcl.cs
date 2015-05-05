@@ -120,14 +120,7 @@ namespace Amazon.Util
                 {
                     if (null == _hashAlgorithm)
                     {
-                        try
-                        {
-                            _hashAlgorithm = HashAlgorithm.Create("SHA-256");
-                        }
-                        catch (Exception) // Managed Hash Provider is not FIPS compliant.
-                        {
-                            _hashAlgorithm = new SHA256CryptoServiceProvider();
-                        }
+                        _hashAlgorithm = new SHA256CryptoServiceProvider();
                     }
                     return _hashAlgorithm;
                 }

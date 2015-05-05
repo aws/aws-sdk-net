@@ -239,6 +239,7 @@ namespace Amazon
     {
         private const string logToKey = "logTo";
         private const string logResponsesKey = "logResponses";
+        private const string logResponsesSizeLimitKey = "logResponsesSizeLimit";
         private const string logMetricsKey = "logMetrics";
         private const string logMetricsFormatKey = "logMetricsFormat";
         private const string logMetricsCustomFormatterKey = "logMetricsCustomFormatter";
@@ -254,6 +255,13 @@ namespace Amazon
         public ResponseLoggingOption LogResponses
         {
             get { return (ResponseLoggingOption)this[logResponsesKey]; }
+            set { this[logResponsesKey] = value; }
+        }
+
+        [ConfigurationProperty(logResponsesSizeLimitKey)]
+        public long? LogResponsesSizeLimit
+        {
+            get { return (long?)this[logResponsesSizeLimitKey]; }
             set { this[logResponsesKey] = value; }
         }
 
