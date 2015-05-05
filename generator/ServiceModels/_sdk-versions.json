@@ -27,7 +27,7 @@
             }
         },
         "CloudFront"     : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
                 "Core" : "3.0.0.0"
             }
