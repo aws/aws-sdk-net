@@ -215,16 +215,23 @@ namespace Amazon.Runtime.Internal
                 requestContext.Metrics.AddProperty(Metric.AWSRequestID, response.ResponseMetadata.RequestId);
             }
 
-            var logResponseBody = _supportsResponseLogging && (requestContext.ClientConfig.LogResponse ||
-                AWSConfigs.LoggingConfig.LogResponses == ResponseLoggingOption.Always);
+            var logResponseBody = ShouldLogResponseBody(_supportsResponseLogging, requestContext);
 
             if (logResponseBody)
             {
-                this.Logger.DebugFormat("Received response: [{0}]", context.ResponseBody);
+                this.Logger.DebugFormat("Received response (truncated to {0} bytes): [{1}]",
+                    AWSConfigs.LoggingConfig.LogResponsesSizeLimit,
+                    context.ResponseBody);
             }
 
             context.ValidateCRC32IfAvailable();
             return response;
+        }
+
+        private static bool ShouldLogResponseBody(bool supportsResponseLogging, IRequestContext requestContext)
+        {
+            return supportsResponseLogging &&
+                (requestContext.ClientConfig.LogResponse || AWSConfigs.LoggingConfig.LogResponses == ResponseLoggingOption.Always);
         }
     }
 }
