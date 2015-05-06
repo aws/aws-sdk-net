@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.ElasticMapReduce</id>
     <title>AWSSDK - Amazon Elastic MapReduce</title>
-    <version>3.0.0.0-preview</version> 
+    <version>3.0.0.1-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to quickly and cost-effectively process vast amounts of data.</description> 
     <language>en-US</language>
@@ -14,10 +14,10 @@
     <dependencies>
       <group targetFramework="portable-wpa+netcore45">
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.0-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.1-preview, 3.1-preview)" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="[3.0.0.0-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.1-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 

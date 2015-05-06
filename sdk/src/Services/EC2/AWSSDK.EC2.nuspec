@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.EC2</id>
     <title>AWSSDK - Amazon Elastic Compute Cloud</title>
-    <version>3.0.0.0-preview</version> 
+    <version>3.0.0.1-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers.</description> 
     <language>en-US</language>
@@ -14,10 +14,10 @@
     <dependencies>
       <group targetFramework="portable-wpa+netcore45">
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.0-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.1-preview, 3.1-preview)" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="[3.0.0.0-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.1-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 

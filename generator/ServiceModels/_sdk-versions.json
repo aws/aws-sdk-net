@@ -3,289 +3,289 @@
     "CoreVersion" : "3.0.0.1",
     "ServiceVersions" : {
         "CloudHSM" : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "AutoScaling" : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "AWSSupport"  : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "CloudFormation" : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "CloudFront"     : {
-            "Version" : "3.0.0.1",
+            "Version" : "3.0.0.2",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "CloudSearch_2011_02_01" : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "CloudSearch"            : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "CloudSearchDomain"      : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "CloudTrail"             : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "ConfigService"          : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "CloudWatch"             : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "CloudWatchLogs"         : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "CodeDeploy"             : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "CognitoIdentity"        : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0",
-                "SecurityToken" : "3.0.0.0"
+                "Core" : "3.0.0.1",
+                "SecurityToken" : "3.0.0.1"
             }
         },
         "CognitoSync"            : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0",
-                "CognitoIdentity" : "3.0.0.0"
+                "Core" : "3.0.0.1",
+                "CognitoIdentity" : "3.0.0.1"
             }
         },
         "DataPipeline"           : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "DirectConnect"          : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "DynamoDBv2"             : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "EC2"                    : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "ECS"                    : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "ElastiCache"            : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "ElasticBeanstalk"       : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "ElasticLoadBalancing"   : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "ElasticMapReduce"       : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "ElasticTranscoder"      : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "Glacier"                : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0",
-                "SQS"  : "3.0.0.0",
-                "SimpleNotificationService" : "3.0.0.0"
+                "Core" : "3.0.0.1",
+                "SQS"  : "3.0.0.1",
+                "SimpleNotificationService" : "3.0.0.1"
             }
         },
         "IdentityManagement"     : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "ImportExport"           : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "Kinesis"                : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "Lambda"                 : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "KeyManagementService"   : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "MachineLearning"        : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "OpsWorks"               : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "RDS"                    : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "Redshift"               : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "Route53"                : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "Route53Domains"         : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "S3"                     : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "SecurityToken"          : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "SimpleDB"               : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "SimpleEmail"            : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "SimpleNotificationService" : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "SimpleWorkflow"            : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "SQS"                       : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "StorageGateway"            : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         },
         "WorkSpaces"                : {
-            "Version" : "3.0.0.0",
+            "Version" : "3.0.0.1",
             "Dependencies" : {
-                "Core" : "3.0.0.0"
+                "Core" : "3.0.0.1"
             }
         }
     }
