@@ -47,7 +47,7 @@
 			Targets="run-tests"
 			Properties="TestContainer=..\sdk\test\UnitTests\bin\Release\net45\AWSSDK.UnitTests.Net45.dll" />
 	</Target>
-	<Target Name="run-integ-tests" DependsOnTargets="init;build-sdk" Condition="'$(RunIntegTests)' != ''">
+	<Target Name="run-integ-tests" DependsOnTargets="init;build-sdk" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'">
  		<MSBuild
 			Projects="$(MSBuildProjectFile)"
 			Targets="run-tests"
