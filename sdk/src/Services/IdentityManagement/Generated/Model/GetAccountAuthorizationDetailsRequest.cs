@@ -29,9 +29,9 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccountAuthorizationDetails operation.
-    /// Retrieves information about all IAM users, groups, and roles in your account, including
-    /// their relationships to one another and their policies. Use this API to obtain a snapshot
-    /// of the configuration of IAM permissions (users, groups, roles, and policies) in your
+    /// Retrieves information about all IAM users, groups, roles, and policies in your account,
+    /// including their relationships to one another. Use this API to obtain a snapshot of
+    /// the configuration of IAM permissions (users, groups, roles, and policies) in your
     /// account.
     /// 
     ///  

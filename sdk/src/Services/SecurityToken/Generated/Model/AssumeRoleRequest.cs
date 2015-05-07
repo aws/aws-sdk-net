@@ -165,7 +165,6 @@ namespace Amazon.SecurityToken.Model
         /// The external ID is useful in order to help third parties bind a role to the customer
         /// who created it. For more information about the external ID, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html"
         /// target="_blank">About the External ID</a> in <i>Using Temporary Security Credentials</i>.
-        /// 
         /// </para>
         /// </summary>
         public string ExternalId
@@ -254,7 +253,6 @@ namespace Amazon.SecurityToken.Model
         /// the role being assumed includes a condition that requires MFA authentication. The
         /// value is either the serial number for a hardware device (such as <code>GAHT12345678</code>)
         /// or an Amazon Resource Name (ARN) for a virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).
-        /// 
         /// </para>
         /// </summary>
         public string SerialNumber
@@ -275,7 +273,7 @@ namespace Amazon.SecurityToken.Model
         /// The value provided by the MFA device, if the trust policy of the role being assumed
         /// requires MFA (that is, if the policy includes a condition that tests for MFA). If
         /// the role being assumed requires MFA and if the <code>TokenCode</code> value is missing
-        /// or expired, the <code>AssumeRole</code> call returns an "access denied" error. 
+        /// or expired, the <code>AssumeRole</code> call returns an "access denied" error.
         /// </para>
         /// </summary>
         public string TokenCode

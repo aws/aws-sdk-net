@@ -39,7 +39,9 @@ namespace Amazon.SecurityToken.Model
     /// 403 response). Some AWS actions additionally return an encoded message that can provide
     /// details about this authorization failure. 
     /// </para>
-    ///  
+    ///  <note> Only certain AWS actions return an encoded authorization message. The documentation
+    /// for an individual action indicates whether that action returns an encoded message
+    /// in addition to returning an HTTP code. </note> 
     /// <para>
     /// The message is encoded because the details of the authorization status can constitute
     /// privileged information that the user who requested the action should not see. To decode
