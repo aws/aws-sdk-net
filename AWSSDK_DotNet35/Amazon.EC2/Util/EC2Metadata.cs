@@ -103,7 +103,7 @@ namespace Amazon.EC2.Util
         /// </summary>
         public static string Hostname
         {
-            get { return GetData("hostname"); }
+            get { return FetchData("/hostname"); }
         }
 
         /// <summary>

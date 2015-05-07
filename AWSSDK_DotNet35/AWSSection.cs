@@ -259,9 +259,9 @@ namespace Amazon
         }
 
         [ConfigurationProperty(logResponsesSizeLimitKey)]
-        public long? LogResponsesSizeLimit
+        public int? LogResponsesSizeLimit
         {
-            get { return (long?)this[logResponsesSizeLimitKey]; }
+            get { return (int?)this[logResponsesSizeLimitKey]; }
             set { this[logResponsesKey] = value; }
         }
 

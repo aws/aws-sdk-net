@@ -46,7 +46,14 @@ namespace Amazon.SecurityToken.Model
     /// minutes) and 129600 seconds (36 hours); credentials that are created by using account
     /// credentials have a maximum duration of 3600 seconds (1 hour). 
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// We recommend that you do not call <code>GetSessionToken</code> with root account credentials.
+    /// Instead, follow our <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html#create-iam-users">best
+    /// practices</a> by creating one or more IAM users, giving them the necessary permissions,
+    /// and using IAM users for everyday interaction with AWS. 
+    /// </para>
+    ///  </note> 
     /// <para>
     /// The permissions associated with the temporary security credentials returned by <code>GetSessionToken</code>
     /// are based on the permissions associated with account or IAM user whose credentials

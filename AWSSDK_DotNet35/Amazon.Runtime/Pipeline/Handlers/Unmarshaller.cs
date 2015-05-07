@@ -219,7 +219,9 @@ namespace Amazon.Runtime.Internal
 
             if (logResponseBody)
             {
-                this.Logger.DebugFormat("Received response: [{0}]", context.ResponseBody);
+                this.Logger.DebugFormat("Received response (truncated to {0} bytes): [{1}]",
+                    AWSConfigs.LoggingConfig.LogResponsesSizeLimit,
+                    context.ResponseBody);
             }
 
             context.ValidateCRC32IfAvailable();

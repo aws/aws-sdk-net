@@ -44,7 +44,13 @@ namespace Amazon.SecurityToken
     /// of the STS API. For more detailed information about using this service, go to <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/Welcome.html"
     /// target="_blank">Using Temporary Security Credentials</a>. 
     /// </para>
-    ///  
+    ///  <note> As an alternative to using the API, you can use one of the AWS SDKs, which
+    /// consist of libraries and sample code for various programming languages and platforms
+    /// (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way to create
+    /// programmatic access to STS. For example, the SDKs take care of cryptographically signing
+    /// requests, managing errors, and retrying requests automatically. For information about
+    /// the AWS SDKs, including how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools
+    /// for Amazon Web Services page</a>. </note> 
     /// <para>
     /// For information about setting up signatures and authorization through the API, go
     /// to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
@@ -67,8 +73,17 @@ namespace Amazon.SecurityToken
     /// </para>
     ///  
     /// <para>
-    /// For information about STS endpoints, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region"
-    /// target="_blank">Regions and Endpoints</a> in the <i>AWS General Reference</i>.
+    /// The AWS Security Token Service (STS) has a default endpoint of https://sts.amazonaws.com
+    /// that maps to the US East (N. Virginia) region. Additional regions are available, but
+    /// must first be activated in the AWS Management Console before you can use a different
+    /// region's endpoint. For more information about activating a region for STS see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-enableregions.html">Activating
+    /// STS in a New Region</a> in the <i>Using Temporary Security Credentials</i> guide.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// For information about STS endpoints, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region">Regions
+    /// and Endpoints</a> in the <i>AWS General Reference</i>.
     /// </para>
     ///  
     /// <para>

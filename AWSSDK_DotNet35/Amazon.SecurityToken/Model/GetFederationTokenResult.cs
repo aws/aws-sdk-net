@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// Contains the result of a successful call to the <a>GetFederationToken</a> action,
-    /// including temporary AWS credentials that can be used to make AWS requests.
+    /// Contains the response to a successful <a>GetFederationToken</a> request, including
+    /// temporary AWS credentials that can be used to make AWS requests.
     /// </summary>
     public partial class GetFederationTokenResult : AmazonWebServiceResponse
     {

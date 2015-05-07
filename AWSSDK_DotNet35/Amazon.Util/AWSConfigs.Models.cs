@@ -174,8 +174,8 @@ namespace Amazon.Util
     /// </summary>
     public partial class LoggingConfig
     {
-        // Default limit for response logging is 500 KB.
-        private static long DefaultLogResponsesSizeLimit = (long)Math.Pow(2, 10) * 500; 
+        // Default limit for response logging is 1 KB.
+        public static readonly int DefaultLogResponsesSizeLimit = 1024; 
 
         private LoggingOptions _logTo;
 
@@ -197,10 +197,11 @@ namespace Amazon.Util
         public ResponseLoggingOption LogResponses { get; set; }
 
         /// <summary>        
+        /// Gets or sets the size limit in bytes for logged responses.
         /// If logging for response body is enabled, logged response
-        /// body is limited to this size.
+        /// body is limited to this size. The default limit is 1KB.
         /// </summary>
-        public long LogResponsesSizeLimit { get; set; }
+        public int LogResponsesSizeLimit { get; set; }
 
         /// <summary>
         /// Whether or not to log SDK metrics.

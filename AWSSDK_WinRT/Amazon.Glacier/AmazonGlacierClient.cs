@@ -361,6 +361,36 @@ namespace Amazon.Glacier
 
         #endregion
         
+        #region  DeleteVaultAccessPolicy
+
+        internal DeleteVaultAccessPolicyResponse DeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request)
+        {
+            var marshaller = new DeleteVaultAccessPolicyRequestMarshaller();
+            var unmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVaultAccessPolicyRequest,DeleteVaultAccessPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVaultAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVaultAccessPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteVaultAccessPolicyResponse> DeleteVaultAccessPolicyAsync(DeleteVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteVaultAccessPolicyRequestMarshaller();
+            var unmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVaultAccessPolicyRequest,DeleteVaultAccessPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteVaultNotifications
 
         internal DeleteVaultNotificationsResponse DeleteVaultNotifications(DeleteVaultNotificationsRequest request)
@@ -506,6 +536,36 @@ namespace Amazon.Glacier
             var unmarshaller = GetJobOutputResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetJobOutputRequest,GetJobOutputResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetVaultAccessPolicy
+
+        internal GetVaultAccessPolicyResponse GetVaultAccessPolicy(GetVaultAccessPolicyRequest request)
+        {
+            var marshaller = new GetVaultAccessPolicyRequestMarshaller();
+            var unmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetVaultAccessPolicyRequest,GetVaultAccessPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVaultAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVaultAccessPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetVaultAccessPolicyResponse> GetVaultAccessPolicyAsync(GetVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetVaultAccessPolicyRequestMarshaller();
+            var unmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetVaultAccessPolicyRequest,GetVaultAccessPolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -750,6 +810,36 @@ namespace Amazon.Glacier
             var unmarshaller = SetDataRetrievalPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetDataRetrievalPolicyRequest,SetDataRetrievalPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetVaultAccessPolicy
+
+        internal SetVaultAccessPolicyResponse SetVaultAccessPolicy(SetVaultAccessPolicyRequest request)
+        {
+            var marshaller = new SetVaultAccessPolicyRequestMarshaller();
+            var unmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<SetVaultAccessPolicyRequest,SetVaultAccessPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetVaultAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetVaultAccessPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SetVaultAccessPolicyResponse> SetVaultAccessPolicyAsync(SetVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetVaultAccessPolicyRequestMarshaller();
+            var unmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetVaultAccessPolicyRequest,SetVaultAccessPolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -41,7 +41,13 @@ namespace Amazon.SecurityToken
     /// of the STS API. For more detailed information about using this service, go to <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/Welcome.html"
     /// target="_blank">Using Temporary Security Credentials</a>. 
     /// </para>
-    ///  
+    ///  <note> As an alternative to using the API, you can use one of the AWS SDKs, which
+    /// consist of libraries and sample code for various programming languages and platforms
+    /// (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way to create
+    /// programmatic access to STS. For example, the SDKs take care of cryptographically signing
+    /// requests, managing errors, and retrying requests automatically. For information about
+    /// the AWS SDKs, including how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools
+    /// for Amazon Web Services page</a>. </note> 
     /// <para>
     /// For information about setting up signatures and authorization through the API, go
     /// to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
@@ -64,8 +70,17 @@ namespace Amazon.SecurityToken
     /// </para>
     ///  
     /// <para>
-    /// For information about STS endpoints, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region"
-    /// target="_blank">Regions and Endpoints</a> in the <i>AWS General Reference</i>.
+    /// The AWS Security Token Service (STS) has a default endpoint of https://sts.amazonaws.com
+    /// that maps to the US East (N. Virginia) region. Additional regions are available, but
+    /// must first be activated in the AWS Management Console before you can use a different
+    /// region's endpoint. For more information about activating a region for STS see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-enableregions.html">Activating
+    /// STS in a New Region</a> in the <i>Using Temporary Security Credentials</i> guide.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// For information about STS endpoints, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region">Regions
+    /// and Endpoints</a> in the <i>AWS General Reference</i>.
     /// </para>
     ///  
     /// <para>
@@ -430,9 +445,10 @@ namespace Amazon.SecurityToken
         /// security credentials to sign calls to AWS services. The credentials are valid for
         /// the duration that you specified when calling <code>AssumeRoleWithSAML</code>, which
         /// can be up to 3600 seconds (1 hour) or until the time specified in the SAML authentication
-        /// response's <code>NotOnOrAfter</code> value, whichever is shorter.
+        /// response's <code>SessionNotOnOrAfter</code> value, whichever is shorter.
         /// </para>
-        ///  
+        ///  <note>The maximum duration for a session is 1 hour, and the minimum duration is 15
+        /// minutes, even if values outside this range are specified. </note> 
         /// <para>
         /// Optionally, you can pass an IAM access policy to this operation. If you choose not
         /// to pass a policy, the temporary security credentials that are returned by the operation
@@ -550,10 +566,26 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Returns a set of temporary security credentials for users who have been authenticated
-        /// in a mobile or web application with a web identity provider, such as Login with Amazon,
-        /// Amazon Cognito, Facebook, or Google. 
+        /// in a mobile or web application with a web identity provider, such as Amazon Cognito,
+        /// Login with Amazon, Facebook, Google, or any OpenID Connect-compatible identity provider.
         /// 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For mobile applications, we recommend that you use Amazon Cognito. You can use Amazon
+        /// Cognito with the <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and
+        /// the <a href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a> to uniquely
+        /// identify a user and supply the user with a consistent identity throughout the lifetime
+        /// of an application.
+        /// </para>
         ///  
+        /// <para>
+        /// To learn more about Amazon Cognito, see <a href="http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840">Amazon
+        /// Cognito Overview</a> in the <i>AWS SDK for Android Developer Guide</i> guide and <a
+        /// href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664">Amazon
+        /// Cognito Overview</a> in the <i>AWS SDK for iOS Developer Guide</i>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Calling <code>AssumeRoleWithWebIdentity</code> does not require the use of AWS security
         /// credentials. Therefore, you can distribute an application (for example, on mobile
@@ -595,29 +627,24 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  
         /// <para>
-        /// For more information about how to use web identity federation and the <code>AssumeRoleWithWebIdentity</code>,
-        /// see the following resources: 
+        /// For more information about how to use web identity federation and the <code>AssumeRoleWithWebIdentity</code>
+        /// API, see the following resources: 
         /// </para>
-        ///  <ul> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html#MobileApplication-KnownProvider"
-        /// target="_blank"> Creating a Mobile Application with Third-Party Sign-In</a> and <a
-        /// href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html" target="_blank">
+        ///  <ul> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html#MobileApplication-KnownProvider">
+        /// Creating a Mobile Application with Third-Party Sign-In</a> and <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html">
         /// Creating Temporary Security Credentials for Mobile Apps Using Third-Party Identity
-        /// Providers</a> in <i>Using Temporary Security Credentials</i>. </li> <li> <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html"
-        /// target="_blank"> Web Identity Federation Playground</a>. This interactive website
-        /// lets you walk through the process of authenticating via Login with Amazon, Facebook,
-        /// or Google, getting temporary security credentials, and then using those credentials
-        /// to make a request to AWS. </li> <li> <a href="http://aws.amazon.com/sdkforios/">AWS
-        /// SDK for iOS</a> and <a href="http://aws.amazon.com/sdkforandroid/" target="_blank">AWS
-        /// SDK for Android</a>. These toolkits contain sample apps that show how to invoke the
-        /// identity providers, and then how to use the information from these providers to get
-        /// and use temporary security credentials. </li> <li> <a href="http://aws.amazon.com/articles/4617974389850313"
-        /// target="_blank">Web Identity Federation with Mobile Applications</a>. This article
-        /// discusses web identity federation and shows an example of how to use web identity
-        /// federation to get access to content in Amazon S3. </li> </ul> <member name="RoleArn"
-        /// target="arnType"></member> <member name="RoleSessionName" target="userNameType"></member>
-        /// <member name="WebIdentityToken" target="clientTokenType"></member> <member name="ProviderId"
-        /// target="urlType"></member> <member name="Policy" target="sessionPolicyDocumentType"></member>
-        /// <member name="DurationSeconds" target="roleDurationSecondsType"></member>
+        /// Providers</a> in <i>Using Temporary Security Credentials</i>. </li> <li> <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
+        /// Web Identity Federation Playground</a>. This interactive website lets you walk through
+        /// the process of authenticating via Login with Amazon, Facebook, or Google, getting
+        /// temporary security credentials, and then using those credentials to make a request
+        /// to AWS. </li> <li> <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a>
+        /// and <a href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a>. These
+        /// toolkits contain sample apps that show how to invoke the identity providers, and then
+        /// how to use the information from these providers to get and use temporary security
+        /// credentials. </li> <li> <a href="http://aws.amazon.com/articles/4617974389850313">Web
+        /// Identity Federation with Mobile Applications</a>. This article discusses web identity
+        /// federation and shows an example of how to use web identity federation to get access
+        /// to content in Amazon S3. </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssumeRoleWithWebIdentity service method.</param>
         /// 
@@ -711,7 +738,9 @@ namespace Amazon.SecurityToken
         /// 403 response). Some AWS actions additionally return an encoded message that can provide
         /// details about this authorization failure. 
         /// </para>
-        ///  
+        ///  <note> Only certain AWS actions return an encoded authorization message. The documentation
+        /// for an individual action indicates whether that action returns an encoded message
+        /// in addition to returning an HTTP code. </note> 
         /// <para>
         /// The message is encoded because the details of the authorization status can constitute
         /// privileged information that the user who requested the action should not see. To decode
@@ -789,13 +818,17 @@ namespace Amazon.SecurityToken
         /// in contexts where those credentials can be safely stored, usually in a server-based
         /// application.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        ///  <b>Note:</b> Do not use this call in mobile applications or client-based web applications
-        /// that directly get temporary security credentials. For those types of applications,
-        /// use <code>AssumeRoleWithWebIdentity</code>.
+        ///  If you are creating a mobile-based or browser-based app that can authenticate users
+        /// using a web identity provider like Login with Amazon, Facebook, Google, or an OpenID
+        /// Connect-compatible identity provider, we recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon
+        /// Cognito</a> or <code>AssumeRoleWithWebIdentity</code>. For more information, see <a
+        /// href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html">Creating Temporary
+        /// Security Credentials for Mobile Apps Using Identity Providers</a> in <i>Using Temporary
+        /// Security Credentials</i>.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// The <code>GetFederationToken</code> action must be called by using the long-term AWS
         /// security credentials of an IAM user. You can also call <code>GetFederationToken</code>
@@ -934,7 +967,14 @@ namespace Amazon.SecurityToken
         /// minutes) and 129600 seconds (36 hours); credentials that are created by using account
         /// credentials have a maximum duration of 3600 seconds (1 hour). 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// We recommend that you do not call <code>GetSessionToken</code> with root account credentials.
+        /// Instead, follow our <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html#create-iam-users">best
+        /// practices</a> by creating one or more IAM users, giving them the necessary permissions,
+        /// and using IAM users for everyday interaction with AWS. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The permissions associated with the temporary security credentials returned by <code>GetSessionToken</code>
         /// are based on the permissions associated with account or IAM user whose credentials
@@ -976,7 +1016,14 @@ namespace Amazon.SecurityToken
         /// minutes) and 129600 seconds (36 hours); credentials that are created by using account
         /// credentials have a maximum duration of 3600 seconds (1 hour). 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// We recommend that you do not call <code>GetSessionToken</code> with root account credentials.
+        /// Instead, follow our <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html#create-iam-users">best
+        /// practices</a> by creating one or more IAM users, giving them the necessary permissions,
+        /// and using IAM users for everyday interaction with AWS. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The permissions associated with the temporary security credentials returned by <code>GetSessionToken</code>
         /// are based on the permissions associated with account or IAM user whose credentials

@@ -744,6 +744,80 @@ namespace Amazon.Glacier
 
         #endregion
         
+        #region  DeleteVaultAccessPolicy
+
+        /// <summary>
+        /// This operation deletes the access policy associated with the specified vault. The
+        /// operation is eventually consistent—that is, it might take some time for Amazon Glacier
+        /// to completely remove the access policy, and you might still see the effect of the
+        /// policy for a short time after you send the delete request.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is idempotent. You can invoke delete multiple times, even if there
+        /// is no policy associated with the vault. For more information about vault access policies,
+        /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
+        /// Glacier Access Control with Vault Access Policies</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVaultAccessPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVaultAccessPolicy service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
+        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        public DeleteVaultAccessPolicyResponse DeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request)
+        {
+            var marshaller = new DeleteVaultAccessPolicyRequestMarshaller();
+            var unmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVaultAccessPolicyRequest,DeleteVaultAccessPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVaultAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVaultAccessPolicy operation on AmazonGlacierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVaultAccessPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteVaultAccessPolicyRequestMarshaller();
+            var unmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteVaultAccessPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVaultAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVaultAccessPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteVaultAccessPolicyResult from Glacier.</returns>
+        public  DeleteVaultAccessPolicyResponse EndDeleteVaultAccessPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVaultAccessPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteVaultNotifications
 
         /// <summary>
@@ -1182,6 +1256,74 @@ namespace Amazon.Glacier
         public  GetJobOutputResponse EndGetJobOutput(IAsyncResult asyncResult)
         {
             return EndInvoke<GetJobOutputResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetVaultAccessPolicy
+
+        /// <summary>
+        /// This operation retrieves the <code>access-policy</code> subresource set on the vault—for
+        /// more information on setting this subresource, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html">Set
+        /// Vault Access Policy (PUT access-policy)</a>. If there is no access policy set on the
+        /// vault, the operation returns a <code>404 Not found</code> error. For more information
+        /// about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
+        /// Glacier Access Control with Vault Access Policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVaultAccessPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetVaultAccessPolicy service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
+        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        public GetVaultAccessPolicyResponse GetVaultAccessPolicy(GetVaultAccessPolicyRequest request)
+        {
+            var marshaller = new GetVaultAccessPolicyRequestMarshaller();
+            var unmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetVaultAccessPolicyRequest,GetVaultAccessPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVaultAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVaultAccessPolicy operation on AmazonGlacierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVaultAccessPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginGetVaultAccessPolicy(GetVaultAccessPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetVaultAccessPolicyRequestMarshaller();
+            var unmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetVaultAccessPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVaultAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVaultAccessPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetVaultAccessPolicyResult from Glacier.</returns>
+        public  GetVaultAccessPolicyResponse EndGetVaultAccessPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetVaultAccessPolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -2121,6 +2263,74 @@ namespace Amazon.Glacier
         public  SetDataRetrievalPolicyResponse EndSetDataRetrievalPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<SetDataRetrievalPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SetVaultAccessPolicy
+
+        /// <summary>
+        /// This operation configures an access policy for a vault and will overwrite an existing
+        /// policy. To configure a vault access policy, send a PUT request to the <code>access-policy</code>
+        /// subresource of the vault. An access policy is specific to a vault and is also called
+        /// a vault subresource. You can set one access policy per vault and the policy can be
+        /// up to 20 KB in size. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
+        /// Glacier Access Control with Vault Access Policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetVaultAccessPolicy service method.</param>
+        /// 
+        /// <returns>The response from the SetVaultAccessPolicy service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
+        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        public SetVaultAccessPolicyResponse SetVaultAccessPolicy(SetVaultAccessPolicyRequest request)
+        {
+            var marshaller = new SetVaultAccessPolicyRequestMarshaller();
+            var unmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<SetVaultAccessPolicyRequest,SetVaultAccessPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetVaultAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetVaultAccessPolicy operation on AmazonGlacierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetVaultAccessPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginSetVaultAccessPolicy(SetVaultAccessPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new SetVaultAccessPolicyRequestMarshaller();
+            var unmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SetVaultAccessPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetVaultAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetVaultAccessPolicy.</param>
+        /// 
+        /// <returns>Returns a  SetVaultAccessPolicyResult from Glacier.</returns>
+        public  SetVaultAccessPolicyResponse EndSetVaultAccessPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SetVaultAccessPolicyResponse>(asyncResult);
         }
 
         #endregion

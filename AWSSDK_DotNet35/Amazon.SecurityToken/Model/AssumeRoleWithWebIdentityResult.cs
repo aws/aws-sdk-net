@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// Contains the result of a successful call to the <a>AssumeRoleWithWebIdentity</a> action,
-    /// including temporary AWS credentials that can be used to make AWS requests.
+    /// Contains the response to a successful <a>AssumeRoleWithWebIdentity</a> request, including
+    /// temporary AWS credentials that can be used to make AWS requests.
     /// </summary>
     public partial class AssumeRoleWithWebIdentityResult : AmazonWebServiceResponse
     {
@@ -65,8 +65,9 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property Audience. 
         /// <para>
-        ///  The intended audience of the web identity token. This is traditionally the client
-        /// identifier issued to the application that requested the web identity token.
+        ///  The intended audience (also known as client ID) of the web identity token. This is
+        /// traditionally the client identifier issued to the application that requested the web
+        /// identity token.
         /// </para>
         /// </summary>
         public string Audience
@@ -124,8 +125,8 @@ namespace Amazon.SecurityToken.Model
         /// Gets and sets the property Provider. 
         /// <para>
         ///  The issuing authority of the web identity token presented. For OpenID Connect ID
-        /// Tokens this contains the value of the <code>iss</code> field. For OAuth 2.0 Access
-        /// Tokens, this contains the value of the <code>ProviderId</code> parameter that was
+        /// Tokens this contains the value of the <code>iss</code> field. For OAuth 2.0 access
+        /// tokens, this contains the value of the <code>ProviderId</code> parameter that was
         /// passed in the <code>AssumeRoleWithWebIdentity</code> request.
         /// </para>
         /// </summary>
@@ -147,9 +148,9 @@ namespace Amazon.SecurityToken.Model
         /// The unique user identifier that is returned by the identity provider. This identifier
         /// is associated with the <code>WebIdentityToken</code> that was submitted with the <code>AssumeRoleWithWebIdentity</code>
         /// call. The identifier is typically unique to the user and the application that acquired
-        /// the <code>WebIdentityToken</code> (pairwise identifier). If an OpenID Connect ID token
-        /// was submitted in the <code>WebIdentityToken</code>, this value is returned by the
-        /// identity provider as the token's <code>sub</code> (Subject) claim. 
+        /// the <code>WebIdentityToken</code> (pairwise identifier). For OpenID Connect ID tokens,
+        /// this field contains the value returned by the identity provider as the token's <code>sub</code>
+        /// (Subject) claim. 
         /// </para>
         /// </summary>
         public string SubjectFromWebIdentityToken
