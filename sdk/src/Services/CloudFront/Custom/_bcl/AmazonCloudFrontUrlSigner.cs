@@ -363,8 +363,9 @@ namespace Amazon.CloudFront
                     + ipAddress
                     + "\"}"
                 // Ignore epochDateGreaterThan if its value is DateTime.MinValue, the default value of DateTime.
-                    + (activeFrom > DateTime.MinValue ? "" : ",\"DateGreaterThan\":{\"AWS:EpochTime\":"
-                            + AWSSDKUtils.ConvertToUnixEpochSeconds(activeFrom.ToUniversalTime()) + "}")
+                    + (activeFrom > DateTime.MinValue ? ",\"DateGreaterThan\":{\"AWS:EpochTime\":"
+                    + AWSSDKUtils.ConvertToUnixEpochSeconds(activeFrom.ToUniversalTime()) + "}"
+                            : string.Empty)
                     + "}}]}";
             return policy;
         }
