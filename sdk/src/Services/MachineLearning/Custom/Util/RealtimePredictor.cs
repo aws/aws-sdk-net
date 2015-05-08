@@ -24,8 +24,10 @@ namespace Amazon.MachineLearning.Util
     /// <summary>
     /// A simplified client that just does realtime predictions.
     /// </summary>
-    public partial class RealtimePredictor
+    public partial class RealtimePredictor : IDisposable
     {
+        private bool shouldDispose = false;
+        private bool isDisposed = false;
         private IAmazonMachineLearning client;
         private string endpoint = null;
         
@@ -61,15 +63,15 @@ namespace Amazon.MachineLearning.Util
         /// </summary>
         /// <remarks>
         /// The endpoint URL will be determined my making a service call to retrieve it.
-        /// </remarks>
-        /// <param name="client">The MachineLearning client that will be used to make requests.</param>
+        /// </remarks>        
         /// <param name="modelId">The MachineLearning model to predict against.</param>
         public RealtimePredictor(string modelId)
         {
             this.client = new AmazonMachineLearningClient();
+            this.shouldDispose = true;
             this.ModelId = modelId;
         }
-        
+
         /// <summary>
         /// The Id of the MachineLearning model.
         /// </summary>
@@ -118,6 +120,37 @@ namespace Amazon.MachineLearning.Util
                 Record = record
             }).Prediction;
         }
+
+        #region Dispose Pattern Implementation
+
+        /// <summary>
+        /// Implements the Dispose pattern
+        /// </summary>
+        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
+        /// or garbage collected.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!isDisposed)
+            {
+                if (disposing && client != null && shouldDispose)
+                {
+                    client.Dispose();
+                    client = null;
+                }
+                isDisposed = true;
+            }
+        }
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        #endregion
     }
 
 }
