@@ -411,7 +411,7 @@ namespace Amazon.S3.Transfer
                     FileInfo fileInfo = new FileInfo(this.FilePath);
                     length = fileInfo.Length;
                 }
-#elif WIN_RT || WINDOWS_PHONE
+#elif WIN_RT || WINDOWS_PHONE || PCL
                 if (IsSetStorageFile())
                 {
                     var result = System.Threading.Tasks.Task.Run(() =>

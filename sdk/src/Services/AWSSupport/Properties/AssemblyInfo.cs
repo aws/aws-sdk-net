@@ -17,6 +17,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows RT) - AWS Support. The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.")]
 #elif WINDOWS_PHONE
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows Phone 8)- AWS Support. The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.")]
+#elif PCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

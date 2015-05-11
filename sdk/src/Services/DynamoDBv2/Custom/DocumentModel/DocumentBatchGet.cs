@@ -309,7 +309,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-#if (WIN_RT || WINDOWS_PHONE)
+#if (WIN_RT || WINDOWS_PHONE || PCL)
         private void CallUntilCompletion(AmazonDynamoDBClient client, BatchGetItemRequest request)
 #else
         private void CallUntilCompletion(IAmazonDynamoDB client, BatchGetItemRequest request)

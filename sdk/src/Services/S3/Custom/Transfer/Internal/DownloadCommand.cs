@@ -42,7 +42,7 @@ namespace Amazon.S3.Transfer.Internal
         {
             WebExceptionStatus.ConnectFailure,
 
-#if (!WIN_RT) // These statuses are not available on WinRT
+#if (!WIN_RT && !PCL) // These statuses are not available on WinRT
             WebExceptionStatus.ConnectionClosed,
             WebExceptionStatus.KeepAliveFailure,
             WebExceptionStatus.NameResolutionFailure,            
@@ -93,7 +93,7 @@ namespace Amazon.S3.Transfer.Internal
             var canRetry = true;
             if (exception is IOException)
             {
-#if (!WIN_RT)
+#if (!WIN_RT && !PCL)
                 while (exception.InnerException != null)
                 {
                     if (exception.InnerException is ThreadAbortException)

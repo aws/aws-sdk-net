@@ -22,6 +22,7 @@ namespace ServiceClientGenerator
             public const string WinRt = "WinRT";
             public const string WinPhone8 = "WP8";
             public const string Portable = "Portable";
+            public const string PCL = "PCL";
         }
 
         static IEnumerable<string> ProjectTypesList
@@ -34,7 +35,8 @@ namespace ServiceClientGenerator
                     ProjectTypes.Net45,
                     ProjectTypes.WinRt,
                     ProjectTypes.WinPhone8,
-                    ProjectTypes.Portable 
+                    ProjectTypes.Portable,
+                    ProjectTypes.PCL
                 };
             }
         }
@@ -163,6 +165,7 @@ namespace ServiceClientGenerator
                 case ProjectTypes.Portable:
                 case ProjectTypes.Net35:
                 case ProjectTypes.Net45:
+                case ProjectTypes.PCL:
                     return StandardPlatformConfigurations;
             }
 
@@ -312,7 +315,8 @@ namespace ServiceClientGenerator
 
             var generator = new SolutionFileGenerator { Session = session };
             var content = generator.TransformText();
-            GeneratorDriver.WriteFile(Options.SdkRootFolder, null, string.Format("AWSSDK.{0}.sln", projectType), content, true, false);
+            var solutionName = string.Format("AWSSDK.{0}.sln", projectType);
+            GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionName, content, true, false);
         }
 
         void SelectProjectAndConfigurationsForSolution(string projectFile, 

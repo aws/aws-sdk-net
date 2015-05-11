@@ -40,15 +40,8 @@ namespace ServiceClientGenerator
                 if (File.Exists(Path.Combine(serviceFilesRoot, projectFilename)))
                 {
                     Console.WriteLine("...updating existing project file {0}", projectFilename);
-                    var xdoc = new XmlDocument();
-                    xdoc.Load(Path.Combine(serviceFilesRoot, projectFilename));
-                    var propertyGroups = xdoc.GetElementsByTagName("PropertyGroup");
-                    var element = ((XmlElement)propertyGroups[0]).GetElementsByTagName("ProjectGuid")[0];
-                    if(element == null)
-                    {
-                        throw new ApplicationException("Failed to find project guid for existing project: " + Path.Combine(serviceFilesRoot, projectFilename));
-                    }
-                    projectGuid = element.InnerText;
+                    var projectPath = Path.Combine(serviceFilesRoot, projectFilename);
+                    projectGuid = GetProjectGuid(projectPath);
                 }
                 else
                 {
@@ -97,7 +90,7 @@ namespace ServiceClientGenerator
                         projectReferences.Add(new ProjectReference
                         {
                             IncludePath = dependencyProject,
-                            ProjectGuid = ProjectGuidFromFile(Path.Combine(serviceFilesRoot, dependencyProject)),
+                            ProjectGuid = GetProjectGuid(Path.Combine(serviceFilesRoot, dependencyProject)),
                             Name = dependencyProjectName
                         });
                     }
@@ -232,19 +225,33 @@ namespace ServiceClientGenerator
             return foldersThatExist;
         }
 
+        //private static string ProjectGuidFromFile(string projectFile)
+        //{
+        //    var content = File.ReadAllText(projectFile);
+        //    var pos = content.IndexOf("<ProjectGuid>", StringComparison.OrdinalIgnoreCase) + "<ProjectGuid>".Length;
+        //    var lastPos = content.IndexOf("</ProjectGuid>", pos, StringComparison.OrdinalIgnoreCase);
+
+        //    return content.Substring(pos, lastPos - pos);
+        //}
+
         /// <summary>
         /// Recovers the guid of a project from an existing project file.
         /// </summary>
         /// <param name="projectFile"></param>
         /// <returns></returns>
-        string ProjectGuidFromFile(string projectFile)
+        private static string GetProjectGuid(string projectPath)
         {
-            var content = File.ReadAllText(projectFile);
-            var pos = content.IndexOf("<ProjectGuid>", StringComparison.OrdinalIgnoreCase) + "<ProjectGuid>".Length;
-            var lastPos = content.IndexOf("</ProjectGuid>", pos, StringComparison.OrdinalIgnoreCase);
+            var xdoc = new XmlDocument();
+            xdoc.Load(projectPath);
+            var propertyGroups = xdoc.GetElementsByTagName("PropertyGroup");
+            var element = ((XmlElement)propertyGroups[0]).GetElementsByTagName("ProjectGuid")[0];
+            if (element == null)
+                throw new ApplicationException("Failed to find project guid for existing project: " + projectPath);
 
-            return content.Substring(pos, lastPos - pos);
+            var projectGuid = element.InnerText;
+            return projectGuid;
         }
+
 
         public static string NewProjectGuid
         {

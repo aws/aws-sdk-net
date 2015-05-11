@@ -170,7 +170,9 @@ namespace ServiceClientGenerator
                 serviceConfigurations.Add(config);
             }
 
-            ServiceConfigurations = serviceConfigurations;
+            ServiceConfigurations = serviceConfigurations
+                .OrderBy(sc => sc.ServiceDependencies.Count)
+                .ToList();
             //ServiceVersions = serviceVersions;
         }
 

@@ -44,6 +44,15 @@
             "binSubFolder": "portable",
             "template": "PortableProjectFile",
             "platformCodeFolders": [ "_mobile", "_async" ]
+        },
+        {
+            "name": "PCL",
+            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
+            "targetFramework": "v4.5",
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
+            "binSubFolder": "pcl",
+            "template": "PortableProjectFile",
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile" ]
         }
     ],
     "models": [

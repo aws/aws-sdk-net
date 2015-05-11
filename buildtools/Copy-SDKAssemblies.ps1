@@ -55,7 +55,7 @@ Function Copy-SDKAssemblies
         # The platforms to copy. Defaults to all if not specified.
         [Parameter()]
         [string[]]
-        $Platforms = @("net35","net45","portable","winrt","wp8"),
+        $Platforms = @("net35","net45","portable","winrt","wp8","pcl"),
         
         # The public key token that all assemblies should have. Optional.
         [Parameter()]

@@ -23,6 +23,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows RT) - <#=this.Config.ServiceModel.ServiceFullName#>. <#=this.Config.AssemblyDescription#>")]
 #elif WINDOWS_PHONE
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows Phone 8)- <#=this.Config.ServiceModel.ServiceFullName#>. <#=this.Config.AssemblyDescription#>")]
+#elif PCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

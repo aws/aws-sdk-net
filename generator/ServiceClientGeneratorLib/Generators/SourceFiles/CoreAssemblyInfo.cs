@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+    #line 1 "C:\code\dotnet\v3\xamarin\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class CoreAssemblyInfo : BaseGenerator
     {
@@ -39,29 +39,31 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "zon Web Services SDK for .NET (Portable)- Core Runtime\")]\r\n#elif WIN_RT\r\n[assemb" +
                     "ly: AssemblyDescription(\"The Amazon Web Services SDK for .NET (Windows RT) - Cor" +
                     "e Runtime\")]\r\n#elif WINDOWS_PHONE\r\n[assembly: AssemblyDescription(\"The Amazon We" +
-                    "b Services SDK for .NET (Windows Phone 8)- Core Runtime\")]\r\n#else\r\n#error Unknow" +
-                    "n platform constant - unable to set correct AssemblyDescription\r\n#endif\r\n\r\n[asse" +
-                    "mbly: AssemblyConfiguration(\"\")]\r\n[assembly: AssemblyProduct(\"Amazon Web Service" +
-                    "s SDK for .NET\")]\r\n[assembly: AssemblyCompany(\"Amazon.com, Inc\")]\r\n[assembly: As" +
-                    "semblyCopyright(\"Copyright 2009-2015 Amazon.com, Inc. or its affiliates. All Rig" +
-                    "hts Reserved.\")]\r\n[assembly: AssemblyTrademark(\"\")]\r\n[assembly: AssemblyCulture(" +
-                    "\"\")]\r\n\r\n// Setting ComVisible to false makes the types in this assembly not visi" +
-                    "ble \r\n// to COM components.  If you need to access a type in this assembly from " +
-                    "\r\n// COM, set the ComVisible attribute to true on that type.\r\n[assembly: ComVisi" +
-                    "ble(false)]\r\n\r\n// Version information for an assembly consists of the following " +
-                    "four values:\r\n//\r\n//      Major Version\r\n//      Minor Version \r\n//      Build N" +
-                    "umber\r\n//      Revision\r\n//\r\n// You can specify all the values or you can defaul" +
-                    "t the Build and Revision Numbers \r\n// by using the \'*\' as shown below:\r\n// [asse" +
-                    "mbly: AssemblyVersion(\"1.0.*\")]\r\n[assembly: AssemblyVersion(\"");
+                    "b Services SDK for .NET (Windows Phone 8)- Core Runtime\")]\r\n#elif PCL\r\n[assembly" +
+                    ": AssemblyDescription(\"The Amazon Web Services SDK for .NET (PCL)- Core Runtime\"" +
+                    ")]\r\n#else\r\n#error Unknown platform constant - unable to set correct AssemblyDesc" +
+                    "ription\r\n#endif\r\n\r\n[assembly: AssemblyConfiguration(\"\")]\r\n[assembly: AssemblyPro" +
+                    "duct(\"Amazon Web Services SDK for .NET\")]\r\n[assembly: AssemblyCompany(\"Amazon.co" +
+                    "m, Inc\")]\r\n[assembly: AssemblyCopyright(\"Copyright 2009-2015 Amazon.com, Inc. or" +
+                    " its affiliates. All Rights Reserved.\")]\r\n[assembly: AssemblyTrademark(\"\")]\r\n[as" +
+                    "sembly: AssemblyCulture(\"\")]\r\n\r\n// Setting ComVisible to false makes the types i" +
+                    "n this assembly not visible \r\n// to COM components.  If you need to access a typ" +
+                    "e in this assembly from \r\n// COM, set the ComVisible attribute to true on that t" +
+                    "ype.\r\n[assembly: ComVisible(false)]\r\n\r\n// Version information for an assembly co" +
+                    "nsists of the following four values:\r\n//\r\n//      Major Version\r\n//      Minor V" +
+                    "ersion \r\n//      Build Number\r\n//      Revision\r\n//\r\n// You can specify all the " +
+                    "values or you can default the Build and Revision Numbers \r\n// by using the \'*\' a" +
+                    "s shown below:\r\n// [assembly: AssemblyVersion(\"1.0.*\")]\r\n[assembly: AssemblyVers" +
+                    "ion(\"");
             
-            #line 52 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 54 "C:\code\dotnet\v3\xamarin\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["Version"]));
             
             #line default
             #line hidden
             this.Write("\")]\r\n[assembly: AssemblyFileVersion(\"");
             
-            #line 53 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 55 "C:\code\dotnet\v3\xamarin\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default

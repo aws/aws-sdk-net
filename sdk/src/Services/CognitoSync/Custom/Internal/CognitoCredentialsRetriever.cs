@@ -13,25 +13,23 @@
  * permissions and limitations under the License.
  */
 
-
 using System;
-using System.Threading;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Threading;
 
+using Amazon.CognitoIdentity;
 using Amazon.CognitoSync.Model;
 using Amazon.CognitoSync.Model.Internal.MarshallTransformations;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal;
-using System.Reflection;
-using System.Globalization;
-
-using Amazon.CognitoIdentity;
-
 
 namespace Amazon.CognitoSync.Internal
 {
@@ -141,14 +139,7 @@ namespace Amazon.CognitoSync.Internal
             private static void PopulateCache()
             {
                 var sourceAssembly = CSRequest.SyncRequestType.Assembly;
-#if BCL
                 var allTypes = sourceAssembly.GetTypes();
-#else
-                var allTypesInfos = sourceAssembly.DefinedTypes;
-                var allTypes = new List<Type>();
-                foreach (var typeInfo in allTypesInfos)
-                    allTypes.Add(typeInfo.AsType());
-#endif
                 // Look up all CognitoSync request objects for caching.
                 foreach (var type in allTypes)
                 {

@@ -200,7 +200,7 @@ namespace Amazon.S3.Transfer.Internal
                 uploadRequest.FilePosition = filePosition;
                 uploadRequest.FilePath = this._fileTransporterRequest.FilePath;
             }
-#elif WIN_RT || WINDOWS_PHONE
+#elif WIN_RT || WINDOWS_PHONE || PCL
             if (this._fileTransporterRequest.IsSetStorageFile())
             {
                 uploadRequest.FilePosition = filePosition;

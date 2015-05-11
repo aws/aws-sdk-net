@@ -22,6 +22,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 this.linker.s3.bucket, this.linker.s3.key, sourcePath, null, cancellationToken);
         }
 
+#if (WIN_RT || WINDOWS_PHONE)
         /// <summary>
         /// Uploads the specified file and stores it in the specified bucket with the provided key from construction.
         /// </summary>
@@ -48,5 +49,6 @@ namespace Amazon.DynamoDBv2.DataModel
             return this.s3ClientCache.GetClient(this.RegionAsEndpoint).DownloadToStorageAsync(
                 this.linker.s3.bucket, this.linker.s3.key, storageFile, null, cancellationToken);
         }
+#endif
     }
 }

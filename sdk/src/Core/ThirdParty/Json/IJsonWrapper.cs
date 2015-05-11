@@ -15,7 +15,7 @@
 using System.Collections;
 using System.Collections.Specialized;
 
-#if (WIN_RT || WINDOWS_PHONE)
+#if (WIN_RT || WINDOWS_PHONE || PCL)
 using Amazon.MissingTypes;
 #endif
 

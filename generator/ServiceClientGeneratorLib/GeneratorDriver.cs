@@ -513,7 +513,8 @@ namespace ServiceClientGenerator
                     "AWSSDK." + SolutionFileCreator.ProjectTypes.Net45 + ".sln",
                     "AWSSDK." + SolutionFileCreator.ProjectTypes.Portable + ".sln",
                     "AWSSDK." + SolutionFileCreator.ProjectTypes.WinPhone8 + ".sln",
-                    "AWSSDK." + SolutionFileCreator.ProjectTypes.WinRt + ".sln"
+                    "AWSSDK." + SolutionFileCreator.ProjectTypes.WinRt + ".sln",
+                    "AWSSDK." + SolutionFileCreator.ProjectTypes.PCL + ".sln"
                 };
 
                 if (expectedSolutions.Any(sln => !File.Exists(Path.Combine(options.SdkRootFolder, sln))))

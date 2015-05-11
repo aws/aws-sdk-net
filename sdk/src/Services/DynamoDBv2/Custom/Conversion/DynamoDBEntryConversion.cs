@@ -21,7 +21,7 @@ using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Util.Internal;
 
-#if (WIN_RT || WINDOWS_PHONE)
+#if (WIN_RT || WINDOWS_PHONE || PCL)
 using Amazon.MissingTypes;
 using Amazon.Runtime.Internal.Util;
 #endif
@@ -362,8 +362,9 @@ namespace Amazon.DynamoDBv2
         {
             var typedConverterTypeInfo = TypeFactory.GetTypeInfo(typeof(Converter));
             var assembly = TypeFactory.GetTypeInfo(typeof(DynamoDBEntryConversion)).Assembly;
-            var types = assembly.GetTypes();
-            foreach (var type in types)
+            var allTypes = assembly.GetTypes();
+
+            foreach (var type in allTypes)
             {
                 string fullName = type.FullName;
 
