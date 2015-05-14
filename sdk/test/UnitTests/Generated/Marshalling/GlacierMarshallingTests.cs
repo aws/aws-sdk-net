@@ -162,6 +162,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Glacier")]
+        public void DeleteVaultAccessPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVaultAccessPolicy");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVaultAccessPolicyRequest>();
+            var marshaller = new DeleteVaultAccessPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("DeleteVaultAccessPolicy", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Glacier")]
         public void DeleteVaultNotificationsMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteVaultNotifications");
@@ -304,6 +321,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetJobOutputResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetJobOutputResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Glacier")]
+        public void GetVaultAccessPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVaultAccessPolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetVaultAccessPolicyRequest>();
+            var marshaller = new GetVaultAccessPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetVaultAccessPolicy", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetVaultAccessPolicyResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -549,6 +598,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var internalRequest = marshaller.Marshall(request);
             RequestValidator.Validate("SetDataRetrievalPolicy", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Glacier")]
+        public void SetVaultAccessPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("SetVaultAccessPolicy");
+
+            var request = InstantiateClassGenerator.Execute<SetVaultAccessPolicyRequest>();
+            var marshaller = new SetVaultAccessPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("SetVaultAccessPolicy", request, internalRequest, service_model);            
 
         }
 

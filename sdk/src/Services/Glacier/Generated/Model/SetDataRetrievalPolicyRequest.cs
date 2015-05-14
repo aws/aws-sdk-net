@@ -49,10 +49,12 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account
-        /// ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated
-        /// with the credentials used to sign the request. If you specify your Account ID, do
-        /// not include the dashes in it. 
+        /// The <code>AccountId</code> value is the AWS account ID. This value must match the
+        /// AWS account ID associated with the credentials used to sign the request. You can either
+        /// specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen),
+        /// in which case Amazon Glacier uses the AWS account ID associated with the credentials
+        /// used to sign the request. If you specify your Account ID, do not include any hyphens
+        /// (apos-apos) in the ID.
         /// </para>
         /// </summary>
         public string AccountId

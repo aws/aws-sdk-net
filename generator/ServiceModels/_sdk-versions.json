@@ -155,7 +155,7 @@
             }
         },
         "Glacier"                : {
-            "Version" : "3.0.0.1",
+            "Version" : "3.0.1.0",
             "Dependencies" : {
                 "Core" : "3.0.0.1",
                 "SQS"  : "3.0.0.1",
