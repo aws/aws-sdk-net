@@ -53,7 +53,7 @@ namespace Amazon.CloudFront
         /// <returns>The signed URL.</returns>
         public static string GetCannedSignedURL(Protocol protocol,
                                                 string distributionDomain,
-                                                FileInfo privateKey,
+                                                FileSystemInfo privateKey,
                                                 string resourcePath,
                                                 string keyPairId,
                                                 DateTime expiresOn)
@@ -76,7 +76,7 @@ namespace Amazon.CloudFront
         /// <returns>The signed URL.</returns>
         public static string GetCannedSignedURL(Protocol protocol,
                                                 string distributionDomain,
-                                                StreamReader privateKey,
+                                                TextReader privateKey,
                                                 string resourcePath,
                                                 string keyPairId,
                                                 DateTime expiresOn)
@@ -101,7 +101,7 @@ namespace Amazon.CloudFront
         /// <returns>The signed URL.</returns>
         public static string GetCustomSignedURL(Protocol protocol,
                                                 string distributionDomain,
-                                                FileInfo privateKey,
+                                                FileSystemInfo privateKey,
                                                 string resourcePath,
                                                 string keyPairId,
                                                 DateTime expiresOn,
@@ -128,7 +128,7 @@ namespace Amazon.CloudFront
         /// <returns>The signed URL.</returns>
         public static string GetCustomSignedURL(Protocol protocol,
                                                 string distributionDomain,
-                                                StreamReader privateKey,
+                                                TextReader privateKey,
                                                 string resourcePath,
                                                 string keyPairId,
                                                 DateTime expiresOn,
@@ -154,7 +154,7 @@ namespace Amazon.CloudFront
         /// <returns>The signed URL.</returns>
         public static string GetCustomSignedURL(Protocol protocol,
                                                 string distributionDomain,
-                                                StreamReader privateKey,
+                                                TextReader privateKey,
                                                 string resourcePath,
                                                 string keyPairId,
                                                 DateTime expiresOn,
@@ -212,7 +212,7 @@ namespace Amazon.CloudFront
         /// <param name="policy">A policy document that describes the access permissions that will be applied by 
         /// the signed URL. To generate a custom policy use</param>
         /// <returns>A signed URL that will permit access to distribution and S3 objects as specified in the policy document.</returns>
-        public static string SignUrl(string resourceUrlOrPath, string keyPairId, StreamReader privateKey, string policy)
+        public static string SignUrl(string resourceUrlOrPath, string keyPairId, TextReader privateKey, string policy)
         {
             RSAParameters rsaParameters = ConvertPEMToRSAParameters(privateKey);
             byte[] signatureBytes = SignWithSha1RSA(UTF8Encoding.UTF8.GetBytes(policy), rsaParameters);
@@ -274,7 +274,7 @@ namespace Amazon.CloudFront
         /// <param name="expiresOn">The time and date when the signed URL will expire.</param>
         public static String SignUrlCanned(string resourceUrlOrPath,
                                            string keyPairId,
-                                           StreamReader privateKey,
+                                           TextReader privateKey,
                                            DateTime expiresOn)
         {
             int epochSeconds = AWSSDKUtils.ConvertToUnixEpochSeconds(expiresOn.ToUniversalTime());

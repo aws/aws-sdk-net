@@ -44,7 +44,7 @@ namespace Amazon.CloudFront
         /// multiple protocols.
         /// </summary>
         [Flags]
-        public enum Protocol
+        public enum Protocols
         {
             Http,
             Https
@@ -60,14 +60,14 @@ namespace Amazon.CloudFront
         /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
         /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
         /// <returns>The signed cookies.</returns>
-        public static CookiesForCannedPolicy GetCookiesForCannedPolicy(Protocol protocol,
+        public static CookiesForCannedPolicy GetCookiesForCannedPolicy(Protocols protocol,
                                                 string distributionDomain,
-                                                FileInfo privateKey,
+                                                FileSystemInfo privateKey,
                                                 string resourcePath,
                                                 string keyPairId,
                                                 DateTime expiresOn)
         {
-            using (StreamReader reader = new StreamReader(privateKey.FullName))
+            using (var reader = new StreamReader(privateKey.FullName))
             {
                 return GetCookiesForCannedPolicy(protocol, distributionDomain, reader, resourcePath, keyPairId, expiresOn);
             }
@@ -83,7 +83,7 @@ namespace Amazon.CloudFront
         /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
         /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
         /// <returns>The signed cookies.</returns>
-        public static CookiesForCannedPolicy GetCookiesForCannedPolicy(Protocol protocol,
+        public static CookiesForCannedPolicy GetCookiesForCannedPolicy(Protocols protocol,
                                                 string distributionDomain,
                                                 TextReader privateKey,
                                                 string resourcePath,
@@ -115,10 +115,10 @@ namespace Amazon.CloudFront
         /// <returns>The signed cookies.</returns>
         public static CookiesForCannedPolicy GetCookiesForCannedPolicy(string resourceUrlOrPath,
                                            string keyPairId,
-                                           FileInfo privateKey,
+                                           FileSystemInfo privateKey,
                                            DateTime expiresOn)
         {
-            using (StreamReader reader = new StreamReader(privateKey.FullName))
+            using (var reader = new StreamReader(privateKey.FullName))
             {
                 return GetCookiesForCannedPolicy(resourceUrlOrPath, keyPairId, reader, expiresOn);
             }
@@ -180,16 +180,16 @@ namespace Amazon.CloudFront
         /// <param name="activeFrom">The date from which content can be accessed using the generated cookies.</param>
         /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
         /// <returns>The signed cookies.</returns>
-        public static CookiesForCustomPolicy GetCookiesForCustomPolicy(Protocol protocol,
+        public static CookiesForCustomPolicy GetCookiesForCustomPolicy(Protocols protocol,
                                                 string distributionDomain,
-                                                FileInfo privateKey,
+                                                FileSystemInfo privateKey,
                                                 string resourcePath,
                                                 string keyPairId,
                                                 DateTime expiresOn,
                                                 DateTime activeFrom,
                                                 string ipRange)
         {
-            using (StreamReader reader = new StreamReader(privateKey.FullName))
+            using (var reader = new StreamReader(privateKey.FullName))
             {
                 return GetCookiesForCustomPolicy(protocol, distributionDomain, reader, resourcePath, keyPairId, expiresOn, activeFrom, ipRange);
             }
@@ -207,7 +207,7 @@ namespace Amazon.CloudFront
         /// <param name="activeFrom">The date from which content can be accessed using the generated cookies.</param>
         /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
         /// <returns>The signed cookies.</returns>
-        public static CookiesForCustomPolicy GetCookiesForCustomPolicy(Protocol protocol,
+        public static CookiesForCustomPolicy GetCookiesForCustomPolicy(Protocols protocol,
                                                 string distributionDomain,
                                                 TextReader privateKey,
                                                 string resourcePath,
@@ -216,8 +216,6 @@ namespace Amazon.CloudFront
                                                 DateTime activeFrom,
                                                 string ipRange)
         {
-            var cookies = new CookiesForCustomPolicy();
-
             var url = GenerateResourcePath(protocol, distributionDomain, resourcePath);
             return GetCookiesForCustomPolicy(url, privateKey, keyPairId, expiresOn,
                 activeFrom, ipRange);
@@ -271,7 +269,7 @@ namespace Amazon.CloudFront
         /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>        
         /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
         /// <returns>The signed cookies.</returns>
-        public static CookiesForCustomPolicy GetCookiesForCustomPolicy(Protocol protocol,
+        public static CookiesForCustomPolicy GetCookiesForCustomPolicy(Protocols protocol,
                                                 string distributionDomain,
                                                 TextReader privateKey,
                                                 string resourcePath,
@@ -287,12 +285,12 @@ namespace Amazon.CloudFront
         /// Returns the resource path for the given distribution, object, 
         /// and protocol.
         /// </summary>
-        private static string GenerateResourcePath(Protocol protocol,
+        private static string GenerateResourcePath(Protocols protocol,
                                                    string distributionDomain,
                                                    string path)
         {
 
-            if (protocol == (Protocol.Http | Protocol.Https))
+            if (protocol == (Protocols.Http | Protocols.Https))
             {
                 return "http*://" + distributionDomain + "/" + path;
             }

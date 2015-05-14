@@ -26,54 +26,53 @@
       <Directory>$(ProjectDir)/Deployment/winrt/</Directory>
       <Directory>$(ProjectDir)/Deployment/dotnet45/</Directory>
     </AssemblyReferenceDirectories>
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.AutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.AWSSupport.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.CloudFormation.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.CloudFront.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.CloudHSM.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.CloudSearch.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.CloudSearchDomain.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.CloudSearch_2011_02_01.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.CloudTrail.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.CloudWatch.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.CloudWatchLogs.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.CodeDeploy.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.CognitoIdentity.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.CognitoSync.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.ConfigService.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.DataPipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.DirectConnect.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.DynamoDBv2.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.EC2.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.ECS.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.ElastiCache.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.ElasticBeanstalk.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.ElasticLoadBalancing.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.ElasticMapReduce.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.ElasticTranscoder.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.Glacier.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.IdentityManagement.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.ImportExport.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.KeyManagementService.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.Kinesis.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.Lambda.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.MachineLearning.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.OpsWorks.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.RDS.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.Redshift.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.Route53.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.Route53Domains.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.S3.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.SecurityToken.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.SimpleDB.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.SimpleEmail.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.SimpleNotificationService.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.SimpleSystemsManagement.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.SimpleWorkflow.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.SQS.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.StorageGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.WorkSpaces.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="C:\code\dotnet\v3\public-custom-fxcop-rules\Deployment\sdk\assemblies\net35\AWSSDK.Core.dll" Analyze="True" AnalyzeAllChildren="False">
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.AutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.AWSSupport.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.CloudFormation.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.CloudFront.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.CloudHSM.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.CloudSearch.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.CloudSearchDomain.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.CloudTrail.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.CloudWatch.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.CloudWatchLogs.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.CodeDeploy.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.CognitoIdentity.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.CognitoSync.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.ConfigService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.DataPipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.DirectConnect.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.DynamoDBv2.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.EC2.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.ECS.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.ElastiCache.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.ElasticBeanstalk.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.ElasticLoadBalancing.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.ElasticMapReduce.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.ElasticTranscoder.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.Glacier.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.IdentityManagement.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.ImportExport.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.KeyManagementService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.Kinesis.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.Lambda.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.MachineLearning.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.OpsWorks.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.RDS.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.Redshift.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.Route53.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.Route53Domains.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.S3.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.SecurityToken.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.SimpleDB.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.SimpleEmail.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.SimpleNotificationService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.SimpleSystemsManagement.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.SimpleWorkflow.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.SQS.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.StorageGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.WorkSpaces.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net35\AWSSDK.Core.dll" Analyze="True" AnalyzeAllChildren="False">
       <Modules AnalyzeAllChildren="False">
         <Module Name="AWSSDK.Core.dll" Analyze="True" AnalyzeAllChildren="False">
           <Namespaces AnalyzeAllChildren="False">
@@ -150,9 +149,9 @@
         <Rule Name="TypesShouldNotExtendCertainBaseTypes" Enabled="True" />
         <Rule Name="TypesThatOwnDisposableFieldsShouldBeDisposable" Enabled="True" />
         <Rule Name="TypesThatOwnNativeResourcesShouldBeDisposable" Enabled="True" />
-        <Rule Name="UriParametersShouldNotBeStrings" Enabled="True" />
-        <Rule Name="UriPropertiesShouldNotBeStrings" Enabled="True" />
-        <Rule Name="UriReturnValuesShouldNotBeStrings" Enabled="True" />
+        <Rule Name="UriParametersShouldNotBeStrings" Enabled="False" />
+        <Rule Name="UriPropertiesShouldNotBeStrings" Enabled="False" />
+        <Rule Name="UriReturnValuesShouldNotBeStrings" Enabled="False" />
         <Rule Name="UseEventsWhereAppropriate" Enabled="True" />
         <Rule Name="UseGenericEventHandlerInstances" Enabled="True" />
         <Rule Name="UseGenericsWhereAppropriate" Enabled="True" />
