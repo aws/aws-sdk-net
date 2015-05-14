@@ -113,7 +113,7 @@
             }
         },
         "EC2"                    : {
-            "Version" : "3.0.0.1",
+            "Version" : "3.0.0.2",
             "Dependencies" : {
                 "Core" : "3.0.0.1"
             }
