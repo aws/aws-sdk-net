@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.MachineLearning</id>
     <title>AWSSDK - Amazon Machine Learning</title>
-    <version>3.0.0.1-preview</version> 
+    <version>3.0.1.0-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.</description> 
     <language>en-US</language>
