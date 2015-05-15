@@ -80,6 +80,10 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             {
                 return new OperationLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedTLD"))
+            {
+                return new UnsupportedTLDException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRoute53DomainsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 

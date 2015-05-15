@@ -124,7 +124,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-%@"
+        /// Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
         /// </para>
         ///  
         /// <para>
@@ -152,7 +152,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-%@"
+        /// Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
         /// </para>
         ///  
         /// <para>
