@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the import snapshot task.
+        /// A description of the import snapshot task.
         /// </para>
         /// </summary>
         public string Description
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImportTaskId. 
         /// <para>
-        /// Task ID of the ImportSnapshot task.
+        /// The ID of the import snapshot task.
         /// </para>
         /// </summary>
         public string ImportTaskId
@@ -73,7 +73,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SnapshotTaskDetail.
+        /// Gets and sets the property SnapshotTaskDetail. 
+        /// <para>
+        /// Information about the import snapshot task.
+        /// </para>
         /// </summary>
         public SnapshotTaskDetail SnapshotTaskDetail
         {

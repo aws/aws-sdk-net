@@ -191,6 +191,16 @@
         {
             "active": true,
 
+            "model": "ds",
+            "base-name": "DirectoryService",
+            "region-lookup-name": "ds",
+            "authentication-service-name": "ds",
+            "service-url": "https://ds.us-east-1.amazonaws.com",
+            "mobile-platforms": [ ]
+        },
+        {
+            "active": true,
+
             "model": "dynamodb",
             "namespace": "Amazon.DynamoDBv2",
             "base-name": "DynamoDB",

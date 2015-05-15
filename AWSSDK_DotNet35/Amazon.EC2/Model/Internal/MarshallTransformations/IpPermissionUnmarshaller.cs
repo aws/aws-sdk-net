@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -66,6 +66,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         var unmarshaller = StringUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.IpRanges.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("prefixListIds/item", targetDepth))
+                    {
+                        var unmarshaller = PrefixListIdUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PrefixListIds.Add(item);
                         continue;
                     }
                     if (context.TestExpression("toPort", targetDepth))

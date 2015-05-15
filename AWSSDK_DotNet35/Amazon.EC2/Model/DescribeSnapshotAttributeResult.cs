@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SnapshotId. 
         /// <para>
-        /// The ID of the Amazon EBS snapshot.
+        /// The ID of the EBS snapshot.
         /// </para>
         /// </summary>
         public string SnapshotId

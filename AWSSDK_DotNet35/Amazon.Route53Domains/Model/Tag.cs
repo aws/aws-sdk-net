@@ -50,7 +50,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: A-Z, a-z, 0-9, space, ".:/=+\-%@"
+        /// Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
         /// </para>
         ///  
         /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: A-Z, a-z, 0-9, space, ".:/=+\-%@"
+        /// Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
         /// </para>
         ///  
         /// <para>

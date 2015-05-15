@@ -303,6 +303,15 @@
     <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.DirectoryService\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DirectoryService\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DirectoryService\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBClient.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -476,6 +485,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.MachineLearning\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.MachineLearning\Util\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.MachineLearning\Model\Internal\MarshallTransformations\*.cs">

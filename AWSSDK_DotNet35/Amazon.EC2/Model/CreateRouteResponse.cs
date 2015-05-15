@@ -14,21 +14,29 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
 
-using Amazon.Runtime;
-using Amazon.Runtime.Internal;
+using System;
 
 namespace Amazon.EC2.Model
 {
-    public partial class CreateRouteResponse : AmazonWebServiceResponse
+    /// <summary>
+    /// Configuration for accessing Amazon CreateRoute service
+    /// </summary>
+    public partial class CreateRouteResponse : CreateRouteResult
     {
-
+        /// <summary>
+        /// Gets and sets the CreateRouteResult property.
+        /// Represents the output of a CreateRoute operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the CreateRouteResult class are now available on the CreateRouteResponse class. You should use the properties on CreateRouteResponse instead of accessing them through CreateRouteResult.")]
+        public CreateRouteResult CreateRouteResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }

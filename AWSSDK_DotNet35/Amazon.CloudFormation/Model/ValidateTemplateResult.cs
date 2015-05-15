@@ -62,7 +62,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property CapabilitiesReason. 
         /// <para>
-        /// The capabilities reason found within the template.
+        /// The list of resources that generated the values in the <code>Capabilities</code> response
+        /// element.
         /// </para>
         /// </summary>
         public string CapabilitiesReason

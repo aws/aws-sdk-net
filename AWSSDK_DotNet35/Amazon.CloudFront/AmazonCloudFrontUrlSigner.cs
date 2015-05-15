@@ -23,9 +23,16 @@ using Amazon.Runtime;
 using Amazon.Util;
 
 using ThirdParty.BouncyCastle.OpenSsl;
+using System.Globalization;
+
+#pragma warning disable 1591
 
 namespace Amazon.CloudFront
 {
+    /// <summary>
+    /// This utility class provides methods for creating signed URLs for 
+    /// Amazon CloudFront distributions using canned or custom policies.
+    /// </summary>
     public static class AmazonCloudFrontUrlSigner
     {
         public enum Protocol
@@ -39,21 +46,21 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="protocol">The protocol of the URL</param>
         /// <param name="distributionDomain">The domain name of the distribution</param>
-        /// <param name="s3ObjectKey">The s3 key of the object, or the name of the stream for rtmp</param>
+        /// <param name="resourcePath">The path for the resource, or the name of the stream for rtmp</param>
         /// <param name="privateKey">The private key file. RSA private key (.pem) are supported.</param>
-        /// <param name="keyPairId">The key pair id corresponding to the private key file given</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
         /// <param name="expiresOn">The expiration date of the signed URL</param>
         /// <returns>The signed URL.</returns>
         public static string GetCannedSignedURL(Protocol protocol,
                                                 string distributionDomain,
-                                                FileInfo privateKey,
-                                                string s3ObjectKey,
+                                                FileSystemInfo privateKey,
+                                                string resourcePath,
                                                 string keyPairId,
-                                                DateTime expiresOn) 
+                                                DateTime expiresOn)
         {
             using (StreamReader reader = new StreamReader(privateKey.FullName))
             {
-                return GetCannedSignedURL(protocol, distributionDomain, reader, s3ObjectKey, keyPairId, expiresOn);
+                return GetCannedSignedURL(protocol, distributionDomain, reader, resourcePath, keyPairId, expiresOn);
             }
         }
 
@@ -62,31 +69,31 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="protocol">The protocol of the URL</param>
         /// <param name="distributionDomain">The domain name of the distribution</param>
-        /// <param name="s3ObjectKey">The s3 key of the object, or the name of the stream for rtmp</param>
+        /// <param name="resourcePath">The path for the resource, or the name of the stream for rtmp</param>
         /// <param name="privateKey">The private key file. RSA private key (.pem) are supported.</param>
-        /// <param name="keyPairId">The key pair id corresponding to the private key file given</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
         /// <param name="expiresOn">The expiration date of the signed URL</param>
         /// <returns>The signed URL.</returns>
         public static string GetCannedSignedURL(Protocol protocol,
                                                 string distributionDomain,
-                                                StreamReader privateKey,
-                                                string s3ObjectKey,
+                                                TextReader privateKey,
+                                                string resourcePath,
                                                 string keyPairId,
                                                 DateTime expiresOn)
         {
-            string resourcePath = GenerateResourcePath(protocol, distributionDomain, s3ObjectKey);
-            string signedUrlCanned = SignUrlCanned(resourcePath, keyPairId, privateKey, expiresOn);
+            string url = GenerateResourcePath(protocol, distributionDomain, resourcePath);
+            string signedUrlCanned = SignUrlCanned(url, keyPairId, privateKey, expiresOn);
 
             return signedUrlCanned;
         }
-       
+
         /// <summary>
         /// Returns a signed URL that provides tailored access to private content based on an access time window and an ip range.
         /// </summary>
         /// <param name="protocol">The protocol of the URL</param>
         /// <param name="distributionDomain">The domain name of the distribution</param>
         /// <param name="privateKey">Your private key file. RSA private key (.pem) are supported.</param>
-        /// <param name="s3ObjectKey">The s3 key of the object, or the name of the stream for rtmp</param>
+        /// <param name="resourcePath">The path for the resource, or the name of the stream for rtmp</param>
         /// <param name="keyPairId">The key pair id corresponding to the private key file given</param>
         /// <param name="expiresOn">The expiration date of the signed URL</param>
         /// <param name="activeFrom">The beginning valid date of the signed URL</param>
@@ -94,16 +101,16 @@ namespace Amazon.CloudFront
         /// <returns>The signed URL.</returns>
         public static string GetCustomSignedURL(Protocol protocol,
                                                 string distributionDomain,
-                                                FileInfo privateKey,
-                                                string s3ObjectKey,
+                                                FileSystemInfo privateKey,
+                                                string resourcePath,
                                                 string keyPairId,
                                                 DateTime expiresOn,
                                                 DateTime activeFrom,
-                                                string ipRange) 
+                                                string ipRange)
         {
             using (StreamReader reader = new StreamReader(privateKey.FullName))
             {
-                return GetCustomSignedURL(protocol, distributionDomain, reader, s3ObjectKey, keyPairId, expiresOn, activeFrom, ipRange);
+                return GetCustomSignedURL(protocol, distributionDomain, reader, resourcePath, keyPairId, expiresOn, activeFrom, ipRange);
             }
         }
 
@@ -113,7 +120,7 @@ namespace Amazon.CloudFront
         /// <param name="protocol">The protocol of the URL</param>
         /// <param name="distributionDomain">The domain name of the distribution</param>
         /// <param name="privateKey">Your private key file. RSA private key (.pem) are supported.</param>
-        /// <param name="s3ObjectKey">The s3 key of the object, or the name of the stream for rtmp</param>
+        /// <param name="resourcePath">The path for the resource, or the name of the stream for rtmp</param>
         /// <param name="keyPairId">The key pair id corresponding to the private key file given</param>
         /// <param name="expiresOn">The expiration date of the signed URL</param>
         /// <param name="activeFrom">The beginning valid date of the signed URL</param>
@@ -121,17 +128,17 @@ namespace Amazon.CloudFront
         /// <returns>The signed URL.</returns>
         public static string GetCustomSignedURL(Protocol protocol,
                                                 string distributionDomain,
-                                                StreamReader privateKey,
-                                                string s3ObjectKey,
+                                                TextReader privateKey,
+                                                string resourcePath,
                                                 string keyPairId,
                                                 DateTime expiresOn,
                                                 DateTime activeFrom,
                                                 string ipRange)
         {
-            string resourcePath = GenerateResourcePath(protocol, distributionDomain, s3ObjectKey);
-            string policy = BuildPolicyForSignedUrl(resourcePath, expiresOn, ipRange, activeFrom);
+            string path = GenerateResourcePath(protocol, distributionDomain, resourcePath);
+            string policy = BuildPolicyForSignedUrl(path, expiresOn, ipRange, activeFrom);
 
-            return SignUrl(resourcePath, keyPairId, privateKey, policy);
+            return SignUrl(path, keyPairId, privateKey, policy);
         }
 
         /// <summary>
@@ -140,33 +147,33 @@ namespace Amazon.CloudFront
         /// <param name="protocol">The protocol of the URL</param>
         /// <param name="distributionDomain">The domain name of the distribution</param>
         /// <param name="privateKey">Your private key file. RSA private key (.pem) are supported.</param>
-        /// <param name="s3ObjectKey">The s3 key of the object, or the name of the stream for rtmp</param>
+        /// <param name="resourcePath">The path for the resource, or the name of the stream for rtmp</param>
         /// <param name="keyPairId">The key pair id corresponding to the private key file given</param>
         /// <param name="expiresOn">The expiration date of the signed URL</param>        
         /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
         /// <returns>The signed URL.</returns>
         public static string GetCustomSignedURL(Protocol protocol,
                                                 string distributionDomain,
-                                                StreamReader privateKey,
-                                                string s3ObjectKey,
+                                                TextReader privateKey,
+                                                string resourcePath,
                                                 string keyPairId,
                                                 DateTime expiresOn,
                                                 string ipRange)
         {
-            string resourcePath = GenerateResourcePath(protocol, distributionDomain, s3ObjectKey);
-            string policy = BuildPolicyForSignedUrl(resourcePath, expiresOn, ipRange);
+            string path = GenerateResourcePath(protocol, distributionDomain, resourcePath);
+            string policy = BuildPolicyForSignedUrl(path, expiresOn, ipRange);
 
-            return SignUrl(resourcePath, keyPairId, privateKey, policy);
+            return SignUrl(path, keyPairId, privateKey, policy);
         }
-       
+
         /// <summary>
-        /// Generate a signed URL that allows access to distribution and S3 objects
+        /// Generate a signed URL that allows access to distribution and resource path
         /// by applying access restrictions specified in a custom policy document.
         /// </summary>
         /// <param name="resourceUrlOrPath">
         /// The URL or path that uniquely identifies a resource within a
         /// distribution. For standard distributions the resource URL will
-        /// be <tt>"http://" + distributionName + "/" + objectKey</tt>
+        /// be <tt>"http://" + distributionName + "/" + path</tt>
         /// (may also include URL parameters. For distributions with the
         /// HTTPS required protocol, the resource URL must start with
         /// <tt>"https://"</tt>. RTMP resources do not take the form of a
@@ -177,7 +184,7 @@ namespace Amazon.CloudFront
         /// <param name="privateKey">The RSA private key data that corresponding to the certificate keypair identified by keyPairId.</param>
         /// <param name="policy">A policy document that describes the access permissions that will be applied by 
         /// the signed URL. To generate a custom policy use</param>
-        /// <returns>A signed URL that will permit access to distribution and S3 objects as specified in the policy document.</returns>
+        /// <returns>A signed URL that will permit access to distribution and resource path as specified in the policy document.</returns>
         public static string SignUrl(string resourceUrlOrPath, string keyPairId, FileInfo privateKey, string policy)
         {
             using (StreamReader reader = new StreamReader(privateKey.FullName))
@@ -187,13 +194,13 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// Generate a signed URL that allows access to distribution and S3 objects
+        /// Generate a signed URL that allows access to distribution and resource path
         /// by applying access restrictions specified in a custom policy document.
         /// </summary>
         /// <param name="resourceUrlOrPath">
         /// The URL or path that uniquely identifies a resource within a
         /// distribution. For standard distributions the resource URL will
-        /// be <tt>"http://" + distributionName + "/" + objectKey</tt>
+        /// be <tt>"http://" + distributionName + "/" + path</tt>
         /// (may also include URL parameters. For distributions with the
         /// HTTPS required protocol, the resource URL must start with
         /// <tt>"https://"</tt>. RTMP resources do not take the form of a
@@ -205,7 +212,7 @@ namespace Amazon.CloudFront
         /// <param name="policy">A policy document that describes the access permissions that will be applied by 
         /// the signed URL. To generate a custom policy use</param>
         /// <returns>A signed URL that will permit access to distribution and S3 objects as specified in the policy document.</returns>
-        public static string SignUrl(string resourceUrlOrPath, string keyPairId, StreamReader privateKey, string policy)
+        public static string SignUrl(string resourceUrlOrPath, string keyPairId, TextReader privateKey, string policy)
         {
             RSAParameters rsaParameters = ConvertPEMToRSAParameters(privateKey);
             byte[] signatureBytes = SignWithSha1RSA(UTF8Encoding.UTF8.GetBytes(policy), rsaParameters);
@@ -217,16 +224,16 @@ namespace Amazon.CloudFront
                     + urlSafePolicy + "&Signature=" + urlSafeSignature + "&Key-Pair-Id=" + keyPairId;
             return signedUrl;
         }
-        
+
         /// <summary>
         /// Generate a signed URL that allows access to a specific distribution and
-        /// S3 object by applying a access restrictions from a "canned" (simplified)
+        /// resource path by applying a access restrictions from a "canned" (simplified)
         /// policy document.
         /// </summary>
         /// <param name="resourceUrlOrPath">
         /// The URL or path that uniquely identifies a resource within a
         /// distribution. For standard distributions the resource URL will
-        /// be <tt>"http://" + distributionName + "/" + objectKey</tt>
+        /// be <tt>"http://" + distributionName + "/" + path</tt>
         /// (may also include URL parameters. For distributions with the
         /// HTTPS required protocol, the resource URL must start with
         /// <tt>"https://"</tt>. RTMP resources do not take the form of a
@@ -249,13 +256,13 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Generate a signed URL that allows access to a specific distribution and
-        /// S3 object by applying a access restrictions from a "canned" (simplified)
+        /// resource path by applying a access restrictions from a "canned" (simplified)
         /// policy document.
         /// </summary>
         /// <param name="resourceUrlOrPath">
         /// The URL or path that uniquely identifies a resource within a
         /// distribution. For standard distributions the resource URL will
-        /// be <tt>"http://" + distributionName + "/" + objectKey</tt>
+        /// be <tt>"http://" + distributionName + "/" + path</tt>
         /// (may also include URL parameters. For distributions with the
         /// HTTPS required protocol, the resource URL must start with
         /// <tt>"https://"</tt>. RTMP resources do not take the form of a
@@ -267,7 +274,7 @@ namespace Amazon.CloudFront
         /// <param name="expiresOn">The time and date when the signed URL will expire.</param>
         public static String SignUrlCanned(string resourceUrlOrPath,
                                            string keyPairId,
-                                           StreamReader privateKey,
+                                           TextReader privateKey,
                                            DateTime expiresOn)
         {
             int epochSeconds = AWSSDKUtils.ConvertToUnixEpochSeconds(expiresOn.ToUniversalTime());
@@ -284,7 +291,7 @@ namespace Amazon.CloudFront
                     "&Signature=" + urlSafeSignature + "&Key-Pair-Id=" + keyPairId;
             return signedUrl;
         }
-      
+
         /// <summary>
         /// Generate a policy document that describes custom access permissions to
         /// apply via a private distribution's signed URL.
@@ -293,7 +300,7 @@ namespace Amazon.CloudFront
         /// An optional HTTP/S or RTMP resource path that restricts which
         /// distribution and S3 objects will be accessible in a signed
         /// URL. For standard distributions the resource URL will be
-        /// <tt>"http://" + distributionName + "/" + objectKey</tt> (may
+        /// <tt>"http://" + distributionName + "/" + path</tt> (may
         /// also include URL parameters. For distributions with the HTTPS
         /// required protocol, the resource URL must start with
         /// <tt>"https://"</tt>. RTMP resources do not take the form of a
@@ -359,7 +366,7 @@ namespace Amazon.CloudFront
                     + "\"}"
                 // Ignore epochDateGreaterThan if its value is DateTime.MinValue, the default value of DateTime.
                     + (activeFrom > DateTime.MinValue ? ",\"DateGreaterThan\":{\"AWS:EpochTime\":"
-                    + AWSSDKUtils.ConvertToUnixEpochSeconds(activeFrom.ToUniversalTime()) + "}" 
+                    + AWSSDKUtils.ConvertToUnixEpochSeconds(activeFrom.ToUniversalTime()) + "}"
                             : string.Empty)
                     + "}}]}";
             return policy;
@@ -371,9 +378,9 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="resourcePath">
         /// An optional HTTP/S or RTMP resource path that restricts which
-        /// distribution and S3 objects will be accessible in a signed
+        /// distribution and resource path will be accessible in a signed
         /// URL. For standard distributions the resource URL will be
-        /// <tt>"http://" + distributionName + "/" + objectKey</tt> (may
+        /// <tt>"http://" + distributionName + "/" + path</tt> (may
         /// also include URL parameters. For distributions with the HTTPS
         /// required protocol, the resource URL must start with
         /// <tt>"https://"</tt>. RTMP resources do not take the form of a
@@ -386,11 +393,11 @@ namespace Amazon.CloudFront
         /// <li><tt>a1b2c3d4e5f6g7.cloudfront.net/*</tt> : All objects
         /// within the distribution a1b2c3d4e5f6g7 will be accessible</li>
         /// <li><tt>a1b2c3d4e5f6g7.cloudfront.net/path/to/object.txt</tt>
-        /// : Only the S3 object named <tt>path/to/object.txt</tt> in the
+        /// : Only the resource named <tt>path/to/object.txt</tt> in the
         /// distribution a1b2c3d4e5f6g7 will be accessible.</li>
         /// </ul>
         /// If this parameter is null the policy will permit access to all
-        /// distributions and S3 objects associated with the certificate
+        /// distributions and resource path associated with the certificate
         /// keypair used to generate the signed URL.
         /// </param>
         /// <param name="expiresOn">The time and date when the signed URL will expire.</param>
@@ -404,7 +411,7 @@ namespace Amazon.CloudFront
                                                      DateTime expiresOn,
                                                      string limitToIpAddressCIDR)
         {
-            return BuildPolicyForSignedUrl(resourcePath, expiresOn, 
+            return BuildPolicyForSignedUrl(resourcePath, expiresOn,
                 limitToIpAddressCIDR, DateTime.MinValue);
         }
 
@@ -412,15 +419,15 @@ namespace Amazon.CloudFront
         /// Converts the given data to be safe for use in signed URLs for a private
         /// distribution by using specialized Base64 encoding.
         /// </summary>
-        private static string MakeBytesUrlSafe(byte[] bytes)
+        internal static string MakeBytesUrlSafe(byte[] bytes)
         {
             return Convert.ToBase64String(bytes).Replace('+', '-').Replace('=', '_').Replace('/', '~');
         }
-        
+
         /// <summary>
         /// Converts the given string to be safe for use in signed URLs for a private distribution.
         /// </summary>
-        private static String MakeStringUrlSafe(string str)
+        internal static String MakeStringUrlSafe(string str)
         {
             return MakeBytesUrlSafe(UTF8Encoding.UTF8.GetBytes(str));
         }
@@ -430,15 +437,16 @@ namespace Amazon.CloudFront
         /// </summary>
         private static string GenerateResourcePath(Protocol protocol,
                                                    string distributionDomain,
-                                                   string s3ObjectKey) 
+                                                   string path)
         {
 
-            if ( protocol == Protocol.http || protocol == Protocol.https ) 
+            if (protocol == Protocol.http || protocol == Protocol.https)
             {
-                return protocol.ToString() + "://" + distributionDomain + "/" + s3ObjectKey;
-            } else 
+                return protocol.ToString() + "://" + distributionDomain + "/" + path;
+            }
+            else
             {
-                return s3ObjectKey;
+                return path;
             }
         }
 
@@ -446,7 +454,7 @@ namespace Amazon.CloudFront
         /// Signs the data given with the private key given, using the SHA1withRSA
         /// algorithm provided by bouncy castle.
         /// </summary>
-        private static byte[] SignWithSha1RSA(byte[] dataToSign, RSAParameters rsaParameters)
+        internal static byte[] SignWithSha1RSA(byte[] dataToSign, RSAParameters rsaParameters)
         {
             using (SHA1CryptoServiceProvider cryptoSHA1 = new SHA1CryptoServiceProvider())
             {
@@ -463,7 +471,7 @@ namespace Amazon.CloudFront
             }
         }
 
-        private static RSAParameters ConvertPEMToRSAParameters(StreamReader privateKeyReader)
+        internal static RSAParameters ConvertPEMToRSAParameters(TextReader privateKeyReader)
         {
             RSAParameters rsaParams;
             try

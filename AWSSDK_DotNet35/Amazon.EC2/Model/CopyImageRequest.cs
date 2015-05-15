@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the CopyImage operation.
     /// Initiates the copy of an AMI from the specified source region to the current region.
     /// You specify the destination region by using its endpoint when making the request.
-    /// AMIs that use encrypted Amazon EBS snapshots cannot be copied with this method.
+    /// AMIs that use encrypted EBS snapshots cannot be copied with this method.
     /// 
     ///  
     /// <para>

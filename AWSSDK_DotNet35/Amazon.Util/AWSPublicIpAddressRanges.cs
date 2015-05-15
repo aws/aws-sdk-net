@@ -143,8 +143,16 @@ namespace Amazon.Util
 
                 var json = JsonMapper.ToObject(new JsonReader(fileContent));
 
-                var createdAt = (string)json[createDateKey];
-                instance.CreateDate = DateTime.ParseExact(createdAt, createDateFormatString, null);
+                DateTime? creationDateTime = null;
+                try
+                {
+                    var createdAt = (string) json[createDateKey];
+                    creationDateTime = DateTime.ParseExact(createdAt, createDateFormatString, null);
+                }
+                catch (FormatException) { }
+                catch (ArgumentNullException) { }
+
+                instance.CreateDate = creationDateTime.GetValueOrDefault(DateTime.Now.ToUniversalTime());
 
                 var parsedRanges = new List<AWSPublicIpAddressRange>();
                 instance.AllAddressRanges = parsedRanges;

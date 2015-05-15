@@ -95,6 +95,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         response.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Metadata", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Metadata = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Parameters/member", targetDepth))
                     {
                         var unmarshaller = ParameterDeclarationUnmarshaller.Instance;

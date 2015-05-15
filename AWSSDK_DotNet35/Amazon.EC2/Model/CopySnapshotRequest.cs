@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,14 +29,14 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CopySnapshot operation.
-    /// Copies a point-in-time snapshot of an Amazon EBS volume and stores it in Amazon S3.
-    /// You can copy the snapshot within the same region or from one region to another. You
-    /// can use the snapshot to create Amazon EBS volumes or Amazon Machine Images (AMIs).
-    /// The snapshot is copied to the regional endpoint that you send the HTTP request to.
+    /// Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can
+    /// copy the snapshot within the same region or from one region to another. You can use
+    /// the snapshot to create EBS volumes or Amazon Machine Images (AMIs). The snapshot is
+    /// copied to the regional endpoint that you send the HTTP request to.
     /// 
     ///  
     /// <para>
-    /// Copies of encrypted Amazon EBS snapshots remain encrypted. Copies of unencrypted snapshots
+    /// Copies of encrypted EBS snapshots remain encrypted. Copies of unencrypted snapshots
     /// remain unencrypted.
     /// </para>
     ///  <note> 
@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the new Amazon EBS snapshot.
+        /// A description for the EBS snapshot.
         /// </para>
         /// </summary>
         public string Description
@@ -113,8 +113,8 @@ namespace Amazon.EC2.Model
         /// should use the snapshot source endpoint, the <code>CopySnapshot</code> action, and
         /// include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
         /// parameters. The <code>PresignedUrl</code> must be signed using AWS Signature Version
-        /// 4. Because Amazon EBS snapshots are stored in Amazon S3, the signing algorithm for
-        /// this parameter uses the same logic that is described in <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+        /// 4. Because EBS snapshots are stored in Amazon S3, the signing algorithm for this parameter
+        /// uses the same logic that is described in <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
         /// Requests by Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon
         /// Simple Storage Service API Reference</i>. An invalid or improperly signed <code>PresignedUrl</code>
         /// will cause the copy operation to fail asynchronously, and the snapshot will move to
@@ -154,7 +154,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SourceSnapshotId. 
         /// <para>
-        /// The ID of the Amazon EBS snapshot to copy.
+        /// The ID of the EBS snapshot to copy.
         /// </para>
         /// </summary>
         public string SourceSnapshotId

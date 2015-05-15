@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Amazon.Route53Domains;
 using Amazon.Route53Domains.Model;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
@@ -25,6 +26,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             };
             var response = Client.CheckDomainAvailability(checkRequest);
             Assert.AreEqual(DomainAvailability.AVAILABLE, response.Availability);
+
+            checkRequest = new CheckDomainAvailabilityRequest
+            {
+                DomainName = "mydomain1111111111111.fake"
+            };
+            AssertExtensions.ExpectException<UnsupportedTLDException>(() => Client.CheckDomainAvailability(checkRequest));
 
             var domains = Client.ListDomains().Domains;
             if (domains.Count > 0)

@@ -103,6 +103,9 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
         /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
+        /// </exception>
         DeleteTagsForDomainResponse DeleteTagsForDomain(string domainName, List<string> tagsToDelete);
 
         /// <summary>
@@ -124,6 +127,9 @@ namespace Amazon.Route53Domains
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
         DeleteTagsForDomainResponse DeleteTagsForDomain(DeleteTagsForDomainRequest request);
 
@@ -170,6 +176,9 @@ namespace Amazon.Route53Domains
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
         DisableDomainAutoRenewResponse DisableDomainAutoRenew(DisableDomainAutoRenewRequest request);
 
@@ -226,6 +235,9 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
         /// The top-level domain does not support this operation.
         /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
+        /// </exception>
         DisableDomainTransferLockResponse DisableDomainTransferLock(DisableDomainTransferLockRequest request);
 
         /// <summary>
@@ -277,6 +289,9 @@ namespace Amazon.Route53Domains
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
         EnableDomainAutoRenewResponse EnableDomainAutoRenew(EnableDomainAutoRenewRequest request);
 
@@ -331,6 +346,9 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
         /// The top-level domain does not support this operation.
         /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
+        /// </exception>
         EnableDomainTransferLockResponse EnableDomainTransferLock(EnableDomainTransferLockRequest request);
 
         /// <summary>
@@ -372,6 +390,9 @@ namespace Amazon.Route53Domains
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
         GetDomainDetailResponse GetDomainDetail(GetDomainDetailRequest request);
 
@@ -572,6 +593,9 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
         /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
+        /// </exception>
         ListTagsForDomainResponse ListTagsForDomain(string domainName);
 
         /// <summary>
@@ -593,6 +617,9 @@ namespace Amazon.Route53Domains
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
         ListTagsForDomainResponse ListTagsForDomain(ListTagsForDomainRequest request);
 
@@ -710,6 +737,9 @@ namespace Amazon.Route53Domains
         /// The requested item is not acceptable. For example, for an OperationId it may refer
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
         RetrieveDomainAuthCodeResponse RetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request);
 
@@ -854,6 +884,9 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
         /// The top-level domain does not support this operation.
         /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
+        /// </exception>
         UpdateDomainContactResponse UpdateDomainContact(UpdateDomainContactRequest request);
 
         /// <summary>
@@ -917,6 +950,9 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
         /// The top-level domain does not support this operation.
         /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
+        /// </exception>
         UpdateDomainContactPrivacyResponse UpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request);
 
         /// <summary>
@@ -976,6 +1012,9 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
         /// The top-level domain does not support this operation.
         /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
+        /// </exception>
         UpdateDomainNameserversResponse UpdateDomainNameservers(UpdateDomainNameserversRequest request);
 
         /// <summary>
@@ -1016,7 +1055,7 @@ namespace Amazon.Route53Domains
         /// </para>
         /// </summary>
         /// <param name="domainName">The domain for which you want to add or update tags. The name of a domain. Type: String Default: None Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when theyaposre surrounded by letters, numbers, or other hyphens. You canapost specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must convert the name to Punycode. Required: Yes</param>
-        /// <param name="tagsToUpdate">A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced. Type: A complex type containing a list of tags Default: None Required: No'&gt; Each tag includes the following elements: <ul> <li> Key The key (name) of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-%@" Constraints: Each key can be 1-128 characters long. Required: Yes </li> <li> Value The value of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-%@" Constraints: Each value can be 0-256 characters long. Required: Yes </li> </ul></param>
+        /// <param name="tagsToUpdate">A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced. Type: A complex type containing a list of tags Default: None Required: No'&gt; Each tag includes the following elements: <ul> <li> Key The key (name) of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each key can be 1-128 characters long. Required: Yes </li> <li> Value The value of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each value can be 0-256 characters long. Required: Yes </li> </ul></param>
         /// 
         /// <returns>The response from the UpdateTagsForDomain service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
@@ -1026,6 +1065,9 @@ namespace Amazon.Route53Domains
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
         UpdateTagsForDomainResponse UpdateTagsForDomain(string domainName, List<Tag> tagsToUpdate);
 
@@ -1048,6 +1090,9 @@ namespace Amazon.Route53Domains
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
         UpdateTagsForDomainResponse UpdateTagsForDomain(UpdateTagsForDomainRequest request);
 

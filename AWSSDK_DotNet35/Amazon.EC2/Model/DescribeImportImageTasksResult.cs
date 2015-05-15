@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -38,8 +38,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImportImageTasks. 
         /// <para>
-        /// A list of zero or more ImportImage tasks that are currently active or completed/cancelled
-        /// in the previous 7 days.
+        /// A list of zero or more import image tasks that are currently active or were completed
+        /// or canceled in the previous 7 days.
         /// </para>
         /// </summary>
         public List<ImportImageTask> ImportImageTasks
@@ -57,7 +57,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to get the next page of paginated describe requests.
+        /// The token to use to get the next page of results. This value is <code>null</code>
+        /// when there are no more results to return.
         /// </para>
         /// </summary>
         public string NextToken

@@ -218,6 +218,16 @@
                     }
                 }
             ]
+        },		
+		"ModifyVpcEndpointResult": {
+            "exclude": [ "Return" ]
+        },
+		"PrefixListId": {
+            "modify": [
+                {
+                    "PrefixListId": { "emitPropertyName": "Id" }
+                }
+            ]
         },
         "RequestSpotLaunchSpecification": {
             "modify": [

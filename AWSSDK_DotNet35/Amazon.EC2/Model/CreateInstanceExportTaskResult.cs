@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,7 +35,10 @@ namespace Amazon.EC2.Model
         private ExportTask _exportTask;
 
         /// <summary>
-        /// Gets and sets the property ExportTask.
+        /// Gets and sets the property ExportTask. 
+        /// <para>
+        /// Information about the instance export task.
+        /// </para>
         /// </summary>
         public ExportTask ExportTask
         {

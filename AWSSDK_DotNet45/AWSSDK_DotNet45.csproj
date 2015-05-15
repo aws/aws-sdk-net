@@ -169,6 +169,8 @@
     <Compile Include="Amazon.DataPipeline\IAmazonDataPipeline.cs" />
     <Compile Include="Amazon.DirectConnect\AmazonDirectConnectClient.cs" />
     <Compile Include="Amazon.DirectConnect\IAmazonDirectConnect.cs" />
+    <Compile Include="Amazon.DirectoryService\AmazonDirectoryServiceClient.cs" />
+    <Compile Include="Amazon.DirectoryService\IAmazonDirectoryService.cs" />
     <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBClient.cs" />
     <Compile Include="Amazon.DynamoDBv2\DataModel\AsyncSearch.Async.cs" />
     <Compile Include="Amazon.DynamoDBv2\DataModel\BatchGet.Async.cs">
@@ -225,6 +227,7 @@
     <Compile Include="Amazon.Lambda\IAmazonLambda.cs" />
     <Compile Include="Amazon.MachineLearning\AmazonMachineLearningClient.cs" />
     <Compile Include="Amazon.MachineLearning\IAmazonMachineLearning.cs" />
+    <Compile Include="Amazon.MachineLearning\Util\*.cs" />
     <Compile Include="Amazon.OpsWorks\AmazonOpsWorksClient.cs" />
     <Compile Include="Amazon.OpsWorks\IAmazonOpsWorks.cs" />
     <Compile Include="Amazon.RDS\AmazonRDSClient.cs" />
@@ -540,6 +543,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DirectoryService\*" Exclude="..\AWSSDK_DotNet35\Amazon.DirectoryService\IAmazonDirectoryService.cs;..\AWSSDK_DotNet35\Amazon.DirectoryService\AmazonDirectoryServiceClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DirectoryService\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DirectoryService\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\IAmazonDynamoDB.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\AmazonDynamoDBClient.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DynamoDBAsync.cs">
       <Visible>false</Visible>
     </Compile>
@@ -740,6 +754,9 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.MachineLearning\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.MachineLearning\Util\*" Exclude="..\AWSSDK_DotNet35\Amazon.MachineLearning\Util\*.bcl35.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.MachineLearning\Internal\*">

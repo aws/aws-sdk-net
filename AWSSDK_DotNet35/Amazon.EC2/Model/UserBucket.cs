@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// User's Amazon S3 bucket details used to access the image.
+    /// Describes the S3 bucket for the disk image.
     /// </summary>
     public partial class UserBucket
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// The Amazon S3 bucket name where the disk image is located.
+        /// The name of the S3 bucket where the disk image is located.
         /// </para>
         /// </summary>
         public string S3Bucket
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property S3Key. 
         /// <para>
-        /// The Amazon S3 Key for the disk image.
+        /// The key for the disk image.
         /// </para>
         /// </summary>
         public string S3Key

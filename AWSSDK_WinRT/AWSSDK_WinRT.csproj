@@ -367,7 +367,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudFront\*" Exclude="..\AWSSDK_DotNet35\Amazon.CloudFront\IAmazonCloudFront.cs;..\AWSSDK_DotNet35\Amazon.CloudFront\AmazonCloudFrontClient.cs;..\AWSSDK_DotNet35\Amazon.CloudFront\AmazonCloudFrontUrlSigner.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudFront\*" Exclude="..\AWSSDK_DotNet35\Amazon.CloudFront\IAmazonCloudFront.cs;..\AWSSDK_DotNet35\Amazon.CloudFront\AmazonCloudFrontClient.cs;..\AWSSDK_DotNet35\Amazon.CloudFront\AmazonCloudFrontUrlSigner.cs;..\AWSSDK_DotNet35\Amazon.CloudFront\AmazonCloudFrontCookieSigner.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudFront\Model\*">

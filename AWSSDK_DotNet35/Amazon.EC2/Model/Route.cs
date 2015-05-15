@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class Route
     {
         private string _destinationCidrBlock;
+        private string _destinationPrefixListId;
         private string _gatewayId;
         private string _instanceId;
         private string _instanceOwnerId;
@@ -57,6 +58,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDestinationCidrBlock()
         {
             return this._destinationCidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationPrefixListId. 
+        /// <para>
+        /// The prefix of the AWS service.
+        /// </para>
+        /// </summary>
+        public string DestinationPrefixListId
+        {
+            get { return this._destinationPrefixListId; }
+            set { this._destinationPrefixListId = value; }
+        }
+
+        // Check to see if DestinationPrefixListId property is set
+        internal bool IsSetDestinationPrefixListId()
+        {
+            return this._destinationPrefixListId != null;
         }
 
         /// <summary>

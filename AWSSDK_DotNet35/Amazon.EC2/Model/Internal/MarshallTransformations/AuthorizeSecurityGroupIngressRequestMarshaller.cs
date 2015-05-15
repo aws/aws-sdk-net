@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "AuthorizeSecurityGroupIngress");
-            request.Parameters.Add("Version", "2015-03-01");
+            request.Parameters.Add("Version", "2015-04-15");
 
             if(publicRequest != null)
             {
@@ -75,6 +75,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             foreach(var publicRequestlistValuelistValue in publicRequestlistValue.IpRanges)
                             {
                                 request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "IpRanges" + "." + publicRequestlistValuelistValueIndex + "." + "CidrIp", StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetPrefixListIds())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PrefixListIds)
+                            {
+                                if(publicRequestlistValuelistValue.IsSetId())
+                                {
+                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "PrefixListIds" + "." + publicRequestlistValuelistValueIndex + "." + "PrefixListId", StringUtils.FromString(publicRequestlistValuelistValue.Id));
+                                }
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }

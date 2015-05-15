@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -41,8 +41,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// You cannot delete a snapshot of the root device of an Amazon EBS volume used by a
-    /// registered AMI. You must first de-register the AMI before you can delete the snapshot.
+    /// You cannot delete a snapshot of the root device of an EBS volume used by a registered
+    /// AMI. You must first de-register the AMI before you can delete the snapshot.
     /// </para>
     ///  
     /// <para>
@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates DeleteSnapshotRequest with the parameterized properties
         /// </summary>
-        /// <param name="snapshotId">The ID of the Amazon EBS snapshot.</param>
+        /// <param name="snapshotId">The ID of the EBS snapshot.</param>
         public DeleteSnapshotRequest(string snapshotId)
         {
             _snapshotId = snapshotId;
@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SnapshotId. 
         /// <para>
-        /// The ID of the Amazon EBS snapshot.
+        /// The ID of the EBS snapshot.
         /// </para>
         /// </summary>
         public string SnapshotId

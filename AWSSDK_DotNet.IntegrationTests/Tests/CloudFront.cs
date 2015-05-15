@@ -9,6 +9,9 @@ using Amazon.CloudFront;
 using Amazon.CloudFront.Model;
 using Amazon.S3.Model;
 using Amazon.IdentityManagement.Model;
+using System.IO;
+using System.Net;
+using System.Globalization;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
@@ -64,6 +67,80 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             };
             var deleteResponse = Client.DeleteCloudFrontOriginAccessIdentity(deleteRequest);
             Assert.IsNotNull(deleteResponse.ResponseMetadata.RequestId);
+        }
+
+        // A CloudFront distribution with Trusted Signer needs to be created
+        // to execute this test.
+        //[TestMethod]
+        //[TestCategory("CloudFront")]
+        public void SignedCookieForCannedPolicyTest()
+        {
+            var cloudFrontKeyPairId = "";
+            var privateKeyFile = new FileInfo(@"");
+            var resourceUri = "";
+            var distributionUri = new Uri("");
+            var expectedResponseContent = "";
+
+            var cookies = AmazonCloudFrontCookieSigner.GetCookiesForCannedPolicy(
+                resourceUri,
+                cloudFrontKeyPairId,
+                privateKeyFile,
+                DateTime.Today.AddYears(1));
+
+            var request = (HttpWebRequest)HttpWebRequest.Create(resourceUri);
+            var cookieContainer = new CookieContainer();
+            cookieContainer.Add(distributionUri, new Cookie(cookies.Expires.Key, cookies.Expires.Value));
+            cookieContainer.Add(distributionUri, new Cookie(cookies.Signature.Key, cookies.Signature.Value));
+            cookieContainer.Add(distributionUri, new Cookie(cookies.KeyPairId.Key, cookies.KeyPairId.Value));
+            request.CookieContainer = cookieContainer;
+
+            var response = (HttpWebResponse)request.GetResponse();
+            using (var responsestream = new StreamReader(response.GetResponseStream()))
+            {
+                var responseContent = responsestream.ReadToEnd();
+                Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+                Assert.AreEqual(expectedResponseContent, responseContent);
+            }
+        }
+
+        // A CloudFront distribution with Trusted Signer needs to be created
+        // to execute this test.
+        //[TestMethod]
+        //[TestCategory("CloudFront")]
+        public void SignedCookieForCustomPolicyTest()
+        {
+            var cloudFrontKeyPairId = "";
+            var privateKeyFile = new FileInfo(@"");
+            var resourceUri = "";
+            var distributionUri = new Uri("");
+            var distributionDomain = "";
+            var expectedResponseContent = "";
+
+            var cookies = AmazonCloudFrontCookieSigner.GetCookiesForCustomPolicy(
+            AmazonCloudFrontCookieSigner.Protocols.Http |
+            AmazonCloudFrontCookieSigner.Protocols.Https,
+            distributionDomain,
+            privateKeyFile,
+            "*.txt",
+            cloudFrontKeyPairId,
+            DateTime.Today.AddDays(1),
+            DateTime.Today,
+            string.Empty);
+
+            var request = (HttpWebRequest)HttpWebRequest.Create(resourceUri);
+            var cookieContainer = new CookieContainer();
+            cookieContainer.Add(new Cookie(cookies.Policy.Key, cookies.Policy.Value, "/", distributionDomain));
+            cookieContainer.Add(new Cookie(cookies.Signature.Key, cookies.Signature.Value, "/", distributionDomain));
+            cookieContainer.Add(new Cookie(cookies.KeyPairId.Key, cookies.KeyPairId.Value, "/", distributionDomain));
+            request.CookieContainer = cookieContainer;
+
+            var response = (HttpWebResponse)request.GetResponse();
+            using (var responsestream = new StreamReader(response.GetResponseStream()))
+            {
+                var responseContent = responsestream.ReadToEnd();
+                Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+                Assert.AreEqual(expectedResponseContent, responseContent);
+            }
         }
     }
 }

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information about Amazon EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+    /// For more information about EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
     /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates DescribeSnapshotAttributeRequest with the parameterized properties
         /// </summary>
-        /// <param name="snapshotId">The ID of the Amazon EBS snapshot.</param>
+        /// <param name="snapshotId">The ID of the EBS snapshot.</param>
         /// <param name="attribute">The snapshot attribute you would like to view.</param>
         public DescribeSnapshotAttributeRequest(string snapshotId, SnapshotAttributeName attribute)
         {
@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SnapshotId. 
         /// <para>
-        /// The ID of the Amazon EBS snapshot.
+        /// The ID of the EBS snapshot.
         /// </para>
         /// </summary>
         public string SnapshotId

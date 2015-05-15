@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,15 +29,15 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVolume operation.
-    /// Creates an Amazon EBS volume that can be attached to an instance in the same Availability
+    /// Creates an EBS volume that can be attached to an instance in the same Availability
     /// Zone. The volume is created in the regional endpoint that you send the HTTP request
     /// to. For more information see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
     /// and Endpoints</a>.
     /// 
     ///  
     /// <para>
-    /// You can create a new empty volume or restore a volume from an Amazon EBS snapshot.
-    /// Any AWS Marketplace product codes from the snapshot are propagated to the volume.
+    /// You can create a new empty volume or restore a volume from an EBS snapshot. Any AWS
+    /// Marketplace product codes from the snapshot are propagated to the volume.
     /// </para>
     ///  
     /// <para>

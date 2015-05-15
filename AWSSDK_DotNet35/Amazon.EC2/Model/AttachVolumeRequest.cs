@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,21 +29,20 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachVolume operation.
-    /// Attaches an Amazon EBS volume to a running or stopped instance and exposes it to the
-    /// instance with the specified device name.
+    /// Attaches an EBS volume to a running or stopped instance and exposes it to the instance
+    /// with the specified device name.
     /// 
     ///  
     /// <para>
-    /// Encrypted Amazon EBS volumes may only be attached to instances that support Amazon
-    /// EBS encryption. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+    /// Encrypted EBS volumes may only be attached to instances that support Amazon EBS encryption.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
     /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For a list of supported device names, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
-    /// an Amazon EBS Volume to an Instance</a>. Any device names that aren't reserved for
-    /// instance store volumes can be used for Amazon EBS volumes. For more information, see
-    /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
+    /// an EBS Volume to an Instance</a>. Any device names that aren't reserved for instance
+    /// store volumes can be used for EBS volumes. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
     /// EC2 Instance Store</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  
@@ -61,7 +60,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about Amazon EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
+    /// For more information about EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
     /// Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
@@ -79,7 +78,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates AttachVolumeRequest with the parameterized properties
         /// </summary>
-        /// <param name="volumeId">The ID of the Amazon EBS volume. The volume and instance must be within the same Availability Zone.</param>
+        /// <param name="volumeId">The ID of the EBS volume. The volume and instance must be within the same Availability Zone.</param>
         /// <param name="instanceId">The ID of the instance.</param>
         /// <param name="device">The device name to expose to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</param>
         public AttachVolumeRequest(string volumeId, string instanceId, string device)
@@ -128,7 +127,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeId. 
         /// <para>
-        /// The ID of the Amazon EBS volume. The volume and instance must be within the same Availability
+        /// The ID of the EBS volume. The volume and instance must be within the same Availability
         /// Zone.
         /// </para>
         /// </summary>
