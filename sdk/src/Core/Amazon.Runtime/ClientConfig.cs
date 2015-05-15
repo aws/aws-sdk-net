@@ -46,7 +46,6 @@ namespace Amazon.Runtime
         private string serviceURL = null;
         private string authRegion = null;
         private string authServiceName = null;
-        private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent;
         private string signatureVersion = "2";
         private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;
         private int maxErrorRetry = 4;
@@ -90,11 +89,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Gets and sets of the UserAgent property.
         /// </summary>
-        public string UserAgent
-        {
-            get { return this.userAgent; }
-            set { this.userAgent = value; }
-        }
+        public virtual string UserAgent { get; protected set; }
 
         /// <summary>
         /// Gets and sets the RegionEndpoint property.  The region constant to use that 
@@ -382,6 +377,20 @@ namespace Amazon.Runtime
 #if BCL
             this.UseNagleAlgorithm = useNagle;                
 #endif
+        }
+
+        /// <summary>
+        /// Appends a value to the user agent string.
+        /// The updated user agent string is used only by clients constructed using
+        /// this instance of client config.
+        /// </summary>        
+        /// <param name="value">The string to be appened to the user agent string.</param>
+        public void AppendToUserAgent(string value)
+        {
+            if (string.IsNullOrEmpty(value))            
+                throw new ArgumentException("The value cannot be null or empty.", "value");            
+
+            this.UserAgent = (this.UserAgent + value).Trim();
         }
         
         /// <summary>

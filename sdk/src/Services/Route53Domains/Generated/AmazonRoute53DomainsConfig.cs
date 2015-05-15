@@ -21,6 +21,7 @@
 using System;
 
 using Amazon.Runtime;
+using Amazon.Util.Internal;
 
 
 namespace Amazon.Route53Domains
@@ -30,6 +31,12 @@ namespace Amazon.Route53Domains
     /// </summary>
     public partial class AmazonRoute53DomainsConfig : ClientConfig
     {
+        private static readonly VersionInfo VersionInfo = new VersionInfo();
+        private static readonly string UserAgentString =
+            InternalSDKUtils.BuildUserAgentString(VersionInfo.FileVersion);
+
+        private string _userAgent = UserAgentString;
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -57,6 +64,21 @@ namespace Amazon.Route53Domains
             get
             {
                 return "2014-05-15";
+            }
+        }
+
+        /// <summary>
+        /// Gets the value of UserAgent property.
+        /// </summary>
+        public override string UserAgent
+        {
+            get
+            {
+                return _userAgent;
+            }
+            protected set
+            {
+                _userAgent = value;
             }
         }
     }

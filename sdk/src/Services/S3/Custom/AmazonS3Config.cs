@@ -15,6 +15,7 @@
 using System;
 
 using Amazon.Runtime;
+using Amazon.Util.Internal;
 
 namespace Amazon.S3
 {
@@ -24,7 +25,12 @@ namespace Amazon.S3
     /// </summary>
     public class AmazonS3Config : ClientConfig
     {
+        private static readonly VersionInfo VersionInfo = new VersionInfo();
+        private static readonly string UserAgentString =
+            InternalSDKUtils.BuildUserAgentString(VersionInfo.FileVersion);
+
         private bool forcePathStyle = false;
+        private string _userAgent = UserAgentString;
 
         /// <summary>
         /// Default constructor
@@ -75,6 +81,22 @@ namespace Amazon.S3
         {
             get { return forcePathStyle; }
             set { forcePathStyle = value; }
+        }
+
+
+        /// <summary>
+        /// Gets the value of UserAgent property.
+        /// </summary>
+        public override string UserAgent
+        {
+            get
+            {
+                return _userAgent;
+            }
+            protected set
+            {
+                _userAgent = value;
+            }
         }
     }
 }

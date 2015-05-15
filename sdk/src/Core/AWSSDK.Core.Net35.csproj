@@ -135,7 +135,7 @@
     </Compile>
     <Compile Include="Amazon.Util\Internal\_bcl\*.cs">
       <SubType>Code</SubType>
-    </Compile>
+    </Compile>    
     <Compile Include="Amazon.Util\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>

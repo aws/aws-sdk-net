@@ -21,6 +21,7 @@
 using System;
 
 using Amazon.Runtime;
+using Amazon.Util.Internal;
 
 
 namespace Amazon.DirectConnect
@@ -30,6 +31,12 @@ namespace Amazon.DirectConnect
     /// </summary>
     public partial class AmazonDirectConnectConfig : ClientConfig
     {
+        private static readonly VersionInfo VersionInfo = new VersionInfo();
+        private static readonly string UserAgentString =
+            InternalSDKUtils.BuildUserAgentString(VersionInfo.FileVersion);
+
+        private string _userAgent = UserAgentString;
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -57,6 +64,21 @@ namespace Amazon.DirectConnect
             get
             {
                 return "2012-10-25";
+            }
+        }
+
+        /// <summary>
+        /// Gets the value of UserAgent property.
+        /// </summary>
+        public override string UserAgent
+        {
+            get
+            {
+                return _userAgent;
+            }
+            protected set
+            {
+                _userAgent = value;
             }
         }
     }

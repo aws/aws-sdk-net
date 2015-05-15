@@ -8,8 +8,67 @@ using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Util.Internal
 {
-    public static class InternalSDKUtils
+    public static partial class InternalSDKUtils
     {
+        internal static readonly VersionInfo SDKVersionNumber = new VersionInfo();
+
+        #region UserAgent
+
+        static string _versionNumber;
+        static string _customSdkUserAgent;
+        static string _customData;
+ 
+        public static void SetUserAgent(string productName, string versionNumber)
+        {
+            SetUserAgent(productName, versionNumber, null);
+        }
+
+        public static void SetUserAgent(string productName, string versionNumber, string customData)
+        {
+            _userAgentBaseName = productName;
+            _versionNumber = versionNumber;
+            _customData = customData;
+
+            BuildCustomUserAgentString();
+        }
+        
+        static void BuildCustomUserAgentString()
+        {
+            if (_versionNumber == null)
+            {
+                _versionNumber = SDKVersionNumber.FileVersion;
+            }
+
+            _customSdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} .NET Runtime/{2} .NET Framework/{3} OS/{4} {5}",
+                _userAgentBaseName,
+                _versionNumber,
+                DetermineRuntime(),
+                DetermineFramework(),
+                DetermineOSVersion(),
+                _customData).Trim();
+        }
+
+
+        public static string BuildUserAgentString(string serviceSdkVersion)
+        {
+            if (!string.IsNullOrEmpty(_customSdkUserAgent))
+            {
+                return _customSdkUserAgent;
+            }
+
+            return string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2} .NET Runtime/{3} .NET Framework/{4} OS/{5} {6}",
+                _userAgentBaseName,
+                SDKVersionNumber.FileVersion,
+                serviceSdkVersion,
+                DetermineRuntime(),
+                DetermineFramework(),
+                DetermineOSVersion(),
+                _customData).Trim();
+        }
+
+
+        #endregion
+
         public static void ApplyValues(object target, IDictionary<string, object> propertyValues)
         {
             if (propertyValues == null || propertyValues.Count == 0)

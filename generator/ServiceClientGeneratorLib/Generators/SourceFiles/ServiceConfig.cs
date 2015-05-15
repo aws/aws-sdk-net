@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+    #line 1 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class ServiceConfig : BaseGenerator
     {
@@ -29,45 +29,56 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 6 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
 
 	AddLicenseHeader();
 
             
             #line default
             #line hidden
-            this.Write("\r\n\r\nusing System;\r\n\r\nusing Amazon.Runtime;\r\n\r\n\r\nnamespace ");
+            this.Write("\r\n\r\nusing System;\r\n\r\nusing Amazon.Runtime;\r\nusing Amazon.Util.Internal;\r\n\r\n\r\nname" +
+                    "space ");
             
-            #line 16 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 17 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    /// <summary>\r\n    /// Configuration for accessing Amazon ");
             
-            #line 19 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 20 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write(" service\r\n    /// </summary>\r\n\tpublic partial class Amazon");
             
-            #line 21 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 22 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
-            this.Write("Config : ClientConfig\r\n\t{\r\n        /// <summary>\r\n        /// Default constructor" +
-                    "\r\n        /// </summary>\r\n        public Amazon");
+            this.Write(@"Config : ClientConfig
+	{
+		private static readonly VersionInfo VersionInfo = new VersionInfo();
+		private static readonly string UserAgentString =
+            InternalSDKUtils.BuildUserAgentString(VersionInfo.FileVersion);
+
+		private string _userAgent = UserAgentString;
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public Amazon");
             
-            #line 26 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 33 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Config()\r\n        {\r\n");
             
-            #line 28 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 35 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
 
             if(!string.IsNullOrEmpty(this.Config.AuthenticationServiceName))
             {
@@ -77,14 +88,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            this.AuthenticationServiceName = \"");
             
-            #line 32 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 39 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AuthenticationServiceName));
             
             #line default
             #line hidden
             this.Write("\";\r\n");
             
-            #line 33 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 40 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
 
             }
             if(this.Config.OverrideMaxRetries.HasValue)
@@ -95,14 +106,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            this.MaxErrorRetry = ");
             
-            #line 38 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 45 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.OverrideMaxRetries));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 39 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 46 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
 
             }
             if(!string.IsNullOrEmpty(this.Config.DefaultRegion))
@@ -114,14 +125,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("            if (this.RegionEndpoint == null)\r\n                this.RegionEndpoint" +
                     " = RegionEndpoint.");
             
-            #line 45 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 52 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.DefaultRegion));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 46 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 53 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
 
             }
 
@@ -139,7 +150,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             {
                 return """);
             
-            #line 58 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 65 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.RegionLookupName));
             
             #line default
@@ -148,12 +159,31 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "ceVersion property.\r\n        /// </summary>\r\n        public override string Serv" +
                     "iceVersion\r\n        {\r\n            get\r\n            {\r\n                return \"");
             
-            #line 69 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 76 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.APIVersion));
             
             #line default
             #line hidden
-            this.Write("\";\r\n            }\r\n        }\r\n    }\r\n}");
+            this.Write(@""";
+            }
+        }
+
+		/// <summary>
+        /// Gets the value of UserAgent property.
+        /// </summary>
+        public override string UserAgent
+        {
+            get
+            {
+                return _userAgent;
+            }
+            protected set
+            {
+                _userAgent = value;
+            }
+        }
+    }
+}");
             return this.GenerationEnvironment.ToString();
         }
     }
