@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ParameterDeclaration Object
+    /// Response Unmarshaller for ParameterConstraints Object
     /// </summary>  
-    public class ParameterDeclarationUnmarshaller : IUnmarshaller<ParameterDeclaration, XmlUnmarshallerContext>, IUnmarshaller<ParameterDeclaration, JsonUnmarshallerContext>
+    public class ParameterConstraintsUnmarshaller : IUnmarshaller<ParameterConstraints, XmlUnmarshallerContext>, IUnmarshaller<ParameterConstraints, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ParameterDeclaration Unmarshall(XmlUnmarshallerContext context)
+        public ParameterConstraints Unmarshall(XmlUnmarshallerContext context)
         {
-            ParameterDeclaration unmarshalledObject = new ParameterDeclaration();
+            ParameterConstraints unmarshalledObject = new ParameterConstraints();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,40 +54,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("DefaultValue", targetDepth))
+                    if (context.TestExpression("AllowedValues/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Description", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("NoEcho", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.NoEcho = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ParameterConstraints", targetDepth))
-                    {
-                        var unmarshaller = ParameterConstraintsUnmarshaller.Instance;
-                        unmarshalledObject.ParameterConstraints = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ParameterKey", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ParameterKey = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ParameterType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ParameterType = unmarshaller.Unmarshall(context);
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AllowedValues.Add(item);
                         continue;
                     }
                 }
@@ -105,18 +76,18 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ParameterDeclaration Unmarshall(JsonUnmarshallerContext context)
+        public ParameterConstraints Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static ParameterDeclarationUnmarshaller _instance = new ParameterDeclarationUnmarshaller();        
+        private static ParameterConstraintsUnmarshaller _instance = new ParameterConstraintsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ParameterDeclarationUnmarshaller Instance
+        public static ParameterConstraintsUnmarshaller Instance
         {
             get
             {

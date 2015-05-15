@@ -28,31 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetStackPolicy operation.
-    /// Returns the stack policy for a specified stack. If a stack doesn't have a policy,
-    /// a null value is returned.
+    /// A set of criteria that AWS CloudFormation uses to validate parameter values. Although
+    /// other constraints might be defined in the stack template, AWS CloudFormation returns
+    /// only the <code>AllowedValues</code> property.
     /// </summary>
-    public partial class GetStackPolicyRequest : AmazonCloudFormationRequest
+    public partial class ParameterConstraints
     {
-        private string _stackName;
+        private List<string> _allowedValues = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property StackName. 
+        /// Gets and sets the property AllowedValues. 
         /// <para>
-        /// The name or unique stack ID that is associated with the stack whose policy you want
-        /// to get.
+        /// A list of values that are permitted for a parameter.
         /// </para>
         /// </summary>
-        public string StackName
+        public List<string> AllowedValues
         {
-            get { return this._stackName; }
-            set { this._stackName = value; }
+            get { return this._allowedValues; }
+            set { this._allowedValues = value; }
         }
 
-        // Check to see if StackName property is set
-        internal bool IsSetStackName()
+        // Check to see if AllowedValues property is set
+        internal bool IsSetAllowedValues()
         {
-            return this._stackName != null;
+            return this._allowedValues != null && this._allowedValues.Count > 0; 
         }
 
     }

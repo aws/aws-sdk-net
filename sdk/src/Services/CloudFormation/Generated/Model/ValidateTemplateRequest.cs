@@ -65,7 +65,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TemplateURL. 
         /// <para>
         /// Location of file containing the template body. The URL must point to a template (max
-        /// size: 307,200 bytes) located in an S3 bucket in the same region as the stack. For
+        /// size: 460,800 bytes) located in an S3 bucket in the same region as the stack. For
         /// more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
         /// Anatomy</a> in the AWS CloudFormation User Guide.
         /// </para>

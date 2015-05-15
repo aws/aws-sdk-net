@@ -35,6 +35,7 @@ namespace Amazon.CloudFormation.Model
         private List<string> _capabilities = new List<string>();
         private string _capabilitiesReason;
         private string _description;
+        private string _metadata;
         private List<ParameterDeclaration> _parameters = new List<ParameterDeclaration>();
         private string _version;
 
@@ -63,7 +64,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property CapabilitiesReason. 
         /// <para>
-        /// The capabilities reason found within the template.
+        /// The list of resources that generated the values in the <code>Capabilities</code> response
+        /// element.
         /// </para>
         /// </summary>
         public string CapabilitiesReason
@@ -94,6 +96,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// The value that is defined for the <code>Metadata</code> property of the template.
+        /// </para>
+        /// </summary>
+        public string Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null;
         }
 
         /// <summary>
