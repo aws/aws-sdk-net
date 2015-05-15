@@ -149,7 +149,7 @@
     <Compile Include="Custom\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\Model\_mobile\*.cs">
+    <Compile Include="Custom\Model\_storagefile\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\Transfer\*.cs">
@@ -164,7 +164,7 @@
     <Compile Include="Custom\Transfer\_async\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\Transfer\_mobile\*.cs">
+    <Compile Include="Custom\Transfer\_storagefile\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\Util\*.cs">

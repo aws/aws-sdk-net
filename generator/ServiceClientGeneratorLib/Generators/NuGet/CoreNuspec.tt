@@ -37,5 +37,8 @@
 	
 	<file src=".\bin\Release\portable\AWSSDK.Core.dll" target="lib\portable-wpa+netcore45" />
 	<file src=".\bin\Release\portable\AWSSDK.Core.xml" target="lib\portable-wpa+netcore45" />
+
+    <file src=".\bin\Release\pcl\AWSSDK.Core.dll" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.Core.xml" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10" />
   </files>
 </package>

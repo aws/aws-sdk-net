@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{62673889-1032-4F18-B11D-7766DEF33302}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AndroidTests</RootNamespace>
+    <AssemblyName>AndroidTests</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v2.3</TargetFrameworkVersion>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>a2064014</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="PCLStorage">
+      <HintPath>..\..\..\packages\PCLStorage.1.0.2\lib\monoandroid\PCLStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage.Abstractions">
+      <HintPath>..\..\..\packages\PCLStorage.1.0.2\lib\monoandroid\PCLStorage.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\..\..\packages\Microsoft.Net.Http.2.2.28\lib\monoandroid\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="PCLCrypto">
+      <HintPath>..\..\..\packages\PCLCrypto.0.5.2.14286\lib\monoandroid\PCLCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLCrypto.Abstractions">
+      <HintPath>..\..\..\packages\PCLCrypto.0.5.2.14286\lib\monoandroid\PCLCrypto.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\..\..\packages\Microsoft.Net.Http.2.2.28\lib\monoandroid\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Validation">
+      <HintPath>..\..\..\packages\Validation.2.0.5.14286\lib\portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch\Validation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\VendedCredentials.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <AndroidAsset Include="Assets\credentials.json" />
+    <None Include="GettingStarted.Xamarin" />
+    <None Include="packages.config" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Main.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.PCL.csproj">
+      <Project>{bfc96f19-cadf-41eb-804c-10dbef3f9126}</Project>
+      <Name>AWSSDK.Core.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\AutoScaling\AWSSDK.AutoScaling.PCL.csproj">
+      <Project>{e2789e19-ab3d-4064-9506-42788eeeaa19}</Project>
+      <Name>AWSSDK.AutoScaling.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\AWSSupport\AWSSDK.AWSSupport.PCL.csproj">
+      <Project>{3e98f8f7-2671-4746-8202-8802e68e9134}</Project>
+      <Name>AWSSDK.AWSSupport.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CloudFormation\AWSSDK.CloudFormation.PCL.csproj">
+      <Project>{a386f1e6-8272-4285-930e-befe7f856934}</Project>
+      <Name>AWSSDK.CloudFormation.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CloudFront\AWSSDK.CloudFront.PCL.csproj">
+      <Project>{ea1a5f63-e939-4273-b81b-2cc0274d7380}</Project>
+      <Name>AWSSDK.CloudFront.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CloudHSM\AWSSDK.CloudHSM.PCL.csproj">
+      <Project>{c0dda449-323d-430f-b347-a333f7bd39f1}</Project>
+      <Name>AWSSDK.CloudHSM.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CloudSearchDomain\AWSSDK.CloudSearchDomain.PCL.csproj">
+      <Project>{c9f6defe-848f-4e73-8509-25d5ebf48cc5}</Project>
+      <Name>AWSSDK.CloudSearchDomain.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CloudSearch\AWSSDK.CloudSearch.PCL.csproj">
+      <Project>{7a011f04-319c-4825-9197-c2716df46da1}</Project>
+      <Name>AWSSDK.CloudSearch.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CloudTrail\AWSSDK.CloudTrail.PCL.csproj">
+      <Project>{4e745706-f02a-4f99-b6f0-a67aadb0ee7a}</Project>
+      <Name>AWSSDK.CloudTrail.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CloudWatchLogs\AWSSDK.CloudWatchLogs.PCL.csproj">
+      <Project>{92fc45a0-d85d-4139-b746-a3805ae71fb9}</Project>
+      <Name>AWSSDK.CloudWatchLogs.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CloudWatch\AWSSDK.CloudWatch.PCL.csproj">
+      <Project>{181bbcba-4b2a-48f0-989c-09e33999b950}</Project>
+      <Name>AWSSDK.CloudWatch.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CodeDeploy\AWSSDK.CodeDeploy.PCL.csproj">
+      <Project>{7fd370b3-a965-47ba-a8eb-46da185c95f7}</Project>
+      <Name>AWSSDK.CodeDeploy.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CognitoIdentity\AWSSDK.CognitoIdentity.PCL.csproj">
+      <Project>{1c5f7691-6dd8-400b-8ec1-788317af0bfe}</Project>
+      <Name>AWSSDK.CognitoIdentity.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CognitoSync\AWSSDK.CognitoSync.PCL.csproj">
+      <Project>{44713a63-6d4b-4f6f-9af8-578ba30f8333}</Project>
+      <Name>AWSSDK.CognitoSync.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ConfigService\AWSSDK.ConfigService.PCL.csproj">
+      <Project>{6a629c05-3726-459b-b62b-4b1119429bc0}</Project>
+      <Name>AWSSDK.ConfigService.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\DataPipeline\AWSSDK.DataPipeline.PCL.csproj">
+      <Project>{23972f26-4fd3-44a7-84fe-ada055323191}</Project>
+      <Name>AWSSDK.DataPipeline.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\DirectConnect\AWSSDK.DirectConnect.PCL.csproj">
+      <Project>{603829d4-1276-427e-b9f3-138bea534ed4}</Project>
+      <Name>AWSSDK.DirectConnect.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.PCL.csproj">
+      <Project>{ff9a7cda-940c-4a29-a8f6-da4392e11def}</Project>
+      <Name>AWSSDK.DynamoDBv2.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\EC2\AWSSDK.EC2.PCL.csproj">
+      <Project>{0c0cba92-fb47-4713-ac32-c2006d50bd95}</Project>
+      <Name>AWSSDK.EC2.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ECS\AWSSDK.ECS.PCL.csproj">
+      <Project>{5bab6939-0f88-4964-875d-711fbc917a6d}</Project>
+      <Name>AWSSDK.ECS.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ElastiCache\AWSSDK.ElastiCache.PCL.csproj">
+      <Project>{e1ddb631-5e61-4d72-a86f-aa6749a1e4a2}</Project>
+      <Name>AWSSDK.ElastiCache.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ElasticBeanstalk\AWSSDK.ElasticBeanstalk.PCL.csproj">
+      <Project>{eb0eb1aa-ccf4-40de-8a38-4cc07e8e2e01}</Project>
+      <Name>AWSSDK.ElasticBeanstalk.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ElasticLoadBalancing\AWSSDK.ElasticLoadBalancing.PCL.csproj">
+      <Project>{e958831a-68d9-4e8d-a730-be29ec700b34}</Project>
+      <Name>AWSSDK.ElasticLoadBalancing.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ElasticMapReduce\AWSSDK.ElasticMapReduce.PCL.csproj">
+      <Project>{4fad21e8-41f4-446e-9b56-a3e99a2005d4}</Project>
+      <Name>AWSSDK.ElasticMapReduce.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.PCL.csproj">
+      <Project>{e0cf8866-9af9-4375-8116-6bddb505e773}</Project>
+      <Name>AWSSDK.ElasticTranscoder.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\Glacier\AWSSDK.Glacier.PCL.csproj">
+      <Project>{ce3c866e-e8be-458f-a27e-99e002e54852}</Project>
+      <Name>AWSSDK.Glacier.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\IdentityManagement\AWSSDK.IdentityManagement.PCL.csproj">
+      <Project>{ffc3331f-8ea8-417c-839e-b8c2061ba809}</Project>
+      <Name>AWSSDK.IdentityManagement.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ImportExport\AWSSDK.ImportExport.PCL.csproj">
+      <Project>{3bf9f15a-af1a-4bd7-ac2d-5b184be7bfb1}</Project>
+      <Name>AWSSDK.ImportExport.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.PCL.csproj">
+      <Project>{0f98464e-856f-4692-8abb-6d82209b8265}</Project>
+      <Name>AWSSDK.KeyManagementService.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\Kinesis\AWSSDK.Kinesis.PCL.csproj">
+      <Project>{1a175c0b-1e35-4c65-a885-e49fdc236c24}</Project>
+      <Name>AWSSDK.Kinesis.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\Lambda\AWSSDK.Lambda.PCL.csproj">
+      <Project>{52eb2667-1274-4721-bee0-1d078b2e8cc0}</Project>
+      <Name>AWSSDK.Lambda.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\MachineLearning\AWSSDK.MachineLearning.PCL.csproj">
+      <Project>{c6bd2209-2710-4c5b-8d4d-e412eff17fa5}</Project>
+      <Name>AWSSDK.MachineLearning.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\OpsWorks\AWSSDK.OpsWorks.PCL.csproj">
+      <Project>{eecabb7e-3bdc-4e64-9ad7-9b7641d42321}</Project>
+      <Name>AWSSDK.OpsWorks.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\RDS\AWSSDK.RDS.PCL.csproj">
+      <Project>{2223d453-8c33-4def-8fb4-09416a9d5f55}</Project>
+      <Name>AWSSDK.RDS.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\Redshift\AWSSDK.Redshift.PCL.csproj">
+      <Project>{c3f8173a-4471-439e-9d7a-a57dc32c920f}</Project>
+      <Name>AWSSDK.Redshift.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\Route53Domains\AWSSDK.Route53Domains.PCL.csproj">
+      <Project>{08b2ebef-0dc3-4431-ad6e-fe23380a1892}</Project>
+      <Name>AWSSDK.Route53Domains.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\Route53\AWSSDK.Route53.PCL.csproj">
+      <Project>{3cb17392-51ab-4ca4-b1b3-81faa777bbd2}</Project>
+      <Name>AWSSDK.Route53.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.PCL.csproj">
+      <Project>{17adb7d7-59f4-4eae-86b3-15a949bed449}</Project>
+      <Name>AWSSDK.S3.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.PCL.csproj">
+      <Project>{1bc2b016-b393-4016-ab85-649e1071067b}</Project>
+      <Name>AWSSDK.SecurityToken.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\SimpleDB\AWSSDK.SimpleDB.PCL.csproj">
+      <Project>{7bb36ae8-6e16-487e-bb8e-ffe48f624f83}</Project>
+      <Name>AWSSDK.SimpleDB.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\SimpleEmail\AWSSDK.SimpleEmail.PCL.csproj">
+      <Project>{daa7a5c9-9cc8-46a5-a248-1643f11e2737}</Project>
+      <Name>AWSSDK.SimpleEmail.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.PCL.csproj">
+      <Project>{ae784d21-b10c-42bf-a4b4-116127ae2219}</Project>
+      <Name>AWSSDK.SimpleNotificationService.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\SimpleSystemsManagement\AWSSDK.SimpleSystemsManagement.PCL.csproj">
+      <Project>{c77552f1-b97d-4871-906f-e33059e702f7}</Project>
+      <Name>AWSSDK.SimpleSystemsManagement.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\SimpleWorkflow\AWSSDK.SimpleWorkflow.PCL.csproj">
+      <Project>{5fbcbad4-c22d-428c-ba56-7abd134c0f8a}</Project>
+      <Name>AWSSDK.SimpleWorkflow.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\SQS\AWSSDK.SQS.PCL.csproj">
+      <Project>{0f2c8e1f-6555-4db4-bdd3-c2729f243673}</Project>
+      <Name>AWSSDK.SQS.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\StorageGateway\AWSSDK.StorageGateway.PCL.csproj">
+      <Project>{b67e16e9-0582-4e8b-ae79-a1283ee61772}</Project>
+      <Name>AWSSDK.StorageGateway.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\WorkSpaces\AWSSDK.WorkSpaces.PCL.csproj">
+      <Project>{1e347233-57d0-44ab-8096-2f5edbbb2902}</Project>
+      <Name>AWSSDK.WorkSpaces.PCL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <!-- <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" /> -->
+    <Error Condition="!Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+     Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

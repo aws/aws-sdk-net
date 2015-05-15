@@ -140,7 +140,7 @@
     <Compile Include="Custom\Model\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_mobile\*.cs">
+    <Compile Include="Custom\_winstorage\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Generated\*.cs">

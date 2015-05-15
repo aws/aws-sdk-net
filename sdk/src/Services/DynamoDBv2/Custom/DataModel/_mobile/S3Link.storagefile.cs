@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+#if (WIN_RT || WINDOWS_PHONE)
 using Windows.Storage;
+#endif
 
 namespace Amazon.DynamoDBv2.DataModel
 {

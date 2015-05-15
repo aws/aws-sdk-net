@@ -53,6 +53,7 @@ namespace ServiceClientGenerator
 
                 var templateSession = new Dictionary<string, object>();
 
+                templateSession["Name"] = projectFileConfiguration.Name;
                 templateSession["ProjectGuid"] = projectGuid;
                 templateSession["RootNamespace"] = serviceConfiguration.Namespace;
                 templateSession["AssemblyName"] = assemblyName;
