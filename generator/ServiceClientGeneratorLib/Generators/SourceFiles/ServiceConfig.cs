@@ -177,10 +177,6 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }");

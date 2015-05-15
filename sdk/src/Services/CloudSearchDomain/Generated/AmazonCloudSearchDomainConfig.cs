@@ -76,10 +76,6 @@ namespace Amazon.CloudSearchDomain
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

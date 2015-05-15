@@ -76,10 +76,6 @@ namespace Amazon.OpsWorks
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

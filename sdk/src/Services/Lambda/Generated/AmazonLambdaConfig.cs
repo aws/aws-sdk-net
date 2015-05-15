@@ -76,10 +76,6 @@ namespace Amazon.Lambda
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

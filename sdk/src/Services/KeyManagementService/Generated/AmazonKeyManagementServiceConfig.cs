@@ -76,10 +76,6 @@ namespace Amazon.KeyManagementService
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

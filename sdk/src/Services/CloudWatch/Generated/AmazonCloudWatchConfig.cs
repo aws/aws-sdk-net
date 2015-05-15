@@ -76,10 +76,6 @@ namespace Amazon.CloudWatch
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

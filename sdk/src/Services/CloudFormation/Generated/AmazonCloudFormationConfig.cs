@@ -76,10 +76,6 @@ namespace Amazon.CloudFormation
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

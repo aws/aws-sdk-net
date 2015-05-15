@@ -93,10 +93,6 @@ namespace Amazon.S3
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

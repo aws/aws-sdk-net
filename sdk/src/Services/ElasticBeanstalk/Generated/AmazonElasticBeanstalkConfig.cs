@@ -76,10 +76,6 @@ namespace Amazon.ElasticBeanstalk
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

@@ -75,10 +75,6 @@ namespace Amazon.SimpleDB
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

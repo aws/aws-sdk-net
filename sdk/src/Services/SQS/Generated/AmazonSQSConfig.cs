@@ -76,10 +76,6 @@ namespace Amazon.SQS
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

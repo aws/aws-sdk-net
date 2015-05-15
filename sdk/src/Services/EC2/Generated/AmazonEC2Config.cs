@@ -76,10 +76,6 @@ namespace Amazon.EC2
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

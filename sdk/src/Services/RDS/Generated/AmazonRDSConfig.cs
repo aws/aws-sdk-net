@@ -76,10 +76,6 @@ namespace Amazon.RDS
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

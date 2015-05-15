@@ -89,7 +89,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Gets and sets of the UserAgent property.
         /// </summary>
-        public virtual string UserAgent { get; protected set; }
+        public virtual string UserAgent { get; private set; }
 
         /// <summary>
         /// Gets and sets the RegionEndpoint property.  The region constant to use that 

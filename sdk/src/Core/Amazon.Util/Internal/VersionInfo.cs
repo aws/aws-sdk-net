@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,9 +37,9 @@ namespace Amazon.Util.Internal
             var callingAssembly = Assembly.GetCallingAssembly();
             var attributes = callingAssembly.GetCustomAttributes(
                 typeof(AssemblyFileVersionAttribute), false);
-            if(attributes.Count() ==0)
+            if (attributes.Length == 0)
             {
-                throw new InvalidOperationException(
+                throw new AmazonClientException(
                     string.Format("The assembly {0} does not define an AssemblyFileVersion attribute.",
                     callingAssembly.FullName));
             }

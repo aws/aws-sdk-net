@@ -76,10 +76,6 @@ namespace Amazon.CloudWatchLogs
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

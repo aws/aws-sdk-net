@@ -78,10 +78,6 @@ namespace Amazon.SecurityToken
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

@@ -86,10 +86,6 @@ namespace <#=this.Config.Namespace#>
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

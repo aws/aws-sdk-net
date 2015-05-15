@@ -76,10 +76,6 @@ namespace Amazon.ConfigService
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

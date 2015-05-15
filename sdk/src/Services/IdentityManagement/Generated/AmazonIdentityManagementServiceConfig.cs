@@ -78,10 +78,6 @@ namespace Amazon.IdentityManagement
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

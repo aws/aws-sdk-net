@@ -76,10 +76,6 @@ namespace Amazon.ElasticMapReduce
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

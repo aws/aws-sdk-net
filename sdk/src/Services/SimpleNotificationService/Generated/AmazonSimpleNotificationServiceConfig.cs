@@ -76,10 +76,6 @@ namespace Amazon.SimpleNotificationService
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

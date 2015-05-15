@@ -76,10 +76,6 @@ namespace Amazon.CognitoIdentity
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

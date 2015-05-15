@@ -76,10 +76,6 @@ namespace Amazon.CloudFront
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

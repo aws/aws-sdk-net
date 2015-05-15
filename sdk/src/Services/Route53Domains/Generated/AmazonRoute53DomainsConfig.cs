@@ -76,10 +76,6 @@ namespace Amazon.Route53Domains
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

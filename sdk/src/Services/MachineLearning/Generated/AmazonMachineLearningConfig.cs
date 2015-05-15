@@ -76,10 +76,6 @@ namespace Amazon.MachineLearning
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

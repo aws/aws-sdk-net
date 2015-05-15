@@ -76,10 +76,6 @@ namespace Amazon.DataPipeline
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }

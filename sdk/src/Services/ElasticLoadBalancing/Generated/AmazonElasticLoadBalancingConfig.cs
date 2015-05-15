@@ -76,10 +76,6 @@ namespace Amazon.ElasticLoadBalancing
             {
                 return _userAgent;
             }
-            protected set
-            {
-                _userAgent = value;
-            }
         }
     }
 }
