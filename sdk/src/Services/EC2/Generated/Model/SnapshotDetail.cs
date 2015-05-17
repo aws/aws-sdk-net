@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The details of the snapshot created from the imported disk.
+    /// Describes the snapshot created from the imported disk.
     /// </summary>
     public partial class SnapshotDetail
     {
@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description for the snapshot.
+        /// A description for the snapshot.
         /// </para>
         /// </summary>
         public string Description
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeviceName. 
         /// <para>
-        /// The Amazon EBS block device mapping for the snapshot.
+        /// The block device mapping for the snapshot.
         /// </para>
         /// </summary>
         public string DeviceName
@@ -82,7 +82,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DiskImageSize. 
         /// <para>
-        /// The size of the disk in the snapshot.
+        /// The size of the disk in the snapshot, in GiB.
         /// </para>
         /// </summary>
         public double DiskImageSize

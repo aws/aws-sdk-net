@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Describes the format and location for an instance export task.
     /// </summary>
     public partial class ExportToS3Task
     {
@@ -77,8 +77,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// The Amazon S3 bucket for the destination image. The destination bucket must exist
-        /// and grant WRITE and READ_ACP permissions to the AWS account <code>vm-import-export@amazon.com</code>.
+        /// The S3 bucket for the destination image. The destination bucket must exist and grant
+        /// WRITE and READ_ACP permissions to the AWS account <code>vm-import-export@amazon.com</code>.
         /// </para>
         /// </summary>
         public string S3Bucket
@@ -94,7 +94,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3Key.
+        /// Gets and sets the property S3Key. 
+        /// <para>
+        /// The encryption key for your S3 bucket.
+        /// </para>
         /// </summary>
         public string S3Key
         {

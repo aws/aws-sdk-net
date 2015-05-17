@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -209,8 +209,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Indicates whether the instance is optimized for EBS I/O. This optimization provides
         /// dedicated throughput to Amazon EBS and an optimized configuration stack to provide
-        /// optimal Amazon EBS I/O performance. This optimization isn't available with all instance
-        /// types. Additional usage charges apply when using an EBS-optimized instance.
+        /// optimal EBS I/O performance. This optimization isn't available with all instance types.
+        /// Additional usage charges apply when using an EBS-optimized instance.
         /// </para>
         ///  
         /// <para>
@@ -344,8 +344,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you launch an instance without specifying a key pair, you can't connect to the
-        /// instance.
+        /// If you do not specify a key pair, you can't connect to the instance unless you choose
+        /// an AMI that is configured to allow users another way to log in.
         /// </para>
         ///  </important>
         /// </summary>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The disk container object for the ImportSnapshot request.
+    /// The disk container object for the import snapshot request.
     /// </summary>
     public partial class SnapshotDiskContainer
     {
@@ -59,6 +59,10 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Format. 
         /// <para>
         /// The format of the disk image being imported.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
         /// </para>
         /// </summary>
         public string Format

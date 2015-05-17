@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Describes an import image task.
     /// </summary>
     public partial class ImportImageTask
     {
@@ -47,7 +47,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Architecture. 
         /// <para>
-        /// Architecture of the VM being imported.
+        /// The architecture of the virtual machine.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>i386</code> | <code>x86_64</code>
         /// </para>
         /// </summary>
         public string Architecture
@@ -65,7 +69,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the import task.
+        /// A description of the import task.
         /// </para>
         /// </summary>
         public string Description
@@ -83,7 +87,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Hypervisor. 
         /// <para>
-        /// Target hypervisor for the import task.
+        /// The target hypervisor for the import task.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>xen</code>
         /// </para>
         /// </summary>
         public string Hypervisor
@@ -101,7 +109,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The Amazon Machine Image (AMI) ID of the imported virtual machine.
+        /// The ID of the Amazon Machine Image (AMI) of the imported virtual machine.
         /// </para>
         /// </summary>
         public string ImageId
@@ -119,7 +127,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImportTaskId. 
         /// <para>
-        /// The ID of the import task.
+        /// The ID of the import image task.
         /// </para>
         /// </summary>
         public string ImportTaskId
@@ -137,7 +145,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LicenseType. 
         /// <para>
-        /// License type of the VM being imported.
+        /// The license type of the virtual machine.
         /// </para>
         /// </summary>
         public string LicenseType
@@ -173,7 +181,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Progress. 
         /// <para>
-        /// The percentage of progress of the ImportImage task.
+        /// The percentage of progress of the import image task.
         /// </para>
         /// </summary>
         public string Progress
@@ -189,7 +197,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SnapshotDetails.
+        /// Gets and sets the property SnapshotDetails. 
+        /// <para>
+        /// Information about the snapshots.
+        /// </para>
         /// </summary>
         public List<SnapshotDetail> SnapshotDetails
         {
@@ -206,7 +217,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// A brief status for the ImportImage task.
+        /// A brief status for the import image task.
         /// </para>
         /// </summary>
         public string Status
@@ -224,7 +235,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// A descriptive status message for the ImportImage task.
+        /// A descriptive status message for the import image task.
         /// </para>
         /// </summary>
         public string StatusMessage

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportInstance operation.
-    /// Creates an import instance task using metadata from the specified disk image. ImportInstance
+    /// Creates an import instance task using metadata from the specified disk image. <code>ImportInstance</code>
     /// only supports single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a>.
     /// After importing the image, you then upload it using the <code>ec2-import-volume</code>
     /// command in the EC2 command line tools. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
@@ -62,7 +62,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DiskImages.
+        /// Gets and sets the property DiskImages. 
+        /// <para>
+        /// The disk image.
+        /// </para>
         /// </summary>
         public List<DiskImage> DiskImages
         {
@@ -77,7 +80,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LaunchSpecification.
+        /// Gets and sets the property LaunchSpecification. 
+        /// <para>
+        /// The launch specification.
+        /// </para>
         /// </summary>
         public ImportInstanceLaunchSpecification LaunchSpecification
         {

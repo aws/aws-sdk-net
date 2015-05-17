@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,10 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// 
     /// </summary>
     public partial class CreateRouteResponse : AmazonWebServiceResponse
     {
+        private string _clientToken;
+        private bool? _return;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+        /// </para>
+        /// </summary>
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Return. 
+        /// <para>
+        /// Returns <code>true</code> if the request succeeds; otherwise, it returns an error.
+        /// </para>
+        /// </summary>
+        public bool Return
+        {
+            get { return this._return.GetValueOrDefault(); }
+            set { this._return = value; }
+        }
+
+        // Check to see if Return property is set
+        internal bool IsSetReturn()
+        {
+            return this._return.HasValue; 
+        }
 
     }
 }

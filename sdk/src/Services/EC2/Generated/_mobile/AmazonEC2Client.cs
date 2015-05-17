@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 
 
@@ -1473,6 +1473,36 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateVpcEndpoint
+
+        internal CreateVpcEndpointResponse CreateVpcEndpoint(CreateVpcEndpointRequest request)
+        {
+            var marshaller = new CreateVpcEndpointRequestMarshaller();
+            var unmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcEndpointRequest,CreateVpcEndpointResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateVpcEndpointResponse> CreateVpcEndpointAsync(CreateVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateVpcEndpointRequestMarshaller();
+            var unmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVpcEndpointRequest,CreateVpcEndpointResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateVpcPeeringConnection
 
         internal CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request)
@@ -2102,6 +2132,36 @@ namespace Amazon.EC2
             var unmarshaller = DeleteVpcResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteVpcRequest,DeleteVpcResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVpcEndpoints
+
+        internal DeleteVpcEndpointsResponse DeleteVpcEndpoints(DeleteVpcEndpointsRequest request)
+        {
+            var marshaller = new DeleteVpcEndpointsRequestMarshaller();
+            var unmarshaller = DeleteVpcEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcEndpointsRequest,DeleteVpcEndpointsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteVpcEndpointsResponse> DeleteVpcEndpointsAsync(DeleteVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteVpcEndpointsRequestMarshaller();
+            var unmarshaller = DeleteVpcEndpointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVpcEndpointsRequest,DeleteVpcEndpointsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2849,6 +2909,36 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeMovingAddresses
+
+        internal DescribeMovingAddressesResponse DescribeMovingAddresses(DescribeMovingAddressesRequest request)
+        {
+            var marshaller = new DescribeMovingAddressesRequestMarshaller();
+            var unmarshaller = DescribeMovingAddressesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMovingAddressesRequest,DescribeMovingAddressesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMovingAddresses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMovingAddresses operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeMovingAddressesResponse> DescribeMovingAddressesAsync(DescribeMovingAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeMovingAddressesRequestMarshaller();
+            var unmarshaller = DescribeMovingAddressesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMovingAddressesRequest,DescribeMovingAddressesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeNetworkAcls
 
         internal DescribeNetworkAclsResponse DescribeNetworkAcls()
@@ -2976,6 +3066,36 @@ namespace Amazon.EC2
             var unmarshaller = DescribePlacementGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribePlacementGroupsRequest,DescribePlacementGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribePrefixLists
+
+        internal DescribePrefixListsResponse DescribePrefixLists(DescribePrefixListsRequest request)
+        {
+            var marshaller = new DescribePrefixListsRequestMarshaller();
+            var unmarshaller = DescribePrefixListsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePrefixListsRequest,DescribePrefixListsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePrefixLists operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrefixLists operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribePrefixListsResponse> DescribePrefixListsAsync(DescribePrefixListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribePrefixListsRequestMarshaller();
+            var unmarshaller = DescribePrefixListsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePrefixListsRequest,DescribePrefixListsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3606,6 +3726,66 @@ namespace Amazon.EC2
             var unmarshaller = DescribeVpcClassicLinkResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeVpcClassicLinkRequest,DescribeVpcClassicLinkResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVpcEndpoints
+
+        internal DescribeVpcEndpointsResponse DescribeVpcEndpoints(DescribeVpcEndpointsRequest request)
+        {
+            var marshaller = new DescribeVpcEndpointsRequestMarshaller();
+            var unmarshaller = DescribeVpcEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcEndpointsRequest,DescribeVpcEndpointsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeVpcEndpointsResponse> DescribeVpcEndpointsAsync(DescribeVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeVpcEndpointsRequestMarshaller();
+            var unmarshaller = DescribeVpcEndpointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVpcEndpointsRequest,DescribeVpcEndpointsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVpcEndpointServices
+
+        internal DescribeVpcEndpointServicesResponse DescribeVpcEndpointServices(DescribeVpcEndpointServicesRequest request)
+        {
+            var marshaller = new DescribeVpcEndpointServicesRequestMarshaller();
+            var unmarshaller = DescribeVpcEndpointServicesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcEndpointServicesRequest,DescribeVpcEndpointServicesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcEndpointServices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServices operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeVpcEndpointServicesResponse> DescribeVpcEndpointServicesAsync(DescribeVpcEndpointServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeVpcEndpointServicesRequestMarshaller();
+            var unmarshaller = DescribeVpcEndpointServicesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVpcEndpointServicesRequest,DescribeVpcEndpointServicesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4557,6 +4737,36 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyVpcEndpoint
+
+        internal ModifyVpcEndpointResponse ModifyVpcEndpoint(ModifyVpcEndpointRequest request)
+        {
+            var marshaller = new ModifyVpcEndpointRequestMarshaller();
+            var unmarshaller = ModifyVpcEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcEndpointRequest,ModifyVpcEndpointResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpoint operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ModifyVpcEndpointResponse> ModifyVpcEndpointAsync(ModifyVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyVpcEndpointRequestMarshaller();
+            var unmarshaller = ModifyVpcEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVpcEndpointRequest,ModifyVpcEndpointResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  MonitorInstances
 
         internal MonitorInstancesResponse MonitorInstances(MonitorInstancesRequest request)
@@ -4582,6 +4792,36 @@ namespace Amazon.EC2
             var unmarshaller = MonitorInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<MonitorInstancesRequest,MonitorInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  MoveAddressToVpc
+
+        internal MoveAddressToVpcResponse MoveAddressToVpc(MoveAddressToVpcRequest request)
+        {
+            var marshaller = new MoveAddressToVpcRequestMarshaller();
+            var unmarshaller = MoveAddressToVpcResponseUnmarshaller.Instance;
+
+            return Invoke<MoveAddressToVpcRequest,MoveAddressToVpcResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the MoveAddressToVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the MoveAddressToVpc operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<MoveAddressToVpcResponse> MoveAddressToVpcAsync(MoveAddressToVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new MoveAddressToVpcRequestMarshaller();
+            var unmarshaller = MoveAddressToVpcResponseUnmarshaller.Instance;
+
+            return InvokeAsync<MoveAddressToVpcRequest,MoveAddressToVpcResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -5032,6 +5272,36 @@ namespace Amazon.EC2
             var unmarshaller = ResetSnapshotAttributeResponseUnmarshaller.Instance;
 
             return InvokeAsync<ResetSnapshotAttributeRequest,ResetSnapshotAttributeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RestoreAddressToClassic
+
+        internal RestoreAddressToClassicResponse RestoreAddressToClassic(RestoreAddressToClassicRequest request)
+        {
+            var marshaller = new RestoreAddressToClassicRequestMarshaller();
+            var unmarshaller = RestoreAddressToClassicResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreAddressToClassicRequest,RestoreAddressToClassicResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreAddressToClassic operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreAddressToClassic operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RestoreAddressToClassicResponse> RestoreAddressToClassicAsync(RestoreAddressToClassicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RestoreAddressToClassicRequestMarshaller();
+            var unmarshaller = RestoreAddressToClassicResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreAddressToClassicRequest,RestoreAddressToClassicResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

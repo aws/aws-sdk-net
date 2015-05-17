@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 
 
@@ -674,21 +674,20 @@ namespace Amazon.EC2
         #region  AttachVolume
 
         /// <summary>
-        /// Attaches an Amazon EBS volume to a running or stopped instance and exposes it to the
-        /// instance with the specified device name.
+        /// Attaches an EBS volume to a running or stopped instance and exposes it to the instance
+        /// with the specified device name.
         /// 
         ///  
         /// <para>
-        /// Encrypted Amazon EBS volumes may only be attached to instances that support Amazon
-        /// EBS encryption. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+        /// Encrypted EBS volumes may only be attached to instances that support Amazon EBS encryption.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
         /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For a list of supported device names, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
-        /// an Amazon EBS Volume to an Instance</a>. Any device names that aren't reserved for
-        /// instance store volumes can be used for Amazon EBS volumes. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
+        /// an EBS Volume to an Instance</a>. Any device names that aren't reserved for instance
+        /// store volumes can be used for EBS volumes. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
         /// EC2 Instance Store</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
@@ -706,7 +705,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about Amazon EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
+        /// For more information about EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
         /// Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -1245,7 +1244,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Initiates the copy of an AMI from the specified source region to the current region.
         /// You specify the destination region by using its endpoint when making the request.
-        /// AMIs that use encrypted Amazon EBS snapshots cannot be copied with this method.
+        /// AMIs that use encrypted EBS snapshots cannot be copied with this method.
         /// 
         ///  
         /// <para>
@@ -1287,14 +1286,14 @@ namespace Amazon.EC2
         #region  CopySnapshot
 
         /// <summary>
-        /// Copies a point-in-time snapshot of an Amazon EBS volume and stores it in Amazon S3.
-        /// You can copy the snapshot within the same region or from one region to another. You
-        /// can use the snapshot to create Amazon EBS volumes or Amazon Machine Images (AMIs).
-        /// The snapshot is copied to the regional endpoint that you send the HTTP request to.
+        /// Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can
+        /// copy the snapshot within the same region or from one region to another. You can use
+        /// the snapshot to create EBS volumes or Amazon Machine Images (AMIs). The snapshot is
+        /// copied to the regional endpoint that you send the HTTP request to.
         /// 
         ///  
         /// <para>
-        /// Copies of encrypted Amazon EBS snapshots remain encrypted. Copies of unencrypted snapshots
+        /// Copies of encrypted EBS snapshots remain encrypted. Copies of unencrypted snapshots
         /// remain unencrypted.
         /// </para>
         ///  <note> 
@@ -1528,7 +1527,7 @@ namespace Amazon.EC2
         #region  CreateInstanceExportTask
 
         /// <summary>
-        /// Exports a running or stopped instance to an Amazon S3 bucket.
+        /// Exports a running or stopped instance to an S3 bucket.
         /// 
         ///  
         /// <para>
@@ -2115,9 +2114,9 @@ namespace Amazon.EC2
         #region  CreateSnapshot
 
         /// <summary>
-        /// Creates a snapshot of an Amazon EBS volume and stores it in Amazon S3. You can use
-        /// snapshots for backups, to make copies of Amazon EBS volumes, and to save data before
-        /// shutting down an instance.
+        /// Creates a snapshot of an EBS volume and stores it in Amazon S3. You can use snapshots
+        /// for backups, to make copies of EBS volumes, and to save data before shutting down
+        /// an instance.
         /// 
         ///  
         /// <para>
@@ -2127,19 +2126,18 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You can take a snapshot of an attached volume that is in use. However, snapshots only
-        /// capture data that has been written to your Amazon EBS volume at the time the snapshot
-        /// command is issued; this may exclude any data that has been cached by any applications
-        /// or the operating system. If you can pause any file systems on the volume long enough
-        /// to take a snapshot, your snapshot should be complete. However, if you cannot pause
-        /// all file writes to the volume, you should unmount the volume from within the instance,
-        /// issue the snapshot command, and then remount the volume to ensure a consistent and
-        /// complete snapshot. You may remount and use your volume while the snapshot status is
-        /// <code>pending</code>.
+        /// capture data that has been written to your EBS volume at the time the snapshot command
+        /// is issued; this may exclude any data that has been cached by any applications or the
+        /// operating system. If you can pause any file systems on the volume long enough to take
+        /// a snapshot, your snapshot should be complete. However, if you cannot pause all file
+        /// writes to the volume, you should unmount the volume from within the instance, issue
+        /// the snapshot command, and then remount the volume to ensure a consistent and complete
+        /// snapshot. You may remount and use your volume while the snapshot status is <code>pending</code>.
         /// </para>
         ///  
         /// <para>
-        /// To create a snapshot for Amazon EBS volumes that serve as root devices, you should
-        /// stop the instance before taking the snapshot.
+        /// To create a snapshot for EBS volumes that serve as root devices, you should stop the
+        /// instance before taking the snapshot.
         /// </para>
         ///  
         /// <para>
@@ -2340,15 +2338,15 @@ namespace Amazon.EC2
         #region  CreateVolume
 
         /// <summary>
-        /// Creates an Amazon EBS volume that can be attached to an instance in the same Availability
+        /// Creates an EBS volume that can be attached to an instance in the same Availability
         /// Zone. The volume is created in the regional endpoint that you send the HTTP request
         /// to. For more information see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
         /// and Endpoints</a>.
         /// 
         ///  
         /// <para>
-        /// You can create a new empty volume or restore a volume from an Amazon EBS snapshot.
-        /// Any AWS Marketplace product codes from the snapshot are propagated to the volume.
+        /// You can create a new empty volume or restore a volume from an EBS snapshot. Any AWS
+        /// Marketplace product codes from the snapshot are propagated to the volume.
         /// </para>
         ///  
         /// <para>
@@ -2442,6 +2440,51 @@ namespace Amazon.EC2
             var unmarshaller = CreateVpcResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateVpcRequest,CreateVpcResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateVpcEndpoint
+
+        /// <summary>
+        /// Creates a VPC endpoint for a specified AWS service. An endpoint enables you to create
+        /// a private connection between your VPC and another AWS service in your account. You
+        /// can specify an endpoint policy to attach to the endpoint that will control access
+        /// to the service from your VPC. You can also specify the VPC route tables that use the
+        /// endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// Currently, only endpoints to Amazon S3 are supported.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcEndpoint service method, as returned by EC2.</returns>
+        public CreateVpcEndpointResponse CreateVpcEndpoint(CreateVpcEndpointRequest request)
+        {
+            var marshaller = new CreateVpcEndpointRequestMarshaller();
+            var unmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcEndpointRequest,CreateVpcEndpointResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateVpcEndpointResponse> CreateVpcEndpointAsync(CreateVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateVpcEndpointRequestMarshaller();
+            var unmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVpcEndpointRequest,CreateVpcEndpointResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3075,8 +3118,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You cannot delete a snapshot of the root device of an Amazon EBS volume used by a
-        /// registered AMI. You must first de-register the AMI before you can delete the snapshot.
+        /// You cannot delete a snapshot of the root device of an EBS volume used by a registered
+        /// AMI. You must first de-register the AMI before you can delete the snapshot.
         /// </para>
         ///  
         /// <para>
@@ -3246,7 +3289,7 @@ namespace Amazon.EC2
         #region  DeleteVolume
 
         /// <summary>
-        /// Deletes the specified Amazon EBS volume. The volume must be in the <code>available</code>
+        /// Deletes the specified EBS volume. The volume must be in the <code>available</code>
         /// state (not attached to an instance).
         /// 
         ///  <note> 
@@ -3325,6 +3368,43 @@ namespace Amazon.EC2
             var unmarshaller = DeleteVpcResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteVpcRequest,DeleteVpcResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVpcEndpoints
+
+        /// <summary>
+        /// Deletes one or more specified VPC endpoints. Deleting the endpoint also deletes the
+        /// endpoint routes in the route tables that were associated with the endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcEndpoints service method, as returned by EC2.</returns>
+        public DeleteVpcEndpointsResponse DeleteVpcEndpoints(DeleteVpcEndpointsRequest request)
+        {
+            var marshaller = new DeleteVpcEndpointsRequestMarshaller();
+            var unmarshaller = DeleteVpcEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcEndpointsRequest,DeleteVpcEndpointsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteVpcEndpointsResponse> DeleteVpcEndpointsAsync(DeleteVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteVpcEndpointsRequestMarshaller();
+            var unmarshaller = DeleteVpcEndpointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVpcEndpointsRequest,DeleteVpcEndpointsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4226,7 +4306,7 @@ namespace Amazon.EC2
         #region  DescribeImportSnapshotTasks
 
         /// <summary>
-        /// Displays details about an import snapshot tasks that is already created.
+        /// Describes your import snapshot tasks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeImportSnapshotTasks service method.</param>
         /// 
@@ -4377,82 +4457,34 @@ namespace Amazon.EC2
         #region  DescribeInstanceStatus
 
         /// <summary>
-        /// Describes the status of one or more instances, including any scheduled events.
+        /// Describes the status of one or more instances.
         /// 
         ///  
         /// <para>
-        /// Instance status has two main components:
+        /// Instance status includes the following components:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// System Status reports impaired functionality that stems from issues related to the
-        /// systems that support an instance, such as such as hardware failures and network connectivity
-        /// problems. This call reports such problems as impaired reachability.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Instance Status reports impaired functionality that arises from problems internal
-        /// to the instance. This call reports such problems as impaired reachability.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Instance status provides information about four types of scheduled events for an instance
-        /// that may require your attention:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Scheduled Reboot: When Amazon EC2 determines that an instance must be rebooted, the
-        /// instances status returns one of two event codes: <code>system-reboot</code> or <code>instance-reboot</code>.
-        /// System reboot commonly occurs if certain maintenance or upgrade operations require
-        /// a reboot of the underlying host that supports an instance. Instance reboot commonly
-        /// occurs if the instance must be rebooted, rather than the underlying host. Rebooting
-        /// events include a scheduled start and end time.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// System Maintenance: When Amazon EC2 determines that an instance requires maintenance
-        /// that requires power or network impact, the instance status is the event code <code>system-maintenance</code>.
-        /// System maintenance is either power maintenance or network maintenance. For power maintenance,
-        /// your instance will be unavailable for a brief period of time and then rebooted. For
-        /// network maintenance, your instance will experience a brief loss of network connectivity.
-        /// System maintenance events include a scheduled start and end time. You will also be
-        /// notified by email if one of your instances is set for system maintenance. The email
-        /// message indicates when your instance is scheduled for maintenance.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Scheduled Retirement: When Amazon EC2 determines that an instance must be shut down,
-        /// the instance status is the event code <code>instance-retirement</code>. Retirement
-        /// commonly occurs when the underlying host is degraded and must be replaced. Retirement
-        /// events include a scheduled start and end time. You will also be notified by email
-        /// if one of your instances is set to retiring. The email message indicates when your
-        /// instance will be permanently retired.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Scheduled Stop: When Amazon EC2 determines that an instance must be shut down, the
-        /// instances status returns an event code called <code>instance-stop</code>. Stop events
-        /// include a scheduled start and end time. You will also be notified by email if one
-        /// of your instances is set to stop. The email message indicates when your instance will
-        /// be stopped.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When your instance is retired, it will either be terminated (if its root device type
-        /// is the instance-store) or stopped (if its root device type is an EBS volume). Instances
-        /// stopped due to retirement will not be restarted, but you can do so manually. You can
-        /// also avoid retirement of EBS-backed instances by manually restarting your instance
-        /// when its event code is <code>instance-retirement</code>. This ensures that your instance
-        /// is started on a different underlying host.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about failed status checks, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
+        /// <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
+        /// to identify hardware and software issues. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
+        /// Checks for Your Instances</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>. For more information about working with scheduled events, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions">Working
-        /// with an Instance That Has a Scheduled Event</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide</i>.
+        /// Guide</i>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
+        /// terminate) for your instances related to hardware issues, software updates, or system
+        /// maintenance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
+        /// Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <b>Instance state</b> - You can manage your instances from the moment you launch them
+        /// through their termination. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+        /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by EC2.</returns>
@@ -4462,82 +4494,34 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describes the status of one or more instances, including any scheduled events.
+        /// Describes the status of one or more instances.
         /// 
         ///  
         /// <para>
-        /// Instance status has two main components:
+        /// Instance status includes the following components:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// System Status reports impaired functionality that stems from issues related to the
-        /// systems that support an instance, such as such as hardware failures and network connectivity
-        /// problems. This call reports such problems as impaired reachability.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Instance Status reports impaired functionality that arises from problems internal
-        /// to the instance. This call reports such problems as impaired reachability.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Instance status provides information about four types of scheduled events for an instance
-        /// that may require your attention:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Scheduled Reboot: When Amazon EC2 determines that an instance must be rebooted, the
-        /// instances status returns one of two event codes: <code>system-reboot</code> or <code>instance-reboot</code>.
-        /// System reboot commonly occurs if certain maintenance or upgrade operations require
-        /// a reboot of the underlying host that supports an instance. Instance reboot commonly
-        /// occurs if the instance must be rebooted, rather than the underlying host. Rebooting
-        /// events include a scheduled start and end time.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// System Maintenance: When Amazon EC2 determines that an instance requires maintenance
-        /// that requires power or network impact, the instance status is the event code <code>system-maintenance</code>.
-        /// System maintenance is either power maintenance or network maintenance. For power maintenance,
-        /// your instance will be unavailable for a brief period of time and then rebooted. For
-        /// network maintenance, your instance will experience a brief loss of network connectivity.
-        /// System maintenance events include a scheduled start and end time. You will also be
-        /// notified by email if one of your instances is set for system maintenance. The email
-        /// message indicates when your instance is scheduled for maintenance.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Scheduled Retirement: When Amazon EC2 determines that an instance must be shut down,
-        /// the instance status is the event code <code>instance-retirement</code>. Retirement
-        /// commonly occurs when the underlying host is degraded and must be replaced. Retirement
-        /// events include a scheduled start and end time. You will also be notified by email
-        /// if one of your instances is set to retiring. The email message indicates when your
-        /// instance will be permanently retired.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Scheduled Stop: When Amazon EC2 determines that an instance must be shut down, the
-        /// instances status returns an event code called <code>instance-stop</code>. Stop events
-        /// include a scheduled start and end time. You will also be notified by email if one
-        /// of your instances is set to stop. The email message indicates when your instance will
-        /// be stopped.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When your instance is retired, it will either be terminated (if its root device type
-        /// is the instance-store) or stopped (if its root device type is an EBS volume). Instances
-        /// stopped due to retirement will not be restarted, but you can do so manually. You can
-        /// also avoid retirement of EBS-backed instances by manually restarting your instance
-        /// when its event code is <code>instance-retirement</code>. This ensures that your instance
-        /// is started on a different underlying host.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about failed status checks, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
+        /// <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
+        /// to identify hardware and software issues. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
+        /// Checks for Your Instances</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>. For more information about working with scheduled events, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions">Working
-        /// with an Instance That Has a Scheduled Event</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide</i>.
+        /// Guide</i>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
+        /// terminate) for your instances related to hardware issues, software updates, or system
+        /// maintenance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
+        /// Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <b>Instance state</b> - You can manage your instances from the moment you launch them
+        /// through their termination. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+        /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceStatus service method.</param>
         /// 
@@ -4669,6 +4653,44 @@ namespace Amazon.EC2
             var unmarshaller = DescribeKeyPairsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeKeyPairsRequest,DescribeKeyPairsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeMovingAddresses
+
+        /// <summary>
+        /// Describes your Elastic IP addresses that are being moved to the EC2-VPC platform,
+        /// or that are being restored to the EC2-Classic platform. This request does not return
+        /// information about any other Elastic IP addresses in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMovingAddresses service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMovingAddresses service method, as returned by EC2.</returns>
+        public DescribeMovingAddressesResponse DescribeMovingAddresses(DescribeMovingAddressesRequest request)
+        {
+            var marshaller = new DescribeMovingAddressesRequestMarshaller();
+            var unmarshaller = DescribeMovingAddressesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMovingAddressesRequest,DescribeMovingAddressesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMovingAddresses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMovingAddresses operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeMovingAddressesResponse> DescribeMovingAddressesAsync(DescribeMovingAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeMovingAddressesRequestMarshaller();
+            var unmarshaller = DescribeMovingAddressesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMovingAddressesRequest,DescribeMovingAddressesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4859,6 +4881,45 @@ namespace Amazon.EC2
             var unmarshaller = DescribePlacementGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribePlacementGroupsRequest,DescribePlacementGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribePrefixLists
+
+        /// <summary>
+        /// Describes available AWS services in a prefix list format, which includes the prefix
+        /// list name and prefix list ID of the service and the IP address range for the service.
+        /// A prefix list ID is required for creating an outbound security group rule that allows
+        /// traffic from a VPC to access an AWS service through a VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrefixLists service method.</param>
+        /// 
+        /// <returns>The response from the DescribePrefixLists service method, as returned by EC2.</returns>
+        public DescribePrefixListsResponse DescribePrefixLists(DescribePrefixListsRequest request)
+        {
+            var marshaller = new DescribePrefixListsRequestMarshaller();
+            var unmarshaller = DescribePrefixListsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePrefixListsRequest,DescribePrefixListsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePrefixLists operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrefixLists operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribePrefixListsResponse> DescribePrefixListsAsync(DescribePrefixListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribePrefixListsRequestMarshaller();
+            var unmarshaller = DescribePrefixListsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePrefixListsRequest,DescribePrefixListsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -5338,7 +5399,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about Amazon EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+        /// For more information about EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
         /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5376,10 +5437,10 @@ namespace Amazon.EC2
         #region  DescribeSnapshots
 
         /// <summary>
-        /// Describes one or more of the Amazon EBS snapshots available to you. Available snapshots
-        /// include public snapshots available for any AWS account to launch, private snapshots
-        /// that you own, and private snapshots owned by another AWS account but for which you've
-        /// been given explicit create volume permissions.
+        /// Describes one or more of the EBS snapshots available to you. Available snapshots include
+        /// public snapshots available for any AWS account to launch, private snapshots that you
+        /// own, and private snapshots owned by another AWS account but for which you've been
+        /// given explicit create volume permissions.
         /// 
         ///  
         /// <para>
@@ -5428,7 +5489,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about Amazon EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+        /// For more information about EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
         /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5440,10 +5501,10 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describes one or more of the Amazon EBS snapshots available to you. Available snapshots
-        /// include public snapshots available for any AWS account to launch, private snapshots
-        /// that you own, and private snapshots owned by another AWS account but for which you've
-        /// been given explicit create volume permissions.
+        /// Describes one or more of the EBS snapshots available to you. Available snapshots include
+        /// public snapshots available for any AWS account to launch, private snapshots that you
+        /// own, and private snapshots owned by another AWS account but for which you've been
+        /// given explicit create volume permissions.
         /// 
         ///  
         /// <para>
@@ -5492,7 +5553,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about Amazon EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+        /// For more information about EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
         /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5841,7 +5902,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about Amazon EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+        /// For more information about EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
         /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5879,7 +5940,7 @@ namespace Amazon.EC2
         #region  DescribeVolumes
 
         /// <summary>
-        /// Describes the specified Amazon EBS volumes.
+        /// Describes the specified EBS volumes.
         /// 
         ///  
         /// <para>
@@ -5892,7 +5953,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about Amazon EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+        /// For more information about EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
         /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5904,7 +5965,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describes the specified Amazon EBS volumes.
+        /// Describes the specified EBS volumes.
         /// 
         ///  
         /// <para>
@@ -5917,7 +5978,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about Amazon EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+        /// For more information about EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
         /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -6156,6 +6217,78 @@ namespace Amazon.EC2
             var unmarshaller = DescribeVpcClassicLinkResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeVpcClassicLinkRequest,DescribeVpcClassicLinkResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVpcEndpoints
+
+        /// <summary>
+        /// Describes one or more of your VPC endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcEndpoints service method, as returned by EC2.</returns>
+        public DescribeVpcEndpointsResponse DescribeVpcEndpoints(DescribeVpcEndpointsRequest request)
+        {
+            var marshaller = new DescribeVpcEndpointsRequestMarshaller();
+            var unmarshaller = DescribeVpcEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcEndpointsRequest,DescribeVpcEndpointsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeVpcEndpointsResponse> DescribeVpcEndpointsAsync(DescribeVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeVpcEndpointsRequestMarshaller();
+            var unmarshaller = DescribeVpcEndpointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVpcEndpointsRequest,DescribeVpcEndpointsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVpcEndpointServices
+
+        /// <summary>
+        /// Describes all supported AWS services that can be specified when creating a VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServices service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcEndpointServices service method, as returned by EC2.</returns>
+        public DescribeVpcEndpointServicesResponse DescribeVpcEndpointServices(DescribeVpcEndpointServicesRequest request)
+        {
+            var marshaller = new DescribeVpcEndpointServicesRequestMarshaller();
+            var unmarshaller = DescribeVpcEndpointServicesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcEndpointServicesRequest,DescribeVpcEndpointServicesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcEndpointServices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServices operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeVpcEndpointServicesResponse> DescribeVpcEndpointServicesAsync(DescribeVpcEndpointServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeVpcEndpointServicesRequestMarshaller();
+            var unmarshaller = DescribeVpcEndpointServicesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVpcEndpointServicesRequest,DescribeVpcEndpointServicesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -6487,9 +6620,9 @@ namespace Amazon.EC2
         #region  DetachVolume
 
         /// <summary>
-        /// Detaches an Amazon EBS volume from an instance. Make sure to unmount any file systems
-        /// on the device within your operating system before detaching the volume. Failure to
-        /// do so results in the volume being stuck in a busy state while detaching.
+        /// Detaches an EBS volume from an instance. Make sure to unmount any file systems on
+        /// the device within your operating system before detaching the volume. Failure to do
+        /// so results in the volume being stuck in a busy state while detaching.
         /// 
         ///  
         /// <para>
@@ -6987,7 +7120,7 @@ namespace Amazon.EC2
         #region  ImportImage
 
         /// <summary>
-        /// Import single or multi-volume disk images or Amazon EBS snapshots into an Amazon Machine
+        /// Import single or multi-volume disk images or EBS snapshots into an Amazon Machine
         /// Image (AMI).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportImage service method.</param>
@@ -7024,7 +7157,7 @@ namespace Amazon.EC2
         #region  ImportInstance
 
         /// <summary>
-        /// Creates an import instance task using metadata from the specified disk image. ImportInstance
+        /// Creates an import instance task using metadata from the specified disk image. <code>ImportInstance</code>
         /// only supports single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a>.
         /// After importing the image, you then upload it using the <code>ec2-import-volume</code>
         /// command in the EC2 command line tools. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
@@ -7111,7 +7244,7 @@ namespace Amazon.EC2
         #region  ImportSnapshot
 
         /// <summary>
-        /// Import a disk into an Amazon Elastic Block Store (Amazon EBS) snapshot.
+        /// Imports a disk into an EBS snapshot.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportSnapshot service method.</param>
         /// 
@@ -7526,6 +7659,43 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyVpcEndpoint
+
+        /// <summary>
+        /// Modifies attributes of a specified VPC endpoint. You can modify the policy associated
+        /// with the endpoint, and you can add and remove route tables associated with the endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpcEndpoint service method, as returned by EC2.</returns>
+        public ModifyVpcEndpointResponse ModifyVpcEndpoint(ModifyVpcEndpointRequest request)
+        {
+            var marshaller = new ModifyVpcEndpointRequestMarshaller();
+            var unmarshaller = ModifyVpcEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcEndpointRequest,ModifyVpcEndpointResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpoint operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ModifyVpcEndpointResponse> ModifyVpcEndpointAsync(ModifyVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyVpcEndpointRequestMarshaller();
+            var unmarshaller = ModifyVpcEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVpcEndpointRequest,ModifyVpcEndpointResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  MonitorInstances
 
         /// <summary>
@@ -7559,6 +7729,47 @@ namespace Amazon.EC2
             var unmarshaller = MonitorInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<MonitorInstancesRequest,MonitorInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  MoveAddressToVpc
+
+        /// <summary>
+        /// Moves an Elastic IP address from the EC2-Classic platform to the EC2-VPC platform.
+        /// The Elastic IP address must be allocated to your account, and it must not be associated
+        /// with an instance. After the Elastic IP address is moved, it is no longer available
+        /// for use in the EC2-Classic platform, unless you move it back using the <a>RestoreAddressToClassic</a>
+        /// request. You cannot move an Elastic IP address that's allocated for use in the EC2-VPC
+        /// platform to the EC2-Classic platform.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MoveAddressToVpc service method.</param>
+        /// 
+        /// <returns>The response from the MoveAddressToVpc service method, as returned by EC2.</returns>
+        public MoveAddressToVpcResponse MoveAddressToVpc(MoveAddressToVpcRequest request)
+        {
+            var marshaller = new MoveAddressToVpcRequestMarshaller();
+            var unmarshaller = MoveAddressToVpcResponseUnmarshaller.Instance;
+
+            return Invoke<MoveAddressToVpcRequest,MoveAddressToVpcResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the MoveAddressToVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the MoveAddressToVpc operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<MoveAddressToVpcResponse> MoveAddressToVpcAsync(MoveAddressToVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new MoveAddressToVpcRequestMarshaller();
+            var unmarshaller = MoveAddressToVpcResponseUnmarshaller.Instance;
+
+            return InvokeAsync<MoveAddressToVpcRequest,MoveAddressToVpcResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -8245,6 +8456,45 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  RestoreAddressToClassic
+
+        /// <summary>
+        /// Restores an Elastic IP address that was previously moved to the EC2-VPC platform back
+        /// to the EC2-Classic platform. You cannot move an Elastic IP address that was originally
+        /// allocated for use in EC2-VPC. The Elastic IP address must not be associated with an
+        /// instance or network interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreAddressToClassic service method.</param>
+        /// 
+        /// <returns>The response from the RestoreAddressToClassic service method, as returned by EC2.</returns>
+        public RestoreAddressToClassicResponse RestoreAddressToClassic(RestoreAddressToClassicRequest request)
+        {
+            var marshaller = new RestoreAddressToClassicRequestMarshaller();
+            var unmarshaller = RestoreAddressToClassicResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreAddressToClassicRequest,RestoreAddressToClassicResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreAddressToClassic operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreAddressToClassic operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RestoreAddressToClassicResponse> RestoreAddressToClassicAsync(RestoreAddressToClassicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RestoreAddressToClassicRequestMarshaller();
+            var unmarshaller = RestoreAddressToClassicResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreAddressToClassicRequest,RestoreAddressToClassicResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RevokeSecurityGroupEgress
 
         /// <summary>
@@ -8574,8 +8824,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// By default, Amazon EC2 deletes all Amazon EBS volumes that were attached when the
-        /// instance launched. Volumes attached after instance launch continue running.
+        /// By default, Amazon EC2 deletes all EBS volumes that were attached when the instance
+        /// launched. Volumes attached after instance launch continue running.
         /// </para>
         ///  
         /// <para>
