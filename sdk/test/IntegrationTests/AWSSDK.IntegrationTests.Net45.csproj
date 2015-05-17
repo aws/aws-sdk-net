@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -70,191 +70,191 @@
     <ProjectReference Include="..\..\src\Services\AutoScaling\AWSSDK.AutoScaling.Net45.csproj">
       <Project>{47B1F84B-C7FD-4F38-A0F5-FF4383752AF4}</Project>
       <Name>AWSSDK.AutoScaling.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\AWSSupport\AWSSDK.AWSSupport.Net45.csproj">
       <Project>{7AFB6468-FE81-4A38-8446-3DFF539B2CFC}</Project>
       <Name>AWSSDK.AWSSupport.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CloudFormation\AWSSDK.CloudFormation.Net45.csproj">
       <Project>{98223582-5CC1-4645-88FA-486C91E14DAC}</Project>
       <Name>AWSSDK.CloudFormation.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CloudFront\AWSSDK.CloudFront.Net45.csproj">
       <Project>{F7340323-42CF-47D1-AB3D-502AB772C141}</Project>
       <Name>AWSSDK.CloudFront.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CloudHSM\AWSSDK.CloudHSM.Net45.csproj">
       <Project>{1A6756E2-64B9-4445-BF56-E1CE650AF417}</Project>
       <Name>AWSSDK.CloudHSM.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CloudSearch\AWSSDK.CloudSearch.Net45.csproj">
       <Project>{02B4D0DD-AABD-4AAC-A08E-9577C3D09971}</Project>
       <Name>AWSSDK.CloudSearch.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CloudSearchDomain\AWSSDK.CloudSearchDomain.Net45.csproj">
       <Project>{431402E6-30D5-4FDE-8CB3-5EEB885ED0A4}</Project>
       <Name>AWSSDK.CloudSearchDomain.Net45</Name>
-    </ProjectReference>	
-    <ProjectReference Include="..\..\src\Services\CloudSearch_2011_02_01\AWSSDK.CloudSearch_2011_02_01.Net45.csproj">
-      <Project>{92F0E795-C196-45B6-BBB3-8B76F3580541}</Project>
-      <Name>AWSSDK.CloudSearch_2011_02_01.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CloudTrail\AWSSDK.CloudTrail.Net45.csproj">
       <Project>{C330247E-010B-45E7-87F7-AF4AEA8402CF}</Project>
       <Name>AWSSDK.CloudTrail.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CloudWatch\AWSSDK.CloudWatch.Net45.csproj">
       <Project>{8C4E574E-7466-4B4B-81BD-A5C0F66ABD77}</Project>
       <Name>AWSSDK.CloudWatch.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CloudWatchLogs\AWSSDK.CloudWatchLogs.Net45.csproj">
       <Project>{48B6C28A-93CE-437F-AABC-8CF0439CC44D}</Project>
       <Name>AWSSDK.CloudWatchLogs.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CodeDeploy\AWSSDK.CodeDeploy.Net45.csproj">
       <Project>{6BC89409-44E1-4393-9C92-0D68975EFAD1}</Project>
       <Name>AWSSDK.CodeDeploy.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CognitoIdentity\AWSSDK.CognitoIdentity.Net45.csproj">
       <Project>{C58BC670-0ACB-42BF-B141-4A949EF71099}</Project>
       <Name>AWSSDK.CognitoIdentity.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CognitoSync\AWSSDK.CognitoSync.Net45.csproj">
       <Project>{75252F5A-D3F2-4A4E-ADDC-560E1E3C2066}</Project>
       <Name>AWSSDK.CognitoSync.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ConfigService\AWSSDK.ConfigService.Net45.csproj">
       <Project>{844769FF-BA07-49FB-94A2-08EEA8AC2DC3}</Project>
       <Name>AWSSDK.ConfigService.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\DataPipeline\AWSSDK.DataPipeline.Net45.csproj">
       <Project>{BACF5518-E9DC-4BE7-BD59-965E9EA51BB7}</Project>
       <Name>AWSSDK.DataPipeline.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\DirectConnect\AWSSDK.DirectConnect.Net45.csproj">
       <Project>{D96D3583-EBEB-403E-96A8-B9069E65C9B6}</Project>
       <Name>AWSSDK.DirectConnect.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\DirectoryService\AWSSDK.DirectoryService.Net45.csproj">
+      <Project>{2c3da5e0-b50e-482d-8fdb-0e14b39e026b}</Project>
+      <Name>AWSSDK.DirectoryService.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.Net45.csproj">
       <Project>{093F2DED-1B19-450C-B9FC-C012C40473C3}</Project>
       <Name>AWSSDK.DynamoDBv2.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\EC2\AWSSDK.EC2.Net45.csproj">
       <Project>{22819F48-B00A-411A-A558-4E77B890A99F}</Project>
       <Name>AWSSDK.EC2.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ECS\AWSSDK.ECS.Net45.csproj">
       <Project>{8A3D5F46-C927-417F-AAF0-8D057B4CAA60}</Project>
       <Name>AWSSDK.ECS.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ElastiCache\AWSSDK.ElastiCache.Net45.csproj">
       <Project>{6E4CD5B4-366E-40EB-BAC3-04E033A904AD}</Project>
       <Name>AWSSDK.ElastiCache.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ElasticBeanstalk\AWSSDK.ElasticBeanstalk.Net45.csproj">
       <Project>{156D9313-7650-4141-8DCD-D3C8DBBF7642}</Project>
       <Name>AWSSDK.ElasticBeanstalk.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ElasticLoadBalancing\AWSSDK.ElasticLoadBalancing.Net45.csproj">
       <Project>{AB715742-9EE8-4D2A-AD38-F0E75723A9AB}</Project>
       <Name>AWSSDK.ElasticLoadBalancing.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ElasticMapReduce\AWSSDK.ElasticMapReduce.Net45.csproj">
       <Project>{2B2A9558-058E-4C26-8637-628846329B9A}</Project>
       <Name>AWSSDK.ElasticMapReduce.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.Net45.csproj">
       <Project>{FCF20E51-E8E5-46A3-8D7A-BB0E68C8BF4A}</Project>
       <Name>AWSSDK.ElasticTranscoder.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Glacier\AWSSDK.Glacier.Net45.csproj">
       <Project>{CC49CFB0-F27C-4D16-AAF8-21097F468129}</Project>
       <Name>AWSSDK.Glacier.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\IdentityManagement\AWSSDK.IdentityManagement.Net45.csproj">
       <Project>{02374DF3-D0F8-43DD-A638-8130A604A683}</Project>
       <Name>AWSSDK.IdentityManagement.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ImportExport\AWSSDK.ImportExport.Net45.csproj">
       <Project>{91A3791F-AC18-48FB-B27C-05389B988B75}</Project>
       <Name>AWSSDK.ImportExport.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.Net45.csproj">
       <Project>{38C583D8-26EB-4BA0-AEEF-338468E4D8DC}</Project>
       <Name>AWSSDK.KeyManagementService.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Kinesis\AWSSDK.Kinesis.Net45.csproj">
       <Project>{6698BD46-B68A-4C53-9560-DD21A91E910D}</Project>
       <Name>AWSSDK.Kinesis.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Lambda\AWSSDK.Lambda.Net45.csproj">
       <Project>{2BAD7146-8A64-4536-83CA-D4DDABD2E3B1}</Project>
       <Name>AWSSDK.Lambda.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\MachineLearning\AWSSDK.MachineLearning.Net45.csproj">
       <Project>{39BC41FA-A4ED-4C24-AEA1-A3CD3556F21A}</Project>
       <Name>AWSSDK.MachineLearning.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\OpsWorks\AWSSDK.OpsWorks.Net45.csproj">
       <Project>{9123E499-47D5-4B7C-BAB4-155A96CA5E9C}</Project>
       <Name>AWSSDK.OpsWorks.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\RDS\AWSSDK.RDS.Net45.csproj">
       <Project>{18F3ECAE-0CD6-4A59-8CB2-80533F276AA3}</Project>
       <Name>AWSSDK.RDS.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Redshift\AWSSDK.Redshift.Net45.csproj">
       <Project>{70CA134F-2307-49F7-BD2A-B30371B88FF1}</Project>
       <Name>AWSSDK.Redshift.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Route53\AWSSDK.Route53.Net45.csproj">
       <Project>{297FC084-5027-44B3-BE25-2E16D16E85D2}</Project>
       <Name>AWSSDK.Route53.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Route53Domains\AWSSDK.Route53Domains.Net45.csproj">
       <Project>{53E678C2-4132-42EE-99F1-0FE88293C874}</Project>
       <Name>AWSSDK.Route53Domains.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\S3\AWSSDK.S3.Net45.csproj">
       <Project>{F9FAF246-06D9-48C8-88F0-0F716CCAC013}</Project>
       <Name>AWSSDK.S3.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.Net45.csproj">
       <Project>{BB266953-D765-4BC6-9315-D206548CB8A6}</Project>
       <Name>AWSSDK.SecurityToken.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\SimpleDB\AWSSDK.SimpleDB.Net45.csproj">
       <Project>{781F0A71-6561-4A11-9AED-1D16163938CE}</Project>
       <Name>AWSSDK.SimpleDB.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\SimpleEmail\AWSSDK.SimpleEmail.Net45.csproj">
       <Project>{03EFBEDB-7A18-4637-9109-252F4D99A636}</Project>
       <Name>AWSSDK.SimpleEmail.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.Net45.csproj">
       <Project>{BE7CC84A-AC78-4A1C-9411-4A0349F22571}</Project>
       <Name>AWSSDK.SimpleNotificationService.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\SimpleSystemsManagement\AWSSDK.SimpleSystemsManagement.Net45.csproj">
       <Project>{C5C99E82-BE0A-45EB-AEEC-513F79B7E60E}</Project>
       <Name>AWSSDK.SimpleSystemsManagement.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\SimpleWorkflow\AWSSDK.SimpleWorkflow.Net45.csproj">
       <Project>{E8FF4CE2-1557-428B-97CE-859C8DCBA2D2}</Project>
       <Name>AWSSDK.SimpleWorkflow.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\SQS\AWSSDK.SQS.Net45.csproj">
       <Project>{3E6F35CA-693B-45D6-8AC0-BAE9BE94F2BB}</Project>
       <Name>AWSSDK.SQS.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\StorageGateway\AWSSDK.StorageGateway.Net45.csproj">
       <Project>{1B549AEC-1E3F-4D4A-8404-98A43CAF2FD9}</Project>
       <Name>AWSSDK.StorageGateway.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\WorkSpaces\AWSSDK.WorkSpaces.Net45.csproj">
       <Project>{60819F67-5CD7-41A4-9E02-BB27E5A3F715}</Project>
       <Name>AWSSDK.WorkSpaces.Net45</Name>
-    </ProjectReference>	
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Config\App.45.config">

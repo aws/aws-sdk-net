@@ -293,6 +293,7 @@
     <Compile Include="ThirdParty\Json\JsonWriter.cs" />
     <Compile Include="ThirdParty\Json\Lexer.cs" />
     <Compile Include="ThirdParty\Json\ParserToken.cs" />
+    <Compile Include="UnitTestProjectReferenceChecker.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>

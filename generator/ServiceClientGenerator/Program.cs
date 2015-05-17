@@ -48,6 +48,7 @@ namespace ServiceClientGenerator
 
                 GeneratorDriver.UpdateSolutionFiles(options);
                 GeneratorDriver.UpdateAssemblyVersionInfo(generationManifest, options);
+                GeneratorDriver.UpdateUnitTestProjectReferences(options);
             }
             catch (Exception e)
             {

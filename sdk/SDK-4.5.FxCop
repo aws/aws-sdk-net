@@ -37,6 +37,7 @@
     <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net45\AWSSDK.ConfigService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net45\AWSSDK.DataPipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net45\AWSSDK.DirectConnect.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net45\AWSSDK.DirectoryService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net45\AWSSDK.DynamoDBv2.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net45\AWSSDK.EC2.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="C:\codebase\V3\AWSDotNetPublic\Deployment\sdk\assemblies\net45\AWSSDK.ECS.dll" Analyze="True" AnalyzeAllChildren="True" />

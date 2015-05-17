@@ -214,6 +214,16 @@
         {
             "active": true,
 
+            "model": "ds",
+            "base-name": "DirectoryService",
+            "region-lookup-name": "ds",
+            "authentication-service-name": "ds",
+            "service-url": "https://ds.us-east-1.amazonaws.com",
+            "synopsis": "AWS Directory Service is a managed service that allows you to connect your AWS resources with an existing on-premises Microsoft Active Directory or to set up a new, stand-alone directory in the AWS Cloud."
+        },        
+		{
+            "active": true,
+
             "model": "dynamodb",
             "namespace": "Amazon.DynamoDBv2",
             "base-name": "DynamoDB",

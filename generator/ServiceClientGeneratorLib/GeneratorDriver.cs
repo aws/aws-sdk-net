@@ -126,8 +126,6 @@ namespace ServiceClientGenerator
 
             ExecuteGeneratorAssemblyInfo();
 
-            ExecuteProjectFileGenerators();
-
             ExecuteNugetFileGenerators();
 
             if (Configuration.Namespace == "Amazon.S3")
@@ -174,6 +172,8 @@ namespace ServiceClientGenerator
 
             // Test that simple customizations were generated correctly
             GenerateCustomizationTests();
+
+            ExecuteProjectFileGenerators();
         }
 
         /// <summary>
@@ -727,6 +727,25 @@ namespace ServiceClientGenerator
 
                 ExecuteCustomizationTestGenerator(methodTests, this.Configuration.BaseName + "MethodTests.cs", "SimpleMethods");
             }
+        }
+
+        /// <summary>
+        /// Update project references in unit test projects to include any new services.
+        /// </summary>
+        public static void UpdateUnitTestProjectReferences(GeneratorOptions options)
+        {
+            var servicesRoot = Path.Combine(options.SdkRootFolder, "src", "Services");
+            var testRoot = Path.Combine(options.SdkRootFolder, "test", "UnitTests");
+
+            var command = new UnitTestProjectReferenceChecker()
+            {
+                ServiceRoot = servicesRoot,
+                ProjectFilePath = Path.Combine(testRoot, "AWSSDK.UnitTests.Net35.csproj")
+            };
+            command.Execute();
+
+            command.ProjectFilePath = Path.Combine(testRoot, "AWSSDK.UnitTests.Net45.csproj");
+            command.Execute();
         }
 
         /// <summary>
