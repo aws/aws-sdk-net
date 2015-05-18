@@ -48,6 +48,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CoreNuspec.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generators\ProjectFiles\PCLProjectFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PCLProjectFile.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generators\SourceFiles\CoreAssemblyInfo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -299,6 +304,10 @@
     <None Include="Generators\NuGet\CoreNuspec.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>CoreNuspec.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\ProjectFiles\PCLProjectFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PCLProjectFile.cs</LastGenOutput>
     </None>
     <None Include="Generators\SourceFiles\AssemblyInfo.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

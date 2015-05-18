@@ -51,7 +51,7 @@
             "targetFramework": "v4.5",
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "pcl",
-            "template": "PortableProjectFile",
+            "template": "PCLProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile" ]
         }
     ],

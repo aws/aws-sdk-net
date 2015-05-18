@@ -154,6 +154,12 @@ namespace ServiceClientGenerator
                         generatedContent = generator.TransformText();
                     }
                     break;
+                case "PCLProjectFile":
+                    {
+                        var generator = new PCLProjectFile { Session = session };
+                        generatedContent = generator.TransformText();
+                    }
+                    break;
                 default:
                     throw new ArgumentException("Project template name " + projectFileConfiguration.Template + " is not recognized");
             }
