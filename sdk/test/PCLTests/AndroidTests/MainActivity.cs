@@ -16,7 +16,6 @@ namespace AndroidTests
     [Activity(Label = "AndroidTests", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        int count = 1;
         AWSCredentials sdkCredentials = null;
         RegionEndpoint sdkRegion = Amazon.RegionEndpoint.USEast1;
         EditText text = null;
@@ -30,18 +29,15 @@ namespace AndroidTests
 
             var button = FindViewById<Button>(Resource.Id.MyButton);
             text = FindViewById<EditText>(Resource.Id.TextField);
+            text.Text = string.Empty;
 
-            sdkCredentials = new VendedCredentials(Assets.Open("credentials.json"));
+            sdkCredentials = new VendedCredentials(Assets);
 
             button.Click += (s, e) =>
             {
-                button.Text = string.Format("{0} clicks!", count++);
                 text.Text = string.Empty;
                 MakeSdkCall();
             };
-            MakeSdkCall();
-
-            //text.Text += System.Environment.NewLine + "end of custom logic";
         }
 
         private async void MakeSdkCall()

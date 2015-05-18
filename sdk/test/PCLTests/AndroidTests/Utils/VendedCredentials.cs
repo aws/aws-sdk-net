@@ -13,29 +13,32 @@ using Amazon.Runtime;
 using ThirdParty.Json.LitJson;
 using System.Net;
 using System.IO;
+using Amazon.SecurityToken.Model;
+using Android.Content.Res;
 
 namespace AndroidTests.Utils
 {
     public class VendedCredentials : AWSCredentials
     {
-        JsonData json;
+        public const string CredentialsAsset = "credentials.json";
+        private string json;
+
+        public VendedCredentials(AssetManager am)
+            : this(am.Open(CredentialsAsset))
+        { }
         public VendedCredentials(Stream assetsStream)
         {
             using(var reader = new StreamReader(assetsStream))
             {
-                json = ThirdParty.Json.LitJson.JsonMapper.ToObject(reader);
+                json = reader.ReadToEnd();
             }
         }
 
         public override ImmutableCredentials GetCredentials()
         {
-            //var json = GetJson();
-            var accessKey = json["AccessKey"].ToString();
-            var secretkey = json["SecretKey"].ToString();
-            var token = json["Token"].ToString();
-
-            var creds = new ImmutableCredentials(accessKey, secretkey, token);
-            return creds;
+            var creds = ThirdParty.Json.LitJson.JsonMapper.ToObject<Credentials>(json);
+            var ic = creds.GetCredentials();
+            return ic;
         }
     }
 }

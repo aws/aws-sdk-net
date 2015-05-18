@@ -16,7 +16,8 @@
 **/buildlogs/
 
 sdk/packages/**
+sdk/test/PCLTests/AndroidTests/packages/**
 
 Deployment/**
 
-
+**/*.userprefs
