@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportSnapshot operation.
-    /// Import a disk into an Amazon Elastic Block Store (Amazon EBS) snapshot.
+    /// Imports a disk into an EBS snapshot.
     /// </summary>
     public partial class ImportSnapshotRequest : AmazonEC2Request
     {
@@ -40,7 +40,10 @@ namespace Amazon.EC2.Model
         private string _roleName;
 
         /// <summary>
-        /// Gets and sets the property ClientData.
+        /// Gets and sets the property ClientData. 
+        /// <para>
+        /// The client-specific data.
+        /// </para>
         /// </summary>
         public ClientData ClientData
         {
@@ -57,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Token to enable idempotency for VM import requests (optional).
+        /// Token to enable idempotency for VM import requests.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -75,7 +78,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description string for the ImportSnapshot task.
+        /// The description string for the import snapshot task.
         /// </para>
         /// </summary>
         public string Description
@@ -91,7 +94,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DiskContainer.
+        /// Gets and sets the property DiskContainer. 
+        /// <para>
+        /// Information about the disk container.
+        /// </para>
         /// </summary>
         public SnapshotDiskContainer DiskContainer
         {
@@ -108,7 +114,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// The name of the role to use when not using the default role name 'vmimport' (optional).
+        /// The name of the role to use when not using the default role, 'vmimport'.
         /// </para>
         /// </summary>
         public string RoleName

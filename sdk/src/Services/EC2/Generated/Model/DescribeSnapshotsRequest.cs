@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,10 +29,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSnapshots operation.
-    /// Describes one or more of the Amazon EBS snapshots available to you. Available snapshots
-    /// include public snapshots available for any AWS account to launch, private snapshots
-    /// that you own, and private snapshots owned by another AWS account but for which you've
-    /// been given explicit create volume permissions.
+    /// Describes one or more of the EBS snapshots available to you. Available snapshots include
+    /// public snapshots available for any AWS account to launch, private snapshots that you
+    /// own, and private snapshots owned by another AWS account but for which you've been
+    /// given explicit create volume permissions.
     /// 
     ///  
     /// <para>
@@ -81,7 +81,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about Amazon EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+    /// For more information about EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
     /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>

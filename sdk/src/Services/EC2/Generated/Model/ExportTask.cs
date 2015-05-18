@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes an export task.
+    /// Describes an instance export task.
     /// </summary>
     public partial class ExportTask
     {
@@ -76,7 +76,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExportToS3Task.
+        /// Gets and sets the property ExportToS3Task. 
+        /// <para>
+        /// Information about the export task.
+        /// </para>
         /// </summary>
         public ExportToS3Task ExportToS3Task
         {
@@ -93,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceExportDetails. 
         /// <para>
-        /// The instance being exported.
+        /// Information about the instance to export.
         /// </para>
         /// </summary>
         public InstanceExportDetails InstanceExportDetails
@@ -111,7 +114,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the conversion task.
+        /// The state of the export task.
         /// </para>
         /// </summary>
         public ExportTaskState State

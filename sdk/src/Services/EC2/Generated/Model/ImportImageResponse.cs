@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Architecture. 
         /// <para>
-        /// Architecture of the virtual machine being imported.
+        /// The architecture of the virtual machine.
         /// </para>
         /// </summary>
         public string Architecture
@@ -83,7 +83,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Hypervisor. 
         /// <para>
-        /// Target hypervisor of the import task.
+        /// The target hypervisor of the import task.
         /// </para>
         /// </summary>
         public string Hypervisor
@@ -101,7 +101,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The Amazon Machine Image (AMI) ID created by the import task.
+        /// The ID of the Amazon Machine Image (AMI) created by the import task.
         /// </para>
         /// </summary>
         public string ImageId
@@ -119,7 +119,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImportTaskId. 
         /// <para>
-        /// The task id of the ImportImage task.
+        /// The task ID of the import image task.
         /// </para>
         /// </summary>
         public string ImportTaskId
@@ -137,7 +137,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LicenseType. 
         /// <para>
-        /// License type of the virtual machine being imported.
+        /// The license type of the virtual machine.
         /// </para>
         /// </summary>
         public string LicenseType
@@ -155,7 +155,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// Operating system of the VM being imported.
+        /// The operating system of the virtual machine.
         /// </para>
         /// </summary>
         public string Platform
@@ -173,7 +173,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Progress. 
         /// <para>
-        /// The task's progress.
+        /// The progress of the task.
         /// </para>
         /// </summary>
         public string Progress
@@ -189,7 +189,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SnapshotDetails.
+        /// Gets and sets the property SnapshotDetails. 
+        /// <para>
+        /// Information about the snapshots.
+        /// </para>
         /// </summary>
         public List<SnapshotDetail> SnapshotDetails
         {

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Describes a disk image.
     /// </summary>
     public partial class DiskImageDetail
     {
@@ -37,7 +37,10 @@ namespace Amazon.EC2.Model
         private string _importManifestUrl;
 
         /// <summary>
-        /// Gets and sets the property Bytes.
+        /// Gets and sets the property Bytes. 
+        /// <para>
+        /// The size of the disk image, in GiB.
+        /// </para>
         /// </summary>
         public long Bytes
         {

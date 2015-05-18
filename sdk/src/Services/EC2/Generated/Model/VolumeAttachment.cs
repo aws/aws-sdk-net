@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeleteOnTermination. 
         /// <para>
-        /// Indicates whether the Amazon EBS volume is deleted on instance termination.
+        /// Indicates whether the EBS volume is deleted on instance termination.
         /// </para>
         /// </summary>
         public bool DeleteOnTermination

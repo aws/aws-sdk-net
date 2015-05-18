@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -74,6 +74,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// <code>route.destination-cidr-block</code> - The CIDR range specified in a route in
         /// the table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS service
+        /// specified in a route in the table.
         /// </para>
         ///  </li> <li> 
         /// <para>

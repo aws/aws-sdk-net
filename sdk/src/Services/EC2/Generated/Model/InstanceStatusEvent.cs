@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes an instance event.
+    /// Describes a scheduled event for an instance.
     /// </summary>
     public partial class InstanceStatusEvent
     {
@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The associated code of the event.
+        /// The event code.
         /// </para>
         /// </summary>
         public EventCode Code
@@ -59,6 +59,12 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Description. 
         /// <para>
         /// A description of the event.
+        /// </para>
+        ///  
+        /// <para>
+        /// After a scheduled event is completed, it can still be described for up to a week.
+        /// If the event has been completed, this description starts with the following text:
+        /// [Completed].
         /// </para>
         /// </summary>
         public string Description

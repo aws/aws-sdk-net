@@ -87,7 +87,7 @@ namespace ServiceClientGenerator
             generationManifest.CoreFileVersion = coreVersionJson.ToString();
             var versions = versionsManifest["ServiceVersions"];
 
-            generationManifest.LoadServiceConfigurations(manifest, versions, modelsFolder);
+            generationManifest.LoadServiceConfigurations(manifest, generationManifest.CoreFileVersion, versions, modelsFolder);
             generationManifest.LoadProjectConfigurations(manifest);
 
             return generationManifest;
@@ -101,7 +101,7 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <param name="document"></param>
         /// <param name="modelsFolder"></param>
-        void LoadServiceConfigurations(JsonData manifest, JsonData versions, string modelsFolder)
+        void LoadServiceConfigurations(JsonData manifest, string coreVersion, JsonData versions, string modelsFolder)
         {
             var serviceConfigurations = new List<ServiceConfiguration>();
             //var serviceVersions = new Dictionary<string, string>();
@@ -155,16 +155,25 @@ namespace ServiceClientGenerator
 
                 var serviceName = config.ServiceNameRoot;
                 var versionInfoJson = versions[serviceName];
-                var dependencies = versionInfoJson["Dependencies"];
-                foreach(var name in dependencies.PropertyNames)
+                if(versionInfoJson != null)
                 {
-                    var version = dependencies[name].ToString();
-                    config.ServiceDependencies[name] = version;
+                    var dependencies = versionInfoJson["Dependencies"];
+                    foreach (var name in dependencies.PropertyNames)
+                    {
+                        var version = dependencies[name].ToString();
+                        config.ServiceDependencies[name] = version;
+                    }
+
+
+                    var versionText = versionInfoJson["Version"].ToString();
+                    config.ServiceFileVersion = versionText;
                 }
-
-
-                var versionText = versionInfoJson["Version"].ToString();
-                config.ServiceFileVersion = versionText;
+                else
+                {
+                    config.ServiceDependencies["Core"] = coreVersion;
+                    var versionTokens = coreVersion.Split('.');
+                    config.ServiceFileVersion = string.Format("{0}.{1}.0.0", versionTokens[0], versionTokens[1]);
+                }
                 //serviceVersions.Add(serviceName, versionText);
 
                 serviceConfigurations.Add(config);

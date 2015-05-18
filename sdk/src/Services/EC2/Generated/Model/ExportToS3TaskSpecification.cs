@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Describes an instance export task.
     /// </summary>
     public partial class ExportToS3TaskSpecification
     {
@@ -38,7 +38,11 @@ namespace Amazon.EC2.Model
         private string _s3Prefix;
 
         /// <summary>
-        /// Gets and sets the property ContainerFormat.
+        /// Gets and sets the property ContainerFormat. 
+        /// <para>
+        /// The container format used to combine disk images with metadata (such as OVF). If absent,
+        /// only the disk image is exported.
+        /// </para>
         /// </summary>
         public ContainerFormat ContainerFormat
         {
@@ -53,7 +57,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DiskImageFormat.
+        /// Gets and sets the property DiskImageFormat. 
+        /// <para>
+        /// The format for the exported image.
+        /// </para>
         /// </summary>
         public DiskImageFormat DiskImageFormat
         {
@@ -68,7 +75,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3Bucket.
+        /// Gets and sets the property S3Bucket. 
+        /// <para>
+        /// The S3 bucket for the destination image. The destination bucket must exist and grant
+        /// WRITE and READ_ACP permissions to the AWS account <code>vm-import-export@amazon.com</code>.
+        /// </para>
         /// </summary>
         public string S3Bucket
         {
@@ -85,8 +96,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property S3Prefix. 
         /// <para>
-        /// The image is written to a single object in the Amazon S3 bucket at the S3 key s3prefix
-        /// + exportTaskId + '.' + diskImageFormat.
+        /// The image is written to a single object in the S3 bucket at the S3 key s3prefix +
+        /// exportTaskId + '.' + diskImageFormat.
         /// </para>
         /// </summary>
         public string S3Prefix

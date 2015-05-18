@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 
 using System;
@@ -973,6 +973,26 @@ namespace Amazon.EC2
         /// Constant Deregistered for ImageState
         /// </summary>
         public static readonly ImageState Deregistered = new ImageState("deregistered");
+        /// <summary>
+        /// Constant Error for ImageState
+        /// </summary>
+        public static readonly ImageState Error = new ImageState("error");
+        /// <summary>
+        /// Constant Failed for ImageState
+        /// </summary>
+        public static readonly ImageState Failed = new ImageState("failed");
+        /// <summary>
+        /// Constant Invalid for ImageState
+        /// </summary>
+        public static readonly ImageState Invalid = new ImageState("invalid");
+        /// <summary>
+        /// Constant Pending for ImageState
+        /// </summary>
+        public static readonly ImageState Pending = new ImageState("pending");
+        /// <summary>
+        /// Constant Transient for ImageState
+        /// </summary>
+        public static readonly ImageState Transient = new ImageState("transient");
 
         /// <summary>
         /// Default Constructor
@@ -1622,6 +1642,51 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MonitoringState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MoveStatus.
+    /// </summary>
+    public class MoveStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MovingToVpc for MoveStatus
+        /// </summary>
+        public static readonly MoveStatus MovingToVpc = new MoveStatus("movingToVpc");
+        /// <summary>
+        /// Constant RestoringToClassic for MoveStatus
+        /// </summary>
+        public static readonly MoveStatus RestoringToClassic = new MoveStatus("restoringToClassic");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public MoveStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MoveStatus FindValue(string value)
+        {
+            return FindValue<MoveStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MoveStatus(string value)
         {
             return FindValue(value);
         }
@@ -2801,6 +2866,108 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SpotInstanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type State.
+    /// </summary>
+    public class State : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for State
+        /// </summary>
+        public static readonly State Available = new State("Available");
+        /// <summary>
+        /// Constant Deleted for State
+        /// </summary>
+        public static readonly State Deleted = new State("Deleted");
+        /// <summary>
+        /// Constant Deleting for State
+        /// </summary>
+        public static readonly State Deleting = new State("Deleting");
+        /// <summary>
+        /// Constant Pending for State
+        /// </summary>
+        public static readonly State Pending = new State("Pending");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public State(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static State FindValue(string value)
+        {
+            return FindValue<State>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator State(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Status.
+    /// </summary>
+    public class Status : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InClassic for Status
+        /// </summary>
+        public static readonly Status InClassic = new Status("InClassic");
+        /// <summary>
+        /// Constant InVpc for Status
+        /// </summary>
+        public static readonly Status InVpc = new Status("InVpc");
+        /// <summary>
+        /// Constant MoveInProgress for Status
+        /// </summary>
+        public static readonly Status MoveInProgress = new Status("MoveInProgress");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public Status(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Status FindValue(string value)
+        {
+            return FindValue<Status>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Status(string value)
         {
             return FindValue(value);
         }
