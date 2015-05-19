@@ -499,41 +499,14 @@ namespace ServiceClientGenerator
             }
         }
 
-        public static void UpdateSolutionFiles(GeneratorOptions options)
+        public static void UpdateSolutionFiles(GenerationManifest manifest, GeneratorOptions options)
         {
-            // if no new projects were created and all our expected solution files exist, we 
-            // can leave the solutions alone
-            var buildSolutionFiles = NewlyCreatedProjectFiles.Any();
-            if (!buildSolutionFiles)
+            Console.WriteLine("Updating solution files.");
+            var solutionFileCreator = new SolutionFileCreator
             {
-                var expectedSolutions = new[]
-                {
-                    "AWSSDK.sln",
-                    "AWSSDK." + SolutionFileCreator.ProjectTypes.Net35 + ".sln",
-                    "AWSSDK." + SolutionFileCreator.ProjectTypes.Net45 + ".sln",
-                    "AWSSDK." + SolutionFileCreator.ProjectTypes.Portable + ".sln",
-                    "AWSSDK." + SolutionFileCreator.ProjectTypes.WinPhone8 + ".sln",
-                    "AWSSDK." + SolutionFileCreator.ProjectTypes.WinRt + ".sln",
-                    "AWSSDK." + SolutionFileCreator.ProjectTypes.PCL + ".sln"
-                };
-
-                if (expectedSolutions.Any(sln => !File.Exists(Path.Combine(options.SdkRootFolder, sln))))
-                {
-                    buildSolutionFiles = true;
-                }
-
-                if (!buildSolutionFiles)
-                {
-                    Console.WriteLine("Expected solution files present and no new projects, no solution updates required.");
-                    return;
-                }
-                else
-                    Console.WriteLine("One or more solution files missing, updates required.");
-            }
-            else
-                Console.WriteLine("New projects created, solution file updates required.");
-
-            var solutionFileCreator = new SolutionFileCreator { Options = options };
+                Options = options,
+                ProjectFileConfigurations = manifest.ProjectFileConfigurations 
+            };
             solutionFileCreator.Execute(NewlyCreatedProjectFiles);
         }
 

@@ -46,7 +46,7 @@ namespace ServiceClientGenerator
                     driver.Execute();
                 }
 
-                GeneratorDriver.UpdateSolutionFiles(options);
+                GeneratorDriver.UpdateSolutionFiles(generationManifest, options);
                 GeneratorDriver.UpdateAssemblyVersionInfo(generationManifest, options);
             }
             catch (Exception e)

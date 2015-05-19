@@ -46,6 +46,7 @@ namespace ServiceClientGenerator
             public const string BinSubFolderKey = "binSubFolder";
             public const string TemplateKey = "template";
             public const string PlatformCodeFoldersKey = "platformCodeFolders";
+            public const string ExtraTestProjects = "extraTestProjects";
         }
 
         /// <summary>
@@ -204,6 +205,16 @@ namespace ServiceClientGenerator
                                          select bc.ToString()).ToList();
                 config.PlatformCodeFolders = (from object pcf in projectNode[ProjectsSectionKeys.PlatformCodeFoldersKey]
                                               select pcf.ToString()).ToList();
+                var extraTestProjects = projectNode.SafeGet(ProjectsSectionKeys.ExtraTestProjects);
+                if (extraTestProjects == null)
+                {
+                    config.ExtraTestProjects = new List<string>();
+                }
+                else
+                {
+                    config.ExtraTestProjects = (from object etp in extraTestProjects
+                                                select etp.ToString()).ToList();
+                }
 
                 projectConfigurations.Add(config);
             }

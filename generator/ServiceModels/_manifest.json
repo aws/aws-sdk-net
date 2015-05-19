@@ -52,7 +52,12 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "pcl",
             "template": "PCLProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile" ]
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile" ],
+            "extraTestProjects": [
+                "test/CredentialsVendor/CredentialsVendor.csproj",
+                "test/PCLTests/CommonTests/CommonTests.csproj",
+                "test/PCLTests/AndroidTests/AndroidTests.csproj"
+            ]
         }
     ],
     "models": [
