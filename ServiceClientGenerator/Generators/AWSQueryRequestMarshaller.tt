@@ -71,9 +71,18 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                 }
                 else
                 {
-                    #>
+					if(string.IsNullOrEmpty(member.CustomMarshallerTransformation)) 
+					{
+				#>
 <#=new string(' ', level * 4)#>                        request.Parameters.Add(<#=listItemContext#>, StringUtils.From<#= member.Shape.ListShape.GetPrimitiveType() #>(<#=variableNameFragment#>listValue));
 <#+
+					}
+					else 
+					{
+				#>
+<#=new string(' ', level * 4)#>                        request.Parameters.Add(<#=listItemContext#>, <#=member.CustomMarshallerTransformation + "(" + variableNameFragment + "listValue)"#>);
+<#+					
+					}
                 }
 #>
 <#=new string(' ', level * 4)#>                        <#=variableNameFragment#>listValueIndex++;
@@ -102,9 +111,17 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                 }
                 else
                 {
+					if(string.IsNullOrEmpty(member.CustomMarshallerTransformation)) 
+					{
                     #>
 <#=new string(' ', level * 4)#>                            request.Parameters.Add(<#=mapValueContext#>, StringUtils.From<#= member.Shape.ValueShape.GetPrimitiveType() #>(value));
 <#+
+					}
+					else 
+					{#>
+<#=new string(' ', level * 4)#>                            request.Parameters.Add(<#=mapValueContext#>, <#=member.CustomMarshallerTransformation + "(value)"#>);
+<#+					
+					}
                 }
 #>
 <#=new string(' ', level * 4)#>                        }
@@ -120,9 +137,17 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             else
             {
                 string context = ComposeContext(parameterContext, marshallName);
+				if(string.IsNullOrEmpty(member.CustomMarshallerTransformation)) 
+				{
 #>
 <#=new string(' ', level * 4)#>                    request.Parameters.Add(<#=context#>, StringUtils.From<#= member.GetPrimitiveType() #>(<#=variableName#>.<#=member.PropertyName#>));
 <#+
+				}
+				else 
+				{#>
+<#=new string(' ', level * 4)#>                    request.Parameters.Add(<#=context#>, <#=member.CustomMarshallerTransformation + "(" + variableName + "." + member.PropertyName + ")"#>);
+<#+					
+				}
             }
 #>
 <#=new string(' ', level * 4)#>                }

@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+    #line 1 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class AWSQueryRequestMarshaller : BaseRequestMarshaller
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators
         public override string TransformText()
         {
             
-            #line 6 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+            #line 6 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 
     AddLicenseHeader();
 
@@ -40,28 +40,28 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("namespace ");
             
-            #line 11 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+            #line 11 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model.Internal.MarshallTransformations\r\n{\r\n    /// <summary>\r\n    /// ");
             
-            #line 14 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+            #line 14 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write(" Request Marshaller\r\n    /// </summary>       \r\n    public class ");
             
-            #line 16 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+            #line 16 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("RequestMarshaller : IMarshaller<IRequest, ");
             
-            #line 16 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+            #line 16 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -70,14 +70,14 @@ namespace ServiceClientGenerator.Generators
                     "arshall(AmazonWebServiceRequest input)\r\n        {\r\n            return this.Marsh" +
                     "all((");
             
-            #line 20 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+            #line 20 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("Request)input);\r\n        }\r\n    \r\n        public IRequest Marshall(");
             
-            #line 23 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+            #line 23 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -85,28 +85,28 @@ namespace ServiceClientGenerator.Generators
             this.Write("Request publicRequest)\r\n        {\r\n            IRequest request = new DefaultRequ" +
                     "est(publicRequest, \"");
             
-            #line 25 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+            #line 25 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\");\r\n            request.Parameters.Add(\"Action\", \"");
             
-            #line 26 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+            #line 26 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n            request.Parameters.Add(\"Version\", \"");
             
-            #line 27 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+            #line 27 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.APIVersion));
             
             #line default
             #line hidden
             this.Write("\");\r\n\r\n            if(publicRequest != null)\r\n            {\r\n");
             
-            #line 31 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+            #line 31 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 
     var requestStructure = this.Operation.RequestStructure;
     if(requestStructure != null)
@@ -119,7 +119,7 @@ namespace ServiceClientGenerator.Generators
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 42 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 42 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 
     void ProcessMembers(int level, string parameterContext, string variableName, IEnumerable<Member> members)
     {
@@ -135,63 +135,63 @@ namespace ServiceClientGenerator.Generators
         #line default
         #line hidden
         
-        #line 53 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 53 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 53 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 53 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                if(");
 
         
         #line default
         #line hidden
         
-        #line 53 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 53 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 53 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 53 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 53 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 53 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 53 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 53 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("())\r\n");
 
         
         #line default
         #line hidden
         
-        #line 54 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 54 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 54 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 54 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 55 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 55 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 
             if(member.IsList )
             {
@@ -205,105 +205,105 @@ this.Write("                {\r\n");
         #line default
         #line hidden
         
-        #line 64 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 64 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 64 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 64 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                    int ");
 
         
         #line default
         #line hidden
         
-        #line 64 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 64 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableNameFragment));
 
         
         #line default
         #line hidden
         
-        #line 64 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 64 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("listValueIndex = 1;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 65 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 65 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 65 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 65 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                    foreach(var ");
 
         
         #line default
         #line hidden
         
-        #line 65 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 65 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableNameFragment));
 
         
         #line default
         #line hidden
         
-        #line 65 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 65 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("listValue in ");
 
         
         #line default
         #line hidden
         
-        #line 65 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 65 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 65 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 65 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 65 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 65 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 65 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 65 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(")\r\n");
 
         
         #line default
         #line hidden
         
-        #line 66 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 66 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 66 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 66 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                    {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 67 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 
                 if(member.Shape.ListShape.IsStructure)
                 {
@@ -311,118 +311,173 @@ this.Write("                    {\r\n");
                 }
                 else
                 {
-                    
+					if(string.IsNullOrEmpty(member.CustomMarshallerTransformation)) 
+					{
+				
         
         #line default
         #line hidden
         
-        #line 75 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 77 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 77 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                        request.Parameters.Add(");
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 77 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listItemContext));
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 77 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(", StringUtils.From");
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 77 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ListShape.GetPrimitiveType()));
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 77 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 77 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableNameFragment));
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 77 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("listValue));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 76 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 78 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 
+					}
+					else 
+					{
+				
+        
+        #line default
+        #line hidden
+        
+        #line 83 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 83 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write("                        request.Parameters.Add(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 83 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(listItemContext));
+
+        
+        #line default
+        #line hidden
+        
+        #line 83 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write(", ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 83 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation + "(" + variableNameFragment + "listValue)"));
+
+        
+        #line default
+        #line hidden
+        
+        #line 83 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write(");\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 84 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+					
+					}
                 }
 
         
         #line default
         #line hidden
         
-        #line 79 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 88 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 79 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 88 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                        ");
 
         
         #line default
         #line hidden
         
-        #line 79 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 88 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableNameFragment));
 
         
         #line default
         #line hidden
         
-        #line 79 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 88 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("listValueIndex++;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 80 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 89 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 80 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 89 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                    }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 81 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 90 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 
             }
             else if(member.IsMap)
@@ -436,217 +491,217 @@ this.Write("                    }\r\n");
         #line default
         #line hidden
         
-        #line 90 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 99 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 90 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 99 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                    int mapIndex = 1;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 91 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 100 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 91 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 100 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                    foreach(var key in ");
 
         
         #line default
         #line hidden
         
-        #line 91 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 100 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 91 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 100 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 91 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 100 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 91 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 100 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(".Keys)\r\n");
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 101 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 101 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                    {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 93 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 102 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 93 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 102 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                        ");
 
         
         #line default
         #line hidden
         
-        #line 93 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 102 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.IsStructure ? member.Shape.ValueShape.Name : member.Shape.ValueShape.GetPrimitiveType()));
 
         
         #line default
         #line hidden
         
-        #line 93 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 102 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(" value;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 94 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 103 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 94 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 103 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                        bool hasValue = ");
 
         
         #line default
         #line hidden
         
-        #line 94 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 103 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 94 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 103 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 94 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 103 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 94 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 103 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(".TryGetValue(key, out value);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 104 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 104 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                        request.Parameters.Add(");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 104 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(mapKeyContext));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 104 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(", StringUtils.From");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 104 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.KeyShape.GetPrimitiveType()));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 104 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("(key));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 96 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 105 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 96 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 105 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                        if (hasValue)\r\n");
 
         
         #line default
         #line hidden
         
-        #line 97 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 106 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 97 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 106 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                        {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 107 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 
                 if(member.Shape.ValueShape.IsStructure)
                 {
@@ -654,104 +709,158 @@ this.Write("                        {\r\n");
                 }
                 else
                 {
+					if(string.IsNullOrEmpty(member.CustomMarshallerTransformation)) 
+					{
                     
         
         #line default
         #line hidden
         
-        #line 106 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 117 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 106 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 117 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                            request.Parameters.Add(");
 
         
         #line default
         #line hidden
         
-        #line 106 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 117 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(mapValueContext));
 
         
         #line default
         #line hidden
         
-        #line 106 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 117 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(", StringUtils.From");
 
         
         #line default
         #line hidden
         
-        #line 106 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 117 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.GetPrimitiveType()));
 
         
         #line default
         #line hidden
         
-        #line 106 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 117 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("(value));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 107 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 118 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 
+					}
+					else 
+					{
+        
+        #line default
+        #line hidden
+        
+        #line 122 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 122 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write("                            request.Parameters.Add(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 122 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(mapValueContext));
+
+        
+        #line default
+        #line hidden
+        
+        #line 122 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write(", ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 122 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation + "(value)"));
+
+        
+        #line default
+        #line hidden
+        
+        #line 122 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write(");\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 123 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+					
+					}
                 }
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 127 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 127 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                        }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 111 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 128 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 111 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 128 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                        mapIndex++;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 112 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 129 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 112 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 129 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                    }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 113 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 130 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 
             }
             else if(member.IsStructure)
@@ -762,104 +871,158 @@ this.Write("                    }\r\n");
             else
             {
                 string context = ComposeContext(parameterContext, marshallName);
+				if(string.IsNullOrEmpty(member.CustomMarshallerTransformation)) 
+				{
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 143 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 143 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                    request.Parameters.Add(");
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 143 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(context));
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 143 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(", StringUtils.From");
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 143 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.GetPrimitiveType()));
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 143 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 143 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 143 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 143 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 143 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 144 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 
-            }
-
+				}
+				else 
+				{
         
         #line default
         #line hidden
         
-        #line 128 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 148 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 128 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 148 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write("                    request.Parameters.Add(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 148 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(context));
+
+        
+        #line default
+        #line hidden
+        
+        #line 148 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write(", ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 148 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation + "(" + variableName + "." + member.PropertyName + ")"));
+
+        
+        #line default
+        #line hidden
+        
+        #line 148 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write(");\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 149 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+					
+				}
+            }
+
+        
+        #line default
+        #line hidden
+        
+        #line 153 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 153 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 this.Write("                }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 129 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
+        #line 154 "C:\code\serviceupdates\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\AWSQueryRequestMarshaller.tt"
 
         }
     }

@@ -81,12 +81,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
                 Assert.IsTrue(login.PasswordResetRequired);
 
 
-                Client.UpdateLoginProfile(new UpdateLoginProfileRequest
+                var updateRequest = new UpdateLoginProfileRequest
                 {
                     UserName = username,
                     Password = password,
                     PasswordResetRequired = false
-                });
+                };
+                UtilityMethods.WaitUntilSuccess(() => Client.UpdateLoginProfile(updateRequest));
 
                 Assert.AreEqual(username, createRes.LoginProfile.UserName);
 

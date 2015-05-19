@@ -58,6 +58,9 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The layer attributes.
         /// </para>
+        ///  <note>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>,
+        /// and <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code>
+        /// instead of the actual value</note>
         /// </summary>
         public Dictionary<string, string> Attributes
         {

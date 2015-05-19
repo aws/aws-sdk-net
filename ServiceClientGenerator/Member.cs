@@ -543,7 +543,7 @@ namespace ServiceClientGenerator
         {
             // Check to see if customizations is overriding.
             var overrideType = this.model.Customizations.OverrideDataType(OwningShape.Name, this._name);
-            if (overrideType != null)
+            if (overrideType != null && !string.IsNullOrEmpty(overrideType.Unmarshaller))
                 return overrideType.Unmarshaller + ".Instance";
 
             var extendsNode = extendedData[ServiceModel.ShapeKey];

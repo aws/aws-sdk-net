@@ -36,6 +36,7 @@ namespace Amazon.ElasticBeanstalk.Model
     {
         private string _awsNamespace;
         private string _optionName;
+        private string _resourceName;
         private string _value;
 
         /// <summary>
@@ -90,6 +91,21 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetOptionName()
         {
             return this._optionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceName.
+        /// </summary>
+        public string ResourceName
+        {
+            get { return this._resourceName; }
+            set { this._resourceName = value; }
+        }
+
+        // Check to see if ResourceName property is set
+        internal bool IsSetResourceName()
+        {
+            return this._resourceName != null;
         }
 
         /// <summary>

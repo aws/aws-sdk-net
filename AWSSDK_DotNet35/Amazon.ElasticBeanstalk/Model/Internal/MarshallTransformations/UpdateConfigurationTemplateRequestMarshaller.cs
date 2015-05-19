@@ -69,6 +69,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
                         }
+                        if(publicRequestlistValue.IsSetResourceName())
+                        {
+                            request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceName", StringUtils.FromString(publicRequestlistValue.ResourceName));
+                        }
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
@@ -88,6 +92,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         if(publicRequestlistValue.IsSetOptionName())
                         {
                             request.Parameters.Add("OptionsToRemove" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
+                        }
+                        if(publicRequestlistValue.IsSetResourceName())
+                        {
+                            request.Parameters.Add("OptionsToRemove" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceName", StringUtils.FromString(publicRequestlistValue.ResourceName));
                         }
                         publicRequestlistValueIndex++;
                     }

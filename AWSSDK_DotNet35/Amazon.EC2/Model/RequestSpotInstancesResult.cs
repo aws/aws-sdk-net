@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Contains the output of RequestSpotInstances.
     /// </summary>
     public partial class RequestSpotInstancesResult : AmazonWebServiceResponse
     {

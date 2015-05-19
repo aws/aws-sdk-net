@@ -51,7 +51,7 @@ namespace Amazon.OpsWorks
     /// </para>
     ///  
     /// <para>
-    /// <b>SDKs and CLI</b> 
+    ///  <b>SDKs and CLI</b> 
     /// </para>
     ///  
     /// <para>
@@ -59,16 +59,16 @@ namespace Amazon.OpsWorks
     /// (CLI) or by using one of the AWS SDKs to implement applications in your preferred
     /// language. For more information, see:
     /// </para>
-    ///  <ul> <li><a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS
-    /// CLI</a></li> <li><a href="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html">AWS
-    /// SDK for Java</a></li> <li><a href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm">AWS
-    /// SDK for .NET</a></li> <li><a href="http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html">AWS
-    /// SDK for PHP 2</a></li> <li><a href="http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/OpsWorks/Client.html">AWS
-    /// SDK for Ruby</a></li> <li><a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS
-    /// SDK for Node.js</a></li> <li><a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS
-    /// SDK for Python(Boto)</a></li> </ul> 
+    ///  <ul> <li> <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS
+    /// CLI</a> </li> <li> <a href="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html">AWS
+    /// SDK for Java</a> </li> <li> <a href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm">AWS
+    /// SDK for .NET</a> </li> <li> <a href="http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html">AWS
+    /// SDK for PHP 2</a> </li> <li> <a href="http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/OpsWorks/Client.html">AWS
+    /// SDK for Ruby</a> </li> <li> <a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS
+    /// SDK for Node.js</a> </li> <li> <a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS
+    /// SDK for Python(Boto)</a> </li> </ul> 
     /// <para>
-    /// <b>Endpoints</b>
+    ///  <b>Endpoints</b> 
     /// </para>
     ///  
     /// <para>
@@ -78,7 +78,7 @@ namespace Amazon.OpsWorks
     /// </para>
     ///  
     /// <para>
-    /// <b>Chef Versions</b>
+    ///  <b>Chef Versions</b> 
     /// </para>
     ///  
     /// <para>
@@ -277,10 +277,12 @@ namespace Amazon.OpsWorks
         #region  AssignInstance
 
         /// <summary>
-        /// Assign a registered instance to a custom layer. You cannot use this action with instances
-        /// that were created with AWS OpsWorks.
+        /// Assign a registered instance to a layer.
         /// 
-        ///  
+        ///  <ul> <li>You can assign registered on-premises instances to any layer type.</li>
+        /// <li>You can assign registered Amazon EC2 instances only to custom layers.</li> <li>You
+        /// cannot use this action with instances that were created with AWS OpsWorks.</li> </ul>
+        /// 
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack or an attached policy that explicitly grants permissions. For
@@ -2568,6 +2570,51 @@ namespace Amazon.OpsWorks
             var unmarshaller = GetHostnameSuggestionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetHostnameSuggestionRequest,GetHostnameSuggestionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GrantAccess
+
+        /// <summary>
+        /// <note>This API can be used only with Windows stacks.</note> 
+        /// <para>
+        /// Grants RDP access to a Windows instance for a specified time period.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GrantAccess service method.</param>
+        /// 
+        /// <returns>The response from the GrantAccess service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        public GrantAccessResponse GrantAccess(GrantAccessRequest request)
+        {
+            var marshaller = new GrantAccessRequestMarshaller();
+            var unmarshaller = GrantAccessResponseUnmarshaller.Instance;
+
+            return Invoke<GrantAccessRequest,GrantAccessResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GrantAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GrantAccess operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GrantAccessResponse> GrantAccessAsync(GrantAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GrantAccessRequestMarshaller();
+            var unmarshaller = GrantAccessResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GrantAccessRequest,GrantAccessResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

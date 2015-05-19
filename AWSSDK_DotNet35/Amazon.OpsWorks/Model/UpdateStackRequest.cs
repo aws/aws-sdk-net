@@ -135,18 +135,18 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property CustomJson. 
         /// <para>
-        /// A string that contains user-defined, custom JSON. It is used to override the corresponding
-        /// default stack configuration JSON values. The string should be in the following format
-        /// and must escape characters such as '"'.:
+        /// A string that contains user-defined, custom JSON. It can be used to override the corresponding
+        /// default stack configuration JSON values or to pass data to recipes. The string should
+        /// be in the following format and must escape characters such as '"'.:
         /// </para>
         ///  
         /// <para>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+        ///  <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> 
         /// </para>
         ///  
         /// <para>
         /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-        /// Custom JSON to Modify the Stack Configuration JSON</a>.
+        /// Custom JSON to Modify the Stack Configuration Attributes</a>.
         /// </para>
         /// </summary>
         public string CustomJson
@@ -207,10 +207,11 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The stack's operating system, which must be set to one of the following.
         /// </para>
-        ///  <ul> <li>Standard operating systems: an Amazon Linux version such as <code>Amazon
+        ///  <ul> <li>Standard Linux operating systems: an Amazon Linux version such as <code>Amazon
         /// Linux 2014.09</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-        /// <li>Custom AMIs: <code>Custom</code>. You specify the custom AMI you want to use when
-        /// you create instances.</li> </ul> 
+        /// <li>Custom Linux AMIs: <code>Custom</code>. You specify the custom AMI you want to
+        /// use when you create instances.</li> <li>Microsoft Windows Server 2012 R2.</li> </ul>
+        /// 
         /// <para>
         ///  The default option is the current Amazon Linux version.
         /// </para>
@@ -304,10 +305,11 @@ namespace Amazon.OpsWorks.Model
         /// is set to <code>Layer_Dependent</code>, which creates host names by appending integers
         /// to the layer's short name. The other themes are:
         /// </para>
-        ///  <ul> <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li> <li><code>Europe_Cities</code></li>
-        /// <li><code>Fruits</code></li> <li><code>Greek_Deities</code></li> <li><code>Legendary_creatures_from_Japan</code></li>
-        /// <li><code>Planets_and_Moons</code></li> <li><code>Roman_Deities</code></li> <li><code>Scottish_Islands</code></li>
-        /// <li><code>US_Cities</code></li> <li><code>Wild_Cats</code></li> </ul> 
+        ///  <ul> <li> <code>Baked_Goods</code> </li> <li> <code>Clouds</code> </li> <li> <code>Europe_Cities</code>
+        /// </li> <li> <code>Fruits</code> </li> <li> <code>Greek_Deities</code> </li> <li> <code>Legendary_creatures_from_Japan</code>
+        /// </li> <li> <code>Planets_and_Moons</code> </li> <li> <code>Roman_Deities</code> </li>
+        /// <li> <code>Scottish_Islands</code> </li> <li> <code>US_Cities</code> </li> <li> <code>Wild_Cats</code>
+        /// </li> </ul> 
         /// <para>
         /// To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns
         /// a host name based on the current theme.

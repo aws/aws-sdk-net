@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
     public partial class RequestSpotInstancesRequest : AmazonEC2Request
     {
         private string _availabilityZoneGroup;
+        private string _clientToken;
         private int? _instanceCount;
         private string _launchGroup;
         private LaunchSpecification _launchSpecification;
@@ -99,6 +100,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZoneGroup()
         {
             return this._availabilityZoneGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+        /// to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
         }
 
         /// <summary>

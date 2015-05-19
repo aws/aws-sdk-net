@@ -211,11 +211,11 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The command type:
         /// </para>
-        ///  <ul> <li><code>deploy</code></li> <li><code>rollback</code></li> <li><code>start</code></li>
-        /// <li><code>stop</code></li> <li><code>restart</code></li> <li><code>undeploy</code></li>
-        /// <li><code>update_dependencies</code></li> <li><code>install_dependencies</code></li>
-        /// <li><code>update_custom_cookbooks</code></li> <li><code>execute_recipes</code></li>
-        /// </ul>
+        ///  <ul> <li> <code>deploy</code> </li> <li> <code>rollback</code> </li> <li> <code>start</code>
+        /// </li> <li> <code>stop</code> </li> <li> <code>restart</code> </li> <li> <code>undeploy</code>
+        /// </li> <li> <code>update_dependencies</code> </li> <li> <code>install_dependencies</code>
+        /// </li> <li> <code>update_custom_cookbooks</code> </li> <li> <code>execute_recipes</code>
+        /// </li> </ul>
         /// </summary>
         public string Type
         {

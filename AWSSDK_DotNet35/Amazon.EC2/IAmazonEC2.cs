@@ -950,6 +950,42 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CancelSpotFleetRequests
+
+        /// <summary>
+        /// Cancels the specified Spot fleet requests.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelSpotFleetRequests service method.</param>
+        /// 
+        /// <returns>The response from the CancelSpotFleetRequests service method, as returned by EC2.</returns>
+        CancelSpotFleetRequestsResponse CancelSpotFleetRequests(CancelSpotFleetRequestsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelSpotFleetRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelSpotFleetRequests operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelSpotFleetRequests
+        ///         operation.</returns>
+        IAsyncResult BeginCancelSpotFleetRequests(CancelSpotFleetRequestsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelSpotFleetRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelSpotFleetRequests.</param>
+        /// 
+        /// <returns>Returns a  CancelSpotFleetRequestsResult from EC2.</returns>
+        CancelSpotFleetRequestsResponse EndCancelSpotFleetRequests(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CancelSpotInstanceRequests
 
         /// <summary>
@@ -5351,6 +5387,120 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeSpotFleetInstances
+
+        /// <summary>
+        /// Describes the running instances for the specified Spot fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetInstances service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSpotFleetInstances service method, as returned by EC2.</returns>
+        DescribeSpotFleetInstancesResponse DescribeSpotFleetInstances(DescribeSpotFleetInstancesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSpotFleetInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetInstances operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSpotFleetInstances
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeSpotFleetInstances(DescribeSpotFleetInstancesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSpotFleetInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSpotFleetInstances.</param>
+        /// 
+        /// <returns>Returns a  DescribeSpotFleetInstancesResult from EC2.</returns>
+        DescribeSpotFleetInstancesResponse EndDescribeSpotFleetInstances(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeSpotFleetRequestHistory
+
+        /// <summary>
+        /// Describes the events for the specified Spot fleet request during the specified time.
+        /// 
+        ///  
+        /// <para>
+        /// Spot fleet events are delayed by up to 30 seconds before they can be described. This
+        /// ensures that you can query by the last evaluated time and not miss a recorded event.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequestHistory service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSpotFleetRequestHistory service method, as returned by EC2.</returns>
+        DescribeSpotFleetRequestHistoryResponse DescribeSpotFleetRequestHistory(DescribeSpotFleetRequestHistoryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSpotFleetRequestHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequestHistory operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSpotFleetRequestHistory
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeSpotFleetRequestHistory(DescribeSpotFleetRequestHistoryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSpotFleetRequestHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSpotFleetRequestHistory.</param>
+        /// 
+        /// <returns>Returns a  DescribeSpotFleetRequestHistoryResult from EC2.</returns>
+        DescribeSpotFleetRequestHistoryResponse EndDescribeSpotFleetRequestHistory(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeSpotFleetRequests
+
+        /// <summary>
+        /// Describes your Spot fleet requests.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequests service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSpotFleetRequests service method, as returned by EC2.</returns>
+        DescribeSpotFleetRequestsResponse DescribeSpotFleetRequests(DescribeSpotFleetRequestsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSpotFleetRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequests operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSpotFleetRequests
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeSpotFleetRequests(DescribeSpotFleetRequestsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSpotFleetRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSpotFleetRequests.</param>
+        /// 
+        /// <returns>Returns a  DescribeSpotFleetRequestsResult from EC2.</returns>
+        DescribeSpotFleetRequestsResponse EndDescribeSpotFleetRequests(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeSpotInstanceRequests
 
         /// <summary>
@@ -7931,6 +8081,48 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  ReportInstanceStatusResult from EC2.</returns>
         ReportInstanceStatusResponse EndReportInstanceStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RequestSpotFleet
+
+        /// <summary>
+        /// Creates a Spot fleet request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html">Spot
+        /// Fleets</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RequestSpotFleet service method.</param>
+        /// 
+        /// <returns>The response from the RequestSpotFleet service method, as returned by EC2.</returns>
+        RequestSpotFleetResponse RequestSpotFleet(RequestSpotFleetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RequestSpotFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RequestSpotFleet operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRequestSpotFleet
+        ///         operation.</returns>
+        IAsyncResult BeginRequestSpotFleet(RequestSpotFleetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RequestSpotFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRequestSpotFleet.</param>
+        /// 
+        /// <returns>Returns a  RequestSpotFleetResult from EC2.</returns>
+        RequestSpotFleetResponse EndRequestSpotFleet(IAsyncResult asyncResult);
 
         #endregion
         

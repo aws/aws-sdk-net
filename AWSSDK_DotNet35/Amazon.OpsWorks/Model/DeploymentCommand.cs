@@ -43,8 +43,8 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2",
-        /// ...], ...}</code>
+        ///  <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2",
+        /// ...], ...}</code> 
         /// </para>
         ///  
         /// <para>
@@ -89,12 +89,14 @@ namespace Amazon.OpsWorks.Model
         /// set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</li> <li>
         /// <code>install_dependencies</code>: Install the stack's dependencies.</li> <li> <code>update_custom_cookbooks</code>:
         /// Update the stack's custom cookbooks.</li> <li> <code>update_dependencies</code>: Update
-        /// the stack's dependencies.</li> </ul> 
+        /// the stack's dependencies.</li> </ul> <note>The update_dependencies and install_dependencies
+        /// commands are supported only for Linux instances. You can run the commands successfully
+        /// on Windows instances, but they do nothing.</note> 
         /// <para>
         /// For apps, the following commands are available:
         /// </para>
-        ///  <ul> <li> <code>deploy</code>: Deploy an app. Rails apps have an optional <code>Args</code>
-        /// parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]}
+        ///  <ul> <li> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional
+        /// <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]}
         /// to migrate the database. The default setting is {"migrate":["false"]}.</li> <li> <code>rollback</code>
         /// Roll the app back to the previous version. When you update an app, AWS OpsWorks stores
         /// the previous version, up to a maximum of five versions. You can use this command to
