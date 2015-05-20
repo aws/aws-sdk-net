@@ -89,7 +89,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Gets and sets of the UserAgent property.
         /// </summary>
-        public virtual string UserAgent { get; private set; }
+        public abstract string UserAgent { get; }
 
         /// <summary>
         /// Gets and sets the RegionEndpoint property.  The region constant to use that 
@@ -377,20 +377,6 @@ namespace Amazon.Runtime
 #if BCL
             this.UseNagleAlgorithm = useNagle;                
 #endif
-        }
-
-        /// <summary>
-        /// Appends a value to the user agent string.
-        /// The updated user agent string is used only by clients constructed using
-        /// this instance of client config.
-        /// </summary>        
-        /// <param name="value">The string to be appened to the user agent string.</param>
-        public void AppendToUserAgent(string value)
-        {
-            if (string.IsNullOrEmpty(value))            
-                throw new ArgumentException("The value cannot be null or empty.", "value");            
-
-            this.UserAgent = (this.UserAgent + value).Trim();
         }
         
         /// <summary>

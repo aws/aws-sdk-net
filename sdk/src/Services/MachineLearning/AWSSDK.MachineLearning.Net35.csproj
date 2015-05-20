@@ -76,9 +76,6 @@
     <Compile Include="Custom\Util\_bcl35\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl35\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Generated\*.cs">
       <SubType>Code</SubType>
     </Compile>
