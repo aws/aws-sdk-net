@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -19,33 +19,32 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Linq;
+using System.Net;
+
 using System.Text;
 
-namespace Amazon.Util
+using System.Globalization;
+
+namespace Amazon.Util.Internal
 {
-    public static partial class AWSSDKUtils
+    public static partial class InternalSDKUtils
     {
-        internal static void ForceCanonicalPathAndQuery(Uri uri)
+        static string _userAgentBaseName = "aws-sdk-dotnet-portable";
+
+        static string DetermineRuntime()
         {
+            return "portable";
         }
 
-        internal static void PreserveStackTrace(Exception exception)
+        static string DetermineFramework()
         {
+            return "4.5";
         }
 
-        internal static int GetConnectionLimit(int? clientConfigValue)
+        static string DetermineOSVersion()
         {
-            if (clientConfigValue.HasValue)
-                return clientConfigValue.Value;
-
-            return AWSSDKUtils.DefaultConnectionLimit;
-        }
-
-        public static void Sleep(int ms)
-        {
-            new System.Threading.ManualResetEvent(false).WaitOne(ms);
+            return "Unknown";
         }
     }
 }

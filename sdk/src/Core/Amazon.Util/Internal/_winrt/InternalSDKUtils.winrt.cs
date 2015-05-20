@@ -23,29 +23,25 @@ using System.Reflection;
 using System.Linq;
 using System.Text;
 
-namespace Amazon.Util
+namespace Amazon.Util.Internal
 {
-    public static partial class AWSSDKUtils
+    public static partial class InternalSDKUtils
     {
-        internal static void ForceCanonicalPathAndQuery(Uri uri)
+        static string _userAgentBaseName = "aws-sdk-dotnet-winrt";
+
+        static string DetermineRuntime()
         {
+            return "WinRT";
         }
 
-        internal static void PreserveStackTrace(Exception exception)
+        static string DetermineFramework()
         {
+            return "4.5";
         }
 
-        internal static int GetConnectionLimit(int? clientConfigValue)
+        static string DetermineOSVersion()
         {
-            if (clientConfigValue.HasValue)
-                return clientConfigValue.Value;
-
-            return AWSSDKUtils.DefaultConnectionLimit;
-        }
-
-        public static void Sleep(int ms)
-        {
-            new System.Threading.ManualResetEvent(false).WaitOne(ms);
+            return "Unknown";
         }
     }
 }

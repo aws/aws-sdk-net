@@ -428,6 +428,7 @@
             "base-name": "S3",
             "region-lookup-name": "s3",
             "service-url": "https://s3.amazonaws.com/",
+			"authentication-service-name": "s3",
             "synopsis": "Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage."
         },
         {

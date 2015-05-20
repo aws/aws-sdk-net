@@ -27,23 +27,6 @@ namespace Amazon.Util
 {
     public static partial class AWSSDKUtils
     {
-        static string _userAgentBaseName = "aws-sdk-dotnet-wp";
-
-        static string DetermineRuntime()
-        {
-            return "WP8";
-        }
-
-        static string DetermineFramework()
-        {
-            return "4.0";
-        }
-
-        static string DetermineOSVersion()
-        {
-            return "Unknown";
-        }
-
         internal static void ForceCanonicalPathAndQuery(Uri uri)
         {
         }

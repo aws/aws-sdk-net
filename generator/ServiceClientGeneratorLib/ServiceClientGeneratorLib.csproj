@@ -53,6 +53,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CoreAssemblyInfo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generators\SourceFiles\InternalSDKUtils.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InternalSDKUtils.tt</DependentUpon>
+    </Compile>
     <Compile Include="ProjectFileConfiguration.cs" />
     <Compile Include="ProjectFileCreator.cs" />
     <Compile Include="ServiceConfiguration.cs" />
@@ -308,6 +313,10 @@
     <None Include="Generators\SourceFiles\CoreAssemblyInfo.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>CoreAssemblyInfo.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\SourceFiles\InternalSDKUtils.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>InternalSDKUtils.cs</LastGenOutput>
     </None>
     <None Include="Generators\TestFiles\AWSQueryEC2MarshallingTests.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

@@ -21,6 +21,7 @@
 using System;
 
 using Amazon.Runtime;
+using Amazon.Util.Internal;
 
 
 namespace Amazon.DirectoryService
@@ -30,6 +31,11 @@ namespace Amazon.DirectoryService
     /// </summary>
     public partial class AmazonDirectoryServiceConfig : ClientConfig
     {
+        private static readonly string UserAgentString =
+            InternalSDKUtils.BuildUserAgentString("3.0");
+
+        private string _userAgent = UserAgentString;
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -57,6 +63,17 @@ namespace Amazon.DirectoryService
             get
             {
                 return "2015-04-16";
+            }
+        }
+
+        /// <summary>
+        /// Gets the value of UserAgent property.
+        /// </summary>
+        public override string UserAgent
+        {
+            get
+            {
+                return _userAgent;
             }
         }
     }

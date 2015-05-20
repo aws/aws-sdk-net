@@ -1,4 +1,19 @@
-﻿using System;
+﻿/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Globalization;
@@ -10,8 +25,6 @@ namespace Amazon.Util.Internal
 {
     public static partial class InternalSDKUtils
     {
-        internal static readonly VersionInfo SDKVersionNumber = new VersionInfo();
-
         #region UserAgent
 
         static string _versionNumber;
@@ -36,7 +49,7 @@ namespace Amazon.Util.Internal
         {
             if (_versionNumber == null)
             {
-                _versionNumber = SDKVersionNumber.FileVersion;
+                _versionNumber = CoreVersionNumber;
             }
 
             _customSdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} .NET Runtime/{2} .NET Framework/{3} OS/{4} {5}",
@@ -58,7 +71,7 @@ namespace Amazon.Util.Internal
 
             return string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2} .NET Runtime/{3} .NET Framework/{4} OS/{5} {6}",
                 _userAgentBaseName,
-                SDKVersionNumber.FileVersion,
+                CoreVersionNumber,
                 serviceSdkVersion,
                 DetermineRuntime(),
                 DetermineFramework(),

@@ -21,9 +21,8 @@ namespace <#=this.Config.Namespace#>
     /// </summary>
 	public partial class Amazon<#=this.Config.BaseName#>Config : ClientConfig
 	{
-		private static readonly VersionInfo VersionInfo = new VersionInfo();
 		private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString(VersionInfo.FileVersion);
+            InternalSDKUtils.BuildUserAgentString("<#=this.Config.ServiceFileVersion #>");
 
 		private string _userAgent = UserAgentString;
 

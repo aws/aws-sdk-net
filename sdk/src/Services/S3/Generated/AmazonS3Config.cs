@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
  */
 
 
@@ -24,12 +24,12 @@ using Amazon.Runtime;
 using Amazon.Util.Internal;
 
 
-namespace Amazon.AutoScaling
+namespace Amazon.S3
 {
     /// <summary>
-    /// Configuration for accessing Amazon AutoScaling service
+    /// Configuration for accessing Amazon S3 service
     /// </summary>
-    public partial class AmazonAutoScalingConfig : ClientConfig
+    public partial class AmazonS3Config : ClientConfig
     {
         private static readonly string UserAgentString =
             InternalSDKUtils.BuildUserAgentString("3.0.0.1");
@@ -39,9 +39,9 @@ namespace Amazon.AutoScaling
         /// <summary>
         /// Default constructor
         /// </summary>
-        public AmazonAutoScalingConfig()
+        public AmazonS3Config()
         {
-            this.AuthenticationServiceName = "autoscaling";
+            this.AuthenticationServiceName = "s3";
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AutoScaling
         {
             get
             {
-                return "autoscaling";
+                return "s3";
             }
         }
 
@@ -62,7 +62,7 @@ namespace Amazon.AutoScaling
         {
             get
             {
-                return "2011-01-01";
+                return "2006-03-01";
             }
         }
 

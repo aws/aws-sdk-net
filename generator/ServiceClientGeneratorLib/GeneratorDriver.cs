@@ -128,11 +128,11 @@ namespace ServiceClientGenerator
 
             ExecuteNugetFileGenerators();
 
-            if (Configuration.Namespace == "Amazon.S3")
-                return;
-
             // Client config object
             ExecuteGenerator(new ServiceConfig(), "Amazon" + Configuration.BaseName + "Config.cs");
+
+            if (Configuration.Namespace == "Amazon.S3")
+                return;
 
             // The top level request that all operation requests are children of
             ExecuteGenerator(new BaseRequest(), "Amazon" + Configuration.BaseName + "Request.cs", "Model");

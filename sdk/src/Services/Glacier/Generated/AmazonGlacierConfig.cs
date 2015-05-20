@@ -31,9 +31,8 @@ namespace Amazon.Glacier
     /// </summary>
     public partial class AmazonGlacierConfig : ClientConfig
     {
-        private static readonly VersionInfo VersionInfo = new VersionInfo();
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString(VersionInfo.FileVersion);
+            InternalSDKUtils.BuildUserAgentString("3.0.1.0");
 
         private string _userAgent = UserAgentString;
 

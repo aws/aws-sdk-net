@@ -23,21 +23,24 @@ namespace Amazon.S3
     /// <summary>
     /// Configuration for accessing AmazonS3 service
     /// </summary>
-    public class AmazonS3Config : ClientConfig
+    public partial class AmazonS3Config : ClientConfig
     {
-        private static readonly VersionInfo VersionInfo = new VersionInfo();
-        private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString(VersionInfo.FileVersion);
-
-        private bool forcePathStyle = false;
-        private string _userAgent = UserAgentString;
-
+        private bool forcePathStyle = false;     
+        
         /// <summary>
-        /// Default constructor
+        /// When true, requests will always use path style addressing.
         /// </summary>
-        public AmazonS3Config()
+        public bool ForcePathStyle
         {
-            this.AuthenticationServiceName = "s3";
+            get { return forcePathStyle; }
+            set { forcePathStyle = value; }
+        }
+        
+        /// <summary>
+        /// This method contains custom initializations for the config object.
+        /// </summary>
+        protected override void Initialize()
+        {           
             this.AllowAutoRedirect = false;
 #if BCL45
             // Set Timeout and ReadWriteTimeout for S3 to max timeout as per-request
@@ -50,49 +53,6 @@ namespace Amazon.S3
             // timeouts are not supported.
             this.Timeout = ClientConfig.MaxTimeout;
 #endif
-        }
-
-        /// <summary>
-        /// The constant used to lookup in the region hash the endpoint.
-        /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "s3";
-            }
-        }
-
-        /// <summary>
-        /// Gets the ServiceVersion property.
-        /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2006-03-01";
-            }
-        }
-
-        /// <summary>
-        /// When true, requests will always use path style addressing.
-        /// </summary>
-        public bool ForcePathStyle
-        {
-            get { return forcePathStyle; }
-            set { forcePathStyle = value; }
-        }
-
-
-        /// <summary>
-        /// Gets the value of UserAgent property.
-        /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
         }
     }
 }
