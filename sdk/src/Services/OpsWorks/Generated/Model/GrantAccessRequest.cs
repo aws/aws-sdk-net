@@ -28,29 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Container for the parameters to the AssignInstance operation.
-    /// Assign a registered instance to a layer.
-    /// 
-    ///  <ul> <li>You can assign registered on-premises instances to any layer type.</li>
-    /// <li>You can assign registered Amazon EC2 instances only to custom layers.</li> <li>You
-    /// cannot use this action with instances that were created with AWS OpsWorks.</li> </ul>
-    /// 
+    /// Container for the parameters to the GrantAccess operation.
+    /// <note>This API can be used only with Windows stacks.</note> 
     /// <para>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack or an attached policy that explicitly grants permissions. For
-    /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-    /// User Permissions</a>.
+    /// Grants RDP access to a Windows instance for a specified time period.
     /// </para>
     /// </summary>
-    public partial class AssignInstanceRequest : AmazonOpsWorksRequest
+    public partial class GrantAccessRequest : AmazonOpsWorksRequest
     {
         private string _instanceId;
-        private List<string> _layerIds = new List<string>();
+        private int? _validForInMinutes;
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID.
+        /// The instance's AWS OpsWorks ID.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -66,22 +58,24 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LayerIds. 
+        /// Gets and sets the property ValidForInMinutes. 
         /// <para>
-        /// The layer ID, which must correspond to a custom layer. You cannot assign a registered
-        /// instance to a built-in layer.
+        /// The length of time (in minutes) that the grant is valid. When the grant expires at
+        /// the end of this period, the user will no longer be able to use the credentials to
+        /// log in. If the user is logged in at the time, he or she automatically will be logged
+        /// out.
         /// </para>
         /// </summary>
-        public List<string> LayerIds
+        public int ValidForInMinutes
         {
-            get { return this._layerIds; }
-            set { this._layerIds = value; }
+            get { return this._validForInMinutes.GetValueOrDefault(); }
+            set { this._validForInMinutes = value; }
         }
 
-        // Check to see if LayerIds property is set
-        internal bool IsSetLayerIds()
+        // Check to see if ValidForInMinutes property is set
+        internal bool IsSetValidForInMinutes()
         {
-            return this._layerIds != null && this._layerIds.Count > 0; 
+            return this._validForInMinutes.HasValue; 
         }
 
     }

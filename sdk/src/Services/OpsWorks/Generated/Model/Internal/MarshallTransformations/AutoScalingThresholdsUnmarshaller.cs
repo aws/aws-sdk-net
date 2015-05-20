@@ -64,6 +64,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Alarms", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Alarms = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CpuThreshold", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
