@@ -209,6 +209,67 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type BatchState.
+    /// </summary>
+    public class BatchState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for BatchState
+        /// </summary>
+        public static readonly BatchState Active = new BatchState("active");
+        /// <summary>
+        /// Constant Cancelled for BatchState
+        /// </summary>
+        public static readonly BatchState Cancelled = new BatchState("cancelled");
+        /// <summary>
+        /// Constant Cancelled_running for BatchState
+        /// </summary>
+        public static readonly BatchState Cancelled_running = new BatchState("cancelled_running");
+        /// <summary>
+        /// Constant Cancelled_terminating for BatchState
+        /// </summary>
+        public static readonly BatchState Cancelled_terminating = new BatchState("cancelled_terminating");
+        /// <summary>
+        /// Constant Failed for BatchState
+        /// </summary>
+        public static readonly BatchState Failed = new BatchState("failed");
+        /// <summary>
+        /// Constant Submitted for BatchState
+        /// </summary>
+        public static readonly BatchState Submitted = new BatchState("submitted");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public BatchState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchState FindValue(string value)
+        {
+            return FindValue<BatchState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BundleTaskState.
     /// </summary>
     public class BundleTaskState : ConstantClass
@@ -267,6 +328,59 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BundleTaskState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CancelBatchErrorCode.
+    /// </summary>
+    public class CancelBatchErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FleetRequestIdDoesNotExist for CancelBatchErrorCode
+        /// </summary>
+        public static readonly CancelBatchErrorCode FleetRequestIdDoesNotExist = new CancelBatchErrorCode("fleetRequestIdDoesNotExist");
+        /// <summary>
+        /// Constant FleetRequestIdMalformed for CancelBatchErrorCode
+        /// </summary>
+        public static readonly CancelBatchErrorCode FleetRequestIdMalformed = new CancelBatchErrorCode("fleetRequestIdMalformed");
+        /// <summary>
+        /// Constant FleetRequestNotInCancellableState for CancelBatchErrorCode
+        /// </summary>
+        public static readonly CancelBatchErrorCode FleetRequestNotInCancellableState = new CancelBatchErrorCode("fleetRequestNotInCancellableState");
+        /// <summary>
+        /// Constant UnexpectedError for CancelBatchErrorCode
+        /// </summary>
+        public static readonly CancelBatchErrorCode UnexpectedError = new CancelBatchErrorCode("unexpectedError");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public CancelBatchErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CancelBatchErrorCode FindValue(string value)
+        {
+            return FindValue<CancelBatchErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CancelBatchErrorCode(string value)
         {
             return FindValue(value);
         }
@@ -700,6 +814,55 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EventType.
+    /// </summary>
+    public class EventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Error for EventType
+        /// </summary>
+        public static readonly EventType Error = new EventType("error");
+        /// <summary>
+        /// Constant FleetRequestChange for EventType
+        /// </summary>
+        public static readonly EventType FleetRequestChange = new EventType("fleetRequestChange");
+        /// <summary>
+        /// Constant InstanceChange for EventType
+        /// </summary>
+        public static readonly EventType InstanceChange = new EventType("instanceChange");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public EventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventType FindValue(string value)
+        {
+            return FindValue<EventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventType(string value)
         {
             return FindValue(value);
         }

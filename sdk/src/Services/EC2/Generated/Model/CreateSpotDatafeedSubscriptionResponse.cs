@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Contains the output of CreateSpotDatafeedSubscription.
     /// </summary>
     public partial class CreateSpotDatafeedSubscriptionResponse : AmazonWebServiceResponse
     {

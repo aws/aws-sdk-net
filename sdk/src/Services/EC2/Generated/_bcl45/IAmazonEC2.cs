@@ -705,6 +705,29 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CancelSpotFleetRequests
+
+        /// <summary>
+        /// Cancels the specified Spot fleet requests.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelSpotFleetRequests service method.</param>
+        /// 
+        /// <returns>The response from the CancelSpotFleetRequests service method, as returned by EC2.</returns>
+        CancelSpotFleetRequestsResponse CancelSpotFleetRequests(CancelSpotFleetRequestsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelSpotFleetRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelSpotFleetRequests operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CancelSpotFleetRequestsResponse> CancelSpotFleetRequestsAsync(CancelSpotFleetRequestsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CancelSpotInstanceRequests
 
         /// <summary>
@@ -3988,6 +4011,81 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeSpotFleetInstances
+
+        /// <summary>
+        /// Describes the running instances for the specified Spot fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetInstances service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSpotFleetInstances service method, as returned by EC2.</returns>
+        DescribeSpotFleetInstancesResponse DescribeSpotFleetInstances(DescribeSpotFleetInstancesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSpotFleetInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeSpotFleetInstancesResponse> DescribeSpotFleetInstancesAsync(DescribeSpotFleetInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeSpotFleetRequestHistory
+
+        /// <summary>
+        /// Describes the events for the specified Spot fleet request during the specified time.
+        /// 
+        ///  
+        /// <para>
+        /// Spot fleet events are delayed by up to 30 seconds before they can be described. This
+        /// ensures that you can query by the last evaluated time and not miss a recorded event.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequestHistory service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSpotFleetRequestHistory service method, as returned by EC2.</returns>
+        DescribeSpotFleetRequestHistoryResponse DescribeSpotFleetRequestHistory(DescribeSpotFleetRequestHistoryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSpotFleetRequestHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequestHistory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeSpotFleetRequestHistoryResponse> DescribeSpotFleetRequestHistoryAsync(DescribeSpotFleetRequestHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeSpotFleetRequests
+
+        /// <summary>
+        /// Describes your Spot fleet requests.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequests service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSpotFleetRequests service method, as returned by EC2.</returns>
+        DescribeSpotFleetRequestsResponse DescribeSpotFleetRequests(DescribeSpotFleetRequestsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSpotFleetRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequests operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeSpotFleetRequestsResponse> DescribeSpotFleetRequestsAsync(DescribeSpotFleetRequestsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeSpotInstanceRequests
 
         /// <summary>
@@ -5853,6 +5951,35 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ReportInstanceStatusResponse> ReportInstanceStatusAsync(ReportInstanceStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RequestSpotFleet
+
+        /// <summary>
+        /// Creates a Spot fleet request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html">Spot
+        /// Fleets</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RequestSpotFleet service method.</param>
+        /// 
+        /// <returns>The response from the RequestSpotFleet service method, as returned by EC2.</returns>
+        RequestSpotFleetResponse RequestSpotFleet(RequestSpotFleetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RequestSpotFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RequestSpotFleet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RequestSpotFleetResponse> RequestSpotFleetAsync(RequestSpotFleetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

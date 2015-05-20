@@ -1154,6 +1154,42 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CancelSpotFleetRequests
+
+        /// <summary>
+        /// Cancels the specified Spot fleet requests.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelSpotFleetRequests service method.</param>
+        /// 
+        /// <returns>The response from the CancelSpotFleetRequests service method, as returned by EC2.</returns>
+        public CancelSpotFleetRequestsResponse CancelSpotFleetRequests(CancelSpotFleetRequestsRequest request)
+        {
+            var marshaller = new CancelSpotFleetRequestsRequestMarshaller();
+            var unmarshaller = CancelSpotFleetRequestsResponseUnmarshaller.Instance;
+
+            return Invoke<CancelSpotFleetRequestsRequest,CancelSpotFleetRequestsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelSpotFleetRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelSpotFleetRequests operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CancelSpotFleetRequestsResponse> CancelSpotFleetRequestsAsync(CancelSpotFleetRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CancelSpotFleetRequestsRequestMarshaller();
+            var unmarshaller = CancelSpotFleetRequestsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelSpotFleetRequestsRequest,CancelSpotFleetRequestsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelSpotInstanceRequests
 
         /// <summary>
@@ -5636,6 +5672,120 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeSpotFleetInstances
+
+        /// <summary>
+        /// Describes the running instances for the specified Spot fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetInstances service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSpotFleetInstances service method, as returned by EC2.</returns>
+        public DescribeSpotFleetInstancesResponse DescribeSpotFleetInstances(DescribeSpotFleetInstancesRequest request)
+        {
+            var marshaller = new DescribeSpotFleetInstancesRequestMarshaller();
+            var unmarshaller = DescribeSpotFleetInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSpotFleetInstancesRequest,DescribeSpotFleetInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSpotFleetInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeSpotFleetInstancesResponse> DescribeSpotFleetInstancesAsync(DescribeSpotFleetInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeSpotFleetInstancesRequestMarshaller();
+            var unmarshaller = DescribeSpotFleetInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSpotFleetInstancesRequest,DescribeSpotFleetInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeSpotFleetRequestHistory
+
+        /// <summary>
+        /// Describes the events for the specified Spot fleet request during the specified time.
+        /// 
+        ///  
+        /// <para>
+        /// Spot fleet events are delayed by up to 30 seconds before they can be described. This
+        /// ensures that you can query by the last evaluated time and not miss a recorded event.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequestHistory service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSpotFleetRequestHistory service method, as returned by EC2.</returns>
+        public DescribeSpotFleetRequestHistoryResponse DescribeSpotFleetRequestHistory(DescribeSpotFleetRequestHistoryRequest request)
+        {
+            var marshaller = new DescribeSpotFleetRequestHistoryRequestMarshaller();
+            var unmarshaller = DescribeSpotFleetRequestHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSpotFleetRequestHistoryRequest,DescribeSpotFleetRequestHistoryResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSpotFleetRequestHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequestHistory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeSpotFleetRequestHistoryResponse> DescribeSpotFleetRequestHistoryAsync(DescribeSpotFleetRequestHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeSpotFleetRequestHistoryRequestMarshaller();
+            var unmarshaller = DescribeSpotFleetRequestHistoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSpotFleetRequestHistoryRequest,DescribeSpotFleetRequestHistoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeSpotFleetRequests
+
+        /// <summary>
+        /// Describes your Spot fleet requests.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequests service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSpotFleetRequests service method, as returned by EC2.</returns>
+        public DescribeSpotFleetRequestsResponse DescribeSpotFleetRequests(DescribeSpotFleetRequestsRequest request)
+        {
+            var marshaller = new DescribeSpotFleetRequestsRequestMarshaller();
+            var unmarshaller = DescribeSpotFleetRequestsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSpotFleetRequestsRequest,DescribeSpotFleetRequestsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSpotFleetRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequests operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeSpotFleetRequestsResponse> DescribeSpotFleetRequestsAsync(DescribeSpotFleetRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeSpotFleetRequestsRequestMarshaller();
+            var unmarshaller = DescribeSpotFleetRequestsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSpotFleetRequestsRequest,DescribeSpotFleetRequestsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeSpotInstanceRequests
 
         /// <summary>
@@ -8244,6 +8394,48 @@ namespace Amazon.EC2
             var unmarshaller = ReportInstanceStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<ReportInstanceStatusRequest,ReportInstanceStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RequestSpotFleet
+
+        /// <summary>
+        /// Creates a Spot fleet request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html">Spot
+        /// Fleets</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RequestSpotFleet service method.</param>
+        /// 
+        /// <returns>The response from the RequestSpotFleet service method, as returned by EC2.</returns>
+        public RequestSpotFleetResponse RequestSpotFleet(RequestSpotFleetRequest request)
+        {
+            var marshaller = new RequestSpotFleetRequestMarshaller();
+            var unmarshaller = RequestSpotFleetResponseUnmarshaller.Instance;
+
+            return Invoke<RequestSpotFleetRequest,RequestSpotFleetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RequestSpotFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RequestSpotFleet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RequestSpotFleetResponse> RequestSpotFleetAsync(RequestSpotFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RequestSpotFleetRequestMarshaller();
+            var unmarshaller = RequestSpotFleetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RequestSpotFleetRequest,RequestSpotFleetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

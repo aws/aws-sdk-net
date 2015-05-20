@@ -107,7 +107,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceName. The AWS service name, in the form com.amazonaws.<i>REGION</i>.<i>SERVICE</i>.
+        /// Gets and sets the property ServiceName. The AWS service name, in the form com.amazonaws.&lt;region&gt;.&lt;service&gt;.
         /// To get a list of available services, use the DescribeVpcEndpointServices request.
         /// </summary>
         public string ServiceName
