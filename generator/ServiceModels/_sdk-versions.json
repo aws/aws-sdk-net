@@ -32,12 +32,6 @@
                 "Core" : "3.0.0.1"
             }
         },
-        "CloudSearch_2011_02_01" : {
-            "Version" : "3.0.0.1",
-            "Dependencies" : {
-                "Core" : "3.0.0.1"
-            }
-        },
         "CloudSearch"            : {
             "Version" : "3.0.0.1",
             "Dependencies" : {
