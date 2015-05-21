@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.AWSSupport</id>
     <title>AWSSDK - AWS Support</title>
-    <version>3.0.0.1-preview</version> 
+    <version>3.0.0.2-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.</description> 
     <language>en-US</language>
@@ -14,10 +14,10 @@
     <dependencies>
       <group targetFramework="portable-wpa+netcore45">
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.1-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="[3.0.0.1-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 

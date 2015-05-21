@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Glacier</id>
     <title>AWSSDK - Amazon Glacier</title>
-    <version>3.0.1.0-preview</version> 
+    <version>3.0.1.1-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.</description> 
     <language>en-US</language>
@@ -14,14 +14,14 @@
     <dependencies>
       <group targetFramework="portable-wpa+netcore45">
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
-      <dependency id="AWSSDK.SQS" version="[3.0.0.1-preview, 3.1-preview)" />
-      <dependency id="AWSSDK.SimpleNotificationService" version="[3.0.0.1-preview, 3.1-preview)" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.1-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.SQS" version="[3.0.0.2-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.SimpleNotificationService" version="[3.0.0.2-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
       </group>
       <group>
-      <dependency id="AWSSDK.SQS" version="[3.0.0.1-preview, 3.1-preview)" />
-      <dependency id="AWSSDK.SimpleNotificationService" version="[3.0.0.1-preview, 3.1-preview)" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.1-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.SQS" version="[3.0.0.2-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.SimpleNotificationService" version="[3.0.0.2-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 

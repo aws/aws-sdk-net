@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.CloudWatch</id>
     <title>AWSSDK - Amazon CloudWatch</title>
-    <version>3.0.0.1-preview</version> 
+    <version>3.0.0.2-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms.</description> 
     <language>en-US</language>
@@ -14,10 +14,10 @@
     <dependencies>
       <group targetFramework="portable-wpa+netcore45">
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.1-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="[3.0.0.1-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 

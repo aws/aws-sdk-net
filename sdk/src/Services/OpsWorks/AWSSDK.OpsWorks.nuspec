@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.OpsWorks</id>
     <title>AWSSDK - AWS OpsWorks</title>
-    <version>3.0.0.1-preview</version> 
+    <version>3.0.1.0-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS OpsWorks is an application management service that makes it easy to deploy and operate applications of all shapes and sizes. You can define the application's architecture and the specification of each component including package installation, software configuration and resources such as storage.</description> 
     <language>en-US</language>
@@ -14,10 +14,10 @@
     <dependencies>
       <group targetFramework="portable-wpa+netcore45">
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.1-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="[3.0.0.1-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 
