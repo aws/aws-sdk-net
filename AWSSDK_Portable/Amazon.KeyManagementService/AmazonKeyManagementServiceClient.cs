@@ -40,8 +40,8 @@ namespace Amazon.KeyManagementService
     /// <para>
     ///  AWS Key Management Service (KMS) is an encryption and key management web service.
     /// This guide describes the KMS actions that you can call programmatically. For general
-    /// information about KMS, see (need an address here). For the KMS developer guide, see
-    /// (need address here). 
+    /// information about KMS, see the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/overview.html">
+    /// AWS Key Management Service Developer Guide </a> 
     /// </para>
     ///  <note> AWS provides SDKs that consist of libraries and sample code for various programming
     /// languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a
@@ -51,9 +51,14 @@ namespace Amazon.KeyManagementService
     /// download and install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon
     /// Web Services</a>. </note> 
     /// <para>
-    ///  We recommend that you use the AWS SDKs to make programmatic API calls to KMS. However,
-    /// you can also use the KMS Query API to make to make direct calls to the KMS web service.
-    /// 
+    ///  We recommend that you use the AWS SDKs to make programmatic API calls to KMS. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Clients must support TLS (Transport Layer Security) 1.0. We recommend TLS 1.2. Clients
+    /// must also support cipher suites with Perfect Forward Secrecy (PFS) such as Ephemeral
+    /// Diffie-Hellman (DHE) or Elliptic Curve Ephemeral Diffie-Hellman (ECDHE). Most modern
+    /// systems such as Java 7 and later support these modes. 
     /// </para>
     ///  
     /// <para>
@@ -99,7 +104,18 @@ namespace Amazon.KeyManagementService
     /// Security Token Service</a>. This guide describes how to create and use temporary security
     /// credentials. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
     /// AWS API Requests</a>. This set of topics walks you through the process of signing
-    /// a request using an access key ID and a secret access key. </li> </ul>
+    /// a request using an access key ID and a secret access key. </li> </ul> 
+    /// <para>
+    /// <b>Commonly Used APIs</b>
+    /// </para>
+    ///  
+    /// <para>
+    ///  Of the APIs discussed in this guide, the following will prove the most useful for
+    /// most applications. You will likely perform actions other than these, such as creating
+    /// keys and assigning policies, by using the console. <ul> <li><a>Encrypt</a></li> <li><a>Decrypt</a></li>
+    /// <li><a>GenerateDataKey</a></li> <li><a>GenerateDataKeyWithoutPlaintext</a></li> </ul>
+    /// 
+    /// </para>
     /// </summary>
     public partial class AmazonKeyManagementServiceClient : AmazonServiceClient, IAmazonKeyManagementService
     {
@@ -942,6 +958,36 @@ namespace Amazon.KeyManagementService
             var unmarshaller = RevokeGrantResponseUnmarshaller.Instance;
 
             return InvokeAsync<RevokeGrantRequest,RevokeGrantResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAlias
+
+        internal UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
+        {
+            var marshaller = new UpdateAliasRequestMarshaller();
+            var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAliasRequest,UpdateAliasResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateAliasRequestMarshaller();
+            var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAliasRequest,UpdateAliasResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

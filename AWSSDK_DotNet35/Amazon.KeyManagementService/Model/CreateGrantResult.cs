@@ -56,9 +56,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property GrantToken. 
         /// <para>
-        /// The grant token. A grant token is a string that identifies a grant and which can be
-        /// used to make a grant take effect immediately. A token contains all of the information
-        /// necessary to create a grant.
+        /// For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+        /// Tokens</a>. 
         /// </para>
         /// </summary>
         public string GrantToken

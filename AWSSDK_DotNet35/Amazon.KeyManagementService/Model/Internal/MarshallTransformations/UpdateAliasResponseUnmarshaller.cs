@@ -34,13 +34,13 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RevokeGrant operation
+    /// Response Unmarshaller for UpdateAlias operation
     /// </summary>  
-    public class RevokeGrantResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateAliasResponseUnmarshaller : JsonResponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            RevokeGrantResponse response = new RevokeGrantResponse();
+            UpdateAliasResponse response = new UpdateAliasResponse();
 
 
             return response;
@@ -53,10 +53,6 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             {
                 return new DependencyTimeoutException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArn"))
-            {
-                return new InvalidArnException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("KMSInternal"))
             {
                 return new KMSInternalException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -68,13 +64,13 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             return new AmazonKeyManagementServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static RevokeGrantResponseUnmarshaller _instance = new RevokeGrantResponseUnmarshaller();        
+        private static UpdateAliasResponseUnmarshaller _instance = new UpdateAliasResponseUnmarshaller();        
 
-        internal static RevokeGrantResponseUnmarshaller GetInstance()
+        internal static UpdateAliasResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
-        public static RevokeGrantResponseUnmarshaller Instance
+        public static UpdateAliasResponseUnmarshaller Instance
         {
             get
             {

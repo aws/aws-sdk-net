@@ -622,6 +622,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("KeyManagementService")]
+        public void UpdateAliasMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<UpdateAliasRequest>();
+            var marshaller = new UpdateAliasRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<UpdateAliasRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("KeyManagementService")]
         public void UpdateKeyDescriptionMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<UpdateKeyDescriptionRequest>();

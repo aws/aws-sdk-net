@@ -28,12 +28,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Represents the output for <code>GetRecords</code>.
+    /// Represents the output for <a>GetRecords</a>.
     /// </summary>
     public partial class GetRecordsResult : AmazonWebServiceResponse
     {
+        private long? _millisBehindLatest;
         private string _nextShardIterator;
         private List<Record> _records = new List<Record>();
+
+        /// <summary>
+        /// Gets and sets the property MillisBehindLatest. 
+        /// <para>
+        /// The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream,
+        /// indicating how far behind current time the consumer is. A value of zero indicates
+        /// record processing is caught up, and there are no new records to process at this moment.
+        /// </para>
+        /// </summary>
+        public long MillisBehindLatest
+        {
+            get { return this._millisBehindLatest.GetValueOrDefault(); }
+            set { this._millisBehindLatest = value; }
+        }
+
+        // Check to see if MillisBehindLatest property is set
+        internal bool IsSetMillisBehindLatest()
+        {
+            return this._millisBehindLatest.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property NextShardIterator. 

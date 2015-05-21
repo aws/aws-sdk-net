@@ -54,10 +54,28 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BitDepth", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BitDepth = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("BitOrder", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BitOrder = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Profile", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Profile = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Signed", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Signed = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

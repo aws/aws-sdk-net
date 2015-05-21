@@ -28,34 +28,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateAlias operation.
-    /// Creates a display name for a customer master key. An alias can be used to identify
-    /// a key and should be unique. The console enforces a one-to-one mapping between the
-    /// alias and a key. An alias name can contain only alphanumeric characters, forward slashes
-    /// (/), underscores (_), and dashes (-). An alias must start with the word "alias" followed
-    /// by a forward slash (alias/). An alias that begins with "aws" after the forward slash
-    /// (alias/aws...) is reserved by Amazon Web Services (AWS). 
+    /// Container for the parameters to the UpdateAlias operation.
+    /// Updates an alias to associate it with a different key.
     /// 
     ///  
     /// <para>
-    /// To associate an alias with a different key, call <a>UpdateAlias</a>.
+    /// An alias name can contain only alphanumeric characters, forward slashes (/), underscores
+    /// (_), and dashes (-). An alias must start with the word "alias" followed by a forward
+    /// slash (alias/). An alias that begins with "aws" after the forward slash (alias/aws...)
+    /// is reserved by Amazon Web Services (AWS). 
+    /// </para>
+    ///  
+    /// <para>
+    /// An alias is not a property of a key. Therefore, an alias can be associated with and
+    /// disassociated from an existing key without changing the properties of the key. 
     /// </para>
     ///  
     /// <para>
     /// Note that you cannot create or update an alias that represents a key in another account.
     /// </para>
     /// </summary>
-    public partial class CreateAliasRequest : AmazonKeyManagementServiceRequest
+    public partial class UpdateAliasRequest : AmazonKeyManagementServiceRequest
     {
         private string _aliasName;
         private string _targetKeyId;
 
         /// <summary>
-        /// Gets and sets the property AliasName. 
-        /// <para>
-        /// String that contains the display name. The name must start with the word "alias" followed
-        /// by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved. 
-        /// </para>
+        /// Gets and sets the property AliasName. String that contains the name of the alias to
+        /// be modifed. The name must start with the word "alias" followed by a forward slash
+        /// (alias/). Aliases that begin with "alias/AWS" are reserved.
         /// </summary>
         public string AliasName
         {
@@ -72,9 +73,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property TargetKeyId. 
         /// <para>
-        /// An identifier of the key for which you are creating the alias. This value cannot be
-        /// another alias but can be a globally unique identifier or a fully specified ARN to
-        /// a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+        /// Unique identifier of the customer master key to be associated with the alias. This
+        /// value can be a globally unique identifier or the fully specified ARN of a key. <ul>
+        /// <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
         /// <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul>
         /// 
         /// </para>

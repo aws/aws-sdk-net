@@ -49,6 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "PutKeyPolicy", new Type[] { typeof(string), typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "RetireGrant", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "RevokeGrant", new Type[] { typeof(string), typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "UpdateAlias", new Type[] { typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "UpdateKeyDescription", new Type[] { typeof(string), typeof(string), });
         }
         

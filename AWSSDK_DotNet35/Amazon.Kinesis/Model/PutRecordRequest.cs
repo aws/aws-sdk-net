@@ -54,12 +54,13 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// Partition keys are Unicode strings, with a maximum length limit of 256 bytes. An MD5
-    /// hash function is used to map partition keys to 128-bit integer values and to map associated
-    /// data records to shards using the hash key ranges of the shards. You can override hashing
-    /// the partition key to determine the shard by explicitly specifying a hash value using
-    /// the <code>ExplicitHashKey</code> parameter. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-defn-partition-key">Partition
-    /// Key</a> in the <i>Amazon Kinesis Developer Guide</i>.
+    /// Partition keys are Unicode strings, with a maximum length limit of 256 characters
+    /// for each key. An MD5 hash function is used to map partition keys to 128-bit integer
+    /// values and to map associated data records to shards using the hash key ranges of the
+    /// shards. You can override hashing the partition key to determine the shard by explicitly
+    /// specifying a hash value using the <code>ExplicitHashKey</code> parameter. For more
+    /// information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html">Adding
+    /// Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -70,8 +71,8 @@ namespace Amazon.Kinesis.Model
     /// <para>
     /// Sequence numbers generally increase over time. To guarantee strictly increasing ordering,
     /// use the <code>SequenceNumberForOrdering</code> parameter. For more information, see
-    /// <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-defn-sequence-number">Sequence
-    /// Number</a> in the <i>Amazon Kinesis Developer Guide</i>.
+    /// <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html">Adding
+    /// Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -136,12 +137,12 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property PartitionKey. 
         /// <para>
         /// Determines which shard in the stream the data record is assigned to. Partition keys
-        /// are Unicode strings with a maximum length limit of 256 bytes. Amazon Kinesis uses
-        /// the partition key as input to a hash function that maps the partition key and associated
-        /// data to a specific shard. Specifically, an MD5 hash function is used to map partition
-        /// keys to 128-bit integer values and to map associated data records to shards. As a
-        /// result of this hashing mechanism, all data records with the same partition key will
-        /// map to the same shard within the stream.
+        /// are Unicode strings with a maximum length limit of 256 characters for each key. Amazon
+        /// Kinesis uses the partition key as input to a hash function that maps the partition
+        /// key and associated data to a specific shard. Specifically, an MD5 hash function is
+        /// used to map partition keys to 128-bit integer values and to map associated data records
+        /// to shards. As a result of this hashing mechanism, all data records with the same partition
+        /// key will map to the same shard within the stream.
         /// </para>
         /// </summary>
         public string PartitionKey
@@ -161,7 +162,7 @@ namespace Amazon.Kinesis.Model
         /// <para>
         /// Guarantees strictly increasing sequence numbers, for puts from the same client and
         /// to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of
-        /// record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the <a>PutRecordResult</a>
+        /// record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result
         /// when putting record <i>n-1</i>). If this parameter is not set, records will be coarsely
         /// ordered based on arrival time.
         /// </para>

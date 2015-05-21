@@ -57,7 +57,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// <code>DescribeStream</code> has a limit of 10 transactions per second per account.
+    /// <a>DescribeStream</a> has a limit of 10 transactions per second per account.
     /// </para>
     /// </summary>
     public partial class DescribeStreamRequest : AmazonKinesisRequest
