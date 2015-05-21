@@ -221,9 +221,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  Condition: You can only update the tier version for an environment. If you change
-        /// the name of the type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code>
-        /// error. 
+        ///  Condition: At this time, if you change the tier version, name, or type, AWS Elastic
+        /// Beanstalk returns <code>InvalidParameterValue</code> error. 
         /// </para>
         /// </summary>
         public EnvironmentTier Tier

@@ -52,8 +52,16 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property AbortableOperationInProgress. 
         /// <para>
-        /// Lists in-progress environment updates and application version deployments that you
-        /// can cancel.
+        /// Indicates if there is an in-progress environment configuration update or application
+        /// version deployment that you can cancel.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>true:</code> There is an update in progress. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>false:</code> There are no updates currently in progress. 
         /// </para>
         /// </summary>
         public bool AbortableOperationInProgress

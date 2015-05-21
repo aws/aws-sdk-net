@@ -78,7 +78,10 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceName.
+        /// Gets and sets the property ResourceName. 
+        /// <para>
+        ///  A unique resource name for a time-based scaling configuration option. 
+        /// </para>
         /// </summary>
         public string ResourceName
         {
