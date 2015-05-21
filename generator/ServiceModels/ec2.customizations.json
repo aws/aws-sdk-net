@@ -237,7 +237,7 @@
                 }
             ]
         },		
-		"ModifyVpcEndpointResponse": {
+		"ModifyVpcEndpointResult": {
             "exclude": [ "Return" ]
         },
 		"PrefixListId": {

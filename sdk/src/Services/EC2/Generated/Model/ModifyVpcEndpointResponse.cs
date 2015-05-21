@@ -32,25 +32,6 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyVpcEndpointResponse : AmazonWebServiceResponse
     {
-        private bool? _return;
-
-        /// <summary>
-        /// Gets and sets the property Return. 
-        /// <para>
-        /// Returns <code>true</code> if the request succeeds; otherwise, it returns an error.
-        /// </para>
-        /// </summary>
-        public bool Return
-        {
-            get { return this._return.GetValueOrDefault(); }
-            set { this._return = value; }
-        }
-
-        // Check to see if Return property is set
-        internal bool IsSetReturn()
-        {
-            return this._return.HasValue; 
-        }
 
     }
 }

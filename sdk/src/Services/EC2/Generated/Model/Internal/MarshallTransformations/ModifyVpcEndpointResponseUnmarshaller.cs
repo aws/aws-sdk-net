@@ -55,12 +55,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("return", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        response.Return = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                 } 
             }
 
