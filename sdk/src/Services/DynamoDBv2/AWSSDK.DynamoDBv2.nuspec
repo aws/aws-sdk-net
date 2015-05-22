@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.DynamoDBv2</id>
     <title>AWSSDK - Amazon DynamoDB</title>
-    <version>3.0.0.2-preview</version> 
+    <version>3.0.0.3-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.</description> 
     <language>en-US</language>
