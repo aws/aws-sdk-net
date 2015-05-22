@@ -8,6 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.Auth.AccessControlPolicy;
 using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.DataModel;
 
 namespace AWSSDK_DotNet35.UnitTests
 {
@@ -26,6 +27,19 @@ namespace AWSSDK_DotNet35.UnitTests
             }
 
             Console.WriteLine(ddbeSubTypes.Count);
+        }
+
+        [TestMethod]
+        public void TestContextConfig()
+        {
+            // Test in response to GitHub issue
+            // https://github.com/aws/aws-sdk-net/issues/209
+            var config = new DynamoDBContextConfig()
+            {
+                TableNamePrefix = "Test"
+            };
+
+            Assert.AreEqual("Test", config.TableNamePrefix);
         }
 
         private static List<Type> GetSubTypes(Type baseType)
