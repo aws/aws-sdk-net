@@ -28,31 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteAlias operation.
-    /// Deletes the specified alias. To associate an alias with a different key, call <a>UpdateAlias</a>.
+    /// Empty class reserved for future use.
     /// </summary>
-    public partial class DeleteAliasRequest : AmazonKeyManagementServiceRequest
+    public partial class UpdateAliasResponse : AmazonWebServiceResponse
     {
-        private string _aliasName;
-
-        /// <summary>
-        /// Gets and sets the property AliasName. 
-        /// <para>
-        /// The alias to be deleted. The name must start with the word "alias" followed by a forward
-        /// slash (alias/). Aliases that begin with "alias/AWS" are reserved.
-        /// </para>
-        /// </summary>
-        public string AliasName
-        {
-            get { return this._aliasName; }
-            set { this._aliasName = value; }
-        }
-
-        // Check to see if AliasName property is set
-        internal bool IsSetAliasName()
-        {
-            return this._aliasName != null;
-        }
 
     }
 }

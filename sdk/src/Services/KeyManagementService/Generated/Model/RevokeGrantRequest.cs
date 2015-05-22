@@ -58,7 +58,11 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Unique identifier of the key associated with the grant.
+        /// A unique identifier for the customer master key associated with the grant. This value
+        /// can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key
+        /// ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+        /// <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul>
+        /// 
         /// </para>
         /// </summary>
         public string KeyId

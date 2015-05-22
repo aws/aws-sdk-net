@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RetireGrant Request Marshaller
+    /// UpdateAlias Request Marshaller
     /// </summary>       
-    public class RetireGrantRequestMarshaller : IMarshaller<IRequest, RetireGrantRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateAliasRequestMarshaller : IMarshaller<IRequest, UpdateAliasRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((RetireGrantRequest)input);
+            return this.Marshall((UpdateAliasRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(RetireGrantRequest publicRequest)
+        public IRequest Marshall(UpdateAliasRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KeyManagementService");
-            string target = "TrentService.RetireGrant";
+            string target = "TrentService.UpdateAlias";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,22 +67,16 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGrantId())
+                if(publicRequest.IsSetAliasName())
                 {
-                    context.Writer.WritePropertyName("GrantId");
-                    context.Writer.Write(publicRequest.GrantId);
+                    context.Writer.WritePropertyName("AliasName");
+                    context.Writer.Write(publicRequest.AliasName);
                 }
 
-                if(publicRequest.IsSetGrantToken())
+                if(publicRequest.IsSetTargetKeyId())
                 {
-                    context.Writer.WritePropertyName("GrantToken");
-                    context.Writer.Write(publicRequest.GrantToken);
-                }
-
-                if(publicRequest.IsSetKeyId())
-                {
-                    context.Writer.WritePropertyName("KeyId");
-                    context.Writer.Write(publicRequest.KeyId);
+                    context.Writer.WritePropertyName("TargetKeyId");
+                    context.Writer.Write(publicRequest.TargetKeyId);
                 }
 
         

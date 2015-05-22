@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RetireGrant operation
+    /// Response Unmarshaller for UpdateAlias operation
     /// </summary>  
-    public class RetireGrantResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateAliasResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            RetireGrantResponse response = new RetireGrantResponse();
+            UpdateAliasResponse response = new UpdateAliasResponse();
 
 
             return response;
@@ -65,10 +65,6 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             {
                 return new DependencyTimeoutException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGrantToken"))
-            {
-                return new InvalidGrantTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("KMSInternal"))
             {
                 return new KMSInternalException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -80,9 +76,9 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             return new AmazonKeyManagementServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static RetireGrantResponseUnmarshaller _instance = new RetireGrantResponseUnmarshaller();        
+        private static UpdateAliasResponseUnmarshaller _instance = new UpdateAliasResponseUnmarshaller();        
 
-        internal static RetireGrantResponseUnmarshaller GetInstance()
+        internal static UpdateAliasResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -90,7 +86,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RetireGrantResponseUnmarshaller Instance
+        public static UpdateAliasResponseUnmarshaller Instance
         {
             get
             {

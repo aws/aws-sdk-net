@@ -37,8 +37,8 @@ namespace Amazon.KeyManagementService
     /// <para>
     ///  AWS Key Management Service (KMS) is an encryption and key management web service.
     /// This guide describes the KMS actions that you can call programmatically. For general
-    /// information about KMS, see (need an address here). For the KMS developer guide, see
-    /// (need address here). 
+    /// information about KMS, see the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/overview.html">
+    /// AWS Key Management Service Developer Guide </a> 
     /// </para>
     ///  <note> AWS provides SDKs that consist of libraries and sample code for various programming
     /// languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a
@@ -48,9 +48,14 @@ namespace Amazon.KeyManagementService
     /// download and install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon
     /// Web Services</a>. </note> 
     /// <para>
-    ///  We recommend that you use the AWS SDKs to make programmatic API calls to KMS. However,
-    /// you can also use the KMS Query API to make to make direct calls to the KMS web service.
-    /// 
+    ///  We recommend that you use the AWS SDKs to make programmatic API calls to KMS. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Clients must support TLS (Transport Layer Security) 1.0. We recommend TLS 1.2. Clients
+    /// must also support cipher suites with Perfect Forward Secrecy (PFS) such as Ephemeral
+    /// Diffie-Hellman (DHE) or Elliptic Curve Ephemeral Diffie-Hellman (ECDHE). Most modern
+    /// systems such as Java 7 and later support these modes. 
     /// </para>
     ///  
     /// <para>
@@ -96,7 +101,18 @@ namespace Amazon.KeyManagementService
     /// Security Token Service</a>. This guide describes how to create and use temporary security
     /// credentials. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
     /// AWS API Requests</a>. This set of topics walks you through the process of signing
-    /// a request using an access key ID and a secret access key. </li> </ul>
+    /// a request using an access key ID and a secret access key. </li> </ul> 
+    /// <para>
+    /// <b>Commonly Used APIs</b>
+    /// </para>
+    ///  
+    /// <para>
+    ///  Of the APIs discussed in this guide, the following will prove the most useful for
+    /// most applications. You will likely perform actions other than these, such as creating
+    /// keys and assigning policies, by using the console. <ul> <li><a>Encrypt</a></li> <li><a>Decrypt</a></li>
+    /// <li><a>GenerateDataKey</a></li> <li><a>GenerateDataKeyWithoutPlaintext</a></li> </ul>
+    /// 
+    /// </para>
     /// </summary>
     public partial class AmazonKeyManagementServiceClient : AmazonServiceClient, IAmazonKeyManagementService
     {
@@ -294,10 +310,19 @@ namespace Amazon.KeyManagementService
         /// alias and a key. An alias name can contain only alphanumeric characters, forward slashes
         /// (/), underscores (_), and dashes (-). An alias must start with the word "alias" followed
         /// by a forward slash (alias/). An alias that begins with "aws" after the forward slash
-        /// (alias/aws...) is reserved by Amazon Web Services (AWS).
+        /// (alias/aws...) is reserved by Amazon Web Services (AWS). 
+        /// 
+        ///  
+        /// <para>
+        /// To associate an alias with a different key, call <a>UpdateAlias</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that you cannot create or update an alias that represents a key in another account.
+        /// </para>
         /// </summary>
-        /// <param name="aliasName">String that contains the display name. Aliases that begin with AWS are reserved.</param>
-        /// <param name="targetKeyId">An identifier of the key for which you are creating the alias. This value cannot be another alias.</param>
+        /// <param name="aliasName">String that contains the display name. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved. </param>
+        /// <param name="targetKeyId">An identifier of the key for which you are creating the alias. This value cannot be another alias but can be a globally unique identifier or a fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
         /// 
         /// <returns>The response from the CreateAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.AlreadyExistsException">
@@ -310,8 +335,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified alias name is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded.
@@ -333,7 +358,16 @@ namespace Amazon.KeyManagementService
         /// alias and a key. An alias name can contain only alphanumeric characters, forward slashes
         /// (/), underscores (_), and dashes (-). An alias must start with the word "alias" followed
         /// by a forward slash (alias/). An alias that begins with "aws" after the forward slash
-        /// (alias/aws...) is reserved by Amazon Web Services (AWS).
+        /// (alias/aws...) is reserved by Amazon Web Services (AWS). 
+        /// 
+        ///  
+        /// <para>
+        /// To associate an alias with a different key, call <a>UpdateAlias</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that you cannot create or update an alias that represents a key in another account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAlias service method.</param>
         /// 
@@ -348,8 +382,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified alias name is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded.
@@ -403,13 +437,11 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Adds a grant to a key to specify who can access the key and under what conditions.
-        /// Grants are alternate permission mechanisms to key policies. If absent, access to the
-        /// key is evaluated based on IAM policies attached to the user. By default, grants do
-        /// not expire. Grants can be listed, retired, or revoked as indicated by the following
-        /// APIs. Typically, when you are finished using a grant, you retire it. When you want
-        /// to end a grant immediately, revoke it. For more information about grants, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>.
-        /// <ol> <li><a>ListGrants</a></li> <li><a>RetireGrant</a></li> <li><a>RevokeGrant</a></li>
-        /// </ol>
+        /// Grants are alternate permission mechanisms to key policies. For more information about
+        /// grants, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
+        /// in the developer guide. If a grant is absent, access to the key is evaluated based
+        /// on IAM policies attached to the user. <ol> <li><a>ListGrants</a></li> <li><a>RetireGrant</a></li>
+        /// <li><a>RevokeGrant</a></li> </ol>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGrant service method.</param>
         /// 
@@ -427,8 +459,8 @@ namespace Amazon.KeyManagementService
         /// A grant token provided as part of the request is invalid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded.
@@ -496,8 +528,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded.
@@ -555,7 +587,20 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Decrypts ciphertext. Ciphertext is plaintext that has been previously encrypted by
-        /// using the <a>Encrypt</a> function.
+        /// using any of the following functions: <ul> <li><a>GenerateDataKey</a></li> <li><a>GenerateDataKeyWithoutPlaintext</a></li>
+        /// <li><a>Encrypt</a></li> </ul> 
+        /// 
+        ///  
+        /// <para>
+        /// Note that if a caller has been granted access permissions to all keys (through, for
+        /// example, IAM user policies that grant <code>Decrypt</code> permission on all resources),
+        /// then ciphertext encrypted by using keys in other accounts where the key grants access
+        /// to the caller can be decrypted. To remedy this, we recommend that you do not grant
+        /// <code>Decrypt</code> access in an IAM user policy. Instead grant <code>Decrypt</code>
+        /// access only in key policies. If you must grant <code>Decrypt</code> access in an IAM
+        /// user policy, you should scope the resource to specific keys or to specific trusted
+        /// accounts. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Decrypt service method.</param>
         /// 
@@ -578,8 +623,8 @@ namespace Amazon.KeyManagementService
         /// available.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -629,17 +674,17 @@ namespace Amazon.KeyManagementService
         #region  DeleteAlias
 
         /// <summary>
-        /// Deletes the specified alias.
+        /// Deletes the specified alias. To associate an alias with a different key, call <a>UpdateAlias</a>.
         /// </summary>
-        /// <param name="aliasName">The alias to be deleted.</param>
+        /// <param name="aliasName">The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</param>
         /// 
         /// <returns>The response from the DeleteAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -652,7 +697,7 @@ namespace Amazon.KeyManagementService
         }
 
         /// <summary>
-        /// Deletes the specified alias.
+        /// Deletes the specified alias. To associate an alias with a different key, call <a>UpdateAlias</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlias service method.</param>
         /// 
@@ -661,8 +706,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -714,7 +759,7 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Provides detailed information about the specified customer master key.
         /// </summary>
-        /// <param name="keyId">Unique identifier of the customer master key to be described. This can be an ARN, an alias, or a globally unique identifier. </param>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> <li>Alias Name Example - alias/MyAliasName</li> </ul> </param>
         /// 
         /// <returns>The response from the DescribeKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -724,8 +769,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -750,8 +795,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -803,7 +848,7 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Marks a key as disabled, thereby preventing its use.
         /// </summary>
-        /// <param name="keyId">Unique identifier of the customer master key to be disabled. This can be an ARN, an alias, or a globally unique identifier. </param>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
         /// 
         /// <returns>The response from the DisableKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -813,8 +858,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -839,8 +884,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -892,18 +937,21 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Disables rotation of the specified key.
         /// </summary>
-        /// <param name="keyId">Unique identifier of the customer master key for which rotation is to be disabled. This can be an ARN, an alias, or a globally unique identifier. </param>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
         /// 
         /// <returns>The response from the DisableKeyRotation service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
+        /// A request was rejected because the specified key was marked as disabled.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -924,12 +972,15 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
+        /// A request was rejected because the specified key was marked as disabled.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -982,7 +1033,7 @@ namespace Amazon.KeyManagementService
         /// Marks a key as enabled, thereby permitting its use. You can have up to 25 enabled
         /// keys at one time.
         /// </summary>
-        /// <param name="keyId">Unique identifier of the customer master key to be enabled. This can be an ARN, an alias, or a globally unique identifier. </param>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
         /// 
         /// <returns>The response from the EnableKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -992,8 +1043,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded.
@@ -1022,8 +1073,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded.
@@ -1078,18 +1129,21 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Enables rotation of the specified customer master key.
         /// </summary>
-        /// <param name="keyId">Unique identifier of the customer master key for which rotation is to be enabled. This can be an ARN, an alias, or a globally unique identifier. </param>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
         /// 
         /// <returns>The response from the EnableKeyRotation service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
+        /// A request was rejected because the specified key was marked as disabled.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1110,12 +1164,15 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
+        /// A request was rejected because the specified key was marked as disabled.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1165,7 +1222,29 @@ namespace Amazon.KeyManagementService
         #region  Encrypt
 
         /// <summary>
-        /// Encrypts plaintext into ciphertext by using a customer master key.
+        /// Encrypts plaintext into ciphertext by using a customer master key. The <code>Encrypt</code>
+        /// function has two primary use cases: <ul> <li>You can encrypt up to 4 KB of arbitrary
+        /// data such as an RSA key, a database password, or other sensitive customer information.</li>
+        /// <li>If you are moving encrypted data from one region to another, you can use this
+        /// API to encrypt in the new region the plaintext data key that was used to encrypt the
+        /// data in the original region. This provides you with an encrypted copy of the data
+        /// key that can be decrypted in the new region and used there to decrypt the encrypted
+        /// data. </li> </ul> 
+        /// 
+        ///  
+        /// <para>
+        /// Unless you are moving encrypted data from one region to another, you don't use this
+        /// function to encrypt a generated data key within a region. You retrieve data keys already
+        /// encrypted by calling the <a>GenerateDataKey</a> or <a>GenerateDataKeyWithoutPlaintext</a>
+        /// function. Data keys don't need to be encrypted again by calling <code>Encrypt</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to encrypt data locally in your application, you can use the <code>GenerateDataKey</code>
+        /// function to return a plaintext data encryption key and a copy of the key encrypted
+        /// under the customer master key (CMK) of your choosing. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Encrypt service method.</param>
         /// 
@@ -1188,8 +1267,8 @@ namespace Amazon.KeyManagementService
         /// available.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1239,8 +1318,42 @@ namespace Amazon.KeyManagementService
         #region  GenerateDataKey
 
         /// <summary>
-        /// Generates a secure data key. Data keys are used to encrypt and decrypt data. They
-        /// are wrapped by customer master keys.
+        /// Generates a data key that you can use in your application to locally encrypt data.
+        /// This call returns a plaintext version of the key in the <code>Plaintext</code> field
+        /// of the response object and an encrypted copy of the key in the <code>CiphertextBlob</code>
+        /// field. The key is encrypted by using the master key specified by the <code>KeyId</code>
+        /// field. To decrypt the encrypted key, pass it to the <code>Decrypt</code> API. 
+        /// 
+        ///  
+        /// <para>
+        /// We recommend that you use the following pattern to locally encrypt data: call the
+        /// <code>GenerateDataKey</code> API, use the key returned in the <code>Plaintext</code>
+        /// response field to locally encrypt data, and then erase the plaintext data key from
+        /// memory. Store the encrypted data key (contained in the <code>CiphertextBlob</code>
+        /// field) alongside of the locally encrypted data. 
+        /// </para>
+        ///  <note>You should not call the <code>Encrypt</code> function to re-encrypt your data
+        /// keys within a region. <code>GenerateDataKey</code> always returns the data key encrypted
+        /// and tied to the customer master key that will be used to decrypt it. There is no need
+        /// to decrypt it twice. </note> 
+        /// <para>
+        /// If you decide to use the optional <code>EncryptionContext</code> parameter, you must
+        /// also store the context in full or at least store enough information along with the
+        /// encrypted data to be able to reconstruct the context when submitting the ciphertext
+        /// to the <code>Decrypt</code> API. It is a good practice to choose a context that you
+        /// can reconstruct on the fly to better secure the ciphertext. For more information about
+        /// how this parameter is used, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+        /// Context</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To decrypt data, pass the encrypted data key to the <code>Decrypt</code> API. <code>Decrypt</code>
+        /// uses the associated master key to decrypt the encrypted data key and returns it as
+        /// plaintext. Use the plaintext data key to locally decrypt your data and then erase
+        /// the key from memory. You must specify the encryption context, if any, that you specified
+        /// when you generated the key. The encryption context is logged by CloudTrail, and you
+        /// can use this log to help track the use of particular data. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKey service method.</param>
         /// 
@@ -1263,8 +1376,8 @@ namespace Amazon.KeyManagementService
         /// available.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1314,8 +1427,10 @@ namespace Amazon.KeyManagementService
         #region  GenerateDataKeyWithoutPlaintext
 
         /// <summary>
-        /// Returns a key wrapped by a customer master key without the plaintext copy of that
-        /// key. To retrieve the plaintext, see <a>GenerateDataKey</a>.
+        /// Returns a data key encrypted by a customer master key without the plaintext copy of
+        /// that key. Otherwise, this API functions exactly like <a>GenerateDataKey</a>. You can
+        /// use this API to, for example, satisfy an audit requirement that an encrypted key be
+        /// made available without exposing the plaintext copy of that key.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKeyWithoutPlaintext service method.</param>
         /// 
@@ -1338,8 +1453,8 @@ namespace Amazon.KeyManagementService
         /// available.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1398,8 +1513,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         public GenerateRandomResponse GenerateRandom(int numberOfBytes)
         {
@@ -1418,8 +1533,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         public GenerateRandomResponse GenerateRandom(GenerateRandomRequest request)
         {
@@ -1468,7 +1583,7 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Retrieves a policy attached to the specified key.
         /// </summary>
-        /// <param name="keyId">Unique identifier of the key. This can be an ARN, an alias, or a globally unique identifier.</param>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
         /// <param name="policyName">String that contains the name of the policy. Currently, this must be "default". Policy names can be discovered by calling <a>ListKeyPolicies</a>. </param>
         /// 
         /// <returns>The response from the GetKeyPolicy service method, as returned by KeyManagementService.</returns>
@@ -1479,8 +1594,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1506,8 +1621,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1560,7 +1675,7 @@ namespace Amazon.KeyManagementService
         /// Retrieves a Boolean value that indicates whether key rotation is enabled for the specified
         /// key.
         /// </summary>
-        /// <param name="keyId">Unique identifier of the key. This can be an ARN, an alias, or a globally unique identifier.</param>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
         /// 
         /// <returns>The response from the GetKeyRotationStatus service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -1570,8 +1685,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1597,8 +1712,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1656,9 +1771,13 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
+        /// The request was rejected because the marker that specifies where pagination should
+        /// next begin is not valid.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         public ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
@@ -1713,13 +1832,16 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
         /// The request was rejected because the marker that specifies where pagination should
         /// next begin is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         public ListGrantsResponse ListGrants(ListGrantsRequest request)
         {
@@ -1778,8 +1900,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1838,8 +1960,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         public ListKeysResponse ListKeys(ListKeysRequest request)
         {
@@ -1888,7 +2010,7 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Attaches a policy to the specified key.
         /// </summary>
-        /// <param name="keyId">Unique identifier of the key. This can be an ARN, an alias, or a globally unique identifier.</param>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
         /// <param name="policy">The policy, in JSON format, to be attached to the key.</param>
         /// <param name="policyName">Name of the policy to be attached. Currently, the only supported name is "default".</param>
         /// 
@@ -1903,8 +2025,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded.
@@ -1944,8 +2066,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded.
@@ -2008,6 +2130,18 @@ namespace Amazon.KeyManagementService
         /// Encrypts data on the server side with a new customer master key without exposing the
         /// plaintext of the data on the client side. The data is first decrypted and then encrypted.
         /// This operation can also be used to change the encryption context of a ciphertext.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Unlike other actions, <code>ReEncrypt</code> is authorized twice - once as <code>ReEncryptFrom</code>
+        /// on the source key and once as <code>ReEncryptTo</code> on the destination key. We
+        /// therefore recommend that you include the <code>"action":"kms:ReEncrypt*"</code> statement
+        /// in your key policies to permit re-encryption from or to the key. The statement is
+        /// included automatically when you authorize use of the key through the console but must
+        /// be included manually when you set a policy by using the <a>PutKeyPolicy</a> function.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReEncrypt service method.</param>
         /// 
@@ -2034,8 +2168,8 @@ namespace Amazon.KeyManagementService
         /// available.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2087,6 +2221,13 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Retires a grant. You can retire a grant when you're done using it to clean up. You
         /// should revoke a grant when you intend to actively deny operations that depend on it.
+        /// The following are permitted to call this API: <ul> <li>The account that created the
+        /// grant</li> <li>The <code>RetiringPrincipal</code>, if present</li> <li>The <code>GranteePrincipal</code>,
+        /// if <code>RetireGrant</code> is a grantee operation</li> </ul> The grant to retire
+        /// must be identified by its grant token or by a combination of the key ARN and the grant
+        /// ID. A grant token is a unique variable-length base64-encoded string. A grant ID is
+        /// a 64 character unique identifier of a grant. Both are returned by the <code>CreateGrant</code>
+        /// function.
         /// </summary>
         /// <param name="grantToken">Token that identifies the grant to be retired.</param>
         /// 
@@ -2098,8 +2239,11 @@ namespace Amazon.KeyManagementService
         /// A grant token provided as part of the request is invalid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         public RetireGrantResponse RetireGrant(string grantToken)
         {
@@ -2111,6 +2255,13 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Retires a grant. You can retire a grant when you're done using it to clean up. You
         /// should revoke a grant when you intend to actively deny operations that depend on it.
+        /// The following are permitted to call this API: <ul> <li>The account that created the
+        /// grant</li> <li>The <code>RetiringPrincipal</code>, if present</li> <li>The <code>GranteePrincipal</code>,
+        /// if <code>RetireGrant</code> is a grantee operation</li> </ul> The grant to retire
+        /// must be identified by its grant token or by a combination of the key ARN and the grant
+        /// ID. A grant token is a unique variable-length base64-encoded string. A grant ID is
+        /// a 64 character unique identifier of a grant. Both are returned by the <code>CreateGrant</code>
+        /// function.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetireGrant service method.</param>
         /// 
@@ -2122,8 +2273,11 @@ namespace Amazon.KeyManagementService
         /// A grant token provided as part of the request is invalid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         public RetireGrantResponse RetireGrant(RetireGrantRequest request)
         {
@@ -2174,15 +2328,18 @@ namespace Amazon.KeyManagementService
         /// it.
         /// </summary>
         /// <param name="grantId">Identifier of the grant to be revoked.</param>
-        /// <param name="keyId">Unique identifier of the key associated with the grant.</param>
+        /// <param name="keyId">A unique identifier for the customer master key associated with the grant. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
         /// 
         /// <returns>The response from the RevokeGrant service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2205,9 +2362,12 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2254,12 +2414,131 @@ namespace Amazon.KeyManagementService
 
         #endregion
         
+        #region  UpdateAlias
+
+        /// <summary>
+        /// Updates an alias to associate it with a different key.
+        /// 
+        ///  
+        /// <para>
+        /// An alias name can contain only alphanumeric characters, forward slashes (/), underscores
+        /// (_), and dashes (-). An alias must start with the word "alias" followed by a forward
+        /// slash (alias/). An alias that begins with "aws" after the forward slash (alias/aws...)
+        /// is reserved by Amazon Web Services (AWS). 
+        /// </para>
+        ///  
+        /// <para>
+        /// An alias is not a property of a key. Therefore, an alias can be associated with and
+        /// disassociated from an existing key without changing the properties of the key. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that you cannot create or update an alias that represents a key in another account.
+        /// </para>
+        /// </summary>
+        /// <param name="aliasName">String that contains the name of the alias to be modifed. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</param>
+        /// <param name="targetKeyId">Unique identifier of the customer master key to be associated with the alias. This value can be a globally unique identifier or the fully specified ARN of a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
+        /// 
+        /// <returns>The response from the UpdateAlias service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public UpdateAliasResponse UpdateAlias(string aliasName, string targetKeyId)
+        {
+            var request = new UpdateAliasRequest();
+            request.AliasName = aliasName;
+            request.TargetKeyId = targetKeyId;
+            return UpdateAlias(request);
+        }
+
+        /// <summary>
+        /// Updates an alias to associate it with a different key.
+        /// 
+        ///  
+        /// <para>
+        /// An alias name can contain only alphanumeric characters, forward slashes (/), underscores
+        /// (_), and dashes (-). An alias must start with the word "alias" followed by a forward
+        /// slash (alias/). An alias that begins with "aws" after the forward slash (alias/aws...)
+        /// is reserved by Amazon Web Services (AWS). 
+        /// </para>
+        ///  
+        /// <para>
+        /// An alias is not a property of a key. Therefore, an alias can be associated with and
+        /// disassociated from an existing key without changing the properties of the key. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that you cannot create or update an alias that represents a key in another account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAlias service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAlias service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
+        {
+            var marshaller = new UpdateAliasRequestMarshaller();
+            var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAliasRequest,UpdateAliasResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAlias operation on AmazonKeyManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAlias
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateAlias(UpdateAliasRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateAliasRequestMarshaller();
+            var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateAliasRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAlias.</param>
+        /// 
+        /// <returns>Returns a  UpdateAliasResult from KeyManagementService.</returns>
+        public  UpdateAliasResponse EndUpdateAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAliasResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateKeyDescription
 
         /// <summary>
         /// Updates the description of a key.
         /// </summary>
-        /// <param name="keyId">Unique value that identifies the key for which the description is to be changed.</param>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
         /// <param name="description">New description for the key.</param>
         /// 
         /// <returns>The response from the UpdateKeyDescription service method, as returned by KeyManagementService.</returns>
@@ -2270,8 +2549,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2297,8 +2576,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// <b>The request was rejected because an internal exception occurred. This error can
-        /// be retried.</b>
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
