@@ -36,52 +36,48 @@ namespace Amazon.Kinesis.Model
     /// Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard
     /// iterator specifies the position in the shard from which you want to start reading
     /// data records sequentially. If there are no records available in the portion of the
-    /// shard that the iterator points to, <code>GetRecords</code> returns an empty list.
-    /// Note that it might take multiple calls to get to a portion of the shard that contains
-    /// records.
+    /// shard that the iterator points to, <a>GetRecords</a> returns an empty list. Note that
+    /// it might take multiple calls to get to a portion of the shard that contains records.
     /// </para>
     ///  
     /// <para>
     /// You can scale by provisioning multiple shards. Your application should have one thread
     /// per shard, each reading continuously from its stream. To read from a stream continually,
-    /// call <code>GetRecords</code> in a loop. Use <a>GetShardIterator</a> to get the shard
-    /// iterator to specify in the first <code>GetRecords</code> call. <code>GetRecords</code>
-    /// returns a new shard iterator in <code>NextShardIterator</code>. Specify the shard
-    /// iterator returned in <code>NextShardIterator</code> in subsequent calls to <code>GetRecords</code>.
-    /// Note that if the shard has been closed, the shard iterator can't return more data
-    /// and <code>GetRecords</code> returns <code>null</code> in <code>NextShardIterator</code>.
-    /// You can terminate the loop when the shard is closed, or when the shard iterator reaches
-    /// the record with the sequence number or other attribute that marks it as the last record
-    /// to process.
+    /// call <a>GetRecords</a> in a loop. Use <a>GetShardIterator</a> to get the shard iterator
+    /// to specify in the first <a>GetRecords</a> call. <a>GetRecords</a> returns a new shard
+    /// iterator in <code>NextShardIterator</code>. Specify the shard iterator returned in
+    /// <code>NextShardIterator</code> in subsequent calls to <a>GetRecords</a>. Note that
+    /// if the shard has been closed, the shard iterator can't return more data and <a>GetRecords</a>
+    /// returns <code>null</code> in <code>NextShardIterator</code>. You can terminate the
+    /// loop when the shard is closed, or when the shard iterator reaches the record with
+    /// the sequence number or other attribute that marks it as the last record to process.
     /// </para>
     ///  
     /// <para>
     /// Each data record can be up to 50 KB in size, and each shard can read up to 2 MB per
     /// second. You can ensure that your calls don't exceed the maximum supported size or
     /// throughput by using the <code>Limit</code> parameter to specify the maximum number
-    /// of records that <code>GetRecords</code> can return. Consider your average record size
-    /// when determining this limit. For example, if your average record size is 40 KB, you
-    /// can limit the data returned to about 1 MB per call by specifying 25 as the limit.
+    /// of records that <a>GetRecords</a> can return. Consider your average record size when
+    /// determining this limit. For example, if your average record size is 40 KB, you can
+    /// limit the data returned to about 1 MB per call by specifying 25 as the limit.
     /// </para>
     ///  
     /// <para>
-    /// The size of the data returned by <code>GetRecords</code> will vary depending on the
-    /// utilization of the shard. The maximum size of data that <code>GetRecords</code> can
-    /// return is 10 MB. If a call returns 10 MB of data, subsequent calls made within the
-    /// next 5 seconds throw <code>ProvisionedThroughputExceededException</code>. If there
-    /// is insufficient provisioned throughput on the shard, subsequent calls made within
-    /// the next 1 second throw <code>ProvisionedThroughputExceededException</code>. Note
-    /// that <code>GetRecords</code> won't return any data when it throws an exception. For
-    /// this reason, we recommend that you wait one second between calls to <code>GetRecords</code>;
-    /// however, it's possible that the application will get exceptions for longer than 1
-    /// second.
+    /// The size of the data returned by <a>GetRecords</a> will vary depending on the utilization
+    /// of the shard. The maximum size of data that <a>GetRecords</a> can return is 10 MB.
+    /// If a call returns this amount of data, subsequent calls made within the next 5 seconds
+    /// throw <code>ProvisionedThroughputExceededException</code>. If there is insufficient
+    /// provisioned throughput on the shard, subsequent calls made within the next 1 second
+    /// throw <code>ProvisionedThroughputExceededException</code>. Note that <a>GetRecords</a>
+    /// won't return any data when it throws an exception. For this reason, we recommend that
+    /// you wait one second between calls to <a>GetRecords</a>; however, it's possible that
+    /// the application will get exceptions for longer than 1 second.
     /// </para>
     ///  
     /// <para>
-    /// To detect whether the application is falling behind in processing, add a timestamp
-    /// to your records and note how long it takes to process them. You can also monitor how
-    /// much data is in a stream using the CloudWatch metrics for write operations (<code>PutRecord</code>
-    /// and <code>PutRecords</code>). For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring_with_cloudwatch.html">Monitoring
+    /// To detect whether the application is falling behind in processing, you can use the
+    /// <code>MillisBehindLatest</code> response attribute. You can also monitor the amount
+    /// of data in a stream using the CloudWatch metrics. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring_with_cloudwatch.html">Monitoring
     /// Amazon Kinesis with Amazon CloudWatch</a> in the <i>Amazon Kinesis Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -94,7 +90,7 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of records to return. Specify a value of up to 10,000. If you specify
-        /// a value that is greater than 10,000, <code>GetRecords</code> throws <code>InvalidArgumentException</code>.
+        /// a value that is greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.
         /// </para>
         /// </summary>
         public int Limit
