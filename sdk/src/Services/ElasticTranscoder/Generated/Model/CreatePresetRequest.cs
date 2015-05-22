@@ -76,9 +76,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Container. 
         /// <para>
-        /// The container type for the output file. Valid values include <code>flv</code>, <code>fmp4</code>,
-        /// <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>ogg</code>,
-        /// <code>ts</code>, and <code>webm</code>.
+        /// The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>,
+        /// <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>,
+        /// <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.
         /// </para>
         /// </summary>
         public string Container

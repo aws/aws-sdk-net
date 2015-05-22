@@ -45,10 +45,28 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AudioCodecOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBitDepth())
+            {
+                context.Writer.WritePropertyName("BitDepth");
+                context.Writer.Write(requestObject.BitDepth);
+            }
+
+            if(requestObject.IsSetBitOrder())
+            {
+                context.Writer.WritePropertyName("BitOrder");
+                context.Writer.Write(requestObject.BitOrder);
+            }
+
             if(requestObject.IsSetProfile())
             {
                 context.Writer.WritePropertyName("Profile");
                 context.Writer.Write(requestObject.Profile);
+            }
+
+            if(requestObject.IsSetSigned())
+            {
+                context.Writer.WritePropertyName("Signed");
+                context.Writer.Write(requestObject.Signed);
             }
 
         }

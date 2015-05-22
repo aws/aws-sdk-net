@@ -45,6 +45,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AudioParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAudioPackingMode())
+            {
+                context.Writer.WritePropertyName("AudioPackingMode");
+                context.Writer.Write(requestObject.AudioPackingMode);
+            }
+
             if(requestObject.IsSetBitRate())
             {
                 context.Writer.WritePropertyName("BitRate");
