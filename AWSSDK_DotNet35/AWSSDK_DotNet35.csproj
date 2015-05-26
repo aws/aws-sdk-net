@@ -387,6 +387,18 @@
     <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.ElasticFileSystem\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.ElasticFileSystem\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.ElasticFileSystem\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.ElasticFileSystem\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.ElasticLoadBalancing\*.cs">
       <SubType>Code</SubType>
     </Compile>

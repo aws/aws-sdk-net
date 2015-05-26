@@ -207,6 +207,8 @@
     <Compile Include="Amazon.ElastiCache\IAmazonElastiCache.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\AmazonElasticBeanstalkClient.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\IAmazonElasticBeanstalk.cs" />
+    <Compile Include="Amazon.ElasticFileSystem\AmazonElasticFileSystemClient.cs" />
+    <Compile Include="Amazon.ElasticFileSystem\IAmazonElasticFileSystem.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\AmazonElasticLoadBalancingClient.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\IAmazonElasticLoadBalancing.cs" />
     <Compile Include="Amazon.ElasticMapReduce\AmazonElasticMapReduceClient.cs" />
@@ -618,6 +620,20 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.ElasticFileSystem\*" Exclude="..\AWSSDK_DotNet35\Amazon.ElasticFileSystem\IAmazonElasticFileSystem.cs;..\AWSSDK_DotNet35\Amazon.ElasticFileSystem\AmazonElasticFileSystemClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.ElasticFileSystem\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.ElasticFileSystem\Internal\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.ElasticFileSystem\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>

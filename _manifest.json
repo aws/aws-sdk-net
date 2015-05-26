@@ -233,6 +233,16 @@
         {
             "active": true,
 
+            "model": "efs",
+            "base-name": "ElasticFileSystem",
+            "region-lookup-name": "elasticfilesystem",
+            "authentication-service-name": "elasticfilesystem",
+            "service-url": "https://elasticfilesystem.us-west-2.amazonaws.com",
+            "mobile-platforms": [ "WinRT" ]
+        },
+        {
+            "active": true,
+
             "model": "elasticache",
             "base-name": "ElastiCache",
             "region-lookup-name": "elasticache",
