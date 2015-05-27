@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}"
 EndProject
@@ -18,7 +18,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Core.WinRT", "src\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Core.WP8", "src\Core\AWSSDK.Core.WP8.csproj", "{654E578E-9927-4A28-A51E-2679D2503F74}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AutoScaling", "AutoScaling", "{C1DCC264-84FC-4EE4-B658-7503CC5E9385}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AutoScaling", "AutoScaling", "{AD8563FB-857D-472F-B967-C47B1EAEE517}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.AutoScaling.Net35", "src\Services\AutoScaling\AWSSDK.AutoScaling.Net35.csproj", "{88F2CD8C-2C47-4E66-A4D4-93B2CF5BDCBC}"
 EndProject
@@ -30,7 +30,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.AutoScaling.WinRT", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.AutoScaling.WP8", "src\Services\AutoScaling\AWSSDK.AutoScaling.WP8.csproj", "{E574C564-0387-4275-A3F8-C27B2598EE5A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AWSSupport", "AWSSupport", "{C2EE00EA-DD84-47D5-B330-C52C4965BD30}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AWSSupport", "AWSSupport", "{C3186E42-13F6-4A26-97CC-E5EC5634D545}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.AWSSupport.Net35", "src\Services\AWSSupport\AWSSDK.AWSSupport.Net35.csproj", "{663AA578-CBBF-4E69-9753-577480DEED1D}"
 EndProject
@@ -42,7 +42,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.AWSSupport.WinRT", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.AWSSupport.WP8", "src\Services\AWSSupport\AWSSDK.AWSSupport.WP8.csproj", "{B6A27E5E-D24F-4B28-B9EA-EEAC3E5ACD67}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudFormation", "CloudFormation", "{55811C94-820B-4511-A482-FD04BFD604B5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudFormation", "CloudFormation", "{AC44D1F7-5C30-4B09-9274-D6269A9DF078}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudFormation.Net35", "src\Services\CloudFormation\AWSSDK.CloudFormation.Net35.csproj", "{8311AA7C-5553-45E2-AA0D-11981F8F7DBE}"
 EndProject
@@ -54,7 +54,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudFormation.WinRT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudFormation.WP8", "src\Services\CloudFormation\AWSSDK.CloudFormation.WP8.csproj", "{7A93A4AF-18EB-400F-84F9-98CB72FE777E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudFront", "CloudFront", "{B38F5A46-7446-4040-8973-34C7D2BFE893}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudFront", "CloudFront", "{71738154-ADA5-4CE9-8AD2-0430D739B8BD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudFront.Net35", "src\Services\CloudFront\AWSSDK.CloudFront.Net35.csproj", "{7BA4CAEB-2DBB-41AC-8D58-00E6290E2503}"
 EndProject
@@ -66,7 +66,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudFront.WinRT", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudFront.WP8", "src\Services\CloudFront\AWSSDK.CloudFront.WP8.csproj", "{7399D12F-02EA-4C0A-8D04-6F5DC202FE3A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudHSM", "CloudHSM", "{47E6B236-09AE-4E21-915E-CC998EC2968E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudHSM", "CloudHSM", "{DF7BA057-F70B-4D1C-B138-9E0218CB8F7C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudHSM.Net35", "src\Services\CloudHSM\AWSSDK.CloudHSM.Net35.csproj", "{E9DD7A57-C490-40BD-93B8-10EC8B1BEFEE}"
 EndProject
@@ -78,7 +78,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudHSM.WinRT", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudHSM.WP8", "src\Services\CloudHSM\AWSSDK.CloudHSM.WP8.csproj", "{0605B821-92E9-4CB4-AC5F-97A4D2242330}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudSearch", "CloudSearch", "{2766E70C-DB3B-40AE-82CF-AB21BC76994E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudSearch", "CloudSearch", "{D4DF648B-B712-4BCD-AED9-6FF9D1494738}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudSearch.Net35", "src\Services\CloudSearch\AWSSDK.CloudSearch.Net35.csproj", "{A23735EA-0E17-4A1B-9E73-CA63735D1958}"
 EndProject
@@ -90,7 +90,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudSearch.WinRT", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudSearch.WP8", "src\Services\CloudSearch\AWSSDK.CloudSearch.WP8.csproj", "{8EC54B5D-2D81-491F-AD3F-EA433DAC9F0E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudSearchDomain", "CloudSearchDomain", "{03AA7714-41D0-4A30-9A7D-A2F656AAA3DD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudSearchDomain", "CloudSearchDomain", "{999BBF09-560E-4832-9C79-9489AAE2586F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudSearchDomain.Net35", "src\Services\CloudSearchDomain\AWSSDK.CloudSearchDomain.Net35.csproj", "{F3B1F33E-0466-49DE-B171-625A0288665B}"
 EndProject
@@ -102,7 +102,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudSearchDomain.Wi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudSearchDomain.WP8", "src\Services\CloudSearchDomain\AWSSDK.CloudSearchDomain.WP8.csproj", "{C0BAFE2B-DB6F-4862-8F99-DE79A5C60229}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudTrail", "CloudTrail", "{8788B05C-0F9F-45D3-B9C0-E8251EA63CF3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudSearch_2011_02_01", "CloudSearch_2011_02_01", "{32B5C665-334B-4C3D-B1DA-637D614B5429}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudTrail", "CloudTrail", "{A3E9E94E-ED22-4AB4-9C1C-9627FCB41B90}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudTrail.Net35", "src\Services\CloudTrail\AWSSDK.CloudTrail.Net35.csproj", "{D0D5AD3D-9737-47B4-8E0E-D7D4AADBDFCF}"
 EndProject
@@ -114,7 +116,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudTrail.WinRT", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudTrail.WP8", "src\Services\CloudTrail\AWSSDK.CloudTrail.WP8.csproj", "{C084E9D8-1E39-49DE-B336-57B87202F30D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudWatch", "CloudWatch", "{E5F5D7C0-AE10-45F7-BF0F-76F39B803BBF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudWatch", "CloudWatch", "{884D5C6F-6657-41E3-A44B-C744BD52B0A7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudWatch.Net35", "src\Services\CloudWatch\AWSSDK.CloudWatch.Net35.csproj", "{1A2903F6-896B-4397-8151-B0CC8DC3BCED}"
 EndProject
@@ -126,7 +128,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudWatch.WinRT", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudWatch.WP8", "src\Services\CloudWatch\AWSSDK.CloudWatch.WP8.csproj", "{5566035D-429E-43F7-B423-0937812AD403}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudWatchLogs", "CloudWatchLogs", "{89F815AF-7B69-40A0-BDE1-BDDA315A8BAE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudWatchLogs", "CloudWatchLogs", "{24B1AE81-0E69-4CC6-81D8-137FC55D97DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudWatchLogs.Net35", "src\Services\CloudWatchLogs\AWSSDK.CloudWatchLogs.Net35.csproj", "{6B43421E-9EA1-4811-9897-E7C130CA175D}"
 EndProject
@@ -138,7 +140,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudWatchLogs.WinRT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudWatchLogs.WP8", "src\Services\CloudWatchLogs\AWSSDK.CloudWatchLogs.WP8.csproj", "{D0CB84D5-A48D-419B-9119-2EC399586A11}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeDeploy", "CodeDeploy", "{B1A43BC8-8BD6-48C6-83ED-D32CB4B1B567}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeDeploy", "CodeDeploy", "{980223A4-6CE1-41B8-AB42-66E9393D6760}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CodeDeploy.Net35", "src\Services\CodeDeploy\AWSSDK.CodeDeploy.Net35.csproj", "{1CE0DD3D-78BF-4922-B544-8B26AD4CA860}"
 EndProject
@@ -150,7 +152,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CodeDeploy.WinRT", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CodeDeploy.WP8", "src\Services\CodeDeploy\AWSSDK.CodeDeploy.WP8.csproj", "{A2EF3FD9-3220-4F0E-82AD-B523FDEA1888}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CognitoIdentity", "CognitoIdentity", "{C81BE6D4-3C70-4A54-B05E-E0355AC3E646}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CognitoIdentity", "CognitoIdentity", "{23921EC4-CC62-44B8-B31C-E9D9747D947D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CognitoIdentity.Net35", "src\Services\CognitoIdentity\AWSSDK.CognitoIdentity.Net35.csproj", "{78446A6A-2F59-4B18-9CB0-14F7C18B8A0E}"
 EndProject
@@ -162,7 +164,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CognitoIdentity.WinR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CognitoIdentity.WP8", "src\Services\CognitoIdentity\AWSSDK.CognitoIdentity.WP8.csproj", "{DCC2C358-CA3C-4B5E-AD98-CBD759CAA681}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CognitoSync", "CognitoSync", "{F4BF018B-6126-4D63-ADE1-A7F349B69A6F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CognitoSync", "CognitoSync", "{FA4D78AA-9815-4350-A253-CFD96C2218FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CognitoSync.Net35", "src\Services\CognitoSync\AWSSDK.CognitoSync.Net35.csproj", "{E0C5CDAF-6D20-4832-8D24-2A7A50711F0D}"
 EndProject
@@ -174,7 +176,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CognitoSync.WinRT", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CognitoSync.WP8", "src\Services\CognitoSync\AWSSDK.CognitoSync.WP8.csproj", "{9931235F-90AF-47C8-A07B-13EE45A32EE3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConfigService", "ConfigService", "{386D861E-1890-4542-B1FD-EAEA4109C0AF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConfigService", "ConfigService", "{34303B90-DBA5-409A-86EB-24E643730F48}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ConfigService.Net35", "src\Services\ConfigService\AWSSDK.ConfigService.Net35.csproj", "{95FFA7BA-A05D-4328-82CE-3362FFA3B85F}"
 EndProject
@@ -186,7 +188,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ConfigService.WinRT"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ConfigService.WP8", "src\Services\ConfigService\AWSSDK.ConfigService.WP8.csproj", "{B565AB39-3DC3-497A-A326-7C670FED0FE4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataPipeline", "DataPipeline", "{9F2390D0-F6D0-440C-AADD-F783DBFD8284}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataPipeline", "DataPipeline", "{EF927200-AB61-475E-9F9D-F6FC2328E253}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.DataPipeline.Net35", "src\Services\DataPipeline\AWSSDK.DataPipeline.Net35.csproj", "{DA8B7290-B3D2-4440-AE91-32C946BF86F1}"
 EndProject
@@ -198,7 +200,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.DataPipeline.WinRT",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.DataPipeline.WP8", "src\Services\DataPipeline\AWSSDK.DataPipeline.WP8.csproj", "{29B244D9-E46D-4BD1-BFFF-B58812413D9C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DirectConnect", "DirectConnect", "{B095D00C-9839-439A-9437-50C184487CAB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DirectConnect", "DirectConnect", "{981CB3EF-F9EB-4CC4-AC3D-4B767343D5C7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.DirectConnect.Net35", "src\Services\DirectConnect\AWSSDK.DirectConnect.Net35.csproj", "{9C749173-C8C9-4864-8FBA-3E0C9EB7DA6B}"
 EndProject
@@ -210,7 +212,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.DirectConnect.WinRT"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.DirectConnect.WP8", "src\Services\DirectConnect\AWSSDK.DirectConnect.WP8.csproj", "{37B0A283-41B5-4D03-80E1-CDDA21EDE314}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DirectoryService", "DirectoryService", "{155B6708-9729-4288-B63D-91EC35BD6243}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DirectoryService", "DirectoryService", "{939C2BBD-F3AF-491D-B743-D27E9783F7C8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.DirectoryService.Net35", "src\Services\DirectoryService\AWSSDK.DirectoryService.Net35.csproj", "{F419E887-8A8D-441C-88FB-51EE57C85A97}"
 EndProject
@@ -222,7 +224,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.DirectoryService.Win
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.DirectoryService.WP8", "src\Services\DirectoryService\AWSSDK.DirectoryService.WP8.csproj", "{05724C5A-4D94-448D-B3DC-39AECB0F3E70}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DynamoDBv2", "DynamoDBv2", "{67FCC5AD-0037-47CF-B40E-0DE2C594DD9B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DynamoDBv2", "DynamoDBv2", "{3443565E-D2C5-431F-8B88-6D04FBEC7451}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.DynamoDBv2.Net35", "src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.Net35.csproj", "{BF82E571-2EF5-4081-B9DE-F23BD522D0A8}"
 EndProject
@@ -234,7 +236,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.DynamoDBv2.WinRT", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.DynamoDBv2.WP8", "src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.WP8.csproj", "{ED60E411-182B-4D10-AEDE-224AE4F9C7B7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EC2", "EC2", "{512309CC-CF5E-49CC-B575-AA87A1D29A7B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EC2", "EC2", "{45C4725C-4FEE-49AB-BA15-378FC81D3F48}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.EC2.Net35", "src\Services\EC2\AWSSDK.EC2.Net35.csproj", "{82F8399B-84DC-4632-B081-2B7697531CA1}"
 EndProject
@@ -246,7 +248,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.EC2.WinRT", "src\Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.EC2.WP8", "src\Services\EC2\AWSSDK.EC2.WP8.csproj", "{39B2F94D-DAA5-46E5-A000-93975E3D6E11}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ECS", "ECS", "{097F9FA2-8342-426C-9301-AE7865C158F4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ECS", "ECS", "{A74E2C06-1987-4220-BDE2-6B2A6494261C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ECS.Net35", "src\Services\ECS\AWSSDK.ECS.Net35.csproj", "{F12F3D23-2856-4CBA-8905-EA9CB52C9534}"
 EndProject
@@ -258,7 +260,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ECS.WinRT", "src\Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ECS.WP8", "src\Services\ECS\AWSSDK.ECS.WP8.csproj", "{58BF2A6E-2476-4950-8368-90278D08F9FA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElastiCache", "ElastiCache", "{87851B25-7C0F-423B-BAF7-B1A06F026E71}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElastiCache", "ElastiCache", "{043600E3-1B60-4964-948F-7EEA55B262A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElastiCache.Net35", "src\Services\ElastiCache\AWSSDK.ElastiCache.Net35.csproj", "{CF9F4EAE-B746-41DE-A547-F65B1E6DF193}"
 EndProject
@@ -270,7 +272,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElastiCache.WinRT", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElastiCache.WP8", "src\Services\ElastiCache\AWSSDK.ElastiCache.WP8.csproj", "{F151763C-FAE7-41BD-A73C-284D7DFC43A8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElasticBeanstalk", "ElasticBeanstalk", "{3835F93A-B97E-4FE0-9E56-1A3D949C7B36}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElasticBeanstalk", "ElasticBeanstalk", "{8B25BCFF-58E2-4F51-94E4-115AB7DC61A2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElasticBeanstalk.Net35", "src\Services\ElasticBeanstalk\AWSSDK.ElasticBeanstalk.Net35.csproj", "{E1B654A3-8244-46E6-980C-597AD119A958}"
 EndProject
@@ -282,7 +284,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElasticBeanstalk.Win
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElasticBeanstalk.WP8", "src\Services\ElasticBeanstalk\AWSSDK.ElasticBeanstalk.WP8.csproj", "{35F90B6E-B966-41A1-A9FE-4196B404F8F5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElasticLoadBalancing", "ElasticLoadBalancing", "{E733F136-3C49-423E-ABB8-10826262913B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElasticFileSystem", "ElasticFileSystem", "{558CE661-9CC0-4942-AFE8-10A197C8DDAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElasticFileSystem.Net35", "src\Services\ElasticFileSystem\AWSSDK.ElasticFileSystem.Net35.csproj", "{C5294C97-CB6C-4188-B36F-54C13B186980}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElasticFileSystem.Net45", "src\Services\ElasticFileSystem\AWSSDK.ElasticFileSystem.Net45.csproj", "{F484C85E-09E4-41BA-AF6E-2F77B26853F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElasticFileSystem.Portable", "src\Services\ElasticFileSystem\AWSSDK.ElasticFileSystem.Portable.csproj", "{1F91DBBF-BE19-46D6-B49D-ED0B62CCB8F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElasticFileSystem.WinRT", "src\Services\ElasticFileSystem\AWSSDK.ElasticFileSystem.WinRT.csproj", "{4E17794F-F2BD-4B9F-B34F-A3123FCE713A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElasticFileSystem.WP8", "src\Services\ElasticFileSystem\AWSSDK.ElasticFileSystem.WP8.csproj", "{996F1A18-0C46-4169-B4DD-ECF52ACEFB17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElasticLoadBalancing", "ElasticLoadBalancing", "{BA08ED94-88B8-414C-A7DD-4A731854A70B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElasticLoadBalancing.Net35", "src\Services\ElasticLoadBalancing\AWSSDK.ElasticLoadBalancing.Net35.csproj", "{46291AE6-55A8-4311-AE68-B2FAF11516B1}"
 EndProject
@@ -294,7 +308,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElasticLoadBalancing
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElasticLoadBalancing.WP8", "src\Services\ElasticLoadBalancing\AWSSDK.ElasticLoadBalancing.WP8.csproj", "{6C2563FD-007F-47CD-8BFD-BAD90583A2A0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElasticMapReduce", "ElasticMapReduce", "{E8C52494-2918-41DF-A996-A95FCD275056}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElasticMapReduce", "ElasticMapReduce", "{A20F1BF2-3D6C-45DB-9C1F-AA3C12DE7CF5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElasticMapReduce.Net35", "src\Services\ElasticMapReduce\AWSSDK.ElasticMapReduce.Net35.csproj", "{09BAE709-4F25-4B39-B1F8-0BCE91800D6E}"
 EndProject
@@ -306,7 +320,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElasticMapReduce.Win
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElasticMapReduce.WP8", "src\Services\ElasticMapReduce\AWSSDK.ElasticMapReduce.WP8.csproj", "{168686CA-8AB5-4F63-B18E-43686E2286BF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElasticTranscoder", "ElasticTranscoder", "{2F58AD0D-E704-4A4B-85AC-93C730EB993F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElasticTranscoder", "ElasticTranscoder", "{7930C64B-269B-4D66-8530-D77A7D185FDD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElasticTranscoder.Net35", "src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.Net35.csproj", "{E3BFF825-F2A1-4F7D-B08A-6CD34EB28990}"
 EndProject
@@ -318,7 +332,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElasticTranscoder.Wi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ElasticTranscoder.WP8", "src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.WP8.csproj", "{D2FB4497-2C23-4ADE-9C48-45615DD2AEDE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Glacier", "Glacier", "{268D4E97-8363-45FE-8010-3DA498E7F0A6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Glacier", "Glacier", "{A44746FC-A048-427D-ADE6-89792CF72C06}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Glacier.Net35", "src\Services\Glacier\AWSSDK.Glacier.Net35.csproj", "{C38A2D2C-E410-4084-9245-F577777E8009}"
 EndProject
@@ -330,7 +344,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Glacier.WinRT", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Glacier.WP8", "src\Services\Glacier\AWSSDK.Glacier.WP8.csproj", "{9CE5A256-AC1A-4867-86E2-57C37F1A91B4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityManagement", "IdentityManagement", "{CE4919E7-5870-4652-A2E2-7E5E50824567}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityManagement", "IdentityManagement", "{DAEF2A89-9D3A-47AA-879D-6CA2FBB7E721}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.IdentityManagement.Net35", "src\Services\IdentityManagement\AWSSDK.IdentityManagement.Net35.csproj", "{40BA3D89-6B91-4199-AF4B-50ABFBD0C18F}"
 EndProject
@@ -342,7 +356,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.IdentityManagement.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.IdentityManagement.WP8", "src\Services\IdentityManagement\AWSSDK.IdentityManagement.WP8.csproj", "{AD32A2F2-4AD9-44FD-AB57-07FD17B7DB76}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImportExport", "ImportExport", "{D4C09B1A-82B7-496E-9232-7968B06692B6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImportExport", "ImportExport", "{72A387B1-5120-41F5-8AE7-F7B2F84DEC7E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ImportExport.Net35", "src\Services\ImportExport\AWSSDK.ImportExport.Net35.csproj", "{63BB1FC1-A3B1-463D-A2DB-C631344EA5C8}"
 EndProject
@@ -354,7 +368,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ImportExport.WinRT",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ImportExport.WP8", "src\Services\ImportExport\AWSSDK.ImportExport.WP8.csproj", "{391CFEDA-8943-4163-8420-D7BEDC82B4EF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KeyManagementService", "KeyManagementService", "{3EB5FD69-6A85-4B54-9B09-54F7DE51119D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KeyManagementService", "KeyManagementService", "{458110B8-1077-4A5D-ADBF-ECA3DD9630D2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.KeyManagementService.Net35", "src\Services\KeyManagementService\AWSSDK.KeyManagementService.Net35.csproj", "{ADF1A47D-4C05-4DC5-B318-E3E412C2578E}"
 EndProject
@@ -366,7 +380,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.KeyManagementService
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.KeyManagementService.WP8", "src\Services\KeyManagementService\AWSSDK.KeyManagementService.WP8.csproj", "{A0257DC7-E6AF-43F1-8E7F-0419BE1F9B61}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kinesis", "Kinesis", "{F85AD923-62B8-4219-ADCC-6BD2215076DE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kinesis", "Kinesis", "{445348ED-C3FB-4A60-A975-B8A0BE66C4DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Kinesis.Net35", "src\Services\Kinesis\AWSSDK.Kinesis.Net35.csproj", "{602515A5-333A-4B51-BE61-43DDD05B2048}"
 EndProject
@@ -378,7 +392,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Kinesis.WinRT", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Kinesis.WP8", "src\Services\Kinesis\AWSSDK.Kinesis.WP8.csproj", "{43A0D5B5-F2B4-4436-A785-7AFBAD4764DD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lambda", "Lambda", "{AD9D370D-A763-4F06-B505-26C5A44FEA10}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lambda", "Lambda", "{E7DD329C-621D-4B6D-A4EB-812BA7980FC5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Lambda.Net35", "src\Services\Lambda\AWSSDK.Lambda.Net35.csproj", "{787D3BC7-1984-4203-B8A2-BF50E708E751}"
 EndProject
@@ -390,7 +404,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Lambda.WinRT", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Lambda.WP8", "src\Services\Lambda\AWSSDK.Lambda.WP8.csproj", "{8138E863-CAA5-4BFF-8122-0B997588FF40}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MachineLearning", "MachineLearning", "{E28897CA-DC1E-4BD5-9132-90F8868A48B9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MachineLearning", "MachineLearning", "{B5167BB6-44C2-4FEA-AC4B-BB64B920CF33}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.MachineLearning.Net35", "src\Services\MachineLearning\AWSSDK.MachineLearning.Net35.csproj", "{6C97BF81-D77B-4050-BD1E-ABB7F756E7D5}"
 EndProject
@@ -402,7 +416,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.MachineLearning.WinR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.MachineLearning.WP8", "src\Services\MachineLearning\AWSSDK.MachineLearning.WP8.csproj", "{902F56EC-F9A2-4D74-9AE9-A8ED9E734A0D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpsWorks", "OpsWorks", "{A7FB3CBB-A3DB-419A-AF50-2B806AC3B1D2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpsWorks", "OpsWorks", "{ADA5E631-964A-44EA-B140-76A429206B62}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.OpsWorks.Net35", "src\Services\OpsWorks\AWSSDK.OpsWorks.Net35.csproj", "{E0546F85-E14F-4AD6-B123-749F143D87FA}"
 EndProject
@@ -414,7 +428,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.OpsWorks.WinRT", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.OpsWorks.WP8", "src\Services\OpsWorks\AWSSDK.OpsWorks.WP8.csproj", "{E4375FB1-5A9B-4C3C-9869-A987D98E97B8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RDS", "RDS", "{CBF91325-F9F4-48C2-84D6-5CAAD07A9234}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RDS", "RDS", "{F8251B5D-EC0D-4365-B72E-103489707727}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.RDS.Net35", "src\Services\RDS\AWSSDK.RDS.Net35.csproj", "{BA873643-A43A-4DA1-A0EF-2419CE4FD4C0}"
 EndProject
@@ -426,7 +440,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.RDS.WinRT", "src\Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.RDS.WP8", "src\Services\RDS\AWSSDK.RDS.WP8.csproj", "{BD862685-597B-4F54-9BA4-509319151BA4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Redshift", "Redshift", "{435131D1-A53F-40E7-A913-A286324BBA72}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Redshift", "Redshift", "{46F94843-D4EE-470F-B062-99573F26980C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Redshift.Net35", "src\Services\Redshift\AWSSDK.Redshift.Net35.csproj", "{2A8F70CD-E47E-4C2C-8999-091CD5961EB2}"
 EndProject
@@ -438,7 +452,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Redshift.WinRT", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Redshift.WP8", "src\Services\Redshift\AWSSDK.Redshift.WP8.csproj", "{7F99FC34-0365-4B00-8E5B-EC8B133E02C2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Route53", "Route53", "{28FDC08E-6ACB-4F20-B837-1752060B26B2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Route53", "Route53", "{56E6A55D-CC64-4390-8A24-E409D1A913EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Route53.Net35", "src\Services\Route53\AWSSDK.Route53.Net35.csproj", "{DB086F2A-FC46-4F2D-801A-82647B261D6F}"
 EndProject
@@ -450,7 +464,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Route53.WinRT", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Route53.WP8", "src\Services\Route53\AWSSDK.Route53.WP8.csproj", "{8AA94107-1FB8-4717-A251-9FE2203FB5EB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Route53Domains", "Route53Domains", "{CFE3BA72-B6A4-4FFD-9B55-F47C4FC3B1F1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Route53Domains", "Route53Domains", "{A0C03EBF-CBC8-44DA-88AA-A8A1E860D02E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Route53Domains.Net35", "src\Services\Route53Domains\AWSSDK.Route53Domains.Net35.csproj", "{2F05AA9A-C7E9-41ED-9741-3264E34D852D}"
 EndProject
@@ -462,7 +476,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Route53Domains.WinRT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Route53Domains.WP8", "src\Services\Route53Domains\AWSSDK.Route53Domains.WP8.csproj", "{C187202B-32A0-47F7-9603-73CAD25D0986}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "S3", "S3", "{29453F3A-44BE-46E1-B720-21F253C59BEB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "S3", "S3", "{D4BC94DA-3928-443F-BCCF-7DDA8B516A50}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.S3.Net35", "src\Services\S3\AWSSDK.S3.Net35.csproj", "{707506E0-BE37-4C01-BEF6-E0E859F1716D}"
 EndProject
@@ -474,7 +488,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.S3.WinRT", "src\Serv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.S3.WP8", "src\Services\S3\AWSSDK.S3.WP8.csproj", "{54E8A15F-CE57-4267-81CF-8AF7192B2D86}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SecurityToken", "SecurityToken", "{0772A99A-3CAC-44CC-8709-1F4B6748B737}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SecurityToken", "SecurityToken", "{4AD11A14-8A2D-4882-BCDD-BACDFB31BD7B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SecurityToken.Net35", "src\Services\SecurityToken\AWSSDK.SecurityToken.Net35.csproj", "{BEE8DED7-9D01-419B-896F-0C5C7D98126A}"
 EndProject
@@ -486,7 +500,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SecurityToken.WinRT"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SecurityToken.WP8", "src\Services\SecurityToken\AWSSDK.SecurityToken.WP8.csproj", "{9E2AA876-9882-42ED-8393-8DB5D20F8AF3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleDB", "SimpleDB", "{DD9E450D-1BB2-425E-8484-F9A2DCCABA28}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleDB", "SimpleDB", "{289C1372-5714-4508-A0B3-C34499772AA2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SimpleDB.Net35", "src\Services\SimpleDB\AWSSDK.SimpleDB.Net35.csproj", "{18355D7A-4D71-4CBF-AC85-EB9CA5E3533E}"
 EndProject
@@ -498,7 +512,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SimpleDB.WinRT", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SimpleDB.WP8", "src\Services\SimpleDB\AWSSDK.SimpleDB.WP8.csproj", "{E911BE99-C18A-484B-91F4-2CF421C6AABA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleEmail", "SimpleEmail", "{64EEDB51-E803-4F8C-ADA3-E053B947091A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleEmail", "SimpleEmail", "{E4F085FC-111B-40AC-A18A-B64711676E17}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SimpleEmail.Net35", "src\Services\SimpleEmail\AWSSDK.SimpleEmail.Net35.csproj", "{212B8962-F927-4FE4-A41E-A98E9E7B9362}"
 EndProject
@@ -510,7 +524,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SimpleEmail.WinRT", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SimpleEmail.WP8", "src\Services\SimpleEmail\AWSSDK.SimpleEmail.WP8.csproj", "{D06E1AD7-9DC9-4CDF-8CCE-D8BBC80201D0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleNotificationService", "SimpleNotificationService", "{427F16DD-7F34-4A03-A19C-F54C134F31BE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleNotificationService", "SimpleNotificationService", "{048E3A77-3889-4EE9-A898-AF630D796124}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SimpleNotificationService.Net35", "src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.Net35.csproj", "{23566608-4A1E-4C97-9C7B-033B62BFB755}"
 EndProject
@@ -522,7 +536,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SimpleNotificationSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SimpleNotificationService.WP8", "src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.WP8.csproj", "{169314BE-66F7-443D-98B6-BC9C3BB2EF7C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleSystemsManagement", "SimpleSystemsManagement", "{791ECA72-82E7-4857-B108-42F48B6B92B3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleSystemsManagement", "SimpleSystemsManagement", "{6F4B4E71-EE0D-47E9-8074-27A4D89A5CEA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SimpleSystemsManagement.Net35", "src\Services\SimpleSystemsManagement\AWSSDK.SimpleSystemsManagement.Net35.csproj", "{415B4E11-769F-4F1E-835C-77ABDC2636FF}"
 EndProject
@@ -534,7 +548,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SimpleSystemsManagem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SimpleSystemsManagement.WP8", "src\Services\SimpleSystemsManagement\AWSSDK.SimpleSystemsManagement.WP8.csproj", "{9566FD0A-B13C-422C-ABAA-0E82B4EF5D37}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleWorkflow", "SimpleWorkflow", "{44336BAA-0F33-47ED-959A-326DDA9259A1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleWorkflow", "SimpleWorkflow", "{5A27D1BE-D8E3-44C4-8100-0062641F687D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SimpleWorkflow.Net35", "src\Services\SimpleWorkflow\AWSSDK.SimpleWorkflow.Net35.csproj", "{8B31C371-88B2-4EB4-82CB-8B26318F78A1}"
 EndProject
@@ -546,7 +560,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SimpleWorkflow.WinRT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SimpleWorkflow.WP8", "src\Services\SimpleWorkflow\AWSSDK.SimpleWorkflow.WP8.csproj", "{BCE9CA73-EF07-4C20-967B-6DD743B55606}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQS", "SQS", "{EA5314E7-A8FC-4FBA-88A5-8CA314D73B89}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQS", "SQS", "{88D98C8A-F828-4A7E-A0DD-5EFF2295DD59}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SQS.Net35", "src\Services\SQS\AWSSDK.SQS.Net35.csproj", "{1A3A5C87-069B-4D11-854A-F476BA5122F4}"
 EndProject
@@ -558,7 +572,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SQS.WinRT", "src\Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SQS.WP8", "src\Services\SQS\AWSSDK.SQS.WP8.csproj", "{CAC67313-DB2D-48B0-95D4-CBD2E5DCE6B1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StorageGateway", "StorageGateway", "{FD05FF95-DE61-4AF0-8C3C-77269C3A67AA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StorageGateway", "StorageGateway", "{495AEAAA-8BEE-4064-A7FA-A5B58020DBDA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.StorageGateway.Net35", "src\Services\StorageGateway\AWSSDK.StorageGateway.Net35.csproj", "{E5D769F1-F0F0-4CA4-B2D6-3DE560DCE248}"
 EndProject
@@ -570,7 +584,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.StorageGateway.WinRT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.StorageGateway.WP8", "src\Services\StorageGateway\AWSSDK.StorageGateway.WP8.csproj", "{B6308CE6-0927-4CD7-96D0-3A2711329F3C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkSpaces", "WorkSpaces", "{9792FC0F-03A7-4E37-80D9-100FFD092541}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkSpaces", "WorkSpaces", "{3699D664-A5A1-435A-B5AC-0ADE4E5E7C7B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.WorkSpaces.Net35", "src\Services\WorkSpaces\AWSSDK.WorkSpaces.Net35.csproj", "{63422F3B-8FAC-4E5F-A27C-07FB8742E8BD}"
 EndProject
@@ -1984,6 +1998,66 @@ Global
 		{35F90B6E-B966-41A1-A9FE-4196B404F8F5}.Release|x64.ActiveCfg = Release|Any CPU
 		{35F90B6E-B966-41A1-A9FE-4196B404F8F5}.Release|x86.ActiveCfg = Release|x86
 		{35F90B6E-B966-41A1-A9FE-4196B404F8F5}.Release|x86.Build.0 = Release|x86
+		{C5294C97-CB6C-4188-B36F-54C13B186980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5294C97-CB6C-4188-B36F-54C13B186980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5294C97-CB6C-4188-B36F-54C13B186980}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{C5294C97-CB6C-4188-B36F-54C13B186980}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C5294C97-CB6C-4188-B36F-54C13B186980}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C5294C97-CB6C-4188-B36F-54C13B186980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5294C97-CB6C-4188-B36F-54C13B186980}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5294C97-CB6C-4188-B36F-54C13B186980}.Release|ARM.ActiveCfg = Release|Any CPU
+		{C5294C97-CB6C-4188-B36F-54C13B186980}.Release|x64.ActiveCfg = Release|Any CPU
+		{C5294C97-CB6C-4188-B36F-54C13B186980}.Release|x86.ActiveCfg = Release|Any CPU
+		{F484C85E-09E4-41BA-AF6E-2F77B26853F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F484C85E-09E4-41BA-AF6E-2F77B26853F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F484C85E-09E4-41BA-AF6E-2F77B26853F3}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{F484C85E-09E4-41BA-AF6E-2F77B26853F3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F484C85E-09E4-41BA-AF6E-2F77B26853F3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F484C85E-09E4-41BA-AF6E-2F77B26853F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F484C85E-09E4-41BA-AF6E-2F77B26853F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F484C85E-09E4-41BA-AF6E-2F77B26853F3}.Release|ARM.ActiveCfg = Release|Any CPU
+		{F484C85E-09E4-41BA-AF6E-2F77B26853F3}.Release|x64.ActiveCfg = Release|Any CPU
+		{F484C85E-09E4-41BA-AF6E-2F77B26853F3}.Release|x86.ActiveCfg = Release|Any CPU
+		{1F91DBBF-BE19-46D6-B49D-ED0B62CCB8F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F91DBBF-BE19-46D6-B49D-ED0B62CCB8F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F91DBBF-BE19-46D6-B49D-ED0B62CCB8F6}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{1F91DBBF-BE19-46D6-B49D-ED0B62CCB8F6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1F91DBBF-BE19-46D6-B49D-ED0B62CCB8F6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1F91DBBF-BE19-46D6-B49D-ED0B62CCB8F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F91DBBF-BE19-46D6-B49D-ED0B62CCB8F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F91DBBF-BE19-46D6-B49D-ED0B62CCB8F6}.Release|ARM.ActiveCfg = Release|Any CPU
+		{1F91DBBF-BE19-46D6-B49D-ED0B62CCB8F6}.Release|x64.ActiveCfg = Release|Any CPU
+		{1F91DBBF-BE19-46D6-B49D-ED0B62CCB8F6}.Release|x86.ActiveCfg = Release|Any CPU
+		{4E17794F-F2BD-4B9F-B34F-A3123FCE713A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E17794F-F2BD-4B9F-B34F-A3123FCE713A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E17794F-F2BD-4B9F-B34F-A3123FCE713A}.Debug|ARM.ActiveCfg = Debug|ARM
+		{4E17794F-F2BD-4B9F-B34F-A3123FCE713A}.Debug|ARM.Build.0 = Debug|ARM
+		{4E17794F-F2BD-4B9F-B34F-A3123FCE713A}.Debug|x64.ActiveCfg = Debug|x64
+		{4E17794F-F2BD-4B9F-B34F-A3123FCE713A}.Debug|x64.Build.0 = Debug|x64
+		{4E17794F-F2BD-4B9F-B34F-A3123FCE713A}.Debug|x86.ActiveCfg = Debug|x86
+		{4E17794F-F2BD-4B9F-B34F-A3123FCE713A}.Debug|x86.Build.0 = Debug|x86
+		{4E17794F-F2BD-4B9F-B34F-A3123FCE713A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E17794F-F2BD-4B9F-B34F-A3123FCE713A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E17794F-F2BD-4B9F-B34F-A3123FCE713A}.Release|ARM.ActiveCfg = Release|ARM
+		{4E17794F-F2BD-4B9F-B34F-A3123FCE713A}.Release|ARM.Build.0 = Release|ARM
+		{4E17794F-F2BD-4B9F-B34F-A3123FCE713A}.Release|x64.ActiveCfg = Release|x64
+		{4E17794F-F2BD-4B9F-B34F-A3123FCE713A}.Release|x64.Build.0 = Release|x64
+		{4E17794F-F2BD-4B9F-B34F-A3123FCE713A}.Release|x86.ActiveCfg = Release|x86
+		{4E17794F-F2BD-4B9F-B34F-A3123FCE713A}.Release|x86.Build.0 = Release|x86
+		{996F1A18-0C46-4169-B4DD-ECF52ACEFB17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{996F1A18-0C46-4169-B4DD-ECF52ACEFB17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{996F1A18-0C46-4169-B4DD-ECF52ACEFB17}.Debug|ARM.ActiveCfg = Debug|ARM
+		{996F1A18-0C46-4169-B4DD-ECF52ACEFB17}.Debug|ARM.Build.0 = Debug|ARM
+		{996F1A18-0C46-4169-B4DD-ECF52ACEFB17}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{996F1A18-0C46-4169-B4DD-ECF52ACEFB17}.Debug|x86.ActiveCfg = Debug|x86
+		{996F1A18-0C46-4169-B4DD-ECF52ACEFB17}.Debug|x86.Build.0 = Debug|x86
+		{996F1A18-0C46-4169-B4DD-ECF52ACEFB17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{996F1A18-0C46-4169-B4DD-ECF52ACEFB17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{996F1A18-0C46-4169-B4DD-ECF52ACEFB17}.Release|ARM.ActiveCfg = Release|ARM
+		{996F1A18-0C46-4169-B4DD-ECF52ACEFB17}.Release|ARM.Build.0 = Release|ARM
+		{996F1A18-0C46-4169-B4DD-ECF52ACEFB17}.Release|x64.ActiveCfg = Release|Any CPU
+		{996F1A18-0C46-4169-B4DD-ECF52ACEFB17}.Release|x86.ActiveCfg = Release|x86
+		{996F1A18-0C46-4169-B4DD-ECF52ACEFB17}.Release|x86.Build.0 = Release|x86
 		{46291AE6-55A8-4311-AE68-B2FAF11516B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{46291AE6-55A8-4311-AE68-B2FAF11516B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46291AE6-55A8-4311-AE68-B2FAF11516B1}.Debug|ARM.ActiveCfg = Debug|Any CPU
@@ -3544,288 +3618,295 @@ Global
 		{A73B63F9-3B77-496E-84BF-8EDE50C0F89A} = {1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}
 		{CA2D8627-AEEE-4ACE-B162-42C811C61E1B} = {1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}
 		{654E578E-9927-4A28-A51E-2679D2503F74} = {1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}
-		{C1DCC264-84FC-4EE4-B658-7503CC5E9385} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{88F2CD8C-2C47-4E66-A4D4-93B2CF5BDCBC} = {C1DCC264-84FC-4EE4-B658-7503CC5E9385}
-		{47B1F84B-C7FD-4F38-A0F5-FF4383752AF4} = {C1DCC264-84FC-4EE4-B658-7503CC5E9385}
-		{1189FBBA-A94D-46DA-99B3-BDDBF6D9492F} = {C1DCC264-84FC-4EE4-B658-7503CC5E9385}
-		{5A2F637A-82ED-4EB9-AF59-05ECF73527F3} = {C1DCC264-84FC-4EE4-B658-7503CC5E9385}
-		{E574C564-0387-4275-A3F8-C27B2598EE5A} = {C1DCC264-84FC-4EE4-B658-7503CC5E9385}
-		{C2EE00EA-DD84-47D5-B330-C52C4965BD30} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{663AA578-CBBF-4E69-9753-577480DEED1D} = {C2EE00EA-DD84-47D5-B330-C52C4965BD30}
-		{7AFB6468-FE81-4A38-8446-3DFF539B2CFC} = {C2EE00EA-DD84-47D5-B330-C52C4965BD30}
-		{9A01A608-B58A-4034-8B45-C03F5E72EAF3} = {C2EE00EA-DD84-47D5-B330-C52C4965BD30}
-		{3B465E04-2ED4-424B-BE49-8F98D1F754C9} = {C2EE00EA-DD84-47D5-B330-C52C4965BD30}
-		{B6A27E5E-D24F-4B28-B9EA-EEAC3E5ACD67} = {C2EE00EA-DD84-47D5-B330-C52C4965BD30}
-		{55811C94-820B-4511-A482-FD04BFD604B5} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{8311AA7C-5553-45E2-AA0D-11981F8F7DBE} = {55811C94-820B-4511-A482-FD04BFD604B5}
-		{98223582-5CC1-4645-88FA-486C91E14DAC} = {55811C94-820B-4511-A482-FD04BFD604B5}
-		{DE4AE7DE-5C25-4C01-A796-640E345CE07B} = {55811C94-820B-4511-A482-FD04BFD604B5}
-		{669D470B-5B4A-4A24-A5EF-60FFBC90703F} = {55811C94-820B-4511-A482-FD04BFD604B5}
-		{7A93A4AF-18EB-400F-84F9-98CB72FE777E} = {55811C94-820B-4511-A482-FD04BFD604B5}
-		{B38F5A46-7446-4040-8973-34C7D2BFE893} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{7BA4CAEB-2DBB-41AC-8D58-00E6290E2503} = {B38F5A46-7446-4040-8973-34C7D2BFE893}
-		{F7340323-42CF-47D1-AB3D-502AB772C141} = {B38F5A46-7446-4040-8973-34C7D2BFE893}
-		{E34DBCF6-323E-4A12-8015-1D127EC91530} = {B38F5A46-7446-4040-8973-34C7D2BFE893}
-		{5A303375-80C5-4B2D-B80C-6B850C90349F} = {B38F5A46-7446-4040-8973-34C7D2BFE893}
-		{7399D12F-02EA-4C0A-8D04-6F5DC202FE3A} = {B38F5A46-7446-4040-8973-34C7D2BFE893}
-		{47E6B236-09AE-4E21-915E-CC998EC2968E} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{E9DD7A57-C490-40BD-93B8-10EC8B1BEFEE} = {47E6B236-09AE-4E21-915E-CC998EC2968E}
-		{1A6756E2-64B9-4445-BF56-E1CE650AF417} = {47E6B236-09AE-4E21-915E-CC998EC2968E}
-		{9905D9A7-3507-4914-AB5B-7C680768DB04} = {47E6B236-09AE-4E21-915E-CC998EC2968E}
-		{3BE08BC0-D162-46E2-8715-97A01680F61C} = {47E6B236-09AE-4E21-915E-CC998EC2968E}
-		{0605B821-92E9-4CB4-AC5F-97A4D2242330} = {47E6B236-09AE-4E21-915E-CC998EC2968E}
-		{2766E70C-DB3B-40AE-82CF-AB21BC76994E} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{A23735EA-0E17-4A1B-9E73-CA63735D1958} = {2766E70C-DB3B-40AE-82CF-AB21BC76994E}
-		{02B4D0DD-AABD-4AAC-A08E-9577C3D09971} = {2766E70C-DB3B-40AE-82CF-AB21BC76994E}
-		{84475983-5DA9-4F36-986A-B4D92E4818D8} = {2766E70C-DB3B-40AE-82CF-AB21BC76994E}
-		{74C73BCB-8A30-4A5E-A6A0-9D6275ADB18A} = {2766E70C-DB3B-40AE-82CF-AB21BC76994E}
-		{8EC54B5D-2D81-491F-AD3F-EA433DAC9F0E} = {2766E70C-DB3B-40AE-82CF-AB21BC76994E}
-		{03AA7714-41D0-4A30-9A7D-A2F656AAA3DD} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{F3B1F33E-0466-49DE-B171-625A0288665B} = {03AA7714-41D0-4A30-9A7D-A2F656AAA3DD}
-		{431402E6-30D5-4FDE-8CB3-5EEB885ED0A4} = {03AA7714-41D0-4A30-9A7D-A2F656AAA3DD}
-		{1CED9929-BA7F-431A-AA49-E1B6AD664EE4} = {03AA7714-41D0-4A30-9A7D-A2F656AAA3DD}
-		{3A5740FC-D826-473E-8BAF-B7D897F91787} = {03AA7714-41D0-4A30-9A7D-A2F656AAA3DD}
-		{C0BAFE2B-DB6F-4862-8F99-DE79A5C60229} = {03AA7714-41D0-4A30-9A7D-A2F656AAA3DD}
-		{8788B05C-0F9F-45D3-B9C0-E8251EA63CF3} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{D0D5AD3D-9737-47B4-8E0E-D7D4AADBDFCF} = {8788B05C-0F9F-45D3-B9C0-E8251EA63CF3}
-		{C330247E-010B-45E7-87F7-AF4AEA8402CF} = {8788B05C-0F9F-45D3-B9C0-E8251EA63CF3}
-		{844D4954-4FE2-46B1-BCB9-FFEF3C246CE7} = {8788B05C-0F9F-45D3-B9C0-E8251EA63CF3}
-		{E5A7E7E2-30F2-4479-972B-3CC0271F45E6} = {8788B05C-0F9F-45D3-B9C0-E8251EA63CF3}
-		{C084E9D8-1E39-49DE-B336-57B87202F30D} = {8788B05C-0F9F-45D3-B9C0-E8251EA63CF3}
-		{E5F5D7C0-AE10-45F7-BF0F-76F39B803BBF} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{1A2903F6-896B-4397-8151-B0CC8DC3BCED} = {E5F5D7C0-AE10-45F7-BF0F-76F39B803BBF}
-		{8C4E574E-7466-4B4B-81BD-A5C0F66ABD77} = {E5F5D7C0-AE10-45F7-BF0F-76F39B803BBF}
-		{53376FE0-EAAC-493E-B96B-24D7D5AEEF5D} = {E5F5D7C0-AE10-45F7-BF0F-76F39B803BBF}
-		{18CD47E0-EA68-404A-B06F-7D42A452B8E8} = {E5F5D7C0-AE10-45F7-BF0F-76F39B803BBF}
-		{5566035D-429E-43F7-B423-0937812AD403} = {E5F5D7C0-AE10-45F7-BF0F-76F39B803BBF}
-		{89F815AF-7B69-40A0-BDE1-BDDA315A8BAE} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{6B43421E-9EA1-4811-9897-E7C130CA175D} = {89F815AF-7B69-40A0-BDE1-BDDA315A8BAE}
-		{48B6C28A-93CE-437F-AABC-8CF0439CC44D} = {89F815AF-7B69-40A0-BDE1-BDDA315A8BAE}
-		{A19F8887-2678-4EF7-8F76-29B59A0A771B} = {89F815AF-7B69-40A0-BDE1-BDDA315A8BAE}
-		{9AC0293B-7A15-4CB7-8B1D-D059948FC9AE} = {89F815AF-7B69-40A0-BDE1-BDDA315A8BAE}
-		{D0CB84D5-A48D-419B-9119-2EC399586A11} = {89F815AF-7B69-40A0-BDE1-BDDA315A8BAE}
-		{B1A43BC8-8BD6-48C6-83ED-D32CB4B1B567} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{1CE0DD3D-78BF-4922-B544-8B26AD4CA860} = {B1A43BC8-8BD6-48C6-83ED-D32CB4B1B567}
-		{6BC89409-44E1-4393-9C92-0D68975EFAD1} = {B1A43BC8-8BD6-48C6-83ED-D32CB4B1B567}
-		{C149C3A6-B6FE-44A3-BA29-97F033BECD17} = {B1A43BC8-8BD6-48C6-83ED-D32CB4B1B567}
-		{62CA4A5F-806D-462D-9A2C-91ACBB7EF623} = {B1A43BC8-8BD6-48C6-83ED-D32CB4B1B567}
-		{A2EF3FD9-3220-4F0E-82AD-B523FDEA1888} = {B1A43BC8-8BD6-48C6-83ED-D32CB4B1B567}
-		{C81BE6D4-3C70-4A54-B05E-E0355AC3E646} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{78446A6A-2F59-4B18-9CB0-14F7C18B8A0E} = {C81BE6D4-3C70-4A54-B05E-E0355AC3E646}
-		{C58BC670-0ACB-42BF-B141-4A949EF71099} = {C81BE6D4-3C70-4A54-B05E-E0355AC3E646}
-		{E3A86A1F-0176-4282-A020-7405D7FFF1E1} = {C81BE6D4-3C70-4A54-B05E-E0355AC3E646}
-		{61B9D8DC-2E5B-479B-8EA6-03E1344B07CF} = {C81BE6D4-3C70-4A54-B05E-E0355AC3E646}
-		{DCC2C358-CA3C-4B5E-AD98-CBD759CAA681} = {C81BE6D4-3C70-4A54-B05E-E0355AC3E646}
-		{F4BF018B-6126-4D63-ADE1-A7F349B69A6F} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{E0C5CDAF-6D20-4832-8D24-2A7A50711F0D} = {F4BF018B-6126-4D63-ADE1-A7F349B69A6F}
-		{75252F5A-D3F2-4A4E-ADDC-560E1E3C2066} = {F4BF018B-6126-4D63-ADE1-A7F349B69A6F}
-		{2DC8BC15-B53A-472F-B764-C686808755D4} = {F4BF018B-6126-4D63-ADE1-A7F349B69A6F}
-		{0CBFC993-3042-49DF-86C2-3D5D603A3BCA} = {F4BF018B-6126-4D63-ADE1-A7F349B69A6F}
-		{9931235F-90AF-47C8-A07B-13EE45A32EE3} = {F4BF018B-6126-4D63-ADE1-A7F349B69A6F}
-		{386D861E-1890-4542-B1FD-EAEA4109C0AF} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{95FFA7BA-A05D-4328-82CE-3362FFA3B85F} = {386D861E-1890-4542-B1FD-EAEA4109C0AF}
-		{844769FF-BA07-49FB-94A2-08EEA8AC2DC3} = {386D861E-1890-4542-B1FD-EAEA4109C0AF}
-		{A7099F66-0A1A-47DB-B1EE-9EFF12195777} = {386D861E-1890-4542-B1FD-EAEA4109C0AF}
-		{A7257491-24A3-4D22-A7FD-0613B57D941B} = {386D861E-1890-4542-B1FD-EAEA4109C0AF}
-		{B565AB39-3DC3-497A-A326-7C670FED0FE4} = {386D861E-1890-4542-B1FD-EAEA4109C0AF}
-		{9F2390D0-F6D0-440C-AADD-F783DBFD8284} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{DA8B7290-B3D2-4440-AE91-32C946BF86F1} = {9F2390D0-F6D0-440C-AADD-F783DBFD8284}
-		{BACF5518-E9DC-4BE7-BD59-965E9EA51BB7} = {9F2390D0-F6D0-440C-AADD-F783DBFD8284}
-		{7675F4E3-BC72-49B8-9EE4-C3E9166C15A4} = {9F2390D0-F6D0-440C-AADD-F783DBFD8284}
-		{7FFA6FF5-CCE4-4DF1-BB44-D162387AB890} = {9F2390D0-F6D0-440C-AADD-F783DBFD8284}
-		{29B244D9-E46D-4BD1-BFFF-B58812413D9C} = {9F2390D0-F6D0-440C-AADD-F783DBFD8284}
-		{B095D00C-9839-439A-9437-50C184487CAB} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{9C749173-C8C9-4864-8FBA-3E0C9EB7DA6B} = {B095D00C-9839-439A-9437-50C184487CAB}
-		{D96D3583-EBEB-403E-96A8-B9069E65C9B6} = {B095D00C-9839-439A-9437-50C184487CAB}
-		{48D01356-52D7-4353-B133-C716D6798417} = {B095D00C-9839-439A-9437-50C184487CAB}
-		{7C7DB8A7-5E02-4F9D-8485-FED67B098CA9} = {B095D00C-9839-439A-9437-50C184487CAB}
-		{37B0A283-41B5-4D03-80E1-CDDA21EDE314} = {B095D00C-9839-439A-9437-50C184487CAB}
-		{155B6708-9729-4288-B63D-91EC35BD6243} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{F419E887-8A8D-441C-88FB-51EE57C85A97} = {155B6708-9729-4288-B63D-91EC35BD6243}
-		{2C3DA5E0-B50E-482D-8FDB-0E14B39E026B} = {155B6708-9729-4288-B63D-91EC35BD6243}
-		{7258978D-1232-44D1-A81A-C610EC48A46C} = {155B6708-9729-4288-B63D-91EC35BD6243}
-		{A224D7FF-C889-4515-9BE1-75339C91A03F} = {155B6708-9729-4288-B63D-91EC35BD6243}
-		{05724C5A-4D94-448D-B3DC-39AECB0F3E70} = {155B6708-9729-4288-B63D-91EC35BD6243}
-		{67FCC5AD-0037-47CF-B40E-0DE2C594DD9B} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{BF82E571-2EF5-4081-B9DE-F23BD522D0A8} = {67FCC5AD-0037-47CF-B40E-0DE2C594DD9B}
-		{093F2DED-1B19-450C-B9FC-C012C40473C3} = {67FCC5AD-0037-47CF-B40E-0DE2C594DD9B}
-		{90F5F723-5F4F-4E9A-8D1B-7F92CBF7444F} = {67FCC5AD-0037-47CF-B40E-0DE2C594DD9B}
-		{40DF9BA3-78EC-44B5-A49E-B4A17F985CB5} = {67FCC5AD-0037-47CF-B40E-0DE2C594DD9B}
-		{ED60E411-182B-4D10-AEDE-224AE4F9C7B7} = {67FCC5AD-0037-47CF-B40E-0DE2C594DD9B}
-		{512309CC-CF5E-49CC-B575-AA87A1D29A7B} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{82F8399B-84DC-4632-B081-2B7697531CA1} = {512309CC-CF5E-49CC-B575-AA87A1D29A7B}
-		{22819F48-B00A-411A-A558-4E77B890A99F} = {512309CC-CF5E-49CC-B575-AA87A1D29A7B}
-		{A9EFEFDA-7D7E-498D-8DFB-1A5BC4373E44} = {512309CC-CF5E-49CC-B575-AA87A1D29A7B}
-		{877BA0E5-DDD1-4EAA-9CE8-C574AC1801B2} = {512309CC-CF5E-49CC-B575-AA87A1D29A7B}
-		{39B2F94D-DAA5-46E5-A000-93975E3D6E11} = {512309CC-CF5E-49CC-B575-AA87A1D29A7B}
-		{097F9FA2-8342-426C-9301-AE7865C158F4} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{F12F3D23-2856-4CBA-8905-EA9CB52C9534} = {097F9FA2-8342-426C-9301-AE7865C158F4}
-		{8A3D5F46-C927-417F-AAF0-8D057B4CAA60} = {097F9FA2-8342-426C-9301-AE7865C158F4}
-		{228D7580-8713-468C-A485-5DD43405FF3E} = {097F9FA2-8342-426C-9301-AE7865C158F4}
-		{951ED54A-1E2C-43B5-A46D-4C005BC52FC8} = {097F9FA2-8342-426C-9301-AE7865C158F4}
-		{58BF2A6E-2476-4950-8368-90278D08F9FA} = {097F9FA2-8342-426C-9301-AE7865C158F4}
-		{87851B25-7C0F-423B-BAF7-B1A06F026E71} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{CF9F4EAE-B746-41DE-A547-F65B1E6DF193} = {87851B25-7C0F-423B-BAF7-B1A06F026E71}
-		{6E4CD5B4-366E-40EB-BAC3-04E033A904AD} = {87851B25-7C0F-423B-BAF7-B1A06F026E71}
-		{FF577BA5-1D0C-459D-B7F1-C02BF53343DB} = {87851B25-7C0F-423B-BAF7-B1A06F026E71}
-		{8AE875C3-6EB0-4CE0-8897-572EE3BF44D1} = {87851B25-7C0F-423B-BAF7-B1A06F026E71}
-		{F151763C-FAE7-41BD-A73C-284D7DFC43A8} = {87851B25-7C0F-423B-BAF7-B1A06F026E71}
-		{3835F93A-B97E-4FE0-9E56-1A3D949C7B36} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{E1B654A3-8244-46E6-980C-597AD119A958} = {3835F93A-B97E-4FE0-9E56-1A3D949C7B36}
-		{156D9313-7650-4141-8DCD-D3C8DBBF7642} = {3835F93A-B97E-4FE0-9E56-1A3D949C7B36}
-		{15B84C74-742F-4768-A361-14B4AA1E39B6} = {3835F93A-B97E-4FE0-9E56-1A3D949C7B36}
-		{75863B92-3578-4E7A-8F00-30098C4C550F} = {3835F93A-B97E-4FE0-9E56-1A3D949C7B36}
-		{35F90B6E-B966-41A1-A9FE-4196B404F8F5} = {3835F93A-B97E-4FE0-9E56-1A3D949C7B36}
-		{E733F136-3C49-423E-ABB8-10826262913B} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{46291AE6-55A8-4311-AE68-B2FAF11516B1} = {E733F136-3C49-423E-ABB8-10826262913B}
-		{AB715742-9EE8-4D2A-AD38-F0E75723A9AB} = {E733F136-3C49-423E-ABB8-10826262913B}
-		{D7B5D488-BA2F-471B-A4AF-1CA4030E2B07} = {E733F136-3C49-423E-ABB8-10826262913B}
-		{0BD4DCED-A521-40A2-B8C5-AA19420A7677} = {E733F136-3C49-423E-ABB8-10826262913B}
-		{6C2563FD-007F-47CD-8BFD-BAD90583A2A0} = {E733F136-3C49-423E-ABB8-10826262913B}
-		{E8C52494-2918-41DF-A996-A95FCD275056} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{09BAE709-4F25-4B39-B1F8-0BCE91800D6E} = {E8C52494-2918-41DF-A996-A95FCD275056}
-		{2B2A9558-058E-4C26-8637-628846329B9A} = {E8C52494-2918-41DF-A996-A95FCD275056}
-		{3EF85AC3-2344-4615-BC88-922EE1C483A1} = {E8C52494-2918-41DF-A996-A95FCD275056}
-		{444128AD-C784-447B-AF99-75B9CA9115D3} = {E8C52494-2918-41DF-A996-A95FCD275056}
-		{168686CA-8AB5-4F63-B18E-43686E2286BF} = {E8C52494-2918-41DF-A996-A95FCD275056}
-		{2F58AD0D-E704-4A4B-85AC-93C730EB993F} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{E3BFF825-F2A1-4F7D-B08A-6CD34EB28990} = {2F58AD0D-E704-4A4B-85AC-93C730EB993F}
-		{FCF20E51-E8E5-46A3-8D7A-BB0E68C8BF4A} = {2F58AD0D-E704-4A4B-85AC-93C730EB993F}
-		{9F4786E7-7402-4D88-AB14-022316A0CE0E} = {2F58AD0D-E704-4A4B-85AC-93C730EB993F}
-		{7C6130AD-7BC1-43E4-8B4C-7CC3B4071077} = {2F58AD0D-E704-4A4B-85AC-93C730EB993F}
-		{D2FB4497-2C23-4ADE-9C48-45615DD2AEDE} = {2F58AD0D-E704-4A4B-85AC-93C730EB993F}
-		{268D4E97-8363-45FE-8010-3DA498E7F0A6} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{C38A2D2C-E410-4084-9245-F577777E8009} = {268D4E97-8363-45FE-8010-3DA498E7F0A6}
-		{CC49CFB0-F27C-4D16-AAF8-21097F468129} = {268D4E97-8363-45FE-8010-3DA498E7F0A6}
-		{BD9BF791-120F-4695-A9F1-E256D33094EA} = {268D4E97-8363-45FE-8010-3DA498E7F0A6}
-		{1E903CF9-CB2D-4254-A80A-71E167DE30EE} = {268D4E97-8363-45FE-8010-3DA498E7F0A6}
-		{9CE5A256-AC1A-4867-86E2-57C37F1A91B4} = {268D4E97-8363-45FE-8010-3DA498E7F0A6}
-		{CE4919E7-5870-4652-A2E2-7E5E50824567} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{40BA3D89-6B91-4199-AF4B-50ABFBD0C18F} = {CE4919E7-5870-4652-A2E2-7E5E50824567}
-		{02374DF3-D0F8-43DD-A638-8130A604A683} = {CE4919E7-5870-4652-A2E2-7E5E50824567}
-		{944716B4-DF95-4D7B-9AFA-8F8D23F8B840} = {CE4919E7-5870-4652-A2E2-7E5E50824567}
-		{4B822254-A6C9-4451-9738-94F517DC5C40} = {CE4919E7-5870-4652-A2E2-7E5E50824567}
-		{AD32A2F2-4AD9-44FD-AB57-07FD17B7DB76} = {CE4919E7-5870-4652-A2E2-7E5E50824567}
-		{D4C09B1A-82B7-496E-9232-7968B06692B6} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{63BB1FC1-A3B1-463D-A2DB-C631344EA5C8} = {D4C09B1A-82B7-496E-9232-7968B06692B6}
-		{91A3791F-AC18-48FB-B27C-05389B988B75} = {D4C09B1A-82B7-496E-9232-7968B06692B6}
-		{6A6647F8-FFFC-40CB-814E-7E5E672084A1} = {D4C09B1A-82B7-496E-9232-7968B06692B6}
-		{89B5C4C5-26D2-4EBE-AB46-28B487BF3443} = {D4C09B1A-82B7-496E-9232-7968B06692B6}
-		{391CFEDA-8943-4163-8420-D7BEDC82B4EF} = {D4C09B1A-82B7-496E-9232-7968B06692B6}
-		{3EB5FD69-6A85-4B54-9B09-54F7DE51119D} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{ADF1A47D-4C05-4DC5-B318-E3E412C2578E} = {3EB5FD69-6A85-4B54-9B09-54F7DE51119D}
-		{38C583D8-26EB-4BA0-AEEF-338468E4D8DC} = {3EB5FD69-6A85-4B54-9B09-54F7DE51119D}
-		{38F809F8-5362-4A47-B92E-D2F2999308D5} = {3EB5FD69-6A85-4B54-9B09-54F7DE51119D}
-		{8DEA7863-E21B-4948-9069-276FFDBDE93F} = {3EB5FD69-6A85-4B54-9B09-54F7DE51119D}
-		{A0257DC7-E6AF-43F1-8E7F-0419BE1F9B61} = {3EB5FD69-6A85-4B54-9B09-54F7DE51119D}
-		{F85AD923-62B8-4219-ADCC-6BD2215076DE} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{602515A5-333A-4B51-BE61-43DDD05B2048} = {F85AD923-62B8-4219-ADCC-6BD2215076DE}
-		{6698BD46-B68A-4C53-9560-DD21A91E910D} = {F85AD923-62B8-4219-ADCC-6BD2215076DE}
-		{04A77223-332C-4502-A45E-C3FE2E46F352} = {F85AD923-62B8-4219-ADCC-6BD2215076DE}
-		{5DDBBD4D-7153-41AF-9838-DCD677D9CB67} = {F85AD923-62B8-4219-ADCC-6BD2215076DE}
-		{43A0D5B5-F2B4-4436-A785-7AFBAD4764DD} = {F85AD923-62B8-4219-ADCC-6BD2215076DE}
-		{AD9D370D-A763-4F06-B505-26C5A44FEA10} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{787D3BC7-1984-4203-B8A2-BF50E708E751} = {AD9D370D-A763-4F06-B505-26C5A44FEA10}
-		{2BAD7146-8A64-4536-83CA-D4DDABD2E3B1} = {AD9D370D-A763-4F06-B505-26C5A44FEA10}
-		{9B57CB03-D55A-432C-9CAE-AD3C730F796E} = {AD9D370D-A763-4F06-B505-26C5A44FEA10}
-		{66218B70-31E5-4944-AC34-A01620A15EE3} = {AD9D370D-A763-4F06-B505-26C5A44FEA10}
-		{8138E863-CAA5-4BFF-8122-0B997588FF40} = {AD9D370D-A763-4F06-B505-26C5A44FEA10}
-		{E28897CA-DC1E-4BD5-9132-90F8868A48B9} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{6C97BF81-D77B-4050-BD1E-ABB7F756E7D5} = {E28897CA-DC1E-4BD5-9132-90F8868A48B9}
-		{39BC41FA-A4ED-4C24-AEA1-A3CD3556F21A} = {E28897CA-DC1E-4BD5-9132-90F8868A48B9}
-		{E9714A3C-110B-4360-9354-97F6CCF27C76} = {E28897CA-DC1E-4BD5-9132-90F8868A48B9}
-		{4B0BDD67-F062-4E65-9F00-0019AC59FC80} = {E28897CA-DC1E-4BD5-9132-90F8868A48B9}
-		{902F56EC-F9A2-4D74-9AE9-A8ED9E734A0D} = {E28897CA-DC1E-4BD5-9132-90F8868A48B9}
-		{A7FB3CBB-A3DB-419A-AF50-2B806AC3B1D2} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{E0546F85-E14F-4AD6-B123-749F143D87FA} = {A7FB3CBB-A3DB-419A-AF50-2B806AC3B1D2}
-		{9123E499-47D5-4B7C-BAB4-155A96CA5E9C} = {A7FB3CBB-A3DB-419A-AF50-2B806AC3B1D2}
-		{49C73690-31F0-4751-81F9-FC1A48C455B7} = {A7FB3CBB-A3DB-419A-AF50-2B806AC3B1D2}
-		{9733281E-3DA4-4833-B1B3-FF2082FD8317} = {A7FB3CBB-A3DB-419A-AF50-2B806AC3B1D2}
-		{E4375FB1-5A9B-4C3C-9869-A987D98E97B8} = {A7FB3CBB-A3DB-419A-AF50-2B806AC3B1D2}
-		{CBF91325-F9F4-48C2-84D6-5CAAD07A9234} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{BA873643-A43A-4DA1-A0EF-2419CE4FD4C0} = {CBF91325-F9F4-48C2-84D6-5CAAD07A9234}
-		{18F3ECAE-0CD6-4A59-8CB2-80533F276AA3} = {CBF91325-F9F4-48C2-84D6-5CAAD07A9234}
-		{B98D524C-5B0F-4F4A-BA6A-93C048B64BE5} = {CBF91325-F9F4-48C2-84D6-5CAAD07A9234}
-		{693F1F20-4EE3-417C-8323-165678635934} = {CBF91325-F9F4-48C2-84D6-5CAAD07A9234}
-		{BD862685-597B-4F54-9BA4-509319151BA4} = {CBF91325-F9F4-48C2-84D6-5CAAD07A9234}
-		{435131D1-A53F-40E7-A913-A286324BBA72} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{2A8F70CD-E47E-4C2C-8999-091CD5961EB2} = {435131D1-A53F-40E7-A913-A286324BBA72}
-		{70CA134F-2307-49F7-BD2A-B30371B88FF1} = {435131D1-A53F-40E7-A913-A286324BBA72}
-		{90E0ECB4-8116-417B-8155-629A4ADA3956} = {435131D1-A53F-40E7-A913-A286324BBA72}
-		{1EF77FCD-C07B-4819-B694-D40838231F9D} = {435131D1-A53F-40E7-A913-A286324BBA72}
-		{7F99FC34-0365-4B00-8E5B-EC8B133E02C2} = {435131D1-A53F-40E7-A913-A286324BBA72}
-		{28FDC08E-6ACB-4F20-B837-1752060B26B2} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{DB086F2A-FC46-4F2D-801A-82647B261D6F} = {28FDC08E-6ACB-4F20-B837-1752060B26B2}
-		{297FC084-5027-44B3-BE25-2E16D16E85D2} = {28FDC08E-6ACB-4F20-B837-1752060B26B2}
-		{4575A7B1-5185-42C5-A7AD-88665AE2E3BF} = {28FDC08E-6ACB-4F20-B837-1752060B26B2}
-		{2E940717-F0E3-4854-97DF-652C7A59A258} = {28FDC08E-6ACB-4F20-B837-1752060B26B2}
-		{8AA94107-1FB8-4717-A251-9FE2203FB5EB} = {28FDC08E-6ACB-4F20-B837-1752060B26B2}
-		{CFE3BA72-B6A4-4FFD-9B55-F47C4FC3B1F1} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{2F05AA9A-C7E9-41ED-9741-3264E34D852D} = {CFE3BA72-B6A4-4FFD-9B55-F47C4FC3B1F1}
-		{53E678C2-4132-42EE-99F1-0FE88293C874} = {CFE3BA72-B6A4-4FFD-9B55-F47C4FC3B1F1}
-		{B33134D3-BFB6-4387-AC19-9ECB4BF1E734} = {CFE3BA72-B6A4-4FFD-9B55-F47C4FC3B1F1}
-		{0EFD8E49-2A2C-4F41-8461-BE05701BD5E1} = {CFE3BA72-B6A4-4FFD-9B55-F47C4FC3B1F1}
-		{C187202B-32A0-47F7-9603-73CAD25D0986} = {CFE3BA72-B6A4-4FFD-9B55-F47C4FC3B1F1}
-		{29453F3A-44BE-46E1-B720-21F253C59BEB} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{707506E0-BE37-4C01-BEF6-E0E859F1716D} = {29453F3A-44BE-46E1-B720-21F253C59BEB}
-		{F9FAF246-06D9-48C8-88F0-0F716CCAC013} = {29453F3A-44BE-46E1-B720-21F253C59BEB}
-		{66DEF703-6F94-48DA-9452-23BC3AD56A18} = {29453F3A-44BE-46E1-B720-21F253C59BEB}
-		{7FC6E5D1-5143-47AD-AF1B-A557E776F4B1} = {29453F3A-44BE-46E1-B720-21F253C59BEB}
-		{54E8A15F-CE57-4267-81CF-8AF7192B2D86} = {29453F3A-44BE-46E1-B720-21F253C59BEB}
-		{0772A99A-3CAC-44CC-8709-1F4B6748B737} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{BEE8DED7-9D01-419B-896F-0C5C7D98126A} = {0772A99A-3CAC-44CC-8709-1F4B6748B737}
-		{BB266953-D765-4BC6-9315-D206548CB8A6} = {0772A99A-3CAC-44CC-8709-1F4B6748B737}
-		{FF8273D8-A9A0-4623-B799-514431A294C3} = {0772A99A-3CAC-44CC-8709-1F4B6748B737}
-		{D9E842BD-5E87-4BC4-9043-86FFDA22F63D} = {0772A99A-3CAC-44CC-8709-1F4B6748B737}
-		{9E2AA876-9882-42ED-8393-8DB5D20F8AF3} = {0772A99A-3CAC-44CC-8709-1F4B6748B737}
-		{DD9E450D-1BB2-425E-8484-F9A2DCCABA28} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{18355D7A-4D71-4CBF-AC85-EB9CA5E3533E} = {DD9E450D-1BB2-425E-8484-F9A2DCCABA28}
-		{781F0A71-6561-4A11-9AED-1D16163938CE} = {DD9E450D-1BB2-425E-8484-F9A2DCCABA28}
-		{56C201B0-6BD3-49BF-9B76-456A58FF1AA6} = {DD9E450D-1BB2-425E-8484-F9A2DCCABA28}
-		{8609F8BD-6E69-4A00-BFBA-3A00D5D48149} = {DD9E450D-1BB2-425E-8484-F9A2DCCABA28}
-		{E911BE99-C18A-484B-91F4-2CF421C6AABA} = {DD9E450D-1BB2-425E-8484-F9A2DCCABA28}
-		{64EEDB51-E803-4F8C-ADA3-E053B947091A} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{212B8962-F927-4FE4-A41E-A98E9E7B9362} = {64EEDB51-E803-4F8C-ADA3-E053B947091A}
-		{03EFBEDB-7A18-4637-9109-252F4D99A636} = {64EEDB51-E803-4F8C-ADA3-E053B947091A}
-		{8A0AEE66-1CC5-43C9-BA1A-8D32D9E00481} = {64EEDB51-E803-4F8C-ADA3-E053B947091A}
-		{63A1A376-3F79-4EBC-8FA7-F6AD80B23D2A} = {64EEDB51-E803-4F8C-ADA3-E053B947091A}
-		{D06E1AD7-9DC9-4CDF-8CCE-D8BBC80201D0} = {64EEDB51-E803-4F8C-ADA3-E053B947091A}
-		{427F16DD-7F34-4A03-A19C-F54C134F31BE} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{23566608-4A1E-4C97-9C7B-033B62BFB755} = {427F16DD-7F34-4A03-A19C-F54C134F31BE}
-		{BE7CC84A-AC78-4A1C-9411-4A0349F22571} = {427F16DD-7F34-4A03-A19C-F54C134F31BE}
-		{8D142242-5162-4DE1-BBE6-7BB9D4567EE7} = {427F16DD-7F34-4A03-A19C-F54C134F31BE}
-		{737F7695-E5EC-4125-B920-603ED86D2AF2} = {427F16DD-7F34-4A03-A19C-F54C134F31BE}
-		{169314BE-66F7-443D-98B6-BC9C3BB2EF7C} = {427F16DD-7F34-4A03-A19C-F54C134F31BE}
-		{791ECA72-82E7-4857-B108-42F48B6B92B3} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{415B4E11-769F-4F1E-835C-77ABDC2636FF} = {791ECA72-82E7-4857-B108-42F48B6B92B3}
-		{C5C99E82-BE0A-45EB-AEEC-513F79B7E60E} = {791ECA72-82E7-4857-B108-42F48B6B92B3}
-		{0E99B4F6-495F-4BDF-B4C3-F0E6C1941E71} = {791ECA72-82E7-4857-B108-42F48B6B92B3}
-		{C1FD7EF9-0589-4380-A813-FF18902911A8} = {791ECA72-82E7-4857-B108-42F48B6B92B3}
-		{9566FD0A-B13C-422C-ABAA-0E82B4EF5D37} = {791ECA72-82E7-4857-B108-42F48B6B92B3}
-		{44336BAA-0F33-47ED-959A-326DDA9259A1} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{8B31C371-88B2-4EB4-82CB-8B26318F78A1} = {44336BAA-0F33-47ED-959A-326DDA9259A1}
-		{E8FF4CE2-1557-428B-97CE-859C8DCBA2D2} = {44336BAA-0F33-47ED-959A-326DDA9259A1}
-		{FE75C4AF-3DCA-4006-8588-6DAA3651E4F7} = {44336BAA-0F33-47ED-959A-326DDA9259A1}
-		{4D35936C-A11A-4899-A89A-B3E50D4A916F} = {44336BAA-0F33-47ED-959A-326DDA9259A1}
-		{BCE9CA73-EF07-4C20-967B-6DD743B55606} = {44336BAA-0F33-47ED-959A-326DDA9259A1}
-		{EA5314E7-A8FC-4FBA-88A5-8CA314D73B89} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{1A3A5C87-069B-4D11-854A-F476BA5122F4} = {EA5314E7-A8FC-4FBA-88A5-8CA314D73B89}
-		{3E6F35CA-693B-45D6-8AC0-BAE9BE94F2BB} = {EA5314E7-A8FC-4FBA-88A5-8CA314D73B89}
-		{834BABCB-0C0A-449C-AFF8-E587E27BC476} = {EA5314E7-A8FC-4FBA-88A5-8CA314D73B89}
-		{8623B885-A072-4DE8-AD4D-5491EA7D5CC8} = {EA5314E7-A8FC-4FBA-88A5-8CA314D73B89}
-		{CAC67313-DB2D-48B0-95D4-CBD2E5DCE6B1} = {EA5314E7-A8FC-4FBA-88A5-8CA314D73B89}
-		{FD05FF95-DE61-4AF0-8C3C-77269C3A67AA} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{E5D769F1-F0F0-4CA4-B2D6-3DE560DCE248} = {FD05FF95-DE61-4AF0-8C3C-77269C3A67AA}
-		{1B549AEC-1E3F-4D4A-8404-98A43CAF2FD9} = {FD05FF95-DE61-4AF0-8C3C-77269C3A67AA}
-		{D3C59088-9818-4009-B6EB-0299019B1C05} = {FD05FF95-DE61-4AF0-8C3C-77269C3A67AA}
-		{BA405115-3F11-49F0-931C-1E845BBA8D21} = {FD05FF95-DE61-4AF0-8C3C-77269C3A67AA}
-		{B6308CE6-0927-4CD7-96D0-3A2711329F3C} = {FD05FF95-DE61-4AF0-8C3C-77269C3A67AA}
-		{9792FC0F-03A7-4E37-80D9-100FFD092541} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
-		{63422F3B-8FAC-4E5F-A27C-07FB8742E8BD} = {9792FC0F-03A7-4E37-80D9-100FFD092541}
-		{60819F67-5CD7-41A4-9E02-BB27E5A3F715} = {9792FC0F-03A7-4E37-80D9-100FFD092541}
-		{155528FB-E270-4309-B819-B26D0A9C68E5} = {9792FC0F-03A7-4E37-80D9-100FFD092541}
-		{F0E72E60-CC49-4483-85E8-3C55275787B5} = {9792FC0F-03A7-4E37-80D9-100FFD092541}
-		{E3F771FE-FEC8-4AC8-8431-F2738AC25A66} = {9792FC0F-03A7-4E37-80D9-100FFD092541}
+		{AD8563FB-857D-472F-B967-C47B1EAEE517} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{88F2CD8C-2C47-4E66-A4D4-93B2CF5BDCBC} = {AD8563FB-857D-472F-B967-C47B1EAEE517}
+		{47B1F84B-C7FD-4F38-A0F5-FF4383752AF4} = {AD8563FB-857D-472F-B967-C47B1EAEE517}
+		{1189FBBA-A94D-46DA-99B3-BDDBF6D9492F} = {AD8563FB-857D-472F-B967-C47B1EAEE517}
+		{5A2F637A-82ED-4EB9-AF59-05ECF73527F3} = {AD8563FB-857D-472F-B967-C47B1EAEE517}
+		{E574C564-0387-4275-A3F8-C27B2598EE5A} = {AD8563FB-857D-472F-B967-C47B1EAEE517}
+		{C3186E42-13F6-4A26-97CC-E5EC5634D545} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{663AA578-CBBF-4E69-9753-577480DEED1D} = {C3186E42-13F6-4A26-97CC-E5EC5634D545}
+		{7AFB6468-FE81-4A38-8446-3DFF539B2CFC} = {C3186E42-13F6-4A26-97CC-E5EC5634D545}
+		{9A01A608-B58A-4034-8B45-C03F5E72EAF3} = {C3186E42-13F6-4A26-97CC-E5EC5634D545}
+		{3B465E04-2ED4-424B-BE49-8F98D1F754C9} = {C3186E42-13F6-4A26-97CC-E5EC5634D545}
+		{B6A27E5E-D24F-4B28-B9EA-EEAC3E5ACD67} = {C3186E42-13F6-4A26-97CC-E5EC5634D545}
+		{AC44D1F7-5C30-4B09-9274-D6269A9DF078} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{8311AA7C-5553-45E2-AA0D-11981F8F7DBE} = {AC44D1F7-5C30-4B09-9274-D6269A9DF078}
+		{98223582-5CC1-4645-88FA-486C91E14DAC} = {AC44D1F7-5C30-4B09-9274-D6269A9DF078}
+		{DE4AE7DE-5C25-4C01-A796-640E345CE07B} = {AC44D1F7-5C30-4B09-9274-D6269A9DF078}
+		{669D470B-5B4A-4A24-A5EF-60FFBC90703F} = {AC44D1F7-5C30-4B09-9274-D6269A9DF078}
+		{7A93A4AF-18EB-400F-84F9-98CB72FE777E} = {AC44D1F7-5C30-4B09-9274-D6269A9DF078}
+		{71738154-ADA5-4CE9-8AD2-0430D739B8BD} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{7BA4CAEB-2DBB-41AC-8D58-00E6290E2503} = {71738154-ADA5-4CE9-8AD2-0430D739B8BD}
+		{F7340323-42CF-47D1-AB3D-502AB772C141} = {71738154-ADA5-4CE9-8AD2-0430D739B8BD}
+		{E34DBCF6-323E-4A12-8015-1D127EC91530} = {71738154-ADA5-4CE9-8AD2-0430D739B8BD}
+		{5A303375-80C5-4B2D-B80C-6B850C90349F} = {71738154-ADA5-4CE9-8AD2-0430D739B8BD}
+		{7399D12F-02EA-4C0A-8D04-6F5DC202FE3A} = {71738154-ADA5-4CE9-8AD2-0430D739B8BD}
+		{DF7BA057-F70B-4D1C-B138-9E0218CB8F7C} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{E9DD7A57-C490-40BD-93B8-10EC8B1BEFEE} = {DF7BA057-F70B-4D1C-B138-9E0218CB8F7C}
+		{1A6756E2-64B9-4445-BF56-E1CE650AF417} = {DF7BA057-F70B-4D1C-B138-9E0218CB8F7C}
+		{9905D9A7-3507-4914-AB5B-7C680768DB04} = {DF7BA057-F70B-4D1C-B138-9E0218CB8F7C}
+		{3BE08BC0-D162-46E2-8715-97A01680F61C} = {DF7BA057-F70B-4D1C-B138-9E0218CB8F7C}
+		{0605B821-92E9-4CB4-AC5F-97A4D2242330} = {DF7BA057-F70B-4D1C-B138-9E0218CB8F7C}
+		{D4DF648B-B712-4BCD-AED9-6FF9D1494738} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{A23735EA-0E17-4A1B-9E73-CA63735D1958} = {D4DF648B-B712-4BCD-AED9-6FF9D1494738}
+		{02B4D0DD-AABD-4AAC-A08E-9577C3D09971} = {D4DF648B-B712-4BCD-AED9-6FF9D1494738}
+		{84475983-5DA9-4F36-986A-B4D92E4818D8} = {D4DF648B-B712-4BCD-AED9-6FF9D1494738}
+		{74C73BCB-8A30-4A5E-A6A0-9D6275ADB18A} = {D4DF648B-B712-4BCD-AED9-6FF9D1494738}
+		{8EC54B5D-2D81-491F-AD3F-EA433DAC9F0E} = {D4DF648B-B712-4BCD-AED9-6FF9D1494738}
+		{999BBF09-560E-4832-9C79-9489AAE2586F} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{F3B1F33E-0466-49DE-B171-625A0288665B} = {999BBF09-560E-4832-9C79-9489AAE2586F}
+		{431402E6-30D5-4FDE-8CB3-5EEB885ED0A4} = {999BBF09-560E-4832-9C79-9489AAE2586F}
+		{1CED9929-BA7F-431A-AA49-E1B6AD664EE4} = {999BBF09-560E-4832-9C79-9489AAE2586F}
+		{3A5740FC-D826-473E-8BAF-B7D897F91787} = {999BBF09-560E-4832-9C79-9489AAE2586F}
+		{C0BAFE2B-DB6F-4862-8F99-DE79A5C60229} = {999BBF09-560E-4832-9C79-9489AAE2586F}
+		{32B5C665-334B-4C3D-B1DA-637D614B5429} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{A3E9E94E-ED22-4AB4-9C1C-9627FCB41B90} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{D0D5AD3D-9737-47B4-8E0E-D7D4AADBDFCF} = {A3E9E94E-ED22-4AB4-9C1C-9627FCB41B90}
+		{C330247E-010B-45E7-87F7-AF4AEA8402CF} = {A3E9E94E-ED22-4AB4-9C1C-9627FCB41B90}
+		{844D4954-4FE2-46B1-BCB9-FFEF3C246CE7} = {A3E9E94E-ED22-4AB4-9C1C-9627FCB41B90}
+		{E5A7E7E2-30F2-4479-972B-3CC0271F45E6} = {A3E9E94E-ED22-4AB4-9C1C-9627FCB41B90}
+		{C084E9D8-1E39-49DE-B336-57B87202F30D} = {A3E9E94E-ED22-4AB4-9C1C-9627FCB41B90}
+		{884D5C6F-6657-41E3-A44B-C744BD52B0A7} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{1A2903F6-896B-4397-8151-B0CC8DC3BCED} = {884D5C6F-6657-41E3-A44B-C744BD52B0A7}
+		{8C4E574E-7466-4B4B-81BD-A5C0F66ABD77} = {884D5C6F-6657-41E3-A44B-C744BD52B0A7}
+		{53376FE0-EAAC-493E-B96B-24D7D5AEEF5D} = {884D5C6F-6657-41E3-A44B-C744BD52B0A7}
+		{18CD47E0-EA68-404A-B06F-7D42A452B8E8} = {884D5C6F-6657-41E3-A44B-C744BD52B0A7}
+		{5566035D-429E-43F7-B423-0937812AD403} = {884D5C6F-6657-41E3-A44B-C744BD52B0A7}
+		{24B1AE81-0E69-4CC6-81D8-137FC55D97DC} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{6B43421E-9EA1-4811-9897-E7C130CA175D} = {24B1AE81-0E69-4CC6-81D8-137FC55D97DC}
+		{48B6C28A-93CE-437F-AABC-8CF0439CC44D} = {24B1AE81-0E69-4CC6-81D8-137FC55D97DC}
+		{A19F8887-2678-4EF7-8F76-29B59A0A771B} = {24B1AE81-0E69-4CC6-81D8-137FC55D97DC}
+		{9AC0293B-7A15-4CB7-8B1D-D059948FC9AE} = {24B1AE81-0E69-4CC6-81D8-137FC55D97DC}
+		{D0CB84D5-A48D-419B-9119-2EC399586A11} = {24B1AE81-0E69-4CC6-81D8-137FC55D97DC}
+		{980223A4-6CE1-41B8-AB42-66E9393D6760} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{1CE0DD3D-78BF-4922-B544-8B26AD4CA860} = {980223A4-6CE1-41B8-AB42-66E9393D6760}
+		{6BC89409-44E1-4393-9C92-0D68975EFAD1} = {980223A4-6CE1-41B8-AB42-66E9393D6760}
+		{C149C3A6-B6FE-44A3-BA29-97F033BECD17} = {980223A4-6CE1-41B8-AB42-66E9393D6760}
+		{62CA4A5F-806D-462D-9A2C-91ACBB7EF623} = {980223A4-6CE1-41B8-AB42-66E9393D6760}
+		{A2EF3FD9-3220-4F0E-82AD-B523FDEA1888} = {980223A4-6CE1-41B8-AB42-66E9393D6760}
+		{23921EC4-CC62-44B8-B31C-E9D9747D947D} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{78446A6A-2F59-4B18-9CB0-14F7C18B8A0E} = {23921EC4-CC62-44B8-B31C-E9D9747D947D}
+		{C58BC670-0ACB-42BF-B141-4A949EF71099} = {23921EC4-CC62-44B8-B31C-E9D9747D947D}
+		{E3A86A1F-0176-4282-A020-7405D7FFF1E1} = {23921EC4-CC62-44B8-B31C-E9D9747D947D}
+		{61B9D8DC-2E5B-479B-8EA6-03E1344B07CF} = {23921EC4-CC62-44B8-B31C-E9D9747D947D}
+		{DCC2C358-CA3C-4B5E-AD98-CBD759CAA681} = {23921EC4-CC62-44B8-B31C-E9D9747D947D}
+		{FA4D78AA-9815-4350-A253-CFD96C2218FC} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{E0C5CDAF-6D20-4832-8D24-2A7A50711F0D} = {FA4D78AA-9815-4350-A253-CFD96C2218FC}
+		{75252F5A-D3F2-4A4E-ADDC-560E1E3C2066} = {FA4D78AA-9815-4350-A253-CFD96C2218FC}
+		{2DC8BC15-B53A-472F-B764-C686808755D4} = {FA4D78AA-9815-4350-A253-CFD96C2218FC}
+		{0CBFC993-3042-49DF-86C2-3D5D603A3BCA} = {FA4D78AA-9815-4350-A253-CFD96C2218FC}
+		{9931235F-90AF-47C8-A07B-13EE45A32EE3} = {FA4D78AA-9815-4350-A253-CFD96C2218FC}
+		{34303B90-DBA5-409A-86EB-24E643730F48} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{95FFA7BA-A05D-4328-82CE-3362FFA3B85F} = {34303B90-DBA5-409A-86EB-24E643730F48}
+		{844769FF-BA07-49FB-94A2-08EEA8AC2DC3} = {34303B90-DBA5-409A-86EB-24E643730F48}
+		{A7099F66-0A1A-47DB-B1EE-9EFF12195777} = {34303B90-DBA5-409A-86EB-24E643730F48}
+		{A7257491-24A3-4D22-A7FD-0613B57D941B} = {34303B90-DBA5-409A-86EB-24E643730F48}
+		{B565AB39-3DC3-497A-A326-7C670FED0FE4} = {34303B90-DBA5-409A-86EB-24E643730F48}
+		{EF927200-AB61-475E-9F9D-F6FC2328E253} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{DA8B7290-B3D2-4440-AE91-32C946BF86F1} = {EF927200-AB61-475E-9F9D-F6FC2328E253}
+		{BACF5518-E9DC-4BE7-BD59-965E9EA51BB7} = {EF927200-AB61-475E-9F9D-F6FC2328E253}
+		{7675F4E3-BC72-49B8-9EE4-C3E9166C15A4} = {EF927200-AB61-475E-9F9D-F6FC2328E253}
+		{7FFA6FF5-CCE4-4DF1-BB44-D162387AB890} = {EF927200-AB61-475E-9F9D-F6FC2328E253}
+		{29B244D9-E46D-4BD1-BFFF-B58812413D9C} = {EF927200-AB61-475E-9F9D-F6FC2328E253}
+		{981CB3EF-F9EB-4CC4-AC3D-4B767343D5C7} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{9C749173-C8C9-4864-8FBA-3E0C9EB7DA6B} = {981CB3EF-F9EB-4CC4-AC3D-4B767343D5C7}
+		{D96D3583-EBEB-403E-96A8-B9069E65C9B6} = {981CB3EF-F9EB-4CC4-AC3D-4B767343D5C7}
+		{48D01356-52D7-4353-B133-C716D6798417} = {981CB3EF-F9EB-4CC4-AC3D-4B767343D5C7}
+		{7C7DB8A7-5E02-4F9D-8485-FED67B098CA9} = {981CB3EF-F9EB-4CC4-AC3D-4B767343D5C7}
+		{37B0A283-41B5-4D03-80E1-CDDA21EDE314} = {981CB3EF-F9EB-4CC4-AC3D-4B767343D5C7}
+		{939C2BBD-F3AF-491D-B743-D27E9783F7C8} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{F419E887-8A8D-441C-88FB-51EE57C85A97} = {939C2BBD-F3AF-491D-B743-D27E9783F7C8}
+		{2C3DA5E0-B50E-482D-8FDB-0E14B39E026B} = {939C2BBD-F3AF-491D-B743-D27E9783F7C8}
+		{7258978D-1232-44D1-A81A-C610EC48A46C} = {939C2BBD-F3AF-491D-B743-D27E9783F7C8}
+		{A224D7FF-C889-4515-9BE1-75339C91A03F} = {939C2BBD-F3AF-491D-B743-D27E9783F7C8}
+		{05724C5A-4D94-448D-B3DC-39AECB0F3E70} = {939C2BBD-F3AF-491D-B743-D27E9783F7C8}
+		{3443565E-D2C5-431F-8B88-6D04FBEC7451} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{BF82E571-2EF5-4081-B9DE-F23BD522D0A8} = {3443565E-D2C5-431F-8B88-6D04FBEC7451}
+		{093F2DED-1B19-450C-B9FC-C012C40473C3} = {3443565E-D2C5-431F-8B88-6D04FBEC7451}
+		{90F5F723-5F4F-4E9A-8D1B-7F92CBF7444F} = {3443565E-D2C5-431F-8B88-6D04FBEC7451}
+		{40DF9BA3-78EC-44B5-A49E-B4A17F985CB5} = {3443565E-D2C5-431F-8B88-6D04FBEC7451}
+		{ED60E411-182B-4D10-AEDE-224AE4F9C7B7} = {3443565E-D2C5-431F-8B88-6D04FBEC7451}
+		{45C4725C-4FEE-49AB-BA15-378FC81D3F48} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{82F8399B-84DC-4632-B081-2B7697531CA1} = {45C4725C-4FEE-49AB-BA15-378FC81D3F48}
+		{22819F48-B00A-411A-A558-4E77B890A99F} = {45C4725C-4FEE-49AB-BA15-378FC81D3F48}
+		{A9EFEFDA-7D7E-498D-8DFB-1A5BC4373E44} = {45C4725C-4FEE-49AB-BA15-378FC81D3F48}
+		{877BA0E5-DDD1-4EAA-9CE8-C574AC1801B2} = {45C4725C-4FEE-49AB-BA15-378FC81D3F48}
+		{39B2F94D-DAA5-46E5-A000-93975E3D6E11} = {45C4725C-4FEE-49AB-BA15-378FC81D3F48}
+		{A74E2C06-1987-4220-BDE2-6B2A6494261C} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{F12F3D23-2856-4CBA-8905-EA9CB52C9534} = {A74E2C06-1987-4220-BDE2-6B2A6494261C}
+		{8A3D5F46-C927-417F-AAF0-8D057B4CAA60} = {A74E2C06-1987-4220-BDE2-6B2A6494261C}
+		{228D7580-8713-468C-A485-5DD43405FF3E} = {A74E2C06-1987-4220-BDE2-6B2A6494261C}
+		{951ED54A-1E2C-43B5-A46D-4C005BC52FC8} = {A74E2C06-1987-4220-BDE2-6B2A6494261C}
+		{58BF2A6E-2476-4950-8368-90278D08F9FA} = {A74E2C06-1987-4220-BDE2-6B2A6494261C}
+		{043600E3-1B60-4964-948F-7EEA55B262A9} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{CF9F4EAE-B746-41DE-A547-F65B1E6DF193} = {043600E3-1B60-4964-948F-7EEA55B262A9}
+		{6E4CD5B4-366E-40EB-BAC3-04E033A904AD} = {043600E3-1B60-4964-948F-7EEA55B262A9}
+		{FF577BA5-1D0C-459D-B7F1-C02BF53343DB} = {043600E3-1B60-4964-948F-7EEA55B262A9}
+		{8AE875C3-6EB0-4CE0-8897-572EE3BF44D1} = {043600E3-1B60-4964-948F-7EEA55B262A9}
+		{F151763C-FAE7-41BD-A73C-284D7DFC43A8} = {043600E3-1B60-4964-948F-7EEA55B262A9}
+		{8B25BCFF-58E2-4F51-94E4-115AB7DC61A2} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{E1B654A3-8244-46E6-980C-597AD119A958} = {8B25BCFF-58E2-4F51-94E4-115AB7DC61A2}
+		{156D9313-7650-4141-8DCD-D3C8DBBF7642} = {8B25BCFF-58E2-4F51-94E4-115AB7DC61A2}
+		{15B84C74-742F-4768-A361-14B4AA1E39B6} = {8B25BCFF-58E2-4F51-94E4-115AB7DC61A2}
+		{75863B92-3578-4E7A-8F00-30098C4C550F} = {8B25BCFF-58E2-4F51-94E4-115AB7DC61A2}
+		{35F90B6E-B966-41A1-A9FE-4196B404F8F5} = {8B25BCFF-58E2-4F51-94E4-115AB7DC61A2}
+		{558CE661-9CC0-4942-AFE8-10A197C8DDAA} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{C5294C97-CB6C-4188-B36F-54C13B186980} = {558CE661-9CC0-4942-AFE8-10A197C8DDAA}
+		{F484C85E-09E4-41BA-AF6E-2F77B26853F3} = {558CE661-9CC0-4942-AFE8-10A197C8DDAA}
+		{1F91DBBF-BE19-46D6-B49D-ED0B62CCB8F6} = {558CE661-9CC0-4942-AFE8-10A197C8DDAA}
+		{4E17794F-F2BD-4B9F-B34F-A3123FCE713A} = {558CE661-9CC0-4942-AFE8-10A197C8DDAA}
+		{996F1A18-0C46-4169-B4DD-ECF52ACEFB17} = {558CE661-9CC0-4942-AFE8-10A197C8DDAA}
+		{BA08ED94-88B8-414C-A7DD-4A731854A70B} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{46291AE6-55A8-4311-AE68-B2FAF11516B1} = {BA08ED94-88B8-414C-A7DD-4A731854A70B}
+		{AB715742-9EE8-4D2A-AD38-F0E75723A9AB} = {BA08ED94-88B8-414C-A7DD-4A731854A70B}
+		{D7B5D488-BA2F-471B-A4AF-1CA4030E2B07} = {BA08ED94-88B8-414C-A7DD-4A731854A70B}
+		{0BD4DCED-A521-40A2-B8C5-AA19420A7677} = {BA08ED94-88B8-414C-A7DD-4A731854A70B}
+		{6C2563FD-007F-47CD-8BFD-BAD90583A2A0} = {BA08ED94-88B8-414C-A7DD-4A731854A70B}
+		{A20F1BF2-3D6C-45DB-9C1F-AA3C12DE7CF5} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{09BAE709-4F25-4B39-B1F8-0BCE91800D6E} = {A20F1BF2-3D6C-45DB-9C1F-AA3C12DE7CF5}
+		{2B2A9558-058E-4C26-8637-628846329B9A} = {A20F1BF2-3D6C-45DB-9C1F-AA3C12DE7CF5}
+		{3EF85AC3-2344-4615-BC88-922EE1C483A1} = {A20F1BF2-3D6C-45DB-9C1F-AA3C12DE7CF5}
+		{444128AD-C784-447B-AF99-75B9CA9115D3} = {A20F1BF2-3D6C-45DB-9C1F-AA3C12DE7CF5}
+		{168686CA-8AB5-4F63-B18E-43686E2286BF} = {A20F1BF2-3D6C-45DB-9C1F-AA3C12DE7CF5}
+		{7930C64B-269B-4D66-8530-D77A7D185FDD} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{E3BFF825-F2A1-4F7D-B08A-6CD34EB28990} = {7930C64B-269B-4D66-8530-D77A7D185FDD}
+		{FCF20E51-E8E5-46A3-8D7A-BB0E68C8BF4A} = {7930C64B-269B-4D66-8530-D77A7D185FDD}
+		{9F4786E7-7402-4D88-AB14-022316A0CE0E} = {7930C64B-269B-4D66-8530-D77A7D185FDD}
+		{7C6130AD-7BC1-43E4-8B4C-7CC3B4071077} = {7930C64B-269B-4D66-8530-D77A7D185FDD}
+		{D2FB4497-2C23-4ADE-9C48-45615DD2AEDE} = {7930C64B-269B-4D66-8530-D77A7D185FDD}
+		{A44746FC-A048-427D-ADE6-89792CF72C06} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{C38A2D2C-E410-4084-9245-F577777E8009} = {A44746FC-A048-427D-ADE6-89792CF72C06}
+		{CC49CFB0-F27C-4D16-AAF8-21097F468129} = {A44746FC-A048-427D-ADE6-89792CF72C06}
+		{BD9BF791-120F-4695-A9F1-E256D33094EA} = {A44746FC-A048-427D-ADE6-89792CF72C06}
+		{1E903CF9-CB2D-4254-A80A-71E167DE30EE} = {A44746FC-A048-427D-ADE6-89792CF72C06}
+		{9CE5A256-AC1A-4867-86E2-57C37F1A91B4} = {A44746FC-A048-427D-ADE6-89792CF72C06}
+		{DAEF2A89-9D3A-47AA-879D-6CA2FBB7E721} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{40BA3D89-6B91-4199-AF4B-50ABFBD0C18F} = {DAEF2A89-9D3A-47AA-879D-6CA2FBB7E721}
+		{02374DF3-D0F8-43DD-A638-8130A604A683} = {DAEF2A89-9D3A-47AA-879D-6CA2FBB7E721}
+		{944716B4-DF95-4D7B-9AFA-8F8D23F8B840} = {DAEF2A89-9D3A-47AA-879D-6CA2FBB7E721}
+		{4B822254-A6C9-4451-9738-94F517DC5C40} = {DAEF2A89-9D3A-47AA-879D-6CA2FBB7E721}
+		{AD32A2F2-4AD9-44FD-AB57-07FD17B7DB76} = {DAEF2A89-9D3A-47AA-879D-6CA2FBB7E721}
+		{72A387B1-5120-41F5-8AE7-F7B2F84DEC7E} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{63BB1FC1-A3B1-463D-A2DB-C631344EA5C8} = {72A387B1-5120-41F5-8AE7-F7B2F84DEC7E}
+		{91A3791F-AC18-48FB-B27C-05389B988B75} = {72A387B1-5120-41F5-8AE7-F7B2F84DEC7E}
+		{6A6647F8-FFFC-40CB-814E-7E5E672084A1} = {72A387B1-5120-41F5-8AE7-F7B2F84DEC7E}
+		{89B5C4C5-26D2-4EBE-AB46-28B487BF3443} = {72A387B1-5120-41F5-8AE7-F7B2F84DEC7E}
+		{391CFEDA-8943-4163-8420-D7BEDC82B4EF} = {72A387B1-5120-41F5-8AE7-F7B2F84DEC7E}
+		{458110B8-1077-4A5D-ADBF-ECA3DD9630D2} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{ADF1A47D-4C05-4DC5-B318-E3E412C2578E} = {458110B8-1077-4A5D-ADBF-ECA3DD9630D2}
+		{38C583D8-26EB-4BA0-AEEF-338468E4D8DC} = {458110B8-1077-4A5D-ADBF-ECA3DD9630D2}
+		{38F809F8-5362-4A47-B92E-D2F2999308D5} = {458110B8-1077-4A5D-ADBF-ECA3DD9630D2}
+		{8DEA7863-E21B-4948-9069-276FFDBDE93F} = {458110B8-1077-4A5D-ADBF-ECA3DD9630D2}
+		{A0257DC7-E6AF-43F1-8E7F-0419BE1F9B61} = {458110B8-1077-4A5D-ADBF-ECA3DD9630D2}
+		{445348ED-C3FB-4A60-A975-B8A0BE66C4DC} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{602515A5-333A-4B51-BE61-43DDD05B2048} = {445348ED-C3FB-4A60-A975-B8A0BE66C4DC}
+		{6698BD46-B68A-4C53-9560-DD21A91E910D} = {445348ED-C3FB-4A60-A975-B8A0BE66C4DC}
+		{04A77223-332C-4502-A45E-C3FE2E46F352} = {445348ED-C3FB-4A60-A975-B8A0BE66C4DC}
+		{5DDBBD4D-7153-41AF-9838-DCD677D9CB67} = {445348ED-C3FB-4A60-A975-B8A0BE66C4DC}
+		{43A0D5B5-F2B4-4436-A785-7AFBAD4764DD} = {445348ED-C3FB-4A60-A975-B8A0BE66C4DC}
+		{E7DD329C-621D-4B6D-A4EB-812BA7980FC5} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{787D3BC7-1984-4203-B8A2-BF50E708E751} = {E7DD329C-621D-4B6D-A4EB-812BA7980FC5}
+		{2BAD7146-8A64-4536-83CA-D4DDABD2E3B1} = {E7DD329C-621D-4B6D-A4EB-812BA7980FC5}
+		{9B57CB03-D55A-432C-9CAE-AD3C730F796E} = {E7DD329C-621D-4B6D-A4EB-812BA7980FC5}
+		{66218B70-31E5-4944-AC34-A01620A15EE3} = {E7DD329C-621D-4B6D-A4EB-812BA7980FC5}
+		{8138E863-CAA5-4BFF-8122-0B997588FF40} = {E7DD329C-621D-4B6D-A4EB-812BA7980FC5}
+		{B5167BB6-44C2-4FEA-AC4B-BB64B920CF33} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{6C97BF81-D77B-4050-BD1E-ABB7F756E7D5} = {B5167BB6-44C2-4FEA-AC4B-BB64B920CF33}
+		{39BC41FA-A4ED-4C24-AEA1-A3CD3556F21A} = {B5167BB6-44C2-4FEA-AC4B-BB64B920CF33}
+		{E9714A3C-110B-4360-9354-97F6CCF27C76} = {B5167BB6-44C2-4FEA-AC4B-BB64B920CF33}
+		{4B0BDD67-F062-4E65-9F00-0019AC59FC80} = {B5167BB6-44C2-4FEA-AC4B-BB64B920CF33}
+		{902F56EC-F9A2-4D74-9AE9-A8ED9E734A0D} = {B5167BB6-44C2-4FEA-AC4B-BB64B920CF33}
+		{ADA5E631-964A-44EA-B140-76A429206B62} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{E0546F85-E14F-4AD6-B123-749F143D87FA} = {ADA5E631-964A-44EA-B140-76A429206B62}
+		{9123E499-47D5-4B7C-BAB4-155A96CA5E9C} = {ADA5E631-964A-44EA-B140-76A429206B62}
+		{49C73690-31F0-4751-81F9-FC1A48C455B7} = {ADA5E631-964A-44EA-B140-76A429206B62}
+		{9733281E-3DA4-4833-B1B3-FF2082FD8317} = {ADA5E631-964A-44EA-B140-76A429206B62}
+		{E4375FB1-5A9B-4C3C-9869-A987D98E97B8} = {ADA5E631-964A-44EA-B140-76A429206B62}
+		{F8251B5D-EC0D-4365-B72E-103489707727} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{BA873643-A43A-4DA1-A0EF-2419CE4FD4C0} = {F8251B5D-EC0D-4365-B72E-103489707727}
+		{18F3ECAE-0CD6-4A59-8CB2-80533F276AA3} = {F8251B5D-EC0D-4365-B72E-103489707727}
+		{B98D524C-5B0F-4F4A-BA6A-93C048B64BE5} = {F8251B5D-EC0D-4365-B72E-103489707727}
+		{693F1F20-4EE3-417C-8323-165678635934} = {F8251B5D-EC0D-4365-B72E-103489707727}
+		{BD862685-597B-4F54-9BA4-509319151BA4} = {F8251B5D-EC0D-4365-B72E-103489707727}
+		{46F94843-D4EE-470F-B062-99573F26980C} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{2A8F70CD-E47E-4C2C-8999-091CD5961EB2} = {46F94843-D4EE-470F-B062-99573F26980C}
+		{70CA134F-2307-49F7-BD2A-B30371B88FF1} = {46F94843-D4EE-470F-B062-99573F26980C}
+		{90E0ECB4-8116-417B-8155-629A4ADA3956} = {46F94843-D4EE-470F-B062-99573F26980C}
+		{1EF77FCD-C07B-4819-B694-D40838231F9D} = {46F94843-D4EE-470F-B062-99573F26980C}
+		{7F99FC34-0365-4B00-8E5B-EC8B133E02C2} = {46F94843-D4EE-470F-B062-99573F26980C}
+		{56E6A55D-CC64-4390-8A24-E409D1A913EF} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{DB086F2A-FC46-4F2D-801A-82647B261D6F} = {56E6A55D-CC64-4390-8A24-E409D1A913EF}
+		{297FC084-5027-44B3-BE25-2E16D16E85D2} = {56E6A55D-CC64-4390-8A24-E409D1A913EF}
+		{4575A7B1-5185-42C5-A7AD-88665AE2E3BF} = {56E6A55D-CC64-4390-8A24-E409D1A913EF}
+		{2E940717-F0E3-4854-97DF-652C7A59A258} = {56E6A55D-CC64-4390-8A24-E409D1A913EF}
+		{8AA94107-1FB8-4717-A251-9FE2203FB5EB} = {56E6A55D-CC64-4390-8A24-E409D1A913EF}
+		{A0C03EBF-CBC8-44DA-88AA-A8A1E860D02E} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{2F05AA9A-C7E9-41ED-9741-3264E34D852D} = {A0C03EBF-CBC8-44DA-88AA-A8A1E860D02E}
+		{53E678C2-4132-42EE-99F1-0FE88293C874} = {A0C03EBF-CBC8-44DA-88AA-A8A1E860D02E}
+		{B33134D3-BFB6-4387-AC19-9ECB4BF1E734} = {A0C03EBF-CBC8-44DA-88AA-A8A1E860D02E}
+		{0EFD8E49-2A2C-4F41-8461-BE05701BD5E1} = {A0C03EBF-CBC8-44DA-88AA-A8A1E860D02E}
+		{C187202B-32A0-47F7-9603-73CAD25D0986} = {A0C03EBF-CBC8-44DA-88AA-A8A1E860D02E}
+		{D4BC94DA-3928-443F-BCCF-7DDA8B516A50} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{707506E0-BE37-4C01-BEF6-E0E859F1716D} = {D4BC94DA-3928-443F-BCCF-7DDA8B516A50}
+		{F9FAF246-06D9-48C8-88F0-0F716CCAC013} = {D4BC94DA-3928-443F-BCCF-7DDA8B516A50}
+		{66DEF703-6F94-48DA-9452-23BC3AD56A18} = {D4BC94DA-3928-443F-BCCF-7DDA8B516A50}
+		{7FC6E5D1-5143-47AD-AF1B-A557E776F4B1} = {D4BC94DA-3928-443F-BCCF-7DDA8B516A50}
+		{54E8A15F-CE57-4267-81CF-8AF7192B2D86} = {D4BC94DA-3928-443F-BCCF-7DDA8B516A50}
+		{4AD11A14-8A2D-4882-BCDD-BACDFB31BD7B} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{BEE8DED7-9D01-419B-896F-0C5C7D98126A} = {4AD11A14-8A2D-4882-BCDD-BACDFB31BD7B}
+		{BB266953-D765-4BC6-9315-D206548CB8A6} = {4AD11A14-8A2D-4882-BCDD-BACDFB31BD7B}
+		{FF8273D8-A9A0-4623-B799-514431A294C3} = {4AD11A14-8A2D-4882-BCDD-BACDFB31BD7B}
+		{D9E842BD-5E87-4BC4-9043-86FFDA22F63D} = {4AD11A14-8A2D-4882-BCDD-BACDFB31BD7B}
+		{9E2AA876-9882-42ED-8393-8DB5D20F8AF3} = {4AD11A14-8A2D-4882-BCDD-BACDFB31BD7B}
+		{289C1372-5714-4508-A0B3-C34499772AA2} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{18355D7A-4D71-4CBF-AC85-EB9CA5E3533E} = {289C1372-5714-4508-A0B3-C34499772AA2}
+		{781F0A71-6561-4A11-9AED-1D16163938CE} = {289C1372-5714-4508-A0B3-C34499772AA2}
+		{56C201B0-6BD3-49BF-9B76-456A58FF1AA6} = {289C1372-5714-4508-A0B3-C34499772AA2}
+		{8609F8BD-6E69-4A00-BFBA-3A00D5D48149} = {289C1372-5714-4508-A0B3-C34499772AA2}
+		{E911BE99-C18A-484B-91F4-2CF421C6AABA} = {289C1372-5714-4508-A0B3-C34499772AA2}
+		{E4F085FC-111B-40AC-A18A-B64711676E17} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{212B8962-F927-4FE4-A41E-A98E9E7B9362} = {E4F085FC-111B-40AC-A18A-B64711676E17}
+		{03EFBEDB-7A18-4637-9109-252F4D99A636} = {E4F085FC-111B-40AC-A18A-B64711676E17}
+		{8A0AEE66-1CC5-43C9-BA1A-8D32D9E00481} = {E4F085FC-111B-40AC-A18A-B64711676E17}
+		{63A1A376-3F79-4EBC-8FA7-F6AD80B23D2A} = {E4F085FC-111B-40AC-A18A-B64711676E17}
+		{D06E1AD7-9DC9-4CDF-8CCE-D8BBC80201D0} = {E4F085FC-111B-40AC-A18A-B64711676E17}
+		{048E3A77-3889-4EE9-A898-AF630D796124} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{23566608-4A1E-4C97-9C7B-033B62BFB755} = {048E3A77-3889-4EE9-A898-AF630D796124}
+		{BE7CC84A-AC78-4A1C-9411-4A0349F22571} = {048E3A77-3889-4EE9-A898-AF630D796124}
+		{8D142242-5162-4DE1-BBE6-7BB9D4567EE7} = {048E3A77-3889-4EE9-A898-AF630D796124}
+		{737F7695-E5EC-4125-B920-603ED86D2AF2} = {048E3A77-3889-4EE9-A898-AF630D796124}
+		{169314BE-66F7-443D-98B6-BC9C3BB2EF7C} = {048E3A77-3889-4EE9-A898-AF630D796124}
+		{6F4B4E71-EE0D-47E9-8074-27A4D89A5CEA} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{415B4E11-769F-4F1E-835C-77ABDC2636FF} = {6F4B4E71-EE0D-47E9-8074-27A4D89A5CEA}
+		{C5C99E82-BE0A-45EB-AEEC-513F79B7E60E} = {6F4B4E71-EE0D-47E9-8074-27A4D89A5CEA}
+		{0E99B4F6-495F-4BDF-B4C3-F0E6C1941E71} = {6F4B4E71-EE0D-47E9-8074-27A4D89A5CEA}
+		{C1FD7EF9-0589-4380-A813-FF18902911A8} = {6F4B4E71-EE0D-47E9-8074-27A4D89A5CEA}
+		{9566FD0A-B13C-422C-ABAA-0E82B4EF5D37} = {6F4B4E71-EE0D-47E9-8074-27A4D89A5CEA}
+		{5A27D1BE-D8E3-44C4-8100-0062641F687D} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{8B31C371-88B2-4EB4-82CB-8B26318F78A1} = {5A27D1BE-D8E3-44C4-8100-0062641F687D}
+		{E8FF4CE2-1557-428B-97CE-859C8DCBA2D2} = {5A27D1BE-D8E3-44C4-8100-0062641F687D}
+		{FE75C4AF-3DCA-4006-8588-6DAA3651E4F7} = {5A27D1BE-D8E3-44C4-8100-0062641F687D}
+		{4D35936C-A11A-4899-A89A-B3E50D4A916F} = {5A27D1BE-D8E3-44C4-8100-0062641F687D}
+		{BCE9CA73-EF07-4C20-967B-6DD743B55606} = {5A27D1BE-D8E3-44C4-8100-0062641F687D}
+		{88D98C8A-F828-4A7E-A0DD-5EFF2295DD59} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{1A3A5C87-069B-4D11-854A-F476BA5122F4} = {88D98C8A-F828-4A7E-A0DD-5EFF2295DD59}
+		{3E6F35CA-693B-45D6-8AC0-BAE9BE94F2BB} = {88D98C8A-F828-4A7E-A0DD-5EFF2295DD59}
+		{834BABCB-0C0A-449C-AFF8-E587E27BC476} = {88D98C8A-F828-4A7E-A0DD-5EFF2295DD59}
+		{8623B885-A072-4DE8-AD4D-5491EA7D5CC8} = {88D98C8A-F828-4A7E-A0DD-5EFF2295DD59}
+		{CAC67313-DB2D-48B0-95D4-CBD2E5DCE6B1} = {88D98C8A-F828-4A7E-A0DD-5EFF2295DD59}
+		{495AEAAA-8BEE-4064-A7FA-A5B58020DBDA} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{E5D769F1-F0F0-4CA4-B2D6-3DE560DCE248} = {495AEAAA-8BEE-4064-A7FA-A5B58020DBDA}
+		{1B549AEC-1E3F-4D4A-8404-98A43CAF2FD9} = {495AEAAA-8BEE-4064-A7FA-A5B58020DBDA}
+		{D3C59088-9818-4009-B6EB-0299019B1C05} = {495AEAAA-8BEE-4064-A7FA-A5B58020DBDA}
+		{BA405115-3F11-49F0-931C-1E845BBA8D21} = {495AEAAA-8BEE-4064-A7FA-A5B58020DBDA}
+		{B6308CE6-0927-4CD7-96D0-3A2711329F3C} = {495AEAAA-8BEE-4064-A7FA-A5B58020DBDA}
+		{3699D664-A5A1-435A-B5AC-0ADE4E5E7C7B} = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}
+		{63422F3B-8FAC-4E5F-A27C-07FB8742E8BD} = {3699D664-A5A1-435A-B5AC-0ADE4E5E7C7B}
+		{60819F67-5CD7-41A4-9E02-BB27E5A3F715} = {3699D664-A5A1-435A-B5AC-0ADE4E5E7C7B}
+		{155528FB-E270-4309-B819-B26D0A9C68E5} = {3699D664-A5A1-435A-B5AC-0ADE4E5E7C7B}
+		{F0E72E60-CC49-4483-85E8-3C55275787B5} = {3699D664-A5A1-435A-B5AC-0ADE4E5E7C7B}
+		{E3F771FE-FEC8-4AC8-8431-F2738AC25A66} = {3699D664-A5A1-435A-B5AC-0ADE4E5E7C7B}
 		{7BEE7C44-BE12-43CC-AFB9-B5852A1F43C8} = {AAB6968E-1FCE-47C8-B34C-4850E27458F1}
 		{41CCC814-09D6-4CC9-850D-F62774A4834B} = {AAB6968E-1FCE-47C8-B34C-4850E27458F1}
 		{12D065E5-0745-4C75-AF9D-34794913346F} = {AAB6968E-1FCE-47C8-B34C-4850E27458F1}
