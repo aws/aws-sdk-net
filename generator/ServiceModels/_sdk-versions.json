@@ -287,6 +287,12 @@
             "Dependencies" : {
                 "Core" : "3.0.0.2"
             }
+        },
+        "ElasticFileSystem"         : {
+            "Version" : "3.0.0.0",
+            "Dependencies" : {
+                "Core" : "3.0.0.2"
+            }
         }
     }
 }
