@@ -1072,7 +1072,6 @@ namespace Amazon.Runtime
         #endregion
     }
 
-
     // Credentials fallback mechanism
     public static class FallbackCredentialsFactory
     {

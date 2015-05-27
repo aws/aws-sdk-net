@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("AndroidTests.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("AndroidApp.Resource", IsApplication=true)]
 
-namespace AndroidTests
+namespace AndroidApp
 {
 	
 	
@@ -26,10 +26,6 @@ namespace AndroidTests
 		
 		public static void UpdateIdValues()
 		{
-			global::PCLCrypto.Resource.String.ApplicationName = global::AndroidTests.Resource.String.ApplicationName;
-			global::PCLCrypto.Resource.String.Hello = global::AndroidTests.Resource.String.Hello;
-			global::PCLStorage.Resource.String.ApplicationName = global::AndroidTests.Resource.String.ApplicationName;
-			global::PCLStorage.Resource.String.Hello = global::AndroidTests.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
@@ -66,9 +62,6 @@ namespace AndroidTests
 			
 			// aapt resource value: 0x7f050000
 			public const int MyButton = 2131034112;
-			
-			// aapt resource value: 0x7f050001
-			public const int TextField = 2131034113;
 			
 			static Id()
 			{

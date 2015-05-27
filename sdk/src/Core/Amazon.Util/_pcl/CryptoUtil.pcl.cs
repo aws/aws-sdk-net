@@ -114,7 +114,7 @@ namespace Amazon.Util
             }
 
             public string HMACSign(byte[] data, string key, SigningAlgorithm algorithmName)
-            {
+            {                
                 //var crypt = MacAlgorithmProvider.OpenAlgorithm(ConvertToAlgorithName(algorithmName));
                 var crypt = WinRTCrypto.MacAlgorithmProvider.OpenAlgorithm(Convert(algorithmName));
 
