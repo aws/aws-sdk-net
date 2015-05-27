@@ -52,8 +52,15 @@ namespace CredentialsVendor
                 {
                     Console.WriteLine("Credentials for {0} should be regenerated", credentialsFile);
                     credentials = GenerateNewCredentials();
-                    WriteToJsonFile(credentials, credentialsFile);
-                    vendedCredentials++;
+                    if (credentials == null)
+                    {
+                        Console.WriteLine("Credentials for {0} could not be generated")
+                    }
+                    else
+                    {
+                        WriteToJsonFile(credentials, credentialsFile);
+                        vendedCredentials++;
+                    }
                 }
                 else
                     Console.WriteLine("Credentials for {0} not being regenerated");
@@ -66,16 +73,24 @@ namespace CredentialsVendor
         private static Credentials GenerateNewCredentials()
         {
             Console.WriteLine("Creating STS client...");
-            using (var stsClient = new AmazonSecurityTokenServiceClient())
+            try
             {
-                Console.WriteLine("Retrieving session credentials...");
-                var credentials = stsClient.GetSessionToken().Credentials;
+                using (var stsClient = new AmazonSecurityTokenServiceClient())
+                {
+                    Console.WriteLine("Retrieving session credentials...");
+                    var credentials = stsClient.GetSessionToken().Credentials;
 
-                var expireTime = credentials.Expiration;
-                var lifetime = expireTime - DateTime.Now;
-                Console.WriteLine("Retrieved credentials that will expire after {0} (in {1})", expireTime, lifetime);
+                    var expireTime = credentials.Expiration;
+                    var lifetime = expireTime - DateTime.Now;
+                    Console.WriteLine("Retrieved credentials that will expire after {0} (in {1})", expireTime, lifetime);
 
-                return credentials;
+                    return credentials;
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Failed during credentials retrieval: {0}");
+                return null;
             }
         }
 
