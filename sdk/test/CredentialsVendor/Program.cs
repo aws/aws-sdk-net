@@ -54,7 +54,7 @@ namespace CredentialsVendor
                     credentials = GenerateNewCredentials();
                     if (credentials == null)
                     {
-                        Console.WriteLine("Credentials for {0} could not be generated")
+                        Console.WriteLine("Credentials for {0} could not be generated");
                     }
                     else
                     {
