@@ -12,6 +12,10 @@ using Amazon.Runtime.Internal.Auth;
 using System.Configuration;
 using System.Collections.Specialized;
 using System.Xml;
+using Amazon.Runtime.Internal.Settings;
+using System.IO;
+using ThirdParty.Json.LitJson;
+using Amazon.Runtime.Internal.Util;
 
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
@@ -20,10 +24,61 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     public class General
     {
         [TestMethod]
+        public void TestPersistenceManagerDecryptionFail()
+        {
+            var settingsType = "IntegTests";
+            var fakeAccessKey = "FAKEKEY";
+            var storeFolder = PersistenceManager.GetSettingsStoreFolder();
+            var jsonFile = Path.Combine(storeFolder, settingsType + ".json");
+            var uniqueKey = DateTime.Now.ToFileTime().ToString();
+
+            var allSettings = PersistenceManager.Instance.GetSettings(settingsType);
+            var settings = allSettings.NewObjectSettings(uniqueKey);
+            settings[SettingsConstants.AccessKeyField] = fakeAccessKey;
+            PersistenceManager.Instance.SaveSettings(settingsType, allSettings);
+
+            Assert.IsTrue(File.Exists(jsonFile));
+
+            try
+            {
+                PushGarbageData(fakeAccessKey, jsonFile, uniqueKey);
+
+                using (UtilityMethods.SetLogging(LoggingOptions.SystemDiagnostics, ResponseLoggingOption.Never))
+                {
+                    var listener = UtilityMethods.AttachListener();
+
+                    allSettings = PersistenceManager.Instance.GetSettings(settingsType);
+                    settings = allSettings[uniqueKey];
+                    Assert.IsFalse(settings.Keys.Contains(SettingsConstants.AccessKeyField));
+
+                    // check that we logged the error message and key
+                    var loggedMessages = listener.AccumulatedLog;
+                    Assert.IsTrue(loggedMessages.Contains(uniqueKey));
+                    Assert.IsTrue(loggedMessages.Contains(SettingsConstants.AccessKeyField));
+                }
+            }
+            finally
+            {
+                File.Delete(jsonFile);
+            }
+        }
+
+        private static void PushGarbageData(string fakeAccessKey, string jsonFile, string uniqueKey)
+        {
+            var jsonText = File.ReadAllText(jsonFile);
+            var json = JsonMapper.ToObject(jsonText);
+
+            // storing clear data into encrypted field
+            json[uniqueKey][SettingsConstants.AccessKeyField] = fakeAccessKey;
+            jsonText = json.ToJson(prettyPrint: true);
+            File.WriteAllText(jsonFile, jsonText);
+        }
+
+        [TestMethod]
         public void TestClientDispose()
         {
             IAmazonS3 client;
-            using(client = new AmazonS3Client())
+            using (client = new AmazonS3Client())
             {
                 var response = client.ListBuckets();
                 Assert.IsNotNull(response);
@@ -34,7 +89,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             AssertExtensions.ExpectException(() => client.ListBuckets(), typeof(ObjectDisposedException));
         }
-        
+
         public void TestExpiringCredentials()
         {
             // test that non-expired credentials work
@@ -50,7 +105,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             // 1 minute offset
             var epsilon = TimeSpan.FromMinutes(1);
-            
+
             TestExpire(DateTime.Now + epsilon, expectFailure: false);
             TestExpire(DateTime.UtcNow + epsilon, expectFailure: false);
             TestExpire(DateTime.Now - epsilon, expectFailure: true);

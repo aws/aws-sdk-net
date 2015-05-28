@@ -33,7 +33,6 @@ namespace Amazon.Runtime.Internal.Settings
     {
         #region Private members
 
-        static Logger LOGGER = Logger.GetLogger(typeof(PersistenceManager)); 
         static PersistenceManager INSTANCE = new PersistenceManager();
         HashSet<string> _encryptedKeys;
         Dictionary<string, SettingsWatcher> _watchers = new Dictionary<string, SettingsWatcher>();
@@ -245,7 +244,8 @@ namespace Amazon.Runtime.Internal.Settings
                             catch(Exception e)
                             {
                                 objectCollection.Remove(key);
-                                LOGGER.Error(e, "Exception decrypting value for key {0}/{1}", settingsKey, key);
+                                var logger = Logger.GetLogger(typeof(PersistenceManager));
+                                logger.Error(e, "Exception decrypting value for key {0}/{1}", settingsKey, key);
                             }
                         }
                     }

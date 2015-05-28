@@ -53,7 +53,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// A structure that includes ZipFile. 
+        /// The code for the Lambda function. 
         /// </para>
         /// </summary>
         public FunctionCode Code

@@ -33,7 +33,7 @@ namespace Amazon.S3.Transfer.Internal
             var initRequest = ConstructInitiateMultipartUploadRequest();
             var initResponse = await _s3Client.InitiateMultipartUploadAsync(initRequest, cancellationToken).
                 ConfigureAwait(continueOnCapturedContext: false);
-            _logger.DebugFormat("Initiated upload: {0}", initResponse.UploadId);
+            Logger.DebugFormat("Initiated upload: {0}", initResponse.UploadId);
 
             var pendingUploadPartTasks = new List<Task<UploadPartResponse>>();
             
@@ -41,7 +41,7 @@ namespace Amazon.S3.Transfer.Internal
             CancellationTokenSource internalCts = null;
             try
             {
-                _logger.DebugFormat("Queue up the UploadPartRequests to be executed");
+                Logger.DebugFormat("Queue up the UploadPartRequests to be executed");
                 long filePosition = 0;
                 for (int i = 1; filePosition < this._contentLength; i++)
                 {
@@ -54,7 +54,7 @@ namespace Amazon.S3.Transfer.Internal
 
                 this._totalNumberOfParts = this._partsToUpload.Count;
 
-                _logger.DebugFormat("Scheduling the {0} UploadPartRequests in the queue", this._totalNumberOfParts);
+                Logger.DebugFormat("Scheduling the {0} UploadPartRequests in the queue", this._totalNumberOfParts);
 
                 internalCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
                 var concurrencyLevel = CalculateConcurrentServiceRequests();
@@ -86,20 +86,20 @@ namespace Amazon.S3.Transfer.Internal
                     pendingUploadPartTasks.Add(task);
                 }
 
-                _logger.DebugFormat("Waiting for upload part requests to complete. ({0})", initResponse.UploadId);
+                Logger.DebugFormat("Waiting for upload part requests to complete. ({0})", initResponse.UploadId);
                 _uploadResponses = await WhenAllOrFirstExceptionAsync(pendingUploadPartTasks, cancellationToken).
                     ConfigureAwait(continueOnCapturedContext: false);
 
-                _logger.DebugFormat("Beginning completing multipart. ({0})", initResponse.UploadId);
+                Logger.DebugFormat("Beginning completing multipart. ({0})", initResponse.UploadId);
                 var compRequest = ConstructCompleteMultipartUploadRequest(initResponse);
                 await this._s3Client.CompleteMultipartUploadAsync(compRequest, cancellationToken).
                     ConfigureAwait(continueOnCapturedContext: false);
-                _logger.DebugFormat("Done completing multipart. ({0})", initResponse.UploadId);
+                Logger.DebugFormat("Done completing multipart. ({0})", initResponse.UploadId);
 
             }
             catch (Exception e)
             {
-                _logger.Error(e, "Exception while uploading. ({0})", initResponse.UploadId);
+                Logger.Error(e, "Exception while uploading. ({0})", initResponse.UploadId);
                 // Can't do async invocation in the catch block, doing cleanup synchronously.
                 Cleanup(initResponse.UploadId, pendingUploadPartTasks);
                 throw;
@@ -116,9 +116,9 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     this._fileTransporterRequest.InputStream.Dispose();
                 }
-                if (_logger != null)
+                if (Logger != null)
                 {
-                    _logger.Flush();
+                    Logger.Flush();
                 }
             }
         }
@@ -155,7 +155,7 @@ namespace Amazon.S3.Transfer.Internal
             }
             catch(Exception exception)
             {
-                _logger.InfoFormat(
+                Logger.InfoFormat(
                     "A timeout occured while waiting for all upload part request to complete as part of aborting the multipart upload : {0}",
                     exception.Message);
             }
@@ -175,7 +175,7 @@ namespace Amazon.S3.Transfer.Internal
             }
             catch (Exception e)
             {
-                _logger.InfoFormat("Error attempting to abort multipart for key {0}: {1}", this._fileTransporterRequest.Key, e.Message);
+                Logger.InfoFormat("Error attempting to abort multipart for key {0}: {1}", this._fileTransporterRequest.Key, e.Message);
             }
         }
     }

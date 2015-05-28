@@ -155,17 +155,9 @@ namespace Amazon.Lambda
     {
 
         /// <summary>
-        /// Constant Jvm for Runtime
-        /// </summary>
-        public static readonly Runtime Jvm = new Runtime("jvm");
-        /// <summary>
         /// Constant Nodejs for Runtime
         /// </summary>
         public static readonly Runtime Nodejs = new Runtime("nodejs");
-        /// <summary>
-        /// Constant Python for Runtime
-        /// </summary>
-        public static readonly Runtime Python = new Runtime("python");
 
         /// <summary>
         /// Default Constructor

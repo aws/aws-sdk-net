@@ -13,6 +13,8 @@ using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
 using Amazon.Runtime;
 using ThirdParty.MD5;
+using Amazon;
+using System.Diagnostics;
 
 namespace AWSSDK_DotNet.IntegrationTests.Utils
 {
@@ -30,13 +32,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         {
             get
             {
-                if(_accountId == null)
+                if (_accountId == null)
                 {
                     var createRequest = new CreateTopicRequest
                     {
                         Name = "sdk-accountid-lookup" + DateTime.Now.Ticks
                     };
-                    using(var snsClient = new AmazonSimpleNotificationServiceClient())
+                    using (var snsClient = new AmazonSimpleNotificationServiceClient())
                     {
                         var response = snsClient.CreateTopic(createRequest);
                         var tokens = response.TopicArn.Split(':');
@@ -64,9 +66,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         {
             return CreateStreamFromString(s, new MemoryStream());
         }
-        
+
         public static Stream CreateStreamFromString(string s, Stream stream)
-        {            
+        {
             StreamWriter writer = new StreamWriter(stream);
             writer.Write(s);
             writer.Flush();
@@ -190,7 +192,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             var maxTime = TimeSpan.FromSeconds(maxWaitSeconds);
             var endTime = DateTime.Now + maxTime;
 
-            while(DateTime.Now < endTime)
+            while (DateTime.Now < endTime)
             {
                 if (matchFunction())
                     return;
@@ -232,6 +234,77 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         public static string GenerateName(string name)
         {
             return name + new Random().Next();
+        }
+
+
+        private const string ListenerSource = "Amazon";
+        public static void RemoveListener(TraceListener listener)
+        {
+            AWSConfigs.RemoveTraceListener(ListenerSource, listener.Name);
+        }
+        public static AccumulatingTraceListener AttachListener()
+        {
+            var listener = new AccumulatingTraceListener()
+            {
+                Name = "AccumulatingTraceListener-" + DateTime.Now.ToFileTime()
+            };
+            AWSConfigs.AddTraceListener(ListenerSource, listener);
+
+            Trace.AutoFlush = true;
+
+            return listener;
+        }
+
+        public static IDisposable SetLogging(LoggingOptions lo, ResponseLoggingOption rlo)
+        {
+            return new TracingTemporarySwitch(lo, rlo);
+        }
+
+        public class AccumulatingTraceListener : TraceListener
+        {
+            public override void Write(string message)
+            {
+                Collector.Write(message);
+            }
+
+            public override void WriteLine(string message)
+            {
+                Collector.WriteLine(message);
+            }
+
+            public StringWriter Collector { get; private set; }
+            public string AccumulatedLog
+            {
+                get
+                {
+                    return Collector.ToString();
+                }
+            }
+
+            public AccumulatingTraceListener()
+            {
+                Collector = new StringWriter();
+            }
+        }
+        private class TracingTemporarySwitch : IDisposable
+        {
+            LoggingOptions oldLO;
+            ResponseLoggingOption oldRLO;
+
+            public TracingTemporarySwitch(LoggingOptions lo, ResponseLoggingOption rlo)
+            {
+                oldLO = AWSConfigs.LoggingConfig.LogTo;
+                oldRLO = AWSConfigs.LoggingConfig.LogResponses;
+
+                AWSConfigs.LoggingConfig.LogTo = lo;
+                AWSConfigs.LoggingConfig.LogResponses = rlo;
+            }
+
+            public void Dispose()
+            {
+                AWSConfigs.LoggingConfig.LogTo = oldLO;
+                AWSConfigs.LoggingConfig.LogResponses = oldRLO;
+            }
         }
     }
 }

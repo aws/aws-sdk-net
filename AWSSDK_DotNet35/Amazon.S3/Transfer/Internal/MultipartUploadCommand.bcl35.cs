@@ -52,11 +52,11 @@ namespace Amazon.S3.Transfer.Internal
         {
             var initRequest = ConstructInitiateMultipartUploadRequest();
             var initResponse = this._s3Client.InitiateMultipartUpload(initRequest);
-            _logger.DebugFormat("Initiated upload: {0}", initResponse.UploadId);
+            Logger.DebugFormat("Initiated upload: {0}", initResponse.UploadId);
 
             try
             {
-                _logger.DebugFormat("Queue up the UploadPartRequests to be executed");
+                Logger.DebugFormat("Queue up the UploadPartRequests to be executed");
                 long filePosition = 0;
                 for (int partNumber = 1; filePosition < this._contentLength; partNumber++)
                 {
@@ -66,22 +66,22 @@ namespace Amazon.S3.Transfer.Internal
                 }
 
                 this._totalNumberOfParts = this._partsToUpload.Count;
-                _logger.DebugFormat("Starting threads to execute the {0} UploadPartRequests in the queue", this._totalNumberOfParts);
+                Logger.DebugFormat("Starting threads to execute the {0} UploadPartRequests in the queue", this._totalNumberOfParts);
                 startInvokerPool();
 
-                _logger.DebugFormat("Waiting for threads to complete. ({0})", initResponse.UploadId);
+                Logger.DebugFormat("Waiting for threads to complete. ({0})", initResponse.UploadId);
                 waitTillAllThreadsComplete();
 
-                _logger.DebugFormat("Beginning completing multipart. ({0})", initResponse.UploadId);
+                Logger.DebugFormat("Beginning completing multipart. ({0})", initResponse.UploadId);
 
                 var compRequest = ConstructCompleteMultipartUploadRequest(initResponse);
                 this._s3Client.CompleteMultipartUpload(compRequest);
-                _logger.DebugFormat("Done completing multipart. ({0})", initResponse.UploadId);
+                Logger.DebugFormat("Done completing multipart. ({0})", initResponse.UploadId);
 
             }
             catch (Exception e)
             {
-                _logger.Error(e, "Exception while uploading. ({0})", initResponse.UploadId);
+                Logger.Error(e, "Exception while uploading. ({0})", initResponse.UploadId);
                 shutdown(initResponse.UploadId);
                 throw;
             }
@@ -91,9 +91,9 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     this._fileTransporterRequest.InputStream.Close();
                 }
-                if (_logger != null)
+                if (Logger != null)
                 {
-                    _logger.Flush();
+                    Logger.Flush();
                 }
             }
         }
@@ -111,7 +111,7 @@ namespace Amazon.S3.Transfer.Internal
             }
             catch (Exception e)
             {
-                _logger.InfoFormat("Error attempting to abort multipart for key {0}: {1}", this._fileTransporterRequest.Key, e.Message);
+                Logger.InfoFormat("Error attempting to abort multipart for key {0}: {1}", this._fileTransporterRequest.Key, e.Message);
             }
         }
 

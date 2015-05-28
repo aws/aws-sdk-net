@@ -180,6 +180,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Scope = "member", Target = "Amazon.CloudFront.AmazonCloudFrontUrlSigner.#SignUrl(System.String,System.String,System.IO.FileInfo,System.String)")]
 [module: SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Scope = "member", Target = "Amazon.CloudFront.AmazonCloudFrontUrlSigner.#GetCannedSignedURL(Amazon.CloudFront.AmazonCloudFrontUrlSigner+Protocol,System.String,System.IO.FileInfo,System.String,System.String,System.DateTime)")]
 [module: SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Scope = "member", Target = "Amazon.Auth.AccessControlPolicy.ConditionFactory.#NewCannedACLCondition(Amazon.S3.S3CannedACL)")]
+[module: SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Scope = "member", Target = "Amazon.EC2.Util.VPCUtilities.#FindNATImage(Amazon.EC2.IAmazonEC2,Amazon.EC2.VirtualizationType)")]
 
 // Casting
 [module: SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily", Scope = "member", Target = "Amazon.Runtime.Internal.Util.WrapperStream.#SearchWrappedStream(System.Func`2<System.IO.Stream,System.Boolean>)")]
@@ -666,3 +667,6 @@ using System.Diagnostics.CodeAnalysis;
 // Move PInvoke to separate file
 [module: SuppressMessage("Microsoft.Design", "CA1060:MovePInvokesToNativeMethodsClass", Scope = "member", Target = "Amazon.Runtime.Internal.Settings.UserCrypto.#CryptUnprotectData(Amazon.Runtime.Internal.Settings.UserCrypto+DATA_BLOB&,System.String,Amazon.Runtime.Internal.Settings.UserCrypto+DATA_BLOB&,System.IntPtr,Amazon.Runtime.Internal.Settings.UserCrypto+CRYPTPROTECT_PROMPTSTRUCT&,Amazon.Runtime.Internal.Settings.UserCrypto+CryptProtectFlags,Amazon.Runtime.Internal.Settings.UserCrypto+DATA_BLOB&)")]
 [module: SuppressMessage("Microsoft.Design", "CA1060:MovePInvokesToNativeMethodsClass", Scope = "member", Target = "Amazon.Runtime.Internal.Settings.UserCrypto.#CryptProtectData(Amazon.Runtime.Internal.Settings.UserCrypto+DATA_BLOB&,System.String,Amazon.Runtime.Internal.Settings.UserCrypto+DATA_BLOB&,System.IntPtr,Amazon.Runtime.Internal.Settings.UserCrypto+CRYPTPROTECT_PROMPTSTRUCT&,Amazon.Runtime.Internal.Settings.UserCrypto+CryptProtectFlags,Amazon.Runtime.Internal.Settings.UserCrypto+DATA_BLOB&)")]
+
+// Empty Logger instance can be cached
+[module: SuppressMessage("AwsSdkRules", "CR1002:PreventStaticLoggersRule", Scope = "member", Target = "Amazon.Runtime.Internal.Util.Logger.#emptyLogger")]

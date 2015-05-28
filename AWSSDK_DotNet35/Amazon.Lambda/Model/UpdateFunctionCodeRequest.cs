@@ -35,12 +35,16 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permision for the <code>lambda:UpdateFunctionCode</code> action.
+    /// This operation requires permission for the <code>lambda:UpdateFunctionCode</code>
+    /// action.
     /// </para>
     /// </summary>
     public partial class UpdateFunctionCodeRequest : AmazonLambdaRequest
     {
         private string _functionName;
+        private string _s3Bucket;
+        private string _s3Key;
+        private string _s3ObjectVersion;
         private MemoryStream _zipFile;
 
         /// <summary>
@@ -67,6 +71,61 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFunctionName()
         {
             return this._functionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Bucket. 
+        /// <para>
+        /// Amazon S3 bucket name where the .zip file containing your deployment package is stored.
+        /// This bucket must reside in the same AWS region where you are creating the Lambda function.
+        /// </para>
+        /// </summary>
+        public string S3Bucket
+        {
+            get { return this._s3Bucket; }
+            set { this._s3Bucket = value; }
+        }
+
+        // Check to see if S3Bucket property is set
+        internal bool IsSetS3Bucket()
+        {
+            return this._s3Bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Key. 
+        /// <para>
+        /// The Amazon S3 object (the deployment package) key name you want to upload. 
+        /// </para>
+        /// </summary>
+        public string S3Key
+        {
+            get { return this._s3Key; }
+            set { this._s3Key = value; }
+        }
+
+        // Check to see if S3Key property is set
+        internal bool IsSetS3Key()
+        {
+            return this._s3Key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3ObjectVersion. 
+        /// <para>
+        /// The Amazon S3 object (the deployment package) version you want to upload.
+        /// </para>
+        /// </summary>
+        public string S3ObjectVersion
+        {
+            get { return this._s3ObjectVersion; }
+            set { this._s3ObjectVersion = value; }
+        }
+
+        // Check to see if S3ObjectVersion property is set
+        internal bool IsSetS3ObjectVersion()
+        {
+            return this._s3ObjectVersion != null;
         }
 
         /// <summary>

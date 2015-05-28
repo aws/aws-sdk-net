@@ -45,15 +45,35 @@ namespace Amazon.EC2.Util
         /// </summary>
         /// <param name="ec2Client">The ec2client used to look up the image.</param>
         /// <returns>The image</returns>
+        [Obsolete("Users should use the overload method that passes in VirtualizationType. This will default to Paravirtual.")]
         public static Image FindNATImage(IAmazonEC2 ec2Client)
+        {
+            return FindNATImage(ec2Client, VirtualizationType.Paravirtual);
+        }
+
+        /// <summary>
+        /// Find the current VPC NAT image in the region for the AmazonEC2 client.
+        /// </summary>
+        /// <param name="ec2Client">The ec2client used to look up the image.</param>
+        /// <param name="vt">The virtualization type of the AMI to look for.</param>
+        /// <returns>The image</returns>
+        public static Image FindNATImage(IAmazonEC2 ec2Client, VirtualizationType vt)
         {
             if (ec2Client == null)
                 throw new ArgumentNullException("ec2Client");
 
+            string nameFilter;
+            if (vt == VirtualizationType.Paravirtual)
+                nameFilter = "amzn-ami-vpc-nat-pv*.x86_64-ebs";
+            else if (vt == VirtualizationType.Hvm)
+                nameFilter = "amzn-ami-vpc-nat-hvm*.x86_64-ebs";
+            else
+                throw new AmazonEC2Exception("Unknown virtualization type " + vt.Value);
+
             List<Filter> filters = new List<Filter>()
             {
                 new Filter(){Name = "architecture", Values = new List<string>(){"x86_64"}},
-                new Filter(){Name = "name", Values = new List<string>(){"ami-vpc-nat-*.x86_64-ebs"}}
+                new Filter(){Name = "name", Values = new List<string>(){nameFilter}}
             };
             DescribeImagesResponse imageResponse = ec2Client.DescribeImages(new DescribeImagesRequest() { Filters = filters });
             var image = imageResponse.Images.OrderByDescending(x => x.Name).FirstOrDefault();
@@ -78,29 +98,21 @@ namespace Amazon.EC2.Util
             if (string.IsNullOrEmpty(request.InstanceType))
                 throw new InvalidOperationException("request.InstanceType is null");
 
-            List<Filter> filters = new List<Filter>()
+            string instanceId;
+            try
             {
-                new Filter(){Name = "architecture", Values = new List<string>(){"x86_64"}},
-                new Filter(){Name = "name", Values = new List<string>(){"ami-vpc-nat-*.x86_64-ebs"}}
-            };
-            DescribeImagesResponse imageResponse = ec2Client.DescribeImages(new DescribeImagesRequest() { Filters = filters });
-            var image = FindNATImage(ec2Client);
-            if (image == null)
+                var image = FindNATImage(ec2Client, VirtualizationType.Hvm);
+                instanceId = LaunchNAT(ec2Client, image, request);
+            }
+            catch(AmazonEC2Exception e)
             {
-                throw new AmazonEC2Exception("No NAT image found in this region");
+                if (!string.Equals(e.ErrorCode, "InvalidParameterCombination", StringComparison.OrdinalIgnoreCase))
+                    throw;
+
+                var image = FindNATImage(ec2Client, VirtualizationType.Paravirtual);
+                instanceId = LaunchNAT(ec2Client, image, request);
             }
 
-            RunInstancesRequest runRequest = new RunInstancesRequest()
-            {
-                InstanceType = request.InstanceType,
-                KeyName = request.KeyName,
-                ImageId = image.ImageId,
-                MinCount = 1,
-                MaxCount = 1,
-                SubnetId = request.SubnetId
-            };
-            RunInstancesResponse runResponse = ec2Client.RunInstances(runRequest);
-            string instanceId = runResponse.Reservation.Instances[0].InstanceId;
             // Can't associated elastic IP address until the instance is available
             WaitForInstanceToStartUp(ec2Client, instanceId);
 
@@ -124,6 +136,27 @@ namespace Amazon.EC2.Util
             var instance = ec2Client.DescribeInstances(new DescribeInstancesRequest() { InstanceIds = new List<string>() { instanceId } }).Reservations[0].Instances[0];
 
             return instance;
+        }
+
+        private static string LaunchNAT(IAmazonEC2 ec2Client, Image image, LaunchNATInstanceRequest request)
+        {
+            if (image == null)
+            {
+                throw new AmazonEC2Exception("No NAT image found in this region");
+            }
+
+            RunInstancesRequest runRequest = new RunInstancesRequest()
+            {
+                InstanceType = request.InstanceType,
+                KeyName = request.KeyName,
+                ImageId = image.ImageId,
+                MinCount = 1,
+                MaxCount = 1,
+                SubnetId = request.SubnetId
+            };
+            RunInstancesResponse runResponse = ec2Client.RunInstances(runRequest);
+            string instanceId = runResponse.Reservation.Instances[0].InstanceId;
+            return instanceId;
         }
 
 
@@ -224,6 +257,27 @@ namespace Amazon.EC2.Util
                 RouteTableId = response.PublicSubnetRouteTable.RouteTableId
             });
             WriteProgress(request.ProgressCallback, "Added route for internet gateway to route table {0}", response.PublicSubnetRouteTable.RouteTableId);
+
+            // can set only one attribute at a time
+            if (request.IsSetEnableDnsHostnames())
+            {
+                ec2Client.ModifyVpcAttribute(new ModifyVpcAttributeRequest
+                {
+                    VpcId = response.VPC.VpcId,
+                    EnableDnsHostnames = request.EnableDnsHostnames
+                });
+                WriteProgress(request.ProgressCallback, "Enabling DNS hostname support for VPC");
+            }
+
+            if (request.IsSetEnableDnsSupport())
+            {
+                ec2Client.ModifyVpcAttribute(new ModifyVpcAttributeRequest
+                {
+                    VpcId = response.VPC.VpcId,
+                    EnableDnsSupport = request.EnableDnsSupport
+                });
+                WriteProgress(request.ProgressCallback, "Enabling DNS resolution support for VPC");
+            }
 
             response.PublicSubnetRouteTable = ec2Client.DescribeRouteTables(describeRouteTableRequest).RouteTables[0];
         }

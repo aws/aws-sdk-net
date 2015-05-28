@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// 
+    /// Upon success, it returns empty response. Otherwise, throws an exception.
     /// </summary>
     public partial class InvokeAsyncResult : AmazonWebServiceResponse
     {
         private int? _status;
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// It will be 202 upon success.
+        /// </para>
         /// </summary>
         public int Status
         {

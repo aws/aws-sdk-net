@@ -56,6 +56,24 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetS3Bucket())
+                {
+                    context.Writer.WritePropertyName("S3Bucket");
+                    context.Writer.Write(publicRequest.S3Bucket);
+                }
+
+                if(publicRequest.IsSetS3Key())
+                {
+                    context.Writer.WritePropertyName("S3Key");
+                    context.Writer.Write(publicRequest.S3Key);
+                }
+
+                if(publicRequest.IsSetS3ObjectVersion())
+                {
+                    context.Writer.WritePropertyName("S3ObjectVersion");
+                    context.Writer.Write(publicRequest.S3ObjectVersion);
+                }
+
                 if(publicRequest.IsSetZipFile())
                 {
                     context.Writer.WritePropertyName("ZipFile");

@@ -38,7 +38,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property EventSourceMappings. 
         /// <para>
-        /// An arrary of <code>EventSourceMappingConfiguration</code> objects.
+        /// An array of <code>EventSourceMappingConfiguration</code> objects.
         /// </para>
         /// </summary>
         public List<EventSourceMappingConfiguration> EventSourceMappings

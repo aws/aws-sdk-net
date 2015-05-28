@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Globalization;
 using System.Reflection;
+using ThirdParty.Json.LitJson;
+using System.IO;
 
 namespace AWSSDK_DotNet.IntegrationTests.Utils
 {
@@ -55,6 +57,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         public static bool IsNull(this object self)
         {
             return (self == null);
+        }
+    }
+
+    public static class JsonDataExtensions
+    {
+        public static string ToJson(this JsonData self, bool prettyPrint)
+        {
+            var jsonWriter = new JsonWriter();
+            jsonWriter.PrettyPrint = prettyPrint;
+            self.ToJson(jsonWriter);
+            return jsonWriter.ToString();
         }
     }
 }
