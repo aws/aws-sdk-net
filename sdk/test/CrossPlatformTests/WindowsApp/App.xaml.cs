@@ -26,7 +26,7 @@ namespace WindowsApp
     /// </summary>
     sealed partial class App : Application
     {
-        public TestRunner TestRunner { get; private set; }
+       
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -83,11 +83,7 @@ namespace WindowsApp
                 rootFrame.Navigate(typeof(MainPage), e.Arguments);
             }
 
-            var credentialsFile = @"Assets\credentials.json";
-            StorageFolder InstallationFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
-            StorageFile file = await InstallationFolder.GetFileAsync(credentialsFile);
-            var stream = await file.OpenStreamForReadAsync();
-            this.TestRunner = new WindowsAppRunner(stream);
+            
 
             // Ensure the current window is active
             Window.Current.Activate();

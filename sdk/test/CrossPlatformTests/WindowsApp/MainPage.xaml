@@ -9,6 +9,10 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button Content="Execute Tests" HorizontalAlignment="Left" Margin="60,74,0,0" VerticalAlignment="Top" Height="54" Width="219" Click="Button_Click"/>
+        <TextBlock x:Name="textBox"  Height="518" TextWrapping="Wrap" 
+                   Text="TextBlock" VerticalAlignment="Top" Width="1145" Margin="63,170,158,0"
+                   ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
+        
 
     </Grid>
 </Page>

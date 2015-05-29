@@ -26,6 +26,10 @@ namespace AndroidApp
 		
 		public static void UpdateIdValues()
 		{
+			global::PCLCrypto.Resource.String.ApplicationName = global::AndroidApp.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::AndroidApp.Resource.String.Hello;
+			global::PCLStorage.Resource.String.ApplicationName = global::AndroidApp.Resource.String.ApplicationName;
+			global::PCLStorage.Resource.String.Hello = global::AndroidApp.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
@@ -63,6 +67,9 @@ namespace AndroidApp
 			// aapt resource value: 0x7f050000
 			public const int MyButton = 2131034112;
 			
+			// aapt resource value: 0x7f050001
+			public const int TestOutput = 2131034113;
+			
 			static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -96,7 +103,10 @@ namespace AndroidApp
 			public const int ApplicationName = 2130968577;
 			
 			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			public const int ExecuteTests = 2130968576;
+			
+			// aapt resource value: 0x7f040002
+			public const int Hello = 2130968578;
 			
 			static String()
 			{

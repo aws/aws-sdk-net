@@ -10,8 +10,15 @@ namespace WindowsConsoleApp
     {
         static void Main(string[] args)
         {
-            var runner = new ConsoleRunner();
-            runner.ExecuteAllTests();
+            try
+            {
+                var runner = new ConsoleRunner();
+                runner.ExecuteAllTests();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

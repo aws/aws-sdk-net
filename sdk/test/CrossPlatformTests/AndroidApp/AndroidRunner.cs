@@ -16,9 +16,17 @@ namespace AndroidApp
 {
     public class AndroidRunner : TestRunner
     {
-        public AndroidRunner(Stream credentials)
+        private TextView _textView = null;
+
+        public AndroidRunner(Stream credentials, TextView txtView)
             : base(credentials)
         {
+            _textView = txtView;
+        }
+
+        public override void WriteLine(string message)
+        {
+            _textView.Append(message);
         }
     }
 }
