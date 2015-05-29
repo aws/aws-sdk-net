@@ -2,6 +2,7 @@
 	DefaultTargets="full-build"
 	xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	
+	<Import Project="..\..\AWSDotNetBuildTools\references.targets" Condition="Exists('..\..\AWSDotNetBuildTools\references.targets')" />
 	<Import Project="common.targets" />
 
 	<Target Name="build-custom-tasks">
@@ -162,4 +163,12 @@
 			SourceFiles="trx-transform.xsl"
 			DestinationFolder="$(Deployment)" />
 	</Target>
+	
+	<Target Name="save-build" DependsOnTargets="build-tools">		
+		<SaveBuildArtifactTask
+			RepositoryRoot="$(MSBuildProjectDirectory)\.."
+			BuildArtifactType="sdk"
+			LocalArchiveRootFolder="$(LocalArchiveRootFolder)"
+			/>
+	</Target>	
 </Project>
