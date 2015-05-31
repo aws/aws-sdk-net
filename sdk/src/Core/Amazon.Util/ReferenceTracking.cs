@@ -38,7 +38,7 @@ namespace Amazon.Util
         /// <summary>
         /// Tracker. Must be disposed.
         /// </summary>
-        public class Tracker : IDisposable
+        private class Tracker : IDisposable
         {
             public object Target { get; private set; }
             private CircularReferenceTracking State { get; set; }
@@ -99,7 +99,7 @@ namespace Amazon.Util
         /// </summary>
         /// <param name="target"></param>
         /// <returns></returns>
-        public Tracker Track(object target)
+        public IDisposable Track(object target)
         {
             if (target == null) throw new ArgumentNullException("target");
 

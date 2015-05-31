@@ -593,7 +593,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="requestHeaders">The set of proposed headers for the request</param>
         /// <returns>List of headers that must be included in the signature</returns>
         /// <remarks>For AWS4 signing, all headers are considered viable for inclusion</remarks>
-        protected static IDictionary<string, string> SortHeaders(IEnumerable<KeyValuePair<string, string>> requestHeaders)
+        protected static IDictionary<string, string> SortHeaders(IDictionary<string, string> requestHeaders)
         {
             var sortedHeaders = new SortedDictionary<string, string>(StringComparer.OrdinalIgnoreCase);
             foreach (var header in requestHeaders)
@@ -609,7 +609,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         /// <param name="sortedHeaders">All request headers, sorted into canonical order</param>
         /// <returns>Canonicalized string of headers, with the header names in lower case.</returns>
-        protected static string CanonicalizeHeaders(ICollection<KeyValuePair<string, string>> sortedHeaders)
+        protected static string CanonicalizeHeaders(IDictionary<string, string> sortedHeaders)
         {
             if (sortedHeaders == null || sortedHeaders.Count == 0)
                 return string.Empty;
@@ -631,7 +631,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         /// <param name="sortedHeaders">The headers included in the signature</param>
         /// <returns>Formatted string of header names</returns>
-        protected static string CanonicalizeHeaderNames(IEnumerable<KeyValuePair<string, string>> sortedHeaders)
+        protected static string CanonicalizeHeaderNames(IDictionary<string, string> sortedHeaders)
         {
             var builder = new StringBuilder();
             foreach (var header in sortedHeaders)

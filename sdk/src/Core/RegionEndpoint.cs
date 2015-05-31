@@ -150,13 +150,13 @@ namespace Amazon
         JsonData GetEndpointRule(string serviceName)
         {
             JsonData rule = null;
-            if (_documentEndpoints.TryGetValue(string.Format("{0}/{1}", this.SystemName, serviceName), out rule))
+            if (_documentEndpoints.TryGetValue(string.Format(CultureInfo.InvariantCulture, "{0}/{1}", this.SystemName, serviceName), out rule))
                 return rule;
 
-            if (_documentEndpoints.TryGetValue(string.Format("{0}/*", this.SystemName), out rule))
+            if (_documentEndpoints.TryGetValue(string.Format(CultureInfo.InvariantCulture, "{0}/*", this.SystemName), out rule))
                 return rule;
 
-            if (_documentEndpoints.TryGetValue(string.Format("*/{0}", serviceName), out rule))
+            if (_documentEndpoints.TryGetValue(string.Format(CultureInfo.InvariantCulture, "*/{0}", serviceName), out rule))
                 return rule;
 
             return _documentEndpoints[DEFAULT_RULE];

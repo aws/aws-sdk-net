@@ -265,8 +265,6 @@ namespace Amazon.Runtime
 
         private const string DEFAULT_PROFILE_NAME = "default";
 
-        private static readonly Logger LOGGER = Logger.GetLogger(typeof(AWSCredentials));
-
         private ImmutableCredentials _wrappedCredentials;
 
         #endregion
@@ -314,7 +312,8 @@ namespace Amazon.Runtime
                 if (Amazon.Util.ProfileManager.TryGetAWSCredentials(lookupName, out credentials))
                 {
                     this._wrappedCredentials = credentials.GetCredentials();
-                    LOGGER.InfoFormat("Credentials found using account name {0} and looking in SDK account store.", lookupName);
+                    var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
+                    logger.InfoFormat("Credentials found using account name {0} and looking in SDK account store.", lookupName);
                 }
             }
 
@@ -329,7 +328,8 @@ namespace Amazon.Runtime
                     if (section != null && section.HasValidCredentials)
                     {
                         this._wrappedCredentials = section.Credentials;
-                        LOGGER.InfoFormat("Credentials found using account name {0} and looking in {1}.", lookupName, credentialsFilePath);
+                        var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
+                        logger.InfoFormat("Credentials found using account name {0} and looking in {1}.", lookupName, credentialsFilePath);
                     }
 
                     ProfilesLocation = credentialsFilePath;
@@ -526,7 +526,6 @@ namespace Amazon.Runtime
         private const string ENVIRONMENT_VARIABLE_SECRETKEY = "AWS_SECRET_ACCESS_KEY";
         private const string ENVIRONMENT_VARIABLE_SESSION_TOKEN = "AWS_SESSION_TOKEN";
 
-        private static readonly Logger LOGGER = Logger.GetLogger(typeof(AWSCredentials));
         private ImmutableCredentials _wrappedCredentials;
 
         #region Public constructors
@@ -548,7 +547,8 @@ namespace Amazon.Runtime
             string sessionToken = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_SESSION_TOKEN);
 
             this._wrappedCredentials = new ImmutableCredentials(accessKeyId, secretKey, sessionToken);
-            LOGGER.InfoFormat("Credentials found using environment variables.");
+            var logger = Logger.GetLogger(typeof(EnvironmentVariablesAWSCredentials));
+            logger.InfoFormat("Credentials found using environment variables.");
         }
 
         #endregion
@@ -572,7 +572,6 @@ namespace Amazon.Runtime
         private const string SECRETKEY = "AWSSecretKey";
 
         private ImmutableCredentials _wrappedCredentials;
-        private static readonly Logger LOGGER = Logger.GetLogger(typeof(AWSCredentials));
 
         #region Public constructors
 
@@ -590,7 +589,8 @@ namespace Amazon.Runtime
                 var accessKey = appConfig[ACCESSKEY];
                 var secretKey = appConfig[SECRETKEY];
                 this._wrappedCredentials = new ImmutableCredentials(accessKey, secretKey, null);
-                LOGGER.InfoFormat("Credentials found with {0} and {1} app settings", ACCESSKEY, SECRETKEY);
+                var logger = Logger.GetLogger(typeof(EnvironmentAWSCredentials));
+                logger.InfoFormat("Credentials found with {0} and {1} app settings", ACCESSKEY, SECRETKEY);
             }
             // Fallback to the StoredProfileAWSCredentials provider
             else
@@ -651,7 +651,6 @@ namespace Amazon.Runtime
 
         #region Private members
 
-        private static Logger _logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
         private TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(0);
 
         #endregion
@@ -736,7 +735,8 @@ namespace Amazon.Runtime
             {
                 // This could happen if the default value of PreemptExpiryTime is
                 // overriden and set too high such that ShouldUpdate returns true.
-                _logger.InfoFormat(
+                var logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
+                logger.InfoFormat(
                     "The preempt expiry time is set too high: Current time = {0}, Credentials expiry time = {1}, Preempt expiry time = {2}.",
                     DateTime.Now,
                     _currentState.Expiration,
@@ -810,7 +810,6 @@ namespace Amazon.Runtime
 
         private CredentialsRefreshState _currentRefreshState = null;
         private static TimeSpan _refreshAttemptPeriod = TimeSpan.FromHours(1);
-        private static Logger _logger = Logger.GetLogger(typeof(InstanceProfileAWSCredentials));
 
         #endregion
 
@@ -836,7 +835,8 @@ namespace Amazon.Runtime
             }
             catch (Exception e)
             {
-                _logger.InfoFormat("Error getting credentials from Instance Profile service: {0}", e);
+                var logger = Logger.GetLogger(typeof(InstanceProfileAWSCredentials));
+                logger.InfoFormat("Error getting credentials from Instance Profile service: {0}", e);
             }
 
             // If successful, save new credentials

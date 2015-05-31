@@ -20,4 +20,14 @@
     <Owner />
     <Email />
   </Rule>
+  <Rule TypeName="PreventStaticLoggersRule" Category="AwsSdkRules" CheckId="CR1002">
+    <Name>Do not store ILogger instances in static members.</Name>
+    <Description>Checks code for static ILogger variables.</Description>
+    <Resolution>Static member {0} of type {1} implements {2}. Instances of {2} should not be stored in static variables. Logger configuration can change during SDK use, but static references are not impacted by this.</Resolution>
+    <MessageLevel Certainty="100">CriticalError</MessageLevel>
+    <FixCategories>NonBreaking</FixCategories>
+    <Url />
+    <Owner />
+    <Email />
+  </Rule>
 </Rules>
