@@ -406,7 +406,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 referenceTracking = new CircularReferenceTracking();
             }
 
-            public CircularReferenceTracking.Tracker Track(object target)
+            public IDisposable Track(object target)
             {
                 return referenceTracking.Track(target);
             }

@@ -25,6 +25,7 @@ using System.Threading;
 
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
+using System.Globalization;
 
 
 namespace Amazon.Runtime.Internal.Settings
@@ -33,7 +34,6 @@ namespace Amazon.Runtime.Internal.Settings
     {
         #region Private members
 
-        static Logger LOGGER = Logger.GetLogger(typeof(PersistenceManager));
         static PersistenceManager INSTANCE = new PersistenceManager();
         HashSet<string> _encryptedKeys;
         Dictionary<string, SettingsWatcher> _watchers = new Dictionary<string, SettingsWatcher>();
@@ -245,7 +245,8 @@ namespace Amazon.Runtime.Internal.Settings
                             catch (Exception e)
                             {
                                 objectCollection.Remove(key);
-                                LOGGER.Error(e, "Exception decrypting value for key {0}/{1}", settingsKey, key);
+                                var logger = Logger.GetLogger(typeof(PersistenceManager));
+                                logger.Error(e, "Exception decrypting value for key {0}/{1}", settingsKey, key);
                             }
                         }
                     }
@@ -253,9 +254,9 @@ namespace Amazon.Runtime.Internal.Settings
             }
         }
 
-        string getFileFromType(string type)
+        private static string getFileFromType(string type)
         {
-            return string.Format(@"{0}\{1}.json", GetSettingsStoreFolder(), type);
+            return string.Format(CultureInfo.InvariantCulture, @"{0}\{1}.json", GetSettingsStoreFolder(), type);
         }
 
         #endregion
@@ -325,12 +326,22 @@ namespace Amazon.Runtime.Internal.Settings
 
         public void Dispose()
         {
-            if (watcher != null)
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
             {
-                watchers.Remove(watcher);
-                watcher = null;
+                if (watcher != null)
+                {
+                    watchers.Remove(watcher);
+                    watcher = null;
+                }
             }
         }
+
 
         #endregion
 

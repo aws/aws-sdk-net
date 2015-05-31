@@ -13,7 +13,7 @@ namespace CustomFxCopRules.Test
     {
         static void Main(string[] args)
         {
-            var expectedIssues = 6;
+            var expectedIssues = 6 + 14; // 6 for MD5, 12 for ILogger
             var issuesXpath = "//Issue";
             var reportPath = Path.GetFullPath("report.xml");
             var customRulesPath = Path.GetFullPath(Environment.CurrentDirectory + @"..\..\..\..\bin\Debug\CustomFxCopRules.dll");

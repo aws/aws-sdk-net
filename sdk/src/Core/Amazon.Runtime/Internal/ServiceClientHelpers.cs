@@ -14,14 +14,14 @@ namespace Amazon.Runtime.Internal
         public const string S3_ASSEMBLY_NAME = "AWSSDK.S3";
         public const string S3_SERVICE_CLASS_NAME = "Amazon.S3.AmazonS3Client";
 
-        public static T CreateServiceFromAnother<T, C>(AmazonServiceClient originalServiceClient)
-            where C : ClientConfig, new ()
-            where T : AmazonServiceClient
+        public static TClient CreateServiceFromAnother<TClient, TConfig>(AmazonServiceClient originalServiceClient)
+            where TConfig : ClientConfig, new ()
+            where TClient : AmazonServiceClient
         {
             var credentials = originalServiceClient.Credentials;
-            var newConfig = originalServiceClient.CloneConfig<C>();
+            var newConfig = originalServiceClient.CloneConfig<TConfig>();
 
-            var newServiceClientType = TypeFactory.GetTypeInfo(typeof(T));
+            var newServiceClientType = TypeFactory.GetTypeInfo(typeof(TClient));
 
             var constructor = newServiceClientType.GetConstructor(new ITypeInfo[]
                 {
@@ -29,14 +29,14 @@ namespace Amazon.Runtime.Internal
                     TypeFactory.GetTypeInfo(newConfig.GetType())
                 });
 
-            var newServiceClient = constructor.Invoke(new object[] { credentials, newConfig }) as T;
+            var newServiceClient = constructor.Invoke(new object[] { credentials, newConfig }) as TClient;
 
             return newServiceClient;
         }
 
-        public static T CreateServiceFromAssembly<T>(string assemblyName, string serviceClientClassName,
+        public static TClient CreateServiceFromAssembly<TClient>(string assemblyName, string serviceClientClassName,
             RegionEndpoint region)
-            where T : class
+            where TClient : class
         {
             var serviceClientType = LoadServiceClientType(assemblyName, serviceClientClassName);
 
@@ -45,14 +45,14 @@ namespace Amazon.Runtime.Internal
                     TypeFactory.GetTypeInfo(typeof(RegionEndpoint))
                 });
 
-            var newServiceClient = constructor.Invoke(new object[] { region }) as T;
+            var newServiceClient = constructor.Invoke(new object[] { region }) as TClient;
 
             return newServiceClient;
         }
 
-        public static T CreateServiceFromAssembly<T>(string assemblyName, string serviceClientClassName, 
+        public static TClient CreateServiceFromAssembly<TClient>(string assemblyName, string serviceClientClassName, 
             AWSCredentials credentials, RegionEndpoint region)
-            where T : class
+            where TClient : class
         {
             var serviceClientType = LoadServiceClientType(assemblyName, serviceClientClassName);
 
@@ -62,13 +62,13 @@ namespace Amazon.Runtime.Internal
                     TypeFactory.GetTypeInfo(typeof(RegionEndpoint))
                 });
 
-            var newServiceClient = constructor.Invoke(new object[] { credentials, region }) as T;
+            var newServiceClient = constructor.Invoke(new object[] { credentials, region }) as TClient;
 
             return newServiceClient;
         }
 
-        public static T CreateServiceFromAssembly<T>(string assemblyName, string serviceClientClassName, AmazonServiceClient originalServiceClient)
-            where T : class
+        public static TClient CreateServiceFromAssembly<TClient>(string assemblyName, string serviceClientClassName, AmazonServiceClient originalServiceClient)
+            where TClient : class
         {
             var serviceClientType = LoadServiceClientType(assemblyName, serviceClientClassName);
 
@@ -82,7 +82,7 @@ namespace Amazon.Runtime.Internal
                     TypeFactory.GetTypeInfo(config.GetType())
                 });
 
-            var newServiceClient = constructor.Invoke(new object[] { originalServiceClient.Credentials, config }) as T;
+            var newServiceClient = constructor.Invoke(new object[] { originalServiceClient.Credentials, config }) as TClient;
 
             return newServiceClient;
         }

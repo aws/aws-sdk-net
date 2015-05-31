@@ -520,8 +520,18 @@ namespace Amazon.Util
         /// </summary>
         /// <param name="source"></param>
         /// <param name="destination"></param>
+        public static void CopyStream(Stream source, Stream destination)
+        {
+            CopyStream(source, destination, DefaultBufferSize);
+        }
+
+        /// <summary>
+        /// Utility method for copy the contents of the source stream to the destination stream.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="destination"></param>
         /// <param name="bufferSize"></param>
-        public static void CopyStream(Stream source, Stream destination, int bufferSize = 8192)
+        public static void CopyStream(Stream source, Stream destination, int bufferSize)
         {
             if (source == null)
                 throw new ArgumentNullException("source");

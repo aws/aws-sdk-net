@@ -31,31 +31,31 @@ namespace Amazon.Util
 {
     public static class PaginatedResourceFactory
     {
-        public static object Create<ItemType, RequestType, ResponseType>(PaginatedResourceInfo pri)
+        public static object Create<TItemType, TRequestType, TResponseType>(PaginatedResourceInfo pri)
         {
             pri.Verify();
 
-            return Create<ItemType, RequestType, ResponseType>(pri.Client, pri.MethodName, pri.Request, pri.TokenRequestPropertyPath, pri.TokenResponsePropertyPath, pri.ItemListPropertyPath);
+            return Create<TItemType, TRequestType, TResponseType>(pri.Client, pri.MethodName, pri.Request, pri.TokenRequestPropertyPath, pri.TokenResponsePropertyPath, pri.ItemListPropertyPath);
         }
 
-        private static PaginatedResource<ItemType> Create<ItemType, RequestType, ResponseType>
+        private static PaginatedResource<ItemType> Create<ItemType, TRequestType, TResponseType>
             (object client, string methodName, object request, string tokenRequestPropertyPath, string tokenResponsePropertyPath, string itemListPropertyPath)
         {
             ITypeInfo clientType = TypeFactory.GetTypeInfo(client.GetType());
-            MethodInfo fetcherMethod = clientType.GetMethod(methodName, new ITypeInfo[] { TypeFactory.GetTypeInfo(typeof(RequestType)) });
+            MethodInfo fetcherMethod = clientType.GetMethod(methodName, new ITypeInfo[] { TypeFactory.GetTypeInfo(typeof(TRequestType)) });
 
-            Type funcType = GetFuncType<RequestType, ResponseType>();
-            Func<RequestType, ResponseType> call = (req) =>
+            Type funcType = GetFuncType<TRequestType, TResponseType>();
+            Func<TRequestType, TResponseType> call = (req) =>
             {
-                return (ResponseType)fetcherMethod.Invoke(client, new object[] { req });
+                return (TResponseType)fetcherMethod.Invoke(client, new object[] { req });
             };
 
 
-            return Create<ItemType, RequestType, ResponseType>(call, (RequestType)request, tokenRequestPropertyPath, tokenResponsePropertyPath, itemListPropertyPath);
+            return Create<ItemType, TRequestType, TResponseType>(call, (TRequestType)request, tokenRequestPropertyPath, tokenResponsePropertyPath, itemListPropertyPath);
         }
 
-        private static PaginatedResource<ItemType> Create<ItemType, RequestType, ResponseType>
-            (Func<RequestType, ResponseType> call, RequestType request, string tokenRequestPropertyPath, string tokenResponsePropertyPath, string itemListPropertyPath)
+        private static PaginatedResource<ItemType> Create<ItemType, TRequestType, TResponseType>
+            (Func<TRequestType, TResponseType> call, TRequestType request, string tokenRequestPropertyPath, string tokenResponsePropertyPath, string itemListPropertyPath)
         {
             Func<string, Marker<ItemType>> fetcher =
                 token =>
@@ -64,7 +64,7 @@ namespace Amazon.Util
                     string nextToken;
 
                     SetPropertyValueAtPath(request, tokenRequestPropertyPath, token);
-                    ResponseType nextSet = call(request);
+                    TResponseType nextSet = call(request);
 
                     nextToken = GetPropertyValueFromPath<string>(nextSet, tokenResponsePropertyPath);
                     currentItems = GetPropertyValueFromPath<List<ItemType>>(nextSet, itemListPropertyPath);

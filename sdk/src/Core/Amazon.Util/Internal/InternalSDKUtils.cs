@@ -93,7 +93,7 @@ namespace Amazon.Util.Internal
             {
                 var property = targetTypeInfo.GetProperty(kvp.Key);
                 if (property == null)
-                    throw new ArgumentException(string.Format("Unable to find property {0} on type {1}.", kvp.Key, targetTypeInfo.FullName));
+                    throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "Unable to find property {0} on type {1}.", kvp.Key, targetTypeInfo.FullName));
 
                 try
                 {
@@ -110,7 +110,7 @@ namespace Amazon.Util.Internal
                 }
                 catch(Exception e)
                 {
-                    throw new ArgumentException(string.Format("Unable to set property {0} on type {1}: {2}", kvp.Key, targetTypeInfo.FullName, e.Message));
+                    throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "Unable to set property {0} on type {1}: {2}", kvp.Key, targetTypeInfo.FullName, e.Message));
                 }
             }
         }
@@ -133,7 +133,11 @@ namespace Amazon.Util.Internal
             }
         }
 
-        public static Dictionary<TKey, TValue> ToDictionary<T, TKey, TValue>(IEnumerable<T> items, Func<T, TKey> keyGenerator, Func<T, TValue> valueGenerator, IEqualityComparer<TKey> comparer = null)
+        public static Dictionary<TKey, TValue> ToDictionary<T, TKey, TValue>(IEnumerable<T> items, Func<T, TKey> keyGenerator, Func<T, TValue> valueGenerator)
+        {
+            return ToDictionary<T, TKey, TValue>(items, keyGenerator, valueGenerator, comparer: null);
+        }
+        public static Dictionary<TKey, TValue> ToDictionary<T, TKey, TValue>(IEnumerable<T> items, Func<T, TKey> keyGenerator, Func<T, TValue> valueGenerator, IEqualityComparer<TKey> comparer)
         {
             Dictionary<TKey, TValue> dictionary;
             if (comparer == null)
