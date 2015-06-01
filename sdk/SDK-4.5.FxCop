@@ -43,6 +43,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\sdk\assemblies\net45\AWSSDK.ECS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\sdk\assemblies\net45\AWSSDK.ElastiCache.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\sdk\assemblies\net45\AWSSDK.ElasticBeanstalk.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\sdk\assemblies\net45\AWSSDK.ElasticFileSystem.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\sdk\assemblies\net45\AWSSDK.ElasticLoadBalancing.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\sdk\assemblies\net45\AWSSDK.ElasticMapReduce.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\sdk\assemblies\net45\AWSSDK.ElasticTranscoder.dll" Analyze="True" AnalyzeAllChildren="True" />

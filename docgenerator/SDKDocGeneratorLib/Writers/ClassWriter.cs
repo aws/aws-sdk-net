@@ -152,7 +152,10 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("</td>");
 
             writer.WriteLine("<td>");
-            writer.WriteLine("<a href=\"./{0}\">{1}({2})</a>", FilenameGenerator.GenerateFilename(info), info.DeclaringType.Name, FormatParameters(info.GetParameters()));
+            var filename = FilenameGenerator.GenerateFilename(info);
+            var parameters = FormatParameters(info.GetParameters());
+            var hrefLink = string.Format("<a href=\"./{0}\">{1}({2})</a>", filename, info.DeclaringType.Name, parameters);
+            writer.WriteLine(hrefLink);
             writer.WriteLine("</td>");
 
             writer.WriteLine("<td>");

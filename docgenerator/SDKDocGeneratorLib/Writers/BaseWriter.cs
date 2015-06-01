@@ -350,7 +350,7 @@ namespace SDKDocGenerator.Writers
                         parameterTypeName = "object";
                         break;
                     default:
-                        parameterTypeName = info.ParameterType.Name;
+                        parameterTypeName = info.ParameterType.GetDisplayName(false);
                         break;
                 }
 
