@@ -63,17 +63,6 @@ namespace Amazon.S3.Model
         }
 
 
-        /// <summary>
-        /// Gets and sets the CloudFunctionConfigurations property. CloudFunctionConfigurations are configuration for 
-        /// Amazon S3 events to be sent to an Amazon Lambda cloud function.
-        /// </summary>
-        public List<CloudFunctionConfiguration> CloudFunctionConfigurations { get; set; }
-
-        internal bool IsSetCloudFunctionConfigurations()
-        {
-            return this.CloudFunctionConfigurations != null && CloudFunctionConfigurations.Count > 0;
-        }
-
 
         /// <summary>
         /// Gets and sets the LambdaFunctionConfigurations property. LambdaFunctionConfigurations are configuration for 
