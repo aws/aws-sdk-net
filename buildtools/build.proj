@@ -1,18 +1,45 @@
 <Project ToolsVersion="4.0" 
-	DefaultTargets="full-build"
+	DefaultTargets="full-build-nodocs"
 	xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	
 	<Import Project="..\..\AWSDotNetBuildTools\references.targets" Condition="Exists('..\..\AWSDotNetBuildTools\references.targets')" />
 	<Import Project="common.targets" />
 
+    <!-- properties used in documentation generation -->
+    <PropertyGroup>
+        <!-- the relative location (to the project file) of the generator executable -->
+        <DocGeneratorPath>$(MSBuildProjectDirectory)\..\docgenerator\SDKDocGenerator\bin\Release</DocGeneratorPath>
+        <DocGenerator>SDKDocGenerator.exe</DocGenerator>
+        
+        <!-- default expected location of SDK assemblies root if not specified -->
+        <SDKAssembliesRoot Condition="'$(SDKAssembliesRoot)'==''">$(MSBuildProjectDirectory)\..\Deployment\sdk\assemblies</SDKAssembliesRoot>
+        
+        <!-- default output path to ..\Deployment\docs if not specified -->
+        <DocOutputRoot Condition="'$(DocOutputRoot)'==''">$(MSBuildProjectDirectory)\..\Deployment\docs</DocOutputRoot>
+        
+		<!-- default location of the documentation samples. This should be the folder ABOVE AWSSDKDocSamples -->
+		
+		<DocSamplesFolder>$(MSBuildProjectDirectory)\..\docgenerator</DocSamplesFolder>
+		
+        <!-- use net45 platform as the primary determinant of assemblies to inspect, and generate 
+             for all services 
+        -->
+        <SDKPlatform Condition="'$(SDKPlatform)'==''">net45</SDKPlatform>
+        <SDKServices Condition="'$(SDKServices)'==''">*</SDKServices>
+        
+    </PropertyGroup>
+    
 	<Target Name="build-custom-tasks">
 		<Exec Command="$(devenv2013) /Rebuild Release .\CustomTasks\CustomTasks.sln"/>
 	</Target>
 	
 	<UsingTask TaskName="CustomTasks.UpdateFxCopProject" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
 	
-	<Target Name="init" DependsOnTargets="prep;build-custom-tasks"/>
-	<Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;consolidate-artifacts"/>
+	<Target Name="init" DependsOnTargets="clean;build-custom-tasks"/>
+
+	<Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;consolidate-artifacts;doc-build"/>
+
+	<Target Name="full-build-nodocs" DependsOnTargets="test-sdk;copy-assemblies;consolidate-artifacts"/>
 	
 	<Target Name="run-generator">
 		<Message Text="Build and run code generator"/>
@@ -171,4 +198,31 @@
 			LocalArchiveRootFolder="$(LocalArchiveRootFolder)"
 			/>
 	</Target>	
+    
+    <!-- DOCUMENTATION BUILD TARGETS -->
+    
+	<Target Name="doc-build" DependsOnTargets="build-docgenerator">
+		<Message Text="Build documentation for all platforms, all assemblies"/>
+		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(SDKAssembliesRoot) -o $(DocOutputRoot) -sf $(DocSamplesFolder)" />
+	</Target>
+
+    <Target Name="build-docgenerator">
+		<Message Text="Building documentation generator"/>
+		<Exec Command="$(devenv2013) /Rebuild Release ..\docgenerator\AWSSDKDocGenerator.sln"/>
+    </Target>
+    
+	<Target Name="doc-platform-build" DependsOnTargets="build-docgenerator">
+		<Message Text="Build documentation for selected platform, all services"/>
+		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(SDKAssembliesRoot) -o $(DocOutputRoot) -p $(SDKPlatform)" />
+	</Target>
+
+	<Target Name="doc-platform-service-build" DependsOnTargets="build-docgenerator">
+		<Message Text="Build documentation for selected service(s) in platform"/>
+		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(SDKAssembliesRoot) -o $(DocOutputRoot) -p $(SDKPlatform) -svc $(SDKServices)" />
+	</Target>
+    
+	<Target Name="test-doc-build" DependsOnTargets="build-docgenerator">
+		<Message Text="Build documentation in test mode (net45 platform, selected services)"/>
+		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -t  -sdk $(SDKAssembliesRoot) -sf $(DocSamplesFolder) -o $(DocOutputRoot) -v" />
+	</Target>    
 </Project>
