@@ -99,8 +99,12 @@ namespace ServiceClientGenerator
             // emit per-platform solutions that are easier to handle
             foreach (var projectType in ProjectTypesList)
             {
-                GeneratePlatformSpecificSolution(projectType);
+                GeneratePlatformSpecificSolution(projectType, true);
             }
+
+            // Include solutions that Travis CI can build
+            GeneratePlatformSpecificSolution(ProjectTypes.Net35, false, "AWSSDK.Net35.Travis.sln");
+            GeneratePlatformSpecificSolution(ProjectTypes.Net45, false, "AWSSDK.Net45.Travis.sln");
         }
 
         // adds any necessary projects to the collection prior to generating the solution file(s)
@@ -242,7 +246,7 @@ namespace ServiceClientGenerator
             GeneratorDriver.WriteFile(Options.SdkRootFolder, null, "AWSSDK.sln", content, true, false);
         }
 
-        private void GeneratePlatformSpecificSolution(string projectType)
+        private void GeneratePlatformSpecificSolution(string projectType, bool includeTests, string solutionFileName = null)
         {
             Console.WriteLine("...generating platform-specific solution file AWSSDK.{0}.sln", projectType);
 
@@ -280,25 +284,28 @@ namespace ServiceClientGenerator
             }
 
             var testProjects = new List<Project>();
-            var sdkTestsFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
-            foreach (var testFoldername in new[] { GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
+            if (includeTests)
             {
-                var testFolder = Path.Combine(sdkTestsFolder, testFoldername);
-                foreach (var projectFile in Directory.GetFiles(testFolder, projectTypeWildCard, SearchOption.TopDirectoryOnly))
+                var sdkTestsFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
+                foreach (var testFoldername in new[] { GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
                 {
-                    testProjects.Add(TestProjectFromFile(testFoldername, projectFile));
+                    var testFolder = Path.Combine(sdkTestsFolder, testFoldername);
+                    foreach (var projectFile in Directory.GetFiles(testFolder, projectTypeWildCard, SearchOption.TopDirectoryOnly))
+                    {
+                        testProjects.Add(TestProjectFromFile(testFoldername, projectFile));
 
-                    var projectKey = Path.GetFileNameWithoutExtension(projectFile);
-                    solutionProjects.Add(projectKey, _allProjects[projectKey]);
-                    SelectBuildConfigurationsForProject(projectKey, buildConfigurations);
+                        var projectKey = Path.GetFileNameWithoutExtension(projectFile);
+                        solutionProjects.Add(projectKey, _allProjects[projectKey]);
+                        SelectBuildConfigurationsForProject(projectKey, buildConfigurations);
+                    }
                 }
-            }
 
-            if (projectType.Equals(ProjectTypes.Net35, StringComparison.Ordinal) || projectType.Equals(ProjectTypes.Net45, StringComparison.Ordinal))
-            {
-                solutionProjects.Add(GeneratorLibProjectName, GeneratorLibProjectConfig);
-                testProjects.Add(GeneratorLibProject);
-                SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
+                if (projectType.Equals(ProjectTypes.Net35, StringComparison.Ordinal) || projectType.Equals(ProjectTypes.Net45, StringComparison.Ordinal))
+                {
+                    solutionProjects.Add(GeneratorLibProjectName, GeneratorLibProjectConfig);
+                    testProjects.Add(GeneratorLibProject);
+                    SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
+                }
             }
 
             var configurationsList = buildConfigurations.ToList();
@@ -312,7 +319,9 @@ namespace ServiceClientGenerator
 
             var generator = new SolutionFileGenerator { Session = session };
             var content = generator.TransformText();
-            GeneratorDriver.WriteFile(Options.SdkRootFolder, null, string.Format("AWSSDK.{0}.sln", projectType), content, true, false);
+            if (string.IsNullOrEmpty(solutionFileName))
+                solutionFileName = string.Format("AWSSDK.{0}.sln", projectType);
+            GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionFileName, content, true, false);
         }
 
         void SelectProjectAndConfigurationsForSolution(string projectFile, 
