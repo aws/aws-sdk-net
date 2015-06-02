@@ -12,7 +12,7 @@
         <DocGenerator>SDKDocGenerator.exe</DocGenerator>
         
         <!-- default expected location of SDK assemblies root if not specified -->
-        <SDKAssembliesRoot Condition="'$(SDKAssembliesRoot)'==''">$(MSBuildProjectDirectory)\..\Deployment\sdk\assemblies</SDKAssembliesRoot>
+        <SDKAssembliesRoot Condition="'$(SDKAssembliesRoot)'==''">$(MSBuildProjectDirectory)\..\Deployment\assemblies</SDKAssembliesRoot>
         
         <!-- default output path to ..\Deployment\docs if not specified -->
         <DocOutputRoot Condition="'$(DocOutputRoot)'==''">$(MSBuildProjectDirectory)\..\Deployment\docs</DocOutputRoot>
@@ -100,8 +100,8 @@
 
 	<Target Name="fxcop" DependsOnTargets="init;copy-assemblies">
 		<!-- Update FxCop project files -->
-		<UpdateFxCopProject Assemblies="$(Deployment)\sdk\assemblies\net35" FxCopProject="..\sdk\SDK-3.5.FxCop" />
-		<UpdateFxCopProject Assemblies="$(Deployment)\sdk\assemblies\net45" FxCopProject="..\sdk\SDK-4.5.FxCop" />
+		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net35" FxCopProject="..\sdk\SDK-3.5.FxCop" />
+		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net45" FxCopProject="..\sdk\SDK-4.5.FxCop" />
 
 		<!-- Compile custom FxCop rules -->
 		<Exec Command="$(devenv2013) /Rebuild Release ..\buildtools\CustomFxCopRules\CustomFxCopRules.sln"/>

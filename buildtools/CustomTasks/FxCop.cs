@@ -69,7 +69,7 @@ namespace CustomTasks
                 else
                 {
                     /*
-                    <Target Name="$(ProjectDir)/Deployment/sdk/assemblies/net35/AWSSDK.AutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
+                    <Target Name="$(ProjectDir)/Deployment/assemblies/net35/AWSSDK.AutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
                     */
                     AddAttribute(newTarget, "AnalyzeAllChildren", "True");
                 }
@@ -84,7 +84,7 @@ namespace CustomTasks
             var assemblyName = Path.GetFileName(coreAssemblyPath).ToLower();
             var coreAssembly = Assembly.LoadFrom(coreAssemblyPath);
             /*
-  <Target Name="$(ProjectDir)/Deployment/sdk/assemblies/net35/AWSSDK.Core.dll" Analyze="True" AnalyzeAllChildren="False">
+  <Target Name="$(ProjectDir)/Deployment/assemblies/net35/AWSSDK.Core.dll" Analyze="True" AnalyzeAllChildren="False">
    <Modules AnalyzeAllChildren="False">
     <Module Name="awssdk.core.dll" Analyze="True" AnalyzeAllChildren="False">
      <Namespaces AnalyzeAllChildren="False">
@@ -126,7 +126,7 @@ namespace CustomTasks
         public const string TargetXpath = "FxCopProject/Targets/Target";
         public const string CoreAssemblyName = "AWSSDK.Core.dll";
 
-        public const string DeploymentPath = @"Deployment\sdk\assemblies";
+        public const string DeploymentPath = @"Deployment\assemblies";
         public const string ProjectDirRelative = @"$(ProjectDir)\..\";
 
         public static IEnumerable<string> GetNamespacesToExamine(Assembly assembly)
