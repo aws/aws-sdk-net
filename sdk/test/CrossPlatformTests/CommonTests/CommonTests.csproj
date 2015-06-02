@@ -37,6 +37,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Framework\Console.cs" />
     <Compile Include="Framework\TestBase.cs" />
     <Compile Include="Framework\TestRunner.cs" />
     <Compile Include="Framework\UtilityMethods.cs" />

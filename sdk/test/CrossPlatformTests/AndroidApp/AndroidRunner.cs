@@ -17,16 +17,18 @@ namespace AndroidApp
     public class AndroidRunner : TestRunner
     {
         private TextView _textView = null;
+        private Action<Action> _uiRunner = null;
 
-        public AndroidRunner(Stream credentials, TextView txtView)
+        public AndroidRunner(Stream credentials, TextView txtView, Action<Action> uiRunner)
             : base(credentials)
         {
             _textView = txtView;
+            _uiRunner = uiRunner;
         }
 
         public override void WriteLine(string message)
         {
-            _textView.Append(message);
+            _uiRunner(() => _textView.Append("\n"+message));
         }
     }
 }

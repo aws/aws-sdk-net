@@ -11,6 +11,7 @@ using System.Reflection;
 using NUnit.Framework.Interfaces;
 using NUnit.Framework.Internal;
 using System.Threading;
+using System.Diagnostics;
 
 namespace CommonTests
 {
@@ -24,10 +25,14 @@ namespace CommonTests
             get { return RegionEndpoint.USWest2; } 
         }
 
+        public static TestRunner Instance { get; private set; }
+
 		public TestRunner(Stream credentials)
         {
             TestRunner.Credentials = 
 				new VendedCredentials(credentials);
+
+            Instance = this;
         }
 
         public void ExecuteAllTests()
@@ -71,6 +76,7 @@ namespace CommonTests
         public void WriteToOutput(string format, params object[] args)
         {
             var message = string.Format(format, args);
+            Debug.WriteLine("TestRunner >> {0}", message);
             this.WriteLine(message);
         }
 
@@ -88,12 +94,10 @@ namespace CommonTests
 
         public void TestFinished(ITestResult result)
         {
-            //var oldColor = Console.ForegroundColor;
-
             var testAssembly = result.Test as TestAssembly;
             if (testAssembly != null)
             {
-                _runner.WriteToOutput("\n=== Executed {0} tests in assembly {1} ===",
+                _runner.WriteToOutput("=== Executed {0} tests in assembly {1} ===",
                     testAssembly.TestCaseCount,
                     testAssembly.Assembly.FullName);
                 _runner.WriteToOutput("\t\tPassed : {0}\tFailed : {1}\tInconclusive : {2}",
@@ -103,7 +107,12 @@ namespace CommonTests
             var testFixture = result.Test as TestFixture;
             if (testFixture != null)
             {
-                _runner.WriteToOutput("  === Executed tests in class {0} ===\n", testFixture.FullName);
+                if (result.FailCount > 0)
+                {                    
+                    _runner.WriteToOutput("\tMessage : {0}", result.Message);
+                    _runner.WriteToOutput("\tStack trace : {0}", result.StackTrace);
+                }
+                _runner.WriteToOutput("  --- Executed tests in class {0}   ---\n", testFixture.FullName);
             }
 
             var testMethod = result.Test as TestMethod;
@@ -111,26 +120,19 @@ namespace CommonTests
             {
                 if (result.FailCount > 0)
                 {
-                    //Console.ForegroundColor = ConsoleColor.Red;
-                    _runner.WriteToOutput("\tTest {0}.{1} failed", testMethod.ClassName, testMethod.MethodName);
-                    //_runner.WriteToOutput("\tException : {0}", result.ex);
+                    _runner.WriteToOutput("\t{0,-75}FAIL", testMethod.MethodName);                 
                     _runner.WriteToOutput("\tMessage : {0}", result.Message);
                     _runner.WriteToOutput("\tStack trace : {0}", result.StackTrace);
-                    //Console.ForegroundColor = oldColor;
                 }
 
                 if (result.InconclusiveCount > 0)
                 {
-                    //Console.ForegroundColor = ConsoleColor.Yellow;
-                    _runner.WriteToOutput("\tTest {0}.{1} inconclusive", testMethod.ClassName, testMethod.MethodName);
-                    //Console.ForegroundColor = oldColor;
+                    _runner.WriteToOutput("\t{0,-75}INCONCLUSIVE", testMethod.MethodName);                 
                 }
 
                 if (result.PassCount > 0)
                 {
-                    //Console.ForegroundColor = ConsoleColor.Green;
-                    _runner.WriteToOutput("\tTest {0}.{1} succeeded", testMethod.ClassName, testMethod.MethodName);
-                    //Console.ForegroundColor = oldColor;
+                    _runner.WriteToOutput("\t{0,-75}PASS", testMethod.MethodName);                 
                 }
             }
         }
@@ -140,19 +142,19 @@ namespace CommonTests
             var testAssembly = test as TestAssembly;
             if (testAssembly != null)
             {
-                _runner.WriteToOutput("\n=== Executing tests in assembly {0} ===\n", testAssembly.Assembly.FullName);
+                _runner.WriteToOutput("=== Executing tests in assembly {0} ===\n", testAssembly.Assembly.FullName);
             }
 
             var testFixture = test as TestFixture;
             if (testFixture != null)
             {
-                _runner.WriteToOutput("\n  === Executing tests in class {0} ===", testFixture.FullName);
+                _runner.WriteToOutput("  --- Executing tests in class {0} ---", testFixture.FullName);
             }
 
             var testMethod = test as TestMethod;
             if (testMethod != null)
             {
-                _runner.WriteToOutput("\tTest {0}.{1} started", testMethod.ClassName, testMethod.MethodName);
+                //_runner.WriteToOutput("\tTest {0}.{1} started", testMethod.ClassName, testMethod.MethodName);
             }
         }
     }

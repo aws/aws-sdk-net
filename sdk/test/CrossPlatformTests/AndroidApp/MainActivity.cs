@@ -32,7 +32,7 @@ namespace AndroidApp
 			var txtBox = FindViewById<TextView>(Resource.Id.TestOutput);
 
             var stream = Assets.Open(CredentialsAsset);
-			runner = new AndroidRunner(stream, txtBox );
+			runner = new AndroidRunner(stream, txtBox, RunOnUiThread );
             
         }
 
@@ -41,6 +41,7 @@ namespace AndroidApp
             Button button = FindViewById<Button>(Resource.Id.MyButton);
             button.Text = string.Format("{0} clicks!", count++);
             await runner.ExecuteAllTestsAsync();
+            
         }
     }
 }
