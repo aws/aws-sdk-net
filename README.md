@@ -10,7 +10,7 @@ The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web
 
 ## Looking for Version 2?
 
-In anticipation of the GA release for version 3 we have merge it to master. We did this before GA to signify that version 3 is ready for production use and to help us with some of our release and build automation we are working on.
+In anticipation of the GA release for version 3 we have merged it to master. We did this before GA to signify that version 3 is ready for production use and to help us with some of the final release and build automation tasks we are working on.
 
 To find the current version 2 source checkout the [version 2 branch][github-aws-sdk-net-v2].
 
