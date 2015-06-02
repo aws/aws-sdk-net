@@ -8,22 +8,28 @@ The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web
 * [Forum][sdk-forum]
 * [GitHub Issues][sdk-issues]
 
+## Looking for Version 2?
+
+In anticipation of the GA release for version 3 we have merge it to master. We did this before GA to signify that version 3 is ready for production use and to help us with some of our release and build automation we are working on.
+
+To find the current version 2 source checkout the [version 2 branch][github-aws-sdk-net-v2].
+
 ## Modularization
 
-This branch is a preview of our work to modularize the SDK. Separate projects are created for each service as well as a core project. To use this branch compile the solution in the **sdk** folder that matches the desired platform and then include the assemblies for the services needed as well as the core assembly.
+With version 3 of the AWS SDK for .NET the SDK has been modularized. This means a separate NuGet package is created for each service as well as a core project. To use this branch compile the solution in the **sdk** folder that matches the desired platform and then include the assemblies for the services needed as well as the core assembly.
 
 ## Tests
 
 **Important:** Do not run the integration tests on a production account.
 
-Integration tests can be found in the **AWSSDK_DotNet.IntegrationTests** project. These test assume that a default profile has been 
+Integration tests can be found in the **AWSSDK.IntegrationTests** project. These test assume that a default profile has been 
 configured for credentials. For information about setting up a default profile read the [Developer Guide][credentials-management].
 
 The tests are designed to create and delete the resources needed for testing but it is important to keep your data safe. Do not run
 these tests on accounts that contain production data or resources. Since AWS resources are created and deleted during the running 
 of these tests, charges can occur. To reduce charges occurred by running the tests the test focus on AWS resources that have minimal cost.
 
-Unit tests can be found in the **AWSSDK_DotNet.UnitTests** project.
+Unit tests can be found in the **AWSSDK.UnitTests** project.
 
 ### Code Generator
 
@@ -44,3 +50,4 @@ uses the service models defined in the **generator\ServiceModels** folder.
 [docs-guide]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/welcome.html
 [credentials-management]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-config-creds.html
 [dotnet-blog]: http://blogs.aws.amazon.com/net/
+[github-aws-sdk-net-v2]: https://github.com/aws/aws-sdk-net/tree/aws-sdk-net-v2
