@@ -11,5 +11,5 @@ before_install:
  - sudo installer -pkg "MonoFramework-MDK-${MONO_VER}.macos10.xamarin.x86.pkg" -target /
 
 script:
-  - MONO_IOMAP=case xbuild "sdk/AWSSDK.Net35.sln" /p:TargetFrameworkProfile="" /p:TargetFrameworkVersion="v3.5" /p:TreatWarningsAsErrors="false"
-  - MONO_IOMAP=case xbuild "sdk/AWSSDK.Net45.sln" /p:TargetFrameworkProfile="" /p:TargetFrameworkVersion="v4.5" /p:TreatWarningsAsErrors="false"
+  - MONO_IOMAP=case xbuild "sdk/AWSSDK.Net35.Travis.sln" /p:TargetFrameworkProfile="" /p:TargetFrameworkVersion="v3.5" /p:TreatWarningsAsErrors="false"
+  - MONO_IOMAP=case xbuild "sdk/AWSSDK.Net45.Travis.sln" /p:TargetFrameworkProfile="" /p:TargetFrameworkVersion="v4.5" /p:TreatWarningsAsErrors="false"
