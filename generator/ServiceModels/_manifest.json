@@ -377,6 +377,16 @@
 			"authentication-service-name" : "machinelearning",
             "synopsis": "Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology."
 		},
+		{
+            "active": true,
+
+			"model":"mobileanalytics",
+			"base-name":"MobileAnalytics",
+			"service-url":"https://mobileanalytics.us-east-1.amazonaws.com",
+			"authentication-service-name": "mobileanalytics",
+			"region-lookup-name":"mobileanalytics",
+			"synopsis":"Amazon Mobile Analytics is a service that lets you simply and cost effectively collect and analyze your application usage data. In addition to providing usage summary charts that are available for quick reference, Amazon Mobile Analytics enables you to set up automatic export of your data to Amazon S3 for use with other data analytics tools such as Amazon Redshift, Amazon Elastic MapReduce (EMR), Extract, Transform and Load (ETL) software, or your own data warehouse."
+		},
         {
             "active": true,
 

@@ -182,6 +182,10 @@
       <Project>{39BC41FA-A4ED-4C24-AEA1-A3CD3556F21A}</Project>
       <Name>AWSSDK.MachineLearning.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.Net45.csproj">
+      <Project>{0701a0d6-df61-47d7-b89d-73fb88a5fab7}</Project>
+      <Name>AWSSDK.MobileAnalytics.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\OpsWorks\AWSSDK.OpsWorks.Net45.csproj">
       <Project>{9123E499-47D5-4B7C-BAB4-155A96CA5E9C}</Project>
       <Name>AWSSDK.OpsWorks.Net45</Name>

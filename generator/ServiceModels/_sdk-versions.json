@@ -192,7 +192,13 @@
                 "Core" : "3.0.0.0"
             }
         },
-        "MachineLearning"        : {
+        "MachineLearning": {
+            "Version": "3.0.0.0",
+            "Dependencies": {
+                "Core": "3.0.0.0"
+            }
+        },
+        "MobileAnalytics"        : {
             "Version" : "3.0.0.0",
             "Dependencies" : {
                 "Core" : "3.0.0.0"
