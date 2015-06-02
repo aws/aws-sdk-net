@@ -110,13 +110,13 @@ Function Copy-SDKAssemblies
 
 #Script code
 
-Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\sdk\assemblies -PublicKeyToken $PublicKeyTokenToCheck
+Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck
 
 $services = gci ..\sdk\src\services
 foreach ($s in $services)
 {
-    Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\sdk\assemblies -PublicKeyToken $PublicKeyTokenToCheck
+    Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck
 }
 
-Write-Verbose "Copying assembly versions manifest..."
-Copy-Item ..\generator\ServiceModels\_sdk-versions.json ..\Deployment\sdk\assemblies\_sdk-versions.json
+#Write-Verbose "Copying assembly versions manifest..."
+#Copy-Item ..\generator\ServiceModels\_sdk-versions.json ..\Deployment\assemblies\_sdk-versions.json
