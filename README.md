@@ -1,3 +1,7 @@
+## Obsolete Branch ##
+
+This branch is obsolete since all changes have been pushed to [master][github-master].
+
 # AWS SDK for .NET (Modularization)
 
 The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web Services][aws] and build scalable solutions with Amazon S3, Amazon DynamoDB, Amazon Glacier, and more.
@@ -44,3 +48,4 @@ uses the service models defined in the **generator\ServiceModels** folder.
 [docs-guide]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/welcome.html
 [credentials-management]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-config-creds.html
 [dotnet-blog]: http://blogs.aws.amazon.com/net/
+[github-master]: https://github.com/aws/aws-sdk-net/tree/master
