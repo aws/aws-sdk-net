@@ -18,5 +18,6 @@
 sdk/packages/**
 
 Deployment/**
+DocDeployment/**
 
 

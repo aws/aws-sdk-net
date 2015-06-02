@@ -9,6 +9,7 @@
 		<vstest2013>&quot;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe&quot;</vstest2013>
 		<fxcopcmd>&quot;C:\Program Files (x86)\Microsoft Fxcop 10.0\FxCopCmd.exe&quot;</fxcopcmd>
 		<Deployment>..\Deployment</Deployment>
+		<DocDeployment>..\DocDeployment</DocDeployment>
 	</PropertyGroup>
 
 	<!-- COMMON TARGETS -->
@@ -31,6 +32,15 @@
 		<Move
 			SourceFiles="deployment.zip"
 			DestinationFolder="$(Deployment)" />
+	</Target>
+
+	<Target Name="consolidate-docartifacts">
+        <ItemGroup>
+			<FilesToZip Include="$(DocDeployment)\docs\**" />
+		</ItemGroup>
+		<Zip
+			InputDirectory="$(DocDeployment)\docs"
+			OutputFileName="$(DocDeployment)\help.zip" />
 	</Target>
 
 	<!-- COMMON CUSTOM TASKS -->

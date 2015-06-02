@@ -12,10 +12,10 @@
         <DocGenerator>SDKDocGenerator.exe</DocGenerator>
         
         <!-- default expected location of SDK assemblies root if not specified -->
-        <SDKAssembliesRoot Condition="'$(SDKAssembliesRoot)'==''">$(MSBuildProjectDirectory)\..\Deployment\assemblies</SDKAssembliesRoot>
+        <SDKAssembliesRoot Condition="'$(SDKAssembliesRoot)'==''">$(MSBuildProjectDirectory)\$(Deployment)\assemblies</SDKAssembliesRoot>
         
-        <!-- default output path to ..\Deployment\docs if not specified -->
-        <DocOutputRoot Condition="'$(DocOutputRoot)'==''">$(MSBuildProjectDirectory)\..\Deployment\docs</DocOutputRoot>
+        <!-- default output path to ..\DocDeployment\docs if not specified -->
+        <DocOutputRoot Condition="'$(DocOutputRoot)'==''">$(MSBuildProjectDirectory)\$(DocDeployment)\docs</DocOutputRoot>
         
 		<!-- default location of the documentation samples. This should be the folder ABOVE AWSSDKDocSamples -->
 		
@@ -37,7 +37,7 @@
 	
 	<Target Name="init" DependsOnTargets="clean;build-custom-tasks"/>
 
-	<Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;consolidate-artifacts;doc-build"/>
+	<Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;doc-build;consolidate-artifacts;consolidate-docartifacts"/>
 
 	<Target Name="full-build-nodocs" DependsOnTargets="test-sdk;copy-assemblies;consolidate-artifacts"/>
 	
