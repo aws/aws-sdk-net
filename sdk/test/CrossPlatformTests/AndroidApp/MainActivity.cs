@@ -33,7 +33,6 @@ namespace AndroidApp
 
             var stream = Assets.Open(CredentialsAsset);
 			runner = new AndroidRunner(stream, txtBox, RunOnUiThread );
-            
         }
 
         async void OnClick(object sender, EventArgs e)

@@ -27,11 +27,15 @@ namespace CommonTests
 
         public static TestRunner Instance { get; private set; }
 
+        public TestRunner(string credentialsResourcePartialName = "credentials.json")
+        {
+            var credentialsStream = GetCredentialsStream(credentialsResourcePartialName);
+            TestRunner.Credentials = new VendedCredentials(credentialsStream);
+            Instance = this;
+        }
 		public TestRunner(Stream credentials)
         {
-            TestRunner.Credentials = 
-				new VendedCredentials(credentials);
-
+            TestRunner.Credentials = new VendedCredentials(credentials);
             Instance = this;
         }
 
@@ -81,6 +85,15 @@ namespace CommonTests
         }
 
         public abstract void WriteLine(string message);
+
+        private Stream GetCredentialsStream(string credentialsResourcePartialName)
+        {
+            var assembly = this.GetType().GetTypeInfo().Assembly;
+            var resources = assembly.GetManifestResourceNames();
+            var credentialsResourceName = resources.First(r => r.IndexOf(credentialsResourcePartialName, StringComparison.OrdinalIgnoreCase) >= 0);
+            var credsStream = assembly.GetManifestResourceStream(credentialsResourceName);
+            return credsStream;
+        }
     }
 
     public class Listener : ITestListener
