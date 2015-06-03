@@ -37,9 +37,9 @@
 	
 	<Target Name="init" DependsOnTargets="clean;build-custom-tasks"/>
 
-	<Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;doc-build;consolidate-artifacts;consolidate-docartifacts"/>
+	<Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;doc-build;consolidate-docartifacts"/>
 
-	<Target Name="full-build-nodocs" DependsOnTargets="test-sdk;copy-assemblies;consolidate-artifacts"/>
+	<Target Name="full-build-nodocs" DependsOnTargets="test-sdk;copy-assemblies"/>
 	
 	<Target Name="run-generator">
 		<Message Text="Build and run code generator"/>
