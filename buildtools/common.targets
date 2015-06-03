@@ -22,18 +22,6 @@
 		<MakeDir Directories="$(Deployment)" />
 	</Target>
 	
-	<Target Name="consolidate-artifacts">
-		<ItemGroup>
-			<FilesToZip Include="$(Deployment)\**" />
-		</ItemGroup>
-		<Zip
-			InputDirectory="$(Deployment)"
-			OutputFileName="deployment.zip" />
-		<Move
-			SourceFiles="deployment.zip"
-			DestinationFolder="$(Deployment)" />
-	</Target>
-
 	<Target Name="consolidate-docartifacts">
         <ItemGroup>
 			<FilesToZip Include="$(DocDeployment)\docs\**" />
