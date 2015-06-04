@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Describes the user data to be made available to an instance.
     /// </summary>
     public partial class UserData
     {
         private string _data;
 
         /// <summary>
-        /// Gets and sets the property Data.
+        /// Gets and sets the property Data. 
+        /// <para>
+        /// The Base64-encoded MIME user data for the instance.
+        /// </para>
         /// </summary>
         public string Data
         {

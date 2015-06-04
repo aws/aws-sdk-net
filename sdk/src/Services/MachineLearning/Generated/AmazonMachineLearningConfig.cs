@@ -21,6 +21,7 @@
 using System;
 
 using Amazon.Runtime;
+using Amazon.Util.Internal;
 
 
 namespace Amazon.MachineLearning
@@ -30,6 +31,11 @@ namespace Amazon.MachineLearning
     /// </summary>
     public partial class AmazonMachineLearningConfig : ClientConfig
     {
+        private static readonly string UserAgentString =
+            InternalSDKUtils.BuildUserAgentString("3.0.1.1");
+
+        private string _userAgent = UserAgentString;
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -57,6 +63,17 @@ namespace Amazon.MachineLearning
             get
             {
                 return "2014-12-12";
+            }
+        }
+
+        /// <summary>
+        /// Gets the value of UserAgent property.
+        /// </summary>
+        public override string UserAgent
+        {
+            get
+            {
+                return _userAgent;
             }
         }
     }

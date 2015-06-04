@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -37,7 +37,10 @@ namespace Amazon.EC2.Model
         private VolumeDetail _volume;
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the disk image.
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -52,7 +55,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Image.
+        /// Gets and sets the property Image. 
+        /// <para>
+        /// Information about the disk image.
+        /// </para>
         /// </summary>
         public DiskImageDetail Image
         {
@@ -67,7 +73,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Volume.
+        /// Gets and sets the property Volume. 
+        /// <para>
+        /// Information about the volume.
+        /// </para>
         /// </summary>
         public VolumeDetail Volume
         {

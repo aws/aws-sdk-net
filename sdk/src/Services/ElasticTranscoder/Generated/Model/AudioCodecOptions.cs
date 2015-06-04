@@ -32,7 +32,69 @@ namespace Amazon.ElasticTranscoder.Model
     /// </summary>
     public partial class AudioCodecOptions
     {
+        private string _bitDepth;
+        private string _bitOrder;
         private string _profile;
+        private string _signed;
+
+        /// <summary>
+        /// Gets and sets the property BitDepth. 
+        /// <para>
+        /// You can only choose an audio bit depth when you specify <code>flac</code> or <code>pcm</code>
+        /// for the value of Audio:Codec.
+        /// </para>
+        ///  
+        /// <para>
+        /// The bit depth of a sample is how many bits of information are included in the audio
+        /// samples. The higher the bit depth, the better the audio, but the larger the file.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are <code>16</code> and <code>24</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The most common bit depth is <code>24</code>.
+        /// </para>
+        /// </summary>
+        public string BitDepth
+        {
+            get { return this._bitDepth; }
+            set { this._bitDepth = value; }
+        }
+
+        // Check to see if BitDepth property is set
+        internal bool IsSetBitDepth()
+        {
+            return this._bitDepth != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BitOrder. 
+        /// <para>
+        /// You can only choose an audio bit order when you specify <code>pcm</code> for the value
+        /// of Audio:Codec.
+        /// </para>
+        ///  
+        /// <para>
+        /// The order the bits of a PCM sample are stored in.
+        /// </para>
+        ///  
+        /// <para>
+        /// The supported value is <code>LittleEndian</code>.
+        /// </para>
+        /// </summary>
+        public string BitOrder
+        {
+            get { return this._bitOrder; }
+            set { this._bitOrder = value; }
+        }
+
+        // Check to see if BitOrder property is set
+        internal bool IsSetBitOrder()
+        {
+            return this._bitOrder != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Profile. 
@@ -70,6 +132,34 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetProfile()
         {
             return this._profile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Signed. 
+        /// <para>
+        /// You can only choose whether an audio sample is signed when you specify <code>pcm</code>
+        /// for the value of Audio:Codec.
+        /// </para>
+        ///  
+        /// <para>
+        /// Whether audio samples are represented with negative and positive numbers (signed)
+        /// or only positive numbers (unsigned).
+        /// </para>
+        ///  
+        /// <para>
+        /// The supported value is <code>Signed</code>.
+        /// </para>
+        /// </summary>
+        public string Signed
+        {
+            get { return this._signed; }
+            set { this._signed = value; }
+        }
+
+        // Check to see if Signed property is set
+        internal bool IsSetSigned()
+        {
+            return this._signed != null;
         }
 
     }

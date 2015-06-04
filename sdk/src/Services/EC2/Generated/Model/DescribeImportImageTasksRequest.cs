@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters to be applied on a describe request.
+        /// One or more filters.
         /// </para>
         /// </summary>
         public List<Filter> Filters
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImportTaskIds. 
         /// <para>
-        /// A list of ImportImage task IDs to describe.
+        /// A list of import image task IDs.
         /// </para>
         /// </summary>
         public List<string> ImportTaskIds
@@ -78,7 +78,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results in a page.
+        /// The maximum number of results to return in a single request.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to get the next page of paginated describe requests.
+        /// A token that indicates the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

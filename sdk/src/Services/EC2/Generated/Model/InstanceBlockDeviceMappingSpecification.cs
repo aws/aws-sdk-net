@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ebs. 
         /// <para>
-        /// Parameters used to automatically set up Amazon EBS volumes when the instance is launched.
+        /// Parameters used to automatically set up EBS volumes when the instance is launched.
         /// </para>
         /// </summary>
         public EbsInstanceBlockDeviceSpecification Ebs

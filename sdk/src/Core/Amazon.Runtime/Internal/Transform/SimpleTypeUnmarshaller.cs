@@ -547,34 +547,34 @@ namespace Amazon.Runtime.Internal.Transform
         }
     }
 
-    public class DictionaryUnmarshaller<K, V, KUnmarshaller, VUnmarshaller> : IUnmarshaller<Dictionary<K, V>, XmlUnmarshallerContext>, IUnmarshaller<Dictionary<K, V>, JsonUnmarshallerContext>
-        where KUnmarshaller : IUnmarshaller<K, XmlUnmarshallerContext>, IUnmarshaller<K, JsonUnmarshallerContext>
-        where VUnmarshaller : IUnmarshaller<V, XmlUnmarshallerContext>, IUnmarshaller<V, JsonUnmarshallerContext>
+    public class DictionaryUnmarshaller<TKey, TValue, TKeyUnmarshaller, TValueUnmarshaller> : IUnmarshaller<Dictionary<TKey, TValue>, XmlUnmarshallerContext>, IUnmarshaller<Dictionary<TKey, TValue>, JsonUnmarshallerContext>
+        where TKeyUnmarshaller : IUnmarshaller<TKey, XmlUnmarshallerContext>, IUnmarshaller<TKey, JsonUnmarshallerContext>
+        where TValueUnmarshaller : IUnmarshaller<TValue, XmlUnmarshallerContext>, IUnmarshaller<TValue, JsonUnmarshallerContext>
     {
-        private KeyValueUnmarshaller<K, V, KUnmarshaller, VUnmarshaller> KVUnmarshaller;
+        private KeyValueUnmarshaller<TKey, TValue, TKeyUnmarshaller, TValueUnmarshaller> KVUnmarshaller;
 
-        public DictionaryUnmarshaller(KUnmarshaller kUnmarshaller, VUnmarshaller vUnmarshaller)
+        public DictionaryUnmarshaller(TKeyUnmarshaller kUnmarshaller, TValueUnmarshaller vUnmarshaller)
         {
-            KVUnmarshaller = new KeyValueUnmarshaller<K, V, KUnmarshaller, VUnmarshaller>(kUnmarshaller, vUnmarshaller);
+            KVUnmarshaller = new KeyValueUnmarshaller<TKey, TValue, TKeyUnmarshaller, TValueUnmarshaller>(kUnmarshaller, vUnmarshaller);
         }
 
-        Dictionary<K, V> IUnmarshaller<Dictionary<K, V>, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Dictionary<TKey, TValue> IUnmarshaller<Dictionary<TKey, TValue>, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
-        public Dictionary<K, V> Unmarshall(JsonUnmarshallerContext context)
+        public Dictionary<TKey, TValue> Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read(); // Read { or null
             if (context.CurrentTokenType == JsonToken.Null)
-                return new Dictionary<K,V>();
+                return new Dictionary<TKey,TValue>();
 
             // If a dictionary is present in the response, use AlwaysSendDictionary,
             // so if the response was empty, reusing the object in the request we will
             // end up sending the same empty collection back.
-            Dictionary<K, V> dictionary = new AlwaysSendDictionary<K, V>();
+            Dictionary<TKey, TValue> dictionary = new AlwaysSendDictionary<TKey, TValue>();
             while (!context.Peek(JsonToken.ObjectEnd)) // Peek }
             {
-                KeyValuePair<K, V> item = KVUnmarshaller.Unmarshall(context);
+                KeyValuePair<TKey, TValue> item = KVUnmarshaller.Unmarshall(context);
                 dictionary.Add(item.Key, item.Value);
             }
             context.Read(); // Read }
@@ -585,7 +585,7 @@ namespace Amazon.Runtime.Internal.Transform
 
     public static class UnmarshallerExtensions
     {
-        public static void Add<K, V>(this Dictionary<K, V> dict, KeyValuePair<K, V> item)
+        public static void Add<TKey, TValue>(this Dictionary<TKey, TValue> dict, KeyValuePair<TKey, TValue> item)
         {
             dict.Add(item.Key, item.Value);
         }

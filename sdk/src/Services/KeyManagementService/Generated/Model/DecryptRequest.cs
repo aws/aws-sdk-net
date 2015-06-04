@@ -30,7 +30,20 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Container for the parameters to the Decrypt operation.
     /// Decrypts ciphertext. Ciphertext is plaintext that has been previously encrypted by
-    /// using the <a>Encrypt</a> function.
+    /// using any of the following functions: <ul> <li><a>GenerateDataKey</a></li> <li><a>GenerateDataKeyWithoutPlaintext</a></li>
+    /// <li><a>Encrypt</a></li> </ul> 
+    /// 
+    ///  
+    /// <para>
+    /// Note that if a caller has been granted access permissions to all keys (through, for
+    /// example, IAM user policies that grant <code>Decrypt</code> permission on all resources),
+    /// then ciphertext encrypted by using keys in other accounts where the key grants access
+    /// to the caller can be decrypted. To remedy this, we recommend that you do not grant
+    /// <code>Decrypt</code> access in an IAM user policy. Instead grant <code>Decrypt</code>
+    /// access only in key policies. If you must grant <code>Decrypt</code> access in an IAM
+    /// user policy, you should scope the resource to specific keys or to specific trusted
+    /// accounts. 
+    /// </para>
     /// </summary>
     public partial class DecryptRequest : AmazonKeyManagementServiceRequest
     {
@@ -41,7 +54,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CiphertextBlob. 
         /// <para>
-        /// Ciphertext including metadata.
+        /// Ciphertext to be decrypted. The blob includes metadata.
         /// </para>
         /// </summary>
         public MemoryStream CiphertextBlob
@@ -80,8 +93,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property GrantTokens. 
         /// <para>
-        /// A list of grant tokens that represent grants which can be used to provide long term
-        /// permissions to perform decryption.
+        /// For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+        /// Tokens</a>. 
         /// </para>
         /// </summary>
         public List<string> GrantTokens

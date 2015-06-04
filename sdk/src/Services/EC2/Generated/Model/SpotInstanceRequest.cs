@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -71,7 +71,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// The time stamp when the Spot Instance request was created.
+        /// The date and time when the Spot Instance request was created, in UTC format (for example,
+        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// </para>
         /// </summary>
         public DateTime CreateTime
@@ -308,10 +309,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ValidFrom. 
         /// <para>
-        /// The start date of the request. If this is a one-time request, the request becomes
-        /// active at this date and time and remains active until all instances launch, the request
-        /// expires, or the request is canceled. If the request is persistent, the request becomes
-        /// active at this date and time and remains active until it expires or is canceled.
+        /// The start date of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+        /// If this is a one-time request, the request becomes active at this date and time and
+        /// remains active until all instances launch, the request expires, or the request is
+        /// canceled. If the request is persistent, the request becomes active at this date and
+        /// time and remains active until it expires or is canceled.
         /// </para>
         /// </summary>
         public DateTime ValidFrom
@@ -329,9 +331,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ValidUntil. 
         /// <para>
-        /// The end date of the request. If this is a one-time request, the request remains active
-        /// until all instances launch, the request is canceled, or this date is reached. If the
-        /// request is persistent, it remains active until it is canceled or this date is reached.
+        /// The end date of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+        /// If this is a one-time request, the request remains active until all instances launch,
+        /// the request is canceled, or this date is reached. If the request is persistent, it
+        /// remains active until it is canceled or this date is reached.
         /// </para>
         /// </summary>
         public DateTime ValidUntil

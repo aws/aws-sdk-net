@@ -45,6 +45,17 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoScalingThresholds requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAlarms())
+            {
+                context.Writer.WritePropertyName("Alarms");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAlarmsListValue in requestObject.Alarms)
+                {
+                        context.Writer.Write(requestObjectAlarmsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetCpuThreshold())
             {
                 context.Writer.WritePropertyName("CpuThreshold");

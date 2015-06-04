@@ -67,9 +67,9 @@ namespace Amazon.Kinesis.Model
     /// in time.</li> <li>Create more shards than are authorized for your account.</li> </ul>
     /// 
     /// <para>
-    /// The default limit for an AWS account is 10 shards per stream. If you need to create
-    /// a stream with more than 10 shards, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-    /// AWS Support</a> to increase the limit on your account.
+    /// For the default shard limit for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+    /// Kinesis Limits</a>. If you need to increase this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+    /// AWS Support</a>
     /// </para>
     ///  
     /// <para>
@@ -78,7 +78,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// <code>CreateStream</code> has a limit of 5 transactions per second per account.
+    /// <a>CreateStream</a> has a limit of 5 transactions per second per account.
     /// </para>
     /// </summary>
     public partial class CreateStreamRequest : AmazonKinesisRequest
@@ -94,9 +94,7 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Note:</b> The default limit for an AWS account is 10 shards per stream. If you
-        /// need to create a stream with more than 10 shards, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-        /// AWS Support</a> to increase the limit on your account.
+        /// DefaultShardLimit;
         /// </para>
         /// </summary>
         public int ShardCount

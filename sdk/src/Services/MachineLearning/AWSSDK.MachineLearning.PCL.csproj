@@ -62,6 +62,12 @@
     <Compile Include="Custom\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\Util\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\Util\_async\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Generated\*.cs">
       <SubType>Code</SubType>
     </Compile>

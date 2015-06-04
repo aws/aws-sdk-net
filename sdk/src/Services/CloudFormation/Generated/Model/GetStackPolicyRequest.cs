@@ -39,7 +39,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name or stack ID that is associated with the stack whose policy you want to get.
+        /// The name or unique stack ID that is associated with the stack whose policy you want
+        /// to get.
         /// </para>
         /// </summary>
         public string StackName

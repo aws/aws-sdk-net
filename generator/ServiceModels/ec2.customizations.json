@@ -97,6 +97,24 @@
             "emitAsShape": "LaunchSpecification"
         }
     },
+	"dataTypeSwap" : {
+		"SpotFleetRequestConfigData" : {
+		  "ValidFrom" : {
+			"Type" : "DateTime",
+			"Marshaller" : "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMilliseconds"
+		  },
+		  "ValidUntil" : {
+			"Type" : "DateTime",
+			"Marshaller" : "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMilliseconds"
+		  }
+		},
+		"DescribeSpotFleetRequestHistoryRequest" : {
+		  "StartTime" : {
+			"Type" : "DateTime",
+			"Marshaller" : "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMilliseconds"
+		  }
+		}
+	},
     "shapeModifiers": {
         "*": {
             "exclude": [
@@ -218,6 +236,16 @@
                     }
                 }
             ]
+        },		
+		"ModifyVpcEndpointResult": {
+            "exclude": [ "Return" ]
+        },
+		"PrefixListId": {
+            "modify": [
+                {
+                    "PrefixListId": { "emitPropertyName": "Id" }
+                }
+            ]
         },
         "RequestSpotLaunchSpecification": {
             "modify": [
@@ -287,6 +315,13 @@
                 "FromPort",
                 "ToPort",
                 "CidrIp"
+            ]
+        },
+        "SpotFleetRequestConfig": {
+            "modify": [
+                {
+                    "SpotFleetRequestConfig": { "emitPropertyName": "ConfigData" }
+                }
             ]
         }
     },

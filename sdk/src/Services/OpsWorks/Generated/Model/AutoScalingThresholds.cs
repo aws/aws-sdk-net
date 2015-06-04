@@ -33,12 +33,37 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class AutoScalingThresholds
     {
+        private List<string> _alarms = new List<string>();
         private double? _cpuThreshold;
         private int? _ignoreMetricsTime;
         private int? _instanceCount;
         private double? _loadThreshold;
         private double? _memoryThreshold;
         private int? _thresholdsWaitTime;
+
+        /// <summary>
+        /// Gets and sets the property Alarms. 
+        /// <para>
+        /// Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes
+        /// a list of up to five alarm names, which are case sensitive and must be in the same
+        /// region as the stack.
+        /// </para>
+        ///  <note>To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
+        /// You can either have AWS OpsWorks update the role for you when you first use this feature
+        /// or you can edit the role manually. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
+        /// AWS OpsWorks to Act on Your Behalf</a>.</note>
+        /// </summary>
+        public List<string> Alarms
+        {
+            get { return this._alarms; }
+            set { this._alarms = value; }
+        }
+
+        // Check to see if Alarms property is set
+        internal bool IsSetAlarms()
+        {
+            return this._alarms != null && this._alarms.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CpuThreshold. 
@@ -62,12 +87,12 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property IgnoreMetricsTime. 
         /// <para>
         /// The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks should
-        /// ignore metrics and not raise any additional scaling events. For example, AWS OpsWorks
-        /// adds new instances following an upscaling event but the instances won't start reducing
+        /// ignore metrics and suppress additional scaling events. For example, AWS OpsWorks adds
+        /// new instances following an upscaling event but the instances won't start reducing
         /// the load until they have been booted and configured. There is no point in raising
         /// additional scaling events during that operation, which typically takes several minutes.
-        /// <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks to not raise any
-        /// scaling events long enough to get the new instances online.
+        /// <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks to suppress scaling
+        /// events long enough to get the new instances online.
         /// </para>
         /// </summary>
         public int IgnoreMetricsTime

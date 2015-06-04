@@ -31,10 +31,39 @@ namespace Amazon.KeyManagementService.Model
     /// Container for the parameters to the RetireGrant operation.
     /// Retires a grant. You can retire a grant when you're done using it to clean up. You
     /// should revoke a grant when you intend to actively deny operations that depend on it.
+    /// The following are permitted to call this API: <ul> <li>The account that created the
+    /// grant</li> <li>The <code>RetiringPrincipal</code>, if present</li> <li>The <code>GranteePrincipal</code>,
+    /// if <code>RetireGrant</code> is a grantee operation</li> </ul> The grant to retire
+    /// must be identified by its grant token or by a combination of the key ARN and the grant
+    /// ID. A grant token is a unique variable-length base64-encoded string. A grant ID is
+    /// a 64 character unique identifier of a grant. Both are returned by the <code>CreateGrant</code>
+    /// function.
     /// </summary>
     public partial class RetireGrantRequest : AmazonKeyManagementServiceRequest
     {
+        private string _grantId;
         private string _grantToken;
+        private string _keyId;
+
+        /// <summary>
+        /// Gets and sets the property GrantId. 
+        /// <para>
+        ///  Unique identifier of the grant to be retired. The grant ID is returned by the <code>CreateGrant</code>
+        /// function. <ul> <li>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</li>
+        /// </ul> 
+        /// </para>
+        /// </summary>
+        public string GrantId
+        {
+            get { return this._grantId; }
+            set { this._grantId = value; }
+        }
+
+        // Check to see if GrantId property is set
+        internal bool IsSetGrantId()
+        {
+            return this._grantId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GrantToken. 
@@ -52,6 +81,28 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetGrantToken()
         {
             return this._grantToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyId. 
+        /// <para>
+        /// A unique identifier for the customer master key associated with the grant. This value
+        /// can be a globally unique identifier or a fully specified ARN of the key. <ul> <li>Key
+        /// ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+        /// <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul>
+        /// 
+        /// </para>
+        /// </summary>
+        public string KeyId
+        {
+            get { return this._keyId; }
+            set { this._keyId = value; }
+        }
+
+        // Check to see if KeyId property is set
+        internal bool IsSetKeyId()
+        {
+            return this._keyId != null;
         }
 
     }

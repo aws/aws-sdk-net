@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInstanceExportTask operation.
-    /// Exports a running or stopped instance to an Amazon S3 bucket.
+    /// Exports a running or stopped instance to an S3 bucket.
     /// 
     ///  
     /// <para>
@@ -65,7 +65,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExportToS3Task.
+        /// Gets and sets the property ExportToS3Task. 
+        /// <para>
+        /// The format and location for an instance export task.
+        /// </para>
         /// </summary>
         public ExportToS3TaskSpecification ExportToS3Task
         {

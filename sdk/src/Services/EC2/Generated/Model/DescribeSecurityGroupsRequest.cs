@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -54,6 +54,11 @@ namespace Amazon.EC2.Model
         ///  <ul> <li> 
         /// <para>
         /// <code>description</code> - The description of the security group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS service
+        /// to which the security group allows access.
         /// </para>
         ///  </li> <li> 
         /// <para>

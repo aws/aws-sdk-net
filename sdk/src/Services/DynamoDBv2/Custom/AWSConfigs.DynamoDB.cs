@@ -27,16 +27,26 @@ namespace Amazon
 
         static AWSConfigsDynamoDB()
         {
+            try
+            {
 #if BCL
-            var root = new RootConfig();
-            var section = root.GetServiceSection(dynamoDBKey);
-            if (section == null)
-                return;
+                var root = new RootConfig();
+                var section = root.GetServiceSection(dynamoDBKey);
+                if (section == null)
+                    return;
 
-            var rootSection = new DynamoDBSectionRoot(section);
-            if (rootSection.DynamoDB != null)
-                AWSConfigsDynamoDB.Configure(rootSection.DynamoDB);
+                var rootSection = new DynamoDBSectionRoot(section);
+                if (rootSection.DynamoDB != null)
+                    AWSConfigsDynamoDB.Configure(rootSection.DynamoDB);
 #endif
+            }
+            finally
+            {
+                // If no configuration exist at least
+                // configure the context config to the default.
+                if (Context == null)
+                    Context = new DynamoDBContextConfig();
+            }
         }
 
         #region DynamoDBContext TableNamePrefix

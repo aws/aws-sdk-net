@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Describes the launch specification for VM import.
     /// </summary>
     public partial class ImportInstanceLaunchSpecification
     {
@@ -45,7 +45,10 @@ namespace Amazon.EC2.Model
         private UserData _userData;
 
         /// <summary>
-        /// Gets and sets the property AdditionalInfo.
+        /// Gets and sets the property AdditionalInfo. 
+        /// <para>
+        /// Reserved.
+        /// </para>
         /// </summary>
         public string AdditionalInfo
         {
@@ -135,11 +138,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type. This is not supported for VMs imported into a VPC, which are assigned
-        /// the default security group. After a VM is imported into a VPC, you can specify another
-        /// security group using the AWS Management Console. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information
-        /// about the Linux instance types you can import, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
+        /// The instance type. For more information about the instance types that you can import,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
         /// You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.
         /// </para>
         /// </summary>
@@ -156,7 +156,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Monitoring.
+        /// Gets and sets the property Monitoring. 
+        /// <para>
+        /// Indicates whether monitoring is enabled.
+        /// </para>
         /// </summary>
         public bool Monitoring
         {
@@ -171,7 +174,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Placement.
+        /// Gets and sets the property Placement. 
+        /// <para>
+        /// The placement information for the instance.
+        /// </para>
         /// </summary>
         public Placement Placement
         {
@@ -188,8 +194,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
-        /// [EC2-VPC] Optionally, you can use this parameter to assign the instance a specific
-        /// available IP address from the IP address range of the subnet.
+        /// [EC2-VPC] An available IP address from the IP address range of the subnet.
         /// </para>
         /// </summary>
         public string PrivateIpAddress
@@ -207,7 +212,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// [EC2-VPC] The ID of the subnet to launch the instance into.
+        /// [EC2-VPC] The ID of the subnet in which to launch the instance.
         /// </para>
         /// </summary>
         public string SubnetId
@@ -225,7 +230,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// User data to be made available to the instance.
+        /// The Base64-encoded MIME user data to be made available to the instance.
         /// </para>
         /// </summary>
         public UserData UserData

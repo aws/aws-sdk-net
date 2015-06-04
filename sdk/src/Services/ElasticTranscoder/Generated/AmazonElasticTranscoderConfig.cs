@@ -21,6 +21,7 @@
 using System;
 
 using Amazon.Runtime;
+using Amazon.Util.Internal;
 
 
 namespace Amazon.ElasticTranscoder
@@ -30,6 +31,11 @@ namespace Amazon.ElasticTranscoder
     /// </summary>
     public partial class AmazonElasticTranscoderConfig : ClientConfig
     {
+        private static readonly string UserAgentString =
+            InternalSDKUtils.BuildUserAgentString("3.0.1.0");
+
+        private string _userAgent = UserAgentString;
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -57,6 +63,17 @@ namespace Amazon.ElasticTranscoder
             get
             {
                 return "2012-09-25";
+            }
+        }
+
+        /// <summary>
+        /// Gets the value of UserAgent property.
+        /// </summary>
+        public override string UserAgent
+        {
+            get
+            {
+                return _userAgent;
             }
         }
     }

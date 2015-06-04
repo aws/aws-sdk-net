@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -89,7 +89,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>state</code> - The state of the Reserved Instance (<code>pending-payment</code>
+        /// <code>state</code> - The state of the Reserved Instance (<code>payment-pending</code>
         /// | <code>active</code> | <code>payment-failed</code> | <code>retired</code>).
         /// </para>
         ///  </li> <li> 

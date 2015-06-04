@@ -27,23 +27,6 @@ namespace Amazon.Util
 {
     public static partial class AWSSDKUtils
     {
-        static string _userAgentBaseName = "aws-sdk-dotnet-winrt";
-
-        static string DetermineRuntime()
-        {
-            return "WinRT";
-        }
-
-        static string DetermineFramework()
-        {
-            return "4.5";
-        }
-
-        static string DetermineOSVersion()
-        {
-            return "Unknown";
-        }
-
         internal static void ForceCanonicalPathAndQuery(Uri uri)
         {
         }

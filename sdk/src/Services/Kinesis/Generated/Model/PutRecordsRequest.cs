@@ -52,15 +52,15 @@ namespace Amazon.Kinesis.Model
     /// the partition key and associated data to a specific shard. An MD5 hash function is
     /// used to map partition keys to 128-bit integer values and to map associated data records
     /// to shards. As a result of this hashing mechanism, all data records with the same partition
-    /// key map to the same shard within the stream. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-defn-partition-key">Partition
-    /// Key</a> in the <i>Amazon Kinesis Developer Guide</i>.
+    /// key map to the same shard within the stream. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html">Adding
+    /// Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// Each record in the <code>Records</code> array may include an optional parameter, <code>ExplicitHashKey</code>,
     /// which overrides the partition key to shard mapping. This parameter allows a data producer
     /// to determine explicitly the shard where the record is stored. For more information,
-    /// see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-putrecords">Adding
+    /// see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
     /// Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Developer Guide</i>.
     /// </para>
     ///  
@@ -91,7 +91,8 @@ namespace Amazon.Kinesis.Model
     /// values: <code>ProvisionedThroughputExceededException</code> or <code>InternalFailure</code>.
     /// <code>ErrorMessage</code> provides more detailed information about the <code>ProvisionedThroughputExceededException</code>
     /// exception including the account ID, stream name, and shard ID of the record that was
-    /// throttled.
+    /// throttled. For more information about partially successful responses, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
+    /// Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Developer Guide</i>.
     /// </para>
     ///  
     /// <para>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Client-specific data.
+    /// Describes the client-specific data.
     /// </summary>
     public partial class ClientData
     {
@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// User-defined comment about the upload.
+        /// A user-defined comment about the disk upload.
         /// </para>
         /// </summary>
         public string Comment
@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UploadSize. 
         /// <para>
-        /// The size of the uploaded disk image.
+        /// The size of the uploaded disk image, in GiB.
         /// </para>
         /// </summary>
         public double UploadSize

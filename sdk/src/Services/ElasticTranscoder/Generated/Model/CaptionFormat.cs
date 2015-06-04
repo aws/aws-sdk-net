@@ -68,6 +68,10 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  <ul> <li>
         /// <para>
+        /// <b>for FLAC</b>: None
+        /// </para>
+        /// </li> <li>
+        /// <para>
         /// <b>For MP3</b>: None
         /// </para>
         /// </li> <li>

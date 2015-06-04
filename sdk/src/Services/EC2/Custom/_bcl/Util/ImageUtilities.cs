@@ -166,7 +166,13 @@ namespace Amazon.EC2.Util
 
         #region Initialization and private members
 
-        static readonly Logger LOGGER = Logger.GetLogger(typeof(ImageUtilities));
+        static Logger Logger
+        {
+            get
+            {
+                return Logger.GetLogger(typeof(ImageUtilities));
+            }
+        }
 
         private static readonly ImageDescriptor[] WindowsDescriptors =
         {
@@ -267,7 +273,7 @@ namespace Amazon.EC2.Util
                     retries++;
                     if (retries == MAX_DOWNLOAD_RETRIES)
                     {
-                        LOGGER.Error(e, "Error downloading AMI definition file, ImageDescriptors were not initialized.");
+                        Logger.Error(e, "Error downloading AMI definition file, ImageDescriptors were not initialized.");
                         break;
                     }
                 }
@@ -300,7 +306,7 @@ namespace Amazon.EC2.Util
                     var imageDefinitions = jdata[platformTag];
                     if (imageDefinitions == null)
                     {
-                        LOGGER.InfoFormat("Parsing AMI definitions - did not find any images for platform tag '{0}'", platformTag);
+                        Logger.InfoFormat("Parsing AMI definitions - did not find any images for platform tag '{0}'", platformTag);
                         continue;
                     }
 
@@ -313,7 +319,7 @@ namespace Amazon.EC2.Util
                         if (!string.IsNullOrEmpty(key) && !string.IsNullOrEmpty(prefix))
                             parsedDefinitionsMap[key] = prefix;
                         else
-                            LOGGER.InfoFormat("Parsing AMI definitions - found malformed descriptor entry for definition index {0} in platform group {1}, discarded", d, platformTag);
+                            Logger.InfoFormat("Parsing AMI definitions - found malformed descriptor entry for definition index {0} in platform group {1}, discarded", d, platformTag);
                     }
                 }
 
@@ -322,7 +328,7 @@ namespace Amazon.EC2.Util
                     if (parsedDefinitionsMap.ContainsKey(d.DefinitionKey))
                         d.NamePrefix = parsedDefinitionsMap[d.DefinitionKey];
                     else
-                        LOGGER.InfoFormat("Parsing AMI definitions - did not find entry for Windows image descriptor '{0}' after parsing", d.DefinitionKey);
+                        Logger.InfoFormat("Parsing AMI definitions - did not find entry for Windows image descriptor '{0}' after parsing", d.DefinitionKey);
                 }
 
                 foreach (var d in LinuxDescriptors)
@@ -330,12 +336,12 @@ namespace Amazon.EC2.Util
                     if (parsedDefinitionsMap.ContainsKey(d.DefinitionKey))
                         d.NamePrefix = parsedDefinitionsMap[d.DefinitionKey];
                     else
-                        LOGGER.InfoFormat("Parsing AMI definitions - did not find entry for Linux image descriptor '{0}' after parsing", d.DefinitionKey);
+                        Logger.InfoFormat("Parsing AMI definitions - did not find entry for Linux image descriptor '{0}' after parsing", d.DefinitionKey);
                 }
             }
             catch (Exception e)
             {
-                LOGGER.Error(e, "Exception whilst parsing AMI definitions file.");
+                Logger.Error(e, "Exception whilst parsing AMI definitions file.");
             }
         }
 
@@ -374,7 +380,7 @@ namespace Amazon.EC2.Util
                     // backing control file may be outdated, reload and try once more
                     if (retryCount == 1)
                     {
-                        LOGGER.InfoFormat("FindImage - DescribeImages call for image descriptor '{0}' (name prefix '{1}') yielded no results, assuming outdated control file and reloading", 
+                        Logger.InfoFormat("FindImage - DescribeImages call for image descriptor '{0}' (name prefix '{1}') yielded no results, assuming outdated control file and reloading", 
                                           descriptor.DefinitionKey,
                                           descriptor.NamePrefix);
                         LoadDefinitionsFromWeb();
@@ -384,7 +390,7 @@ namespace Amazon.EC2.Util
             } while (image == null && retryCount <= 2);
 
             if (image == null)
-                LOGGER.InfoFormat("FindImage - failed to find valid AMI image for descriptor '{0}' (name prefix '{1}')", 
+                Logger.InfoFormat("FindImage - failed to find valid AMI image for descriptor '{0}' (name prefix '{1}')", 
                                   descriptor.DefinitionKey, 
                                   descriptor.NamePrefix);
 

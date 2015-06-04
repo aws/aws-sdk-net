@@ -21,6 +21,7 @@
 using System;
 
 using Amazon.Runtime;
+using Amazon.Util.Internal;
 
 
 namespace Amazon.ImportExport
@@ -30,6 +31,11 @@ namespace Amazon.ImportExport
     /// </summary>
     public partial class AmazonImportExportConfig : ClientConfig
     {
+        private static readonly string UserAgentString =
+            InternalSDKUtils.BuildUserAgentString("3.0.0.2");
+
+        private string _userAgent = UserAgentString;
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -56,6 +62,17 @@ namespace Amazon.ImportExport
             get
             {
                 return "2010-06-01";
+            }
+        }
+
+        /// <summary>
+        /// Gets the value of UserAgent property.
+        /// </summary>
+        public override string UserAgent
+        {
+            get
+            {
+                return _userAgent;
             }
         }
     }

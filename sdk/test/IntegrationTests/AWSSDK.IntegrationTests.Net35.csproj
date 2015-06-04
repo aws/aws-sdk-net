@@ -130,6 +130,10 @@
       <Project>{9C749173-C8C9-4864-8FBA-3E0C9EB7DA6B}</Project>
       <Name>AWSSDK.DirectConnect.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\DirectoryService\AWSSDK.DirectoryService.Net35.csproj">
+      <Project>{f419e887-8a8d-441c-88fb-51ee57c85a97}</Project>
+      <Name>AWSSDK.DirectoryService.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.Net35.csproj">
       <Project>{BF82E571-2EF5-4081-B9DE-F23BD522D0A8}</Project>
       <Name>AWSSDK.DynamoDBv2.Net35</Name>

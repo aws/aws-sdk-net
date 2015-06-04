@@ -153,6 +153,21 @@ namespace Amazon.Glacier
 
         #endregion
                 
+        #region  DeleteVaultAccessPolicy
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVaultAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVaultAccessPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteVaultAccessPolicyResponse> DeleteVaultAccessPolicyAsync(DeleteVaultAccessPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteVaultNotifications
 
         /// <summary>
@@ -225,6 +240,21 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetJobOutputResponse> GetJobOutputAsync(GetJobOutputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetVaultAccessPolicy
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVaultAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVaultAccessPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetVaultAccessPolicyResponse> GetVaultAccessPolicyAsync(GetVaultAccessPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -345,6 +375,21 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<SetDataRetrievalPolicyResponse> SetDataRetrievalPolicyAsync(SetDataRetrievalPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SetVaultAccessPolicy
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetVaultAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetVaultAccessPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<SetVaultAccessPolicyResponse> SetVaultAccessPolicyAsync(SetVaultAccessPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

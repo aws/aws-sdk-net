@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -82,23 +82,23 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>block-device-mapping.device-name</code> - The device name for the Amazon EBS
-        /// volume (for example, <code>/dev/sdh</code>).
+        /// <code>block-device-mapping.device-name</code> - The device name for the EBS volume
+        /// (for example, <code>/dev/sdh</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the
-        /// Amazon EBS volume.
+        /// EBS volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>block-device-mapping.volume-size</code> - The volume size of the Amazon EBS
-        /// volume, in GiB.
+        /// <code>block-device-mapping.volume-size</code> - The volume size of the EBS volume,
+        /// in GiB.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>block-device-mapping.volume-type</code> - The volume type of the Amazon EBS
-        /// volume (<code>gp2</code> | <code>standard</code> | <code>io1</code>).
+        /// <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume
+        /// (<code>gp2</code> | <code>standard</code> | <code>io1</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

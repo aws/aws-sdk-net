@@ -68,11 +68,6 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The trust policy that grants permission to assume the role.
         /// </para>
-        ///  
-        /// <para>
-        ///  The returned policy is URL-encoded according to <a href="http://www.faqs.org/rfcs/rfc3986.html">RFC
-        /// 3986</a>. 
-        /// </para>
         /// </summary>
         public string AssumeRolePolicyDocument
         {

@@ -74,9 +74,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// The policy document is returned in the response to the <a>GetPolicyVersion</a> operation.
-        /// It is not included in the response to the <a>ListPolicyVersions</a> or <a>GetAccountAuthorizationDetails</a>
-        /// operations. 
+        /// The policy document is returned in the response to the <a>GetPolicyVersion</a> and
+        /// <a>GetAccountAuthorizationDetails</a> operations. It is not returned in the response
+        /// to the <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a> operations. 
         /// </para>
         /// </summary>
         public string Document

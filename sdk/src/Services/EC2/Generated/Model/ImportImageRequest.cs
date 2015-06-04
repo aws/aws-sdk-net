@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportImage operation.
-    /// Import single or multi-volume disk images or Amazon EBS snapshots into an Amazon Machine
+    /// Import single or multi-volume disk images or EBS snapshots into an Amazon Machine
     /// Image (AMI).
     /// </summary>
     public partial class ImportImageRequest : AmazonEC2Request
@@ -47,7 +47,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Architecture. 
         /// <para>
-        /// The architecture of the virtual machine being imported (optional).
+        /// The architecture of the virtual machine.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>i386</code> | <code>x86_64</code>
         /// </para>
         /// </summary>
         public string Architecture
@@ -65,7 +69,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ClientData. 
         /// <para>
-        /// Client-specific data.
+        /// The client-specific data.
         /// </para>
         /// </summary>
         public ClientData ClientData
@@ -83,7 +87,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The token to enable idempotency for VM import requests (optional).
+        /// The token to enable idempotency for VM import requests.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -101,7 +105,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description string for the import image task (optional).
+        /// A description string for the import image task.
         /// </para>
         /// </summary>
         public string Description
@@ -117,7 +121,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DiskContainers.
+        /// Gets and sets the property DiskContainers. 
+        /// <para>
+        /// Information about the disk containers.
+        /// </para>
         /// </summary>
         public List<ImageDiskContainer> DiskContainers
         {
@@ -134,7 +141,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Hypervisor. 
         /// <para>
-        /// The target hypervisor platform to use (optional).
+        /// The target hypervisor platform.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>xen</code>
         /// </para>
         /// </summary>
         public string Hypervisor
@@ -152,7 +163,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LicenseType. 
         /// <para>
-        /// The license type to be used for the Amazon Machine Image (AMI) after importing (optional).
+        /// The license type to be used for the Amazon Machine Image (AMI) after importing.
         /// </para>
         ///  
         /// <para>
@@ -162,7 +173,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: AWS | BYOL
+        /// Valid values: <code>AWS</code> | <code>BYOL</code>
         /// </para>
         /// </summary>
         public string LicenseType
@@ -180,7 +191,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The operating system of the virtual machine being imported (optional).
+        /// The operating system of the virtual machine.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>Windows</code> | <code>Linux</code>
         /// </para>
         /// </summary>
         public string Platform
@@ -198,7 +213,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// The name of the role to use when not using the default role name 'vmimport' (optional).
+        /// The name of the role to use when not using the default role, 'vmimport'.
         /// </para>
         /// </summary>
         public string RoleName

@@ -21,6 +21,7 @@
 using System;
 
 using Amazon.Runtime;
+using Amazon.Util.Internal;
 
 
 namespace Amazon.SimpleNotificationService
@@ -30,6 +31,11 @@ namespace Amazon.SimpleNotificationService
     /// </summary>
     public partial class AmazonSimpleNotificationServiceConfig : ClientConfig
     {
+        private static readonly string UserAgentString =
+            InternalSDKUtils.BuildUserAgentString("3.0.0.2");
+
+        private string _userAgent = UserAgentString;
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -57,6 +63,17 @@ namespace Amazon.SimpleNotificationService
             get
             {
                 return "2010-03-31";
+            }
+        }
+
+        /// <summary>
+        /// Gets the value of UserAgent property.
+        /// </summary>
+        public override string UserAgent
+        {
+            get
+            {
+                return _userAgent;
             }
         }
     }

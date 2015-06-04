@@ -425,6 +425,53 @@ namespace Amazon.Glacier
 
         #endregion
         
+        #region  DeleteVaultAccessPolicy
+
+        /// <summary>
+        /// This operation deletes the access policy associated with the specified vault. The
+        /// operation is eventually consistent—that is, it might take some time for Amazon Glacier
+        /// to completely remove the access policy, and you might still see the effect of the
+        /// policy for a short time after you send the delete request.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is idempotent. You can invoke delete multiple times, even if there
+        /// is no policy associated with the vault. For more information about vault access policies,
+        /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
+        /// Glacier Access Control with Vault Access Policies</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVaultAccessPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVaultAccessPolicy service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
+        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        DeleteVaultAccessPolicyResponse DeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVaultAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVaultAccessPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteVaultAccessPolicyResponse> DeleteVaultAccessPolicyAsync(DeleteVaultAccessPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteVaultNotifications
 
         /// <summary>
@@ -729,6 +776,47 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetJobOutputResponse> GetJobOutputAsync(GetJobOutputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetVaultAccessPolicy
+
+        /// <summary>
+        /// This operation retrieves the <code>access-policy</code> subresource set on the vault—for
+        /// more information on setting this subresource, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html">Set
+        /// Vault Access Policy (PUT access-policy)</a>. If there is no access policy set on the
+        /// vault, the operation returns a <code>404 Not found</code> error. For more information
+        /// about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
+        /// Glacier Access Control with Vault Access Policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVaultAccessPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetVaultAccessPolicy service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
+        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        GetVaultAccessPolicyResponse GetVaultAccessPolicy(GetVaultAccessPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVaultAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVaultAccessPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetVaultAccessPolicyResponse> GetVaultAccessPolicyAsync(GetVaultAccessPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1449,6 +1537,47 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<SetDataRetrievalPolicyResponse> SetDataRetrievalPolicyAsync(SetDataRetrievalPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SetVaultAccessPolicy
+
+        /// <summary>
+        /// This operation configures an access policy for a vault and will overwrite an existing
+        /// policy. To configure a vault access policy, send a PUT request to the <code>access-policy</code>
+        /// subresource of the vault. An access policy is specific to a vault and is also called
+        /// a vault subresource. You can set one access policy per vault and the policy can be
+        /// up to 20 KB in size. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
+        /// Glacier Access Control with Vault Access Policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetVaultAccessPolicy service method.</param>
+        /// 
+        /// <returns>The response from the SetVaultAccessPolicy service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
+        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        SetVaultAccessPolicyResponse SetVaultAccessPolicy(SetVaultAccessPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetVaultAccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetVaultAccessPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<SetVaultAccessPolicyResponse> SetVaultAccessPolicyAsync(SetVaultAccessPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

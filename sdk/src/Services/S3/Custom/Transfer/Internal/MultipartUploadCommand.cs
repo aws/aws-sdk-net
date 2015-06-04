@@ -51,7 +51,13 @@ namespace Amazon.S3.Transfer.Internal
 
 
         long _contentLength;
-        static Logger _logger = Logger.GetLogger(typeof(TransferUtility));
+        private static Logger Logger
+        {
+            get
+            {
+                return Logger.GetLogger(typeof(TransferUtility));
+            }
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MultipartUploadCommand"/> class.
@@ -65,11 +71,11 @@ namespace Amazon.S3.Transfer.Internal
 
             if (fileTransporterRequest.IsSetFilePath())
             {
-                _logger.DebugFormat("Beginning upload of file {0}.", fileTransporterRequest.FilePath);
+                Logger.DebugFormat("Beginning upload of file {0}.", fileTransporterRequest.FilePath);
             }
             else
             {
-                _logger.DebugFormat("Beginning upload of stream.");
+                Logger.DebugFormat("Beginning upload of stream.");
             }
 
             this._s3Client = s3Client;
@@ -89,7 +95,7 @@ namespace Amazon.S3.Transfer.Internal
                 }
             }
 
-            _logger.DebugFormat("Upload part size {0}.", this._partSize);
+            Logger.DebugFormat("Upload part size {0}.", this._partSize);
         }
 
         private static long calculatePartSize(long fileSize)

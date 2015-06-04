@@ -79,6 +79,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Options" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
                         }
+                        if(publicRequestlistValue.IsSetResourceName())
+                        {
+                            request.Parameters.Add("Options" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceName", StringUtils.FromString(publicRequestlistValue.ResourceName));
+                        }
                         publicRequestlistValueIndex++;
                     }
                 }

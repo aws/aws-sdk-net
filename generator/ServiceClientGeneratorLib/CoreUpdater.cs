@@ -17,6 +17,7 @@ namespace ServiceClientGenerator
         private Dictionary<string, object> session;
         private static string corePath = Path.Combine("src", "Core");
         private static string assemblyInfoPath = Path.Combine("Properties", "AssemblyInfo.cs");
+        private static string internalSdkUtilPath = Path.Combine("Amazon.Util","Internal","InternalSDKUtils.generated.cs");
         private const string nuspecPath = "AWSSDK.Core.nuspec";
 
 
@@ -34,7 +35,7 @@ namespace ServiceClientGenerator
 
         public void Execute()
         {
-            UpdateAssemblyVersion();
+            UpdateAssemblyVersion();            
             UpdateNuspec();
         }
 
@@ -52,6 +53,11 @@ namespace ServiceClientGenerator
             var text = avi.TransformText();
             GeneratorDriver.WriteFile(
                 Options.SdkRootFolder, corePath, assemblyInfoPath, text);
+
+            var sdkUtil = new InternalSDKUtils { Session = session };
+            var sdkUtilText = sdkUtil.TransformText();
+            GeneratorDriver.WriteFile(
+                Options.SdkRootFolder, corePath, internalSdkUtilPath, sdkUtilText);
         }
     }
 }

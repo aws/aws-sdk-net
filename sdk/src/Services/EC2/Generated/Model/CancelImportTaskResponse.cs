@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImportTaskId. 
         /// <para>
-        /// The task ID of the ImportImage or ImportSnapshot task being canceled.
+        /// The ID of the task being canceled.
         /// </para>
         /// </summary>
         public string ImportTaskId
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PreviousState. 
         /// <para>
-        /// The current state of the ImportImage or ImportSnapshot task being canceled.
+        /// The current state of the task being canceled.
         /// </para>
         /// </summary>
         public string PreviousState
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of the ImportImage or ImportSnapshot task being canceled.
+        /// The current state of the task being canceled.
         /// </para>
         /// </summary>
         public string State

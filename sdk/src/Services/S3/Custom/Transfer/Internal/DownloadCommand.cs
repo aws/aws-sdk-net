@@ -49,7 +49,13 @@ namespace Amazon.S3.Transfer.Internal
 #endif
         };
 
-        static Logger _logger = Logger.GetLogger(typeof(TransferUtility));
+        static Logger Logger
+        {
+            get
+            {
+                return Logger.GetLogger(typeof(TransferUtility));
+            }
+        }
 
         IAmazonS3 _s3Client;
         TransferUtilityDownloadRequest _request;
@@ -98,7 +104,7 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     if (exception.InnerException is ThreadAbortException)
                     {
-                        _logger.Error(exception, "Encountered a IOException caused by a ThreadAbortException.");
+                        Logger.Error(exception, "Encountered a IOException caused by a ThreadAbortException.");
                         return false;
                     }
                     exception = exception.InnerException;
@@ -106,7 +112,7 @@ namespace Amazon.S3.Transfer.Internal
 #endif
                 if (retries < maxRetries)
                 {
-                    _logger.InfoFormat("Encountered an IOException. Retrying, retry {0} of {1}.",
+                    Logger.InfoFormat("Encountered an IOException. Retrying, retry {0} of {1}.",
                         retries, maxRetries);
                     return true;
                 }
@@ -117,11 +123,11 @@ namespace Amazon.S3.Transfer.Internal
             var webException = exception as WebException;
             if (webException != null)
             {
-                _logger.Error(exception, "Encountered a WebException ({1}).", webException.GetType().Name, webException.Status);
+                Logger.Error(exception, "Encountered a WebException ({1}).", webException.GetType().Name, webException.Status);
                 if (WebExceptionStatusesToRetryOn.Contains(webException.Status) && retries < maxRetries)
                 {
 
-                    _logger.InfoFormat("Encountered a WebException ({0}). Retrying, retry {1} of {2}.",
+                    Logger.InfoFormat("Encountered a WebException ({0}). Retrying, retry {1} of {2}.",
                         webException.Status, retries, maxRetries);
                     return true;
                 }
@@ -131,11 +137,11 @@ namespace Amazon.S3.Transfer.Internal
 
             if (!canRetry)
             {
-                _logger.Error(exception, "Encountered a {0}. Reached maximum retries {1} of {2}.", exception.GetType().Name, retries, maxRetries);
+                Logger.Error(exception, "Encountered a {0}. Reached maximum retries {1} of {2}.", exception.GetType().Name, retries, maxRetries);
                 return false;
             }
 
-            _logger.Error(exception, "Encountered a non retryable {0}, rethrowing exception.", exception.GetType().Name);
+            Logger.Error(exception, "Encountered a non retryable {0}, rethrowing exception.", exception.GetType().Name);
             return false;
         }
 
